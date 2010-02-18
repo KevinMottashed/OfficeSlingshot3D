@@ -1,0 +1,83 @@
+# user specific files
+*.user
+
+# executables
+*/Debug/*.exe*
+*/Release/*.exe*
+
+# Windows Thumbs.db
+Thumbs.db
+
+# Visual Studio - START
+
+# auto generated resource files
+*.aps
+
+# class wizard files (generated when opening the class wizard)
+*.clw
+
+# non-compressed browse file (auto-generated when opening project)
+*.ncb
+
+# workspace configuration file
+*.opt
+
+# build logs
+*.plg
+BuildLog.htm
+
+# program database
+*.pdb
+
+# compiled resource files
+*/Debug/*.res
+*/Release/*.res
+
+# compiler state
+*.idb
+
+# browse information database
+*.bsc
+
+# Visual Studio - END
+
+# C++ - START
+
+# object files
+*.obj
+*.sbr
+
+# linker files
+*.ilk
+
+# precompiled header files
+*.pch
+
+# C++ - END
+
+# Blender
+# don't ignore blender object files (ignored in the c++ rule)
+!HugMe v0.9.1/Blender/*.obj
+
+# chai3d - START
+
+# example executables
+chai3d*/bin/*.exe
+
+# compiled examples
+chai3d*/examples/*/Debug
+chai3d*/examples/*/Release
+chai3d*/examples/*/*/Debug
+chai3d*/examples/*/*/Release
+
+# chai3d library
+chai3d*/lib/*/chai3d_complete.lib
+
+# chai3d - END
+
+# compiled activeX file
+*.ocx
+
+# Eclipse
+.metadata
+

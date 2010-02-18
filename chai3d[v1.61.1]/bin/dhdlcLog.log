@@ -1,0 +1,18 @@
+[dhdlcImp::dhdlcImp():15.54.35.0006] - Constructor called
+[dhdlcImp::init():15.54.35.0008] - init(Default Falcon,(null))
+[dhdlcImp::init():15.54.35.0302] - dhdOpen() returned 0
+[dhdlcImp::init():15.54.35.0884] - DeviceSN = 14Q952G0
+[dhdlcImp::init():15.54.35.0884] - Returning
+[dhdlcImp::shutdown():15.54.35.0955] - shutdown sequence
+[dhdlcImp::shutdown():15.54.35.0963] - update returned
+[dhdlcImp::shutdown():15.54.35.1071] - dhdClose() returned
+[dhdlcImp::shutdown():15.54.35.1072] - Returning
+[dhdlcImp::init():15.54.35.1133] - init(Default Falcon,(null))
+[dhdlcImp::init():15.54.35.1693] - dhdOpen() returned 0
+[dhdlcImp::init():15.54.35.2283] - DeviceSN = 14Q952G0
+[dhdlcImp::init():15.54.35.2283] - Returning
+[dhdlcImp::tryCalibration():15.54.35.2563] - HomeDisabled, LED Blue
+[dhdlcImp::shutdown():15.55.05.6240] - shutdown sequence
+[dhdlcImp::shutdown():15.55.05.6248] - update returned
+[dhdlcImp::shutdown():15.55.05.6358] - dhdClose() returned
+[dhdlcImp::shutdown():15.55.05.6358] - Returning

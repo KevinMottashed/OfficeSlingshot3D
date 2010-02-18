@@ -1,0 +1,10 @@
+C:/Chris/chai3dv1.6/chai3dv1.6/src/devices/CPhantomDevices.cpp:308: Warning: no matching class member found for
+  cPhantomDevice::setCallback(cCallback *m_callback)
+C:/Chris/chai3dv1.6/chai3dv1.6/src/devices/PhantomDriver.cpp:771: Warning: argument `void' of command @param is not found in the argument list of SetCallbackPhantom(void(*callbackFunc)(void *), void *a_data)
+C:/Chris/chai3dv1.6/chai3dv1.6/src/devices/PhantomDriver.cpp:771: Warning: argument `void' of command @param is not found in the argument list of SetCallbackPhantom(void(*callbackFunc)(void *), void *a_data)
+C:/Chris/chai3dv1.6/chai3dv1.6/src/devices/PhantomDriver.cpp:771: Warning: argument `void' of command @param is not found in the argument list of SetCallbackPhantom(void(*callbackFunc)(void *), void *a_data)
+C:/Chris/chai3dv1.6/chai3dv1.6/src/devices/PhantomDriver.cpp:771: Warning: The following parameters of SetCallbackPhantom(void(*callbackFunc)(void *), void *a_data) are not documented:
+  parameter a_data
+C:/Chris/chai3dv1.6/chai3dv1.6/src/math/CQuaternion.h:230: Warning: argument `a_scale' of command @param is not found in the argument list of cQuaternion::mul(double s)
+C:/Chris/chai3dv1.6/chai3dv1.6/src/math/CQuaternion.h:230: Warning: The following parameters of cQuaternion::mul(double s) are not documented:
+  parameter s
