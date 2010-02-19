@@ -110,10 +110,98 @@ typedef int HugMe_Err;
 class HugMe  
 {
 public:
+
+	HugMe(HWND a_hWnd);
+	virtual ~HugMe();
+
+	void SaveConfig(void);
+	int LoadConfig(void);
+
+	void setConfig(HugMeConfig a_config);
+	HugMeConfig getConfig(void) const;
+
+	void setDevice(HugMeDevice a_device);
+	HugMeDevice getDevice(void) const;
+
+	// get device names
+	const char* getImageDeviceName(ImageDeviceType type) const;
+	const char* getInputDeviceName(InputDeviceType type) const;
+	const char* getDisplayDeviceName(DisplayDeviceType type) const;
+	const char* getBodyPartName(HumanPart type) const;
+
+	// chai3d gets
+	cWorld* getWorldRemote();
+	cViewport* getViewport();
+	cMesh* getContactPoint();
+	cDepthImage* getDepthVideo();
+
+	// get the local human model
+	CHumanModel& getLocalHumanModel();
+	const CHumanModel& getLocalHumanModel() const;
+
+	// get the remote human model
+	CHumanModel& getRemoteHumanModel();
+	const CHumanModel& getRemoteHumanModel() const;
+
+	// get the buffers
+	unsigned char* getLocalVideoBuffer();
+	const unsigned char* getLocalVideoBuffer() const;
+	unsigned char* getLocalDepthBuffer();
+	const unsigned char* getLocalDepthBuffer() const;
+	unsigned char* getRemoteVideoBuffer();
+	const unsigned char* getRemoteVideoBuffer() const;
+	unsigned char* getRemoteDepthBuffer();
+	const unsigned char* getRemoteDepthBuffer() const;
+
+	// get the devices
+	cGeneric3dofPointer* getInputDevice();
+	const cGeneric3dofPointer* getInputDevice() const;
+
+	DisplayDeviceFinger* getDisplayDeviceFinger();
+	const DisplayDeviceFinger* getDisplayDeviceFinger() const;
+
+	DisplayDeviceJacket* getDisplayDeviceJacket();
+	const DisplayDeviceJacket* getDisplayDeviceJacket() const;
+
+	DisplayDeviceArmband* getDisplayDeviceArmband();
+	const DisplayDeviceArmband* getDisplayDeviceArmband() const;
+
+	CellphoneSocket* getCellphoneSocket();
+	const CellphoneSocket* getCellphoneSocket() const;
+
+	int Initialize(void);
+	void Uninitialize(void);
+	void CheckDevices(void);
+	bool CheckInputDevice(void);
+	bool CheckImageDevice(void);
+	
+	// Build the remote world that shows the remote person and its avatar
+	void InitRemoteWorld();
+	void UninitRemoteWorld();
+
+	HugMe_Err InitInputDevice(void);
+	void UninitInputDevice(void);
+	HugMe_Err InitImageDevice(void);
+	void UninitImageDevice();
+	HugMe_Err InitRemoteDepthVideo(void);
+	void UninitRemoteDepthVideo(void);
+	HugMe_Err InitDisplayDevice(void);
+	void UninitDisplayDevice(void);
+
+	void CaptureFrame(void);
+
+	void ShowContactPoint(bool a_show);
+
+	// returns true if the system has been initialized
+	bool isStarted() const;
+
+private:
 	// Is the HugMeSystem started?
 	bool m_bIsStarted;
+
 	// device configuration for HugMe system
 	HugMeConfig m_config;
+
 	// device status for HugMe system
 	HugMeDevice m_device;
 
@@ -146,7 +234,7 @@ public:
 	// Window handle where the remote world will be rendered on
 	HWND m_hWnd;
 	/////////////////////////////////////
-	
+
 	/////////////////////////////////////
 	// Human models that represent the local user and the remote user
 	// The local model gets the color image and compute the pose of local user via ARToolKit
@@ -179,12 +267,14 @@ public:
 	int m_depthDistance;
 	double m_focalLength;
 	double m_pixelWidth;
+
 	////////////////////////////////////////////////////////////////////////////
 	unsigned char * m_pLocalVideo;
 	unsigned char * m_pLocalDepth;
 	unsigned char * m_pRemoteVideo;
 	unsigned char * m_pRemoteDepth;
 	////////////////////////////////////////////////////////////////////////////
+
 	// Interface to the haptic device or one finger tactile glove...
 	cGeneric3dofPointer* m_pInputDevice;
 	DisplayDeviceFinger* m_pDisplayDeviceFinger;
@@ -193,44 +283,6 @@ public:
 	DisplayDeviceArmband* m_pDisplayDeviceArmband;
 	// Interface to a cellphone (socket)
 	CellphoneSocket* m_pCellphoneSocket;
-
-	HugMe(HWND a_hWnd);
-	virtual ~HugMe();
-
-	void SaveConfig(void);
-	int LoadConfig(void);
-
-	void SetConfig(HugMeConfig a_config)
-	{
-		m_config = a_config;
-	}
-	HugMeConfig GetConfig(void)
-	{
-		return m_config;
-	}
-
-	int Initialize(void);
-	void Uninitialize(void);
-	void CheckDevices(void);
-	bool CheckInputDevice(void);
-	bool CheckImageDevice(void);
-	
-	// Build the remote world that shows the remote person and its avatar
-	void InitRemoteWorld();
-	void UninitRemoteWorld();
-
-	HugMe_Err InitInputDevice(void);
-	void UninitInputDevice(void);
-	HugMe_Err InitImageDevice(void);
-	void UninitImageDevice();
-	HugMe_Err InitRemoteDepthVideo(void);
-	void UninitRemoteDepthVideo(void);
-	HugMe_Err InitDisplayDevice(void);
-	void UninitDisplayDevice(void);
-
-	void CaptureFrame(void);
-
-	void ShowContactPoint(bool a_show);
 };
 
 #endif // !defined(AFX_HUGME_H__6C1BAE81_D2E5_4084_8F76_37EC3F73A50D__INCLUDED_)

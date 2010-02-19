@@ -177,7 +177,7 @@ BOOL CChatDlg::OnInitDialog()
 	// Initialize HugMe system
 	CWnd * pWnd = GetDlgItem(IDC_VIDEO_REMOTE);
 	m_pHugMe = new HugMe(pWnd->m_hWnd);
-	m_configLocal = m_pHugMe->GetConfig();
+	m_configLocal = m_pHugMe->getConfig();
 
 	// initialize the local video view
 	initVideoPreview();
@@ -370,7 +370,7 @@ void CChatDlg::OnFileConnect()
 	// Send the config of this system
 	CChatPacket configPacket;
 	configPacket.setType(CChatPacket::PACKET_CONFIG);
-	HugMeConfig config = m_pHugMe->GetConfig();
+	HugMeConfig config = m_pHugMe->getConfig();
 	configPacket.writeByteArray((BYTE*)&config, sizeof(HugMeConfig));
 	m_pChatSocket->Send(configPacket);
 
@@ -378,7 +378,6 @@ void CChatDlg::OnFileConnect()
 	//m_pHugMe->CheckDevices();
 	// Initialize devices
 	m_pHugMe->Initialize();
-	m_pHugMe->m_bIsStarted = true;
 
 	// Video synchronization
 	InitializeCriticalSection(&m_csVideoSend);
@@ -457,7 +456,7 @@ void CChatDlg::OnFileDisconnect()
 	SetEvent(m_hSendThreadEvent);
 	m_bIsReceiving = false;
 
-	if(m_pHugMe->m_bIsStarted) {
+	if(m_pHugMe->isStarted()) {
 		Sleep(1);
 		DeleteCriticalSection(&m_csVideoSend);
 		DeleteCriticalSection(&m_csVideoRecv);
@@ -466,7 +465,6 @@ void CChatDlg::OnFileDisconnect()
 	// Uninitialize the HugMe system
 	m_pHugMe->UninitRemoteDepthVideo();
 	m_pHugMe->Uninitialize();
-	m_pHugMe->m_bIsStarted = false;
 
 	CloseSockets();
 
@@ -495,7 +493,7 @@ LRESULT CChatDlg::OnAccept(WPARAM wParam, LPARAM lParam)
 		// Send the config of this system
 		CChatPacket configPacket;
 		configPacket.setType(CChatPacket::PACKET_CONFIG);
-		HugMeConfig config = m_pHugMe->GetConfig();
+		HugMeConfig config = m_pHugMe->getConfig();
 		configPacket.writeByteArray((BYTE*)&config, sizeof(HugMeConfig));
 		m_pChatSocket->Send(configPacket);
 	}
@@ -514,7 +512,6 @@ LRESULT CChatDlg::OnAccept(WPARAM wParam, LPARAM lParam)
 		// Initialize devices
 		//m_pHugMe->InitRemoteDepthVideo();
 		m_pHugMe->Initialize();
-		m_pHugMe->m_bIsStarted = true;
 
 		// Video synchronization
 		InitializeCriticalSection(&m_csVideoSend);
@@ -557,7 +554,6 @@ LRESULT CChatDlg::OnClose(WPARAM wParam, LPARAM lParam)
 	// Uninitialize the HugMe system
 	m_pHugMe->UninitRemoteDepthVideo();
 	m_pHugMe->Uninitialize();
-	m_pHugMe->m_bIsStarted = false;
 	
 	CloseSockets();
 
@@ -606,9 +602,9 @@ LRESULT CChatDlg::OnReceive(WPARAM wParam, LPARAM lParam)
 				memcpy(&m_configRemote, packet.getPacketPtr(), sizeof(HugMeConfig));
 				// If there is a image device in the remote site,
 				// Initialize the remote video in the remote world in HugMe
-				if(m_configRemote.m_bUseImageDevice && m_pHugMe->m_depthVideo == NULL)
+				if(m_configRemote.m_bUseImageDevice && m_pHugMe->getDepthVideo() == NULL)
 					m_pHugMe->InitRemoteDepthVideo();			
-				if(!m_configRemote.m_bUseImageDevice && m_pHugMe->m_depthVideo)
+				if(!m_configRemote.m_bUseImageDevice && m_pHugMe->getDepthVideo())
 					m_pHugMe->UninitRemoteDepthVideo();
 				break;
 			}
@@ -749,13 +745,13 @@ DWORD CChatDlg::VideoSendThread(CChatDlg* pDlg)
 #endif
 
 			// append human part pose data
-			memcpy(packet+dataAcc, &pDlg->m_pHugMe->m_localHumanModel.m_partPose, sizeof(HumanPartPose));
+			memcpy(packet+dataAcc, &pDlg->m_pHugMe->getLocalHumanModel().m_partPose, sizeof(HumanPartPose));
 			dataAcc += sizeof(HumanPartPose);
 		}
 		if(pDlg->m_sendPacket.isTactile) 
 		{
 			// append the contact info
-			memcpy(packet+dataAcc, &pDlg->m_pHugMe->m_remoteHumanModel.m_contactInfo, sizeof(ContactInfo));
+			memcpy(packet+dataAcc, &pDlg->m_pHugMe->getRemoteHumanModel().m_contactInfo, sizeof(ContactInfo));
 			dataAcc += sizeof(ContactInfo);
 		}
 
@@ -843,13 +839,13 @@ DWORD CChatDlg::VideoRecvThread(CChatDlg* pDlg) //updated according to new proto
 #endif
 				}
 
-				memcpy(&pDlg->m_pHugMe->m_remoteHumanModel.m_partPose, pPacket+dataAcc, sizeof(HumanPartPose));
+				memcpy(&pDlg->m_pHugMe->getRemoteHumanModel().m_partPose, pPacket+dataAcc, sizeof(HumanPartPose));
 				dataAcc += sizeof(HumanPartPose);
 
-				pDlg->m_pHugMe->m_remoteHumanModel.SetPartPose(pDlg->m_pHugMe->m_remoteHumanModel.m_partPose);
+				pDlg->m_pHugMe->getRemoteHumanModel().SetPartPose(pDlg->m_pHugMe->getRemoteHumanModel().m_partPose);
 			}
 			if(pDlg->m_recvPacket.isTactile) {
-				memcpy(&pDlg->m_pHugMe->m_localHumanModel.m_contactInfo, pPacket+dataAcc, sizeof(ContactInfo));
+				memcpy(&pDlg->m_pHugMe->getLocalHumanModel().m_contactInfo, pPacket+dataAcc, sizeof(ContactInfo));
 				dataAcc += sizeof(ContactInfo);
 			}
 			queue.erase(queue.begin(), queue.begin() + dataAcc);
@@ -865,13 +861,13 @@ DWORD CChatDlg::VideoRecvThread(CChatDlg* pDlg) //updated according to new proto
 ////////////////////////////////////////////////////////////////////////////
 void CChatDlg::drawLocalVideo()
 {
-	HugMeDevice deviceLocal = m_pHugMe->m_device;
+	HugMeDevice deviceLocal = m_pHugMe->getDevice();
 
 	if(deviceLocal.m_bOnImageDevice) {
 		m_pHugMe->CaptureFrame();
 		synchronized (m_csVideoSend) {
-			memcpy(m_pVideoForSend, m_pHugMe->m_pLocalVideo, sizeof(unsigned char)*DEPTH_IMAGE_WIDTH*DEPTH_IMAGE_HEIGHT*4);
-			memcpy(m_pDepthForSend, m_pHugMe->m_pLocalDepth, sizeof(unsigned char)*DEPTH_IMAGE_WIDTH*DEPTH_IMAGE_HEIGHT);
+			memcpy(m_pVideoForSend, m_pHugMe->getLocalVideoBuffer(), sizeof(unsigned char)*DEPTH_IMAGE_WIDTH*DEPTH_IMAGE_HEIGHT*4);
+			memcpy(m_pDepthForSend, m_pHugMe->getLocalDepthBuffer(), sizeof(unsigned char)*DEPTH_IMAGE_WIDTH*DEPTH_IMAGE_HEIGHT);
 		}
 	}
 
@@ -886,47 +882,47 @@ void CChatDlg::drawLocalVideo()
 	m_wndTouchedPart = (CEdit*)GetDlgItem(IDC_TOUCHED_PART);
 	m_wndTouchedPos = (CEdit*)GetDlgItem(IDC_TOUCHED_POS);
 	if(deviceLocal.m_bOnDisplayDevice) {
-		if(m_pHugMe->m_localHumanModel.m_contactInfo.isContacted) {
+		if(m_pHugMe->getLocalHumanModel().m_contactInfo.isContacted) {
 			// for debugging
-			switch(m_pHugMe->m_localHumanModel.m_contactInfo.tagConPart) {
+			switch(m_pHugMe->getLocalHumanModel().m_contactInfo.tagConPart) {
 			case CHEST:
 				sTouchedPart.Format("Chest");
 				if(deviceLocal.m_typeOnDisplayDevice & TAG_TACTILE_JACKET) {
-					m_pHugMe->m_pDisplayDeviceJacket->setActChest(m_pHugMe->m_localHumanModel.m_contactInfo.contactPosT.x,
-						m_pHugMe->m_localHumanModel.m_contactInfo.contactPosT.y);
-					m_pHugMe->m_pDisplayDeviceJacket->actuate();
+					m_pHugMe->getDisplayDeviceJacket()->setActChest(m_pHugMe->getLocalHumanModel().m_contactInfo.contactPosT.x,
+						m_pHugMe->getLocalHumanModel().m_contactInfo.contactPosT.y);
+					m_pHugMe->getDisplayDeviceJacket()->actuate();
 				}
 			break;
 			case RIGHT_UPPER_ARM:
 				sTouchedPart.Format("Upper arm");
 				if(deviceLocal.m_typeOnDisplayDevice & TAG_TACTILE_JACKET) {
-					m_pHugMe->m_pDisplayDeviceJacket->setActUpperArm(m_pHugMe->m_localHumanModel.m_contactInfo.contactPosT.x,
-						m_pHugMe->m_localHumanModel.m_contactInfo.contactPosT.y);
-					m_pHugMe->m_pDisplayDeviceJacket->actuate();
+					m_pHugMe->getDisplayDeviceJacket()->setActUpperArm(m_pHugMe->getLocalHumanModel().m_contactInfo.contactPosT.x,
+						m_pHugMe->getLocalHumanModel().m_contactInfo.contactPosT.y);
+					m_pHugMe->getDisplayDeviceJacket()->actuate();
 				}
 			break;
 			case RIGHT_LOWER_ARM:
 				sTouchedPart.Format("Forearm");
 				if(deviceLocal.m_typeOnDisplayDevice & TAG_TACTILE_ARMBAND) {
-					m_pHugMe->m_pDisplayDeviceArmband->setActForearm(m_pHugMe->m_localHumanModel.m_contactInfo.contactPosT.x,
-						m_pHugMe->m_localHumanModel.m_contactInfo.contactPosT.y);
-					m_pHugMe->m_pDisplayDeviceArmband->actuate();
+					m_pHugMe->getDisplayDeviceArmband()->setActForearm(m_pHugMe->getLocalHumanModel().m_contactInfo.contactPosT.x,
+						m_pHugMe->getLocalHumanModel().m_contactInfo.contactPosT.y);
+					m_pHugMe->getDisplayDeviceArmband()->actuate();
 				}
 			break;
 			}
 			
-			sTouchedPos.Format("%f, %f", m_pHugMe->m_localHumanModel.m_contactInfo.contactPosT.x,
-				m_pHugMe->m_localHumanModel.m_contactInfo.contactPosT.y);
+			sTouchedPos.Format("%f, %f", m_pHugMe->getLocalHumanModel().m_contactInfo.contactPosT.x,
+				m_pHugMe->getLocalHumanModel().m_contactInfo.contactPosT.y);
 		} else {
 			sTouchedPart.Format("Nothing");
 			sTouchedPos.Format("Nothing");
 			if(deviceLocal.m_typeOnDisplayDevice & TAG_TACTILE_JACKET) {
-				m_pHugMe->m_pDisplayDeviceJacket->setIntensityAll(0);
-				m_pHugMe->m_pDisplayDeviceJacket->actuate();
+				m_pHugMe->getDisplayDeviceJacket()->setIntensityAll(0);
+				m_pHugMe->getDisplayDeviceJacket()->actuate();
 			}
 			if(deviceLocal.m_typeOnDisplayDevice & TAG_TACTILE_ARMBAND) {
-				m_pHugMe->m_pDisplayDeviceArmband->setIntensityAll(0);
-				m_pHugMe->m_pDisplayDeviceArmband->actuate();
+				m_pHugMe->getDisplayDeviceArmband()->setIntensityAll(0);
+				m_pHugMe->getDisplayDeviceArmband()->actuate();
 			}
 		}
 	} 
@@ -969,17 +965,17 @@ void CChatDlg::drawRemoteVideo()
 	if(m_recvPacket.isVideo) {
 		synchronized (m_csVideoRecv) {
 #ifdef USE_H263
-			memcpy(m_pHugMe->m_pRemoteVideo, m_pReceivedVideo[m_iCurrentBuffer], sizeof(unsigned char)*DEPTH_IMAGE_WIDTH*DEPTH_IMAGE_HEIGHT*3);
-			memcpy(m_pHugMe->m_pRemoteDepth, m_pReceivedDepth[m_iCurrentBuffer], sizeof(unsigned char)*DEPTH_IMAGE_WIDTH*DEPTH_IMAGE_HEIGHT);
+			memcpy(m_pHugMe->getRemoteVideoBuffer(), m_pReceivedVideo[m_iCurrentBuffer], sizeof(unsigned char)*DEPTH_IMAGE_WIDTH*DEPTH_IMAGE_HEIGHT*3);
+			memcpy(m_pHugMe->getRemoteDepthBuffer(), m_pReceivedDepth[m_iCurrentBuffer], sizeof(unsigned char)*DEPTH_IMAGE_WIDTH*DEPTH_IMAGE_HEIGHT);
 #else
-			memcpy(m_pHugMe->m_pRemoteVideo, m_pReceivedVideo[m_iCurrentBuffer], sizeof(unsigned char)*DEPTH_IMAGE_WIDTH*DEPTH_IMAGE_HEIGHT*4);
-			memcpy(m_pHugMe->m_pRemoteDepth, m_pReceivedDepth[m_iCurrentBuffer], sizeof(unsigned char)*DEPTH_IMAGE_WIDTH*DEPTH_IMAGE_HEIGHT);
+			memcpy(m_pHugMe->getRemoteVideoBuffer(), m_pReceivedVideo[m_iCurrentBuffer], sizeof(unsigned char)*DEPTH_IMAGE_WIDTH*DEPTH_IMAGE_HEIGHT*4);
+			memcpy(m_pHugMe->getRemoteDepthBuffer(), m_pReceivedDepth[m_iCurrentBuffer], sizeof(unsigned char)*DEPTH_IMAGE_WIDTH*DEPTH_IMAGE_HEIGHT);
 #endif
 		}
 	}
 
-	if(m_recvPacket.isVideo && m_configRemote.m_bUseImageDevice && m_pHugMe->m_depthVideo) {
-		m_pHugMe->m_depthVideo->setImageData(m_pHugMe->m_pRemoteVideo, m_pHugMe->m_pRemoteDepth);
+	if(m_recvPacket.isVideo && m_configRemote.m_bUseImageDevice && m_pHugMe->getDepthVideo()) {
+		m_pHugMe->getDepthVideo()->setImageData(m_pHugMe->getRemoteVideoBuffer(), m_pHugMe->getRemoteDepthBuffer());
 	}
 
 	if(m_configLocal.m_bUseInputDevice)
@@ -988,35 +984,35 @@ void CChatDlg::drawRemoteVideo()
 		case FORCE_FEEDBACK_FALCON:
 		case FORCE_FEEDBACK_PHANTOM:
 		case ONE_FINGER_GLOVE:
-			m_pHugMe->m_remoteHumanModel.proxymityCheck(m_pHugMe->m_pInputDevice->getProxy()->getProxyGlobalPosition());
-			if(m_pHugMe->m_remoteHumanModel.m_contactInfo.isContacted)
+			m_pHugMe->getRemoteHumanModel().proxymityCheck(m_pHugMe->getInputDevice()->getProxy()->getProxyGlobalPosition());
+			if(m_pHugMe->getRemoteHumanModel().m_contactInfo.isContacted)
 				{
-				m_pHugMe->m_pContactPoint->setPos(m_pHugMe->m_remoteHumanModel.m_contactInfo.contactPosH);
-				cVector3d cntct = m_pHugMe->m_remoteHumanModel.m_contactInfo.contactPosT;
+				m_pHugMe->getContactPoint()->setPos(m_pHugMe->getRemoteHumanModel().m_contactInfo.contactPosH);
+				cVector3d cntct = m_pHugMe->getRemoteHumanModel().m_contactInfo.contactPosT;
 				}
 			else
-				m_pHugMe->m_pContactPoint->setPos(CHAI_LARGE, CHAI_LARGE, CHAI_LARGE);
+				m_pHugMe->getContactPoint()->setPos(CHAI_LARGE, CHAI_LARGE, CHAI_LARGE);
 		break;
 		case VIRTUAL_TOUCHPAD:
 			if(m_pDlgVirtualPad) {
-				m_pHugMe->m_remoteHumanModel.m_contactInfo.isContacted = m_pDlgVirtualPad->m_bTouched;
-				m_pHugMe->m_remoteHumanModel.m_contactInfo.tagConPart = m_pDlgVirtualPad->m_selectedBodyPart;
-				m_pHugMe->m_remoteHumanModel.m_contactInfo.contactPosT.x = m_pDlgVirtualPad->m_normTouchPointX;
-				m_pHugMe->m_remoteHumanModel.m_contactInfo.contactPosT.y = m_pDlgVirtualPad->m_normTouchPointY;
+				m_pHugMe->getRemoteHumanModel().m_contactInfo.isContacted = m_pDlgVirtualPad->m_bTouched;
+				m_pHugMe->getRemoteHumanModel().m_contactInfo.tagConPart = m_pDlgVirtualPad->m_selectedBodyPart;
+				m_pHugMe->getRemoteHumanModel().m_contactInfo.contactPosT.x = m_pDlgVirtualPad->m_normTouchPointX;
+				m_pHugMe->getRemoteHumanModel().m_contactInfo.contactPosT.y = m_pDlgVirtualPad->m_normTouchPointY;
 			}
 		break;
 		case CELLPHONE_TOUCHPAD:
 			if(m_pDlgCellphonePad) {
-				m_pHugMe->m_remoteHumanModel.m_contactInfo.isContacted = m_pDlgCellphonePad->m_bTouched;
-				m_pHugMe->m_remoteHumanModel.m_contactInfo.tagConPart = m_pDlgCellphonePad->m_selectedBodyPart;
-				m_pHugMe->m_remoteHumanModel.m_contactInfo.contactPosT.x = m_pDlgCellphonePad->m_normTouchPointX;
-				m_pHugMe->m_remoteHumanModel.m_contactInfo.contactPosT.y = m_pDlgCellphonePad->m_normTouchPointY;
+				m_pHugMe->getRemoteHumanModel().m_contactInfo.isContacted = m_pDlgCellphonePad->m_bTouched;
+				m_pHugMe->getRemoteHumanModel().m_contactInfo.tagConPart = m_pDlgCellphonePad->m_selectedBodyPart;
+				m_pHugMe->getRemoteHumanModel().m_contactInfo.contactPosT.x = m_pDlgCellphonePad->m_normTouchPointX;
+				m_pHugMe->getRemoteHumanModel().m_contactInfo.contactPosT.y = m_pDlgCellphonePad->m_normTouchPointY;
 			}
 		break;
 		}
 	}
-	m_pHugMe->m_worldRemote->computeGlobalPositions(true);
-	m_pHugMe->m_viewport->render();
+	m_pHugMe->getWorldRemote()->computeGlobalPositions(true);
+	m_pHugMe->getViewport()->render();
 }
 
 // changed
@@ -1076,11 +1072,11 @@ void CChatDlg::OnTimer(UINT nIDEvent)
 	
 	// For some reason, the hand tracking api does not work in the haptic thread.
 	// So when we use the finger glove, this haptic thread should be here.
-	HugMeDevice deviceLocal = m_pHugMe->m_device;
+	HugMeDevice deviceLocal = m_pHugMe->getDevice();
 	if(deviceLocal.m_bOnInputDevice && deviceLocal.m_typeOnInputDevice == ONE_FINGER_GLOVE) {
-		m_pHugMe->m_pInputDevice->updatePose();
-		m_pHugMe->m_pInputDevice->computeForces();
-		cVector3d force = m_pHugMe->m_pInputDevice->m_lastComputedGlobalForce;
+		m_pHugMe->getInputDevice()->updatePose();
+		m_pHugMe->getInputDevice()->computeForces();
+		cVector3d force = m_pHugMe->getInputDevice()->m_lastComputedGlobalForce;
 		double force_mag = force.length();
 		/*
 		m_pHugMe->m_pDisplayDeviceFinger->setIntensity(0, 0, 15);
@@ -1093,14 +1089,14 @@ void CChatDlg::OnTimer(UINT nIDEvent)
 			double max_force = 7.0;
 			if(force_mag > max_force)
 				force_mag = max_force;
-			if(m_pHugMe->m_pDisplayDeviceFinger) {
-				m_pHugMe->m_pDisplayDeviceFinger->setActFinger(force_mag/max_force);
-				m_pHugMe->m_pDisplayDeviceFinger->actuate();
+			if(m_pHugMe->getDisplayDeviceFinger()) {
+				m_pHugMe->getDisplayDeviceFinger()->setActFinger(force_mag/max_force);
+				m_pHugMe->getDisplayDeviceFinger()->actuate();
 			}
 		} else {
-			if(m_pHugMe->m_pDisplayDeviceFinger) {
-				m_pHugMe->m_pDisplayDeviceFinger->setIntensityAll(0);
-				m_pHugMe->m_pDisplayDeviceFinger->actuate();
+			if(m_pHugMe->getDisplayDeviceFinger()) {
+				m_pHugMe->getDisplayDeviceFinger()->setIntensityAll(0);
+				m_pHugMe->getDisplayDeviceFinger()->actuate();
 			}
 		}
 	}
@@ -1180,20 +1176,20 @@ void CChatDlg::OnToolsOption()
 	
 	dlg.DoModal();
 
-	m_pHugMe->SetConfig(dlg.m_config);
+	m_pHugMe->setConfig(dlg.m_config);
 	m_pHugMe->SaveConfig();
 
 	// Check the devices
-	if(m_pHugMe->m_bIsStarted == false)
+	if(m_pHugMe->isStarted() == false)
 		m_pHugMe->CheckDevices();
 	else
 		m_pHugMe->Initialize();
 
 	// After checking everyting, update the config.
-	m_configLocal = m_pHugMe->GetConfig();
+	m_configLocal = m_pHugMe->getConfig();
 
 	// Send the updated config to the remote user
-	if(m_pHugMe->m_bIsStarted) {
+	if(m_pHugMe->isStarted()) {
 		CChatPacket configPacket;
 		configPacket.setType(CChatPacket::PACKET_CONFIG);
 		configPacket.writeByteArray((BYTE*)&m_configLocal, sizeof(HugMeConfig));
@@ -1202,7 +1198,7 @@ void CChatDlg::OnToolsOption()
 
 	//
 	m_pHugMe->ShowContactPoint(m_configLocal.m_bShowContactpoint);
-	m_pHugMe->m_remoteHumanModel.ShowAvatar(m_configLocal.m_bShowAvatar);
+	m_pHugMe->getRemoteHumanModel().ShowAvatar(m_configLocal.m_bShowAvatar);
 
 	// Initialize the virtual pad menu
 	CMenu * pMenu = GetMenu();

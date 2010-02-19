@@ -85,7 +85,7 @@ HugMe::HugMe(HWND a_hWnd)
 	m_device.m_bOnInputDevice = false;
 	m_device.m_bOnDisplayDevice = false;
 
-	//
+	// the system is not started by default
 	m_bIsStarted = false;
 
 	m_pLocalVideo = new BYTE[DEPTH_IMAGE_WIDTH * DEPTH_IMAGE_HEIGHT * 4];
@@ -426,9 +426,9 @@ void HugMe::UninitRemoteWorld()
 void haptic_iteration(void* param) {
 	HugMe * hugMe = (HugMe*)param;
 
-	hugMe->m_pInputDevice->updatePose();
-	hugMe->m_pInputDevice->computeForces();
-	hugMe->m_pInputDevice->applyForces();
+	hugMe->getInputDevice()->updatePose();
+	hugMe->getInputDevice()->computeForces();
+	hugMe->getInputDevice()->applyForces();
 }
 
 HugMe_Err HugMe::InitInputDevice(void) {
@@ -757,7 +757,7 @@ int HugMe::Initialize(void)
 
 	SaveConfig();
 	
-	
+	m_bIsStarted = true;
 	return result_err;
 }
 
@@ -769,6 +769,7 @@ void HugMe::Uninitialize(void)
 		UninitInputDevice();
 	if(m_config.m_bUseDisplayDevice && m_device.m_bOnDisplayDevice)
 		UninitDisplayDevice();
+	m_bIsStarted = false;
 }
 
 void HugMe::CheckDevices(void)
@@ -859,4 +860,181 @@ void HugMe::CaptureFrame(void)
 	memcpy(m_pLocalVideo, pRGB, sizeof(unsigned char)*DEPTH_IMAGE_WIDTH*DEPTH_IMAGE_HEIGHT*4);
 	memcpy(m_pLocalDepth, pDepth, sizeof(unsigned char)*DEPTH_IMAGE_WIDTH*DEPTH_IMAGE_HEIGHT);
 	m_localHumanModel.UpdatePose(m_pLocalVideo);
+}
+
+bool HugMe::isStarted() const
+{
+	return m_bIsStarted;
+}
+
+void HugMe::setConfig(HugMeConfig a_config)
+{
+	m_config = a_config;
+}
+
+HugMeConfig HugMe::getConfig(void) const
+{
+	return m_config;
+}
+
+void HugMe::setDevice(HugMeDevice a_device)
+{
+	m_device = a_device;
+}
+
+HugMeDevice HugMe::getDevice(void) const
+{
+	return m_device;
+}
+
+const char* HugMe::getImageDeviceName(ImageDeviceType type) const
+{
+	return m_nameImageDevice[type];
+}
+
+const char* HugMe::getInputDeviceName(InputDeviceType type) const
+{
+	return m_nameInputDevice[type];
+}
+
+const char* HugMe::getDisplayDeviceName(DisplayDeviceType type) const
+{
+	return m_nameDisplayDevice[type];
+}
+
+const char* HugMe::getBodyPartName(HumanPart type) const
+{
+	return m_nameBodyPart[type];
+}
+
+cWorld* HugMe::getWorldRemote()
+{
+	return m_worldRemote;
+}
+
+cViewport* HugMe::getViewport()
+{
+	return m_viewport;
+}
+
+cMesh* HugMe::getContactPoint()
+{
+	return m_pContactPoint;
+}
+
+cDepthImage* HugMe::getDepthVideo()
+{
+	return m_depthVideo;
+}
+
+// get the local human model
+CHumanModel& HugMe::getLocalHumanModel()
+{
+	return m_localHumanModel;
+}
+
+const CHumanModel& HugMe::getLocalHumanModel() const
+{
+	return m_localHumanModel;
+}
+
+// get the remote human model
+CHumanModel& HugMe::getRemoteHumanModel()
+{
+	return m_remoteHumanModel;
+}
+
+const CHumanModel& HugMe::getRemoteHumanModel() const
+{
+	return m_remoteHumanModel;
+}
+
+unsigned char* HugMe::getLocalVideoBuffer()
+{
+	return m_pLocalVideo;
+}
+
+const unsigned char* HugMe::getLocalVideoBuffer() const
+{
+	return m_pLocalVideo;
+}
+
+unsigned char* HugMe::getLocalDepthBuffer()
+{
+	return m_pLocalDepth;
+}
+
+const unsigned char* HugMe::getLocalDepthBuffer() const
+{
+	return m_pLocalDepth;
+}
+
+unsigned char* HugMe::getRemoteVideoBuffer()
+{
+	return m_pRemoteVideo;
+}
+
+const unsigned char* HugMe::getRemoteVideoBuffer() const
+{
+	return m_pRemoteVideo;
+}
+
+unsigned char* HugMe::getRemoteDepthBuffer()
+{
+	return m_pRemoteDepth;
+}
+
+const unsigned char* HugMe::getRemoteDepthBuffer() const
+{
+	return m_pRemoteDepth;
+}
+
+cGeneric3dofPointer* HugMe::getInputDevice()
+{
+	return m_pInputDevice;
+}
+
+const cGeneric3dofPointer* HugMe::getInputDevice() const
+{
+	return m_pInputDevice;
+}
+
+DisplayDeviceFinger* HugMe::getDisplayDeviceFinger()
+{
+	return m_pDisplayDeviceFinger;
+}
+
+const DisplayDeviceFinger* HugMe::getDisplayDeviceFinger() const
+{
+	return m_pDisplayDeviceFinger;
+}
+
+DisplayDeviceJacket* HugMe::getDisplayDeviceJacket()
+{
+	return m_pDisplayDeviceJacket;
+}
+
+const DisplayDeviceJacket* HugMe::getDisplayDeviceJacket() const
+{
+	return m_pDisplayDeviceJacket;
+}
+
+DisplayDeviceArmband* HugMe::getDisplayDeviceArmband()
+{
+	return m_pDisplayDeviceArmband;
+}
+
+const DisplayDeviceArmband* HugMe::getDisplayDeviceArmband() const
+{
+	return m_pDisplayDeviceArmband;
+}
+
+CellphoneSocket* HugMe::getCellphoneSocket()
+{
+	return m_pCellphoneSocket;
+}
+
+const CellphoneSocket* HugMe::getCellphoneSocket() const
+{
+	return m_pCellphoneSocket;
 }
