@@ -28,6 +28,10 @@
 typedef DWORD DWORD_PTR;
 typedef LONG LONG_PTR;
 
+// This is microsft's way of dealing with this warning in vc++6
+// the warning occurs because the STL vector is used
+#pragma warning (disable : 4786)
+
 #include <vector>
 #include <string>
 using std::vector;

@@ -85,7 +85,7 @@ void CellphoneSocket::OnReceive(int nErrorCode)
 	fourth[4] = '\0';
 
 	
-	m_cellphoneContact.m_bIsContacted = (bool)atoi(&first);
+	m_cellphoneContact.m_bIsContacted = atoi(&first) != 0; // != 0 converts to bool without a compiler warning
 	m_cellphoneContact.m_part = atoi(&second);
 	m_cellphoneContact.m_x = atof(third);
 	m_cellphoneContact.m_y = atof(fourth);

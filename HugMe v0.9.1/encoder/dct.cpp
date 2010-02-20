@@ -95,7 +95,7 @@ int Dct( int *block, int *coeff)
 
   for (i = 0, k = 0; i < 8; i++, k += 8) {
     for (j = 0; j < 8; j++) {
-      b[j] = block[k+j];
+      b[j] = (float)block[k+j];
     }
     /* Horizontal transform */
     for (j = 0; j < 4; j++) {

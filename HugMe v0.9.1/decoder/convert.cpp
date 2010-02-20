@@ -37,14 +37,14 @@ void InitLookupTable()
 {
 	int i;
 
-	for (i = 0; i < 256; i++) RGB2YUV_YR[i] = (float)65.481 * (i<<8);
-	for (i = 0; i < 256; i++) RGB2YUV_YG[i] = (float)128.553 * (i<<8);
-	for (i = 0; i < 256; i++) RGB2YUV_YB[i] = (float)24.966 * (i<<8);
-	for (i = 0; i < 256; i++) RGB2YUV_UR[i] = (float)37.797 * (i<<8);
-	for (i = 0; i < 256; i++) RGB2YUV_UG[i] = (float)74.203 * (i<<8);
-	for (i = 0; i < 256; i++) RGB2YUV_VG[i] = (float)93.786 * (i<<8);
-	for (i = 0; i < 256; i++) RGB2YUV_VB[i] = (float)18.214 * (i<<8);
-	for (i = 0; i < 256; i++) RGB2YUV_UBVR[i] = (float)112 * (i<<8);
+	for (i = 0; i < 256; i++) RGB2YUV_YR[i] = (int)(65.481f * (i<<8));
+	for (i = 0; i < 256; i++) RGB2YUV_YG[i] = (int)(128.553f * (i<<8));
+	for (i = 0; i < 256; i++) RGB2YUV_YB[i] = (int)(24.966f * (i<<8));
+	for (i = 0; i < 256; i++) RGB2YUV_UR[i] = (int)(37.797f * (i<<8));
+	for (i = 0; i < 256; i++) RGB2YUV_UG[i] = (int)(74.203f * (i<<8));
+	for (i = 0; i < 256; i++) RGB2YUV_VG[i] = (int)(93.786f * (i<<8));
+	for (i = 0; i < 256; i++) RGB2YUV_VB[i] = (int)(18.214f * (i<<8));
+	for (i = 0; i < 256; i++) RGB2YUV_UBVR[i] = (int)(112.0f * (i<<8));
 }
 
 
@@ -177,7 +177,7 @@ int ConvertD2YUV(int w,int h,unsigned char *bmp,unsigned int *yuv)
 unsigned int *u,*v,*y,*uu,*vv;
 unsigned int *pu1,*pu2,*pu3,*pu4;
 unsigned int *pv1,*pv2,*pv3,*pv4;
-unsigned char *r,*g,*b;
+unsigned char *r;
 int i,j;
 
 uu=new unsigned int[w*h];

@@ -131,12 +131,14 @@ void COptionDlg::OnOK()
 	// TODO: Add extra validation here
 	UpdateData(TRUE);
 
-	m_config.m_bShowAvatar = (bool)m_bShowAvatar;
-	m_config.m_bShowContactpoint = (bool)m_bShowContactPoint;
-	m_config.m_bShowDepthImage = (bool)m_bShowRemotePerson;
-	m_config.m_bUseDisplayDevice = (bool)m_bUseDisplayDevice;
-	m_config.m_bUseImageDevice = (bool)m_bUseImageDevice;
-	m_config.m_bUseInputDevice = (bool)m_bUseInputDevice;
+
+	// != 0 converts to bool without a compiler warning
+	m_config.m_bShowAvatar = m_bShowAvatar != 0;
+	m_config.m_bShowContactpoint = m_bShowContactPoint != 0;
+	m_config.m_bShowDepthImage = m_bShowRemotePerson != 0;
+	m_config.m_bUseDisplayDevice = m_bUseDisplayDevice != 0;
+	m_config.m_bUseImageDevice = m_bUseImageDevice != 0;
+	m_config.m_bUseInputDevice = m_bUseInputDevice != 0;
 
 	CComboBox * pImageDevice = (CComboBox *)GetDlgItem(IDC_IMAGE_DEVICE);
 	m_config.m_typeImageDevice = (ImageDeviceType)pImageDevice->GetCurSel();
@@ -149,7 +151,7 @@ void COptionDlg::OnOK()
 	if(m_portNumFinger > 99)
 		m_portNumFinger = 99;
 	if(m_config.m_typeInputDevice == ONE_FINGER_GLOVE) {
-		m_config.m_bUseFingerTactile = (bool)m_bUseFingerTactile;
+		m_config.m_bUseFingerTactile = m_bUseFingerTactile != 0;
 		m_config.m_portNumFinger = m_portNumFinger;
 	}
 
