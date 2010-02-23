@@ -39,6 +39,9 @@ BuildLog.htm
 # browse information database
 *.bsc
 
+# user solution
+*.suo
+
 # Visual Studio - END
 
 # C++ - START
