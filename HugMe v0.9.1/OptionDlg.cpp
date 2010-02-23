@@ -20,7 +20,7 @@ COptionDlg::COptionDlg(CWnd* pParent /*=NULL*/)
 {
 	m_pChatDlg = (CChatDlg *) pParent;
 
-	m_config = m_pChatDlg->m_configLocal;
+	m_config = m_pChatDlg->getLocalConfig();
 
 	//{{AFX_DATA_INIT(COptionDlg)
 	m_bShowRemotePerson = m_config.m_bShowDepthImage;
@@ -84,14 +84,14 @@ BOOL COptionDlg::OnInitDialog()
 
 	CComboBox * pImageDevice = (CComboBox *)GetDlgItem(IDC_IMAGE_DEVICE);
 	for(i=0; i<NUM_IMAGE_DEVICE; i++)
-		pImageDevice->InsertString(i, m_pChatDlg->m_pHugMe->getImageDeviceName((tagImageDeviceType)i));
+		pImageDevice->InsertString(i, m_pChatDlg->getHugMeSystem()->getImageDeviceName((tagImageDeviceType)i));
 	pImageDevice->SetCurSel(m_config.m_typeImageDevice);
 	if(!m_config.m_bUseImageDevice)
 		pImageDevice->EnableWindow(FALSE);
 
 	CComboBox * pInputDevice = (CComboBox *)GetDlgItem(IDC_INPUT_DEVICE);
 	for(i=0; i<NUM_INPUT_DEVICE; i++)
-		pInputDevice->InsertString(i, m_pChatDlg->m_pHugMe->getInputDeviceName((tagInputDeviceType)i));
+		pInputDevice->InsertString(i, m_pChatDlg->getHugMeSystem()->getInputDeviceName((tagInputDeviceType)i));
 	pInputDevice->SetCurSel(m_config.m_typeInputDevice);
 	if(!m_config.m_bUseInputDevice)
 		pInputDevice->EnableWindow(FALSE);
@@ -184,7 +184,7 @@ void COptionDlg::OnUseImageDevice()
 	CComboBox * pImageDevice = (CComboBox *)GetDlgItem(IDC_IMAGE_DEVICE);
 	if( m_bUseImageDevice ) {
 		pImageDevice->EnableWindow(TRUE);
-		pImageDevice->SelectString(0, m_pChatDlg->m_pHugMe->getImageDeviceName((tagImageDeviceType)m_config.m_typeImageDevice));
+		pImageDevice->SelectString(0, m_pChatDlg->getHugMeSystem()->getImageDeviceName((tagImageDeviceType)m_config.m_typeImageDevice));
 	}
 	else
 		pImageDevice->EnableWindow(FALSE);
@@ -199,7 +199,7 @@ void COptionDlg::OnUseInputDevice()
 	CEdit * pPortNumFinger = (CEdit *)GetDlgItem(IDC_PORT_FINGER);
 	if( m_bUseInputDevice ) {
 		pInputDevice->EnableWindow(TRUE);
-		pInputDevice->SelectString(0, m_pChatDlg->m_pHugMe->getInputDeviceName((tagInputDeviceType)m_config.m_typeInputDevice));
+		pInputDevice->SelectString(0, m_pChatDlg->getHugMeSystem()->getInputDeviceName((tagInputDeviceType)m_config.m_typeInputDevice));
 		if(m_config.m_typeInputDevice == ONE_FINGER_GLOVE)
 			pPortNumFinger->EnableWindow(TRUE);
 		else
@@ -265,8 +265,8 @@ void COptionDlg::OnTactileArmband()
 void COptionDlg::OnButton1() 
 {
 	// TODO: Add your control notification handler code here
-	if(m_pChatDlg->m_pHugMe->getDevice().m_bOnDisplayDevice) {
-		m_pChatDlg->m_pHugMe->getDisplayDeviceJacket()->test1by1();
+	if(m_pChatDlg->getHugMeSystem()->getDevice().m_bOnDisplayDevice) {
+		m_pChatDlg->getHugMeSystem()->getDisplayDeviceJacket()->test1by1();
 	}
 }
 

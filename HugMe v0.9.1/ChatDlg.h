@@ -53,23 +53,62 @@ class CChatDlg : public CDialog
 {
 // Construction
 public:
+	
+	CChatDlg(CWnd* pParent = NULL);	// standard constructor
+
+#ifdef USE_H263
+	// image compressor
+	DepthImageComp * m_imageComp;
+#endif
+
+	
+
+// Dialog Data
+	//{{AFX_DATA(CChatDlg)
+	enum { IDD = IDD_CHAT_DIALOG };
+	CRichEditCtrl	m_richChat;
+	CEdit	m_editChatInput;
+	CBitmapButton	m_btnEmoticon;
+	//}}AFX_DATA
+
+	// ClassWizard generated virtual function overrides
+	//{{AFX_VIRTUAL(CChatDlg)
+	protected:
+	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV support
+	//}}AFX_VIRTUAL
+
+public:
+
+	HugMe* getHugMeSystem();
+
+	HugMeConfig getLocalConfig() const;
+	HugMeConfig getRemoteConfig() const;
+
+	void SendEmoticon(Pattern* pPattern);
+	void initVideoPreview();
+
+private:
+	void AddChatContent(CString strCont);
+	void CloseSockets();
+
+	static DWORD VideoSendThread(CChatDlg* pDlg);
+	static DWORD VideoRecvThread(CChatDlg* pDlg);
+
+	void drawRemoteVideo();
+	void drawLocalVideo();
+
 	// HugMe system
 	HugMe * m_pHugMe;
+
 	// Configuration for the local and the remote HugMe systems
 	HugMeConfig m_configLocal;
 	HugMeConfig m_configRemote;
 
 	// Virtual pad dialog box
-	CVirtualPadDlg * m_pDlgVirtualPad;	
+	CVirtualPadDlg * m_pDlgVirtualPad;
+
 	// Cellphone pad dialog box
 	CCellphoneDlg * m_pDlgCellphonePad;
-	
-	void drawRemoteVideo();
-	void drawLocalVideo();
-
-	CChatDlg(CWnd* pParent = NULL);	// standard constructor
-
-	//
 
 	// parameters to draw the local video
 	PBITMAPINFO m_bmpinfo;
@@ -89,11 +128,6 @@ public:
 	unsigned char * m_pVideoForSend;
 	unsigned char * m_pDepthForSend;
 
-#ifdef USE_H263
-	// image compressor
-	DepthImageComp * m_imageComp;
-#endif
-
 	// videos for receiving and their buffers
 	unsigned char * m_pReceivedVideo[2];
 	unsigned char * m_pReceivedDepth[2];
@@ -111,33 +145,6 @@ public:
 	// for RichEditCtrl
 	LPRICHEDITOLE	m_pRichEditOle;
 
-// Dialog Data
-	//{{AFX_DATA(CChatDlg)
-	enum { IDD = IDD_CHAT_DIALOG };
-	CRichEditCtrl	m_richChat;
-	CEdit	m_editChatInput;
-	CBitmapButton	m_btnEmoticon;
-	//}}AFX_DATA
-
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CChatDlg)
-	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV support
-	//}}AFX_VIRTUAL
-
-public:
-
-
-	void SendEmoticon(Pattern* pPattern);
-	void initVideoPreview();
-
-private:
-	void AddChatContent(CString strCont);
-	void CloseSockets();
-
-	static DWORD VideoSendThread(CChatDlg* pDlg);
-	static DWORD VideoRecvThread(CChatDlg* pDlg);
-
 // Implementation
 protected:
 
@@ -148,8 +155,11 @@ protected:
 	CChatSocket* m_pTmpVideoSocket;
 	// socket handle for video and hugme data
 	SOCKET m_hVideoSocket;
-	CRITICAL_SECTION m_csVideoSend;
-	CRITICAL_SECTION m_csVideoRecv;
+
+	// mutexes, semaphores, etc.. Should all be mutable
+	mutable CRITICAL_SECTION m_csVideoSend;
+	mutable CRITICAL_SECTION m_csVideoRecv;
+	
 	HANDLE m_hVideoSendThread;
 	HANDLE m_hVideoRecvThread;
 	DWORD m_dwIDVideoSend;

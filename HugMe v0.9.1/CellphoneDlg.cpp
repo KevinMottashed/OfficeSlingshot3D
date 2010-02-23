@@ -56,7 +56,7 @@ BOOL CCellphoneDlg::OnInitDialog()
 	CDialog::OnInitDialog();
 	
 	// TODO: Add extra initialization here
-	m_device = &((CChatDlg*)m_pChatDlg)->m_pHugMe->getDevice();
+	m_device = &((CChatDlg*)m_pChatDlg)->getHugMeSystem()->getDevice();
 
 	CEdit* status = (CEdit*)GetDlgItem(IDC_STATUS);
 	CButton* ok = (CButton*)GetDlgItem(ID_YES);

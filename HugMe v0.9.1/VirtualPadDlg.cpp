@@ -69,7 +69,7 @@ BOOL CVirtualPadDlg::OnInitDialog()
 
 	CComboBox * pWndBodyPart = (CComboBox *)GetDlgItem(IDC_BODY_PART);
 	for(int i=0; i<TOTAL_NUM_PART; i++)
-		pWndBodyPart->InsertString(i, pChatDlg->m_pHugMe->getBodyPartName((tagHumanPart)i));
+		pWndBodyPart->InsertString(i, pChatDlg->getHugMeSystem()->getBodyPartName((tagHumanPart)i));
 	pWndBodyPart->SetCurSel(m_selectedBodyPart);
 
 	OnSelchangeBodyPart();

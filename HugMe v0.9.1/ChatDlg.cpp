@@ -1265,3 +1265,18 @@ void CChatDlg::OnToolsCellphonePad()
 		}
 	}	
 }
+
+HugMe* CChatDlg::getHugMeSystem()
+{
+	return m_pHugMe;
+}
+
+HugMeConfig CChatDlg::getLocalConfig() const
+{
+	return m_configLocal;
+}
+
+HugMeConfig CChatDlg::getRemoteConfig() const
+{
+	return m_configRemote;
+}
