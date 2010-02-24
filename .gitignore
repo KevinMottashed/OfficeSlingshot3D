@@ -83,6 +83,7 @@ chai3d*/lib/*/chai3d_complete.lib
 
 # Eclipse
 .metadata
+.settings
 
 # GIT file backups
 *.orig
