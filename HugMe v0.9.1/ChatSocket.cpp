@@ -11,13 +11,13 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CWnd* CChatSocket::pWndMsgProc = NULL;
+//CWnd* CChatSocket::pWndMsgProc = NULL;
 
 /////////////////////////////////////////////////////////////////////////////
 // CChatSocket
 
-CChatSocket::CChatSocket()
-	: m_bIsServer(false), m_pParent(NULL), m_pClient(NULL)
+CChatSocket::CChatSocket(NetworkManager* manager)
+	: m_bIsServer(false), m_pParent(NULL), m_pClient(NULL), m_pNetworkManager(manager)
 {
 }
 
@@ -51,19 +51,24 @@ void CChatSocket::OnAccept(int nErrorCode)
 	m_pClient->m_pParent = this;
 	Accept(*m_pClient);
 
-	if (pWndMsgProc)
+	//if (pWndMsgProc)
+	//{
+	//	pWndMsgProc->SendMessage(WM_ON_ACCEPT, (WPARAM) (LPCSTR) m_pClient, (LPARAM) ParamPtr());
+	//}
+	if (m_pNetworkManager)
 	{
-		pWndMsgProc->SendMessage(WM_ON_ACCEPT, (WPARAM) (LPCSTR) m_pClient, (LPARAM) ParamPtr());
+		m_pNetworkManager->notifyAccept();
 	}
+
 	CSocket::OnAccept(nErrorCode);
 }
 
 void CChatSocket::OnClose(int nErrorCode) 
 {
-	if (pWndMsgProc)
-	{
-		pWndMsgProc->SendMessage(WM_ON_CLOSE, 0, (LPARAM) ParamPtr());
-	}
+	//if (pWndMsgProc)
+	//{
+	//	pWndMsgProc->SendMessage(WM_ON_CLOSE, 0, (LPARAM) ParamPtr());
+	//}
 	CSocket::OnClose(nErrorCode);
 }
 
@@ -91,9 +96,9 @@ void CChatSocket::OnReceive(int nErrorCode)
 //		m_recvQueue.insert(m_recvQueue.end(), &buff[0], &buff[ret]);
 	}
 
-	if (pWndMsgProc) {
-		pWndMsgProc->SendMessage(WM_ON_RECEIVE, (WPARAM) &m_recvQueue, (LPARAM) ParamPtr());
-	}
+	//if (pWndMsgProc) {
+	//	pWndMsgProc->SendMessage(WM_ON_RECEIVE, (WPARAM) &m_recvQueue, (LPARAM) ParamPtr());
+	//}
 	CSocket::OnReceive(nErrorCode);
 }
 

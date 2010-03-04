@@ -93,6 +93,8 @@ CChatDlg::CChatDlg(CWnd* pParent /*=NULL*/)
 
 	m_hVideoSendThread = INVALID_HANDLE_VALUE;
 	m_hVideoRecvThread = INVALID_HANDLE_VALUE;
+
+	Controller::instance()->setChatWindow(this);
 }
 
 void CChatDlg::DoDataExchange(CDataExchange* pDX)
@@ -172,7 +174,7 @@ BOOL CChatDlg::OnInitDialog()
 	m_remoteWndHeight = remoteWndRect.bottom - remoteWndRect.top;
 
 	// Initializing socket
-	CChatSocket::pWndMsgProc = this;	
+	//CChatSocket::pWndMsgProc = this;
 
 	// Initialize HugMe system
 	CWnd * pWnd = GetDlgItem(IDC_VIDEO_REMOTE);
@@ -408,24 +410,30 @@ void CChatDlg::OnFileConnect()
 
 void CChatDlg::OnFileListen() 
 {
-	if (m_pChatSocket) {
-		MessageBox("You are already connected.");
-		return;
-	}
-
-	m_pChatSocket = new CChatSocket();
-	if (!m_pChatSocket->Create(CHAT_PORT))
+	rc_network error = Controller::instance()->netStartListening();
+	if (error != SUCCESS)
 	{
-		MessageBox("Failed to create the chatting socket");
-		CloseSockets();
+		MessageBox(lookup(error).c_str());
 		return;
 	}
-	if (!m_pChatSocket->Listen())
-	{
-		MessageBox("Failed to listen to a connection for chat");
-		CloseSockets();
-		return;
-	}
+//	if (m_pChatSocket) {
+//		MessageBox("You are already connected.");
+//		return;
+//	}
+//
+//	m_pChatSocket = new CChatSocket();
+//	if (!m_pChatSocket->Create(CHAT_PORT))
+//	{
+//		MessageBox("Failed to create the chatting socket");
+//		CloseSockets();
+//		return;
+//	}
+//	if (!m_pChatSocket->Listen())
+//	{
+//		MessageBox("Failed to listen to a connection for chat");
+//		CloseSockets();
+//		return;
+//	}
 
 	m_pTmpVideoSocket = new CChatSocket();
 	if (!m_pTmpVideoSocket->Create(CHAT_PORT+1)) {
@@ -477,63 +485,64 @@ void CChatDlg::OnFileDisconnect()
 // server의 경우에만..
 LRESULT CChatDlg::OnAccept(WPARAM wParam, LPARAM lParam)
 {
-	CChatSocket* pSocket = (CChatSocket*) lParam;
-	if (pSocket == m_pChatSocket)
-	{
-		m_bCanChat = true;
-		// When the connections are established safely,
-		// Send the chat name
-		m_strChatName = "rainbow";
-
-		CChatPacket packet;
-		packet.setType(CChatPacket::PACKET_NAME);
-		packet.writeString(CString(m_strChatName.c_str()));
-		m_pChatSocket->Send(packet);
-
-		// Send the config of this system
-		CChatPacket configPacket;
-		configPacket.setType(CChatPacket::PACKET_CONFIG);
-		HugMeConfig config = m_pHugMe->getConfig();
-		configPacket.writeByteArray((BYTE*)&config, sizeof(HugMeConfig));
-		m_pChatSocket->Send(configPacket);
-	}
-	else // Video Socket
-	{
-		// detach the newly generated socket for video connection and use it in the other thread.
-		// Since the CSocket is not thread-safe, we should do this.
-		CChatSocket* pClient = (CChatSocket*) wParam;
-		m_hVideoSocket = pClient->Detach();
-		// delete the video socket that is listening.
-		delete m_pTmpVideoSocket;
-		m_pTmpVideoSocket = NULL;
-
-		// Check the devices that are described in the configuration structure
-		//m_pHugMe->CheckDevices();
-		// Initialize devices
-		//m_pHugMe->InitRemoteDepthVideo();
-		m_pHugMe->Initialize();
-
-		// Video synchronization
-		InitializeCriticalSection(&m_csVideoSend);
-		InitializeCriticalSection(&m_csVideoRecv);
-	
-		// to start the main thread
-		// tactile device, video refresh
-		// 66ms --> 15Hz refresh rate
-		// 33ms --> 30Hz refresh rate
-		SetTimer(1, 33, NULL);
-	
-		//
-		m_bIsSending = true;
-		m_hSendThreadEvent = CreateEvent(NULL, FALSE, FALSE, NULL);
-		m_bIsReceiving = true;
-
-		// start threads for sending and receiving the data through network
-		m_hVideoSendThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) VideoSendThread, (void*) this, 0, &m_dwIDVideoSend);
-		m_hVideoRecvThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) VideoRecvThread, (void*) this, 0, &m_dwIDVideoRecv);
-
-		//MessageBox("Connected to the client.");
-	}
+	MessageBox("Connection Accepted");
+//	CChatSocket* pSocket = (CChatSocket*) lParam;
+//	if (pSocket == m_pChatSocket)
+//	{
+//		m_bCanChat = true;
+//		// When the connections are established safely,
+//		// Send the chat name
+//		m_strChatName = "rainbow";
+//
+//		CChatPacket packet;
+//		packet.setType(CChatPacket::PACKET_NAME);
+//		packet.writeString(CString(m_strChatName.c_str()));
+//		m_pChatSocket->Send(packet);
+//
+//		// Send the config of this system
+//		CChatPacket configPacket;
+//		configPacket.setType(CChatPacket::PACKET_CONFIG);
+//		HugMeConfig config = m_pHugMe->getConfig();
+//		configPacket.writeByteArray((BYTE*)&config, sizeof(HugMeConfig));
+//		m_pChatSocket->Send(configPacket);
+//	}
+//	else // Video Socket
+//	{
+//		// detach the newly generated socket for video connection and use it in the other thread.
+//		// Since the CSocket is not thread-safe, we should do this.
+//		CChatSocket* pClient = (CChatSocket*) wParam;
+//		m_hVideoSocket = pClient->Detach();
+//		// delete the video socket that is listening.
+//		delete m_pTmpVideoSocket;
+//		m_pTmpVideoSocket = NULL;
+//
+//		// Check the devices that are described in the configuration structure
+//		//m_pHugMe->CheckDevices();
+//		// Initialize devices
+//		//m_pHugMe->InitRemoteDepthVideo();
+//		m_pHugMe->Initialize();
+//
+//		// Video synchronization
+//		InitializeCriticalSection(&m_csVideoSend);
+//		InitializeCriticalSection(&m_csVideoRecv);
+//
+//		// to start the main thread
+//		// tactile device, video refresh
+//		// 66ms --> 15Hz refresh rate
+//		// 33ms --> 30Hz refresh rate
+//		SetTimer(1, 33, NULL);
+//
+//		//
+//		m_bIsSending = true;
+//		m_hSendThreadEvent = CreateEvent(NULL, FALSE, FALSE, NULL);
+//		m_bIsReceiving = true;
+//
+//		// start threads for sending and receiving the data through network
+//		m_hVideoSendThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) VideoSendThread, (void*) this, 0, &m_dwIDVideoSend);
+//		m_hVideoRecvThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) VideoRecvThread, (void*) this, 0, &m_dwIDVideoRecv);
+//
+//		//MessageBox("Connected to the client.");
+//	}
 	return 0;
 }
 

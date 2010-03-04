@@ -8,6 +8,10 @@
 //
 
 #include "ChatPacket.h"
+#include "NetworkManager.h"
+
+// Forward declaration (files include each other)
+class NetworkManager;
 
 // CChatSocket command target
 
@@ -39,7 +43,7 @@ public:
 
 // Operations
 public:
-	CChatSocket();
+	CChatSocket(NetworkManager* manager = NULL);
 	virtual ~CChatSocket();
 
 // Overrides
@@ -62,7 +66,7 @@ public:
 	virtual int Send(CChatPacket& packet);
 	virtual void Close();
 
-	static CWnd* pWndMsgProc;
+	//static CWnd* pWndMsgProc;
 
 // Implementation
 protected:
@@ -75,6 +79,8 @@ protected:
 
 	vector<BYTE> m_sendQueue;
 	vector<BYTE> m_recvQueue;
+
+	NetworkManager* m_pNetworkManager;
 };
 
 /////////////////////////////////////////////////////////////////////////////

@@ -31,6 +31,9 @@
 // Cellphone pad dialog
 #include "CellphoneDlg.h"
 
+// Controller
+#include "Controller.h"
+
 struct PacketHeader
 {
 	bool	isVideo;

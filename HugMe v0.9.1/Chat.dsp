@@ -137,6 +137,10 @@ SOURCE=.\ConnectDlg.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\Controller.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\DepthCamera.cpp
 # End Source File
 # Begin Source File
@@ -170,6 +174,10 @@ SOURCE=.\HumanModel.cpp
 # Begin Source File
 
 SOURCE=.\ImageDataObject.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\NetworkManager.cpp
 # End Source File
 # Begin Source File
 
@@ -246,6 +254,10 @@ SOURCE=.\ConnectDlg.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\Controller.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\DepthImageComp.h
 # End Source File
 # Begin Source File
@@ -275,6 +287,14 @@ SOURCE=.\HumanModel.h
 # Begin Source File
 
 SOURCE=.\ImageDataObject.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\NetworkCodes.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\NetworkManager.h
 # End Source File
 # Begin Source File
 
