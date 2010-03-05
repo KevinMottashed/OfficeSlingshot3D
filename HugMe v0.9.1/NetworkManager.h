@@ -9,16 +9,21 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-//STL
+// STL
 #include <string>
+#include <queue>
+#include <vector>
+
+// Windows
+#include <afxmt.h> // for semaphore
 
 #include "Controller.h"
-#include "ChatSocket.h"
+#include "NetworkSocket.h"
 #include "NetworkCodes.h"
 
 // Forward declarations (files include each other)
 class Controller;
-class CChatSocket;
+class NetworkSocket;
 
 class NetworkManager  
 {
@@ -29,15 +34,66 @@ public:
 	// start listening for connections
 	rc_network startListening();
 
+	// connect to a host
+	rc_network connect(CString ipAdrress);
+
 	// notify the controller that a network connection has been accepted
-	void notifyAccept();
+	void notifyAccept(NetworkSocket* socket);
+
+	// send a control message to the peer
+	rc_network sendControlMessage(const std::vector<BYTE>& message);
 
 private:
-	// the network port for our application
+	// the network ports for our application
 	static const int chat_port;
+	static const int data_port;
 
-	CChatSocket* m_pChatSocket;
+	// maximum messages in the send/receive queues
+	static const int maximum_messages;
+
+	// the control socket, used for sending chat messages, user names, game data ...
+	NetworkSocket* m_pControlSocket; // the actual socket
+	SOCKET m_hControlSocket; // the socket handle
+	BOOL m_bControlConnected; // true if the connection has been accepted
+
+	std::queue<std::vector<BYTE> > m_ControlSocketSendQueue; // send queue
+	CSemaphore m_sControlSocketSend; // semaphore for how many messages in the send queue
+	CRITICAL_SECTION m_csControlSocketSend; // critical section for the send queue
+
+	std::queue<std::vector<BYTE> > m_ControlSocketReceiveQueue; // receive queue
+	CSemaphore m_sControlSocketReceive; // semaphore for how many messages in the receive queue
+	CRITICAL_SECTION m_csControlSocketReceive; // critical section for the receive queue
+
+	// the control send thread, sends messages through the network
+	HANDLE m_hControlSendThread; // handle
+	DWORD m_dwIDControlSend; // thread id
+
+	// the control receive thread, receives messages through the network
+	HANDLE m_hControlReceiveThread; // handle
+	DWORD m_dwIDControlReceive; // thread id
+
+	// the control message handle thread, handles messages received through the network
+	HANDLE m_hControlMessageHandleThread; // handle
+	DWORD m_dwIDControlMessageHandle; // thread id
+
+
+	static DWORD ControlSendThread(NetworkManager* pNetworkManager);
+	static DWORD ControlReceiveThread(NetworkManager* pNetworkManager);
+	static DWORD ControlMessageHandleThread(NetworkManager* pNetworkManager);
+
+	// the data socket, used for sending data, video, falcon, tactile ...
+	NetworkSocket* m_pDataSocket; // the actual socket
+	SOCKET m_hDataSocket; // the socket handle
+	BOOL m_bDataConnected; // true if the connection has been accepted
+	std::queue<std::vector<BYTE> > m_DataSocketSendQueue; // send queue
+	std::queue<std::vector<BYTE> > m_DataSocketReceiveQueue; // receive queue
+
+	void closeSockets();
+	rc_network initializeConnection();
+
 	Controller* m_pController;
+	bool m_bIsConnected;
+	bool m_bIsServer;
 };
 
 #endif // !defined(AFX_NETWORKMANAGER_H__3D85BBC3_3F80_477F_ABAB_1DAE8326532A__INCLUDED_)

@@ -19,7 +19,7 @@ CConnectDlg::CConnectDlg(CWnd* pParent /*=NULL*/)
 	: CDialog(CConnectDlg::IDD, pParent)
 {
 	//{{AFX_DATA_INIT(CConnectDlg)
-	m_strAddress =("137.122.91.117");
+	m_strAddress =("127.0.0.1");
 	//}}AFX_DATA_INIT
 }
 

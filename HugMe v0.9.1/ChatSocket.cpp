@@ -11,7 +11,7 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-//CWnd* CChatSocket::pWndMsgProc = NULL;
+CWnd* CChatSocket::pWndMsgProc = NULL;
 
 /////////////////////////////////////////////////////////////////////////////
 // CChatSocket
@@ -51,14 +51,13 @@ void CChatSocket::OnAccept(int nErrorCode)
 	m_pClient->m_pParent = this;
 	Accept(*m_pClient);
 
-	//if (pWndMsgProc)
-	//{
-	//	pWndMsgProc->SendMessage(WM_ON_ACCEPT, (WPARAM) (LPCSTR) m_pClient, (LPARAM) ParamPtr());
-	//}
-	if (m_pNetworkManager)
+	if (pWndMsgProc)
 	{
-		m_pNetworkManager->notifyAccept();
+		pWndMsgProc->SendMessage(WM_ON_ACCEPT, (WPARAM) (LPCSTR) m_pClient, (LPARAM) ParamPtr());
 	}
+
+	DWORD dwID = GetCurrentThreadId();
+	printf("thread %lu accepted\n", dwID);
 
 	CSocket::OnAccept(nErrorCode);
 }

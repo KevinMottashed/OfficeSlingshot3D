@@ -181,6 +181,10 @@ SOURCE=.\NetworkManager.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\NetworkSocket.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\OptionDlg.cpp
 # End Source File
 # Begin Source File
@@ -295,6 +299,10 @@ SOURCE=.\NetworkCodes.h
 # Begin Source File
 
 SOURCE=.\NetworkManager.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\NetworkSocket.h
 # End Source File
 # Begin Source File
 

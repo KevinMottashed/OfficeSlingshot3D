@@ -66,7 +66,7 @@ public:
 	virtual int Send(CChatPacket& packet);
 	virtual void Close();
 
-	//static CWnd* pWndMsgProc;
+	static CWnd* pWndMsgProc;
 
 // Implementation
 protected:

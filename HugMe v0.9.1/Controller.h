@@ -11,6 +11,7 @@
 
 #include "NetworkManager.h"
 #include "NetworkCodes.h"
+#include "NetworkSignals.h"
 
 // Forward declaration (files include each other)
 class NetworkManager;
@@ -27,6 +28,9 @@ public:
 
 	// start listening for connections on the network
 	rc_network netStartListening();
+
+	// attempt to connect to a host
+	rc_network netConnect(CString ipAddress);
 
 	// a network connection has been accepted, notify the user interface
 	void notifyNetworkConnectionAccepted();

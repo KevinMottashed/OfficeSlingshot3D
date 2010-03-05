@@ -33,6 +33,11 @@ void Controller::setChatWindow(CWnd *pChatWindow)
 	return;
 }
 
+rc_network Controller::netConnect(CString ipAddress)
+{
+	return m_pNetworkManager->connect(ipAddress);
+}
+
 Controller::Controller()
 {
 	m_pNetworkManager = new NetworkManager(this);

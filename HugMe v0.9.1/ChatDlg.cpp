@@ -320,92 +320,108 @@ void CChatDlg::OnBtnSend()
 
 void CChatDlg::OnFileConnect() 
 {
-	if (m_pChatSocket) {
-		MessageBox("You are already connected.");
-		return;
-	}
-
+	// the popup for the IP address
 	CConnectDlg dlg;
-	if (dlg.DoModal() != IDOK) {
-		return;
-	}
-
-	m_pChatSocket = new CChatSocket();
-	if (!m_pChatSocket->Create())
+	if (dlg.DoModal() != IDOK)
 	{
-		MessageBox("Failed to create the chatting socket");
-		CloseSockets();
-		return;
-	}
-	if (!m_pChatSocket->Connect(dlg.m_strAddress, CHAT_PORT))
-	{
-		MessageBox("Failed to connect");
-		CloseSockets();
-		return;
-	}
-
-	m_pTmpVideoSocket = new CChatSocket();
-	if (!m_pTmpVideoSocket->Create()) {
-		MessageBox("Failed to create video socket.");
-		CloseSockets();
 		return;
 	}
 	
-	if (!m_pTmpVideoSocket->Connect(dlg.m_strAddress, CHAT_PORT+1))
+	rc_network error = Controller::instance()->netConnect(dlg.m_strAddress);
+	if (error != SUCCESS)
 	{
-		MessageBox("Failed to connect to video socket");
-		CloseSockets();
+		MessageBox(lookup(error).c_str());
 		return;
 	}
-	m_hVideoSocket = m_pTmpVideoSocket->Detach();
-
-	m_bCanChat = true;
-
-	// When the connections are established safely,
-	// Send the chat name	
-	m_strChatName = "sunshine";
-	CChatPacket packet;
-	packet.setType(CChatPacket::PACKET_NAME);
-	packet.writeString(CString(m_strChatName.c_str()));
-	m_pChatSocket->Send(packet);
-
-	// Send the config of this system
-	CChatPacket configPacket;
-	configPacket.setType(CChatPacket::PACKET_CONFIG);
-	HugMeConfig config = m_pHugMe->getConfig();
-	configPacket.writeByteArray((BYTE*)&config, sizeof(HugMeConfig));
-	m_pChatSocket->Send(configPacket);
-
-	// Check the devices that are described in the configuration structure
-	//m_pHugMe->CheckDevices();
-	// Initialize devices
-	m_pHugMe->Initialize();
-
-	// Video synchronization
-	InitializeCriticalSection(&m_csVideoSend);
-	InitializeCriticalSection(&m_csVideoRecv);
 	
-	// to start the main thread
-	// tactile device, video refresh
-	// 66ms --> 15Hz refresh rate
-	// 33ms --> 30Hz refresh rate
-	SetTimer(1, 33, NULL);
-	
-	//
-	m_bIsSending = true;
-	m_hSendThreadEvent = CreateEvent(NULL, FALSE, FALSE, NULL);
-	m_bIsReceiving = true;
+	// for reference only, to be deleted later
 
-	// start threads for sending and receiving the data through network
-	m_hVideoSendThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) VideoSendThread, (void*) this, 0, &m_dwIDVideoSend);
-	m_hVideoRecvThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) VideoRecvThread, (void*) this, 0, &m_dwIDVideoRecv);
+//	if (m_pChatSocket) {
+//		MessageBox("You are already connected.");
+//		return;
+//	}
+//
+//	CConnectDlg dlg;
+//	if (dlg.DoModal() != IDOK) {
+//		return;
+//	}
+//
+//	m_pChatSocket = new CChatSocket();
+//	if (!m_pChatSocket->Create())
+//	{
+//		MessageBox("Failed to create the chatting socket");
+//		CloseSockets();
+//		return;
+//	}
+//	if (!m_pChatSocket->Connect(dlg.m_strAddress, CHAT_PORT))
+//	{
+//		MessageBox("Failed to connect");
+//		CloseSockets();
+//		return;
+//	}
+//
+//	m_pTmpVideoSocket = new CChatSocket();
+//	if (!m_pTmpVideoSocket->Create()) {
+//		MessageBox("Failed to create video socket.");
+//		CloseSockets();
+//		return;
+//	}
+//
+//	if (!m_pTmpVideoSocket->Connect(dlg.m_strAddress, CHAT_PORT+1))
+//	{
+//		MessageBox("Failed to connect to video socket");
+//		CloseSockets();
+//		return;
+//	}
+//	m_hVideoSocket = m_pTmpVideoSocket->Detach();
+//
+//	m_bCanChat = true;
+//
+//	// When the connections are established safely,
+//	// Send the chat name
+//	m_strChatName = "sunshine";
+//	CChatPacket packet;
+//	packet.setType(CChatPacket::PACKET_NAME);
+//	packet.writeString(CString(m_strChatName.c_str()));
+//	m_pChatSocket->Send(packet);
+//
+//	// Send the config of this system
+//	CChatPacket configPacket;
+//	configPacket.setType(CChatPacket::PACKET_CONFIG);
+//	HugMeConfig config = m_pHugMe->getConfig();
+//	configPacket.writeByteArray((BYTE*)&config, sizeof(HugMeConfig));
+//	m_pChatSocket->Send(configPacket);
+//
+//	// Check the devices that are described in the configuration structure
+//	//m_pHugMe->CheckDevices();
+//	// Initialize devices
+//	m_pHugMe->Initialize();
+//
+//	// Video synchronization
+//	InitializeCriticalSection(&m_csVideoSend);
+//	InitializeCriticalSection(&m_csVideoRecv);
+//
+//	// to start the main thread
+//	// tactile device, video refresh
+//	// 66ms --> 15Hz refresh rate
+//	// 33ms --> 30Hz refresh rate
+//	SetTimer(1, 33, NULL);
+//
+//	//
+//	m_bIsSending = true;
+//	m_hSendThreadEvent = CreateEvent(NULL, FALSE, FALSE, NULL);
+//	m_bIsReceiving = true;
+//
+//	// start threads for sending and receiving the data through network
+//	m_hVideoSendThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) VideoSendThread, (void*) this, 0, &m_dwIDVideoSend);
+//	m_hVideoRecvThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) VideoRecvThread, (void*) this, 0, &m_dwIDVideoRecv);
 
 	CMenu* pMenu = GetMenu();
 	pMenu->EnableMenuItem(ID_FILE_CONNECT, MF_GRAYED | MF_BYCOMMAND);
 	pMenu->EnableMenuItem(ID_FILE_LISTEN, MF_GRAYED | MF_BYCOMMAND);
 	pMenu->EnableMenuItem(ID_FILE_DISCONNECT, MF_ENABLED | MF_BYCOMMAND);
 
-	//MessageBox("Connected to the server");
+	MessageBox("Connected to the server");
 }
 
 void CChatDlg::OnFileListen() 
@@ -416,6 +432,9 @@ void CChatDlg::OnFileListen()
 		MessageBox(lookup(error).c_str());
 		return;
 	}
+
+	// for reference only, to delete later
+
 //	if (m_pChatSocket) {
 //		MessageBox("You are already connected.");
 //		return;
@@ -435,23 +454,25 @@ void CChatDlg::OnFileListen()
 //		return;
 //	}
 
-	m_pTmpVideoSocket = new CChatSocket();
-	if (!m_pTmpVideoSocket->Create(CHAT_PORT+1)) {
-		MessageBox("Failed to create video socket.");
-		CloseSockets();
-		return;
-	}
-	if (!m_pTmpVideoSocket->Listen())
-	{
-		MessageBox("Failed to listen to a connection for video streaming");
-		CloseSockets();
-		return;
-	}
+//	m_pTmpVideoSocket = new CChatSocket();
+//	if (!m_pTmpVideoSocket->Create(CHAT_PORT+1)) {
+//		MessageBox("Failed to create video socket.");
+//		CloseSockets();
+//		return;
+//	}
+//	if (!m_pTmpVideoSocket->Listen())
+//	{
+//		MessageBox("Failed to listen to a connection for video streaming");
+//		CloseSockets();
+//		return;
+//	}
 
 	CMenu* pMenu = GetMenu();
 	pMenu->EnableMenuItem(ID_FILE_CONNECT, MF_GRAYED | MF_BYCOMMAND);
 	pMenu->EnableMenuItem(ID_FILE_LISTEN, MF_GRAYED | MF_BYCOMMAND);
 	pMenu->EnableMenuItem(ID_FILE_DISCONNECT, MF_ENABLED | MF_BYCOMMAND);
+
+	MessageBox("Listening");
 }
 
 void CChatDlg::OnFileDisconnect() 
