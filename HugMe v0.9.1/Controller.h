@@ -35,6 +35,10 @@ public:
 	// a network connection has been accepted, notify the user interface
 	void notifyNetworkConnectionAccepted();
 
+	// update the remote player's user name
+	void updateRemoteUserName(const std::string& name);
+
+	// to be removed eventually
 	void setChatWindow(CWnd* pChatWindow);
 
 private:
@@ -47,6 +51,8 @@ private:
 
 	NetworkManager* m_pNetworkManager; // the network manager
 	CWnd* m_pChatWindow; // the user interface
+	std::string localUserName;
+	std::string remoteUserName;
 };
 
 #endif // !defined(AFX_CONTROLLER_H__11C3ACF3_BC70_49EC_BA36_3849E78C8CB6__INCLUDED_)

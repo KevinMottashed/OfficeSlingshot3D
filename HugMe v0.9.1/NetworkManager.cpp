@@ -14,13 +14,20 @@
 const int NetworkManager::chat_port = 8869;
 const int NetworkManager::data_port = 8870;
 const int NetworkManager::maximum_messages = 10;
+const int NetworkManager::maximum_control_packet_size = 4096;
 
 NetworkManager::NetworkManager(Controller* controller) :
-	m_pControlSocket(NULL), m_hControlSocket(0), m_bControlConnected(false),
-			m_pDataSocket(NULL), m_hDataSocket(0), m_bDataConnected(false),
-			m_pController(controller),
-			m_sControlSocketSend(0, maximum_messages), m_sControlSocketReceive(
-					0, maximum_messages)
+	m_pControlSocket(NULL),
+	m_hControlSocket(0),
+	m_bControlConnected(false),
+	m_pDataSocket(NULL),
+	m_hDataSocket(0),
+	m_bDataConnected(false),
+	m_pController(controller),
+	m_sControlSocketSend(0, maximum_messages),
+	m_sControlSocketReceive(0, maximum_messages),
+	m_bUserNameReceived(false),
+	m_bConfigurationReceived(false)
 {
 	InitializeCriticalSection(&m_csControlSocketSend);
 	InitializeCriticalSection(&m_csControlSocketReceive);
@@ -69,7 +76,7 @@ rc_network NetworkManager::startListening()
 	return SUCCESS;
 }
 
-rc_network NetworkManager::connect(CString ipAddress)
+rc_network NetworkManager::connect(const CString& ipAddress)
 {
 	if (m_pControlSocket != NULL)
 	{
@@ -179,29 +186,45 @@ DWORD NetworkManager::ControlSendThread(NetworkManager *pNetworkManager)
 		// wait for a message to arrive
 		pNetworkManager->m_sControlSocketSend.Lock();
 
-		// the message to send
-		std::vector<BYTE> message;
+		// the packet to send
+		CChatPacket packet;
 
 		// need to synchronize access to the send queue,
 		// another thread might try to add a message to the queue while we send
 		synchronized (pNetworkManager->m_csControlSocketSend)
 		{
-			// get the message at the front of the queue
-			std::vector<BYTE> messageToSend = pNetworkManager->m_ControlSocketSendQueue.front();
+			// get the packet at the front of the queue
+			CChatPacket packetToSend = pNetworkManager->m_ControlSocketSendQueue.front();
 
 			// copy it into our buffer
-			message.insert(message.end(), messageToSend.begin(), messageToSend.end());
+			packet = CChatPacket(packetToSend);
 
-			// remove the message from the queue of messages to send
+			// remove the packet from the queue of packets to send
 			pNetworkManager->m_ControlSocketSendQueue.pop();
 		}
+
+		// the message to send in bytes
+		std::vector<BYTE> message;
+
+		// packet format is <size><type><data>
+		unsigned int size = sizeof(unsigned int) + sizeof(CChatPacket::PacketType) + packet.getPacketSize();
+		CChatPacket::PacketType type = packet.getType();
+
+		// add the total size to the packet
+		message.insert(message.end(), (BYTE*) &size, ((BYTE*) (&size)) + sizeof(unsigned int));
+
+		// add the type to the packet
+		message.insert(message.end(), (BYTE*) &type, ((BYTE*) (&type)) + sizeof(CChatPacket::PacketType));
+
+		// add the data to the packet
+		message.insert(message.end(), packet.getPacketPtr(), packet.getPacketPtr() + packet.getPacketSize());
 
 		// send the message
 		// When sending the message we might need to call the send function multiple times.
 		// This is because it is not guaranteed to send all the bytes in one packet.
 		// We therefore have to keep calling the send function until all the bytes are sent.
 		const char* i = (const char*)&message[0];
-		int bytesSent = 0;
+		int bytesSent = 0;		
 		while (bytesSent < message.size())
 		{
 			int rc = send(pNetworkManager->m_hControlSocket, i, message.size() - bytesSent, 0);
@@ -225,12 +248,110 @@ DWORD NetworkManager::ControlSendThread(NetworkManager *pNetworkManager)
 
 DWORD NetworkManager::ControlReceiveThread(NetworkManager* pNetworkManager)
 {
-	//BYTE receivedBuffer[76800]; // not correct, TODO find correct size
+	BYTE receivedBuffer[maximum_control_packet_size];
 	vector<BYTE> queue;
+	CChatPacket packet = CChatPacket();
 	while (pNetworkManager->m_bIsConnected)
 	{
 		// sleep to prevent this thread from hogging the CPU
 		Sleep(1);
+
+		// receive data through the network
+		int rc = recv(pNetworkManager->m_hControlSocket, (char*) receivedBuffer, maximum_control_packet_size, 0);
+
+		switch (rc) {
+		case SOCKET_ERROR: // fail when a socket error occurs
+			return 0;
+		case 0: // fail if no data was received
+			return 0;
+		}
+
+		printf("received %u bytes\n", rc);
+
+		// add the received bytes to the end of the queue
+		queue.insert(queue.end(), &receivedBuffer[0], &receivedBuffer[rc]);
+
+		if (packet.readPacket(queue))
+		{
+			printf("received a packet\n");
+
+			// the packet is complete, add it to the queue
+			synchronized(pNetworkManager->m_csControlSocketReceive)
+			{
+				// add the packet to the end of the receive queue
+				pNetworkManager->m_ControlSocketReceiveQueue.push(packet);
+			}
+
+			// notify the message handler that a new packet has arrived
+			pNetworkManager->m_sControlSocketReceive.Unlock();
+
+			// start a new packet
+			packet = CChatPacket();
+		}
+	}
+	return 1;
+}
+
+DWORD NetworkManager::ControlMessageHandleThread(NetworkManager* pNetworkManager)
+{
+	// continue until we disconnect
+	while(pNetworkManager->m_bIsConnected)
+	{
+		// wait for a message to arrive
+		pNetworkManager->m_sControlSocketReceive.Lock();
+
+		// the packet to handle
+		CChatPacket packet;
+
+		// we need to synchronize here so we don't remove a message from the queue while
+		// the receive thread is adding a message
+		synchronized(pNetworkManager->m_csControlSocketReceive)
+		{
+			// get the next message to handle
+			CChatPacket packetToHandle = pNetworkManager->m_ControlSocketReceiveQueue.front();
+
+			// copy the packet over
+			packet = CChatPacket(packetToHandle);
+
+			// remove the packet from the queue
+			pNetworkManager->m_ControlSocketReceiveQueue.pop();
+		}
+
+		switch (packet.getType())
+		{
+		case CChatPacket::PACKET_DISCONNET:
+			// TODO not implemented yet
+			break;
+		case CChatPacket::PACKET_CHAT:
+			// TODO not implemented yet
+			break;
+		case CChatPacket::PACKET_EMOTICON:
+			// TODO not implemented yet
+			break;
+		case CChatPacket::PACKET_NAME:
+		{
+			packet.writeChar('\0'); // make sure the name is null terminated
+			std::string remoteUserName = (LPCSTR) packet.getPacketPtr();
+			pNetworkManager->m_pController->updateRemoteUserName(remoteUserName);
+			pNetworkManager->m_bUserNameReceived = true;
+			if (pNetworkManager->m_bUserNameReceived) // && m_bConfigurationReceived
+			{
+				pNetworkManager->m_pController->notifyNetworkConnectionAccepted();
+			}
+			break;
+		}
+		case CChatPacket::PACKET_UDP_PORT:
+			// TODO not implemented yet
+			break;
+		case CChatPacket::PACKET_CONFIG:
+			// TODO not implemented yet
+			break;
+		case CChatPacket::PACKET_FORCE_DWORD:
+			// TODO not implemented yet
+			break;
+		default:
+			return 0; // unknown packet type
+		}
 	}
 	return 1;
 }
@@ -246,21 +367,31 @@ rc_network NetworkManager::initializeConnection()
 
 	// initialize the threads
 	m_hControlSendThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) ControlSendThread, (void*) this, 0, &m_dwIDControlSend);
+	m_hControlReceiveThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) ControlReceiveThread, (void*) this, 0, &m_dwIDControlReceive);
+	m_hControlMessageHandleThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) ControlMessageHandleThread, (void*) this, 0, &m_dwIDControlMessageHandle);
 
-	std::vector<BYTE> nameMessage;
-	nameMessage.push_back('A');
-	nameMessage.push_back('B');
-	nameMessage.push_back('C');
-
-	sendControlMessage(nameMessage);
-
-	// notify the controller that the connection has been accepted
-	m_pController->notifyNetworkConnectionAccepted();
+	// send our user name to the peer
+	if (m_bIsServer)
+	{
+		sendUserName("rainbow");
+	}
+	else
+	{
+		sendUserName("sunshine");
+	}
 
 	return SUCCESS;
 }
 
-rc_network NetworkManager::sendControlMessage(const std::vector<BYTE>& message)
+rc_network NetworkManager::sendUserName(const CString& userName)
+{
+	CChatPacket userNamePacket;
+	userNamePacket.setType(CChatPacket::PACKET_NAME);
+	userNamePacket.writeString(userName);
+	return sendControlMessage(userNamePacket);
+}
+
+rc_network NetworkManager::sendControlMessage(const CChatPacket& message)
 {
 	// we synchronize here to avoid adding a message to the queue
 	// while a message is being sent
@@ -270,7 +401,7 @@ rc_network NetworkManager::sendControlMessage(const std::vector<BYTE>& message)
 		m_ControlSocketSendQueue.push(message);
 	}
 
-	// notifies the send queue that there is a message to send
+	// notifies the send thread that there is a message to send
 	m_sControlSocketSend.Unlock();
 
 	return SUCCESS;

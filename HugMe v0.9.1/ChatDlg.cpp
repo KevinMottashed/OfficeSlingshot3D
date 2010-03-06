@@ -1,6 +1,13 @@
  // ChatDlg.cpp : implementation file
 //
 
+// This is microsft's way of dealing with this warning in vc++6
+// the warning occurs because the STL is used
+#pragma warning (disable : 4786)
+
+// STL
+#include <sstream>
+
 #include "stdafx.h"
 #include "Chat.h"
 #include "ChatDlg.h"
@@ -506,7 +513,13 @@ void CChatDlg::OnFileDisconnect()
 // server의 경우에만..
 LRESULT CChatDlg::OnAccept(WPARAM wParam, LPARAM lParam)
 {
-	MessageBox("Connection Accepted");
+	std::string* remoteUserName = (std::string*) wParam;
+	std::ostringstream os;
+	os << *remoteUserName << " has joined the game";
+	MessageBox(os.str().c_str());
+
+	// for reference only, to be removed later
+
 //	CChatSocket* pSocket = (CChatSocket*) lParam;
 //	if (pSocket == m_pChatSocket)
 //	{

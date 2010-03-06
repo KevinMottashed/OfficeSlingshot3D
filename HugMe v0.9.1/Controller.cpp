@@ -24,7 +24,7 @@ rc_network Controller::netStartListening()
 void Controller::notifyNetworkConnectionAccepted()
 {
 	// send the connection accepted message to the user interface process
-	m_pChatWindow->SendMessage(WM_ON_ACCEPT, NULL, NULL);
+	m_pChatWindow->SendMessage(WM_ON_ACCEPT, (WPARAM) (LPCSTR) (&remoteUserName), NULL);
 }
 
 void Controller::setChatWindow(CWnd *pChatWindow)
@@ -47,3 +47,11 @@ Controller::~Controller()
 {
 	delete m_pNetworkManager;
 }
+
+void Controller::updateRemoteUserName(const std::string& name)
+{
+	remoteUserName = name;
+	return;
+}
+
+
