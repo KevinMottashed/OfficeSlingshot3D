@@ -118,6 +118,28 @@ rc_network NetworkManager::connect(const CString& ipAddress)
 	return SUCCESS;
 }
 
+rc_network NetworkManager::disconnect()
+{
+	// **** Implement disconnect ****
+
+	return SUCCESS;
+}
+
+rc_network NetworkManager::startVideo()
+{
+	// **** Implement disconnect ****
+
+	return SUCCESS;
+}
+
+rc_network NetworkManager::exitVideo()
+{
+	// **** Implement disconnect ****
+
+	return SUCCESS;
+}
+
+
 void NetworkManager::notifyAccept(NetworkSocket* socket)
 {
 	if (socket == m_pControlSocket)

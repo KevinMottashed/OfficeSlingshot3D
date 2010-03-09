@@ -198,6 +198,8 @@ protected:
 	afx_msg void OnToolsOption();
 	afx_msg void OnToolsVirtualPad();
 	afx_msg void OnToolsCellphonePad();
+	afx_msg void OnStartGame();
+	afx_msg void OnExitGame();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

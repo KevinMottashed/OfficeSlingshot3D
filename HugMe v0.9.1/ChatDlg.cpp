@@ -128,6 +128,8 @@ BEGIN_MESSAGE_MAP(CChatDlg, CDialog)
 	ON_COMMAND(ID_TOOLS_OPTION, OnToolsOption)
 	ON_COMMAND(ID_TOOLS_VIRTUAL_PAD, OnToolsVirtualPad)
 	ON_COMMAND(ID_TOOLS_CELLPHONE_PAD, OnToolsCellphonePad)
+	ON_COMMAND(ID_GAME_STARTGAME, OnStartGame)
+	ON_COMMAND(ID_GAME_EXITGAME, OnExitGame)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -325,7 +327,6 @@ void CChatDlg::OnFileConnect()
 	{
 		return;
 	}
-	
 	rc_network error = m_pUserInterfaceManager->networkConnectButtonPushed(dlg.m_strAddress);
 	if (error != SUCCESS)
 	{
@@ -333,92 +334,95 @@ void CChatDlg::OnFileConnect()
 		return;
 	}
 	
+	/*
 	// for reference only, to be deleted later
+	if (m_pChatSocket) {
+		MessageBox("You are already connected.");
+		return;
+	}
 
-//	if (m_pChatSocket) {
-//		MessageBox("You are already connected.");
-//		return;
-//	}
-//
-//	CConnectDlg dlg;
-//	if (dlg.DoModal() != IDOK) {
-//		return;
-//	}
-//
-//	m_pChatSocket = new CChatSocket();
-//	if (!m_pChatSocket->Create())
-//	{
-//		MessageBox("Failed to create the chatting socket");
-//		CloseSockets();
-//		return;
-//	}
-//	if (!m_pChatSocket->Connect(dlg.m_strAddress, CHAT_PORT))
-//	{
-//		MessageBox("Failed to connect");
-//		CloseSockets();
-//		return;
-//	}
-//
-//	m_pTmpVideoSocket = new CChatSocket();
-//	if (!m_pTmpVideoSocket->Create()) {
-//		MessageBox("Failed to create video socket.");
-//		CloseSockets();
-//		return;
-//	}
-//
-//	if (!m_pTmpVideoSocket->Connect(dlg.m_strAddress, CHAT_PORT+1))
-//	{
-//		MessageBox("Failed to connect to video socket");
-//		CloseSockets();
-//		return;
-//	}
-//	m_hVideoSocket = m_pTmpVideoSocket->Detach();
-//
-//	m_bCanChat = true;
-//
-//	// When the connections are established safely,
-//	// Send the chat name
-//	m_strChatName = "sunshine";
-//	CChatPacket packet;
-//	packet.setType(CChatPacket::PACKET_NAME);
-//	packet.writeString(CString(m_strChatName.c_str()));
-//	m_pChatSocket->Send(packet);
-//
-//	// Send the config of this system
-//	CChatPacket configPacket;
-//	configPacket.setType(CChatPacket::PACKET_CONFIG);
-//	HugMeConfig config = m_pHugMe->getConfig();
-//	configPacket.writeByteArray((BYTE*)&config, sizeof(HugMeConfig));
-//	m_pChatSocket->Send(configPacket);
-//
-//	// Check the devices that are described in the configuration structure
-//	//m_pHugMe->CheckDevices();
-//	// Initialize devices
-//	m_pHugMe->Initialize();
-//
-//	// Video synchronization
-//	InitializeCriticalSection(&m_csVideoSend);
-//	InitializeCriticalSection(&m_csVideoRecv);
-//
-//	// to start the main thread
-//	// tactile device, video refresh
-//	// 66ms --> 15Hz refresh rate
-//	// 33ms --> 30Hz refresh rate
-//	SetTimer(1, 33, NULL);
-//
-//	//
-//	m_bIsSending = true;
-//	m_hSendThreadEvent = CreateEvent(NULL, FALSE, FALSE, NULL);
-//	m_bIsReceiving = true;
-//
-//	// start threads for sending and receiving the data through network
-//	m_hVideoSendThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) VideoSendThread, (void*) this, 0, &m_dwIDVideoSend);
-//	m_hVideoRecvThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) VideoRecvThread, (void*) this, 0, &m_dwIDVideoRecv);
+	CConnectDlg dlg;
+	if (dlg.DoModal() != IDOK) {
+		return;
+	}
+
+	m_pChatSocket = new CChatSocket();
+	if (!m_pChatSocket->Create())
+	{
+		MessageBox("Failed to create the chatting socket");
+		CloseSockets();
+		return;
+	}
+	if (!m_pChatSocket->Connect(dlg.m_strAddress, CHAT_PORT))
+	{
+		MessageBox("Failed to connect");
+		CloseSockets();
+		return;
+	}
+
+	m_pTmpVideoSocket = new CChatSocket();
+	if (!m_pTmpVideoSocket->Create()) {
+		MessageBox("Failed to create video socket.");
+		CloseSockets();
+		return;
+	}
+
+	if (!m_pTmpVideoSocket->Connect(dlg.m_strAddress, CHAT_PORT+1))
+	{
+		MessageBox("Failed to connect to video socket");
+		CloseSockets();
+		return;
+	}
+	m_hVideoSocket = m_pTmpVideoSocket->Detach();
+
+	m_bCanChat = true;
+
+	// When the connections are established safely,
+	// Send the chat name
+	m_strChatName = "sunshine";
+	CChatPacket packet;
+	packet.setType(CChatPacket::PACKET_NAME);
+	packet.writeString(CString(m_strChatName.c_str()));
+	m_pChatSocket->Send(packet);
+
+	// Send the config of this system
+	CChatPacket configPacket;
+	configPacket.setType(CChatPacket::PACKET_CONFIG);
+	HugMeConfig config = m_pHugMe->getConfig();
+	configPacket.writeByteArray((BYTE*)&config, sizeof(HugMeConfig));
+	m_pChatSocket->Send(configPacket);
+
+	// Check the devices that are described in the configuration structure
+	//m_pHugMe->CheckDevices();
+	// Initialize devices
+	m_pHugMe->Initialize();
+
+	// Video synchronization
+	InitializeCriticalSection(&m_csVideoSend);
+	InitializeCriticalSection(&m_csVideoRecv);
+
+	// to start the main thread
+	// tactile device, video refresh
+	// 66ms --> 15Hz refresh rate
+	// 33ms --> 30Hz refresh rate
+	SetTimer(1, 33, NULL);
+
+	//
+	m_bIsSending = true;
+	m_hSendThreadEvent = CreateEvent(NULL, FALSE, FALSE, NULL);
+	m_bIsReceiving = true;
+
+	// start threads for sending and receiving the data through network
+	m_hVideoSendThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) VideoSendThread, (void*) this, 0, &m_dwIDVideoSend);
+	m_hVideoRecvThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) VideoRecvThread, (void*) this, 0, &m_dwIDVideoRecv);
+	*/
 
 	CMenu* pMenu = GetMenu();
 	pMenu->EnableMenuItem(ID_FILE_CONNECT, MF_GRAYED | MF_BYCOMMAND);
 	pMenu->EnableMenuItem(ID_FILE_LISTEN, MF_GRAYED | MF_BYCOMMAND);
 	pMenu->EnableMenuItem(ID_FILE_DISCONNECT, MF_ENABLED | MF_BYCOMMAND);
+
+	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_ENABLED | MF_BYCOMMAND);
 }
 
 void CChatDlg::OnFileListen() 
@@ -438,6 +442,16 @@ void CChatDlg::OnFileListen()
 
 void CChatDlg::OnFileDisconnect() 
 {
+	
+	rc_network error = m_pUserInterfaceManager->networkDisconnectButtonPushed();
+	if (error != SUCCESS)
+	{
+		MessageBox(lookup(error).c_str());
+		return;
+	}
+	
+	/*
+	// for reference only
 	// quit the graphic rendering
 	KillTimer(1);
 
@@ -457,6 +471,7 @@ void CChatDlg::OnFileDisconnect()
 	m_pHugMe->Uninitialize();
 
 	CloseSockets();
+	*/
 
 	CMenu* pMenu = GetMenu();
 	pMenu->EnableMenuItem(ID_FILE_CONNECT, MF_ENABLED| MF_BYCOMMAND);
@@ -464,7 +479,6 @@ void CChatDlg::OnFileDisconnect()
 	pMenu->EnableMenuItem(ID_FILE_DISCONNECT, MF_GRAYED | MF_BYCOMMAND);
 }
 
-// server의 경우에만..
 LRESULT CChatDlg::OnAccept(WPARAM wParam, LPARAM lParam)
 {
 	std::string* remoteUserName = (std::string*) wParam;
@@ -472,65 +486,67 @@ LRESULT CChatDlg::OnAccept(WPARAM wParam, LPARAM lParam)
 	os << *remoteUserName << " has joined the game";
 	MessageBox(os.str().c_str());
 
+	/*
 	// for reference only, to be removed later
 
-//	CChatSocket* pSocket = (CChatSocket*) lParam;
-//	if (pSocket == m_pChatSocket)
-//	{
-//		m_bCanChat = true;
-//		// When the connections are established safely,
-//		// Send the chat name
-//		m_strChatName = "rainbow";
-//
-//		CChatPacket packet;
-//		packet.setType(CChatPacket::PACKET_NAME);
-//		packet.writeString(CString(m_strChatName.c_str()));
-//		m_pChatSocket->Send(packet);
-//
-//		// Send the config of this system
-//		CChatPacket configPacket;
-//		configPacket.setType(CChatPacket::PACKET_CONFIG);
-//		HugMeConfig config = m_pHugMe->getConfig();
-//		configPacket.writeByteArray((BYTE*)&config, sizeof(HugMeConfig));
-//		m_pChatSocket->Send(configPacket);
-//	}
-//	else // Video Socket
-//	{
-//		// detach the newly generated socket for video connection and use it in the other thread.
-//		// Since the CSocket is not thread-safe, we should do this.
-//		CChatSocket* pClient = (CChatSocket*) wParam;
-//		m_hVideoSocket = pClient->Detach();
-//		// delete the video socket that is listening.
-//		delete m_pTmpVideoSocket;
-//		m_pTmpVideoSocket = NULL;
-//
-//		// Check the devices that are described in the configuration structure
-//		//m_pHugMe->CheckDevices();
-//		// Initialize devices
-//		//m_pHugMe->InitRemoteDepthVideo();
-//		m_pHugMe->Initialize();
-//
-//		// Video synchronization
-//		InitializeCriticalSection(&m_csVideoSend);
-//		InitializeCriticalSection(&m_csVideoRecv);
-//
-//		// to start the main thread
-//		// tactile device, video refresh
-//		// 66ms --> 15Hz refresh rate
-//		// 33ms --> 30Hz refresh rate
-//		SetTimer(1, 33, NULL);
-//
-//		//
-//		m_bIsSending = true;
-//		m_hSendThreadEvent = CreateEvent(NULL, FALSE, FALSE, NULL);
-//		m_bIsReceiving = true;
-//
-//		// start threads for sending and receiving the data through network
-//		m_hVideoSendThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) VideoSendThread, (void*) this, 0, &m_dwIDVideoSend);
-//		m_hVideoRecvThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) VideoRecvThread, (void*) this, 0, &m_dwIDVideoRecv);
-//
-//		//MessageBox("Connected to the client.");
-//	}
+	CChatSocket* pSocket = (CChatSocket*) lParam;
+	if (pSocket == m_pChatSocket)
+	{
+		m_bCanChat = true;
+		// When the connections are established safely,
+		// Send the chat name
+		m_strChatName = "rainbow";
+
+		CChatPacket packet;
+		packet.setType(CChatPacket::PACKET_NAME);
+		packet.writeString(CString(m_strChatName.c_str()));
+		m_pChatSocket->Send(packet);
+
+		// Send the config of this system
+		CChatPacket configPacket;
+		configPacket.setType(CChatPacket::PACKET_CONFIG);
+		HugMeConfig config = m_pHugMe->getConfig();
+		configPacket.writeByteArray((BYTE*)&config, sizeof(HugMeConfig));
+		m_pChatSocket->Send(configPacket);
+	}
+	else // Video Socket
+	{
+		// detach the newly generated socket for video connection and use it in the other thread.
+		// Since the CSocket is not thread-safe, we should do this.
+		CChatSocket* pClient = (CChatSocket*) wParam;
+		m_hVideoSocket = pClient->Detach();
+		// delete the video socket that is listening.
+		delete m_pTmpVideoSocket;
+		m_pTmpVideoSocket = NULL;
+
+		// Check the devices that are described in the configuration structure
+		//m_pHugMe->CheckDevices();
+		// Initialize devices
+		//m_pHugMe->InitRemoteDepthVideo();
+		m_pHugMe->Initialize();
+
+		// Video synchronization
+		InitializeCriticalSection(&m_csVideoSend);
+		InitializeCriticalSection(&m_csVideoRecv);
+
+		// to start the main thread
+		// tactile device, video refresh
+		// 66ms --> 15Hz refresh rate
+		// 33ms --> 30Hz refresh rate
+		SetTimer(1, 33, NULL);
+		
+
+		m_bIsSending = true;
+		m_hSendThreadEvent = CreateEvent(NULL, FALSE, FALSE, NULL);
+		m_bIsReceiving = true;
+
+		// start threads for sending and receiving the data through network
+		m_hVideoSendThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) VideoSendThread, (void*) this, 0, &m_dwIDVideoSend);
+		m_hVideoRecvThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) VideoRecvThread, (void*) this, 0, &m_dwIDVideoRecv);
+
+		//MessageBox("Connected to the client.");
+	}
+	*/
 	return 0;
 }
 
@@ -1190,6 +1206,38 @@ void CChatDlg::OnToolsCellphonePad()
 			m_pDlgCellphonePad->ShowWindow(SW_SHOW);
 		}
 	}	
+}
+
+void CChatDlg::OnStartGame() 
+{
+	MessageBox("Starting Game");
+
+	rc_network error = m_pUserInterfaceManager->startGameButtonPushed();
+	if (error != SUCCESS)
+	{
+		MessageBox(lookup(error).c_str());
+		return;
+	}
+
+	CMenu * pMenu = GetMenu();
+	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_GRAYED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_ENABLED | MF_BYCOMMAND);
+}
+
+void CChatDlg::OnExitGame() 
+{
+	MessageBox("Exiting Game");
+
+	rc_network error = m_pUserInterfaceManager->exitGameButtonPushed();
+	if (error != SUCCESS)
+	{
+		MessageBox(lookup(error).c_str());
+		return;
+	}
+
+	CMenu * pMenu = GetMenu();
+	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_GRAYED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_ENABLED | MF_BYCOMMAND);
 }
 
 HugMe* CChatDlg::getHugMeSystem()

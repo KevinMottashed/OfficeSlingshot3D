@@ -42,6 +42,15 @@ public:
 	// connect to a host
 	rc_network connect(const CString& ipAdrress);
 
+	// disconnect to a host
+	rc_network disconnect();
+
+	// start video feed
+	rc_network startVideo();
+
+	// exit video feed
+	rc_network exitVideo();
+
 	// send the player's user name over the network
 	rc_network sendUserName(const CString& userName);
 

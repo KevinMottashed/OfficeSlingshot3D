@@ -28,6 +28,21 @@ rc_network UserInterfaceManager::networkConnectButtonPushed(const CString& ipAdd
 	return Controller::instance()->netConnect(ipAddress);
 }
 
+rc_network UserInterfaceManager::networkDisconnectButtonPushed()
+{
+	return Controller::instance()->netDisconnect();
+}
+
+rc_network UserInterfaceManager::startGameButtonPushed()
+{
+	return Controller::instance()->startVideo();
+}
+
+rc_network UserInterfaceManager::exitGameButtonPushed()
+{
+	return Controller::instance()->exitVideo();
+}
+
 CDialog* UserInterfaceManager::getMainWindow()
 {
 	return m_pChatDlg;

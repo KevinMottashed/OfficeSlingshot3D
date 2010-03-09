@@ -32,6 +32,21 @@ rc_network Controller::netConnect(const CString& ipAddress)
 	return m_pNetworkManager->connect(ipAddress);
 }
 
+rc_network Controller::netDisconnect()
+{
+	return m_pNetworkManager->disconnect();
+}
+
+rc_network Controller::startVideo()
+{
+	return m_pNetworkManager->startVideo();
+}
+
+rc_network Controller::exitVideo()
+{
+	return m_pNetworkManager->exitVideo();
+}
+
 Controller::Controller()
 {
 	m_pUserInterfaceManager = new UserInterfaceManager(this);

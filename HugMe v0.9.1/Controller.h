@@ -38,6 +38,15 @@ public:
 	// attempt to connect to a host
 	rc_network netConnect(const CString& ipAddress);
 
+	// attempt to disconnect to a host
+	rc_network netDisconnect();
+
+	// start video feed
+	rc_network startVideo();
+
+	// exit video feed
+	rc_network exitVideo();
+
 	// a network connection has been accepted, notify the user interface
 	void notifyNetworkConnectionAccepted();
 
