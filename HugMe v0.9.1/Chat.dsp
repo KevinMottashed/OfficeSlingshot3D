@@ -161,10 +161,6 @@ SOURCE=.\DisplayDeviceJacket.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\EmoticonDlg.cpp
-# End Source File
-# Begin Source File
-
 SOURCE=.\HugMe.cpp
 # End Source File
 # Begin Source File
@@ -278,10 +274,6 @@ SOURCE=.\DisplayDeviceJacket.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\EmoticonDlg.h
-# End Source File
-# Begin Source File
-
 SOURCE=.\HugMe.h
 # End Source File
 # Begin Source File
@@ -359,14 +351,6 @@ SOURCE=.\res\Chat.ico
 # Begin Source File
 
 SOURCE=.\res\Chat.rc2
-# End Source File
-# Begin Source File
-
-SOURCE=.\res\emoticon.bmp
-# End Source File
-# Begin Source File
-
-SOURCE=.\res\emoticon_sel.bmp
 # End Source File
 # End Group
 # Begin Group "encoder"

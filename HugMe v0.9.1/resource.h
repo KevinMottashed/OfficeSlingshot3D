@@ -19,7 +19,6 @@
 #define IDB_SMILE                       137
 #define IDB_SMILE_SEL                   138
 #define IDD_DIALOG1                     139
-#define IDD_EMOTICON_DIALOG             139
 #define IDD_PATTERN_DIALOG              140
 #define IDB_EMOTICON                    141
 #define IDB_EMOTICON_SEL                143
@@ -80,20 +79,24 @@
 #define IDC_EDIT3_CELL                  1046
 #define IDC_EDIT4_CELL                  1047
 #define IDC_FINGER_TACTILE              1047
+#define IDC_CHAT_SECTION                1048
+#define IDC_GAMEPLAY                    1049
 #define ID_FILE_CONNECT                 32771
 #define ID_FILE_LISTEN                  32772
 #define ID_FILE_DISCONNECT              32773
 #define ID_TOOLS_OPTION                 32774
 #define ID_TOOLS_VIRTUAL_PAD            32775
 #define ID_TOOLS_CELLPHONE_PAD          32776
+#define ID_GAME_STARTGAME               32777
+#define ID_GAME_EXITGAME                32778
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        147
-#define _APS_NEXT_COMMAND_VALUE         32777
-#define _APS_NEXT_CONTROL_VALUE         1048
+#define _APS_NEXT_COMMAND_VALUE         32779
+#define _APS_NEXT_CONTROL_VALUE         1050
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

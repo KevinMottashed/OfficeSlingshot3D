@@ -18,13 +18,7 @@ public:
 	CEmoticonDlg(CWnd* pParent = NULL);   // standard constructor
 
 // Dialog Data
-	//{{AFX_DATA(CEmoticonDlg)
-	enum { IDD = IDD_EMOTICON_DIALOG };
-	CListCtrl	m_listEmoticon;
-	//}}AFX_DATA
 
-	void LoadEmoticons();
-	void SaveEmoticons();
 	BOOL m_bHideWhenInactive;
 
 // Overrides

@@ -9,7 +9,6 @@
 #endif // _MSC_VER > 1000
 
 #include "chatsocket.h"
-#include "EmoticonDlg.h"
 #include "Pattern.h"
 // Z-Cam
 #include "DepthCamera.h"
@@ -71,7 +70,6 @@ public:
 	enum { IDD = IDD_CHAT_DIALOG };
 	CRichEditCtrl	m_richChat;
 	CEdit	m_editChatInput;
-	CBitmapButton	m_btnEmoticon;
 	//}}AFX_DATA
 
 	// ClassWizard generated virtual function overrides
@@ -87,7 +85,6 @@ public:
 	HugMeConfig getLocalConfig() const;
 	HugMeConfig getRemoteConfig() const;
 
-	void SendEmoticon(Pattern* pPattern);
 	void initVideoPreview();
 
 private:
@@ -142,8 +139,6 @@ private:
 	// Buffers to transmit data
 	PacketHeader m_sendPacket;
 	PacketHeader m_recvPacket;
-
-	CEmoticonDlg* m_pEmoticonDlg;
 	
 	// for RichEditCtrl
 	LPRICHEDITOLE	m_pRichEditOle;
@@ -191,7 +186,6 @@ protected:
 	afx_msg LRESULT OnReceive(WPARAM, LPARAM);
 	afx_msg void OnDestroy();
 	afx_msg void OnTimer(UINT nIDEvent);
-	afx_msg void OnBtnEmoticon();
 	afx_msg void OnToolsOption();
 	afx_msg void OnToolsVirtualPad();
 	afx_msg void OnToolsCellphonePad();

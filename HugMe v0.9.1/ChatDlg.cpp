@@ -75,7 +75,7 @@ CChatDlg::CChatDlg(CWnd* pParent /*=NULL*/)
 	: CDialog(CChatDlg::IDD, pParent), m_pChatSocket(NULL), m_pTmpVideoSocket(NULL), m_bCanChat(false)
 	, m_hVideoSocket(NULL), m_bIsSending(false), m_hSendThreadEvent(NULL), m_bIsReceiving(false)
 	, m_pVideoForSend(NULL), m_iCurrentBuffer(0), m_dwIDVideoSend(0), m_dwIDVideoRecv(0)
-	, m_strChatName(""), m_strMateName(""), m_pEmoticonDlg(NULL), m_pRichEditOle(NULL), m_pDlgVirtualPad(NULL),
+	, m_strChatName(""), m_strMateName(""), m_pRichEditOle(NULL), m_pDlgVirtualPad(NULL),
 	m_pDlgCellphonePad(NULL)
 {
 	//{{AFX_DATA_INIT(CChatDlg)
@@ -128,7 +128,6 @@ BEGIN_MESSAGE_MAP(CChatDlg, CDialog)
 	ON_MESSAGE(WM_ON_RECEIVE, OnReceive)
 	ON_WM_DESTROY()
 	ON_WM_TIMER()
-	ON_BN_CLICKED(IDC_BTN_EMOTICON, OnBtnEmoticon)
 	ON_COMMAND(ID_TOOLS_OPTION, OnToolsOption)
 	ON_COMMAND(ID_TOOLS_VIRTUAL_PAD, OnToolsVirtualPad)
 	ON_COMMAND(ID_TOOLS_CELLPHONE_PAD, OnToolsCellphonePad)
@@ -165,10 +164,6 @@ BOOL CChatDlg::OnInitDialog()
 	SetIcon(m_hIcon, TRUE);			// Set big icon
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 	
-	// 이모티콘 버튼
-	m_btnEmoticon.LoadBitmaps(IDB_EMOTICON, IDB_EMOTICON_SEL);
-	m_btnEmoticon.SizeToContent();
-
 	// Obtain the window sizes for local and remote videos
 	CWnd* pLocalWnd = GetDlgItem(IDC_VIDEO_LOCAL);
 	CWnd* pRemoteWnd = GetDlgItem(IDC_VIDEO_REMOTE);
@@ -315,7 +310,7 @@ void CChatDlg::OnBtnSend()
 		return;
 	}
 
-	AddChatContent(CString(m_strChatName.c_str()) + " said:\r\n  " + strInput);
+	AddChatContent(CString(m_strChatName.c_str()) + ":  " + strInput);
 	m_editChatInput.SetWindowText("");
 
 	// 채팅 내용 전송
@@ -625,21 +620,11 @@ LRESULT CChatDlg::OnReceive(WPARAM wParam, LPARAM lParam)
 				break;
 			}
 
-			case CChatPacket::PACKET_EMOTICON:
-			{
-				AddChatContent(CString(m_strMateName.c_str()) + " sent:");
-				PatternPacket* pPacket = (PatternPacket*) packet.getPacketPtr();
-				BYTE* pIconData = ((BYTE*) pPacket) + pPacket->dwPacketBytes - pPacket->dwIconBytes;
-				HBITMAP hBitmap = CreateBitmap(32, 32, 1, (pPacket->dwIconBytes / (32 * 32)) * 8, pIconData);
-				CImageDataObject::InsertBitmap(m_pRichEditOle, hBitmap);
-				AddChatContent("");
-				break;
-			}
-
 			case CChatPacket::PACKET_NAME:
 				packet.writeChar('\0');
 				m_strMateName = (LPCSTR) packet.getPacketPtr();
 				break;
+			
 			case CChatPacket::PACKET_CONFIG:
 			{
 				memcpy(&m_configRemote, packet.getPacketPtr(), sizeof(HugMeConfig));
@@ -1149,67 +1134,6 @@ void CChatDlg::OnTimer(UINT nIDEvent)
 
 	CDialog::OnTimer(nIDEvent);
 }
-
-void CChatDlg::OnBtnEmoticon() 
-{
-	CRect rect;
-	m_btnEmoticon.GetWindowRect(&rect);
-
-	if (m_pEmoticonDlg == NULL)
-	{
-		m_pEmoticonDlg = new CEmoticonDlg(this);
-		m_pEmoticonDlg->Create(CEmoticonDlg::IDD);
-	}
-	m_pEmoticonDlg->SetWindowPos(NULL, rect.left, rect.bottom, 0, 0, SWP_NOSIZE);
-	m_pEmoticonDlg->ShowWindow(SW_SHOW);
-
-	/*
-	if (!m_bCanChat) {
-		return;
-	}
-
-	CChatPacket packet;
-	packet.setType(CChatPacket::PACKET_EMOTICON);
-	packet.writeChar(0x01);
-	m_pChatSocket->Send(packet);
-
-	AddChatContent(CString(m_strChatName.c_str()) + " smiled.");
-	*/
-}
-
-void CChatDlg::SendEmoticon(Pattern* pPattern)
-{
-	if (!m_bCanChat)
-		return;
-
-	AddChatContent(CString(m_strChatName.c_str()) + " sent:");
-	CImageDataObject::InsertBitmap(m_pRichEditOle, (HBITMAP) pPattern->pIconBitmap->m_hObject);
-	AddChatContent("");
-
-	BYTE* pBitmapData = new BYTE[32 * 32 * 4];
-	DWORD dwIconBytes = pPattern->pIconBitmap->GetBitmapBits(32 * 32 * 4, pBitmapData);
-	DWORD dwPointsBytes = sizeof(Pattern::Point) * pPattern->points.size();
-	DWORD dwPacketBytes = sizeof(PatternPacket) + dwPointsBytes + dwIconBytes;
-
-	PatternPacket* pPacket = (PatternPacket*) new BYTE[dwPacketBytes];
-	pPacket->dwPacketBytes = dwPacketBytes;
-	pPacket->dwPointsBytes = dwPointsBytes;
-	pPacket->dwIconBytes = dwIconBytes;
-	pPacket->samplingTime = pPattern->samplingTime;
-	pPacket->nPointCount = pPattern->points.size();
-	memcpy(((BYTE*) pPacket) + sizeof(PatternPacket), &pPattern->points[0], dwPointsBytes);
-	memcpy(((BYTE*) pPacket) + sizeof(PatternPacket) + dwPointsBytes, pBitmapData, dwIconBytes);
-	delete[] pBitmapData;
-	pBitmapData = NULL;
-
-	CChatPacket packet;
-	packet.setType(CChatPacket::PACKET_EMOTICON);
-	packet.writeByteArray((BYTE*) pPacket, dwPacketBytes);
-	m_pChatSocket->Send(packet);
-}
-
-
-
 
 
 void CChatDlg::OnToolsOption() 
