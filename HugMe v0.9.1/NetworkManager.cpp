@@ -266,15 +266,11 @@ DWORD NetworkManager::ControlReceiveThread(NetworkManager* pNetworkManager)
 			return 0;
 		}
 
-		printf("received %u bytes\n", rc);
-
 		// add the received bytes to the end of the queue
 		queue.insert(queue.end(), &receivedBuffer[0], &receivedBuffer[rc]);
 
 		if (packet.readPacket(queue))
 		{
-			printf("received a packet\n");
-
 			// the packet is complete, add it to the queue
 			synchronized(pNetworkManager->m_csControlSocketReceive)
 			{
@@ -323,9 +319,6 @@ DWORD NetworkManager::ControlMessageHandleThread(NetworkManager* pNetworkManager
 			// TODO not implemented yet
 			break;
 		case CChatPacket::PACKET_CHAT:
-			// TODO not implemented yet
-			break;
-		case CChatPacket::PACKET_EMOTICON:
 			// TODO not implemented yet
 			break;
 		case CChatPacket::PACKET_NAME:

@@ -9,6 +9,10 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
+// This is microsft's way of dealing with this warning in vc++6
+// the warning occurs because the STL is used
+#pragma warning (disable : 4786)
+
 // STL
 #include <string>
 #include <queue>

@@ -22,6 +22,8 @@
 // Video for Window
 #include <vfw.h>
 
+#include "resource.h"
+
 // Image compressor
 #include "DepthImageComp.h"
 
@@ -32,6 +34,11 @@
 
 // Controller
 #include "Controller.h"
+#include "UserInterfaceManager.h"
+
+class Controller;
+class UserInterfaceManager;
+class CChatSocket;
 
 struct PacketHeader
 {
@@ -56,7 +63,7 @@ class CChatDlg : public CDialog
 // Construction
 public:
 	
-	CChatDlg(CWnd* pParent = NULL);	// standard constructor
+	CChatDlg(UserInterfaceManager* pUserInterfaceManager, CWnd* pParent = NULL);	// standard constructor
 
 #ifdef USE_H263
 	// image compressor
@@ -142,6 +149,8 @@ private:
 	
 	// for RichEditCtrl
 	LPRICHEDITOLE	m_pRichEditOle;
+
+	UserInterfaceManager* m_pUserInterfaceManager;
 
 // Implementation
 protected:
