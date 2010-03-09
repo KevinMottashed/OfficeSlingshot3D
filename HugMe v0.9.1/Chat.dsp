@@ -210,6 +210,10 @@ SOURCE=.\TactileArray.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\UserInterfaceManager.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\VirtualPadDlg.cpp
 # End Source File
 # End Group
@@ -339,6 +343,10 @@ SOURCE=.\Sync.h
 # Begin Source File
 
 SOURCE=.\TactileArray.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\UserInterfaceManager.h
 # End Source File
 # Begin Source File
 

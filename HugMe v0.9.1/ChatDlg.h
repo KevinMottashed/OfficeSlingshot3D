@@ -8,7 +8,7 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#include "chatsocket.h"
+#include "ChatSocket.h"
 #include "EmoticonDlg.h"
 #include "Pattern.h"
 // Z-Cam
@@ -23,6 +23,8 @@
 // Video for Window
 #include <vfw.h>
 
+#include "resource.h"
+
 // Image compressor
 #include "DepthImageComp.h"
 
@@ -33,6 +35,11 @@
 
 // Controller
 #include "Controller.h"
+#include "UserInterfaceManager.h"
+
+class Controller;
+class UserInterfaceManager;
+class CChatSocket;
 
 struct PacketHeader
 {

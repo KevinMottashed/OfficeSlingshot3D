@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include "Chat.h"
 #include "ChatDlg.h"
+#include "Controller.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -57,9 +58,14 @@ BOOL CChatApp::InitInstance()
 	CoInitialize(NULL);
 	AfxInitRichEdit();
 
-	CChatDlg dlg;
-	m_pMainWnd = &dlg;
-	int nResponse = dlg.DoModal();
+	// this will initialize the controller class and it will initialize the system
+	Controller* controller = Controller::instance();
+
+	CDialog* mainWindow = controller->getMainWindow();
+
+	m_pMainWnd = mainWindow;
+
+	int nResponse = mainWindow->DoModal();
 	if (nResponse == IDOK)
 	{
 		// TODO: Place code here to handle when the dialog is

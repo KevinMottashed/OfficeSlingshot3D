@@ -24,13 +24,7 @@ rc_network Controller::netStartListening()
 void Controller::notifyNetworkConnectionAccepted()
 {
 	// send the connection accepted message to the user interface process
-	m_pChatWindow->SendMessage(WM_ON_ACCEPT, (WPARAM) (LPCSTR) (&remoteUserName), NULL);
-}
-
-void Controller::setChatWindow(CWnd *pChatWindow)
-{
-	m_pChatWindow = pChatWindow;
-	return;
+	m_pUserInterfaceManager->notifyNetworkConnectionEstablished();
 }
 
 rc_network Controller::netConnect(CString ipAddress)
@@ -40,6 +34,7 @@ rc_network Controller::netConnect(CString ipAddress)
 
 Controller::Controller()
 {
+	m_pUserInterfaceManager = new UserInterfaceManager(this);
 	m_pNetworkManager = new NetworkManager(this);
 }
 
@@ -54,4 +49,8 @@ void Controller::updateRemoteUserName(const std::string& name)
 	return;
 }
 
+CDialog* Controller::getMainWindow()
+{
+	return m_pUserInterfaceManager->getMainWindow();
+}
 

@@ -100,8 +100,6 @@ CChatDlg::CChatDlg(CWnd* pParent /*=NULL*/)
 
 	m_hVideoSendThread = INVALID_HANDLE_VALUE;
 	m_hVideoRecvThread = INVALID_HANDLE_VALUE;
-
-	Controller::instance()->setChatWindow(this);
 }
 
 void CChatDlg::DoDataExchange(CDataExchange* pDX)
@@ -427,8 +425,6 @@ void CChatDlg::OnFileConnect()
 	pMenu->EnableMenuItem(ID_FILE_CONNECT, MF_GRAYED | MF_BYCOMMAND);
 	pMenu->EnableMenuItem(ID_FILE_LISTEN, MF_GRAYED | MF_BYCOMMAND);
 	pMenu->EnableMenuItem(ID_FILE_DISCONNECT, MF_ENABLED | MF_BYCOMMAND);
-
-	MessageBox("Connected to the server");
 }
 
 void CChatDlg::OnFileListen() 
@@ -440,46 +436,10 @@ void CChatDlg::OnFileListen()
 		return;
 	}
 
-	// for reference only, to delete later
-
-//	if (m_pChatSocket) {
-//		MessageBox("You are already connected.");
-//		return;
-//	}
-//
-//	m_pChatSocket = new CChatSocket();
-//	if (!m_pChatSocket->Create(CHAT_PORT))
-//	{
-//		MessageBox("Failed to create the chatting socket");
-//		CloseSockets();
-//		return;
-//	}
-//	if (!m_pChatSocket->Listen())
-//	{
-//		MessageBox("Failed to listen to a connection for chat");
-//		CloseSockets();
-//		return;
-//	}
-
-//	m_pTmpVideoSocket = new CChatSocket();
-//	if (!m_pTmpVideoSocket->Create(CHAT_PORT+1)) {
-//		MessageBox("Failed to create video socket.");
-//		CloseSockets();
-//		return;
-//	}
-//	if (!m_pTmpVideoSocket->Listen())
-//	{
-//		MessageBox("Failed to listen to a connection for video streaming");
-//		CloseSockets();
-//		return;
-//	}
-
 	CMenu* pMenu = GetMenu();
 	pMenu->EnableMenuItem(ID_FILE_CONNECT, MF_GRAYED | MF_BYCOMMAND);
 	pMenu->EnableMenuItem(ID_FILE_LISTEN, MF_GRAYED | MF_BYCOMMAND);
 	pMenu->EnableMenuItem(ID_FILE_DISCONNECT, MF_ENABLED | MF_BYCOMMAND);
-
-	MessageBox("Listening");
 }
 
 void CChatDlg::OnFileDisconnect() 
