@@ -27,6 +27,18 @@ void Controller::notifyNetworkConnectionAccepted()
 	m_pUserInterfaceManager->notifyNetworkConnectionEstablished();
 }
 
+void Controller::notifyPeerDisconnected()
+{
+	// notify the user interface that the network connection as been disconnected
+	m_pUserInterfaceManager->notifyPeerDisconnected();
+}
+
+void Controller::notifyNetworkError()
+{
+	// notify the user interface that the network connection as been disconnected
+	m_pUserInterfaceManager->notifyNetworkError();
+}
+
 rc_network Controller::netConnect(const CString& ipAddress)
 {
 	return m_pNetworkManager->connect(ipAddress);

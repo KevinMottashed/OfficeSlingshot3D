@@ -35,6 +35,8 @@ NetworkManager::NetworkManager(Controller* controller) :
 
 NetworkManager::~NetworkManager()
 {
+	DeleteCriticalSection(&m_csControlSocketSend);
+	DeleteCriticalSection(&m_csControlSocketReceive);
 	delete m_pControlSocket;
 	delete m_pDataSocket;
 }
@@ -120,7 +122,30 @@ rc_network NetworkManager::connect(const CString& ipAddress)
 
 rc_network NetworkManager::disconnect()
 {
-	// **** Implement disconnect ****
+	// close the sockets and reset the connection
+	closeSockets();
+	resetConnection();
+	return SUCCESS;
+}
+
+rc_network NetworkManager::peerDisconnect()
+{
+	// close the sockets and reset the connection
+	disconnect();
+
+	// notify the controller that the peer has disconnected
+	m_pController->notifyPeerDisconnected();
+
+	return SUCCESS;
+}
+
+rc_network NetworkManager::networkError()
+{
+	// close the sockets and reset the connection
+	disconnect();
+
+	// notify the controller that the network has been disconnected due to an error
+	m_pController->notifyNetworkError();
 
 	return SUCCESS;
 }
@@ -164,7 +189,7 @@ void NetworkManager::notifyAccept(NetworkSocket* socket)
 	return;
 }
 
-void NetworkManager::closeSockets()
+void NetworkManager::resetConnection()
 {
 	// reset the connection status to not connected
 	m_bControlConnected = false;
@@ -172,9 +197,35 @@ void NetworkManager::closeSockets()
 	m_bIsConnected = false;
 	m_bIsServer = false;
 
+	// empty the control receive queue in a thread safe manner
+	while (m_sControlSocketReceive.Lock(1)) // wait 1 ms for the lock
+	{
+		synchronized(m_csControlSocketReceive)
+		{
+			m_ControlSocketReceiveQueue.pop();
+		}
+	}
+
+	// empty the control send queue in a thread safe manner
+	while (m_sControlSocketSend.Lock(1)) // wait 1 ms for the lock
+	{
+		synchronized(m_csControlSocketSend)
+		{
+			m_ControlSocketSendQueue.pop();
+		}
+	}
+
+	return;
+}
+
+void NetworkManager::closeSockets()
+{
 	// Close sockets
 	if (m_hControlSocket)
 	{
+		// 0 represents shutdown the socket's send functionality
+		// there is a constant for this but including that header causes many problems
+		// we only want to terminate the send so that the receive can terminate cleanly
 		shutdown(m_hControlSocket, 0);
 		closesocket(m_hControlSocket);
 		m_hControlSocket = 0;
@@ -182,6 +233,9 @@ void NetworkManager::closeSockets()
 
 	if (m_hDataSocket)
 	{
+		// 0 represents shutdown the socket's send functionality
+		// there is a constant for this but including that header causes many problems
+		// we only want to terminate the send so that the receive can terminate cleanly
 		shutdown(m_hDataSocket, 0);
 		closesocket(m_hDataSocket);
 		m_hDataSocket = 0;
@@ -257,7 +311,24 @@ DWORD NetworkManager::ControlSendThread(NetworkManager *pNetworkManager)
 				case 0: // no bytes have been sent, consider this a failure
 					return 0;
 				case SOCKET_ERROR: // there's a problem with the socket, fail here
-					return 0;
+					{
+						DWORD error = GetLastError();
+						// ignore the would block error, it means the socket is temporarily unavailable
+						if (error != WSAEWOULDBLOCK)
+						{
+							// the error is only genuine if we are still connected
+							// when the network is disconnected by the user we will receive a socket error
+							// this is normal, so do not notify the controller
+							if (pNetworkManager->m_bIsConnected)
+							{
+								// disconnect when the socket fails
+								pNetworkManager->networkError();
+								return 0;
+							}
+							return 1;
+						}
+						break;
+					}
 				default: // some bytes have been sent, the return code represent how many
 					bytesSent += rc;
 					i += bytesSent;
@@ -283,8 +354,30 @@ DWORD NetworkManager::ControlReceiveThread(NetworkManager* pNetworkManager)
 
 		switch (rc) {
 		case SOCKET_ERROR: // fail when a socket error occurs
-			return 0;
-		case 0: // fail if no data was received
+			{	
+				DWORD error = GetLastError();
+				// ignore the would block error, it means the socket is temporarily unavailable
+				if (error != WSAEWOULDBLOCK)
+				{
+					// the error is only genuine if we are still connected
+					// when the network is disconnected by the user we will receive a socket error
+					// this is normal, so do not notify the controller
+					if (pNetworkManager->m_bIsConnected)
+					{
+						// disconnect when the socket fails
+						pNetworkManager->networkError();
+						return 0;
+					}
+					return 1;
+				}
+				// this read failed, we don't want to try to handle an empty message so try reading again
+				continue;
+			}
+
+		case 0:
+			// recv returns 0 to indicate an end of stream
+			// this means the peer has disconnected
+			pNetworkManager->peerDisconnect();
 			return 0;
 		}
 

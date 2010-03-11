@@ -50,6 +50,12 @@ public:
 	// a network connection has been accepted, notify the user interface
 	void notifyNetworkConnectionAccepted();
 
+	// the network the peer has disconnected, notify the user interface
+	void notifyPeerDisconnected();
+
+	// the network has been disconnected in error, notify the user interface
+	void notifyNetworkError();
+
 	// --------------------------------
 	// Player info related functions
 	// --------------------------------

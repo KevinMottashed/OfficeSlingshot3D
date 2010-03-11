@@ -29,6 +29,12 @@ public:
 	// updates the user interface to reflect an established network connection
 	void notifyNetworkConnectionEstablished();
 
+	// updates the user interface to reflect a disconnected network connection
+	void notifyPeerDisconnected();
+
+	// updates the user interface to reflect an error in the network connection
+	void notifyNetworkError();
+
 	//-----------------------------------------------
 	// Notifications coming from the user interface
 	//-----------------------------------------------

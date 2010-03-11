@@ -51,6 +51,19 @@ CDialog* UserInterfaceManager::getMainWindow()
 void UserInterfaceManager::notifyNetworkConnectionEstablished()
 {
 	// TODO implement
+	printf("connection established\n");
+}
+
+void UserInterfaceManager::notifyPeerDisconnected()
+{
+	// TODO implement
+	printf("peer disconnected\n");
+}
+
+void UserInterfaceManager::notifyNetworkError()
+{
+	// TODO implement
+	printf("network error\n");
 }
 
 rc_network UserInterfaceManager::networkListenButtonPushed()

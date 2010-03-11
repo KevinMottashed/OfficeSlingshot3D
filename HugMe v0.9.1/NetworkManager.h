@@ -42,7 +42,7 @@ public:
 	// connect to a host
 	rc_network connect(const CString& ipAdrress);
 
-	// disconnect to a host
+	// disconnect from a host
 	rc_network disconnect();
 
 	// start video feed
@@ -93,7 +93,6 @@ private:
 	HANDLE m_hControlMessageHandleThread; // handle
 	DWORD m_dwIDControlMessageHandle; // thread id
 
-
 	static DWORD ControlSendThread(NetworkManager* pNetworkManager);
 	static DWORD ControlReceiveThread(NetworkManager* pNetworkManager);
 	static DWORD ControlMessageHandleThread(NetworkManager* pNetworkManager);
@@ -105,13 +104,23 @@ private:
 	std::queue<std::vector<BYTE> > m_DataSocketSendQueue; // send queue
 	std::queue<std::vector<BYTE> > m_DataSocketReceiveQueue; // receive queue
 
+	// closes the network sockets
 	void closeSockets();
+
+	// resets variables related to the connection status
+	void resetConnection();
 
 	// initialize the connection
 	rc_network initializeConnection();
 
 	// send a control message to the peer
 	rc_network sendControlMessage(const CChatPacket& message);
+
+	// reset the network connection and notify the controller that the peer has disconnected
+	rc_network peerDisconnect();
+
+	// reset the network connection and notify the controller that a network error has occured
+	rc_network networkError();
 
 	Controller* m_pController;
 	bool m_bIsConnected;
