@@ -150,20 +150,6 @@ rc_network NetworkManager::networkError()
 	return SUCCESS;
 }
 
-rc_network NetworkManager::startVideo()
-{
-	// **** Implement disconnect ****
-
-	return SUCCESS;
-}
-
-rc_network NetworkManager::exitVideo()
-{
-	// **** Implement disconnect ****
-
-	return SUCCESS;
-}
-
 
 void NetworkManager::notifyAccept(NetworkSocket* socket)
 {

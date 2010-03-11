@@ -123,6 +123,8 @@ BEGIN_MESSAGE_MAP(CChatDlg, CDialog)
 	ON_MESSAGE(WM_ON_ACCEPT, OnAccept)
 	ON_MESSAGE(WM_ON_CLOSE, OnClose)
 	ON_MESSAGE(WM_ON_RECEIVE, OnReceive)
+	ON_MESSAGE(WM_ON_PEER_DISCONNECT, OnPeerDisconnect)
+	ON_MESSAGE(WM_ON_NETWORK_ERROR, OnNetworkError)
 	ON_WM_DESTROY()
 	ON_WM_TIMER()
 	ON_COMMAND(ID_TOOLS_OPTION, OnToolsOption)
@@ -479,7 +481,7 @@ void CChatDlg::OnFileDisconnect()
 	pMenu->EnableMenuItem(ID_FILE_DISCONNECT, MF_GRAYED | MF_BYCOMMAND);
 }
 
-LRESULT CChatDlg::OnAccept(WPARAM wParam, LPARAM lParam)
+LRESULT CChatDlg::OnAccept(WPARAM wParam)
 {
 	std::string* remoteUserName = (std::string*) wParam;
 	std::ostringstream os;
@@ -613,6 +615,23 @@ LRESULT CChatDlg::OnReceive(WPARAM wParam, LPARAM lParam)
 			}
 		}
 	}
+	return 0;
+}
+
+LRESULT CChatDlg::OnPeerDisconnect(WPARAM wParam)
+{
+	std::string* remoteUserName = (std::string*) wParam;
+	std::ostringstream os;
+	os << *remoteUserName << " disconnected from the game";
+	MessageBox(os.str().c_str());
+
+	return 0;
+}
+
+LRESULT CChatDlg::OnNetworkError()
+{
+	MessageBox("There has been a network error");
+
 	return 0;
 }
 
@@ -1212,12 +1231,14 @@ void CChatDlg::OnStartGame()
 {
 	MessageBox("Starting Game");
 
-	rc_network error = m_pUserInterfaceManager->startGameButtonPushed();
+	m_pUserInterfaceManager->startGameButtonPushed();
+	/*
 	if (error != SUCCESS)
 	{
 		MessageBox(lookup(error).c_str());
 		return;
 	}
+	*/
 
 	CMenu * pMenu = GetMenu();
 	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_GRAYED | MF_BYCOMMAND);
@@ -1228,12 +1249,14 @@ void CChatDlg::OnExitGame()
 {
 	MessageBox("Exiting Game");
 
-	rc_network error = m_pUserInterfaceManager->exitGameButtonPushed();
+	m_pUserInterfaceManager->exitGameButtonPushed();
+	/*
 	if (error != SUCCESS)
 	{
 		MessageBox(lookup(error).c_str());
 		return;
 	}
+	*/
 
 	CMenu * pMenu = GetMenu();
 	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_GRAYED | MF_BYCOMMAND);

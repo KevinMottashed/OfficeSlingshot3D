@@ -42,8 +42,8 @@ public:
 	rc_network networkConnectButtonPushed(const CString& ipAddress);
 	rc_network networkListenButtonPushed();
 	rc_network networkDisconnectButtonPushed();
-	rc_network startGameButtonPushed();
-	rc_network exitGameButtonPushed();
+	void startGameButtonPushed();
+	void exitGameButtonPushed();
 
 	// returns the applications main window
 	CDialog* getMainWindow();

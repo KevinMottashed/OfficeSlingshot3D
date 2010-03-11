@@ -49,14 +49,14 @@ rc_network Controller::netDisconnect()
 	return m_pNetworkManager->disconnect();
 }
 
-rc_network Controller::startVideo()
+void Controller::startVideo()
 {
-	return m_pNetworkManager->startVideo();
+	//TODO Implement this in the video controller maybe
 }
 
-rc_network Controller::exitVideo()
+void Controller::exitVideo()
 {
-	return m_pNetworkManager->exitVideo();
+	//TODO Implement this in the video controller maybe
 }
 
 Controller::Controller()
@@ -74,6 +74,11 @@ void Controller::updateRemoteUserName(const std::string& name)
 {
 	remoteUserName = name;
 	return;
+}
+
+string Controller::getRemoteUserName()
+{
+	return remoteUserName;
 }
 
 CDialog* Controller::getMainWindow()

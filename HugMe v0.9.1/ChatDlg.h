@@ -190,9 +190,11 @@ protected:
 	afx_msg void OnFileConnect();
 	afx_msg void OnFileListen();
 	afx_msg void OnFileDisconnect();
-	afx_msg LRESULT OnAccept(WPARAM, LPARAM);
+	afx_msg LRESULT OnAccept(WPARAM);
 	afx_msg LRESULT OnClose(WPARAM, LPARAM);
 	afx_msg LRESULT OnReceive(WPARAM, LPARAM);
+	afx_msg LRESULT OnPeerDisconnect(WPARAM);
+	afx_msg LRESULT OnNetworkError();
 	afx_msg void OnDestroy();
 	afx_msg void OnTimer(UINT nIDEvent);
 	afx_msg void OnToolsOption();

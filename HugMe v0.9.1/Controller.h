@@ -42,10 +42,10 @@ public:
 	rc_network netDisconnect();
 
 	// start video feed
-	rc_network startVideo();
+	void startVideo();
 
 	// exit video feed
-	rc_network exitVideo();
+	void exitVideo();
 
 	// a network connection has been accepted, notify the user interface
 	void notifyNetworkConnectionAccepted();
@@ -62,6 +62,8 @@ public:
 
 	// update the remote player's user name
 	void updateRemoteUserName(const std::string& name);
+
+	string getRemoteUserName();
 
 	// ------------------------------------
 	// User interface related functions

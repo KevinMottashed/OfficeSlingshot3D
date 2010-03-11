@@ -33,6 +33,18 @@ class NetworkManager;
  */
 #define WM_ON_RECEIVE	(WM_USER + 0x102)
 
+/* WM_ON_PEER_DISCONNECT
+ * WPARAM : CChatSocket*	client socket
+ * LPARAM : CChatSocket*	root parent or this
+ */
+#define WM_ON_PEER_DISCONNECT	(WM_USER + 0x103)
+
+/* WM_ON_NETWORK_ERROR
+ * WPARAM : CChatSocket*	client socket
+ * LPARAM : CChatSocket*	root parent or this
+ */
+#define WM_ON_NETWORK_ERROR	(WM_USER + 0x104)
+
 /////////////////////////////////////////////////////////////////////////////
 // CChatSocket command target
 

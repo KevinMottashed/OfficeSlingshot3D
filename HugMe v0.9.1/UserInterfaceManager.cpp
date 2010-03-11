@@ -33,14 +33,14 @@ rc_network UserInterfaceManager::networkDisconnectButtonPushed()
 	return Controller::instance()->netDisconnect();
 }
 
-rc_network UserInterfaceManager::startGameButtonPushed()
+void UserInterfaceManager::startGameButtonPushed()
 {
-	return Controller::instance()->startVideo();
+	Controller::instance()->startVideo();
 }
 
-rc_network UserInterfaceManager::exitGameButtonPushed()
+void UserInterfaceManager::exitGameButtonPushed()
 {
-	return Controller::instance()->exitVideo();
+	Controller::instance()->exitVideo();
 }
 
 CDialog* UserInterfaceManager::getMainWindow()
@@ -50,20 +50,19 @@ CDialog* UserInterfaceManager::getMainWindow()
 
 void UserInterfaceManager::notifyNetworkConnectionEstablished()
 {
-	// TODO implement
-	printf("connection established\n");
+	string remoteUserName = Controller::instance()->getRemoteUserName();
+	getMainWindow()->SendMessage(WM_ON_ACCEPT, (WPARAM)&remoteUserName);
 }
 
 void UserInterfaceManager::notifyPeerDisconnected()
 {
-	// TODO implement
-	printf("peer disconnected\n");
+	string remoteUserName = Controller::instance()->getRemoteUserName();
+	getMainWindow()->SendMessage(WM_ON_PEER_DISCONNECT, (WPARAM)&remoteUserName);
 }
 
 void UserInterfaceManager::notifyNetworkError()
 {
-	// TODO implement
-	printf("network error\n");
+	getMainWindow()->SendMessage(WM_ON_NETWORK_ERROR);
 }
 
 rc_network UserInterfaceManager::networkListenButtonPushed()

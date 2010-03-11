@@ -45,12 +45,6 @@ public:
 	// disconnect from a host
 	rc_network disconnect();
 
-	// start video feed
-	rc_network startVideo();
-
-	// exit video feed
-	rc_network exitVideo();
-
 	// send the player's user name over the network
 	rc_network sendUserName(const CString& userName);
 
