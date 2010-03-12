@@ -173,6 +173,10 @@ SOURCE=.\ImageDataObject.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\ListenDlg.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\NetworkManager.cpp
 # End Source File
 # Begin Source File

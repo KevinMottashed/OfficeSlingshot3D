@@ -25,6 +25,7 @@
 #define IDD_OPTION                      144
 #define IDD_VIRTUAL_PAD_DIALOG          145
 #define IDD_CELLPHONE_DIALOG            146
+#define IDD_LISTEN_DIALOG               147
 #define IDC_CHAT                        1000
 #define IDC_CHAT_INPUT                  1001
 #define IDC_BTN_SEND                    1002
@@ -70,6 +71,7 @@
 #define IDC_PORT_JACKET                 1038
 #define IDC_PORT_ARMBAND                1039
 #define IDC_BUTTON1                     1040
+#define IDC_TEST_JACKET                 1040
 #define IDC_STATUS                      1041
 #define IDC_PORT_FINGER                 1041
 #define ID_YES                          1042
@@ -81,6 +83,9 @@
 #define IDC_FINGER_TACTILE              1047
 #define IDC_CHAT_SECTION                1048
 #define IDC_GAMEPLAY                    1049
+#define IDC_TEST_FALCON                 1050
+#define IDC_TEST_CAMERA                 1051
+#define IDC_LOCALNAME                   1052
 #define ID_FILE_CONNECT                 32771
 #define ID_FILE_LISTEN                  32772
 #define ID_FILE_DISCONNECT              32773
@@ -94,9 +99,9 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        147
+#define _APS_NEXT_RESOURCE_VALUE        148
 #define _APS_NEXT_COMMAND_VALUE         32779
-#define _APS_NEXT_CONTROL_VALUE         1050
+#define _APS_NEXT_CONTROL_VALUE         1053
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

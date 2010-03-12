@@ -65,6 +65,11 @@ public:
 
 	string getRemoteUserName();
 
+	// update the local player's user name
+	void updateLocalUserName(const std::string& name);
+
+	string getLocalUserName();
+
 	// ------------------------------------
 	// User interface related functions
 	// ------------------------------------

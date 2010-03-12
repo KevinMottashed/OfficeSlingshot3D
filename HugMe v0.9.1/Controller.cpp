@@ -81,6 +81,17 @@ string Controller::getRemoteUserName()
 	return remoteUserName;
 }
 
+void Controller::updateLocalUserName(const std::string& name)
+{
+	localUserName = name;
+	return;
+}
+
+string Controller::getLocalUserName()
+{
+	return localUserName;
+}
+
 CDialog* Controller::getMainWindow()
 {
 	return m_pUserInterfaceManager->getMainWindow();

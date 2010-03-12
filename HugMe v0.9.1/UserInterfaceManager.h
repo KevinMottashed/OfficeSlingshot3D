@@ -39,11 +39,17 @@ public:
 	// Notifications coming from the user interface
 	//-----------------------------------------------
 
-	rc_network networkConnectButtonPushed(const CString& ipAddress);
-	rc_network networkListenButtonPushed();
+	rc_network networkConnectButtonPushed(const CString& ipAddress, const CString& localName);
+	rc_network networkListenButtonPushed(const CString& localName);
 	rc_network networkDisconnectButtonPushed();
+
 	void startGameButtonPushed();
 	void exitGameButtonPushed();
+
+	void testJacketButtonPressed();
+	void testFalconButtonPressed();
+	void testCameraButtonPressed();
+
 
 	// returns the applications main window
 	CDialog* getMainWindow();

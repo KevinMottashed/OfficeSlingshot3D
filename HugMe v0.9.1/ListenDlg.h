@@ -1,32 +1,31 @@
-#if !defined(AFX_CONNECTDLG_H__8A6C0B87_7643_43FB_B02A_3A3014B6F2C4__INCLUDED_)
-#define AFX_CONNECTDLG_H__8A6C0B87_7643_43FB_B02A_3A3014B6F2C4__INCLUDED_
+#if !defined(AFX_LISTENDLG_H__8A6C0B87_7643_43FB_B02A_3A3014B6F2C4__INCLUDED_)
+#define AFX_LISTENDLG_H__8A6C0B87_7643_43FB_B02A_3A3014B6F2C4__INCLUDED_
 
 #if _MSC_VER > 1000
 #pragma once
 #endif // _MSC_VER > 1000
-// ConnectDlg.h : header file
+// CListenDlg.h : header file
 //
 
 /////////////////////////////////////////////////////////////////////////////
-// CConnectDlg dialog
+// CListenDlg dialog
 
-class CConnectDlg : public CDialog
+class CListenDlg : public CDialog
 {
 // Construction
 public:
-	CConnectDlg(CWnd* pParent = NULL);   // standard constructor
+	CListenDlg(CWnd* pParent = NULL);   // standard constructor
 
 // Dialog Data
-	//{{AFX_DATA(CConnectDlg)
-	enum { IDD = IDD_CONNECT_DIALOG };
-	CString	m_strAddress;
+	//{{AFX_DATA(CListenDlg)
+	enum { IDD = IDD_LISTEN_DIALOG };
 	CString	m_localName;
 	//}}AFX_DATA
 
 
 // Overrides
 	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CConnectDlg)
+	//{{AFX_VIRTUAL(CListenDlg)
 	protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
 	//}}AFX_VIRTUAL
@@ -35,7 +34,7 @@ public:
 protected:
 
 	// Generated message map functions
-	//{{AFX_MSG(CConnectDlg)
+	//{{AFX_MSG(CListenDlg)
 		// NOTE: the ClassWizard will add member functions here
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()

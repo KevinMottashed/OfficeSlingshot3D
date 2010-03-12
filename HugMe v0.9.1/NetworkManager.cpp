@@ -464,15 +464,7 @@ rc_network NetworkManager::initializeConnection()
 	m_hControlReceiveThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) ControlReceiveThread, (void*) this, 0, &m_dwIDControlReceive);
 	m_hControlMessageHandleThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) ControlMessageHandleThread, (void*) this, 0, &m_dwIDControlMessageHandle);
 
-	// send our user name to the peer
-	if (m_bIsServer)
-	{
-		sendUserName("rainbow");
-	}
-	else
-	{
-		sendUserName("sunshine");
-	}
+	sendUserName(Controller::instance()->getLocalUserName().c_str());
 
 	return SUCCESS;
 }

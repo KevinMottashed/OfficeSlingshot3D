@@ -13,9 +13,13 @@
 
 class COptionDlg : public CDialog
 {
+
+private:
+	UserInterfaceManager* m_pUserInterfaceManager;
+
 // Construction
 public:
-	COptionDlg(CWnd* pParent = NULL);   // standard constructor
+	COptionDlg(UserInterfaceManager* pUserInterfaceManager, CWnd* pParent = NULL);   // standard constructor
 
 // Dialog Data
 	//{{AFX_DATA(COptionDlg)
@@ -56,7 +60,9 @@ protected:
 	afx_msg void OnUseDisplayDevice();
 	afx_msg void OnTactileJacket();
 	afx_msg void OnTactileArmband();
-	afx_msg void OnButton1();
+	afx_msg void OnTestJacket();
+	afx_msg void OnTestFalcon();
+	afx_msg void OnTestCamera();
 	afx_msg void OnSelchangeInputDevice();
 	afx_msg void OnFingerTactile();
 	//}}AFX_MSG

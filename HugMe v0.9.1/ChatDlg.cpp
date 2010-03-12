@@ -12,6 +12,7 @@
 #include "Chat.h"
 #include "ChatDlg.h"
 #include "ConnectDlg.h"
+#include "ListenDlg.h"
 #include "ChatPacket.h"
 #include "Sync.h"
 #include "ImageDataObject.h"
@@ -323,13 +324,13 @@ void CChatDlg::OnBtnSend()
 
 void CChatDlg::OnFileConnect() 
 {
-	// the popup for the IP address
+	// the popup for the IP address & the name
 	CConnectDlg dlg;
 	if (dlg.DoModal() != IDOK)
 	{
 		return;
 	}
-	rc_network error = m_pUserInterfaceManager->networkConnectButtonPushed(dlg.m_strAddress);
+	rc_network error = m_pUserInterfaceManager->networkConnectButtonPushed(dlg.m_strAddress, dlg.m_localName);
 	if (error != SUCCESS)
 	{
 		MessageBox(lookup(error).c_str());
@@ -429,7 +430,14 @@ void CChatDlg::OnFileConnect()
 
 void CChatDlg::OnFileListen() 
 {
-	rc_network error = Controller::instance()->netStartListening();
+	// the popup for the the name
+	CListenDlg dlg;
+	if (dlg.DoModal() != IDOK)
+	{
+		return;
+	}
+
+	rc_network error = m_pUserInterfaceManager->networkListenButtonPushed(dlg.m_localName);
 	if (error != SUCCESS)
 	{
 		MessageBox(lookup(error).c_str());
@@ -1133,7 +1141,7 @@ void CChatDlg::OnTimer(UINT nIDEvent)
 void CChatDlg::OnToolsOption() 
 {
 	// TODO: Add your command handler code here
-	COptionDlg dlg(this);
+	COptionDlg dlg(m_pUserInterfaceManager, this);
 	
 	dlg.DoModal();
 

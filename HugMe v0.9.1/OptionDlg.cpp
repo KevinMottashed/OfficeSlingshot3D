@@ -15,8 +15,8 @@ static char THIS_FILE[] = __FILE__;
 // COptionDlg dialog
 
 
-COptionDlg::COptionDlg(CWnd* pParent /*=NULL*/)
-	: CDialog(COptionDlg::IDD, pParent)
+COptionDlg::COptionDlg(UserInterfaceManager* pUserInterfaceManager, CWnd* pParent /*=NULL*/)
+	: CDialog(COptionDlg::IDD, pParent), m_pUserInterfaceManager(pUserInterfaceManager)
 {
 	m_pChatDlg = (CChatDlg *) pParent;
 
@@ -66,7 +66,10 @@ BEGIN_MESSAGE_MAP(COptionDlg, CDialog)
 	ON_BN_CLICKED(IDC_USE_DISPLAY_DEVICE, OnUseDisplayDevice)
 	ON_BN_CLICKED(IDC_TACTILE_JACKET, OnTactileJacket)
 	ON_BN_CLICKED(IDC_TACTILE_ARMBAND, OnTactileArmband)
-	ON_BN_CLICKED(IDC_BUTTON1, OnButton1)
+	ON_BN_CLICKED(IDC_TEST_JACKET, OnTestJacket)
+	ON_BN_CLICKED(IDC_TEST_FALCON, OnTestFalcon)
+	ON_BN_CLICKED(IDC_TEST_CAMERA, OnTestCamera)
+
 	ON_CBN_SELCHANGE(IDC_INPUT_DEVICE, OnSelchangeInputDevice)
 	ON_BN_CLICKED(IDC_FINGER_TACTILE, OnFingerTactile)
 	//}}AFX_MSG_MAP
@@ -262,12 +265,25 @@ void COptionDlg::OnTactileArmband()
 	
 }
 
-void COptionDlg::OnButton1() 
+void COptionDlg::OnTestJacket() 
 {
+	/*
 	// TODO: Add your control notification handler code here
 	if(m_pChatDlg->getHugMeSystem()->getDevice().m_bOnDisplayDevice) {
 		m_pChatDlg->getHugMeSystem()->getDisplayDeviceJacket()->test1by1();
 	}
+	*/
+	m_pUserInterfaceManager->testJacketButtonPressed();
+}
+
+void COptionDlg::OnTestFalcon() 
+{
+	m_pUserInterfaceManager->testFalconButtonPressed();
+}
+
+void COptionDlg::OnTestCamera() 
+{
+	m_pUserInterfaceManager->testCameraButtonPressed();
 }
 
 void COptionDlg::OnSelchangeInputDevice() 
