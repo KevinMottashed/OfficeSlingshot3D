@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_5hyEkS7TEd-XWO-kk_FZew" name="Deployment">
+  <elementImport xmi:id="_5kEjkC7TEd-XWO-kk_FZew">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_5kQw0C7TEd-XWO-kk_FZew">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_5kQw0S7TEd-XWO-kk_FZew">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_5kQw0i7TEd-XWO-kk_FZew">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Node" xmi:id="_74xKEC7TEd-XWO-kk_FZew" name="Client">
+    <ownedAttribute xmi:id="_F9ZbQi7VEd-XWO-kk_FZew" name="dst" type="_P9QMEC7UEd-XWO-kk_FZew" association="_F9TUoC7VEd-XWO-kk_FZew">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_F9ZbRC7VEd-XWO-kk_FZew" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_F9ZbQy7VEd-XWO-kk_FZew" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_IjkzVC7VEd-XWO-kk_FZew" name="dst" type="_LZlMkC7UEd-XWO-kk_FZew" association="_IjkzUC7VEd-XWO-kk_FZew">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IjkzVi7VEd-XWO-kk_FZew" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IjkzVS7VEd-XWO-kk_FZew" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_Jx5AlC7VEd-XWO-kk_FZew" name="dst" type="_Nt5YkC7UEd-XWO-kk_FZew" association="_Jx5AkC7VEd-XWO-kk_FZew">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Jx5Ali7VEd-XWO-kk_FZew" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Jx5AlS7VEd-XWO-kk_FZew" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_RIKDhC7VEd-XWO-kk_FZew" name="dst" type="_S7-nAC7UEd-XWO-kk_FZew" association="_RIKDgC7VEd-XWO-kk_FZew">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RIKDhi7VEd-XWO-kk_FZew" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RIKDhS7VEd-XWO-kk_FZew" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Node" xmi:id="_LZlMkC7UEd-XWO-kk_FZew" name="Falcon Pen"/>
+  <packagedElement xmi:type="uml:Node" xmi:id="_Nt5YkC7UEd-XWO-kk_FZew" name="ZCamera"/>
+  <packagedElement xmi:type="uml:Node" xmi:id="_P9QMEC7UEd-XWO-kk_FZew" name="Speakers"/>
+  <packagedElement xmi:type="uml:Node" xmi:id="_S7-nAC7UEd-XWO-kk_FZew" name="Client"/>
+  <packagedElement xmi:type="uml:CommunicationPath" xmi:id="_F9TUoC7VEd-XWO-kk_FZew" name="Stereo Cable" memberEnd="_F9TUoS7VEd-XWO-kk_FZew _F9ZbQi7VEd-XWO-kk_FZew">
+    <ownedEnd xmi:id="_F9TUoS7VEd-XWO-kk_FZew" name="src" type="_74xKEC7TEd-XWO-kk_FZew" association="_F9TUoC7VEd-XWO-kk_FZew">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_F9ZbQS7VEd-XWO-kk_FZew" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_F9ZbQC7VEd-XWO-kk_FZew" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:CommunicationPath" xmi:id="_IjkzUC7VEd-XWO-kk_FZew" name="USB" memberEnd="_IjkzUS7VEd-XWO-kk_FZew _IjkzVC7VEd-XWO-kk_FZew">
+    <ownedEnd xmi:id="_IjkzUS7VEd-XWO-kk_FZew" name="src" type="_74xKEC7TEd-XWO-kk_FZew" association="_IjkzUC7VEd-XWO-kk_FZew">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IjkzUy7VEd-XWO-kk_FZew" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IjkzUi7VEd-XWO-kk_FZew" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:CommunicationPath" xmi:id="_Jx5AkC7VEd-XWO-kk_FZew" name="USB" memberEnd="_Jx5AkS7VEd-XWO-kk_FZew _Jx5AlC7VEd-XWO-kk_FZew">
+    <ownedEnd xmi:id="_Jx5AkS7VEd-XWO-kk_FZew" name="src" type="_74xKEC7TEd-XWO-kk_FZew" association="_Jx5AkC7VEd-XWO-kk_FZew">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Jx5Aky7VEd-XWO-kk_FZew" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Jx5Aki7VEd-XWO-kk_FZew" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:CommunicationPath" xmi:id="_RIKDgC7VEd-XWO-kk_FZew" name="TCP/IP" memberEnd="_RIKDgS7VEd-XWO-kk_FZew _RIKDhC7VEd-XWO-kk_FZew">
+    <ownedEnd xmi:id="_RIKDgS7VEd-XWO-kk_FZew" name="src" type="_74xKEC7TEd-XWO-kk_FZew" association="_RIKDgC7VEd-XWO-kk_FZew">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RIKDgy7VEd-XWO-kk_FZew" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RIKDgi7VEd-XWO-kk_FZew" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Node" xmi:id="_U0-6kC7VEd-XWO-kk_FZew" name="Smart Jacket">
+    <ownedAttribute xmi:id="_YYig5C7VEd-XWO-kk_FZew" name="dst" type="_74xKEC7TEd-XWO-kk_FZew" association="_YYig4C7VEd-XWO-kk_FZew">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YYig5i7VEd-XWO-kk_FZew" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YYig5S7VEd-XWO-kk_FZew" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:CommunicationPath" xmi:id="_YYig4C7VEd-XWO-kk_FZew" name="Bluetooth" memberEnd="_YYig4S7VEd-XWO-kk_FZew _YYig5C7VEd-XWO-kk_FZew">
+    <ownedEnd xmi:id="_YYig4S7VEd-XWO-kk_FZew" name="src" type="_U0-6kC7VEd-XWO-kk_FZew" association="_YYig4C7VEd-XWO-kk_FZew">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YYig4y7VEd-XWO-kk_FZew" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YYig4i7VEd-XWO-kk_FZew" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Package>

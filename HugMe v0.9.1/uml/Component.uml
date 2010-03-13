@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_5xTGQC7eEd-B3Joy3PBhgA" name="System">
+  <elementImport xmi:id="_5xxnYC7eEd-B3Joy3PBhgA">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_5xxnYS7eEd-B3Joy3PBhgA">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_5xxnYi7eEd-B3Joy3PBhgA">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_5xxnYy7eEd-B3Joy3PBhgA">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Component" xmi:id="_-6TncC7eEd-B3Joy3PBhgA" name="Controller"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_B7KJUC7fEd-B3Joy3PBhgA" name="Smart Jacket" clientDependency="_Ywjh0C7hEd-B3Joy3PBhgA"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_E1iPwC7fEd-B3Joy3PBhgA" name="ZCamera" clientDependency="_RTghcC7hEd-B3Joy3PBhgA _IbS4sC7jEd-B3Joy3PBhgA _kOCm4C7jEd-B3Joy3PBhgA"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_IvGiUC7fEd-B3Joy3PBhgA" name="" memberEnd="_IvHJYC7fEd-B3Joy3PBhgA _IvHwci7fEd-B3Joy3PBhgA">
+    <ownedEnd xmi:id="_IvHJYC7fEd-B3Joy3PBhgA" name="src" type="_-6TncC7eEd-B3Joy3PBhgA" association="_IvGiUC7fEd-B3Joy3PBhgA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IvHwcS7fEd-B3Joy3PBhgA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IvHwcC7fEd-B3Joy3PBhgA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_IvHwci7fEd-B3Joy3PBhgA" name="dst" type="_B7KJUC7fEd-B3Joy3PBhgA" association="_IvGiUC7fEd-B3Joy3PBhgA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IvIXgC7fEd-B3Joy3PBhgA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IvHwcy7fEd-B3Joy3PBhgA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NIhZoC7fEd-B3Joy3PBhgA" memberEnd="_NIhZoS7fEd-B3Joy3PBhgA _NIiAsi7fEd-B3Joy3PBhgA">
+    <ownedEnd xmi:id="_NIhZoS7fEd-B3Joy3PBhgA" name="src" type="_-6TncC7eEd-B3Joy3PBhgA" association="_NIhZoC7fEd-B3Joy3PBhgA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NIiAsS7fEd-B3Joy3PBhgA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NIiAsC7fEd-B3Joy3PBhgA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_NIiAsi7fEd-B3Joy3PBhgA" name="dst" type="_E1iPwC7fEd-B3Joy3PBhgA" association="_NIhZoC7fEd-B3Joy3PBhgA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NIiAtC7fEd-B3Joy3PBhgA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NIiAsy7fEd-B3Joy3PBhgA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_O8FB8C7fEd-B3Joy3PBhgA" name="Game" clientDependency="_QmQvAC7jEd-B3Joy3PBhgA"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_SKKHgC7fEd-B3Joy3PBhgA" memberEnd="_SKLVoC7fEd-B3Joy3PBhgA _SKL8sC7fEd-B3Joy3PBhgA">
+    <ownedEnd xmi:id="_SKLVoC7fEd-B3Joy3PBhgA" name="src" type="_-6TncC7eEd-B3Joy3PBhgA" association="_SKKHgC7fEd-B3Joy3PBhgA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SKLVoi7fEd-B3Joy3PBhgA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SKLVoS7fEd-B3Joy3PBhgA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_SKL8sC7fEd-B3Joy3PBhgA" name="dst" type="_O8FB8C7fEd-B3Joy3PBhgA" association="_SKKHgC7fEd-B3Joy3PBhgA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SKL8si7fEd-B3Joy3PBhgA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SKL8sS7fEd-B3Joy3PBhgA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_WkhaAC7fEd-B3Joy3PBhgA" name="User Interface" clientDependency="_cLoPoC7jEd-B3Joy3PBhgA"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_aseG0C7fEd-B3Joy3PBhgA" memberEnd="_asfU8C7fEd-B3Joy3PBhgA _asf8AC7fEd-B3Joy3PBhgA">
+    <ownedEnd xmi:id="_asfU8C7fEd-B3Joy3PBhgA" name="src" type="_-6TncC7eEd-B3Joy3PBhgA" association="_aseG0C7fEd-B3Joy3PBhgA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_asfU8i7fEd-B3Joy3PBhgA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_asfU8S7fEd-B3Joy3PBhgA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_asf8AC7fEd-B3Joy3PBhgA" name="dst" type="_WkhaAC7fEd-B3Joy3PBhgA" association="_aseG0C7fEd-B3Joy3PBhgA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_asf8Ai7fEd-B3Joy3PBhgA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_asf8AS7fEd-B3Joy3PBhgA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_dvrZIC7fEd-B3Joy3PBhgA" memberEnd="_dvsnQC7fEd-B3Joy3PBhgA _dvtOUi7fEd-B3Joy3PBhgA">
+    <ownedEnd xmi:id="_dvsnQC7fEd-B3Joy3PBhgA" name="src" type="_WkhaAC7fEd-B3Joy3PBhgA" association="_dvrZIC7fEd-B3Joy3PBhgA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dvtOUS7fEd-B3Joy3PBhgA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dvtOUC7fEd-B3Joy3PBhgA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_dvtOUi7fEd-B3Joy3PBhgA" name="dst" type="_O8FB8C7fEd-B3Joy3PBhgA" association="_dvrZIC7fEd-B3Joy3PBhgA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dvtOVC7fEd-B3Joy3PBhgA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dvtOUy7fEd-B3Joy3PBhgA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_f6NXAC7fEd-B3Joy3PBhgA" name="Network" clientDependency="_Zm1-sC7jEd-B3Joy3PBhgA"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_iCy0IC7fEd-B3Joy3PBhgA" memberEnd="_iCy0IS7fEd-B3Joy3PBhgA _iCzbMS7fEd-B3Joy3PBhgA">
+    <ownedEnd xmi:id="_iCy0IS7fEd-B3Joy3PBhgA" name="src" type="_-6TncC7eEd-B3Joy3PBhgA" association="_iCy0IC7fEd-B3Joy3PBhgA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iCzbMC7fEd-B3Joy3PBhgA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iCy0Ii7fEd-B3Joy3PBhgA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_iCzbMS7fEd-B3Joy3PBhgA" name="dst" type="_f6NXAC7fEd-B3Joy3PBhgA" association="_iCy0IC7fEd-B3Joy3PBhgA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iCzbMy7fEd-B3Joy3PBhgA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iCzbMi7fEd-B3Joy3PBhgA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_kD_24C7fEd-B3Joy3PBhgA" name="Falcon Pen" clientDependency="_5UobkC7iEd-B3Joy3PBhgA"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_nFHegC7fEd-B3Joy3PBhgA" memberEnd="_nFHegS7fEd-B3Joy3PBhgA _nFIFkS7fEd-B3Joy3PBhgA">
+    <ownedEnd xmi:id="_nFHegS7fEd-B3Joy3PBhgA" name="src" type="_-6TncC7eEd-B3Joy3PBhgA" association="_nFHegC7fEd-B3Joy3PBhgA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nFIFkC7fEd-B3Joy3PBhgA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nFHegi7fEd-B3Joy3PBhgA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_nFIFkS7fEd-B3Joy3PBhgA" name="dst" type="_kD_24C7fEd-B3Joy3PBhgA" association="_nFHegC7fEd-B3Joy3PBhgA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nFIFky7fEd-B3Joy3PBhgA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nFIFki7fEd-B3Joy3PBhgA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_OEN68C7hEd-B3Joy3PBhgA" name="ZCameraAPI"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_RTghcC7hEd-B3Joy3PBhgA" name="uses" supplier="_OEN68C7hEd-B3Joy3PBhgA" client="_E1iPwC7fEd-B3Joy3PBhgA"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_VM9fQC7hEd-B3Joy3PBhgA" name="Smart Jacket API"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_Ywjh0C7hEd-B3Joy3PBhgA" name="uses" supplier="_VM9fQC7hEd-B3Joy3PBhgA" client="_B7KJUC7fEd-B3Joy3PBhgA"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_03cekC7iEd-B3Joy3PBhgA" name="Chai3D"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_5UobkC7iEd-B3Joy3PBhgA" name="uses" supplier="_03cekC7iEd-B3Joy3PBhgA" client="_kD_24C7fEd-B3Joy3PBhgA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_IbS4sC7jEd-B3Joy3PBhgA" name="uses" supplier="_03cekC7iEd-B3Joy3PBhgA" client="_E1iPwC7fEd-B3Joy3PBhgA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_QmQvAC7jEd-B3Joy3PBhgA" name="uses" supplier="_03cekC7iEd-B3Joy3PBhgA" client="_O8FB8C7fEd-B3Joy3PBhgA"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_XC4NIC7jEd-B3Joy3PBhgA" name="Microsoft Foundation Classes"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_Zm1-sC7jEd-B3Joy3PBhgA" name="uses" supplier="_XC4NIC7jEd-B3Joy3PBhgA" client="_f6NXAC7fEd-B3Joy3PBhgA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_cLoPoC7jEd-B3Joy3PBhgA" name="uses" supplier="_XC4NIC7jEd-B3Joy3PBhgA" client="_WkhaAC7fEd-B3Joy3PBhgA"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_iDGZUC7jEd-B3Joy3PBhgA" name="AR Toolkit"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_kOCm4C7jEd-B3Joy3PBhgA" name="uses" supplier="_iDGZUC7jEd-B3Joy3PBhgA" client="_E1iPwC7fEd-B3Joy3PBhgA"/>
+</uml:Package>
