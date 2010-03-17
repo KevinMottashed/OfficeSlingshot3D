@@ -141,6 +141,10 @@ SOURCE=.\Controller.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\DataPacket.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\DepthCamera.cpp
 # End Source File
 # Begin Source File
@@ -263,6 +267,10 @@ SOURCE=.\ConnectDlg.h
 # Begin Source File
 
 SOURCE=.\Controller.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\DataPacket.h
 # End Source File
 # Begin Source File
 

@@ -36,12 +36,12 @@ rc_network UserInterfaceManager::networkDisconnectButtonPushed()
 
 void UserInterfaceManager::startGameButtonPushed()
 {
-	Controller::instance()->startVideo();
+	Controller::instance()->startGame();
 }
 
 void UserInterfaceManager::exitGameButtonPushed()
 {
-	Controller::instance()->exitVideo();
+	Controller::instance()->exitGame();
 }
 
 CDialog* UserInterfaceManager::getMainWindow()

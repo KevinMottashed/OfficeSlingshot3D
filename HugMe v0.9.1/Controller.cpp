@@ -49,14 +49,14 @@ rc_network Controller::netDisconnect()
 	return m_pNetworkManager->disconnect();
 }
 
-void Controller::startVideo()
+void Controller::startGame()
 {
-	//TODO Implement this in the video controller maybe
+	//TODO Implement
 }
 
-void Controller::exitVideo()
+void Controller::exitGame()
 {
-	//TODO Implement this in the video controller maybe
+	//TODO Implement
 }
 
 Controller::Controller()
@@ -95,5 +95,17 @@ string Controller::getLocalUserName()
 CDialog* Controller::getMainWindow()
 {
 	return m_pUserInterfaceManager->getMainWindow();
+}
+
+void Controller::notifyNewVideoData(const std::vector<BYTE>& vRGB, const std::vector<BYTE>& vDepth, const std::vector<BYTE>& vAR)
+{
+	// TODO implement
+	printf("new video data has arrived\n");
+}
+
+void Controller::notifyNewTactileData(const std::vector<BYTE>& vTactile)
+{
+	// TODO implement
+	printf("new tactile data has arrived\n");
 }
 

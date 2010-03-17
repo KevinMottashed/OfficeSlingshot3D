@@ -25,6 +25,7 @@
 #include "NetworkSocket.h"
 #include "NetworkCodes.h"
 #include "ChatPacket.h"
+#include "DataPacket.h"
 
 // Forward declarations (files include each other)
 class Controller;
@@ -48,10 +49,28 @@ public:
 	// send the player's user name over the network
 	rc_network sendUserName(const CString& userName);
 
+	// send a full data packet to the other player, video + tactile
+	rc_network sendDataPacket(	const std::vector<BYTE>& vRGB,
+								const std::vector<BYTE>& vDepth,
+								const std::vector<BYTE>& vAR,
+								const std::vector<BYTE>& vTactile);
+
+	// send a video only packet to the other player
+	rc_network sendVideoPacket(	const std::vector<BYTE>& vRGB,
+								const std::vector<BYTE>& vDepth,
+								const std::vector<BYTE>& vAR);
+
+	// send a tactile only packet to the other player
+	rc_network sendTactilePacket(const std::vector<BYTE>& vTactile);
+
 	// notify the controller that a network connection has been accepted
 	void notifyAccept(NetworkSocket* socket);
 
 private:
+	//---------------
+	// Constants
+	//---------------
+
 	// the network ports for our application
 	static const int chat_port;
 	static const int data_port;
@@ -61,7 +80,11 @@ private:
 
 	// maximum size for a control packet
 	static const int maximum_control_packet_size;
+	static const int maximum_data_packet_size;
 
+	//-----------------------
+	// Control Socket
+	//-----------------------
 	// the control socket, used for sending chat messages, user names, game data ...
 	NetworkSocket* m_pControlSocket; // the actual socket
 	SOCKET m_hControlSocket; // the socket handle
@@ -91,13 +114,41 @@ private:
 	static DWORD ControlReceiveThread(NetworkManager* pNetworkManager);
 	static DWORD ControlMessageHandleThread(NetworkManager* pNetworkManager);
 
+	//-----------------------
+	// Data Socket
+	//-----------------------
 	// the data socket, used for sending data, video, falcon, tactile ...
 	NetworkSocket* m_pDataSocket; // the actual socket
 	SOCKET m_hDataSocket; // the socket handle
 	BOOL m_bDataConnected; // true if the connection has been accepted
-	std::queue<std::vector<BYTE> > m_DataSocketSendQueue; // send queue
-	std::queue<std::vector<BYTE> > m_DataSocketReceiveQueue; // receive queue
 
+	std::queue<DataPacket> m_DataSocketSendQueue; // send queue
+	CSemaphore m_sDataSocketSend; // semaphore for how many messages in the send queue
+	CRITICAL_SECTION m_csDataSocketSend; // critical section for the send queue
+
+	std::queue<DataPacket> m_DataSocketReceiveQueue; // receive queue
+	CSemaphore m_sDataSocketReceive; // semaphore for how many messages in the receive queue
+	CRITICAL_SECTION m_csDataSocketReceive; // critical section for the receive queue
+
+	// the data game thread, sends messages through the network
+	HANDLE m_hDataSendThread; // handle
+	DWORD m_dwIDDataSend; // thread id
+
+	// the control receive thread, receives messages through the network
+	HANDLE m_hDataReceiveThread; // handle
+	DWORD m_dwIDDataReceive; // thread id
+
+	// the control message handle thread, handles messages received through the network
+	HANDLE m_hDataMessageHandleThread; // handle
+	DWORD m_dwIDDataMessageHandle; // thread id
+
+	static DWORD DataSendThread(NetworkManager* pNetworkManager);
+	static DWORD DataReceiveThread(NetworkManager* pNetworkManager);
+	static DWORD DataMessageHandleThread(NetworkManager* pNetworkManager);
+
+	//--------------------------
+	// Private Member functions
+	//--------------------------
 	// closes the network sockets
 	void closeSockets();
 
@@ -110,17 +161,23 @@ private:
 	// send a control message to the peer
 	rc_network sendControlMessage(const CChatPacket& message);
 
+	// send a data message to the peer
+	rc_network sendDataMessage(const DataPacket& message);
+
 	// reset the network connection and notify the controller that the peer has disconnected
 	rc_network peerDisconnect();
 
 	// reset the network connection and notify the controller that a network error has occured
 	rc_network networkError();
 
-	Controller* m_pController;
-	bool m_bIsConnected;
-	bool m_bIsServer;
-	bool m_bUserNameReceived;
-	bool m_bConfigurationReceived;
+	//---------------------------
+	// Private Data Members
+	//---------------------------
+	Controller* m_pController; // our controller
+	bool m_bIsConnected; // true if connected to a peer
+	bool m_bIsServer; // true if we are the server (listener)
+	bool m_bUserNameReceived; // true if we have received the peer's user name
+	bool m_bConfigurationReceived; // true if we have received the peer's configuration
 };
 
 #endif // !defined(AFX_NETWORKMANAGER_H__3D85BBC3_3F80_477F_ABAB_1DAE8326532A__INCLUDED_)

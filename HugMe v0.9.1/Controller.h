@@ -41,11 +41,11 @@ public:
 	// attempt to disconnect to a host
 	rc_network netDisconnect();
 
-	// start video feed
-	void startVideo();
+	// start the game
+	void startGame();
 
-	// exit video feed
-	void exitVideo();
+	// exit the game
+	void exitGame();
 
 	// a network connection has been accepted, notify the user interface
 	void notifyNetworkConnectionAccepted();
@@ -55,6 +55,11 @@ public:
 
 	// the network has been disconnected in error, notify the user interface
 	void notifyNetworkError();
+
+	// new video data
+	void notifyNewVideoData(const std::vector<BYTE>& vRGB, const std::vector<BYTE>& vDepth, const std::vector<BYTE>& vAR);
+
+	void notifyNewTactileData(const std::vector<BYTE>& vTactile);
 
 	// --------------------------------
 	// Player info related functions
@@ -89,6 +94,12 @@ private:
 
 	// manages everything GUI related
 	UserInterfaceManager* m_pUserInterfaceManager;
+
+	// It should be noted that the user names are not thread safe.
+	// For now this is OK because the UI and network will never try to access to access them at the same time.
+	// This is because the UI won't try to access them until the network connection is established.
+	// If we ever add a feature where the user names can changes after the connection has been established, then
+	// we will need to make these thread safe
 	std::string localUserName;
 	std::string remoteUserName;
 };
