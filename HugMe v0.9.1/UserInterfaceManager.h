@@ -35,6 +35,9 @@ public:
 	// updates the user interface to reflect an error in the network connection
 	void notifyNetworkError();
 
+	// update the user interface to display a chat message
+	void notifyNewChatMessage(const std::string& message);
+
 	//-----------------------------------------------
 	// Notifications coming from the user interface
 	//-----------------------------------------------

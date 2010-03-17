@@ -115,3 +115,8 @@ void Controller::notifyNewTactileData(const std::vector<BYTE>& vTactile)
 	printf("new tactile data has arrived\n");
 }
 
+void Controller::notifyNewChatMessage(const std::string& message)
+{
+	m_pUserInterfaceManager->notifyNewChatMessage(message);
+}
+

@@ -59,7 +59,11 @@ public:
 	// new video data
 	void notifyNewVideoData(const std::vector<BYTE>& vRGB, const std::vector<BYTE>& vDepth, const std::vector<BYTE>& vAR);
 
+	// new tactile data
 	void notifyNewTactileData(const std::vector<BYTE>& vTactile);
+
+	// new chat message
+	void notifyNewChatMessage(const std::string& message);
 
 	// --------------------------------
 	// Player info related functions

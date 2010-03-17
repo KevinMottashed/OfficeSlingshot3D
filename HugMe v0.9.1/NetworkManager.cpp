@@ -175,7 +175,6 @@ rc_network NetworkManager::networkError()
 	return SUCCESS;
 }
 
-
 void NetworkManager::notifyAccept(NetworkSocket* socket)
 {
 	if (socket == m_pControlSocket)
@@ -448,8 +447,12 @@ DWORD NetworkManager::ControlMessageHandleThread(NetworkManager* pNetworkManager
 			// TODO not implemented yet
 			break;
 		case CChatPacket::PACKET_CHAT:
-			// TODO not implemented yet
+		{
+			packet.writeChar('\0'); // make sure the string is null terminated
+			std::string message = (LPCSTR) packet.getPacketPtr();
+			pNetworkManager->m_pController->notifyNewChatMessage(message);
 			break;
+		}
 		case CChatPacket::PACKET_NAME:
 		{
 			packet.writeChar('\0'); // make sure the name is null terminated
@@ -667,7 +670,7 @@ rc_network NetworkManager::initializeConnection()
 	m_hControlSocket = m_pControlSocket->Detach();
 	m_hDataSocket = m_pDataSocket->Detach();
 
-	// initialize the threads
+	// initialize the socket threads
 	// control socket threads
 	m_hControlSendThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) ControlSendThread, (void*) this, 0, &m_dwIDControlSend);
 	m_hControlReceiveThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) ControlReceiveThread, (void*) this, 0, &m_dwIDControlReceive);
@@ -689,6 +692,14 @@ rc_network NetworkManager::sendUserName(const CString& userName)
 	userNamePacket.setType(CChatPacket::PACKET_NAME);
 	userNamePacket.writeString(userName);
 	return sendControlMessage(userNamePacket);
+}
+
+rc_network NetworkManager::sendChatMessage(const CString& message)
+{
+	CChatPacket messagePacket;
+	messagePacket.setType(CChatPacket::PACKET_CHAT);
+	messagePacket.writeString(message);
+	return sendControlMessage(messagePacket);
 }
 
 rc_network NetworkManager::sendControlMessage(const CChatPacket& message)
