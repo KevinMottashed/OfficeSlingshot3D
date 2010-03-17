@@ -50,6 +50,8 @@ public:
 	void testFalconButtonPressed();
 	void testCameraButtonPressed();
 
+	void closeApplication();
+
 
 	// returns the applications main window
 	CDialog* getMainWindow();

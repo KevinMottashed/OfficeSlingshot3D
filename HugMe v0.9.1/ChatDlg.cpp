@@ -229,6 +229,9 @@ void CChatDlg::OnDestroy()
 		::DrawDibClose(hdib);
 	}
 
+	// tell the UI manager to shutdown the application
+	m_pUserInterfaceManager->closeApplication();
+
 	delete m_pLocalVideoFlip;
 	delete m_pReceivedVideo[0];
 	delete m_pReceivedVideo[1];

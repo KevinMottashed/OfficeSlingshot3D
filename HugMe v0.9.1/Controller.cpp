@@ -59,6 +59,12 @@ void Controller::exitGame()
 	//TODO Implement
 }
 
+void Controller::closeApplication()
+{
+	// the only thing to do is to close the sockets so the other end has a clean disconnect
+	m_pNetworkManager->disconnect();
+}
+
 Controller::Controller()
 {
 	m_pUserInterfaceManager = new UserInterfaceManager(this);

@@ -44,6 +44,11 @@ void UserInterfaceManager::exitGameButtonPushed()
 	Controller::instance()->exitGame();
 }
 
+void UserInterfaceManager::closeApplication()
+{
+	m_pController->closeApplication();
+}
+
 CDialog* UserInterfaceManager::getMainWindow()
 {
 	return m_pChatDlg;

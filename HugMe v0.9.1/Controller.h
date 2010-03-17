@@ -81,6 +81,13 @@ public:
 
 	CDialog* getMainWindow();
 
+	// ------------------------------------
+	// System related functions
+	// ------------------------------------
+
+	// close the application in a safe way
+	void closeApplication();
+
 private:
 	Controller(); // private for singleton pattern
 	Controller(const Controller& c); // intentionally not implemented
