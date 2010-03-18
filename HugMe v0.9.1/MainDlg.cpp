@@ -15,8 +15,8 @@ static char THIS_FILE[] = __FILE__;
 // CMainDlg dialog
 
 
-CMainDlg::CMainDlg(CWnd* pParent /*=NULL*/)
-	: CDialog(CMainDlg::IDD, pParent)
+CMainDlg::CMainDlg(UserInterfaceManager* m_pUserInterfaceManager, CWnd* pParent /*=NULL*/)
+	: pUserInterfaceManager(pUserInterfaceManager), CDialog(CMainDlg::IDD, pParent)
 {
 	//{{AFX_DATA_INIT(CMainDlg)
 		// NOTE: the ClassWizard will add member initialization here
@@ -47,20 +47,38 @@ END_MESSAGE_MAP()
 void CMainDlg::OnNetworkConnect() 
 {
 	// TODO: Add your command handler code here
-	MessageBox("Trying to connect");
+	rc_network status = pUserInterfaceManager->networkConnectButtonPushed("Connector", "127.0.0.1");
+
+	MessageBox(lookup(status).c_str());
+
+	if (status == SUCCESS){
+		MessageBox("Connected !");
+	}
 	
 }
 
 void CMainDlg::OnNetworkDisconnect() 
 {
 	// TODO: Add your command handler code here
-	MessageBox("Trying to disconnect");
+	rc_network status = pUserInterfaceManager->networkDisconnectButtonPushed();
+
+	MessageBox(lookup(status).c_str());
+
+	if (status == SUCCESS){
+		MessageBox("Disonnected !");
+	}
 	
 }
 
 void CMainDlg::OnNetworkListen() 
 {
 	// TODO: Add your command handler code here
-	MessageBox("Trying to listen");
+	rc_network status = pUserInterfaceManager->networkListenButtonPushed("Listener");
+
+	MessageBox(lookup(status).c_str());
+
+	if (status == SUCCESS){
+		MessageBox("Listening !");
+	}
 	
 }

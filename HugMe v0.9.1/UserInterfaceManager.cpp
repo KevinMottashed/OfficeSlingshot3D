@@ -11,9 +11,9 @@ static char THIS_FILE[]=__FILE__;
 #endif
 
 UserInterfaceManager::UserInterfaceManager(Controller* pController) :
-		m_pController(pController),
-		m_pMainDlg(new CMainDlg())
+		m_pController(pController)
 {
+	m_pMainDlg = new CMainDlg(this);
 }
 
 UserInterfaceManager::~UserInterfaceManager()

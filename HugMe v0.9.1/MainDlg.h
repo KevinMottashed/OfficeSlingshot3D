@@ -8,15 +8,20 @@
 //
 
 #include "Resource.h"
+#include "UserInterfaceManager.h"
 
 /////////////////////////////////////////////////////////////////////////////
 // CMainDlg dialog
 
+class UserInterfaceManager;
+
 class CMainDlg : public CDialog
 {
+private:
+	UserInterfaceManager* pUserInterfaceManager;
 // Construction
 public:
-	CMainDlg(CWnd* pParent = NULL);   // standard constructor
+	CMainDlg(UserInterfaceManager* pUserInterfaceManager, CWnd* pParent = NULL);   // standard constructor
 
 // Dialog Data
 	//{{AFX_DATA(CMainDlg)
