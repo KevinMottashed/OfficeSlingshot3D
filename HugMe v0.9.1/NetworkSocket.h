@@ -9,8 +9,8 @@
 
 #include "NetworkManager.h"
 
-// Windows
-#include <afxsock.h>
+// STL & Windows
+#include "StdAfx.h"
 
 // Forward declaration (files include each other)
 class NetworkManager;

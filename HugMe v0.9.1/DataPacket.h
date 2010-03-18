@@ -9,12 +9,8 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-// STL
-#include <vector>
-#include <memory>
-
-// Windows
-#include <afxwin.h>
+// STL & Windows
+#include "StdAfx.h"
 
 // This is the header for all data packets
 // The tactile section of the packet might disappear in the future

@@ -2,9 +2,8 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-// STL
-#include <algorithm>
-#include <memory>
+// STL & Windows
+#include "StdAfx.h"
 
 #include "NetworkManager.h"
 #include "SyncLocker.h"

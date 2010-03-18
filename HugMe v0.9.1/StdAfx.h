@@ -12,6 +12,10 @@
 
 #define VC_EXTRALEAN		// Exclude rarely-used stuff from Windows headers
 
+//----------------------------------------------
+// Windows Headers
+//----------------------------------------------
+
 #include <afxwin.h>         // MFC core and standard components
 #include <afxext.h>         // MFC extensions
 #include <afxdisp.h>        // MFC Automation classes
@@ -28,12 +32,18 @@
 typedef DWORD DWORD_PTR;
 typedef LONG LONG_PTR;
 
+//----------------------------------------------
+// Standard Template Library (STL)
+//----------------------------------------------
+
 // This is microsft's way of dealing with this warning in vc++6
 // the warning occurs because the STL is used
 #pragma warning (disable : 4786)
 
-#include <vector>
+#include <algorithm>
+#include <memory>
 #include <string>
+#include <vector>
 
 // renable the warning
 #pragma warning (default : 4786)
