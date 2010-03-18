@@ -35,9 +35,32 @@ void CMainDlg::DoDataExchange(CDataExchange* pDX)
 
 BEGIN_MESSAGE_MAP(CMainDlg, CDialog)
 	//{{AFX_MSG_MAP(CMainDlg)
-		// NOTE: the ClassWizard will add message map macros here
+	ON_COMMAND(ID_NETWORK_CONNECT, OnNetworkConnect)
+	ON_COMMAND(ID_NETWORK_DISCONNECT, OnNetworkDisconnect)
+	ON_COMMAND(ID_NETWORK_LISTEN, OnNetworkListen)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
 // CMainDlg message handlers
+
+void CMainDlg::OnNetworkConnect() 
+{
+	// TODO: Add your command handler code here
+	MessageBox("Trying to connect");
+	
+}
+
+void CMainDlg::OnNetworkDisconnect() 
+{
+	// TODO: Add your command handler code here
+	MessageBox("Trying to disconnect");
+	
+}
+
+void CMainDlg::OnNetworkListen() 
+{
+	// TODO: Add your command handler code here
+	MessageBox("Trying to listen");
+	
+}

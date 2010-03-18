@@ -133,7 +133,8 @@ END
 
 IDD_MAIN_DIALOG DIALOG DISCARDABLE  0, 0, 320, 201
 STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Dialog"
+CAPTION "Office Slingshot 3D"
+MENU IDR_MENU
 FONT 8, "MS Sans Serif"
 BEGIN
     DEFPUSHBUTTON   "OK",IDOK,263,7,50,14
@@ -158,6 +159,22 @@ BEGIN
     END
 END
 #endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&Network"
+    BEGIN
+        MENUITEM "&Listen",                     ID_NETWORK_LISTEN
+        MENUITEM "&Connect",                    ID_NETWORK_CONNECT
+        MENUITEM "&Disconnect",                 ID_NETWORK_DISCONNECT
+    END
+END
 
 
 /////////////////////////////////////////////////////////////////////////////
