@@ -6,11 +6,8 @@
 #include <algorithm>
 #include <memory>
 
-// Windows
-#include "stdafx.h"
-
 #include "NetworkManager.h"
-#include "Sync.h"
+#include "SyncLocker.h"
 
 const int NetworkManager::chat_port = 8869;
 const int NetworkManager::data_port = 8870;
@@ -266,218 +263,19 @@ void NetworkManager::closeSockets()
 
 DWORD NetworkManager::ControlSendThread(NetworkManager *pNetworkManager)
 {
-	// keep going until the network manager closes the connection
-	while (pNetworkManager->m_bIsConnected)
-	{
-		// wait for a message to arrive
-		pNetworkManager->m_sControlSocketSend.Lock();
-
-		// the packet to send
-		CChatPacket packet;
-
-		// need to synchronize access to the send queue,
-		// another thread might try to add a message to the queue while we send
-		synchronized (pNetworkManager->m_csControlSocketSend)
-		{
-			// get the packet at the front of the queue
-			CChatPacket packetToSend = pNetworkManager->m_ControlSocketSendQueue.front();
-
-			// copy it into our buffer
-			packet = CChatPacket(packetToSend);
-
-			// remove the packet from the queue of packets to send
-			pNetworkManager->m_ControlSocketSendQueue.pop();
-		}
-
-		// the message to send in bytes
-		std::vector<BYTE> message;
-
-		// packet format is <size><type><data>
-		unsigned int size = sizeof(unsigned int) + sizeof(CChatPacket::PacketType) + packet.getPacketSize();
-		CChatPacket::PacketType type = packet.getType();
-
-		// add the total size to the packet
-		message.insert(message.end(), (BYTE*) &size, ((BYTE*) (&size)) + sizeof(unsigned int));
-
-		// add the type to the packet
-		message.insert(message.end(), (BYTE*) &type, ((BYTE*) (&type)) + sizeof(CChatPacket::PacketType));
-
-		// add the data to the packet
-		message.insert(message.end(), packet.getPacketPtr(), packet.getPacketPtr() + packet.getPacketSize());
-
-		// send the message
-		// When sending the message we might need to call the send function multiple times.
-		// This is because it is not guaranteed to send all the bytes in one packet.
-		// We therefore have to keep calling the send function until all the bytes are sent.
-		const char* i = (const char*)&message[0];
-		int bytesSent = 0;		
-		while (bytesSent < message.size())
-		{
-			int rc = send(pNetworkManager->m_hControlSocket, i, message.size() - bytesSent, 0);
-
-			// check the return code
-			switch (rc)
-			{
-				case 0: // no bytes have been sent, consider this a failure
-					return 0;
-				case SOCKET_ERROR: // there's a problem with the socket, fail here
-					{
-						DWORD error = GetLastError();
-						// ignore the would block error, it means the socket is temporarily unavailable
-						if (error != WSAEWOULDBLOCK)
-						{
-							// the error is only genuine if we are still connected
-							// when the network is disconnected by the user we will receive a socket error
-							// this is normal, so do not notify the controller
-							if (pNetworkManager->m_bIsConnected)
-							{
-								// disconnect when the socket fails
-								pNetworkManager->networkError();
-								return 0;
-							}
-							return 1;
-						}
-						break;
-					}
-				default: // some bytes have been sent, the return code represent how many
-					bytesSent += rc;
-					i += bytesSent;
-			}
-		}
-	}
-	// exited gracefully
+	// TODO implement
 	return 1;
 }
 
 DWORD NetworkManager::ControlReceiveThread(NetworkManager* pNetworkManager)
 {
-	BYTE receivedBuffer[maximum_control_packet_size];
-	vector<BYTE> queue;
-	CChatPacket packet = CChatPacket();
-	while (pNetworkManager->m_bIsConnected)
-	{
-		// sleep to prevent this thread from hogging the CPU
-		Sleep(1);
-
-		// receive data through the network
-		int rc = recv(pNetworkManager->m_hControlSocket, (char*) receivedBuffer, maximum_control_packet_size, 0);
-
-		switch (rc) {
-		case SOCKET_ERROR: // fail when a socket error occurs
-			{	
-				DWORD error = GetLastError();
-				// ignore the would block error, it means the socket is temporarily unavailable
-				if (error != WSAEWOULDBLOCK)
-				{
-					// the error is only genuine if we are still connected
-					// when the network is disconnected by the user we will receive a socket error
-					// this is normal, so do not notify the controller
-					if (pNetworkManager->m_bIsConnected)
-					{
-						// disconnect when the socket fails
-						pNetworkManager->networkError();
-						return 0;
-					}
-					return 1;
-				}
-				// this read failed, we don't want to try to handle an empty message so try reading again
-				continue;
-			}
-
-		case 0:
-			// recv returns 0 to indicate an end of stream
-			// this means the peer has disconnected
-			pNetworkManager->peerDisconnect();
-			return 0;
-		}
-
-		// add the received bytes to the end of the queue
-		queue.insert(queue.end(), &receivedBuffer[0], &receivedBuffer[rc]);
-
-		// the while loop here may seem a little strange but it is needed
-		// if the other sends 2 or more messages in quick succession then might read them both
-		// in the same recv(...) call, we need to read as many messages as possible from the stream before continuing
-		while (packet.readPacket(queue))
-		{
-			// the packet is complete, add it to the queue
-			synchronized(pNetworkManager->m_csControlSocketReceive)
-			{
-				// add the packet to the end of the receive queue
-				pNetworkManager->m_ControlSocketReceiveQueue.push(packet);
-			}
-
-			// notify the message handler that a new packet has arrived
-			pNetworkManager->m_sControlSocketReceive.Unlock();
-
-			// start a new packet
-			packet = CChatPacket();
-		}
-	}
+	// TODO implement
 	return 1;
 }
 
 DWORD NetworkManager::ControlMessageHandleThread(NetworkManager* pNetworkManager)
 {
-	// continue until we disconnect
-	while(pNetworkManager->m_bIsConnected)
-	{
-		// wait for a message to arrive
-		pNetworkManager->m_sControlSocketReceive.Lock();
-
-		// the packet to handle
-		CChatPacket packet;
-
-		// we need to synchronize here so we don't remove a message from the queue while
-		// the receive thread is adding a message
-		synchronized(pNetworkManager->m_csControlSocketReceive)
-		{
-			// get the next message to handle
-			CChatPacket packetToHandle = pNetworkManager->m_ControlSocketReceiveQueue.front();
-
-			// copy the packet over
-			packet = CChatPacket(packetToHandle);
-
-			// remove the packet from the queue
-			pNetworkManager->m_ControlSocketReceiveQueue.pop();
-		}
-
-		switch (packet.getType())
-		{
-		case CChatPacket::PACKET_DISCONNET:
-			// TODO not implemented yet
-			break;
-		case CChatPacket::PACKET_CHAT:
-		{
-			packet.writeChar('\0'); // make sure the string is null terminated
-			std::string message = (LPCSTR) packet.getPacketPtr();
-			pNetworkManager->m_pController->notifyNewChatMessage(message);
-			break;
-		}
-		case CChatPacket::PACKET_NAME:
-		{
-			packet.writeChar('\0'); // make sure the name is null terminated
-			std::string remoteUserName = (LPCSTR) packet.getPacketPtr();
-			pNetworkManager->m_pController->updateRemoteUserName(remoteUserName);
-			pNetworkManager->m_bUserNameReceived = true;
-			if (pNetworkManager->m_bUserNameReceived) // && m_bConfigurationReceived
-			{
-				pNetworkManager->m_pController->notifyNetworkConnectionAccepted();
-			}
-			break;
-		}
-		case CChatPacket::PACKET_UDP_PORT:
-			// TODO not implemented yet
-			break;
-		case CChatPacket::PACKET_CONFIG:
-			// TODO not implemented yet
-			break;
-		case CChatPacket::PACKET_FORCE_DWORD:
-			// TODO not implemented yet
-			break;
-		default:
-			return 0; // unknown packet type
-		}
-	}
+	// TODO implement
 	return 1;
 }
 
@@ -559,7 +357,7 @@ DWORD NetworkManager::DataSendThread(NetworkManager *pNetworkManager)
 DWORD NetworkManager::DataReceiveThread(NetworkManager* pNetworkManager)
 {
 	BYTE receivedBuffer[maximum_data_packet_size];
-	vector<BYTE> queue;
+	std::vector<BYTE> queue;
 	DataPacket packet = DataPacket();
 	while (pNetworkManager->m_bIsConnected)
 	{
@@ -688,21 +486,17 @@ rc_network NetworkManager::initializeConnection()
 
 rc_network NetworkManager::sendUserName(const CString& userName)
 {
-	CChatPacket userNamePacket;
-	userNamePacket.setType(CChatPacket::PACKET_NAME);
-	userNamePacket.writeString(userName);
-	return sendControlMessage(userNamePacket);
+	// TODO implement
+	return SUCCESS;
 }
 
 rc_network NetworkManager::sendChatMessage(const CString& message)
 {
-	CChatPacket messagePacket;
-	messagePacket.setType(CChatPacket::PACKET_CHAT);
-	messagePacket.writeString(message);
-	return sendControlMessage(messagePacket);
+	// TODO implement
+	return SUCCESS;
 }
 
-rc_network NetworkManager::sendControlMessage(const CChatPacket& message)
+rc_network NetworkManager::sendControlMessage(const ControlPacket& message)
 {
 	// we synchronize here to avoid adding a message to the queue
 	// while a message is being sent

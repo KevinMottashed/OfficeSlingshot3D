@@ -2,8 +2,6 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#include "stdafx.h"
-#include "chat.h"
 #include "UserInterfaceManager.h"
 
 #ifdef _DEBUG
@@ -13,19 +11,19 @@ static char THIS_FILE[]=__FILE__;
 #endif
 
 UserInterfaceManager::UserInterfaceManager(Controller* pController) :
-		m_pController(pController)
+		m_pController(pController),
+		m_pMainDlg(new CMainDlg())
 {
-	m_pChatDlg = new CChatDlg(this);
 }
 
 UserInterfaceManager::~UserInterfaceManager()
 {
-	delete m_pChatDlg;
+	delete m_pMainDlg;
 }
 
 rc_network UserInterfaceManager::networkConnectButtonPushed(const CString& ipAddress, const CString& localName)
 {
-	Controller::instance()->updateLocalUserName((string)localName);
+	Controller::instance()->updateLocalUserName((std::string)localName);
 	return Controller::instance()->netConnect(ipAddress);
 }
 
@@ -51,47 +49,27 @@ void UserInterfaceManager::closeApplication()
 
 CDialog* UserInterfaceManager::getMainWindow()
 {
-	return m_pChatDlg;
+	return m_pMainDlg;
 }
 
 void UserInterfaceManager::notifyNetworkConnectionEstablished()
 {
-	string remoteUserName = Controller::instance()->getRemoteUserName();
-	getMainWindow()->SendMessage(WM_ON_ACCEPT, (WPARAM)&remoteUserName);
+	// TODO implement
 }
 
 void UserInterfaceManager::notifyPeerDisconnected()
 {
-	string remoteUserName = Controller::instance()->getRemoteUserName();
-	getMainWindow()->SendMessage(WM_ON_PEER_DISCONNECT, (WPARAM)&remoteUserName);
-}
-
-void UserInterfaceManager::testJacketButtonPressed()
-{
-	getMainWindow()->MessageBox("Testing Jacket");
-	//TODO Implement by Jacket Manager
-}
-
-void UserInterfaceManager::testFalconButtonPressed()
-{
-	getMainWindow()->MessageBox("Testing Falcon");
-	//TODO Implement by Jacket Manager
-}
-
-void UserInterfaceManager::testCameraButtonPressed()
-{
-	getMainWindow()->MessageBox("Testing Camera");
-	//TODO Implement by Jacket Manager
+	// TODO implement
 }
 
 void UserInterfaceManager::notifyNetworkError()
 {
-	getMainWindow()->SendMessage(WM_ON_NETWORK_ERROR);
+	// TODO implement
 }
 
 rc_network UserInterfaceManager::networkListenButtonPushed(const CString& localName)
 {
-	Controller::instance()->updateLocalUserName((string)localName);
+	Controller::instance()->updateLocalUserName((std::string)localName);
 	return Controller::instance()->netStartListening();
 }
 

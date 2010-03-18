@@ -74,7 +74,7 @@ LINK32=link.exe
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0x412 /d "_DEBUG" /d "_AFXDLL"
-# ADD RSC /l 0x412 /d "_DEBUG" /d "_AFXDLL"
+# ADD RSC /l 0x1009 /d "_DEBUG" /d "_AFXDLL"
 BSC32=bscmake.exe
 # ADD BASE BSC32 /nologo
 # ADD BSC32 /nologo
@@ -93,26 +93,6 @@ LINK32=link.exe
 # PROP Default_Filter "cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
 # Begin Source File
 
-SOURCE=.\ART.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\CellphoneDlg.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\CellphoneSocket.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\CFinger3dofPointer.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\CFingerDevices.cpp
-# End Source File
-# Begin Source File
-
 SOURCE=.\Chat.cpp
 # End Source File
 # Begin Source File
@@ -121,23 +101,11 @@ SOURCE=.\Chat.rc
 # End Source File
 # Begin Source File
 
-SOURCE=.\ChatDlg.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\ChatPacket.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\ChatSocket.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\ConnectDlg.cpp
-# End Source File
-# Begin Source File
-
 SOURCE=.\Controller.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\ControlPacket.cpp
 # End Source File
 # Begin Source File
 
@@ -145,39 +113,7 @@ SOURCE=.\DataPacket.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\DepthCamera.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\DepthImageComp.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\DisplayDeviceArmband.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\DisplayDeviceFinger.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\DisplayDeviceJacket.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\HugMe.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\HumanModel.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\ImageDataObject.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\ListenDlg.cpp
+SOURCE=.\MainDlg.cpp
 # End Source File
 # Begin Source File
 
@@ -189,36 +125,12 @@ SOURCE=.\NetworkSocket.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\OptionDlg.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\PatternDlg.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\SerialPort.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\StaticCanvas.cpp
-# End Source File
-# Begin Source File
-
 SOURCE=.\StdAfx.cpp
 # ADD CPP /Yc"stdafx.h"
 # End Source File
 # Begin Source File
 
-SOURCE=.\TactileArray.cpp
-# End Source File
-# Begin Source File
-
 SOURCE=.\UserInterfaceManager.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\VirtualPadDlg.cpp
 # End Source File
 # End Group
 # Begin Group "Header Files"
@@ -226,43 +138,7 @@ SOURCE=.\VirtualPadDlg.cpp
 # PROP Default_Filter "h;hpp;hxx;hm;inl"
 # Begin Source File
 
-SOURCE=.\ART.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\CellphoneDlg.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\CellphoneSocket.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\CFinger3dofPointer.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\CFingerDevices.h
-# End Source File
-# Begin Source File
-
 SOURCE=.\Chat.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\ChatDlg.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\ChatPacket.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\ChatSocket.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\ConnectDlg.h
 # End Source File
 # Begin Source File
 
@@ -270,39 +146,15 @@ SOURCE=.\Controller.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\ControlPacket.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\DataPacket.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\DepthImageComp.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\DisplayDeviceArmband.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\DisplayDeviceFinger.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\DisplayDeviceJacket.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\HugMe.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\HumanModel.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\ImageDataObject.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\ListenDlg.h
+SOURCE=.\MainDlg.h
 # End Source File
 # Begin Source File
 
@@ -318,27 +170,7 @@ SOURCE=.\NetworkSocket.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\OptionDlg.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\Pattern.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\PatternDlg.h
-# End Source File
-# Begin Source File
-
 SOURCE=.\Resource.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\SerialPort.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\StaticCanvas.h
 # End Source File
 # Begin Source File
 
@@ -346,23 +178,11 @@ SOURCE=.\StdAfx.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Sync.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\TactileArray.h
+SOURCE=.\SyncLocker.h
 # End Source File
 # Begin Source File
 
 SOURCE=.\UserInterfaceManager.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\VirtualPadDlg.h
-# End Source File
-# Begin Source File
-
-SOURCE="..\chai3d[v1.61.1]\src\devices\ZCAM_HEADER1.h"
 # End Source File
 # End Group
 # Begin Group "Resource Files"

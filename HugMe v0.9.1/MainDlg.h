@@ -1,31 +1,33 @@
-#if !defined(AFX_LISTENDLG_H__8A6C0B87_7643_43FB_B02A_3A3014B6F2C4__INCLUDED_)
-#define AFX_LISTENDLG_H__8A6C0B87_7643_43FB_B02A_3A3014B6F2C4__INCLUDED_
+#if !defined(AFX_MAINDLG_H__C6E6906F_C091_400D_B656_29072BCDB657__INCLUDED_)
+#define AFX_MAINDLG_H__C6E6906F_C091_400D_B656_29072BCDB657__INCLUDED_
 
 #if _MSC_VER > 1000
 #pragma once
 #endif // _MSC_VER > 1000
-// CListenDlg.h : header file
+// MainDlg.h : header file
 //
 
-/////////////////////////////////////////////////////////////////////////////
-// CListenDlg dialog
+#include "Resource.h"
 
-class CListenDlg : public CDialog
+/////////////////////////////////////////////////////////////////////////////
+// CMainDlg dialog
+
+class CMainDlg : public CDialog
 {
 // Construction
 public:
-	CListenDlg(CWnd* pParent = NULL);   // standard constructor
+	CMainDlg(CWnd* pParent = NULL);   // standard constructor
 
 // Dialog Data
-	//{{AFX_DATA(CListenDlg)
-	enum { IDD = IDD_LISTEN_DIALOG };
-	CString	m_localName;
+	//{{AFX_DATA(CMainDlg)
+	enum { IDD = IDD_MAIN_DIALOG };
+		// NOTE: the ClassWizard will add data members here
 	//}}AFX_DATA
 
 
 // Overrides
 	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CListenDlg)
+	//{{AFX_VIRTUAL(CMainDlg)
 	protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
 	//}}AFX_VIRTUAL
@@ -34,7 +36,7 @@ public:
 protected:
 
 	// Generated message map functions
-	//{{AFX_MSG(CListenDlg)
+	//{{AFX_MSG(CMainDlg)
 		// NOTE: the ClassWizard will add member functions here
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
@@ -43,4 +45,4 @@ protected:
 //{{AFX_INSERT_LOCATION}}
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
-#endif // !defined(AFX_CONNECTDLG_H__8A6C0B87_7643_43FB_B02A_3A3014B6F2C4__INCLUDED_)
+#endif // !defined(AFX_MAINDLG_H__C6E6906F_C091_400D_B656_29072BCDB657__INCLUDED_)

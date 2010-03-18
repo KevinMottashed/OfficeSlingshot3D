@@ -13,6 +13,9 @@
 #include <vector>
 #include <memory>
 
+// Windows
+#include <afxwin.h>
+
 // This is the header for all data packets
 // The tactile section of the packet might disappear in the future
 // each player will calculate the projectile hits so there will be no need to send it to the other player

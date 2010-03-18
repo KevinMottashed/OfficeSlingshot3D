@@ -20,12 +20,14 @@
 
 // Windows
 #include <afxmt.h> // for semaphore
+#include <afxwin.h>
+#include <afxsock.h>
 
 #include "Controller.h"
 #include "NetworkSocket.h"
 #include "NetworkCodes.h"
-#include "ChatPacket.h"
 #include "DataPacket.h"
+#include "ControlPacket.h"
 
 // Forward declarations (files include each other)
 class Controller;
@@ -93,11 +95,11 @@ private:
 	SOCKET m_hControlSocket; // the socket handle
 	BOOL m_bControlConnected; // true if the connection has been accepted
 
-	std::queue<CChatPacket> m_ControlSocketSendQueue; // send queue
+	std::queue<ControlPacket> m_ControlSocketSendQueue; // send queue
 	CSemaphore m_sControlSocketSend; // semaphore for how many messages in the send queue
 	CRITICAL_SECTION m_csControlSocketSend; // critical section for the send queue
 
-	std::queue<CChatPacket> m_ControlSocketReceiveQueue; // receive queue
+	std::queue<ControlPacket> m_ControlSocketReceiveQueue; // receive queue
 	CSemaphore m_sControlSocketReceive; // semaphore for how many messages in the receive queue
 	CRITICAL_SECTION m_csControlSocketReceive; // critical section for the receive queue
 
@@ -162,7 +164,7 @@ private:
 	rc_network initializeConnection();
 
 	// send a control message to the peer
-	rc_network sendControlMessage(const CChatPacket& message);
+	rc_network sendControlMessage(const ControlPacket& message);
 
 	// send a data message to the peer
 	rc_network sendDataMessage(const DataPacket& message);

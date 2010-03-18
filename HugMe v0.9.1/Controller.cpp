@@ -2,7 +2,6 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#include "stdafx.h"
 #include "Controller.h"
 
 Controller* Controller::globalInstance = NULL;
@@ -82,7 +81,7 @@ void Controller::updateRemoteUserName(const std::string& name)
 	return;
 }
 
-string Controller::getRemoteUserName()
+std::string Controller::getRemoteUserName()
 {
 	return remoteUserName;
 }
@@ -93,7 +92,7 @@ void Controller::updateLocalUserName(const std::string& name)
 	return;
 }
 
-string Controller::getLocalUserName()
+std::string Controller::getLocalUserName()
 {
 	return localUserName;
 }

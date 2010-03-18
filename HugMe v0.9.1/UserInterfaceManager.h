@@ -10,11 +10,10 @@
 #endif // _MSC_VER > 1000
 
 #include "Controller.h"
-#include "ChatDlg.h"
+#include "MainDlg.h"
 
 // Forward declaration (files include each other)
 class Controller;
-class CChatDlg;
 
 class UserInterfaceManager  
 {
@@ -49,10 +48,6 @@ public:
 	void startGameButtonPushed();
 	void exitGameButtonPushed();
 
-	void testJacketButtonPressed();
-	void testFalconButtonPressed();
-	void testCameraButtonPressed();
-
 	void closeApplication();
 
 
@@ -61,7 +56,7 @@ public:
 
 private:
 	Controller* m_pController;
-	CChatDlg* m_pChatDlg;
+	CDialog* m_pMainDlg;
 };
 
 #endif // !defined(AFX_USERINTERFACEMANAGER_H__DC0E386C_0D7D_44F6_B8B3_0BA8C08D1B1A__INCLUDED_)

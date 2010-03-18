@@ -3,7 +3,6 @@
 
 #include "stdafx.h"
 #include "Chat.h"
-#include "ChatDlg.h"
 #include "Controller.h"
 
 #ifdef _DEBUG

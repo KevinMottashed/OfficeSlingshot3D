@@ -1,8 +1,6 @@
 // NetworkSocket.cpp : implementation file
 //
 
-#include "stdafx.h"
-#include "chat.h"
 #include "NetworkSocket.h"
 
 #ifdef _DEBUG

@@ -58,6 +58,18 @@ END
 
 #endif    // APSTUDIO_INVOKED
 
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Canada) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENC)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_CAN
+#pragma code_page(1252)
+#endif //_WIN32
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -67,84 +79,6 @@ END
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
 IDR_MAINFRAME           ICON    DISCARDABLE     "res\\Chat.ico"
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// Dialog
-//
-
-IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Chat 정보"
-FONT 9, "굴림"
-BEGIN
-    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
-    LTEXT           "Chat 버전 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
-    LTEXT           "Copyright (C) 2006",IDC_STATIC,40,25,119,8
-    DEFPUSHBUTTON   "확인",IDOK,178,7,50,14,WS_GROUP
-END
-
-IDD_CHAT_DIALOG DIALOGEX 0, 0, 403, 338
-STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
-EXSTYLE WS_EX_APPWINDOW
-CAPTION "Chat"
-MENU IDR_MENU1
-FONT 9, "굴림", 0, 0, 0x1
-BEGIN
-    CONTROL         "",IDC_CHAT,"RICHEDIT",ES_MULTILINE | ES_AUTOHSCROLL | 
-                    ES_READONLY | WS_BORDER | WS_TABSTOP,10,277,383,31
-    EDITTEXT        IDC_CHAT_INPUT,10,310,200,18,ES_AUTOHSCROLL
-    CONTROL         "",IDC_VIDEO_LOCAL,"Static",SS_BLACKRECT,338,218,53,40
-    CONTROL         "",IDC_VIDEO_REMOTE,"Static",SS_BLACKRECT,11,17,380,241
-    DEFPUSHBUTTON   "Send",IDC_BTN_SEND,212,313,50,14
-    GROUPBOX        "Chat",IDC_CHAT_SECTION,7,267,389,64
-    GROUPBOX        "Gameplay",IDC_GAMEPLAY,7,7,389,256
-END
-
-IDD_CONNECT_DIALOG DIALOG DISCARDABLE  0, 0, 192, 45
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Dialog"
-FONT 10, "System"
-BEGIN
-    DEFPUSHBUTTON   "OK",IDOK,135,7,50,14
-    PUSHBUTTON      "Cancel",IDCANCEL,135,24,50,14
-    LTEXT           "Address",IDC_STATIC,10,9,28,8
-    EDITTEXT        IDC_EDIT1,42,7,89,14,ES_AUTOHSCROLL
-    EDITTEXT        IDC_EDIT2,42,24,89,14,ES_AUTOHSCROLL
-    LTEXT           "Name",IDC_STATIC,16,26,20,8
-END
-
-IDD_PATTERN_DIALOG DIALOG DISCARDABLE  0, 0, 177, 145
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "패턴"
-FONT 10, "System"
-BEGIN
-    SCROLLBAR       IDC_SCROLLBAR_FRAME,120,34,50,11
-    LTEXT           "Frame",IDC_STATIC,120,24,22,8
-    RTEXT           "1",IDC_STATIC_FRAME,150,24,20,8
-    SCROLLBAR       IDC_SCROLLBAR_INTENSITY,120,64,50,11
-    LTEXT           "Intensity",IDC_STATIC,120,54,29,8
-    RTEXT           "1",IDC_STATIC_INTENSITY,150,54,20,8
-    PUSHBUTTON      "&Delete All",IDC_BUTTON_DELETE_ALL,120,104,50,14
-    PUSHBUTTON      "Save && &Close",IDC_BUTTON_CLOSE,120,124,50,14
-    CONTROL         "",IDC_PIC_PATTERN,"Static",SS_BLACKRECT,7,30,100,100
-    PUSHBUTTON      "&Load Icon...",IDC_BUTTON_LOADICO,31,7,50,14
-    CONTROL         "",IDC_STATIC_ICON,"Static",SS_BITMAP,7,7,20,20
-    EDITTEXT        IDC_EDIT_NAME,110,7,60,14,ES_AUTOHSCROLL
-    LTEXT           "Name",IDC_STATIC,87,9,20,8
-END
-
-IDD_LISTEN_DIALOG DIALOG DISCARDABLE  0, 0, 192, 45
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Dialog"
-FONT 10, "System"
-BEGIN
-    DEFPUSHBUTTON   "OK",IDOK,135,7,50,14
-    PUSHBUTTON      "Cancel",IDCANCEL,135,24,50,14
-    EDITTEXT        IDC_LOCALNAME,42,16,89,14,ES_AUTOHSCROLL
-    LTEXT           "Name",-1,16,18,20,8
-END
-
 
 #ifndef _MAC
 /////////////////////////////////////////////////////////////////////////////
@@ -167,8 +101,9 @@ VS_VERSION_INFO VERSIONINFO
 BEGIN
     BLOCK "StringFileInfo"
     BEGIN
-        BLOCK "041204B0"
+        BLOCK "041204b0"
         BEGIN
+            VALUE "Comments", "\0"
             VALUE "CompanyName", "\0"
             VALUE "FileDescription", "Chat MFC 응용 프로그램\0"
             VALUE "FileVersion", "1, 0, 0, 1\0"
@@ -176,8 +111,10 @@ BEGIN
             VALUE "LegalCopyright", "Copyright (C) 2006\0"
             VALUE "LegalTrademarks", "\0"
             VALUE "OriginalFilename", "Chat.EXE\0"
+            VALUE "PrivateBuild", "\0"
             VALUE "ProductName", "Chat 응용 프로그램\0"
             VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
         END
     END
     BLOCK "VarFileInfo"
@@ -191,81 +128,36 @@ END
 
 /////////////////////////////////////////////////////////////////////////////
 //
+// Dialog
+//
+
+IDD_MAIN_DIALOG DIALOG DISCARDABLE  0, 0, 320, 201
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,263,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,263,24,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
 // DESIGNINFO
 //
 
 #ifdef APSTUDIO_INVOKED
 GUIDELINES DESIGNINFO DISCARDABLE 
 BEGIN
-    IDD_ABOUTBOX, DIALOG
+    IDD_MAIN_DIALOG, DIALOG
     BEGIN
         LEFTMARGIN, 7
-        RIGHTMARGIN, 228
+        RIGHTMARGIN, 313
         TOPMARGIN, 7
-        BOTTOMMARGIN, 48
-    END
-
-    IDD_CHAT_DIALOG, DIALOG
-    BEGIN
-        LEFTMARGIN, 7
-        RIGHTMARGIN, 396
-        TOPMARGIN, 7
-        BOTTOMMARGIN, 331
-    END
-
-    IDD_CONNECT_DIALOG, DIALOG
-    BEGIN
-        LEFTMARGIN, 7
-        RIGHTMARGIN, 185
-        TOPMARGIN, 7
-        BOTTOMMARGIN, 38
-    END
-
-    IDD_PATTERN_DIALOG, DIALOG
-    BEGIN
-        LEFTMARGIN, 7
-        RIGHTMARGIN, 170
-        TOPMARGIN, 7
-        BOTTOMMARGIN, 138
-    END
-
-    IDD_LISTEN_DIALOG, DIALOG
-    BEGIN
-        LEFTMARGIN, 7
-        RIGHTMARGIN, 185
-        TOPMARGIN, 7
-        BOTTOMMARGIN, 38
+        BOTTOMMARGIN, 194
     END
 END
 #endif    // APSTUDIO_INVOKED
-
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// Menu
-//
-
-IDR_MENU1 MENU DISCARDABLE 
-BEGIN
-    POPUP "&File"
-    BEGIN
-        MENUITEM "&Connect",                    ID_FILE_CONNECT
-        MENUITEM "&Listen",                     ID_FILE_LISTEN
-        MENUITEM "&Disconnect",                 ID_FILE_DISCONNECT, GRAYED
-    END
-    POPUP "Tools"
-    BEGIN
-        MENUITEM "Virtual pad",                 ID_TOOLS_VIRTUAL_PAD
-        MENUITEM "Cellphone pad",               ID_TOOLS_CELLPHONE_PAD
-        MENUITEM SEPARATOR
-        MENUITEM "Option...",                   ID_TOOLS_OPTION
-    END
-    POPUP "Game"
-    BEGIN
-        MENUITEM "Start Game",                  ID_GAME_STARTGAME, GRAYED
-        MENUITEM "Exit Game",                   ID_GAME_EXITGAME, GRAYED
-    END
-END
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -275,140 +167,11 @@ END
 
 STRINGTABLE DISCARDABLE 
 BEGIN
-    IDS_ABOUTBOX            "Chat 정보(&A)..."
-    IDP_SOCKETS_INIT_FAILED "Windows 소켓 초기화에 실패하였습니다."
+    IDS_ABOUTBOX            "Chat ??(&A)..."
+    IDP_SOCKETS_INIT_FAILED "Windows ?? ???? ???????."
 END
 
-#endif    // Korean resources
-/////////////////////////////////////////////////////////////////////////////
-
-
-/////////////////////////////////////////////////////////////////////////////
-// English (U.S.) resources
-
-#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
-#ifdef _WIN32
-LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
-#pragma code_page(1252)
-#endif //_WIN32
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// Dialog
-//
-
-IDD_OPTION DIALOG DISCARDABLE  0, 0, 156, 355
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Options"
-FONT 8, "MS Sans Serif"
-BEGIN
-    DEFPUSHBUTTON   "OK",IDOK,22,334,50,14
-    PUSHBUTTON      "Cancel",IDCANCEL,84,334,50,14
-    GROUPBOX        "Graphic rendering",IDC_STATIC,13,9,99,54
-    CONTROL         "Show avatar",IDC_SHOW_AVATAR,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,18,35,56,10
-    CONTROL         "Show remote person",IDC_SHOW_REMOTE_PERSON,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,18,21,81,10
-    CONTROL         "Show contact point",IDC_SHOW_CONTACT,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,18,49,77,10
-    GROUPBOX        "Input Device",IDC_STATIC,13,113,129,59
-    CONTROL         "Use input device",IDC_USE_INPUT_DEVICE,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,18,124,69,10
-    COMBOBOX        IDC_INPUT_DEVICE,54,137,84,74,CBS_DROPDOWN | CBS_SORT | 
-                    WS_VSCROLL | WS_TABSTOP
-    LTEXT           "Device:",IDC_STATIC,26,139,26,8
-    GROUPBOX        "Display Device",IDC_STATIC,14,188,129,81
-    CONTROL         "Use display device",IDC_USE_DISPLAY_DEVICE,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,18,198,75,10
-    CONTROL         "Tactile Jacket",IDC_TACTILE_JACKET,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,35,211,61,10
-    CONTROL         "Tactile Armband",IDC_TACTILE_ARMBAND,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,35,237,67,10
-    GROUPBOX        "Image Device",IDC_STATIC,13,67,129,42
-    CONTROL         "Use Image Device",IDC_USE_IMAGE_DEVICE,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,17,78,75,10
-    COMBOBOX        IDC_IMAGE_DEVICE,53,91,84,46,CBS_DROPDOWN | CBS_SORT | 
-                    WS_VSCROLL | WS_TABSTOP
-    LTEXT           "Device:",IDC_STATIC,25,92,26,8
-    LTEXT           "Port Num:",IDC_STATIC,44,223,32,8
-    LTEXT           "Port Num:",IDC_STATIC,44,249,32,8
-    EDITTEXT        IDC_PORT_JACKET,77,221,40,14,ES_AUTOHSCROLL
-    EDITTEXT        IDC_PORT_ARMBAND,77,247,40,14,ES_AUTOHSCROLL
-    PUSHBUTTON      "Test Jacket",IDC_TEST_JACKET,52,274,50,14
-    LTEXT           "Port Num:",IDC_STATIC,79,156,32,8
-    EDITTEXT        IDC_PORT_FINGER,113,154,24,14,ES_AUTOHSCROLL
-    CONTROL         "Tactile",IDC_FINGER_TACTILE,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,36,155,37,10
-    PUSHBUTTON      "Test Falcon Pen",IDC_TEST_FALCON,42,293,71,14
-    PUSHBUTTON      "Test Camera",IDC_TEST_CAMERA,52,312,50,14
-END
-
-IDD_VIRTUAL_PAD_DIALOG DIALOG DISCARDABLE  0, 0, 186, 180
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Dialog"
-FONT 8, "MS Sans Serif"
-BEGIN
-    DEFPUSHBUTTON   "OK",IDOK,66,159,50,14
-    COMBOBOX        IDC_BODY_PART,85,7,70,51,CBS_DROPDOWN | CBS_SORT | 
-                    WS_VSCROLL | WS_TABSTOP
-    LTEXT           "Body part to touch:",IDC_STATIC,22,9,61,8
-    CONTROL         "",IDC_PAD,"Static",SS_BLACKRECT,52,38,80,98
-    EDITTEXT        IDC_EDIT1,7,139,40,14,ES_AUTOHSCROLL
-    EDITTEXT        IDC_EDIT2,71,138,40,14,ES_AUTOHSCROLL
-    EDITTEXT        IDC_EDIT3,133,137,40,14,ES_AUTOHSCROLL
-END
-
-IDD_CELLPHONE_DIALOG DIALOG DISCARDABLE  0, 0, 158, 140
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Connect to cellphone"
-FONT 8, "MS Sans Serif"
-BEGIN
-    DEFPUSHBUTTON   "OK",ID_YES,49,38,50,14
-    EDITTEXT        IDC_STATUS,7,14,144,14,ES_CENTER | ES_AUTOHSCROLL | 
-                    ES_READONLY | NOT WS_BORDER
-    DEFPUSHBUTTON   "Cancel",ID_NO,55,38,50,14
-    EDITTEXT        IDC_EDIT1_CELL,27,66,43,14,ES_AUTOHSCROLL
-    EDITTEXT        IDC_EDIT2_CELL,20,98,40,14,ES_AUTOHSCROLL
-    EDITTEXT        IDC_EDIT3_CELL,87,97,40,14,ES_AUTOHSCROLL
-    EDITTEXT        IDC_EDIT4_CELL,83,65,43,14,ES_AUTOHSCROLL
-END
-
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// DESIGNINFO
-//
-
-#ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO DISCARDABLE 
-BEGIN
-    IDD_OPTION, DIALOG
-    BEGIN
-        LEFTMARGIN, 7
-        RIGHTMARGIN, 149
-        TOPMARGIN, 7
-        BOTTOMMARGIN, 348
-    END
-
-    IDD_VIRTUAL_PAD_DIALOG, DIALOG
-    BEGIN
-        LEFTMARGIN, 7
-        RIGHTMARGIN, 179
-        TOPMARGIN, 7
-        BOTTOMMARGIN, 173
-    END
-
-    IDD_CELLPHONE_DIALOG, DIALOG
-    BEGIN
-        LEFTMARGIN, 7
-        RIGHTMARGIN, 151
-        TOPMARGIN, 7
-        BOTTOMMARGIN, 133
-    END
-END
-#endif    // APSTUDIO_INVOKED
-
-#endif    // English (U.S.) resources
+#endif    // English (Canada) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

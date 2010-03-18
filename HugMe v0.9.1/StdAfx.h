@@ -34,8 +34,9 @@ typedef LONG LONG_PTR;
 
 #include <vector>
 #include <string>
-using std::vector;
-using std::string;
+
+// renable the warning
+#pragma warning (default : 4786)
 
 //{{AFX_INSERT_LOCATION}}
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.

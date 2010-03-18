@@ -20,7 +20,7 @@ class UserInterfaceManager;
 
 // The controller class for the program
 // this class is a singleton
-class Controller  
+class Controller
 {
 public:
 	// gets the singleton
@@ -72,12 +72,12 @@ public:
 	// update the remote player's user name
 	void updateRemoteUserName(const std::string& name);
 
-	string getRemoteUserName();
+	std::string getRemoteUserName();
 
 	// update the local player's user name
 	void updateLocalUserName(const std::string& name);
 
-	string getLocalUserName();
+	std::string getLocalUserName();
 
 	// ------------------------------------
 	// User interface related functions
