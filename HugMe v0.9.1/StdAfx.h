@@ -41,6 +41,7 @@ typedef LONG LONG_PTR;
 #pragma warning (disable : 4786)
 
 #include <algorithm>
+#include <iostream>
 #include <memory>
 #include <string>
 #include <vector>

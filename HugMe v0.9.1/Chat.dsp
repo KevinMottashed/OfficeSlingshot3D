@@ -113,6 +113,10 @@ SOURCE=.\DataPacket.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\FalconPenManager.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\MainDlg.cpp
 # End Source File
 # Begin Source File
@@ -125,12 +129,20 @@ SOURCE=.\NetworkSocket.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\SmartClothingManager.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\StdAfx.cpp
 # ADD CPP /Yc"stdafx.h"
 # End Source File
 # Begin Source File
 
 SOURCE=.\UserInterfaceManager.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\ZCameraManager.cpp
 # End Source File
 # End Group
 # Begin Group "Header Files"
@@ -154,6 +166,10 @@ SOURCE=.\DataPacket.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\FalconPenManager.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\MainDlg.h
 # End Source File
 # Begin Source File
@@ -174,6 +190,10 @@ SOURCE=.\Resource.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\SmartClothingManager.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\StdAfx.h
 # End Source File
 # Begin Source File
@@ -183,6 +203,10 @@ SOURCE=.\SyncLocker.h
 # Begin Source File
 
 SOURCE=.\UserInterfaceManager.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\ZCameraManager.h
 # End Source File
 # End Group
 # Begin Group "Resource Files"

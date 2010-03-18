@@ -13,10 +13,16 @@
 #include "NetworkCodes.h"
 #include "NetworkSignals.h"
 #include "UserInterfaceManager.h"
+#include "FalconPenManager.h"
+#include "ZCameraManager.h"
+#include "SmartClothingManager.h"
 
 // Forward declaration (files include each other)
 class NetworkManager;
 class UserInterfaceManager;
+class FalconPenManager;
+class ZCameraManager;
+class SmartClothingManager;
 
 // The controller class for the program
 // this class is a singleton
@@ -105,6 +111,24 @@ private:
 
 	// manages everything GUI related
 	UserInterfaceManager* m_pUserInterfaceManager;
+
+	// manages everything falcon pen related
+	FalconPenManager* m_pFalconPenManager;
+
+	// manages everything z camera related
+	ZCameraManager* m_pZCameraManager;
+
+	// manages the smart clothing
+	SmartClothingManager* m_pSmartClothingManager;
+
+	// the main game loop thread
+	HANDLE m_hGameLoopThread; // handle
+	DWORD m_dwIDGameLoop; // thread id
+
+	// this is the thread that controls the game
+	static DWORD GameLoopThread(Controller* p_Controller);
+
+	bool m_bGameIsRunning; // true when the game is running
 
 	// It should be noted that the user names are not thread safe.
 	// For now this is OK because the UI and network will never try to access to access them at the same time.

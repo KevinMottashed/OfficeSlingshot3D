@@ -1,0 +1,20 @@
+// FalconPenManager.cpp: implementation of the FalconPenManager class.
+//
+//////////////////////////////////////////////////////////////////////
+
+#include "stdafx.h"
+#include "FalconPenManager.h"
+
+//////////////////////////////////////////////////////////////////////
+// Construction/Destruction
+//////////////////////////////////////////////////////////////////////
+
+FalconPenManager::FalconPenManager(Controller* pController) :
+	m_pController(pController)
+{
+}
+
+FalconPenManager::~FalconPenManager()
+{
+
+}
