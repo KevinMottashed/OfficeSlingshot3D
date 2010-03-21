@@ -9,25 +9,12 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-// This is microsft's way of dealing with this warning in vc++6
-// the warning occurs because the STL is used
-#pragma warning (disable : 4786)
-
-// STL
-#include <string>
-#include <queue>
-#include <vector>
-
-// Windows
-#include <afxmt.h> // for semaphore
-#include <afxwin.h>
-#include <afxsock.h>
-
 #include "Controller.h"
 #include "NetworkSocket.h"
 #include "NetworkCodes.h"
 #include "DataPacket.h"
 #include "ControlPacket.h"
+#include "Stdafx.h"
 
 // Forward declarations (files include each other)
 class Controller;
@@ -48,11 +35,14 @@ public:
 	// disconnect from a host
 	rc_network disconnect();
 
+	// return true if we are connected to a peer
+	bool isConnected() const;
+
 	// send the player's user name over the network
-	rc_network sendUserName(const CString& userName);
+	rc_network sendUserName(const std::string& userName);
 
 	// send a chat message to the other player
-	rc_network sendChatMessage(const CString& message);
+	rc_network sendChatMessage(const std::string& message);
 
 	// send a full data packet to the other player, video + tactile
 	rc_network sendDataPacket(	const std::vector<BYTE>& vRGB,
@@ -115,6 +105,7 @@ private:
 	HANDLE m_hControlMessageHandleThread; // handle
 	DWORD m_dwIDControlMessageHandle; // thread id
 
+	// the threads managing the control socket
 	static DWORD ControlSendThread(NetworkManager* pNetworkManager);
 	static DWORD ControlReceiveThread(NetworkManager* pNetworkManager);
 	static DWORD ControlMessageHandleThread(NetworkManager* pNetworkManager);
@@ -147,6 +138,7 @@ private:
 	HANDLE m_hDataMessageHandleThread; // handle
 	DWORD m_dwIDDataMessageHandle; // thread id
 
+	// the threads managing the data socket
 	static DWORD DataSendThread(NetworkManager* pNetworkManager);
 	static DWORD DataReceiveThread(NetworkManager* pNetworkManager);
 	static DWORD DataMessageHandleThread(NetworkManager* pNetworkManager);
@@ -181,8 +173,6 @@ private:
 	Controller* m_pController; // our controller
 	bool m_bIsConnected; // true if connected to a peer
 	bool m_bIsServer; // true if we are the server (listener)
-	bool m_bUserNameReceived; // true if we have received the peer's user name
-	bool m_bConfigurationReceived; // true if we have received the peer's configuration
 };
 
 #endif // !defined(AFX_NETWORKMANAGER_H__3D85BBC3_3F80_477F_ABAB_1DAE8326532A__INCLUDED_)

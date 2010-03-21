@@ -76,7 +76,7 @@ rc_network UserInterfaceManager::networkListenButtonPushed(const CString& localN
 void UserInterfaceManager::notifyNewChatMessage(const std::string& message)
 {
 	// TODO implement
-	printf("chat %s\n", message.c_str());
+	std::cout << m_pController->getRemoteUserName() << " says " << message << std::endl;
 }
 
 

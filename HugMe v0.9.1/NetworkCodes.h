@@ -1,15 +1,20 @@
 #ifndef _NETWORK_CODES_H__
 #define _NETWORK_CODES_H__
 
+#include "Stdafx.h"
+
 // All the possible return codes from network related functions
 enum rc_network
 {
 	SUCCESS,
 	ERROR_ALREADY_LISTENING,
-	ERROR_CREATE_SOCKET,
-	ERROR_LISTEN_SOCKET,
+	ERROR_CREATE_CONTROL_SOCKET,
+	ERROR_CREATE_DATA_SOCKET,
+	ERROR_LISTEN_CONTROL_SOCKET,
+	ERROR_LISTEN_DATA_SOCKET,
 	ERROR_ALREADY_CONNECTED,
-	ERROR_CONNECT,
+	ERROR_CONNECT_CONTROL_SOCKET,
+	ERROR_CONNECT_DATA_SOCKET,
 	ERROR_MESSAGE_QUEUE_OVERFLOW
 };
 
@@ -22,14 +27,20 @@ static std::string lookup(rc_network code)
 		return "SUCCESS";
 	case ERROR_ALREADY_LISTENING:
 		return "Error, already listening";
-	case ERROR_CREATE_SOCKET:
-		return "Error, failed to create socket";
-	case ERROR_LISTEN_SOCKET:
-		return "Error, failed to listen on socket";
+	case ERROR_CREATE_CONTROL_SOCKET:
+		return "Error, failed to create control socket";
+	case ERROR_CREATE_DATA_SOCKET:
+		return "Error, failed to create data socket";
+	case ERROR_LISTEN_CONTROL_SOCKET:
+		return "Error, failed to listen on control socket";
+	case ERROR_LISTEN_DATA_SOCKET:
+		return "Error, failed to listen on data socket";
 	case ERROR_ALREADY_CONNECTED:
 		return "Error, already connected";
-	case ERROR_CONNECT:
-		return "Error, could not connect";
+	case ERROR_CONNECT_CONTROL_SOCKET:
+		return "Error, could not connect the control socket";
+	case ERROR_CONNECT_DATA_SOCKET:
+		return "Error, could not connect the data socket";
 	case ERROR_MESSAGE_QUEUE_OVERFLOW:
 		return "Error, too many message in the queue";
 	default:

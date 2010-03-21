@@ -167,6 +167,11 @@ DWORD Controller::GameLoopThread(Controller* p_Controller)
 		// vibrate the jacket
 		p_Controller->m_pSmartClothingManager->vibrate(1, 10);
 
+		if (p_Controller->m_pNetworkManager->isConnected())
+		{
+			p_Controller->m_pNetworkManager->sendChatMessage("Salut, sa va tu bien?");
+		}
+
 		// sleep for a short while
 		Sleep(1000); // 1 sec
 	}

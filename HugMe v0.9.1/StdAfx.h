@@ -26,6 +26,7 @@
 
 #include <afxsock.h>		// MFC socket extensions
 #include <afxole.h>
+#include <afxmt.h>			// multi thread library
 #include <Richole.h>
 
 
@@ -43,6 +44,7 @@ typedef LONG LONG_PTR;
 #include <algorithm>
 #include <iostream>
 #include <memory>
+#include <queue>
 #include <string>
 #include <vector>
 

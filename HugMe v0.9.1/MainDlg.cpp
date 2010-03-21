@@ -47,7 +47,7 @@ END_MESSAGE_MAP()
 void CMainDlg::OnNetworkConnect() 
 {
 	// TODO: Add your command handler code here
-	rc_network status = pUserInterfaceManager->networkConnectButtonPushed("Connector", "127.0.0.1");
+	rc_network status = pUserInterfaceManager->networkConnectButtonPushed("127.0.0.1", "Connector");
 
 	MessageBox(lookup(status).c_str());
 
@@ -65,7 +65,7 @@ void CMainDlg::OnNetworkDisconnect()
 	MessageBox(lookup(status).c_str());
 
 	if (status == SUCCESS){
-		MessageBox("Disonnected !");
+		MessageBox("Disconnected !");
 	}
 	
 }
