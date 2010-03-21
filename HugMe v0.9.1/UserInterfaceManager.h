@@ -38,6 +38,12 @@ public:
 	// updates the user interface to reflect an error in the network connection
 	void notifyNetworkError();
 
+	// updates the user interface to reflect a game started
+	void notifyGameStarted();
+
+	// updates the user interface to reflect a game exited
+	void notifyGameExited();
+
 	// update the user interface to display a chat message
 	void notifyNewChatMessage(const std::string& message);
 

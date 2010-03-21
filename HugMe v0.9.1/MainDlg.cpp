@@ -59,9 +59,13 @@ BEGIN_MESSAGE_MAP(CMainDlg, CDialog)
 	ON_COMMAND(ID_NETWORK_DISCONNECT, OnNetworkDisconnect)
 	ON_COMMAND(ID_NETWORK_LISTEN, OnNetworkListen)
 	ON_COMMAND(ID_PREFERENCES_EDIT, OnPreferencesEdit)
+	ON_COMMAND(ID_GAME_STARTGAME, OnStartGame)
+	ON_COMMAND(ID_GAME_EXITGAME, OnExitGame)
 	ON_MESSAGE(WM_ON_CONNECT, OnNetworkEstablished)
 	ON_MESSAGE(WM_ON_DISCONNECT,OnNetworkDisconnected)
 	ON_MESSAGE(WM_ON_NETWORK_ERROR,OnNetworkError)
+	ON_MESSAGE(WM_ON_START_GAME,OnGameStarted)
+	ON_MESSAGE(WM_ON_EXIT_GAME,OnGameExited)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -70,7 +74,6 @@ END_MESSAGE_MAP()
 
 void CMainDlg::OnNetworkConnect() 
 {
-	// TODO: Add your command handler code here
 	rc_network status = pUserInterfaceManager->networkConnectButtonPushed(m_ipAddress.c_str(), m_userName);
 
 	if (status == SUCCESS){
@@ -78,6 +81,8 @@ void CMainDlg::OnNetworkConnect()
 		pMenu->EnableMenuItem(ID_NETWORK_CONNECT, MF_GRAYED | MF_BYCOMMAND);
 		pMenu->EnableMenuItem(ID_NETWORK_LISTEN, MF_GRAYED | MF_BYCOMMAND);
 		pMenu->EnableMenuItem(ID_NETWORK_DISCONNECT, MF_ENABLED | MF_BYCOMMAND);
+
+		pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_ENABLED | MF_BYCOMMAND);
 	} else {
 		MessageBox(lookup(status).c_str());
 	}
@@ -86,7 +91,6 @@ void CMainDlg::OnNetworkConnect()
 
 void CMainDlg::OnNetworkDisconnect() 
 {
-	// TODO: Add your command handler code here
 	rc_network status = pUserInterfaceManager->networkDisconnectButtonPushed();
 
 	if (status == SUCCESS){
@@ -94,6 +98,9 @@ void CMainDlg::OnNetworkDisconnect()
 		pMenu->EnableMenuItem(ID_NETWORK_CONNECT, MF_ENABLED | MF_BYCOMMAND);
 		pMenu->EnableMenuItem(ID_NETWORK_LISTEN, MF_ENABLED | MF_BYCOMMAND);
 		pMenu->EnableMenuItem(ID_NETWORK_DISCONNECT, MF_GRAYED | MF_BYCOMMAND);
+
+		pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_GRAYED | MF_BYCOMMAND);
+		pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_GRAYED | MF_BYCOMMAND);
 	} else {
 		MessageBox(lookup(status).c_str());
 	}
@@ -102,7 +109,6 @@ void CMainDlg::OnNetworkDisconnect()
 
 void CMainDlg::OnNetworkListen() 
 {
-	// TODO: Add your command handler code here
 	rc_network status = pUserInterfaceManager->networkListenButtonPushed(m_userName);
 
 	if (status == SUCCESS){
@@ -123,6 +129,9 @@ LRESULT CMainDlg::OnNetworkEstablished(WPARAM wParam)
 	os << *remoteUserName << " has joined the game";
 	MessageBox(os.str().c_str());
 
+	CMenu* pMenu = GetMenu();
+	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_ENABLED | MF_BYCOMMAND);
+
 	return 0;
 }
 
@@ -138,6 +147,9 @@ LRESULT CMainDlg::OnNetworkDisconnected(WPARAM wParam)
 	pMenu->EnableMenuItem(ID_NETWORK_LISTEN, MF_ENABLED | MF_BYCOMMAND);
 	pMenu->EnableMenuItem(ID_NETWORK_DISCONNECT, MF_GRAYED | MF_BYCOMMAND);
 
+	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_GRAYED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_GRAYED | MF_BYCOMMAND);
+
 	return 0;
 }
 
@@ -149,6 +161,9 @@ LRESULT CMainDlg::OnNetworkError()
 	pMenu->EnableMenuItem(ID_NETWORK_CONNECT, MF_ENABLED | MF_BYCOMMAND);
 	pMenu->EnableMenuItem(ID_NETWORK_LISTEN, MF_ENABLED | MF_BYCOMMAND);
 	pMenu->EnableMenuItem(ID_NETWORK_DISCONNECT, MF_GRAYED | MF_BYCOMMAND);
+
+	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_GRAYED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_GRAYED | MF_BYCOMMAND);
 
 	return 0;
 }
@@ -168,4 +183,58 @@ void CMainDlg::OnPreferencesEdit()
 		myfile.close();
 	}
 	
+}
+
+void CMainDlg::OnStartGame()
+{
+	pUserInterfaceManager->startGameButtonPushed();
+
+	CMenu* pMenu = GetMenu();
+	pMenu->EnableMenuItem(ID_NETWORK_CONNECT, MF_GRAYED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_NETWORK_LISTEN, MF_GRAYED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_NETWORK_DISCONNECT, MF_ENABLED | MF_BYCOMMAND);
+
+	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_GRAYED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_ENABLED | MF_BYCOMMAND);
+}
+
+void CMainDlg::OnExitGame() 
+{
+	pUserInterfaceManager->exitGameButtonPushed();
+
+	CMenu* pMenu = GetMenu();
+	pMenu->EnableMenuItem(ID_NETWORK_CONNECT, MF_GRAYED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_NETWORK_LISTEN, MF_GRAYED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_NETWORK_DISCONNECT, MF_ENABLED | MF_BYCOMMAND);
+
+	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_ENABLED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_GRAYED | MF_BYCOMMAND);
+}
+
+LRESULT CMainDlg::OnGameStarted(WPARAM wParam)
+{
+	string* remoteUserName = (string*) wParam;
+	ostringstream os;
+	os << *remoteUserName << " has started the game";
+	MessageBox(os.str().c_str());
+
+	CMenu* pMenu = GetMenu();
+	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_GRAYED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_ENABLED | MF_BYCOMMAND);
+
+	return 0;
+}
+
+LRESULT CMainDlg::OnGameExited(WPARAM wParam)
+{
+	string* remoteUserName = (string*) wParam;
+	ostringstream os;
+	os << *remoteUserName << " has exited the game";
+	MessageBox(os.str().c_str());
+
+	CMenu* pMenu = GetMenu();
+	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_ENABLED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_GRAYED | MF_BYCOMMAND);
+
+	return 0;
 }

@@ -197,6 +197,11 @@ BEGIN
         MENUITEM "&Disconnect",                 ID_NETWORK_DISCONNECT
         , GRAYED
     END
+    POPUP "&Game"
+    BEGIN
+        MENUITEM "&Start Game",                 ID_GAME_STARTGAME, GRAYED
+        MENUITEM "&Exit Game",                  ID_GAME_EXITGAME, GRAYED
+    END
     POPUP "&Preferences"
     BEGIN
         MENUITEM "&Edit",                       ID_PREFERENCES_EDIT

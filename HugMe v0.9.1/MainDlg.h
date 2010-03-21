@@ -55,6 +55,10 @@ protected:
 	afx_msg LRESULT OnNetworkDisconnected(WPARAM);
 	afx_msg LRESULT OnNetworkError();
 	afx_msg void OnPreferencesEdit();
+	afx_msg void OnStartGame();
+	afx_msg void OnExitGame();
+	afx_msg LRESULT OnGameStarted(WPARAM);
+	afx_msg LRESULT OnGameExited(WPARAM);
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

@@ -79,6 +79,18 @@ void UserInterfaceManager::notifyNetworkError()
 	getMainWindow()->SendMessage(WM_ON_NETWORK_ERROR);
 }
 
+void UserInterfaceManager::notifyGameStarted()
+{
+	string remoteUserName = Controller::instance()->getRemoteUserName();
+	getMainWindow()->SendMessage(WM_ON_START_GAME, (WPARAM)&remoteUserName);
+}
+
+void UserInterfaceManager::notifyGameExited()
+{
+	string remoteUserName = Controller::instance()->getRemoteUserName();
+	getMainWindow()->SendMessage(WM_ON_EXIT_GAME, (WPARAM)&remoteUserName);
+}
+
 void UserInterfaceManager::notifyNewChatMessage(const string& message)
 {
 	// TODO implement
