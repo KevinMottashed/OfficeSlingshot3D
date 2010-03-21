@@ -2,6 +2,8 @@
 //
 //////////////////////////////////////////////////////////////////////
 
+#include <string>
+
 #include "UserInterfaceManager.h"
 
 #ifdef _DEBUG
@@ -9,6 +11,8 @@
 static char THIS_FILE[]=__FILE__;
 #define new DEBUG_NEW
 #endif
+
+using namespace std;
 
 UserInterfaceManager::UserInterfaceManager(Controller* pController) :
 		m_pController(pController)
@@ -21,15 +25,21 @@ UserInterfaceManager::~UserInterfaceManager()
 	delete m_pMainDlg;
 }
 
-rc_network UserInterfaceManager::networkConnectButtonPushed(const CString& ipAddress, const CString& localName)
+rc_network UserInterfaceManager::networkConnectButtonPushed(const CString& ipAddress, const string& localName)
 {
-	Controller::instance()->updateLocalUserName((std::string)localName);
+	Controller::instance()->updateLocalUserName(localName);
 	return Controller::instance()->netConnect(ipAddress);
 }
 
 rc_network UserInterfaceManager::networkDisconnectButtonPushed()
 {
 	return Controller::instance()->netDisconnect();
+}
+
+rc_network UserInterfaceManager::networkListenButtonPushed(const string& localName)
+{
+	Controller::instance()->updateLocalUserName(localName);
+	return Controller::instance()->netStartListening();
 }
 
 void UserInterfaceManager::startGameButtonPushed()
@@ -54,26 +64,22 @@ CDialog* UserInterfaceManager::getMainWindow()
 
 void UserInterfaceManager::notifyNetworkConnectionEstablished()
 {
-	// TODO implement
+	string remoteUserName = Controller::instance()->getRemoteUserName();
+	getMainWindow()->SendMessage(WM_ON_CONNECT, (WPARAM)&remoteUserName);
 }
 
 void UserInterfaceManager::notifyPeerDisconnected()
 {
-	// TODO implement
+	string remoteUserName = Controller::instance()->getRemoteUserName();
+	getMainWindow()->SendMessage(WM_ON_DISCONNECT, (WPARAM)&remoteUserName);
 }
 
 void UserInterfaceManager::notifyNetworkError()
 {
-	// TODO implement
+	getMainWindow()->SendMessage(WM_ON_NETWORK_ERROR);
 }
 
-rc_network UserInterfaceManager::networkListenButtonPushed(const CString& localName)
-{
-	Controller::instance()->updateLocalUserName((std::string)localName);
-	return Controller::instance()->netStartListening();
-}
-
-void UserInterfaceManager::notifyNewChatMessage(const std::string& message)
+void UserInterfaceManager::notifyNewChatMessage(const string& message)
 {
 	// TODO implement
 	std::cout << m_pController->getRemoteUserName() << " says " << message << std::endl;

@@ -141,6 +141,20 @@ BEGIN
     PUSHBUTTON      "Cancel",IDCANCEL,263,24,50,14
 END
 
+IDD_PREFERENCES DIALOG DISCARDABLE  0, 0, 307, 52
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Preferences"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Save",IDOK,250,10,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,250,27,50,14
+    EDITTEXT        IDC_NAME_EDIT,49,7,180,14,ES_AUTOHSCROLL
+    LTEXT           "Username : ",IDC_NAME,7,10,39,8
+    LTEXT           "IP Address : ",IDC_IPADDRESS,7,33,41,8
+    CONTROL         "IPAddress2",IDC_IPADDRESS_EDIT,"SysIPAddress32",
+                    WS_TABSTOP,49,30,106,15
+END
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -156,6 +170,14 @@ BEGIN
         RIGHTMARGIN, 313
         TOPMARGIN, 7
         BOTTOMMARGIN, 194
+    END
+
+    IDD_PREFERENCES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 300
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 45
     END
 END
 #endif    // APSTUDIO_INVOKED
@@ -173,6 +195,11 @@ BEGIN
         MENUITEM "&Listen",                     ID_NETWORK_LISTEN
         MENUITEM "&Connect",                    ID_NETWORK_CONNECT
         MENUITEM "&Disconnect",                 ID_NETWORK_DISCONNECT
+        , GRAYED
+    END
+    POPUP "&Preferences"
+    BEGIN
+        MENUITEM "&Edit",                       ID_PREFERENCES_EDIT
     END
 END
 

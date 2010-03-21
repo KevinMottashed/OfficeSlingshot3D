@@ -1,15 +1,24 @@
 // MainDlg.cpp : implementation file
 //
 
+#include <iostream>
+#include <fstream>
+#include <sstream>
+
+#include <string>
+
 #include "stdafx.h"
 #include "chat.h"
 #include "MainDlg.h"
+#include "Preferences.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #undef THIS_FILE
 static char THIS_FILE[] = __FILE__;
 #endif
+
+using namespace std;
 
 /////////////////////////////////////////////////////////////////////////////
 // CMainDlg dialog
@@ -19,7 +28,18 @@ CMainDlg::CMainDlg(UserInterfaceManager* m_pUserInterfaceManager, CWnd* pParent 
 	: pUserInterfaceManager(pUserInterfaceManager), CDialog(CMainDlg::IDD, pParent)
 {
 	//{{AFX_DATA_INIT(CMainDlg)
-		// NOTE: the ClassWizard will add member initialization here
+		string line;
+		ifstream myfile ("userPreferences.txt");
+		if (myfile.is_open()) {
+			getline (myfile, line);
+			m_userName = line;
+			getline (myfile, line);
+			m_ipAddress = line;
+			myfile.close();
+		} else {
+			m_userName = "UserName";
+			m_ipAddress = "127.0.0.1";
+		}
 	//}}AFX_DATA_INIT
 }
 
@@ -38,6 +58,10 @@ BEGIN_MESSAGE_MAP(CMainDlg, CDialog)
 	ON_COMMAND(ID_NETWORK_CONNECT, OnNetworkConnect)
 	ON_COMMAND(ID_NETWORK_DISCONNECT, OnNetworkDisconnect)
 	ON_COMMAND(ID_NETWORK_LISTEN, OnNetworkListen)
+	ON_COMMAND(ID_PREFERENCES_EDIT, OnPreferencesEdit)
+	ON_MESSAGE(WM_ON_CONNECT, OnNetworkEstablished)
+	ON_MESSAGE(WM_ON_DISCONNECT,OnNetworkDisconnected)
+	ON_MESSAGE(WM_ON_NETWORK_ERROR,OnNetworkError)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -47,12 +71,15 @@ END_MESSAGE_MAP()
 void CMainDlg::OnNetworkConnect() 
 {
 	// TODO: Add your command handler code here
-	rc_network status = pUserInterfaceManager->networkConnectButtonPushed("127.0.0.1", "Connector");
-
-	MessageBox(lookup(status).c_str());
+	rc_network status = pUserInterfaceManager->networkConnectButtonPushed(m_ipAddress.c_str(), m_userName);
 
 	if (status == SUCCESS){
-		MessageBox("Connected !");
+		CMenu* pMenu = GetMenu();
+		pMenu->EnableMenuItem(ID_NETWORK_CONNECT, MF_GRAYED | MF_BYCOMMAND);
+		pMenu->EnableMenuItem(ID_NETWORK_LISTEN, MF_GRAYED | MF_BYCOMMAND);
+		pMenu->EnableMenuItem(ID_NETWORK_DISCONNECT, MF_ENABLED | MF_BYCOMMAND);
+	} else {
+		MessageBox(lookup(status).c_str());
 	}
 	
 }
@@ -62,10 +89,13 @@ void CMainDlg::OnNetworkDisconnect()
 	// TODO: Add your command handler code here
 	rc_network status = pUserInterfaceManager->networkDisconnectButtonPushed();
 
-	MessageBox(lookup(status).c_str());
-
 	if (status == SUCCESS){
-		MessageBox("Disconnected !");
+		CMenu* pMenu = GetMenu();
+		pMenu->EnableMenuItem(ID_NETWORK_CONNECT, MF_ENABLED | MF_BYCOMMAND);
+		pMenu->EnableMenuItem(ID_NETWORK_LISTEN, MF_ENABLED | MF_BYCOMMAND);
+		pMenu->EnableMenuItem(ID_NETWORK_DISCONNECT, MF_GRAYED | MF_BYCOMMAND);
+	} else {
+		MessageBox(lookup(status).c_str());
 	}
 	
 }
@@ -73,12 +103,69 @@ void CMainDlg::OnNetworkDisconnect()
 void CMainDlg::OnNetworkListen() 
 {
 	// TODO: Add your command handler code here
-	rc_network status = pUserInterfaceManager->networkListenButtonPushed("Listener");
-
-	MessageBox(lookup(status).c_str());
+	rc_network status = pUserInterfaceManager->networkListenButtonPushed(m_userName);
 
 	if (status == SUCCESS){
-		MessageBox("Listening !");
+		CMenu* pMenu = GetMenu();
+		pMenu->EnableMenuItem(ID_NETWORK_CONNECT, MF_GRAYED | MF_BYCOMMAND);
+		pMenu->EnableMenuItem(ID_NETWORK_LISTEN, MF_GRAYED | MF_BYCOMMAND);
+		pMenu->EnableMenuItem(ID_NETWORK_DISCONNECT, MF_ENABLED | MF_BYCOMMAND);
+	} else {
+		MessageBox(lookup(status).c_str());
+	}
+	
+}
+
+LRESULT CMainDlg::OnNetworkEstablished(WPARAM wParam)
+{
+	string* remoteUserName = (string*) wParam;
+	ostringstream os;
+	os << *remoteUserName << " has joined the game";
+	MessageBox(os.str().c_str());
+
+	return 0;
+}
+
+LRESULT CMainDlg::OnNetworkDisconnected(WPARAM wParam)
+{
+	string* remoteUserName = (string*) wParam;
+	ostringstream os;
+	os << *remoteUserName << " has disconnected from the game";
+	MessageBox(os.str().c_str());
+
+	CMenu* pMenu = GetMenu();
+	pMenu->EnableMenuItem(ID_NETWORK_CONNECT, MF_ENABLED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_NETWORK_LISTEN, MF_ENABLED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_NETWORK_DISCONNECT, MF_GRAYED | MF_BYCOMMAND);
+
+	return 0;
+}
+
+LRESULT CMainDlg::OnNetworkError()
+{
+	MessageBox("a network error has occured");
+
+	CMenu* pMenu = GetMenu();
+	pMenu->EnableMenuItem(ID_NETWORK_CONNECT, MF_ENABLED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_NETWORK_LISTEN, MF_ENABLED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_NETWORK_DISCONNECT, MF_GRAYED | MF_BYCOMMAND);
+
+	return 0;
+}
+
+void CMainDlg::OnPreferencesEdit() 
+{
+	CPreferences prefs;
+
+	if(prefs.DoModal() == IDOK) {
+		m_userName = prefs.m_userName;
+		m_ipAddress = prefs.m_strAddress;
+
+		ofstream myfile;
+		myfile.open ("userPreferences.txt");
+		myfile << (string)prefs.m_userName << "\n";
+		myfile << (string)prefs.m_strAddress;
+		myfile.close();
 	}
 	
 }

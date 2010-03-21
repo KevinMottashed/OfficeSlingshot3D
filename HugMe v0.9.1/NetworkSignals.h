@@ -27,4 +27,24 @@
 #define WM_ON_RECEIVE	(WM_USER + 0x102)
 
 
+/* WM_ON_CONNECT
+ * WPARAM :
+ * LPARAM :
+ */
+#define WM_ON_CONNECT	(WM_USER + 0x103)
+
+
+/* WM_ON_DISCONNECT
+ * WPARAM :
+ * LPARAM :
+ */
+#define WM_ON_DISCONNECT	(WM_USER + 0x104)
+
+/* WM_ON_NETWORK_ERROR
+ * WPARAM :
+ * LPARAM :
+ */
+#define WM_ON_NETWORK_ERROR	(WM_USER + 0x104)
+
+
 #endif /* NETWORKSIGNALS_H_ */

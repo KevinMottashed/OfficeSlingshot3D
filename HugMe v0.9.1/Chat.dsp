@@ -129,6 +129,10 @@ SOURCE=.\NetworkSocket.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\Preferences.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\SmartClothingManager.cpp
 # End Source File
 # Begin Source File
@@ -183,6 +187,10 @@ SOURCE=.\NetworkManager.h
 # Begin Source File
 
 SOURCE=.\NetworkSocket.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Preferences.h
 # End Source File
 # Begin Source File
 

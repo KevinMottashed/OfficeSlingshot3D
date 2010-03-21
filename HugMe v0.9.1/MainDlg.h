@@ -7,8 +7,12 @@
 // MainDlg.h : header file
 //
 
+#include <string>
+
 #include "Resource.h"
 #include "UserInterfaceManager.h"
+
+using namespace std;
 
 /////////////////////////////////////////////////////////////////////////////
 // CMainDlg dialog
@@ -19,6 +23,8 @@ class CMainDlg : public CDialog
 {
 private:
 	UserInterfaceManager* pUserInterfaceManager;
+	string m_userName;
+	string m_ipAddress;
 // Construction
 public:
 	CMainDlg(UserInterfaceManager* pUserInterfaceManager, CWnd* pParent = NULL);   // standard constructor
@@ -45,6 +51,10 @@ protected:
 	afx_msg void OnNetworkConnect();
 	afx_msg void OnNetworkDisconnect();
 	afx_msg void OnNetworkListen();
+	afx_msg LRESULT OnNetworkEstablished(WPARAM);
+	afx_msg LRESULT OnNetworkDisconnected(WPARAM);
+	afx_msg LRESULT OnNetworkError();
+	afx_msg void OnPreferencesEdit();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

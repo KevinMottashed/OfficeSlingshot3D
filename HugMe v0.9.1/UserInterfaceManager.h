@@ -9,8 +9,12 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
+#include <string>
+
 #include "Controller.h"
 #include "MainDlg.h"
+
+using namespace std;
 
 // Forward declaration (files include each other)
 class Controller;
@@ -41,8 +45,8 @@ public:
 	// Notifications coming from the user interface
 	//-----------------------------------------------
 
-	rc_network networkConnectButtonPushed(const CString& ipAddress, const CString& localName);
-	rc_network networkListenButtonPushed(const CString& localName);
+	rc_network networkConnectButtonPushed(const CString& ipAddress, const string& localName);
+	rc_network networkListenButtonPushed(const string& localName);
 	rc_network networkDisconnectButtonPushed();
 
 	void startGameButtonPushed();
