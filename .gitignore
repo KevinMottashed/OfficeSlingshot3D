@@ -88,3 +88,10 @@ chai3d*/lib/*/chai3d_complete.lib
 # GIT file backups
 *.orig
 
+# Office Slingshot 3D - START
+
+# the preferences file for the UI
+HugMe v0.9.1/userPreferences.txt
+
+# Office Slingshot 3D - END
+
