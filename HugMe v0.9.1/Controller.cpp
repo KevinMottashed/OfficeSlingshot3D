@@ -55,14 +55,17 @@ void Controller::startGame()
 		return; // already started
 	}
 	m_bGameIsRunning = true;
-	m_hGameLoopThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) GameLoopThread, (void*) this, 0, &m_dwIDGameLoop);
+	m_pGame->start();
+	m_pFalconPenManager->start();
+	m_pZCameraManager->start();
 }
 
 void Controller::exitGame()
 {
 	m_bGameIsRunning = false;
-	m_hGameLoopThread = 0;
-	m_dwIDGameLoop = 0;
+	m_pGame->stop();
+	m_pFalconPenManager->stop();
+	m_pZCameraManager->stop();
 }
 
 void Controller::closeApplication()
@@ -72,8 +75,6 @@ void Controller::closeApplication()
 }
 
 Controller::Controller() :
-		m_hGameLoopThread(0),
-		m_dwIDGameLoop(0),
 		m_bGameIsRunning(false)
 {
 	m_pUserInterfaceManager = new UserInterfaceManager(this);
@@ -81,7 +82,7 @@ Controller::Controller() :
 	m_pFalconPenManager = new FalconPenManager(this);
 	m_pZCameraManager = new ZCameraManager(this);
 	m_pSmartClothingManager = new SmartClothingManager(this);
-	startGame(); // remove this when the UI can start the game
+	m_pGame = new Game(this);
 }
 
 Controller::~Controller()
@@ -91,6 +92,7 @@ Controller::~Controller()
 	delete m_pFalconPenManager;
 	delete m_pZCameraManager;
 	delete m_pSmartClothingManager;
+	delete m_pGame;
 }
 
 void Controller::updateRemoteUserName(const std::string& name)
@@ -120,16 +122,16 @@ CDialog* Controller::getMainWindow()
 	return m_pUserInterfaceManager->getMainWindow();
 }
 
-void Controller::notifyNewVideoData(const std::vector<BYTE>& vRGB, const std::vector<BYTE>& vDepth, const std::vector<BYTE>& vAR)
+void Controller::notifyNewLocalVideoData(const std::vector<BYTE>& vRGB)
 {
 	// TODO implement
-	printf("new video data has arrived\n");
+	printf("new local video data has arrived\n");
 }
 
-void Controller::notifyNewTactileData(const std::vector<BYTE>& vTactile)
+void Controller::notifyNewRemoteVideoData(const std::vector<BYTE>& vRGB)
 {
 	// TODO implement
-	printf("new tactile data has arrived\n");
+	printf("new remote video data has arrived\n");
 }
 
 void Controller::notifyNewChatMessage(const std::string& message)
@@ -137,46 +139,25 @@ void Controller::notifyNewChatMessage(const std::string& message)
 	m_pUserInterfaceManager->notifyNewChatMessage(message);
 }
 
-DWORD Controller::GameLoopThread(Controller* p_Controller)
+void Controller::notifyNewLocalSlingshotPosition(const cVector3d& position)
 {
-	p_Controller->m_pFalconPenManager->start();
-	p_Controller->m_pZCameraManager->start();
-	while(p_Controller->m_bGameIsRunning)
-	{
-		// falcon pen position
-		FalconPosition position = p_Controller->m_pFalconPenManager->getSlingshotPosition();
-		std::cout << "The slingshot is at " << position.getPosition()
-				<< " with an orientation of " << position.getOrientation() << std::endl;
+	// TODO send it over the network too
+	m_pGame->setLocalSlingshotPosition(position);
+}
 
-		// falcon pen projectile
-		if (p_Controller->m_pFalconPenManager->hasNewProjectile())
-		{
-			Projectile projectile = p_Controller->m_pFalconPenManager->getNewProjectile();
-			std::cout << "A new projectile was created at " << projectile.getPosition()
-					<< " with a velocity of " << projectile.getVelocity() << std::endl;
-		}
+void Controller::notifyNewRemoteSlingshotPosition(const cVector3d& position)
+{
+	m_pGame->setRemoteSlingshotPosition(position);
+}
 
-		// rgb data
-		std::vector<BYTE> rgb = p_Controller->m_pZCameraManager->getFrame();
-		std::cout << "We has received " << rgb.size() << " bytes of video data" << std::endl;
+void Controller::notifyNewLocalPlayerPosition(const cVector3d& position)
+{
+	// TODO send it over the network too
+	m_pGame->setLocalPlayerPosition(position);
+}
 
-		// the player position
-		std::cout << "The player is now located at "
-				<< p_Controller->m_pZCameraManager->getPlayerPosition() << std::endl;
-
-		// vibrate the jacket
-		p_Controller->m_pSmartClothingManager->vibrate(1, 10);
-
-		if (p_Controller->m_pNetworkManager->isConnected())
-		{
-			p_Controller->m_pNetworkManager->sendChatMessage("Salut, sa va tu bien?");
-		}
-
-		// sleep for a short while
-		Sleep(1000); // 1 sec
-	}
-	p_Controller->m_pFalconPenManager->stop();
-	p_Controller->m_pZCameraManager->stop();
-	return 0;
+void Controller::notifyNewRemotePlayerPosition(const cVector3d& position)
+{
+	m_pGame->setRemotePlayerPosition(position);
 }
 

@@ -16,13 +16,15 @@
 #include "FalconPenManager.h"
 #include "ZCameraManager.h"
 #include "SmartClothingManager.h"
+#include "Game.h"
 
-// Forward declaration (files include each other)
+// Forward declarations (files include each other)
 class NetworkManager;
 class UserInterfaceManager;
 class FalconPenManager;
 class ZCameraManager;
 class SmartClothingManager;
+class Game;
 
 // The controller class for the program
 // this class is a singleton
@@ -63,13 +65,19 @@ public:
 	void notifyNetworkError();
 
 	// new video data
-	void notifyNewVideoData(const std::vector<BYTE>& vRGB, const std::vector<BYTE>& vDepth, const std::vector<BYTE>& vAR);
-
-	// new tactile data
-	void notifyNewTactileData(const std::vector<BYTE>& vTactile);
+	void notifyNewLocalVideoData(const std::vector<BYTE>& vRGB);
+	void notifyNewRemoteVideoData(const std::vector<BYTE>& vRGB);
 
 	// new chat message
 	void notifyNewChatMessage(const std::string& message);
+
+	// new slingshot position
+	void notifyNewLocalSlingshotPosition(const cVector3d& position);
+	void notifyNewRemoteSlingshotPosition(const cVector3d& position);
+
+	// new player position
+	void notifyNewLocalPlayerPosition(const cVector3d& position);
+	void notifyNewRemotePlayerPosition(const cVector3d& position);
 
 	// --------------------------------
 	// Player info related functions
@@ -121,14 +129,10 @@ private:
 	// manages the smart clothing
 	SmartClothingManager* m_pSmartClothingManager;
 
-	// the main game loop thread
-	HANDLE m_hGameLoopThread; // handle
-	DWORD m_dwIDGameLoop; // thread id
+	// the game
+	Game* m_pGame;
 
-	// this is the thread that controls the game
-	static DWORD GameLoopThread(Controller* p_Controller);
-
-	bool m_bGameIsRunning; // true when the game is running
+	bool m_bGameIsRunning;
 
 	// It should be noted that the user names are not thread safe.
 	// For now this is OK because the UI and network will never try to access to access them at the same time.

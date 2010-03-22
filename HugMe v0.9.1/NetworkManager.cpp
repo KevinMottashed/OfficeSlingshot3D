@@ -604,12 +604,7 @@ DWORD NetworkManager::DataMessageHandleThread(NetworkManager* pNetworkManager)
 
 		if (packet.getHeader().isVideo)
 		{
-			pNetworkManager->m_pController->notifyNewVideoData(packet.getVideoRGBData(), packet.getVideoDepthData(), packet.getVideoARData());
-		}
-
-		if (packet.getHeader().isTactile)
-		{
-			pNetworkManager->m_pController->notifyNewTactileData(packet.getTactileData());
+			pNetworkManager->m_pController->notifyNewLocalVideoData(packet.getVideoRGBData());
 		}
 	}
 	return 1;

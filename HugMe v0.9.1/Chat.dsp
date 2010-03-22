@@ -117,6 +117,10 @@ SOURCE=.\FalconPenManager.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\Game.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\MainDlg.cpp
 # End Source File
 # Begin Source File
@@ -154,6 +158,10 @@ SOURCE=.\ZCameraManager.cpp
 # PROP Default_Filter "h;hpp;hxx;hm;inl"
 # Begin Source File
 
+SOURCE=.\chai3d.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\Chat.h
 # End Source File
 # Begin Source File
@@ -171,6 +179,10 @@ SOURCE=.\DataPacket.h
 # Begin Source File
 
 SOURCE=.\FalconPenManager.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Game.h
 # End Source File
 # Begin Source File
 
