@@ -150,6 +150,17 @@ void Controller::notifyNewRemoteSlingshotPosition(const cVector3d& position)
 	m_pGame->setRemoteSlingshotPosition(position);
 }
 
+void Controller::notifyNewLocalProjectile(const cVector3d& position, const cVector3d& speed)
+{
+	// TODO send it over the network
+	m_pGame->addLocalProjectile(position, speed);
+}
+
+void Controller::notifyNewRemoteProjectile(const cVector3d& position, const cVector3d& speed)
+{
+	m_pGame->addRemoteProjectile(position, speed);
+}
+
 void Controller::notifyNewLocalPlayerPosition(const cVector3d& position)
 {
 	// TODO send it over the network too

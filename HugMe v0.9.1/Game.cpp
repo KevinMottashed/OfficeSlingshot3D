@@ -22,6 +22,8 @@ Game::Game(Controller* pController) :
 	InitializeCriticalSection(&m_csRemoteSlingshotPosition);
 	InitializeCriticalSection(&m_csLocalPlayerPosition);
 	InitializeCriticalSection(&m_csRemotePlayerPosition);
+	InitializeCriticalSection(&m_csLocalProjectiles);
+	InitializeCriticalSection(&m_csRemoteProjectiles);
 }
 
 Game::~Game()
@@ -30,6 +32,8 @@ Game::~Game()
 	DeleteCriticalSection(&m_csRemoteSlingshotPosition);
 	DeleteCriticalSection(&m_csLocalPlayerPosition);
 	DeleteCriticalSection(&m_csRemotePlayerPosition);
+	DeleteCriticalSection(&m_csLocalProjectiles);
+	DeleteCriticalSection(&m_csRemoteProjectiles);
 }
 
 cVector3d Game::getLocalSlingshotPosition() const
@@ -80,6 +84,20 @@ void Game::setRemotePlayerPosition(const cVector3d& position)
 	m_RemotePlayerPosition = position;
 }
 
+void Game::addLocalProjectile(const cVector3d& position, const cVector3d& speed)
+{
+	SyncLocker lock(m_csLocalSlingshotPosition);
+	m_LocalProjectiles.push_back(Projectile(position, speed));
+	return;
+}
+
+void Game::addRemoteProjectile(const cVector3d& position, const cVector3d& speed)
+{
+	SyncLocker lock(m_csRemoteProjectiles);
+	m_RemoteProjectiles.push_back(Projectile(position, speed));
+	return;
+}
+
 void Game::start()
 {
 	if (m_bGameIsRunning)
@@ -125,6 +143,26 @@ DWORD Game::GameLoopThread(Game* pGame)
 		// player positions
 		std::cout << "The local player is at " << pGame->getLocalPlayerPosition() <<  std::endl;
 		std::cout << "The remote player is at " << pGame->getRemotePlayerPosition() <<  std::endl;
+
+		// friendly projectiles
+		synchronized(pGame->m_csLocalProjectiles)
+		{
+			std::vector<Projectile>::const_iterator it = pGame->m_LocalProjectiles.begin();
+			for (; it != pGame->m_LocalProjectiles.end(); ++it)
+			{
+				std::cout << "Friendly projectile at " << it->position << " traveling at " << it->speed << std::endl;
+			}
+		}
+
+		// enemy projectiles
+		synchronized(pGame->m_csRemoteProjectiles)
+		{
+			std::vector<Projectile>::const_iterator it = pGame->m_RemoteProjectiles.begin();
+			for (; it != pGame->m_RemoteProjectiles.end(); ++it)
+			{
+				std::cout << "Enemy projectile at " << it->position << " traveling at " << it->speed << std::endl;
+			}
+		}
 
 		// sleep for a short while
 		Sleep(1000); // 1 sec

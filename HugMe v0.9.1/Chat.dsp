@@ -137,6 +137,10 @@ SOURCE=.\Preferences.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\Projectile.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\SmartClothingManager.cpp
 # End Source File
 # Begin Source File
@@ -203,6 +207,10 @@ SOURCE=.\NetworkSocket.h
 # Begin Source File
 
 SOURCE=.\Preferences.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Projectile.h
 # End Source File
 # Begin Source File
 

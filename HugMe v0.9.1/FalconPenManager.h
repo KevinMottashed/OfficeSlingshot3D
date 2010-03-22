@@ -14,36 +14,11 @@
 // forward declarations (files include each other)
 class Controller;
 
-// TODO implement these classes (in other files)
-class FalconPosition
-{
-public:
-	// TODO implement (with an appropriate return type, probably Vector3D from chai3d)
-	int getPosition() const { return 1; }
-	int getOrientation() const { return 1; }
-};
-
-class Projectile
-{
-public:
-	// TODO implement (with an appropriate return type, probably Vector3D from chai3d)
-	int getPosition() const { return 1; }
-	int getVelocity() const { return 1; }
-};
-
 class FalconPenManager  
 {
 public:
 	FalconPenManager(Controller* pController);
 	virtual ~FalconPenManager();
-
-	// TODO implement
-	// get the latest slingshot position
-	FalconPosition getSlingshotPosition() const {return FalconPosition(); }
-
-	// TODO implement
-	bool hasNewProjectile() const { return true; }
-	Projectile getNewProjectile() const { return Projectile(); }
 
 	// TODO implement
 	// start managing the falcon pen (polling it for information)

@@ -13,6 +13,7 @@
 #include "chai3d.h"
 
 #include "Controller.h"
+#include "Projectile.h"
 
 class Controller;
 
@@ -44,7 +45,14 @@ public:
 	cVector3d getRemotePlayerPosition() const;
 	void setRemotePlayerPosition(const cVector3d& position);
 
+	// add projectiles to the game
+	void addLocalProjectile(const cVector3d& position, const cVector3d& speed);
+	void addRemoteProjectile(const cVector3d& position, const cVector3d& speed);
+
 private:
+	Game(const Game& game); // intentionally not implemented
+	Game& operator=(const Game& game); // intentionally not implemented
+
 	Controller* m_pController; // our controller
 
 	// slingshot position for the players
@@ -52,7 +60,6 @@ private:
 	// you should not access these directly, use the get/set
 	cVector3d m_LocalSlingshotPosition;
 	mutable CRITICAL_SECTION m_csLocalSlingshotPosition;
-
 	cVector3d m_RemoteSlingshotPosition;
 	mutable CRITICAL_SECTION m_csRemoteSlingshotPosition;
 
@@ -61,9 +68,15 @@ private:
 	// you should not access these directly, use the get/set
 	cVector3d m_LocalPlayerPosition;
 	mutable CRITICAL_SECTION m_csLocalPlayerPosition;
-
 	cVector3d m_RemotePlayerPosition;
 	mutable CRITICAL_SECTION m_csRemotePlayerPosition;
+
+	// vector for storing the local and remote projectiles
+	// need to be thread safe because they will be updated from other threads too
+	std::vector<Projectile> m_LocalProjectiles;
+	mutable CRITICAL_SECTION m_csLocalProjectiles;
+	std::vector<Projectile> m_RemoteProjectiles;
+	mutable CRITICAL_SECTION m_csRemoteProjectiles;
 
 	// the main game loop thread
 	HANDLE m_hGameLoopThread; // handle

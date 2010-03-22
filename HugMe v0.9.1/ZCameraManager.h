@@ -22,14 +22,6 @@ public:
 	virtual ~ZCameraManager();
 
 	// TODO implement
-	bool hasNewFrame() const { return true; }
-	// get only the RGB frame, I don't think the controller will ever need the depth
-	std::vector<BYTE> getFrame() { return std::vector<BYTE>(1000); }
-
-	// TODO implement (with an appropriate return type, probably Vector3D from chai3d)
-	int getPlayerPosition() { return 1; }
-
-	// TODO implement
 	// start getting pictures from the z camera
 	// create a thread to poll it
 	void start() {}

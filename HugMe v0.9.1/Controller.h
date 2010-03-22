@@ -75,6 +75,10 @@ public:
 	void notifyNewLocalSlingshotPosition(const cVector3d& position);
 	void notifyNewRemoteSlingshotPosition(const cVector3d& position);
 
+	// new projectiles
+	void notifyNewLocalProjectile(const cVector3d& position, const cVector3d& speed);
+	void notifyNewRemoteProjectile(const cVector3d& position, const cVector3d& speed);
+
 	// new player position
 	void notifyNewLocalPlayerPosition(const cVector3d& position);
 	void notifyNewRemotePlayerPosition(const cVector3d& position);
