@@ -63,11 +63,20 @@ NetworkManager::~NetworkManager()
 // start listening to for connections
 rc_network NetworkManager::startListening()
 {
+	// don't try listening is we are already listening or connected
 	if (m_pControlSocket != NULL)
 	{
-		return ERROR_ALREADY_LISTENING;
+		if (m_bIsConnected)
+		{
+			return ERROR_ALREADY_CONNECTED;
+		}
+		else
+		{
+			return ERROR_ALREADY_LISTENING;
+		}
 	}
 
+	// create the control socket
 	m_pControlSocket = new NetworkSocket(this);
 	if (!m_pControlSocket->Create(chat_port))
 	{
@@ -75,12 +84,14 @@ rc_network NetworkManager::startListening()
 		return ERROR_CREATE_CONTROL_SOCKET;
 	}
 
+	// listen on the control socket
 	if (!m_pControlSocket->Listen())
 	{
 		closeSockets();
 		return ERROR_LISTEN_CONTROL_SOCKET;
 	}
 
+	// create the data socket
 	m_pDataSocket = new NetworkSocket(this);
 	if (!m_pDataSocket->Create(data_port))
 	{
@@ -88,6 +99,7 @@ rc_network NetworkManager::startListening()
 		return ERROR_CREATE_DATA_SOCKET;
 	}
 
+	// listen on the data socket
 	if (!m_pDataSocket->Listen())
 	{
 		closeSockets();
@@ -97,14 +109,22 @@ rc_network NetworkManager::startListening()
 	return SUCCESS;
 }
 
-rc_network NetworkManager::connect(const CString& ipAddress)
+rc_network NetworkManager::connect(const std::string& ipAddress)
 {
+	// don't try connecting if we are already connected
 	if (m_pControlSocket != NULL)
 	{
-		return ERROR_ALREADY_CONNECTED;
+		if (isConnected())
+		{
+			return ERROR_ALREADY_CONNECTED;
+		}
+		else
+		{
+			return ERROR_ALREADY_LISTENING;
+		}
 	}
 
-	// connect the control socket
+	// create the control socket
 	m_pControlSocket = new NetworkSocket(this);
 	if (!m_pControlSocket->Create())
 	{
@@ -112,13 +132,14 @@ rc_network NetworkManager::connect(const CString& ipAddress)
 		return ERROR_CREATE_CONTROL_SOCKET;
 	}
 
-	if (!m_pControlSocket->Connect(ipAddress, chat_port))
+	// connect the control socket
+	if (!m_pControlSocket->Connect(ipAddress.c_str(), chat_port))
 	{
 		closeSockets();
 		return ERROR_CONNECT_CONTROL_SOCKET;
 	}
 
-	// connect the data socket
+	// create the data socket
 	m_pDataSocket = new NetworkSocket(this);
 	if (!m_pDataSocket->Create())
 	{
@@ -126,7 +147,8 @@ rc_network NetworkManager::connect(const CString& ipAddress)
 		return ERROR_CREATE_DATA_SOCKET;
 	}
 
-	if (!m_pDataSocket->Connect(ipAddress, data_port))
+	// connect the data socket
+	if (!m_pDataSocket->Connect(ipAddress.c_str(), data_port))
 	{
 		closeSockets();
 		return ERROR_CONNECT_DATA_SOCKET;
@@ -147,30 +169,27 @@ rc_network NetworkManager::disconnect()
 	return SUCCESS;
 }
 
-rc_network NetworkManager::peerDisconnect()
+void NetworkManager::peerDisconnect()
 {
 	// close the sockets and reset the connection
 	disconnect();
 
 	// notify the controller that the peer has disconnected
 	m_pController->notifyPeerDisconnected();
-
-	return SUCCESS;
 }
 
-rc_network NetworkManager::networkError()
+void NetworkManager::networkError(rc_network error)
 {
 	// close the sockets and reset the connection
 	disconnect();
 
 	// notify the controller that the network has been disconnected due to an error
-	m_pController->notifyNetworkError();
-
-	return SUCCESS;
+	m_pController->notifyNetworkError(error);
 }
 
 void NetworkManager::notifyAccept(NetworkSocket* socket)
 {
+	// determine which socket has accepted a connection
 	if (socket == m_pControlSocket)
 	{
 		m_bControlConnected = true;
@@ -184,6 +203,7 @@ void NetworkManager::notifyAccept(NetworkSocket* socket)
 		return;
 	}
 
+	// when both sockets have accepted a connection we can initialize the connection
 	if (m_bControlConnected && m_bDataConnected)
 	{
 		// we are the server
@@ -256,6 +276,8 @@ void NetworkManager::closeSockets()
 		delete m_pDataSocket;
 		m_pDataSocket = NULL;
 	}
+
+	return;
 }
 
 DWORD NetworkManager::ControlSendThread(NetworkManager *pNetworkManager)
@@ -309,7 +331,7 @@ DWORD NetworkManager::ControlSendThread(NetworkManager *pNetworkManager)
 							if (pNetworkManager->m_bIsConnected)
 							{
 								// disconnect when the socket fails
-								pNetworkManager->networkError();
+								pNetworkManager->networkError(ERROR_SOCKET_ERROR);
 								return 0;
 							}
 							return 1;
@@ -351,7 +373,7 @@ DWORD NetworkManager::ControlReceiveThread(NetworkManager* pNetworkManager)
 					if (pNetworkManager->m_bIsConnected)
 					{
 						// disconnect when the socket fails
-						pNetworkManager->networkError();
+						pNetworkManager->networkError(ERROR_SOCKET_ERROR);
 						return 0;
 					}
 					return 1;
@@ -429,14 +451,22 @@ DWORD NetworkManager::ControlMessageHandleThread(NetworkManager* pNetworkManager
 				break;
 			}
 			case CONTROL_PACKET_START_GAME:
+			{
+				// notify the controller that the peer has started the game
 				pNetworkManager->m_pController->notifyPeerStartGame();
 				break;
+			}
 			case CONTROL_PACKET_END_GAME:
+			{
+				// notify the controller that the peer has exited the game
 				pNetworkManager->m_pController->notifyPeerExitGame();
 				break;
+			}
 			case CONTROL_PACKET_UNKNOWN:
 			default:
 			{
+				// fail if we receive an unknown packet
+				pNetworkManager->networkError(ERROR_UNKNOWN_CONTROL_MESSAGE);
 				return 0;
 			}
 		}
@@ -499,7 +529,7 @@ DWORD NetworkManager::DataSendThread(NetworkManager *pNetworkManager)
 							if (pNetworkManager->m_bIsConnected)
 							{
 								// disconnect when the socket fails
-								pNetworkManager->networkError();
+								pNetworkManager->networkError(ERROR_SOCKET_ERROR);
 								return 0;
 							}
 							return 1;
@@ -542,7 +572,7 @@ DWORD NetworkManager::DataReceiveThread(NetworkManager* pNetworkManager)
 					if (pNetworkManager->m_bIsConnected)
 					{
 						// disconnect when the socket fails
-						pNetworkManager->networkError();
+						pNetworkManager->networkError(ERROR_SOCKET_ERROR);
 						return 0;
 					}
 					return 1;
@@ -636,7 +666,7 @@ rc_network NetworkManager::initializeConnection()
 	m_hDataReceiveThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) DataReceiveThread, (void*) this, 0, &m_dwIDDataReceive);
 	m_hDataMessageHandleThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) DataMessageHandleThread, (void*) this, 0, &m_dwIDDataMessageHandle);
 
-	sendUserName(Controller::instance()->getLocalUserName().c_str());
+	sendUserName(Controller::instance()->getLocalUserName());
 
 	return SUCCESS;
 }
@@ -671,6 +701,12 @@ rc_network NetworkManager::sendEndGame()
 
 rc_network NetworkManager::sendControlMessage(const ControlPacket& packet)
 {
+	// we can't send a message if we are not connected
+	if (!isConnected())
+	{
+		return ERROR_NO_CONNECTION;
+	}
+
 	// we synchronize here to avoid adding a message to the queue
 	// while a message is being sent
 	synchronized(m_csControlSocketSend)
@@ -680,13 +716,21 @@ rc_network NetworkManager::sendControlMessage(const ControlPacket& packet)
 	}
 
 	// notifies the send thread that there is a message to send
-	m_sControlSocketSend.Unlock();
-
+	if (!m_sControlSocketSend.Unlock())
+	{
+		return ERROR_MESSAGE_QUEUE_OVERFLOW;
+	}
 	return SUCCESS;
 }
 
 rc_network NetworkManager::sendDataMessage(const DataPacket& message)
 {
+	// we can't send a message if we are not connected
+	if (!isConnected())
+	{
+		return ERROR_NO_CONNECTION;
+	}
+
 	// we synchronize here to avoid adding a message to the queue
 	// while a message is being sent
 	synchronized(m_csDataSocketSend)
@@ -696,8 +740,10 @@ rc_network NetworkManager::sendDataMessage(const DataPacket& message)
 	}
 
 	// notifies the send thread that there is a message to send
-	m_sDataSocketSend.Unlock();
-
+	if (!m_sDataSocketSend.Unlock())
+	{
+		return ERROR_MESSAGE_QUEUE_OVERFLOW;
+	}
 	return SUCCESS;
 }
 

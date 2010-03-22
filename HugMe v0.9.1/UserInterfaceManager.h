@@ -36,7 +36,7 @@ public:
 	void notifyPeerDisconnected();
 
 	// updates the user interface to reflect an error in the network connection
-	void notifyNetworkError();
+	void notifyNetworkError(rc_network error);
 
 	// updates the user interface to reflect a game started
 	void notifyGameStarted();
@@ -51,7 +51,7 @@ public:
 	// Notifications coming from the user interface
 	//-----------------------------------------------
 
-	rc_network networkConnectButtonPushed(const CString& ipAddress, const string& localName);
+	rc_network networkConnectButtonPushed(const string& ipAddress, const string& localName);
 	rc_network networkListenButtonPushed(const string& localName);
 	rc_network networkDisconnectButtonPushed();
 

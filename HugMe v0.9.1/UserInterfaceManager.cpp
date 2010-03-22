@@ -25,7 +25,7 @@ UserInterfaceManager::~UserInterfaceManager()
 	delete m_pMainDlg;
 }
 
-rc_network UserInterfaceManager::networkConnectButtonPushed(const CString& ipAddress, const string& localName)
+rc_network UserInterfaceManager::networkConnectButtonPushed(const string& ipAddress, const string& localName)
 {
 	Controller::instance()->updateLocalUserName(localName);
 	return Controller::instance()->netConnect(ipAddress);
@@ -74,9 +74,9 @@ void UserInterfaceManager::notifyPeerDisconnected()
 	getMainWindow()->SendMessage(WM_ON_DISCONNECT, (WPARAM)&remoteUserName);
 }
 
-void UserInterfaceManager::notifyNetworkError()
+void UserInterfaceManager::notifyNetworkError(rc_network error)
 {
-	getMainWindow()->SendMessage(WM_ON_NETWORK_ERROR);
+	getMainWindow()->SendMessage(WM_ON_NETWORK_ERROR, (WPARAM)&error);
 }
 
 void UserInterfaceManager::notifyGameStarted()

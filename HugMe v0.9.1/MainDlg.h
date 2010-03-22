@@ -53,7 +53,7 @@ protected:
 	afx_msg void OnNetworkListen();
 	afx_msg LRESULT OnNetworkEstablished(WPARAM);
 	afx_msg LRESULT OnNetworkDisconnected(WPARAM);
-	afx_msg LRESULT OnNetworkError();
+	afx_msg LRESULT OnNetworkError(WPARAM);
 	afx_msg void OnPreferencesEdit();
 	afx_msg void OnStartGame();
 	afx_msg void OnExitGame();

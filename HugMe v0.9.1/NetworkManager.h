@@ -30,7 +30,7 @@ public:
 	rc_network startListening();
 
 	// connect to a host
-	rc_network connect(const CString& ipAdrress);
+	rc_network connect(const std::string& ipAdrress);
 
 	// disconnect from a host
 	rc_network disconnect();
@@ -168,10 +168,10 @@ private:
 	rc_network sendDataMessage(const DataPacket& message);
 
 	// reset the network connection and notify the controller that the peer has disconnected
-	rc_network peerDisconnect();
+	void peerDisconnect();
 
 	// reset the network connection and notify the controller that a network error has occured
-	rc_network networkError();
+	void networkError(rc_network error);
 
 	//---------------------------
 	// Private Data Members

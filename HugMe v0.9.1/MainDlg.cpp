@@ -153,9 +153,10 @@ LRESULT CMainDlg::OnNetworkDisconnected(WPARAM wParam)
 	return 0;
 }
 
-LRESULT CMainDlg::OnNetworkError()
+LRESULT CMainDlg::OnNetworkError(WPARAM wParam)
 {
-	MessageBox("a network error has occured");
+	rc_network* error = (rc_network*) wParam;
+	MessageBox(lookup(*error).c_str());
 
 	CMenu* pMenu = GetMenu();
 	pMenu->EnableMenuItem(ID_NETWORK_CONNECT, MF_ENABLED | MF_BYCOMMAND);

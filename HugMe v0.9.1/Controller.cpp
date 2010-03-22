@@ -35,16 +35,16 @@ void Controller::notifyPeerDisconnected()
 	m_pUserInterfaceManager->notifyPeerDisconnected();
 }
 
-void Controller::notifyNetworkError()
+void Controller::notifyNetworkError(rc_network error)
 {
 	// exit the game when a network error occurs
 	exitGame();
 
 	// notify the user interface that the network connection as been disconnected
-	m_pUserInterfaceManager->notifyNetworkError();
+	m_pUserInterfaceManager->notifyNetworkError(error);
 }
 
-rc_network Controller::netConnect(const CString& ipAddress)
+rc_network Controller::netConnect(const std::string& ipAddress)
 {
 	return m_pNetworkManager->connect(ipAddress);
 }

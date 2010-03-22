@@ -44,7 +44,7 @@ public:
 	rc_network netStartListening();
 
 	// attempt to connect to a host
-	rc_network netConnect(const CString& ipAddress);
+	rc_network netConnect(const std::string& ipAddress);
 
 	// attempt to disconnect to a host
 	rc_network netDisconnect();
@@ -52,8 +52,15 @@ public:
 	// a network connection has been accepted, notify the user interface
 	void notifyNetworkConnectionAccepted();
 
-	// the network the peer has disconnected, notify the user interface
+	// the peer has disconnected, notify the user interface
 	void notifyPeerDisconnected();
+
+	// the network has been disconnected in error, notify the user interface
+	void notifyNetworkError(rc_network error);
+
+	//------------------------------------------
+	// Game related
+	//------------------------------------------
 
 	// we are starting/exiting the game
 	void localStartGame();
@@ -62,16 +69,6 @@ public:
 	// the peer has started or exited the game
 	void notifyPeerStartGame();
 	void notifyPeerExitGame();
-
-	// the network has been disconnected in error, notify the user interface
-	void notifyNetworkError();
-
-	// new video data
-	void notifyNewLocalVideoData(const std::vector<BYTE>& vRGB);
-	void notifyNewRemoteVideoData(const std::vector<BYTE>& vRGB);
-
-	// new chat message
-	void notifyNewChatMessage(const std::string& message);
 
 	// new slingshot position
 	void notifyNewLocalSlingshotPosition(const cVector3d& position);
@@ -84,6 +81,14 @@ public:
 	// new player position
 	void notifyNewLocalPlayerPosition(const cVector3d& position);
 	void notifyNewRemotePlayerPosition(const cVector3d& position);
+
+	// --------------------------------
+	// Video related functions
+	// --------------------------------
+
+	// new video data
+	void notifyNewLocalVideoData(const std::vector<BYTE>& vRGB);
+	void notifyNewRemoteVideoData(const std::vector<BYTE>& vRGB);
 
 	// --------------------------------
 	// Player info related functions
@@ -103,6 +108,10 @@ public:
 	// User interface related functions
 	// ------------------------------------
 
+	// new chat message
+	void notifyNewChatMessage(const std::string& message);
+
+	// get the main window of the application
 	CDialog* getMainWindow();
 
 	// ------------------------------------

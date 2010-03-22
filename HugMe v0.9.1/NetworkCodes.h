@@ -15,7 +15,11 @@ enum rc_network
 	ERROR_ALREADY_CONNECTED,
 	ERROR_CONNECT_CONTROL_SOCKET,
 	ERROR_CONNECT_DATA_SOCKET,
-	ERROR_MESSAGE_QUEUE_OVERFLOW
+	ERROR_MESSAGE_QUEUE_OVERFLOW,
+	ERROR_SOCKET_ERROR,
+	ERROR_UNKNOWN_CONTROL_MESSAGE,
+	ERROR_UNKNOWN_DATA_MESSAGE,
+	ERROR_NO_CONNECTION
 };
 
 // Get the error message for a return code
@@ -43,6 +47,14 @@ static std::string lookup(rc_network code)
 		return "Error, could not connect the data socket";
 	case ERROR_MESSAGE_QUEUE_OVERFLOW:
 		return "Error, too many message in the queue";
+	case ERROR_SOCKET_ERROR:
+		return "Error, a socket error has occurred";
+	case ERROR_UNKNOWN_CONTROL_MESSAGE:
+		return "Error, unknown control message received";
+	case ERROR_UNKNOWN_DATA_MESSAGE:
+		return "Error, unknown data message received";
+	case ERROR_NO_CONNECTION:
+		return "Error, not connected";
 	default:
 		return "unknown error code";
 	}
