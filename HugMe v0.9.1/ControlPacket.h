@@ -15,6 +15,8 @@ enum ControlPacketType
 {
 	CONTROL_PACKET_NAME, // a user name packet
 	CONTROL_PACKET_CHAT, // a chat message packet
+	CONTROL_PACKET_START_GAME, // tell the peer the game is starting
+	CONTROL_PACKET_END_GAME, // tell the peer the game is ending
 	CONTROL_PACKET_UNKNOWN
 };
 
@@ -48,6 +50,12 @@ public:
 	// set the packet to a chat message packet and add the message to the packet
 	void setChatMessage(const std::string& message);
 
+	// set this packet to a start game packet
+	void setStartGame();
+
+	// set this packet to an end game packet
+	void setEndGame();
+
 	// try to create a packet from a series of bytes
 	// returns true if we managed to create a packet
 	bool readPacket(std::vector<BYTE>& input);
@@ -57,6 +65,9 @@ private:
 
 	// create the packet with the string as the data
 	void writeStringPacket(ControlPacketHeader header, const std::string& data);
+
+	// create the packet with no data (header only)
+	void writeEmptyPacket(ControlPacketHeader header);
 };
 
 #endif // !defined(AFX_CONTROLPACKET_H__D6F3D183_3B6D_41A0_AB79_14DEA957D8CE__INCLUDED_)

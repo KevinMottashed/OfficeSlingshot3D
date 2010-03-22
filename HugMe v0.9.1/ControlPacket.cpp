@@ -39,6 +39,24 @@ void ControlPacket::setUserName(const std::string& name)
 	return;
 }
 
+void ControlPacket::setStartGame()
+{
+	ControlPacketHeader header;
+	header.size = 0; // no data in a start game packet
+	header.type = CONTROL_PACKET_START_GAME;
+	writeEmptyPacket(header);
+	return;
+}
+
+void ControlPacket::setEndGame()
+{
+	ControlPacketHeader header;
+	header.size = 0; // no data in an end game packet
+	header.type = CONTROL_PACKET_END_GAME;
+	writeEmptyPacket(header);
+	return;
+}
+
 const std::vector<BYTE>& ControlPacket::getPacket() const
 {
 	return m_vPacket;
@@ -64,6 +82,17 @@ void ControlPacket::writeStringPacket(ControlPacketHeader header, const std::str
 
 	// all strings must be null terminated
 	m_vPacket.push_back('\0');
+
+	return;
+}
+
+void ControlPacket::writeEmptyPacket(ControlPacketHeader header)
+{
+	// clear the existing content
+	m_vPacket.clear();
+
+	// copy the header into the packet
+	m_vPacket.insert(m_vPacket.end(), (BYTE*) &header, ((BYTE*) &header) + sizeof(ControlPacketHeader));
 
 	return;
 }

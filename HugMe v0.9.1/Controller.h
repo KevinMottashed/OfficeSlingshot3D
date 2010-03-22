@@ -49,17 +49,19 @@ public:
 	// attempt to disconnect to a host
 	rc_network netDisconnect();
 
-	// start the game
-	void startGame();
-
-	// exit the game
-	void exitGame();
-
 	// a network connection has been accepted, notify the user interface
 	void notifyNetworkConnectionAccepted();
 
 	// the network the peer has disconnected, notify the user interface
 	void notifyPeerDisconnected();
+
+	// we are starting/exiting the game
+	void localStartGame();
+	void localExitGame();
+
+	// the peer has started or exited the game
+	void notifyPeerStartGame();
+	void notifyPeerExitGame();
 
 	// the network has been disconnected in error, notify the user interface
 	void notifyNetworkError();
@@ -145,6 +147,13 @@ private:
 	// we will need to make these thread safe
 	std::string localUserName;
 	std::string remoteUserName;
+
+	// start the game
+	void startGame();
+
+	// exit the game
+	void exitGame();
+
 };
 
 #endif // !defined(AFX_CONTROLLER_H__11C3ACF3_BC70_49EC_BA36_3849E78C8CB6__INCLUDED_)

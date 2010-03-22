@@ -428,6 +428,12 @@ DWORD NetworkManager::ControlMessageHandleThread(NetworkManager* pNetworkManager
 				pNetworkManager->m_pController->notifyNewChatMessage(packet.getChatMessage());
 				break;
 			}
+			case CONTROL_PACKET_START_GAME:
+				pNetworkManager->m_pController->notifyPeerStartGame();
+				break;
+			case CONTROL_PACKET_END_GAME:
+				pNetworkManager->m_pController->notifyPeerExitGame();
+				break;
 			case CONTROL_PACKET_UNKNOWN:
 			default:
 			{
@@ -639,16 +645,28 @@ rc_network NetworkManager::sendUserName(const std::string& userName)
 {
 	ControlPacket packet;
 	packet.setUserName(userName);
-	sendControlMessage(packet);
-	return SUCCESS;
+	return sendControlMessage(packet);
 }
 
 rc_network NetworkManager::sendChatMessage(const std::string& message)
 {
 	ControlPacket packet;
 	packet.setChatMessage(message);
-	sendControlMessage(packet);
-	return SUCCESS;
+	return sendControlMessage(packet);
+}
+
+rc_network NetworkManager::sendStartGame()
+{
+	ControlPacket packet;
+	packet.setStartGame();
+	return sendControlMessage(packet);
+}
+
+rc_network NetworkManager::sendEndGame()
+{
+	ControlPacket packet;
+	packet.setEndGame();
+	return sendControlMessage(packet);
 }
 
 rc_network NetworkManager::sendControlMessage(const ControlPacket& packet)

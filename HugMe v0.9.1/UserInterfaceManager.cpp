@@ -44,12 +44,12 @@ rc_network UserInterfaceManager::networkListenButtonPushed(const string& localNa
 
 void UserInterfaceManager::startGameButtonPushed()
 {
-	Controller::instance()->startGame();
+	Controller::instance()->localStartGame();
 }
 
 void UserInterfaceManager::exitGameButtonPushed()
 {
-	Controller::instance()->exitGame();
+	Controller::instance()->localExitGame();
 }
 
 void UserInterfaceManager::closeApplication()

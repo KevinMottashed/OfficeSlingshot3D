@@ -44,6 +44,12 @@ public:
 	// send a chat message to the other player
 	rc_network sendChatMessage(const std::string& message);
 
+	// send a start game message
+	rc_network sendStartGame();
+
+	// send a end game message
+	rc_network sendEndGame();
+
 	// send a full data packet to the other player, video + tactile
 	rc_network sendDataPacket(	const std::vector<BYTE>& vRGB,
 								const std::vector<BYTE>& vDepth,

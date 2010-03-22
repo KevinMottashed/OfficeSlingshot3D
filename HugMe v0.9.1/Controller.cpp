@@ -172,3 +172,39 @@ void Controller::notifyNewRemotePlayerPosition(const cVector3d& position)
 	m_pGame->setRemotePlayerPosition(position);
 }
 
+void Controller::localStartGame()
+{
+	// start the game
+	startGame();
+
+	// and let the peer know that the game is starting
+	m_pNetworkManager->sendStartGame();
+}
+
+void Controller::localExitGame()
+{
+	// exit the game
+	exitGame();
+
+	// and let the peer know that the game is over
+	m_pNetworkManager->sendEndGame();
+}
+
+void Controller::notifyPeerStartGame()
+{
+	// start our own game
+	startGame();
+
+	// let the UI know that the game has been started
+	m_pUserInterfaceManager->notifyGameStarted();
+}
+
+void Controller::notifyPeerExitGame()
+{
+	// exit our own game
+	exitGame();
+
+	// let the UI know that the game has been ended
+	m_pUserInterfaceManager->notifyGameExited();
+}
+
