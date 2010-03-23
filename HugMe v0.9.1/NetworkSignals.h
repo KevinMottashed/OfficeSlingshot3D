@@ -56,5 +56,11 @@
  */
 #define WM_ON_EXIT_GAME (WM_USER + 0x107)
 
+/* WM_ON_SEND_CHAT_MESSAGE
+ * WPARAM : remote Username
+ * LPARAM : message
+ */
+#define WM_ON_NEW_CHAT_MESSAGE (WM_USER + 0x108)
+
 
 #endif /* NETWORKSIGNALS_H_ */

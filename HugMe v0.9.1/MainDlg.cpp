@@ -48,7 +48,9 @@ void CMainDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialog::DoDataExchange(pDX);
 	//{{AFX_DATA_MAP(CMainDlg)
-		// NOTE: the ClassWizard will add DDX and DDV calls here
+		DDX_Control(pDX, IDC_CHAT, m_richChat);
+		DDX_Control(pDX, IDC_CHAT_INPUT, m_editChatInput);
+		DDX_Control(pDX, IDC_SEND_CHAT, m_sendChatButton);
 	//}}AFX_DATA_MAP
 }
 
@@ -67,7 +69,9 @@ BEGIN_MESSAGE_MAP(CMainDlg, CDialog)
 	ON_MESSAGE(WM_ON_NETWORK_ERROR,OnNetworkError)
 	ON_MESSAGE(WM_ON_START_GAME,OnGameStarted)
 	ON_MESSAGE(WM_ON_EXIT_GAME,OnGameExited)
+	ON_MESSAGE(WM_ON_NEW_CHAT_MESSAGE,OnNewChatMessage)
 	ON_WM_DESTROY()
+	ON_EN_CHANGE(IDC_CHAT_INPUT, OnChangeChatInput)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -244,7 +248,43 @@ LRESULT CMainDlg::OnGameExited(WPARAM wParam)
 
 void CMainDlg::OnSendChat() 
 {
-	pUserInterfaceManager->sendChatButtonPushed("Test Chat");
+	CString chatInput;
+	m_editChatInput.GetWindowText(chatInput);
+
+	if(!chatInput.IsEmpty()) {
+		pUserInterfaceManager->sendChatButtonPushed((string)chatInput);
+
+		m_editChatInput.SetWindowText("");
+	}
+}
+
+LRESULT CMainDlg::OnNewChatMessage(WPARAM wParam, LPARAM lParam) 
+{
+	string* remoteUserName = (string*) wParam;
+	string* message = (string*) lParam;
+	ostringstream os;
+	os << *remoteUserName << " : " << *message << "\n";
+
+	CString oldText;
+	m_richChat.GetWindowText(oldText);
+
+	m_richChat.SetWindowText(os.str().c_str() + oldText);
+
+	m_editChatInput.SetWindowText("");
+
+	return 0;
+}
+
+void CMainDlg::OnChangeChatInput()
+{
+	CString newChatInput;
+	m_editChatInput.GetWindowText(newChatInput);
+
+	if(!newChatInput.IsEmpty()) {
+		m_sendChatButton.EnableWindow(TRUE);
+	} else {
+		m_sendChatButton.EnableWindow(FALSE);
+	}
 }
 
 void CMainDlg::OnDestroy() 

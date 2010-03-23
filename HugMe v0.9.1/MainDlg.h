@@ -32,7 +32,9 @@ public:
 // Dialog Data
 	//{{AFX_DATA(CMainDlg)
 	enum { IDD = IDD_MAIN_DIALOG };
-		// NOTE: the ClassWizard will add data members here
+		CRichEditCtrl m_richChat;
+		CEdit m_editChatInput;
+		CButton m_sendChatButton;
 	//}}AFX_DATA
 
 
@@ -61,6 +63,8 @@ protected:
 	afx_msg LRESULT OnGameExited(WPARAM);
 	afx_msg void OnDestroy();
 	afx_msg void OnSendChat();
+	afx_msg LRESULT OnNewChatMessage(WPARAM, LPARAM);
+	afx_msg void OnChangeChatInput();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

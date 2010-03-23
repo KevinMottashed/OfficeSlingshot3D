@@ -97,8 +97,6 @@ void UserInterfaceManager::sendChatButtonPushed(const string& message)
 
 void UserInterfaceManager::notifyNewChatMessage(const string& message)
 {
-	// TODO implement
-	std::cout << Controller::instance()->getRemoteUserName() << " says " << message << std::endl;
+	string remoteUserName = Controller::instance()->getRemoteUserName();
+	getMainWindow()->SendMessage(WM_ON_NEW_CHAT_MESSAGE, (WPARAM)&remoteUserName, (LPARAM)&message);
 }
-
-
