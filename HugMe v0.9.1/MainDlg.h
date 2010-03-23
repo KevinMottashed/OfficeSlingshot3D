@@ -65,6 +65,7 @@ protected:
 	afx_msg void OnSendChat();
 	afx_msg LRESULT OnNewChatMessage(WPARAM, LPARAM);
 	afx_msg void OnChangeChatInput();
+	afx_msg LRESULT OnDisplayNewFrame(WPARAM);
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

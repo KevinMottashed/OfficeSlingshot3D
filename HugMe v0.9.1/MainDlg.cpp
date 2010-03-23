@@ -70,6 +70,7 @@ BEGIN_MESSAGE_MAP(CMainDlg, CDialog)
 	ON_MESSAGE(WM_ON_START_GAME,OnGameStarted)
 	ON_MESSAGE(WM_ON_EXIT_GAME,OnGameExited)
 	ON_MESSAGE(WM_ON_NEW_CHAT_MESSAGE,OnNewChatMessage)
+	ON_MESSAGE(WM_ON_NEW_FRAME, OnDisplayNewFrame)
 	ON_WM_DESTROY()
 	ON_EN_CHANGE(IDC_CHAT_INPUT, OnChangeChatInput)
 	//}}AFX_MSG_MAP
@@ -285,6 +286,13 @@ void CMainDlg::OnChangeChatInput()
 	} else {
 		m_sendChatButton.EnableWindow(FALSE);
 	}
+}
+
+LRESULT CMainDlg::OnDisplayNewFrame(WPARAM wParam)
+{
+	MessageBox("New Frame");
+
+	return 0;
 }
 
 void CMainDlg::OnDestroy() 

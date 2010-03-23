@@ -229,3 +229,7 @@ void Controller::notifyPeerExitGame()
 	m_pUserInterfaceManager->notifyGameExited();
 }
 
+void Controller::notifyDisplayNewFrame(const char* vRGB)
+{
+	m_pUserInterfaceManager->notifyDisplayNewFrame(vRGB);
+}

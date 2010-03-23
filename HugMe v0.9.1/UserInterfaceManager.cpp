@@ -100,3 +100,8 @@ void UserInterfaceManager::notifyNewChatMessage(const string& message)
 	string remoteUserName = Controller::instance()->getRemoteUserName();
 	getMainWindow()->SendMessage(WM_ON_NEW_CHAT_MESSAGE, (WPARAM)&remoteUserName, (LPARAM)&message);
 }
+
+void UserInterfaceManager::notifyDisplayNewFrame(const char *vRGB)
+{
+	getMainWindow()->SendMessage(WM_ON_NEW_FRAME, (WPARAM)&vRGB);
+}
