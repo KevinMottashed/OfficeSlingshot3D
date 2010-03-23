@@ -11,6 +11,7 @@
 
 #include "StdAfx.h"
 #include "Controller.h"
+#include "CVector3d.h"
 
 // forward declarations (files include each other)
 class Controller;
@@ -24,18 +25,24 @@ public:
 	// TODO implement
 	// start getting pictures from the z camera
 	// create a thread to poll it
-	void start() {}
+	void start();
 
 	// TODO implement
 	// stop getting pictures
 	// stop the thread that's polling it
-	void stop() {}
+	void stop();
+	
+	// Camera loop that fetches frames and player position.
+	// runs at 32 fps and continually sends information to controller
+	static DWORD getFrameFromCamera(ZCameraManager* p_ZCamera);
 
 private:
 	ZCameraManager(const ZCameraManager& zCameraManager); // intentionally not implemented
 	ZCameraManager& operator=(const ZCameraManager& zCameraManager); // intentionally not implemented
 
 	Controller* m_pController;
+	bool zcam_started;
+	std::vector<BYTE> currentFrame;
 
 };
 
