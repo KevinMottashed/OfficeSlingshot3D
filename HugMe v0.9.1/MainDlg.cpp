@@ -66,6 +66,7 @@ BEGIN_MESSAGE_MAP(CMainDlg, CDialog)
 	ON_MESSAGE(WM_ON_NETWORK_ERROR,OnNetworkError)
 	ON_MESSAGE(WM_ON_START_GAME,OnGameStarted)
 	ON_MESSAGE(WM_ON_EXIT_GAME,OnGameExited)
+	ON_WM_DESTROY()
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -238,4 +239,9 @@ LRESULT CMainDlg::OnGameExited(WPARAM wParam)
 	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_GRAYED | MF_BYCOMMAND);
 
 	return 0;
+}
+
+void CMainDlg::OnDestroy() 
+{
+	pUserInterfaceManager->closeApplication();
 }
