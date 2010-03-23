@@ -61,6 +61,7 @@ BEGIN_MESSAGE_MAP(CMainDlg, CDialog)
 	ON_COMMAND(ID_PREFERENCES_EDIT, OnPreferencesEdit)
 	ON_COMMAND(ID_GAME_STARTGAME, OnStartGame)
 	ON_COMMAND(ID_GAME_EXITGAME, OnExitGame)
+	ON_COMMAND(IDC_SEND_CHAT, OnSendChat)
 	ON_MESSAGE(WM_ON_CONNECT, OnNetworkEstablished)
 	ON_MESSAGE(WM_ON_DISCONNECT,OnNetworkDisconnected)
 	ON_MESSAGE(WM_ON_NETWORK_ERROR,OnNetworkError)
@@ -239,6 +240,11 @@ LRESULT CMainDlg::OnGameExited(WPARAM wParam)
 	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_GRAYED | MF_BYCOMMAND);
 
 	return 0;
+}
+
+void CMainDlg::OnSendChat() 
+{
+	pUserInterfaceManager->sendChatButtonPushed("Test Chat");
 }
 
 void CMainDlg::OnDestroy() 

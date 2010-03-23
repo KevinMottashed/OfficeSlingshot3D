@@ -109,6 +109,7 @@ public:
 	// ------------------------------------
 
 	// new chat message
+	void sendChatMessage(const std::string& message);
 	void notifyNewChatMessage(const std::string& message);
 
 	// get the main window of the application

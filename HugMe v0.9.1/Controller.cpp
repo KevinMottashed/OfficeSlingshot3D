@@ -143,6 +143,12 @@ void Controller::notifyNewRemoteVideoData(const std::vector<BYTE>& vRGB)
 	printf("new remote video data has arrived\n");
 }
 
+void Controller::sendChatMessage(const std::string& message)
+{
+	// TODO implement
+	printf("sending new chat message\n");
+}
+
 void Controller::notifyNewChatMessage(const std::string& message)
 {
 	m_pUserInterfaceManager->notifyNewChatMessage(message);

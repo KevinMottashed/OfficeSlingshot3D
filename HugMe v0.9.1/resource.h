@@ -12,6 +12,9 @@
 #define IDC_NAME                        1055
 #define IDC_IPADDRESS                   1057
 #define IDC_IPADDRESS_EDIT              1059
+#define IDC_CHAT_EDIT                   1060
+#define IDC_CHAT_BOX                    1061
+#define IDC_SEND_CHAT                   1062
 #define ID_NETWORK_LISTEN               32780
 #define ID_NETWORK_CONNECT              32781
 #define ID_NETWORK_DISCONNECT           32782
@@ -25,7 +28,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        150
 #define _APS_NEXT_COMMAND_VALUE         32786
-#define _APS_NEXT_CONTROL_VALUE         1060
+#define _APS_NEXT_CONTROL_VALUE         1063
 #define _APS_NEXT_SYMED_VALUE           103
 #endif
 #endif

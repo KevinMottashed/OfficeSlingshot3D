@@ -60,6 +60,7 @@ protected:
 	afx_msg LRESULT OnGameStarted(WPARAM);
 	afx_msg LRESULT OnGameExited(WPARAM);
 	afx_msg void OnDestroy();
+	afx_msg void OnSendChat();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };
