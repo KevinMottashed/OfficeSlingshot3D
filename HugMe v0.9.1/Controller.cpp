@@ -20,21 +20,24 @@ rc_network Controller::netStartListening()
 	return m_pNetworkManager->startListening();
 }
 
+// when the network is connected we want to notify the UI
 void Controller::notifyNetworkConnectionAccepted()
 {
 	// send the connection accepted message to the user interface process
 	m_pUserInterfaceManager->notifyNetworkConnectionEstablished();
 }
 
+// when the peer disconnects we want to exit the game and notify the UI
 void Controller::notifyPeerDisconnected()
 {
 	// exit the game when the peer disconnects
 	exitGame();
 
-	// notify the user interface that the network connection as been disconnected
+	// notify the user interface that the network connection has been disconnected
 	m_pUserInterfaceManager->notifyPeerDisconnected();
 }
 
+// when there has been a network error we should exit the game and notify the UI
 void Controller::notifyNetworkError(rc_network error)
 {
 	// exit the game when a network error occurs
@@ -49,11 +52,13 @@ rc_network Controller::netConnect(const std::string& ipAddress)
 	return m_pNetworkManager->connect(ipAddress);
 }
 
+// we want to exit the game and disconnect when the local user wishes to disconnect
 rc_network Controller::netDisconnect()
 {
 	// exit the game when we disconnect
 	exitGame();
 
+	// tell the network manager to disconnect us
 	return m_pNetworkManager->disconnect();
 }
 
@@ -80,18 +85,20 @@ void Controller::exitGame()
 void Controller::closeApplication()
 {
 	// the only thing to do is to close the sockets so the other end has a clean disconnect
+	// by closing the sockets the other end will receive an end of file of its sockets
+	// this is how the remote end will know that we have disconnected
 	m_pNetworkManager->disconnect();
 }
 
 Controller::Controller() :
 		m_bGameIsRunning(false)
 {
-	m_pUserInterfaceManager = new UserInterfaceManager(this);
-	m_pNetworkManager = new NetworkManager(this);
-	m_pFalconPenManager = new FalconPenManager(this);
-	m_pZCameraManager = new ZCameraManager(this);
-	m_pSmartClothingManager = new SmartClothingManager(this);
-	m_pGame = new Game(this);
+	m_pUserInterfaceManager = new UserInterfaceManager();
+	m_pNetworkManager = new NetworkManager();
+	m_pFalconPenManager = new FalconPenManager();
+	m_pZCameraManager = new ZCameraManager();
+	m_pSmartClothingManager = new SmartClothingManager();
+	m_pGame = new Game();
 }
 
 Controller::~Controller()
@@ -145,8 +152,7 @@ void Controller::notifyNewRemoteVideoData(const std::vector<BYTE>& vRGB)
 
 void Controller::sendChatMessage(const std::string& message)
 {
-	// TODO implement
-	printf("sending new chat message\n");
+	m_pNetworkManager->sendChatMessage(message);
 }
 
 void Controller::notifyNewChatMessage(const std::string& message)

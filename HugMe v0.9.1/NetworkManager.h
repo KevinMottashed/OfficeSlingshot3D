@@ -23,7 +23,7 @@ class NetworkSocket;
 class NetworkManager  
 {
 public:
-	NetworkManager(Controller* pController);
+	NetworkManager();
 	virtual ~NetworkManager();
 
 	// start listening for connections
@@ -176,7 +176,6 @@ private:
 	//---------------------------
 	// Private Data Members
 	//---------------------------
-	Controller* m_pController; // our controller
 	bool m_bIsConnected; // true if connected to a peer
 	bool m_bIsServer; // true if we are the server (listener)
 };

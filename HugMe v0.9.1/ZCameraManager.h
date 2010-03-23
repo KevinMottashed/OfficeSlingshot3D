@@ -19,7 +19,7 @@ class Controller;
 class ZCameraManager  
 {
 public:
-	ZCameraManager(Controller* pController);
+	ZCameraManager();
 	virtual ~ZCameraManager();
 
 	// TODO implement
@@ -40,7 +40,6 @@ private:
 	ZCameraManager(const ZCameraManager& zCameraManager); // intentionally not implemented
 	ZCameraManager& operator=(const ZCameraManager& zCameraManager); // intentionally not implemented
 
-	Controller* m_pController;
 	bool zcam_started;
 	std::vector<BYTE> currentFrame;
 

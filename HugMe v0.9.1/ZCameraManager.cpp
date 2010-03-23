@@ -9,8 +9,7 @@
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-ZCameraManager::ZCameraManager(Controller* pController) :
-	m_pController(pController)
+ZCameraManager::ZCameraManager()
 {
 		zcam_started = false;
 }
@@ -42,14 +41,14 @@ DWORD ZCameraManager::getFrameFromCamera(ZCameraManager* p_ZCamera){
 		}
 
 		p_ZCamera->currentFrame = nextFrame;
-		p_ZCamera->m_pController->notifyNewLocalVideoData(p_ZCamera->currentFrame);
+		Controller::instance()->notifyNewLocalVideoData(p_ZCamera->currentFrame);
 
 
 		cVector3d vec;
 		vec.x = 5;
 		vec.y = 5;
 		vec.z = 5;
-		p_ZCamera->m_pController->notifyNewLocalPlayerPosition(vec);
+		Controller::instance()->notifyNewLocalPlayerPosition(vec);
 
 		Sleep(31); // 32 fps
 	}

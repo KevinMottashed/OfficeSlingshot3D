@@ -14,8 +14,7 @@ static char THIS_FILE[]=__FILE__;
 
 using namespace std;
 
-UserInterfaceManager::UserInterfaceManager(Controller* pController) :
-		m_pController(pController)
+UserInterfaceManager::UserInterfaceManager()
 {
 	m_pMainDlg = new CMainDlg(this);
 }
@@ -54,7 +53,7 @@ void UserInterfaceManager::exitGameButtonPushed()
 
 void UserInterfaceManager::closeApplication()
 {
-	m_pController->closeApplication();
+	Controller::instance()->closeApplication();
 }
 
 CDialog* UserInterfaceManager::getMainWindow()
@@ -99,7 +98,7 @@ void UserInterfaceManager::sendChatButtonPushed(const string& message)
 void UserInterfaceManager::notifyNewChatMessage(const string& message)
 {
 	// TODO implement
-	std::cout << m_pController->getRemoteUserName() << " says " << message << std::endl;
+	std::cout << Controller::instance()->getRemoteUserName() << " says " << message << std::endl;
 }
 
 

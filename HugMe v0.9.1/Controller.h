@@ -40,22 +40,24 @@ public:
 	// Network related functions
 	// ----------------------------
 
-	// start listening for connections on the network
+	// the local user wishes to start listening for connections
 	rc_network netStartListening();
 
-	// attempt to connect to a host
+	// the local user wishes to connect to a host
+	// this function will attempt to connect us to the proper IP address
 	rc_network netConnect(const std::string& ipAddress);
 
-	// attempt to disconnect to a host
+	// the local user wishes to disconnect from the network
+	// this function will disconnect us from the network
 	rc_network netDisconnect();
 
-	// a network connection has been accepted, notify the user interface
+	// notifies the controller that the network connection has been accepted
 	void notifyNetworkConnectionAccepted();
 
-	// the peer has disconnected, notify the user interface
+	// notifies the controller that the peer has disconnected
 	void notifyPeerDisconnected();
 
-	// the network has been disconnected in error, notify the user interface
+	// notifies the controller that there has been a network error
 	void notifyNetworkError(rc_network error);
 
 	//------------------------------------------
@@ -66,19 +68,19 @@ public:
 	void localStartGame();
 	void localExitGame();
 
-	// the peer has started or exited the game
+	// notifies the controller that the peer has started or exited the game
 	void notifyPeerStartGame();
 	void notifyPeerExitGame();
 
-	// new slingshot position
+	// notifies the controller that the slingshot position has changed
 	void notifyNewLocalSlingshotPosition(const cVector3d& position);
 	void notifyNewRemoteSlingshotPosition(const cVector3d& position);
 
-	// new projectiles
+	// notifies the controller that a new projectile has been launched
 	void notifyNewLocalProjectile(const cVector3d& position, const cVector3d& speed);
 	void notifyNewRemoteProjectile(const cVector3d& position, const cVector3d& speed);
 
-	// new player position
+	// notifies the controller that the position of a player has changed
 	void notifyNewLocalPlayerPosition(const cVector3d& position);
 	void notifyNewRemotePlayerPosition(const cVector3d& position);
 
@@ -86,7 +88,7 @@ public:
 	// Video related functions
 	// --------------------------------
 
-	// new video data
+	// notifies the controller that new video data has arrived
 	void notifyNewLocalVideoData(const std::vector<BYTE>& vRGB);
 	void notifyNewRemoteVideoData(const std::vector<BYTE>& vRGB);
 
@@ -108,8 +110,10 @@ public:
 	// User interface related functions
 	// ------------------------------------
 
-	// new chat message
+	// the local user wishes to send a chat message
 	void sendChatMessage(const std::string& message);
+
+	// the peer has sent us a chat message
 	void notifyNewChatMessage(const std::string& message);
 
 	// get the main window of the application

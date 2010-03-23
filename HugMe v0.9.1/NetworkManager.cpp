@@ -14,7 +14,7 @@ const int NetworkManager::maximum_messages = 10;
 const int NetworkManager::maximum_control_packet_size = 4096;
 const int NetworkManager::maximum_data_packet_size = 76800;
 
-NetworkManager::NetworkManager(Controller* controller) :
+NetworkManager::NetworkManager() :
 	// the control socket
 	m_pControlSocket(NULL),
 	m_hControlSocket(0),
@@ -40,7 +40,6 @@ NetworkManager::NetworkManager(Controller* controller) :
 	m_hDataMessageHandleThread(0),
 	m_dwIDDataMessageHandle(0),
 	// control members
-	m_pController(controller),
 	m_bIsConnected(false),
 	m_bIsServer(false)
 {
@@ -175,7 +174,7 @@ void NetworkManager::peerDisconnect()
 	disconnect();
 
 	// notify the controller that the peer has disconnected
-	m_pController->notifyPeerDisconnected();
+	Controller::instance()->notifyPeerDisconnected();
 }
 
 void NetworkManager::networkError(rc_network error)
@@ -184,7 +183,7 @@ void NetworkManager::networkError(rc_network error)
 	disconnect();
 
 	// notify the controller that the network has been disconnected due to an error
-	m_pController->notifyNetworkError(error);
+	Controller::instance()->notifyNetworkError(error);
 }
 
 void NetworkManager::notifyAccept(NetworkSocket* socket)
@@ -440,26 +439,26 @@ DWORD NetworkManager::ControlMessageHandleThread(NetworkManager* pNetworkManager
 			case CONTROL_PACKET_NAME:
 			{
 				// update the remote user name
-				pNetworkManager->m_pController->updateRemoteUserName(packet.getUserName());
-				pNetworkManager->m_pController->notifyNetworkConnectionAccepted();
+				Controller::instance()->updateRemoteUserName(packet.getUserName());
+				Controller::instance()->notifyNetworkConnectionAccepted();
 				break;
 			}
 			case CONTROL_PACKET_CHAT:
 			{
 				// notify the controller that a new message has arrived
-				pNetworkManager->m_pController->notifyNewChatMessage(packet.getChatMessage());
+				Controller::instance()->notifyNewChatMessage(packet.getChatMessage());
 				break;
 			}
 			case CONTROL_PACKET_START_GAME:
 			{
 				// notify the controller that the peer has started the game
-				pNetworkManager->m_pController->notifyPeerStartGame();
+				Controller::instance()->notifyPeerStartGame();
 				break;
 			}
 			case CONTROL_PACKET_END_GAME:
 			{
 				// notify the controller that the peer has exited the game
-				pNetworkManager->m_pController->notifyPeerExitGame();
+				Controller::instance()->notifyPeerExitGame();
 				break;
 			}
 			case CONTROL_PACKET_UNKNOWN:
@@ -640,7 +639,7 @@ DWORD NetworkManager::DataMessageHandleThread(NetworkManager* pNetworkManager)
 
 		if (packet.getHeader().isVideo)
 		{
-			pNetworkManager->m_pController->notifyNewLocalVideoData(packet.getVideoRGBData());
+			Controller::instance()->notifyNewLocalVideoData(packet.getVideoRGBData());
 		}
 	}
 	return 1;

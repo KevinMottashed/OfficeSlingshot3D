@@ -22,7 +22,7 @@ class Controller;
 class UserInterfaceManager  
 {
 public:
-	UserInterfaceManager(Controller* pController);
+	UserInterfaceManager();
 	virtual ~UserInterfaceManager();
 
 	//----------------------------------------

@@ -9,8 +9,7 @@
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-FalconPenManager::FalconPenManager(Controller* pController) :
-	m_pController(pController)
+FalconPenManager::FalconPenManager()
 {
 }
 

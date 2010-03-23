@@ -9,8 +9,7 @@
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-SmartClothingManager::SmartClothingManager(Controller* pController) :
-	m_pController(pController)
+SmartClothingManager::SmartClothingManager()
 {
 }
 

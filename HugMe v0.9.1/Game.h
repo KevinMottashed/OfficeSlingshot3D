@@ -20,7 +20,7 @@ class Controller;
 class Game  
 {
 public:
-	Game(Controller* pController);
+	Game();
 	virtual ~Game();
 
 	// start the game
@@ -52,8 +52,6 @@ public:
 private:
 	Game(const Game& game); // intentionally not implemented
 	Game& operator=(const Game& game); // intentionally not implemented
-
-	Controller* m_pController; // our controller
 
 	// slingshot position for the players
 	// these need to be protected by mutexes because multiple threads will be accessing them

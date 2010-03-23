@@ -10,12 +10,11 @@
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-Game::Game(Controller* pController) :
+Game::Game() :
 	m_LocalSlingshotPosition(cVector3d(0,0,0)),
 	m_RemoteSlingshotPosition(cVector3d(0,0,0)),
 	m_LocalPlayerPosition(cVector3d(0,0,0)),
 	m_RemotePlayerPosition(cVector3d(0,0,0)),
-	m_pController(pController),
 	m_bGameIsRunning(false)
 {
 	InitializeCriticalSection(&m_csLocalSlingshotPosition);

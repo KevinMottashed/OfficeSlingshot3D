@@ -17,7 +17,7 @@ class Controller;
 class FalconPenManager  
 {
 public:
-	FalconPenManager(Controller* pController);
+	FalconPenManager();
 	virtual ~FalconPenManager();
 
 	// TODO implement
@@ -33,8 +33,6 @@ public:
 private:
 	FalconPenManager(const FalconPenManager& falconPenManager); // intentionally not implemented
 	FalconPenManager& operator=(const FalconPenManager& falconPenManager); // intentionally not implemented
-
-	Controller* m_pController;
 };
 
 #endif // !defined(AFX_FALCONPENMANAGER_H__AFCF2776_E117_47EC_94C7_97838C3AFB59__INCLUDED_)

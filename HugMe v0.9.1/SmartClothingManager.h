@@ -17,7 +17,7 @@ class Controller;
 class SmartClothingManager  
 {
 public:
-	SmartClothingManager(Controller* pController);
+	SmartClothingManager();
 	virtual ~SmartClothingManager();
 
 	// implement this with a proper type for position, probably Vector3D from chai3d
@@ -29,8 +29,6 @@ public:
 private:
 	SmartClothingManager(const SmartClothingManager& smartClothingManager); // intentionally not implemented
 	SmartClothingManager& operator=(const SmartClothingManager& smartClothingManager); // intentionally not implemented
-
-	Controller* m_pController;
 };
 
 #endif // !defined(AFX_SMARTCLOTHINGMANAGER_H__D57F7F21_D039_4BF1_9255_065D47A8F264__INCLUDED_)
