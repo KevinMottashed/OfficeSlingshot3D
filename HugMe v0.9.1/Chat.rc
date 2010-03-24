@@ -63,6 +63,25 @@ END
 
 
 /////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP2             BITMAP  DISCARDABLE     "Objects\\table_blurred.bmp"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
 // English (Canada) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENC)
@@ -131,17 +150,18 @@ END
 // Dialog
 //
 
-IDD_MAIN_DIALOG DIALOG DISCARDABLE  0, 0, 410, 323
+IDD_MAIN_DIALOG DIALOG DISCARDABLE  0, 0, 415, 329
 STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Office Slingshot 3D"
 MENU IDR_MENU
 FONT 8, "MS Sans Serif"
 BEGIN
-    EDITTEXT        IDC_CHAT_INPUT,7,302,322,14,ES_AUTOHSCROLL
-    PUSHBUTTON      "Send",IDC_SEND_CHAT,353,302,50,14,WS_DISABLED
-    CONTROL         "",IDC_STATIC,"Static",SS_BLACKRECT,7,7,396,235
+    EDITTEXT        IDC_CHAT_INPUT,7,308,322,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Send",IDC_SEND_CHAT,358,308,50,14,WS_DISABLED
+    CONTROL         151,IDC_STATIC,"Static",SS_BITMAP,7,7,401,246
     CONTROL         "",IDC_CHAT,"RICHEDIT",ES_MULTILINE | ES_AUTOHSCROLL | 
-                    WS_BORDER | WS_VSCROLL | WS_TABSTOP,7,255,396,41
+                    WS_DISABLED | WS_BORDER | WS_VSCROLL | WS_TABSTOP,7,261,
+                    401,41
 END
 
 IDD_PREFERENCES DIALOG DISCARDABLE  0, 0, 307, 52
@@ -170,9 +190,9 @@ BEGIN
     IDD_MAIN_DIALOG, DIALOG
     BEGIN
         LEFTMARGIN, 7
-        RIGHTMARGIN, 403
+        RIGHTMARGIN, 408
         TOPMARGIN, 7
-        BOTTOMMARGIN, 316
+        BOTTOMMARGIN, 322
     END
 
     IDD_PREFERENCES, DIALOG

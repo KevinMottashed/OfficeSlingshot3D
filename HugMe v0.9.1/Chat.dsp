@@ -242,11 +242,19 @@ SOURCE=.\ZCameraManager.h
 # PROP Default_Filter "ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"
 # Begin Source File
 
+SOURCE=.\Objects\BoardroomTable.bmp
+# End Source File
+# Begin Source File
+
 SOURCE=.\res\Chat.ico
 # End Source File
 # Begin Source File
 
 SOURCE=.\res\Chat.rc2
+# End Source File
+# Begin Source File
+
+SOURCE=.\Objects\table_blurred.bmp
 # End Source File
 # End Group
 # Begin Group "encoder"

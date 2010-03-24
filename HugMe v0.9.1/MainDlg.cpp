@@ -295,6 +295,7 @@ LRESULT CMainDlg::OnDisplayNewFrame(WPARAM wParam)
 	return 0;
 }
 
+
 void CMainDlg::OnDestroy() 
 {
 	pUserInterfaceManager->closeApplication();
