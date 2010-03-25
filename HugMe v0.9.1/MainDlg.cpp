@@ -303,6 +303,20 @@ LRESULT CMainDlg::OnDisplayNewFrame(WPARAM wParam)
 	return 0;
 }
 
+BOOL CMainDlg::PreTranslateMessage(MSG* pMsg)
+{
+	if (pMsg->message == WM_KEYDOWN)
+	{
+		if (pMsg->wParam == VK_ESCAPE)
+		{
+			MessageBox("Escape");
+			// TODO Perform Escape action
+			return TRUE;
+		}
+			
+	}
+	return CDialog::PreTranslateMessage(pMsg);
+}
 
 void CMainDlg::OnDestroy() 
 {

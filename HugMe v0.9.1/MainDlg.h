@@ -28,6 +28,7 @@ private:
 // Construction
 public:
 	CMainDlg(UserInterfaceManager* pUserInterfaceManager, CWnd* pParent = NULL);   // standard constructor
+	virtual BOOL CMainDlg::PreTranslateMessage(MSG* pMsg);
 
 // Dialog Data
 	//{{AFX_DATA(CMainDlg)
