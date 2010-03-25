@@ -18,6 +18,18 @@ Package=<4>
 
 ###############################################################################
 
+Project: "Test_Suite"=".\Test_Suite\Test_Suite.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
 Project: "chai3d_complete"="..\chai3d[v1.61.1]\msvc6\chai3d_complete.dsp" - Package Owner=<4>
 
 Package=<5>
