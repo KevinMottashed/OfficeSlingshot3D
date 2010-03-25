@@ -18,6 +18,7 @@
 #define IDC_CHAT_INPUT                  1060
 #define IDC_SEND_CHAT                   1062
 #define IDC_CHAT                        1063
+#define IDC_VIDEO                       1064
 #define ID_NETWORK_LISTEN               32780
 #define ID_NETWORK_CONNECT              32781
 #define ID_NETWORK_DISCONNECT           32782
@@ -31,7 +32,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        152
 #define _APS_NEXT_COMMAND_VALUE         32786
-#define _APS_NEXT_CONTROL_VALUE         1064
+#define _APS_NEXT_CONTROL_VALUE         1065
 #define _APS_NEXT_SYMED_VALUE           103
 #endif
 #endif

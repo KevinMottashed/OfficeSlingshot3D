@@ -36,6 +36,7 @@ public:
 		CRichEditCtrl m_richChat;
 		CEdit m_editChatInput;
 		CButton m_sendChatButton;
+		CStatic m_videoBitmap;
 	//}}AFX_DATA
 
 

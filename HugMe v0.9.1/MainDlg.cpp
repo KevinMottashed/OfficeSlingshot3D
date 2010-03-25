@@ -11,6 +11,7 @@
 #include "chat.h"
 #include "MainDlg.h"
 #include "Preferences.h"
+#include "vfw.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -51,6 +52,7 @@ void CMainDlg::DoDataExchange(CDataExchange* pDX)
 		DDX_Control(pDX, IDC_CHAT, m_richChat);
 		DDX_Control(pDX, IDC_CHAT_INPUT, m_editChatInput);
 		DDX_Control(pDX, IDC_SEND_CHAT, m_sendChatButton);
+		DDX_Control(pDX, IDC_VIDEO, m_videoBitmap);
 	//}}AFX_DATA_MAP
 }
 
@@ -298,7 +300,61 @@ void CMainDlg::OnChangeChatInput()
 
 LRESULT CMainDlg::OnDisplayNewFrame(WPARAM wParam)
 {
-	MessageBox("New Frame");
+	char* vRGB = (char*) wParam;
+
+	MessageBox("Got Frame");
+	/*
+	PBITMAPINFO m_bmpinfo=new BITMAPINFO;
+	m_bmpinfo->bmiHeader.biSize=sizeof(BITMAPINFOHEADER);
+	m_bmpinfo->bmiHeader.biWidth=320;
+	m_bmpinfo->bmiHeader.biHeight=240;
+	m_bmpinfo->bmiHeader.biPlanes=1;
+	m_bmpinfo->bmiHeader.biBitCount=32;
+	m_bmpinfo->bmiHeader.biCompression=0;
+	m_bmpinfo->bmiHeader.biSizeImage=0;
+	m_bmpinfo->bmiHeader.biXPelsPerMeter=0;
+	m_bmpinfo->bmiHeader.biYPelsPerMeter=0;
+	m_bmpinfo->bmiHeader.biClrUsed=0;
+	m_bmpinfo->bmiHeader.biClrImportant=0;
+
+	CWnd *wnd = CMainDlg::GetActiveWindow();
+	CRect rect;
+
+	// Get Dialog DC
+	HDC	m_hdc=wnd->GetDC()->m_hDC;
+
+	RECT localWndRect;
+	m_videoBitmap.GetWindowRect(&localWndRect);
+
+	int m_localWndWidth = localWndRect.right - localWndRect.left;
+	int m_localWndHeight = localWndRect.bottom - localWndRect.top;
+	HDRAWDIB hdib = ::DrawDibOpen();
+
+	::DrawDibBegin(hdib,
+					   m_hdc,
+					   m_localWndWidth,				// don't stretch
+					   m_localWndHeight,				// don't stretch
+					   &m_bmpinfo->bmiHeader,
+					   320,         // width of image
+					   240,        // height of image
+					   0				
+					   );
+
+	::DrawDibDraw(hdib,
+				  m_hdc,
+				  0,		// dest : left pos
+				  0,		// dest : top pos
+				  m_localWndWidth,					 // don't zoom x
+				  m_localWndHeight,					 // don't zoom y
+				  &m_bmpinfo->bmiHeader,			 // bmp header info
+				  vRGB,					 // bmp data
+				  0,					 // src :left
+				  0,					 // src :top
+				  320,				 // src : width
+				  240,				 // src : height
+				  DDF_SAME_DRAW			 // use prev params....
+				  );
+	*/
 
 	return 0;
 }
