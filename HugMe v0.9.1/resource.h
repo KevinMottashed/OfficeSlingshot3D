@@ -10,6 +10,7 @@
 #define IDD_PREFERENCES                 149
 #define IDB_BITMAP1                     150
 #define IDB_BITMAP2                     151
+#define IDB_GAME_BACKGROUND             151
 #define IDC_NAME_EDIT                   1054
 #define IDC_NAME                        1055
 #define IDC_IPADDRESS                   1057

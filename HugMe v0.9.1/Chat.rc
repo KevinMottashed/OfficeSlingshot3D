@@ -76,7 +76,7 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 // Bitmap
 //
 
-IDB_BITMAP2             BITMAP  DISCARDABLE     "Objects\\table_blurred.bmp"
+IDB_GAME_BACKGROUND     BITMAP  DISCARDABLE     "Objects\\table_blurred.bmp"
 #endif    // English (U.S.) resources
 /////////////////////////////////////////////////////////////////////////////
 
@@ -157,7 +157,7 @@ MENU IDR_MENU
 FONT 8, "MS Sans Serif"
 BEGIN
     EDITTEXT        IDC_CHAT_INPUT,7,308,322,14,ES_AUTOHSCROLL
-    PUSHBUTTON      "Send",IDC_SEND_CHAT,358,308,50,14,WS_DISABLED
+    DEFPUSHBUTTON   "Send",IDC_SEND_CHAT,358,308,50,14,WS_DISABLED
     CONTROL         151,IDC_STATIC,"Static",SS_BITMAP,7,7,401,246
     CONTROL         "",IDC_CHAT,"RICHEDIT",ES_MULTILINE | ES_AUTOHSCROLL | 
                     WS_DISABLED | WS_BORDER | WS_VSCROLL | WS_TABSTOP,7,261,

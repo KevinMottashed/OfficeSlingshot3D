@@ -256,6 +256,14 @@ void CMainDlg::OnSendChat()
 		pUserInterfaceManager->sendChatButtonPushed((string)chatInput);
 
 		m_editChatInput.SetWindowText("");
+
+		ostringstream os;
+		os << m_userName << " : " << (string)chatInput << "\n";
+
+		CString oldText;
+		m_richChat.GetWindowText(oldText);
+
+		m_richChat.SetWindowText( os.str().c_str() + oldText);
 	}
 }
 
