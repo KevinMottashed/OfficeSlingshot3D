@@ -4,6 +4,7 @@
 # executables
 */Debug/*.exe*
 */Release/*.exe*
+Test_Suite.exe
 
 # Windows Thumbs.db
 Thumbs.db
