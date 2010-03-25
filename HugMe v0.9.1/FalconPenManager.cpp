@@ -24,6 +24,7 @@ DWORD FalconPenManager::getPositionFromFalcon(FalconPenManager* p_Falcon)
 	double x,y,z;
 	//cVector3d position;
 	
+	int projectileCount = 0;
 
 	while(p_Falcon->falcon_enabled) 
 	{
@@ -37,21 +38,29 @@ DWORD FalconPenManager::getPositionFromFalcon(FalconPenManager* p_Falcon)
 		position.y = y;
 		position.z = z;
 
-		p_Falcon->m_pController->notifyNewLocalSlingshotPosition(position);
+		Controller::instance()->notifyNewLocalSlingshotPosition(position);
 
-		cVector3d new_projectile;
-		cVector3d new_speed;
 
-		new_projectile.x = x;
-		new_projectile.y = y;
-		new_projectile.z = z;
+		if (projectileCount < 5)
+		{
+			++projectileCount;
 
-		new_speed.x = x;
-		new_speed.y = y;
-		new_speed.z = z;
+			cVector3d new_projectile;
+			cVector3d new_speed;
 
-		p_Falcon->m_pController->notifyNewLocalProjectile(new_projectile, new_speed);
+			new_projectile.x = x;
+			new_projectile.y = y;
+			new_projectile.z = z;
 
+			new_speed.x = x;
+			new_speed.y = y;
+			new_speed.z = z;
+
+			Controller::instance()->notifyNewLocalProjectile(new_projectile, new_speed);
+		}
+
+		// sleep for 100ms
+		Sleep(100);
 	}
 
 	return 0;
