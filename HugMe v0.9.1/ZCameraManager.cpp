@@ -64,9 +64,9 @@ DWORD ZCameraManager::getFrameFromCamera(ZCameraManager* p_ZCamera){
 
 
 		cVector3d vec;
-		vec.x = 5;
-		vec.y = 5;
-		vec.z = 5;
+		vec.x = rand() % 10;
+		vec.y = rand() % 10;
+		vec.z = rand() % 10;
 		Controller::instance()->notifyNewLocalPlayerPosition(vec);
 
 		Sleep(31); // 32 fps

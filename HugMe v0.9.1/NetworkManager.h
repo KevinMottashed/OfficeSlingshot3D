@@ -50,8 +50,11 @@ public:
 	// send a end game message
 	rc_network sendEndGame();
 
-	// send a video only packet to the other player
+	// send a video data to the other player
 	rc_network sendVideoData(const std::vector<BYTE>& vRGB);
+
+	// send a player position to the other player
+	rc_network sendPlayerPosition(const cVector3d& position);
 
 	// notify the controller that a network connection has been accepted
 	void notifyAccept(NetworkSocket* socket);

@@ -12,9 +12,13 @@
 // STL & Windows
 #include "StdAfx.h"
 
+// chai3d
+#include "chai3d.h"
+
 enum DataPacketType
 {
 	DATA_PACKET_VIDEO,
+	DATA_PACKET_PLAYER_POSITION,
 	DATA_PACKET_UNKNOWN
 };
 
@@ -38,6 +42,9 @@ public:
 	// Get the RGB video data of the packet in bytes
 	const char* getVideoData() const;
 
+	// Get the players position
+	cVector3d getPlayerPosition() const;
+
 	// get the packet
 	const std::vector<BYTE>& getPacket() const;
 
@@ -49,6 +56,9 @@ public:
 
 	// set the packet's video data
 	void setVideoData(const std::vector<BYTE>& vRGB);
+
+	// set the packet's player position data
+	void setPlayerPosition(const cVector3d& position);
 
 private:
 	std::vector<BYTE> m_vPacket;

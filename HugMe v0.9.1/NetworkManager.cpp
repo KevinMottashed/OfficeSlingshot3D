@@ -425,6 +425,13 @@ rc_network NetworkManager::sendVideoData(const std::vector<BYTE>& vRGB)
 	return syncSendDataMessage(message);
 }
 
+rc_network NetworkManager::sendPlayerPosition(const cVector3d& position)
+{
+	DataPacket message;
+	message.setPlayerPosition(position);
+	return syncSendDataMessage(message);
+}
+
 bool NetworkManager::isConnected() const
 {
 	return m_bIsConnected;
@@ -489,6 +496,11 @@ void NetworkManager::handleDataMessage(const DataPacket& message)
 		case DATA_PACKET_VIDEO:
 		{
 			Controller::instance()->notifyNewRemoteVideoData(message.getVideoData());
+			break;
+		}
+		case DATA_PACKET_PLAYER_POSITION:
+		{
+			Controller::instance()->notifyNewRemotePlayerPosition(message.getPlayerPosition());
 			break;
 		}
 		case DATA_PACKET_UNKNOWN:

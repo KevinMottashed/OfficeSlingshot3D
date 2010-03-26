@@ -91,9 +91,37 @@ void DataPacket::setVideoData(const std::vector<BYTE>& vRGB)
 	return;
 }
 
+void DataPacket::setPlayerPosition(const cVector3d& position)
+{
+	DataPacketHeader header;
+	header.type = DATA_PACKET_PLAYER_POSITION;
+	header.size = sizeof(cVector3d);
+
+	// clear the existing content
+	m_vPacket.clear();
+
+	// copy the header into the packet
+	m_vPacket.insert(m_vPacket.end(), (BYTE*) &header, ((BYTE*) &header) + sizeof(DataPacketHeader));
+
+	// copy the player position into the packet
+	m_vPacket.insert(m_vPacket.end(), (BYTE*) &position, ((BYTE*) &position) + sizeof(cVector3d));
+
+	return;
+}
+
 const char* DataPacket::getVideoData() const
 {
 	return (const char*) &m_vPacket[0] + sizeof(DataPacketHeader);
+}
+
+cVector3d DataPacket::getPlayerPosition() const
+{
+	cVector3d position;
+
+	// copy the players position from the packet
+	memcpy(&position, &m_vPacket[0] + sizeof(DataPacketHeader), sizeof(cVector3d));
+
+	return position;
 }
 
 const std::vector<BYTE>& DataPacket::getPacket() const

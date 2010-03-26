@@ -182,12 +182,16 @@ void Controller::notifyNewRemoteProjectile(const cVector3d& position, const cVec
 
 void Controller::notifyNewLocalPlayerPosition(const cVector3d& position)
 {
-	// TODO send it over the network too
+	// let our game know that the player has moved
 	m_pGame->setLocalPlayerPosition(position);
+
+	// let our peer know that we have moved
+	m_pNetworkManager->sendPlayerPosition(position);
 }
 
 void Controller::notifyNewRemotePlayerPosition(const cVector3d& position)
 {
+	// update our game to reflect that our opponent has moved
 	m_pGame->setRemotePlayerPosition(position);
 }
 
