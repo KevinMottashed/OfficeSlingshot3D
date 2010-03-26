@@ -55,19 +55,19 @@ protected:
 	afx_msg void OnNetworkConnect();
 	afx_msg void OnNetworkDisconnect();
 	afx_msg void OnNetworkListen();
-	afx_msg LRESULT OnNetworkEstablished(WPARAM);
-	afx_msg LRESULT OnNetworkDisconnected(WPARAM);
-	afx_msg LRESULT OnNetworkError(WPARAM);
+	afx_msg LRESULT OnNetworkEstablished(WPARAM, LPARAM);
+	afx_msg LRESULT OnNetworkDisconnected(WPARAM, LPARAM);
+	afx_msg LRESULT OnNetworkError(WPARAM, LPARAM);
 	afx_msg void OnPreferencesEdit();
 	afx_msg void OnStartGame();
 	afx_msg void OnExitGame();
-	afx_msg LRESULT OnGameStarted(WPARAM);
-	afx_msg LRESULT OnGameExited(WPARAM);
+	afx_msg LRESULT OnGameStarted(WPARAM, LPARAM);
+	afx_msg LRESULT OnGameExited(WPARAM, LPARAM);
 	afx_msg void OnDestroy();
 	afx_msg void OnSendChat();
 	afx_msg LRESULT OnNewChatMessage(WPARAM, LPARAM);
 	afx_msg void OnChangeChatInput();
-	afx_msg LRESULT OnDisplayNewFrame(WPARAM);
+	afx_msg LRESULT OnDisplayNewFrame(WPARAM, LPARAM);
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

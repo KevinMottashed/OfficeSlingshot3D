@@ -131,7 +131,7 @@ void CMainDlg::OnNetworkListen()
 	
 }
 
-LRESULT CMainDlg::OnNetworkEstablished(WPARAM wParam)
+LRESULT CMainDlg::OnNetworkEstablished(WPARAM wParam, LPARAM lParam)
 {
 	string* remoteUserName = (string*) wParam;
 	ostringstream os;
@@ -144,7 +144,7 @@ LRESULT CMainDlg::OnNetworkEstablished(WPARAM wParam)
 	return 0;
 }
 
-LRESULT CMainDlg::OnNetworkDisconnected(WPARAM wParam)
+LRESULT CMainDlg::OnNetworkDisconnected(WPARAM wParam, LPARAM lParam)
 {
 	string* remoteUserName = (string*) wParam;
 	ostringstream os;
@@ -162,7 +162,7 @@ LRESULT CMainDlg::OnNetworkDisconnected(WPARAM wParam)
 	return 0;
 }
 
-LRESULT CMainDlg::OnNetworkError(WPARAM wParam)
+LRESULT CMainDlg::OnNetworkError(WPARAM wParam, LPARAM lParam)
 {
 	rc_network* error = (rc_network*) wParam;
 	MessageBox(lookup(*error).c_str());
@@ -221,7 +221,7 @@ void CMainDlg::OnExitGame()
 	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_GRAYED | MF_BYCOMMAND);
 }
 
-LRESULT CMainDlg::OnGameStarted(WPARAM wParam)
+LRESULT CMainDlg::OnGameStarted(WPARAM wParam, LPARAM lParam)
 {
 	string* remoteUserName = (string*) wParam;
 	ostringstream os;
@@ -235,7 +235,7 @@ LRESULT CMainDlg::OnGameStarted(WPARAM wParam)
 	return 0;
 }
 
-LRESULT CMainDlg::OnGameExited(WPARAM wParam)
+LRESULT CMainDlg::OnGameExited(WPARAM wParam, LPARAM lParam)
 {
 	string* remoteUserName = (string*) wParam;
 	ostringstream os;
@@ -298,7 +298,7 @@ void CMainDlg::OnChangeChatInput()
 	}
 }
 
-LRESULT CMainDlg::OnDisplayNewFrame(WPARAM wParam)
+LRESULT CMainDlg::OnDisplayNewFrame(WPARAM wParam, LPARAM lParam)
 {
 	char* vRGB = (char*) wParam;
 
@@ -316,17 +316,10 @@ LRESULT CMainDlg::OnDisplayNewFrame(WPARAM wParam)
 	m_bmpinfo->bmiHeader.biClrUsed=0;
 	m_bmpinfo->bmiHeader.biClrImportant=0;
 
-	CWnd *wnd = CMainDlg::GetActiveWindow();
-
-	if (wnd == NULL)
-	{
-		return 0;
-	}
-
 	CRect rect;
 
 	// Get Dialog DC
-	HDC	m_hdc=wnd->GetDC()->m_hDC;
+	HDC	m_hdc=m_videoBitmap.GetDC()->m_hDC;
 
 	RECT localWndRect;
 	m_videoBitmap.GetWindowRect(&localWndRect);
