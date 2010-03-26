@@ -140,14 +140,12 @@ CDialog* Controller::getMainWindow()
 
 void Controller::notifyNewLocalVideoData(const std::vector<BYTE>& vRGB)
 {
-	// TODO implement
-	printf("new local video data has arrived\n");
+	m_pNetworkManager->sendVideoData(vRGB);
 }
 
-void Controller::notifyNewRemoteVideoData(const std::vector<BYTE>& vRGB)
+void Controller::notifyNewRemoteVideoData(const char* pRGB)
 {
-	// TODO implement
-	printf("new remote video data has arrived\n");
+	m_pUserInterfaceManager->notifyDisplayNewFrame(pRGB);
 }
 
 void Controller::sendChatMessage(const std::string& message)

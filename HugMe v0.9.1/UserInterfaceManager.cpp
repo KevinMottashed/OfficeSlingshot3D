@@ -101,7 +101,7 @@ void UserInterfaceManager::notifyNewChatMessage(const string& message)
 	getMainWindow()->SendMessage(WM_ON_NEW_CHAT_MESSAGE, (WPARAM)&remoteUserName, (LPARAM)&message);
 }
 
-void UserInterfaceManager::notifyDisplayNewFrame(const char *vRGB)
+void UserInterfaceManager::notifyDisplayNewFrame(const char *pRGB)
 {
-	getMainWindow()->SendMessage(WM_ON_NEW_FRAME, (WPARAM)&vRGB);
+	getMainWindow()->SendMessage(WM_ON_NEW_FRAME, (WPARAM)pRGB);
 }

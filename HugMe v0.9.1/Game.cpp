@@ -164,7 +164,7 @@ DWORD Game::GameLoopThread(Game* pGame)
 		}
 
 		// sleep for a short while
-		Sleep(1000); // 1 sec
+		Sleep(5000); // 5 secs
 	}
 	return 0;
 }

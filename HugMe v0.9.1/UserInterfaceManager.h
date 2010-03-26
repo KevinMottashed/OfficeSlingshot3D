@@ -48,7 +48,7 @@ public:
 	void notifyNewChatMessage(const std::string& message);
 
 	// updates the user interface to display the new video frame
-	void notifyDisplayNewFrame(const char *vRGB);
+	void notifyDisplayNewFrame(const char *pRGB);
 
 	//-----------------------------------------------
 	// Notifications coming from the user interface

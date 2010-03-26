@@ -50,19 +50,8 @@ public:
 	// send a end game message
 	rc_network sendEndGame();
 
-	// send a full data packet to the other player, video + tactile
-	rc_network sendDataPacket(	const std::vector<BYTE>& vRGB,
-								const std::vector<BYTE>& vDepth,
-								const std::vector<BYTE>& vAR,
-								const std::vector<BYTE>& vTactile);
-
 	// send a video only packet to the other player
-	rc_network sendVideoPacket(	const std::vector<BYTE>& vRGB,
-								const std::vector<BYTE>& vDepth,
-								const std::vector<BYTE>& vAR);
-
-	// send a tactile only packet to the other player
-	rc_network sendTactilePacket(const std::vector<BYTE>& vTactile);
+	rc_network sendVideoData(const std::vector<BYTE>& vRGB);
 
 	// notify the controller that a network connection has been accepted
 	void notifyAccept(NetworkSocket* socket);
@@ -90,31 +79,14 @@ private:
 	NetworkSocket* m_pControlSocket; // the actual socket
 	SOCKET m_hControlSocket; // the socket handle
 	BOOL m_bControlConnected; // true if the connection has been accepted
-
-	std::queue<ControlPacket> m_ControlSocketSendQueue; // send queue
-	CSemaphore m_sControlSocketSend; // semaphore for how many messages in the send queue
-	CRITICAL_SECTION m_csControlSocketSend; // critical section for the send queue
-
-	std::queue<ControlPacket> m_ControlSocketReceiveQueue; // receive queue
-	CSemaphore m_sControlSocketReceive; // semaphore for how many messages in the receive queue
-	CRITICAL_SECTION m_csControlSocketReceive; // critical section for the receive queue
-
-	// the control send thread, sends messages through the network
-	HANDLE m_hControlSendThread; // handle
-	DWORD m_dwIDControlSend; // thread id
+	CRITICAL_SECTION m_csControlSocketSend; // mutex for sending control messages
 
 	// the control receive thread, receives messages through the network
 	HANDLE m_hControlReceiveThread; // handle
 	DWORD m_dwIDControlReceive; // thread id
 
-	// the control message handle thread, handles messages received through the network
-	HANDLE m_hControlMessageHandleThread; // handle
-	DWORD m_dwIDControlMessageHandle; // thread id
-
 	// the threads managing the control socket
-	static DWORD ControlSendThread(NetworkManager* pNetworkManager);
 	static DWORD ControlReceiveThread(NetworkManager* pNetworkManager);
-	static DWORD ControlMessageHandleThread(NetworkManager* pNetworkManager);
 
 	//-----------------------
 	// Data Socket
@@ -123,31 +95,14 @@ private:
 	NetworkSocket* m_pDataSocket; // the actual socket
 	SOCKET m_hDataSocket; // the socket handle
 	BOOL m_bDataConnected; // true if the connection has been accepted
-
-	std::queue<DataPacket> m_DataSocketSendQueue; // send queue
-	CSemaphore m_sDataSocketSend; // semaphore for how many messages in the send queue
-	CRITICAL_SECTION m_csDataSocketSend; // critical section for the send queue
-
-	std::queue<DataPacket> m_DataSocketReceiveQueue; // receive queue
-	CSemaphore m_sDataSocketReceive; // semaphore for how many messages in the receive queue
-	CRITICAL_SECTION m_csDataSocketReceive; // critical section for the receive queue
-
-	// the data game thread, sends messages through the network
-	HANDLE m_hDataSendThread; // handle
-	DWORD m_dwIDDataSend; // thread id
+	CRITICAL_SECTION m_csDataSocketSend; // mutex for sending data message
 
 	// the control receive thread, receives messages through the network
 	HANDLE m_hDataReceiveThread; // handle
 	DWORD m_dwIDDataReceive; // thread id
 
-	// the control message handle thread, handles messages received through the network
-	HANDLE m_hDataMessageHandleThread; // handle
-	DWORD m_dwIDDataMessageHandle; // thread id
-
 	// the threads managing the data socket
-	static DWORD DataSendThread(NetworkManager* pNetworkManager);
 	static DWORD DataReceiveThread(NetworkManager* pNetworkManager);
-	static DWORD DataMessageHandleThread(NetworkManager* pNetworkManager);
 
 	//--------------------------
 	// Private Member functions
@@ -165,13 +120,25 @@ private:
 	rc_network sendControlMessage(const ControlPacket& message);
 
 	// send a data message to the peer
-	rc_network sendDataMessage(const DataPacket& message);
+	rc_network asyncSendDataMessage(const DataPacket& message);
 
 	// reset the network connection and notify the controller that the peer has disconnected
 	void peerDisconnect();
 
 	// reset the network connection and notify the controller that a network error has occured
 	void networkError(rc_network error);
+
+	// send a data message synchronously
+	rc_network syncSendDataMessage(const DataPacket& packet);
+
+	// handle a data message
+	void handleDataMessage(const DataPacket& message);
+
+	// send a control message synchronously
+	rc_network syncSendControlMessage(const ControlPacket& packet);
+
+	// handle a control message
+	void handleControlMessage(const ControlPacket& message);
 
 	//---------------------------
 	// Private Data Members

@@ -90,7 +90,7 @@ public:
 
 	// notifies the controller that new video data has arrived
 	void notifyNewLocalVideoData(const std::vector<BYTE>& vRGB);
-	void notifyNewRemoteVideoData(const std::vector<BYTE>& vRGB);
+	void notifyNewRemoteVideoData(const char* pRGB);
 
 	// --------------------------------
 	// Player info related functions

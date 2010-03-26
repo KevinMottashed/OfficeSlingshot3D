@@ -302,9 +302,8 @@ LRESULT CMainDlg::OnDisplayNewFrame(WPARAM wParam)
 {
 	char* vRGB = (char*) wParam;
 
-	MessageBox("Got Frame");
-	/*
-	PBITMAPINFO m_bmpinfo=new BITMAPINFO;
+	BITMAPINFO bmpinfo = BITMAPINFO();
+	PBITMAPINFO m_bmpinfo = &bmpinfo;
 	m_bmpinfo->bmiHeader.biSize=sizeof(BITMAPINFOHEADER);
 	m_bmpinfo->bmiHeader.biWidth=320;
 	m_bmpinfo->bmiHeader.biHeight=240;
@@ -318,6 +317,12 @@ LRESULT CMainDlg::OnDisplayNewFrame(WPARAM wParam)
 	m_bmpinfo->bmiHeader.biClrImportant=0;
 
 	CWnd *wnd = CMainDlg::GetActiveWindow();
+
+	if (wnd == NULL)
+	{
+		return 0;
+	}
+
 	CRect rect;
 
 	// Get Dialog DC
@@ -354,7 +359,6 @@ LRESULT CMainDlg::OnDisplayNewFrame(WPARAM wParam)
 				  240,				 // src : height
 				  DDF_SAME_DRAW			 // use prev params....
 				  );
-	*/
 
 	return 0;
 }

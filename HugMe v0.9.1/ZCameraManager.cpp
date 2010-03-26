@@ -27,6 +27,8 @@ DWORD ZCameraManager::getFrameFromCamera(ZCameraManager* p_ZCamera){
 	
 	std::vector<BYTE> nextFrame;
 
+	int frameColor = 0;
+
 	while(p_ZCamera->zcam_started){
 		nextFrame.clear();
 
@@ -35,10 +37,27 @@ DWORD ZCameraManager::getFrameFromCamera(ZCameraManager* p_ZCamera){
 		int IMAGE_HEIGTH = 240;
 
 		for (int i=0;i<IMAGE_WIDTH*IMAGE_HEIGTH;i++){
-			nextFrame.push_back(rand()%256);
-			nextFrame.push_back(rand()%256);
-			nextFrame.push_back(rand()%256);
+			if (frameColor % 3 == 0)
+			{
+				nextFrame.push_back(255);
+				nextFrame.push_back(0);
+				nextFrame.push_back(0);
+			}
+			else if (frameColor % 3 == 1)
+			{
+				nextFrame.push_back(0);
+				nextFrame.push_back(255);
+				nextFrame.push_back(0);
+			}
+			else
+			{
+				nextFrame.push_back(0);
+				nextFrame.push_back(0);
+				nextFrame.push_back(255);
+			}
 		}
+
+		++frameColor;
 
 		p_ZCamera->currentFrame = nextFrame;
 		Controller::instance()->notifyNewLocalVideoData(p_ZCamera->currentFrame);

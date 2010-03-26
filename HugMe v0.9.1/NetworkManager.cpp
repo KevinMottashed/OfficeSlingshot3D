@@ -19,42 +19,26 @@ NetworkManager::NetworkManager() :
 	m_pControlSocket(NULL),
 	m_hControlSocket(0),
 	m_bControlConnected(false),
-	m_sControlSocketSend(0, maximum_messages),
-	m_sControlSocketReceive(0, maximum_messages),
-	m_hControlSendThread(0),
-	m_dwIDControlSend(0),
 	m_hControlReceiveThread(0),
 	m_dwIDControlReceive(0),
-	m_hControlMessageHandleThread(0),
-	m_dwIDControlMessageHandle(0),
 	// the data socket
 	m_pDataSocket(NULL),
 	m_hDataSocket(0),
 	m_bDataConnected(false),
-	m_sDataSocketSend(0, maximum_messages),
-	m_sDataSocketReceive(0, maximum_messages),
-	m_hDataSendThread(0),
-	m_dwIDDataSend(0),
 	m_hDataReceiveThread(0),
 	m_dwIDDataReceive(0),
-	m_hDataMessageHandleThread(0),
-	m_dwIDDataMessageHandle(0),
 	// control members
 	m_bIsConnected(false),
 	m_bIsServer(false)
 {
 	InitializeCriticalSection(&m_csControlSocketSend);
-	InitializeCriticalSection(&m_csControlSocketReceive);
 	InitializeCriticalSection(&m_csDataSocketSend);
-	InitializeCriticalSection(&m_csDataSocketReceive);
 }
 
 NetworkManager::~NetworkManager()
 {
 	DeleteCriticalSection(&m_csControlSocketSend);
-	DeleteCriticalSection(&m_csControlSocketReceive);
 	DeleteCriticalSection(&m_csDataSocketSend);
-	DeleteCriticalSection(&m_csDataSocketReceive);
 	delete m_pControlSocket;
 	delete m_pDataSocket;
 }
@@ -162,6 +146,11 @@ rc_network NetworkManager::connect(const std::string& ipAddress)
 
 rc_network NetworkManager::disconnect()
 {
+	if (!m_bIsConnected)
+	{
+		return SUCCESS;
+	}
+
 	// close the sockets and reset the connection
 	closeSockets();
 	resetConnection();
@@ -220,24 +209,6 @@ void NetworkManager::resetConnection()
 	m_bIsConnected = false;
 	m_bIsServer = false;
 
-	// empty the control receive queue in a thread safe manner
-	while (m_sControlSocketReceive.Lock(1)) // wait 1 ms for the lock
-	{
-		synchronized(m_csControlSocketReceive)
-		{
-			m_ControlSocketReceiveQueue.pop();
-		}
-	}
-
-	// empty the control send queue in a thread safe manner
-	while (m_sControlSocketSend.Lock(1)) // wait 1 ms for the lock
-	{
-		synchronized(m_csControlSocketSend)
-		{
-			m_ControlSocketSendQueue.pop();
-		}
-	}
-
 	return;
 }
 
@@ -277,73 +248,6 @@ void NetworkManager::closeSockets()
 	}
 
 	return;
-}
-
-DWORD NetworkManager::ControlSendThread(NetworkManager *pNetworkManager)
-{
-	while (pNetworkManager->m_bIsConnected)
-	{
-		// wait for a message to arrive
-		pNetworkManager->m_sControlSocketSend.Lock();
-
-		// the packet to send
-		ControlPacket packet;
-
-		// need to synchronize access to the send queue,
-		// another thread might try to add a message to the queue while we send
-		synchronized (pNetworkManager->m_csControlSocketSend)
-		{
-			// get the packet at the front of the queue
-			packet = pNetworkManager->m_ControlSocketSendQueue.front();
-
-			// remove the packet from the queue of packets to send
-			pNetworkManager->m_ControlSocketSendQueue.pop();
-		}
-
-		// get the data to send
-		const std::vector<BYTE>& data = packet.getPacket();
-
-		// send the message
-		// When sending the message we might need to call the send function multiple times.
-		// This is because it is not guaranteed to send all the bytes in one chunk.
-		// We therefore have to keep calling the send function until all the bytes are sent.
-		const char* i = (const char*)&data[0];
-		int bytesSent = 0;
-		while (bytesSent < data.size())
-		{
-			int rc = send(pNetworkManager->m_hControlSocket, i, data.size() - bytesSent, 0);
-
-			// check the return code
-			switch (rc)
-			{
-				case 0: // no bytes have been sent, consider this a failure
-					return 0;
-				case SOCKET_ERROR: // there's a problem with the socket, fail here
-					{
-						DWORD error = GetLastError();
-						// ignore the would block error, it means the socket is temporarily unavailable
-						if (error != WSAEWOULDBLOCK)
-						{
-							// the error is only genuine if we are still connected
-							// when the network is disconnected by the user we will receive a socket error
-							// this is normal, so do not notify the controller
-							if (pNetworkManager->m_bIsConnected)
-							{
-								// disconnect when the socket fails
-								pNetworkManager->networkError(ERROR_SOCKET_ERROR);
-								return 0;
-							}
-							return 1;
-						}
-						break;
-					}
-				default: // some bytes have been sent, the return code represents how many
-					bytesSent += rc;
-					i += bytesSent;
-			}
-		}
-	}
-	return 1;
 }
 
 DWORD NetworkManager::ControlReceiveThread(NetworkManager* pNetworkManager)
@@ -395,153 +299,12 @@ DWORD NetworkManager::ControlReceiveThread(NetworkManager* pNetworkManager)
 		// in the same recv(...) call, we need to read as many messages as possible from the stream before continuing
 		while (packet.readPacket(queue))
 		{
-			// the packet is complete, add it to the queue
-			synchronized(pNetworkManager->m_csControlSocketReceive)
-			{
-				// add the packet to the end of the receive queue
-				pNetworkManager->m_ControlSocketReceiveQueue.push(packet);
-			}
-
-			// notify the message handler that a new packet has arrived
-			pNetworkManager->m_sControlSocketReceive.Unlock();
+			pNetworkManager->handleControlMessage(packet);
 
 			// start a new packet
 			packet = ControlPacket();
 		}
 	}
-	return 1;
-}
-
-DWORD NetworkManager::ControlMessageHandleThread(NetworkManager* pNetworkManager)
-{
-	// continue until we disconnect
-	while(pNetworkManager->m_bIsConnected)
-	{
-		// wait for a message to arrive
-		pNetworkManager->m_sControlSocketReceive.Lock();
-
-		// the packet to handle
-		ControlPacket packet;
-
-		// we need to synchronize here so we don't remove a message from the queue while
-		// the receive thread is adding a message
-		synchronized(pNetworkManager->m_csControlSocketReceive)
-		{
-			// get the next message to handle
-			packet = pNetworkManager->m_ControlSocketReceiveQueue.front();
-
-			// remove the packet from the queue
-			pNetworkManager->m_ControlSocketReceiveQueue.pop();
-		}
-
-		switch(packet.getType())
-		{
-			case CONTROL_PACKET_NAME:
-			{
-				// update the remote user name
-				Controller::instance()->updateRemoteUserName(packet.getUserName());
-				Controller::instance()->notifyNetworkConnectionAccepted();
-				break;
-			}
-			case CONTROL_PACKET_CHAT:
-			{
-				// notify the controller that a new message has arrived
-				Controller::instance()->notifyNewChatMessage(packet.getChatMessage());
-				break;
-			}
-			case CONTROL_PACKET_START_GAME:
-			{
-				// notify the controller that the peer has started the game
-				Controller::instance()->notifyPeerStartGame();
-				break;
-			}
-			case CONTROL_PACKET_END_GAME:
-			{
-				// notify the controller that the peer has exited the game
-				Controller::instance()->notifyPeerExitGame();
-				break;
-			}
-			case CONTROL_PACKET_UNKNOWN:
-			default:
-			{
-				// fail if we receive an unknown packet
-				pNetworkManager->networkError(ERROR_UNKNOWN_CONTROL_MESSAGE);
-				return 0;
-			}
-		}
-	}
-	return 1;
-}
-
-DWORD NetworkManager::DataSendThread(NetworkManager *pNetworkManager)
-{
-	// keep going until the network manager closes the connection
-	while (pNetworkManager->m_bIsConnected)
-	{
-		// wait for a message to arrive
-		pNetworkManager->m_sDataSocketSend.Lock();
-
-		// the packet to send
-		DataPacket packet;
-
-		// need to synchronize access to the send queue,
-		// another thread might try to add a message to the queue while we send
-		synchronized (pNetworkManager->m_csDataSocketSend)
-		{
-			// get the packet at the front of the queue
-			packet = pNetworkManager->m_DataSocketSendQueue.front();
-
-			// remove the packet from the queue of packets to send
-			pNetworkManager->m_DataSocketSendQueue.pop();
-		}
-
-		// get the assembled message in bytes
-		std::auto_ptr<std::vector<BYTE> > ap_message = packet.getPacket();
-
-		// the message to send in bytes
-		std::vector<BYTE>& message = *ap_message;
-
-		// send the message
-		// When sending the message we might need to call the send function multiple times.
-		// This is because it is not guaranteed to send all the bytes in one packet.
-		// We therefore have to keep calling the send function until all the bytes are sent.
-		const char* i = (const char*)&message[0];
-		int bytesSent = 0;
-		while (bytesSent < message.size())
-		{
-			int rc = send(pNetworkManager->m_hDataSocket, i, message.size() - bytesSent, 0);
-
-			// check the return code
-			switch (rc)
-			{
-				case 0: // no bytes have been sent, consider this a failure
-					return 0;
-				case SOCKET_ERROR: // there's a problem with the socket, fail here
-					{
-						DWORD error = GetLastError();
-						// ignore the would block error, it means the socket is temporarily unavailable
-						if (error != WSAEWOULDBLOCK)
-						{
-							// the error is only genuine if we are still connected
-							// when the network is disconnected by the user we will receive a socket error
-							// this is normal, so do not notify the controller
-							if (pNetworkManager->m_bIsConnected)
-							{
-								// disconnect when the socket fails
-								pNetworkManager->networkError(ERROR_SOCKET_ERROR);
-								return 0;
-							}
-							return 1;
-						}
-						break;
-					}
-				default: // some bytes have been sent, the return code represent how many
-					bytesSent += rc;
-					i += bytesSent;
-			}
-		}
-	}
-	// exited gracefully
 	return 1;
 }
 
@@ -576,6 +339,7 @@ DWORD NetworkManager::DataReceiveThread(NetworkManager* pNetworkManager)
 					}
 					return 1;
 				}
+
 				// this read failed, we don't want to try to handle an empty message so try reading again
 				continue;
 			}
@@ -595,51 +359,11 @@ DWORD NetworkManager::DataReceiveThread(NetworkManager* pNetworkManager)
 		// in the same recv(...) call, we need to read as many messages as possible from the stream before continuing
 		while (packet.readPacket(queue))
 		{
-			// the packet is complete, add it to the queue
-			synchronized(pNetworkManager->m_csDataSocketReceive)
-			{
-				// add the packet to the end of the receive queue
-				pNetworkManager->m_DataSocketReceiveQueue.push(packet);
-			}
-
 			// notify the message handler that a new packet has arrived
-			pNetworkManager->m_sDataSocketReceive.Unlock();
+			pNetworkManager->handleDataMessage(packet);
 
 			// start a new packet
 			packet = DataPacket();
-		}
-	}
-	return 1;
-}
-
-DWORD NetworkManager::DataMessageHandleThread(NetworkManager* pNetworkManager)
-{
-	// continue until we disconnect
-	while(pNetworkManager->m_bIsConnected)
-	{
-		// wait for a message to arrive
-		pNetworkManager->m_sDataSocketReceive.Lock();
-
-		// the packet to handle
-		DataPacket packet;
-
-		// we need to synchronize here so we don't remove a message from the queue while
-		// the receive thread is adding a message
-		synchronized(pNetworkManager->m_csDataSocketReceive)
-		{
-			// get the next message to handle
-			DataPacket packetToHandle = pNetworkManager->m_DataSocketReceiveQueue.front();
-
-			// copy the packet over
-			packet = DataPacket(packetToHandle);
-
-			// remove the packet from the queue
-			pNetworkManager->m_DataSocketReceiveQueue.pop();
-		}
-
-		if (packet.getHeader().isVideo)
-		{
-			Controller::instance()->notifyNewLocalVideoData(packet.getVideoRGBData());
 		}
 	}
 	return 1;
@@ -656,14 +380,10 @@ rc_network NetworkManager::initializeConnection()
 
 	// initialize the socket threads
 	// control socket threads
-	m_hControlSendThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) ControlSendThread, (void*) this, 0, &m_dwIDControlSend);
 	m_hControlReceiveThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) ControlReceiveThread, (void*) this, 0, &m_dwIDControlReceive);
-	m_hControlMessageHandleThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) ControlMessageHandleThread, (void*) this, 0, &m_dwIDControlMessageHandle);
 
 	// data socket threads
-	m_hDataSendThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) DataSendThread, (void*) this, 0, &m_dwIDDataSend);
 	m_hDataReceiveThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) DataReceiveThread, (void*) this, 0, &m_dwIDDataReceive);
-	m_hDataMessageHandleThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) DataMessageHandleThread, (void*) this, 0, &m_dwIDDataMessageHandle);
 
 	sendUserName(Controller::instance()->getLocalUserName());
 
@@ -674,106 +394,198 @@ rc_network NetworkManager::sendUserName(const std::string& userName)
 {
 	ControlPacket packet;
 	packet.setUserName(userName);
-	return sendControlMessage(packet);
+	return syncSendControlMessage(packet);
 }
 
 rc_network NetworkManager::sendChatMessage(const std::string& message)
 {
 	ControlPacket packet;
 	packet.setChatMessage(message);
-	return sendControlMessage(packet);
+	return syncSendControlMessage(packet);
 }
 
 rc_network NetworkManager::sendStartGame()
 {
 	ControlPacket packet;
 	packet.setStartGame();
-	return sendControlMessage(packet);
+	return syncSendControlMessage(packet);
 }
 
 rc_network NetworkManager::sendEndGame()
 {
 	ControlPacket packet;
 	packet.setEndGame();
-	return sendControlMessage(packet);
+	return syncSendControlMessage(packet);
 }
 
-rc_network NetworkManager::sendControlMessage(const ControlPacket& packet)
-{
-	// we can't send a message if we are not connected
-	if (!isConnected())
-	{
-		return ERROR_NO_CONNECTION;
-	}
-
-	// we synchronize here to avoid adding a message to the queue
-	// while a message is being sent
-	synchronized(m_csControlSocketSend)
-	{
-		// add the message to the rear of the queue
-		m_ControlSocketSendQueue.push(packet);
-	}
-
-	// notifies the send thread that there is a message to send
-	if (!m_sControlSocketSend.Unlock())
-	{
-		return ERROR_MESSAGE_QUEUE_OVERFLOW;
-	}
-	return SUCCESS;
-}
-
-rc_network NetworkManager::sendDataMessage(const DataPacket& message)
-{
-	// we can't send a message if we are not connected
-	if (!isConnected())
-	{
-		return ERROR_NO_CONNECTION;
-	}
-
-	// we synchronize here to avoid adding a message to the queue
-	// while a message is being sent
-	synchronized(m_csDataSocketSend)
-	{
-		// add the message to the rear of the queue
-		m_DataSocketSendQueue.push(message);
-	}
-
-	// notifies the send thread that there is a message to send
-	if (!m_sDataSocketSend.Unlock())
-	{
-		return ERROR_MESSAGE_QUEUE_OVERFLOW;
-	}
-	return SUCCESS;
-}
-
-rc_network NetworkManager::sendDataPacket(	const std::vector<BYTE>& vRGB,
-											const std::vector<BYTE>& vDepth,
-											const std::vector<BYTE>& vAR,
-											const std::vector<BYTE>& vTactile)
+rc_network NetworkManager::sendVideoData(const std::vector<BYTE>& vRGB)
 {
 	DataPacket message;
-	message.setVideoData(vRGB, vDepth, vAR);
-	message.setTactileData(vTactile);
-	return sendDataMessage(message);
-}
-
-rc_network NetworkManager::sendVideoPacket(	const std::vector<BYTE>& vRGB,
-											const std::vector<BYTE>& vDepth,
-											const std::vector<BYTE>& vAR)
-{
-	DataPacket message;
-	message.setVideoData(vRGB, vDepth, vAR);
-	return sendDataMessage(message);
-}
-
-rc_network NetworkManager::sendTactilePacket(const std::vector<BYTE>& vTactile)
-{
-	DataPacket message;
-	message.setTactileData(vTactile);
-	return sendDataMessage(message);
+	message.setVideoData(vRGB);
+	return syncSendDataMessage(message);
 }
 
 bool NetworkManager::isConnected() const
 {
 	return m_bIsConnected;
+}
+
+rc_network NetworkManager::syncSendDataMessage(const DataPacket& packet)
+{
+	if (!m_bIsConnected)
+	{
+		return ERROR_NO_CONNECTION;
+	}
+
+	// the message to send in bytes
+	const std::vector<BYTE>& message = packet.getPacket();
+
+	// send the message
+	// When sending the message we might need to call the send function multiple times.
+	// This is because it is not guaranteed to send all the bytes in one packet.
+	// We therefore have to keep calling the send function until all the bytes are sent.
+	const char* i = (const char*)&message[0];
+	int bytesSent = 0;
+
+	// we need to synchronize here so that only one thread is sending data on the socket at a time
+	SyncLocker lock = SyncLocker(m_csDataSocketSend);
+
+	while (bytesSent < message.size())
+	{
+		int rc = send(m_hDataSocket, i, message.size() - bytesSent, 0);
+
+		// check the return code
+		switch (rc)
+		{
+			case 0: // no bytes have been sent, consider this a failure
+			{
+				return ERROR_SOCKET_ERROR;
+			}
+			case SOCKET_ERROR: // there's a problem with the socket, fail here
+			{
+				DWORD error = GetLastError();
+				// ignore the would block error, it means the socket is temporarily unavailable
+				if (error != WSAEWOULDBLOCK)
+				{
+					// fail when a socket error occurs
+					return ERROR_SOCKET_ERROR;
+				}
+				break;
+			}
+			default: // some bytes have been sent, the return code represent how many
+			{
+				bytesSent += rc;
+				i += bytesSent;
+			}
+		}
+	}
+	return SUCCESS;
+}
+
+void NetworkManager::handleDataMessage(const DataPacket& message)
+{
+	switch (message.getType())
+	{
+		case DATA_PACKET_VIDEO:
+		{
+			Controller::instance()->notifyNewRemoteVideoData(message.getVideoData());
+			break;
+		}
+		case DATA_PACKET_UNKNOWN:
+		default:
+		{
+			// fail if we receive an unknown packet type
+			networkError(ERROR_UNKNOWN_DATA_MESSAGE);
+			break;
+		}
+	}
+	return;
+}
+
+rc_network NetworkManager::syncSendControlMessage(const ControlPacket& packet)
+{
+	if (!m_bIsConnected)
+	{
+		return ERROR_NO_CONNECTION;
+	}
+
+	// get the data to send
+	const std::vector<BYTE>& data = packet.getPacket();
+
+	// send the message
+	// When sending the message we might need to call the send function multiple times.
+	// This is because it is not guaranteed to send all the bytes in one chunk.
+	// We therefore have to keep calling the send function until all the bytes are sent.
+	const char* i = (const char*)&data[0];
+	int bytesSent = 0;
+
+	// we need to synchronize here so that only one thread is sending data on the socket at a time
+	SyncLocker lock = SyncLocker(m_csControlSocketSend);
+
+	while (bytesSent < data.size())
+	{
+		int rc = send(m_hControlSocket, i, data.size() - bytesSent, 0);
+
+		// check the return code
+		switch (rc)
+		{
+			case 0: // no bytes have been sent, consider this a failure
+				return ERROR_SOCKET_ERROR;
+			case SOCKET_ERROR: // there's a problem with the socket, fail here
+				{
+					DWORD error = GetLastError();
+					// ignore the would block error, it means the socket is temporarily unavailable
+					if (error != WSAEWOULDBLOCK)
+					{
+						// fail when a socket error occurs
+						return ERROR_SOCKET_ERROR;
+					}
+					break;
+				}
+			default: // some bytes have been sent, the return code represents how many
+				bytesSent += rc;
+				i += bytesSent;
+		}
+	}
+	return SUCCESS;
+}
+
+void NetworkManager::handleControlMessage(const ControlPacket& message)
+{
+	switch(message.getType())
+	{
+		case CONTROL_PACKET_NAME:
+		{
+			// update the remote user name
+			Controller::instance()->updateRemoteUserName(message.getUserName());
+			Controller::instance()->notifyNetworkConnectionAccepted();
+			break;
+		}
+		case CONTROL_PACKET_CHAT:
+		{
+			// notify the controller that a new message has arrived
+			Controller::instance()->notifyNewChatMessage(message.getChatMessage());
+			break;
+		}
+		case CONTROL_PACKET_START_GAME:
+		{
+			// notify the controller that the peer has started the game
+			Controller::instance()->notifyPeerStartGame();
+			break;
+		}
+		case CONTROL_PACKET_END_GAME:
+		{
+			// notify the controller that the peer has exited the game
+			Controller::instance()->notifyPeerExitGame();
+			break;
+		}
+		case CONTROL_PACKET_UNKNOWN:
+		default:
+		{
+			// fail if we receive an unknown packet
+			networkError(ERROR_UNKNOWN_CONTROL_MESSAGE);
+			break;
+		}
+	}
+	return;
 }
