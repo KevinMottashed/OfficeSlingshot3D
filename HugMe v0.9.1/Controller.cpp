@@ -160,8 +160,11 @@ void Controller::notifyNewChatMessage(const std::string& message)
 
 void Controller::notifyNewLocalSlingshotPosition(const cVector3d& position)
 {
-	// TODO send it over the network too
+	// update our game with the new slingshot position
 	m_pGame->setLocalSlingshotPosition(position);
+
+	// let the peer know that we have moved our slingshot
+	m_pNetworkManager->sendSlingshotPosition(position);
 }
 
 void Controller::notifyNewRemoteSlingshotPosition(const cVector3d& position)

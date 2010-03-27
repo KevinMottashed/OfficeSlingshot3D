@@ -56,6 +56,9 @@ public:
 	// send a player position to the other player
 	rc_network sendPlayerPosition(const cVector3d& position);
 
+	// send a slingshot position to the other player
+	rc_network sendSlingshotPosition(const cVector3d& position);
+
 	// notify the controller that a network connection has been accepted
 	void notifyAccept(NetworkSocket* socket);
 

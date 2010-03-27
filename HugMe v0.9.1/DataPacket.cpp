@@ -109,12 +109,40 @@ void DataPacket::setPlayerPosition(const cVector3d& position)
 	return;
 }
 
+void DataPacket::setSlingshotPosition(const cVector3d& position)
+{
+	DataPacketHeader header;
+	header.type = DATA_PACKET_SLINGSHOT_POSITION;
+	header.size = sizeof(cVector3d);
+
+	// clear the existing content
+	m_vPacket.clear();
+
+	// copy the header into the packet
+	m_vPacket.insert(m_vPacket.end(), (BYTE*) &header, ((BYTE*) &header) + sizeof(DataPacketHeader));
+
+	// copy the slingshot position into the packet
+	m_vPacket.insert(m_vPacket.end(), (BYTE*) &position, ((BYTE*) &position) + sizeof(cVector3d));
+
+	return;
+}
+
 const char* DataPacket::getVideoData() const
 {
 	return (const char*) &m_vPacket[0] + sizeof(DataPacketHeader);
 }
 
 cVector3d DataPacket::getPlayerPosition() const
+{
+	cVector3d position;
+
+	// copy the players position from the packet
+	memcpy(&position, &m_vPacket[0] + sizeof(DataPacketHeader), sizeof(cVector3d));
+
+	return position;
+}
+
+cVector3d DataPacket::getSlingshotPosition() const
 {
 	cVector3d position;
 

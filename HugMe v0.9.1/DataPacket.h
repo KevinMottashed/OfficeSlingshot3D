@@ -19,6 +19,7 @@ enum DataPacketType
 {
 	DATA_PACKET_VIDEO,
 	DATA_PACKET_PLAYER_POSITION,
+	DATA_PACKET_SLINGSHOT_POSITION,
 	DATA_PACKET_UNKNOWN
 };
 
@@ -45,6 +46,9 @@ public:
 	// Get the players position
 	cVector3d getPlayerPosition() const;
 
+	// Get the slingshot position
+	cVector3d getSlingshotPosition() const;
+
 	// get the packet
 	const std::vector<BYTE>& getPacket() const;
 
@@ -59,6 +63,9 @@ public:
 
 	// set the packet's player position data
 	void setPlayerPosition(const cVector3d& position);
+
+	// set the slingshot position data
+	void setSlingshotPosition(const cVector3d& position);
 
 private:
 	std::vector<BYTE> m_vPacket;
