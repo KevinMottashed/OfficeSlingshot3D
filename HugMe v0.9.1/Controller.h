@@ -111,7 +111,7 @@ public:
 	// ------------------------------------
 
 	// the local user wishes to send a chat message
-	void sendChatMessage(const std::string& message);
+	rc_network sendChatMessage(const std::string& message);
 
 	// the peer has sent us a chat message
 	void notifyNewChatMessage(const std::string& message);

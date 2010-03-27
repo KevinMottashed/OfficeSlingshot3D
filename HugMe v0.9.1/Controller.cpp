@@ -148,9 +148,9 @@ void Controller::notifyNewRemoteVideoData(const char* pRGB)
 	m_pUserInterfaceManager->notifyDisplayNewFrame(pRGB);
 }
 
-void Controller::sendChatMessage(const std::string& message)
+rc_network Controller::sendChatMessage(const std::string& message)
 {
-	m_pNetworkManager->sendChatMessage(message);
+	return m_pNetworkManager->sendChatMessage(message);
 }
 
 void Controller::notifyNewChatMessage(const std::string& message)
