@@ -90,9 +90,9 @@ void UserInterfaceManager::notifyGameExited()
 	getMainWindow()->SendMessage(WM_ON_EXIT_GAME, (WPARAM)&remoteUserName);
 }
 
-void UserInterfaceManager::sendChatButtonPushed(const string& message)
+rc_network UserInterfaceManager::sendChatButtonPushed(const string& message)
 {
-	Controller::instance()->sendChatMessage(message);
+	return Controller::instance()->sendChatMessage(message);
 }
 
 void UserInterfaceManager::notifyNewChatMessage(const string& message)

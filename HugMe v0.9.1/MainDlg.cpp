@@ -81,6 +81,11 @@ END_MESSAGE_MAP()
 /////////////////////////////////////////////////////////////////////////////
 // CMainDlg message handlers
 
+BOOL CMainDlg::OnInitDialog()
+{
+	return CDialog::OnInitDialog();
+}
+
 void CMainDlg::OnNetworkConnect() 
 {
 	rc_network status = pUserInterfaceManager->networkConnectButtonPushed(m_ipAddress.c_str(), m_userName);
@@ -93,7 +98,11 @@ void CMainDlg::OnNetworkConnect()
 
 		pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_ENABLED | MF_BYCOMMAND);
 	} else {
-		MessageBox(lookup(status).c_str());
+		CString oldText;
+		m_richChat.GetWindowText(oldText);
+		oldText = oldText + "\n";
+
+		m_richChat.SetWindowText(oldText + lookup(status).c_str());
 	}
 	
 }
@@ -111,7 +120,11 @@ void CMainDlg::OnNetworkDisconnect()
 		pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_GRAYED | MF_BYCOMMAND);
 		pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_GRAYED | MF_BYCOMMAND);
 	} else {
-		MessageBox(lookup(status).c_str());
+		CString oldText;
+		m_richChat.GetWindowText(oldText);
+		oldText = oldText + "\n";
+
+		m_richChat.SetWindowText(oldText + lookup(status).c_str());
 	}
 	
 }
@@ -126,7 +139,11 @@ void CMainDlg::OnNetworkListen()
 		pMenu->EnableMenuItem(ID_NETWORK_LISTEN, MF_GRAYED | MF_BYCOMMAND);
 		pMenu->EnableMenuItem(ID_NETWORK_DISCONNECT, MF_ENABLED | MF_BYCOMMAND);
 	} else {
-		MessageBox(lookup(status).c_str());
+		CString oldText;
+		m_richChat.GetWindowText(oldText);
+		oldText = oldText + "\n";
+
+		m_richChat.SetWindowText(oldText + lookup(status).c_str());
 	}
 	
 }
@@ -136,7 +153,12 @@ LRESULT CMainDlg::OnNetworkEstablished(WPARAM wParam, LPARAM lParam)
 	string* remoteUserName = (string*) wParam;
 	ostringstream os;
 	os << *remoteUserName << " has joined the game";
-	MessageBox(os.str().c_str());
+
+	CString oldText;
+	m_richChat.GetWindowText(oldText);
+	oldText = oldText + "\n";
+
+	m_richChat.SetWindowText(oldText + os.str().c_str());
 
 	CMenu* pMenu = GetMenu();
 	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_ENABLED | MF_BYCOMMAND);
@@ -149,7 +171,12 @@ LRESULT CMainDlg::OnNetworkDisconnected(WPARAM wParam, LPARAM lParam)
 	string* remoteUserName = (string*) wParam;
 	ostringstream os;
 	os << *remoteUserName << " has disconnected from the game";
-	MessageBox(os.str().c_str());
+
+	CString oldText;
+	m_richChat.GetWindowText(oldText);
+	oldText = oldText + "\n";
+
+	m_richChat.SetWindowText(oldText + os.str().c_str());
 
 	CMenu* pMenu = GetMenu();
 	pMenu->EnableMenuItem(ID_NETWORK_CONNECT, MF_ENABLED | MF_BYCOMMAND);
@@ -165,7 +192,12 @@ LRESULT CMainDlg::OnNetworkDisconnected(WPARAM wParam, LPARAM lParam)
 LRESULT CMainDlg::OnNetworkError(WPARAM wParam, LPARAM lParam)
 {
 	rc_network* error = (rc_network*) wParam;
-	MessageBox(lookup(*error).c_str());
+
+	CString oldText;
+	m_richChat.GetWindowText(oldText);
+	oldText = oldText + "\n";
+
+	m_richChat.SetWindowText(oldText + lookup(*error).c_str());
 
 	CMenu* pMenu = GetMenu();
 	pMenu->EnableMenuItem(ID_NETWORK_CONNECT, MF_ENABLED | MF_BYCOMMAND);
@@ -226,7 +258,12 @@ LRESULT CMainDlg::OnGameStarted(WPARAM wParam, LPARAM lParam)
 	string* remoteUserName = (string*) wParam;
 	ostringstream os;
 	os << *remoteUserName << " has started the game";
-	MessageBox(os.str().c_str());
+
+	CString oldText;
+	m_richChat.GetWindowText(oldText);
+	oldText = oldText + "\n";
+
+	m_richChat.SetWindowText(oldText + os.str().c_str());
 
 	CMenu* pMenu = GetMenu();
 	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_GRAYED | MF_BYCOMMAND);
@@ -240,7 +277,12 @@ LRESULT CMainDlg::OnGameExited(WPARAM wParam, LPARAM lParam)
 	string* remoteUserName = (string*) wParam;
 	ostringstream os;
 	os << *remoteUserName << " has exited the game";
-	MessageBox(os.str().c_str());
+
+	CString oldText;
+	m_richChat.GetWindowText(oldText);
+	oldText = oldText + "\n";
+
+	m_richChat.SetWindowText(oldText + os.str().c_str());
 
 	CMenu* pMenu = GetMenu();
 	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_ENABLED | MF_BYCOMMAND);
@@ -255,17 +297,26 @@ void CMainDlg::OnSendChat()
 	m_editChatInput.GetWindowText(chatInput);
 
 	if(!chatInput.IsEmpty()) {
-		pUserInterfaceManager->sendChatButtonPushed((string)chatInput);
+		rc_network status = pUserInterfaceManager->sendChatButtonPushed((string)chatInput);
 
-		m_editChatInput.SetWindowText("");
+		if (status == SUCCESS){
+			m_editChatInput.SetWindowText("");
 
-		ostringstream os;
-		os << m_userName << " : " << (string)chatInput << "\n";
+			ostringstream os;
+			os << m_userName << " : " << (string)chatInput;
 
-		CString oldText;
-		m_richChat.GetWindowText(oldText);
+			CString oldText;
+			m_richChat.GetWindowText(oldText);
+			oldText = oldText + "\n";
 
-		m_richChat.SetWindowText( os.str().c_str() + oldText);
+			m_richChat.SetWindowText(oldText + os.str().c_str());
+		} else {
+			CString oldText;
+			m_richChat.GetWindowText(oldText);
+			oldText = oldText + "\n";
+
+			m_richChat.SetWindowText(oldText + lookup(status).c_str());
+		}
 	}
 }
 
@@ -274,12 +325,13 @@ LRESULT CMainDlg::OnNewChatMessage(WPARAM wParam, LPARAM lParam)
 	string* remoteUserName = (string*) wParam;
 	string* message = (string*) lParam;
 	ostringstream os;
-	os << *remoteUserName << " : " << *message << "\n";
+	os << *remoteUserName << " : " << *message;
 
 	CString oldText;
 	m_richChat.GetWindowText(oldText);
+	oldText = oldText + "\n";
 
-	m_richChat.SetWindowText(os.str().c_str() + oldText);
+	m_richChat.SetWindowText(oldText + os.str().c_str());
 
 	m_editChatInput.SetWindowText("");
 
@@ -301,6 +353,15 @@ void CMainDlg::OnChangeChatInput()
 LRESULT CMainDlg::OnDisplayNewFrame(WPARAM wParam, LPARAM lParam)
 {
 	char* vRGB = (char*) wParam;
+	char* tmp = vRGB;
+
+	ofstream myfile;
+	myfile.open ("testVideo.txt");
+		
+	for(int i=0; i<30; i++){
+		myfile << *tmp++ << "\n";
+	}
+	myfile.close();
 
 	BITMAPINFO bmpinfo = BITMAPINFO();
 	PBITMAPINFO m_bmpinfo = &bmpinfo;
@@ -316,13 +377,17 @@ LRESULT CMainDlg::OnDisplayNewFrame(WPARAM wParam, LPARAM lParam)
 	m_bmpinfo->bmiHeader.biClrUsed=0;
 	m_bmpinfo->bmiHeader.biClrImportant=0;
 
+	CWnd *wnd;
 	CRect rect;
 
+	// For remote video display window
+	wnd=CMainDlg::GetDlgItem(IDC_VIDEO);	// Video display window
+
 	// Get Dialog DC
-	HDC	m_hdc=m_videoBitmap.GetDC()->m_hDC;
+	HDC	m_hdc=wnd->GetDC()->m_hDC;
 
 	RECT localWndRect;
-	m_videoBitmap.GetWindowRect(&localWndRect);
+	wnd->GetWindowRect(&localWndRect);
 
 	int m_localWndWidth = localWndRect.right - localWndRect.left;
 	int m_localWndHeight = localWndRect.bottom - localWndRect.top;
@@ -352,6 +417,7 @@ LRESULT CMainDlg::OnDisplayNewFrame(WPARAM wParam, LPARAM lParam)
 				  240,				 // src : height
 				  DDF_SAME_DRAW			 // use prev params....
 				  );
+	::DrawDibClose(hdib);
 
 	return 0;
 }
@@ -362,7 +428,7 @@ BOOL CMainDlg::PreTranslateMessage(MSG* pMsg)
 	{
 		if (pMsg->wParam == VK_ESCAPE)
 		{
-			MessageBox("Escape");
+			//MessageBox("Escape");
 			// TODO Perform Escape action
 			return TRUE;
 		}

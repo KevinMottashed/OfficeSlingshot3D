@@ -58,7 +58,7 @@ public:
 	rc_network networkListenButtonPushed(const string& localName);
 	rc_network networkDisconnectButtonPushed();
 
-	void sendChatButtonPushed(const string& message);
+	rc_network sendChatButtonPushed(const string& message);
 
 	void startGameButtonPushed();
 	void exitGameButtonPushed();
