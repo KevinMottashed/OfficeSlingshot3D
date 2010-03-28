@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="8.00"
 	Name="Chat"
-	ProjectGUID="{594F02DF-A5BD-4EEB-8B93-2ED9C4128AF9}"
+	ProjectGUID="{8D13CAB1-842C-478B-8092-B9DC6F317FD0}"
 	Keyword="MFCProj"
 	>
 	<Platforms>
@@ -70,7 +70,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="_DEBUG"
-				Culture="1042"
+				Culture="4105"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -82,7 +82,6 @@
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="lib\ARToolKit-2.72.1,..\chai3d[v1.61.1]\lib\msvc6,lib/Z-Cam,lib,lib\HandTracker"
-				IgnoreDefaultLibraryNames="LIBCD.lib"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile=".\Debug/Chat.pdb"
 				SubSystem="2"
@@ -221,116 +220,6 @@
 			Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
 			>
 			<File
-				RelativePath="ART.cpp"
-				>
-				<FileConfiguration
-					Name="Debug|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			</File>
-			<File
-				RelativePath="CellphoneDlg.cpp"
-				>
-				<FileConfiguration
-					Name="Debug|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			</File>
-			<File
-				RelativePath="CellphoneSocket.cpp"
-				>
-				<FileConfiguration
-					Name="Debug|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			</File>
-			<File
-				RelativePath="CFinger3dofPointer.cpp"
-				>
-				<FileConfiguration
-					Name="Debug|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			</File>
-			<File
-				RelativePath="CFingerDevices.cpp"
-				>
-				<FileConfiguration
-					Name="Debug|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			</File>
-			<File
 				RelativePath="Chat.cpp"
 				>
 				<FileConfiguration
@@ -373,7 +262,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="ChatDlg.cpp"
+				RelativePath="Controller.cpp"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -395,7 +284,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="ChatPacket.cpp"
+				RelativePath="ControlPacket.cpp"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -417,7 +306,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="ChatSocket.cpp"
+				RelativePath="DataPacket.cpp"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -439,7 +328,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="ConnectDlg.cpp"
+				RelativePath="FalconPenManager.cpp"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -461,7 +350,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="DepthCamera.cpp"
+				RelativePath="Game.cpp"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -483,7 +372,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="DepthImageComp.cpp"
+				RelativePath="MainDlg.cpp"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -505,7 +394,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="DisplayDeviceArmband.cpp"
+				RelativePath="NetworkManager.cpp"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -527,7 +416,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="DisplayDeviceFinger.cpp"
+				RelativePath="NetworkSocket.cpp"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -549,7 +438,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="DisplayDeviceJacket.cpp"
+				RelativePath="Preferences.cpp"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -571,7 +460,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="EmoticonDlg.cpp"
+				RelativePath="Projectile.cpp"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -593,139 +482,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="HugMe.cpp"
-				>
-				<FileConfiguration
-					Name="Debug|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			</File>
-			<File
-				RelativePath="HumanModel.cpp"
-				>
-				<FileConfiguration
-					Name="Debug|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			</File>
-			<File
-				RelativePath="ImageDataObject.cpp"
-				>
-				<FileConfiguration
-					Name="Debug|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			</File>
-			<File
-				RelativePath="OptionDlg.cpp"
-				>
-				<FileConfiguration
-					Name="Debug|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			</File>
-			<File
-				RelativePath="PatternDlg.cpp"
-				>
-				<FileConfiguration
-					Name="Debug|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			</File>
-			<File
-				RelativePath="SerialPort.cpp"
-				>
-				<FileConfiguration
-					Name="Debug|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			</File>
-			<File
-				RelativePath="StaticCanvas.cpp"
+				RelativePath="SmartClothingManager.cpp"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -773,7 +530,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="TactileArray.cpp"
+				RelativePath="UserInterfaceManager.cpp"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -795,7 +552,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="VirtualPadDlg.cpp"
+				RelativePath="ZCameraManager.cpp"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -822,23 +579,7 @@
 			Filter="h;hpp;hxx;hm;inl"
 			>
 			<File
-				RelativePath="ART.h"
-				>
-			</File>
-			<File
-				RelativePath="CellphoneDlg.h"
-				>
-			</File>
-			<File
-				RelativePath="CellphoneSocket.h"
-				>
-			</File>
-			<File
-				RelativePath="CFinger3dofPointer.h"
-				>
-			</File>
-			<File
-				RelativePath="CFingerDevices.h"
+				RelativePath="chai3d.h"
 				>
 			</File>
 			<File
@@ -846,63 +587,47 @@
 				>
 			</File>
 			<File
-				RelativePath="ChatDlg.h"
+				RelativePath="Controller.h"
 				>
 			</File>
 			<File
-				RelativePath="ChatPacket.h"
+				RelativePath="ControlPacket.h"
 				>
 			</File>
 			<File
-				RelativePath="ChatSocket.h"
+				RelativePath="DataPacket.h"
 				>
 			</File>
 			<File
-				RelativePath="ConnectDlg.h"
+				RelativePath="FalconPenManager.h"
 				>
 			</File>
 			<File
-				RelativePath="DepthImageComp.h"
+				RelativePath="Game.h"
 				>
 			</File>
 			<File
-				RelativePath="DisplayDeviceArmband.h"
+				RelativePath="MainDlg.h"
 				>
 			</File>
 			<File
-				RelativePath="DisplayDeviceFinger.h"
+				RelativePath="NetworkCodes.h"
 				>
 			</File>
 			<File
-				RelativePath="DisplayDeviceJacket.h"
+				RelativePath="NetworkManager.h"
 				>
 			</File>
 			<File
-				RelativePath="EmoticonDlg.h"
+				RelativePath="NetworkSocket.h"
 				>
 			</File>
 			<File
-				RelativePath="HugMe.h"
+				RelativePath="Preferences.h"
 				>
 			</File>
 			<File
-				RelativePath="HumanModel.h"
-				>
-			</File>
-			<File
-				RelativePath="ImageDataObject.h"
-				>
-			</File>
-			<File
-				RelativePath="OptionDlg.h"
-				>
-			</File>
-			<File
-				RelativePath="Pattern.h"
-				>
-			</File>
-			<File
-				RelativePath="PatternDlg.h"
+				RelativePath="Projectile.h"
 				>
 			</File>
 			<File
@@ -910,11 +635,7 @@
 				>
 			</File>
 			<File
-				RelativePath="SerialPort.h"
-				>
-			</File>
-			<File
-				RelativePath="StaticCanvas.h"
+				RelativePath="SmartClothingManager.h"
 				>
 			</File>
 			<File
@@ -922,19 +643,15 @@
 				>
 			</File>
 			<File
-				RelativePath="Sync.h"
+				RelativePath="SyncLocker.h"
 				>
 			</File>
 			<File
-				RelativePath="TactileArray.h"
+				RelativePath="UserInterfaceManager.h"
 				>
 			</File>
 			<File
-				RelativePath="VirtualPadDlg.h"
-				>
-			</File>
-			<File
-				RelativePath="..\chai3d[v1.61.1]\src\devices\ZCAM_HEADER1.h"
+				RelativePath="ZCameraManager.h"
 				>
 			</File>
 		</Filter>
@@ -942,6 +659,10 @@
 			Name="Resource Files"
 			Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"
 			>
+			<File
+				RelativePath="Objects\BoardroomTable.bmp"
+				>
+			</File>
 			<File
 				RelativePath="res\Chat.ico"
 				>
@@ -951,11 +672,7 @@
 				>
 			</File>
 			<File
-				RelativePath="res\emoticon.bmp"
-				>
-			</File>
-			<File
-				RelativePath="res\emoticon_sel.bmp"
+				RelativePath="Objects\table_blurred.bmp"
 				>
 			</File>
 		</Filter>

@@ -4,10 +4,13 @@
 # executables
 */Debug/*.exe*
 */Release/*.exe*
-Test_Suite.exe
+Test_Suite.exe*
 
 # Windows Thumbs.db
 Thumbs.db
+
+# falcon log
+hdal_messages.log
 
 # Visual Studio - START
 
@@ -42,6 +45,9 @@ BuildLog.htm
 
 # user solution
 *.suo
+
+# data execution prevention
+*.dep
 
 # Visual Studio - END
 
