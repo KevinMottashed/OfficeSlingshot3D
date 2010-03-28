@@ -11,6 +11,7 @@
 
 #include "Resource.h"
 #include "UserInterfaceManager.h"
+#include "vfw.h"
 
 using namespace std;
 
@@ -25,11 +26,25 @@ private:
 	UserInterfaceManager* pUserInterfaceManager;
 	string m_userName;
 	string m_ipAddress;
+
+	CWnd *wnd;
+
+	int m_localWndWidth;
+	int m_localWndHeight;
+
+	PBITMAPINFO m_bmpinfo;
+	HDC m_hdc;
+	HDRAWDIB hdib;
 // Construction
 public:
 	CMainDlg(UserInterfaceManager* pUserInterfaceManager, CWnd* pParent = NULL);   // standard constructor
 	virtual BOOL CMainDlg::PreTranslateMessage(MSG* pMsg);
 	virtual BOOL CMainDlg::OnInitDialog();
+
+	void initVideoArea();
+	void closeVideoArea();
+
+	void AddChatContent(CString strCont);
 
 // Dialog Data
 	//{{AFX_DATA(CMainDlg)

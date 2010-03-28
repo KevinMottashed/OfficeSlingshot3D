@@ -98,11 +98,7 @@ void CMainDlg::OnNetworkConnect()
 
 		pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_ENABLED | MF_BYCOMMAND);
 	} else {
-		CString oldText;
-		m_richChat.GetWindowText(oldText);
-		oldText = oldText + "\n";
-
-		m_richChat.SetWindowText(oldText + lookup(status).c_str());
+		AddChatContent(lookup(status).c_str());
 	}
 	
 }
@@ -119,12 +115,10 @@ void CMainDlg::OnNetworkDisconnect()
 
 		pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_GRAYED | MF_BYCOMMAND);
 		pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_GRAYED | MF_BYCOMMAND);
-	} else {
-		CString oldText;
-		m_richChat.GetWindowText(oldText);
-		oldText = oldText + "\n";
 
-		m_richChat.SetWindowText(oldText + lookup(status).c_str());
+		AddChatContent("Disconnected");
+	} else {
+		AddChatContent(lookup(status).c_str());
 	}
 	
 }
@@ -138,12 +132,10 @@ void CMainDlg::OnNetworkListen()
 		pMenu->EnableMenuItem(ID_NETWORK_CONNECT, MF_GRAYED | MF_BYCOMMAND);
 		pMenu->EnableMenuItem(ID_NETWORK_LISTEN, MF_GRAYED | MF_BYCOMMAND);
 		pMenu->EnableMenuItem(ID_NETWORK_DISCONNECT, MF_ENABLED | MF_BYCOMMAND);
-	} else {
-		CString oldText;
-		m_richChat.GetWindowText(oldText);
-		oldText = oldText + "\n";
 
-		m_richChat.SetWindowText(oldText + lookup(status).c_str());
+		AddChatContent("Listening");
+	} else {
+		AddChatContent(lookup(status).c_str());
 	}
 	
 }
@@ -154,11 +146,7 @@ LRESULT CMainDlg::OnNetworkEstablished(WPARAM wParam, LPARAM lParam)
 	ostringstream os;
 	os << *remoteUserName << " has joined the game";
 
-	CString oldText;
-	m_richChat.GetWindowText(oldText);
-	oldText = oldText + "\n";
-
-	m_richChat.SetWindowText(oldText + os.str().c_str());
+	AddChatContent(os.str().c_str());
 
 	CMenu* pMenu = GetMenu();
 	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_ENABLED | MF_BYCOMMAND);
@@ -172,11 +160,7 @@ LRESULT CMainDlg::OnNetworkDisconnected(WPARAM wParam, LPARAM lParam)
 	ostringstream os;
 	os << *remoteUserName << " has disconnected from the game";
 
-	CString oldText;
-	m_richChat.GetWindowText(oldText);
-	oldText = oldText + "\n";
-
-	m_richChat.SetWindowText(oldText + os.str().c_str());
+	AddChatContent(os.str().c_str());
 
 	CMenu* pMenu = GetMenu();
 	pMenu->EnableMenuItem(ID_NETWORK_CONNECT, MF_ENABLED | MF_BYCOMMAND);
@@ -193,11 +177,7 @@ LRESULT CMainDlg::OnNetworkError(WPARAM wParam, LPARAM lParam)
 {
 	rc_network* error = (rc_network*) wParam;
 
-	CString oldText;
-	m_richChat.GetWindowText(oldText);
-	oldText = oldText + "\n";
-
-	m_richChat.SetWindowText(oldText + lookup(*error).c_str());
+	AddChatContent(lookup(*error).c_str());
 
 	CMenu* pMenu = GetMenu();
 	pMenu->EnableMenuItem(ID_NETWORK_CONNECT, MF_ENABLED | MF_BYCOMMAND);
@@ -238,6 +218,8 @@ void CMainDlg::OnStartGame()
 
 	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_GRAYED | MF_BYCOMMAND);
 	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_ENABLED | MF_BYCOMMAND);
+
+	AddChatContent("Started the game");
 }
 
 void CMainDlg::OnExitGame() 
@@ -251,6 +233,8 @@ void CMainDlg::OnExitGame()
 
 	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_ENABLED | MF_BYCOMMAND);
 	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_GRAYED | MF_BYCOMMAND);
+
+	AddChatContent("Exited the game");
 }
 
 LRESULT CMainDlg::OnGameStarted(WPARAM wParam, LPARAM lParam)
@@ -259,11 +243,7 @@ LRESULT CMainDlg::OnGameStarted(WPARAM wParam, LPARAM lParam)
 	ostringstream os;
 	os << *remoteUserName << " has started the game";
 
-	CString oldText;
-	m_richChat.GetWindowText(oldText);
-	oldText = oldText + "\n";
-
-	m_richChat.SetWindowText(oldText + os.str().c_str());
+	AddChatContent(os.str().c_str());
 
 	CMenu* pMenu = GetMenu();
 	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_GRAYED | MF_BYCOMMAND);
@@ -278,11 +258,7 @@ LRESULT CMainDlg::OnGameExited(WPARAM wParam, LPARAM lParam)
 	ostringstream os;
 	os << *remoteUserName << " has exited the game";
 
-	CString oldText;
-	m_richChat.GetWindowText(oldText);
-	oldText = oldText + "\n";
-
-	m_richChat.SetWindowText(oldText + os.str().c_str());
+	AddChatContent(os.str().c_str());
 
 	CMenu* pMenu = GetMenu();
 	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_ENABLED | MF_BYCOMMAND);
@@ -305,17 +281,9 @@ void CMainDlg::OnSendChat()
 			ostringstream os;
 			os << m_userName << " : " << (string)chatInput;
 
-			CString oldText;
-			m_richChat.GetWindowText(oldText);
-			oldText = oldText + "\n";
-
-			m_richChat.SetWindowText(oldText + os.str().c_str());
+			AddChatContent(os.str().c_str());
 		} else {
-			CString oldText;
-			m_richChat.GetWindowText(oldText);
-			oldText = oldText + "\n";
-
-			m_richChat.SetWindowText(oldText + lookup(status).c_str());
+			AddChatContent(lookup(status).c_str());
 		}
 	}
 }
@@ -327,11 +295,7 @@ LRESULT CMainDlg::OnNewChatMessage(WPARAM wParam, LPARAM lParam)
 	ostringstream os;
 	os << *remoteUserName << " : " << *message;
 
-	CString oldText;
-	m_richChat.GetWindowText(oldText);
-	oldText = oldText + "\n";
-
-	m_richChat.SetWindowText(oldText + os.str().c_str());
+	AddChatContent(os.str().c_str());
 
 	m_editChatInput.SetWindowText("");
 
@@ -353,55 +317,6 @@ void CMainDlg::OnChangeChatInput()
 LRESULT CMainDlg::OnDisplayNewFrame(WPARAM wParam, LPARAM lParam)
 {
 	char* vRGB = (char*) wParam;
-	char* tmp = vRGB;
-
-	ofstream myfile;
-	myfile.open ("testVideo.txt");
-		
-	for(int i=0; i<30; i++){
-		myfile << *tmp++ << "\n";
-	}
-	myfile.close();
-
-	BITMAPINFO bmpinfo = BITMAPINFO();
-	PBITMAPINFO m_bmpinfo = &bmpinfo;
-	m_bmpinfo->bmiHeader.biSize=sizeof(BITMAPINFOHEADER);
-	m_bmpinfo->bmiHeader.biWidth=320;
-	m_bmpinfo->bmiHeader.biHeight=240;
-	m_bmpinfo->bmiHeader.biPlanes=1;
-	m_bmpinfo->bmiHeader.biBitCount=32;
-	m_bmpinfo->bmiHeader.biCompression=0;
-	m_bmpinfo->bmiHeader.biSizeImage=0;
-	m_bmpinfo->bmiHeader.biXPelsPerMeter=0;
-	m_bmpinfo->bmiHeader.biYPelsPerMeter=0;
-	m_bmpinfo->bmiHeader.biClrUsed=0;
-	m_bmpinfo->bmiHeader.biClrImportant=0;
-
-	CWnd *wnd;
-	CRect rect;
-
-	// For remote video display window
-	wnd=CMainDlg::GetDlgItem(IDC_VIDEO);	// Video display window
-
-	// Get Dialog DC
-	HDC	m_hdc=wnd->GetDC()->m_hDC;
-
-	RECT localWndRect;
-	wnd->GetWindowRect(&localWndRect);
-
-	int m_localWndWidth = localWndRect.right - localWndRect.left;
-	int m_localWndHeight = localWndRect.bottom - localWndRect.top;
-	HDRAWDIB hdib = ::DrawDibOpen();
-
-	::DrawDibBegin(hdib,
-					   m_hdc,
-					   m_localWndWidth,				// don't stretch
-					   m_localWndHeight,				// don't stretch
-					   &m_bmpinfo->bmiHeader,
-					   320,         // width of image
-					   240,        // height of image
-					   0				
-					   );
 
 	::DrawDibDraw(hdib,
 				  m_hdc,
@@ -417,9 +332,70 @@ LRESULT CMainDlg::OnDisplayNewFrame(WPARAM wParam, LPARAM lParam)
 				  240,				 // src : height
 				  DDF_SAME_DRAW			 // use prev params....
 				  );
-	::DrawDibClose(hdib);
 
 	return 0;
+}
+void CMainDlg::initVideoArea()
+{
+	m_bmpinfo=new BITMAPINFO;
+	m_bmpinfo->bmiHeader.biSize=sizeof(BITMAPINFOHEADER);
+	m_bmpinfo->bmiHeader.biWidth=320;
+	m_bmpinfo->bmiHeader.biHeight=240;
+	m_bmpinfo->bmiHeader.biPlanes=1;
+	m_bmpinfo->bmiHeader.biBitCount=32;
+	m_bmpinfo->bmiHeader.biCompression=0;
+	m_bmpinfo->bmiHeader.biSizeImage=0;
+	m_bmpinfo->bmiHeader.biXPelsPerMeter=0;
+	m_bmpinfo->bmiHeader.biYPelsPerMeter=0;
+	m_bmpinfo->bmiHeader.biClrUsed=0;
+	m_bmpinfo->bmiHeader.biClrImportant=0;
+
+
+	//Adjust display windows
+	RECT localWndRect;
+
+	wnd = this->GetDlgItem(IDC_VIDEO);	 //Video display window
+	wnd->GetWindowRect(&localWndRect);
+
+	m_localWndWidth = localWndRect.right - localWndRect.left;
+	m_localWndHeight = localWndRect.bottom - localWndRect.top;
+
+	//Get Dialog DC
+	m_hdc=wnd->GetDC()->m_hDC;
+	
+	//Initialize DIB for drawing...
+	hdib=DrawDibOpen();
+	if(hdib!=NULL)
+	{
+		::DrawDibBegin(hdib,
+					   m_hdc,
+					   m_localWndWidth,		//don't stretch
+					   m_localWndHeight,	//don't stretch
+					   &m_bmpinfo->bmiHeader,
+					   320,          //width of image
+					   240,         //height of image
+					   0				
+					   );
+	
+	}
+}
+
+void CMainDlg::closeVideoArea()
+{
+	if(hdib!=NULL) {
+		DrawDibEnd(hdib);
+		DrawDibClose(hdib);
+	}
+}
+
+void CMainDlg::AddChatContent(CString strCont)
+{
+	CString str;
+	int oldLineCnt = m_richChat.GetLineCount();
+	m_richChat.SetSel(m_richChat.GetWindowTextLength(), -1);
+	m_richChat.ReplaceSel(strCont + "\r\n");
+	int newLineCnt = m_richChat.GetLineCount();
+	m_richChat.LineScroll(newLineCnt - oldLineCnt);
 }
 
 BOOL CMainDlg::PreTranslateMessage(MSG* pMsg)
