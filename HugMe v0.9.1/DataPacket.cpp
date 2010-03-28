@@ -61,9 +61,13 @@ bool DataPacket::readPacket(std::vector<BYTE>& input)
 		m_vPacket.insert(m_vPacket.end(), &input[dataIndex], &input[dataIndex] + sizeof(DataPacketHeader));
 		dataIndex += sizeof(DataPacketHeader);
 
-		// add the data to the packet
-		m_vPacket.insert(m_vPacket.end(), &input[dataIndex], &input[dataIndex] + header->size);
-		dataIndex += header->size;
+		// some packets are headers only, make sure there is data before copying it into the packet
+		if (header->size > 0)
+		{
+			// add the data to the packet
+			m_vPacket.insert(m_vPacket.end(), &input[dataIndex], &input[dataIndex] + header->size);
+			dataIndex += header->size;
+		}
 
 		// erase this packet from the input stream
 		input.erase(input.begin(), input.begin() + size);
