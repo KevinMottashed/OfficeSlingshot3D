@@ -459,7 +459,7 @@ rc_network NetworkManager::syncSendDataMessage(const DataPacket& packet)
 	// This is because it is not guaranteed to send all the bytes in one packet.
 	// We therefore have to keep calling the send function until all the bytes are sent.
 	const char* i = (const char*)&message[0];
-	int bytesSent = 0;
+	unsigned int bytesSent = 0;
 
 	// we need to synchronize here so that only one thread is sending data on the socket at a time
 	SyncLocker lock = SyncLocker(m_csDataSocketSend);
@@ -541,7 +541,7 @@ rc_network NetworkManager::syncSendControlMessage(const ControlPacket& packet)
 	// This is because it is not guaranteed to send all the bytes in one chunk.
 	// We therefore have to keep calling the send function until all the bytes are sent.
 	const char* i = (const char*)&data[0];
-	int bytesSent = 0;
+	unsigned int bytesSent = 0;
 
 	// we need to synchronize here so that only one thread is sending data on the socket at a time
 	SyncLocker lock = SyncLocker(m_csControlSocketSend);

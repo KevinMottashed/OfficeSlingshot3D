@@ -47,7 +47,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalOptions="/D /NODEFAULTLIB:library&quot; &quot;"
+				AdditionalOptions="/D /NODEFAULTLIB:library&quot; &quot; /D _CRT_SECURE_NO_DEPRECATE"
 				Optimization="0"
 				AdditionalIncludeDirectories="include,include\ARToolKit-2.72.1,..\chai3d[v1.61.1]\include,include\Z-Cam,include\HandTracker"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_MSVC"

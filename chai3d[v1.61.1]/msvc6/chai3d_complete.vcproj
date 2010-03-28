@@ -117,6 +117,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
+				AdditionalOptions="/D _CRT_SECURE_NO_DEPRECATE"
 				Optimization="0"
 				AdditionalIncludeDirectories="../external,../src/graphics,../src/collisions,../src/files,../src/tools,../src/devices,../src/display,../src/forces,../src/math,../src/timers,../src/scenegraph,../src/widgets"
 				PreprocessorDefinitions="_DEBUG;WIN32;_LIB;_MSVC"
@@ -128,7 +129,7 @@
 				AssemblerListingLocation=".\chai3d_complete___Win32_Debug/"
 				ObjectFile=".\chai3d_complete___Win32_Debug/"
 				ProgramDataBaseFileName=".\chai3d_complete___Win32_Debug/"
-				WarningLevel="3"
+				WarningLevel="0"
 				SuppressStartupBanner="true"
 				DebugInformationFormat="4"
 			/>
