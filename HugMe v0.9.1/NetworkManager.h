@@ -15,6 +15,7 @@
 #include "DataPacket.h"
 #include "ControlPacket.h"
 #include "Stdafx.h"
+#include "SyncReaderWriters.h"
 
 // Forward declarations (files include each other)
 class Controller;
@@ -34,9 +35,6 @@ public:
 
 	// disconnect from a host
 	rc_network disconnect();
-
-	// return true if we are connected to a peer
-	bool isConnected() const;
 
 	// send the player's user name over the network
 	rc_network sendUserName(const std::string& userName);
@@ -71,9 +69,6 @@ private:
 	static const int chat_port;
 	static const int data_port;
 
-	// maximum messages in the send/receive queues
-	static const int maximum_messages;
-
 	// maximum size for a control packet
 	static const int maximum_control_packet_size;
 	static const int maximum_data_packet_size;
@@ -85,7 +80,7 @@ private:
 	NetworkSocket* m_pControlSocket; // the actual socket
 	SOCKET m_hControlSocket; // the socket handle
 	BOOL m_bControlConnected; // true if the connection has been accepted
-	CRITICAL_SECTION m_csControlSocketSend; // mutex for sending control messages
+	mutable CRITICAL_SECTION m_csControlSocketSend; // mutex for sending control messages
 
 	// the control receive thread, receives messages through the network
 	HANDLE m_hControlReceiveThread; // handle
@@ -101,9 +96,9 @@ private:
 	NetworkSocket* m_pDataSocket; // the actual socket
 	SOCKET m_hDataSocket; // the socket handle
 	BOOL m_bDataConnected; // true if the connection has been accepted
-	CRITICAL_SECTION m_csDataSocketSend; // mutex for sending data message
+	mutable CRITICAL_SECTION m_csDataSocketSend; // mutex for sending data message
 
-	// the control receive thread, receives messages through the network
+	// the data receive thread, receives messages through the network
 	HANDLE m_hDataReceiveThread; // handle
 	DWORD m_dwIDDataReceive; // thread id
 
@@ -113,20 +108,32 @@ private:
 	//--------------------------
 	// Private Member functions
 	//--------------------------
-	// closes the network sockets
+
+	// reset the sockets to their original state
+	void resetSockets();
+
+	// shutdown the send operation on the sockets
+	void shutdownSockets();
+
+	// close the sockets
 	void closeSockets();
 
 	// resets variables related to the connection status
-	void resetConnection();
+	void resetConnectionStatus();
 
-	// initialize the connection
+	// initialize the connection, this will create the threads for receiving
 	rc_network initializeConnection();
+
+	// establishes the connection,
+	// this will send any messages that need to be sent for the connection to be established
+	// currently, all we need to send is our user name
+	rc_network establishConnection();
+
+	// terminate the network connection and reset everything
+	void terminateConnection();
 
 	// send a control message to the peer
 	rc_network sendControlMessage(const ControlPacket& message);
-
-	// send a data message to the peer
-	rc_network asyncSendDataMessage(const DataPacket& message);
 
 	// reset the network connection and notify the controller that the peer has disconnected
 	void peerDisconnect();
@@ -149,8 +156,20 @@ private:
 	//---------------------------
 	// Private Data Members
 	//---------------------------
+
+	// we need to synchronize the different threads modifying the connection status to avoid race conditions
+	// the operations that modify the connection status are:
+	// startListening, connect, disconnect, peerDisconnect, notifyAccept and network error
+	// only 1 of these operation can be executed at a time or we will run into synchronization issues
+	// these operations are considered writers in the readers/writers concurrency pattern
+	// the readers are the operations that use the sockets (send/recv)
+	mutable SyncReaderWriters m_rwsync_ConnectionStatus;
+
 	bool m_bIsConnected; // true if connected to a peer
 	bool m_bIsServer; // true if we are the server (listener)
+
+	// true if we are in the process of disconnecting and the disconnect originated from us
+	bool m_bLocalDisconnect; 
 };
 
 #endif // !defined(AFX_NETWORKMANAGER_H__3D85BBC3_3F80_477F_ABAB_1DAE8326532A__INCLUDED_)

@@ -8,9 +8,16 @@
 #include "NetworkManager.h"
 #include "SyncLocker.h"
 
+// These are the constants for shutting down sockets for version 1 of the socket
+// Version 2 of the socket has different constans (send and receive inverted)
+// keep this in mind if we ever switch over
+static const int shutdown_receive = 0;
+static const int shutdown_send = 1;
+static const int shutdown_receive_and_send = 2;
+
+// various contants for ports and message sizes
 const int NetworkManager::chat_port = 8869;
 const int NetworkManager::data_port = 8870;
-const int NetworkManager::maximum_messages = 10;
 const int NetworkManager::maximum_control_packet_size = 4096;
 const int NetworkManager::maximum_data_packet_size = 76800;
 
@@ -29,7 +36,8 @@ NetworkManager::NetworkManager() :
 	m_dwIDDataReceive(0),
 	// control members
 	m_bIsConnected(false),
-	m_bIsServer(false)
+	m_bIsServer(false),
+	m_bLocalDisconnect(false)
 {
 	InitializeCriticalSection(&m_csControlSocketSend);
 	InitializeCriticalSection(&m_csDataSocketSend);
@@ -46,31 +54,34 @@ NetworkManager::~NetworkManager()
 // start listening to for connections
 rc_network NetworkManager::startListening()
 {
-	// don't try listening is we are already listening or connected
+	// start listening is an operation that modifies the connection status
+	// we must therefore request write access to the connection resource before proceeding
+	SyncWriterLock statusLock = SyncWriterLock(m_rwsync_ConnectionStatus);
+
+	// don't try to connect if we are already connected
+	if (m_bIsConnected)
+	{
+		return ERROR_ALREADY_CONNECTED;
+	}
+
+	// don't try listening if we are already listening
 	if (m_pControlSocket != NULL)
 	{
-		if (m_bIsConnected)
-		{
-			return ERROR_ALREADY_CONNECTED;
-		}
-		else
-		{
-			return ERROR_ALREADY_LISTENING;
-		}
+		return ERROR_ALREADY_LISTENING;
 	}
 
 	// create the control socket
 	m_pControlSocket = new NetworkSocket(this);
 	if (!m_pControlSocket->Create(chat_port))
 	{
-		closeSockets();
+		resetSockets();
 		return ERROR_CREATE_CONTROL_SOCKET;
 	}
 
 	// listen on the control socket
 	if (!m_pControlSocket->Listen())
 	{
-		closeSockets();
+		resetSockets();
 		return ERROR_LISTEN_CONTROL_SOCKET;
 	}
 
@@ -78,14 +89,14 @@ rc_network NetworkManager::startListening()
 	m_pDataSocket = new NetworkSocket(this);
 	if (!m_pDataSocket->Create(data_port))
 	{
-		closeSockets();
+		resetSockets();
 		return ERROR_CREATE_DATA_SOCKET;
 	}
 
 	// listen on the data socket
 	if (!m_pDataSocket->Listen())
 	{
-		closeSockets();
+		resetSockets();
 		return ERROR_LISTEN_DATA_SOCKET;
 	}
 
@@ -94,120 +105,206 @@ rc_network NetworkManager::startListening()
 
 rc_network NetworkManager::connect(const std::string& ipAddress)
 {
-	// don't try connecting if we are already connected
-	if (m_pControlSocket != NULL)
 	{
-		if (isConnected())
+		// connect is an operation that modifies the connection status
+		// we must therefore request write access to the connection resource before proceeding
+		SyncWriterLock statusLock = SyncWriterLock(m_rwsync_ConnectionStatus);
+
+		// don't try connecting if we are already connected
+		if (m_bIsConnected)
 		{
 			return ERROR_ALREADY_CONNECTED;
 		}
-		else
+
+		// don't try connecting if we are already listening
+		if (m_pControlSocket != NULL)
 		{
 			return ERROR_ALREADY_LISTENING;
 		}
+
+		// create the control socket
+		m_pControlSocket = new NetworkSocket(this);
+		if (!m_pControlSocket->Create())
+		{
+			resetSockets();
+			return ERROR_CREATE_CONTROL_SOCKET;
+		}
+
+		// connect the control socket
+		if (!m_pControlSocket->Connect(ipAddress.c_str(), chat_port))
+		{
+			resetSockets();
+			return ERROR_CONNECT_CONTROL_SOCKET;
+		}
+
+		// create the data socket
+		m_pDataSocket = new NetworkSocket(this);
+		if (!m_pDataSocket->Create())
+		{
+			resetSockets();
+			return ERROR_CREATE_DATA_SOCKET;
+		}
+
+		// connect the data socket
+		if (!m_pDataSocket->Connect(ipAddress.c_str(), data_port))
+		{
+			resetSockets();
+			return ERROR_CONNECT_DATA_SOCKET;
+		}
+
+		// we are the client
+		m_bIsServer = false;
+		m_bIsConnected = true;
+		initializeConnection();
 	}
 
-	// create the control socket
-	m_pControlSocket = new NetworkSocket(this);
-	if (!m_pControlSocket->Create())
-	{
-		closeSockets();
-		return ERROR_CREATE_CONTROL_SOCKET;
-	}
-
-	// connect the control socket
-	if (!m_pControlSocket->Connect(ipAddress.c_str(), chat_port))
-	{
-		closeSockets();
-		return ERROR_CONNECT_CONTROL_SOCKET;
-	}
-
-	// create the data socket
-	m_pDataSocket = new NetworkSocket(this);
-	if (!m_pDataSocket->Create())
-	{
-		closeSockets();
-		return ERROR_CREATE_DATA_SOCKET;
-	}
-
-	// connect the data socket
-	if (!m_pDataSocket->Connect(ipAddress.c_str(), data_port))
-	{
-		closeSockets();
-		return ERROR_CONNECT_DATA_SOCKET;
-	}
-
-	// we are the client
-	m_bIsServer = false;
-	initializeConnection();
+	// establish the connection (send user name)
+	establishConnection();
 
 	return SUCCESS;
 }
 
 rc_network NetworkManager::disconnect()
 {
-	if (!m_bIsConnected)
+	// disconnect is an operation that modifies the connection status
+	// we must therefore request write access to the connection resource before proceeding
+	SyncWriterLock statusLock = SyncWriterLock(m_rwsync_ConnectionStatus);
+
+	if (m_bIsConnected)
 	{
-		return SUCCESS;
+		// it is important to only shutdown the sockets when we are already connected
+		// if we close the sockets the other side will get a network error
+		// it is only safe to close the sockets once both sides have shutdown the send operations
+		// once the other side shuts down its sockets the receive threads will call the peer disconnect function
+		// this will give us a clean disconnect
+		shutdownSockets();
+
+		// we set this variable so that the peerDisconnect call doesn't notify the UI that the peer has disconnected
+		m_bLocalDisconnect = true;
+	}
+	else
+	{
+		// if we are not connected to anything then it is safe to close our sockets abruptly (no shutdown first)
+		terminateConnection();
 	}
 
-	// close the sockets and reset the connection
-	closeSockets();
-	resetConnection();
 	return SUCCESS;
 }
 
 void NetworkManager::peerDisconnect()
 {
-	// close the sockets and reset the connection
-	disconnect();
+	// a peer disconnect is an operation that modifies the connection status
+	// we must therefore request write access to the connection resource before proceeding
+	SyncWriterLock statusLock = SyncWriterLock(m_rwsync_ConnectionStatus);
 
-	// notify the controller that the peer has disconnected
-	Controller::instance()->notifyPeerDisconnected();
+	if (m_bIsConnected && !m_bLocalDisconnect)
+	{
+		// notify the controller that the peer has disconnected
+		// only notify the controller if it was the peer that initiated the disconnect
+		Controller::instance()->notifyPeerDisconnected();
+	}
+
+	// close the sockets and reset the connection
+	// we know that the peer has already shutdown it's send operations so it is safe to close the sockets
+	terminateConnection();
+
+	return;
 }
 
 void NetworkManager::networkError(rc_network error)
 {
-	// close the sockets and reset the connection
-	disconnect();
+	// a network error is an operation that modifies the connection status
+	// we must therefore request write access to the connection resource before proceeding
+	SyncWriterLock statusLock = SyncWriterLock(m_rwsync_ConnectionStatus);
 
-	// notify the controller that the network has been disconnected due to an error
-	Controller::instance()->notifyNetworkError(error);
+	if (m_bIsConnected)
+	{
+		// notify the controller that the network has been disconnected due to an error
+		Controller::instance()->notifyNetworkError(error);
+	}
+
+	// close the sockets and reset the connection
+	terminateConnection();
+
+	return;
 }
 
 void NetworkManager::notifyAccept(NetworkSocket* socket)
 {
-	// determine which socket has accepted a connection
-	if (socket == m_pControlSocket)
+	bool establish = false;
+
+	// we must scope the write access because this function call will need read access to establish the connection
+	// if a thread tries to get write and read access at the same time a deadlock occurs
 	{
-		m_bControlConnected = true;
-	}
-	else if (socket == m_pDataSocket)
-	{
-		m_bDataConnected = true;
-	}
-	else
-	{
-		return;
+		// a network connection accept is an operation that modifies the connection status
+		// we must therefore request write access to the connection resource before proceeding
+		SyncWriterLock statusLock = SyncWriterLock(m_rwsync_ConnectionStatus);
+
+		// determine which socket has accepted a connection
+		if (socket == m_pControlSocket)
+		{
+			m_bControlConnected = true;
+		}
+		else if (socket == m_pDataSocket)
+		{
+			m_bDataConnected = true;
+		}
+		else
+		{
+			return;
+		}
+
+		// when both sockets have accepted a connection we can initialize the connection
+		if (m_bControlConnected && m_bDataConnected)
+		{
+			// we are the server
+			m_bIsServer = true;
+			m_bIsConnected = true;
+			initializeConnection();
+			establish = true;
+		}
 	}
 
-	// when both sockets have accepted a connection we can initialize the connection
-	if (m_bControlConnected && m_bDataConnected)
+	if (establish)
 	{
-		// we are the server
-		m_bIsServer = true;
-		initializeConnection();
+		establishConnection();
 	}
+
 	return;
 }
 
-void NetworkManager::resetConnection()
+void NetworkManager::resetConnectionStatus()
 {
 	// reset the connection status to not connected
 	m_bControlConnected = false;
 	m_bDataConnected = false;
 	m_bIsConnected = false;
 	m_bIsServer = false;
+	m_bLocalDisconnect = false;
+
+	return;
+}
+
+void NetworkManager::resetSockets()
+{
+	shutdownSockets();
+	closeSockets();
+}
+
+void NetworkManager::shutdownSockets()
+{
+	// shutdown sockets
+	if (m_hControlSocket)
+	{
+		// we only want to terminate the send so that the receive can terminate cleanly
+		shutdown(m_hControlSocket, shutdown_send);
+	}
+
+	if (m_hDataSocket)
+	{
+		// we only want to terminate the send so that the receive can terminate cleanly
+		shutdown(m_hDataSocket, shutdown_send);
+	}
 
 	return;
 }
@@ -217,24 +314,17 @@ void NetworkManager::closeSockets()
 	// Close sockets
 	if (m_hControlSocket)
 	{
-		// 0 represents shutdown the socket's send functionality
-		// there is a constant for this but including that header causes many problems
-		// we only want to terminate the send so that the receive can terminate cleanly
-		shutdown(m_hControlSocket, 0);
 		closesocket(m_hControlSocket);
 		m_hControlSocket = 0;
 	}
 
 	if (m_hDataSocket)
 	{
-		// 0 represents shutdown the socket's send functionality
-		// there is a constant for this but including that header causes many problems
-		// we only want to terminate the send so that the receive can terminate cleanly
-		shutdown(m_hDataSocket, 0);
 		closesocket(m_hDataSocket);
 		m_hDataSocket = 0;
 	}
 
+	// free memory
 	if (m_pControlSocket)
 	{
 		delete m_pControlSocket;
@@ -255,8 +345,40 @@ DWORD NetworkManager::ControlReceiveThread(NetworkManager* pNetworkManager)
 	BYTE receivedBuffer[maximum_control_packet_size];
 	std::vector<BYTE> queue;
 	ControlPacket packet;
-	while (pNetworkManager->m_bIsConnected)
+
+	// we need to use flags for operations that require write access to the connection status
+	// this thread will use read access to receive data so when a disconnect or error occurs
+	// we will release the read access and obtain write access to react to the disconnect/error
+	// we do this because a deadlock occurs if a thread tries to obtain both read an write access
+	bool peerDisconnect = false;
+	bool socketError = false;
+
+	// keep going until the network connection has been terminated,
+	// a peer disconnect occurs or a network error occurs
+	while (true)
 	{
+		// look for operations that require write access
+		if (peerDisconnect)
+		{
+			pNetworkManager->peerDisconnect();
+			return 0;
+		}
+		else if (socketError)
+		{
+			pNetworkManager->networkError(ERROR_SOCKET_ERROR);
+			return 0;
+		}
+
+		// receiving data through the control socket is an operation that reads the connection status
+		// we must therefore request read access to the connection resource before proceeding
+		SyncReaderLock statusLock = SyncReaderLock(pNetworkManager->m_rwsync_ConnectionStatus);
+
+		if (!pNetworkManager->m_bIsConnected)
+		{
+			// we are no longer connected, we can stop receiving data
+			return 0;
+		}
+
 		// sleep to prevent this thread from hogging the CPU
 		Sleep(1);
 
@@ -266,20 +388,12 @@ DWORD NetworkManager::ControlReceiveThread(NetworkManager* pNetworkManager)
 		switch (rc) {
 		case SOCKET_ERROR: // fail when a socket error occurs
 			{
-				DWORD error = GetLastError();
+				DWORD error = WSAGetLastError();
 				// ignore the would block error, it means the socket is temporarily unavailable
 				if (error != WSAEWOULDBLOCK)
 				{
-					// the error is only genuine if we are still connected
-					// when the network is disconnected by the user we will receive a socket error
-					// this is normal, so do not notify the controller
-					if (pNetworkManager->m_bIsConnected)
-					{
-						// disconnect when the socket fails
-						pNetworkManager->networkError(ERROR_SOCKET_ERROR);
-						return 0;
-					}
-					return 1;
+					// disconnect when the socket fails
+					socketError = true;
 				}
 				// this read failed, we don't want to try to handle an empty message so try reading again
 				continue;
@@ -287,8 +401,8 @@ DWORD NetworkManager::ControlReceiveThread(NetworkManager* pNetworkManager)
 		case 0:
 			// recv returns 0 to indicate an end of stream
 			// this means the peer has disconnected
-			pNetworkManager->peerDisconnect();
-			return 0;
+			peerDisconnect = true;
+			continue;
 		}
 
 		// add the received bytes to the end of the queue
@@ -313,10 +427,39 @@ DWORD NetworkManager::DataReceiveThread(NetworkManager* pNetworkManager)
 	BYTE receivedBuffer[maximum_data_packet_size];
 	std::vector<BYTE> queue;
 	DataPacket packet = DataPacket();
-	while (pNetworkManager->m_bIsConnected)
+
+	// we need to use flags for operations that require write access to the connection status
+	// this thread will use read access to receive data so when a disconnect or error occurs
+	// we will release the read access and obtain write access to react to the disconnect/error
+	// we do this because a deadlock occurs if a thread tries to obtain both read an write access
+	bool peerDisconnect = false;
+	bool socketError = false;
+
+	// keep going until the network connection has been terminated,
+	// a peer disconnect occurs or a network error occurs
+	while (true)
 	{
-		// sleep to prevent this thread from hogging the CPU
-		Sleep(1);
+		// look for operations that require write access
+		if (peerDisconnect)
+		{
+			pNetworkManager->peerDisconnect();
+			return 0;
+		}
+		else if (socketError)
+		{
+			pNetworkManager->networkError(ERROR_SOCKET_ERROR);
+			return 0;
+		}
+
+		// receiving data through the data socket is an operation that reads the connection status
+		// we must therefore request read access to the connection resource before proceeding
+		SyncReaderLock statusLock = SyncReaderLock(pNetworkManager->m_rwsync_ConnectionStatus);
+
+		if (!pNetworkManager->m_bIsConnected)
+		{
+			// we are no longer connected, we can stop receiving data
+			return 0;
+		}
 
 		// receive data through the network
 		int rc = recv(pNetworkManager->m_hDataSocket, (char*) receivedBuffer, maximum_control_packet_size, 0);
@@ -324,31 +467,22 @@ DWORD NetworkManager::DataReceiveThread(NetworkManager* pNetworkManager)
 		switch (rc) {
 		case SOCKET_ERROR: // fail when a socket error occurs
 			{
-				DWORD error = GetLastError();
+				DWORD error = WSAGetLastError();
 				// ignore the would block error, it means the socket is temporarily unavailable
 				if (error != WSAEWOULDBLOCK)
 				{
-					// the error is only genuine if we are still connected
-					// when the network is disconnected by the user we will receive a socket error
-					// this is normal, so do not notify the controller
-					if (pNetworkManager->m_bIsConnected)
-					{
-						// disconnect when the socket fails
-						pNetworkManager->networkError(ERROR_SOCKET_ERROR);
-						return 0;
-					}
-					return 1;
+					// disconnect when the socket fails
+					socketError = true;
 				}
 
 				// this read failed, we don't want to try to handle an empty message so try reading again
 				continue;
 			}
-
 		case 0:
 			// recv returns 0 to indicate an end of stream
 			// this means the peer has disconnected
-			pNetworkManager->peerDisconnect();
-			return 0;
+			peerDisconnect = true;
+			continue;
 		}
 
 		// add the received bytes to the end of the queue
@@ -371,9 +505,6 @@ DWORD NetworkManager::DataReceiveThread(NetworkManager* pNetworkManager)
 
 rc_network NetworkManager::initializeConnection()
 {
-	// the connection has been established
-	m_bIsConnected = true;
-
 	// detach the sockets from their threads
 	m_hControlSocket = m_pControlSocket->Detach();
 	m_hDataSocket = m_pDataSocket->Detach();
@@ -385,9 +516,21 @@ rc_network NetworkManager::initializeConnection()
 	// data socket threads
 	m_hDataReceiveThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) DataReceiveThread, (void*) this, 0, &m_dwIDDataReceive);
 
-	sendUserName(Controller::instance()->getLocalUserName());
-
 	return SUCCESS;
+}
+
+rc_network NetworkManager::establishConnection()
+{
+	// we only need to send our username to establish the connection
+	return sendUserName(Controller::instance()->getLocalUserName());
+}
+
+void NetworkManager::terminateConnection()
+{
+	// close the sockets and reset the connection
+	resetConnectionStatus();
+	resetSockets();
+	return;
 }
 
 rc_network NetworkManager::sendUserName(const std::string& userName)
@@ -439,13 +582,12 @@ rc_network NetworkManager::sendSlingshotPosition(const cVector3d& position)
 	return syncSendDataMessage(message);
 }
 
-bool NetworkManager::isConnected() const
-{
-	return m_bIsConnected;
-}
-
 rc_network NetworkManager::syncSendDataMessage(const DataPacket& packet)
 {
+	// sending data through the control socket is an operation that reads the connection status
+	// we must therefore request read access to the connection resource before proceeding
+	SyncReaderLock statusLock = SyncReaderLock(m_rwsync_ConnectionStatus);
+
 	if (!m_bIsConnected)
 	{
 		return ERROR_NO_CONNECTION;
@@ -462,7 +604,7 @@ rc_network NetworkManager::syncSendDataMessage(const DataPacket& packet)
 	unsigned int bytesSent = 0;
 
 	// we need to synchronize here so that only one thread is sending data on the socket at a time
-	SyncLocker lock = SyncLocker(m_csDataSocketSend);
+	SyncLocker sendLock = SyncLocker(m_csDataSocketSend);
 
 	while (bytesSent < message.size())
 	{
@@ -477,7 +619,7 @@ rc_network NetworkManager::syncSendDataMessage(const DataPacket& packet)
 			}
 			case SOCKET_ERROR: // there's a problem with the socket, fail here
 			{
-				DWORD error = GetLastError();
+				DWORD error = WSAGetLastError();
 				// ignore the would block error, it means the socket is temporarily unavailable
 				if (error != WSAEWOULDBLOCK)
 				{
@@ -518,8 +660,7 @@ void NetworkManager::handleDataMessage(const DataPacket& message)
 		case DATA_PACKET_UNKNOWN:
 		default:
 		{
-			// fail if we receive an unknown packet type
-			networkError(ERROR_UNKNOWN_DATA_MESSAGE);
+			// ignore unknown packets
 			break;
 		}
 	}
@@ -528,6 +669,10 @@ void NetworkManager::handleDataMessage(const DataPacket& message)
 
 rc_network NetworkManager::syncSendControlMessage(const ControlPacket& packet)
 {
+	// sending data through the control socket is an operation that reads the connection status
+	// we must therefore request read access to the connection resource before proceeding
+	SyncReaderLock statusLock = SyncReaderLock(m_rwsync_ConnectionStatus);
+
 	if (!m_bIsConnected)
 	{
 		return ERROR_NO_CONNECTION;
@@ -544,7 +689,7 @@ rc_network NetworkManager::syncSendControlMessage(const ControlPacket& packet)
 	unsigned int bytesSent = 0;
 
 	// we need to synchronize here so that only one thread is sending data on the socket at a time
-	SyncLocker lock = SyncLocker(m_csControlSocketSend);
+	SyncLocker sendLock = SyncLocker(m_csControlSocketSend);
 
 	while (bytesSent < data.size())
 	{
@@ -557,7 +702,7 @@ rc_network NetworkManager::syncSendControlMessage(const ControlPacket& packet)
 				return ERROR_SOCKET_ERROR;
 			case SOCKET_ERROR: // there's a problem with the socket, fail here
 				{
-					DWORD error = GetLastError();
+					DWORD error = WSAGetLastError();
 					// ignore the would block error, it means the socket is temporarily unavailable
 					if (error != WSAEWOULDBLOCK)
 					{
@@ -606,8 +751,7 @@ void NetworkManager::handleControlMessage(const ControlPacket& message)
 		case CONTROL_PACKET_UNKNOWN:
 		default:
 		{
-			// fail if we receive an unknown packet
-			networkError(ERROR_UNKNOWN_CONTROL_MESSAGE);
+			// ignore unknown packets
 			break;
 		}
 	}
