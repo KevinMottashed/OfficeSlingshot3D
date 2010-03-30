@@ -83,7 +83,9 @@ END_MESSAGE_MAP()
 
 BOOL CMainDlg::OnInitDialog()
 {
-	return CDialog::OnInitDialog();
+	CDialog::OnInitDialog();
+	initVideoArea();
+	return TRUE;
 }
 
 void CMainDlg::OnNetworkConnect() 
@@ -316,7 +318,7 @@ void CMainDlg::OnChangeChatInput()
 
 LRESULT CMainDlg::OnDisplayNewFrame(WPARAM wParam, LPARAM lParam)
 {
-	char* vRGB = (char*) wParam;
+	unsigned char* vRGB = (unsigned char*) wParam;
 
 	::DrawDibDraw(hdib,
 				  m_hdc,
@@ -332,7 +334,6 @@ LRESULT CMainDlg::OnDisplayNewFrame(WPARAM wParam, LPARAM lParam)
 				  240,				 // src : height
 				  DDF_SAME_DRAW			 // use prev params....
 				  );
-
 	return 0;
 }
 void CMainDlg::initVideoArea()
@@ -415,5 +416,6 @@ BOOL CMainDlg::PreTranslateMessage(MSG* pMsg)
 
 void CMainDlg::OnDestroy() 
 {
+	closeVideoArea();
 	pUserInterfaceManager->closeApplication();
 }

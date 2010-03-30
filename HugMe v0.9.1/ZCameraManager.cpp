@@ -39,21 +39,24 @@ DWORD ZCameraManager::getFrameFromCamera(ZCameraManager* p_ZCamera){
 		for (int i=0;i<IMAGE_WIDTH*IMAGE_HEIGTH;i++){
 			if (frameColor % 3 == 0)
 			{
-				nextFrame.push_back(255);
-				nextFrame.push_back(0);
+				nextFrame.push_back(rand()*255);
+				nextFrame.push_back(rand()*255);
+				nextFrame.push_back(rand()*255);
 				nextFrame.push_back(0);
 			}
 			else if (frameColor % 3 == 1)
 			{
-				nextFrame.push_back(0);
-				nextFrame.push_back(255);
+				nextFrame.push_back(rand()*255);
+				nextFrame.push_back(rand()*255);
+				nextFrame.push_back(rand()*255);
 				nextFrame.push_back(0);
 			}
 			else
 			{
+				nextFrame.push_back(rand()*255);
+				nextFrame.push_back(rand()*255);
+				nextFrame.push_back(rand()*255);
 				nextFrame.push_back(0);
-				nextFrame.push_back(0);
-				nextFrame.push_back(255);
 			}
 		}
 

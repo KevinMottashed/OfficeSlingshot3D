@@ -1,4 +1,4 @@
-//Microsoft Developer Studio generated resource script.
+// Microsoft Visual C++ generated resource script.
 //
 #include "resource.h"
 
@@ -27,18 +27,18 @@ LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
 // TEXTINCLUDE
 //
 
-1 TEXTINCLUDE DISCARDABLE 
+1 TEXTINCLUDE 
 BEGIN
     "resource.h\0"
 END
 
-2 TEXTINCLUDE DISCARDABLE 
+2 TEXTINCLUDE 
 BEGIN
     "#include ""afxres.h""\r\n"
     "\0"
 END
 
-3 TEXTINCLUDE DISCARDABLE 
+3 TEXTINCLUDE 
 BEGIN
     "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
     "#define _AFX_NO_OLE_RESOURCES\r\n"
@@ -76,7 +76,7 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 // Bitmap
 //
 
-IDB_GAME_BACKGROUND     BITMAP  DISCARDABLE     "Objects\\table_blurred.bmp"
+IDB_GAME_BACKGROUND     BITMAP                  "Objects\\table_blurred.bmp"
 #endif    // English (U.S.) resources
 /////////////////////////////////////////////////////////////////////////////
 
@@ -97,9 +97,8 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_CAN
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-IDR_MAINFRAME           ICON    DISCARDABLE     "res\\Chat.ico"
+IDR_MAINFRAME           ICON                    "res\\Chat.ico"
 
-#ifndef _MAC
 /////////////////////////////////////////////////////////////////////////////
 //
 // Version
@@ -122,18 +121,13 @@ BEGIN
     BEGIN
         BLOCK "041204b0"
         BEGIN
-            VALUE "Comments", "\0"
-            VALUE "CompanyName", "\0"
-            VALUE "FileDescription", "Chat MFC 응용 프로그램\0"
-            VALUE "FileVersion", "1, 0, 0, 1\0"
-            VALUE "InternalName", "Chat\0"
-            VALUE "LegalCopyright", "Copyright (C) 2006\0"
-            VALUE "LegalTrademarks", "\0"
-            VALUE "OriginalFilename", "Chat.EXE\0"
-            VALUE "PrivateBuild", "\0"
-            VALUE "ProductName", "Chat 응용 프로그램\0"
-            VALUE "ProductVersion", "1, 0, 0, 1\0"
-            VALUE "SpecialBuild", "\0"
+            VALUE "FileDescription", "Chat MFC 응용 프로그램"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "Chat"
+            VALUE "LegalCopyright", "Copyright (C) 2006"
+            VALUE "OriginalFilename", "Chat.EXE"
+            VALUE "ProductName", "Chat 응용 프로그램"
+            VALUE "ProductVersion", "1, 0, 0, 1"
         END
     END
     BLOCK "VarFileInfo"
@@ -142,31 +136,27 @@ BEGIN
     END
 END
 
-#endif    // !_MAC
-
 
 /////////////////////////////////////////////////////////////////////////////
 //
 // Dialog
 //
 
-IDD_MAIN_DIALOG DIALOG DISCARDABLE  0, 0, 415, 329
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_MAIN_DIALOG DIALOGEX 0, 0, 415, 329
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Office Slingshot 3D"
 MENU IDR_MENU
-FONT 8, "MS Sans Serif"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
 BEGIN
     EDITTEXT        IDC_CHAT_INPUT,7,308,322,14,ES_AUTOHSCROLL
     DEFPUSHBUTTON   "Send",IDC_SEND_CHAT,358,308,50,14,WS_DISABLED
     CONTROL         151,IDC_STATIC,"Static",SS_BITMAP,7,7,401,246
-    CONTROL         "",IDC_CHAT,"RICHEDIT",ES_MULTILINE | ES_AUTOHSCROLL | 
-                    ES_READONLY | WS_BORDER | WS_VSCROLL | WS_TABSTOP,7,261,
-                    401,41
-    CONTROL         "",IDC_VIDEO,"Static",SS_BLACKRECT,123,150,168,105
+    CONTROL         "",IDC_CHAT,"RICHEDIT",TCS_VERTICAL | TCS_RAGGEDRIGHT | TCS_MULTISELECT | WS_BORDER | WS_VSCROLL | WS_TABSTOP,7,261,401,41
+    CONTROL         "",IDC_VIDEO,"Static",SS_BLACKRECT,127,24,160,120
 END
 
-IDD_PREFERENCES DIALOG DISCARDABLE  0, 0, 307, 52
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_PREFERENCES DIALOG  0, 0, 307, 52
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Preferences"
 FONT 8, "MS Sans Serif"
 BEGIN
@@ -175,8 +165,7 @@ BEGIN
     EDITTEXT        IDC_NAME_EDIT,49,7,180,14,ES_AUTOHSCROLL
     LTEXT           "Username : ",IDC_NAME,7,10,39,8
     LTEXT           "IP Address : ",IDC_IPADDRESS,7,33,41,8
-    CONTROL         "IPAddress2",IDC_IPADDRESS_EDIT,"SysIPAddress32",
-                    WS_TABSTOP,49,30,106,15
+    CONTROL         "IPAddress2",IDC_IPADDRESS_EDIT,"SysIPAddress32",WS_TABSTOP,49,30,106,15
 END
 
 
@@ -186,7 +175,7 @@ END
 //
 
 #ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO DISCARDABLE 
+GUIDELINES DESIGNINFO 
 BEGIN
     IDD_MAIN_DIALOG, DIALOG
     BEGIN
@@ -212,14 +201,13 @@ END
 // Menu
 //
 
-IDR_MENU MENU DISCARDABLE 
+IDR_MENU MENU 
 BEGIN
     POPUP "&Network"
     BEGIN
         MENUITEM "&Listen",                     ID_NETWORK_LISTEN
         MENUITEM "&Connect",                    ID_NETWORK_CONNECT
-        MENUITEM "&Disconnect",                 ID_NETWORK_DISCONNECT
-        , GRAYED
+        MENUITEM "&Disconnect",                 ID_NETWORK_DISCONNECT, GRAYED
     END
     POPUP "&Game"
     BEGIN
@@ -238,7 +226,7 @@ END
 // String Table
 //
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE 
 BEGIN
     IDS_ABOUTBOX            "Chat ??(&A)..."
     IDP_SOCKETS_INIT_FAILED "Windows ?? ???? ???????."
