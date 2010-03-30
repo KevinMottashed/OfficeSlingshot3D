@@ -4,6 +4,7 @@
 	Version="8.00"
 	Name="Test_Suite"
 	ProjectGUID="{24DF6964-49DB-4C39-A1D1-601239AE9239}"
+	RootNamespace="Test_Suite"
 	>
 	<Platforms>
 		<Platform
@@ -201,26 +202,6 @@
 			Name="Source Files"
 			Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
 			>
-			<File
-				RelativePath="Main.cpp"
-				>
-				<FileConfiguration
-					Name="Debug|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"

@@ -4,6 +4,7 @@
 	Version="8.00"
 	Name="Chat"
 	ProjectGUID="{8D13CAB1-842C-478B-8092-B9DC6F317FD0}"
+	RootNamespace="Chat"
 	Keyword="MFCProj"
 	>
 	<Platforms>
@@ -328,6 +329,14 @@
 				</FileConfiguration>
 			</File>
 			<File
+				RelativePath=".\DisplayDeviceArmband.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\DisplayDeviceJacket.cpp"
+				>
+			</File>
+			<File
 				RelativePath="FalconPenManager.cpp"
 				>
 				<FileConfiguration
@@ -482,6 +491,10 @@
 				</FileConfiguration>
 			</File>
 			<File
+				RelativePath=".\serialport.cpp"
+				>
+			</File>
+			<File
 				RelativePath="SmartClothingManager.cpp"
 				>
 				<FileConfiguration
@@ -531,6 +544,10 @@
 			</File>
 			<File
 				RelativePath=".\SyncReaderWriters.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\TactileArray.cpp"
 				>
 			</File>
 			<File
@@ -603,6 +620,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\DisplayDeviceArmband.h"
+				>
+			</File>
+			<File
+				RelativePath=".\DisplayDeviceJacket.h"
+				>
+			</File>
+			<File
 				RelativePath="FalconPenManager.h"
 				>
 			</File>
@@ -639,6 +664,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\serialport.h"
+				>
+			</File>
+			<File
 				RelativePath="SmartClothingManager.h"
 				>
 			</File>
@@ -652,6 +681,10 @@
 			</File>
 			<File
 				RelativePath=".\SyncReaderWriters.h"
+				>
+			</File>
+			<File
+				RelativePath=".\TactileArray.h"
 				>
 			</File>
 			<File

@@ -9,6 +9,14 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
+//Should be created in HumanModel... 
+typedef enum tagHumanPart {
+	CHEST = 0,
+	RIGHT_UPPER_ARM,
+	RIGHT_LOWER_ARM,
+	TOTAL_NUM_PART
+} HumanPart;
+
 #include "Controller.h"
 
 // forward declarations (files include each other)
@@ -24,7 +32,7 @@ public:
 	// implement this with a thread/event/timer
 	// the controller shouldn't be blocked while the jacket vibrates (don't put a sleep)
 	// if possible, make the time in ms
-	void vibrate(int position, int time) {}
+	void vibrate(HumanPart touchedPart, int x, int y, int time);
 
 private:
 	SmartClothingManager(const SmartClothingManager& smartClothingManager); // intentionally not implemented
