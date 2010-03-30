@@ -37,8 +37,6 @@
 #define CHAI_DEBUG_PRINT printf
 #endif
 
-#error "cannot compile chai3d"
-
 
 //===========================================================================
 /*!

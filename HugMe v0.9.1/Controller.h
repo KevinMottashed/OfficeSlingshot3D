@@ -26,8 +26,6 @@ class ZCameraManager;
 class SmartClothingManager;
 class Game;
 
-#error "cannot compile this code"
-
 // The controller class for the program
 // this class is a singleton
 class Controller
