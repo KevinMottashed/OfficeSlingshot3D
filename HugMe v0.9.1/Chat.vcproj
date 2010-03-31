@@ -329,6 +329,10 @@
 				</FileConfiguration>
 			</File>
 			<File
+				RelativePath=".\include\Z-Cam\DepthCamera.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\DisplayDeviceArmband.cpp"
 				>
 			</File>
@@ -620,6 +624,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\include\Z-Cam\DepthCamera.h"
+				>
+			</File>
+			<File
 				RelativePath=".\DisplayDeviceArmband.h"
 				>
 			</File>
@@ -685,6 +693,14 @@
 			</File>
 			<File
 				RelativePath=".\TactileArray.h"
+				>
+			</File>
+			<File
+				RelativePath=".\include\Z-Cam\tdvCameraInterface.h"
+				>
+			</File>
+			<File
+				RelativePath=".\include\Z-Cam\TDVCameraInterface2.h"
 				>
 			</File>
 			<File

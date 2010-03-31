@@ -138,9 +138,10 @@ CDialog* Controller::getMainWindow()
 	return m_pUserInterfaceManager->getMainWindow();
 }
 
-void Controller::notifyNewLocalVideoData(const std::vector<BYTE>& vRGB)
+void Controller::notifyNewLocalVideoData(const char* vRGB)
 {
-	m_pNetworkManager->sendVideoData(vRGB);
+	//TODO change networking aspect from vector to char*, size is ZCameraManager::IMAGE_WIDTH*ZCameraManager::IMAGE_HEIGHT*4
+	//	m_pNetworkManager->sendVideoData(vRGB);
 }
 
 void Controller::notifyNewRemoteVideoData(const char* pRGB)

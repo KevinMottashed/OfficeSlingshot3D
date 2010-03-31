@@ -330,8 +330,8 @@ LRESULT CMainDlg::OnDisplayNewFrame(WPARAM wParam, LPARAM lParam)
 				  vRGB,					 // bmp data
 				  0,					 // src :left
 				  0,					 // src :top
-				  320,				 // src : width
-				  240,				 // src : height
+				  ZCameraManager::IMAGE_WIDTH,				 // src : width
+				  ZCameraManager::IMAGE_HEIGHT,				 // src : height
 				  DDF_SAME_DRAW			 // use prev params....
 				  );
 	return 0;

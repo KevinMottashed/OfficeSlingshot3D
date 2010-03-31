@@ -11,70 +11,72 @@
 
 ZCameraManager::ZCameraManager()
 {
-		zcam_started = false;
+	//Initiate thread flag to false
+	zcam_started = false;
+
+	//Create the depth camera object
+	m_depthCamera = new CDepthCamera();
+
+	//Allocate memory for the video frame
+	RGB = new BYTE[ZCameraManager::IMAGE_WIDTH*ZCameraManager::IMAGE_HEIGHT*4];
 }
 
 ZCameraManager::~ZCameraManager()
 {
+	//delete resources
+	delete m_depthCamera;
+	delete[] RGB;
 }
 
 //////////////////////////////////////////////////////////////////////
 // Functions
 //////////////////////////////////////////////////////////////////////
 
-//Dummy data generator
+//Camera thread to poll for new pictures
 DWORD ZCameraManager::getFrameFromCamera(ZCameraManager* p_ZCamera){
 	
-	std::vector<BYTE> nextFrame;
-
-	int frameColor = 0;
-
+	//While the thread is active
 	while(p_ZCamera->zcam_started){
-		nextFrame.clear();
+		//DO REAL CAMERA STUFF
+		
+		//GetNextFrame(p_ZCamera->DEPTH,p_ZCamera->RGB,p_ZCamera->RGBFull,p_ZCamera->PRIM,p_ZCamera->SEC,1000);
+		//Controller::instance()->notifyNewLocalVideoData((const char*)p_ZCamera->RGB);
+	}
 
-		//Generate a vector of 320X240 times 3 pixels for each of the RGB
-		int IMAGE_WIDTH = 320;
-		int IMAGE_HEIGTH = 240;
+	return 0;
+}
 
-		for (int i=0;i<IMAGE_WIDTH*IMAGE_HEIGTH;i++){
-			if (frameColor % 3 == 0)
-			{
-				nextFrame.push_back(rand()*255);
-				nextFrame.push_back(rand()*255);
-				nextFrame.push_back(rand()*255);
-				nextFrame.push_back(0);
-			}
-			else if (frameColor % 3 == 1)
-			{
-				nextFrame.push_back(rand()*255);
-				nextFrame.push_back(rand()*255);
-				nextFrame.push_back(rand()*255);
-				nextFrame.push_back(0);
-			}
-			else
-			{
-				nextFrame.push_back(rand()*255);
-				nextFrame.push_back(rand()*255);
-				nextFrame.push_back(rand()*255);
-				nextFrame.push_back(0);
+//Dummy data generator
+DWORD ZCameraManager::getFrameFromDummy(ZCameraManager* p_ZCamera){
+	
+	//Shortcut to access each pixel of every line
+	int step = ZCameraManager::IMAGE_WIDTH*4;
+
+	//While the thread is active
+	while(p_ZCamera->zcam_started){
+
+		//Go through eahc row and column and fill all 4 values for each pixel
+		for (int i=0;i<ZCameraManager::IMAGE_HEIGHT;i++){
+			for(int j=0;j<ZCameraManager::IMAGE_WIDTH;j++){
+				p_ZCamera->RGB[i*step+j*4]		=	rand()*255;			//blue
+				p_ZCamera->RGB[i*step+j*4+1]	=	rand()*255;			//green	
+				p_ZCamera->RGB[i*step+j*4+2]	=	rand()*255;			//red
+				p_ZCamera->RGB[i*step+j*4+3]	=	0;			//ignored	
 			}
 		}
 
-		++frameColor;
+		//Send the array to the controller, as remote data so it gets displayed locally
+		Controller::instance()->notifyNewRemoteVideoData((const char*)p_ZCamera->RGB);
 
-		p_ZCamera->currentFrame = nextFrame;
-		Controller::instance()->notifyNewLocalVideoData(p_ZCamera->currentFrame);
-
-
+/*
 		cVector3d vec;
 		vec.x = rand() % 10;
 		vec.y = rand() % 10;
 		vec.z = rand() % 10;
 		Controller::instance()->notifyNewLocalPlayerPosition(vec);
-
+*/
 		Sleep(31); // 32 fps
 	}
-	p_ZCamera->currentFrame.clear();
 	return 0;
 }
 
@@ -85,7 +87,15 @@ void ZCameraManager::start() {
 	zcam_started = true;
 
 	DWORD threadId;
-	HANDLE hThread = CreateThread( 0, 0, (LPTHREAD_START_ROUTINE) getFrameFromCamera,  (void*) this, 0, &threadId);
+	HANDLE hThread;
+
+	TDVCameraInterfaceBase* x = m_depthCamera->GetCameraInterface();
+	if (x){	//REAL CAMERA is connected
+		m_depthCamera->Initialize(1000);
+		hThread = CreateThread( 0, 0, (LPTHREAD_START_ROUTINE) getFrameFromCamera,  (void*) this, 0, &threadId);
+	}else{	//No camera is connected
+		hThread = CreateThread( 0, 0, (LPTHREAD_START_ROUTINE) getFrameFromDummy,  (void*) this, 0, &threadId);
+	}
 }
 
 // TODO implement

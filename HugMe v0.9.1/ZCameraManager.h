@@ -12,36 +12,47 @@
 #include "StdAfx.h"
 #include "Controller.h"
 #include "CVector3d.h"
+#include "DepthCamera.h"
 
 // forward declarations (files include each other)
 class Controller;
 
 class ZCameraManager  
 {
+
 public:
+
+	static const int IMAGE_WIDTH = 320;
+	static const int IMAGE_HEIGHT = 240;
+
 	ZCameraManager();
 	virtual ~ZCameraManager();
 
-	// TODO implement
-	// start getting pictures from the z camera
-	// create a thread to poll it
+	// create a thread to poll the camera
 	void start();
 
-	// TODO implement
-	// stop getting pictures
-	// stop the thread that's polling it
+	// stop the thread that's polling the camera
 	void stop();
 	
 	// Camera loop that fetches frames and player position.
 	// runs at 32 fps and continually sends information to controller
 	static DWORD getFrameFromCamera(ZCameraManager* p_ZCamera);
+	static DWORD getFrameFromDummy(ZCameraManager* p_ZCamera);
+
+	
+	unsigned char* RGB;
 
 private:
 	ZCameraManager(const ZCameraManager& zCameraManager); // intentionally not implemented
 	ZCameraManager& operator=(const ZCameraManager& zCameraManager); // intentionally not implemented
 
 	bool zcam_started;
-	std::vector<BYTE> currentFrame;
+
+	CDepthCamera * m_depthCamera;
+	unsigned char* DEPTH;
+	unsigned char* RGBFull;
+	unsigned char* PRIM;
+	unsigned char* SEC;
 
 };
 

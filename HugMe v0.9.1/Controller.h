@@ -89,7 +89,7 @@ public:
 	// --------------------------------
 
 	// notifies the controller that new video data has arrived
-	void notifyNewLocalVideoData(const std::vector<BYTE>& vRGB);
+	void notifyNewLocalVideoData(const char* vRGB);
 	void notifyNewRemoteVideoData(const char* pRGB);
 
 	// --------------------------------
