@@ -14,7 +14,7 @@
 **
 */
 
-#include "stdafx.h"
+#include "../Utils/stdafx.h"
 #include "SerialPort.h"
 
 #include <assert.h>

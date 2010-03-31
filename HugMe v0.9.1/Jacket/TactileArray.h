@@ -3,7 +3,7 @@
 
 #include "mmsystem.h"
 #include "math.h"
-#include "SerialPort.h"
+#include "serialPort.h"
 
 // definition of the array of the tactile device
 //////////////////////////////////////////////////////////

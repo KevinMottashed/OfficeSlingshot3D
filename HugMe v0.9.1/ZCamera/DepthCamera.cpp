@@ -485,12 +485,12 @@ void CDepthCamera::EnableTrack(bool enable)
 void CDepthCamera::EnableSmoothing(bool enable, double smoothVal)
 {
 	m_pCameraInterfaceBase->setCameraCommand(CMD_SMOOTH, enable);
-	m_pCameraInterfaceBase->setCameraCommand(CMD_SOFTNESS_VAL, smoothVal);
+	m_pCameraInterfaceBase->setCameraCommand(CMD_SOFTNESS_VAL, (int)smoothVal);
 }
 
 void CDepthCamera::SetCleanVal(double cleanVal)
 {
-	m_pCameraInterfaceBase->setCameraCommand(CMD_CLEAN_VAL, cleanVal);
+	m_pCameraInterfaceBase->setCameraCommand(CMD_CLEAN_VAL, (int)cleanVal);
 }
 
 void CDepthCamera::EnableMedian(bool enable)
