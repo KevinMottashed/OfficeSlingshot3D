@@ -105,3 +105,13 @@ void UserInterfaceManager::notifyDisplayNewFrame(const char *pRGB)
 {
 	getMainWindow()->SendMessage(WM_ON_NEW_FRAME, (WPARAM)pRGB);
 }
+
+void UserInterfaceManager::changeArmBandPort(int armBandPort)
+{
+	Controller::instance()->changeArmBandPort(armBandPort);
+}
+
+void UserInterfaceManager::changeJacketPort(int jacketPort)
+{
+	Controller::instance()->changeJacketPort(jacketPort);
+}

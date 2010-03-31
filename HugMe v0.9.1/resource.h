@@ -1,5 +1,5 @@
 //{{NO_DEPENDENCIES}}
-// Microsoft Developer Studio generated include file.
+// Microsoft Visual C++ generated include file.
 // Used by Chat.rc
 //
 #define IDS_ABOUTBOX                    101
@@ -19,6 +19,9 @@
 #define IDC_SEND_CHAT                   1062
 #define IDC_CHAT                        1063
 #define IDC_VIDEO                       1064
+#define IDC_ARMBAND_EDIT                1065
+#define IDC_ARMBAND_EDIT2               1066
+#define IDC_JACKET_EDIT                 1066
 #define ID_NETWORK_LISTEN               32780
 #define ID_NETWORK_CONNECT              32781
 #define ID_NETWORK_DISCONNECT           32782
@@ -32,7 +35,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        152
 #define _APS_NEXT_COMMAND_VALUE         32786
-#define _APS_NEXT_CONTROL_VALUE         1065
+#define _APS_NEXT_CONTROL_VALUE         1066
 #define _APS_NEXT_SYMED_VALUE           103
 #endif
 #endif

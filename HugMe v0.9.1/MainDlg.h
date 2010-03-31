@@ -24,9 +24,12 @@ class CMainDlg : public CDialog
 {
 private:
 	UserInterfaceManager* pUserInterfaceManager;
+
+	// User preference variables
 	string m_userName;
 	string m_ipAddress;
 
+	// Video processing variables
 	CWnd *wnd;
 
 	int m_localWndWidth;
@@ -38,12 +41,18 @@ private:
 // Construction
 public:
 	CMainDlg(UserInterfaceManager* pUserInterfaceManager, CWnd* pParent = NULL);   // standard constructor
+	
+	// Inherited method to catch messages before they are sent to the UI
 	virtual BOOL CMainDlg::PreTranslateMessage(MSG* pMsg);
+
+	// Inherited method to perform actions before the UI is displayed
 	virtual BOOL CMainDlg::OnInitDialog();
 
+	// Methods to initialize and close video sessions
 	void initVideoArea();
 	void closeVideoArea();
 
+	// Method to add a string in a new line in the text box
 	void AddChatContent(CString strCont);
 
 // Dialog Data
@@ -55,18 +64,14 @@ public:
 		CStatic m_videoBitmap;
 	//}}AFX_DATA
 
-
-// Overrides
-	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CMainDlg)
 	protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
 	//}}AFX_VIRTUAL
 
-// Implementation
 protected:
 
-	// Generated message map functions
+	// Message map functions
 	//{{AFX_MSG(CMainDlg)
 	afx_msg void OnNetworkConnect();
 	afx_msg void OnNetworkDisconnect();

@@ -21,6 +21,8 @@ public:
 	enum { IDD = IDD_PREFERENCES };
 		CString m_strAddress;
 		CString m_userName;
+		int m_armBandPort;
+		int m_jacketPort;
 	//}}AFX_DATA
 
 

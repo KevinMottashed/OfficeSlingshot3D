@@ -63,6 +63,9 @@ public:
 	void startGameButtonPushed();
 	void exitGameButtonPushed();
 
+	void changeArmBandPort(int armBandPort);
+	void changeJacketPort(int jacketPort);
+
 	void closeApplication();
 
 

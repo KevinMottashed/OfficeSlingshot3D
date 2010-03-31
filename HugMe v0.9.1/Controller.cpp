@@ -239,3 +239,13 @@ void Controller::notifyDisplayNewFrame(const char* vRGB)
 {
 	m_pUserInterfaceManager->notifyDisplayNewFrame(vRGB);
 }
+
+void Controller::changeArmBandPort(int armBandPort)
+{
+	//TODO implement
+}
+
+void Controller::changeJacketPort(int jacketPort)
+{
+	// TODO implement
+}

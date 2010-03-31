@@ -93,6 +93,14 @@ public:
 	void notifyNewRemoteVideoData(const char* pRGB);
 
 	// --------------------------------
+	// Smart Clothing related functions
+	// --------------------------------
+
+	// changes the armband and jacket port numbers
+	void changeArmBandPort(int armBandPort);
+	void changeJacketPort(int jacketPort);
+
+	// --------------------------------
 	// Player info related functions
 	// --------------------------------
 
