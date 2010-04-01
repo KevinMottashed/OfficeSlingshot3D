@@ -45,18 +45,17 @@ DWORD FalconPenManager::getPositionFromFalcon(FalconPenManager* p_Falcon)
 		{
 			++projectileCount;
 
-			cVector3d new_projectile;
-			cVector3d new_speed;
+			Projectile projectile;
 
-			new_projectile.x = x;
-			new_projectile.y = y;
-			new_projectile.z = z;
+			projectile.speed.x = x;
+			projectile.speed.y = y;
+			projectile.speed.z = z;
 
-			new_speed.x = x;
-			new_speed.y = y;
-			new_speed.z = z;
+			projectile.position.x = x;
+			projectile.position.y = y;
+			projectile.position.z = z;
 
-			Controller::instance()->notifyNewLocalProjectile(new_projectile, new_speed);
+			Controller::instance()->notifyNewLocalProjectile(projectile);
 		}
 
 		// sleep for 100ms

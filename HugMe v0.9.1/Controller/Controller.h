@@ -77,8 +77,8 @@ public:
 	void notifyNewRemoteSlingshotPosition(const cVector3d& position);
 
 	// notifies the controller that a new projectile has been launched
-	void notifyNewLocalProjectile(const cVector3d& position, const cVector3d& speed);
-	void notifyNewRemoteProjectile(const cVector3d& position, const cVector3d& speed);
+	void notifyNewLocalProjectile(const Projectile& projectile);
+	void notifyNewRemoteProjectile(const Projectile& projectile);
 
 	// notifies the controller that the position of a player has changed
 	void notifyNewLocalPlayerPosition(const cVector3d& position);

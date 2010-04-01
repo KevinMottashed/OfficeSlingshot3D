@@ -46,8 +46,8 @@ public:
 	void setRemotePlayerPosition(const cVector3d& position);
 
 	// add projectiles to the game
-	void addLocalProjectile(const cVector3d& position, const cVector3d& speed);
-	void addRemoteProjectile(const cVector3d& position, const cVector3d& speed);
+	void addLocalProjectile(const Projectile& projectile);
+	void addRemoteProjectile(const Projectile& projectile);
 
 private:
 	Game(const Game& game); // intentionally not implemented

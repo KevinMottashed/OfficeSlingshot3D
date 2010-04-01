@@ -15,11 +15,14 @@
 // chai3d
 #include "chai3d.h"
 
+#include "Projectile.h"
+
 enum DataPacketType
 {
 	DATA_PACKET_VIDEO,
 	DATA_PACKET_PLAYER_POSITION,
 	DATA_PACKET_SLINGSHOT_POSITION,
+	DATA_PACKET_PROJECTILE,
 	DATA_PACKET_UNKNOWN
 };
 
@@ -50,6 +53,9 @@ public:
 	// Get the slingshot position
 	cVector3d getSlingshotPosition() const;
 
+	// Get the projectile
+	Projectile getProjectile() const;
+
 	// get the packet
 	const std::vector<BYTE>& getPacket() const;
 
@@ -67,6 +73,9 @@ public:
 
 	// set the slingshot position data
 	void setSlingshotPosition(const cVector3d& position);
+
+	// set the projectile data
+	void setProjectile(const Projectile& projectile);
 
 private:
 	std::vector<BYTE> m_vPacket;

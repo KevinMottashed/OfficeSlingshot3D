@@ -140,7 +140,6 @@ CDialog* Controller::getMainWindow()
 
 void Controller::notifyNewLocalVideoData(const char* pRGB, unsigned int size)
 {
-	//TODO change networking aspect from vector to char*, size is ZCameraManager::IMAGE_WIDTH*ZCameraManager::IMAGE_HEIGHT*4
 	m_pNetworkManager->sendVideoData(pRGB, size);
 }
 
@@ -173,15 +172,16 @@ void Controller::notifyNewRemoteSlingshotPosition(const cVector3d& position)
 	m_pGame->setRemoteSlingshotPosition(position);
 }
 
-void Controller::notifyNewLocalProjectile(const cVector3d& position, const cVector3d& speed)
+void Controller::notifyNewLocalProjectile(const Projectile& projectile)
 {
-	// TODO send it over the network
-	m_pGame->addLocalProjectile(position, speed);
+	m_pNetworkManager->sendProjectile(projectile);
+	
+	m_pGame->addLocalProjectile(projectile);
 }
 
-void Controller::notifyNewRemoteProjectile(const cVector3d& position, const cVector3d& speed)
+void Controller::notifyNewRemoteProjectile(const Projectile& projectile)
 {
-	m_pGame->addRemoteProjectile(position, speed);
+	m_pGame->addRemoteProjectile(projectile);
 }
 
 void Controller::notifyNewLocalPlayerPosition(const cVector3d& position)

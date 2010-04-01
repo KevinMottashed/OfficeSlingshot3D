@@ -14,6 +14,7 @@
 class Projectile  
 {
 public:
+	Projectile();
 	Projectile(cVector3d position, cVector3d speed);
 	virtual ~Projectile();
 

@@ -582,6 +582,13 @@ rc_network NetworkManager::sendSlingshotPosition(const cVector3d& position)
 	return syncSendDataMessage(message);
 }
 
+rc_network NetworkManager::sendProjectile(const Projectile& projectile)
+{
+	DataPacket message;
+	message.setProjectile(projectile);
+	return syncSendDataMessage(message);
+}
+
 rc_network NetworkManager::syncSendDataMessage(const DataPacket& packet)
 {
 	// sending data through the control socket is an operation that reads the connection status
@@ -655,6 +662,11 @@ void NetworkManager::handleDataMessage(const DataPacket& message)
 		case DATA_PACKET_SLINGSHOT_POSITION:
 		{
 			Controller::instance()->notifyNewRemoteSlingshotPosition(message.getSlingshotPosition());
+			break;
+		}
+		case DATA_PACKET_PROJECTILE:
+		{
+			Controller::instance()->notifyNewRemoteProjectile(message.getProjectile());
 			break;
 		}
 		case DATA_PACKET_UNKNOWN:

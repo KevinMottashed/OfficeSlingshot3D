@@ -131,6 +131,24 @@ void DataPacket::setSlingshotPosition(const cVector3d& position)
 	return;
 }
 
+void DataPacket::setProjectile(const Projectile& projectile)
+{
+	DataPacketHeader header;
+	header.type = DATA_PACKET_PROJECTILE;
+	header.size = sizeof(Projectile);
+
+	// clear the existing content
+	m_vPacket.clear();
+
+	// copy the header into the packet
+	m_vPacket.insert(m_vPacket.end(), (BYTE*) &header, ((BYTE*) &header) + sizeof(DataPacketHeader));
+
+	// copy the projectile into the packet
+	m_vPacket.insert(m_vPacket.end(), (BYTE*) &projectile, ((BYTE*) &projectile) + sizeof(Projectile));
+
+	return;
+}
+
 const char* DataPacket::getVideoData() const
 {
 	return (const char*) &m_vPacket[0] + sizeof(DataPacketHeader);
@@ -161,6 +179,16 @@ cVector3d DataPacket::getSlingshotPosition() const
 	memcpy(&position, &m_vPacket[0] + sizeof(DataPacketHeader), sizeof(cVector3d));
 
 	return position;
+}
+
+Projectile DataPacket::getProjectile() const
+{
+	Projectile projectile;
+
+	// copy the projectile from the packet
+	memcpy(&projectile, &m_vPacket[0] + sizeof(DataPacketHeader), sizeof(Projectile));
+
+	return projectile;
 }
 
 const std::vector<BYTE>& DataPacket::getPacket() const

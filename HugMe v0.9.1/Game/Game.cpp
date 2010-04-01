@@ -83,17 +83,17 @@ void Game::setRemotePlayerPosition(const cVector3d& position)
 	m_RemotePlayerPosition = position;
 }
 
-void Game::addLocalProjectile(const cVector3d& position, const cVector3d& speed)
+void Game::addLocalProjectile(const Projectile& projectile)
 {
 	SyncLocker lock(m_csLocalSlingshotPosition);
-	m_LocalProjectiles.push_back(Projectile(position, speed));
+	m_LocalProjectiles.push_back(projectile);
 	return;
 }
 
-void Game::addRemoteProjectile(const cVector3d& position, const cVector3d& speed)
+void Game::addRemoteProjectile(const Projectile& projectile)
 {
 	SyncLocker lock(m_csRemoteProjectiles);
-	m_RemoteProjectiles.push_back(Projectile(position, speed));
+	m_RemoteProjectiles.push_back(projectile);
 	return;
 }
 
