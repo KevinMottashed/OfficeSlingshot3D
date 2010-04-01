@@ -101,14 +101,8 @@ void DataPacket::setPlayerPosition(const cVector3d& position)
 	header.type = DATA_PACKET_PLAYER_POSITION;
 	header.size = sizeof(cVector3d);
 
-	// clear the existing content
-	m_vPacket.clear();
-
-	// copy the header into the packet
-	m_vPacket.insert(m_vPacket.end(), (BYTE*) &header, ((BYTE*) &header) + sizeof(DataPacketHeader));
-
-	// copy the player position into the packet
-	m_vPacket.insert(m_vPacket.end(), (BYTE*) &position, ((BYTE*) &position) + sizeof(cVector3d));
+	// write the header and data into the packet
+	writeData(header, position);
 
 	return;
 }
@@ -119,14 +113,8 @@ void DataPacket::setSlingshotPosition(const cVector3d& position)
 	header.type = DATA_PACKET_SLINGSHOT_POSITION;
 	header.size = sizeof(cVector3d);
 
-	// clear the existing content
-	m_vPacket.clear();
-
-	// copy the header into the packet
-	m_vPacket.insert(m_vPacket.end(), (BYTE*) &header, ((BYTE*) &header) + sizeof(DataPacketHeader));
-
-	// copy the slingshot position into the packet
-	m_vPacket.insert(m_vPacket.end(), (BYTE*) &position, ((BYTE*) &position) + sizeof(cVector3d));
+	// write the header and data into the packet
+	writeData(header, position);
 
 	return;
 }
@@ -137,14 +125,8 @@ void DataPacket::setProjectile(const Projectile& projectile)
 	header.type = DATA_PACKET_PROJECTILE;
 	header.size = sizeof(Projectile);
 
-	// clear the existing content
-	m_vPacket.clear();
-
-	// copy the header into the packet
-	m_vPacket.insert(m_vPacket.end(), (BYTE*) &header, ((BYTE*) &header) + sizeof(DataPacketHeader));
-
-	// copy the projectile into the packet
-	m_vPacket.insert(m_vPacket.end(), (BYTE*) &projectile, ((BYTE*) &projectile) + sizeof(Projectile));
+	// write the header and data into the packet
+	writeData(header, projectile);
 
 	return;
 }
@@ -163,32 +145,17 @@ unsigned int DataPacket::getVideoDataSize() const
 
 cVector3d DataPacket::getPlayerPosition() const
 {
-	cVector3d position;
-
-	// copy the players position from the packet
-	memcpy(&position, &m_vPacket[0] + sizeof(DataPacketHeader), sizeof(cVector3d));
-
-	return position;
+	return readData<cVector3d>();
 }
 
 cVector3d DataPacket::getSlingshotPosition() const
 {
-	cVector3d position;
-
-	// copy the players position from the packet
-	memcpy(&position, &m_vPacket[0] + sizeof(DataPacketHeader), sizeof(cVector3d));
-
-	return position;
+	return readData<cVector3d>();
 }
 
 Projectile DataPacket::getProjectile() const
 {
-	Projectile projectile;
-
-	// copy the projectile from the packet
-	memcpy(&projectile, &m_vPacket[0] + sizeof(DataPacketHeader), sizeof(Projectile));
-
-	return projectile;
+	return readData<Projectile>();
 }
 
 const std::vector<BYTE>& DataPacket::getPacket() const

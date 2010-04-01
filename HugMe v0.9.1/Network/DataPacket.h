@@ -79,6 +79,40 @@ public:
 
 private:
 	std::vector<BYTE> m_vPacket;
+
+	// write data into the packet, including the header
+	template <typename T>
+	void writeData(DataPacketHeader header, const T& data);
+
+	// read data from the packet
+	template <typename T>
+	T readData() const;
 };
+
+template <typename T>
+void DataPacket::writeData(DataPacketHeader header, const T& data)
+{
+	// clear the existing content
+	m_vPacket.clear();
+
+	// copy the header into the packet
+	m_vPacket.insert(m_vPacket.end(), (BYTE*) &header, ((BYTE*) &header) + sizeof(DataPacketHeader));
+
+	// copy the data into the packet
+	m_vPacket.insert(m_vPacket.end(), (BYTE*) &data, ((BYTE*) &data) + sizeof(T));
+
+	return;
+}
+
+template <typename T>
+T DataPacket::readData() const
+{
+	T data;
+
+	// copy the data from the packet
+	memcpy(&data, &m_vPacket[0] + sizeof(DataPacketHeader), sizeof(T));
+
+	return data;
+}
 
 #endif // !defined(AFX_DATAPACKET_H__642CEFC6_DF57_4693_9B56_D98227F17BE7__INCLUDED_)
