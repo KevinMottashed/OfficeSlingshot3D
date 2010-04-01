@@ -22,8 +22,9 @@ class ZCameraManager
 
 public:
 
-	static const int IMAGE_WIDTH = 320;
-	static const int IMAGE_HEIGHT = 240;
+	static const unsigned int IMAGE_WIDTH = 320;
+	static const unsigned int IMAGE_HEIGHT = 240;
+	static const unsigned int IMAGE_ARRAY_SIZE = IMAGE_WIDTH * IMAGE_HEIGHT * 4;
 
 	ZCameraManager();
 	virtual ~ZCameraManager();

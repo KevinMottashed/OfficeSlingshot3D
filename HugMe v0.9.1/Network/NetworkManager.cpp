@@ -561,10 +561,10 @@ rc_network NetworkManager::sendEndGame()
 	return syncSendControlMessage(packet);
 }
 
-rc_network NetworkManager::sendVideoData(const std::vector<BYTE>& vRGB)
+rc_network NetworkManager::sendVideoData(const char* pVideoData, unsigned int size)
 {
 	DataPacket message;
-	message.setVideoData(vRGB);
+	message.setVideoData(pVideoData, size);
 	return syncSendDataMessage(message);
 }
 
@@ -644,7 +644,7 @@ void NetworkManager::handleDataMessage(const DataPacket& message)
 	{
 		case DATA_PACKET_VIDEO:
 		{
-			Controller::instance()->notifyNewRemoteVideoData(message.getVideoData());
+			Controller::instance()->notifyNewRemoteVideoData(message.getVideoData(), message.getVideoDataSize());
 			break;
 		}
 		case DATA_PACKET_PLAYER_POSITION:

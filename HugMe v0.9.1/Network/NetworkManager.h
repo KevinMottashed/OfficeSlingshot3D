@@ -49,7 +49,7 @@ public:
 	rc_network sendEndGame();
 
 	// send a video data to the other player
-	rc_network sendVideoData(const std::vector<BYTE>& vRGB);
+	rc_network sendVideoData(const char* pVideoData, unsigned int size);
 
 	// send a player position to the other player
 	rc_network sendPlayerPosition(const cVector3d& position);

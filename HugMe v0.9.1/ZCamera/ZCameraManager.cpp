@@ -18,7 +18,7 @@ ZCameraManager::ZCameraManager()
 	m_depthCamera = new CDepthCamera();
 
 	//Allocate memory for the video frame
-	RGB = new BYTE[ZCameraManager::IMAGE_WIDTH*ZCameraManager::IMAGE_HEIGHT*4];
+	RGB = new BYTE[IMAGE_ARRAY_SIZE];
 }
 
 ZCameraManager::~ZCameraManager()
@@ -55,7 +55,7 @@ DWORD ZCameraManager::getFrameFromDummy(ZCameraManager* p_ZCamera){
 	//While the thread is active
 	while(p_ZCamera->zcam_started){
 
-		//Go through eahc row and column and fill all 4 values for each pixel
+		//Go through each row and column and fill all 4 values for each pixel
 		for (int i=0;i<ZCameraManager::IMAGE_HEIGHT;i++){
 			for(int j=0;j<ZCameraManager::IMAGE_WIDTH;j++){
 				p_ZCamera->RGB[i*step+j*4]		=	rand()*255;			//blue
@@ -65,8 +65,8 @@ DWORD ZCameraManager::getFrameFromDummy(ZCameraManager* p_ZCamera){
 			}
 		}
 
-		//Send the array to the controller, as remote data so it gets displayed locally
-		Controller::instance()->notifyNewRemoteVideoData((const char*)p_ZCamera->RGB);
+		// notify the controller that new local video data has arrived
+		Controller::instance()->notifyNewLocalVideoData((const char*)p_ZCamera->RGB, IMAGE_ARRAY_SIZE);
 
 /*
 		cVector3d vec;

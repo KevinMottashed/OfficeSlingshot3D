@@ -101,9 +101,9 @@ void UserInterfaceManager::notifyNewChatMessage(const string& message)
 	getMainWindow()->SendMessage(WM_ON_NEW_CHAT_MESSAGE, (WPARAM)&remoteUserName, (LPARAM)&message);
 }
 
-void UserInterfaceManager::notifyDisplayNewFrame(const char *pRGB)
+void UserInterfaceManager::notifyDisplayNewFrame(const char *pRGB, unsigned int size)
 {
-	getMainWindow()->SendMessage(WM_ON_NEW_FRAME, (WPARAM)pRGB);
+	getMainWindow()->SendMessage(WM_ON_NEW_FRAME, (WPARAM)pRGB, (LPARAM)&size);
 }
 
 void UserInterfaceManager::changeArmBandPort(int armBandPort)

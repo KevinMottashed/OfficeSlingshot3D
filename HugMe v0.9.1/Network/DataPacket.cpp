@@ -77,11 +77,11 @@ bool DataPacket::readPacket(std::vector<BYTE>& input)
 	return false;
 }
 
-void DataPacket::setVideoData(const std::vector<BYTE>& vRGB)
+void DataPacket::setVideoData(const char* pVideoData, unsigned int size)
 {
 	DataPacketHeader header;
 	header.type = DATA_PACKET_VIDEO;
-	header.size = vRGB.size();
+	header.size = size;
 
 	// clear the existing content
 	m_vPacket.clear();
@@ -90,7 +90,7 @@ void DataPacket::setVideoData(const std::vector<BYTE>& vRGB)
 	m_vPacket.insert(m_vPacket.end(), (BYTE*) &header, ((BYTE*) &header) + sizeof(DataPacketHeader));
 
 	// copy the video data into the packet
-	m_vPacket.insert(m_vPacket.end(), vRGB.begin(), vRGB.end());
+	m_vPacket.insert(m_vPacket.end(), pVideoData, pVideoData + size);
 
 	return;
 }
@@ -134,6 +134,13 @@ void DataPacket::setSlingshotPosition(const cVector3d& position)
 const char* DataPacket::getVideoData() const
 {
 	return (const char*) &m_vPacket[0] + sizeof(DataPacketHeader);
+}
+
+unsigned int DataPacket::getVideoDataSize() const
+{
+	// grab the header from the packet
+	DataPacketHeader* header = (DataPacketHeader*) &m_vPacket[0];
+	return header->size;
 }
 
 cVector3d DataPacket::getPlayerPosition() const

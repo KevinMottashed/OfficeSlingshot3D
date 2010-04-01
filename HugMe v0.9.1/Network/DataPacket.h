@@ -42,6 +42,7 @@ public:
 
 	// Get the RGB video data of the packet in bytes
 	const char* getVideoData() const;
+	unsigned int getVideoDataSize() const;
 
 	// Get the players position
 	cVector3d getPlayerPosition() const;
@@ -59,7 +60,7 @@ public:
 	bool readPacket(std::vector<BYTE>& input);
 
 	// set the packet's video data
-	void setVideoData(const std::vector<BYTE>& vRGB);
+	void setVideoData(const char* pVideoData, unsigned int size);
 
 	// set the packet's player position data
 	void setPlayerPosition(const cVector3d& position);

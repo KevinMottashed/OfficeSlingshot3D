@@ -138,15 +138,15 @@ CDialog* Controller::getMainWindow()
 	return m_pUserInterfaceManager->getMainWindow();
 }
 
-void Controller::notifyNewLocalVideoData(const char* vRGB)
+void Controller::notifyNewLocalVideoData(const char* pRGB, unsigned int size)
 {
 	//TODO change networking aspect from vector to char*, size is ZCameraManager::IMAGE_WIDTH*ZCameraManager::IMAGE_HEIGHT*4
-	//	m_pNetworkManager->sendVideoData(vRGB);
+	m_pNetworkManager->sendVideoData(pRGB, size);
 }
 
-void Controller::notifyNewRemoteVideoData(const char* pRGB)
+void Controller::notifyNewRemoteVideoData(const char* pRGB, unsigned int size)
 {
-	m_pUserInterfaceManager->notifyDisplayNewFrame(pRGB);
+	m_pUserInterfaceManager->notifyDisplayNewFrame(pRGB, size);
 }
 
 rc_network Controller::sendChatMessage(const std::string& message)
@@ -233,11 +233,6 @@ void Controller::notifyPeerExitGame()
 
 	// let the UI know that the game has been ended
 	m_pUserInterfaceManager->notifyGameExited();
-}
-
-void Controller::notifyDisplayNewFrame(const char* vRGB)
-{
-	m_pUserInterfaceManager->notifyDisplayNewFrame(vRGB);
 }
 
 void Controller::changeArmBandPort(int armBandPort)

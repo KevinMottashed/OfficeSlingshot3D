@@ -89,8 +89,8 @@ public:
 	// --------------------------------
 
 	// notifies the controller that new video data has arrived
-	void notifyNewLocalVideoData(const char* vRGB);
-	void notifyNewRemoteVideoData(const char* pRGB);
+	void notifyNewLocalVideoData(const char* pRGB, unsigned int size);
+	void notifyNewRemoteVideoData(const char* pRGB, unsigned int size);
 
 	// --------------------------------
 	// Smart Clothing related functions
@@ -123,9 +123,6 @@ public:
 
 	// the peer has sent us a chat message
 	void notifyNewChatMessage(const std::string& message);
-		
-	// the peer's video frame needs to be re-displayed
-	void notifyDisplayNewFrame(const char* vRGB);
 
 	// get the main window of the application
 	CDialog* getMainWindow();
