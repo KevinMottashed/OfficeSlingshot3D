@@ -11,13 +11,10 @@
 
 #include <string>
 
-#include "Controller.h"
+#include "UserInterfaceProxy.h"
 #include "MainDlg.h"
 
 using namespace std;
-
-// Forward declaration (files include each other)
-class Controller;
 
 class UserInterfaceManager  
 {
@@ -62,6 +59,7 @@ public:
 
 	void startGameButtonPushed();
 	void exitGameButtonPushed();
+	void pauseGameButtonPushed();
 
 	void changeArmBandPort(int armBandPort);
 	void changeJacketPort(int jacketPort);

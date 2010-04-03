@@ -76,7 +76,7 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 // Bitmap
 //
 
-IDB_GAME_BACKGROUND     BITMAP                  "Objects\\table_blurred.bmp"
+IDB_GAME_BACKGROUND     BITMAP                  "..\\Objects\\table_blurred.bmp"
 #endif    // English (U.S.) resources
 /////////////////////////////////////////////////////////////////////////////
 
@@ -97,7 +97,7 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_CAN
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-IDR_MAINFRAME           ICON                    "res\\Chat.ico"
+IDR_MAINFRAME           ICON                    "..\\res\\Chat.ico"
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -217,6 +217,7 @@ BEGIN
     BEGIN
         MENUITEM "&Start Game",                 ID_GAME_STARTGAME, GRAYED
         MENUITEM "&Exit Game",                  ID_GAME_EXITGAME, GRAYED
+        MENUITEM "Pause Game",                  ID_GAME_PAUSEGAME, GRAYED
     END
     POPUP "&Preferences"
     BEGIN

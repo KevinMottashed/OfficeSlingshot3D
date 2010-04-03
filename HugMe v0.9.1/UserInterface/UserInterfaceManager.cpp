@@ -51,6 +51,11 @@ void UserInterfaceManager::exitGameButtonPushed()
 	Controller::instance()->localExitGame();
 }
 
+void UserInterfaceManager::pauseGameButtonPushed()
+{
+	Controller::instance()->localPauseGame();
+}
+
 void UserInterfaceManager::closeApplication()
 {
 	Controller::instance()->closeApplication();

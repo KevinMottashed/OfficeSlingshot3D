@@ -22,6 +22,9 @@ class UserInterfaceManager;
 
 class CMainDlg : public CDialog
 {
+public:
+	CMainDlg(UserInterfaceManager* pUserInterfaceManager, CWnd* pParent = NULL);   // standard constructor
+
 private:
 	UserInterfaceManager* pUserInterfaceManager;
 
@@ -38,15 +41,6 @@ private:
 	PBITMAPINFO m_bmpinfo;
 	HDC m_hdc;
 	HDRAWDIB hdib;
-// Construction
-public:
-	CMainDlg(UserInterfaceManager* pUserInterfaceManager, CWnd* pParent = NULL);   // standard constructor
-	
-	// Inherited method to catch messages before they are sent to the UI
-	virtual BOOL CMainDlg::PreTranslateMessage(MSG* pMsg);
-
-	// Inherited method to perform actions before the UI is displayed
-	virtual BOOL CMainDlg::OnInitDialog();
 
 	// Methods to initialize and close video sessions
 	void initVideoArea();
@@ -54,6 +48,12 @@ public:
 
 	// Method to add a string in a new line in the text box
 	void AddChatContent(CString strCont);
+	
+	// Inherited method to catch messages before they are sent to the UI
+	virtual BOOL CMainDlg::PreTranslateMessage(MSG* pMsg);
+
+	// Inherited method to perform actions before the UI is displayed
+	virtual BOOL CMainDlg::OnInitDialog();
 
 // Dialog Data
 	//{{AFX_DATA(CMainDlg)
@@ -65,11 +65,9 @@ public:
 	//}}AFX_DATA
 
 	//{{AFX_VIRTUAL(CMainDlg)
-	protected:
+
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
 	//}}AFX_VIRTUAL
-
-protected:
 
 	// Message map functions
 	//{{AFX_MSG(CMainDlg)
@@ -82,6 +80,7 @@ protected:
 	afx_msg void OnPreferencesEdit();
 	afx_msg void OnStartGame();
 	afx_msg void OnExitGame();
+	afx_msg void OnPauseGame();
 	afx_msg LRESULT OnGameStarted(WPARAM, LPARAM);
 	afx_msg LRESULT OnGameExited(WPARAM, LPARAM);
 	afx_msg void OnDestroy();

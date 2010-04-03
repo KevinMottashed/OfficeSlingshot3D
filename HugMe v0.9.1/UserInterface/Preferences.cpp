@@ -55,6 +55,25 @@ void CPreferences::DoDataExchange(CDataExchange* pDX)
 	//}}AFX_DATA_MAP
 }
 
+CString CPreferences::getStrAddress()
+{
+	return m_strAddress;
+}
+
+CString CPreferences::getUserName()
+{
+	return m_userName;
+}
+
+int CPreferences::getArmBandPort()
+{
+	return m_armBandPort;
+}
+
+int CPreferences::getJacketBandPort()
+{
+	return m_jacketPort;
+}
 
 BEGIN_MESSAGE_MAP(CPreferences, CDialog)
 	//{{AFX_MSG_MAP(CPreferences)

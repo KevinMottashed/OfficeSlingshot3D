@@ -208,6 +208,11 @@ void Controller::localStartGame()
 	m_pNetworkManager->sendStartGame();
 }
 
+void Controller::localPauseGame()
+{
+	// TODO implement
+}
+
 void Controller::localExitGame()
 {
 	// exit the game

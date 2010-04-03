@@ -50,7 +50,7 @@
 				Name="VCCLCompilerTool"
 				AdditionalOptions="/D /NODEFAULTLIB:library&quot; &quot; /D _CRT_SECURE_NO_DEPRECATE"
 				Optimization="0"
-				AdditionalIncludeDirectories="include;&quot;include\ARToolKit-2.72.1&quot;;&quot;..\chai3d[v1.61.1]\include&quot;;&quot;include\Z-Cam&quot;;include\HandTracker;Utils\;Controller\;Falcon\;Game\;Jacket\;Network\;UserInterface\;ZCamera\"
+				AdditionalIncludeDirectories="include;&quot;include\ARToolKit-2.72.1&quot;;&quot;..\chai3d[v1.61.1]\include&quot;;&quot;include\Z-Cam&quot;;include\HandTracker;Utils\;Controller\;Falcon\;Game\;Jacket\;Network\;UserInterface\;ZCamera\;Objects\"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_MSVC"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -1022,6 +1022,10 @@
 				RelativePath=".\UserInterface\UserInterfaceManager.h"
 				>
 			</File>
+			<File
+				RelativePath=".\UserInterface\UserInterfaceProxy.h"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Network"
@@ -1207,5 +1211,9 @@
 		</File>
 	</Files>
 	<Globals>
+		<Global
+			Name="RESOURCE_FILE"
+			Value="UserInterface\Chat.rc"
+		/>
 	</Globals>
 </VisualStudioProject>

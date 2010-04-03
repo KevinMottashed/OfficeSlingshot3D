@@ -12,7 +12,7 @@
 #include "NetworkManager.h"
 #include "NetworkCodes.h"
 #include "NetworkSignals.h"
-#include "UserInterfaceManager.h"
+#include "UserInterfaceProxy.h"
 #include "FalconPenManager.h"
 #include "ZCameraManager.h"
 #include "SmartClothingManager.h"
@@ -64,9 +64,10 @@ public:
 	// Game related
 	//------------------------------------------
 
-	// we are starting/exiting the game
+	// we are starting/exiting/pausing the game
 	void localStartGame();
 	void localExitGame();
+	void localPauseGame();
 
 	// notifies the controller that the peer has started or exited the game
 	void notifyPeerStartGame();

@@ -28,13 +28,14 @@
 #define ID_PREFERENCES_EDIT             32783
 #define ID_GAME_STARTGAME               32784
 #define ID_GAME_EXITGAME                32785
+#define ID_GAME_PAUSEGAME               32786
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        152
-#define _APS_NEXT_COMMAND_VALUE         32786
+#define _APS_NEXT_COMMAND_VALUE         32787
 #define _APS_NEXT_CONTROL_VALUE         1066
 #define _APS_NEXT_SYMED_VALUE           103
 #endif

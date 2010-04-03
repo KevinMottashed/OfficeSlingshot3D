@@ -63,6 +63,7 @@ BEGIN_MESSAGE_MAP(CMainDlg, CDialog)
 	ON_COMMAND(ID_PREFERENCES_EDIT, OnPreferencesEdit)
 	ON_COMMAND(ID_GAME_STARTGAME, OnStartGame)
 	ON_COMMAND(ID_GAME_EXITGAME, OnExitGame)
+	ON_COMMAND(ID_GAME_PAUSEGAME, OnPauseGame)
 	ON_COMMAND(IDC_SEND_CHAT, OnSendChat)
 	ON_MESSAGE(WM_ON_CONNECT, OnNetworkEstablished)
 	ON_MESSAGE(WM_ON_DISCONNECT,OnNetworkDisconnected)
@@ -231,11 +232,11 @@ void CMainDlg::OnPreferencesEdit()
 	if(prefs.DoModal() == IDOK) {
 
 		// get the dialog attributes
-		m_userName = prefs.m_userName;
-		m_ipAddress = prefs.m_strAddress;
+		m_userName = prefs.getUserName();
+		m_ipAddress = prefs.getStrAddress();
 
-		int armBandPort = prefs.m_armBandPort;
-		int jacketPort = prefs.m_jacketPort;
+		int armBandPort = prefs.getArmBandPort();
+		int jacketPort = prefs.getJacketBandPort();
 		
 		// set armBand and jacket ports through the controller
 		pUserInterfaceManager->changeArmBandPort(armBandPort);
@@ -244,8 +245,8 @@ void CMainDlg::OnPreferencesEdit()
 		// write new userName and ipAddress to the file
 		ofstream myfile;
 		myfile.open ("userPreferences.txt");
-		myfile << (string)prefs.m_userName << "\n";
-		myfile << (string)prefs.m_strAddress;
+		myfile << (string)m_userName << "\n";
+		myfile << (string)m_ipAddress;
 		myfile.close();
 	}
 	
@@ -265,6 +266,7 @@ void CMainDlg::OnStartGame()
 
 	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_GRAYED | MF_BYCOMMAND);
 	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_ENABLED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_PAUSEGAME, MF_ENABLED | MF_BYCOMMAND);
 
 	// give user feedback on the text area
 	AddChatContent("Started the game");
@@ -284,9 +286,25 @@ void CMainDlg::OnExitGame()
 
 	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_ENABLED | MF_BYCOMMAND);
 	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_GRAYED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_PAUSEGAME, MF_GRAYED | MF_BYCOMMAND);
 
 	// give user feedback on the text area
 	AddChatContent("Exited the game");
+}
+
+// method used to pause the game with the connected remote user
+void CMainDlg::OnPauseGame()
+{
+	// pause the game
+	pUserInterfaceManager->pauseGameButtonPushed();
+
+	// enable and disable appropriate menu items
+	CMenu* pMenu = GetMenu();
+	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_ENABLED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_PAUSEGAME, MF_GRAYED | MF_BYCOMMAND);
+
+	// give user feedback on the text area
+	AddChatContent("Paused the game");
 }
 
 // method notifying the user that the remote user has started the game

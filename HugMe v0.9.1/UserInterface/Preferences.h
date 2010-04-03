@@ -15,7 +15,12 @@ class CPreferences : public CDialog
 // Construction
 public:
 	CPreferences(CWnd* pParent = NULL);   // standard constructor
+	CString getStrAddress();
+	CString getUserName();
+	int getArmBandPort();
+	int getJacketBandPort();
 
+private:
 // Dialog Data
 	//{{AFX_DATA(CPreferences)
 	enum { IDD = IDD_PREFERENCES };
@@ -29,12 +34,8 @@ public:
 // Overrides
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CPreferences)
-	protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
 	//}}AFX_VIRTUAL
-
-// Implementation
-protected:
 
 	// Generated message map functions
 	//{{AFX_MSG(CPreferences)

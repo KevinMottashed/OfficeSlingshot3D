@@ -27,7 +27,7 @@ public:
 // Overrides
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CChatApp)
-	public:
+private:
 	virtual BOOL InitInstance();
 	//}}AFX_VIRTUAL
 
