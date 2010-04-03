@@ -24,3 +24,27 @@ Projectile::Projectile(cVector3d position, cVector3d speed) :
 Projectile::~Projectile()
 {
 }
+
+cVector3d Projectile::getPosition() const
+{
+	return position;
+}
+
+cVector3d Projectile::getSpeed() const
+{
+	return speed;
+}
+
+void Projectile::setPosition(double x, double y, double z)
+{
+	position.x = x;
+	position.y = y;
+	position.z = z;
+}
+
+void Projectile::setSpeed(double x, double y, double z)
+{
+	speed.x = x;
+	speed.y = y;
+	speed.z = z;
+}

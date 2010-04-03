@@ -55,22 +55,22 @@ void CPreferences::DoDataExchange(CDataExchange* pDX)
 	//}}AFX_DATA_MAP
 }
 
-CString CPreferences::getStrAddress()
+CString CPreferences::getStrAddress() const
 {
 	return m_strAddress;
 }
 
-CString CPreferences::getUserName()
+CString CPreferences::getUserName() const
 {
 	return m_userName;
 }
 
-int CPreferences::getArmBandPort()
+int CPreferences::getArmBandPort() const
 {
 	return m_armBandPort;
 }
 
-int CPreferences::getJacketBandPort()
+int CPreferences::getJacketBandPort() const
 {
 	return m_jacketPort;
 }

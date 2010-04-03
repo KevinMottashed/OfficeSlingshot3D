@@ -16,7 +16,7 @@
 #include "FalconPenManager.h"
 #include "ZCameraManager.h"
 #include "SmartClothingManager.h"
-#include "Game.h"
+#include "GameProxy.h"
 
 // Forward declarations (files include each other)
 class NetworkManager;

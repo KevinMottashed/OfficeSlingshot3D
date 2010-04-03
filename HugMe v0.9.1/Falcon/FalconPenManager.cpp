@@ -47,13 +47,9 @@ DWORD FalconPenManager::getPositionFromFalcon(FalconPenManager* p_Falcon)
 
 			Projectile projectile;
 
-			projectile.speed.x = x;
-			projectile.speed.y = y;
-			projectile.speed.z = z;
+			projectile.setSpeed(x, y, z);
 
-			projectile.position.x = x;
-			projectile.position.y = y;
-			projectile.position.z = z;
+			projectile.setPosition(x, y, z);
 
 			Controller::instance()->notifyNewLocalProjectile(projectile);
 		}

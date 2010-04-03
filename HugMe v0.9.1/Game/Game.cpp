@@ -149,7 +149,7 @@ DWORD Game::GameLoopThread(Game* pGame)
 			std::vector<Projectile>::const_iterator it = pGame->m_LocalProjectiles.begin();
 			for (; it != pGame->m_LocalProjectiles.end(); ++it)
 			{
-				std::cout << "Friendly projectile at " << it->position << " traveling at " << it->speed << std::endl;
+				std::cout << "Friendly projectile at " << it->getPosition() << " traveling at " << it->getSpeed() << std::endl;
 			}
 		}
 
@@ -159,7 +159,7 @@ DWORD Game::GameLoopThread(Game* pGame)
 			std::vector<Projectile>::const_iterator it = pGame->m_RemoteProjectiles.begin();
 			for (; it != pGame->m_RemoteProjectiles.end(); ++it)
 			{
-				std::cout << "Enemy projectile at " << it->position << " traveling at " << it->speed << std::endl;
+				std::cout << "Enemy projectile at " << it->getPosition() << " traveling at " << it->getSpeed() << std::endl;
 			}
 		}
 

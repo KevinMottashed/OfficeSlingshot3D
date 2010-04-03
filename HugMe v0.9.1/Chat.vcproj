@@ -1151,6 +1151,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Game\GameProxy.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Game\Projectile.cpp"
 				>
 			</File>

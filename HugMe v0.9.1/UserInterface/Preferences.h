@@ -15,10 +15,12 @@ class CPreferences : public CDialog
 // Construction
 public:
 	CPreferences(CWnd* pParent = NULL);   // standard constructor
-	CString getStrAddress();
-	CString getUserName();
-	int getArmBandPort();
-	int getJacketBandPort();
+
+	// getters for private attributes
+	CString getStrAddress() const;
+	CString getUserName() const;
+	int getArmBandPort() const;
+	int getJacketBandPort() const;
 
 private:
 // Dialog Data

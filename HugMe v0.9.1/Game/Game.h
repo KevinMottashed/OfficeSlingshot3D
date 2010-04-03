@@ -12,10 +12,7 @@
 #include "Stdafx.h"
 #include "chai3d.h"
 
-#include "Controller.h"
 #include "Projectile.h"
-
-class Controller;
 
 class Game  
 {
