@@ -1,5 +1,7 @@
 #pragma once
 
+#include "stdafx.h"
+
 class SyncLocker
 {
 	CRITICAL_SECTION* cs;

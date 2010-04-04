@@ -1,9 +1,5 @@
-// UserInterfaceProxy.h: interface between the Controller the UserInterfaceManager packages.
-//
-//////////////////////////////////////////////////////////////////////
-
-#include "Controller.h"
+// public members of the user interface module
 #include "UserInterfaceManager.h"
 
-// Forward declaration (files include each other)
-class Controller;
+// Forward declarations
+class UserInterfaceManager;

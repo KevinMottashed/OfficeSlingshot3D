@@ -10,8 +10,8 @@
 #endif // _MSC_VER > 1000
 
 #include "StdAfx.h"
-#include "Controller.h"
-#include "CVector3d.h"
+#include "ControllerProxy.h"
+#include "chai3d.h"
 #include "DepthCamera.h"
 
 // forward declarations (files include each other)

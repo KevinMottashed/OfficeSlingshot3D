@@ -3,7 +3,7 @@
 
 #include "stdafx.h"
 #include "Chat.h"
-#include "Controller.h"
+#include "ControllerProxy.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW

@@ -9,10 +9,7 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#include "Controller.h"
-
-// forward declarations (files include each other)
-class Controller;
+#include "ControllerProxy.h"
 
 class FalconPenManager  
 {

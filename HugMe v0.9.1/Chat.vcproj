@@ -978,6 +978,10 @@
 				RelativePath=".\ZCamera\ZCameraManager.h"
 				>
 			</File>
+			<File
+				RelativePath=".\ZCamera\ZCameraProxy.h"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="UserInterface"
@@ -1059,6 +1063,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Network\NetworkProxy.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Network\NetworkSignals.h"
 				>
 			</File>
@@ -1082,6 +1090,10 @@
 				RelativePath=".\Falcon\FalconPenManager.h"
 				>
 			</File>
+			<File
+				RelativePath=".\Falcon\FalconProxy.h"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Jacket"
@@ -1100,6 +1112,10 @@
 			</File>
 			<File
 				RelativePath=".\Jacket\DisplayDeviceJacket.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Jacket\JacketProxy.h"
 				>
 			</File>
 			<File
@@ -1136,6 +1152,10 @@
 			</File>
 			<File
 				RelativePath=".\Controller\Controller.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Controller\ControllerProxy.h"
 				>
 			</File>
 		</Filter>

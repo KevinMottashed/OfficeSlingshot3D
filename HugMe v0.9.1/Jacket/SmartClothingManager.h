@@ -9,6 +9,8 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
+#include "ControllerProxy.h"
+
 //Should be created in HumanModel... 
 typedef enum tagHumanPart {
 	CHEST = 0,
@@ -16,11 +18,6 @@ typedef enum tagHumanPart {
 	RIGHT_LOWER_ARM,
 	TOTAL_NUM_PART
 } HumanPart;
-
-#include "Controller.h"
-
-// forward declarations (files include each other)
-class Controller;
 
 class SmartClothingManager  
 {

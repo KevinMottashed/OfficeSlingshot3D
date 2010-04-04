@@ -9,7 +9,7 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#include "Controller.h"
+#include "ControllerProxy.h"
 #include "NetworkSocket.h"
 #include "NetworkCodes.h"
 #include "DataPacket.h"

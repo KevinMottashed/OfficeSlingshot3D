@@ -11,7 +11,8 @@
 
 #include <string>
 
-#include "UserInterfaceProxy.h"
+#include "NetworkProxy.h"
+#include "ControllerProxy.h"
 #include "MainDlg.h"
 
 using namespace std;

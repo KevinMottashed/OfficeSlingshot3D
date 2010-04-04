@@ -15,7 +15,8 @@
 // chai3d
 #include "chai3d.h"
 
-#include "Projectile.h"
+// we need to send some data types from the game module
+#include "GameProxy.h"
 
 enum DataPacketType
 {

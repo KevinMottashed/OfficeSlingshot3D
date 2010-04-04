@@ -15,12 +15,6 @@
 */
 
 
-
-
-
-
-
-
 #ifndef __SERIALPORT_H__
 #define __SERIALPORT_H__
 

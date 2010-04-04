@@ -9,22 +9,12 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#include "NetworkManager.h"
-#include "NetworkCodes.h"
-#include "NetworkSignals.h"
+#include "NetworkProxy.h"
 #include "UserInterfaceProxy.h"
-#include "FalconPenManager.h"
-#include "ZCameraManager.h"
-#include "SmartClothingManager.h"
+#include "FalconProxy.h"
+#include "ZCameraProxy.h"
+#include "JacketProxy.h"
 #include "GameProxy.h"
-
-// Forward declarations (files include each other)
-class NetworkManager;
-class UserInterfaceManager;
-class FalconPenManager;
-class ZCameraManager;
-class SmartClothingManager;
-class Game;
 
 // The controller class for the program
 // this class is a singleton

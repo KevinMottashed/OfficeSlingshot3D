@@ -1,9 +1,7 @@
-// GameProxy.h: interface between the Controller the Game packages.
-//
-//////////////////////////////////////////////////////////////////////
-
-#include "Controller.h"
+// public members of the game module
 #include "Game.h"
+#include "Projectile.h"
 
-// Forward declaration (files include each other)
+// Forward declarations
 class Controller;
+class Projectile;
