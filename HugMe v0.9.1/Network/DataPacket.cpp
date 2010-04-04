@@ -119,6 +119,12 @@ void DataPacket::setSlingshotPullback()
 	writeData(DATA_PACKET_SLINGSHOT_PULLBACK);
 }
 
+void DataPacket::setSlingshotRelease()
+{
+	// write the header and data into the packet
+	writeData(DATA_PACKET_SLINGSHOT_RELEASE);
+}
+
 const char* DataPacket::getVideoData() const
 {
 	return (const char*) &m_vPacket[0] + sizeof(DataPacketHeader);

@@ -23,6 +23,7 @@ enum DataPacketType
 	DATA_PACKET_PLAYER_POSITION,
 	DATA_PACKET_SLINGSHOT_POSITION,
 	DATA_PACKET_SLINGSHOT_PULLBACK,
+	DATA_PACKET_SLINGSHOT_RELEASE,
 	DATA_PACKET_PROJECTILE,
 	DATA_PACKET_UNKNOWN
 };
@@ -78,8 +79,11 @@ public:
 	// set the projectile data
 	void setProjectile(const Projectile& projectile);
 
-	// make this packet a sling shot pullback packet
+	// make this packet a slingshot pullback packet
 	void setSlingshotPullback();
+
+	// make this packet a slingshot release packet
+	void setSlingshotRelease();
 
 private:
 	std::vector<BYTE> m_vPacket;

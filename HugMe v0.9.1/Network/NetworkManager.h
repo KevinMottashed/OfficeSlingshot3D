@@ -63,6 +63,9 @@ public:
 	// send a slingshot pullback event over the network
 	rc_network sendSlingshotPullback();
 
+	// send a slingshot release event over the network
+	rc_network sendSlingshotRelease();
+
 	// notify the controller that a network connection has been accepted
 	void notifyAccept(NetworkSocket* socket);
 

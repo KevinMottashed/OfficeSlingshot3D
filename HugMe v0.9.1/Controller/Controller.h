@@ -88,6 +88,10 @@ public:
 	// notifies the controller that a slingshot is being pulled back
 	void notifyLocalSlingshotPullback();
 	void notifyRemoteSlingshotPullback();
+
+	// notifies the controller that a slingshot has being released
+	void notifyLocalSlingshotRelease();
+	void notifyRemoteSlingshotRelease();
 	
 
 	// --------------------------------

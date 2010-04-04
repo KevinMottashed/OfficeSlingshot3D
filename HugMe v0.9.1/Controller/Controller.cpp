@@ -209,6 +209,16 @@ void Controller::notifyRemoteSlingshotPullback()
 	// TODO implement
 }
 
+void Controller::notifyLocalSlingshotRelease()
+{
+	m_pNetworkManager->sendSlingshotRelease();
+}
+
+void Controller::notifyRemoteSlingshotRelease()
+{
+	// TODO implement
+}
+
 void Controller::localStartGame()
 {
 	// start the game

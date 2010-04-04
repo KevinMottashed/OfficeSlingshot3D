@@ -596,6 +596,12 @@ rc_network NetworkManager::sendSlingshotPullback()
 	return syncSendDataMessage(message);
 }
 
+rc_network NetworkManager::sendSlingshotRelease()
+{
+	DataPacket message;
+	message.setSlingshotRelease();
+	return syncSendDataMessage(message);
+}
 
 rc_network NetworkManager::syncSendDataMessage(const DataPacket& packet)
 {
@@ -680,6 +686,11 @@ void NetworkManager::handleDataMessage(const DataPacket& message)
 		case DATA_PACKET_SLINGSHOT_PULLBACK:
 		{
 			Controller::instance()->notifyRemoteSlingshotPullback();
+			break;
+		}
+		case DATA_PACKET_SLINGSHOT_RELEASE:
+		{
+			Controller::instance()->notifyRemoteSlingshotRelease();
 			break;
 		}
 		case DATA_PACKET_UNKNOWN:
