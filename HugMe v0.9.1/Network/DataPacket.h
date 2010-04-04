@@ -22,6 +22,7 @@ enum DataPacketType
 	DATA_PACKET_VIDEO,
 	DATA_PACKET_PLAYER_POSITION,
 	DATA_PACKET_SLINGSHOT_POSITION,
+	DATA_PACKET_SLINGSHOT_PULLBACK,
 	DATA_PACKET_PROJECTILE,
 	DATA_PACKET_UNKNOWN
 };
@@ -77,12 +78,18 @@ public:
 	// set the projectile data
 	void setProjectile(const Projectile& projectile);
 
+	// make this packet a sling shot pullback packet
+	void setSlingshotPullback();
+
 private:
 	std::vector<BYTE> m_vPacket;
 
 	// write data into the packet, including the header
 	template <typename T>
-	void writeData(DataPacketHeader header, const T& data);
+	void writeData(DataPacketType type, const T& data);
+
+	// a version for header only packets
+	void writeData(DataPacketType type);
 
 	// read data from the packet
 	template <typename T>
@@ -90,16 +97,21 @@ private:
 };
 
 template <typename T>
-void DataPacket::writeData(DataPacketHeader header, const T& data)
+void DataPacket::writeData(DataPacketType type, const T& data)
 {
 	// clear the existing content
 	m_vPacket.clear();
+
+	// create a header for this packet
+	DataPacketHeader header;
+	header.type = type;
+	header.size = sizeof(T);
 
 	// copy the header into the packet
 	m_vPacket.insert(m_vPacket.end(), (BYTE*) &header, ((BYTE*) &header) + sizeof(DataPacketHeader));
 
 	// copy the data into the packet
-	m_vPacket.insert(m_vPacket.end(), (BYTE*) &data, ((BYTE*) &data) + sizeof(T));
+	m_vPacket.insert(m_vPacket.end(), (BYTE*) &data, ((BYTE*) &data) + sizeof(T));	
 
 	return;
 }

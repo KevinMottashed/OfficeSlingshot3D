@@ -97,38 +97,26 @@ void DataPacket::setVideoData(const char* pVideoData, unsigned int size)
 
 void DataPacket::setPlayerPosition(const cVector3d& position)
 {
-	DataPacketHeader header;
-	header.type = DATA_PACKET_PLAYER_POSITION;
-	header.size = sizeof(cVector3d);
-
 	// write the header and data into the packet
-	writeData(header, position);
-
-	return;
+	writeData(DATA_PACKET_PLAYER_POSITION, &position);
 }
 
 void DataPacket::setSlingshotPosition(const cVector3d& position)
 {
-	DataPacketHeader header;
-	header.type = DATA_PACKET_SLINGSHOT_POSITION;
-	header.size = sizeof(cVector3d);
-
 	// write the header and data into the packet
-	writeData(header, position);
-
-	return;
+	writeData(DATA_PACKET_SLINGSHOT_POSITION, &position);
 }
 
 void DataPacket::setProjectile(const Projectile& projectile)
 {
-	DataPacketHeader header;
-	header.type = DATA_PACKET_PROJECTILE;
-	header.size = sizeof(Projectile);
-
 	// write the header and data into the packet
-	writeData(header, projectile);
+	writeData(DATA_PACKET_PROJECTILE, &projectile);
+}
 
-	return;
+void DataPacket::setSlingshotPullback()
+{
+	// write the header and data into the packet
+	writeData(DATA_PACKET_SLINGSHOT_PULLBACK);
 }
 
 const char* DataPacket::getVideoData() const
@@ -161,4 +149,20 @@ Projectile DataPacket::getProjectile() const
 const std::vector<BYTE>& DataPacket::getPacket() const
 {
 	return m_vPacket;
+}
+
+void DataPacket::writeData(DataPacketType type)
+{
+	// clear the existing content
+	m_vPacket.clear();
+
+	// create a header for this packet
+	DataPacketHeader header;
+	header.type = type;
+	header.size = 0;
+
+	// copy the header into the packet
+	m_vPacket.insert(m_vPacket.end(), (BYTE*) &header, ((BYTE*) &header) + sizeof(DataPacketHeader));
+
+	return;
 }

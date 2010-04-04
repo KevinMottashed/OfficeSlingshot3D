@@ -199,6 +199,16 @@ void Controller::notifyNewRemotePlayerPosition(const cVector3d& position)
 	m_pGame->setRemotePlayerPosition(position);
 }
 
+void Controller::notifyLocalSlingshotPullback()
+{
+	m_pNetworkManager->sendSlingshotPullback();
+}
+
+void Controller::notifyRemoteSlingshotPullback()
+{
+	// TODO implement
+}
+
 void Controller::localStartGame()
 {
 	// start the game

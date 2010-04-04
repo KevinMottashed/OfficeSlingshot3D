@@ -589,6 +589,14 @@ rc_network NetworkManager::sendProjectile(const Projectile& projectile)
 	return syncSendDataMessage(message);
 }
 
+rc_network NetworkManager::sendSlingshotPullback()
+{
+	DataPacket message;
+	message.setSlingshotPullback();
+	return syncSendDataMessage(message);
+}
+
+
 rc_network NetworkManager::syncSendDataMessage(const DataPacket& packet)
 {
 	// sending data through the control socket is an operation that reads the connection status
@@ -667,6 +675,11 @@ void NetworkManager::handleDataMessage(const DataPacket& message)
 		case DATA_PACKET_PROJECTILE:
 		{
 			Controller::instance()->notifyNewRemoteProjectile(message.getProjectile());
+			break;
+		}
+		case DATA_PACKET_SLINGSHOT_PULLBACK:
+		{
+			Controller::instance()->notifyRemoteSlingshotPullback();
 			break;
 		}
 		case DATA_PACKET_UNKNOWN:

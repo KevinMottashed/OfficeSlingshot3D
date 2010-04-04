@@ -60,6 +60,9 @@ public:
 	// send a projectile over the network
 	rc_network sendProjectile(const Projectile& projectile);
 
+	// send a slingshot pullback event over the network
+	rc_network sendSlingshotPullback();
+
 	// notify the controller that a network connection has been accepted
 	void notifyAccept(NetworkSocket* socket);
 

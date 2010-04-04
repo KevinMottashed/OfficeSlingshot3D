@@ -85,6 +85,11 @@ public:
 	void notifyNewLocalPlayerPosition(const cVector3d& position);
 	void notifyNewRemotePlayerPosition(const cVector3d& position);
 
+	// notifies the controller that a slingshot is being pulled back
+	void notifyLocalSlingshotPullback();
+	void notifyRemoteSlingshotPullback();
+	
+
 	// --------------------------------
 	// Video related functions
 	// --------------------------------
