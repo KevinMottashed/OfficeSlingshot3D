@@ -48,6 +48,15 @@ void ControlPacket::setStartGame()
 	return;
 }
 
+void ControlPacket::setPauseGame()
+{
+	ControlPacketHeader header;
+	header.size = 0; // no data in a start game packet
+	header.type = CONTROL_PACKET_PAUSE_GAME;
+	writeEmptyPacket(header);
+	return;
+}
+
 void ControlPacket::setEndGame()
 {
 	ControlPacketHeader header;

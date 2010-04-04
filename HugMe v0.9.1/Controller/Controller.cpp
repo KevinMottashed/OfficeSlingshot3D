@@ -74,6 +74,14 @@ void Controller::startGame()
 	m_pZCameraManager->start();
 }
 
+void Controller::pauseGame()
+{
+	m_bGameIsRunning = false;
+	m_pGame->pause();
+	m_pFalconPenManager->stop();
+	m_pZCameraManager->stop();
+}
+
 void Controller::exitGame()
 {
 	m_bGameIsRunning = false;
@@ -230,7 +238,11 @@ void Controller::localStartGame()
 
 void Controller::localPauseGame()
 {
-	// TODO implement
+	// pause the game
+	pauseGame();
+
+	// and let the peer know that the game is paused
+	m_pNetworkManager->sendPauseGame();
 }
 
 void Controller::localExitGame()
@@ -258,6 +270,15 @@ void Controller::notifyPeerExitGame()
 
 	// let the UI know that the game has been ended
 	m_pUserInterfaceManager->notifyGameExited();
+}
+
+void Controller::notifyPeerPauseGame()
+{
+	// pause our game
+	pauseGame();
+
+	// let the UI know that the game has been paused
+	m_pUserInterfaceManager->notifyGamePaused();
 }
 
 void Controller::changeArmBandPort(int armBandPort)

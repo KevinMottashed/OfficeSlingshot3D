@@ -554,6 +554,13 @@ rc_network NetworkManager::sendStartGame()
 	return syncSendControlMessage(packet);
 }
 
+rc_network NetworkManager::sendPauseGame()
+{
+	ControlPacket packet;
+	packet.setPauseGame();
+	return syncSendControlMessage(packet);
+}
+
 rc_network NetworkManager::sendEndGame()
 {
 	ControlPacket packet;
@@ -776,6 +783,12 @@ void NetworkManager::handleControlMessage(const ControlPacket& message)
 		{
 			// notify the controller that the peer has started the game
 			Controller::instance()->notifyPeerStartGame();
+			break;
+		}
+		case CONTROL_PACKET_PAUSE_GAME:
+		{
+			// notify the controller that the peer has started the game
+			Controller::instance()->notifyPeerPauseGame();
 			break;
 		}
 		case CONTROL_PACKET_END_GAME:

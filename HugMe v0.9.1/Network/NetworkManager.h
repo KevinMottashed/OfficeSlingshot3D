@@ -45,6 +45,9 @@ public:
 	// send a start game message
 	rc_network sendStartGame();
 
+	// send a pause game message
+	rc_network sendPauseGame();
+
 	// send a end game message
 	rc_network sendEndGame();
 

@@ -109,6 +109,17 @@ void Game::start()
 	return;
 }
 
+// a pause is the same thing as a stop
+// except that we don't reset the game state
+// that way we can resume from the previous state
+void Game::pause()
+{
+	m_bGameIsRunning = false;
+	m_hGameLoopThread = 0;
+	m_dwIDGameLoop = 0;
+	return;
+}
+
 void Game::stop()
 {
 	m_bGameIsRunning = false;

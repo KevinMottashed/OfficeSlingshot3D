@@ -16,6 +16,7 @@ enum ControlPacketType
 	CONTROL_PACKET_NAME, // a user name packet
 	CONTROL_PACKET_CHAT, // a chat message packet
 	CONTROL_PACKET_START_GAME, // tell the peer the game is starting
+	CONTROL_PACKET_PAUSE_GAME, // tell the peer the game is paused
 	CONTROL_PACKET_END_GAME, // tell the peer the game is ending
 	CONTROL_PACKET_UNKNOWN
 };
@@ -52,6 +53,9 @@ public:
 
 	// set this packet to a start game packet
 	void setStartGame();
+
+	// set this packet to a pause game packet
+	void setPauseGame();
 
 	// set this packet to an end game packet
 	void setEndGame();

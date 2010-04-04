@@ -62,6 +62,7 @@ public:
 	// notifies the controller that the peer has started or exited the game
 	void notifyPeerStartGame();
 	void notifyPeerExitGame();
+	void notifyPeerPauseGame();
 
 	// notifies the controller that the slingshot position has changed
 	void notifyNewLocalSlingshotPosition(const cVector3d& position);
@@ -172,6 +173,9 @@ private:
 
 	// start the game
 	void startGame();
+
+	// pause the game
+	void pauseGame();
 
 	// exit the game
 	void exitGame();

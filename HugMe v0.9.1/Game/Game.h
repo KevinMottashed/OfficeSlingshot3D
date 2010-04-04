@@ -23,6 +23,9 @@ public:
 	// start the game
 	void start();
 
+	// pause the game
+	void pause();
+
 	// stop the game
 	void stop();
 

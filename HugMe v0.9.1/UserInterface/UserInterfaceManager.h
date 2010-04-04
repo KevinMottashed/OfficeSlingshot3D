@@ -39,6 +39,9 @@ public:
 	// updates the user interface to reflect a game started
 	void notifyGameStarted();
 
+	// updates the user interface to reflect a game paused
+	void notifyGamePaused();
+
 	// updates the user interface to reflect a game exited
 	void notifyGameExited();
 
