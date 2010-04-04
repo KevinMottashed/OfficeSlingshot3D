@@ -83,6 +83,7 @@ private:
 	afx_msg void OnPauseGame();
 	afx_msg LRESULT OnGameStarted(WPARAM, LPARAM);
 	afx_msg LRESULT OnGameExited(WPARAM, LPARAM);
+	afx_msg LRESULT OnGamePaused(WPARAM, LPARAM);
 	afx_msg void OnDestroy();
 	afx_msg void OnSendChat();
 	afx_msg LRESULT OnNewChatMessage(WPARAM, LPARAM);

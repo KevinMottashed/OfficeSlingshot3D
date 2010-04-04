@@ -70,6 +70,7 @@ BEGIN_MESSAGE_MAP(CMainDlg, CDialog)
 	ON_MESSAGE(WM_ON_NETWORK_ERROR,OnNetworkError)
 	ON_MESSAGE(WM_ON_START_GAME,OnGameStarted)
 	ON_MESSAGE(WM_ON_EXIT_GAME,OnGameExited)
+	ON_MESSAGE(WM_ON_PAUSE_GAME,OnGamePaused)
 	ON_MESSAGE(WM_ON_NEW_CHAT_MESSAGE,OnNewChatMessage)
 	ON_MESSAGE(WM_ON_NEW_FRAME, OnDisplayNewFrame)
 	ON_WM_DESTROY()
@@ -199,6 +200,7 @@ LRESULT CMainDlg::OnNetworkDisconnected(WPARAM wParam, LPARAM lParam)
 
 	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_GRAYED | MF_BYCOMMAND);
 	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_GRAYED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_PAUSEGAME, MF_GRAYED | MF_BYCOMMAND);
 
 	return 0;
 }
@@ -219,6 +221,7 @@ LRESULT CMainDlg::OnNetworkError(WPARAM wParam, LPARAM lParam)
 
 	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_GRAYED | MF_BYCOMMAND);
 	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_GRAYED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_PAUSEGAME, MF_GRAYED | MF_BYCOMMAND);
 
 	return 0;
 }
@@ -322,6 +325,7 @@ LRESULT CMainDlg::OnGameStarted(WPARAM wParam, LPARAM lParam)
 	CMenu* pMenu = GetMenu();
 	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_GRAYED | MF_BYCOMMAND);
 	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_ENABLED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_PAUSEGAME, MF_ENABLED | MF_BYCOMMAND);
 
 	return 0;
 }
@@ -341,6 +345,26 @@ LRESULT CMainDlg::OnGameExited(WPARAM wParam, LPARAM lParam)
 	CMenu* pMenu = GetMenu();
 	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_ENABLED | MF_BYCOMMAND);
 	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_GRAYED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_PAUSEGAME, MF_GRAYED | MF_BYCOMMAND);
+
+	return 0;
+}
+
+// method notifying the user that the remote user has paused the game
+LRESULT CMainDlg::OnGamePaused(WPARAM wParam, LPARAM lParam)
+{
+	// construc message
+	string* remoteUserName = (string*) wParam;
+	ostringstream os;
+	os << *remoteUserName << " has paused the game";
+
+	// add feedback message on the text area
+	AddChatContent(os.str().c_str());
+
+	// enable and disable appropriate menu items
+	CMenu* pMenu = GetMenu();
+	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_ENABLED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_PAUSEGAME, MF_GRAYED | MF_BYCOMMAND);
 
 	return 0;
 }

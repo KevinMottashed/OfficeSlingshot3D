@@ -56,16 +56,22 @@
  */
 #define WM_ON_EXIT_GAME (WM_USER + 0x107)
 
+/* WM_ON_PAUSE_GAME
+ * WPARAM :
+ * LPARAM :
+ */
+#define WM_ON_PAUSE_GAME (WM_USER + 0x108)
+
 /* WM_ON_SEND_CHAT_MESSAGE
  * WPARAM : remote Username
  * LPARAM : message
  */
-#define WM_ON_NEW_CHAT_MESSAGE (WM_USER + 0x108)
+#define WM_ON_NEW_CHAT_MESSAGE (WM_USER + 0x109)
 
 /* WM_ON_SEND_CHAT_MESSAGE
  * WPARAM : video frame
  */
-#define WM_ON_NEW_FRAME (WM_USER + 0x109)
+#define WM_ON_NEW_FRAME (WM_USER + 0x110)
 
 
 #endif /* NETWORKSIGNALS_H_ */

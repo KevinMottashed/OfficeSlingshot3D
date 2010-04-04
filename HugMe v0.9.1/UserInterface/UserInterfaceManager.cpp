@@ -91,7 +91,8 @@ void UserInterfaceManager::notifyGameStarted()
 
 void UserInterfaceManager::notifyGamePaused()
 {
-	// TODO implement
+	string remoteUserName = Controller::instance()->getRemoteUserName();
+	getMainWindow()->SendMessage(WM_ON_PAUSE_GAME, (WPARAM)&remoteUserName);
 }
 
 void UserInterfaceManager::notifyGameExited()
