@@ -37,10 +37,17 @@ DWORD ZCameraManager::getFrameFromCamera(ZCameraManager* p_ZCamera){
 	
 	//While the thread is active
 	while(p_ZCamera->zcam_started){
-		//DO REAL CAMERA STUFF
 		
-		//GetNextFrame(p_ZCamera->DEPTH,p_ZCamera->RGB,p_ZCamera->RGBFull,p_ZCamera->PRIM,p_ZCamera->SEC,1000);
-		//Controller::instance()->notifyNewLocalVideoData((const char*)p_ZCamera->RGB);
+		//Get frame from camera, updates the values of the char arrays
+		p_ZCamera->m_depthCamera->GetNextFrame(p_ZCamera->DEPTH,p_ZCamera->RGB,p_ZCamera->RGBFull,p_ZCamera->PRIM,p_ZCamera->SEC,1000);
+		
+		//Flip the image up-down
+		reverseFrame(p_ZCamera->RGB,4);
+
+		//Send to the controller
+		Controller::instance()->notifyNewLocalVideoData((const char*)p_ZCamera->RGB, IMAGE_ARRAY_SIZE);
+
+		Sleep(31); // 32 fps
 	}
 
 	return 0;
@@ -65,6 +72,8 @@ DWORD ZCameraManager::getFrameFromDummy(ZCameraManager* p_ZCamera){
 			}
 		}
 
+		reverseFrame(p_ZCamera->RGB,4);
+
 		// notify the controller that new local video data has arrived
 		Controller::instance()->notifyNewLocalVideoData((const char*)p_ZCamera->RGB, IMAGE_ARRAY_SIZE);
 
@@ -80,27 +89,38 @@ DWORD ZCameraManager::getFrameFromDummy(ZCameraManager* p_ZCamera){
 	return 0;
 }
 
-// TODO implement
-// start getting pictures from the z camera
-// create a thread to poll it
+//Starts the thread and begins to send data to the controller
 void ZCameraManager::start() {	
 	zcam_started = true;
 
 	DWORD threadId;
 	HANDLE hThread;
 
-	TDVCameraInterfaceBase* x = m_depthCamera->GetCameraInterface();
-	if (x){	//REAL CAMERA is connected
-		m_depthCamera->Initialize(1000);
+	//Check if the camera is connection, if not we use dummy data for frames.
+	if (m_depthCamera->Initialize(1000)){
 		hThread = CreateThread( 0, 0, (LPTHREAD_START_ROUTINE) getFrameFromCamera,  (void*) this, 0, &threadId);
-	}else{	//No camera is connected
+	}else{
 		hThread = CreateThread( 0, 0, (LPTHREAD_START_ROUTINE) getFrameFromDummy,  (void*) this, 0, &threadId);
 	}
 }
 
-// TODO implement
-// stop getting pictures
-// stop the thread that's polling it
+//Stops the thread from running
 void ZCameraManager::stop() {
 	zcam_started = false;
+}
+
+//Reverses the image up-down, but not left-right
+void ZCameraManager::reverseFrame(unsigned char* &RGB,int channels){
+
+	int step = ZCameraManager::IMAGE_WIDTH*channels;
+	unsigned char* tmp = new BYTE[step];
+
+	for(int i=0; i<ZCameraManager::IMAGE_HEIGHT/2; i++){
+		memcpy(tmp,RGB + step*(ZCameraManager::IMAGE_HEIGHT-i-1),step);				//tmp = b
+		memcpy(RGB + step*(ZCameraManager::IMAGE_HEIGHT-i-1),RGB+i*step,step);		//b = a
+		memcpy(RGB+i*step,tmp,step);												//a = tmp
+	}
+
+	delete []tmp;
+
 }

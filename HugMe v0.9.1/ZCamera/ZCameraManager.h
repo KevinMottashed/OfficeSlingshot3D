@@ -40,8 +40,10 @@ public:
 	static DWORD getFrameFromCamera(ZCameraManager* p_ZCamera);
 	static DWORD getFrameFromDummy(ZCameraManager* p_ZCamera);
 
+	//Reverse the image array, so it displays correctly on the UI
+	static void reverseFrame(unsigned char* &RGB, int channels);
+
 	
-	unsigned char* RGB;
 
 private:
 	ZCameraManager(const ZCameraManager& zCameraManager); // intentionally not implemented
@@ -50,6 +52,7 @@ private:
 	bool zcam_started;
 
 	CDepthCamera * m_depthCamera;
+	unsigned char* RGB;
 	unsigned char* DEPTH;
 	unsigned char* RGBFull;
 	unsigned char* PRIM;

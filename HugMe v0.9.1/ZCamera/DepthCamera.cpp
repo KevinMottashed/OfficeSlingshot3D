@@ -123,8 +123,12 @@ bool CDepthCamera::Initialize(int timeout)
 		{
 			Sleep(waitResolution);
 			waitTime -= waitResolution;
-			if (waitTime < 0)
+			if (waitTime <= 0){
 				waitTime = 0;
+
+				//**********DanGrise: Added a return false to exit the loop when the camera is not connected************
+				return false;
+			}
 		}
 	}
 	if (waitTime == 0) // timeout occured
