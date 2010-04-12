@@ -1,0 +1,5 @@
+<area shape="rect" id="node3" href="$classc_effect_magnet.html" title="cEffectMagnet models the reaction force on a tool located near a magnet field." alt="" coords="5,83,109,111">
+<area shape="rect" id="node5" href="$classc_effect_stick_slip.html" title="cEffectStickSlip models a stick and slip effect." alt="" coords="133,83,245,111">
+<area shape="rect" id="node7" href="$classc_effect_surface.html" title="cEffectSurface models the reaction force of on tool pushing against the surface of..." alt="" coords="269,83,373,111">
+<area shape="rect" id="node9" href="$classc_effect_vibration.html" title="cEffectVibration models force vibrations by defining a frequency and amplitude." alt="" coords="397,83,509,111">
+<area shape="rect" id="node11" href="$classc_effect_viscosity.html" title="cEffectViscosity models the reaction force of a tool moving through a viscous environment..." alt="" coords="533,83,648,111">

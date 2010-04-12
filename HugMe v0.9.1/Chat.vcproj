@@ -50,7 +50,7 @@
 				Name="VCCLCompilerTool"
 				AdditionalOptions="/D /NODEFAULTLIB:library&quot; &quot; /D _CRT_SECURE_NO_DEPRECATE"
 				Optimization="0"
-				AdditionalIncludeDirectories="include;&quot;include\ARToolKit-2.72.1&quot;;&quot;..\chai3d[v1.61.1]\include&quot;;&quot;include\Z-Cam&quot;;include\HandTracker;Utils\;Controller\;Falcon\;Game\;Jacket\;Network\;UserInterface\;ZCamera\;Objects\"
+				AdditionalIncludeDirectories="include;&quot;include\ARToolKit-2.72.1&quot;;&quot;..\chai3d-2.0.0\external\OpenGL&quot;;&quot;..\chai3d-2.0.0\lib\msvc8&quot;;&quot;..\chai3d[v1.61.1]\include&quot;;&quot;include\Z-Cam&quot;;include\HandTracker;Utils\;Controller\;Falcon\;Game\;Jacket\;Network\;UserInterface\;ZCamera\;Objects\"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_MSVC"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -78,11 +78,11 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="strmiids.lib opengl32.lib glu32.lib glut32.lib libARd.lib libARvideod.lib libARgsub_MFCd.lib vfw32.lib chai3d_complete.lib winmm.lib hdl.lib ConnectDM_VC80.lib tinyxmld.lib TDVHandsTracking.lib depthCameraLibrary2.lib"
+				AdditionalDependencies="strmiids.lib opengl32.lib glu32.lib glut32.lib libARd.lib libARvideod.lib libARgsub_MFCd.lib vfw32.lib winmm.lib hdl.lib ConnectDM_VC80.lib tinyxmld.lib TDVHandsTracking.lib depthCameraLibrary2.lib"
 				OutputFile=".\Debug/Chat.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="lib\ARToolKit-2.72.1,..\chai3d[v1.61.1]\lib\msvc6,lib/Z-Cam,lib,lib\HandTracker"
+				AdditionalLibraryDirectories="&quot;lib\ARToolKit-2.72.1&quot;;&quot;..\chai3d-2.0.0\external\hdFalcon\lib&quot;;&quot;..\chai3d-2.0.0\external\OpenGL\msvc&quot;;&quot;..\chai3d-2.0.0\lib\msvc8&quot;;&quot;lib/Z-Cam&quot;;lib;lib\HandTracker"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile=".\Debug/Chat.pdb"
 				SubSystem="2"

@@ -1,0 +1,6 @@
+<area shape="rect" id="node1" href="$classc_generic_effect.html" title="cGenericEffect provides a base class to program haptic effects (force models) when..." alt="" coords="5,106,112,134">
+<area shape="rect" id="node3" href="$classc_effect_magnet.html" title="cEffectMagnet models the reaction force on a tool located near a magnet field." alt="" coords="167,5,271,33">
+<area shape="rect" id="node5" href="$classc_effect_stick_slip.html" title="cEffectStickSlip models a stick and slip effect." alt="" coords="163,55,275,83">
+<area shape="rect" id="node7" href="$classc_effect_surface.html" title="cEffectSurface models the reaction force of on tool pushing against the surface of..." alt="" coords="167,106,271,134">
+<area shape="rect" id="node9" href="$classc_effect_vibration.html" title="cEffectVibration models force vibrations by defining a frequency and amplitude." alt="" coords="163,157,275,185">
+<area shape="rect" id="node11" href="$classc_effect_viscosity.html" title="cEffectViscosity models the reaction force of a tool moving through a viscous environment..." alt="" coords="161,207,276,235">
