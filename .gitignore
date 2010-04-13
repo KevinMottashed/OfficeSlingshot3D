@@ -81,7 +81,7 @@ chai3d*/examples/*/*/Debug
 chai3d*/examples/*/*/Release
 
 # chai3d library
-chai3d*/lib/*/chai3d_complete.lib
+chai3d*/lib/*/*.lib
 
 # chai3d - END
 

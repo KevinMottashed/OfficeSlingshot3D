@@ -50,7 +50,7 @@
 				Name="VCCLCompilerTool"
 				AdditionalOptions="/D /NODEFAULTLIB:library&quot; &quot; /D _CRT_SECURE_NO_DEPRECATE"
 				Optimization="0"
-				AdditionalIncludeDirectories="include;&quot;include\ARToolKit-2.72.1&quot;;&quot;..\chai3d-2.0.0\external\OpenGL&quot;;&quot;..\chai3d-2.0.0\lib\msvc8&quot;;&quot;..\chai3d[v1.61.1]\include&quot;;&quot;include\Z-Cam&quot;;include\HandTracker;Utils\;Controller\;Falcon\;Game\;Jacket\;Network\;UserInterface\;ZCamera\;Objects\"
+				AdditionalIncludeDirectories="include;&quot;include\ARToolKit-2.72.1&quot;;&quot;include\Z-Cam&quot;;include\HandTracker;&quot;..\chai3d-2.0.0\src&quot;;&quot;..\chai3d-2.0.0\external\OpenGL\msvc&quot;;Utils\;Controller\;Falcon\;Game\;Jacket\;Network\;UserInterface\;ZCamera\;Objects\"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_MSVC"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -214,6 +214,10 @@
 		</Configuration>
 	</Configurations>
 	<References>
+		<ProjectReference
+			ReferencedProjectIdentifier="{A9F01342-5463-4634-B1F9-BF98CD5591B0}"
+			RelativePathToProject="..\chai3d-2.0.0\projects\msvc8\chai3d_complete.vcproj"
+		/>
 	</References>
 	<Files>
 		<Filter
