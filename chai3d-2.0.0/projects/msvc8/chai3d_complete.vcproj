@@ -155,6 +155,7 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
+				AdditionalOptions="/IGNORE:4221"
 				OutputFile="../../lib/msvc8/chai3d-debug.lib"
 				SuppressStartupBanner="true"
 				IgnoreDefaultLibraryNames="libmmd.lib libmmdd.lib"
