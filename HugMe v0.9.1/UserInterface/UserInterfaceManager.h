@@ -48,8 +48,11 @@ public:
 	// update the user interface to display a chat message
 	void notifyNewChatMessage(const std::string& message);
 
-	// updates the user interface to display the new video frame
-	void notifyDisplayNewFrame(const char *pRGB, unsigned int size);
+	// updates the user interface to display the new local video frame
+	void notifyDisplayNewLocalFrame(const char *pRGB, unsigned int size);
+
+	// updates the user interface to display the new remote video frame
+	void notifyDisplayNewRemoteFrame(const char *pRGB, unsigned int size);
 
 	//-----------------------------------------------
 	// Notifications coming from the user interface

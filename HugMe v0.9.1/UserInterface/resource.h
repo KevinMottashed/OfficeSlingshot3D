@@ -19,9 +19,12 @@
 #define IDC_SEND_CHAT                   1062
 #define IDC_CHAT                        1063
 #define IDC_VIDEO                       1064
+#define IDC_VIDEO_REMOTE                1064
 #define IDC_ARMBAND_EDIT                1065
 #define IDC_ARMBAND_EDIT2               1066
 #define IDC_JACKET_EDIT                 1066
+#define IDC_VIDEO_REMOTE2               1066
+#define IDC_VIDEO_LOCAL                 1066
 #define ID_NETWORK_LISTEN               32780
 #define ID_NETWORK_CONNECT              32781
 #define ID_NETWORK_DISCONNECT           32782

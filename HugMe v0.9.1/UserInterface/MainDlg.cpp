@@ -72,7 +72,8 @@ BEGIN_MESSAGE_MAP(CMainDlg, CDialog)
 	ON_MESSAGE(WM_ON_EXIT_GAME,OnGameExited)
 	ON_MESSAGE(WM_ON_PAUSE_GAME,OnGamePaused)
 	ON_MESSAGE(WM_ON_NEW_CHAT_MESSAGE,OnNewChatMessage)
-	ON_MESSAGE(WM_ON_NEW_FRAME, OnDisplayNewFrame)
+	ON_MESSAGE(WM_ON_NEW_LOCAL_FRAME, OnDisplayNewLocalFrame)
+	ON_MESSAGE(WM_ON_NEW_REMOTE_FRAME, OnDisplayNewRemoteFrame)
 	ON_WM_DESTROY()
 	ON_EN_CHANGE(IDC_CHAT_INPUT, OnChangeChatInput)
 	//}}AFX_MSG_MAP
@@ -87,7 +88,8 @@ BOOL CMainDlg::OnInitDialog()
 	CDialog::OnInitDialog();
 
 	// start the video before displaying the Dialog
-	initVideoArea();
+	initLocalVideoArea();
+	initRemoteVideoArea();
 
 	return TRUE;
 }
@@ -434,18 +436,18 @@ void CMainDlg::OnChangeChatInput()
 }
 
 // method used to display a new frame on the UI
-LRESULT CMainDlg::OnDisplayNewFrame(WPARAM wParam, LPARAM lParam)
+LRESULT CMainDlg::OnDisplayNewLocalFrame(WPARAM wParam, LPARAM lParam)
 {
 	unsigned char* vRGB = (unsigned char*) wParam;
 
 	// updates the specified m_hdc dialog element using the vRGB variable
-	::DrawDibDraw(hdib,
-				  m_hdc,
+	::DrawDibDraw(hdib_local,
+				  m_hdc_local,
 				  0,		// dest : left pos
 				  0,		// dest : top pos
-				  m_localWndWidth,					 // don't zoom x
-				  m_localWndHeight,					 // don't zoom y
-				  &m_bmpinfo->bmiHeader,			 // bmp header info
+				  m_localWndWidth_local,					 // don't zoom x
+				  m_localWndHeight_local,					 // don't zoom y
+				  &m_bmpinfo_local->bmiHeader,			 // bmp header info
 				  vRGB,					 // bmp data
 				  0,					 // src :left
 				  0,					 // src :top
@@ -456,46 +458,68 @@ LRESULT CMainDlg::OnDisplayNewFrame(WPARAM wParam, LPARAM lParam)
 	return 0;
 }
 
-// method used to initiate a new DIB
-void CMainDlg::initVideoArea()
+LRESULT CMainDlg::OnDisplayNewRemoteFrame(WPARAM wParam, LPARAM lParam)
+{
+	unsigned char* vRGB = (unsigned char*) wParam;
+
+	// updates the specified m_hdc dialog element using the vRGB variable
+	::DrawDibDraw(hdib_remote,
+				  m_hdc_remote,
+				  0,		// dest : left pos
+				  0,		// dest : top pos
+				  m_localWndWidth_remote,					 // don't zoom x
+				  m_localWndHeight_remote,					 // don't zoom y
+				  &m_bmpinfo_remote->bmiHeader,			 // bmp header info
+				  vRGB,					 // bmp data
+				  0,					 // src :left
+				  0,					 // src :top
+				  ZCameraManager::IMAGE_WIDTH,          // src : width
+				  ZCameraManager::IMAGE_HEIGHT,			// src : height
+				  DDF_SAME_DRAW			 // use prev params....
+				  );
+	return 0;
+}
+
+// method used to initiate a new local DIB
+void CMainDlg::initLocalVideoArea()
 {
 	// assemble the bitmap header
-	m_bmpinfo=new BITMAPINFO;
-	m_bmpinfo->bmiHeader.biSize=sizeof(BITMAPINFOHEADER);
-	m_bmpinfo->bmiHeader.biWidth=320;
-	m_bmpinfo->bmiHeader.biHeight=240;
-	m_bmpinfo->bmiHeader.biPlanes=1;
-	m_bmpinfo->bmiHeader.biBitCount=32;
-	m_bmpinfo->bmiHeader.biCompression=0;
-	m_bmpinfo->bmiHeader.biSizeImage=0;
-	m_bmpinfo->bmiHeader.biXPelsPerMeter=0;
-	m_bmpinfo->bmiHeader.biYPelsPerMeter=0;
-	m_bmpinfo->bmiHeader.biClrUsed=0;
-	m_bmpinfo->bmiHeader.biClrImportant=0;
+	m_bmpinfo_local=new BITMAPINFO;
+	m_bmpinfo_local->bmiHeader.biSize=sizeof(BITMAPINFOHEADER);
+	m_bmpinfo_local->bmiHeader.biWidth=320;
+	m_bmpinfo_local->bmiHeader.biHeight=240;
+	m_bmpinfo_local->bmiHeader.biPlanes=1;
+	m_bmpinfo_local->bmiHeader.biBitCount=32;
+	m_bmpinfo_local->bmiHeader.biCompression=0;
+	m_bmpinfo_local->bmiHeader.biSizeImage=0;
+	m_bmpinfo_local->bmiHeader.biXPelsPerMeter=0;
+	m_bmpinfo_local->bmiHeader.biYPelsPerMeter=0;
+	m_bmpinfo_local->bmiHeader.biClrUsed=0;
+	m_bmpinfo_local->bmiHeader.biClrImportant=0;
 
 	RECT localWndRect;
 
 	//video display window
-	wnd = this->GetDlgItem(IDC_VIDEO);
+	wnd_local = this->GetDlgItem(IDC_VIDEO_LOCAL);
 
-	wnd->GetWindowRect(&localWndRect);
+	wnd_local->GetWindowRect(&localWndRect);
 
 	// set the height and width to match the video window
-	m_localWndWidth = localWndRect.right - localWndRect.left;
-	m_localWndHeight = localWndRect.bottom - localWndRect.top;
+	m_localWndWidth_local = localWndRect.right - localWndRect.left;
+	m_localWndHeight_local = localWndRect.bottom - localWndRect.top;
 
 	//get Dialog DC
-	m_hdc=wnd->GetDC()->m_hDC;
+	m_hdc_local=wnd_local->GetDC()->m_hDC;
 	
 	//initialize DIB for drawing
-	hdib=DrawDibOpen();
-	if(hdib!=NULL)
+	hdib_local=DrawDibOpen();
+	if(hdib_local!=NULL)
 	{
-		::DrawDibBegin(hdib,
-					   m_hdc,
-					   m_localWndWidth,		//don't stretch
-					   m_localWndHeight,	//don't stretch
-					   &m_bmpinfo->bmiHeader,
+		::DrawDibBegin(hdib_local,
+					   m_hdc_local,
+					   m_localWndWidth_local,		//don't stretch
+					   m_localWndHeight_local,	//don't stretch
+					   &m_bmpinfo_local->bmiHeader,
 					   ZCameraManager::IMAGE_WIDTH,          //width of image
 					   ZCameraManager::IMAGE_HEIGHT,         //height of image
 					   0				
@@ -505,12 +529,70 @@ void CMainDlg::initVideoArea()
 }
 
 // method used to close the DIB
-void CMainDlg::closeVideoArea()
+void CMainDlg::closeLocalVideoArea()
 {
 	// ends and closes the DIB if it was previously initialized
-	if(hdib!=NULL) {
-		DrawDibEnd(hdib);
-		DrawDibClose(hdib);
+	if(hdib_local!=NULL) {
+		DrawDibEnd(hdib_local);
+		DrawDibClose(hdib_local);
+	}
+}
+
+// method used to initiate a new local DIB
+void CMainDlg::initRemoteVideoArea()
+{
+	// assemble the bitmap header
+	m_bmpinfo_remote=new BITMAPINFO;
+	m_bmpinfo_remote->bmiHeader.biSize=sizeof(BITMAPINFOHEADER);
+	m_bmpinfo_remote->bmiHeader.biWidth=320;
+	m_bmpinfo_remote->bmiHeader.biHeight=240;
+	m_bmpinfo_remote->bmiHeader.biPlanes=1;
+	m_bmpinfo_remote->bmiHeader.biBitCount=32;
+	m_bmpinfo_remote->bmiHeader.biCompression=0;
+	m_bmpinfo_remote->bmiHeader.biSizeImage=0;
+	m_bmpinfo_remote->bmiHeader.biXPelsPerMeter=0;
+	m_bmpinfo_remote->bmiHeader.biYPelsPerMeter=0;
+	m_bmpinfo_remote->bmiHeader.biClrUsed=0;
+	m_bmpinfo_remote->bmiHeader.biClrImportant=0;
+
+	RECT localWndRect;
+
+	//video display window
+	wnd_remote = this->GetDlgItem(IDC_VIDEO_REMOTE);
+
+	wnd_remote->GetWindowRect(&localWndRect);
+
+	// set the height and width to match the video window
+	m_localWndWidth_remote = localWndRect.right - localWndRect.left;
+	m_localWndHeight_remote = localWndRect.bottom - localWndRect.top;
+
+	//get Dialog DC
+	m_hdc_remote=wnd_remote->GetDC()->m_hDC;
+	
+	//initialize DIB for drawing
+	hdib_remote=DrawDibOpen();
+	if(hdib_remote!=NULL)
+	{
+		::DrawDibBegin(hdib_remote,
+					   m_hdc_remote,
+					   m_localWndWidth_remote,		//don't stretch
+					   m_localWndHeight_remote,	//don't stretch
+					   &m_bmpinfo_remote->bmiHeader,
+					   ZCameraManager::IMAGE_WIDTH,          //width of image
+					   ZCameraManager::IMAGE_HEIGHT,         //height of image
+					   0				
+					   );
+	
+	}
+}
+
+// method used to close the DIB
+void CMainDlg::closeRemoteVideoArea()
+{
+	// ends and closes the DIB if it was previously initialized
+	if(hdib_remote!=NULL) {
+		DrawDibEnd(hdib_remote);
+		DrawDibClose(hdib_remote);
 	}
 }
 
@@ -552,6 +634,7 @@ BOOL CMainDlg::PreTranslateMessage(MSG* pMsg)
 void CMainDlg::OnDestroy() 
 {
 	// close video DIB and application
-	closeVideoArea();
+	closeLocalVideoArea();
+	closeRemoteVideoArea();
 	pUserInterfaceManager->closeApplication();
 }

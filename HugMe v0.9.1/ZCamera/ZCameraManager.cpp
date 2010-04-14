@@ -97,7 +97,7 @@ void ZCameraManager::start() {
 	HANDLE hThread;
 
 	//Check if the camera is connection, if not we use dummy data for frames.
-	if (m_depthCamera->Initialize(1000)){
+	if (m_depthCamera->Initialize(5000)){
 		hThread = CreateThread( 0, 0, (LPTHREAD_START_ROUTINE) getFrameFromCamera,  (void*) this, 0, &threadId);
 	}else{
 		hThread = CreateThread( 0, 0, (LPTHREAD_START_ROUTINE) getFrameFromDummy,  (void*) this, 0, &threadId);

@@ -32,19 +32,34 @@ private:
 	string m_userName;
 	string m_ipAddress;
 
-	// Video processing variables
-	CWnd *wnd;
+	// Local video processing variables
+	CWnd *wnd_local;
 
-	int m_localWndWidth;
-	int m_localWndHeight;
+	int m_localWndWidth_local;
+	int m_localWndHeight_local;
 
-	PBITMAPINFO m_bmpinfo;
-	HDC m_hdc;
-	HDRAWDIB hdib;
+	PBITMAPINFO m_bmpinfo_local;
+
+	HDC m_hdc_local;
+	HDRAWDIB hdib_local;
+
+	// Remote video processing variables
+	CWnd *wnd_remote;
+
+	int m_localWndWidth_remote;
+	int m_localWndHeight_remote;
+
+	PBITMAPINFO m_bmpinfo_remote;
+
+	HDC m_hdc_remote;
+	HDRAWDIB hdib_remote;
 
 	// Methods to initialize and close video sessions
-	void initVideoArea();
-	void closeVideoArea();
+	void initLocalVideoArea();
+	void closeLocalVideoArea();
+
+	void initRemoteVideoArea();
+	void closeRemoteVideoArea();
 
 	// Method to add a string in a new line in the text box
 	void AddChatContent(CString strCont);
@@ -88,7 +103,8 @@ private:
 	afx_msg void OnSendChat();
 	afx_msg LRESULT OnNewChatMessage(WPARAM, LPARAM);
 	afx_msg void OnChangeChatInput();
-	afx_msg LRESULT OnDisplayNewFrame(WPARAM, LPARAM);
+	afx_msg LRESULT OnDisplayNewLocalFrame(WPARAM, LPARAM);
+	afx_msg LRESULT OnDisplayNewRemoteFrame(WPARAM, LPARAM);
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

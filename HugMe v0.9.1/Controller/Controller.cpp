@@ -148,12 +148,13 @@ CDialog* Controller::getMainWindow()
 
 void Controller::notifyNewLocalVideoData(const char* pRGB, unsigned int size)
 {
+	m_pUserInterfaceManager->notifyDisplayNewLocalFrame(pRGB, size);
 	m_pNetworkManager->sendVideoData(pRGB, size);
 }
 
 void Controller::notifyNewRemoteVideoData(const char* pRGB, unsigned int size)
 {
-	m_pUserInterfaceManager->notifyDisplayNewFrame(pRGB, size);
+	m_pUserInterfaceManager->notifyDisplayNewRemoteFrame(pRGB, size);
 }
 
 rc_network Controller::sendChatMessage(const std::string& message)

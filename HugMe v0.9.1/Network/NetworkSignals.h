@@ -68,10 +68,15 @@
  */
 #define WM_ON_NEW_CHAT_MESSAGE (WM_USER + 0x109)
 
-/* WM_ON_SEND_CHAT_MESSAGE
+/* WM_ON_NEW_LOCAL_FRAME
  * WPARAM : video frame
  */
-#define WM_ON_NEW_FRAME (WM_USER + 0x110)
+#define WM_ON_NEW_LOCAL_FRAME (WM_USER + 0x110)
+
+/* WM_ON_NEW_REMOTE_FRAME
+ * WPARAM : video frame
+ */
+#define WM_ON_NEW_REMOTE_FRAME (WM_USER + 0x111)
 
 
 #endif /* NETWORKSIGNALS_H_ */
