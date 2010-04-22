@@ -45,7 +45,8 @@ DWORD ZCameraManager::getFrameFromCamera(ZCameraManager* p_ZCamera){
 		reverseFrame(p_ZCamera->RGB,4);
 
 		//Send to the controller
-		Controller::instance()->notifyNewLocalVideoData((const char*)p_ZCamera->RGB, IMAGE_ARRAY_SIZE);
+		VideoData video((const char*) p_ZCamera->RGB, IMAGE_ARRAY_SIZE);
+		Controller::instance()->notifyNewLocalVideoData(video);
 
 		Sleep(31); // 32 fps
 	}
@@ -75,7 +76,8 @@ DWORD ZCameraManager::getFrameFromDummy(ZCameraManager* p_ZCamera){
 		reverseFrame(p_ZCamera->RGB,4);
 
 		// notify the controller that new local video data has arrived
-		Controller::instance()->notifyNewLocalVideoData((const char*)p_ZCamera->RGB, IMAGE_ARRAY_SIZE);
+		VideoData video((const char*) p_ZCamera->RGB, IMAGE_ARRAY_SIZE);
+		Controller::instance()->notifyNewLocalVideoData(video);
 
 /*
 		cVector3d vec;

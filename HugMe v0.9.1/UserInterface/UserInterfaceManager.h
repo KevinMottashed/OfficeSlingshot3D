@@ -13,6 +13,7 @@
 
 #include "NetworkProxy.h"
 #include "ControllerProxy.h"
+#include "ZCameraProxy.h"
 #include "MainDlg.h"
 
 using namespace std;
@@ -49,10 +50,10 @@ public:
 	void notifyNewChatMessage(const std::string& message);
 
 	// updates the user interface to display the new local video frame
-	void notifyDisplayNewLocalFrame(const char *pRGB, unsigned int size);
+	void notifyDisplayNewLocalFrame(VideoData video);
 
 	// updates the user interface to display the new remote video frame
-	void notifyDisplayNewRemoteFrame(const char *pRGB, unsigned int size);
+	void notifyDisplayNewRemoteFrame(VideoData video);
 
 	//-----------------------------------------------
 	// Notifications coming from the user interface

@@ -112,14 +112,14 @@ void UserInterfaceManager::notifyNewChatMessage(const string& message)
 	getMainWindow()->SendMessage(WM_ON_NEW_CHAT_MESSAGE, (WPARAM)&remoteUserName, (LPARAM)&message);
 }
 
-void UserInterfaceManager::notifyDisplayNewLocalFrame(const char *pRGB, unsigned int size)
+void UserInterfaceManager::notifyDisplayNewLocalFrame(VideoData video)
 {
-	getMainWindow()->SendMessage(WM_ON_NEW_LOCAL_FRAME, (WPARAM)pRGB, (LPARAM)&size);
+	getMainWindow()->SendMessage(WM_ON_NEW_LOCAL_FRAME, (WPARAM)video.rgb, (LPARAM)&video.size);
 }
 
-void UserInterfaceManager::notifyDisplayNewRemoteFrame(const char *pRGB, unsigned int size)
+void UserInterfaceManager::notifyDisplayNewRemoteFrame(VideoData video)
 {
-	getMainWindow()->SendMessage(WM_ON_NEW_REMOTE_FRAME, (WPARAM)pRGB, (LPARAM)&size);
+	getMainWindow()->SendMessage(WM_ON_NEW_REMOTE_FRAME, (WPARAM)video.rgb, (LPARAM)&video.size);
 }
 
 void UserInterfaceManager::changeArmBandPort(int armBandPort)

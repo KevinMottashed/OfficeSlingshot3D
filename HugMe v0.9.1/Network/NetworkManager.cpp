@@ -199,9 +199,9 @@ void NetworkManager::peerDisconnect()
 
 	if (m_bIsConnected && !m_bLocalDisconnect)
 	{
-		// notify the controller that the peer has disconnected
-		// only notify the controller if it was the peer that initiated the disconnect
-		Controller::instance()->notifyPeerDisconnected();
+		// notify the observers that the peer has disconnected
+		// only notify the observers if it was the peer that initiated the disconnect
+		networkNotify(PEER_DISCONNECTED);
 	}
 
 	// close the sockets and reset the connection
@@ -219,8 +219,8 @@ void NetworkManager::networkError(rc_network error)
 
 	if (m_bIsConnected)
 	{
-		// notify the controller that the network has been disconnected due to an error
-		Controller::instance()->notifyNetworkError(error);
+		// notify the observers that the network has been disconnected due to an error		
+		networkNotify(NETWORK_ERROR, &error);
 	}
 
 	// close the sockets and reset the connection
@@ -568,10 +568,10 @@ rc_network NetworkManager::sendEndGame()
 	return syncSendControlMessage(packet);
 }
 
-rc_network NetworkManager::sendVideoData(const char* pVideoData, unsigned int size)
+rc_network NetworkManager::sendVideoData(VideoData video)
 {
 	DataPacket message;
-	message.setVideoData(pVideoData, size);
+	message.setVideoData(video.rgb, video.size);
 	return syncSendDataMessage(message);
 }
 
@@ -672,32 +672,33 @@ void NetworkManager::handleDataMessage(const DataPacket& message)
 	{
 		case DATA_PACKET_VIDEO:
 		{
-			Controller::instance()->notifyNewRemoteVideoData(message.getVideoData(), message.getVideoDataSize());
+			VideoData video(message.getVideoData(), message.getVideoDataSize());
+			networkNotify(RECEIVED_VIDEO, &video);			
 			break;
 		}
 		case DATA_PACKET_PLAYER_POSITION:
 		{
-			Controller::instance()->notifyNewRemotePlayerPosition(message.getPlayerPosition());
+			networkNotify(RECEIVED_PLAYER_POSITION, &message.getPlayerPosition());
 			break;
 		}
 		case DATA_PACKET_SLINGSHOT_POSITION:
 		{
-			Controller::instance()->notifyNewRemoteSlingshotPosition(message.getSlingshotPosition());
+			networkNotify(RECEIVED_SLINGSHOT_POSITION, &message.getSlingshotPosition());			
 			break;
 		}
 		case DATA_PACKET_PROJECTILE:
 		{
-			Controller::instance()->notifyNewRemoteProjectile(message.getProjectile());
+			networkNotify(RECEIVED_PROJECTILE, &message.getProjectile());
 			break;
 		}
 		case DATA_PACKET_SLINGSHOT_PULLBACK:
 		{
-			Controller::instance()->notifyRemoteSlingshotPullback();
+			networkNotify(RECEIVED_PULLBACK);
 			break;
 		}
 		case DATA_PACKET_SLINGSHOT_RELEASE:
 		{
-			Controller::instance()->notifyRemoteSlingshotRelease();
+			networkNotify(RECEIVED_RELEASE);
 			break;
 		}
 		case DATA_PACKET_UNKNOWN:
@@ -769,32 +770,32 @@ void NetworkManager::handleControlMessage(const ControlPacket& message)
 		case CONTROL_PACKET_NAME:
 		{
 			// update the remote user name
-			Controller::instance()->updateRemoteUserName(message.getUserName());
-			Controller::instance()->notifyNetworkConnectionAccepted();
+			networkNotify(RECEIVED_USER_NAME, &message.getUserName());
+			networkNotify(PEER_CONNECTED);
 			break;
 		}
 		case CONTROL_PACKET_CHAT:
 		{
-			// notify the controller that a new message has arrived
-			Controller::instance()->notifyNewChatMessage(message.getChatMessage());
+			// notify the observers that a new message has arrived			
+			networkNotify(RECEIVED_CHAT_MESSAGE, &message.getChatMessage());
 			break;
 		}
 		case CONTROL_PACKET_START_GAME:
 		{
-			// notify the controller that the peer has started the game
-			Controller::instance()->notifyPeerStartGame();
+			// notify the observers that the peer has started the game
+			networkNotify(PEER_START_GAME);
 			break;
 		}
 		case CONTROL_PACKET_PAUSE_GAME:
 		{
-			// notify the controller that the peer has started the game
-			Controller::instance()->notifyPeerPauseGame();
+			// notify the observers that the peer has started the game
+			networkNotify(PEER_PAUSE_GAME);
 			break;
 		}
 		case CONTROL_PACKET_END_GAME:
 		{
-			// notify the controller that the peer has exited the game
-			Controller::instance()->notifyPeerExitGame();
+			// notify the observers that the peer has exited the game
+			networkNotify(PEER_EXIT_GAME);
 			break;
 		}
 		case CONTROL_PACKET_UNKNOWN:

@@ -18,7 +18,7 @@
 
 // The controller class for the program
 // this class is a singleton
-class Controller
+class Controller : public NetworkObserver
 {
 public:
 	// gets the singleton
@@ -41,14 +41,10 @@ public:
 	// this function will disconnect us from the network
 	rc_network netDisconnect();
 
-	// notifies the controller that the network connection has been accepted
-	void notifyNetworkConnectionAccepted();
-
-	// notifies the controller that the peer has disconnected
-	void notifyPeerDisconnected();
-
-	// notifies the controller that there has been a network error
-	void notifyNetworkError(rc_network error);
+	// handles updates received from the network module
+	// context is the update subject (user name, connect, disconnect, etc ...)
+	// data is the data that accompagnies the update (player position, projectile, etc ...)
+	virtual void networkUpdate(NetworkUpdateContext context, void* data);
 
 	//------------------------------------------
 	// Game related
@@ -59,39 +55,27 @@ public:
 	void localExitGame();
 	void localPauseGame();
 
-	// notifies the controller that the peer has started or exited the game
-	void notifyPeerStartGame();
-	void notifyPeerExitGame();
-	void notifyPeerPauseGame();
-
 	// notifies the controller that the slingshot position has changed
 	void notifyNewLocalSlingshotPosition(const cVector3d& position);
-	void notifyNewRemoteSlingshotPosition(const cVector3d& position);
 
 	// notifies the controller that a new projectile has been launched
 	void notifyNewLocalProjectile(const Projectile& projectile);
-	void notifyNewRemoteProjectile(const Projectile& projectile);
 
 	// notifies the controller that the position of a player has changed
 	void notifyNewLocalPlayerPosition(const cVector3d& position);
-	void notifyNewRemotePlayerPosition(const cVector3d& position);
 
 	// notifies the controller that a slingshot is being pulled back
 	void notifyLocalSlingshotPullback();
-	void notifyRemoteSlingshotPullback();
 
 	// notifies the controller that a slingshot has being released
-	void notifyLocalSlingshotRelease();
-	void notifyRemoteSlingshotRelease();
-	
+	void notifyLocalSlingshotRelease();	
 
 	// --------------------------------
 	// Video related functions
 	// --------------------------------
 
 	// notifies the controller that new video data has arrived
-	void notifyNewLocalVideoData(const char* pRGB, unsigned int size);
-	void notifyNewRemoteVideoData(const char* pRGB, unsigned int size);
+	void notifyNewLocalVideoData(VideoData video);
 
 	// --------------------------------
 	// Smart Clothing related functions
@@ -104,9 +88,6 @@ public:
 	// --------------------------------
 	// Player info related functions
 	// --------------------------------
-
-	// update the remote player's user name
-	void updateRemoteUserName(const std::string& name);
 
 	std::string getRemoteUserName();
 
@@ -121,9 +102,6 @@ public:
 
 	// the local user wishes to send a chat message
 	rc_network sendChatMessage(const std::string& message);
-
-	// the peer has sent us a chat message
-	void notifyNewChatMessage(const std::string& message);
 
 	// get the main window of the application
 	CDialog* getMainWindow();
@@ -179,6 +157,30 @@ private:
 
 	// exit the game
 	void exitGame();
+
+	//--------------------------------------------
+	// Network Related updates
+	//--------------------------------------------
+
+	// connection status
+	void handlePeerConnected();
+	void handlePeerDisconnected();
+	void handleNetworkError(rc_network error);
+
+	// game status
+	void handlePeerStartGame();
+	void handlePeerPauseGame();
+	void handlePeerExitGame();
+
+	// data reception
+	void handleUserName(const std::string& name);
+	void handleChatMessage(const std::string& message);
+	void handleRemoteVideoData(VideoData video);
+	void handleRemoteSlingshotPosition(const cVector3d& position);
+	void handleRemoteProjectile(const Projectile& projectile);
+	void handleRemotePlayerPosition(const cVector3d& position);
+	void handleRemotePullback();
+	void handleRemoteRelease();
 
 };
 

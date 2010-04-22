@@ -2,6 +2,10 @@
 #include "NetworkManager.h"
 #include "NetworkCodes.h"
 #include "NetworkSignals.h"
+#include "NetworkObserver.h"
+#include "NetworkSubject.h"
 
 // forward declarations
 class NetworkManager;
+class NetworkObserver;
+class NetworkSubject;

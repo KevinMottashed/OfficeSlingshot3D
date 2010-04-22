@@ -14,9 +14,6 @@
 #include "chai3d.h"
 #include "DepthCamera.h"
 
-// forward declarations (files include each other)
-class Controller;
-
 class ZCameraManager  
 {
 

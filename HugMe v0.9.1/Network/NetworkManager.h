@@ -12,16 +12,17 @@
 #include "ControllerProxy.h"
 #include "NetworkSocket.h"
 #include "NetworkCodes.h"
+#include "NetworkSubject.h"
 #include "DataPacket.h"
 #include "ControlPacket.h"
 #include "Stdafx.h"
 #include "SyncReaderWriters.h"
+#include "ZCameraProxy.h"
 
 // Forward declarations (files include each other)
-class Controller;
 class NetworkSocket;
 
-class NetworkManager  
+class NetworkManager : public NetworkSubject 
 {
 public:
 	NetworkManager();
@@ -52,7 +53,7 @@ public:
 	rc_network sendEndGame();
 
 	// send a video data to the other player
-	rc_network sendVideoData(const char* pVideoData, unsigned int size);
+	rc_network sendVideoData(VideoData video);
 
 	// send a player position to the other player
 	rc_network sendPlayerPosition(const cVector3d& position);

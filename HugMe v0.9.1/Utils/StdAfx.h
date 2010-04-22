@@ -51,6 +51,12 @@ typedef LONG LONG_PTR;
 // renable the warning
 #pragma warning (default : 4786)
 
+//----------------------------------------------
+// Standard C Headers
+//----------------------------------------------
+
+#include <cassert>
+
 //{{AFX_INSERT_LOCATION}}
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 

@@ -971,6 +971,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\ZCamera\VideoData.h"
+				>
+			</File>
+			<File
 				RelativePath=".\ZCamera\ZCameraManager.cpp"
 				>
 			</File>
@@ -1063,6 +1067,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Network\NetworkObserver.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Network\NetworkObserver.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Network\NetworkProxy.h"
 				>
 			</File>
@@ -1076,6 +1088,14 @@
 			</File>
 			<File
 				RelativePath=".\Network\NetworkSocket.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Network\NetworkSubject.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Network\NetworkSubject.h"
 				>
 			</File>
 		</Filter>
