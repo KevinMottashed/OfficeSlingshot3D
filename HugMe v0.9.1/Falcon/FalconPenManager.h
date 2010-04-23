@@ -9,7 +9,7 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#include "ControllerProxy.h"
+#include "MediatorProxy.h"
 
 class FalconPenManager  
 {

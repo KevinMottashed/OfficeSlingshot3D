@@ -1,4 +1,4 @@
-// Controller.h: interface for the Controller class.
+// Mediator.h: interface for the Mediator class.
 //
 //////////////////////////////////////////////////////////////////////
 
@@ -18,15 +18,15 @@
 #include "LoggerProxy.h"
 #include "VideoData.h"
 
-// The controller class for the program
+// The Mediator class for the program
 // this class is a singleton
-class Controller : public NetworkObserver
+class Mediator : public NetworkObserver
 {
 public:
 	// gets the singleton
-	static Controller* instance();
+	static Mediator* instance();
 
-	virtual ~Controller();
+	virtual ~Mediator();
 
 	// ----------------------------
 	// Network related functions
@@ -57,26 +57,26 @@ public:
 	void localExitGame();
 	void localPauseGame();
 
-	// notifies the controller that the slingshot position has changed
+	// notifies the Mediator that the slingshot position has changed
 	void notifyNewLocalSlingshotPosition(const cVector3d& position);
 
-	// notifies the controller that a new projectile has been launched
+	// notifies the Mediator that a new projectile has been launched
 	void notifyNewLocalProjectile(const Projectile& projectile);
 
-	// notifies the controller that the position of a player has changed
+	// notifies the Mediator that the position of a player has changed
 	void notifyNewLocalPlayerPosition(const cVector3d& position);
 
-	// notifies the controller that a slingshot is being pulled back
+	// notifies the Mediator that a slingshot is being pulled back
 	void notifyLocalSlingshotPullback();
 
-	// notifies the controller that a slingshot has being released
+	// notifies the Mediator that a slingshot has being released
 	void notifyLocalSlingshotRelease();	
 
 	// --------------------------------
 	// Video related functions
 	// --------------------------------
 
-	// notifies the controller that new video data has arrived
+	// notifies the Mediator that new video data has arrived
 	void notifyNewLocalVideoData(VideoData video);
 
 	// --------------------------------
@@ -116,12 +116,12 @@ public:
 	void closeApplication();
 
 private:
-	Controller(); // private for singleton pattern
-	Controller(const Controller& c); // intentionally not implemented
-	Controller& operator=(const Controller& c); // intentionally not implemented
+	Mediator(); // private for singleton pattern
+	Mediator(const Mediator& c); // intentionally not implemented
+	Mediator& operator=(const Mediator& c); // intentionally not implemented
 
 	// the singleton
-	static Controller* globalInstance;
+	static Mediator* globalInstance;
 
 	// the network manager, manages everything network related
 	NetworkManager* m_pNetworkManager;

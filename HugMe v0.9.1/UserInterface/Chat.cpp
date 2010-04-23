@@ -3,7 +3,7 @@
 
 #include "stdafx.h"
 #include "Chat.h"
-#include "ControllerProxy.h"
+#include "MediatorProxy.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -57,10 +57,10 @@ BOOL CChatApp::InitInstance()
 	CoInitialize(NULL);
 	AfxInitRichEdit();
 
-	// this will initialize the controller class and it will initialize the system
-	Controller* controller = Controller::instance();
+	// this will initialize the Mediator class and it will initialize the system
+	Mediator* mediator = Mediator::instance();
 
-	CDialog* mainWindow = controller->getMainWindow();
+	CDialog* mainWindow = mediator->getMainWindow();
 
 	m_pMainWnd = mainWindow;
 

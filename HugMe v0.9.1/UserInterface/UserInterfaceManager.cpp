@@ -26,39 +26,39 @@ UserInterfaceManager::~UserInterfaceManager()
 
 rc_network UserInterfaceManager::networkConnectButtonPushed(const string& ipAddress, const string& localName)
 {
-	Controller::instance()->updateLocalUserName(localName);
-	return Controller::instance()->netConnect(ipAddress);
+	Mediator::instance()->updateLocalUserName(localName);
+	return Mediator::instance()->netConnect(ipAddress);
 }
 
 rc_network UserInterfaceManager::networkDisconnectButtonPushed()
 {
-	return Controller::instance()->netDisconnect();
+	return Mediator::instance()->netDisconnect();
 }
 
 rc_network UserInterfaceManager::networkListenButtonPushed(const string& localName)
 {
-	Controller::instance()->updateLocalUserName(localName);
-	return Controller::instance()->netStartListening();
+	Mediator::instance()->updateLocalUserName(localName);
+	return Mediator::instance()->netStartListening();
 }
 
 void UserInterfaceManager::startGameButtonPushed()
 {
-	Controller::instance()->localStartGame();
+	Mediator::instance()->localStartGame();
 }
 
 void UserInterfaceManager::exitGameButtonPushed()
 {
-	Controller::instance()->localExitGame();
+	Mediator::instance()->localExitGame();
 }
 
 void UserInterfaceManager::pauseGameButtonPushed()
 {
-	Controller::instance()->localPauseGame();
+	Mediator::instance()->localPauseGame();
 }
 
 void UserInterfaceManager::closeApplication()
 {
-	Controller::instance()->closeApplication();
+	Mediator::instance()->closeApplication();
 }
 
 CDialog* UserInterfaceManager::getMainWindow()
@@ -68,13 +68,13 @@ CDialog* UserInterfaceManager::getMainWindow()
 
 void UserInterfaceManager::notifyNetworkConnectionEstablished()
 {
-	string remoteUserName = Controller::instance()->getRemoteUserName();
+	string remoteUserName = Mediator::instance()->getRemoteUserName();
 	getMainWindow()->SendMessage(WM_ON_CONNECT, (WPARAM)&remoteUserName);
 }
 
 void UserInterfaceManager::notifyPeerDisconnected()
 {
-	string remoteUserName = Controller::instance()->getRemoteUserName();
+	string remoteUserName = Mediator::instance()->getRemoteUserName();
 	getMainWindow()->SendMessage(WM_ON_DISCONNECT, (WPARAM)&remoteUserName);
 }
 
@@ -85,30 +85,30 @@ void UserInterfaceManager::notifyNetworkError(rc_network error)
 
 void UserInterfaceManager::notifyGameStarted()
 {
-	string remoteUserName = Controller::instance()->getRemoteUserName();
+	string remoteUserName = Mediator::instance()->getRemoteUserName();
 	getMainWindow()->SendMessage(WM_ON_START_GAME, (WPARAM)&remoteUserName);
 }
 
 void UserInterfaceManager::notifyGamePaused()
 {
-	string remoteUserName = Controller::instance()->getRemoteUserName();
+	string remoteUserName = Mediator::instance()->getRemoteUserName();
 	getMainWindow()->SendMessage(WM_ON_PAUSE_GAME, (WPARAM)&remoteUserName);
 }
 
 void UserInterfaceManager::notifyGameExited()
 {
-	string remoteUserName = Controller::instance()->getRemoteUserName();
+	string remoteUserName = Mediator::instance()->getRemoteUserName();
 	getMainWindow()->SendMessage(WM_ON_EXIT_GAME, (WPARAM)&remoteUserName);
 }
 
 rc_network UserInterfaceManager::sendChatButtonPushed(const string& message)
 {
-	return Controller::instance()->sendChatMessage(message);
+	return Mediator::instance()->sendChatMessage(message);
 }
 
 void UserInterfaceManager::notifyNewChatMessage(const string& message)
 {
-	string remoteUserName = Controller::instance()->getRemoteUserName();
+	string remoteUserName = Mediator::instance()->getRemoteUserName();
 	getMainWindow()->SendMessage(WM_ON_NEW_CHAT_MESSAGE, (WPARAM)&remoteUserName, (LPARAM)&message);
 }
 
@@ -124,10 +124,10 @@ void UserInterfaceManager::notifyDisplayNewRemoteFrame(VideoData video)
 
 void UserInterfaceManager::changeArmBandPort(int armBandPort)
 {
-	Controller::instance()->changeArmBandPort(armBandPort);
+	Mediator::instance()->changeArmBandPort(armBandPort);
 }
 
 void UserInterfaceManager::changeJacketPort(int jacketPort)
 {
-	Controller::instance()->changeJacketPort(jacketPort);
+	Mediator::instance()->changeJacketPort(jacketPort);
 }

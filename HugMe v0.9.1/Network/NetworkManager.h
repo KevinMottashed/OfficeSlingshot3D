@@ -69,7 +69,7 @@ public:
 	// send a slingshot release event over the network
 	rc_network sendSlingshotRelease();
 
-	// notify the controller that a network connection has been accepted
+	// notify the manager that a network connection has been accepted
 	void notifyAccept(NetworkSocket* socket);
 
 private:
@@ -147,10 +147,10 @@ private:
 	// send a control message to the peer
 	rc_network sendControlMessage(const ControlPacket& message);
 
-	// reset the network connection and notify the controller that the peer has disconnected
+	// reset the network connection and notify the observers that the peer has disconnected
 	void peerDisconnect();
 
-	// reset the network connection and notify the controller that a network error has occured
+	// reset the network connection and notify the observers that a network error has occured
 	void networkError(rc_network error);
 
 	// send a data message synchronously

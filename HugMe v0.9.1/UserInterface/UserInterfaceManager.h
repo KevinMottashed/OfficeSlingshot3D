@@ -12,7 +12,7 @@
 #include <string>
 
 #include "NetworkProxy.h"
-#include "ControllerProxy.h"
+#include "MediatorProxy.h"
 #include "ZCameraProxy.h"
 #include "MainDlg.h"
 #include "VideoData.h"
@@ -80,7 +80,6 @@ public:
 	CDialog* getMainWindow();
 
 private:
-	Controller* m_pController;
 	CDialog* m_pMainDlg;
 };
 

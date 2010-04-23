@@ -44,9 +44,9 @@ DWORD ZCameraManager::getFrameFromCamera(ZCameraManager* p_ZCamera){
 		//Flip the image up-down
 		reverseFrame(p_ZCamera->RGB,4);
 
-		//Send to the controller
+		//Send to the Mediator
 		VideoData video((const char*) p_ZCamera->RGB, IMAGE_ARRAY_SIZE);
-		Controller::instance()->notifyNewLocalVideoData(video);
+		Mediator::instance()->notifyNewLocalVideoData(video);
 
 		Sleep(31); // 32 fps
 	}
@@ -75,23 +75,23 @@ DWORD ZCameraManager::getFrameFromDummy(ZCameraManager* p_ZCamera){
 
 		reverseFrame(p_ZCamera->RGB,4);
 
-		// notify the controller that new local video data has arrived
+		// notify the Mediator that new local video data has arrived
 		VideoData video((const char*) p_ZCamera->RGB, IMAGE_ARRAY_SIZE);
-		Controller::instance()->notifyNewLocalVideoData(video);
+		Mediator::instance()->notifyNewLocalVideoData(video);
 
 /*
 		cVector3d vec;
 		vec.x = rand() % 10;
 		vec.y = rand() % 10;
 		vec.z = rand() % 10;
-		Controller::instance()->notifyNewLocalPlayerPosition(vec);
+		Mediator::instance()->notifyNewLocalPlayerPosition(vec);
 */
 		Sleep(31); // 32 fps
 	}
 	return 0;
 }
 
-//Starts the thread and begins to send data to the controller
+//Starts the thread and begins to send data to the Mediator
 void ZCameraManager::start() {	
 	zcam_started = true;
 

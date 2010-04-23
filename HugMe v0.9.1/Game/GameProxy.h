@@ -3,5 +3,5 @@
 #include "Projectile.h"
 
 // Forward declarations
-class Controller;
+class Game;
 class Projectile;

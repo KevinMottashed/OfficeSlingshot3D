@@ -97,7 +97,7 @@ BOOL CMainDlg::OnInitDialog()
 // method used to connect the user to a remote user
 void CMainDlg::OnNetworkConnect() 
 {
-	// call the connect method of the networkManager through the controller
+	// call the connect method of the networkManager through the mediator
 	rc_network status = pUserInterfaceManager->networkConnectButtonPushed(m_ipAddress.c_str(), m_userName);
 
 	if (status == SUCCESS){
@@ -119,7 +119,7 @@ void CMainDlg::OnNetworkConnect()
 // method used to close the connection with the remote user
 void CMainDlg::OnNetworkDisconnect() 
 {
-	// call the disconnect method of the networkManager through the controller
+	// call the disconnect method of the networkManager through the Mediator
 	rc_network status = pUserInterfaceManager->networkDisconnectButtonPushed();
 
 	if (status == SUCCESS){
@@ -145,7 +145,7 @@ void CMainDlg::OnNetworkDisconnect()
 // method used to listen for incoming connection attempts
 void CMainDlg::OnNetworkListen() 
 {
-	// call the listen method of the networkManager through the controller
+	// call the listen method of the networkManager through the Mediator
 	rc_network status = pUserInterfaceManager->networkListenButtonPushed(m_userName);
 
 	if (status == SUCCESS){
@@ -243,7 +243,7 @@ void CMainDlg::OnPreferencesEdit()
 		int armBandPort = prefs.getArmBandPort();
 		int jacketPort = prefs.getJacketBandPort();
 		
-		// set armBand and jacket ports through the controller
+		// set armBand and jacket ports through the Mediator
 		pUserInterfaceManager->changeArmBandPort(armBandPort);
 		pUserInterfaceManager->changeJacketPort(jacketPort);
 

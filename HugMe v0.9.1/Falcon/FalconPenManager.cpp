@@ -38,7 +38,7 @@ DWORD FalconPenManager::getPositionFromFalcon(FalconPenManager* p_Falcon)
 		position.y = y;
 		position.z = z;
 
-		Controller::instance()->notifyNewLocalSlingshotPosition(position);
+		Mediator::instance()->notifyNewLocalSlingshotPosition(position);
 
 
 		if (projectileCount < 5)
@@ -51,7 +51,7 @@ DWORD FalconPenManager::getPositionFromFalcon(FalconPenManager* p_Falcon)
 
 			projectile.setPosition(x, y, z);
 
-			Controller::instance()->notifyNewLocalProjectile(projectile);
+			Mediator::instance()->notifyNewLocalProjectile(projectile);
 		}
 
 		// sleep for 100ms

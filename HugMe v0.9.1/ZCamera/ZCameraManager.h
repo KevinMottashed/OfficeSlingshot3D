@@ -10,7 +10,7 @@
 #endif // _MSC_VER > 1000
 
 #include "StdAfx.h"
-#include "ControllerProxy.h"
+#include "MediatorProxy.h"
 #include "chai3d.h"
 #include "DepthCamera.h"
 

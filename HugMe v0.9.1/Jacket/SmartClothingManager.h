@@ -9,7 +9,7 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#include "ControllerProxy.h"
+#include "MediatorProxy.h"
 
 //Should be created in HumanModel... 
 typedef enum tagHumanPart {
@@ -27,7 +27,7 @@ public:
 
 	// implement this with a proper type for position, probably Vector3D from chai3d
 	// implement this with a thread/event/timer
-	// the controller shouldn't be blocked while the jacket vibrates (don't put a sleep)
+	// the Mediator shouldn't be blocked while the jacket vibrates (don't put a sleep)
 	// if possible, make the time in ms
 	void vibrate(HumanPart touchedPart, int x, int y, int time);
 

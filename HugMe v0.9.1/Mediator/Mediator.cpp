@@ -1,33 +1,33 @@
-// Controller.cpp: implementation of the Controller class.
+// Mediator.cpp: implementation of the Mediator class.
 //
 //////////////////////////////////////////////////////////////////////
 
-#include "Controller.h"
+#include "Mediator.h"
 #include "ConsoleStream.h"
 
-Controller* Controller::globalInstance = NULL;
+Mediator* Mediator::globalInstance = NULL;
 
-Controller* Controller::instance()
+Mediator* Mediator::instance()
 {
 	if (globalInstance == NULL)
 	{
-		globalInstance = new Controller();
+		globalInstance = new Mediator();
 	}
 	return globalInstance;
 }
 
-rc_network Controller::netStartListening()
+rc_network Mediator::netStartListening()
 {
 	return m_pNetworkManager->listen(localUserName);
 }
 
-rc_network Controller::netConnect(const std::string& ipAddress)
+rc_network Mediator::netConnect(const std::string& ipAddress)
 {
 	return m_pNetworkManager->connect(ipAddress, localUserName);
 }
 
 // we want to exit the game and disconnect when the local user wishes to disconnect
-rc_network Controller::netDisconnect()
+rc_network Mediator::netDisconnect()
 {
 	// exit the game when we disconnect
 	exitGame();
@@ -36,7 +36,7 @@ rc_network Controller::netDisconnect()
 	return m_pNetworkManager->disconnect();
 }
 
-void Controller::startGame()
+void Mediator::startGame()
 {
 	if (m_bGameIsRunning)
 	{
@@ -48,7 +48,7 @@ void Controller::startGame()
 	m_pZCameraManager->start();
 }
 
-void Controller::pauseGame()
+void Mediator::pauseGame()
 {
 	m_bGameIsRunning = false;
 	m_pGame->pause();
@@ -56,7 +56,7 @@ void Controller::pauseGame()
 	m_pZCameraManager->stop();
 }
 
-void Controller::exitGame()
+void Mediator::exitGame()
 {
 	m_bGameIsRunning = false;
 	m_pGame->stop();
@@ -64,7 +64,7 @@ void Controller::exitGame()
 	m_pZCameraManager->stop();
 }
 
-void Controller::closeApplication()
+void Mediator::closeApplication()
 {
 	// the only thing to do is to close the sockets so the other end has a clean disconnect
 	// by closing the sockets the other end will receive an end of file of its sockets
@@ -72,7 +72,7 @@ void Controller::closeApplication()
 	m_pNetworkManager->disconnect();
 }
 
-Controller::Controller() :
+Mediator::Mediator() :
 		m_bGameIsRunning(false)
 {
 	// create the various components
@@ -93,7 +93,7 @@ Controller::Controller() :
 	m_pNetworkManager->attach(m_pLogger);
 }
 
-Controller::~Controller()
+Mediator::~Mediator()
 {
 	delete m_pNetworkManager;
 	delete m_pUserInterfaceManager;
@@ -104,39 +104,39 @@ Controller::~Controller()
 	delete m_pLogger;
 }
 
-std::string Controller::getRemoteUserName()
+std::string Mediator::getRemoteUserName()
 {
 	return remoteUserName;
 }
 
-void Controller::updateLocalUserName(const std::string& name)
+void Mediator::updateLocalUserName(const std::string& name)
 {
 	localUserName = name;
 	return;
 }
 
-std::string Controller::getLocalUserName()
+std::string Mediator::getLocalUserName()
 {
 	return localUserName;
 }
 
-CDialog* Controller::getMainWindow()
+CDialog* Mediator::getMainWindow()
 {
 	return m_pUserInterfaceManager->getMainWindow();
 }
 
-void Controller::notifyNewLocalVideoData(VideoData video)
+void Mediator::notifyNewLocalVideoData(VideoData video)
 {
 	m_pUserInterfaceManager->notifyDisplayNewLocalFrame(video);
 	m_pNetworkManager->sendVideoData(video);
 }
 
-rc_network Controller::sendChatMessage(const std::string& message)
+rc_network Mediator::sendChatMessage(const std::string& message)
 {
 	return m_pNetworkManager->sendChatMessage(message);
 }
 
-void Controller::notifyNewLocalSlingshotPosition(const cVector3d& position)
+void Mediator::notifyNewLocalSlingshotPosition(const cVector3d& position)
 {
 	// update our game with the new slingshot position
 	m_pGame->setLocalSlingshotPosition(position);
@@ -145,14 +145,14 @@ void Controller::notifyNewLocalSlingshotPosition(const cVector3d& position)
 	m_pNetworkManager->sendSlingshotPosition(position);
 }
 
-void Controller::notifyNewLocalProjectile(const Projectile& projectile)
+void Mediator::notifyNewLocalProjectile(const Projectile& projectile)
 {
 	m_pNetworkManager->sendProjectile(projectile);
 	
 	m_pGame->addLocalProjectile(projectile);
 }
 
-void Controller::notifyNewLocalPlayerPosition(const cVector3d& position)
+void Mediator::notifyNewLocalPlayerPosition(const cVector3d& position)
 {
 	// let our game know that the player has moved
 	m_pGame->setLocalPlayerPosition(position);
@@ -161,17 +161,17 @@ void Controller::notifyNewLocalPlayerPosition(const cVector3d& position)
 	m_pNetworkManager->sendPlayerPosition(position);
 }
 
-void Controller::notifyLocalSlingshotPullback()
+void Mediator::notifyLocalSlingshotPullback()
 {
 	m_pNetworkManager->sendSlingshotPullback();
 }
 
-void Controller::notifyLocalSlingshotRelease()
+void Mediator::notifyLocalSlingshotRelease()
 {
 	m_pNetworkManager->sendSlingshotRelease();
 }
 
-void Controller::localStartGame()
+void Mediator::localStartGame()
 {
 	// start the game
 	startGame();
@@ -180,7 +180,7 @@ void Controller::localStartGame()
 	m_pNetworkManager->sendStartGame();
 }
 
-void Controller::localPauseGame()
+void Mediator::localPauseGame()
 {
 	// pause the game
 	pauseGame();
@@ -189,7 +189,7 @@ void Controller::localPauseGame()
 	m_pNetworkManager->sendPauseGame();
 }
 
-void Controller::localExitGame()
+void Mediator::localExitGame()
 {
 	// exit the game
 	exitGame();
@@ -198,17 +198,17 @@ void Controller::localExitGame()
 	m_pNetworkManager->sendEndGame();
 }
 
-void Controller::changeArmBandPort(int armBandPort)
+void Mediator::changeArmBandPort(int armBandPort)
 {
 	//TODO implement
 }
 
-void Controller::changeJacketPort(int jacketPort)
+void Mediator::changeJacketPort(int jacketPort)
 {
 	// TODO implement
 }
 
-void Controller::networkUpdate(NetworkUpdateContext context, void* data)
+void Mediator::networkUpdate(NetworkUpdateContext context, void* data)
 {
 	switch (context)
 	{
@@ -320,14 +320,14 @@ void Controller::networkUpdate(NetworkUpdateContext context, void* data)
 	return;
 }
 
-void Controller::handlePeerConnected()
+void Mediator::handlePeerConnected()
 {
 	// send the connection accepted message to the user interface process
 	m_pUserInterfaceManager->notifyNetworkConnectionEstablished();
 	return;
 }
 
-void Controller::handlePeerDisconnected()
+void Mediator::handlePeerDisconnected()
 {
 	// exit the game when the peer disconnects
 	exitGame();
@@ -337,7 +337,7 @@ void Controller::handlePeerDisconnected()
 	return;
 }
 
-void Controller::handleNetworkError(rc_network error)
+void Mediator::handleNetworkError(rc_network error)
 {
 	// exit the game when a network error occurs
 	exitGame();
@@ -347,7 +347,7 @@ void Controller::handleNetworkError(rc_network error)
 	return;
 }
 
-void Controller::handlePeerStartGame()
+void Mediator::handlePeerStartGame()
 {
 	// start our own game
 	startGame();
@@ -357,7 +357,7 @@ void Controller::handlePeerStartGame()
 	return;
 }
 
-void Controller::handlePeerPauseGame()
+void Mediator::handlePeerPauseGame()
 {
 	// pause our game
 	pauseGame();
@@ -367,7 +367,7 @@ void Controller::handlePeerPauseGame()
 	return;
 }
 
-void Controller::handlePeerExitGame()
+void Mediator::handlePeerExitGame()
 {
 	// exit our own game
 	exitGame();
@@ -377,55 +377,55 @@ void Controller::handlePeerExitGame()
 	return;
 }
 
-void Controller::handleUserName(const std::string& name)
+void Mediator::handleUserName(const std::string& name)
 {
 	// update the other player's user name
 	remoteUserName = name;
 	return;
 }
 
-void Controller::handleChatMessage(const std::string& message)
+void Mediator::handleChatMessage(const std::string& message)
 {
 	// tell the UI to display the chat message
 	m_pUserInterfaceManager->notifyNewChatMessage(message);
 	return;
 }
 
-void Controller::handleRemoteVideoData(VideoData video)
+void Mediator::handleRemoteVideoData(VideoData video)
 {
 	// tell the UI to display the video
 	m_pUserInterfaceManager->notifyDisplayNewRemoteFrame(video);
 	return;
 }
 
-void Controller::handleRemoteSlingshotPosition(const cVector3d& position)
+void Mediator::handleRemoteSlingshotPosition(const cVector3d& position)
 {
 	// update the slingshot position in the game module
 	m_pGame->setRemoteSlingshotPosition(position);
 	return;
 }
 
-void Controller::handleRemoteProjectile(const Projectile& projectile)
+void Mediator::handleRemoteProjectile(const Projectile& projectile)
 {
 	// add this new projectile to the game
 	m_pGame->addRemoteProjectile(projectile);
 	return;
 }
 
-void Controller::handleRemotePlayerPosition(const cVector3d& position)
+void Mediator::handleRemotePlayerPosition(const cVector3d& position)
 {
 	// update our game to reflect that our opponent has moved
 	m_pGame->setRemotePlayerPosition(position);
 	return;
 }
 
-void Controller::handleRemotePullback()
+void Mediator::handleRemotePullback()
 {
 	// TODO implement
 	return;
 }
 
-void Controller::handleRemoteRelease()
+void Mediator::handleRemoteRelease()
 {
 	// TODO implement
 	return;
