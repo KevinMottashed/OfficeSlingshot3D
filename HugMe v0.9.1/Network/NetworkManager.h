@@ -9,7 +9,6 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#include "ControllerProxy.h"
 #include "NetworkSocket.h"
 #include "NetworkCodes.h"
 #include "NetworkSubject.h"
@@ -17,7 +16,7 @@
 #include "ControlPacket.h"
 #include "Stdafx.h"
 #include "SyncReaderWriters.h"
-#include "ZCameraProxy.h"
+#include "VideoData.h"
 
 // Forward declarations (files include each other)
 class NetworkSocket;
@@ -28,11 +27,11 @@ public:
 	NetworkManager();
 	virtual ~NetworkManager();
 
-	// start listening for connections
-	rc_network startListening();
+	// start listening for connections with the given user name
+	rc_network listen(const std::string& userName);
 
 	// connect to a host
-	rc_network connect(const std::string& ipAdrress);
+	rc_network connect(const std::string& ipAddress, const std::string& userName);
 
 	// disconnect from a host
 	rc_network disconnect();
@@ -183,6 +182,9 @@ private:
 
 	// true if we are in the process of disconnecting and the disconnect originated from us
 	bool m_bLocalDisconnect; 
+
+	// the user name that we will use to establish a connection to the other player
+	std::string userName;
 };
 
 #endif // !defined(AFX_NETWORKMANAGER_H__3D85BBC3_3F80_477F_ABAB_1DAE8326532A__INCLUDED_)

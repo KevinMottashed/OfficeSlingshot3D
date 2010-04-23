@@ -15,6 +15,8 @@
 #include "ZCameraProxy.h"
 #include "JacketProxy.h"
 #include "GameProxy.h"
+#include "LoggerProxy.h"
+#include "VideoData.h"
 
 // The controller class for the program
 // this class is a singleton
@@ -138,6 +140,12 @@ private:
 
 	// the game
 	Game* m_pGame;
+
+	// the logger, this will eventually be moved out of this class
+	// but its too much work to do in one shot
+	// leave it here until we have some sort of application initializer
+	Logger* m_pLogger;
+
 
 	bool m_bGameIsRunning;
 

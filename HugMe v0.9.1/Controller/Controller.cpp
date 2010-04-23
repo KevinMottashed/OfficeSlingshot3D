@@ -3,6 +3,7 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "Controller.h"
+#include "ConsoleStream.h"
 
 Controller* Controller::globalInstance = NULL;
 
@@ -17,12 +18,12 @@ Controller* Controller::instance()
 
 rc_network Controller::netStartListening()
 {
-	return m_pNetworkManager->startListening();
+	return m_pNetworkManager->listen(localUserName);
 }
 
 rc_network Controller::netConnect(const std::string& ipAddress)
 {
-	return m_pNetworkManager->connect(ipAddress);
+	return m_pNetworkManager->connect(ipAddress, localUserName);
 }
 
 // we want to exit the game and disconnect when the local user wishes to disconnect
@@ -84,6 +85,12 @@ Controller::Controller() :
 
 	// attach ourselves as an observer to the components
 	m_pNetworkManager->attach(this);
+
+	// create the logger
+	m_pLogger = new ConsoleLogger();
+
+	// attach the logger to the components
+	m_pNetworkManager->attach(m_pLogger);
 }
 
 Controller::~Controller()
@@ -94,6 +101,7 @@ Controller::~Controller()
 	delete m_pZCameraManager;
 	delete m_pSmartClothingManager;
 	delete m_pGame;
+	delete m_pLogger;
 }
 
 std::string Controller::getRemoteUserName()
@@ -226,6 +234,12 @@ void Controller::networkUpdate(NetworkUpdateContext context, void* data)
 		{
 			// the peer has paused the game
 			handlePeerPauseGame();
+			break;
+		}
+		case PEER_EXIT_GAME:
+		{
+			// the peer has exited the game
+			handlePeerExitGame();
 			break;
 		}
 		case NETWORK_ERROR:

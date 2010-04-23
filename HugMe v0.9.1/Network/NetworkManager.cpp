@@ -52,8 +52,11 @@ NetworkManager::~NetworkManager()
 }
 
 // start listening to for connections
-rc_network NetworkManager::startListening()
+rc_network NetworkManager::listen(const std::string& userName)
 {
+	// set our user name
+	this->userName = userName;
+
 	// start listening is an operation that modifies the connection status
 	// we must therefore request write access to the connection resource before proceeding
 	SyncWriterLock statusLock = SyncWriterLock(m_rwsync_ConnectionStatus);
@@ -103,7 +106,7 @@ rc_network NetworkManager::startListening()
 	return SUCCESS;
 }
 
-rc_network NetworkManager::connect(const std::string& ipAddress)
+rc_network NetworkManager::connect(const std::string& ipAddress, const std::string& userName)
 {
 	{
 		// connect is an operation that modifies the connection status
@@ -522,7 +525,7 @@ rc_network NetworkManager::initializeConnection()
 rc_network NetworkManager::establishConnection()
 {
 	// we only need to send our username to establish the connection
-	return sendUserName(Controller::instance()->getLocalUserName());
+	return sendUserName(userName);
 }
 
 void NetworkManager::terminateConnection()

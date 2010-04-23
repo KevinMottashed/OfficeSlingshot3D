@@ -15,6 +15,7 @@
 #include "ControllerProxy.h"
 #include "ZCameraProxy.h"
 #include "MainDlg.h"
+#include "VideoData.h"
 
 using namespace std;
 

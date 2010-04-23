@@ -28,7 +28,8 @@
 #include <afxole.h>
 #include <afxmt.h>			// multi thread library
 #include <Richole.h>
-
+#include <stdio.h>
+#include <windows.h>
 
 typedef DWORD DWORD_PTR;
 typedef LONG LONG_PTR;
@@ -45,6 +46,7 @@ typedef LONG LONG_PTR;
 #include <iostream>
 #include <memory>
 #include <queue>
+#include <sstream>
 #include <string>
 #include <vector>
 

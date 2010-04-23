@@ -3,6 +3,8 @@
 
 #include "stdafx.h"
 
+// each update has a context
+// the context represents what has changed in the observed object
 enum NetworkUpdateContext
 {
 	PEER_CONNECTED,
@@ -27,6 +29,7 @@ public:
 	NetworkObserver();
 	virtual ~NetworkObserver();
 
+	// handles an update
 	virtual void networkUpdate(NetworkUpdateContext context, void* data) = 0;
 };
 
