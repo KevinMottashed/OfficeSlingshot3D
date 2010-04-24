@@ -1251,11 +1251,11 @@
 			Name="Logger"
 			>
 			<File
-				RelativePath=".\Logger\ConsoleLogger.cpp"
+				RelativePath=".\Logger\HumanFormatLogger.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Logger\ConsoleLogger.h"
+				RelativePath=".\Logger\HumanFormatLogger.h"
 				>
 			</File>
 			<File
@@ -1271,11 +1271,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Logger\ReplayLogger.cpp"
+				RelativePath=".\Logger\ReplayFormatLogger.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Logger\ReplayLogger.h"
+				RelativePath=".\Logger\ReplayFormatLogger.h"
 				>
 			</File>
 		</Filter>

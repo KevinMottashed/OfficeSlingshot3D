@@ -100,5 +100,8 @@ chai3d*/lib/*/*.lib
 # the preferences file for the UI
 HugMe v0.9.1/userPreferences.txt
 
+# Log files
+*.log
+
 # Office Slingshot 3D - END
 

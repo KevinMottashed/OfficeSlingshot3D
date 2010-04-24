@@ -25,8 +25,8 @@ Mediator::Mediator() :
 	m_pFalconPenManager->attach(this);
 	m_pGame->attach(this);
 
-	// create the logger
-	m_pLogger = new ConsoleLogger();
+	// create the logger	
+	m_pLogger = new HumanFormatFileLogger("HumanFormat.log");
 
 	// attach the logger to the components
 	m_pNetworkManager->attach(m_pLogger);
