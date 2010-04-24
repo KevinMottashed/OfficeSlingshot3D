@@ -4,6 +4,7 @@
 
 #include "stdafx.h"
 #include "FalconPenManager.h"
+#include "chai3d.h"
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
@@ -22,9 +23,6 @@ FalconPenManager::~FalconPenManager()
 DWORD FalconPenManager::getPositionFromFalcon(FalconPenManager* p_Falcon)
 {
 	double x,y,z;
-	//cVector3d position;
-	
-	int projectileCount = 0;
 
 	while(p_Falcon->falcon_enabled) 
 	{
@@ -38,21 +36,7 @@ DWORD FalconPenManager::getPositionFromFalcon(FalconPenManager* p_Falcon)
 		position.y = y;
 		position.z = z;
 
-		Mediator::instance()->notifyNewLocalSlingshotPosition(position);
-
-
-		if (projectileCount < 5)
-		{
-			++projectileCount;
-
-			Projectile projectile;
-
-			projectile.setSpeed(x, y, z);
-
-			projectile.setPosition(x, y, z);
-
-			Mediator::instance()->notifyNewLocalProjectile(projectile);
-		}
+		p_Falcon->notify(SLINGSHOT_POSITION, &position);		
 
 		// sleep for 100ms
 		Sleep(100);

@@ -25,7 +25,8 @@
 // this class is a singleton
 class Mediator :	public NetworkObserver,
 					public UserInterfaceObserver,
-					public ZCameraObserver
+					public ZCameraObserver,
+					public FalconObserver
 {
 public:
 	// gets the singleton
@@ -36,29 +37,7 @@ public:
 	virtual void update(NetworkUpdateContext context, const void* data);
 	virtual void update(UserInterfaceUpdateContext context, const void* data);
 	virtual void update(ZCameraUpdateContext context, const void* data);
-
-	//------------------------------------------
-	// Game related
-	//------------------------------------------
-
-	// notifies the Mediator that the slingshot position has changed
-	void notifyNewLocalSlingshotPosition(const cVector3d& position);
-
-	// notifies the Mediator that a new projectile has been launched
-	void notifyNewLocalProjectile(const Projectile& projectile);
-
-	// notifies the Mediator that the position of a player has changed
-	void notifyNewLocalPlayerPosition(const cVector3d& position);
-
-	// notifies the Mediator that a slingshot is being pulled back
-	void notifyLocalSlingshotPullback();
-
-	// notifies the Mediator that a slingshot has being released
-	void notifyLocalSlingshotRelease();	
-
-	// ------------------------------------
-	// User interface related functions
-	// ------------------------------------
+	virtual void update(FalconUpdateContext context, const void* data);
 
 	// get the main window of the application
 	CDialog* getMainWindow();	
@@ -149,6 +128,13 @@ private:
 
 	// new local video
 	void handleLocalVideoData(VideoData video);
+
+	//--------------------------------------------
+	// Falcon Related updates
+	//--------------------------------------------
+
+	// slingshot related
+	void handleLocalSlingshotPosition(const cVector3d& position);
 
 };
 

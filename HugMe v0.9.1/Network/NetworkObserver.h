@@ -1,5 +1,5 @@
-#ifndef NETWORK_OBSERVER_H_
-#define NETWORK_OBSERVER_H_
+#ifndef NETWORK_OBSERVER_H
+#define NETWORK_OBSERVER_H
 
 #include "stdafx.h"
 

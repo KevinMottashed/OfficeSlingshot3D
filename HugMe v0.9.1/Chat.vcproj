@@ -1061,6 +1061,14 @@
 			Name="Falcon"
 			>
 			<File
+				RelativePath=".\Falcon\FalconObserver.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Falcon\FalconObserver.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Falcon\FalconPenManager.cpp"
 				>
 			</File>
@@ -1070,6 +1078,14 @@
 			</File>
 			<File
 				RelativePath=".\Falcon\FalconProxy.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Falcon\FalconSubject.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Falcon\FalconSubject.h"
 				>
 			</File>
 		</Filter>

@@ -9,9 +9,10 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#include "MediatorProxy.h"
+#include "stdafx.h"
+#include "FalconSubject.h"
 
-class FalconPenManager  
+class FalconPenManager : public FalconSubject
 {
 public:
 	FalconPenManager();

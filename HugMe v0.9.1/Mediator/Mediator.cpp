@@ -88,41 +88,6 @@ CDialog* Mediator::getMainWindow()
 	return m_pUserInterfaceManager->getMainWindow();
 }
 
-void Mediator::notifyNewLocalSlingshotPosition(const cVector3d& position)
-{
-	// update our game with the new slingshot position
-	m_pGame->setLocalSlingshotPosition(position);
-
-	// let the peer know that we have moved our slingshot
-	m_pNetworkManager->sendSlingshotPosition(position);
-}
-
-void Mediator::notifyNewLocalProjectile(const Projectile& projectile)
-{
-	m_pNetworkManager->sendProjectile(projectile);
-	
-	m_pGame->addLocalProjectile(projectile);
-}
-
-void Mediator::notifyNewLocalPlayerPosition(const cVector3d& position)
-{
-	// let our game know that the player has moved
-	m_pGame->setLocalPlayerPosition(position);
-
-	// let our peer know that we have moved
-	m_pNetworkManager->sendPlayerPosition(position);
-}
-
-void Mediator::notifyLocalSlingshotPullback()
-{
-	m_pNetworkManager->sendSlingshotPullback();
-}
-
-void Mediator::notifyLocalSlingshotRelease()
-{
-	m_pNetworkManager->sendSlingshotRelease();
-}
-
 void Mediator::update(NetworkUpdateContext context, const void* data)
 {
 	switch (context)
@@ -550,5 +515,34 @@ void Mediator::handleLocalVideoData(VideoData video)
 {
 	m_pUserInterfaceManager->displayLocalFrame(video);
 	m_pNetworkManager->sendVideoData(video);
+	return;
+}
+
+void Mediator::update(FalconUpdateContext context, const void* data)
+{
+	switch(context)
+	{
+		case SLINGSHOT_POSITION:
+		{
+			assert(data != NULL);
+			handleLocalSlingshotPosition(*(cVector3d*) data);
+		}
+		default:
+		{
+			// all updates should be handled
+			assert(false);
+			break;
+		}
+	}
+	return;
+}
+
+void Mediator::handleLocalSlingshotPosition(const cVector3d& position)
+{
+	// update our game with the new slingshot position
+	m_pGame->setLocalSlingshotPosition(position);
+
+	// let the peer know that we have moved our slingshot
+	m_pNetworkManager->sendSlingshotPosition(position);
 	return;
 }
