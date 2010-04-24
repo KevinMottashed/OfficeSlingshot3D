@@ -38,8 +38,8 @@ DWORD FalconPenManager::getPositionFromFalcon(FalconPenManager* p_Falcon)
 
 		p_Falcon->notify(SLINGSHOT_POSITION, &position);		
 
-		// sleep for 100ms
-		Sleep(100);
+		// sleep for 1000ms
+		Sleep(1000);
 	}
 
 	return 0;

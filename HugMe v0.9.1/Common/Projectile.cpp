@@ -48,3 +48,9 @@ void Projectile::setSpeed(double x, double y, double z)
 	speed.y = y;
 	speed.z = z;
 }
+
+std::ostream& operator<<(std::ostream& os, const Projectile& projectile)
+{
+	os << "position=" << projectile.getPosition() << " speed=" << projectile.getSpeed();
+	return os;
+}

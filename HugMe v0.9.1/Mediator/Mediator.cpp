@@ -68,6 +68,10 @@ Mediator::Mediator() :
 
 	// attach the logger to the components
 	m_pNetworkManager->attach(m_pLogger);
+	m_pUserInterfaceManager->attach(m_pLogger);
+	m_pZCameraManager->attach(m_pLogger);
+	m_pFalconPenManager->attach(m_pLogger);
+	m_pGame->attach(m_pLogger);
 
 	InitializeCriticalSection(&m_csConfiguration);
 }
@@ -128,48 +132,42 @@ void Mediator::update(NetworkUpdateContext context, const void* data)
 		{
 			// a network error has occured
 			assert(data != NULL);
-			rc_network* error = (rc_network*) data;
-			handleNetworkError(*error);
+			handleNetworkError(*(rc_network*) data);
 			break;
 		}
 		case RECEIVED_USER_NAME:
 		{
 			// the network has received a user name
 			assert(data != NULL);
-			const std::string* name = (const std::string*) data;
-			handleUserName(*name);
+			handleUserName(*(const std::string*) data);
 			break;
 		}
 		case RECEIVED_CHAT_MESSAGE:
 		{
 			// the network has received a chat message
 			assert(data != NULL);
-			const std::string* message = (const std::string*) data;
-			handleChatMessage(*message);
+			handleChatMessage(*(const std::string*) data);
 			break;
 		}
 		case RECEIVED_VIDEO:
 		{
 			// the network has received some new video
 			assert(data != NULL);
-			VideoData* video = (VideoData*) data;
-			handleRemoteVideoData(*video);
+			handleRemoteVideoData(*(VideoData*) data);
 			break;
 		}
 		case RECEIVED_SLINGSHOT_POSITION:
 		{
 			// the network has received a slingshot position
 			assert(data != NULL);
-			cVector3d* position = (cVector3d*) data;
-			handleRemoteSlingshotPosition(*position);
+			handleRemoteSlingshotPosition(*(cVector3d*) data);
 			break;
 		}
 		case RECEIVED_PROJECTILE:
 		{
 			// the network has received a projectile
 			assert(data != NULL);
-			Projectile* projectile = (Projectile*) data;
-			handleRemoteProjectile(*projectile);
+			handleRemoteProjectile(*(Projectile*) data);
 			break;
 		}
 		case RECEIVED_PULLBACK:
@@ -188,8 +186,7 @@ void Mediator::update(NetworkUpdateContext context, const void* data)
 		{
 			// the network has received a player position
 			assert(data != NULL);
-			cVector3d* position = (cVector3d*) data;
-			handleRemotePlayerPosition(*position);
+			handleRemotePlayerPosition(*(cVector3d*) data);
 			break;
 		}
 		default:

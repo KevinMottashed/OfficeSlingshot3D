@@ -10,6 +10,7 @@
 #endif // _MSC_VER > 1000
 
 #include "chai3d.h"
+#include "stdafx.h"
 
 class Projectile  
 {
@@ -28,7 +29,10 @@ public:
 
 private:
 	cVector3d position;
-	cVector3d speed;
+	cVector3d speed;	
 };
+
+// output operator to make things easier
+std::ostream& operator<<(std::ostream& os, const Projectile& projectile);
 
 #endif // !defined(AFX_PROJECTILE_H__ED91DB1D_0FFA_4DA6_A8C2_F936C5838618__INCLUDED_)
