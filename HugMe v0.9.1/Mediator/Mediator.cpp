@@ -5,44 +5,6 @@
 #include "Mediator.h"
 #include "ConsoleStream.h"
 
-Mediator* Mediator::globalInstance = NULL;
-
-Mediator* Mediator::instance()
-{
-	if (globalInstance == NULL)
-	{
-		globalInstance = new Mediator();
-	}
-	return globalInstance;
-}
-
-void Mediator::startGame()
-{
-	if (m_bGameIsRunning)
-	{
-		return; // already started
-	}
-	m_bGameIsRunning = true;
-	m_pGame->start();
-	m_pFalconPenManager->start();
-	m_pZCameraManager->start();
-}
-
-void Mediator::pauseGame()
-{
-	m_bGameIsRunning = false;
-	m_pGame->pause();
-	m_pFalconPenManager->stop();
-	m_pZCameraManager->stop();
-}
-
-void Mediator::exitGame()
-{
-	m_bGameIsRunning = false;
-	m_pGame->stop();
-	m_pFalconPenManager->stop();
-	m_pZCameraManager->stop();
-}
 
 Mediator::Mediator() :
 		m_bGameIsRunning(false)
@@ -87,6 +49,34 @@ Mediator::~Mediator()
 	delete m_pLogger;
 	delete m_pConfiguration;
 	DeleteCriticalSection(&m_csConfiguration);
+}
+
+void Mediator::startGame()
+{
+	if (m_bGameIsRunning)
+	{
+		return; // already started
+	}
+	m_bGameIsRunning = true;
+	m_pGame->start();
+	m_pFalconPenManager->start();
+	m_pZCameraManager->start();
+}
+
+void Mediator::pauseGame()
+{
+	m_bGameIsRunning = false;
+	m_pGame->pause();
+	m_pFalconPenManager->stop();
+	m_pZCameraManager->stop();
+}
+
+void Mediator::exitGame()
+{
+	m_bGameIsRunning = false;
+	m_pGame->stop();
+	m_pFalconPenManager->stop();
+	m_pZCameraManager->stop();
 }
 
 CDialog* Mediator::getMainWindow()

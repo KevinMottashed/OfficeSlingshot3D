@@ -22,7 +22,6 @@
 #include "SyncLocker.h"
 
 // The Mediator class for the program
-// this class is a singleton
 class Mediator :	public NetworkObserver,
 					public UserInterfaceObserver,
 					public ZCameraObserver,
@@ -30,8 +29,7 @@ class Mediator :	public NetworkObserver,
 					public GameObserver
 {
 public:
-	// gets the singleton
-	static Mediator* instance();
+	Mediator();
 	virtual ~Mediator();
 
 	// updates for observer patterns
@@ -45,12 +43,8 @@ public:
 	CDialog* getMainWindow();	
 
 private:
-	Mediator(); // private for singleton pattern
 	Mediator(const Mediator& c); // intentionally not implemented
 	Mediator& operator=(const Mediator& c); // intentionally not implemented
-
-	// the singleton
-	static Mediator* globalInstance;
 
 	// managers for the different modules
 	NetworkManager* m_pNetworkManager;

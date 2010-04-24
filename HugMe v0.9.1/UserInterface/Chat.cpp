@@ -58,9 +58,9 @@ BOOL CChatApp::InitInstance()
 	AfxInitRichEdit();
 
 	// this will initialize the Mediator class and it will initialize the system
-	Mediator* mediator = Mediator::instance();
+	Mediator mediator;
 
-	CDialog* mainWindow = mediator->getMainWindow();
+	CDialog* mainWindow = mediator.getMainWindow();
 
 	m_pMainWnd = mainWindow;
 
