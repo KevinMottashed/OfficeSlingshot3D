@@ -60,6 +60,7 @@ Mediator::Mediator() :
 	m_pNetworkManager->attach(this);
 	m_pUserInterfaceManager->attach(this);
 	m_pZCameraManager->attach(this);
+	m_pFalconPenManager->attach(this);
 
 	// create the logger
 	m_pLogger = new ConsoleLogger();
@@ -526,6 +527,7 @@ void Mediator::update(FalconUpdateContext context, const void* data)
 		{
 			assert(data != NULL);
 			handleLocalSlingshotPosition(*(cVector3d*) data);
+			break;
 		}
 		default:
 		{

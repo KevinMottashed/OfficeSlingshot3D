@@ -9,8 +9,6 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#include "MediatorProxy.h"
-
 //Should be created in HumanModel... 
 typedef enum tagHumanPart {
 	CHEST = 0,
