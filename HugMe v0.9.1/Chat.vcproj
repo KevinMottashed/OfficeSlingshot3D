@@ -1176,14 +1176,6 @@
 				RelativePath=".\Game\GameProxy.h"
 				>
 			</File>
-			<File
-				RelativePath=".\Game\Projectile.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\Game\Projectile.h"
-				>
-			</File>
 		</Filter>
 		<Filter
 			Name="Utils"
@@ -1274,6 +1266,14 @@
 		<Filter
 			Name="Common"
 			>
+			<File
+				RelativePath=".\Common\Projectile.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Common\Projectile.h"
+				>
+			</File>
 			<File
 				RelativePath=".\Common\UserPreferences.cpp"
 				>
