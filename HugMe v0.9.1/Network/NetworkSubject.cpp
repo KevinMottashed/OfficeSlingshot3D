@@ -23,11 +23,12 @@ void NetworkSubject::detach(NetworkObserver* observer)
 	return;
 }
 
-void NetworkSubject::networkNotify(NetworkUpdateContext context, void* data)
+void NetworkSubject::notify(NetworkUpdateContext context, const void* data)
 {
 	std::vector<NetworkObserver*>::iterator it;
 	for (it = m_observers.begin(); it != m_observers.end(); ++it)
 	{
-		(*it)->networkUpdate(context, data);
+		(*it)->update(context, data);
 	}
+	return;
 }

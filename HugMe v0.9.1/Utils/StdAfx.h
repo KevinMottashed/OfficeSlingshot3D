@@ -30,6 +30,7 @@
 #include <Richole.h>
 #include <stdio.h>
 #include <windows.h>
+#include <vfw.h>
 
 typedef DWORD DWORD_PTR;
 typedef LONG LONG_PTR;
@@ -43,6 +44,7 @@ typedef LONG LONG_PTR;
 #pragma warning (disable : 4786)
 
 #include <algorithm>
+#include <fstream>
 #include <iostream>
 #include <memory>
 #include <queue>

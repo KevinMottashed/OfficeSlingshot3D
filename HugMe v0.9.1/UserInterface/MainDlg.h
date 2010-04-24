@@ -7,13 +7,11 @@
 // MainDlg.h : header file
 //
 
-#include <string>
-
+#include "stdafx.h"
 #include "Resource.h"
 #include "UserInterfaceManager.h"
-#include "vfw.h"
-
-using namespace std;
+#include "VideoData.h"
+#include "UserPreferences.h"
 
 /////////////////////////////////////////////////////////////////////////////
 // CMainDlg dialog
@@ -23,14 +21,36 @@ class UserInterfaceManager;
 class CMainDlg : public CDialog
 {
 public:
-	CMainDlg(UserInterfaceManager* pUserInterfaceManager, CWnd* pParent = NULL);   // standard constructor
+	CMainDlg(UserInterfaceManager* pUserInterfaceManager, const UserPreferences& preferences, CWnd* pParent = NULL);   // standard constructor
+
+	// visual feedback for connection state
+	void displayConnectionEstablished();	
+	void displayConnectionFailed();
+	void displayListening();
+	void displayFailedToListen();
+	void displayPeerDisconnected();
+	void displayNetworkError();
+
+	// visual feedback for game state
+	void displayGameStarted();
+	void displayGamePaused();
+	void displayGameExited();
+
+	// visual feedback for peer interaction
+	void displayPeerChatMessage(const std::string& message);
+	void displayLocalChatMessage(const std::string& message);
+	void displayLocalFrame(VideoData video);
+	void displayRemoteFrame(VideoData video);
+
+	// update the peers user name
+	void setPeerUserName(const std::string& name);
 
 private:
 	UserInterfaceManager* pUserInterfaceManager;
+	UserPreferences m_preferences;
 
-	// User preference variables
-	string m_userName;
-	string m_ipAddress;
+	// peers user name
+	std::string m_peerUserName;
 
 	// Local video processing variables
 	CWnd *wnd_local;
@@ -53,6 +73,8 @@ private:
 
 	HDC m_hdc_remote;
 	HDRAWDIB hdib_remote;
+
+
 
 	// Methods to initialize and close video sessions
 	void initLocalVideoArea();
@@ -89,22 +111,13 @@ private:
 	afx_msg void OnNetworkConnect();
 	afx_msg void OnNetworkDisconnect();
 	afx_msg void OnNetworkListen();
-	afx_msg LRESULT OnNetworkEstablished(WPARAM, LPARAM);
-	afx_msg LRESULT OnNetworkDisconnected(WPARAM, LPARAM);
-	afx_msg LRESULT OnNetworkError(WPARAM, LPARAM);
 	afx_msg void OnPreferencesEdit();
 	afx_msg void OnStartGame();
 	afx_msg void OnExitGame();
 	afx_msg void OnPauseGame();
-	afx_msg LRESULT OnGameStarted(WPARAM, LPARAM);
-	afx_msg LRESULT OnGameExited(WPARAM, LPARAM);
-	afx_msg LRESULT OnGamePaused(WPARAM, LPARAM);
 	afx_msg void OnDestroy();
 	afx_msg void OnSendChat();
-	afx_msg LRESULT OnNewChatMessage(WPARAM, LPARAM);
 	afx_msg void OnChangeChatInput();
-	afx_msg LRESULT OnDisplayNewLocalFrame(WPARAM, LPARAM);
-	afx_msg LRESULT OnDisplayNewRemoteFrame(WPARAM, LPARAM);
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

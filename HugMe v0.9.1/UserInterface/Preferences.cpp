@@ -20,26 +20,15 @@ using namespace std;
 // CPreferences dialog
 
 
-CPreferences::CPreferences(CWnd* pParent /*=NULL*/)
-	: CDialog(CPreferences::IDD, pParent)
+CPreferences::CPreferences(const UserPreferences& prefs, CWnd* pParent /*=NULL*/)
+	:	m_preferences(prefs),
+		CDialog(CPreferences::IDD, pParent)
 {
 	//{{AFX_DATA_INIT(CPreferences)
-	m_armBandPort = 0;
-	m_jacketPort = 0;
-
-	string line;
-	ifstream myfile ("userPreferences.txt");
-	if (myfile.is_open()) {
-		getline (myfile, line);
-		m_userName = line.c_str();
-		getline (myfile, line);
-		m_strAddress = line.c_str();
-		myfile.close();
-	} else {
-		m_userName = "UserName";
-		m_strAddress = "127.0.0.1";
-	}
-
+	m_strAddress = m_preferences.ipAddress.c_str();
+	m_userName = m_preferences.name.c_str();
+	m_armBandPort = m_preferences.armBandPort;
+	m_jacketPort = m_preferences.jacketPort;
 	//}}AFX_DATA_INIT
 }
 
@@ -55,24 +44,13 @@ void CPreferences::DoDataExchange(CDataExchange* pDX)
 	//}}AFX_DATA_MAP
 }
 
-CString CPreferences::getStrAddress() const
+UserPreferences CPreferences::getPreferences()
 {
-	return m_strAddress;
-}
-
-CString CPreferences::getUserName() const
-{
-	return m_userName;
-}
-
-int CPreferences::getArmBandPort() const
-{
-	return m_armBandPort;
-}
-
-int CPreferences::getJacketBandPort() const
-{
-	return m_jacketPort;
+	m_preferences.ipAddress = m_strAddress;
+	m_preferences.name = m_userName;
+	m_preferences.armBandPort = m_armBandPort;
+	m_preferences.jacketPort = m_jacketPort;
+	return m_preferences;
 }
 
 BEGIN_MESSAGE_MAP(CPreferences, CDialog)

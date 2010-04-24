@@ -8,7 +8,7 @@ Logger::~Logger()
 {
 }
 
-void Logger::networkUpdate(NetworkUpdateContext context, void *data)
+void Logger::update(NetworkUpdateContext context, const void *data)
 {
 	switch (context)
 	{

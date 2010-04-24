@@ -1,17 +1,10 @@
 // MainDlg.cpp : implementation file
 //
 
-#include <iostream>
-#include <fstream>
-#include <sstream>
-
-#include <string>
-
 #include "stdafx.h"
 #include "chat.h"
 #include "MainDlg.h"
 #include "Preferences.h"
-#include "vfw.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -21,24 +14,12 @@ static char THIS_FILE[] = __FILE__;
 
 using namespace std;
 
-CMainDlg::CMainDlg(UserInterfaceManager* m_pUserInterfaceManager, CWnd* pParent /*=NULL*/)
-	: pUserInterfaceManager(pUserInterfaceManager), CDialog(CMainDlg::IDD, pParent)
+CMainDlg::CMainDlg(UserInterfaceManager* pUserInterfaceManager, const UserPreferences& preferences, CWnd* pParent /*=NULL*/)
+	: pUserInterfaceManager(pUserInterfaceManager),
+		m_preferences(preferences),
+		CDialog(CMainDlg::IDD, pParent)
 {
 	//{{AFX_DATA_INIT(CMainDlg)
-		// get the userName and ipAddress from the file if already created
-		string line;
-		ifstream myfile ("userPreferences.txt");
-		if (myfile.is_open()) {
-			getline (myfile, line);
-			m_userName = line;
-			getline (myfile, line);
-			m_ipAddress = line;
-			myfile.close();
-		} else {
-			// set the userName and ipAddress to the default values
-			m_userName = "UserName";
-			m_ipAddress = "127.0.0.1";
-		}
 	//}}AFX_DATA_INIT
 }
 
@@ -65,15 +46,6 @@ BEGIN_MESSAGE_MAP(CMainDlg, CDialog)
 	ON_COMMAND(ID_GAME_EXITGAME, OnExitGame)
 	ON_COMMAND(ID_GAME_PAUSEGAME, OnPauseGame)
 	ON_COMMAND(IDC_SEND_CHAT, OnSendChat)
-	ON_MESSAGE(WM_ON_CONNECT, OnNetworkEstablished)
-	ON_MESSAGE(WM_ON_DISCONNECT,OnNetworkDisconnected)
-	ON_MESSAGE(WM_ON_NETWORK_ERROR,OnNetworkError)
-	ON_MESSAGE(WM_ON_START_GAME,OnGameStarted)
-	ON_MESSAGE(WM_ON_EXIT_GAME,OnGameExited)
-	ON_MESSAGE(WM_ON_PAUSE_GAME,OnGamePaused)
-	ON_MESSAGE(WM_ON_NEW_CHAT_MESSAGE,OnNewChatMessage)
-	ON_MESSAGE(WM_ON_NEW_LOCAL_FRAME, OnDisplayNewLocalFrame)
-	ON_MESSAGE(WM_ON_NEW_REMOTE_FRAME, OnDisplayNewRemoteFrame)
 	ON_WM_DESTROY()
 	ON_EN_CHANGE(IDC_CHAT_INPUT, OnChangeChatInput)
 	//}}AFX_MSG_MAP
@@ -97,164 +69,54 @@ BOOL CMainDlg::OnInitDialog()
 // method used to connect the user to a remote user
 void CMainDlg::OnNetworkConnect() 
 {
-	// call the connect method of the networkManager through the mediator
-	rc_network status = pUserInterfaceManager->networkConnectButtonPushed(m_ipAddress.c_str(), m_userName);
-
-	if (status == SUCCESS){
-
-		// enable and disable appropriate menu items
-		CMenu* pMenu = GetMenu();
-		pMenu->EnableMenuItem(ID_NETWORK_CONNECT, MF_GRAYED | MF_BYCOMMAND);
-		pMenu->EnableMenuItem(ID_NETWORK_LISTEN, MF_GRAYED | MF_BYCOMMAND);
-		pMenu->EnableMenuItem(ID_NETWORK_DISCONNECT, MF_ENABLED | MF_BYCOMMAND);
-
-		pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_ENABLED | MF_BYCOMMAND);
-	} else {
-		// show error message on the text area
-		AddChatContent(lookup(status).c_str());
-	}
-	
+	// notify the UI manager that the connect button has been pushed
+	pUserInterfaceManager->networkConnectButtonPushed();
+	return;	
 }
 
 // method used to close the connection with the remote user
 void CMainDlg::OnNetworkDisconnect() 
 {
-	// call the disconnect method of the networkManager through the Mediator
-	rc_network status = pUserInterfaceManager->networkDisconnectButtonPushed();
+	// notify the UI manager that the disconnect button has been pushed
+	pUserInterfaceManager->networkDisconnectButtonPushed();
 
-	if (status == SUCCESS){
+	// enable and disable appropriate menu items
+	CMenu* pMenu = GetMenu();
+	pMenu->EnableMenuItem(ID_NETWORK_CONNECT, MF_ENABLED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_NETWORK_LISTEN, MF_ENABLED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_NETWORK_DISCONNECT, MF_GRAYED | MF_BYCOMMAND);
 
-		// enable and disable appropriate menu items
-		CMenu* pMenu = GetMenu();
-		pMenu->EnableMenuItem(ID_NETWORK_CONNECT, MF_ENABLED | MF_BYCOMMAND);
-		pMenu->EnableMenuItem(ID_NETWORK_LISTEN, MF_ENABLED | MF_BYCOMMAND);
-		pMenu->EnableMenuItem(ID_NETWORK_DISCONNECT, MF_GRAYED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_GRAYED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_GRAYED | MF_BYCOMMAND);
 
-		pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_GRAYED | MF_BYCOMMAND);
-		pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_GRAYED | MF_BYCOMMAND);
-
-		// give feedback to the user on the text area
-		AddChatContent("Disconnected");
-	} else {
-		// show error on the text area
-		AddChatContent(lookup(status).c_str());
-	}
-	
+	// give feedback to the user on the text area
+	AddChatContent("Disconnected");
+	return;
 }
 
 // method used to listen for incoming connection attempts
 void CMainDlg::OnNetworkListen() 
 {
 	// call the listen method of the networkManager through the Mediator
-	rc_network status = pUserInterfaceManager->networkListenButtonPushed(m_userName);
-
-	if (status == SUCCESS){
-
-		// enable and disable appropriate menu items
-		CMenu* pMenu = GetMenu();
-		pMenu->EnableMenuItem(ID_NETWORK_CONNECT, MF_GRAYED | MF_BYCOMMAND);
-		pMenu->EnableMenuItem(ID_NETWORK_LISTEN, MF_GRAYED | MF_BYCOMMAND);
-		pMenu->EnableMenuItem(ID_NETWORK_DISCONNECT, MF_ENABLED | MF_BYCOMMAND);
-
-		// give user feedback on the text area
-		AddChatContent("Listening");
-	} else {
-		// show error on the text area
-		AddChatContent(lookup(status).c_str());
-	}
-	
-}
-
-// method notifying the user that a remote user has connected to him
-LRESULT CMainDlg::OnNetworkEstablished(WPARAM wParam, LPARAM lParam)
-{
-	// construct message
-	string* remoteUserName = (string*) wParam;
-	ostringstream os;
-	os << *remoteUserName << " has joined the game";
-
-	// add feedback message on the text area
-	AddChatContent(os.str().c_str());
-
-	// enable the startGame menu item
-	CMenu* pMenu = GetMenu();
-	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_ENABLED | MF_BYCOMMAND);
-
-	return 0;
-}
-
-// method notifying the user that a remote user has closed the connection to him
-LRESULT CMainDlg::OnNetworkDisconnected(WPARAM wParam, LPARAM lParam)
-{
-	// construct message
-	string* remoteUserName = (string*) wParam;
-	ostringstream os;
-	os << *remoteUserName << " has disconnected from the game";
-
-	// add feedback message on the text area
-	AddChatContent(os.str().c_str());
-
-	// enable and disable appropriate menu items
-	CMenu* pMenu = GetMenu();
-	pMenu->EnableMenuItem(ID_NETWORK_CONNECT, MF_ENABLED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_NETWORK_LISTEN, MF_ENABLED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_NETWORK_DISCONNECT, MF_GRAYED | MF_BYCOMMAND);
-
-	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_GRAYED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_GRAYED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_GAME_PAUSEGAME, MF_GRAYED | MF_BYCOMMAND);
-
-	return 0;
-}
-
-// method notifying the user that a network error has occured
-LRESULT CMainDlg::OnNetworkError(WPARAM wParam, LPARAM lParam)
-{
-	rc_network* error = (rc_network*) wParam;
-
-	// display error message on the text area
-	AddChatContent(lookup(*error).c_str());
-
-	// enable and disable appropriate menu items
-	CMenu* pMenu = GetMenu();
-	pMenu->EnableMenuItem(ID_NETWORK_CONNECT, MF_ENABLED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_NETWORK_LISTEN, MF_ENABLED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_NETWORK_DISCONNECT, MF_GRAYED | MF_BYCOMMAND);
-
-	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_GRAYED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_GRAYED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_GAME_PAUSEGAME, MF_GRAYED | MF_BYCOMMAND);
-
-	return 0;
+	pUserInterfaceManager->networkListenButtonPushed();	
+	return;
 }
 
 // method opening the CPreferences dialog and updating the user preferences
 void CMainDlg::OnPreferencesEdit() 
 {
-	CPreferences prefs;
+	CPreferences prefs(m_preferences);	
 
 	// show the CPrefences dialog
-	if(prefs.DoModal() == IDOK) {
-
-		// get the dialog attributes
-		m_userName = prefs.getUserName();
-		m_ipAddress = prefs.getStrAddress();
-
-		int armBandPort = prefs.getArmBandPort();
-		int jacketPort = prefs.getJacketBandPort();
+	if(prefs.DoModal() == IDOK) 
+	{
+		UserPreferences preferences = prefs.getPreferences(); 
 		
-		// set armBand and jacket ports through the Mediator
-		pUserInterfaceManager->changeArmBandPort(armBandPort);
-		pUserInterfaceManager->changeJacketPort(jacketPort);
-
-		// write new userName and ipAddress to the file
-		ofstream myfile;
-		myfile.open ("userPreferences.txt");
-		myfile << (string)m_userName << "\n";
-		myfile << (string)m_ipAddress;
-		myfile.close();
+		// change our preferences
+		m_preferences = preferences;
+		pUserInterfaceManager->changePreferences(preferences);
 	}
-	
+	return;	
 }
 
 // method used to start the game with the connected remote user
@@ -312,65 +174,6 @@ void CMainDlg::OnPauseGame()
 	AddChatContent("Paused the game");
 }
 
-// method notifying the user that the remote user has started the game
-LRESULT CMainDlg::OnGameStarted(WPARAM wParam, LPARAM lParam)
-{
-	// construct message
-	string* remoteUserName = (string*) wParam;
-	ostringstream os;
-	os << *remoteUserName << " has started the game";
-
-	// add feedback message on the text area
-	AddChatContent(os.str().c_str());
-
-	// enable and disable appropriate menu items
-	CMenu* pMenu = GetMenu();
-	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_GRAYED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_ENABLED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_GAME_PAUSEGAME, MF_ENABLED | MF_BYCOMMAND);
-
-	return 0;
-}
-
-// method notifying the user that the remote user has exited the game
-LRESULT CMainDlg::OnGameExited(WPARAM wParam, LPARAM lParam)
-{
-	// construc message
-	string* remoteUserName = (string*) wParam;
-	ostringstream os;
-	os << *remoteUserName << " has exited the game";
-
-	// add feedback message on the text area
-	AddChatContent(os.str().c_str());
-
-	// enable and disable appropriate menu items
-	CMenu* pMenu = GetMenu();
-	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_ENABLED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_GRAYED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_GAME_PAUSEGAME, MF_GRAYED | MF_BYCOMMAND);
-
-	return 0;
-}
-
-// method notifying the user that the remote user has paused the game
-LRESULT CMainDlg::OnGamePaused(WPARAM wParam, LPARAM lParam)
-{
-	// construc message
-	string* remoteUserName = (string*) wParam;
-	ostringstream os;
-	os << *remoteUserName << " has paused the game";
-
-	// add feedback message on the text area
-	AddChatContent(os.str().c_str());
-
-	// enable and disable appropriate menu items
-	CMenu* pMenu = GetMenu();
-	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_ENABLED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_GAME_PAUSEGAME, MF_GRAYED | MF_BYCOMMAND);
-
-	return 0;
-}
-
 // method used to send a new chat message to the remote user
 void CMainDlg::OnSendChat() 
 {
@@ -379,44 +182,20 @@ void CMainDlg::OnSendChat()
 	m_editChatInput.GetWindowText(chatInput);
 
 	// check if the text is empty
-	if(!chatInput.IsEmpty()) {
-
+	if(!chatInput.IsEmpty()) 
+	{
 		// send the chat message to the remote user through the network
-		rc_network status = pUserInterfaceManager->sendChatButtonPushed((string)chatInput);
+		pUserInterfaceManager->sendChatButtonPushed((string)chatInput);
 
-		if (status == SUCCESS){
+		// empty the chat edit box
+		m_editChatInput.SetWindowText("");
 
-			// empty the chat edit box
-			m_editChatInput.SetWindowText("");
+		ostringstream os;
+		os << m_preferences.name << " : " << (string)chatInput;
 
-			ostringstream os;
-			os << m_userName << " : " << (string)chatInput;
-
-			// add chat text on the local user's text area
-			AddChatContent(os.str().c_str());
-		} else {
-			// show error on the text area
-			AddChatContent(lookup(status).c_str());
-		}
+		// add chat text on the local user's text area
+		AddChatContent(os.str().c_str());
 	}
-}
-
-// method notifying the user that the remote user has sent him a new chat message
-LRESULT CMainDlg::OnNewChatMessage(WPARAM wParam, LPARAM lParam) 
-{
-	// construct message
-	string* remoteUserName = (string*) wParam;
-	string* message = (string*) lParam;
-	ostringstream os;
-	os << *remoteUserName << " : " << *message;
-
-	// add feedback message on the text area
-	AddChatContent(os.str().c_str());
-
-	// empty the chat edit box
-	m_editChatInput.SetWindowText("");
-
-	return 0;
 }
 
 // method used to enable/disable the send chat button depending on the chat edit box text
@@ -433,51 +212,6 @@ void CMainDlg::OnChangeChatInput()
 		// Disable the send button if the text is empty
 		m_sendChatButton.EnableWindow(FALSE);
 	}
-}
-
-// method used to display a new frame on the UI
-LRESULT CMainDlg::OnDisplayNewLocalFrame(WPARAM wParam, LPARAM lParam)
-{
-	unsigned char* vRGB = (unsigned char*) wParam;
-
-	// updates the specified m_hdc dialog element using the vRGB variable
-	::DrawDibDraw(hdib_local,
-				  m_hdc_local,
-				  0,		// dest : left pos
-				  0,		// dest : top pos
-				  m_localWndWidth_local,					 // don't zoom x
-				  m_localWndHeight_local,					 // don't zoom y
-				  &m_bmpinfo_local->bmiHeader,			 // bmp header info
-				  vRGB,					 // bmp data
-				  0,					 // src :left
-				  0,					 // src :top
-				  ZCameraManager::IMAGE_WIDTH,          // src : width
-				  ZCameraManager::IMAGE_HEIGHT,			// src : height
-				  DDF_SAME_DRAW			 // use prev params....
-				  );
-	return 0;
-}
-
-LRESULT CMainDlg::OnDisplayNewRemoteFrame(WPARAM wParam, LPARAM lParam)
-{
-	unsigned char* vRGB = (unsigned char*) wParam;
-
-	// updates the specified m_hdc dialog element using the vRGB variable
-	::DrawDibDraw(hdib_remote,
-				  m_hdc_remote,
-				  0,		// dest : left pos
-				  0,		// dest : top pos
-				  m_localWndWidth_remote,					 // don't zoom x
-				  m_localWndHeight_remote,					 // don't zoom y
-				  &m_bmpinfo_remote->bmiHeader,			 // bmp header info
-				  vRGB,					 // bmp data
-				  0,					 // src :left
-				  0,					 // src :top
-				  ZCameraManager::IMAGE_WIDTH,          // src : width
-				  ZCameraManager::IMAGE_HEIGHT,			// src : height
-				  DDF_SAME_DRAW			 // use prev params....
-				  );
-	return 0;
 }
 
 // method used to initiate a new local DIB
@@ -520,8 +254,8 @@ void CMainDlg::initLocalVideoArea()
 					   m_localWndWidth_local,		//don't stretch
 					   m_localWndHeight_local,	//don't stretch
 					   &m_bmpinfo_local->bmiHeader,
-					   ZCameraManager::IMAGE_WIDTH,          //width of image
-					   ZCameraManager::IMAGE_HEIGHT,         //height of image
+					   IMAGE_WIDTH,          //width of image
+					   IMAGE_HEIGHT,         //height of image
 					   0				
 					   );
 	
@@ -578,8 +312,8 @@ void CMainDlg::initRemoteVideoArea()
 					   m_localWndWidth_remote,		//don't stretch
 					   m_localWndHeight_remote,	//don't stretch
 					   &m_bmpinfo_remote->bmiHeader,
-					   ZCameraManager::IMAGE_WIDTH,          //width of image
-					   ZCameraManager::IMAGE_HEIGHT,         //height of image
+					   IMAGE_WIDTH,          //width of image
+					   IMAGE_HEIGHT,         //height of image
 					   0				
 					   );
 	
@@ -638,3 +372,201 @@ void CMainDlg::OnDestroy()
 	closeRemoteVideoArea();
 	pUserInterfaceManager->closeApplication();
 }
+
+void CMainDlg::displayConnectionEstablished()
+{
+	// enable and disable appropriate menu items
+	CMenu* pMenu = GetMenu();
+	pMenu->EnableMenuItem(ID_NETWORK_CONNECT, MF_GRAYED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_NETWORK_LISTEN, MF_GRAYED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_NETWORK_DISCONNECT, MF_ENABLED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_ENABLED | MF_BYCOMMAND);
+
+	// construct message
+	ostringstream os;
+	os << m_peerUserName << " has joined the game";
+
+	// add feedback message on the text area
+	AddChatContent(os.str().c_str());
+
+	return;
+}
+
+void CMainDlg::displayConnectionFailed()
+{
+	AddChatContent("Failed to connect to peer");
+	return;
+}
+
+void CMainDlg::displayListening()
+{
+	// enable and disable appropriate menu items
+	CMenu* pMenu = GetMenu();
+	pMenu->EnableMenuItem(ID_NETWORK_CONNECT, MF_GRAYED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_NETWORK_LISTEN, MF_GRAYED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_NETWORK_DISCONNECT, MF_ENABLED | MF_BYCOMMAND);
+
+	// give user feedback on the text area
+	AddChatContent("Listening");
+	return;
+}
+
+void CMainDlg::displayFailedToListen()
+{
+	AddChatContent("Could not listen for connections");
+	return;
+}
+
+void CMainDlg::displayPeerDisconnected()
+{
+	// construct message
+	ostringstream os;
+	os << m_peerUserName << " has disconnected from the game";
+
+	// add feedback message on the text area
+	AddChatContent(os.str().c_str());
+
+	// enable and disable appropriate menu items
+	CMenu* pMenu = GetMenu();
+	pMenu->EnableMenuItem(ID_NETWORK_CONNECT, MF_ENABLED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_NETWORK_LISTEN, MF_ENABLED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_NETWORK_DISCONNECT, MF_GRAYED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_GRAYED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_GRAYED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_PAUSEGAME, MF_GRAYED | MF_BYCOMMAND);
+	return;
+}
+
+void CMainDlg::displayNetworkError()
+{
+	// display error message on the text area
+	AddChatContent("Network error");
+
+	// enable and disable appropriate menu items
+	CMenu* pMenu = GetMenu();
+	pMenu->EnableMenuItem(ID_NETWORK_CONNECT, MF_ENABLED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_NETWORK_LISTEN, MF_ENABLED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_NETWORK_DISCONNECT, MF_GRAYED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_GRAYED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_GRAYED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_PAUSEGAME, MF_GRAYED | MF_BYCOMMAND);
+	return;
+}
+
+void CMainDlg::setPeerUserName(const std::string& name)
+{
+	m_peerUserName = name;
+	return;
+}
+
+void CMainDlg::displayGameStarted()
+{
+	// construct message
+	ostringstream os;
+	os << m_peerUserName << " has started the game";
+
+	// add feedback message on the text area
+	AddChatContent(os.str().c_str());
+
+	// enable and disable appropriate menu items
+	CMenu* pMenu = GetMenu();
+	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_GRAYED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_ENABLED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_PAUSEGAME, MF_ENABLED | MF_BYCOMMAND);
+
+	return;
+}
+
+void CMainDlg::displayGamePaused()
+{
+	// construct message
+	ostringstream os;
+	os << m_peerUserName << " has paused the game";
+
+	// add feedback message on the text area
+	AddChatContent(os.str().c_str());
+
+	// enable and disable appropriate menu items
+	CMenu* pMenu = GetMenu();
+	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_ENABLED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_PAUSEGAME, MF_GRAYED | MF_BYCOMMAND);
+	return;
+}
+
+void CMainDlg::displayGameExited()
+{
+	// construct message	
+	ostringstream os;
+	os << m_peerUserName << " has exited the game";
+
+	// add feedback message on the text area
+	AddChatContent(os.str().c_str());
+
+	// enable and disable appropriate menu items
+	CMenu* pMenu = GetMenu();
+	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_ENABLED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_GRAYED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_PAUSEGAME, MF_GRAYED | MF_BYCOMMAND);
+	return;
+}
+
+void CMainDlg::displayPeerChatMessage(const std::string& message)
+{
+	// construct message
+	ostringstream os;
+	os << m_peerUserName << " : " << message;
+
+	// add feedback message on the text area
+	AddChatContent(os.str().c_str());
+
+	return;
+}
+
+void CMainDlg::displayLocalFrame(VideoData video)
+{
+	// the DrawDibDraw function is not const-correct so we need to cast away the const modifier
+	// we would it need to modify the pixels to draw the image?
+	char* vRGB = const_cast<char*>(video.rgb);
+
+	// updates the specified m_hdc dialog element using the vRGB variable
+	::DrawDibDraw(hdib_local,
+				  m_hdc_local,
+				  0,		// dest : left pos
+				  0,		// dest : top pos
+				  m_localWndWidth_local,					 // don't zoom x
+				  m_localWndHeight_local,					 // don't zoom y
+				  &m_bmpinfo_local->bmiHeader,			 // bmp header info
+				  vRGB,					 // bmp data
+				  0,					 // src :left
+				  0,					 // src :top
+				  video.width,          // src : width
+				  video.height,			// src : height
+				  DDF_SAME_DRAW			 // use prev params....
+				  );
+	return;
+}
+
+void CMainDlg::displayRemoteFrame(VideoData video)
+{
+	// the DrawDibDraw function is not const-correct so we need to cast away the const modifier
+	// we would it need to modify the pixels to draw the image?
+	char* vRGB = const_cast<char*>(video.rgb);
+
+	// updates the specified m_hdc dialog element using the vRGB variable
+	::DrawDibDraw(hdib_remote,
+				  m_hdc_remote,
+				  0,		// dest : left pos
+				  0,		// dest : top pos
+				  m_localWndWidth_remote,					 // don't zoom x
+				  m_localWndHeight_remote,					 // don't zoom y
+				  &m_bmpinfo_remote->bmiHeader,			 // bmp header info
+				  vRGB,					 // bmp data
+				  0,					 // src :left
+				  0,					 // src :top
+				  video.width,          // src : width
+				  video.height,			// src : height
+				  DDF_SAME_DRAW			 // use prev params....
+				  );
+	return;
+}
+

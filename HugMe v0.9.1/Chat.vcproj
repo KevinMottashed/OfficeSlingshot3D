@@ -1017,71 +1017,27 @@
 				>
 			</File>
 			<File
+				RelativePath=".\UserInterface\UserInterfaceObserver.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\UserInterface\UserInterfaceObserver.h"
+				>
+			</File>
+			<File
 				RelativePath=".\UserInterface\UserInterfaceProxy.h"
 				>
 			</File>
-		</Filter>
-		<Filter
-			Name="Network"
-			>
 			<File
-				RelativePath=".\Network\ControlPacket.cpp"
+				RelativePath=".\UserInterface\UserInterfaceSignals.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Network\ControlPacket.h"
+				RelativePath=".\UserInterface\UserInterfaceSubject.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Network\DataPacket.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\Network\DataPacket.h"
-				>
-			</File>
-			<File
-				RelativePath=".\Network\NetworkCodes.h"
-				>
-			</File>
-			<File
-				RelativePath=".\Network\NetworkManager.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\Network\NetworkManager.h"
-				>
-			</File>
-			<File
-				RelativePath=".\Network\NetworkObserver.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\Network\NetworkObserver.h"
-				>
-			</File>
-			<File
-				RelativePath=".\Network\NetworkProxy.h"
-				>
-			</File>
-			<File
-				RelativePath=".\Network\NetworkSignals.h"
-				>
-			</File>
-			<File
-				RelativePath=".\Network\NetworkSocket.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\Network\NetworkSocket.h"
-				>
-			</File>
-			<File
-				RelativePath=".\Network\NetworkSubject.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\Network\NetworkSubject.h"
+				RelativePath=".\UserInterface\UserInterfaceSubject.h"
 				>
 			</File>
 		</Filter>
@@ -1152,6 +1108,14 @@
 		<Filter
 			Name="Mediator"
 			>
+			<File
+				RelativePath=".\Mediator\Configuration.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Mediator\Configuration.h"
+				>
+			</File>
 			<File
 				RelativePath=".\Mediator\Mediator.cpp"
 				>
@@ -1279,7 +1243,75 @@
 			Name="Common"
 			>
 			<File
+				RelativePath=".\Common\UserPreferences.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Common\UserPreferences.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Common\VideoData.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Network"
+			>
+			<File
+				RelativePath=".\Network\ControlPacket.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Network\ControlPacket.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Network\DataPacket.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Network\DataPacket.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Network\NetworkCodes.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Network\NetworkManager.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Network\NetworkManager.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Network\NetworkObserver.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Network\NetworkObserver.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Network\NetworkProxy.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Network\NetworkSocket.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Network\NetworkSocket.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Network\NetworkSubject.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Network\NetworkSubject.h"
 				>
 			</File>
 		</Filter>

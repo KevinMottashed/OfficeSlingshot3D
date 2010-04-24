@@ -30,7 +30,7 @@ public:
 	virtual ~NetworkObserver();
 
 	// handles an update
-	virtual void networkUpdate(NetworkUpdateContext context, void* data) = 0;
+	virtual void update(NetworkUpdateContext context, const void* data) = 0;
 };
 
 #endif

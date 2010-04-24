@@ -77,11 +77,13 @@ bool DataPacket::readPacket(std::vector<BYTE>& input)
 	return false;
 }
 
-void DataPacket::setVideoData(const char* pVideoData, unsigned int size)
+void DataPacket::setVideoData(VideoData video)
 {
 	DataPacketHeader header;
 	header.type = DATA_PACKET_VIDEO;
-	header.size = size;
+
+	// the format of a video packet is <header><width><height><rgb>
+	header.size = sizeof(unsigned int) * 2 + video.width * video.height * BYTES_PER_PIXEL;
 
 	// clear the existing content
 	m_vPacket.clear();
@@ -89,8 +91,14 @@ void DataPacket::setVideoData(const char* pVideoData, unsigned int size)
 	// copy the header into the packet
 	m_vPacket.insert(m_vPacket.end(), (BYTE*) &header, ((BYTE*) &header) + sizeof(DataPacketHeader));
 
+	// copy the width into the packet
+	m_vPacket.insert(m_vPacket.end(), (BYTE*) &video.width, ((BYTE*) &video.width) + sizeof(unsigned int));
+
+	// copy the height into the packet
+	m_vPacket.insert(m_vPacket.end(), (BYTE*) &video.height, ((BYTE*) &video.height) + sizeof(unsigned int));
+
 	// copy the video data into the packet
-	m_vPacket.insert(m_vPacket.end(), pVideoData, pVideoData + size);
+	m_vPacket.insert(m_vPacket.end(), video.rgb, video.rgb + video.width * video.height * BYTES_PER_PIXEL);
 
 	return;
 }
@@ -125,16 +133,25 @@ void DataPacket::setSlingshotRelease()
 	writeData(DATA_PACKET_SLINGSHOT_RELEASE);
 }
 
-const char* DataPacket::getVideoData() const
+VideoData DataPacket::getVideoData() const
 {
-	return (const char*) &m_vPacket[0] + sizeof(DataPacketHeader);
-}
+	// the format of a video packet is <header><width><height><rgb>
+	unsigned int index = sizeof(DataPacketHeader);
 
-unsigned int DataPacket::getVideoDataSize() const
-{
-	// grab the header from the packet
-	DataPacketHeader* header = (DataPacketHeader*) &m_vPacket[0];
-	return header->size;
+	// copy in the width
+	unsigned int width;
+	memcpy(&width, &m_vPacket[index], sizeof(unsigned int));
+	index += sizeof(unsigned int);
+
+	// copy in the height
+	unsigned int height;
+	memcpy(&height, &m_vPacket[index], sizeof(unsigned int));
+	index += sizeof(unsigned int);
+
+	// get the rgb data
+	const char* rgb = (const char*) &m_vPacket[index];
+
+	return VideoData(rgb, width, height);	
 }
 
 cVector3d DataPacket::getPlayerPosition() const

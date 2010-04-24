@@ -13,7 +13,7 @@ public:
 	void attach(NetworkObserver* observer);
 	void detach(NetworkObserver* observer);
 
-	void networkNotify(NetworkUpdateContext context, void* data = NULL);
+	void notify(NetworkUpdateContext context, const void* data = NULL);
 
 private:
 	std::vector<NetworkObserver*> m_observers;

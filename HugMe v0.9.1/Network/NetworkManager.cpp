@@ -19,7 +19,7 @@ static const int shutdown_receive_and_send = 2;
 const int NetworkManager::chat_port = 8869;
 const int NetworkManager::data_port = 8870;
 const int NetworkManager::maximum_control_packet_size = 4096;
-const int NetworkManager::maximum_data_packet_size = 76800;
+const int NetworkManager::maximum_data_packet_size = 100000;
 
 NetworkManager::NetworkManager() :
 	// the control socket
@@ -37,18 +37,23 @@ NetworkManager::NetworkManager() :
 	// control members
 	m_bIsConnected(false),
 	m_bIsServer(false),
-	m_bLocalDisconnect(false)
+	m_bIsEstablishing(false),
+	m_bLocalDisconnect(false),	
+	m_sEstablished(new CSemaphore(0,1))
 {
 	InitializeCriticalSection(&m_csControlSocketSend);
 	InitializeCriticalSection(&m_csDataSocketSend);
+	InitializeCriticalSection(&m_csIsEstablishing);
 }
 
 NetworkManager::~NetworkManager()
 {
 	DeleteCriticalSection(&m_csControlSocketSend);
 	DeleteCriticalSection(&m_csDataSocketSend);
+	DeleteCriticalSection(&m_csIsEstablishing);
 	delete m_pControlSocket;
 	delete m_pDataSocket;
+	delete m_sEstablished;
 }
 
 // start listening to for connections
@@ -108,6 +113,9 @@ rc_network NetworkManager::listen(const std::string& userName)
 
 rc_network NetworkManager::connect(const std::string& ipAddress, const std::string& userName)
 {
+	// set our user name
+	this->userName = userName;
+
 	{
 		// connect is an operation that modifies the connection status
 		// we must therefore request write access to the connection resource before proceeding
@@ -158,13 +166,15 @@ rc_network NetworkManager::connect(const std::string& ipAddress, const std::stri
 		// we are the client
 		m_bIsServer = false;
 		m_bIsConnected = true;
+		{
+			SyncLocker lock(m_csIsEstablishing);
+			m_bIsEstablishing = true;
+		}
 		initializeConnection();
 	}
 
 	// establish the connection (send user name)
-	establishConnection();
-
-	return SUCCESS;
+	return establishConnection();
 }
 
 rc_network NetworkManager::disconnect()
@@ -204,7 +214,7 @@ void NetworkManager::peerDisconnect()
 	{
 		// notify the observers that the peer has disconnected
 		// only notify the observers if it was the peer that initiated the disconnect
-		networkNotify(PEER_DISCONNECTED);
+		notify(PEER_DISCONNECTED);
 	}
 
 	// close the sockets and reset the connection
@@ -223,7 +233,7 @@ void NetworkManager::networkError(rc_network error)
 	if (m_bIsConnected)
 	{
 		// notify the observers that the network has been disconnected due to an error		
-		networkNotify(NETWORK_ERROR, &error);
+		notify(NETWORK_ERROR, &error);
 	}
 
 	// close the sockets and reset the connection
@@ -263,6 +273,10 @@ void NetworkManager::notifyAccept(NetworkSocket* socket)
 			// we are the server
 			m_bIsServer = true;
 			m_bIsConnected = true;
+			{
+				SyncLocker lock(m_csIsEstablishing);
+				m_bIsEstablishing = true;
+			}
 			initializeConnection();
 			establish = true;
 		}
@@ -270,7 +284,15 @@ void NetworkManager::notifyAccept(NetworkSocket* socket)
 
 	if (establish)
 	{
-		establishConnection();
+		rc_network error = establishConnection();
+		if (error != SUCCESS)
+		{
+			networkError(error);
+		}
+		else
+		{
+			notify(PEER_CONNECTED);
+		}
 	}
 
 	return;
@@ -284,7 +306,8 @@ void NetworkManager::resetConnectionStatus()
 	m_bIsConnected = false;
 	m_bIsServer = false;
 	m_bLocalDisconnect = false;
-
+	SyncLocker lock (m_csIsEstablishing);
+	m_bIsEstablishing = false;
 	return;
 }
 
@@ -383,7 +406,7 @@ DWORD NetworkManager::ControlReceiveThread(NetworkManager* pNetworkManager)
 		}
 
 		// sleep to prevent this thread from hogging the CPU
-		Sleep(1);
+		Sleep(100);
 
 		// receive data through the network
 		int rc = recv(pNetworkManager->m_hControlSocket, (char*) receivedBuffer, maximum_control_packet_size, 0);
@@ -452,7 +475,7 @@ DWORD NetworkManager::DataReceiveThread(NetworkManager* pNetworkManager)
 		{
 			pNetworkManager->networkError(ERROR_SOCKET_ERROR);
 			return 0;
-		}
+		}		
 
 		// receiving data through the data socket is an operation that reads the connection status
 		// we must therefore request read access to the connection resource before proceeding
@@ -463,6 +486,9 @@ DWORD NetworkManager::DataReceiveThread(NetworkManager* pNetworkManager)
 			// we are no longer connected, we can stop receiving data
 			return 0;
 		}
+
+		// sleep to prevent this thread from hogging the CPU
+		Sleep(100);
 
 		// receive data through the network
 		int rc = recv(pNetworkManager->m_hDataSocket, (char*) receivedBuffer, maximum_control_packet_size, 0);
@@ -524,8 +550,25 @@ rc_network NetworkManager::initializeConnection()
 
 rc_network NetworkManager::establishConnection()
 {
-	// we only need to send our username to establish the connection
-	return sendUserName(userName);
+	// we need to send our username to establish the connection
+	rc_network error = sendUserName(userName);
+
+	if (error != SUCCESS)
+	{
+		return error;
+	}
+
+	// wait 5 seconds for the connection to be established
+	if (m_sEstablished->Lock(5000))
+	{
+		SyncLocker lock(m_csIsEstablishing);
+		m_bIsEstablishing = false;
+		return SUCCESS;
+	}
+	else
+	{
+		return ERROR_USER_NAME_NOT_RECEIVED;
+	}
 }
 
 void NetworkManager::terminateConnection()
@@ -574,7 +617,7 @@ rc_network NetworkManager::sendEndGame()
 rc_network NetworkManager::sendVideoData(VideoData video)
 {
 	DataPacket message;
-	message.setVideoData(video.rgb, video.size);
+	message.setVideoData(video);
 	return syncSendDataMessage(message);
 }
 
@@ -675,33 +718,32 @@ void NetworkManager::handleDataMessage(const DataPacket& message)
 	{
 		case DATA_PACKET_VIDEO:
 		{
-			VideoData video(message.getVideoData(), message.getVideoDataSize());
-			networkNotify(RECEIVED_VIDEO, &video);			
+			notify(RECEIVED_VIDEO, &message.getVideoData());			
 			break;
 		}
 		case DATA_PACKET_PLAYER_POSITION:
 		{
-			networkNotify(RECEIVED_PLAYER_POSITION, &message.getPlayerPosition());
+			notify(RECEIVED_PLAYER_POSITION, &message.getPlayerPosition());
 			break;
 		}
 		case DATA_PACKET_SLINGSHOT_POSITION:
 		{
-			networkNotify(RECEIVED_SLINGSHOT_POSITION, &message.getSlingshotPosition());			
+			notify(RECEIVED_SLINGSHOT_POSITION, &message.getSlingshotPosition());			
 			break;
 		}
 		case DATA_PACKET_PROJECTILE:
 		{
-			networkNotify(RECEIVED_PROJECTILE, &message.getProjectile());
+			notify(RECEIVED_PROJECTILE, &message.getProjectile());
 			break;
 		}
 		case DATA_PACKET_SLINGSHOT_PULLBACK:
 		{
-			networkNotify(RECEIVED_PULLBACK);
+			notify(RECEIVED_PULLBACK);
 			break;
 		}
 		case DATA_PACKET_SLINGSHOT_RELEASE:
 		{
-			networkNotify(RECEIVED_RELEASE);
+			notify(RECEIVED_RELEASE);
 			break;
 		}
 		case DATA_PACKET_UNKNOWN:
@@ -773,32 +815,38 @@ void NetworkManager::handleControlMessage(const ControlPacket& message)
 		case CONTROL_PACKET_NAME:
 		{
 			// update the remote user name
-			networkNotify(RECEIVED_USER_NAME, &message.getUserName());
-			networkNotify(PEER_CONNECTED);
+			notify(RECEIVED_USER_NAME, &message.getUserName());
+			{
+				SyncLocker lock(m_csIsEstablishing);
+				if (m_bIsEstablishing)
+				{
+					m_sEstablished->Unlock();
+				}
+			}			
 			break;
 		}
 		case CONTROL_PACKET_CHAT:
 		{
 			// notify the observers that a new message has arrived			
-			networkNotify(RECEIVED_CHAT_MESSAGE, &message.getChatMessage());
+			notify(RECEIVED_CHAT_MESSAGE, &message.getChatMessage());
 			break;
 		}
 		case CONTROL_PACKET_START_GAME:
 		{
 			// notify the observers that the peer has started the game
-			networkNotify(PEER_START_GAME);
+			notify(PEER_START_GAME);
 			break;
 		}
 		case CONTROL_PACKET_PAUSE_GAME:
 		{
 			// notify the observers that the peer has started the game
-			networkNotify(PEER_PAUSE_GAME);
+			notify(PEER_PAUSE_GAME);
 			break;
 		}
 		case CONTROL_PACKET_END_GAME:
 		{
 			// notify the observers that the peer has exited the game
-			networkNotify(PEER_EXIT_GAME);
+			notify(PEER_EXIT_GAME);
 			break;
 		}
 		case CONTROL_PACKET_UNKNOWN:

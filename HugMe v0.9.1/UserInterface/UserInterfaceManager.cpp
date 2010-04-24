@@ -14,9 +14,9 @@ static char THIS_FILE[]=__FILE__;
 
 using namespace std;
 
-UserInterfaceManager::UserInterfaceManager()
+UserInterfaceManager::UserInterfaceManager(const UserPreferences& preferences)
 {
-	m_pMainDlg = new CMainDlg(this);
+	m_pMainDlg = new CMainDlg(this, preferences);
 }
 
 UserInterfaceManager::~UserInterfaceManager()
@@ -24,41 +24,46 @@ UserInterfaceManager::~UserInterfaceManager()
 	delete m_pMainDlg;
 }
 
-rc_network UserInterfaceManager::networkConnectButtonPushed(const string& ipAddress, const string& localName)
+void UserInterfaceManager::networkConnectButtonPushed()
 {
-	Mediator::instance()->updateLocalUserName(localName);
-	return Mediator::instance()->netConnect(ipAddress);
+	notify(CONNECT);	
+	return;
 }
 
-rc_network UserInterfaceManager::networkDisconnectButtonPushed()
+void UserInterfaceManager::networkDisconnectButtonPushed()
 {
-	return Mediator::instance()->netDisconnect();
+	notify(DISCONNECT);
+	return;
 }
 
-rc_network UserInterfaceManager::networkListenButtonPushed(const string& localName)
+void UserInterfaceManager::networkListenButtonPushed()
 {
-	Mediator::instance()->updateLocalUserName(localName);
-	return Mediator::instance()->netStartListening();
+	notify(LISTEN);
+	return;
 }
 
 void UserInterfaceManager::startGameButtonPushed()
 {
-	Mediator::instance()->localStartGame();
+	notify(START_GAME);
+	return;
 }
 
 void UserInterfaceManager::exitGameButtonPushed()
 {
-	Mediator::instance()->localExitGame();
+	notify(EXIT_GAME);
+	return;
 }
 
 void UserInterfaceManager::pauseGameButtonPushed()
 {
-	Mediator::instance()->localPauseGame();
+	notify(PAUSE_GAME);
+	return;
 }
 
 void UserInterfaceManager::closeApplication()
 {
-	Mediator::instance()->closeApplication();
+	notify(EXIT_APPLICATION);
+	return;
 }
 
 CDialog* UserInterfaceManager::getMainWindow()
@@ -66,68 +71,93 @@ CDialog* UserInterfaceManager::getMainWindow()
 	return m_pMainDlg;
 }
 
-void UserInterfaceManager::notifyNetworkConnectionEstablished()
+void UserInterfaceManager::displayConnectionEstablished()
 {
-	string remoteUserName = Mediator::instance()->getRemoteUserName();
-	getMainWindow()->SendMessage(WM_ON_CONNECT, (WPARAM)&remoteUserName);
+	m_pMainDlg->displayConnectionEstablished();
+	return;
 }
 
-void UserInterfaceManager::notifyPeerDisconnected()
+void UserInterfaceManager::displayConnectionFailed()
 {
-	string remoteUserName = Mediator::instance()->getRemoteUserName();
-	getMainWindow()->SendMessage(WM_ON_DISCONNECT, (WPARAM)&remoteUserName);
+	m_pMainDlg->displayConnectionFailed();
+	return;
 }
 
-void UserInterfaceManager::notifyNetworkError(rc_network error)
+void UserInterfaceManager::displayListening()
 {
-	getMainWindow()->SendMessage(WM_ON_NETWORK_ERROR, (WPARAM)&error);
+	m_pMainDlg->displayListening();
+	return;
 }
 
-void UserInterfaceManager::notifyGameStarted()
+void UserInterfaceManager::displayFailedToListen()
 {
-	string remoteUserName = Mediator::instance()->getRemoteUserName();
-	getMainWindow()->SendMessage(WM_ON_START_GAME, (WPARAM)&remoteUserName);
+	m_pMainDlg->displayFailedToListen();
+	return;
 }
 
-void UserInterfaceManager::notifyGamePaused()
+void UserInterfaceManager::displayPeerDisconnected()
 {
-	string remoteUserName = Mediator::instance()->getRemoteUserName();
-	getMainWindow()->SendMessage(WM_ON_PAUSE_GAME, (WPARAM)&remoteUserName);
+	m_pMainDlg->displayPeerDisconnected();
+	return;
 }
 
-void UserInterfaceManager::notifyGameExited()
+void UserInterfaceManager::displayNetworkError()
 {
-	string remoteUserName = Mediator::instance()->getRemoteUserName();
-	getMainWindow()->SendMessage(WM_ON_EXIT_GAME, (WPARAM)&remoteUserName);
+	m_pMainDlg->displayNetworkError();
+	return;
 }
 
-rc_network UserInterfaceManager::sendChatButtonPushed(const string& message)
+void UserInterfaceManager::displayGameStarted()
 {
-	return Mediator::instance()->sendChatMessage(message);
+	m_pMainDlg->displayGameStarted();
+	return;
 }
 
-void UserInterfaceManager::notifyNewChatMessage(const string& message)
+void UserInterfaceManager::displayGamePaused()
 {
-	string remoteUserName = Mediator::instance()->getRemoteUserName();
-	getMainWindow()->SendMessage(WM_ON_NEW_CHAT_MESSAGE, (WPARAM)&remoteUserName, (LPARAM)&message);
+	m_pMainDlg->displayGamePaused();
+	return;
 }
 
-void UserInterfaceManager::notifyDisplayNewLocalFrame(VideoData video)
+void UserInterfaceManager::displayGameExited()
 {
-	getMainWindow()->SendMessage(WM_ON_NEW_LOCAL_FRAME, (WPARAM)video.rgb, (LPARAM)&video.size);
+	m_pMainDlg->displayGameExited();
+	return;
 }
 
-void UserInterfaceManager::notifyDisplayNewRemoteFrame(VideoData video)
+void UserInterfaceManager::sendChatButtonPushed(const string& message)
 {
-	getMainWindow()->SendMessage(WM_ON_NEW_REMOTE_FRAME, (WPARAM)video.rgb, (LPARAM)&video.size);
+	notify(CHAT_MESSAGE, &message);
+	return;
 }
 
-void UserInterfaceManager::changeArmBandPort(int armBandPort)
+void UserInterfaceManager::displayPeerChatMessage(const string& message)
 {
-	Mediator::instance()->changeArmBandPort(armBandPort);
+	m_pMainDlg->displayPeerChatMessage(message);
+	return;
 }
 
-void UserInterfaceManager::changeJacketPort(int jacketPort)
+void UserInterfaceManager::displayLocalFrame(VideoData video)
 {
-	Mediator::instance()->changeJacketPort(jacketPort);
+	m_pMainDlg->displayLocalFrame(video);
+	return;	
 }
+
+void UserInterfaceManager::displayRemoteFrame(VideoData video)
+{
+	m_pMainDlg->displayRemoteFrame(video);
+	return;
+}
+
+void UserInterfaceManager::setPeerUserName(const std::string& name)
+{
+	m_pMainDlg->setPeerUserName(name);
+	return;
+}
+
+void UserInterfaceManager::changePreferences(const UserPreferences& preferences)
+{
+	notify(PREFERENCES, &preferences);
+	return;
+}
+

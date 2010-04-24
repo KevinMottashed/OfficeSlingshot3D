@@ -24,9 +24,7 @@ public:
 
 	// getter and setter for the speed
 	cVector3d getSpeed() const;
-	void setSpeed(double x, double y, double z);
-	
-	
+	void setSpeed(double x, double y, double z);	
 
 private:
 	cVector3d position;

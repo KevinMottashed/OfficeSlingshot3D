@@ -1,7 +1,6 @@
 // public members of the network module
 #include "NetworkManager.h"
 #include "NetworkCodes.h"
-#include "NetworkSignals.h"
 #include "NetworkObserver.h"
 #include "NetworkSubject.h"
 

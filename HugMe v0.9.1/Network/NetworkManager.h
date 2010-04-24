@@ -42,13 +42,9 @@ public:
 	// send a chat message to the other player
 	rc_network sendChatMessage(const std::string& message);
 
-	// send a start game message
+	// send a start/pause/exit game message
 	rc_network sendStartGame();
-
-	// send a pause game message
 	rc_network sendPauseGame();
-
-	// send a end game message
 	rc_network sendEndGame();
 
 	// send a video data to the other player
@@ -179,12 +175,17 @@ private:
 
 	bool m_bIsConnected; // true if connected to a peer
 	bool m_bIsServer; // true if we are the server (listener)
+	bool m_bIsEstablishing; // true if we are currently establishing a connection
+	mutable CRITICAL_SECTION m_csIsEstablishing;
 
 	// true if we are in the process of disconnecting and the disconnect originated from us
 	bool m_bLocalDisconnect; 
 
 	// the user name that we will use to establish a connection to the other player
 	std::string userName;
+
+	// the semaphore that will be used to signal a connection established
+	mutable CSemaphore* m_sEstablished;
 };
 
 #endif // !defined(AFX_NETWORKMANAGER_H__3D85BBC3_3F80_477F_ABAB_1DAE8326532A__INCLUDED_)

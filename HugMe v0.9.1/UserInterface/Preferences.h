@@ -7,6 +7,9 @@
 // Preferences.h : header file
 //
 
+#include "stdafx.h"
+#include "UserPreferences.h"
+
 /////////////////////////////////////////////////////////////////////////////
 // CPreferences dialog
 
@@ -14,22 +17,21 @@ class CPreferences : public CDialog
 {
 // Construction
 public:
-	CPreferences(CWnd* pParent = NULL);   // standard constructor
+	CPreferences(const UserPreferences& prefs, CWnd* pParent = NULL);   // standard constructor
 
 	// getters for private attributes
-	CString getStrAddress() const;
-	CString getUserName() const;
-	int getArmBandPort() const;
-	int getJacketBandPort() const;
+	UserPreferences getPreferences();
+
 
 private:
 // Dialog Data
 	//{{AFX_DATA(CPreferences)
 	enum { IDD = IDD_PREFERENCES };
-		CString m_strAddress;
-		CString m_userName;
-		int m_armBandPort;
-		int m_jacketPort;
+	UserPreferences m_preferences;
+	CString m_strAddress;
+	CString m_userName;
+	int m_armBandPort;
+	int m_jacketPort;
 	//}}AFX_DATA
 
 

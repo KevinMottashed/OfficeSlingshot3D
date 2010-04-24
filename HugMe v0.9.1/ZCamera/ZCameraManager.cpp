@@ -45,7 +45,7 @@ DWORD ZCameraManager::getFrameFromCamera(ZCameraManager* p_ZCamera){
 		reverseFrame(p_ZCamera->RGB,4);
 
 		//Send to the Mediator
-		VideoData video((const char*) p_ZCamera->RGB, IMAGE_ARRAY_SIZE);
+		VideoData video((const char*) p_ZCamera->RGB, IMAGE_WIDTH, IMAGE_HEIGHT);
 		Mediator::instance()->notifyNewLocalVideoData(video);
 
 		Sleep(31); // 32 fps
@@ -58,17 +58,17 @@ DWORD ZCameraManager::getFrameFromCamera(ZCameraManager* p_ZCamera){
 DWORD ZCameraManager::getFrameFromDummy(ZCameraManager* p_ZCamera){
 	
 	//Shortcut to access each pixel of every line
-	int step = ZCameraManager::IMAGE_WIDTH*4;
+	int step = IMAGE_WIDTH*4;
 
 	//While the thread is active
 	while(p_ZCamera->zcam_started){
 
 		//Go through each row and column and fill all 4 values for each pixel
-		for (int i=0;i<ZCameraManager::IMAGE_HEIGHT;i++){
-			for(int j=0;j<ZCameraManager::IMAGE_WIDTH;j++){
-				p_ZCamera->RGB[i*step+j*4]		=	rand()*255;			//blue
-				p_ZCamera->RGB[i*step+j*4+1]	=	rand()*255;			//green	
-				p_ZCamera->RGB[i*step+j*4+2]	=	rand()*255;			//red
+		for (int i=0;i<IMAGE_HEIGHT;i++){
+			for(int j=0;j<IMAGE_WIDTH;j++){
+				p_ZCamera->RGB[i*step+j*4]		=	rand() % 255;			//blue
+				p_ZCamera->RGB[i*step+j*4+1]	=	rand() % 255;			//green	
+				p_ZCamera->RGB[i*step+j*4+2]	=	rand() % 255;			//red
 				p_ZCamera->RGB[i*step+j*4+3]	=	0;			//ignored	
 			}
 		}
@@ -76,7 +76,7 @@ DWORD ZCameraManager::getFrameFromDummy(ZCameraManager* p_ZCamera){
 		reverseFrame(p_ZCamera->RGB,4);
 
 		// notify the Mediator that new local video data has arrived
-		VideoData video((const char*) p_ZCamera->RGB, IMAGE_ARRAY_SIZE);
+		VideoData video((const char*) p_ZCamera->RGB, IMAGE_WIDTH, IMAGE_HEIGHT);
 		Mediator::instance()->notifyNewLocalVideoData(video);
 
 /*
@@ -114,12 +114,12 @@ void ZCameraManager::stop() {
 //Reverses the image up-down, but not left-right
 void ZCameraManager::reverseFrame(unsigned char* &RGB,int channels){
 
-	int step = ZCameraManager::IMAGE_WIDTH*channels;
+	int step = IMAGE_WIDTH*channels;
 	unsigned char* tmp = new BYTE[step];
 
-	for(int i=0; i<ZCameraManager::IMAGE_HEIGHT/2; i++){
-		memcpy(tmp,RGB + step*(ZCameraManager::IMAGE_HEIGHT-i-1),step);				//tmp = b
-		memcpy(RGB + step*(ZCameraManager::IMAGE_HEIGHT-i-1),RGB+i*step,step);		//b = a
+	for(int i=0; i<IMAGE_HEIGHT/2; i++){
+		memcpy(tmp,RGB + step*(IMAGE_HEIGHT-i-1),step);				//tmp = b
+		memcpy(RGB + step*(IMAGE_HEIGHT-i-1),RGB+i*step,step);		//b = a
 		memcpy(RGB+i*step,tmp,step);												//a = tmp
 	}
 

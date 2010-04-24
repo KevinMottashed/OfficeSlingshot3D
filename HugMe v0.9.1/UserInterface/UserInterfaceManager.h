@@ -9,78 +9,74 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#include <string>
-
-#include "NetworkProxy.h"
-#include "MediatorProxy.h"
-#include "ZCameraProxy.h"
+#include "stdafx.h"
 #include "MainDlg.h"
 #include "VideoData.h"
+#include "UserInterfaceSignals.h"
+#include "UserInterfaceSubject.h"
+#include "UserPreferences.h"
 
-using namespace std;
+class CMainDlg;
 
-class UserInterfaceManager  
+class UserInterfaceManager : public UserInterfaceSubject
 {
 public:
-	UserInterfaceManager();
+	UserInterfaceManager(const UserPreferences& preferences);
 	virtual ~UserInterfaceManager();
 
 	//----------------------------------------
-	// Notifications for the user interface
+	// Display updates
 	//----------------------------------------
 
-	// updates the user interface to reflect an established network connection
-	void notifyNetworkConnectionEstablished();
+	// update the user interface to reflect a change in the connection state
+	void displayConnectionEstablished();
+	void displayConnectionFailed();
+	void displayListening();
+	void displayFailedToListen();
+	void displayPeerDisconnected();
+	void displayNetworkError();
 
-	// updates the user interface to reflect a disconnected network connection
-	void notifyPeerDisconnected();
+	// update the user interface to reflect a change in the game state
+	void displayGameStarted();
+	void displayGamePaused();
+	void displayGameExited();
 
-	// updates the user interface to reflect an error in the network connection
-	void notifyNetworkError(rc_network error);
-
-	// updates the user interface to reflect a game started
-	void notifyGameStarted();
-
-	// updates the user interface to reflect a game paused
-	void notifyGamePaused();
-
-	// updates the user interface to reflect a game exited
-	void notifyGameExited();
-
-	// update the user interface to display a chat message
-	void notifyNewChatMessage(const std::string& message);
-
-	// updates the user interface to display the new local video frame
-	void notifyDisplayNewLocalFrame(VideoData video);
-
-	// updates the user interface to display the new remote video frame
-	void notifyDisplayNewRemoteFrame(VideoData video);
+	// update the user interface to display the interaction with the peer
+	void displayPeerChatMessage(const std::string& message);
+	void displayLocalFrame(VideoData video);
+	void displayRemoteFrame(VideoData video);
 
 	//-----------------------------------------------
 	// Notifications coming from the user interface
 	//-----------------------------------------------
 
-	rc_network networkConnectButtonPushed(const string& ipAddress, const string& localName);
-	rc_network networkListenButtonPushed(const string& localName);
-	rc_network networkDisconnectButtonPushed();
+	// user wants to change the connection state
+	void networkConnectButtonPushed();
+	void networkListenButtonPushed();
+	void networkDisconnectButtonPushed();
 
-	rc_network sendChatButtonPushed(const string& message);
+	// user wants to send chat message
+	void sendChatButtonPushed(const std::string& message);
 
+	// user wants to change the game state
 	void startGameButtonPushed();
 	void exitGameButtonPushed();
 	void pauseGameButtonPushed();
 
-	void changeArmBandPort(int armBandPort);
-	void changeJacketPort(int jacketPort);
+	// update the users preferences
+	void changePreferences(const UserPreferences& preferences);
 
+	// user wants to close the application
 	void closeApplication();
-
+	
+	// update the peers user name
+	void setPeerUserName(const std::string& name);	
 
 	// returns the applications main window
 	CDialog* getMainWindow();
 
 private:
-	CDialog* m_pMainDlg;
+	CMainDlg* m_pMainDlg;
 };
 
 #endif // !defined(AFX_USERINTERFACEMANAGER_H__DC0E386C_0D7D_44F6_B8B3_0BA8C08D1B1A__INCLUDED_)

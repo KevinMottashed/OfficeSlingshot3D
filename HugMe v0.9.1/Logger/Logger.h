@@ -11,7 +11,7 @@ public:
 	virtual ~Logger();
 
 	// handle network updates, we will want to log these
-	virtual void networkUpdate(NetworkUpdateContext context, void* data);
+	virtual void update(NetworkUpdateContext context, const void* data);	
 
 protected:
 	// log network events

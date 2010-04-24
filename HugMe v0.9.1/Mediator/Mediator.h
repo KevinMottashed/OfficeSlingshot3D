@@ -9,6 +9,7 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
+#include "stdafx.h"
 #include "NetworkProxy.h"
 #include "UserInterfaceProxy.h"
 #include "FalconProxy.h"
@@ -17,45 +18,26 @@
 #include "GameProxy.h"
 #include "LoggerProxy.h"
 #include "VideoData.h"
+#include "Configuration.h"
+#include "SyncLocker.h"
 
 // The Mediator class for the program
 // this class is a singleton
-class Mediator : public NetworkObserver
+class Mediator :	public NetworkObserver,
+					public UserInterfaceObserver
 {
 public:
 	// gets the singleton
 	static Mediator* instance();
-
 	virtual ~Mediator();
 
-	// ----------------------------
-	// Network related functions
-	// ----------------------------
-
-	// the local user wishes to start listening for connections
-	rc_network netStartListening();
-
-	// the local user wishes to connect to a host
-	// this function will attempt to connect us to the proper IP address
-	rc_network netConnect(const std::string& ipAddress);
-
-	// the local user wishes to disconnect from the network
-	// this function will disconnect us from the network
-	rc_network netDisconnect();
-
-	// handles updates received from the network module
-	// context is the update subject (user name, connect, disconnect, etc ...)
-	// data is the data that accompagnies the update (player position, projectile, etc ...)
-	virtual void networkUpdate(NetworkUpdateContext context, void* data);
+	// updates for observer patterns
+	virtual void update(NetworkUpdateContext context, const void* data);
+	virtual void update(UserInterfaceUpdateContext context, const void* data);
 
 	//------------------------------------------
 	// Game related
 	//------------------------------------------
-
-	// we are starting/exiting/pausing the game
-	void localStartGame();
-	void localExitGame();
-	void localPauseGame();
 
 	// notifies the Mediator that the slingshot position has changed
 	void notifyNewLocalSlingshotPosition(const cVector3d& position);
@@ -79,41 +61,12 @@ public:
 	// notifies the Mediator that new video data has arrived
 	void notifyNewLocalVideoData(VideoData video);
 
-	// --------------------------------
-	// Smart Clothing related functions
-	// --------------------------------
-
-	// changes the armband and jacket port numbers
-	void changeArmBandPort(int armBandPort);
-	void changeJacketPort(int jacketPort);
-
-	// --------------------------------
-	// Player info related functions
-	// --------------------------------
-
-	std::string getRemoteUserName();
-
-	// update the local player's user name
-	void updateLocalUserName(const std::string& name);
-
-	std::string getLocalUserName();
-
 	// ------------------------------------
 	// User interface related functions
 	// ------------------------------------
 
-	// the local user wishes to send a chat message
-	rc_network sendChatMessage(const std::string& message);
-
 	// get the main window of the application
-	CDialog* getMainWindow();
-
-	// ------------------------------------
-	// System related functions
-	// ------------------------------------
-
-	// close the application in a safe way
-	void closeApplication();
+	CDialog* getMainWindow();	
 
 private:
 	Mediator(); // private for singleton pattern
@@ -146,16 +99,11 @@ private:
 	// leave it here until we have some sort of application initializer
 	Logger* m_pLogger;
 
+	// move this out once we have an application initializer
+	Configuration* m_pConfiguration;
+	mutable CRITICAL_SECTION m_csConfiguration;
 
 	bool m_bGameIsRunning;
-
-	// It should be noted that the user names are not thread safe.
-	// For now this is OK because the UI and network will never try to access to access them at the same time.
-	// This is because the UI won't try to access them until the network connection is established.
-	// If we ever add a feature where the user names can changes after the connection has been established, then
-	// we will need to make these thread safe
-	std::string localUserName;
-	std::string remoteUserName;
 
 	// start the game
 	void startGame();
@@ -189,6 +137,28 @@ private:
 	void handleRemotePlayerPosition(const cVector3d& position);
 	void handleRemotePullback();
 	void handleRemoteRelease();
+
+	//--------------------------------------------
+	// User Interface Related updates
+	//--------------------------------------------
+
+	// connection status updates
+	// the user wants to change the connection status
+	void connect();
+	void listen();
+	void disconnect();
+
+	// the user changed his preferences
+	void changePreferences(const UserPreferences& preferences);
+
+	// the user wants to start/exit/pause the game
+	void localStartGame();
+	void localExitGame();
+	void localPauseGame();
+
+	// user wants to close the application
+	void closeApplication();
+	void sendChatMessage(const std::string& message);
 
 };
 
