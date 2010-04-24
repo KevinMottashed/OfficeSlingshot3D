@@ -524,9 +524,6 @@ DWORD NetworkManager::DataReceiveThread(NetworkManager* pNetworkManager)
 		{
 			// notify the message handler that a new packet has arrived
 			pNetworkManager->handleDataMessage(packet);
-
-			// start a new packet
-			packet = DataPacket();
 		}
 	}
 	return 1;

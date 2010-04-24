@@ -16,11 +16,6 @@ static char THIS_FILE[]=__FILE__;
 
 DataPacket::DataPacket()
 {
-	// start off with an unknown packet of size 0
-	DataPacketHeader header;
-	header.size = 0;
-	header.type = DATA_PACKET_UNKNOWN;
-	m_vPacket.insert(m_vPacket.end(), (BYTE*) &header, ((BYTE*) &header) + sizeof(DataPacketHeader));
 }
 
 DataPacket::~DataPacket()
