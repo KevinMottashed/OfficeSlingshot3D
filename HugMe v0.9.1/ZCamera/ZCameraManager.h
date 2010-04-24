@@ -10,16 +10,14 @@
 #endif // _MSC_VER > 1000
 
 #include "StdAfx.h"
-#include "MediatorProxy.h"
 #include "chai3d.h"
 #include "DepthCamera.h"
+#include "ZCameraSubject.h"
+#include "VideoData.h"
 
-class ZCameraManager  
+class ZCameraManager : public ZCameraSubject 
 {
-
-public:
-
-	static const unsigned int IMAGE_ARRAY_SIZE = IMAGE_WIDTH * IMAGE_HEIGHT * 4;
+public:	
 
 	ZCameraManager();
 	virtual ~ZCameraManager();
@@ -36,9 +34,7 @@ public:
 	static DWORD getFrameFromDummy(ZCameraManager* p_ZCamera);
 
 	//Reverse the image array, so it displays correctly on the UI
-	static void reverseFrame(unsigned char* &RGB, int channels);
-
-	
+	static void reverseFrame(unsigned char* &RGB, int channels);	
 
 private:
 	ZCameraManager(const ZCameraManager& zCameraManager); // intentionally not implemented

@@ -24,7 +24,8 @@
 // The Mediator class for the program
 // this class is a singleton
 class Mediator :	public NetworkObserver,
-					public UserInterfaceObserver
+					public UserInterfaceObserver,
+					public ZCameraObserver
 {
 public:
 	// gets the singleton
@@ -34,6 +35,7 @@ public:
 	// updates for observer patterns
 	virtual void update(NetworkUpdateContext context, const void* data);
 	virtual void update(UserInterfaceUpdateContext context, const void* data);
+	virtual void update(ZCameraUpdateContext context, const void* data);
 
 	//------------------------------------------
 	// Game related
@@ -54,13 +56,6 @@ public:
 	// notifies the Mediator that a slingshot has being released
 	void notifyLocalSlingshotRelease();	
 
-	// --------------------------------
-	// Video related functions
-	// --------------------------------
-
-	// notifies the Mediator that new video data has arrived
-	void notifyNewLocalVideoData(VideoData video);
-
 	// ------------------------------------
 	// User interface related functions
 	// ------------------------------------
@@ -76,19 +71,11 @@ private:
 	// the singleton
 	static Mediator* globalInstance;
 
-	// the network manager, manages everything network related
+	// managers for the different modules
 	NetworkManager* m_pNetworkManager;
-
-	// manages everything GUI related
 	UserInterfaceManager* m_pUserInterfaceManager;
-
-	// manages everything falcon pen related
 	FalconPenManager* m_pFalconPenManager;
-
-	// manages everything z camera related
 	ZCameraManager* m_pZCameraManager;
-
-	// manages the smart clothing
 	SmartClothingManager* m_pSmartClothingManager;
 
 	// the game
@@ -105,13 +92,9 @@ private:
 
 	bool m_bGameIsRunning;
 
-	// start the game
+	// alter the game state
 	void startGame();
-
-	// pause the game
 	void pauseGame();
-
-	// exit the game
 	void exitGame();
 
 	//--------------------------------------------
@@ -159,6 +142,13 @@ private:
 	// user wants to close the application
 	void closeApplication();
 	void sendChatMessage(const std::string& message);
+
+	//--------------------------------------------
+	// ZCamera Related updates
+	//--------------------------------------------
+
+	// new local video
+	void handleLocalVideoData(VideoData video);
 
 };
 

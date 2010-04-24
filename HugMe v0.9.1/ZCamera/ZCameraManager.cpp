@@ -44,9 +44,9 @@ DWORD ZCameraManager::getFrameFromCamera(ZCameraManager* p_ZCamera){
 		//Flip the image up-down
 		reverseFrame(p_ZCamera->RGB,4);
 
-		//Send to the Mediator
+		//Send to the observers
 		VideoData video((const char*) p_ZCamera->RGB, IMAGE_WIDTH, IMAGE_HEIGHT);
-		Mediator::instance()->notifyNewLocalVideoData(video);
+		p_ZCamera->notify(VIDEO, &video);
 
 		Sleep(31); // 32 fps
 	}
@@ -77,8 +77,7 @@ DWORD ZCameraManager::getFrameFromDummy(ZCameraManager* p_ZCamera){
 
 		// notify the Mediator that new local video data has arrived
 		VideoData video((const char*) p_ZCamera->RGB, IMAGE_WIDTH, IMAGE_HEIGHT);
-		Mediator::instance()->notifyNewLocalVideoData(video);
-
+		p_ZCamera->notify(VIDEO, &video);
 /*
 		cVector3d vec;
 		vec.x = rand() % 10;

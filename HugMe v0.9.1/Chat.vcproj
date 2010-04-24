@@ -969,7 +969,23 @@
 				>
 			</File>
 			<File
+				RelativePath=".\ZCamera\ZCameraObserver.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\ZCamera\ZCameraObserver.h"
+				>
+			</File>
+			<File
 				RelativePath=".\ZCamera\ZCameraProxy.h"
+				>
+			</File>
+			<File
+				RelativePath=".\ZCamera\ZCameraSubject.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\ZCamera\ZCameraSubject.h"
 				>
 			</File>
 		</Filter>

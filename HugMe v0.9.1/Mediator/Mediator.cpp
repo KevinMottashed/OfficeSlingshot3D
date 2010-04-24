@@ -59,6 +59,7 @@ Mediator::Mediator() :
 	// attach ourselves as an observer to the components
 	m_pNetworkManager->attach(this);
 	m_pUserInterfaceManager->attach(this);
+	m_pZCameraManager->attach(this);
 
 	// create the logger
 	m_pLogger = new ConsoleLogger();
@@ -85,12 +86,6 @@ Mediator::~Mediator()
 CDialog* Mediator::getMainWindow()
 {
 	return m_pUserInterfaceManager->getMainWindow();
-}
-
-void Mediator::notifyNewLocalVideoData(VideoData video)
-{
-	m_pUserInterfaceManager->displayLocalFrame(video);
-	m_pNetworkManager->sendVideoData(video);
 }
 
 void Mediator::notifyNewLocalSlingshotPosition(const cVector3d& position)
@@ -529,5 +524,31 @@ void Mediator::closeApplication()
 void Mediator::sendChatMessage(const std::string& message)
 {
 	m_pNetworkManager->sendChatMessage(message);
+	return;
+}
+
+void Mediator::update(ZCameraUpdateContext context, const void* data)
+{
+	switch(context)
+	{
+		case VIDEO:
+		{
+			assert(data != NULL);
+			handleLocalVideoData(*(VideoData*) data);
+			break;
+		}
+		default:
+		{
+			// all updates should be handled
+			assert(false);
+		}
+	}
+	return;
+}
+
+void Mediator::handleLocalVideoData(VideoData video)
+{
+	m_pUserInterfaceManager->displayLocalFrame(video);
+	m_pNetworkManager->sendVideoData(video);
 	return;
 }
