@@ -26,7 +26,8 @@
 class Mediator :	public NetworkObserver,
 					public UserInterfaceObserver,
 					public ZCameraObserver,
-					public FalconObserver
+					public FalconObserver,
+					public GameObserver
 {
 public:
 	// gets the singleton
@@ -38,6 +39,7 @@ public:
 	virtual void update(UserInterfaceUpdateContext context, const void* data);
 	virtual void update(ZCameraUpdateContext context, const void* data);
 	virtual void update(FalconUpdateContext context, const void* data);
+	virtual void update(GameUpdateContext context, const void* data);
 
 	// get the main window of the application
 	CDialog* getMainWindow();	

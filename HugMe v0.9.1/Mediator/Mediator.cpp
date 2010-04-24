@@ -61,6 +61,7 @@ Mediator::Mediator() :
 	m_pUserInterfaceManager->attach(this);
 	m_pZCameraManager->attach(this);
 	m_pFalconPenManager->attach(this);
+	m_pGame->attach(this);
 
 	// create the logger
 	m_pLogger = new ConsoleLogger();
@@ -546,5 +547,12 @@ void Mediator::handleLocalSlingshotPosition(const cVector3d& position)
 
 	// let the peer know that we have moved our slingshot
 	m_pNetworkManager->sendSlingshotPosition(position);
+	return;
+}
+
+void Mediator::update(GameUpdateContext context, const void* data)
+{
+	// there are currently no updates coming from the game
+	assert(false);
 	return;
 }

@@ -1,32 +1,21 @@
-// Game.h: interface for the Game class.
-//
-//////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_GAME_H__C33BEB5F_D09F_4D06_A8D6_0E91A23E7C71__INCLUDED_)
-#define AFX_GAME_H__C33BEB5F_D09F_4D06_A8D6_0E91A23E7C71__INCLUDED_
-
-#if _MSC_VER > 1000
-#pragma once
-#endif // _MSC_VER > 1000
+#ifndef GAME_H
+#define GAME_H
 
 #include "Stdafx.h"
 #include "chai3d.h"
 
 #include "Projectile.h"
+#include "GameSubject.h"
 
-class Game  
+class Game : public GameSubject
 {
 public:
 	Game();
 	virtual ~Game();
 
-	// start the game
+	// alter the game state
 	void start();
-
-	// pause the game
 	void pause();
-
-	// stop the game
 	void stop();
 
 	// get/set local slingshot position, these are protected by a mutex
