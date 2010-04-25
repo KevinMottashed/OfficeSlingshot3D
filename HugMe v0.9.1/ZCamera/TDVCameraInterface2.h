@@ -13,8 +13,8 @@
 //	Version:		1.12
 //****************************************************************************
 
-#ifndef TDV_CAMERA_INTERFACE2_H__
-#define TDV_CAMERA_INTERFACE2_H__
+#ifndef TDV_CAMERA_INTERFACE2_H
+#define TDV_CAMERA_INTERFACE2_H
 
 // TDVCameraInterfaceBase2 contains 
 class CONNECTDM_DLL_API TDVCameraInterfaceBase2 {
@@ -244,3 +244,4 @@ public:
 
 
 #endif
+

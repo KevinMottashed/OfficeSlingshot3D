@@ -1,5 +1,5 @@
-#ifndef __TACTILE_ARRAY_H__
-#define __TACTILE_ARRAY_H__
+#ifndef TACTILE_ARRAY_H
+#define TACTILE_ARRAY_H
 
 #include "mmsystem.h"
 #include "math.h"
@@ -150,3 +150,4 @@ public:
 };
 
 #endif
+

@@ -1,13 +1,5 @@
-// ZCameraManager.h: interface for the ZCameraManager class.
-//
-//////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_ZCAMERAMANAGER_H__2520671A_E135_424D_8BBB_12E57375D836__INCLUDED_)
-#define AFX_ZCAMERAMANAGER_H__2520671A_E135_424D_8BBB_12E57375D836__INCLUDED_
-
-#if _MSC_VER > 1000
-#pragma once
-#endif // _MSC_VER > 1000
+#ifndef ZCAMERA_MANAGER_H
+#define ZCAMERA_MANAGER_H
 
 #include "StdAfx.h"
 #include "chai3d.h"
@@ -51,4 +43,5 @@ private:
 
 };
 
-#endif // !defined(AFX_ZCAMERAMANAGER_H__2520671A_E135_424D_8BBB_12E57375D836__INCLUDED_)
+#endif
+ 

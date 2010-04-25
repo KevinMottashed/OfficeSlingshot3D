@@ -7,3 +7,4 @@ NetworkObserver::NetworkObserver()
 NetworkObserver::~NetworkObserver()
 {
 }
+

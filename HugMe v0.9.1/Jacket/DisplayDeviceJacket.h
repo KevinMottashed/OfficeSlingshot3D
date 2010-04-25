@@ -1,13 +1,5 @@
-// DisplayDevice.h: interface for the DisplayDevice class.
-//
-//////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_DISPLAYDEVICE_H__809A67E4_0DFE_414D_B801_86B8A624097A__INCLUDED_)
-#define AFX_DISPLAYDEVICE_H__809A67E4_0DFE_414D_B801_86B8A624097A__INCLUDED_
-
-#if _MSC_VER > 1000
-#pragma once
-#endif // _MSC_VER > 1000
+#ifndef DISPLAY_DEVICE_JACKET
+#define DISPLAY_DEVICE_JACKET
 
 #include "TactileArray.h"
 
@@ -37,4 +29,5 @@ public:
 	void setActNeck(int a_actX, double a_intensity);
 };
 
-#endif // !defined(AFX_DISPLAYDEVICE_H__809A67E4_0DFE_414D_B801_86B8A624097A__INCLUDED_)
+#endif
+ 

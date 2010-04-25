@@ -12,8 +12,8 @@
 //	Version:		1.00
 //****************************************************************************
 
-#pragma once
-
+#ifndef DEPTH_CAMERA_H
+#define DEPTH_CAMERA_H
 
 #include "windows.h"
 #include "tdvCameraInterface.h"
@@ -148,3 +148,6 @@ private:
 	unsigned char*			m_pSecondary;				// holds the latest secondary IR frame
 	bool					m_bIsInitialized;			// Is the DepthCamera initialized?
 };
+
+#endif
+

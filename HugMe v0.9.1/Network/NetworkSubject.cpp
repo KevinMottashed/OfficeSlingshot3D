@@ -32,3 +32,4 @@ void NetworkSubject::notify(NetworkUpdateContext context, const void* data)
 	}
 	return;
 }
+

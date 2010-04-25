@@ -1,5 +1,5 @@
-#ifndef CONSOLE_H_
-#define CONSOLE_H_
+#ifndef CONSOLE_H
+#define CONSOLE_H
 
 #include "stdafx.h"
 
@@ -38,3 +38,4 @@ ConsoleStream& operator<<(ConsoleStream& c, const T& t)
 static ConsoleStream console;
 
 #endif
+

@@ -506,3 +506,4 @@ void CDepthCamera::FreezeVideo(bool freeze)
 {
 	m_pCameraInterfaceBase->setCameraCommand(CMD_FREEZE_VIDEO, freeze);
 }
+

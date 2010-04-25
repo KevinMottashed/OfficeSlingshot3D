@@ -56,3 +56,4 @@ void Configuration::setUserPreferences(const UserPreferences& pref)
 	writeToFile();
 	return;
 }
+

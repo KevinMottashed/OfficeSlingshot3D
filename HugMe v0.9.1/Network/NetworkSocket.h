@@ -1,11 +1,5 @@
-#if !defined(AFX_NETWORKSOCKET_H__75C413B1_CF23_4933_AAC8_800170373195__INCLUDED_)
-#define AFX_NETWORKSOCKET_H__75C413B1_CF23_4933_AAC8_800170373195__INCLUDED_
-
-#if _MSC_VER > 1000
-#pragma once
-#endif // _MSC_VER > 1000
-// NetworkSocket.h : header file
-//
+#ifndef NETWORK_SOCKET_H
+#define NETWORK_SOCKET_H
 
 #include "NetworkManager.h"
 
@@ -53,9 +47,5 @@ private:
 	NetworkSocket* m_pClient;
 };
 
-/////////////////////////////////////////////////////////////////////////////
+#endif
 
-//{{AFX_INSERT_LOCATION}}
-// Microsoft Visual C++ will insert additional declarations immediately before the previous line.
-
-#endif // !defined(AFX_NETWORKSOCKET_H__75C413B1_CF23_4933_AAC8_800170373195__INCLUDED_)

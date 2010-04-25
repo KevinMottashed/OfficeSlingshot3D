@@ -1,7 +1,3 @@
-// Projectile.cpp: implementation of the Projectile class.
-//
-//////////////////////////////////////////////////////////////////////
-
 #include "stdafx.h"
 #include "Projectile.h"
 
@@ -54,3 +50,4 @@ std::ostream& operator<<(std::ostream& os, const Projectile& projectile)
 	os << "position=" << projectile.getPosition() << " speed=" << projectile.getSpeed();
 	return os;
 }
+

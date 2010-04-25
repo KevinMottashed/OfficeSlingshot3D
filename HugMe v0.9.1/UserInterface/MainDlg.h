@@ -1,11 +1,5 @@
-#if !defined(AFX_MAINDLG_H__C6E6906F_C091_400D_B656_29072BCDB657__INCLUDED_)
-#define AFX_MAINDLG_H__C6E6906F_C091_400D_B656_29072BCDB657__INCLUDED_
-
-#if _MSC_VER > 1000
-#pragma once
-#endif // _MSC_VER > 1000
-// MainDlg.h : header file
-//
+#ifndef MAIN_DLG_H
+#define MAIN_DLG_H
 
 #include "stdafx.h"
 #include "Resource.h"
@@ -125,4 +119,5 @@ private:
 //{{AFX_INSERT_LOCATION}}
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
-#endif // !defined(AFX_MAINDLG_H__C6E6906F_C091_400D_B656_29072BCDB657__INCLUDED_)
+#endif
+ 

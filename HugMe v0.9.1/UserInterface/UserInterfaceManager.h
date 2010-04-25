@@ -1,13 +1,5 @@
-// UserInterfaceManager.h: interface for the UserInterfaceManager class.
-//
-//////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_USERINTERFACEMANAGER_H__DC0E386C_0D7D_44F6_B8B3_0BA8C08D1B1A__INCLUDED_)
-#define AFX_USERINTERFACEMANAGER_H__DC0E386C_0D7D_44F6_B8B3_0BA8C08D1B1A__INCLUDED_
-
-#if _MSC_VER > 1000
-#pragma once
-#endif // _MSC_VER > 1000
+#ifndef USER_INTERFACE_MANAGER_H
+#define USER_INTERFACE_MANAGER_H
 
 #include "stdafx.h"
 #include "MainDlg.h"
@@ -79,4 +71,5 @@ private:
 	CMainDlg* m_pMainDlg;
 };
 
-#endif // !defined(AFX_USERINTERFACEMANAGER_H__DC0E386C_0D7D_44F6_B8B3_0BA8C08D1B1A__INCLUDED_)
+#endif
+ 

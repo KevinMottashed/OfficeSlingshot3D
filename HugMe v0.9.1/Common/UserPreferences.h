@@ -17,3 +17,4 @@ std::ostream& operator<<(std::ostream& os, const UserPreferences& pref);
 std::istream& operator>>(std::istream& is, UserPreferences& pref);
 
 #endif
+

@@ -1,7 +1,3 @@
-// SyncReaderWriters.cpp: implementation of the SyncReaderWriters class.
-//
-//////////////////////////////////////////////////////////////////////
-
 #include "stdafx.h"
 #include "SyncReaderWriters.h"
 
@@ -132,3 +128,4 @@ SyncWriterLock::~SyncWriterLock()
 {
 	sync->unlock_writer();
 }
+

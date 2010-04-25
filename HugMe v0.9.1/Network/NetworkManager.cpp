@@ -1,9 +1,5 @@
-// NetworkManager.cpp: implementation of the NetworkManager class.
-//
-//////////////////////////////////////////////////////////////////////
-
 // STL & Windows
-#include "StdAfx.h"
+#include "stdAfx.h"
 
 #include "NetworkManager.h"
 #include "SyncLocker.h"
@@ -855,3 +851,4 @@ void NetworkManager::handleControlMessage(const ControlPacket& message)
 	}
 	return;
 }
+

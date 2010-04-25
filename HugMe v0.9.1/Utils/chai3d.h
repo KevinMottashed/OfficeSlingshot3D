@@ -5,9 +5,10 @@
  *      Author: kevin
  */
 
-#ifndef CHAI3D_H_
-#define CHAI3D_H_
+#ifndef CHAI3D_H
+#define CHAI3D_H
 
 #include "CVector3d.h"
 
 #endif /* CHAI3D_H_ */
+

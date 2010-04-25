@@ -1,7 +1,3 @@
-// Game.cpp: implementation of the Game class.
-//
-//////////////////////////////////////////////////////////////////////
-
 #include "stdafx.h"
 #include "Game.h"
 #include "SyncLocker.h"
@@ -179,3 +175,4 @@ DWORD Game::GameLoopThread(Game* pGame)
 	}
 	return 0;
 }
+

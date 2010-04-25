@@ -1,4 +1,4 @@
-#include "StdAfx.h"
+#include "stdafx.h"
 #include "TactileArray.h"
 
 #pragma warning(disable : 4996)
@@ -161,3 +161,4 @@ void TactileArray::initialize(void)
 
 	openSerialPort(m_portNum);
 }
+

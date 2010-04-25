@@ -706,3 +706,4 @@ DWORD CSerialPort::GetWriteBufferSize()
 {
 	return m_nWriteBufferSize;
 }
+

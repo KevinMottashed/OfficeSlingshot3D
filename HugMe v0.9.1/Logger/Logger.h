@@ -1,5 +1,5 @@
-#ifndef LOGGER_H_
-#define LOGGER_H_
+#ifndef LOGGER_H
+#define LOGGER_H
 
 #include "NetworkProxy.h"
 #include "FalconProxy.h"
@@ -61,3 +61,4 @@ protected:
 };
 
 #endif
+

@@ -1,7 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "Stdafx.h"
+#include "stdafx.h"
 #include "chai3d.h"
 
 #include "Projectile.h"
@@ -77,5 +77,5 @@ private:
 	// reset the game to its original state
 	void reset();
 };
+#endif
 
-#endif // !defined(AFX_GAME_H__C33BEB5F_D09F_4D06_A8D6_0E91A23E7C71__INCLUDED_)

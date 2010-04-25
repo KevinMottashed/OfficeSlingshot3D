@@ -1,15 +1,7 @@
-// ControlPacket.h: interface for the ControlPacket class.
-//
-//////////////////////////////////////////////////////////////////////
+#ifndef CONTROL_PACKET_H
+#define CONTROL_PACKET_H
 
-#if !defined(AFX_CONTROLPACKET_H__D6F3D183_3B6D_41A0_AB79_14DEA957D8CE__INCLUDED_)
-#define AFX_CONTROLPACKET_H__D6F3D183_3B6D_41A0_AB79_14DEA957D8CE__INCLUDED_
-
-#if _MSC_VER > 1000
-#pragma once
-#endif // _MSC_VER > 1000
-
-#include "Stdafx.h"
+#include "stdafx.h"
 
 enum ControlPacketType
 {
@@ -74,4 +66,5 @@ private:
 	void writeEmptyPacket(ControlPacketHeader header);
 };
 
-#endif // !defined(AFX_CONTROLPACKET_H__D6F3D183_3B6D_41A0_AB79_14DEA957D8CE__INCLUDED_)
+#endif
+

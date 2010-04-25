@@ -1,18 +1,9 @@
-// Preferences.cpp : implementation file
-//
-
 #include <iostream>
 #include <fstream>
 
 #include "stdafx.h"
 #include "chat.h"
 #include "Preferences.h"
-
-#ifdef _DEBUG
-#define new DEBUG_NEW
-#undef THIS_FILE
-static char THIS_FILE[] = __FILE__;
-#endif
 
 using namespace std;
 
@@ -60,3 +51,4 @@ END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
 // CPreferences message handlers
+

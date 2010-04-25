@@ -1,15 +1,7 @@
-// SyncReaderWriters.h: interface for the SyncReaderWriters class.
-//
-//////////////////////////////////////////////////////////////////////
+#ifndef SYNC_READERS_WRITERS_H
+#define SYNC_READERS_WRITERS_H
 
-#if !defined(AFX_SYNCREADERWRITERS_H__670C51BB_C7E4_48A0_90D9_B19A66B0A409__INCLUDED_)
-#define AFX_SYNCREADERWRITERS_H__670C51BB_C7E4_48A0_90D9_B19A66B0A409__INCLUDED_
-
-#if _MSC_VER > 1000
-#pragma once
-#endif // _MSC_VER > 1000
-
-#include "Stdafx.h"
+#include "stdafx.h"
 
 /*
  * The SyncReaderWriters is a utility class designed to solve the readers/writers concurrency problem
@@ -93,4 +85,5 @@ private:
 	SyncReaderWriters* sync;
 };
 
-#endif // !defined(AFX_SYNCREADERWRITERS_H__670C51BB_C7E4_48A0_90D9_B19A66B0A409__INCLUDED_)
+#endif
+ 

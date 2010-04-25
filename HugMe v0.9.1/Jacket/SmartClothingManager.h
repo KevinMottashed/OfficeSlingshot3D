@@ -1,13 +1,5 @@
-// SmartClothingManager.h: interface for the SmartClothingManager class.
-//
-//////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_SMARTCLOTHINGMANAGER_H__D57F7F21_D039_4BF1_9255_065D47A8F264__INCLUDED_)
-#define AFX_SMARTCLOTHINGMANAGER_H__D57F7F21_D039_4BF1_9255_065D47A8F264__INCLUDED_
-
-#if _MSC_VER > 1000
-#pragma once
-#endif // _MSC_VER > 1000
+#ifndef SMART_CLOTHING_MANAGER_H
+#define SMART_CLOTHING_MANAGER_H
 
 //Should be created in HumanModel... 
 typedef enum tagHumanPart {
@@ -34,4 +26,5 @@ private:
 	SmartClothingManager& operator=(const SmartClothingManager& smartClothingManager); // intentionally not implemented
 };
 
-#endif // !defined(AFX_SMARTCLOTHINGMANAGER_H__D57F7F21_D039_4BF1_9255_065D47A8F264__INCLUDED_)
+#endif
+ 

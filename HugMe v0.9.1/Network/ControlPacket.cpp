@@ -1,7 +1,3 @@
-// ControlPacket.cpp: implementation of the ControlPacket class.
-//
-//////////////////////////////////////////////////////////////////////
-
 #include "ControlPacket.h"
 
 //////////////////////////////////////////////////////////////////////
@@ -167,3 +163,4 @@ ControlPacketType ControlPacket::getType() const
 	ControlPacketHeader* header = (ControlPacketHeader*) &m_vPacket[0];
 	return header->type;
 }
+

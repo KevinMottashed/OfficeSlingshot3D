@@ -1,4 +1,5 @@
-#pragma once
+#ifndef SYNC_LOCKER_H
+#define SYNC_LOCKER_H
 
 #include "stdafx.h"
 
@@ -22,3 +23,6 @@ public:
 };
 
 #define synchronized(obj) if (SyncLocker __sync_locker__ = obj) ASSERT(0); else
+
+#endif
+

@@ -1,7 +1,3 @@
-// ZCameraManager.cpp: implementation of the ZCameraManager class.
-//
-//////////////////////////////////////////////////////////////////////
-
 #include "stdafx.h"
 #include "ZCameraManager.h"
 
@@ -125,3 +121,4 @@ void ZCameraManager::reverseFrame(unsigned char* &RGB,int channels){
 	delete []tmp;
 
 }
+

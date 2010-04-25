@@ -1,7 +1,7 @@
-#ifndef _NETWORK_CODES_H__
-#define _NETWORK_CODES_H__
+#ifndef NETWORK_CODES_H
+#define NETWORK_CODES_H
 
-#include "Stdafx.h"
+#include "stdafx.h"
 
 // All the possible return codes from network related functions
 enum rc_network
@@ -62,3 +62,4 @@ static std::string lookup(rc_network code)
 }
 
 #endif
+

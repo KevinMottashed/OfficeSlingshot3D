@@ -1,13 +1,5 @@
-// FalconPenManager.h: interface for the FalconPenManager class.
-//
-//////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_FALCONPENMANAGER_H__AFCF2776_E117_47EC_94C7_97838C3AFB59__INCLUDED_)
-#define AFX_FALCONPENMANAGER_H__AFCF2776_E117_47EC_94C7_97838C3AFB59__INCLUDED_
-
-#if _MSC_VER > 1000
-#pragma once
-#endif // _MSC_VER > 1000
+#ifndef FALCON_PEN_MANAGER_H
+#define FALCON_PEN_MANAGER_H
 
 #include "stdafx.h"
 #include "FalconSubject.h"
@@ -37,5 +29,5 @@ private:
 	bool falcon_enabled;
 };
 
-#endif // !defined(AFX_FALCONPENMANAGER_H__AFCF2776_E117_47EC_94C7_97838C3AFB59__INCLUDED_)
+#endif
 

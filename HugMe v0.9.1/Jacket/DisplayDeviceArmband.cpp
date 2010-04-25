@@ -1,16 +1,6 @@
-// DisplayDeviceArmband.cpp: implementation of the DisplayDeviceArmband class.
-//
-//////////////////////////////////////////////////////////////////////
-
 #include "stdafx.h"
 #include "Chat.h"
 #include "DisplayDeviceArmband.h"
-
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
@@ -77,3 +67,4 @@ void DisplayDeviceArmband::setActForearm(double a_actX, double a_actY)
 		setIntensity(0, actIndex[3], actInt[3]);
 	}
 }
+

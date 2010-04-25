@@ -1,7 +1,3 @@
-// Mediator.cpp: implementation of the Mediator class.
-//
-//////////////////////////////////////////////////////////////////////
-
 #include "Mediator.h"
 #include "ConsoleStream.h"
 
@@ -543,3 +539,4 @@ void Mediator::update(GameUpdateContext context, const void* data)
 	assert(false);
 	return;
 }
+

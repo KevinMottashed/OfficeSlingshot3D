@@ -32,3 +32,4 @@ void ZCameraSubject::notify(ZCameraUpdateContext context, const void* data)
 	}
 	return;
 }
+

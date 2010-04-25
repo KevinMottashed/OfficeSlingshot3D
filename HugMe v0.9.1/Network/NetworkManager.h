@@ -1,13 +1,5 @@
-// NetworkManager.h: interface for the NetworkManager class.
-//
-//////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_NETWORKMANAGER_H__3D85BBC3_3F80_477F_ABAB_1DAE8326532A__INCLUDED_)
-#define AFX_NETWORKMANAGER_H__3D85BBC3_3F80_477F_ABAB_1DAE8326532A__INCLUDED_
-
-#if _MSC_VER > 1000
-#pragma once
-#endif // _MSC_VER > 1000
+#ifndef NETWORK_MANAGER_H
+#define NETWORK_MANAGER_H
 
 #include "NetworkSocket.h"
 #include "NetworkCodes.h"
@@ -188,4 +180,5 @@ private:
 	mutable CSemaphore* m_sEstablished;
 };
 
-#endif // !defined(AFX_NETWORKMANAGER_H__3D85BBC3_3F80_477F_ABAB_1DAE8326532A__INCLUDED_)
+#endif
+

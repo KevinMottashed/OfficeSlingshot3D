@@ -1,16 +1,7 @@
-// MainDlg.cpp : implementation file
-//
-
 #include "stdafx.h"
 #include "chat.h"
 #include "MainDlg.h"
 #include "Preferences.h"
-
-#ifdef _DEBUG
-#define new DEBUG_NEW
-#undef THIS_FILE
-static char THIS_FILE[] = __FILE__;
-#endif
 
 using namespace std;
 

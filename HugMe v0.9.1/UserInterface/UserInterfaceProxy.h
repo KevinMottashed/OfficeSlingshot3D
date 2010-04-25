@@ -7,3 +7,4 @@
 class UserInterfaceManager;
 class UserInterfaceSubject;
 class UserInterfaceObserver;
+

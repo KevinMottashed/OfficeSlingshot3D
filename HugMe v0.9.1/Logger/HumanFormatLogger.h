@@ -257,3 +257,4 @@ void HumanFormatLogger<S,T>::logLocalVideoData(const VideoData& data)
 }
 
 #endif
+

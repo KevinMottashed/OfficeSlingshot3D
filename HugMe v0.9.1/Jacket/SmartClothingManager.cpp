@@ -1,7 +1,3 @@
-// SmartClothingManager.cpp: implementation of the SmartClothingManager class.
-//
-//////////////////////////////////////////////////////////////////////
-
 #include "stdafx.h"
 #include "SmartClothingManager.h"
 #include "DisplayDeviceJacket.h"
@@ -75,3 +71,4 @@ void SmartClothingManager::vibrate(HumanPart touchedPart, int x, int y, int time
 
 		SetTimer(NULL,1, 2000, MySetTimerProc);
 }
+

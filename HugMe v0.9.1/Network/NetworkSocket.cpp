@@ -1,16 +1,4 @@
-// NetworkSocket.cpp : implementation file
-//
-
 #include "NetworkSocket.h"
-
-#ifdef _DEBUG
-#define new DEBUG_NEW
-#undef THIS_FILE
-static char THIS_FILE[] = __FILE__;
-#endif
-
-/////////////////////////////////////////////////////////////////////////////
-// NetworkSocket
 
 NetworkSocket::NetworkSocket(NetworkManager* pManager) :
 	m_pManager(pManager), m_bIsServer(false), m_pClient(NULL)

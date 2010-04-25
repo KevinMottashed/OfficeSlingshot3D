@@ -17,3 +17,4 @@ std::istream& operator>>(std::istream& is, UserPreferences& pref)
 	is >> pref.jacketPort;
 	return is;
 }
+

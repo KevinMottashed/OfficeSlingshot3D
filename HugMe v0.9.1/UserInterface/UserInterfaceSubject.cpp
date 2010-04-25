@@ -32,3 +32,4 @@ void UserInterfaceSubject::notify(UserInterfaceUpdateContext context, const void
 	}
 	return;
 }
+

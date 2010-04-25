@@ -32,3 +32,4 @@ void GameSubject::notify(GameUpdateContext context, const void* data)
 	}
 	return;
 }
+

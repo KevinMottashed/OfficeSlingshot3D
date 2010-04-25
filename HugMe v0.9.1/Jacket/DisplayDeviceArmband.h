@@ -1,13 +1,5 @@
-// DisplayDeviceArmband.h: interface for the DisplayDeviceArmband class.
-//
-//////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_DISPLAYDEVICEARMBAND_H__809A67E4_0DFE_414D_B801_86B8A624097A__INCLUDED_)
-#define AFX_DISPLAYDEVICEARMBAND_H__809A67E4_0DFE_414D_B801_86B8A624097A__INCLUDED_
-
-#if _MSC_VER > 1000
-#pragma once
-#endif // _MSC_VER > 1000
+#ifndef DISPLAY_DEVICE_ARMBAND_H
+#define DISPLAY_DEVICE_ARMBAND_H
 
 #include "TactileArray.h"
 
@@ -29,4 +21,5 @@ public:
 	void setActForearm(double a_actX, double a_actY);
 };
 
-#endif // !defined(AFX_DISPLAYDEVICEARMBAND_H__809A67E4_0DFE_414D_B801_86B8A624097A__INCLUDED_)
+#endif
+ 

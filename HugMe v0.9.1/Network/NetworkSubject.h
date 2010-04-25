@@ -1,5 +1,5 @@
-#ifndef NETWORK_SUBJECT_H_
-#define NETWORK_SUBJECT_H_
+#ifndef NETWORK_SUBJECT_H
+#define NETWORK_SUBJECT_H
 
 #include "stdafx.h"
 #include "NetworkObserver.h"
@@ -20,3 +20,4 @@ private:
 };
 
 #endif
+

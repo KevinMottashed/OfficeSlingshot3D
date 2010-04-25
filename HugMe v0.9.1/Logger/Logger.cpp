@@ -181,3 +181,4 @@ void Logger::update(ZCameraUpdateContext context, const void* data)
 	}
 	return;
 }
+

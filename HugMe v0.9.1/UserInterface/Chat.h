@@ -1,13 +1,6 @@
-// Chat.h : main header file for the CHAT application
-//
-
-#if !defined(AFX_CHAT_H__69F7179A_9B63_4006_9E2E_7E0714F15BA4__INCLUDED_)
-#define AFX_CHAT_H__69F7179A_9B63_4006_9E2E_7E0714F15BA4__INCLUDED_
-
-#if _MSC_VER > 1000
-#pragma once
-#endif // _MSC_VER > 1000
-
+#ifndef CHAT_H
+#define CHAT_H
+ 
 #include "stdafx.h"
 
 #ifndef __AFXWIN_H__
@@ -48,4 +41,5 @@ private:
 //{{AFX_INSERT_LOCATION}}
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
-#endif // !defined(AFX_CHAT_H__69F7179A_9B63_4006_9E2E_7E0714F15BA4__INCLUDED_)
+#endif
+ 

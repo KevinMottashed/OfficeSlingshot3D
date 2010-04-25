@@ -1,5 +1,5 @@
-#ifndef FALCON_SUBJECT_H_
-#define FALCON_SUBJECT_H_
+#ifndef FALCON_SUBJECT_H
+#define FALCON_SUBJECT_H
 
 #include "stdafx.h"
 #include "FalconObserver.h"
@@ -20,3 +20,4 @@ private:
 };
 
 #endif
+

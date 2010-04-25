@@ -1,16 +1,6 @@
-// DisplayDevice.cpp: implementation of the DisplayDevice class.
-//
-//////////////////////////////////////////////////////////////////////
-
 #include "stdafx.h"
 #include "Chat.h"
 #include "DisplayDeviceJacket.h"
-
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
@@ -137,3 +127,4 @@ void DisplayDeviceJacket::setActNeck(int a_actX, double a_intensity)
 	setIntensityAll(0);
 	setIntensity(0, m_neckArray[a_actX][0], (int)a_intensity);
 }
+

@@ -1,16 +1,8 @@
-// DataPacket.h: interface for the DataPacket class.
-//
-//////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_DATAPACKET_H__642CEFC6_DF57_4693_9B56_D98227F17BE7__INCLUDED_)
-#define AFX_DATAPACKET_H__642CEFC6_DF57_4693_9B56_D98227F17BE7__INCLUDED_
-
-#if _MSC_VER > 1000
-#pragma once
-#endif // _MSC_VER > 1000
+#ifndef DATA_PACKET_H
+#define DATA_PACKET_H
 
 // STL & Windows
-#include "StdAfx.h"
+#include "stdAfx.h"
 
 // chai3d
 #include "chai3d.h"
@@ -132,4 +124,5 @@ T DataPacket::readData() const
 	return data;
 }
 
-#endif // !defined(AFX_DATAPACKET_H__642CEFC6_DF57_4693_9B56_D98227F17BE7__INCLUDED_)
+#endif
+ 

@@ -7,3 +7,4 @@ ZCameraObserver::ZCameraObserver()
 ZCameraObserver::~ZCameraObserver()
 {
 }
+

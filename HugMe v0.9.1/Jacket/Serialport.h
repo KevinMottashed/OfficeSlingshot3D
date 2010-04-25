@@ -15,8 +15,8 @@
 */
 
 
-#ifndef __SERIALPORT_H__
-#define __SERIALPORT_H__
+#ifndef SERIALPORT_H
+#define SERIALPORT_H
 
 #define WM_COMM_BREAK_DETECTED		WM_USER+1	// A break was detected on input.
 #define WM_COMM_CTS_DETECTED		WM_USER+2	// The CTS (clear-to-send) signal changed state. 
@@ -145,4 +145,5 @@ protected:
 	int					bufferRead;
 };
 
-#endif __SERIALPORT_H__
+#endif
+ 

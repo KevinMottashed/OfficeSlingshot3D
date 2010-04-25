@@ -1,11 +1,5 @@
-#if !defined(AFX_PREFERENCES_H__249F5F65_D95E_4F53_81D5_17C8ABB098C5__INCLUDED_)
-#define AFX_PREFERENCES_H__249F5F65_D95E_4F53_81D5_17C8ABB098C5__INCLUDED_
-
-#if _MSC_VER > 1000
-#pragma once
-#endif // _MSC_VER > 1000
-// Preferences.h : header file
-//
+#ifndef PREFERENCES_H
+#define PREFERENCES_H
 
 #include "stdafx.h"
 #include "UserPreferences.h"
@@ -50,4 +44,5 @@ private:
 //{{AFX_INSERT_LOCATION}}
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
-#endif // !defined(AFX_PREFERENCES_H__249F5F65_D95E_4F53_81D5_17C8ABB098C5__INCLUDED_)
+#endif
+ 

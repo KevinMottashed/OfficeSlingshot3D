@@ -1,5 +1,5 @@
-#ifndef VIDEO_DATA_H_
-#define VIDEO_DATA_H_
+#ifndef VIDEO_DATA_H
+#define VIDEO_DATA_H
 
 static const unsigned int IMAGE_WIDTH = 320;
 static const unsigned int IMAGE_HEIGHT = 240;
@@ -16,3 +16,4 @@ struct VideoData
 };
 
 #endif
+

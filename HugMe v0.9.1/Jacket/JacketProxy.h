@@ -3,3 +3,4 @@
 
 // forward declarations
 class SmartClothingManager;
+

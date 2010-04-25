@@ -1,7 +1,3 @@
-// FalconPenManager.cpp: implementation of the FalconPenManager class.
-//
-//////////////////////////////////////////////////////////////////////
-
 #include "stdafx.h"
 #include "FalconPenManager.h"
 #include "chai3d.h"

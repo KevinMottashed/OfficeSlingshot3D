@@ -7,3 +7,4 @@ ConsoleStream::ConsoleStream()
 ConsoleStream::~ConsoleStream()
 {
 }
+

@@ -1,13 +1,5 @@
-// Mediator.h: interface for the Mediator class.
-//
-//////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_CONTROLLER_H__11C3ACF3_BC70_49EC_BA36_3849E78C8CB6__INCLUDED_)
-#define AFX_CONTROLLER_H__11C3ACF3_BC70_49EC_BA36_3849E78C8CB6__INCLUDED_
-
-#if _MSC_VER > 1000
-#pragma once
-#endif // _MSC_VER > 1000
+#ifndef MEDIATOR_H
+#define MEDIATOR_H
 
 #include "stdafx.h"
 #include "NetworkProxy.h"
@@ -134,4 +126,5 @@ private:
 
 };
 
-#endif // !defined(AFX_CONTROLLER_H__11C3ACF3_BC70_49EC_BA36_3849E78C8CB6__INCLUDED_)
+#endif
+
