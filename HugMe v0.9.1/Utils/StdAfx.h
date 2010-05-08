@@ -35,11 +35,11 @@ typedef LONG LONG_PTR;
 // Standard Template Library (STL)
 //----------------------------------------------
 
-// This is microsft's way of dealing with this warning in vc++6
-// the warning occurs because the STL is used
-#pragma warning (disable : 4786)
-
+// from some reason microsoft decided to deprecate certain algorithms
+#pragma warning (disable : 4996)
 #include <algorithm>
+#pragma warning (default : 4996)
+
 #include <fstream>
 #include <iostream>
 #include <memory>
@@ -47,9 +47,6 @@ typedef LONG LONG_PTR;
 #include <sstream>
 #include <string>
 #include <vector>
-
-// renable the warning
-#pragma warning (default : 4786)
 
 //----------------------------------------------
 // Standard C Headers
