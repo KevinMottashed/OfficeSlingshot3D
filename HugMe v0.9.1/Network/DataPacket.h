@@ -11,7 +11,7 @@
 #include "Projectile.h"
 #include "VideoData.h"
 
-#include "Serialize.h" // so we can serialize/deserialize the data
+#include "Serialization.h" // so we can serialize/deserialize the data
 
 enum DataPacketType
 {
