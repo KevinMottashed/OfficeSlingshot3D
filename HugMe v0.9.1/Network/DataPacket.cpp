@@ -91,19 +91,19 @@ void DataPacket::setVideoData(VideoData video)
 void DataPacket::setPlayerPosition(const cVector3d& position)
 {
 	// write the header and data into the packet
-	writeData(DATA_PACKET_PLAYER_POSITION, &position);
+	writeData(DATA_PACKET_PLAYER_POSITION, position);
 }
 
 void DataPacket::setSlingshotPosition(const cVector3d& position)
 {
 	// write the header and data into the packet
-	writeData(DATA_PACKET_SLINGSHOT_POSITION, &position);
+	writeData(DATA_PACKET_SLINGSHOT_POSITION, position);
 }
 
 void DataPacket::setProjectile(const Projectile& projectile)
 {
 	// write the header and data into the packet
-	writeData(DATA_PACKET_PROJECTILE, &projectile);
+	writeData(DATA_PACKET_PROJECTILE, projectile);
 }
 
 void DataPacket::setSlingshotPullback()

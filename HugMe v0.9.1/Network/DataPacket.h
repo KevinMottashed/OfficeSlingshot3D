@@ -11,6 +11,8 @@
 #include "Projectile.h"
 #include "VideoData.h"
 
+#include "Serialize.h" // so we can serialize/deserialize the data
+
 enum DataPacketType
 {
 	DATA_PACKET_VIDEO,
@@ -102,13 +104,19 @@ void DataPacket::writeData(DataPacketType type, const T& data)
 	// create a header for this packet
 	DataPacketHeader header;
 	header.type = type;
-	header.size = sizeof(T);
+
+	// serialize the data
+	std::vector<BYTE> bytes;
+	Serialization::serialize(data, bytes);
+
+	// we now know the size of the data
+	header.size = bytes.size();
 
 	// copy the header into the packet
 	m_vPacket.insert(m_vPacket.end(), (BYTE*) &header, ((BYTE*) &header) + sizeof(DataPacketHeader));
 
-	// copy the data into the packet
-	m_vPacket.insert(m_vPacket.end(), (BYTE*) &data, ((BYTE*) &data) + sizeof(T));	
+	// copy the serialized data into the packet
+	m_vPacket.insert(m_vPacket.end(), bytes.begin(), bytes.end());	
 
 	return;
 }
@@ -118,8 +126,8 @@ T DataPacket::readData() const
 {
 	T data;
 
-	// copy the data from the packet
-	memcpy(&data, &m_vPacket[0] + sizeof(DataPacketHeader), sizeof(T));
+	// deserialize the packet into the data
+	Serialization::deserialize(m_vPacket.begin() + sizeof(DataPacketHeader), m_vPacket.end(), data);
 
 	return data;
 }

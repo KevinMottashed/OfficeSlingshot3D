@@ -1209,6 +1209,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Utils\StaticAssert.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Utils\StdAfx.cpp"
 				>
 				<FileConfiguration
@@ -1360,6 +1364,14 @@
 			</File>
 			<File
 				RelativePath=".\Network\NetworkSubject.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Network\Serialization.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Network\Serialization.h"
 				>
 			</File>
 		</Filter>
