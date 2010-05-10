@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include "chai3d.h"
 #include "StaticAssert.h"
+#include "Projectile.h"
 
 namespace Serialization
 {
@@ -17,9 +18,16 @@ namespace Serialization
 	// serializes a cVector3d
 	void serialize(const cVector3d& data, std::vector<BYTE>& bytes);
 
+	// serializes a projectile
+	void serialize(const Projectile& data, std::vector<BYTE>& bytes);
+
 	// serializes a type T
 	template <typename T>
 	void serialize(const T& data, std::vector<BYTE>& bytes);
+
+	// get the size of a serialized data type
+	template <typename T>
+	unsigned int getSerializedSize();
 
 	//--------------------------------------------------------------------
 	// DESERIALIZATION
@@ -32,6 +40,10 @@ namespace Serialization
 	// deserialize a cVector3d
 	template <typename Iterator>
 	void deserialize(Iterator begin, Iterator end, cVector3d& data);
+
+	// deserialize a projectile
+	template <typename Iterator>
+	void deserialize(Iterator begin, Iterator end, Projectile& data);
 
 	// deserialize a type T
 	template <typename Iterator, typename T>
@@ -79,6 +91,29 @@ void Serialization::deserialize(Iterator begin, Iterator end, cVector3d& data)
 	std::copy(it, it + sizeof(double), (BYTE*) &data.y);
 	it += sizeof(double);
 	std::copy(it, it + sizeof(double), (BYTE*) &data.z);
+	return;
+}
+
+template <typename Iterator>
+void Serialization::deserialize(Iterator begin, Iterator end, Projectile& data)
+{
+	// the iterator must point to a single byte
+	static_assert(sizeof(*begin) == 1);
+
+	// we are expecting 2 cVector3d
+	assert(end - begin == 2 * getSerializedSize<cVector3d>());
+
+	cVector3d temp;
+	Iterator it = begin;
+	
+	// deserialize the position
+	deserialize(it, it + getSerializedSize<cVector3d>(), temp);
+	data.setPosition(temp);
+	it += getSerializedSize<cVector3d>();
+	
+	// deserialize the speed
+	deserialize(it, it + getSerializedSize<cVector3d>(), temp);
+	data.setSpeed(temp);	
 	return;
 }
 

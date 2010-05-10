@@ -38,11 +38,23 @@ void Projectile::setPosition(double x, double y, double z)
 	position.z = z;
 }
 
+void Projectile::setPosition(const cVector3d& v)
+{
+	position = v;
+	return;
+}
+
 void Projectile::setSpeed(double x, double y, double z)
 {
 	speed.x = x;
 	speed.y = y;
 	speed.z = z;
+}
+
+void Projectile::setSpeed(const cVector3d& v)
+{
+	speed = v;
+	return;
 }
 
 std::ostream& operator<<(std::ostream& os, const Projectile& projectile)

@@ -105,18 +105,14 @@ void DataPacket::writeData(DataPacketType type, const T& data)
 	DataPacketHeader header;
 	header.type = type;
 
-	// serialize the data
-	std::vector<BYTE> bytes;
-	Serialization::serialize(data, bytes);
-
 	// we now know the size of the data
-	header.size = bytes.size();
+	header.size = Serialization::getSerializedSize<T>();
 
 	// copy the header into the packet
 	m_vPacket.insert(m_vPacket.end(), (BYTE*) &header, ((BYTE*) &header) + sizeof(DataPacketHeader));
 
-	// copy the serialized data into the packet
-	m_vPacket.insert(m_vPacket.end(), bytes.begin(), bytes.end());	
+	// serialize the data into the packet
+	Serialization::serialize(data, m_vPacket);	
 
 	return;
 }
