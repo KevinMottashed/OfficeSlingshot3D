@@ -50,7 +50,7 @@
 				Name="VCCLCompilerTool"
 				AdditionalOptions="/D /NODEFAULTLIB:library&quot; &quot; /D _CRT_SECURE_NO_DEPRECATE /D &quot;WINVER=0x0501&quot;"
 				Optimization="0"
-				AdditionalIncludeDirectories="include;&quot;include\ARToolKit-2.72.1&quot;;&quot;include\Z-Cam&quot;;include\HandTracker;&quot;..\chai3d-2.0.0\src&quot;;&quot;..\chai3d-2.0.0\external\OpenGL\msvc&quot;;Utils\;Mediator\;Falcon\;Game\;Jacket\;Network\;UserInterface\;ZCamera\;Objects\;Logger\;Common\"
+				AdditionalIncludeDirectories="include;&quot;include\ARToolKit-2.72.1&quot;;&quot;include\Z-Cam&quot;;include\HandTracker;&quot;..\chai3d-2.0.0\src&quot;;&quot;..\chai3d-2.0.0\external\OpenGL\msvc&quot;;Utils\;Mediator\;Falcon\;Game\;Jacket\;Network\;UserInterface\;ZCamera\;Objects\;Logger\;Common\;Main\;res\"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_MSVC"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -225,7 +225,15 @@
 				>
 			</File>
 			<File
+				RelativePath=".\res\Chat.rc"
+				>
+			</File>
+			<File
 				RelativePath="res\Chat.rc2"
+				>
+			</File>
+			<File
+				RelativePath=".\UserInterface\resource.h"
 				>
 			</File>
 			<File
@@ -993,18 +1001,6 @@
 			Name="UserInterface"
 			>
 			<File
-				RelativePath=".\UserInterface\Chat.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\UserInterface\Chat.h"
-				>
-			</File>
-			<File
-				RelativePath=".\UserInterface\Chat.rc"
-				>
-			</File>
-			<File
 				RelativePath=".\UserInterface\MainDlg.cpp"
 				>
 			</File>
@@ -1018,10 +1014,6 @@
 			</File>
 			<File
 				RelativePath=".\UserInterface\Preferences.h"
-				>
-			</File>
-			<File
-				RelativePath=".\UserInterface\resource.h"
 				>
 			</File>
 			<File
@@ -1372,6 +1364,36 @@
 			</File>
 			<File
 				RelativePath=".\Network\Serialization.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Main"
+			>
+			<File
+				RelativePath=".\Main\Chat.cpp"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						ObjectFile="$(IntDir)\$(InputName)1.obj"
+						XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						ObjectFile="$(IntDir)\$(InputName)1.obj"
+						XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\Main\Chat.h"
 				>
 			</File>
 		</Filter>
