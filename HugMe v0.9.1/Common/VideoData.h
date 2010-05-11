@@ -8,11 +8,12 @@ static const unsigned int IMAGE_ARRAY_SIZE = IMAGE_WIDTH * IMAGE_HEIGHT * BYTES_
 
 struct VideoData
 {
-	VideoData(const char* rgb, unsigned int width, unsigned int height) : rgb(rgb), width(width), height(height) {}
+	VideoData() : rgb(NULL), width(0), height(0) {}
+	VideoData(char* rgb, unsigned int width, unsigned int height) : rgb(rgb), width(width), height(height) {}
 
-	const char* const rgb;
-	const unsigned int width;
-	const unsigned int height;
+	char* rgb;
+	unsigned int width;
+	unsigned int height;
 };
 
 #endif

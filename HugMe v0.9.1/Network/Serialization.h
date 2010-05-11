@@ -5,6 +5,7 @@
 #include "chai3d.h"
 #include "StaticAssert.h"
 #include "Projectile.h"
+#include "VideoData.h"
 
 namespace Serialization
 {
@@ -20,6 +21,9 @@ namespace Serialization
 
 	// serializes a projectile
 	void serialize(const Projectile& data, std::vector<BYTE>& bytes);
+
+	// serializes video data
+	void serialize(const VideoData& data, std::vector<BYTE>& bytes);
 
 	// serializes a type T
 	template <typename T>
@@ -44,6 +48,10 @@ namespace Serialization
 	// deserialize a projectile
 	template <typename Iterator>
 	void deserialize(Iterator begin, Iterator end, Projectile& data);
+
+	// deserialize a video data
+	template <typename Iterator>
+	void deserialize(Iterator begin, Iterator end, VideoData& data);
 
 	// deserialize a type T
 	template <typename Iterator, typename T>
@@ -114,6 +122,27 @@ void Serialization::deserialize(Iterator begin, Iterator end, Projectile& data)
 	// deserialize the speed
 	deserialize(it, it + getSerializedSize<cVector3d>(), temp);
 	data.setSpeed(temp);	
+	return;
+}
+
+template <typename Iterator>
+void Serialization::deserialize(Iterator begin, Iterator end, VideoData& data)
+{
+	// the iterator must point to a single byte
+	static_assert(sizeof(*begin) == 1);
+
+	// we are expecting an instance of VideoData
+	assert(end - begin == getSerializedSize<VideoData>());
+
+	Iterator it = begin;
+	std::copy(it, it + sizeof(unsigned int), (BYTE*) &data.width);
+	it += sizeof(unsigned int);
+	std::copy(it, it + sizeof(unsigned int), (BYTE*) &data.height);
+	it += sizeof(unsigned int);
+
+	// fix this mess later
+	data.rgb = const_cast<char*>((const char*) &(*it));
+
 	return;
 }
 

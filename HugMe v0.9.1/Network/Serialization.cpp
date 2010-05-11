@@ -19,6 +19,15 @@ void Serialization::serialize(const Projectile& data, std::vector<BYTE>& bytes)
 	return;
 }
 
+// the video data will be serialized as <width><height><rgb>
+void Serialization::serialize(const VideoData& data, std::vector<BYTE>& bytes)
+{
+	serialize(data.width, bytes); // <width>
+	serialize(data.height, bytes); // <height>
+	bytes.insert(bytes.end(), data.rgb, data.rgb + data.width * data.height * BYTES_PER_PIXEL); // <rgb>
+	return;
+}
+
 template <>
 unsigned int Serialization::getSerializedSize<cVector3d>()
 {
@@ -31,4 +40,11 @@ unsigned int Serialization::getSerializedSize<Projectile>()
 {
 	// a projectile is serialized as <position><speed>
 	return 2 * getSerializedSize<cVector3d>();
+}
+
+template <>
+unsigned int Serialization::getSerializedSize<VideoData>()
+{
+	// video data is serialized as <width><height><rgb>	
+	return 2 * sizeof(unsigned int) + IMAGE_ARRAY_SIZE;
 }
