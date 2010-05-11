@@ -3,7 +3,7 @@
 
 
 Mediator::Mediator() :
-		m_bGameIsRunning(false)
+		gameState(NOT_PLAYING)
 {
 	// create the various components
 	m_pConfiguration = new Configuration("userPreferences.txt");
@@ -49,11 +49,11 @@ Mediator::~Mediator()
 
 void Mediator::startGame()
 {
-	if (m_bGameIsRunning)
+	if (gameState == PLAYING)
 	{
 		return; // already started
 	}
-	m_bGameIsRunning = true;
+	gameState = PLAYING;
 	m_pGame->start();
 	m_pFalconPenManager->start();
 	m_pZCameraManager->start();
@@ -61,7 +61,7 @@ void Mediator::startGame()
 
 void Mediator::pauseGame()
 {
-	m_bGameIsRunning = false;
+	gameState = PAUSED;
 	m_pGame->pause();
 	m_pFalconPenManager->stop();
 	m_pZCameraManager->stop();
@@ -69,7 +69,7 @@ void Mediator::pauseGame()
 
 void Mediator::exitGame()
 {
-	m_bGameIsRunning = false;
+	gameState = NOT_PLAYING;
 	m_pGame->stop();
 	m_pFalconPenManager->stop();
 	m_pZCameraManager->stop();
@@ -139,40 +139,58 @@ void Mediator::update(NetworkUpdateContext context, const void* data)
 		{
 			// the network has received some new video
 			assert(data != NULL);
-			handleRemoteVideoData(*(VideoData*) data);
+			if (gameState == PLAYING)
+			{
+				handleRemoteVideoData(*(VideoData*) data);
+			}
 			break;
 		}
 		case RECEIVED_SLINGSHOT_POSITION:
 		{
 			// the network has received a slingshot position
 			assert(data != NULL);
-			handleRemoteSlingshotPosition(*(cVector3d*) data);
+			if (gameState == PLAYING)
+			{
+				handleRemoteSlingshotPosition(*(cVector3d*) data);
+			}
 			break;
 		}
 		case RECEIVED_PROJECTILE:
 		{
 			// the network has received a projectile
 			assert(data != NULL);
-			handleRemoteProjectile(*(Projectile*) data);
+			if (gameState == PLAYING)
+			{
+				handleRemoteProjectile(*(Projectile*) data);
+			}
 			break;
 		}
 		case RECEIVED_PULLBACK:
 		{
 			// the network has received a slingshot pullback
-			handleRemotePullback();
+			if (gameState == PLAYING)
+			{
+				handleRemotePullback();
+			}
 			break;
 		}
 		case RECEIVED_RELEASE:
 		{
 			// the network has received a slingshot release
-			handleRemoteRelease();
+			if (gameState == PLAYING)
+			{
+				handleRemoteRelease();
+			}
 			break;
 		}
 		case RECEIVED_PLAYER_POSITION:
 		{
 			// the network has received a player position
 			assert(data != NULL);
-			handleRemotePlayerPosition(*(cVector3d*) data);
+			if (gameState == PLAYING)
+			{
+				handleRemotePlayerPosition(*(cVector3d*) data);
+			}
 			break;
 		}
 		default:
@@ -484,7 +502,10 @@ void Mediator::update(ZCameraUpdateContext context, const void* data)
 		case VIDEO:
 		{
 			assert(data != NULL);
-			handleLocalVideoData(*(VideoData*) data);
+			if (gameState == PLAYING)
+			{
+				handleLocalVideoData(*(VideoData*) data);
+			}
 			break;
 		}
 		default:
@@ -510,7 +531,10 @@ void Mediator::update(FalconUpdateContext context, const void* data)
 		case SLINGSHOT_POSITION:
 		{
 			assert(data != NULL);
-			handleLocalSlingshotPosition(*(cVector3d*) data);
+			if (gameState == PLAYING)
+			{
+				handleLocalSlingshotPosition(*(cVector3d*) data);
+			}
 			break;
 		}
 		default:
