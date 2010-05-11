@@ -82,7 +82,7 @@
 				OutputFile=".\Debug/Chat.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="&quot;lib\ARToolKit-2.72.1&quot;;&quot;..\chai3d-2.0.0\external\hdFalcon\lib&quot;;&quot;..\chai3d-2.0.0\external\OpenGL\msvc&quot;;&quot;..\chai3d-2.0.0\lib\msvc8&quot;;&quot;lib/Z-Cam&quot;;lib;lib\HandTracker"
+				AdditionalLibraryDirectories="&quot;lib\ARToolKit-2.72.1&quot;;&quot;lib/Z-Cam&quot;;lib;lib\HandTracker;lib\chai3d"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile=".\Debug/Chat.pdb"
 				SubSystem="2"
