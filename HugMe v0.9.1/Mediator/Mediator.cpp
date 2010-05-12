@@ -2,20 +2,20 @@
 #include "ConsoleStream.h"
 
 
-Mediator::Mediator() :
-		gameState(NOT_PLAYING)
+Mediator::Mediator(Network* network) :
+	network(network),
+	gameState(NOT_PLAYING)
 {
 	// create the various components
 	m_pConfiguration = new Configuration("userPreferences.txt");
 	m_pUserInterfaceManager = new UserInterfaceManager(m_pConfiguration->getUserPreferences());
-	m_pNetworkManager = new NetworkManager();
 	m_pFalconPenManager = new FalconPenManager();
 	m_pZCameraManager = new ZCameraManager();
 	m_pSmartClothingManager = new SmartClothingManager();
 	m_pGame = new Game();
 
 	// attach ourselves as an observer to the components
-	m_pNetworkManager->attach(this);
+	network->attach(this);
 	m_pUserInterfaceManager->attach(this);
 	m_pZCameraManager->attach(this);
 	m_pFalconPenManager->attach(this);
@@ -25,7 +25,7 @@ Mediator::Mediator() :
 	m_pLogger = new HumanFormatFileLogger("HumanFormat.log");
 
 	// attach the logger to the components
-	m_pNetworkManager->attach(m_pLogger);
+	network->attach(m_pLogger);
 	m_pUserInterfaceManager->attach(m_pLogger);
 	m_pZCameraManager->attach(m_pLogger);
 	m_pFalconPenManager->attach(m_pLogger);
@@ -36,7 +36,6 @@ Mediator::Mediator() :
 
 Mediator::~Mediator()
 {
-	delete m_pNetworkManager;
 	delete m_pUserInterfaceManager;
 	delete m_pFalconPenManager;
 	delete m_pZCameraManager;
@@ -381,7 +380,7 @@ void Mediator::connect()
 	SyncLocker lock(m_csConfiguration);
 
 	UserPreferences prefs = m_pConfiguration->getUserPreferences();
-	rc_network error = m_pNetworkManager->connect(prefs.ipAddress, prefs.name);
+	rc_network error = network->connect(prefs.ipAddress, prefs.name);
 	if (error == SUCCESS)
 	{
 		m_pUserInterfaceManager->displayConnectionEstablished();
@@ -399,7 +398,7 @@ void Mediator::listen()
 	SyncLocker lock(m_csConfiguration);
 
 	UserPreferences prefs = m_pConfiguration->getUserPreferences();
-	rc_network error = m_pNetworkManager->listen(prefs.name);
+	rc_network error = network->listen(prefs.name);
 	
 	if (error == SUCCESS)
 	{
@@ -420,7 +419,7 @@ void Mediator::disconnect()
 	exitGame();
 
 	// tell the network manager to disconnect us
-	m_pNetworkManager->disconnect();
+	network->disconnect();
 	return;
 }
 
@@ -433,7 +432,7 @@ void Mediator::changePreferences(const UserPreferences& preferences)
 
 	if (currentPreferences.name != preferences.name)
 	{
-		m_pNetworkManager->sendUserName(preferences.name);
+		network->sendUserName(preferences.name);
 	}
 
 	if (currentPreferences.armBandPort != preferences.armBandPort)
@@ -456,7 +455,7 @@ void Mediator::localStartGame()
 	startGame();
 
 	// and let the peer know that the game is starting
-	m_pNetworkManager->sendStartGame();
+	network->sendStartGame();
 	return;
 }
 
@@ -466,7 +465,7 @@ void Mediator::localPauseGame()
 	pauseGame();
 
 	// and let the peer know that the game is paused
-	m_pNetworkManager->sendPauseGame();
+	network->sendPauseGame();
 	return;
 }
 
@@ -476,7 +475,7 @@ void Mediator::localExitGame()
 	exitGame();
 
 	// and let the peer know that the game is over
-	m_pNetworkManager->sendEndGame();
+	network->sendEndGame();
 	return;
 }
 
@@ -485,13 +484,13 @@ void Mediator::closeApplication()
 	// the only thing to do is to close the sockets so the other end has a clean disconnect
 	// by closing the sockets the other end will receive an end of file of its sockets
 	// this is how the remote end will know that we have disconnected
-	m_pNetworkManager->disconnect();
+	network->disconnect();
 	return;
 }
 
 void Mediator::sendChatMessage(const std::string& message)
 {
-	m_pNetworkManager->sendChatMessage(message);
+	network->sendChatMessage(message);
 	return;
 }
 
@@ -520,7 +519,7 @@ void Mediator::update(ZCameraUpdateContext context, const void* data)
 void Mediator::handleLocalVideoData(VideoData video)
 {
 	m_pUserInterfaceManager->displayLocalFrame(video);
-	m_pNetworkManager->sendVideoData(video);
+	network->sendVideoData(video);
 	return;
 }
 
@@ -553,7 +552,7 @@ void Mediator::handleLocalSlingshotPosition(const cVector3d& position)
 	m_pGame->setLocalSlingshotPosition(position);
 
 	// let the peer know that we have moved our slingshot
-	m_pNetworkManager->sendSlingshotPosition(position);
+	network->sendSlingshotPosition(position);
 	return;
 }
 

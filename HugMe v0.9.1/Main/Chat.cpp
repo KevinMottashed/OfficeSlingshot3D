@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Chat.h"
 #include "MediatorProxy.h"
+#include "NetworkProxy.h"
 
 /////////////////////////////////////////////////////////////////////////////
 // CChatApp
@@ -48,8 +49,11 @@ BOOL CChatApp::InitInstance()
 	CoInitialize(NULL);
 	AfxInitRichEdit();
 
+	// Initialize the components
+	WinsockNetwork network;
+
 	// this will initialize the Mediator class and it will initialize the system
-	Mediator mediator;
+	Mediator mediator(&network);
 
 	CDialog* mainWindow = mediator.getMainWindow();
 

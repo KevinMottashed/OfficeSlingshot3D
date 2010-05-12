@@ -611,15 +611,15 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Network\Network.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Network\Network.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Network\NetworkCodes.h"
-				>
-			</File>
-			<File
-				RelativePath=".\Network\NetworkManager.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\Network\NetworkManager.h"
 				>
 			</File>
 			<File
@@ -656,6 +656,14 @@
 			</File>
 			<File
 				RelativePath=".\Network\Serialization.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Network\WinsockNetwork.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Network\WinsockNetwork.h"
 				>
 			</File>
 		</Filter>

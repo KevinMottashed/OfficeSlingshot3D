@@ -1,7 +1,7 @@
 // STL & Windows
 #include "stdAfx.h"
 
-#include "NetworkManager.h"
+#include "WinsockNetwork.h"
 #include "SyncLocker.h"
 
 // These are the constants for shutting down sockets for version 1 of the socket
@@ -12,12 +12,12 @@ static const int shutdown_send = 1;
 static const int shutdown_receive_and_send = 2;
 
 // various contants for ports and message sizes
-const int NetworkManager::chat_port = 8869;
-const int NetworkManager::data_port = 8870;
-const int NetworkManager::maximum_control_packet_size = 4096;
-const int NetworkManager::maximum_data_packet_size = 100000;
+const int WinsockNetwork::chat_port = 8869;
+const int WinsockNetwork::data_port = 8870;
+const int WinsockNetwork::maximum_control_packet_size = 4096;
+const int WinsockNetwork::maximum_data_packet_size = 100000;
 
-NetworkManager::NetworkManager() :
+WinsockNetwork::WinsockNetwork() :
 	// the control socket
 	m_pControlSocket(NULL),
 	m_hControlSocket(0),
@@ -42,7 +42,7 @@ NetworkManager::NetworkManager() :
 	InitializeCriticalSection(&m_csIsEstablishing);
 }
 
-NetworkManager::~NetworkManager()
+WinsockNetwork::~WinsockNetwork()
 {
 	DeleteCriticalSection(&m_csControlSocketSend);
 	DeleteCriticalSection(&m_csDataSocketSend);
@@ -53,7 +53,7 @@ NetworkManager::~NetworkManager()
 }
 
 // start listening to for connections
-rc_network NetworkManager::listen(const std::string& userName)
+rc_network WinsockNetwork::listen(const std::string& userName)
 {
 	// set our user name
 	this->userName = userName;
@@ -107,7 +107,7 @@ rc_network NetworkManager::listen(const std::string& userName)
 	return SUCCESS;
 }
 
-rc_network NetworkManager::connect(const std::string& ipAddress, const std::string& userName)
+rc_network WinsockNetwork::connect(const std::string& ipAddress, const std::string& userName)
 {
 	// set our user name
 	this->userName = userName;
@@ -173,7 +173,7 @@ rc_network NetworkManager::connect(const std::string& ipAddress, const std::stri
 	return establishConnection();
 }
 
-rc_network NetworkManager::disconnect()
+rc_network WinsockNetwork::disconnect()
 {
 	// disconnect is an operation that modifies the connection status
 	// we must therefore request write access to the connection resource before proceeding
@@ -200,7 +200,7 @@ rc_network NetworkManager::disconnect()
 	return SUCCESS;
 }
 
-void NetworkManager::peerDisconnect()
+void WinsockNetwork::peerDisconnect()
 {
 	// a peer disconnect is an operation that modifies the connection status
 	// we must therefore request write access to the connection resource before proceeding
@@ -220,7 +220,7 @@ void NetworkManager::peerDisconnect()
 	return;
 }
 
-void NetworkManager::networkError(rc_network error)
+void WinsockNetwork::networkError(rc_network error)
 {
 	// a network error is an operation that modifies the connection status
 	// we must therefore request write access to the connection resource before proceeding
@@ -238,7 +238,7 @@ void NetworkManager::networkError(rc_network error)
 	return;
 }
 
-void NetworkManager::notifyAccept(NetworkSocket* socket)
+void WinsockNetwork::notifyAccept(NetworkSocket* socket)
 {
 	bool establish = false;
 
@@ -294,7 +294,7 @@ void NetworkManager::notifyAccept(NetworkSocket* socket)
 	return;
 }
 
-void NetworkManager::resetConnectionStatus()
+void WinsockNetwork::resetConnectionStatus()
 {
 	// reset the connection status to not connected
 	m_bControlConnected = false;
@@ -307,13 +307,13 @@ void NetworkManager::resetConnectionStatus()
 	return;
 }
 
-void NetworkManager::resetSockets()
+void WinsockNetwork::resetSockets()
 {
 	shutdownSockets();
 	closeSockets();
 }
 
-void NetworkManager::shutdownSockets()
+void WinsockNetwork::shutdownSockets()
 {
 	// shutdown sockets
 	if (m_hControlSocket)
@@ -331,7 +331,7 @@ void NetworkManager::shutdownSockets()
 	return;
 }
 
-void NetworkManager::closeSockets()
+void WinsockNetwork::closeSockets()
 {
 	// Close sockets
 	if (m_hControlSocket)
@@ -362,7 +362,7 @@ void NetworkManager::closeSockets()
 	return;
 }
 
-DWORD NetworkManager::ControlReceiveThread(NetworkManager* pNetworkManager)
+DWORD WinsockNetwork::ControlReceiveThread(WinsockNetwork* network)
 {
 	BYTE receivedBuffer[maximum_control_packet_size];
 	std::vector<BYTE> queue;
@@ -382,20 +382,20 @@ DWORD NetworkManager::ControlReceiveThread(NetworkManager* pNetworkManager)
 		// look for operations that require write access
 		if (peerDisconnect)
 		{
-			pNetworkManager->peerDisconnect();
+			network->peerDisconnect();
 			return 0;
 		}
 		else if (socketError)
 		{
-			pNetworkManager->networkError(ERROR_SOCKET_ERROR);
+			network->networkError(ERROR_SOCKET_ERROR);
 			return 0;
 		}
 
 		// receiving data through the control socket is an operation that reads the connection status
 		// we must therefore request read access to the connection resource before proceeding
-		SyncReaderLock statusLock = SyncReaderLock(pNetworkManager->m_rwsync_ConnectionStatus);
+		SyncReaderLock statusLock = SyncReaderLock(network->m_rwsync_ConnectionStatus);
 
-		if (!pNetworkManager->m_bIsConnected)
+		if (!network->m_bIsConnected)
 		{
 			// we are no longer connected, we can stop receiving data
 			return 0;
@@ -405,7 +405,7 @@ DWORD NetworkManager::ControlReceiveThread(NetworkManager* pNetworkManager)
 		Sleep(100);
 
 		// receive data through the network
-		int rc = recv(pNetworkManager->m_hControlSocket, (char*) receivedBuffer, maximum_control_packet_size, 0);
+		int rc = recv(network->m_hControlSocket, (char*) receivedBuffer, maximum_control_packet_size, 0);
 
 		switch (rc) {
 		case SOCKET_ERROR: // fail when a socket error occurs
@@ -435,7 +435,7 @@ DWORD NetworkManager::ControlReceiveThread(NetworkManager* pNetworkManager)
 		// in the same recv(...) call, we need to read as many messages as possible from the stream before continuing
 		while (packet.readPacket(queue))
 		{
-			pNetworkManager->handleControlMessage(packet);
+			network->handleControlMessage(packet);
 
 			// start a new packet
 			packet = ControlPacket();
@@ -444,7 +444,7 @@ DWORD NetworkManager::ControlReceiveThread(NetworkManager* pNetworkManager)
 	return 1;
 }
 
-DWORD NetworkManager::DataReceiveThread(NetworkManager* pNetworkManager)
+DWORD WinsockNetwork::DataReceiveThread(WinsockNetwork* network)
 {
 	BYTE receivedBuffer[maximum_data_packet_size];
 	std::vector<BYTE> queue;
@@ -464,20 +464,20 @@ DWORD NetworkManager::DataReceiveThread(NetworkManager* pNetworkManager)
 		// look for operations that require write access
 		if (peerDisconnect)
 		{
-			pNetworkManager->peerDisconnect();
+			network->peerDisconnect();
 			return 0;
 		}
 		else if (socketError)
 		{
-			pNetworkManager->networkError(ERROR_SOCKET_ERROR);
+			network->networkError(ERROR_SOCKET_ERROR);
 			return 0;
 		}		
 
 		// receiving data through the data socket is an operation that reads the connection status
 		// we must therefore request read access to the connection resource before proceeding
-		SyncReaderLock statusLock = SyncReaderLock(pNetworkManager->m_rwsync_ConnectionStatus);
+		SyncReaderLock statusLock = SyncReaderLock(network->m_rwsync_ConnectionStatus);
 
-		if (!pNetworkManager->m_bIsConnected)
+		if (!network->m_bIsConnected)
 		{
 			// we are no longer connected, we can stop receiving data
 			return 0;
@@ -487,7 +487,7 @@ DWORD NetworkManager::DataReceiveThread(NetworkManager* pNetworkManager)
 		Sleep(100);
 
 		// receive data through the network
-		int rc = recv(pNetworkManager->m_hDataSocket, (char*) receivedBuffer, maximum_control_packet_size, 0);
+		int rc = recv(network->m_hDataSocket, (char*) receivedBuffer, maximum_control_packet_size, 0);
 
 		switch (rc) {
 		case SOCKET_ERROR: // fail when a socket error occurs
@@ -519,13 +519,13 @@ DWORD NetworkManager::DataReceiveThread(NetworkManager* pNetworkManager)
 		while (packet.readPacket(queue))
 		{
 			// notify the message handler that a new packet has arrived
-			pNetworkManager->handleDataMessage(packet);
+			network->handleDataMessage(packet);
 		}
 	}
 	return 1;
 }
 
-rc_network NetworkManager::initializeConnection()
+rc_network WinsockNetwork::initializeConnection()
 {
 	// detach the sockets from their threads
 	m_hControlSocket = m_pControlSocket->Detach();
@@ -541,7 +541,7 @@ rc_network NetworkManager::initializeConnection()
 	return SUCCESS;
 }
 
-rc_network NetworkManager::establishConnection()
+rc_network WinsockNetwork::establishConnection()
 {
 	// we need to send our username to establish the connection
 	rc_network error = sendUserName(userName);
@@ -564,7 +564,7 @@ rc_network NetworkManager::establishConnection()
 	}
 }
 
-void NetworkManager::terminateConnection()
+void WinsockNetwork::terminateConnection()
 {
 	// close the sockets and reset the connection
 	resetConnectionStatus();
@@ -572,84 +572,84 @@ void NetworkManager::terminateConnection()
 	return;
 }
 
-rc_network NetworkManager::sendUserName(const std::string& userName)
+rc_network WinsockNetwork::sendUserName(const std::string& userName)
 {
 	ControlPacket packet;
 	packet.setUserName(userName);
 	return syncSendControlMessage(packet);
 }
 
-rc_network NetworkManager::sendChatMessage(const std::string& message)
+rc_network WinsockNetwork::sendChatMessage(const std::string& message)
 {
 	ControlPacket packet;
 	packet.setChatMessage(message);
 	return syncSendControlMessage(packet);
 }
 
-rc_network NetworkManager::sendStartGame()
+rc_network WinsockNetwork::sendStartGame()
 {
 	ControlPacket packet;
 	packet.setStartGame();
 	return syncSendControlMessage(packet);
 }
 
-rc_network NetworkManager::sendPauseGame()
+rc_network WinsockNetwork::sendPauseGame()
 {
 	ControlPacket packet;
 	packet.setPauseGame();
 	return syncSendControlMessage(packet);
 }
 
-rc_network NetworkManager::sendEndGame()
+rc_network WinsockNetwork::sendEndGame()
 {
 	ControlPacket packet;
 	packet.setEndGame();
 	return syncSendControlMessage(packet);
 }
 
-rc_network NetworkManager::sendVideoData(VideoData video)
+rc_network WinsockNetwork::sendVideoData(VideoData video)
 {
 	DataPacket message;
 	message.setVideoData(video);
 	return syncSendDataMessage(message);
 }
 
-rc_network NetworkManager::sendPlayerPosition(const cVector3d& position)
+rc_network WinsockNetwork::sendPlayerPosition(const cVector3d& position)
 {
 	DataPacket message;
 	message.setPlayerPosition(position);
 	return syncSendDataMessage(message);
 }
 
-rc_network NetworkManager::sendSlingshotPosition(const cVector3d& position)
+rc_network WinsockNetwork::sendSlingshotPosition(const cVector3d& position)
 {
 	DataPacket message;
 	message.setSlingshotPosition(position);
 	return syncSendDataMessage(message);
 }
 
-rc_network NetworkManager::sendProjectile(const Projectile& projectile)
+rc_network WinsockNetwork::sendProjectile(const Projectile& projectile)
 {
 	DataPacket message;
 	message.setProjectile(projectile);
 	return syncSendDataMessage(message);
 }
 
-rc_network NetworkManager::sendSlingshotPullback()
+rc_network WinsockNetwork::sendSlingshotPullback()
 {
 	DataPacket message;
 	message.setSlingshotPullback();
 	return syncSendDataMessage(message);
 }
 
-rc_network NetworkManager::sendSlingshotRelease()
+rc_network WinsockNetwork::sendSlingshotRelease()
 {
 	DataPacket message;
 	message.setSlingshotRelease();
 	return syncSendDataMessage(message);
 }
 
-rc_network NetworkManager::syncSendDataMessage(const DataPacket& packet)
+rc_network WinsockNetwork::syncSendDataMessage(const DataPacket& packet)
 {
 	// sending data through the control socket is an operation that reads the connection status
 	// we must therefore request read access to the connection resource before proceeding
@@ -705,7 +705,7 @@ rc_network NetworkManager::syncSendDataMessage(const DataPacket& packet)
 	return SUCCESS;
 }
 
-void NetworkManager::handleDataMessage(const DataPacket& message)
+void WinsockNetwork::handleDataMessage(const DataPacket& message)
 {
 	switch (message.getType())
 	{
@@ -749,7 +749,7 @@ void NetworkManager::handleDataMessage(const DataPacket& message)
 	return;
 }
 
-rc_network NetworkManager::syncSendControlMessage(const ControlPacket& packet)
+rc_network WinsockNetwork::syncSendControlMessage(const ControlPacket& packet)
 {
 	// sending data through the control socket is an operation that reads the connection status
 	// we must therefore request read access to the connection resource before proceeding
@@ -801,7 +801,7 @@ rc_network NetworkManager::syncSendControlMessage(const ControlPacket& packet)
 	return SUCCESS;
 }
 
-void NetworkManager::handleControlMessage(const ControlPacket& message)
+void WinsockNetwork::handleControlMessage(const ControlPacket& message)
 {
 	switch(message.getType())
 	{

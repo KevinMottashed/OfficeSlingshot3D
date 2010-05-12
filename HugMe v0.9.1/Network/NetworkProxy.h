@@ -1,11 +1,13 @@
 // public members of the network module
-#include "NetworkManager.h"
+#include "WinsockNetwork.h"
+#include "Network.h"
 #include "NetworkCodes.h"
 #include "NetworkObserver.h"
 #include "NetworkSubject.h"
 
 // forward declarations
-class NetworkManager;
+class WinsockNetwork;
+class Network;
 class NetworkObserver;
 class NetworkSubject;
 

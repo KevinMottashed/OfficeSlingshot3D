@@ -1,13 +1,13 @@
 #ifndef NETWORK_SOCKET_H
 #define NETWORK_SOCKET_H
 
-#include "NetworkManager.h"
+#include "WinsockNetwork.h"
 
 // STL & Windows
 #include "StdAfx.h"
 
 // Forward declaration (files include each other)
-class NetworkManager;
+class WinsockNetwork;
 
 /////////////////////////////////////////////////////////////////////////////
 // NetworkSocket command target
@@ -19,7 +19,7 @@ public:
 
 // Operations
 public:
-	NetworkSocket(NetworkManager* pManager);
+	NetworkSocket(WinsockNetwork* network);
 	virtual ~NetworkSocket();
 
 	virtual SOCKET Detach();
@@ -42,7 +42,7 @@ public:
 // Implementation
 protected:
 private:
-	NetworkManager* m_pManager;
+	WinsockNetwork* network;
 	bool m_bIsServer;
 	NetworkSocket* m_pClient;
 };

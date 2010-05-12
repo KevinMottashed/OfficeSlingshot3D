@@ -88,7 +88,7 @@ void CMainDlg::OnNetworkDisconnect()
 // method used to listen for incoming connection attempts
 void CMainDlg::OnNetworkListen() 
 {
-	// call the listen method of the networkManager through the Mediator
+	// let the UI manager know that the listen button has been pushed
 	pUserInterfaceManager->networkListenButtonPushed();	
 	return;
 }

@@ -1,9 +1,9 @@
-#ifndef NETWORK_MANAGER_H
-#define NETWORK_MANAGER_H
+#ifndef WINSOCK_NETWORK_H
+#define WINSOCK_NETWORK_H
 
 #include "NetworkSocket.h"
 #include "NetworkCodes.h"
-#include "NetworkSubject.h"
+#include "Network.h"
 #include "DataPacket.h"
 #include "ControlPacket.h"
 #include "Stdafx.h"
@@ -13,51 +13,53 @@
 // Forward declarations (files include each other)
 class NetworkSocket;
 
-class NetworkManager : public NetworkSubject 
+// A concrete implementation of the network class
+// this class uses windows sockets to implement the send/receive functionality
+class WinsockNetwork : public Network 
 {
 public:
-	NetworkManager();
-	virtual ~NetworkManager();
+	WinsockNetwork();
+	virtual ~WinsockNetwork();
 
 	// start listening for connections with the given user name
-	rc_network listen(const std::string& userName);
+	virtual rc_network listen(const std::string& userName);
 
 	// connect to a host
-	rc_network connect(const std::string& ipAddress, const std::string& userName);
+	virtual rc_network connect(const std::string& ipAddress, const std::string& userName);
 
 	// disconnect from a host
-	rc_network disconnect();
+	virtual rc_network disconnect();
 
 	// send the player's user name over the network
-	rc_network sendUserName(const std::string& userName);
+	virtual rc_network sendUserName(const std::string& userName);
 
 	// send a chat message to the other player
-	rc_network sendChatMessage(const std::string& message);
+	virtual rc_network sendChatMessage(const std::string& message);
 
 	// send a start/pause/exit game message
-	rc_network sendStartGame();
-	rc_network sendPauseGame();
-	rc_network sendEndGame();
+	virtual rc_network sendStartGame();
+	virtual rc_network sendPauseGame();
+	virtual rc_network sendEndGame();
 
 	// send a video data to the other player
-	rc_network sendVideoData(VideoData video);
+	virtual rc_network sendVideoData(VideoData video);
 
 	// send a player position to the other player
-	rc_network sendPlayerPosition(const cVector3d& position);
+	virtual rc_network sendPlayerPosition(const cVector3d& position);
 
 	// send a slingshot position to the other player
-	rc_network sendSlingshotPosition(const cVector3d& position);
+	virtual rc_network sendSlingshotPosition(const cVector3d& position);
 
 	// send a projectile over the network
-	rc_network sendProjectile(const Projectile& projectile);
+	virtual rc_network sendProjectile(const Projectile& projectile);
 
 	// send a slingshot pullback event over the network
-	rc_network sendSlingshotPullback();
+	virtual rc_network sendSlingshotPullback();
 
 	// send a slingshot release event over the network
-	rc_network sendSlingshotRelease();
+	virtual rc_network sendSlingshotRelease();
 
-	// notify the manager that a network connection has been accepted
+	// notify the network interface that a network connection has been accepted
 	void notifyAccept(NetworkSocket* socket);
 
 private:
@@ -87,7 +89,7 @@ private:
 	DWORD m_dwIDControlReceive; // thread id
 
 	// the threads managing the control socket
-	static DWORD ControlReceiveThread(NetworkManager* pNetworkManager);
+	static DWORD ControlReceiveThread(WinsockNetwork* network);
 
 	//-----------------------
 	// Data Socket
@@ -103,7 +105,7 @@ private:
 	DWORD m_dwIDDataReceive; // thread id
 
 	// the threads managing the data socket
-	static DWORD DataReceiveThread(NetworkManager* pNetworkManager);
+	static DWORD DataReceiveThread(WinsockNetwork* network);
 
 	//--------------------------
 	// Private Member functions

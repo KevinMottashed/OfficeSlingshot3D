@@ -28,7 +28,7 @@ class Mediator :	public NetworkObserver,
 					public GameObserver
 {
 public:
-	Mediator();
+	Mediator(Network* network);
 	virtual ~Mediator();
 
 	// updates for observer patterns
@@ -46,7 +46,7 @@ private:
 	Mediator& operator=(const Mediator& c); // intentionally not implemented
 
 	// managers for the different modules
-	NetworkManager* m_pNetworkManager;
+	Network* network;
 	UserInterfaceManager* m_pUserInterfaceManager;
 	FalconPenManager* m_pFalconPenManager;
 	ZCameraManager* m_pZCameraManager;

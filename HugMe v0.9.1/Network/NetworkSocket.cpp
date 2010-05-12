@@ -1,7 +1,7 @@
 #include "NetworkSocket.h"
 
-NetworkSocket::NetworkSocket(NetworkManager* pManager) :
-	m_pManager(pManager), m_bIsServer(false), m_pClient(NULL)
+NetworkSocket::NetworkSocket(WinsockNetwork* network) :
+	network(network), m_bIsServer(false), m_pClient(NULL)
 {
 }
 
@@ -35,10 +35,10 @@ END_MESSAGE_MAP()
 void NetworkSocket::OnAccept(int nErrorCode) 
 {
 	m_bIsServer = true;
-	m_pClient = new NetworkSocket(m_pManager);
+	m_pClient = new NetworkSocket(network);
 	Accept(*m_pClient);
 
-	m_pManager->notifyAccept(this);
+	network->notifyAccept(this);
 
 	CSocket::OnAccept(nErrorCode);
 }
