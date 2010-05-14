@@ -6,6 +6,7 @@
 #include "DepthCamera.h"
 #include "ZCameraSubject.h"
 #include "VideoData.h"
+#include "boost.h"
 
 class ZCameraManager : public ZCameraSubject 
 {
@@ -35,7 +36,7 @@ private:
 	bool zcam_started;
 
 	CDepthCamera * m_depthCamera;
-	unsigned char* RGB;
+	boost::shared_ptr<std::vector<BYTE> > RGB;
 	unsigned char* DEPTH;
 	unsigned char* RGBFull;
 	unsigned char* PRIM;

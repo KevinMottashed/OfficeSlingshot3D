@@ -7,8 +7,6 @@
 #include "chai3d.h"
 #include "NetworkCodes.h"
 #include "Projectile.h"
-#include "DataPacket.h"
-#include "ControlPacket.h"
 
 // abstract class representing the networking component of the application
 // all network interfaces should be able to send and receive data

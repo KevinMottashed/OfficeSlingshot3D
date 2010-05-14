@@ -1,8 +1,11 @@
-// STL & Windows
-#include "stdAfx.h"
+#include "stdAfx.h" // STL & Windows
+#include "boost.h" // boost libraries
 
 #include "WinsockNetwork.h"
 #include "SyncLocker.h"
+
+using namespace std;
+using namespace boost;
 
 // These are the constants for shutting down sockets for version 1 of the socket
 // Version 2 of the socket has different constans (send and receive inverted)
@@ -575,78 +578,78 @@ void WinsockNetwork::terminateConnection()
 rc_network WinsockNetwork::sendUserName(const std::string& userName)
 {
 	ControlPacket packet;
-	packet.setUserName(userName);
+	packet.write(CONTROL_PACKET_NAME, userName);
 	return syncSendControlMessage(packet);
 }
 
 rc_network WinsockNetwork::sendChatMessage(const std::string& message)
 {
 	ControlPacket packet;
-	packet.setChatMessage(message);
+	packet.write(CONTROL_PACKET_CHAT, message);
 	return syncSendControlMessage(packet);
 }
 
 rc_network WinsockNetwork::sendStartGame()
 {
 	ControlPacket packet;
-	packet.setStartGame();
+	packet.write(CONTROL_PACKET_START_GAME);
 	return syncSendControlMessage(packet);
 }
 
 rc_network WinsockNetwork::sendPauseGame()
 {
 	ControlPacket packet;
-	packet.setPauseGame();
+	packet.write(CONTROL_PACKET_PAUSE_GAME);
 	return syncSendControlMessage(packet);
 }
 
 rc_network WinsockNetwork::sendEndGame()
 {
 	ControlPacket packet;
-	packet.setEndGame();
+	packet.write(CONTROL_PACKET_END_GAME);
 	return syncSendControlMessage(packet);
 }
 
 rc_network WinsockNetwork::sendVideoData(VideoData video)
 {
-	DataPacket message;
-	message.setVideoData(video);
-	return syncSendDataMessage(message);
+	DataPacket packet;
+	packet.write(DATA_PACKET_VIDEO, video);
+	return syncSendDataMessage(packet);
 }
 
 rc_network WinsockNetwork::sendPlayerPosition(const cVector3d& position)
 {
-	DataPacket message;
-	message.setPlayerPosition(position);
-	return syncSendDataMessage(message);
+	DataPacket packet;
+	packet.write(DATA_PACKET_PLAYER_POSITION, position);
+	return syncSendDataMessage(packet);
 }
 
 rc_network WinsockNetwork::sendSlingshotPosition(const cVector3d& position)
 {
-	DataPacket message;
-	message.setSlingshotPosition(position);
-	return syncSendDataMessage(message);
+	DataPacket packet;
+	packet.write(DATA_PACKET_SLINGSHOT_POSITION, position);
+	return syncSendDataMessage(packet);
 }
 
 rc_network WinsockNetwork::sendProjectile(const Projectile& projectile)
 {
-	DataPacket message;
-	message.setProjectile(projectile);
-	return syncSendDataMessage(message);
+	DataPacket packet;
+	packet.write(DATA_PACKET_PROJECTILE, projectile);
+	return syncSendDataMessage(packet);
 }
 
 rc_network WinsockNetwork::sendSlingshotPullback()
 {
-	DataPacket message;
-	message.setSlingshotPullback();
-	return syncSendDataMessage(message);
+	DataPacket packet;
+	packet.write(DATA_PACKET_SLINGSHOT_PULLBACK);
+	return syncSendDataMessage(packet);
 }
 
 rc_network WinsockNetwork::sendSlingshotRelease()
 {
-	DataPacket message;
-	message.setSlingshotRelease();
-	return syncSendDataMessage(message);
+	DataPacket packet;
+	packet.write(DATA_PACKET_SLINGSHOT_RELEASE);
+	return syncSendDataMessage(packet);
 }
 
 rc_network WinsockNetwork::syncSendDataMessage(const DataPacket& packet)
@@ -660,45 +663,57 @@ rc_network WinsockNetwork::syncSendDataMessage(const DataPacket& packet)
 		return ERROR_NO_CONNECTION;
 	}
 
-	// the message to send in bytes
-	const std::vector<BYTE>& message = packet.getPacket();
-
-	// send the message
-	// When sending the message we might need to call the send function multiple times.
-	// This is because it is not guaranteed to send all the bytes in one packet.
-	// We therefore have to keep calling the send function until all the bytes are sent.
-	const char* i = (const char*)&message[0];
-	unsigned int bytesSent = 0;
+	// a message has 2 chunks, header and data
+	// the order of the chunks is <header><data>
+	vector<shared_ptr<vector<BYTE> > > message;
+	message.push_back(packet.getHeader());
+	message.push_back(packet.getData());
 
 	// we need to synchronize here so that only one thread is sending data on the socket at a time
 	SyncLocker sendLock = SyncLocker(m_csDataSocketSend);
 
-	while (bytesSent < message.size())
+	foreach (shared_ptr<vector<BYTE> > chunk, message)
 	{
-		int rc = send(m_hDataSocket, i, message.size() - bytesSent, 0);
-
-		// check the return code
-		switch (rc)
+		// skip empty chunks
+		if (chunk->size() == 0)
 		{
-			case 0: // no bytes have been sent, consider this a failure
+			continue;
+		}
+
+		// send the chunk
+		// When sending the message we might need to call the send function multiple times.
+		// This is because it is not guaranteed to send all the bytes in one packet.
+		// We therefore have to keep calling the send function until all the bytes are sent.
+		const char* i = (const char*)&chunk->front();
+		unsigned int bytesSent = 0;
+
+		while (bytesSent < chunk->size())
+		{
+			int rc = send(m_hDataSocket, i, chunk->size() - bytesSent, 0);
+
+			// check the return code
+			switch (rc)
 			{
-				return ERROR_SOCKET_ERROR;
-			}
-			case SOCKET_ERROR: // there's a problem with the socket, fail here
-			{
-				DWORD error = WSAGetLastError();
-				// ignore the would block error, it means the socket is temporarily unavailable
-				if (error != WSAEWOULDBLOCK)
+				case 0: // no bytes have been sent, consider this a failure
 				{
-					// fail when a socket error occurs
 					return ERROR_SOCKET_ERROR;
 				}
-				break;
-			}
-			default: // some bytes have been sent, the return code represent how many
-			{
-				bytesSent += rc;
-				i += bytesSent;
+				case SOCKET_ERROR: // there's a problem with the socket, fail here
+				{
+					DWORD error = WSAGetLastError();
+					// ignore the would block error, it means the socket is temporarily unavailable
+					if (error != WSAEWOULDBLOCK)
+					{
+						// fail when a socket error occurs
+						return ERROR_SOCKET_ERROR;
+					}
+					break;
+				}
+				default: // some bytes have been sent, the return code represent how many
+				{
+					bytesSent += rc;
+					i += bytesSent;
+				}
 			}
 		}
 	}
@@ -711,22 +726,22 @@ void WinsockNetwork::handleDataMessage(const DataPacket& message)
 	{
 		case DATA_PACKET_VIDEO:
 		{
-			notify(RECEIVED_VIDEO, &message.getVideoData());			
+			notify(RECEIVED_VIDEO, &message.read<VideoData>());			
 			break;
 		}
 		case DATA_PACKET_PLAYER_POSITION:
 		{
-			notify(RECEIVED_PLAYER_POSITION, &message.getPlayerPosition());
+			notify(RECEIVED_PLAYER_POSITION, &message.read<cVector3d>());
 			break;
 		}
 		case DATA_PACKET_SLINGSHOT_POSITION:
 		{
-			notify(RECEIVED_SLINGSHOT_POSITION, &message.getSlingshotPosition());			
+			notify(RECEIVED_SLINGSHOT_POSITION, &message.read<cVector3d>());			
 			break;
 		}
 		case DATA_PACKET_PROJECTILE:
 		{
-			notify(RECEIVED_PROJECTILE, &message.getProjectile());
+			notify(RECEIVED_PROJECTILE, &message.read<Projectile>());
 			break;
 		}
 		case DATA_PACKET_SLINGSHOT_PULLBACK:
@@ -760,42 +775,54 @@ rc_network WinsockNetwork::syncSendControlMessage(const ControlPacket& packet)
 		return ERROR_NO_CONNECTION;
 	}
 
-	// get the data to send
-	const std::vector<BYTE>& data = packet.getPacket();
-
-	// send the message
-	// When sending the message we might need to call the send function multiple times.
-	// This is because it is not guaranteed to send all the bytes in one chunk.
-	// We therefore have to keep calling the send function until all the bytes are sent.
-	const char* i = (const char*)&data[0];
-	unsigned int bytesSent = 0;
+	// a message has 2 chunks, header and data
+	// the order of the chunks is <header><data>
+	vector<shared_ptr<vector<BYTE> > > message;
+	message.push_back(packet.getHeader());
+	message.push_back(packet.getData());
 
 	// we need to synchronize here so that only one thread is sending data on the socket at a time
 	SyncLocker sendLock = SyncLocker(m_csControlSocketSend);
 
-	while (bytesSent < data.size())
+	foreach (shared_ptr<vector<BYTE> > chunk, message)
 	{
-		int rc = send(m_hControlSocket, i, data.size() - bytesSent, 0);
-
-		// check the return code
-		switch (rc)
+		// skip empty chunks
+		if (chunk->size() == 0)
 		{
-			case 0: // no bytes have been sent, consider this a failure
-				return ERROR_SOCKET_ERROR;
-			case SOCKET_ERROR: // there's a problem with the socket, fail here
-				{
-					DWORD error = WSAGetLastError();
-					// ignore the would block error, it means the socket is temporarily unavailable
-					if (error != WSAEWOULDBLOCK)
+			continue;
+		}
+
+		// send the chunk
+		// When sending the message we might need to call the send function multiple times.
+		// This is because it is not guaranteed to send all the bytes in one packet.
+		// We therefore have to keep calling the send function until all the bytes are sent.
+		const char* i = (const char*)&chunk->front();
+		unsigned int bytesSent = 0;
+
+		while (bytesSent < chunk->size())
+		{
+			int rc = send(m_hControlSocket, i, chunk->size() - bytesSent, 0);
+
+			// check the return code
+			switch (rc)
+			{
+				case 0: // no bytes have been sent, consider this a failure
+					return ERROR_SOCKET_ERROR;
+				case SOCKET_ERROR: // there's a problem with the socket, fail here
 					{
-						// fail when a socket error occurs
-						return ERROR_SOCKET_ERROR;
+						DWORD error = WSAGetLastError();
+						// ignore the would block error, it means the socket is temporarily unavailable
+						if (error != WSAEWOULDBLOCK)
+						{
+							// fail when a socket error occurs
+							return ERROR_SOCKET_ERROR;
+						}
+						break;
 					}
-					break;
-				}
-			default: // some bytes have been sent, the return code represents how many
-				bytesSent += rc;
-				i += bytesSent;
+				default: // some bytes have been sent, the return code represents how many
+					bytesSent += rc;
+					i += bytesSent;
+			}
 		}
 	}
 	return SUCCESS;
@@ -808,7 +835,7 @@ void WinsockNetwork::handleControlMessage(const ControlPacket& message)
 		case CONTROL_PACKET_NAME:
 		{
 			// update the remote user name
-			notify(RECEIVED_USER_NAME, &message.getUserName());
+			notify(RECEIVED_USER_NAME, &message.read<std::string>());
 			{
 				SyncLocker lock(m_csIsEstablishing);
 				if (m_bIsEstablishing)
@@ -821,7 +848,7 @@ void WinsockNetwork::handleControlMessage(const ControlPacket& message)
 		case CONTROL_PACKET_CHAT:
 		{
 			// notify the observers that a new message has arrived			
-			notify(RECEIVED_CHAT_MESSAGE, &message.getChatMessage());
+			notify(RECEIVED_CHAT_MESSAGE, &message.read<std::string>());
 			break;
 		}
 		case CONTROL_PACKET_START_GAME:

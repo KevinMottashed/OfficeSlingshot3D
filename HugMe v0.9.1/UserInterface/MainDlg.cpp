@@ -517,7 +517,7 @@ void CMainDlg::displayLocalFrame(VideoData video)
 {
 	// the DrawDibDraw function is not const-correct so we need to cast away the const modifier
 	// we would it need to modify the pixels to draw the image?
-	char* vRGB = const_cast<char*>(video.rgb);
+	BYTE* vRGB = &video.rgb->front();
 
 	// updates the specified m_hdc dialog element using the vRGB variable
 	::DrawDibDraw(hdib_local,
@@ -530,8 +530,8 @@ void CMainDlg::displayLocalFrame(VideoData video)
 				  vRGB,					 // bmp data
 				  0,					 // src :left
 				  0,					 // src :top
-				  video.width,          // src : width
-				  video.height,			// src : height
+				  IMAGE_WIDTH,          // src : width
+				  IMAGE_HEIGHT,			// src : height
 				  DDF_SAME_DRAW			 // use prev params....
 				  );
 	return;
@@ -541,7 +541,7 @@ void CMainDlg::displayRemoteFrame(VideoData video)
 {
 	// the DrawDibDraw function is not const-correct so we need to cast away the const modifier
 	// we would it need to modify the pixels to draw the image?
-	char* vRGB = const_cast<char*>(video.rgb);
+	BYTE* vRGB = &video.rgb->front();
 
 	// updates the specified m_hdc dialog element using the vRGB variable
 	::DrawDibDraw(hdib_remote,
@@ -554,8 +554,8 @@ void CMainDlg::displayRemoteFrame(VideoData video)
 				  vRGB,					 // bmp data
 				  0,					 // src :left
 				  0,					 // src :top
-				  video.width,          // src : width
-				  video.height,			// src : height
+				  IMAGE_WIDTH,          // src : width
+				  IMAGE_HEIGHT,			// src : height
 				  DDF_SAME_DRAW			 // use prev params....
 				  );
 	return;

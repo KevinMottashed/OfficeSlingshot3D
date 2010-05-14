@@ -140,7 +140,7 @@ void HumanFormatLogger<S,T>::logChatMessageReceived(const std::string& message)
 template <typename S, typename T>
 void HumanFormatLogger<S,T>::logVideoDataReceived(const VideoData& data)
 {
-	ostream << "received video width=" << data.width << " height=" << data.height << "\n";
+	ostream << "received video width=" << IMAGE_WIDTH << " height=" << IMAGE_HEIGHT << "\n";
 	return;
 }
 
@@ -252,7 +252,7 @@ void HumanFormatLogger<S,T>::logLocalSlingshotPosition(const cVector3d& position
 template <typename S, typename T>
 void HumanFormatLogger<S,T>::logLocalVideoData(const VideoData& data)
 {
-	ostream << "new local frame, width=" << data.width << " height=" << data.height << "\n";
+	ostream << "new local frame, width=" << IMAGE_WIDTH << " height=" << IMAGE_HEIGHT << "\n";
 	return;
 }
 

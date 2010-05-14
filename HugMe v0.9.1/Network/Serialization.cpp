@@ -1,50 +1,100 @@
 #include "Serialization.h"
 
 using namespace std;
+using namespace boost;
+
+static const unsigned int cVector3d_serialized_size = 3 * sizeof(double);
+static const unsigned int projectile_serialized_size = 2 * cVector3d_serialized_size;
+static const unsigned int videoData_serialized_size = IMAGE_ARRAY_SIZE;
 
 // the cVector3d will be serialized as <x><y><z>
-void Serialization::serialize(const cVector3d& data, vector<BYTE>& bytes)
+void Serialization::serialize(const cVector3d& vec, shared_ptr<vector<BYTE> >& data)
 {
-	bytes.insert(bytes.end(), (BYTE*) &data.x, ((BYTE*) &data.x) + sizeof(data.x));
-	bytes.insert(bytes.end(), (BYTE*) &data.y, ((BYTE*) &data.y) + sizeof(data.x));
-	bytes.insert(bytes.end(), (BYTE*) &data.z, ((BYTE*) &data.z) + sizeof(data.x));
+	data->insert(data->end(), (BYTE*) &vec.x, ((BYTE*) &vec.x) + sizeof(vec.x));
+	data->insert(data->end(), (BYTE*) &vec.y, ((BYTE*) &vec.y) + sizeof(vec.y));
+	data->insert(data->end(), (BYTE*) &vec.z, ((BYTE*) &vec.z) + sizeof(vec.z));
 	return;
 }
 
 // the projectile will be serialized as <position><speed>
-void Serialization::serialize(const Projectile& data, std::vector<BYTE>& bytes)
+void Serialization::serialize(const Projectile& projectile, shared_ptr<vector<BYTE> >& data)
 {
-	serialize(data.getPosition(), bytes);
-	serialize(data.getSpeed(), bytes);
+	serialize(projectile.getPosition(), data);
+	serialize(projectile.getSpeed(), data);
 	return;
 }
 
-// the video data will be serialized as <width><height><rgb>
-void Serialization::serialize(const VideoData& data, std::vector<BYTE>& bytes)
+void Serialization::serialize(const VideoData& video, shared_ptr<vector<BYTE> >& data)
 {
-	serialize(data.width, bytes); // <width>
-	serialize(data.height, bytes); // <height>
-	bytes.insert(bytes.end(), data.rgb, data.rgb + data.width * data.height * BYTES_PER_PIXEL); // <rgb>
+	data = video.rgb;
 	return;
 }
 
-template <>
-unsigned int Serialization::getSerializedSize<cVector3d>()
+void Serialization::serialize(const string& str, shared_ptr<vector<BYTE> >& data)
 {
-	// a vector is serialized as <x><y><z>
-	return 3 * sizeof(double);
+	data->insert(data->end(), str.begin(), str.end());
+	return;
 }
 
-template <>
-unsigned int Serialization::getSerializedSize<Projectile>()
+void Serialization::deserialize(shared_ptr<vector<BYTE> > data, string& str)
 {
-	// a projectile is serialized as <position><speed>
-	return 2 * getSerializedSize<cVector3d>();
+	str = "";
+	str.insert(str.end(), data->begin(), data->end());
+	return;
 }
 
-template <>
-unsigned int Serialization::getSerializedSize<VideoData>()
+void Serialization::deserialize(shared_ptr<vector<BYTE> > data, cVector3d& vec)
 {
-	// video data is serialized as <width><height><rgb>	
-	return 2 * sizeof(unsigned int) + IMAGE_ARRAY_SIZE;
+	// we are expecting 3 doubles
+	assert(data->size() == cVector3d_serialized_size);
+
+	// get the 3 doubles from the bytes
+	vector<BYTE>::const_iterator it = data->begin();
+	copy(it, it + sizeof(double), (BYTE*) &vec.x);
+	it += sizeof(double);
+	copy(it, it + sizeof(double), (BYTE*) &vec.y);
+	it += sizeof(double);
+	copy(it, it + sizeof(double), (BYTE*) &vec.z);
+	return;
 }
+
+void Serialization::deserialize(shared_ptr<vector<BYTE> > data, Projectile& projectile)
+{
+	// we are expecting 2 cVector3d
+	assert(data->size() == projectile_serialized_size);
+
+	cVector3d temp;
+	vector<BYTE>::const_iterator it = data->begin();
+	
+	// deserialize the position
+	copy(it, it + sizeof(double), (BYTE*) &temp.x);
+	it += sizeof(double);
+	copy(it, it + sizeof(double), (BYTE*) &temp.y);
+	it += sizeof(double);
+	copy(it, it + sizeof(double), (BYTE*) &temp.z);
+	it += sizeof(double);
+	projectile.setPosition(temp);
+	
+	// deserialize the speed
+	copy(it, it + sizeof(double), (BYTE*) &temp.x);
+	it += sizeof(double);
+	copy(it, it + sizeof(double), (BYTE*) &temp.y);
+	it += sizeof(double);
+	copy(it, it + sizeof(double), (BYTE*) &temp.z);
+	it += sizeof(double);
+	projectile.setSpeed(temp);
+
+	return;
+}
+
+void Serialization::deserialize(shared_ptr<vector<BYTE> > data, VideoData& video)
+{
+	// we are expecting an instance of VideoData
+	assert(data->size() == videoData_serialized_size);
+
+	// get the video
+	video.rgb = data;
+
+	return;
+}
+

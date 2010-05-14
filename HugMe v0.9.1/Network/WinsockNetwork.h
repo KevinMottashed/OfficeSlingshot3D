@@ -4,14 +4,40 @@
 #include "NetworkSocket.h"
 #include "NetworkCodes.h"
 #include "Network.h"
-#include "DataPacket.h"
-#include "ControlPacket.h"
+#include "Packet.h"
 #include "Stdafx.h"
 #include "SyncReaderWriters.h"
 #include "VideoData.h"
 
 // Forward declarations (files include each other)
 class NetworkSocket;
+
+// all the different packet types for a control packet
+enum ControlPacketType
+{
+	CONTROL_PACKET_NAME, // a user name packet
+	CONTROL_PACKET_CHAT, // a chat message packet
+	CONTROL_PACKET_START_GAME, // tell the peer the game is starting
+	CONTROL_PACKET_PAUSE_GAME, // tell the peer the game is paused
+	CONTROL_PACKET_END_GAME, // tell the peer the game is ending
+	CONTROL_PACKET_UNKNOWN
+};
+
+// all the different packet types for a data packet
+enum DataPacketType
+{
+	DATA_PACKET_VIDEO,
+	DATA_PACKET_PLAYER_POSITION,
+	DATA_PACKET_SLINGSHOT_POSITION,
+	DATA_PACKET_SLINGSHOT_PULLBACK,
+	DATA_PACKET_SLINGSHOT_RELEASE,
+	DATA_PACKET_PROJECTILE,
+	DATA_PACKET_UNKNOWN
+};
+
+// the 2 packet types
+typedef Packet<ControlPacketType> ControlPacket;
+typedef Packet<DataPacketType> DataPacket;
 
 // A concrete implementation of the network class
 // this class uses windows sockets to implement the send/receive functionality

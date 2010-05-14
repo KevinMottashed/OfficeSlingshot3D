@@ -1,6 +1,9 @@
 #ifndef VIDEO_DATA_H
 #define VIDEO_DATA_H
 
+#include "boost.h" // boost libraries
+#include "stdafx.h" // STL + windows
+
 static const unsigned int IMAGE_WIDTH = 320;
 static const unsigned int IMAGE_HEIGHT = 240;
 static const unsigned int BYTES_PER_PIXEL = 4;
@@ -8,12 +11,10 @@ static const unsigned int IMAGE_ARRAY_SIZE = IMAGE_WIDTH * IMAGE_HEIGHT * BYTES_
 
 struct VideoData
 {
-	VideoData() : rgb(NULL), width(0), height(0) {}
-	VideoData(char* rgb, unsigned int width, unsigned int height) : rgb(rgb), width(width), height(height) {}
+	VideoData() {}
+	VideoData(boost::shared_ptr<std::vector<BYTE> > rgb) : rgb(rgb) {}
 
-	char* rgb;
-	unsigned int width;
-	unsigned int height;
+	boost::shared_ptr<std::vector<BYTE> > rgb;
 };
 
 #endif

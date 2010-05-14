@@ -1,6 +1,9 @@
 #include "stdafx.h"
 #include "ZCameraManager.h"
 
+using namespace std;
+using namespace boost;
+
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
@@ -14,14 +17,13 @@ ZCameraManager::ZCameraManager()
 	m_depthCamera = new CDepthCamera();
 
 	//Allocate memory for the video frame
-	RGB = new BYTE[IMAGE_ARRAY_SIZE];
+	RGB = shared_ptr<vector<BYTE> >(new vector<BYTE>(IMAGE_ARRAY_SIZE));
 }
 
 ZCameraManager::~ZCameraManager()
 {
 	//delete resources
 	delete m_depthCamera;
-	delete[] RGB;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -33,15 +35,18 @@ DWORD ZCameraManager::getFrameFromCamera(ZCameraManager* p_ZCamera){
 	
 	//While the thread is active
 	while(p_ZCamera->zcam_started){
+
+		// get a pointer to the video array
+		BYTE* rgb = &p_ZCamera->RGB->front();
 		
 		//Get frame from camera, updates the values of the char arrays
-		p_ZCamera->m_depthCamera->GetNextFrame(p_ZCamera->DEPTH,p_ZCamera->RGB,p_ZCamera->RGBFull,p_ZCamera->PRIM,p_ZCamera->SEC,1000);
+		p_ZCamera->m_depthCamera->GetNextFrame(p_ZCamera->DEPTH,rgb,p_ZCamera->RGBFull,p_ZCamera->PRIM,p_ZCamera->SEC,1000);
 		
 		//Flip the image up-down
-		reverseFrame(p_ZCamera->RGB,4);
+		reverseFrame(rgb,4);
 
 		//Send to the observers
-		VideoData video((char*) p_ZCamera->RGB, IMAGE_WIDTH, IMAGE_HEIGHT);
+		VideoData video(p_ZCamera->RGB);
 		p_ZCamera->notify(VIDEO, &video);
 
 		Sleep(31); // 32 fps
@@ -59,20 +64,23 @@ DWORD ZCameraManager::getFrameFromDummy(ZCameraManager* p_ZCamera){
 	//While the thread is active
 	while(p_ZCamera->zcam_started){
 
+		// get a pointer to the video array
+		BYTE* rgb = &p_ZCamera->RGB->front();
+
 		//Go through each row and column and fill all 4 values for each pixel
 		for (int i=0;i<IMAGE_HEIGHT;i++){
 			for(int j=0;j<IMAGE_WIDTH;j++){
-				p_ZCamera->RGB[i*step+j*4]		=	rand() % 255;			//blue
-				p_ZCamera->RGB[i*step+j*4+1]	=	rand() % 255;			//green	
-				p_ZCamera->RGB[i*step+j*4+2]	=	rand() % 255;			//red
-				p_ZCamera->RGB[i*step+j*4+3]	=	0;			//ignored	
+				rgb[i*step+j*4]		=	rand() % 255;			//blue
+				rgb[i*step+j*4+1]	=	rand() % 255;			//green	
+				rgb[i*step+j*4+2]	=	rand() % 255;			//red
+				rgb[i*step+j*4+3]	=	0;			//ignored	
 			}
 		}
 
-		reverseFrame(p_ZCamera->RGB,4);
+		reverseFrame(rgb,4);
 
 		// notify the Mediator that new local video data has arrived
-		VideoData video((char*) p_ZCamera->RGB, IMAGE_WIDTH, IMAGE_HEIGHT);
+		VideoData video(p_ZCamera->RGB);
 		p_ZCamera->notify(VIDEO, &video);
 /*
 		cVector3d vec;

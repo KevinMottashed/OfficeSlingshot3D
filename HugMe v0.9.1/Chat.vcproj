@@ -50,7 +50,7 @@
 				Name="VCCLCompilerTool"
 				AdditionalOptions="/D /NODEFAULTLIB:library&quot; &quot; /D _CRT_SECURE_NO_DEPRECATE /D &quot;WINVER=0x0501&quot;"
 				Optimization="0"
-				AdditionalIncludeDirectories="include;&quot;include\ARToolKit-2.72.1&quot;;&quot;include\Z-Cam&quot;;include\HandTracker;&quot;..\chai3d-2.0.0\src&quot;;&quot;..\chai3d-2.0.0\external\OpenGL\msvc&quot;;Utils\;Mediator\;Falcon\;Game\;Jacket\;Network\;UserInterface\;ZCamera\;Objects\;Logger\;Common\;Main\;res\"
+				AdditionalIncludeDirectories="include;&quot;include\ARToolKit-2.72.1&quot;;&quot;include\Z-Cam&quot;;include\HandTracker;&quot;..\chai3d-2.0.0\src&quot;;&quot;..\chai3d-2.0.0\external\OpenGL\msvc&quot;;Utils\;Mediator\;Falcon\;Game\;Jacket\;Network\;UserInterface\;ZCamera\;Objects\;Logger\;Common\;Main\;res\;&quot;C:\Program Files\boost\boost_1_43_0&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_MSVC"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -481,6 +481,10 @@
 			Name="Utils"
 			>
 			<File
+				RelativePath=".\Utils\boost.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Utils\chai3d.h"
 				>
 			</File>
@@ -595,22 +599,6 @@
 			Name="Network"
 			>
 			<File
-				RelativePath=".\Network\ControlPacket.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\Network\ControlPacket.h"
-				>
-			</File>
-			<File
-				RelativePath=".\Network\DataPacket.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\Network\DataPacket.h"
-				>
-			</File>
-			<File
 				RelativePath=".\Network\Network.cpp"
 				>
 			</File>
@@ -648,6 +636,10 @@
 			</File>
 			<File
 				RelativePath=".\Network\NetworkSubject.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Network\Packet.h"
 				>
 			</File>
 			<File
