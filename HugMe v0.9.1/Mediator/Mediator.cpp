@@ -518,8 +518,9 @@ void Mediator::update(ZCameraUpdateContext context, const void* data)
 
 void Mediator::handleLocalVideoData(VideoData video)
 {
-	m_pUserInterfaceManager->displayLocalFrame(video);
 	network->sendVideoData(video);
+	ZCameraManager::reverseFrameLeftRight(video,4);
+	m_pUserInterfaceManager->displayLocalFrame(video);
 	return;
 }
 

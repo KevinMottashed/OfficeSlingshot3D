@@ -27,7 +27,8 @@ public:
 	static DWORD getFrameFromDummy(ZCameraManager* p_ZCamera);
 
 	//Reverse the image array, so it displays correctly on the UI
-	static void reverseFrame(unsigned char* &RGB, int channels);	
+	static void reverseFrameUpDown(VideoData vd, int channels);	
+	static void reverseFrameLeftRight(VideoData vd, int channels);	
 
 private:
 	ZCameraManager(const ZCameraManager& zCameraManager); // intentionally not implemented
