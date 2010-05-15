@@ -1,48 +1,46 @@
 #include "Mediator.h"
 #include "ConsoleStream.h"
 
+using namespace std;
+using namespace boost; 
 
-Mediator::Mediator(Network* network, Falcon* falcon) :
+
+Mediator::Mediator(boost::shared_ptr<Network> network, boost::shared_ptr<Falcon> falcon) :
 	network(network),
 	falcon(falcon),
+	game(),
+	configuration("userPreferences.txt"),
 	gameState(NOT_PLAYING)
 {
-	// create the various components
-	m_pConfiguration = new Configuration("userPreferences.txt");
-	m_pUserInterfaceManager = new UserInterfaceManager(m_pConfiguration->getUserPreferences());
-	m_pZCameraManager = new ZCameraManager();
-	m_pSmartClothingManager = new SmartClothingManager();
-	m_pGame = new Game();
+	// create the various components	
+	userInterface = shared_ptr<UserInterfaceManager>(new UserInterfaceManager(configuration.getUserPreferences()));
+	zcamera = shared_ptr<ZCameraManager>(new ZCameraManager());
+	smartClothing = shared_ptr<SmartClothingManager>(new SmartClothingManager());
 
 	// attach ourselves as an observer to the components
 	network->attach(this);
-	m_pUserInterfaceManager->attach(this);
-	m_pZCameraManager->attach(this);
+	userInterface->attach(this);
+	zcamera->attach(this);
 	falcon->attach(this);
-	m_pGame->attach(this);
+	game.attach(this);
 
 	// create the logger	
-	m_pLogger = new HumanFormatFileLogger("HumanFormat.log");
+	logger = new HumanFormatFileLogger("HumanFormat.log");
 
 	// attach the logger to the components
-	network->attach(m_pLogger);
-	m_pUserInterfaceManager->attach(m_pLogger);
-	m_pZCameraManager->attach(m_pLogger);
-	falcon->attach(m_pLogger);
-	m_pGame->attach(m_pLogger);
+	network->attach(logger);
+	userInterface->attach(logger);
+	zcamera->attach(logger);
+	falcon->attach(logger);
+	game.attach(logger);
 
-	InitializeCriticalSection(&m_csConfiguration);
+	InitializeCriticalSection(&configurationMutex);
 }
 
 Mediator::~Mediator()
 {
-	delete m_pUserInterfaceManager;
-	delete m_pZCameraManager;
-	delete m_pSmartClothingManager;
-	delete m_pGame;
-	delete m_pLogger;
-	delete m_pConfiguration;
-	DeleteCriticalSection(&m_csConfiguration);
+	delete logger;
+	DeleteCriticalSection(&configurationMutex);
 }
 
 void Mediator::startGame()
@@ -52,30 +50,38 @@ void Mediator::startGame()
 		return; // already started
 	}
 	gameState = PLAYING;
-	m_pGame->start();
+	game.start();
 	falcon->start();
-	m_pZCameraManager->start();
+	zcamera->start();
 }
 
 void Mediator::pauseGame()
 {
+	if (gameState != PLAYING)
+	{
+		return; // nothing to do, the game is either already paused or not started
+	}
 	gameState = PAUSED;
-	m_pGame->pause();
+	game.pause();
 	falcon->stop();
-	m_pZCameraManager->stop();
+	zcamera->stop();
 }
 
 void Mediator::exitGame()
 {
+	if (gameState == NOT_PLAYING)
+	{
+		return; // nothing to do, the game is not running
+	}
 	gameState = NOT_PLAYING;
-	m_pGame->stop();
+	game.stop();
 	falcon->stop();
-	m_pZCameraManager->stop();
+	zcamera->stop();
 }
 
 CDialog* Mediator::getMainWindow()
 {
-	return m_pUserInterfaceManager->getMainWindow();
+	return userInterface->getMainWindow();
 }
 
 void Mediator::update(NetworkUpdateContext context, const void* data)
@@ -204,7 +210,7 @@ void Mediator::update(NetworkUpdateContext context, const void* data)
 void Mediator::handlePeerConnected()
 {
 	// send the connection accepted message to the user interface process
-	m_pUserInterfaceManager->displayConnectionEstablished();
+	userInterface->displayConnectionEstablished();
 	return;
 }
 
@@ -214,7 +220,7 @@ void Mediator::handlePeerDisconnected()
 	exitGame();
 
 	// notify the user interface that the network connection has been disconnected
-	m_pUserInterfaceManager->displayPeerDisconnected();
+	userInterface->displayPeerDisconnected();
 	return;
 }
 
@@ -224,7 +230,7 @@ void Mediator::handleNetworkError(rc_network error)
 	exitGame();
 
 	// notify the user interface that the network connection as been disconnected
-	m_pUserInterfaceManager->displayNetworkError();
+	userInterface->displayNetworkError();
 	return;
 }
 
@@ -234,7 +240,7 @@ void Mediator::handlePeerStartGame()
 	startGame();
 
 	// let the UI know that the game has been started
-	m_pUserInterfaceManager->displayGameStarted();
+	userInterface->displayGameStarted();
 	return;
 }
 
@@ -244,7 +250,7 @@ void Mediator::handlePeerPauseGame()
 	pauseGame();
 
 	// let the UI know that the game has been paused
-	m_pUserInterfaceManager->displayGamePaused();
+	userInterface->displayGamePaused();
 	return;
 }
 
@@ -254,49 +260,49 @@ void Mediator::handlePeerExitGame()
 	exitGame();
 
 	// let the UI know that the game has been ended
-	m_pUserInterfaceManager->displayGameExited();
+	userInterface->displayGameExited();
 	return;
 }
 
 void Mediator::handleUserName(const std::string& name)
 {
 	// update the other player's user name
-	m_pUserInterfaceManager->setPeerUserName(name);
+	userInterface->setPeerUserName(name);
 	return;
 }
 
 void Mediator::handleChatMessage(const std::string& message)
 {
 	// tell the UI to display the chat message
-	m_pUserInterfaceManager->displayPeerChatMessage(message);
+	userInterface->displayPeerChatMessage(message);
 	return;
 }
 
 void Mediator::handleRemoteVideoData(VideoData video)
 {
 	// tell the UI to display the video
-	m_pUserInterfaceManager->displayRemoteFrame(video);
+	userInterface->displayRemoteFrame(video);
 	return;
 }
 
 void Mediator::handleRemoteSlingshotPosition(const cVector3d& position)
 {
 	// update the slingshot position in the game module
-	m_pGame->setRemoteSlingshotPosition(position);
+	game.setRemoteSlingshotPosition(position);
 	return;
 }
 
 void Mediator::handleRemoteProjectile(const Projectile& projectile)
 {
 	// add this new projectile to the game
-	m_pGame->addRemoteProjectile(projectile);
+	game.addRemoteProjectile(projectile);
 	return;
 }
 
 void Mediator::handleRemotePlayerPosition(const cVector3d& position)
 {
 	// update our game to reflect that our opponent has moved
-	m_pGame->setRemotePlayerPosition(position);
+	game.setRemotePlayerPosition(position);
 	return;
 }
 
@@ -376,17 +382,17 @@ void Mediator::update(UserInterfaceUpdateContext context, const void* data)
 void Mediator::connect()
 {
 	// many threads could try to modify/read the configuration at once so we need to synchronize it
-	SyncLocker lock(m_csConfiguration);
+	SyncLocker lock(configurationMutex);
 
-	UserPreferences prefs = m_pConfiguration->getUserPreferences();
+	UserPreferences prefs = configuration.getUserPreferences();
 	rc_network error = network->connect(prefs.ipAddress, prefs.name);
 	if (error == SUCCESS)
 	{
-		m_pUserInterfaceManager->displayConnectionEstablished();
+		userInterface->displayConnectionEstablished();
 	}
 	else
 	{
-		m_pUserInterfaceManager->displayConnectionFailed();
+		userInterface->displayConnectionFailed();
 	}
 	return;
 }
@@ -394,18 +400,18 @@ void Mediator::connect()
 void Mediator::listen()
 {
 	// many threads could try to modify/read the configuration at once so we need to synchronize it
-	SyncLocker lock(m_csConfiguration);
+	SyncLocker lock(configurationMutex);
 
-	UserPreferences prefs = m_pConfiguration->getUserPreferences();
+	UserPreferences prefs = configuration.getUserPreferences();
 	rc_network error = network->listen(prefs.name);
 	
 	if (error == SUCCESS)
 	{
-		m_pUserInterfaceManager->displayListening();
+		userInterface->displayListening();
 	}
 	else
 	{
-		m_pUserInterfaceManager->displayFailedToListen();
+		userInterface->displayFailedToListen();
 	}
 
 	return;
@@ -425,9 +431,9 @@ void Mediator::disconnect()
 void Mediator::changePreferences(const UserPreferences& preferences)
 {
 	// many threads could try to modify/read the configuration at once so we need to synchronize it
-	SyncLocker lock(m_csConfiguration);
+	SyncLocker lock(configurationMutex);
 
-	UserPreferences currentPreferences = m_pConfiguration->getUserPreferences();
+	UserPreferences currentPreferences = configuration.getUserPreferences();
 
 	if (currentPreferences.name != preferences.name)
 	{
@@ -444,7 +450,7 @@ void Mediator::changePreferences(const UserPreferences& preferences)
 		// TODO, notify smart clothing manager
 	}
 
-	m_pConfiguration->setUserPreferences(preferences);
+	configuration.setUserPreferences(preferences);
 	return;
 }
 
@@ -519,7 +525,7 @@ void Mediator::handleLocalVideoData(VideoData video)
 {
 	network->sendVideoData(video);
 	ZCameraManager::reverseFrameLeftRight(video,4);
-	m_pUserInterfaceManager->displayLocalFrame(video);
+	userInterface->displayLocalFrame(video);
 	return;
 }
 
@@ -549,7 +555,7 @@ void Mediator::update(FalconUpdateContext context, const void* data)
 void Mediator::handleLocalSlingshotPosition(const cVector3d& position)
 {
 	// update our game with the new slingshot position
-	m_pGame->setLocalSlingshotPosition(position);
+	game.setLocalSlingshotPosition(position);
 
 	// let the peer know that we have moved our slingshot
 	network->sendSlingshotPosition(position);

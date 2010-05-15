@@ -1,7 +1,8 @@
 #ifndef MEDIATOR_H
 #define MEDIATOR_H
 
-#include "stdafx.h"
+#include "stdafx.h" // STL + windows
+#include "boost.h" // boost
 #include "NetworkProxy.h"
 #include "UserInterfaceProxy.h"
 #include "FalconProxy.h"
@@ -28,7 +29,7 @@ class Mediator :	public NetworkObserver,
 					public GameObserver
 {
 public:
-	Mediator(Network* network, Falcon* falcon);
+	Mediator(boost::shared_ptr<Network> network, boost::shared_ptr<Falcon> falcon);
 	virtual ~Mediator();
 
 	// updates for observer patterns
@@ -46,23 +47,23 @@ private:
 	Mediator& operator=(const Mediator& c); // intentionally not implemented
 
 	// managers for the different modules
-	Network* network;
-	UserInterfaceManager* m_pUserInterfaceManager;
-	Falcon* falcon;
-	ZCameraManager* m_pZCameraManager;
-	SmartClothingManager* m_pSmartClothingManager;
+	boost::shared_ptr<Network> network;
+	boost::shared_ptr<UserInterfaceManager> userInterface;
+	boost::shared_ptr<Falcon> falcon;
+	boost::shared_ptr<ZCameraManager> zcamera;
+	boost::shared_ptr<SmartClothingManager> smartClothing;
 
 	// the game
-	Game* m_pGame;
+	Game game;
 
 	// the logger, this will eventually be moved out of this class
 	// but its too much work to do in one shot
 	// leave it here until we have some sort of application initializer
-	Logger* m_pLogger;
+	Logger* logger;
 
 	// move this out once we have an application initializer
-	Configuration* m_pConfiguration;
-	mutable CRITICAL_SECTION m_csConfiguration;
+	Configuration configuration;
+	mutable CRITICAL_SECTION configurationMutex;
 
 	// the current state of the game
 	GameState gameState;
