@@ -1,22 +1,22 @@
 #include "stdafx.h"
-#include "FalconPenManager.h"
+#include "NovintFalcon.h"
 #include "chai3d.h"
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-FalconPenManager::FalconPenManager()
+NovintFalcon::NovintFalcon()
 {
 	falcon_enabled = false;
 }
 
-FalconPenManager::~FalconPenManager()
+NovintFalcon::~NovintFalcon()
 {
 
 }
 
-DWORD FalconPenManager::getPositionFromFalcon(FalconPenManager* p_Falcon)
+DWORD NovintFalcon::getPositionFromFalcon(NovintFalcon* p_Falcon)
 {
 	double x,y,z;
 
@@ -45,7 +45,7 @@ DWORD FalconPenManager::getPositionFromFalcon(FalconPenManager* p_Falcon)
 // TODO implement
 // start managing the falcon pen (polling it for information)
 // create a thread to poll it
-void FalconPenManager::start() 
+void NovintFalcon::start() 
 {
 	falcon_enabled = true;
 
@@ -58,7 +58,7 @@ void FalconPenManager::start()
 // TODO implement
 // stop managing the falcon pen
 // stop the thread that's polling it
-void FalconPenManager::stop() 
+void NovintFalcon::stop() 
 {
 	falcon_enabled = false;
 

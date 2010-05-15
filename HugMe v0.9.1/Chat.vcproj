@@ -345,19 +345,19 @@
 			Name="Falcon"
 			>
 			<File
+				RelativePath=".\Falcon\Falcon.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Falcon\Falcon.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Falcon\FalconObserver.cpp"
 				>
 			</File>
 			<File
 				RelativePath=".\Falcon\FalconObserver.h"
-				>
-			</File>
-			<File
-				RelativePath=".\Falcon\FalconPenManager.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\Falcon\FalconPenManager.h"
 				>
 			</File>
 			<File
@@ -370,6 +370,14 @@
 			</File>
 			<File
 				RelativePath=".\Falcon\FalconSubject.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Falcon\NovintFalcon.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Falcon\NovintFalcon.h"
 				>
 			</File>
 		</Filter>

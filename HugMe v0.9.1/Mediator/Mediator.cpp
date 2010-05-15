@@ -2,14 +2,14 @@
 #include "ConsoleStream.h"
 
 
-Mediator::Mediator(Network* network) :
+Mediator::Mediator(Network* network, Falcon* falcon) :
 	network(network),
+	falcon(falcon),
 	gameState(NOT_PLAYING)
 {
 	// create the various components
 	m_pConfiguration = new Configuration("userPreferences.txt");
 	m_pUserInterfaceManager = new UserInterfaceManager(m_pConfiguration->getUserPreferences());
-	m_pFalconPenManager = new FalconPenManager();
 	m_pZCameraManager = new ZCameraManager();
 	m_pSmartClothingManager = new SmartClothingManager();
 	m_pGame = new Game();
@@ -18,7 +18,7 @@ Mediator::Mediator(Network* network) :
 	network->attach(this);
 	m_pUserInterfaceManager->attach(this);
 	m_pZCameraManager->attach(this);
-	m_pFalconPenManager->attach(this);
+	falcon->attach(this);
 	m_pGame->attach(this);
 
 	// create the logger	
@@ -28,7 +28,7 @@ Mediator::Mediator(Network* network) :
 	network->attach(m_pLogger);
 	m_pUserInterfaceManager->attach(m_pLogger);
 	m_pZCameraManager->attach(m_pLogger);
-	m_pFalconPenManager->attach(m_pLogger);
+	falcon->attach(m_pLogger);
 	m_pGame->attach(m_pLogger);
 
 	InitializeCriticalSection(&m_csConfiguration);
@@ -37,7 +37,6 @@ Mediator::Mediator(Network* network) :
 Mediator::~Mediator()
 {
 	delete m_pUserInterfaceManager;
-	delete m_pFalconPenManager;
 	delete m_pZCameraManager;
 	delete m_pSmartClothingManager;
 	delete m_pGame;
@@ -54,7 +53,7 @@ void Mediator::startGame()
 	}
 	gameState = PLAYING;
 	m_pGame->start();
-	m_pFalconPenManager->start();
+	falcon->start();
 	m_pZCameraManager->start();
 }
 
@@ -62,7 +61,7 @@ void Mediator::pauseGame()
 {
 	gameState = PAUSED;
 	m_pGame->pause();
-	m_pFalconPenManager->stop();
+	falcon->stop();
 	m_pZCameraManager->stop();
 }
 
@@ -70,7 +69,7 @@ void Mediator::exitGame()
 {
 	gameState = NOT_PLAYING;
 	m_pGame->stop();
-	m_pFalconPenManager->stop();
+	falcon->stop();
 	m_pZCameraManager->stop();
 }
 

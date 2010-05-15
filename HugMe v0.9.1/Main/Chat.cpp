@@ -51,9 +51,10 @@ BOOL CChatApp::InitInstance()
 
 	// Initialize the components
 	WinsockNetwork network;
+	NovintFalcon falcon;
 
 	// this will initialize the Mediator class and it will initialize the system
-	Mediator mediator(&network);
+	Mediator mediator(&network, &falcon);
 
 	CDialog* mainWindow = mediator.getMainWindow();
 
