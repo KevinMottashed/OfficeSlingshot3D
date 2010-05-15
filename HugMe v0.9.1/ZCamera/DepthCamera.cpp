@@ -59,7 +59,6 @@ void cmdCallBack(int cmd, void* pObject)
 	was set in the camera.
 	*/
 	CDepthCamera *pDepthCamera = (CDepthCamera*)pObject;
-	TDVCameraInterfaceBase *pCamera = pDepthCamera->GetCameraInterface();
 
 	// at first run, or when the resolution has changed, we need to 
 	// re-initialize the videos that we want to be processed
@@ -166,11 +165,9 @@ bool CDepthCamera::Initialize(int timeout)
 // uninitialize all internal objects.
 void CDepthCamera::UnInitialize()
 {
-	if (m_pCameraInterfaceBase)
-	{
-		delete m_pCameraInterfaceBase;
-		m_pCameraInterfaceBase = NULL;
-	}
+	delete m_pCameraInterfaceBase;
+	m_pCameraInterfaceBase = NULL;
+
 	if (m_hCriticalSection)
 	{
 		CloseHandle(m_hCriticalSection);

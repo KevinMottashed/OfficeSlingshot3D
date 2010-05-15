@@ -74,7 +74,6 @@ public:
 
 	void setIntensity(double * pIntensityArray)
 	{
-		int* pScaledIntensityArray =  new int(m_arraySize);
 		for(int i=0; i<m_arraySizeX; i++)
 			for(int j=0; j<m_arraySizeY; j++)
 				setIntensity(i, j, pIntensityArray[i*m_arraySizeX+m_arraySizeY]);
@@ -128,22 +127,22 @@ public:
 	void actuate(void);
 	void test1by1(void);
 
-	int getMaxIntensity(void)
+	int getMaxIntensity(void) const
 	{
 		return m_maxIntensity;
 	}
 
-	int getArraySizeX(void)
+	int getArraySizeX(void) const
 	{
 		return m_arraySizeX;
 	}
 
-	int getArraySizeY(void)
+	int getArraySizeY(void) const
 	{
 		return m_arraySizeY;
 	}
 
-	int getArraySize(void)
+	int getArraySize(void) const
 	{
 		return m_arraySize;
 	}

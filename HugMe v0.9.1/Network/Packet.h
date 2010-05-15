@@ -68,10 +68,10 @@ private:
 //--------------------------------------------
 
 template <typename PacketType>
-Packet<PacketType>::Packet() :
-header(new std::vector<BYTE>()),
-data(new std::vector<BYTE>())
+Packet<PacketType>::Packet()
 {
+	header = boost::shared_ptr<std::vector<BYTE> >(new std::vector<BYTE>());
+	data = boost::shared_ptr<std::vector<BYTE> >(new std::vector<BYTE>());
 }
 
 template <typename PacketType>

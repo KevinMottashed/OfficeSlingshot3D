@@ -350,17 +350,11 @@ void WinsockNetwork::closeSockets()
 	}
 
 	// free memory
-	if (m_pControlSocket)
-	{
-		delete m_pControlSocket;
-		m_pControlSocket = NULL;
-	}
+	delete m_pControlSocket;
+	m_pControlSocket = NULL;
 
-	if (m_pDataSocket)
-	{
-		delete m_pDataSocket;
-		m_pDataSocket = NULL;
-	}
+	delete m_pDataSocket;
+	m_pDataSocket = NULL;
 
 	return;
 }

@@ -91,10 +91,10 @@ public:
 		return 0;
 		}
 
-	bool inBufferData()
+	bool inBufferData() const
 		{return !(bufferRead==bufferWrite);}
 
-	bool getConnected()
+	bool getConnected() const
 		{return connected;}
 
 protected:

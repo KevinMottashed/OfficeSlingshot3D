@@ -117,8 +117,8 @@ BOOL CSerialPort::InitPort(UINT  portnr,		// portnumber (1..4)
 	m_dwCommEvents = dwCommEvents;
 
 	BOOL bResult = FALSE;
-	char *szPort = new char[50];
-	char *szBaud = new char[50];
+	char szPort[50];
+	char szBaud[50];
 
 	// now it critical!
 	EnterCriticalSection(&m_csCommunicationSync);
@@ -157,9 +157,6 @@ BOOL CSerialPort::InitPort(UINT  portnr,		// portnumber (1..4)
 	if (m_hComm == INVALID_HANDLE_VALUE)
 	{
 		// port not found
-		delete [] szPort;
-		delete [] szBaud;
-
 		return FALSE;
 	}
 
@@ -196,9 +193,6 @@ BOOL CSerialPort::InitPort(UINT  portnr,		// portnumber (1..4)
 	}
 	else
 		ProcessErrorMessage("SetCommTimeouts()");
-
-	delete [] szPort;
-	delete [] szBaud;
 
 	// flush the port
 	PurgeComm(m_hComm, PURGE_RXCLEAR | PURGE_TXCLEAR | PURGE_RXABORT | PURGE_TXABORT);

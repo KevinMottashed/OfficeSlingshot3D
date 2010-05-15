@@ -30,8 +30,7 @@ TactileArray::~TactileArray(void)
 	closeSerialPort();
 	delete m_pSerialPort;
 	
-	if(m_pIntensityArray)
-		delete [] m_pIntensityArray;
+	delete [] m_pIntensityArray;
 
 	// Error occurs here. But I don't know the reason.
 	// Just comment out
