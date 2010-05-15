@@ -200,6 +200,7 @@ private:
 
 	// true if we are in the process of disconnecting and the disconnect originated from us
 	bool m_bLocalDisconnect; 
+	mutable CRITICAL_SECTION m_csLocalDisconnect;
 
 	// the user name that we will use to establish a connection to the other player
 	std::string userName;

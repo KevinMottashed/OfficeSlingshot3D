@@ -43,6 +43,7 @@ WinsockNetwork::WinsockNetwork() :
 	InitializeCriticalSection(&m_csControlSocketSend);
 	InitializeCriticalSection(&m_csDataSocketSend);
 	InitializeCriticalSection(&m_csIsEstablishing);
+	InitializeCriticalSection(&m_csLocalDisconnect);
 }
 
 WinsockNetwork::~WinsockNetwork()
@@ -50,6 +51,7 @@ WinsockNetwork::~WinsockNetwork()
 	DeleteCriticalSection(&m_csControlSocketSend);
 	DeleteCriticalSection(&m_csDataSocketSend);
 	DeleteCriticalSection(&m_csIsEstablishing);
+	DeleteCriticalSection(&m_csLocalDisconnect);
 	delete m_pControlSocket;
 	delete m_pDataSocket;
 	delete m_sEstablished;
@@ -178,6 +180,12 @@ rc_network WinsockNetwork::connect(const std::string& ipAddress, const std::stri
 
 rc_network WinsockNetwork::disconnect()
 {
+	{
+		SyncLocker lock(m_csLocalDisconnect);
+		// we set this variable so that the peerDisconnect call doesn't notify the UI that the peer has disconnected
+		m_bLocalDisconnect = true;
+	}
+
 	// disconnect is an operation that modifies the connection status
 	// we must therefore request write access to the connection resource before proceeding
 	SyncWriterLock statusLock = SyncWriterLock(m_rwsync_ConnectionStatus);
@@ -189,10 +197,7 @@ rc_network WinsockNetwork::disconnect()
 		// it is only safe to close the sockets once both sides have shutdown the send operations
 		// once the other side shuts down its sockets the receive threads will call the peer disconnect function
 		// this will give us a clean disconnect
-		shutdownSockets();
-
-		// we set this variable so that the peerDisconnect call doesn't notify the UI that the peer has disconnected
-		m_bLocalDisconnect = true;
+		shutdownSockets();		
 	}
 	else
 	{
@@ -209,11 +214,15 @@ void WinsockNetwork::peerDisconnect()
 	// we must therefore request write access to the connection resource before proceeding
 	SyncWriterLock statusLock = SyncWriterLock(m_rwsync_ConnectionStatus);
 
-	if (m_bIsConnected && !m_bLocalDisconnect)
+	if (m_bIsConnected)
 	{
-		// notify the observers that the peer has disconnected
-		// only notify the observers if it was the peer that initiated the disconnect
-		notify(PEER_DISCONNECTED);
+		SyncLocker lock (m_csLocalDisconnect);
+		if (!m_bLocalDisconnect)
+		{
+			// notify the observers that the peer has disconnected
+			// only notify the observers if it was the peer that initiated the disconnect
+			notify(PEER_DISCONNECTED);
+		}
 	}
 
 	// close the sockets and reset the connection
@@ -304,9 +313,14 @@ void WinsockNetwork::resetConnectionStatus()
 	m_bDataConnected = false;
 	m_bIsConnected = false;
 	m_bIsServer = false;
-	m_bLocalDisconnect = false;
-	SyncLocker lock (m_csIsEstablishing);
-	m_bIsEstablishing = false;
+	{
+		SyncLocker lock (m_csLocalDisconnect);
+		m_bLocalDisconnect = false;
+	}
+	{
+		SyncLocker lock (m_csIsEstablishing);
+		m_bIsEstablishing = false;
+	}
 	return;
 }
 
@@ -683,6 +697,15 @@ rc_network WinsockNetwork::syncSendDataMessage(const DataPacket& packet)
 
 		while (bytesSent < chunk->size())
 		{
+			{
+				SyncLocker lock (m_csLocalDisconnect);
+				if (m_bLocalDisconnect)
+				{
+					// if we are in the process of disconnecting then we don't want to send anything over this socket
+					return ERROR_NO_CONNECTION;
+				}
+			}
+
 			int rc = send(m_hDataSocket, i, chunk->size() - bytesSent, 0);
 
 			// check the return code
@@ -795,6 +818,15 @@ rc_network WinsockNetwork::syncSendControlMessage(const ControlPacket& packet)
 
 		while (bytesSent < chunk->size())
 		{
+			{
+				SyncLocker lock (m_csLocalDisconnect);
+				if (m_bLocalDisconnect)
+				{
+					// if we are in the process of disconnecting then we don't want to send anything over this socket
+					return ERROR_NO_CONNECTION;
+				}
+			}
+
 			int rc = send(m_hControlSocket, i, chunk->size() - bytesSent, 0);
 
 			// check the return code

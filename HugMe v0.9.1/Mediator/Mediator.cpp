@@ -489,7 +489,10 @@ void Mediator::closeApplication()
 	// the only thing to do is to close the sockets so the other end has a clean disconnect
 	// by closing the sockets the other end will receive an end of file of its sockets
 	// this is how the remote end will know that we have disconnected
-	network->disconnect();
+	// the disconnect function will also exit the game
+	// by disconnecting the network and exiting the game all threads will have (or will soon be) exited
+	// so the application will be closed
+	disconnect();
 	return;
 }
 
