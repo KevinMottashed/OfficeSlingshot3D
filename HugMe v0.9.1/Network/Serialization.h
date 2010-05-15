@@ -3,7 +3,6 @@
 
 #include "stdafx.h"
 #include "chai3d.h"
-#include "StaticAssert.h"
 #include "Projectile.h"
 #include "VideoData.h"
 #include "boost.h"
