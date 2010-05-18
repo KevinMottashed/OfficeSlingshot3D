@@ -1,11 +1,28 @@
 #ifndef BOOST_H
 #define BOOST_H
 
-// boost for each
+//------------------------------------------------------------------------
+// Boost Foreach
+// http://www.boost.org/doc/libs/1_42_0/doc/html/foreach.html
+//------------------------------------------------------------------------
 #include <boost/foreach.hpp>
 #define foreach BOOST_FOREACH
 
-// smart pointers
+//------------------------------------------------------------------------
+// Boost Smart Ptr
+// http://www.boost.org/doc/libs/1_43_0/libs/smart_ptr/smart_ptr.htm
+//------------------------------------------------------------------------
+#include <boost/scoped_array.hpp>
 #include <boost/shared_ptr.hpp>
+
+//------------------------------------------------------------------------
+// Boost Iostreams
+// http://www.boost.org/doc/libs/1_43_0/libs/iostreams/doc/index.html
+//------------------------------------------------------------------------
+// microsoft STL deprecation strikes again
+#pragma warning (disable : 4996)
+#include <boost/iostreams/stream.hpp>
+#include <boost/iostreams/concepts.hpp>
+#pragma warning (default : 4996)
 
 #endif

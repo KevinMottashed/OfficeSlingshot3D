@@ -2,39 +2,34 @@
 #define CONSOLE_H
 
 #include "stdafx.h"
+#include "boost.h"
 
-// A utility class for writing to the console
-// the goal of this class is to wrap the OutputDebugStr function
-// this will allow using the output operator to print to the console
+// A utility for writing to the console
+// the goal of this file is to wrap the OutputDebugStr function
+// into a STL compliant string
 //
 // Usage
-// console << "some message to display\n";
-//
-// Limitations
-// stream modifiers can't be applied
-// for example std::endl can't be used (use "\n" instead)
-class ConsoleStream
+// console << "some message to display" << std::endl;
+
+
+// A boost sink that writes to the debug console
+class ConsoleSink : public boost::iostreams::sink
+{
+public:
+	std::streamsize write(const char* s, std::streamsize n);
+};
+
+// a boost stream that writes to a console sink
+class ConsoleStream : public boost::iostreams::stream<ConsoleSink>
 {
 public:
 	ConsoleStream();
 	~ConsoleStream();
+private:
+	ConsoleSink sink;
 };
 
-// output operator for the console stream
-template <typename T>
-ConsoleStream& operator<<(ConsoleStream& c, const T& t)
-{
-	// write t to a stream
-	std::ostringstream os;
-	os << t;
-
-	// write the stream to the console
-	OutputDebugString(os.str().c_str());
-
-	return c;
-}
-
-// the console for this application
+// the console stream for this application
 static ConsoleStream console;
 
 #endif

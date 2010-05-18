@@ -13,8 +13,8 @@ template <typename S, typename T = int>
 class HumanFormatLogger : public Logger
 {
 public:
-	HumanFormatLogger(S& ostream); // for streams that can be copied
-	HumanFormatLogger(T param); // for streams that cannot be copied
+	HumanFormatLogger();
+	HumanFormatLogger(T param);
 	virtual ~HumanFormatLogger();
 
 protected:
@@ -63,11 +63,11 @@ typedef HumanFormatLogger<std::ofstream, char*> HumanFormatFileLogger;
 typedef HumanFormatLogger<ConsoleStream> HumanFormatConsoleLogger;
 
 //---------------------------------------------
-// Implementation
+// Template Implementation
 //---------------------------------------------
 
 template <typename S, typename T>
-HumanFormatLogger<S,T>::HumanFormatLogger(S& ostream) : ostream(ostream)
+HumanFormatLogger<S,T>::HumanFormatLogger() : ostream()
 {
 }
 
@@ -84,175 +84,175 @@ HumanFormatLogger<S,T>::~HumanFormatLogger()
 template <typename S, typename T>
 void HumanFormatLogger<S,T>::logPeerConnected()
 {
-	ostream << "peer connected\n";
+	ostream << "peer connected" << std::endl;
 	return;
 }
 
 template <typename S, typename T>
 void HumanFormatLogger<S,T>::logPeerDisconnected()
 {
-	ostream << "peer disconnected\n";
+	ostream << "peer disconnected" << std::endl;
 	return;
 }
 
 template <typename S, typename T>
 void HumanFormatLogger<S,T>::logPeerStartGame()
 {
-	ostream << "peer started game\n";
+	ostream << "peer started game" << std::endl;
 	return;
 }
 
 template <typename S, typename T>
 void HumanFormatLogger<S,T>::logPeerPauseGame()
 {
-	ostream << "peer paused game\n";
+	ostream << "peer paused game" << std::endl;
 	return;
 }
 
 template <typename S, typename T>
 void HumanFormatLogger<S,T>::logPeerExitGame()
 {
-	ostream << "peer exited game\n";
+	ostream << "peer exited game" << std::endl;
 	return;
 }
 
 template <typename S, typename T>
 void HumanFormatLogger<S,T>::logNetworkError(rc_network error)
 {
-	ostream << "network error " << lookup(error) << "\n";
+	ostream << "network error " << lookup(error) << std::endl;
 	return;
 }
 
 template <typename S, typename T>
 void HumanFormatLogger<S,T>::logUserNameReceived(const std::string& name)
 {
-	ostream << "received user name: " << name << "\n";
+	ostream << "received user name: " << name << std::endl;
 	return;
 }
 
 template <typename S, typename T>
 void HumanFormatLogger<S,T>::logChatMessageReceived(const std::string& message)
 {
-	ostream << "received chat message: " << message << "\n";
+	ostream << "received chat message: " << message << std::endl;
 	return;
 }
 
 template <typename S, typename T>
 void HumanFormatLogger<S,T>::logVideoDataReceived(const VideoData& data)
 {
-	ostream << "received video width=" << IMAGE_WIDTH << " height=" << IMAGE_HEIGHT << "\n";
+	ostream << "received video width=" << IMAGE_WIDTH << " height=" << IMAGE_HEIGHT << std::endl;
 	return;
 }
 
 template <typename S, typename T>
 void HumanFormatLogger<S,T>::logSlingshotPositionReceived(const cVector3d& position)
 {
-	ostream << "received slingshot position " << position << "\n";
+	ostream << "received slingshot position " << position << std::endl;
 	return;
 }
 
 template <typename S, typename T>
 void HumanFormatLogger<S,T>::logProjectileReceived(const Projectile& projectile)
 {
-	ostream << "received projectile " << projectile << "\n";
+	ostream << "received projectile " << projectile << std::endl;
 	return;
 }
 
 template <typename S, typename T>
 void HumanFormatLogger<S,T>::logPullbackReceived()
 {
-	ostream << "received pullback\n";
+	ostream << "received pullback" << std::endl;
 	return;
 }
 
 template <typename S, typename T>
 void HumanFormatLogger<S,T>::logReleaseReceived()
 {
-	ostream << "received release\n";
+	ostream << "received release" << std::endl;
 	return;
 }
 
 template <typename S, typename T>
 void HumanFormatLogger<S,T>::logPlayerPositionReceived(const cVector3d& position)
 {
-	ostream << "received player position " << position << "\n";
+	ostream << "received player position " << position << std::endl;
 	return;
 }
 
 template <typename S, typename T>
 void HumanFormatLogger<S,T>::logConnect()
 {
-	ostream << "connect pushed\n";
+	ostream << "connect pushed" << std::endl;
 	return;
 }
 
 template <typename S, typename T>
 void HumanFormatLogger<S,T>::logListen()
 {
-	ostream << "listen pushed\n";
+	ostream << "listen pushed" << std::endl;
 	return;
 }
 
 template <typename S, typename T>
 void HumanFormatLogger<S,T>::logDisconnect()
 {
-	ostream << "disconnect pushed\n";
+	ostream << "disconnect pushed" << std::endl;
 	return;
 }
 
 template <typename S, typename T>
 void HumanFormatLogger<S,T>::logChangePreferences(const UserPreferences& preferences)
 {
-	ostream << "preferences changed\n" << preferences;
+	ostream << "preferences changed" << preferences << std::endl;
 	return;
 }
 
 template <typename S, typename T>
 void HumanFormatLogger<S,T>::logLocalStartGame()
 {
-	ostream << "start game pushed\n";
+	ostream << "start game pushed" << std::endl;
 	return;
 }
 
 template <typename S, typename T>
 void HumanFormatLogger<S,T>::logLocalPauseGame()
 {
-	ostream << "pause game pushed\n";
+	ostream << "pause game pushed" << std::endl;
 	return;
 }
 
 template <typename S, typename T>
 void HumanFormatLogger<S,T>::logLocalExitGame()
 {
-	ostream << "exit game pushed\n";
+	ostream << "exit game pushed" << std::endl;
 	return;
 }
 
 template <typename S, typename T>
 void HumanFormatLogger<S,T>::logCloseApplication()
 {
-	ostream << "close application pushed\n";
+	ostream << "close application pushed" << std::endl;
 	return;
 }
 
 template <typename S, typename T>
 void HumanFormatLogger<S,T>::logSendChatMessage(const std::string& message)
 {
-	ostream << "send chat pushed, message=" << message << "\n";
+	ostream << "send chat pushed, message=" << message << std::endl;
 	return;
 }
 
 template <typename S, typename T>
 void HumanFormatLogger<S,T>::logLocalSlingshotPosition(const cVector3d& position)
 {
-	ostream << "local slingshot moved to " << position << "\n";
+	ostream << "local slingshot moved to " << position << std::endl;
 	return;
 }
 
 template <typename S, typename T>
 void HumanFormatLogger<S,T>::logLocalVideoData(const VideoData& data)
 {
-	ostream << "new local frame, width=" << IMAGE_WIDTH << " height=" << IMAGE_HEIGHT << "\n";
+	ostream << "new local frame, width=" << IMAGE_WIDTH << " height=" << IMAGE_HEIGHT << std::endl;
 	return;
 }
 
