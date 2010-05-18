@@ -547,10 +547,6 @@
 			Name="Logger"
 			>
 			<File
-				RelativePath=".\Logger\HumanFormatLogger.cpp"
-				>
-			</File>
-			<File
 				RelativePath=".\Logger\HumanFormatLogger.h"
 				>
 			</File>
@@ -564,10 +560,6 @@
 			</File>
 			<File
 				RelativePath=".\Logger\LoggerProxy.h"
-				>
-			</File>
-			<File
-				RelativePath=".\Logger\ReplayFormatLogger.cpp"
 				>
 			</File>
 			<File
