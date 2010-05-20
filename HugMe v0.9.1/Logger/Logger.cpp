@@ -14,79 +14,79 @@ void Logger::update(NetworkUpdateContext context, const void *data)
 	{
 		case PEER_CONNECTED:
 		{
-			logPeerConnected();
+			log(NETWORK_PEER_CONNECTED);
 			break;
 		}
 		case PEER_DISCONNECTED:
 		{
-			logPeerDisconnected();
+			log(NETWORK_PEER_DISCONNECTED);
 			break;
 		}
 		case PEER_START_GAME:
 		{
-			logPeerStartGame();
+			log(NETWORK_PEER_START_GAME);
 			break;
 		}
 		case PEER_PAUSE_GAME:
 		{
-			logPeerPauseGame();
+			log(NETWORK_PEER_PAUSE_GAME);
 			break;
 		}
 		case PEER_EXIT_GAME:
 		{
-			logPeerExitGame();
+			log(NETWORK_PEER_EXIT_GAME);
 			break;
 		}
 		case NETWORK_ERROR:
 		{
 			assert(data != NULL);
-			logNetworkError(*(rc_network*) data);
+			log(NETWORK_ERROR_OCCURED, *(rc_network*) data);
 			break;
 		}
 		case RECEIVED_USER_NAME:
 		{
 			assert(data != NULL);
-			logUserNameReceived(*(const std::string*) data);
+			log(NETWORK_USER_NAME, *(const std::string*) data);
 			break;
 		}
 		case RECEIVED_CHAT_MESSAGE:
 		{
 			assert(data != NULL);
-			logChatMessageReceived(*(const std::string*) data);
+			log(NETWORK_CHAT_MESSAGE, *(const std::string*) data);
 			break;
 		}
 		case RECEIVED_VIDEO:
 		{
 			assert(data != NULL);
-			logVideoDataReceived(*(VideoData*) data);
+			log(NETWORK_VIDEO_DATA, *(VideoData*) data);
 			break;
 		}
 		case RECEIVED_SLINGSHOT_POSITION:
 		{
 			assert(data != NULL);
-			logSlingshotPositionReceived(*(cVector3d*) data);
+			log(NETWORK_SLINGSHOT_POSITION, *(cVector3d*) data);
 			break;
 		}
 		case RECEIVED_PROJECTILE:
 		{
 			assert(data != NULL);
-			logProjectileReceived(*(Projectile*) data);
+			log(NETWORK_PROJECTILE, *(Projectile*) data);
 			break;
 		}
 		case RECEIVED_PULLBACK:
 		{			
-			logPullbackReceived();
+			log(NETWORK_SLINGSHOT_PULLBACK);
 			break;
 		}
 		case RECEIVED_RELEASE:
 		{
-			logReleaseReceived();
+			log(NETWORK_SLINGSHOT_RELEASE);
 			break;
 		}
 		case RECEIVED_PLAYER_POSITION:
 		{
 			assert(data != NULL);
-			logPlayerPositionReceived(*(cVector3d*) data);
+			log(NETWORK_PLAYER_POSITION, *(cVector3d*) data);
 			break;
 		}
 	}
@@ -99,49 +99,49 @@ void Logger::update(UserInterfaceUpdateContext context, const void* data)
 	{
 		case CONNECT:
 		{
-			logConnect();
+			log(UI_CONNECT);
 			break;
 		}
 		case LISTEN:
 		{
-			logListen();
+			log(UI_LISTEN);
 			break;
 		}
 		case DISCONNECT:
 		{
-			logDisconnect();
+			log(UI_DISCONNECT);
 			break;
 		}
 		case PREFERENCES:
 		{
 			assert(data != NULL);
-			logChangePreferences(*(UserPreferences*) data);
+			log(UI_PREFERENCES, *(UserPreferences*) data);
 			break;
 		}
 		case START_GAME:
 		{
-			logLocalStartGame();
+			log(UI_START_GAME);
 			break;
 		}
 		case PAUSE_GAME:
 		{
-			logLocalPauseGame();
+			log(UI_PAUSE_GAME);
 			break;
 		}
 		case EXIT_GAME:
 		{
-			logLocalExitGame();
+			log(UI_EXIT_GAME);
 			break;
 		}
 		case EXIT_APPLICATION:
 		{
-			logCloseApplication();
+			log(UI_CLOSE_APPLICATION);
 			break;
 		}
 		case CHAT_MESSAGE:
 		{
 			assert(data != NULL);
-			logSendChatMessage(*(std::string*) data);
+			log(UI_CHAT_MESSAGE, *(std::string*) data);
 			break;
 		}
 	}
@@ -155,7 +155,7 @@ void Logger::update(FalconUpdateContext context, const void* data)
 		case SLINGSHOT_POSITION:
 		{
 			assert(data != NULL);
-			logLocalSlingshotPosition(*(cVector3d*) data);
+			log(FALCON_SLINGSHOT_POSITION, *(cVector3d*) data);
 			break;
 		}
 	}
@@ -175,7 +175,7 @@ void Logger::update(ZCameraUpdateContext context, const void* data)
 		case VIDEO:
 		{
 			assert(data != NULL);
-			logLocalVideoData(*(VideoData*) data);
+			log(ZCAM_VIDEO_DATA, *(VideoData*) data);
 			break;
 		}
 	}

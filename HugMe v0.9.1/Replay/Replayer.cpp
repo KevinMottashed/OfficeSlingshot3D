@@ -42,13 +42,13 @@ void Replayer::replay()
 	while (!file.eof())
 	{
 		long ms;
-		ReplayEvent rEvent;
+		LogEvent logEvent;
 		unsigned int size;
 
 		// extract the needed information from the file
 		// each replay is formatted as <time><event><size><data>
 		file.read((char*) &ms, sizeof(long));
-		file.read((char*) &rEvent, sizeof(ReplayEvent));
+		file.read((char*) &logEvent, sizeof(LogEvent));
 		file.read((char*) &size, sizeof(unsigned int));
 		if (!file.good())
 		{
@@ -66,7 +66,7 @@ void Replayer::replay()
 			timer.wait();
 		}
 
-		switch (rEvent)
+		switch (logEvent)
 		{
 		case NETWORK_PEER_CONNECTED:
 			{

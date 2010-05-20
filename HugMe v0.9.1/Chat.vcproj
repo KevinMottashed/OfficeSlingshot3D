@@ -551,6 +551,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Logger\LogEvent.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Logger\Logger.cpp"
 				>
 			</File>

@@ -13,12 +13,12 @@
 
 // forward declarations
 class Logger;
-template <typename S, typename T1> class HumanFormatLogger;
-template <typename S, typename T1, typename T2> class ReplayFormatLogger;
+template <typename Stream> class HumanFormatLogger;
+template <typename Stream> class ReplayFormatLogger;
 
 // typedefs for commonly used template parameters;
-typedef HumanFormatLogger<std::ofstream, char*> HumanFormatFileLogger;
+typedef HumanFormatLogger<std::ofstream> HumanFormatFileLogger;
 typedef HumanFormatLogger<ConsoleStream> HumanFormatConsoleLogger;
-typedef ReplayFormatLogger<std::ofstream, char*, unsigned int> ReplayFormatFileLogger;
+typedef ReplayFormatLogger<std::ofstream> ReplayFormatFileLogger;
 typedef ReplayFormatLogger<ConsoleStream> ReplayFormatConsoleLogger;
 

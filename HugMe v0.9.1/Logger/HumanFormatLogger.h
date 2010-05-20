@@ -7,248 +7,123 @@
 
 // concrete logger class
 // this logger outputs the log in a human readable format
-// S is the stream type
-// T is the type needed to initialize the stream
-template <typename S, typename T = int>
+// Stream is the stream type
+template <typename Stream>
 class HumanFormatLogger : public Logger
 {
 public:
+	// Constructors
+	// many stream types cannot be copied (including the STL ones)
+	// so we must provide templated constructors to be able to initialize the stream
 	HumanFormatLogger();
-	HumanFormatLogger(T param);
+
+	template <typename T1>
+	HumanFormatLogger(T1 param);
+
+	template <typename T1, typename T2>
+	HumanFormatLogger(T1 param1, T2 param2);
+
+	template <typename T1, typename T2, typename T3>
+	HumanFormatLogger(T1 param1, T2 param2, T3 param3);
+
+
 	virtual ~HumanFormatLogger();
 
 protected:
-	// log network events
-	virtual void logPeerConnected();
-	virtual void logPeerDisconnected();
-	virtual void logPeerStartGame();
-	virtual void logPeerPauseGame();
-	virtual void logPeerExitGame();
-	virtual void logNetworkError(rc_network error);
-	virtual void logUserNameReceived(const std::string& name);
-	virtual void logChatMessageReceived(const std::string& message);
-	virtual void logVideoDataReceived(const VideoData& data);
-	virtual void logSlingshotPositionReceived(const cVector3d& position);
-	virtual void logProjectileReceived(const Projectile& projectile);
-	virtual void logPullbackReceived();
-	virtual void logReleaseReceived();
-	virtual void logPlayerPositionReceived(const cVector3d& position);
-
-	// log user interface events
-	virtual void logConnect();
-	virtual void logListen();
-	virtual void logDisconnect();
-	virtual void logChangePreferences(const UserPreferences& preferences);
-	virtual void logLocalStartGame();
-	virtual void logLocalPauseGame();
-	virtual void logLocalExitGame();
-	virtual void logCloseApplication();
-	virtual void logSendChatMessage(const std::string& message);
-
-	// log falcon events
-	virtual void logLocalSlingshotPosition(const cVector3d& position);
-
-	// log zcam events
-	virtual void logLocalVideoData(const VideoData& data);
+	// log various event of various data types
+	virtual void log(LogEvent logEvent);
+	virtual void log(LogEvent logEvent, rc_network error);
+	virtual void log(LogEvent logEvent, const std::string& str);
+	virtual void log(LogEvent logEvent, const VideoData& video);
+	virtual void log(LogEvent logEvent, const cVector3d& vec);
+	virtual void log(LogEvent logEvent, const Projectile& projectile);
+	virtual void log(LogEvent logEvent, const UserPreferences& preferences);
 
 private:
 	HumanFormatLogger(const HumanFormatLogger& c); // intentionally not implemented
 	HumanFormatLogger& operator=(const HumanFormatLogger& c); // intentionally not implemented
 
-	S ostream;
+	Stream ostream;
 };
 
 //---------------------------------------------
 // Template Implementation
 //---------------------------------------------
 
-template <typename S, typename T>
-HumanFormatLogger<S,T>::HumanFormatLogger() : ostream()
+template <typename Stream>
+HumanFormatLogger<Stream>::HumanFormatLogger() : ostream()
 {
 }
 
-template <typename S, typename T>
-HumanFormatLogger<S,T>::HumanFormatLogger(T param) : ostream(param)
+template <typename Stream>
+template <typename T1>
+HumanFormatLogger<Stream>::HumanFormatLogger(T1 param) : ostream(param)
 {
 }
 
-template <typename S, typename T>
-HumanFormatLogger<S,T>::~HumanFormatLogger()
+template <typename Stream>
+template <typename T1, typename T2>
+HumanFormatLogger<Stream>::HumanFormatLogger(T1 param1, T2 param2) : ostream(param1, param2)
 {
 }
 
-template <typename S, typename T>
-void HumanFormatLogger<S,T>::logPeerConnected()
+template <typename Stream>
+template <typename T1, typename T2, typename T3>
+HumanFormatLogger<Stream>::HumanFormatLogger(T1 param1, T2 param2, T3 param3) : ostream(param1, param2, param3)
 {
-	ostream << "peer connected" << std::endl;
+}
+
+template <typename Stream>
+HumanFormatLogger<Stream>::~HumanFormatLogger()
+{
+}
+
+template <typename Stream>
+void HumanFormatLogger<Stream>::log(LogEvent logEvent)
+{
+	ostream << lookup(logEvent) << std::endl;
 	return;
 }
 
-template <typename S, typename T>
-void HumanFormatLogger<S,T>::logPeerDisconnected()
+template <typename Stream>
+void HumanFormatLogger<Stream>::log(LogEvent logEvent, rc_network error)
 {
-	ostream << "peer disconnected" << std::endl;
+	ostream << lookup(logEvent) << " - " << lookup(error) << std::endl;
 	return;
 }
 
-template <typename S, typename T>
-void HumanFormatLogger<S,T>::logPeerStartGame()
+template <typename Stream>
+void HumanFormatLogger<Stream>::log(LogEvent logEvent, const std::string& str)
 {
-	ostream << "peer started game" << std::endl;
+	ostream << lookup(logEvent) << " - " << str << std::endl;
 	return;
 }
 
-template <typename S, typename T>
-void HumanFormatLogger<S,T>::logPeerPauseGame()
+template <typename Stream>
+void HumanFormatLogger<Stream>::log(LogEvent logEvent, const VideoData& video)
 {
-	ostream << "peer paused game" << std::endl;
+	ostream << lookup(logEvent) << std::endl;
 	return;
 }
 
-template <typename S, typename T>
-void HumanFormatLogger<S,T>::logPeerExitGame()
+template <typename Stream>
+void HumanFormatLogger<Stream>::log(LogEvent logEvent, const cVector3d& vec)
 {
-	ostream << "peer exited game" << std::endl;
+	ostream << lookup(logEvent) << " - " << vec << std::endl;
 	return;
 }
 
-template <typename S, typename T>
-void HumanFormatLogger<S,T>::logNetworkError(rc_network error)
+template <typename Stream>
+void HumanFormatLogger<Stream>::log(LogEvent logEvent, const Projectile& projectile)
 {
-	ostream << "network error " << lookup(error) << std::endl;
+	ostream << lookup(logEvent) << " - " << projectile << std::endl;
 	return;
 }
 
-template <typename S, typename T>
-void HumanFormatLogger<S,T>::logUserNameReceived(const std::string& name)
+template <typename Stream>
+void HumanFormatLogger<Stream>::log(LogEvent logEvent, const UserPreferences& preferences)
 {
-	ostream << "received user name: " << name << std::endl;
-	return;
-}
-
-template <typename S, typename T>
-void HumanFormatLogger<S,T>::logChatMessageReceived(const std::string& message)
-{
-	ostream << "received chat message: " << message << std::endl;
-	return;
-}
-
-template <typename S, typename T>
-void HumanFormatLogger<S,T>::logVideoDataReceived(const VideoData& data)
-{
-	ostream << "received video width=" << IMAGE_WIDTH << " height=" << IMAGE_HEIGHT << std::endl;
-	return;
-}
-
-template <typename S, typename T>
-void HumanFormatLogger<S,T>::logSlingshotPositionReceived(const cVector3d& position)
-{
-	ostream << "received slingshot position " << position << std::endl;
-	return;
-}
-
-template <typename S, typename T>
-void HumanFormatLogger<S,T>::logProjectileReceived(const Projectile& projectile)
-{
-	ostream << "received projectile " << projectile << std::endl;
-	return;
-}
-
-template <typename S, typename T>
-void HumanFormatLogger<S,T>::logPullbackReceived()
-{
-	ostream << "received pullback" << std::endl;
-	return;
-}
-
-template <typename S, typename T>
-void HumanFormatLogger<S,T>::logReleaseReceived()
-{
-	ostream << "received release" << std::endl;
-	return;
-}
-
-template <typename S, typename T>
-void HumanFormatLogger<S,T>::logPlayerPositionReceived(const cVector3d& position)
-{
-	ostream << "received player position " << position << std::endl;
-	return;
-}
-
-template <typename S, typename T>
-void HumanFormatLogger<S,T>::logConnect()
-{
-	ostream << "connect pushed" << std::endl;
-	return;
-}
-
-template <typename S, typename T>
-void HumanFormatLogger<S,T>::logListen()
-{
-	ostream << "listen pushed" << std::endl;
-	return;
-}
-
-template <typename S, typename T>
-void HumanFormatLogger<S,T>::logDisconnect()
-{
-	ostream << "disconnect pushed" << std::endl;
-	return;
-}
-
-template <typename S, typename T>
-void HumanFormatLogger<S,T>::logChangePreferences(const UserPreferences& preferences)
-{
-	ostream << "preferences changed" << preferences << std::endl;
-	return;
-}
-
-template <typename S, typename T>
-void HumanFormatLogger<S,T>::logLocalStartGame()
-{
-	ostream << "start game pushed" << std::endl;
-	return;
-}
-
-template <typename S, typename T>
-void HumanFormatLogger<S,T>::logLocalPauseGame()
-{
-	ostream << "pause game pushed" << std::endl;
-	return;
-}
-
-template <typename S, typename T>
-void HumanFormatLogger<S,T>::logLocalExitGame()
-{
-	ostream << "exit game pushed" << std::endl;
-	return;
-}
-
-template <typename S, typename T>
-void HumanFormatLogger<S,T>::logCloseApplication()
-{
-	ostream << "close application pushed" << std::endl;
-	return;
-}
-
-template <typename S, typename T>
-void HumanFormatLogger<S,T>::logSendChatMessage(const std::string& message)
-{
-	ostream << "send chat pushed, message=" << message << std::endl;
-	return;
-}
-
-template <typename S, typename T>
-void HumanFormatLogger<S,T>::logLocalSlingshotPosition(const cVector3d& position)
-{
-	ostream << "local slingshot moved to " << position << std::endl;
-	return;
-}
-
-template <typename S, typename T>
-void HumanFormatLogger<S,T>::logLocalVideoData(const VideoData& data)
-{
-	ostream << "new local frame, width=" << IMAGE_WIDTH << " height=" << IMAGE_HEIGHT << std::endl;
+	ostream << lookup(logEvent) << " - " << preferences << std::endl;
 	return;
 }
 
