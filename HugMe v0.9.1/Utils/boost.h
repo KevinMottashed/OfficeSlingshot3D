@@ -25,4 +25,22 @@
 #include <boost/iostreams/concepts.hpp>
 #pragma warning (default : 4996)
 
+//------------------------------------------------------------------------
+// Boost Date Time
+// http://www.boost.org/doc/libs/1_43_0/doc/html/date_time.html
+//------------------------------------------------------------------------
+#include <boost/date_time/posix_time/posix_time.hpp>
+
+//------------------------------------------------------------------------
+// Boost Thread
+// http://www.boost.org/doc/libs/1_43_0/doc/html/thread.html
+//------------------------------------------------------------------------
+#include <boost/thread.hpp>
+
+//------------------------------------------------------------------------
+// Boost Asio
+// http://www.boost.org/doc/libs/1_43_0/doc/html/boost_asio.html
+//------------------------------------------------------------------------
+#include <boost/asio.hpp>
+
 #endif

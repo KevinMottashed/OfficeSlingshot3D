@@ -54,8 +54,8 @@ BOOL CChatApp::InitInstance()
 	AfxInitRichEdit();
 
 	// Initialize the components
-	shared_ptr<WinsockNetwork> network(new WinsockNetwork());
-	shared_ptr<NovintFalcon> falcon(new NovintFalcon());
+	shared_ptr<Network> network(new WinsockNetwork());
+	shared_ptr<Falcon> falcon(new NovintFalcon());
 
 	// this will initialize the Mediator class and it will initialize the system
 	Mediator mediator(network, falcon);

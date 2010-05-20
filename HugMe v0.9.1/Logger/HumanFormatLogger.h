@@ -58,10 +58,6 @@ private:
 	S ostream;
 };
 
-// some typedefs to make things easier
-typedef HumanFormatLogger<std::ofstream, char*> HumanFormatFileLogger;
-typedef HumanFormatLogger<ConsoleStream> HumanFormatConsoleLogger;
-
 //---------------------------------------------
 // Template Implementation
 //---------------------------------------------
