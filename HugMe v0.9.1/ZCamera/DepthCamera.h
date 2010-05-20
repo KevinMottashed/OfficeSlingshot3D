@@ -15,7 +15,7 @@
 #ifndef DEPTH_CAMERA_H
 #define DEPTH_CAMERA_H
 
-#include "windows.h"
+#include "stdafx.h"
 #include "tdvCameraInterface.h"
 
 // video callback definition

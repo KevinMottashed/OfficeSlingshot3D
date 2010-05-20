@@ -25,7 +25,6 @@
 #include <afxmt.h>			// multi thread library
 #include <Richole.h>
 #include <stdio.h>
-#include <windows.h>
 #include <vfw.h>
 
 typedef DWORD DWORD_PTR;
