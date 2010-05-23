@@ -29,7 +29,10 @@ class Mediator :	public NetworkObserver,
 					public GameObserver
 {
 public:
-	Mediator(boost::shared_ptr<Network> network, boost::shared_ptr<Falcon> falcon);
+	Mediator(	boost::shared_ptr<Network> network,
+				boost::shared_ptr<Falcon> falcon,
+				boost::shared_ptr<UserInterface> userInterface,
+				boost::shared_ptr<Configuration> configuration);
 	virtual ~Mediator();
 
 	// updates for observer patterns
@@ -39,16 +42,13 @@ public:
 	virtual void update(FalconUpdateContext context, const void* data);
 	virtual void update(GameUpdateContext context, const void* data);
 
-	// get the main window of the application
-	CDialog* getMainWindow();	
-
 private:
 	Mediator(const Mediator& c); // intentionally not implemented
 	Mediator& operator=(const Mediator& c); // intentionally not implemented
 
 	// managers for the different modules
 	boost::shared_ptr<Network> network;
-	boost::shared_ptr<UserInterfaceManager> userInterface;
+	boost::shared_ptr<UserInterface> userInterface;
 	boost::shared_ptr<Falcon> falcon;
 	boost::shared_ptr<ZCameraManager> zcamera;
 	boost::shared_ptr<SmartClothingManager> smartClothing;
@@ -62,7 +62,7 @@ private:
 	Logger* logger;
 
 	// move this out once we have an application initializer
-	Configuration configuration;
+	boost::shared_ptr<Configuration> configuration;
 	mutable CRITICAL_SECTION configurationMutex;
 
 	// the current state of the game

@@ -5,8 +5,8 @@
 
 using namespace std;
 
-CMainDlg::CMainDlg(UserInterfaceManager* pUserInterfaceManager, const UserPreferences& preferences, CWnd* pParent /*=NULL*/)
-	: pUserInterfaceManager(pUserInterfaceManager),
+CMainDlg::CMainDlg(UserInterface* pUserInterface, const UserPreferences& preferences, CWnd* pParent /*=NULL*/)
+	: pUserInterface(pUserInterface),
 		m_preferences(preferences),
 		CDialog(CMainDlg::IDD, pParent)
 {
@@ -60,16 +60,16 @@ BOOL CMainDlg::OnInitDialog()
 // method used to connect the user to a remote user
 void CMainDlg::OnNetworkConnect() 
 {
-	// notify the UI manager that the connect button has been pushed
-	pUserInterfaceManager->networkConnectButtonPushed();
+	// notify the UI that the connect button has been pushed
+	pUserInterface->networkConnectButtonPushed();
 	return;	
 }
 
 // method used to close the connection with the remote user
 void CMainDlg::OnNetworkDisconnect() 
 {
-	// notify the UI manager that the disconnect button has been pushed
-	pUserInterfaceManager->networkDisconnectButtonPushed();
+	// notify the UI that the disconnect button has been pushed
+	pUserInterface->networkDisconnectButtonPushed();
 
 	// enable and disable appropriate menu items
 	CMenu* pMenu = GetMenu();
@@ -88,8 +88,8 @@ void CMainDlg::OnNetworkDisconnect()
 // method used to listen for incoming connection attempts
 void CMainDlg::OnNetworkListen() 
 {
-	// let the UI manager know that the listen button has been pushed
-	pUserInterfaceManager->networkListenButtonPushed();	
+	// let the UI know that the listen button has been pushed
+	pUserInterface->networkListenButtonPushed();	
 	return;
 }
 
@@ -105,7 +105,7 @@ void CMainDlg::OnPreferencesEdit()
 		
 		// change our preferences
 		m_preferences = preferences;
-		pUserInterfaceManager->changePreferences(preferences);
+		pUserInterface->changePreferences(preferences);
 	}
 	return;	
 }
@@ -114,7 +114,7 @@ void CMainDlg::OnPreferencesEdit()
 void CMainDlg::OnStartGame()
 {
 	// start the game
-	pUserInterfaceManager->startGameButtonPushed();
+	pUserInterface->startGameButtonPushed();
 
 	// enable and disable appropriate menu items
 	CMenu* pMenu = GetMenu();
@@ -134,7 +134,7 @@ void CMainDlg::OnStartGame()
 void CMainDlg::OnExitGame() 
 {
 	// exit the game
-	pUserInterfaceManager->exitGameButtonPushed();
+	pUserInterface->exitGameButtonPushed();
 
 	// enable and disable appropriate menu items
 	CMenu* pMenu = GetMenu();
@@ -154,7 +154,7 @@ void CMainDlg::OnExitGame()
 void CMainDlg::OnPauseGame()
 {
 	// pause the game
-	pUserInterfaceManager->pauseGameButtonPushed();
+	pUserInterface->pauseGameButtonPushed();
 
 	// enable and disable appropriate menu items
 	CMenu* pMenu = GetMenu();
@@ -176,7 +176,7 @@ void CMainDlg::OnSendChat()
 	if(!chatInput.IsEmpty()) 
 	{
 		// send the chat message to the remote user through the network
-		pUserInterfaceManager->sendChatButtonPushed((string)chatInput);
+		pUserInterface->sendChatButtonPushed((string)chatInput);
 
 		// empty the chat edit box
 		m_editChatInput.SetWindowText("");
@@ -361,7 +361,7 @@ void CMainDlg::OnDestroy()
 	// close video DIB and application
 	closeLocalVideoArea();
 	closeRemoteVideoArea();
-	pUserInterfaceManager->closeApplication();
+	pUserInterface->closeApplication();
 }
 
 void CMainDlg::displayConnectionEstablished()

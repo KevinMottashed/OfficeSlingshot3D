@@ -1,10 +1,12 @@
 // public members of the user interface module
-#include "UserInterfaceManager.h"
+#include "UserInterface.h"
 #include "UserInterfaceSubject.h"
 #include "UserInterfaceObserver.h"
+#include "MFCUserInterface.h"
 
 // Forward declarations
-class UserInterfaceManager;
+class UserInterface;
 class UserInterfaceSubject;
 class UserInterfaceObserver;
+class MFCUserInterface;
 

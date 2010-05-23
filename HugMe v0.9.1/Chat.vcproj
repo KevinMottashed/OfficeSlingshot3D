@@ -301,6 +301,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\UserInterface\MFCUserInterface.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\UserInterface\MFCUserInterface.h"
+				>
+			</File>
+			<File
 				RelativePath=".\UserInterface\Preferences.cpp"
 				>
 			</File>
@@ -309,11 +317,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\UserInterface\UserInterfaceManager.cpp"
+				RelativePath=".\UserInterface\UserInterface.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\UserInterface\UserInterfaceManager.h"
+				RelativePath=".\UserInterface\UserInterface.h"
 				>
 			</File>
 			<File

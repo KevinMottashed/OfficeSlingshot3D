@@ -3,19 +3,19 @@
 
 #include "stdafx.h"
 #include "Resource.h"
-#include "UserInterfaceManager.h"
+#include "UserInterface.h"
 #include "VideoData.h"
 #include "UserPreferences.h"
 
 /////////////////////////////////////////////////////////////////////////////
 // CMainDlg dialog
 
-class UserInterfaceManager;
+class UserInterface;
 
 class CMainDlg : public CDialog
 {
 public:
-	CMainDlg(UserInterfaceManager* pUserInterfaceManager, const UserPreferences& preferences, CWnd* pParent = NULL);   // standard constructor
+	CMainDlg(UserInterface* pUserInterface, const UserPreferences& preferences, CWnd* pParent = NULL);   // standard constructor
 
 	// visual feedback for connection state
 	void displayConnectionEstablished();	
@@ -40,7 +40,7 @@ public:
 	void setPeerUserName(const std::string& name);
 
 private:
-	UserInterfaceManager* pUserInterfaceManager;
+	UserInterface* pUserInterface;
 	UserPreferences m_preferences;
 
 	// peers user name

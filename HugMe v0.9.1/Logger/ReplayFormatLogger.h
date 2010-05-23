@@ -7,7 +7,7 @@
 #include "ConsoleStream.h"
 
 // concrete logger class
-// this logger outputs the log in a human readable format
+// this logger outputs the log in the replay format
 // Stream is the stream type
 template <typename Stream>
 class ReplayFormatLogger : public Logger

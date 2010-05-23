@@ -5,15 +5,18 @@ using namespace std;
 using namespace boost; 
 
 
-Mediator::Mediator(boost::shared_ptr<Network> network, boost::shared_ptr<Falcon> falcon) :
+Mediator::Mediator(boost::shared_ptr<Network> network,
+				   boost::shared_ptr<Falcon> falcon,
+				   boost::shared_ptr<UserInterface> userInterface,
+				   boost::shared_ptr<Configuration> configuration) :
 	network(network),
 	falcon(falcon),
+	userInterface(userInterface),
 	game(),
-	configuration("userPreferences.txt"),
+	configuration(configuration),
 	gameState(NOT_PLAYING)
 {
-	// create the various components	
-	userInterface = shared_ptr<UserInterfaceManager>(new UserInterfaceManager(configuration.getUserPreferences()));
+	// create the various components
 	zcamera = shared_ptr<ZCameraManager>(new ZCameraManager());
 	smartClothing = shared_ptr<SmartClothingManager>(new SmartClothingManager());
 
@@ -77,11 +80,6 @@ void Mediator::exitGame()
 	game.stop();
 	falcon->stop();
 	zcamera->stop();
-}
-
-CDialog* Mediator::getMainWindow()
-{
-	return userInterface->getMainWindow();
 }
 
 void Mediator::update(NetworkUpdateContext context, const void* data)
@@ -384,7 +382,7 @@ void Mediator::connect()
 	// many threads could try to modify/read the configuration at once so we need to synchronize it
 	SyncLocker lock(configurationMutex);
 
-	UserPreferences prefs = configuration.getUserPreferences();
+	UserPreferences prefs = configuration->getUserPreferences();
 	rc_network error = network->connect(prefs.ipAddress, prefs.name);
 	if (error == SUCCESS)
 	{
@@ -402,7 +400,7 @@ void Mediator::listen()
 	// many threads could try to modify/read the configuration at once so we need to synchronize it
 	SyncLocker lock(configurationMutex);
 
-	UserPreferences prefs = configuration.getUserPreferences();
+	UserPreferences prefs = configuration->getUserPreferences();
 	rc_network error = network->listen(prefs.name);
 	
 	if (error == SUCCESS)
@@ -433,7 +431,7 @@ void Mediator::changePreferences(const UserPreferences& preferences)
 	// many threads could try to modify/read the configuration at once so we need to synchronize it
 	SyncLocker lock(configurationMutex);
 
-	UserPreferences currentPreferences = configuration.getUserPreferences();
+	UserPreferences currentPreferences = configuration->getUserPreferences();
 
 	if (currentPreferences.name != preferences.name)
 	{
@@ -450,7 +448,7 @@ void Mediator::changePreferences(const UserPreferences& preferences)
 		// TODO, notify smart clothing manager
 	}
 
-	configuration.setUserPreferences(preferences);
+	configuration->setUserPreferences(preferences);
 	return;
 }
 

@@ -56,11 +56,13 @@ BOOL CChatApp::InitInstance()
 	// Initialize the components
 	shared_ptr<Network> network(new WinsockNetwork());
 	shared_ptr<Falcon> falcon(new NovintFalcon());
+	shared_ptr<Configuration> configuration(new Configuration("userPreferences.txt"));
+	shared_ptr<MFCUserInterface> userInterface(new MFCUserInterface(configuration->getUserPreferences()));
 
 	// this will initialize the Mediator class and it will initialize the system
-	Mediator mediator(network, falcon);
+	Mediator mediator(network, falcon, userInterface, configuration);
 
-	CDialog* mainWindow = mediator.getMainWindow();
+	CDialog* mainWindow = userInterface->getMainWindow();
 
 	m_pMainWnd = mainWindow;
 
