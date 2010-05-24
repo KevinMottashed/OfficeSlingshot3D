@@ -1,10 +1,12 @@
 // public members of the zcamera module
-#include "ZCameraManager.h"
+#include "IZCamera.h"
+#include "ZCamera.h"
 #include "ZCameraSubject.h"
 #include "ZCameraObserver.h"
 
 // forward declarations
-class ZCameraManager;
+class IZCamera;
+class ZCamera;
 class ZCameraSubject;
 class ZCameraObserver;
 

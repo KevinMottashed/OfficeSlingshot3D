@@ -3,6 +3,8 @@
 #include "Chat.h"
 #include "MediatorProxy.h"
 #include "NetworkProxy.h"
+#include "UserInterfaceProxy.h"
+#include "ZCameraProxy.h"
 
 using namespace std;
 using namespace boost;
@@ -58,9 +60,10 @@ BOOL CChatApp::InitInstance()
 	shared_ptr<Falcon> falcon(new NovintFalcon());
 	shared_ptr<Configuration> configuration(new Configuration("userPreferences.txt"));
 	shared_ptr<MFCUserInterface> userInterface(new MFCUserInterface(configuration->getUserPreferences()));
+	shared_ptr<IZCamera> zcamera(new ZCamera());
 
 	// this will initialize the Mediator class and it will initialize the system
-	Mediator mediator(network, falcon, userInterface, configuration);
+	Mediator mediator(network, falcon, zcamera, userInterface, configuration);
 
 	CDialog* mainWindow = userInterface->getMainWindow();
 

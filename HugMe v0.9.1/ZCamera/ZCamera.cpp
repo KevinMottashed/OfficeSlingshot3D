@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "ZCameraManager.h"
+#include "ZCamera.h"
 
 using namespace std;
 using namespace boost;
@@ -8,7 +8,7 @@ using namespace boost;
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-ZCameraManager::ZCameraManager()
+ZCamera::ZCamera()
 {
 	//Initiate thread flag to false
 	zcam_started = false;
@@ -20,7 +20,7 @@ ZCameraManager::ZCameraManager()
 	RGB = shared_ptr<vector<BYTE> >(new vector<BYTE>(IMAGE_ARRAY_SIZE));
 }
 
-ZCameraManager::~ZCameraManager()
+ZCamera::~ZCamera()
 {
 	//delete resources
 	delete m_depthCamera;
@@ -31,7 +31,7 @@ ZCameraManager::~ZCameraManager()
 //////////////////////////////////////////////////////////////////////
 
 //Camera thread to poll for new pictures
-DWORD ZCameraManager::getFrameFromCamera(ZCameraManager* p_ZCamera){
+DWORD ZCamera::getFrameFromCamera(ZCamera* p_ZCamera){
 	
 	//While the thread is active
 	while(p_ZCamera->zcam_started){
@@ -57,7 +57,7 @@ DWORD ZCameraManager::getFrameFromCamera(ZCameraManager* p_ZCamera){
 }
 
 //Dummy data generator
-DWORD ZCameraManager::getFrameFromDummy(ZCameraManager* p_ZCamera){
+DWORD ZCamera::getFrameFromDummy(ZCamera* p_ZCamera){
 	
 	//Shortcut to access each pixel of every line
 	int step = IMAGE_WIDTH*4;
@@ -135,7 +135,7 @@ DWORD ZCameraManager::getFrameFromDummy(ZCameraManager* p_ZCamera){
 }
 
 //Starts the thread and begins to send data to the Mediator
-void ZCameraManager::start() {	
+void ZCamera::start() {	
 	zcam_started = true;
 
 	DWORD threadId;
@@ -151,12 +151,12 @@ void ZCameraManager::start() {
 }
 
 //Stops the thread from running
-void ZCameraManager::stop() {
+void ZCamera::stop() {
 	zcam_started = false;
 }
 
 //Reverses the image up-down
-void ZCameraManager::reverseFrameUpDown(VideoData vd,int channels){
+void ZCamera::reverseFrameUpDown(VideoData vd,int channels){
 
 	BYTE* RGB = &(vd.rgb)->front();
 
@@ -174,7 +174,7 @@ void ZCameraManager::reverseFrameUpDown(VideoData vd,int channels){
 }
 
 //Reverses the image left-right
-void ZCameraManager::reverseFrameLeftRight(VideoData vd,int channels){
+void ZCamera::reverseFrameLeftRight(VideoData vd,int channels){
 
 	BYTE* RGB = &(vd.rgb)->front();
 

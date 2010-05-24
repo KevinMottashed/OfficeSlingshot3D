@@ -253,6 +253,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\ZCamera\IZCamera.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\ZCamera\IZCamera.h"
+				>
+			</File>
+			<File
 				RelativePath=".\ZCamera\TDVCameraInterface.h"
 				>
 			</File>
@@ -261,11 +269,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\ZCamera\ZCameraManager.cpp"
+				RelativePath=".\ZCamera\ZCamera.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\ZCamera\ZCameraManager.h"
+				RelativePath=".\ZCamera\ZCamera.h"
 				>
 			</File>
 			<File

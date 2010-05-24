@@ -31,6 +31,7 @@ class Mediator :	public NetworkObserver,
 public:
 	Mediator(	boost::shared_ptr<Network> network,
 				boost::shared_ptr<Falcon> falcon,
+				boost::shared_ptr<IZCamera> zcamera,
 				boost::shared_ptr<UserInterface> userInterface,
 				boost::shared_ptr<Configuration> configuration);
 	virtual ~Mediator();
@@ -50,7 +51,7 @@ private:
 	boost::shared_ptr<Network> network;
 	boost::shared_ptr<UserInterface> userInterface;
 	boost::shared_ptr<Falcon> falcon;
-	boost::shared_ptr<ZCameraManager> zcamera;
+	boost::shared_ptr<IZCamera> zcamera;
 	boost::shared_ptr<SmartClothingManager> smartClothing;
 
 	// the game

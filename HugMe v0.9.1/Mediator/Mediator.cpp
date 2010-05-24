@@ -7,17 +7,18 @@ using namespace boost;
 
 Mediator::Mediator(boost::shared_ptr<Network> network,
 				   boost::shared_ptr<Falcon> falcon,
+				   boost::shared_ptr<IZCamera> zcamera,
 				   boost::shared_ptr<UserInterface> userInterface,
 				   boost::shared_ptr<Configuration> configuration) :
 	network(network),
-	falcon(falcon),
 	userInterface(userInterface),
+	falcon(falcon),
+	zcamera(zcamera),
 	game(),
 	configuration(configuration),
 	gameState(NOT_PLAYING)
 {
 	// create the various components
-	zcamera = shared_ptr<ZCameraManager>(new ZCameraManager());
 	smartClothing = shared_ptr<SmartClothingManager>(new SmartClothingManager());
 
 	// attach ourselves as an observer to the components
@@ -525,7 +526,7 @@ void Mediator::update(ZCameraUpdateContext context, const void* data)
 void Mediator::handleLocalVideoData(VideoData video)
 {
 	network->sendVideoData(video);
-	ZCameraManager::reverseFrameLeftRight(video,4);
+	ZCamera::reverseFrameLeftRight(video,4);
 	userInterface->displayLocalFrame(video);
 	return;
 }
