@@ -515,8 +515,7 @@ void CMainDlg::displayPeerChatMessage(const std::string& message)
 
 void CMainDlg::displayLocalFrame(VideoData video)
 {
-	// the DrawDibDraw function is not const-correct so we need to cast away the const modifier
-	// we would it need to modify the pixels to draw the image?
+	// get a pointer to the start of the pixel array
 	BYTE* vRGB = &video.rgb->front();
 
 	// updates the specified m_hdc dialog element using the vRGB variable
@@ -539,8 +538,7 @@ void CMainDlg::displayLocalFrame(VideoData video)
 
 void CMainDlg::displayRemoteFrame(VideoData video)
 {
-	// the DrawDibDraw function is not const-correct so we need to cast away the const modifier
-	// we would it need to modify the pixels to draw the image?
+	// get a pointer to the start of the pixel array
 	BYTE* vRGB = &video.rgb->front();
 
 	// updates the specified m_hdc dialog element using the vRGB variable

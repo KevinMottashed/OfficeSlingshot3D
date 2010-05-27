@@ -30,6 +30,7 @@ Mediator::Mediator(boost::shared_ptr<Network> network,
 
 	// create the logger	
 	logger = new HumanFormatFileLogger("HumanFormat.log");
+	//logger = new ReplayFormatFileLogger("Sample.replay", ios::out | ios::binary);
 
 	// attach the logger to the components
 	network->attach(logger);

@@ -7,6 +7,8 @@
 #include "UserInterfaceProxy.h"
 #include "ZCameraProxy.h"
 #include "LogEvent.h"
+#include "Projectile.h"
+#include "chai3d.h"
 
 // abstract class used for logging
 class Logger :	public NetworkObserver,
@@ -27,7 +29,7 @@ public:
 	virtual void update(ZCameraUpdateContext context, const void* data);
 
 protected:
-	// log various event of various data types
+	// log various events of various data types
 	virtual void log(LogEvent logEvent) = 0;
 	virtual void log(LogEvent logEvent, rc_network error) = 0;
 	virtual void log(LogEvent logEvent, const std::string& str) = 0;

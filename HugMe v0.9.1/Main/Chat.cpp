@@ -5,6 +5,7 @@
 #include "NetworkProxy.h"
 #include "UserInterfaceProxy.h"
 #include "ZCameraProxy.h"
+#include "ReplayProxy.h"
 
 using namespace std;
 using namespace boost;
@@ -57,6 +58,7 @@ BOOL CChatApp::InitInstance()
 
 	// Initialize the components
 	shared_ptr<Network> network(new WinsockNetwork());
+	//shared_ptr<Replayer> network(new Replayer("Sample.replay"));
 	shared_ptr<Falcon> falcon(new NovintFalcon());
 	shared_ptr<Configuration> configuration(new Configuration("userPreferences.txt"));
 	shared_ptr<MFCUserInterface> userInterface(new MFCUserInterface(configuration->getUserPreferences()));
@@ -68,6 +70,8 @@ BOOL CChatApp::InitInstance()
 	CDialog* mainWindow = userInterface->getMainWindow();
 
 	m_pMainWnd = mainWindow;
+
+	//network->startReplay();
 
 	int nResponse = mainWindow->DoModal();
 	if (nResponse == IDOK)
