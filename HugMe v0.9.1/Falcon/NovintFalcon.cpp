@@ -45,7 +45,7 @@ DWORD NovintFalcon::getPositionFromFalcon(NovintFalcon* p_Falcon)
 // TODO implement
 // start managing the falcon pen (polling it for information)
 // create a thread to poll it
-void NovintFalcon::start() 
+void NovintFalcon::startPolling() 
 {
 	falcon_enabled = true;
 
@@ -58,7 +58,7 @@ void NovintFalcon::start()
 // TODO implement
 // stop managing the falcon pen
 // stop the thread that's polling it
-void NovintFalcon::stop() 
+void NovintFalcon::stopPolling() 
 {
 	falcon_enabled = false;
 

@@ -59,18 +59,21 @@ BOOL CChatApp::InitInstance()
 	// create the configuration
 	shared_ptr<Configuration> configuration(new Configuration("userPreferences.txt"));
 	
-	// Initialize the components	
+	// Initialize the components
+	
+	// comment this block of code to test the replayer
 	shared_ptr<Network> network(new WinsockNetwork());
 	shared_ptr<MFCUserInterface> userInterface(new MFCUserInterface(configuration->getUserPreferences()));
 	shared_ptr<Falcon> falcon(new NovintFalcon());
+	shared_ptr<IZCamera> zcamera(new ZCamera());
 
+	// uncomment this block of code to test the replayer
 	//shared_ptr<Replayer> replayer(new Replayer("Sample.replay", configuration->getUserPreferences()));
 	//shared_ptr<Replayer> network(replayer);
 	//shared_ptr<Replayer> userInterface(replayer);
 	//shared_ptr<Replayer> falcon(replayer);
-		
-	shared_ptr<IZCamera> zcamera(new ZCamera());
-
+	//shared_ptr<Replayer> zcamera(replayer);
+	
 	// this will initialize the Mediator class and it will initialize the system
 	Mediator mediator(network, falcon, zcamera, userInterface, configuration);
 
@@ -78,6 +81,7 @@ BOOL CChatApp::InitInstance()
 
 	m_pMainWnd = mainWindow;
 
+	// uncomment this line to test the replayer
 	//replayer->startReplay();
 
 	int nResponse = mainWindow->DoModal();

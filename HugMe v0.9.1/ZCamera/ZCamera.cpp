@@ -134,8 +134,8 @@ DWORD ZCamera::getFrameFromDummy(ZCamera* p_ZCamera){
 	return 0;
 }
 
-//Starts the thread and begins to send data to the Mediator
-void ZCamera::start() {	
+//Starts the thread that captures frames from the camera
+void ZCamera::startCapture() {	
 	zcam_started = true;
 
 	DWORD threadId;
@@ -150,8 +150,8 @@ void ZCamera::start() {
 	}
 }
 
-//Stops the thread from running
-void ZCamera::stop() {
+//stop the thread that captures frames from the camera
+void ZCamera::stopCapture() {
 	zcam_started = false;
 }
 

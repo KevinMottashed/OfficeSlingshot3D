@@ -15,11 +15,11 @@ public:
 	IZCamera();
 	virtual ~IZCamera();
 
-	// create a thread to poll the camera
-	virtual void start() = 0;
+	// create a thread to start capturing frames from the camera
+	virtual void startCapture() = 0;
 
-	// stop the thread that's polling the camera
-	virtual void stop() = 0;
+	// stop the thread that's capturing frames from the camera
+	virtual void stopCapture() = 0;
 
 private:
 	IZCamera(const IZCamera& zCamera); // intentionally not implemented

@@ -13,11 +13,11 @@ public:
 
 	// start managing the falcon pen (polling it for information)
 	// create a thread to poll it
-	virtual void start();
+	virtual void startPolling();
 
 	// stop managing the falcon pen
 	// stop the thread that's polling it
-	virtual void stop();
+	virtual void stopPolling();
 
 	// Creates a random 3dVector
 	static DWORD getPositionFromFalcon(NovintFalcon* p_Falcon);

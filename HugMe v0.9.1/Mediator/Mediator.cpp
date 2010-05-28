@@ -56,8 +56,8 @@ void Mediator::startGame()
 	}
 	gameState = PLAYING;
 	game.start();
-	falcon->start();
-	zcamera->start();
+	falcon->startPolling();
+	zcamera->startCapture();
 }
 
 void Mediator::pauseGame()
@@ -68,8 +68,8 @@ void Mediator::pauseGame()
 	}
 	gameState = PAUSED;
 	game.pause();
-	falcon->stop();
-	zcamera->stop();
+	falcon->stopPolling();
+	zcamera->stopCapture();
 }
 
 void Mediator::exitGame()
@@ -80,8 +80,8 @@ void Mediator::exitGame()
 	}
 	gameState = NOT_PLAYING;
 	game.stop();
-	falcon->stop();
-	zcamera->stop();
+	falcon->stopPolling();
+	zcamera->stopCapture();
 }
 
 void Mediator::update(NetworkUpdateContext context, const void* data)

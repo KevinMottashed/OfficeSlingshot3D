@@ -273,6 +273,15 @@ void Replayer::replay()
 				FalconSubject::notify(SLINGSHOT_POSITION, &vec);
 				break;
 			}
+		case ZCAM_VIDEO_DATA:
+			{
+				assert(size == IMAGE_ARRAY_SIZE);
+				shared_ptr<vector<BYTE> > rgb(new vector<BYTE>(IMAGE_ARRAY_SIZE));
+				memcpy(&rgb->front(), data.get(), size);
+				VideoData video(rgb);
+				ZCameraSubject::notify(VIDEO, &video);
+				break;
+			}
 		}		
 	}
 	return;
@@ -348,12 +357,22 @@ rc_network Replayer::sendSlingshotRelease()
 	return SUCCESS;
 }
 
-void Replayer::start()
+void Replayer::startPolling()
 {
 	return;
 }
 
-void Replayer::stop()
+void Replayer::stopPolling()
+{
+	return;
+}
+
+void Replayer::startCapture()
+{
+	return;
+}
+
+void Replayer::stopCapture()
 {
 	return;
 }

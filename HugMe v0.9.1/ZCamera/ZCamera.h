@@ -15,11 +15,11 @@ public:
 	ZCamera();
 	virtual ~ZCamera();
 
-	// create a thread to poll the camera
-	void start();
+	// create a thread to start capturing frames from the camera
+	virtual void startCapture();
 
-	// stop the thread that's polling the camera
-	void stop();
+	// stop the thread that's capturing frames from the camera
+	virtual void stopCapture();
 	
 	// Camera loop that fetches frames and player position.
 	// runs at 32 fps and continually sends information to controller

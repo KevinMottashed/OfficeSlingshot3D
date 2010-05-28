@@ -6,10 +6,11 @@
 #include "NetworkProxy.h"
 #include "UserInterfaceProxy.h"
 #include "FalconProxy.h"
+#include "ZCameraProxy.h"
 #include "LoggerProxy.h"
 #include "UserPreferences.h"
 
-class Replayer : public Network, public MFCUserInterface, public Falcon
+class Replayer : public Network, public MFCUserInterface, public Falcon, public ZCamera
 {
 public:
 	Replayer(const char* fileName, const UserPreferences& preferences);
@@ -47,8 +48,16 @@ public:
 	//---------------------------------------------------------------------
 
 	// start/stop polling the falcon
-	virtual void start();
-	virtual void stop();
+	virtual void startPolling();
+	virtual void stopPolling();
+
+	//---------------------------------------------------------------------
+	// Z-Camera
+	//---------------------------------------------------------------------
+
+	// start/stop capturing frames from the camera
+	virtual void startCapture();
+	virtual void stopCapture();
 
 private:
 

@@ -11,10 +11,10 @@ public:
 	virtual ~Falcon();
 
 	// start polling the falcon for information (position, buttons, ...)
-	virtual void start() = 0;
+	virtual void startPolling() = 0;
 
 	// stop polling the falcon for information (position, buttons, ...)
-	virtual void stop() = 0;
+	virtual void stopPolling() = 0;
 };
 
 #endif
