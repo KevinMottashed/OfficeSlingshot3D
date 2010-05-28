@@ -5,10 +5,11 @@
 #include "boost.h"
 #include "NetworkProxy.h"
 #include "UserInterfaceProxy.h"
+#include "FalconProxy.h"
 #include "LoggerProxy.h"
 #include "UserPreferences.h"
 
-class Replayer : public Network, public MFCUserInterface
+class Replayer : public Network, public MFCUserInterface, public Falcon
 {
 public:
 	Replayer(const char* fileName, const UserPreferences& preferences);
@@ -41,13 +42,21 @@ public:
 	virtual rc_network sendSlingshotPullback();
 	virtual rc_network sendSlingshotRelease();
 
+	//---------------------------------------------------------------------
+	// Falcon
+	//---------------------------------------------------------------------
+
+	// start/stop polling the falcon
+	virtual void start();
+	virtual void stop();
+
 private:
 
 	// start replaying from the file
 	void replay();
 
 	// the time at which the replay was started
-	boost::posix_time::ptime start;
+	boost::posix_time::ptime startTime;
 	std::ifstream file;
 
 	// holds the replay thread

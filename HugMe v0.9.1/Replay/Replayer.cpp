@@ -36,7 +36,7 @@ void Replayer::replay()
 	deadline_timer timer(io);
 
 	// get the start time
-	start = microsec_clock::local_time();
+	startTime = microsec_clock::local_time();
 
 	bool open = file.is_open();
 
@@ -67,7 +67,7 @@ void Replayer::replay()
 		if (ms > 0)
 		{
 			time_duration nextEvent = milliseconds(ms);
-			time_duration current = microsec_clock::local_time() - start;
+			time_duration current = microsec_clock::local_time() - startTime;
 			time_duration wait = nextEvent - current;
 			timer.expires_from_now(wait);
 			timer.wait();
@@ -146,7 +146,7 @@ void Replayer::replay()
 			}
 		case NETWORK_PROJECTILE:
 			{
-				assert(size == 3 * sizeof(double));
+				assert(size == 6 * sizeof(double));
 				
 				cVector3d position;
 				cVector3d speed;
@@ -263,6 +263,16 @@ void Replayer::replay()
 				UserInterfaceSubject::notify(CHAT_MESSAGE, &str);
 				break;
 			}
+		case FALCON_SLINGSHOT_POSITION:
+			{
+				assert(size == 3 * sizeof(double));
+				cVector3d vec;
+				memcpy(&vec.x, data.get(), sizeof(double));
+				memcpy(&vec.y, data.get() + sizeof(double), sizeof(double));
+				memcpy(&vec.z, data.get() + 2 * sizeof(double), sizeof(double));
+				FalconSubject::notify(SLINGSHOT_POSITION, &vec);
+				break;
+			}
 		}		
 	}
 	return;
@@ -336,4 +346,14 @@ rc_network Replayer::sendSlingshotPullback()
 rc_network Replayer::sendSlingshotRelease()
 {
 	return SUCCESS;
+}
+
+void Replayer::start()
+{
+	return;
+}
+
+void Replayer::stop()
+{
+	return;
 }

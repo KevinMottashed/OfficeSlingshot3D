@@ -62,12 +62,13 @@ BOOL CChatApp::InitInstance()
 	// Initialize the components	
 	shared_ptr<Network> network(new WinsockNetwork());
 	shared_ptr<MFCUserInterface> userInterface(new MFCUserInterface(configuration->getUserPreferences()));
-	
+	shared_ptr<Falcon> falcon(new NovintFalcon());
+
 	//shared_ptr<Replayer> replayer(new Replayer("Sample.replay", configuration->getUserPreferences()));
 	//shared_ptr<Replayer> network(replayer);
 	//shared_ptr<Replayer> userInterface(replayer);
-	
-	shared_ptr<Falcon> falcon(new NovintFalcon());	
+	//shared_ptr<Replayer> falcon(replayer);
+		
 	shared_ptr<IZCamera> zcamera(new ZCamera());
 
 	// this will initialize the Mediator class and it will initialize the system
