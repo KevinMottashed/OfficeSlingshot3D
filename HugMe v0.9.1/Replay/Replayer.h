@@ -4,12 +4,14 @@
 #include "stdafx.h"
 #include "boost.h"
 #include "NetworkProxy.h"
+#include "UserInterfaceProxy.h"
 #include "LoggerProxy.h"
+#include "UserPreferences.h"
 
-class Replayer : public Network
+class Replayer : public Network, public MFCUserInterface
 {
 public:
-	Replayer(const char* fileName);
+	Replayer(const char* fileName, const UserPreferences& preferences);
 	virtual ~Replayer();
 
 	void startReplay();

@@ -67,7 +67,7 @@ public:
 	// returns the applications main window
 	CDialog* getMainWindow();
 
-private:
+protected:
 	CMainDlg* m_pMainDlg;
 };
 

@@ -38,7 +38,7 @@ protected:
 	virtual void log(LogEvent logEvent, const VideoData& video);
 	virtual void log(LogEvent logEvent, const cVector3d& vec);
 	virtual void log(LogEvent logEvent, const Projectile& projectile);
-	virtual void log(LogEvent logEvent, const UserPreferences& preferences) {};
+	virtual void log(LogEvent logEvent, const UserPreferences& preferences);
 
 private:
 	ReplayFormatLogger(const ReplayFormatLogger& c); // intentionally not implemented
@@ -197,6 +197,29 @@ void ReplayFormatLogger<Stream>::log(LogEvent e, const Projectile& projectile)
 	ostream.write((char*) &(projectile.getSpeed().x), sizeof(double));
 	ostream.write((char*) &(projectile.getSpeed().y), sizeof(double));
 	ostream.write((char*) &(projectile.getSpeed().z), sizeof(double));
+
+	ostream << std::flush;
+	return;
+}
+
+template <typename Stream>
+void ReplayFormatLogger<Stream>::log(LogEvent e, const UserPreferences& preferences)
+{
+	long ms = getElapsedTimeInMs();
+	unsigned int size = 0;
+
+	// each event has the format <time><event><size><data>
+	// write this event to the file
+	ostream.write((char*) &ms, sizeof(long));
+	ostream.write((char*) &e, sizeof(LogEvent));
+	ostream.write((char*) &size, sizeof(unsigned int));
+
+	// user preferences are serialized as
+	// <IP><\0><User name><\0><arm band port><jacket port>
+	ostream.write(preferences.ipAddress.c_str(), preferences.ipAddress.size() + 1); // +1 for \0
+	ostream.write(preferences.name.c_str(), preferences.name.size() + 1); // +1 for \0
+	ostream.write((char*) &preferences.armBandPort, sizeof(unsigned int));
+	ostream.write((char*) &preferences.jacketPort, sizeof(unsigned int));
 
 	ostream << std::flush;
 	return;

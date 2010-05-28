@@ -513,6 +513,18 @@ void CMainDlg::displayPeerChatMessage(const std::string& message)
 	return;
 }
 
+void CMainDlg::displayLocalChatMessage(const std::string& message)
+{
+	// construct message
+	ostringstream os;
+	os << m_preferences.name << " : " << message;
+
+	// add feedback message on the text area
+	AddChatContent(os.str().c_str());
+
+	return;
+}
+
 void CMainDlg::displayLocalFrame(VideoData video)
 {
 	// get a pointer to the start of the pixel array

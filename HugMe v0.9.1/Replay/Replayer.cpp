@@ -4,7 +4,9 @@
 using namespace std;
 using namespace boost;
 
-Replayer::Replayer(const char* fileName) : file(fileName, ios::in | ios::binary)
+Replayer::Replayer(const char* fileName, const UserPreferences& preferences) :
+	MFCUserInterface(preferences),
+	file(fileName, ios::in | ios::binary)
 {
 }
 
@@ -76,31 +78,31 @@ void Replayer::replay()
 		case NETWORK_PEER_CONNECTED:
 			{
 				assert(size == 0);
-				notify(PEER_CONNECTED);
+				NetworkSubject::notify(PEER_CONNECTED);
 				break;
 			}
 		case NETWORK_PEER_DISCONNECTED:
 			{
 				assert(size == 0);
-				notify(PEER_DISCONNECTED);
+				NetworkSubject::notify(PEER_DISCONNECTED);
 				break;
 			}
 		case NETWORK_PEER_START_GAME:
 			{
 				assert(size == 0);
-				notify(PEER_START_GAME);
+				NetworkSubject::notify(PEER_START_GAME);
 				break;
 			}
 		case NETWORK_PEER_PAUSE_GAME:
 			{
 				assert(size == 0);
-				notify(PEER_PAUSE_GAME);
+				NetworkSubject::notify(PEER_PAUSE_GAME);
 				break;
 			}
 		case NETWORK_PEER_EXIT_GAME:
 			{
 				assert(size == 0);
-				notify(PEER_EXIT_GAME);
+				NetworkSubject::notify(PEER_EXIT_GAME);
 				break;
 			}
 		case NETWORK_ERROR_OCCURED:
@@ -108,19 +110,19 @@ void Replayer::replay()
 				assert(size == sizeof(rc_network));
 				rc_network code;
 				memcpy(&code, data.get(), size);
-				notify(NETWORK_ERROR, &code);
+				NetworkSubject::notify(NETWORK_ERROR, &code);
 				break;
 			}
 		case NETWORK_USER_NAME:
 			{
 				string str((char*) data.get());
-				notify(RECEIVED_USER_NAME, &str);
+				NetworkSubject::notify(RECEIVED_USER_NAME, &str);
 				break;
 			}
 		case NETWORK_CHAT_MESSAGE:
 			{
 				string str((char*) data.get());
-				notify(RECEIVED_CHAT_MESSAGE, &str);
+				NetworkSubject::notify(RECEIVED_CHAT_MESSAGE, &str);
 				break;
 			}
 		case NETWORK_VIDEO_DATA:
@@ -129,7 +131,7 @@ void Replayer::replay()
 				shared_ptr<vector<BYTE> > rgb(new vector<BYTE>(IMAGE_ARRAY_SIZE));
 				memcpy(&rgb->front(), data.get(), size);
 				VideoData video(rgb);
-				notify(RECEIVED_VIDEO, &video);
+				NetworkSubject::notify(RECEIVED_VIDEO, &video);
 				break;
 			}
 		case NETWORK_SLINGSHOT_POSITION:
@@ -139,7 +141,7 @@ void Replayer::replay()
 				memcpy(&vec.x, data.get(), sizeof(double));
 				memcpy(&vec.y, data.get() + sizeof(double), sizeof(double));
 				memcpy(&vec.z, data.get() + 2 * sizeof(double), sizeof(double));
-				notify(RECEIVED_SLINGSHOT_POSITION, &vec);
+				NetworkSubject::notify(RECEIVED_SLINGSHOT_POSITION, &vec);
 				break;
 			}
 		case NETWORK_PROJECTILE:
@@ -158,19 +160,19 @@ void Replayer::replay()
 				Projectile p;
 				p.setPosition(position);
 				p.setSpeed(speed);
-				notify(RECEIVED_PROJECTILE, &p);
+				NetworkSubject::notify(RECEIVED_PROJECTILE, &p);
 				break;
 			}
 		case NETWORK_SLINGSHOT_PULLBACK:
 			{
 				assert(size == 0);
-				notify(RECEIVED_PULLBACK);
+				NetworkSubject::notify(RECEIVED_PULLBACK);
 				break;
 			}
 		case NETWORK_SLINGSHOT_RELEASE:
 			{
 				assert(size == 0);
-				notify(RECEIVED_RELEASE);
+				NetworkSubject::notify(RECEIVED_RELEASE);
 				break;
 			}
 		case NETWORK_PLAYER_POSITION:
@@ -180,7 +182,85 @@ void Replayer::replay()
 				memcpy(&vec.x, data.get(), sizeof(double));
 				memcpy(&vec.y, data.get() + sizeof(double), sizeof(double));
 				memcpy(&vec.z, data.get() + 2 * sizeof(double), sizeof(double));
-				notify(RECEIVED_PLAYER_POSITION, &vec);
+				NetworkSubject::notify(RECEIVED_PLAYER_POSITION, &vec);
+				break;
+			}
+		case UI_CONNECT:
+			{
+				assert(size == 0);
+				UserInterfaceSubject::notify(CONNECT);
+				break;
+			}
+		case UI_LISTEN:
+			{
+				assert(size == 0);
+				UserInterfaceSubject::notify(LISTEN);
+				break;
+			}
+		case UI_DISCONNECT:
+			{
+				assert(size == 0);
+				UserInterfaceSubject::notify(DISCONNECT);
+				break;
+			}
+		case UI_PREFERENCES:
+			{
+				assert(size >= sizeof(unsigned int) * 4);
+				UserPreferences preferences;
+				unsigned int index = 0;
+
+				preferences.ipAddress = (char*) data.get() + index;
+				index += preferences.ipAddress.size();
+
+				preferences.name = (char*) data.get() + index;
+				index += preferences.name.size();
+
+				memcpy(&preferences.armBandPort, data.get() + index, sizeof(unsigned int));
+				index += sizeof(unsigned int);
+
+				memcpy(&preferences.jacketPort, data.get() + index, sizeof(unsigned int));
+				index += sizeof(unsigned int);
+
+				UserInterfaceSubject::notify(PREFERENCES, &preferences);
+				break;
+			}
+		case UI_START_GAME:
+			{
+				assert(size == 0);
+				UserInterfaceSubject::notify(START_GAME);
+				break;
+			}
+		case UI_PAUSE_GAME:
+			{
+				assert(size == 0);
+				UserInterfaceSubject::notify(PAUSE_GAME);
+				break;
+			}
+		case UI_EXIT_GAME:
+			{
+				assert(size == 0);
+				UserInterfaceSubject::notify(EXIT_GAME);
+				break;
+			}
+		case UI_CLOSE_APPLICATION:
+			{
+				assert(size == 0);
+				UserInterfaceSubject::notify(EXIT_APPLICATION);
+
+				// notify the replay watcher that the application would have been closed
+				// by not closing the application we can inspect the UI, debug, etc...
+				m_pMainDlg->MessageBox("APPLICATION CLOSED");
+								
+				break;
+			}
+		case UI_CHAT_MESSAGE:
+			{
+				string str((char*) data.get());
+
+				// add the message to the UI
+				m_pMainDlg->displayLocalChatMessage(str);
+
+				UserInterfaceSubject::notify(CHAT_MESSAGE, &str);
 				break;
 			}
 		}		
