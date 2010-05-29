@@ -4,9 +4,9 @@
 using namespace std;
 using namespace boost;
 
-Replayer::Replayer(const char* fileName, const UserPreferences& preferences) :
+Replayer::Replayer(string fileName, const UserPreferences& preferences) :
 	MFCUserInterface(preferences),
-	file(fileName, ios::in | ios::binary)
+	file(fileName.c_str(), ios::in | ios::binary)
 {
 }
 

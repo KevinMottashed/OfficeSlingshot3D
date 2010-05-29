@@ -1,11 +1,8 @@
 #include "stdafx.h"
 #include "boost.h"
 #include "Chat.h"
-#include "MediatorProxy.h"
-#include "NetworkProxy.h"
-#include "UserInterfaceProxy.h"
-#include "ZCameraProxy.h"
-#include "ReplayProxy.h"
+#include "OfficeSlingshot3D.h"
+#include "OfficeSlingshot3DFactory.h"
 
 using namespace std;
 using namespace boost;
@@ -43,7 +40,7 @@ BOOL CChatApp::InitInstance()
 	if (!AfxSocketInit())
 	{
 		AfxMessageBox(IDP_SOCKETS_INIT_FAILED);
-		return FALSE;
+		return EXIT_FAILURE;
 	}
 
 	AfxEnableControlContainer();
@@ -56,48 +53,30 @@ BOOL CChatApp::InitInstance()
 	CoInitialize(NULL);
 	AfxInitRichEdit();
 
-	// create the configuration
-	shared_ptr<Configuration> configuration(new Configuration("userPreferences.txt"));
-	
-	// Initialize the components
-	
-	// comment this block of code to test the replayer
-	shared_ptr<Network> network(new WinsockNetwork());
-	shared_ptr<MFCUserInterface> userInterface(new MFCUserInterface(configuration->getUserPreferences()));
-	shared_ptr<Falcon> falcon(new NovintFalcon());
-	shared_ptr<IZCamera> zcamera(new ZCamera());
+	// the file name for the configuration
+	string configFileName;
 
-	// uncomment this block of code to test the replayer
-	//shared_ptr<Replayer> replayer(new Replayer("Sample.replay", configuration->getUserPreferences()));
-	//shared_ptr<Replayer> network(replayer);
-	//shared_ptr<Replayer> userInterface(replayer);
-	//shared_ptr<Replayer> falcon(replayer);
-	//shared_ptr<Replayer> zcamera(replayer);
-	
-	// this will initialize the Mediator class and it will initialize the system
-	Mediator mediator(network, falcon, zcamera, userInterface, configuration);
+	namespace po = boost::program_options;
 
-	CDialog* mainWindow = userInterface->getMainWindow();
+	po::options_description cmdLineOptions("Allowed Options");
+	cmdLineOptions.add_options()
+		("config", po::value<string>(&configFileName)->default_value("config.ini"), "configuration file name");
 
-	m_pMainWnd = mainWindow;
+	// convert the windows style command arguments to a vector of arguments
+	vector<string> args = po::split_winmain(m_lpCmdLine);	
 
-	// uncomment this line to test the replayer
-	//replayer->startReplay();
+	// create a variable map and fill it in by parsing the command line options
+	po::variables_map cmdVMap;
+	po::store(po::command_line_parser(args).options(cmdLineOptions).run(), cmdVMap);
+	po::notify(cmdVMap);
 
-	int nResponse = mainWindow->DoModal();
-	if (nResponse == IDOK)
-	{
-		// TODO: Place code here to handle when the dialog is
-		//  dismissed with OK
-	}
-	else if (nResponse == IDCANCEL)
-	{
-		// TODO: Place code here to handle when the dialog is
-		//  dismissed with Cancel
-	}
+	// create the app from the config file
+	shared_ptr<OfficeSlingshot3D> app = OfficeSlingshot3DFactory::createFromConfigFile(configFileName);
 
-	// Since the dialog has been closed, return FALSE so that we exit the
-	//  application, rather than start the application's message pump.
-	return FALSE;
+	// run the app
+	app->run();
+
+	// the app has finished (dialog box closed)
+	return EXIT_SUCCESS;
 }
 

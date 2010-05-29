@@ -28,23 +28,11 @@ Mediator::Mediator(boost::shared_ptr<Network> network,
 	falcon->attach(this);
 	game.attach(this);
 
-	// create the logger	
-	logger = new HumanFormatFileLogger("HumanFormat.log");
-	//logger = new ReplayFormatFileLogger("Sample.replay", ios::out | ios::binary);
-
-	// attach the logger to the components
-	network->attach(logger);
-	userInterface->attach(logger);
-	zcamera->attach(logger);
-	falcon->attach(logger);
-	game.attach(logger);
-
 	InitializeCriticalSection(&configurationMutex);
 }
 
 Mediator::~Mediator()
 {
-	delete logger;
 	DeleteCriticalSection(&configurationMutex);
 }
 

@@ -57,12 +57,7 @@ private:
 	// the game
 	Game game;
 
-	// the logger, this will eventually be moved out of this class
-	// but its too much work to do in one shot
-	// leave it here until we have some sort of application initializer
-	Logger* logger;
-
-	// move this out once we have an application initializer
+	// the user preferences
 	boost::shared_ptr<Configuration> configuration;
 	mutable CRITICAL_SECTION configurationMutex;
 

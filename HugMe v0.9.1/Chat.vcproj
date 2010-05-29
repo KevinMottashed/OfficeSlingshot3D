@@ -704,6 +704,22 @@
 				RelativePath=".\Main\Chat.h"
 				>
 			</File>
+			<File
+				RelativePath=".\Main\OfficeSlingshot3D.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Main\OfficeSlingshot3D.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Main\OfficeSlingshot3DFactory.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Main\OfficeSlingshot3DFactory.h"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Replay"

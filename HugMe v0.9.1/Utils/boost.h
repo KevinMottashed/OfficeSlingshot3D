@@ -43,4 +43,16 @@
 //------------------------------------------------------------------------
 #include <boost/asio.hpp>
 
+//------------------------------------------------------------------------
+// Boost Program Options
+// http://www.boost.org/doc/libs/1_43_0/doc/html/program_options.html
+//------------------------------------------------------------------------
+#include <boost/program_options.hpp>
+
+//------------------------------------------------------------------------
+// Boost String Algorithms
+// http://www.boost.org/doc/libs/1_43_0/doc/html/string_algo.html
+//------------------------------------------------------------------------
+#include <boost/algorithm/string.hpp>
+
 #endif

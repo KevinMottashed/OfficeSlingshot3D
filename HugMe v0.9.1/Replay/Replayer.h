@@ -13,7 +13,7 @@
 class Replayer : public Network, public MFCUserInterface, public Falcon, public ZCamera
 {
 public:
-	Replayer(const char* fileName, const UserPreferences& preferences);
+	Replayer(std::string fileName, const UserPreferences& preferences);
 	virtual ~Replayer();
 
 	void startReplay();
