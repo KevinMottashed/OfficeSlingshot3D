@@ -54,7 +54,21 @@ BOOL CMainDlg::OnInitDialog()
 	initLocalVideoArea();
 	initRemoteVideoArea();
 
-	return TRUE;
+	CRect rect;
+
+	// Get size and position of the picture control
+	GetDlgItem(IDC_OPENGL)->GetWindowRect(rect);
+
+	// Convert screen coordinates to client coordinates
+	ScreenToClient(rect);
+
+	// Create OpenGL Control window
+	m_oglWindow.oglCreate(rect, this);
+
+	// Setup the OpenGL Window's timer to render
+	m_oglWindow.m_unpTimer = m_oglWindow.SetTimer(1, 1, 0);
+	
+	return TRUE;  // return TRUE  unless you set the focus to a control
 }
 
 // method used to connect the user to a remote user
@@ -570,4 +584,3 @@ void CMainDlg::displayRemoteFrame(VideoData video)
 				  );
 	return;
 }
-

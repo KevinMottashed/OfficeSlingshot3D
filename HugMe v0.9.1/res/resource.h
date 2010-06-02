@@ -25,6 +25,7 @@
 #define IDC_JACKET_EDIT                 1066
 #define IDC_VIDEO_REMOTE2               1066
 #define IDC_VIDEO_LOCAL                 1066
+#define IDC_OPENGL                      1067
 #define ID_NETWORK_LISTEN               32780
 #define ID_NETWORK_CONNECT              32781
 #define ID_NETWORK_DISCONNECT           32782
@@ -39,8 +40,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        152
 #define _APS_NEXT_COMMAND_VALUE         32787
-#define _APS_NEXT_CONTROL_VALUE         1066
+#define _APS_NEXT_CONTROL_VALUE         1068
 #define _APS_NEXT_SYMED_VALUE           103
 #endif
 #endif
-

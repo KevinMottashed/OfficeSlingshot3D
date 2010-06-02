@@ -6,6 +6,7 @@
 #include "UserInterface.h"
 #include "VideoData.h"
 #include "UserPreferences.h"
+#include "MFCOpenGLControl.h"
 
 /////////////////////////////////////////////////////////////////////////////
 // CMainDlg dialog
@@ -40,6 +41,9 @@ public:
 	void setPeerUserName(const std::string& name);
 
 private:
+
+	MFCOpenGLControl m_oglWindow;
+
 	UserInterface* pUserInterface;
 	UserPreferences m_preferences;
 

@@ -309,6 +309,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\UserInterface\MFCOpenGLControl.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\UserInterface\MFCOpenGLControl.h"
+				>
+			</File>
+			<File
 				RelativePath=".\UserInterface\MFCUserInterface.cpp"
 				>
 			</File>
@@ -741,11 +749,15 @@
 			RelativePath="ReadMe.txt"
 			>
 		</File>
+		<File
+			RelativePath=".\res\resource.h"
+			>
+		</File>
 	</Files>
 	<Globals>
 		<Global
 			Name="RESOURCE_FILE"
-			Value="UserInterface\Chat.rc"
+			Value="res\Chat.rc"
 		/>
 	</Globals>
 </VisualStudioProject>
