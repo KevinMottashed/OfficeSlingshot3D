@@ -7,6 +7,8 @@
 #include "UserInterfaceSignals.h"
 #include "UserInterface.h"
 #include "UserPreferences.h"
+#include "ConnectionStateEnum.h"
+#include "PlayerEnum.h"
 
 class CMainDlg;
 
@@ -20,12 +22,12 @@ public:
 	// Display updates
 	//----------------------------------------
 
+	// display that a certain player has changed the connection state
+	virtual void displayConnectionStateChanged(ConnectionStateEnum state, PlayerEnum player);
+
 	// update the user interface to reflect a change in the connection state
-	virtual void displayConnectionEstablished();
 	virtual void displayConnectionFailed();
-	virtual void displayListening();
 	virtual void displayFailedToListen();
-	virtual void displayPeerDisconnected();
 	virtual void displayNetworkError();
 
 	// update the user interface to reflect a change in the game state

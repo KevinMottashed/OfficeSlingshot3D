@@ -59,9 +59,9 @@ CDialog* MFCUserInterface::getMainWindow()
 	return m_pMainDlg;
 }
 
-void MFCUserInterface::displayConnectionEstablished()
+void MFCUserInterface::displayConnectionStateChanged(ConnectionStateEnum state, PlayerEnum player)
 {
-	m_pMainDlg->displayConnectionEstablished();
+	m_pMainDlg->displayConnectionStateChanged(state, player);
 	return;
 }
 
@@ -71,21 +71,9 @@ void MFCUserInterface::displayConnectionFailed()
 	return;
 }
 
-void MFCUserInterface::displayListening()
-{
-	m_pMainDlg->displayListening();
-	return;
-}
-
 void MFCUserInterface::displayFailedToListen()
 {
 	m_pMainDlg->displayFailedToListen();
-	return;
-}
-
-void MFCUserInterface::displayPeerDisconnected()
-{
-	m_pMainDlg->displayPeerDisconnected();
 	return;
 }
 

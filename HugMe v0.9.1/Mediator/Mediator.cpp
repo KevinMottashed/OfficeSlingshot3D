@@ -197,8 +197,8 @@ void Mediator::update(NetworkUpdateContext context, const void* data)
 
 void Mediator::handlePeerConnected()
 {
-	// send the connection accepted message to the user interface process
-	userInterface->displayConnectionEstablished();
+	// display the change in connection state in the UI
+	userInterface->displayConnectionStateChanged(CONNECTED, PEER);
 	return;
 }
 
@@ -207,8 +207,8 @@ void Mediator::handlePeerDisconnected()
 	// exit the game when the peer disconnects
 	exitGame();
 
-	// notify the user interface that the network connection has been disconnected
-	userInterface->displayPeerDisconnected();
+	// display the change in connection state in the UI
+	userInterface->displayConnectionStateChanged(DISCONNECTED, PEER);
 	return;
 }
 
@@ -374,9 +374,11 @@ void Mediator::connect()
 
 	UserPreferences prefs = configuration->getUserPreferences();
 	rc_network error = network->connect(prefs.ipAddress, prefs.name);
+
 	if (error == SUCCESS)
 	{
-		userInterface->displayConnectionEstablished();
+		// display the change in connection state in the UI
+		userInterface->displayConnectionStateChanged(CONNECTED, LOCAL);
 	}
 	else
 	{
@@ -395,7 +397,8 @@ void Mediator::listen()
 	
 	if (error == SUCCESS)
 	{
-		userInterface->displayListening();
+		// display the change in connection state in the UI
+		userInterface->displayConnectionStateChanged(LISTENING, LOCAL);
 	}
 	else
 	{
@@ -412,7 +415,19 @@ void Mediator::disconnect()
 	exitGame();
 
 	// tell the network manager to disconnect us
-	network->disconnect();
+	rc_network error = network->disconnect();
+
+	if (error == SUCCESS)
+	{
+		// display the change in connection state in the UI
+		userInterface->displayConnectionStateChanged(DISCONNECTED, LOCAL);
+	}
+	else
+	{
+		// this should never happen, we must always be able to disconnect from a peer
+		assert(false);
+	}
+	
 	return;
 }
 

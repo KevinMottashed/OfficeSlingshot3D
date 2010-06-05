@@ -76,7 +76,7 @@ void CMainDlg::OnNetworkConnect()
 {
 	// notify the UI that the connect button has been pushed
 	pUserInterface->networkConnectButtonPushed();
-	return;	
+	return;
 }
 
 // method used to close the connection with the remote user
@@ -84,18 +84,6 @@ void CMainDlg::OnNetworkDisconnect()
 {
 	// notify the UI that the disconnect button has been pushed
 	pUserInterface->networkDisconnectButtonPushed();
-
-	// enable and disable appropriate menu items
-	CMenu* pMenu = GetMenu();
-	pMenu->EnableMenuItem(ID_NETWORK_CONNECT, MF_ENABLED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_NETWORK_LISTEN, MF_ENABLED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_NETWORK_DISCONNECT, MF_GRAYED | MF_BYCOMMAND);
-
-	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_GRAYED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_GRAYED | MF_BYCOMMAND);
-
-	// give feedback to the user on the text area
-	AddChatContent("Disconnected");
 	return;
 }
 
@@ -378,22 +366,93 @@ void CMainDlg::OnDestroy()
 	pUserInterface->closeApplication();
 }
 
-void CMainDlg::displayConnectionEstablished()
+void CMainDlg::displayConnectionStateChanged(ConnectionStateEnum state, PlayerEnum player)
 {
-	// enable and disable appropriate menu items
+	// the message that the user will see in the chat box
+	ostringstream message;
+
+	// the menu options, either enabled or disabled
+	long networkConnect;
+	long networkListen;
+	long networkDisconnect;
+	long gameStart;
+	long gamePause;
+	long gameExit;
+	
+	switch (state)
+	{
+		case DISCONNECTED:
+		{
+			networkConnect = MF_ENABLED;
+			networkListen = MF_ENABLED;
+			networkDisconnect = MF_GRAYED;
+
+			// all game buttons are disabled
+			gameStart = gamePause = gameExit = MF_GRAYED;
+			
+			if (player == LOCAL)
+			{
+				message << "Disconnected";
+			}
+			else
+			{
+				message << m_peerUserName << " has disconnected";
+			}
+			break;
+		}
+		case LISTENING:
+		{
+			// it makes no sense for a peer to tell us that he is listening
+			// as we are not even connected to him
+			assert(player == LOCAL);
+			
+			networkConnect = MF_GRAYED;
+			networkListen = MF_GRAYED;
+			networkDisconnect = MF_ENABLED;
+
+			// all game buttons are disabled
+			gameStart = gamePause = gameExit = MF_GRAYED;
+
+			message << "Listening";
+			break;
+		}
+		case CONNECTED:
+		{
+			networkConnect = MF_GRAYED;
+			networkListen = MF_GRAYED;
+			networkDisconnect = MF_ENABLED;
+
+			gameStart = MF_ENABLED;
+			gamePause = MF_GRAYED;
+			gameExit = MF_GRAYED;
+
+			if (player == LOCAL)
+			{
+				message << "Connected to " << m_peerUserName;
+			}
+			else
+			{
+				message << m_peerUserName << " has connected";
+			}
+
+			break;
+		}
+	}
+
+	// change the state of the menu options
 	CMenu* pMenu = GetMenu();
-	pMenu->EnableMenuItem(ID_NETWORK_CONNECT, MF_GRAYED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_NETWORK_LISTEN, MF_GRAYED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_NETWORK_DISCONNECT, MF_ENABLED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_ENABLED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_NETWORK_CONNECT, networkConnect | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_NETWORK_LISTEN, networkListen | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_NETWORK_DISCONNECT, networkDisconnect | MF_BYCOMMAND);
 
-	// construct message
-	ostringstream os;
-	os << m_peerUserName << " has joined the game";
+	pMenu->EnableMenuItem(ID_GAME_STARTGAME, gameStart | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_EXITGAME, gameExit | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_PAUSEGAME, gamePause | MF_BYCOMMAND);
 
-	// add feedback message on the text area
-	AddChatContent(os.str().c_str());
 
+	// display the message in the chat box
+	AddChatContent(message.str().c_str());
+	
 	return;
 }
 
@@ -403,42 +462,9 @@ void CMainDlg::displayConnectionFailed()
 	return;
 }
 
-void CMainDlg::displayListening()
-{
-	// enable and disable appropriate menu items
-	CMenu* pMenu = GetMenu();
-	pMenu->EnableMenuItem(ID_NETWORK_CONNECT, MF_GRAYED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_NETWORK_LISTEN, MF_GRAYED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_NETWORK_DISCONNECT, MF_ENABLED | MF_BYCOMMAND);
-
-	// give user feedback on the text area
-	AddChatContent("Listening");
-	return;
-}
-
 void CMainDlg::displayFailedToListen()
 {
 	AddChatContent("Could not listen for connections");
-	return;
-}
-
-void CMainDlg::displayPeerDisconnected()
-{
-	// construct message
-	ostringstream os;
-	os << m_peerUserName << " has disconnected from the game";
-
-	// add feedback message on the text area
-	AddChatContent(os.str().c_str());
-
-	// enable and disable appropriate menu items
-	CMenu* pMenu = GetMenu();
-	pMenu->EnableMenuItem(ID_NETWORK_CONNECT, MF_ENABLED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_NETWORK_LISTEN, MF_ENABLED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_NETWORK_DISCONNECT, MF_GRAYED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_GRAYED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_GRAYED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_GAME_PAUSEGAME, MF_GRAYED | MF_BYCOMMAND);
 	return;
 }
 

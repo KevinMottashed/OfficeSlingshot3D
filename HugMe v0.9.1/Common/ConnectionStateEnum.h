@@ -1,0 +1,12 @@
+#ifndef CONNECTION_STATE_ENUM_H
+#define CONNECTION_STATE_ENUM_H
+
+enum ConnectionStateEnum
+{
+	LISTENING,
+	ESTABLISHING,
+	CONNECTED,
+	DISCONNECTED
+};
+
+#endif

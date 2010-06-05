@@ -7,6 +7,8 @@
 #include "VideoData.h"
 #include "UserPreferences.h"
 #include "MFCOpenGLControl.h"
+#include "ConnectionStateEnum.h"
+#include "PlayerEnum.h"
 
 /////////////////////////////////////////////////////////////////////////////
 // CMainDlg dialog
@@ -18,12 +20,12 @@ class CMainDlg : public CDialog
 public:
 	CMainDlg(UserInterface* pUserInterface, const UserPreferences& preferences, CWnd* pParent = NULL);   // standard constructor
 
-	// visual feedback for connection state
-	void displayConnectionEstablished();	
+	// display that a certain player has changed the connection state
+	void displayConnectionStateChanged(ConnectionStateEnum state, PlayerEnum player);
+
+	// visual feedback for connection state	
 	void displayConnectionFailed();
-	void displayListening();
 	void displayFailedToListen();
-	void displayPeerDisconnected();
 	void displayNetworkError();
 
 	// visual feedback for game state
