@@ -1,6 +1,9 @@
 # user specific files
 *.user
 
+# temporary files
+*~
+
 # executables
 */Debug/*.exe*
 */Release/*.exe*
