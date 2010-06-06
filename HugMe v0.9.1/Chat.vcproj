@@ -78,7 +78,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="strmiids.lib opengl32.lib glu32.lib glut32.lib libARd.lib libARvideod.lib libARgsub_MFCd.lib vfw32.lib winmm.lib hdl.lib ConnectDM_VC80.lib tinyxmld.lib TDVHandsTracking.lib depthCameraLibrary2.lib"
+				AdditionalDependencies="strmiids.lib opengl32.lib glu32.lib glut32.lib libARd.lib libARvideod.lib libARgsub_MFCd.lib vfw32.lib winmm.lib hdl.lib ConnectDM_VC80.lib tinyxmld.lib TDVHandsTracking.lib depthCameraLibrary2.lib chai3d-debug.lib"
 				OutputFile=".\Debug/Chat.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
