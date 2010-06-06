@@ -14,13 +14,6 @@
 #include "Configuration.h"
 #include "SyncLocker.h"
 
-enum GameState
-{
-	PLAYING,
-	PAUSED,
-	NOT_PLAYING
-};
-
 // The Mediator class for the program
 class Mediator :	public NetworkObserver,
 					public UserInterfaceObserver,
@@ -62,7 +55,7 @@ private:
 	mutable CRITICAL_SECTION configurationMutex;
 
 	// the current state of the game
-	GameState gameState;
+	GameStateEnum gameState;
 
 	// alter the game state
 	void startGame();

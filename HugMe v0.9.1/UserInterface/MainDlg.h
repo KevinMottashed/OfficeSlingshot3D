@@ -9,6 +9,7 @@
 #include "MFCOpenGLControl.h"
 #include "ConnectionStateEnum.h"
 #include "PlayerEnum.h"
+#include "GameStateEnum.h"
 
 /////////////////////////////////////////////////////////////////////////////
 // CMainDlg dialog
@@ -23,15 +24,13 @@ public:
 	// display that a certain player has changed the connection state
 	void displayConnectionStateChanged(ConnectionStateEnum state, PlayerEnum player);
 
+	// display that a certain player has changed the game state
+	void displayGameStateChanged(GameStateEnum state, PlayerEnum player);
+
 	// visual feedback for connection state	
 	void displayConnectionFailed();
 	void displayFailedToListen();
 	void displayNetworkError();
-
-	// visual feedback for game state
-	void displayGameStarted();
-	void displayGamePaused();
-	void displayGameExited();
 
 	// visual feedback for peer interaction
 	void displayPeerChatMessage(const std::string& message);

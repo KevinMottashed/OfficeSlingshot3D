@@ -117,19 +117,7 @@ void CMainDlg::OnStartGame()
 {
 	// start the game
 	pUserInterface->startGameButtonPushed();
-
-	// enable and disable appropriate menu items
-	CMenu* pMenu = GetMenu();
-	pMenu->EnableMenuItem(ID_NETWORK_CONNECT, MF_GRAYED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_NETWORK_LISTEN, MF_GRAYED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_NETWORK_DISCONNECT, MF_ENABLED | MF_BYCOMMAND);
-
-	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_GRAYED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_ENABLED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_GAME_PAUSEGAME, MF_ENABLED | MF_BYCOMMAND);
-
-	// give user feedback on the text area
-	AddChatContent("Started the game");
+	return;
 }
 
 // method used to exit the game with the connected remote user
@@ -137,19 +125,7 @@ void CMainDlg::OnExitGame()
 {
 	// exit the game
 	pUserInterface->exitGameButtonPushed();
-
-	// enable and disable appropriate menu items
-	CMenu* pMenu = GetMenu();
-	pMenu->EnableMenuItem(ID_NETWORK_CONNECT, MF_GRAYED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_NETWORK_LISTEN, MF_GRAYED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_NETWORK_DISCONNECT, MF_ENABLED | MF_BYCOMMAND);
-
-	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_ENABLED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_GRAYED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_GAME_PAUSEGAME, MF_GRAYED | MF_BYCOMMAND);
-
-	// give user feedback on the text area
-	AddChatContent("Exited the game");
+	return;
 }
 
 // method used to pause the game with the connected remote user
@@ -157,14 +133,7 @@ void CMainDlg::OnPauseGame()
 {
 	// pause the game
 	pUserInterface->pauseGameButtonPushed();
-
-	// enable and disable appropriate menu items
-	CMenu* pMenu = GetMenu();
-	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_ENABLED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_GAME_PAUSEGAME, MF_GRAYED | MF_BYCOMMAND);
-
-	// give user feedback on the text area
-	AddChatContent("Paused the game");
+	return;
 }
 
 // method used to send a new chat message to the remote user
@@ -456,6 +425,78 @@ void CMainDlg::displayConnectionStateChanged(ConnectionStateEnum state, PlayerEn
 	return;
 }
 
+void CMainDlg::displayGameStateChanged(GameStateEnum state, PlayerEnum player)
+{
+	// the message that the user will see in the chat box
+	ostringstream message;
+
+	// the game menu options, either enabled or disabled
+	long gameStart;
+	long gamePause;
+	long gameExit;
+
+	switch(state)
+	{
+		case NOT_RUNNING:
+		{
+			gameStart = MF_ENABLED;
+			gamePause = MF_GRAYED;
+			gameExit = MF_GRAYED;
+
+			if (player == LOCAL)
+			{
+				message << "Exited the game";
+			}
+			else
+			{
+				message << m_peerUserName << " has exited the game";
+			}
+			break;
+		}
+		case PAUSED:
+		{
+			gameStart = MF_ENABLED;
+			gamePause = MF_GRAYED;
+			gameExit = MF_ENABLED;
+
+			if (player == LOCAL)
+			{
+				message << "Paused the game";
+			}
+			else
+			{
+				message << m_peerUserName << " has paused the game";
+			}
+			break;
+		}
+		case RUNNING:
+		{
+			gameStart = MF_GRAYED;
+			gamePause = MF_ENABLED;
+			gameExit = MF_ENABLED;
+
+			if (player == LOCAL)
+			{
+				message << "Started the game";
+			}
+			else
+			{
+				message << m_peerUserName << " has started the game";
+			}
+			break;
+		}
+	}
+
+	// change the state of the game menu options
+	CMenu* pMenu = GetMenu();
+	pMenu->EnableMenuItem(ID_GAME_STARTGAME, gameStart | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_EXITGAME, gameExit | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_PAUSEGAME, gamePause | MF_BYCOMMAND);
+
+	AddChatContent(message.str().c_str());
+	return;
+}
+
 void CMainDlg::displayConnectionFailed()
 {
 	AddChatContent("Failed to connect to peer");
@@ -487,57 +528,6 @@ void CMainDlg::displayNetworkError()
 void CMainDlg::setPeerUserName(const std::string& name)
 {
 	m_peerUserName = name;
-	return;
-}
-
-void CMainDlg::displayGameStarted()
-{
-	// construct message
-	ostringstream os;
-	os << m_peerUserName << " has started the game";
-
-	// add feedback message on the text area
-	AddChatContent(os.str().c_str());
-
-	// enable and disable appropriate menu items
-	CMenu* pMenu = GetMenu();
-	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_GRAYED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_ENABLED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_GAME_PAUSEGAME, MF_ENABLED | MF_BYCOMMAND);
-
-	return;
-}
-
-void CMainDlg::displayGamePaused()
-{
-	// construct message
-	ostringstream os;
-	os << m_peerUserName << " has paused the game";
-
-	// add feedback message on the text area
-	AddChatContent(os.str().c_str());
-
-	// enable and disable appropriate menu items
-	CMenu* pMenu = GetMenu();
-	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_ENABLED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_GAME_PAUSEGAME, MF_GRAYED | MF_BYCOMMAND);
-	return;
-}
-
-void CMainDlg::displayGameExited()
-{
-	// construct message	
-	ostringstream os;
-	os << m_peerUserName << " has exited the game";
-
-	// add feedback message on the text area
-	AddChatContent(os.str().c_str());
-
-	// enable and disable appropriate menu items
-	CMenu* pMenu = GetMenu();
-	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_ENABLED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_GRAYED | MF_BYCOMMAND);
-	pMenu->EnableMenuItem(ID_GAME_PAUSEGAME, MF_GRAYED | MF_BYCOMMAND);
 	return;
 }
 

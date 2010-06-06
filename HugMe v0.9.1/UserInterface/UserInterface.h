@@ -8,6 +8,7 @@
 #include "UserPreferences.h"
 #include "ConnectionStateEnum.h"
 #include "PlayerEnum.h"
+#include "GameStateEnum.h"
 
 class CMainDlg;
 
@@ -24,15 +25,13 @@ public:
 	// display that a certain player has changed the connection state
 	virtual void displayConnectionStateChanged(ConnectionStateEnum state, PlayerEnum player) = 0;
 
+	// display that a certain player has changed the game state
+	virtual void displayGameStateChanged(GameStateEnum state, PlayerEnum player) = 0;
+
 	// update the user interface to reflect a change in the connection state
 	virtual void displayConnectionFailed() = 0;
 	virtual void displayFailedToListen() = 0;
 	virtual void displayNetworkError() = 0;
-
-	// update the user interface to reflect a change in the game state
-	virtual void displayGameStarted() = 0;
-	virtual void displayGamePaused() = 0;
-	virtual void displayGameExited() = 0;
 
 	// update the user interface to display the interaction with the peer
 	virtual void displayPeerChatMessage(const std::string& message) = 0;

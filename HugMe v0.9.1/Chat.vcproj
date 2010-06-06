@@ -599,6 +599,18 @@
 			Name="Common"
 			>
 			<File
+				RelativePath=".\Common\ConnectionStateEnum.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Common\GameStateEnum.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Common\PlayerEnum.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Common\Projectile.cpp"
 				>
 			</File>

@@ -65,6 +65,12 @@ void MFCUserInterface::displayConnectionStateChanged(ConnectionStateEnum state, 
 	return;
 }
 
+void MFCUserInterface::displayGameStateChanged(GameStateEnum state, PlayerEnum player)
+{
+	m_pMainDlg->displayGameStateChanged(state, player);
+	return;
+}
+
 void MFCUserInterface::displayConnectionFailed()
 {
 	m_pMainDlg->displayConnectionFailed();
@@ -80,24 +86,6 @@ void MFCUserInterface::displayFailedToListen()
 void MFCUserInterface::displayNetworkError()
 {
 	m_pMainDlg->displayNetworkError();
-	return;
-}
-
-void MFCUserInterface::displayGameStarted()
-{
-	m_pMainDlg->displayGameStarted();
-	return;
-}
-
-void MFCUserInterface::displayGamePaused()
-{
-	m_pMainDlg->displayGamePaused();
-	return;
-}
-
-void MFCUserInterface::displayGameExited()
-{
-	m_pMainDlg->displayGameExited();
 	return;
 }
 
