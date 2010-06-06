@@ -35,6 +35,9 @@ public:
 	virtual rc_network sendProjectile(const Projectile& projectile) = 0;
 	virtual rc_network sendSlingshotPullback() = 0;
 	virtual rc_network sendSlingshotRelease() = 0;
+
+	// true if  we are connected to a peer
+	virtual bool isConnected() const = 0;
 };
 
 #endif

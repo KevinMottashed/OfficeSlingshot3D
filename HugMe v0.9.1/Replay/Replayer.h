@@ -43,6 +43,8 @@ public:
 	virtual rc_network sendSlingshotPullback();
 	virtual rc_network sendSlingshotRelease();
 
+	virtual bool isConnected() const;
+
 	//---------------------------------------------------------------------
 	// Falcon
 	//---------------------------------------------------------------------
@@ -67,6 +69,9 @@ private:
 	// the time at which the replay was started
 	boost::posix_time::ptime startTime;
 	std::ifstream file;
+
+	// true if we are connected to a peer
+	bool connected;
 
 	// holds the replay thread
 	std::auto_ptr<boost::thread> replayThread;

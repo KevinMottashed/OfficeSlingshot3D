@@ -34,15 +34,14 @@ WinsockNetwork::WinsockNetwork() :
 	m_hDataReceiveThread(0),
 	m_dwIDDataReceive(0),
 	// control members
-	m_bIsConnected(false),
 	m_bIsServer(false),
-	m_bIsEstablishing(false),
+	m_connectionState(DISCONNECTED),
 	m_bLocalDisconnect(false),	
 	m_sEstablished(new CSemaphore(0,1))
 {
 	InitializeCriticalSection(&m_csControlSocketSend);
 	InitializeCriticalSection(&m_csDataSocketSend);
-	InitializeCriticalSection(&m_csIsEstablishing);
+	InitializeCriticalSection(&m_csConnectionState);
 	InitializeCriticalSection(&m_csLocalDisconnect);
 }
 
@@ -50,7 +49,7 @@ WinsockNetwork::~WinsockNetwork()
 {
 	DeleteCriticalSection(&m_csControlSocketSend);
 	DeleteCriticalSection(&m_csDataSocketSend);
-	DeleteCriticalSection(&m_csIsEstablishing);
+	DeleteCriticalSection(&m_csConnectionState);
 	DeleteCriticalSection(&m_csLocalDisconnect);
 	delete m_pControlSocket;
 	delete m_pDataSocket;
@@ -68,7 +67,7 @@ rc_network WinsockNetwork::listen(const std::string& userName)
 	SyncWriterLock statusLock = SyncWriterLock(m_rwsync_ConnectionStatus);
 
 	// don't try to connect if we are already connected
-	if (m_bIsConnected)
+	if (isConnected())
 	{
 		return ERROR_ALREADY_CONNECTED;
 	}
@@ -123,7 +122,7 @@ rc_network WinsockNetwork::connect(const std::string& ipAddress, const std::stri
 		SyncWriterLock statusLock = SyncWriterLock(m_rwsync_ConnectionStatus);
 
 		// don't try connecting if we are already connected
-		if (m_bIsConnected)
+		if (isConnected())
 		{
 			return ERROR_ALREADY_CONNECTED;
 		}
@@ -166,11 +165,9 @@ rc_network WinsockNetwork::connect(const std::string& ipAddress, const std::stri
 
 		// we are the client
 		m_bIsServer = false;
-		m_bIsConnected = true;
-		{
-			SyncLocker lock(m_csIsEstablishing);
-			m_bIsEstablishing = true;
-		}
+
+		// establish the connection
+		setConnectionState(ESTABLISHING);
 		initializeConnection();
 	}
 
@@ -190,7 +187,7 @@ rc_network WinsockNetwork::disconnect()
 	// we must therefore request write access to the connection resource before proceeding
 	SyncWriterLock statusLock = SyncWriterLock(m_rwsync_ConnectionStatus);
 
-	if (m_bIsConnected)
+	if (isConnected())
 	{
 		// it is important to only shutdown the sockets when we are already connected
 		// if we close the sockets the other side will get a network error
@@ -214,7 +211,7 @@ void WinsockNetwork::peerDisconnect()
 	// we must therefore request write access to the connection resource before proceeding
 	SyncWriterLock statusLock = SyncWriterLock(m_rwsync_ConnectionStatus);
 
-	if (m_bIsConnected)
+	if (isConnected())
 	{
 		SyncLocker lock (m_csLocalDisconnect);
 		if (!m_bLocalDisconnect)
@@ -238,7 +235,7 @@ void WinsockNetwork::networkError(rc_network error)
 	// we must therefore request write access to the connection resource before proceeding
 	SyncWriterLock statusLock = SyncWriterLock(m_rwsync_ConnectionStatus);
 
-	if (m_bIsConnected)
+	if (isConnected())
 	{
 		// notify the observers that the network has been disconnected due to an error		
 		notify(NETWORK_ERROR, &error);
@@ -280,11 +277,9 @@ void WinsockNetwork::notifyAccept(NetworkSocket* socket)
 		{
 			// we are the server
 			m_bIsServer = true;
-			m_bIsConnected = true;
-			{
-				SyncLocker lock(m_csIsEstablishing);
-				m_bIsEstablishing = true;
-			}
+
+			// establish the connection
+			setConnectionState(ESTABLISHING);
 			initializeConnection();
 			establish = true;
 		}
@@ -311,16 +306,12 @@ void WinsockNetwork::resetConnectionStatus()
 	// reset the connection status to not connected
 	m_bControlConnected = false;
 	m_bDataConnected = false;
-	m_bIsConnected = false;
 	m_bIsServer = false;
 	{
 		SyncLocker lock (m_csLocalDisconnect);
 		m_bLocalDisconnect = false;
 	}
-	{
-		SyncLocker lock (m_csIsEstablishing);
-		m_bIsEstablishing = false;
-	}
+	setConnectionState(DISCONNECTED);
 	return;
 }
 
@@ -406,7 +397,8 @@ DWORD WinsockNetwork::ControlReceiveThread(WinsockNetwork* network)
 		// we must therefore request read access to the connection resource before proceeding
 		SyncReaderLock statusLock = SyncReaderLock(network->m_rwsync_ConnectionStatus);
 
-		if (!network->m_bIsConnected)
+		ConnectionStateEnum connectionState = network->getConnectionState();
+		if (connectionState != CONNECTED && connectionState != ESTABLISHING)
 		{
 			// we are no longer connected, we can stop receiving data
 			return 0;
@@ -488,7 +480,8 @@ DWORD WinsockNetwork::DataReceiveThread(WinsockNetwork* network)
 		// we must therefore request read access to the connection resource before proceeding
 		SyncReaderLock statusLock = SyncReaderLock(network->m_rwsync_ConnectionStatus);
 
-		if (!network->m_bIsConnected)
+		ConnectionStateEnum connectionState = network->getConnectionState();
+		if (connectionState != CONNECTED && connectionState != ESTABLISHING)
 		{
 			// we are no longer connected, we can stop receiving data
 			return 0;
@@ -565,8 +558,7 @@ rc_network WinsockNetwork::establishConnection()
 	// wait 5 seconds for the connection to be established
 	if (m_sEstablished->Lock(5000))
 	{
-		SyncLocker lock(m_csIsEstablishing);
-		m_bIsEstablishing = false;
+		setConnectionState(CONNECTED);
 		return SUCCESS;
 	}
 	else
@@ -660,13 +652,20 @@ rc_network WinsockNetwork::sendSlingshotRelease()
 	return syncSendDataMessage(packet);
 }
 
+bool WinsockNetwork::isConnected() const
+{
+	SyncLocker lock(m_csConnectionState);
+	return m_connectionState == CONNECTED;
+}
+
 rc_network WinsockNetwork::syncSendDataMessage(const DataPacket& packet)
 {
 	// sending data through the control socket is an operation that reads the connection status
 	// we must therefore request read access to the connection resource before proceeding
 	SyncReaderLock statusLock = SyncReaderLock(m_rwsync_ConnectionStatus);
 
-	if (!m_bIsConnected)
+	ConnectionStateEnum connectionState = getConnectionState();
+	if (connectionState != CONNECTED && connectionState != ESTABLISHING)
 	{
 		return ERROR_NO_CONNECTION;
 	}
@@ -787,7 +786,8 @@ rc_network WinsockNetwork::syncSendControlMessage(const ControlPacket& packet)
 	// we must therefore request read access to the connection resource before proceeding
 	SyncReaderLock statusLock = SyncReaderLock(m_rwsync_ConnectionStatus);
 
-	if (!m_bIsConnected)
+	ConnectionStateEnum connectionState = getConnectionState();
+	if (connectionState != CONNECTED && connectionState != ESTABLISHING)
 	{
 		return ERROR_NO_CONNECTION;
 	}
@@ -863,8 +863,7 @@ void WinsockNetwork::handleControlMessage(const ControlPacket& message)
 			// update the remote user name
 			notify(RECEIVED_USER_NAME, &message.read<std::string>());
 			{
-				SyncLocker lock(m_csIsEstablishing);
-				if (m_bIsEstablishing)
+				if (getConnectionState() == ESTABLISHING)
 				{
 					m_sEstablished->Unlock();
 				}
@@ -902,6 +901,19 @@ void WinsockNetwork::handleControlMessage(const ControlPacket& message)
 			break;
 		}
 	}
+	return;
+}
+
+ConnectionStateEnum WinsockNetwork::getConnectionState() const
+{
+	SyncLocker lock(m_csConnectionState);
+	return m_connectionState;
+}
+
+void WinsockNetwork::setConnectionState(ConnectionStateEnum state)
+{
+	SyncLocker lock(m_csConnectionState);
+	m_connectionState = state;
 	return;
 }
 

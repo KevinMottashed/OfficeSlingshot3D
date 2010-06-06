@@ -411,23 +411,25 @@ void Mediator::listen()
 // we want to exit the game and disconnect when the local user wishes to disconnect
 void Mediator::disconnect()
 {
-	// exit the game when we disconnect
-	exitGame();
-
-	// tell the network manager to disconnect us
-	rc_network error = network->disconnect();
-
-	if (error == SUCCESS)
+	if (network->isConnected())
 	{
-		// display the change in connection state in the UI
-		userInterface->displayConnectionStateChanged(DISCONNECTED, LOCAL);
-	}
-	else
-	{
-		// this should never happen, we must always be able to disconnect from a peer
-		assert(false);
-	}
-	
+		// exit the game when we disconnect
+		exitGame();
+
+		// tell the network manager to disconnect us
+		rc_network error = network->disconnect();
+
+		if (error == SUCCESS)
+		{
+			// display the change in connection state in the UI
+			userInterface->displayConnectionStateChanged(DISCONNECTED, LOCAL);
+		}
+		else
+		{
+			// this should never happen, we must always be able to disconnect from a peer
+			assert(false);
+		}
+	}	
 	return;
 }
 

@@ -8,6 +8,7 @@
 #include "Stdafx.h"
 #include "SyncReaderWriters.h"
 #include "VideoData.h"
+#include "ConnectionStateEnum.h"
 
 // Forward declarations (files include each other)
 class NetworkSocket;
@@ -84,6 +85,9 @@ public:
 
 	// send a slingshot release event over the network
 	virtual rc_network sendSlingshotRelease();
+
+	// true if  we are connected to a peer
+	virtual bool isConnected() const;
 
 	// notify the network interface that a network connection has been accepted
 	void notifyAccept(NetworkSocket* socket);
@@ -181,6 +185,10 @@ private:
 	// handle a control message
 	void handleControlMessage(const ControlPacket& message);
 
+	// get and set the connection in a thread safe manner
+	ConnectionStateEnum getConnectionState() const;
+	void setConnectionState(ConnectionStateEnum state);
+
 	//---------------------------
 	// Private Data Members
 	//---------------------------
@@ -193,10 +201,9 @@ private:
 	// the readers are the operations that use the sockets (send/recv)
 	mutable SyncReaderWriters m_rwsync_ConnectionStatus;
 
-	bool m_bIsConnected; // true if connected to a peer
 	bool m_bIsServer; // true if we are the server (listener)
-	bool m_bIsEstablishing; // true if we are currently establishing a connection
-	mutable CRITICAL_SECTION m_csIsEstablishing;
+	ConnectionStateEnum m_connectionState;
+	mutable CRITICAL_SECTION m_csConnectionState;
 
 	// true if we are in the process of disconnecting and the disconnect originated from us
 	bool m_bLocalDisconnect; 

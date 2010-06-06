@@ -6,7 +6,8 @@ using namespace boost;
 
 Replayer::Replayer(string fileName, const UserPreferences& preferences) :
 	MFCUserInterface(preferences),
-	file(fileName.c_str(), ios::in | ios::binary)
+	file(fileName.c_str(), ios::in | ios::binary),
+	connected(false)
 {
 }
 
@@ -78,12 +79,14 @@ void Replayer::replay()
 		case NETWORK_PEER_CONNECTED:
 			{
 				assert(size == 0);
+				connected = true;
 				NetworkSubject::notify(PEER_CONNECTED);
 				break;
 			}
 		case NETWORK_PEER_DISCONNECTED:
 			{
 				assert(size == 0);
+				connected = false;
 				NetworkSubject::notify(PEER_DISCONNECTED);
 				break;
 			}
@@ -294,11 +297,13 @@ rc_network Replayer::listen(const std::string& userName)
 
 rc_network Replayer::connect(const std::string& ipAddress, const std::string& userName)
 {
+	connected = true;
 	return SUCCESS;
 }
 
 rc_network Replayer::disconnect()
 {
+	connected = false;
 	return SUCCESS;
 }
 
@@ -355,6 +360,11 @@ rc_network Replayer::sendSlingshotPullback()
 rc_network Replayer::sendSlingshotRelease()
 {
 	return SUCCESS;
+}
+
+bool Replayer::isConnected() const
+{
+	return connected;
 }
 
 void Replayer::startPolling()
