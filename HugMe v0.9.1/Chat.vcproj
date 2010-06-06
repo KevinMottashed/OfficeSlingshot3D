@@ -746,6 +746,10 @@
 			</File>
 		</Filter>
 		<File
+			RelativePath=".\config.ini"
+			>
+		</File>
+		<File
 			RelativePath="ReadMe.txt"
 			>
 		</File>
