@@ -198,7 +198,7 @@ void Mediator::update(NetworkUpdateContext context, const void* data)
 void Mediator::handlePeerConnected()
 {
 	// display the change in connection state in the UI
-	userInterface->displayConnectionStateChanged(CONNECTED, PEER);
+	userInterface->displayConnectionStateChanged(ConnectionState::CONNECTED, PEER);
 	return;
 }
 
@@ -208,7 +208,7 @@ void Mediator::handlePeerDisconnected()
 	exitGame();
 
 	// display the change in connection state in the UI
-	userInterface->displayConnectionStateChanged(DISCONNECTED, PEER);
+	userInterface->displayConnectionStateChanged(ConnectionState::DISCONNECTED, PEER);
 	return;
 }
 
@@ -378,7 +378,7 @@ void Mediator::connect()
 	if (error == SUCCESS)
 	{
 		// display the change in connection state in the UI
-		userInterface->displayConnectionStateChanged(CONNECTED, LOCAL);
+		userInterface->displayConnectionStateChanged(ConnectionState::CONNECTED, LOCAL);
 	}
 	else
 	{
@@ -398,7 +398,7 @@ void Mediator::listen()
 	if (error == SUCCESS)
 	{
 		// display the change in connection state in the UI
-		userInterface->displayConnectionStateChanged(LISTENING, LOCAL);
+		userInterface->displayConnectionStateChanged(ConnectionState::LISTENING, LOCAL);
 	}
 	else
 	{
@@ -422,7 +422,7 @@ void Mediator::disconnect()
 		if (error == SUCCESS)
 		{
 			// display the change in connection state in the UI
-			userInterface->displayConnectionStateChanged(DISCONNECTED, LOCAL);
+			userInterface->displayConnectionStateChanged(ConnectionState::DISCONNECTED, LOCAL);
 		}
 		else
 		{

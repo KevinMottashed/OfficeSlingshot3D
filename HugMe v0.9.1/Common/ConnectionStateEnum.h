@@ -1,12 +1,22 @@
 #ifndef CONNECTION_STATE_ENUM_H
 #define CONNECTION_STATE_ENUM_H
 
-enum ConnectionStateEnum
+#include "stdafx.h"
+
+namespace ConnectionState
 {
-	LISTENING,
-	ESTABLISHING,
-	CONNECTED,
-	DISCONNECTED
-};
+	enum ConnectionStateEnum
+	{
+		LISTENING,
+		ESTABLISHING,
+		CONNECTED,
+		DISCONNECTED
+	};
+
+	// get a string from the enum
+	std::string lookup(ConnectionStateEnum e);
+}
+
+typedef ConnectionState::ConnectionStateEnum ConnectionState_t;
 
 #endif

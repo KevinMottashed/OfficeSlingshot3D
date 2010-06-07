@@ -335,7 +335,7 @@ void CMainDlg::OnDestroy()
 	pUserInterface->closeApplication();
 }
 
-void CMainDlg::displayConnectionStateChanged(ConnectionStateEnum state, PlayerEnum player)
+void CMainDlg::displayConnectionStateChanged(ConnectionState_t state, PlayerEnum player)
 {
 	// the message that the user will see in the chat box
 	ostringstream message;
@@ -350,7 +350,7 @@ void CMainDlg::displayConnectionStateChanged(ConnectionStateEnum state, PlayerEn
 	
 	switch (state)
 	{
-		case DISCONNECTED:
+		case ConnectionState::DISCONNECTED:
 		{
 			networkConnect = MF_ENABLED;
 			networkListen = MF_ENABLED;
@@ -369,7 +369,7 @@ void CMainDlg::displayConnectionStateChanged(ConnectionStateEnum state, PlayerEn
 			}
 			break;
 		}
-		case LISTENING:
+		case ConnectionState::LISTENING:
 		{
 			// it makes no sense for a peer to tell us that he is listening
 			// as we are not even connected to him
@@ -385,7 +385,7 @@ void CMainDlg::displayConnectionStateChanged(ConnectionStateEnum state, PlayerEn
 			message << "Listening";
 			break;
 		}
-		case CONNECTED:
+		case ConnectionState::CONNECTED:
 		{
 			networkConnect = MF_GRAYED;
 			networkListen = MF_GRAYED;

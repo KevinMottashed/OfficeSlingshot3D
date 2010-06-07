@@ -186,8 +186,8 @@ private:
 	void handleControlMessage(const ControlPacket& message);
 
 	// get and set the connection in a thread safe manner
-	ConnectionStateEnum getConnectionState() const;
-	void setConnectionState(ConnectionStateEnum state);
+	ConnectionState_t getConnectionState() const;
+	void setConnectionState(ConnectionState_t state);
 
 	//---------------------------
 	// Private Data Members
@@ -202,7 +202,7 @@ private:
 	mutable SyncReaderWriters m_rwsync_ConnectionStatus;
 
 	bool m_bIsServer; // true if we are the server (listener)
-	ConnectionStateEnum m_connectionState;
+	ConnectionState_t m_connectionState;
 	mutable CRITICAL_SECTION m_csConnectionState;
 
 	// true if we are in the process of disconnecting and the disconnect originated from us

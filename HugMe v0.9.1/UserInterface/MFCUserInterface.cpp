@@ -59,7 +59,7 @@ CDialog* MFCUserInterface::getMainWindow()
 	return m_pMainDlg;
 }
 
-void MFCUserInterface::displayConnectionStateChanged(ConnectionStateEnum state, PlayerEnum player)
+void MFCUserInterface::displayConnectionStateChanged(ConnectionState_t state, PlayerEnum player)
 {
 	m_pMainDlg->displayConnectionStateChanged(state, player);
 	return;

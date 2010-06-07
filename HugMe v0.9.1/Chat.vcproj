@@ -599,6 +599,10 @@
 			Name="Common"
 			>
 			<File
+				RelativePath=".\Common\ConnectionStateEnum.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Common\ConnectionStateEnum.h"
 				>
 			</File>

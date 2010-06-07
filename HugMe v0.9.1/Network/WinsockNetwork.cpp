@@ -35,7 +35,7 @@ WinsockNetwork::WinsockNetwork() :
 	m_dwIDDataReceive(0),
 	// control members
 	m_bIsServer(false),
-	m_connectionState(DISCONNECTED),
+	m_connectionState(ConnectionState::DISCONNECTED),
 	m_bLocalDisconnect(false),	
 	m_sEstablished(new CSemaphore(0,1))
 {
@@ -167,7 +167,7 @@ rc_network WinsockNetwork::connect(const std::string& ipAddress, const std::stri
 		m_bIsServer = false;
 
 		// establish the connection
-		setConnectionState(ESTABLISHING);
+		setConnectionState(ConnectionState::ESTABLISHING);
 		initializeConnection();
 	}
 
@@ -279,7 +279,7 @@ void WinsockNetwork::notifyAccept(NetworkSocket* socket)
 			m_bIsServer = true;
 
 			// establish the connection
-			setConnectionState(ESTABLISHING);
+			setConnectionState(ConnectionState::ESTABLISHING);
 			initializeConnection();
 			establish = true;
 		}
@@ -311,7 +311,7 @@ void WinsockNetwork::resetConnectionStatus()
 		SyncLocker lock (m_csLocalDisconnect);
 		m_bLocalDisconnect = false;
 	}
-	setConnectionState(DISCONNECTED);
+	setConnectionState(ConnectionState::DISCONNECTED);
 	return;
 }
 
@@ -397,8 +397,9 @@ DWORD WinsockNetwork::ControlReceiveThread(WinsockNetwork* network)
 		// we must therefore request read access to the connection resource before proceeding
 		SyncReaderLock statusLock = SyncReaderLock(network->m_rwsync_ConnectionStatus);
 
-		ConnectionStateEnum connectionState = network->getConnectionState();
-		if (connectionState != CONNECTED && connectionState != ESTABLISHING)
+		ConnectionState_t connectionState = network->getConnectionState();
+		if (connectionState != ConnectionState::CONNECTED &&
+			connectionState != ConnectionState::ESTABLISHING)
 		{
 			// we are no longer connected, we can stop receiving data
 			return 0;
@@ -480,8 +481,9 @@ DWORD WinsockNetwork::DataReceiveThread(WinsockNetwork* network)
 		// we must therefore request read access to the connection resource before proceeding
 		SyncReaderLock statusLock = SyncReaderLock(network->m_rwsync_ConnectionStatus);
 
-		ConnectionStateEnum connectionState = network->getConnectionState();
-		if (connectionState != CONNECTED && connectionState != ESTABLISHING)
+		ConnectionState_t connectionState = network->getConnectionState();
+		if (connectionState != ConnectionState::CONNECTED &&
+			connectionState != ConnectionState::ESTABLISHING)
 		{
 			// we are no longer connected, we can stop receiving data
 			return 0;
@@ -558,7 +560,7 @@ rc_network WinsockNetwork::establishConnection()
 	// wait 5 seconds for the connection to be established
 	if (m_sEstablished->Lock(5000))
 	{
-		setConnectionState(CONNECTED);
+		setConnectionState(ConnectionState::CONNECTED);
 		return SUCCESS;
 	}
 	else
@@ -655,7 +657,7 @@ rc_network WinsockNetwork::sendSlingshotRelease()
 bool WinsockNetwork::isConnected() const
 {
 	SyncLocker lock(m_csConnectionState);
-	return m_connectionState == CONNECTED;
+	return m_connectionState == ConnectionState::CONNECTED;
 }
 
 rc_network WinsockNetwork::syncSendDataMessage(const DataPacket& packet)
@@ -664,8 +666,9 @@ rc_network WinsockNetwork::syncSendDataMessage(const DataPacket& packet)
 	// we must therefore request read access to the connection resource before proceeding
 	SyncReaderLock statusLock = SyncReaderLock(m_rwsync_ConnectionStatus);
 
-	ConnectionStateEnum connectionState = getConnectionState();
-	if (connectionState != CONNECTED && connectionState != ESTABLISHING)
+	ConnectionState_t connectionState = getConnectionState();
+	if (connectionState != ConnectionState::CONNECTED &&
+		connectionState != ConnectionState::ESTABLISHING)
 	{
 		return ERROR_NO_CONNECTION;
 	}
@@ -786,8 +789,9 @@ rc_network WinsockNetwork::syncSendControlMessage(const ControlPacket& packet)
 	// we must therefore request read access to the connection resource before proceeding
 	SyncReaderLock statusLock = SyncReaderLock(m_rwsync_ConnectionStatus);
 
-	ConnectionStateEnum connectionState = getConnectionState();
-	if (connectionState != CONNECTED && connectionState != ESTABLISHING)
+	ConnectionState_t connectionState = getConnectionState();
+	if (connectionState != ConnectionState::CONNECTED &&
+		connectionState != ConnectionState::ESTABLISHING)
 	{
 		return ERROR_NO_CONNECTION;
 	}
@@ -863,7 +867,7 @@ void WinsockNetwork::handleControlMessage(const ControlPacket& message)
 			// update the remote user name
 			notify(RECEIVED_USER_NAME, &message.read<std::string>());
 			{
-				if (getConnectionState() == ESTABLISHING)
+				if (getConnectionState() == ConnectionState::ESTABLISHING)
 				{
 					m_sEstablished->Unlock();
 				}
@@ -904,13 +908,13 @@ void WinsockNetwork::handleControlMessage(const ControlPacket& message)
 	return;
 }
 
-ConnectionStateEnum WinsockNetwork::getConnectionState() const
+ConnectionState_t WinsockNetwork::getConnectionState() const
 {
 	SyncLocker lock(m_csConnectionState);
 	return m_connectionState;
 }
 
-void WinsockNetwork::setConnectionState(ConnectionStateEnum state)
+void WinsockNetwork::setConnectionState(ConnectionState_t state)
 {
 	SyncLocker lock(m_csConnectionState);
 	m_connectionState = state;

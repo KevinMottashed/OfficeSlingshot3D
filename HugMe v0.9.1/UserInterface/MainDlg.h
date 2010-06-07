@@ -22,7 +22,7 @@ public:
 	CMainDlg(UserInterface* pUserInterface, const UserPreferences& preferences, CWnd* pParent = NULL);   // standard constructor
 
 	// display that a certain player has changed the connection state
-	void displayConnectionStateChanged(ConnectionStateEnum state, PlayerEnum player);
+	void displayConnectionStateChanged(ConnectionState_t state, PlayerEnum player);
 
 	// display that a certain player has changed the game state
 	void displayGameStateChanged(GameStateEnum state, PlayerEnum player);
