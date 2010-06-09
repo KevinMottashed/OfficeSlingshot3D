@@ -23,10 +23,10 @@ public:
 	//----------------------------------------
 
 	// display that a certain player has changed the connection state
-	virtual void displayConnectionStateChanged(ConnectionState_t state, PlayerEnum player) = 0;
+	virtual void displayConnectionStateChanged(ConnectionState_t state, Player_t player) = 0;
 
 	// display that a certain player has changed the game state
-	virtual void displayGameStateChanged(GameState_t state, PlayerEnum player) = 0;
+	virtual void displayGameStateChanged(GameState_t state, Player_t player) = 0;
 
 	// update the user interface to reflect a change in the connection state
 	virtual void displayConnectionFailed() = 0;

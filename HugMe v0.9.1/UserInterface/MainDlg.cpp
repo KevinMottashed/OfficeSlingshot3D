@@ -335,7 +335,7 @@ void CMainDlg::OnDestroy()
 	pUserInterface->closeApplication();
 }
 
-void CMainDlg::displayConnectionStateChanged(ConnectionState_t state, PlayerEnum player)
+void CMainDlg::displayConnectionStateChanged(ConnectionState_t state, Player_t player)
 {
 	// the message that the user will see in the chat box
 	ostringstream message;
@@ -359,7 +359,7 @@ void CMainDlg::displayConnectionStateChanged(ConnectionState_t state, PlayerEnum
 			// all game buttons are disabled
 			gameStart = gamePause = gameExit = MF_GRAYED;
 			
-			if (player == LOCAL)
+			if (player == Player::LOCAL)
 			{
 				message << "Disconnected";
 			}
@@ -373,7 +373,7 @@ void CMainDlg::displayConnectionStateChanged(ConnectionState_t state, PlayerEnum
 		{
 			// it makes no sense for a peer to tell us that he is listening
 			// as we are not even connected to him
-			assert(player == LOCAL);
+			assert(player == Player::LOCAL);
 			
 			networkConnect = MF_GRAYED;
 			networkListen = MF_GRAYED;
@@ -395,7 +395,7 @@ void CMainDlg::displayConnectionStateChanged(ConnectionState_t state, PlayerEnum
 			gamePause = MF_GRAYED;
 			gameExit = MF_GRAYED;
 
-			if (player == LOCAL)
+			if (player == Player::LOCAL)
 			{
 				message << "Connected to " << m_peerUserName;
 			}
@@ -425,7 +425,7 @@ void CMainDlg::displayConnectionStateChanged(ConnectionState_t state, PlayerEnum
 	return;
 }
 
-void CMainDlg::displayGameStateChanged(GameState_t state, PlayerEnum player)
+void CMainDlg::displayGameStateChanged(GameState_t state, Player_t player)
 {
 	// the message that the user will see in the chat box
 	ostringstream message;
@@ -443,7 +443,7 @@ void CMainDlg::displayGameStateChanged(GameState_t state, PlayerEnum player)
 			gamePause = MF_GRAYED;
 			gameExit = MF_GRAYED;
 
-			if (player == LOCAL)
+			if (player == Player::LOCAL)
 			{
 				message << "Exited the game";
 			}
@@ -459,7 +459,7 @@ void CMainDlg::displayGameStateChanged(GameState_t state, PlayerEnum player)
 			gamePause = MF_GRAYED;
 			gameExit = MF_ENABLED;
 
-			if (player == LOCAL)
+			if (player == Player::LOCAL)
 			{
 				message << "Paused the game";
 			}
@@ -475,7 +475,7 @@ void CMainDlg::displayGameStateChanged(GameState_t state, PlayerEnum player)
 			gamePause = MF_ENABLED;
 			gameExit = MF_ENABLED;
 
-			if (player == LOCAL)
+			if (player == Player::LOCAL)
 			{
 				message << "Started the game";
 			}

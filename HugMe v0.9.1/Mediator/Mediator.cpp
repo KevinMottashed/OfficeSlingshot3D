@@ -198,7 +198,7 @@ void Mediator::update(NetworkUpdateContext context, const void* data)
 void Mediator::handlePeerConnected()
 {
 	// display the change in connection state in the UI
-	userInterface->displayConnectionStateChanged(ConnectionState::CONNECTED, PEER);
+	userInterface->displayConnectionStateChanged(ConnectionState::CONNECTED, Player::PEER);
 	return;
 }
 
@@ -208,7 +208,7 @@ void Mediator::handlePeerDisconnected()
 	exitGame();
 
 	// display the change in connection state in the UI
-	userInterface->displayConnectionStateChanged(ConnectionState::DISCONNECTED, PEER);
+	userInterface->displayConnectionStateChanged(ConnectionState::DISCONNECTED, Player::PEER);
 	return;
 }
 
@@ -228,7 +228,7 @@ void Mediator::handlePeerStartGame()
 	startGame();
 
 	// let the UI know that the game has been started
-	userInterface->displayGameStateChanged(GameState::RUNNING, PEER);
+	userInterface->displayGameStateChanged(GameState::RUNNING, Player::PEER);
 	return;
 }
 
@@ -238,7 +238,7 @@ void Mediator::handlePeerPauseGame()
 	pauseGame();
 
 	// let the UI know that the game has been paused
-	userInterface->displayGameStateChanged(GameState::PAUSED, PEER);
+	userInterface->displayGameStateChanged(GameState::PAUSED, Player::PEER);
 	return;
 }
 
@@ -248,7 +248,7 @@ void Mediator::handlePeerExitGame()
 	exitGame();
 
 	// let the UI know that the game has been ended
-	userInterface->displayGameStateChanged(GameState::NOT_RUNNING, PEER);
+	userInterface->displayGameStateChanged(GameState::NOT_RUNNING, Player::PEER);
 	return;
 }
 
@@ -378,7 +378,7 @@ void Mediator::connect()
 	if (error == SUCCESS)
 	{
 		// display the change in connection state in the UI
-		userInterface->displayConnectionStateChanged(ConnectionState::CONNECTED, LOCAL);
+		userInterface->displayConnectionStateChanged(ConnectionState::CONNECTED, Player::LOCAL);
 	}
 	else
 	{
@@ -398,7 +398,7 @@ void Mediator::listen()
 	if (error == SUCCESS)
 	{
 		// display the change in connection state in the UI
-		userInterface->displayConnectionStateChanged(ConnectionState::LISTENING, LOCAL);
+		userInterface->displayConnectionStateChanged(ConnectionState::LISTENING, Player::LOCAL);
 	}
 	else
 	{
@@ -422,7 +422,7 @@ void Mediator::disconnect()
 		if (error == SUCCESS)
 		{
 			// display the change in connection state in the UI
-			userInterface->displayConnectionStateChanged(ConnectionState::DISCONNECTED, LOCAL);
+			userInterface->displayConnectionStateChanged(ConnectionState::DISCONNECTED, Player::LOCAL);
 		}
 		else
 		{
@@ -467,7 +467,7 @@ void Mediator::localStartGame()
 		// start the game
 		startGame();
 
-		userInterface->displayGameStateChanged(GameState::RUNNING, LOCAL);
+		userInterface->displayGameStateChanged(GameState::RUNNING, Player::LOCAL);
 	}
 	return;
 }
@@ -480,7 +480,7 @@ void Mediator::localPauseGame()
 		// pause the game
 		pauseGame();
 
-		userInterface->displayGameStateChanged(GameState::PAUSED, LOCAL);
+		userInterface->displayGameStateChanged(GameState::PAUSED, Player::LOCAL);
 	}
 	return;
 }
@@ -493,7 +493,7 @@ void Mediator::localExitGame()
 		// pause the game
 		exitGame();
 
-		userInterface->displayGameStateChanged(GameState::NOT_RUNNING, LOCAL);
+		userInterface->displayGameStateChanged(GameState::NOT_RUNNING, Player::LOCAL);
 	}
 	return;
 }

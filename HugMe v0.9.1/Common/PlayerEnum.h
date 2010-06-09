@@ -1,10 +1,20 @@
 #ifndef PLAYER_ENUM_H
 #define PLAYER_ENUM_H
 
-enum PlayerEnum
+#include "stdafx.h"
+
+namespace Player
 {
-	LOCAL,
-	PEER
-};
+	enum PlayerEnum
+	{
+		LOCAL,
+		PEER
+	};
+
+	// get a string from the enum
+	std::string lookup(PlayerEnum e);
+}
+
+typedef Player::PlayerEnum Player_t;
 
 #endif

@@ -59,13 +59,13 @@ CDialog* MFCUserInterface::getMainWindow()
 	return m_pMainDlg;
 }
 
-void MFCUserInterface::displayConnectionStateChanged(ConnectionState_t state, PlayerEnum player)
+void MFCUserInterface::displayConnectionStateChanged(ConnectionState_t state, Player_t player)
 {
 	m_pMainDlg->displayConnectionStateChanged(state, player);
 	return;
 }
 
-void MFCUserInterface::displayGameStateChanged(GameState_t state, PlayerEnum player)
+void MFCUserInterface::displayGameStateChanged(GameState_t state, Player_t player)
 {
 	m_pMainDlg->displayGameStateChanged(state, player);
 	return;
