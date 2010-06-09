@@ -411,7 +411,7 @@ void Mediator::listen()
 // we want to exit the game and disconnect when the local user wishes to disconnect
 void Mediator::disconnect()
 {
-	if (network->isConnected())
+	if (network->isConnected() || network->isListening())
 	{
 		// exit the game when we disconnect
 		exitGame();

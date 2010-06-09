@@ -89,6 +89,9 @@ public:
 	// true if  we are connected to a peer
 	virtual bool isConnected() const;
 
+	// true if  we are listening for connections
+	virtual bool isListening() const;
+
 	// notify the network interface that a network connection has been accepted
 	void notifyAccept(NetworkSocket* socket);
 

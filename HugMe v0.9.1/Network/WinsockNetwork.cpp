@@ -73,7 +73,7 @@ rc_network WinsockNetwork::listen(const std::string& userName)
 	}
 
 	// don't try listening if we are already listening
-	if (m_pControlSocket != NULL)
+	if (isListening())
 	{
 		return ERROR_ALREADY_LISTENING;
 	}
@@ -108,6 +108,9 @@ rc_network WinsockNetwork::listen(const std::string& userName)
 		return ERROR_LISTEN_DATA_SOCKET;
 	}
 
+	// we are now listening, change the state
+	setConnectionState(ConnectionState::LISTENING);
+
 	return SUCCESS;
 }
 
@@ -128,7 +131,7 @@ rc_network WinsockNetwork::connect(const std::string& ipAddress, const std::stri
 		}
 
 		// don't try connecting if we are already listening
-		if (m_pControlSocket != NULL)
+		if (isListening())
 		{
 			return ERROR_ALREADY_LISTENING;
 		}
@@ -656,8 +659,12 @@ rc_network WinsockNetwork::sendSlingshotRelease()
 
 bool WinsockNetwork::isConnected() const
 {
-	SyncLocker lock(m_csConnectionState);
-	return m_connectionState == ConnectionState::CONNECTED;
+	return getConnectionState() == ConnectionState::CONNECTED;
+}
+
+bool WinsockNetwork::isListening() const
+{
+	return getConnectionState() == ConnectionState::LISTENING;
 }
 
 rc_network WinsockNetwork::syncSendDataMessage(const DataPacket& packet)

@@ -38,6 +38,9 @@ public:
 
 	// true if  we are connected to a peer
 	virtual bool isConnected() const = 0;
+
+	// true if  we are listening for connections
+	virtual bool isListening() const = 0;
 };
 
 #endif

@@ -7,7 +7,7 @@ using namespace boost;
 Replayer::Replayer(string fileName, const UserPreferences& preferences) :
 	MFCUserInterface(preferences),
 	file(fileName.c_str(), ios::in | ios::binary),
-	connected(false)
+	connectionState(ConnectionState::DISCONNECTED)
 {
 }
 
@@ -79,14 +79,14 @@ void Replayer::replay()
 		case NETWORK_PEER_CONNECTED:
 			{
 				assert(size == 0);
-				connected = true;
+				connectionState = ConnectionState::CONNECTED;
 				NetworkSubject::notify(PEER_CONNECTED);
 				break;
 			}
 		case NETWORK_PEER_DISCONNECTED:
 			{
 				assert(size == 0);
-				connected = false;
+				connectionState = ConnectionState::DISCONNECTED;
 				NetworkSubject::notify(PEER_DISCONNECTED);
 				break;
 			}
@@ -111,6 +111,8 @@ void Replayer::replay()
 		case NETWORK_ERROR_OCCURED:
 			{
 				assert(size == sizeof(rc_network));
+				connectionState = ConnectionState::DISCONNECTED;
+
 				rc_network code;
 				memcpy(&code, data.get(), size);
 				NetworkSubject::notify(NETWORK_ERROR, &code);
@@ -292,18 +294,19 @@ void Replayer::replay()
 
 rc_network Replayer::listen(const std::string& userName)
 {
+	connectionState = ConnectionState::LISTENING;
 	return SUCCESS;
 }
 
 rc_network Replayer::connect(const std::string& ipAddress, const std::string& userName)
 {
-	connected = true;
+	connectionState = ConnectionState::CONNECTED;
 	return SUCCESS;
 }
 
 rc_network Replayer::disconnect()
 {
-	connected = false;
+	connectionState = ConnectionState::DISCONNECTED;
 	return SUCCESS;
 }
 
@@ -364,7 +367,12 @@ rc_network Replayer::sendSlingshotRelease()
 
 bool Replayer::isConnected() const
 {
-	return connected;
+	return connectionState == ConnectionState::CONNECTED;
+}
+
+bool Replayer::isListening() const
+{
+	return connectionState == ConnectionState::LISTENING;
 }
 
 void Replayer::startPolling()
