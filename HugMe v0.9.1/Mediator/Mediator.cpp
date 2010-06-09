@@ -16,7 +16,7 @@ Mediator::Mediator(boost::shared_ptr<Network> network,
 	zcamera(zcamera),
 	game(),
 	configuration(configuration),
-	gameState(NOT_RUNNING)
+	gameState(GameState::NOT_RUNNING)
 {
 	// create the various components
 	smartClothing = shared_ptr<SmartClothingManager>(new SmartClothingManager());
@@ -38,11 +38,11 @@ Mediator::~Mediator()
 
 void Mediator::startGame()
 {
-	if (gameState == RUNNING)
+	if (gameState == GameState::RUNNING)
 	{
 		return; // already started
 	}
-	gameState = RUNNING;
+	gameState = GameState::RUNNING;
 	game.start();
 	falcon->startPolling();
 	zcamera->startCapture();
@@ -50,11 +50,11 @@ void Mediator::startGame()
 
 void Mediator::pauseGame()
 {
-	if (gameState != RUNNING)
+	if (gameState != GameState::RUNNING)
 	{
 		return; // nothing to do, the game is either already paused or not started
 	}
-	gameState = PAUSED;
+	gameState = GameState::PAUSED;
 	game.pause();
 	falcon->stopPolling();
 	zcamera->stopCapture();
@@ -62,11 +62,11 @@ void Mediator::pauseGame()
 
 void Mediator::exitGame()
 {
-	if (gameState == NOT_RUNNING)
+	if (gameState == GameState::NOT_RUNNING)
 	{
 		return; // nothing to do, the game is not running
 	}
-	gameState = NOT_RUNNING;
+	gameState = GameState::NOT_RUNNING;
 	game.stop();
 	falcon->stopPolling();
 	zcamera->stopCapture();
@@ -131,7 +131,7 @@ void Mediator::update(NetworkUpdateContext context, const void* data)
 		{
 			// the network has received some new video
 			assert(data != NULL);
-			if (gameState == RUNNING)
+			if (gameState == GameState::RUNNING)
 			{
 				handleRemoteVideoData(*(VideoData*) data);
 			}
@@ -141,7 +141,7 @@ void Mediator::update(NetworkUpdateContext context, const void* data)
 		{
 			// the network has received a slingshot position
 			assert(data != NULL);
-			if (gameState == RUNNING)
+			if (gameState == GameState::RUNNING)
 			{
 				handleRemoteSlingshotPosition(*(cVector3d*) data);
 			}
@@ -151,7 +151,7 @@ void Mediator::update(NetworkUpdateContext context, const void* data)
 		{
 			// the network has received a projectile
 			assert(data != NULL);
-			if (gameState == RUNNING)
+			if (gameState == GameState::RUNNING)
 			{
 				handleRemoteProjectile(*(Projectile*) data);
 			}
@@ -160,7 +160,7 @@ void Mediator::update(NetworkUpdateContext context, const void* data)
 		case RECEIVED_PULLBACK:
 		{
 			// the network has received a slingshot pullback
-			if (gameState == RUNNING)
+			if (gameState == GameState::RUNNING)
 			{
 				handleRemotePullback();
 			}
@@ -169,7 +169,7 @@ void Mediator::update(NetworkUpdateContext context, const void* data)
 		case RECEIVED_RELEASE:
 		{
 			// the network has received a slingshot release
-			if (gameState == RUNNING)
+			if (gameState == GameState::RUNNING)
 			{
 				handleRemoteRelease();
 			}
@@ -179,7 +179,7 @@ void Mediator::update(NetworkUpdateContext context, const void* data)
 		{
 			// the network has received a player position
 			assert(data != NULL);
-			if (gameState == RUNNING)
+			if (gameState == GameState::RUNNING)
 			{
 				handleRemotePlayerPosition(*(cVector3d*) data);
 			}
@@ -228,7 +228,7 @@ void Mediator::handlePeerStartGame()
 	startGame();
 
 	// let the UI know that the game has been started
-	userInterface->displayGameStateChanged(RUNNING, PEER);
+	userInterface->displayGameStateChanged(GameState::RUNNING, PEER);
 	return;
 }
 
@@ -238,7 +238,7 @@ void Mediator::handlePeerPauseGame()
 	pauseGame();
 
 	// let the UI know that the game has been paused
-	userInterface->displayGameStateChanged(PAUSED, PEER);
+	userInterface->displayGameStateChanged(GameState::PAUSED, PEER);
 	return;
 }
 
@@ -248,7 +248,7 @@ void Mediator::handlePeerExitGame()
 	exitGame();
 
 	// let the UI know that the game has been ended
-	userInterface->displayGameStateChanged(NOT_RUNNING, PEER);
+	userInterface->displayGameStateChanged(GameState::NOT_RUNNING, PEER);
 	return;
 }
 
@@ -467,7 +467,7 @@ void Mediator::localStartGame()
 		// start the game
 		startGame();
 
-		userInterface->displayGameStateChanged(RUNNING, LOCAL);
+		userInterface->displayGameStateChanged(GameState::RUNNING, LOCAL);
 	}
 	return;
 }
@@ -480,7 +480,7 @@ void Mediator::localPauseGame()
 		// pause the game
 		pauseGame();
 
-		userInterface->displayGameStateChanged(PAUSED, LOCAL);
+		userInterface->displayGameStateChanged(GameState::PAUSED, LOCAL);
 	}
 	return;
 }
@@ -493,7 +493,7 @@ void Mediator::localExitGame()
 		// pause the game
 		exitGame();
 
-		userInterface->displayGameStateChanged(NOT_RUNNING, LOCAL);
+		userInterface->displayGameStateChanged(GameState::NOT_RUNNING, LOCAL);
 	}
 	return;
 }
@@ -523,7 +523,7 @@ void Mediator::update(ZCameraUpdateContext context, const void* data)
 		case VIDEO:
 		{
 			assert(data != NULL);
-			if (gameState == RUNNING)
+			if (gameState == GameState::RUNNING)
 			{
 				handleLocalVideoData(*(VideoData*) data);
 			}
@@ -553,7 +553,7 @@ void Mediator::update(FalconUpdateContext context, const void* data)
 		case SLINGSHOT_POSITION:
 		{
 			assert(data != NULL);
-			if (gameState == RUNNING)
+			if (gameState == GameState::RUNNING)
 			{
 				handleLocalSlingshotPosition(*(cVector3d*) data);
 			}

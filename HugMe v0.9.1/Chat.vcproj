@@ -607,6 +607,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Common\GameStateEnum.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Common\GameStateEnum.h"
 				>
 			</File>

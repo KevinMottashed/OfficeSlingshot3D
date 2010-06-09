@@ -425,7 +425,7 @@ void CMainDlg::displayConnectionStateChanged(ConnectionState_t state, PlayerEnum
 	return;
 }
 
-void CMainDlg::displayGameStateChanged(GameStateEnum state, PlayerEnum player)
+void CMainDlg::displayGameStateChanged(GameState_t state, PlayerEnum player)
 {
 	// the message that the user will see in the chat box
 	ostringstream message;
@@ -437,7 +437,7 @@ void CMainDlg::displayGameStateChanged(GameStateEnum state, PlayerEnum player)
 
 	switch(state)
 	{
-		case NOT_RUNNING:
+		case GameState::NOT_RUNNING:
 		{
 			gameStart = MF_ENABLED;
 			gamePause = MF_GRAYED;
@@ -453,7 +453,7 @@ void CMainDlg::displayGameStateChanged(GameStateEnum state, PlayerEnum player)
 			}
 			break;
 		}
-		case PAUSED:
+		case GameState::PAUSED:
 		{
 			gameStart = MF_ENABLED;
 			gamePause = MF_GRAYED;
@@ -469,7 +469,7 @@ void CMainDlg::displayGameStateChanged(GameStateEnum state, PlayerEnum player)
 			}
 			break;
 		}
-		case RUNNING:
+		case GameState::RUNNING:
 		{
 			gameStart = MF_GRAYED;
 			gamePause = MF_ENABLED;

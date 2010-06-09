@@ -65,7 +65,7 @@ void MFCUserInterface::displayConnectionStateChanged(ConnectionState_t state, Pl
 	return;
 }
 
-void MFCUserInterface::displayGameStateChanged(GameStateEnum state, PlayerEnum player)
+void MFCUserInterface::displayGameStateChanged(GameState_t state, PlayerEnum player)
 {
 	m_pMainDlg->displayGameStateChanged(state, player);
 	return;

@@ -55,7 +55,7 @@ private:
 	mutable CRITICAL_SECTION configurationMutex;
 
 	// the current state of the game
-	GameStateEnum gameState;
+	GameState_t gameState;
 
 	// alter the game state
 	void startGame();

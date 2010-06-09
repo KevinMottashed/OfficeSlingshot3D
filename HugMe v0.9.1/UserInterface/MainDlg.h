@@ -25,7 +25,7 @@ public:
 	void displayConnectionStateChanged(ConnectionState_t state, PlayerEnum player);
 
 	// display that a certain player has changed the game state
-	void displayGameStateChanged(GameStateEnum state, PlayerEnum player);
+	void displayGameStateChanged(GameState_t state, PlayerEnum player);
 
 	// visual feedback for connection state	
 	void displayConnectionFailed();
