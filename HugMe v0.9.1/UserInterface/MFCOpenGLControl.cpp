@@ -1,24 +1,9 @@
 #include "MFCOpenGLControl.h"
-#include "chai3d.h"
-
-
-
-/* TEMPORARY CHAI stuff, will have to be moved */
-
-void initChai();
-void createRectangle(cMesh* a_mesh, double width, double height, double depth);
-cCamera* camera;
-cLabel* label;
-int displayW = 0;
-int displayH = 0;
-
-/****************************/
-
-
-
 
 MFCOpenGLControl::MFCOpenGLControl(void)
 {
+	displayW = 0;
+	displayH = 0;
 }
 
 MFCOpenGLControl::~MFCOpenGLControl(void)
@@ -50,9 +35,7 @@ void MFCOpenGLControl::oglCreate(CRect rect, CWnd *parent)
 
 void MFCOpenGLControl::OnPaint()
 {
-	//CPaintDC dc(this);    // device context for painting
-   ValidateRect(NULL);
-
+	ValidateRect(NULL);
 }
 
 int MFCOpenGLControl::OnCreate(LPCREATESTRUCT lpCreateStruct)
@@ -61,15 +44,13 @@ int MFCOpenGLControl::OnCreate(LPCREATESTRUCT lpCreateStruct)
       return -1;
 	
 	oglInitialize();
+	chaiInitialize();
 	
 	return 0;
-
 }
 
 void MFCOpenGLControl::oglInitialize(void)
 {
-   // Initial Setup:
-   //
    static PIXELFORMATDESCRIPTOR pfd =
    {
 	   sizeof(PIXELFORMATDESCRIPTOR),
@@ -93,8 +74,6 @@ void MFCOpenGLControl::oglInitialize(void)
    hrc = wglCreateContext(hdc);
    wglMakeCurrent(hdc, hrc);
 
-   // Basic Setup:
-   //
    // Set color to use when clearing the background.
    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
    glClearDepth(1.0f);
@@ -109,13 +88,10 @@ void MFCOpenGLControl::oglInitialize(void)
 
    // Send draw request
    OnDraw(NULL);
-
-   initChai();
 }
 
 void MFCOpenGLControl::OnDraw(CDC *pDC)
 {
-   // TODO: Camera controls.
 }
 
 void MFCOpenGLControl::OnSize(UINT nType, int cx, int cy)
@@ -141,6 +117,8 @@ void MFCOpenGLControl::OnSize(UINT nType, int cx, int cy)
 
    // Model view
    glMatrixMode(GL_MODELVIEW);
+
+   glLoadIdentity();
 }
 
 void MFCOpenGLControl::OnTimer(UINT_PTR nIDEvent)
@@ -152,8 +130,7 @@ void MFCOpenGLControl::OnTimer(UINT_PTR nIDEvent)
          // Clear color and depth buffer bits
          glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-         // Draw OpenGL scene
-         // oglDrawScene();
+         // Draw Virtual Environment
 		 camera->renderView(displayW, displayH);
 
          // Swap buffers
@@ -169,14 +146,21 @@ void MFCOpenGLControl::OnTimer(UINT_PTR nIDEvent)
    CWnd::OnTimer(nIDEvent);
 }
 
-void initChai(){
+void MFCOpenGLControl::chaiInitialize(){
+
+	//**************************************//
+	//                WORLD                 //
+	//**************************************//
 
 	cWorld* world = new cWorld();
 
     // set the background color of the environment
     // the color is defined by its (R,G,B) components.
-    //world->setBackgroundColor(0.0, 0.0, 0.0);
     world->setBackgroundColor(0.5, 0.37, 0.28);
+
+	//**************************************//
+	//               CAMERA                 //
+	//**************************************//
 
     // create a camera and insert it into the virtual world
     camera = new cCamera(world);
@@ -194,10 +178,9 @@ void initChai(){
     // enable high quality rendering
     camera->enableMultipassTransparency(true);
 
-
-
-
-
+	//**************************************//
+	//                LIGHT                 //
+	//**************************************//
 
     // create a light source and attach it to the camera
     cLight* light = new cLight(world);
@@ -209,32 +192,9 @@ void initChai(){
     light->m_diffuse.set(0.8, 0.8, 0.8);
     light->m_specular.set(0.8, 0.8, 0.8);
 
-
-
-
-
-
-	// create a 2D bitmap logo
-    cBitmap* coord = new cBitmap();
-    camera->m_front_2Dscene.addChild(coord);
-	bool test2 = coord->m_image.loadFromFile("Objects\\coord.bmp");
-    coord->setPos(10, 10, 0);
-    coord->setZoomHV(0.6, 0.6);
-
-    // here we replace all black pixels (0,0,0) of the logo bitmap
-    // with transparent black pixels (0, 0, 0, 0). This allows us to make
-    // the background of the logo look transparent.
-    coord->m_image.replace(
-                          cColorb(0, 0, 0),      // original RGB color
-                          cColorb(0, 0, 0, 0)    // new RGBA color
-                          );
-
-    // enable transparency
-    coord->enableTransparency(true);
-
-
-
-
+	//**************************************//
+	//              SLINGSHOT               //
+	//**************************************//
 
 	cMesh* slinghot = new cMesh(world);
 
@@ -255,21 +215,11 @@ void initChai(){
     // define some haptic friction properties
     slinghot->setFriction(0.1, 0.2, true);
 
-	//object->setShowBox(true);
 	slinghot->setUseCulling(false, true);
-	//slinghot->setWireMode(true);
 
-
-	cMesh* rec = new cMesh(world);
-    world->addChild(rec);
-	
-	rec->rotate( cVector3d(1, 0, 0), cDegToRad(45));
-	rec->setPos(0, 2.0, 0.3);
-
-	createRectangle(rec,1,2,0.1);
-    rec->setUseCulling(false, true);
-
-
+	//**************************************//
+	//               GROUND                 //
+	//**************************************//
 
 	cMesh* ground = new cMesh(world);
     world->addChild(ground);
@@ -304,6 +254,9 @@ void initChai(){
     ground->setTransparencyLevel(0.75);
     ground->setUseTransparency(true);
 
+	//**************************************//
+	//              REFLEXION               //
+	//**************************************//
 
 	// we create an intermediate node to which we will attach
     // a copy of the object located inside the world
@@ -327,18 +280,9 @@ void initChai(){
 
     // add objects to the world
     reflexion->addChild(slinghot);
-    reflexion->addChild(rec);
-	
-
-	label = new cLabel();
-    camera->m_front_2Dscene.addChild(label);
-	label->m_fontColor = cColorf(1.0,1.0,1.0);
-	label->m_string = "Here's our awesome 3D scene, look at that, its at a 45' angle !!!!!!!!!!!!!";
-    label->setPos(200, 10, 0);
-
 }
 
-void createRectangle(cMesh* a_mesh, double width, double height, double depth)
+void MFCOpenGLControl::createRectangle(cMesh* a_mesh, double width, double height, double depth)
 {
     const double HALFWIDTH = width / 2.0;
     const double HALFHEIGTH = height / 2.0;

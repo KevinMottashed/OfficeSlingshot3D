@@ -4,6 +4,8 @@
 #include <gl/gl.h>
 #include <gl/glu.h>
 
+#include "chai3d.h"
+
 class MFCOpenGLControl : public CWnd
 {
 private:
@@ -15,6 +17,12 @@ private:
 	CRect   m_oldWindow;
 	CRect   m_originalRect;
 
+	cCamera* camera;
+	cLabel* label;
+
+	int displayW;
+	int displayH;
+
 public:
 	UINT_PTR m_unpTimer;
 
@@ -24,6 +32,8 @@ public:
 
 	void oglCreate(CRect rect, CWnd *parent);
 	void oglInitialize(void);
+	void chaiInitialize(void);
+	void createRectangle(cMesh* a_mesh, double width, double height, double depth);
 
 	DECLARE_MESSAGE_MAP()
 	afx_msg void OnPaint();
