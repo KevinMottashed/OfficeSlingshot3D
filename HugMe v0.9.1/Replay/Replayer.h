@@ -10,14 +10,23 @@
 #include "LoggerProxy.h"
 #include "UserPreferences.h"
 
+// The Replayer class is used to replay user inputs
+// Depending on how the replayer it can replay any combination of
+// network, UI, falcon and zcamera events.
+// The replayer is meant as a testing class to produce predictable user inputs.
+// This facilates unit testing as a we can give the application a set of inputs and
+// expect the same output each time.
 class Replayer : public Network, public MFCUserInterface, public Falcon, public ZCamera
 {
 public:
+	// Replay inputs are loaded from a file and we need the user preferences
+	// to properly display the UI
 	Replayer(std::string fileName, const UserPreferences& preferences);
 	virtual ~Replayer();
 
+	// start/stop the replay
 	void startReplay();
-	void endReplay();
+	void stopReplay();
 
 	//---------------------------------------------------------------------
 	// Network
@@ -36,13 +45,14 @@ public:
 	// send data to the other player
 	virtual rc_network sendUserName(const std::string& userName);
 	virtual rc_network sendChatMessage(const std::string& message);
-	virtual rc_network sendVideoData(VideoData video);
+	virtual rc_network sendVideoData(const VideoData& video);
 	virtual rc_network sendPlayerPosition(const cVector3d& position);
 	virtual rc_network sendSlingshotPosition(const cVector3d& position);
 	virtual rc_network sendProjectile(const Projectile& projectile);
 	virtual rc_network sendSlingshotPullback();
 	virtual rc_network sendSlingshotRelease();
 
+	// network state retrievers
 	virtual bool isConnected() const;
 	virtual bool isListening() const;
 
@@ -69,7 +79,10 @@ private:
 
 	// the time at which the replay was started
 	boost::posix_time::ptime startTime;
+
+	// the file and the serialization archive for the file
 	std::ifstream file;
+	boost::archive::text_iarchive archive;
 
 	// the state of the network connection
 	ConnectionState_t connectionState;

@@ -9,8 +9,6 @@
 #include "Projectile.h"
 #include "VideoData.h"
 
-#include "Serialization.h" // so we can serialize/deserialize the data
-
 // This is the header for all data packets
 template <typename PacketType>
 struct PacketHeader
@@ -19,8 +17,15 @@ struct PacketHeader
 	PacketType type;
 };
 
+// The Packet class is used to represent all
+// packets that our network can send.
+// All packets include a header and data section.
+// The header is the type of the packet and the
+// size of the data section. This class uses the
+// boost serialization library to serialize
+// types for transmission and deserialize types upon reception
 template <typename PacketType>
-class Packet  
+class Packet
 {
 public:
 	// the default constructor creates an empty packet
@@ -31,27 +36,33 @@ public:
 	PacketType getType() const;
 
 	// get the packet header in bytes
-	boost::shared_ptr<std::vector<BYTE> > getHeader() const;
+	boost::shared_ptr<const std::vector<char> > getHeader() const;
 
 	// get the packet data in bytes
-	boost::shared_ptr<std::vector<BYTE> > getData() const;
+	boost::shared_ptr<const std::vector<char> > getData() const;
 
 	// attempt to create a data packet from a stream of bytes
 	// if we could create a packet from the bytes then the contents of this packet will be replaced with contents from the stream
 	// the bytes that were used to create the packet will also be removed from the stream
 	// the function returns false if a packet could not be created
-	bool readPacket(std::vector<BYTE>& input);
+	bool readPacket(std::vector<char>& input);
 
 	// write data into the packet, including the header
 	template <typename T>
-	void write(PacketType type, const T& data);
+	void write(PacketType type, const T& t);
+
+	// write video data into the packet
+	void write(PacketType type, const VideoData& video);
 
 	// a version for header only packets
 	void write(PacketType type);
 
 	// read data from the packet
 	template <typename T>
-	T read() const;
+	void read(T& t) const;
+
+	// read video data from the packet
+	void read(VideoData& video) const;
 
 	// clear the header and data
 	void clear();
@@ -59,8 +70,8 @@ public:
 private:
 	// a packet has 2 sections
 	// <header><data>
-	boost::shared_ptr<std::vector<BYTE> > header;
-	boost::shared_ptr<std::vector<BYTE> > data;	
+	boost::shared_ptr<std::vector<char> > header;
+	boost::shared_ptr<std::vector<char> > data;
 };
 
 //--------------------------------------------
@@ -70,8 +81,8 @@ private:
 template <typename PacketType>
 Packet<PacketType>::Packet()
 {
-	header = boost::shared_ptr<std::vector<BYTE> >(new std::vector<BYTE>());
-	data = boost::shared_ptr<std::vector<BYTE> >(new std::vector<BYTE>());
+	header = boost::shared_ptr<std::vector<char> >(new std::vector<char>());
+	data = boost::shared_ptr<std::vector<char> >(new std::vector<char>());
 }
 
 template <typename PacketType>
@@ -88,19 +99,19 @@ PacketType Packet<PacketType>::getType() const
 }
 
 template <typename PacketType>
-boost::shared_ptr<std::vector<BYTE> > Packet<PacketType>::getHeader() const
+boost::shared_ptr<const std::vector<char> > Packet<PacketType>::getHeader() const
 {
 	return header;
 }
 
 template <typename PacketType>
-boost::shared_ptr<std::vector<BYTE> > Packet<PacketType>::getData() const
+boost::shared_ptr<const std::vector<char> > Packet<PacketType>::getData() const
 {
 	return data;
 }
 
 template <typename PacketType>
-bool Packet<PacketType>::readPacket(std::vector<BYTE>& input)
+bool Packet<PacketType>::readPacket(std::vector<char>& input)
 {
 	if (input.size() < sizeof(PacketHeader<PacketType>))
 	{
@@ -155,7 +166,7 @@ void Packet<PacketType>::write(PacketType type)
 	temp.size = 0;
 
 	// write it into the packet
-	header->insert(header->end(), (BYTE*) &temp, ((BYTE*) &temp) + sizeof(PacketHeader<PacketType>));
+	header->insert(header->end(), (char*) &temp, ((char*) &temp) + sizeof(PacketHeader<PacketType>));
 	return;
 }
 
@@ -170,28 +181,77 @@ void Packet<PacketType>::write(PacketType type, const T& t)
 	PacketHeader<PacketType> temp;
 	temp.type = type;
 
-	// serialize the data
-	Serialization::serialize(t, data);	
+	// serialize the data, note that the archive must be destroyed before we can determine the size
+	// of the data, otherwise the data vector will still be empty
+	{
+		boost::iostreams::filtering_ostream dataOStream(boost::iostreams::back_inserter(*data));
+		boost::archive::text_oarchive archive(dataOStream);
+		archive << t;
+	}
 
 	// we can now calculate the total size of the packet (excluding the header)
 	temp.size = data->size();
 
 	// copy the header into the packet
-	header->insert(header->end(), (BYTE*) &temp, ((BYTE*) &temp) + sizeof(PacketHeader<PacketType>));
+	header->insert(header->end(), (char*) &temp, ((char*) &temp) + sizeof(PacketHeader<PacketType>));
 
 	return;
 }
 
 template <typename PacketType>
-template <typename T>
-T Packet<PacketType>::read() const
+void Packet<PacketType>::write(PacketType type, const VideoData& video)
 {
-	T t;
+	// clear the existing content
+	clear();
 
-	// deserialize the packet into the data
-	Serialization::deserialize(data, t);
+	// create a header for this packet
+	PacketHeader<PacketType> temp;
+	temp.type = type;
 
-	return t;
+	// serialize the data, note that the archive must be destroyed before we can determine the size
+	// of the data, otherwise the data vector will still be empty
+	{
+		boost::iostreams::filtering_ostream dataOStream(boost::iostreams::back_inserter(*data), ios::out | ios::binary);
+		boost::archive::binary_oarchive archive(dataOStream);
+		archive << video;
+	}
+
+	// we can now calculate the total size of the packet (excluding the header)
+	temp.size = data->size();
+
+	// copy the header into the packet
+	header->insert(header->end(), (char*) &temp, ((char*) &temp) + sizeof(PacketHeader<PacketType>));
+
+	return;
+}
+
+
+template <typename PacketType>
+template <typename T>
+void Packet<PacketType>::read(T& t) const
+{
+	// create a binary stream that will read from the data vector
+	boost::iostreams::filtering_istream dataIStream(boost::make_iterator_range(*data));
+
+	// create an archive from the vector stream and read the data
+	boost::archive::text_iarchive archive(dataIStream);
+	archive >> t;
+	return;
+}
+
+// The VideoData class requires a special consideration because it is so big.
+// We will be using a binary archive, which is more efficient then a text archive
+// for this kind of data (array of bytes).
+template <typename PacketType>
+void Packet<PacketType>::read(VideoData& video) const
+{
+	// create a binary stream that will read from the data vector
+	boost::iostreams::filtering_istream dataIStream(boost::make_iterator_range(*data), ios::in | ios::binary);
+
+	// create an archive from the vector stream and read the data
+	boost::archive::binary_iarchive archive(dataIStream);
+	archive >> video;
+	return;
 }
 
 template <typename PacketType>
@@ -203,4 +263,4 @@ void Packet<PacketType>::clear()
 }
 
 #endif
- 
+

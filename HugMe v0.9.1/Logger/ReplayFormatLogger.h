@@ -6,6 +6,7 @@
 #include "Logger.h"
 #include "ConsoleStream.h"
 #include "Projectile.h"
+#include "ReplayFormatEvent.h"
 
 // concrete logger class
 // this logger outputs the log in the replay format
@@ -46,18 +47,25 @@ private:
 
 	long getElapsedTimeInMs() const;
 
+	// This function is a helper for serializing the ReplayFormatEvent type
+	// The serialization library doesn't like to serialize non-const types
+	// so this creates and returns a const ReplayFormatEvent
+	const ReplayFormatEvent toReplayEvent(LogEvent e) const;
+
 	Stream ostream;
 	const boost::posix_time::ptime start;
+	boost::archive::text_oarchive archive;
 };
 
 //---------------------------------------------
-// Template Implementation
+// Template Implementations
 //---------------------------------------------
 
 template <typename Stream>
 ReplayFormatLogger<Stream>::ReplayFormatLogger() : 
 	ostream(), 
-	start(boost::posix_time::microsec_clock::local_time())
+	start(boost::posix_time::microsec_clock::local_time()),
+	archive(ostream)
 {
 }
 
@@ -65,7 +73,8 @@ template <typename Stream>
 template <typename T1>
 ReplayFormatLogger<Stream>::ReplayFormatLogger(T1 param) : 
 	ostream(param), 
-	start(boost::posix_time::microsec_clock::local_time())
+	start(boost::posix_time::microsec_clock::local_time()),
+	archive(ostream)
 {
 }
 
@@ -73,7 +82,8 @@ template <typename Stream>
 template <typename T1, typename T2>
 ReplayFormatLogger<Stream>::ReplayFormatLogger(T1 param1, T2 param2) : 
 	ostream(param1, param2), 
-	start(boost::posix_time::microsec_clock::local_time())
+	start(boost::posix_time::microsec_clock::local_time()),
+	archive(ostream)
 {
 }
 
@@ -81,7 +91,8 @@ template <typename Stream>
 template <typename T1, typename T2, typename T3>
 ReplayFormatLogger<Stream>::ReplayFormatLogger(T1 param1, T2 param2, T3 param3) : 
 	ostream(param1, param2, param3), 
-	start(boost::posix_time::microsec_clock::local_time())
+	start(boost::posix_time::microsec_clock::local_time()),
+	archive(ostream)
 {
 }
 
@@ -94,134 +105,49 @@ ReplayFormatLogger<Stream>::~ReplayFormatLogger()
 template <typename Stream>
 void ReplayFormatLogger<Stream>::log(LogEvent e)
 {
-	long ms = getElapsedTimeInMs();
-	unsigned int size = 0;
-
-	// each event has the format <time><event><size><data>
-	// write this event to the file
-	ostream.write((char*) &ms, sizeof(long));
-	ostream.write((char*) &e, sizeof(LogEvent));
-	ostream.write((char*) &size, sizeof(unsigned int));
-	ostream << std::flush;
+	archive << toReplayEvent(e);
 	return;
 }
 
 template <typename Stream>
 void ReplayFormatLogger<Stream>::log(LogEvent e, rc_network error)
 {
-	long ms = getElapsedTimeInMs();
-	unsigned int size = sizeof(rc_network);
-
-	// each event has the format <time><event><size><data>
-	// write this event to the file
-	ostream.write((char*) &ms, sizeof(long));
-	ostream.write((char*) &e, sizeof(LogEvent));
-	ostream.write((char*) &size, sizeof(unsigned int));
-	ostream.write((char*) &error, sizeof(rc_network));
-	ostream << std::flush;
+	archive << toReplayEvent(e) << error;
 	return;
 }
 
 template <typename Stream>
 void ReplayFormatLogger<Stream>::log(LogEvent e, const std::string& str)
 {
-	long ms = getElapsedTimeInMs();
-
-	// the +1 is for the null termination character
-	unsigned int size = str.size() + 1;
-
-	// each event has the format <time><event><size><data>
-	// write this event to the file
-	ostream.write((char*) &ms, sizeof(long));
-	ostream.write((char*) &e, sizeof(LogEvent));
-	ostream.write((char*) &size, sizeof(unsigned int));
-	ostream.write((char*) str.c_str(), str.size() + 1);
-	ostream << std::flush;
+	archive << toReplayEvent(e) << str;
 	return;
 }
 
 template <typename Stream>
 void ReplayFormatLogger<Stream>::log(LogEvent e, const VideoData& video)
 {
-	long ms = getElapsedTimeInMs();
-	unsigned int size = IMAGE_ARRAY_SIZE;
-
-	// each event has the format <time><event><size><data>
-	// write this event to the file
-	ostream.write((char*) &ms, sizeof(long));
-	ostream.write((char*) &e, sizeof(LogEvent));
-	ostream.write((char*) &size, sizeof(unsigned int));
-	ostream.write((char*) &video.rgb->front(), IMAGE_ARRAY_SIZE);
-	ostream << std::flush;
+	archive << toReplayEvent(e) << video;
 	return;
 }
 
 template <typename Stream>
 void ReplayFormatLogger<Stream>::log(LogEvent e, const cVector3d& vec)
 {
-	long ms = getElapsedTimeInMs();
-	unsigned int size = 3 * sizeof(double);
-
-	// each event has the format <time><event><size><data>
-	// write this event to the file
-	ostream.write((char*) &ms, sizeof(long));
-	ostream.write((char*) &e, sizeof(LogEvent));
-	ostream.write((char*) &size, sizeof(unsigned int));
-
-	// the format of a cVector3d is <x><y><z>
-	ostream.write((char*) &vec.x, sizeof(double));
-	ostream.write((char*) &vec.y, sizeof(double));
-	ostream.write((char*) &vec.z, sizeof(double));
-
-	ostream << std::flush;
+	archive << toReplayEvent(e) << vec;
 	return;
 }
 
 template <typename Stream>
 void ReplayFormatLogger<Stream>::log(LogEvent e, const Projectile& projectile)
 {
-	long ms = getElapsedTimeInMs();
-	unsigned int size = 6 * sizeof(double);
-
-	// each event has the format <time><event><size><data>
-	// write this event to the file
-	ostream.write((char*) &ms, sizeof(long));
-	ostream.write((char*) &e, sizeof(LogEvent));
-	ostream.write((char*) &size, sizeof(unsigned int));
-
-	// the format of a Projectile is <position><speed>
-	// and the format of a cVector3d is <x><y><z>
-	ostream.write((char*) &(projectile.getPosition().x), sizeof(double));
-	ostream.write((char*) &(projectile.getPosition().y), sizeof(double));
-	ostream.write((char*) &(projectile.getPosition().z), sizeof(double));
-	ostream.write((char*) &(projectile.getSpeed().x), sizeof(double));
-	ostream.write((char*) &(projectile.getSpeed().y), sizeof(double));
-	ostream.write((char*) &(projectile.getSpeed().z), sizeof(double));
-
-	ostream << std::flush;
+	archive << toReplayEvent(e) << projectile;
 	return;
 }
 
 template <typename Stream>
 void ReplayFormatLogger<Stream>::log(LogEvent e, const UserPreferences& preferences)
 {
-	long ms = getElapsedTimeInMs();
-	unsigned int size = 0;
-
-	// each event has the format <time><event><size><data>
-	// write this event to the file
-	ostream.write((char*) &ms, sizeof(long));
-	ostream.write((char*) &e, sizeof(LogEvent));
-	ostream.write((char*) &size, sizeof(unsigned int));
-
-	// user preferences are serialized as
-	// <IP><\0><User name><\0><arm band port><jacket port>
-	ostream.write(preferences.ipAddress.c_str(), preferences.ipAddress.size() + 1); // +1 for \0
-	ostream.write(preferences.name.c_str(), preferences.name.size() + 1); // +1 for \0
-	ostream.write((char*) &preferences.armBandPort, sizeof(unsigned int));
-	ostream.write((char*) &preferences.jacketPort, sizeof(unsigned int));
-
-	ostream << std::flush;
+	archive << toReplayEvent(e) << preferences;
 	return;
 }
 
@@ -231,6 +157,12 @@ long ReplayFormatLogger<Stream>::getElapsedTimeInMs() const
 	using namespace boost::posix_time;
 	time_duration elapsed = microsec_clock::local_time() - start;
 	return elapsed.total_milliseconds();
+}
+
+template <typename Stream>
+const ReplayFormatEvent ReplayFormatLogger<Stream>::toReplayEvent(LogEvent e) const
+{
+	return ReplayFormatEvent(getElapsedTimeInMs(), e);
 }
 
 #endif

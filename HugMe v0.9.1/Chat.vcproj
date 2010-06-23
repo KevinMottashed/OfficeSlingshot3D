@@ -50,7 +50,7 @@
 				Name="VCCLCompilerTool"
 				AdditionalOptions="/D /NODEFAULTLIB:library&quot; &quot; /D _CRT_SECURE_NO_DEPRECATE /D &quot;WINVER=0x0501&quot;"
 				Optimization="0"
-				AdditionalIncludeDirectories="include;&quot;include\ARToolKit-2.72.1&quot;;&quot;include\Z-Cam&quot;;include\HandTracker;&quot;..\chai3d-2.0.0\src&quot;;&quot;..\chai3d-2.0.0\external\OpenGL\msvc&quot;;Utils\;Mediator\;Falcon\;Game\;Jacket\;Network\;UserInterface\;ZCamera\;Objects\;Logger\;Common\;Main\;Replay\;res\;&quot;C:\Program Files\boost\boost_1_43_0&quot;"
+				AdditionalIncludeDirectories="include;&quot;include\ARToolKit-2.72.1&quot;;&quot;include\Z-Cam&quot;;include\HandTracker;&quot;..\chai3d-2.0.0\src&quot;;&quot;..\chai3d-2.0.0\external\OpenGL\msvc&quot;;Utils\;Mediator\;Falcon\;Game\;Jacket\;Network\;UserInterface\;ZCamera\;Objects\;Logger\;Common\;Main\;Replay\;res\;&quot;C:\Program Files\boost\boost_1_43_0&quot;;Serialization\"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_MSVC"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -517,10 +517,6 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Utils\chai3d.h"
-				>
-			</File>
-			<File
 				RelativePath=".\Utils\ConsoleStream.cpp"
 				>
 			</File>
@@ -588,6 +584,14 @@
 			</File>
 			<File
 				RelativePath=".\Logger\LoggerProxy.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Logger\ReplayFormatEvent.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Logger\ReplayFormatEvent.h"
 				>
 			</File>
 			<File
@@ -691,14 +695,6 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Network\Serialization.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\Network\Serialization.h"
-				>
-			</File>
-			<File
 				RelativePath=".\Network\WinsockNetwork.cpp"
 				>
 			</File>
@@ -766,6 +762,14 @@
 			</File>
 			<File
 				RelativePath=".\Replay\ReplayProxy.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Serialization"
+			>
+			<File
+				RelativePath=".\Serialization\chai3DSerialization.h"
 				>
 			</File>
 		</Filter>

@@ -1,6 +1,9 @@
 #ifndef BOOST_H
 #define BOOST_H
 
+// microsoft likes to deprecate stuff in the STL so we ignore those warnings
+#pragma warning (disable : 4996)
+
 //------------------------------------------------------------------------
 // Boost Foreach
 // http://www.boost.org/doc/libs/1_42_0/doc/html/foreach.html
@@ -19,11 +22,10 @@
 // Boost Iostreams
 // http://www.boost.org/doc/libs/1_43_0/libs/iostreams/doc/index.html
 //------------------------------------------------------------------------
-// microsoft STL deprecation strikes again
-#pragma warning (disable : 4996)
 #include <boost/iostreams/stream.hpp>
+#include <boost/iostreams/filtering_stream.hpp>
 #include <boost/iostreams/concepts.hpp>
-#pragma warning (default : 4996)
+#include <boost/iostreams/device/back_inserter.hpp>
 
 //------------------------------------------------------------------------
 // Boost Date Time
@@ -54,5 +56,24 @@
 // http://www.boost.org/doc/libs/1_43_0/doc/html/string_algo.html
 //------------------------------------------------------------------------
 #include <boost/algorithm/string.hpp>
+
+//------------------------------------------------------------------------
+// Boost Serialization
+// http://www.boost.org/doc/libs/1_43_0/libs/serialization/doc/index.html
+//------------------------------------------------------------------------
+#include <boost/archive/binary_oarchive.hpp>
+#include <boost/archive/binary_iarchive.hpp>
+#include <boost/archive/text_oarchive.hpp>
+#include <boost/archive/text_iarchive.hpp>
+#include <boost/serialization/string.hpp>
+#include <boost/serialization/vector.hpp>
+#include <boost/serialization/shared_ptr.hpp>
+#include <boost/serialization/binary_object.hpp>
+
+// serialization for types that come from 3rd party libraries
+#include "chai3DSerialization.h"
+
+// stop ignoring the deprecation warning
+#pragma warning (default : 4996)
 
 #endif

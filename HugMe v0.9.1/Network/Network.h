@@ -29,7 +29,7 @@ public:
 	// send data to the other player
 	virtual rc_network sendUserName(const std::string& userName) = 0;
 	virtual rc_network sendChatMessage(const std::string& message) = 0;
-	virtual rc_network sendVideoData(VideoData video) = 0;
+	virtual rc_network sendVideoData(const VideoData& video) = 0;
 	virtual rc_network sendPlayerPosition(const cVector3d& position) = 0;
 	virtual rc_network sendSlingshotPosition(const cVector3d& position) = 0;
 	virtual rc_network sendProjectile(const Projectile& projectile) = 0;

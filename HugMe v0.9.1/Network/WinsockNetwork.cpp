@@ -369,8 +369,8 @@ void WinsockNetwork::closeSockets()
 
 DWORD WinsockNetwork::ControlReceiveThread(WinsockNetwork* network)
 {
-	BYTE receivedBuffer[maximum_control_packet_size];
-	std::vector<BYTE> queue;
+	char receivedBuffer[maximum_control_packet_size];
+	std::vector<char> queue;
 	ControlPacket packet;
 
 	// we need to use flags for operations that require write access to the connection status
@@ -442,7 +442,7 @@ DWORD WinsockNetwork::ControlReceiveThread(WinsockNetwork* network)
 		// in the same recv(...) call, we need to read as many messages as possible from the stream before continuing
 		while (packet.readPacket(queue))
 		{
-			network->handleControlMessage(packet);
+			network->handleControlPacket(packet);
 
 			// start a new packet
 			packet = ControlPacket();
@@ -453,8 +453,8 @@ DWORD WinsockNetwork::ControlReceiveThread(WinsockNetwork* network)
 
 DWORD WinsockNetwork::DataReceiveThread(WinsockNetwork* network)
 {
-	BYTE receivedBuffer[maximum_data_packet_size];
-	std::vector<BYTE> queue;
+	char receivedBuffer[maximum_data_packet_size];
+	std::vector<char> queue;
 	DataPacket packet = DataPacket();
 
 	// we need to use flags for operations that require write access to the connection status
@@ -615,7 +615,7 @@ rc_network WinsockNetwork::sendEndGame()
 	return syncSendControlMessage(packet);
 }
 
-rc_network WinsockNetwork::sendVideoData(VideoData video)
+rc_network WinsockNetwork::sendVideoData(const VideoData& video)
 {
 	DataPacket packet;
 	packet.write(DATA_PACKET_VIDEO, video);
@@ -682,14 +682,14 @@ rc_network WinsockNetwork::syncSendDataMessage(const DataPacket& packet)
 
 	// a message has 2 chunks, header and data
 	// the order of the chunks is <header><data>
-	vector<shared_ptr<vector<BYTE> > > message;
+	vector<shared_ptr<const vector<char> > > message;
 	message.push_back(packet.getHeader());
 	message.push_back(packet.getData());
 
 	// we need to synchronize here so that only one thread is sending data on the socket at a time
 	SyncLocker sendLock = SyncLocker(m_csDataSocketSend);
 
-	foreach (shared_ptr<vector<BYTE> > chunk, message)
+	foreach (shared_ptr<const vector<char> > chunk, message)
 	{
 		// skip empty chunks
 		if (chunk->size() == 0)
@@ -752,22 +752,30 @@ void WinsockNetwork::handleDataMessage(const DataPacket& message)
 	{
 		case DATA_PACKET_VIDEO:
 		{
-			notify(RECEIVED_VIDEO, &message.read<VideoData>());			
+			VideoData videoData;
+			message.read(videoData);
+			notify(RECEIVED_VIDEO, &videoData);			
 			break;
 		}
 		case DATA_PACKET_PLAYER_POSITION:
 		{
-			notify(RECEIVED_PLAYER_POSITION, &message.read<cVector3d>());
+			cVector3d vec;
+			message.read(vec);
+			notify(RECEIVED_PLAYER_POSITION, &vec);
 			break;
 		}
 		case DATA_PACKET_SLINGSHOT_POSITION:
 		{
-			notify(RECEIVED_SLINGSHOT_POSITION, &message.read<cVector3d>());			
+			cVector3d vec;
+			message.read(vec);
+			notify(RECEIVED_SLINGSHOT_POSITION, &vec);			
 			break;
 		}
 		case DATA_PACKET_PROJECTILE:
 		{
-			notify(RECEIVED_PROJECTILE, &message.read<Projectile>());
+			Projectile projectile;
+			message.read(projectile);
+			notify(RECEIVED_PROJECTILE, &projectile);
 			break;
 		}
 		case DATA_PACKET_SLINGSHOT_PULLBACK:
@@ -805,14 +813,14 @@ rc_network WinsockNetwork::syncSendControlMessage(const ControlPacket& packet)
 
 	// a message has 2 chunks, header and data
 	// the order of the chunks is <header><data>
-	vector<shared_ptr<vector<BYTE> > > message;
+	vector<shared_ptr<const vector<char> > > message;
 	message.push_back(packet.getHeader());
 	message.push_back(packet.getData());
 
 	// we need to synchronize here so that only one thread is sending data on the socket at a time
 	SyncLocker sendLock = SyncLocker(m_csControlSocketSend);
 
-	foreach (shared_ptr<vector<BYTE> > chunk, message)
+	foreach (shared_ptr<const vector<char> > chunk, message)
 	{
 		// skip empty chunks
 		if (chunk->size() == 0)
@@ -865,14 +873,16 @@ rc_network WinsockNetwork::syncSendControlMessage(const ControlPacket& packet)
 	return SUCCESS;
 }
 
-void WinsockNetwork::handleControlMessage(const ControlPacket& message)
+void WinsockNetwork::handleControlPacket(const ControlPacket& packet)
 {
-	switch(message.getType())
+	switch(packet.getType())
 	{
 		case CONTROL_PACKET_NAME:
 		{
 			// update the remote user name
-			notify(RECEIVED_USER_NAME, &message.read<std::string>());
+			string name;
+			packet.read(name);
+			notify(RECEIVED_USER_NAME, &name);
 			{
 				if (getConnectionState() == ConnectionState::ESTABLISHING)
 				{
@@ -883,8 +893,10 @@ void WinsockNetwork::handleControlMessage(const ControlPacket& message)
 		}
 		case CONTROL_PACKET_CHAT:
 		{
-			// notify the observers that a new message has arrived			
-			notify(RECEIVED_CHAT_MESSAGE, &message.read<std::string>());
+			// notify the observers that a new message has arrived
+			string message;
+			packet.read(message);
+			notify(RECEIVED_CHAT_MESSAGE, &message);
 			break;
 		}
 		case CONTROL_PACKET_START_GAME:

@@ -79,7 +79,7 @@ private:
 	// data reception
 	void handleUserName(const std::string& name);
 	void handleChatMessage(const std::string& message);
-	void handleRemoteVideoData(VideoData video);
+	void handleRemoteVideoData(const VideoData& video);
 	void handleRemoteSlingshotPosition(const cVector3d& position);
 	void handleRemoteProjectile(const Projectile& projectile);
 	void handleRemotePlayerPosition(const cVector3d& position);
@@ -113,7 +113,7 @@ private:
 	//--------------------------------------------
 
 	// new local video
-	void handleLocalVideoData(VideoData video);
+	void handleLocalVideoData(VideoData& video);
 
 	//--------------------------------------------
 	// Falcon Related updates

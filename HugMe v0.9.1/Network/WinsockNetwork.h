@@ -69,7 +69,7 @@ public:
 	virtual rc_network sendEndGame();
 
 	// send a video data to the other player
-	virtual rc_network sendVideoData(VideoData video);
+	virtual rc_network sendVideoData(const VideoData& video);
 
 	// send a player position to the other player
 	virtual rc_network sendPlayerPosition(const cVector3d& position);
@@ -185,8 +185,8 @@ private:
 	// send a control message synchronously
 	rc_network syncSendControlMessage(const ControlPacket& packet);
 
-	// handle a control message
-	void handleControlMessage(const ControlPacket& message);
+	// handle a control packet
+	void handleControlPacket(const ControlPacket& packet);
 
 	// get and set the connection in a thread safe manner
 	ConnectionState_t getConnectionState() const;

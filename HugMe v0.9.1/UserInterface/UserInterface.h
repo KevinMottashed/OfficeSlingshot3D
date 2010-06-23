@@ -35,8 +35,8 @@ public:
 
 	// update the user interface to display the interaction with the peer
 	virtual void displayPeerChatMessage(const std::string& message) = 0;
-	virtual void displayLocalFrame(VideoData video) = 0;
-	virtual void displayRemoteFrame(VideoData video) = 0;
+	virtual void displayLocalFrame(const VideoData& video) = 0;
+	virtual void displayRemoteFrame(const VideoData& video) = 0;
 
 	//-----------------------------------------------
 	// Notifications coming from the user interface

@@ -35,8 +35,8 @@ public:
 	// visual feedback for peer interaction
 	void displayPeerChatMessage(const std::string& message);
 	void displayLocalChatMessage(const std::string& message);
-	void displayLocalFrame(VideoData video);
-	void displayRemoteFrame(VideoData video);
+	void displayLocalFrame(const VideoData& video);
+	void displayRemoteFrame(const VideoData& video);
 
 	// update the peers user name
 	void setPeerUserName(const std::string& name);

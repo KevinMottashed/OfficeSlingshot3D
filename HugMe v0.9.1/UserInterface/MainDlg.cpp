@@ -555,10 +555,10 @@ void CMainDlg::displayLocalChatMessage(const std::string& message)
 	return;
 }
 
-void CMainDlg::displayLocalFrame(VideoData video)
+void CMainDlg::displayLocalFrame(const VideoData& video)
 {
 	// get a pointer to the start of the pixel array
-	BYTE* vRGB = &video.rgb->front();
+	BYTE* vRGB = const_cast<BYTE*>(&video.rgb.front());
 
 	// updates the specified m_hdc dialog element using the vRGB variable
 	::DrawDibDraw(hdib_local,
@@ -578,10 +578,10 @@ void CMainDlg::displayLocalFrame(VideoData video)
 	return;
 }
 
-void CMainDlg::displayRemoteFrame(VideoData video)
+void CMainDlg::displayRemoteFrame(const VideoData& video)
 {
 	// get a pointer to the start of the pixel array
-	BYTE* vRGB = &video.rgb->front();
+	BYTE* vRGB = const_cast<BYTE*>(&video.rgb.front());
 
 	// updates the specified m_hdc dialog element using the vRGB variable
 	::DrawDibDraw(hdib_remote,

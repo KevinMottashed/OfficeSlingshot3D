@@ -266,7 +266,7 @@ void Mediator::handleChatMessage(const std::string& message)
 	return;
 }
 
-void Mediator::handleRemoteVideoData(VideoData video)
+void Mediator::handleRemoteVideoData(const VideoData& video)
 {
 	// tell the UI to display the video
 	userInterface->displayRemoteFrame(video);
@@ -538,7 +538,7 @@ void Mediator::update(ZCameraUpdateContext context, const void* data)
 	return;
 }
 
-void Mediator::handleLocalVideoData(VideoData video)
+void Mediator::handleLocalVideoData(VideoData& video)
 {
 	network->sendVideoData(video);
 	ZCamera::reverseFrameLeftRight(video,4);

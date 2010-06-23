@@ -34,15 +34,15 @@ ZCamera::~ZCamera()
 DWORD ZCamera::getFrameFromCamera(ZCamera* p_ZCamera){
 	
 	//While the thread is active
-	while(p_ZCamera->zcam_started){
+	while(p_ZCamera->zcam_started)
+	{
+		VideoData video;
 
 		// get a pointer to the video array
-		BYTE* rgb = &p_ZCamera->RGB->front();
+		BYTE* rgb = &video.rgb.front();
 		
 		//Get frame from camera, updates the values of the char arrays
-		p_ZCamera->m_depthCamera->GetNextFrame(p_ZCamera->DEPTH,rgb,p_ZCamera->RGBFull,p_ZCamera->PRIM,p_ZCamera->SEC,1000);
-		
-		VideoData video(p_ZCamera->RGB);
+		p_ZCamera->m_depthCamera->GetNextFrame(p_ZCamera->DEPTH,rgb,p_ZCamera->RGBFull,p_ZCamera->PRIM,p_ZCamera->SEC,1000);		
 
 		//Flip the image up-down
 		reverseFrameUpDown(video,4);
@@ -70,8 +70,10 @@ DWORD ZCamera::getFrameFromDummy(ZCamera* p_ZCamera){
 	//While the thread is active
 	while(p_ZCamera->zcam_started){
 
+		VideoData video;
+
 		// get a pointer to the video array
-		BYTE* rgb = &p_ZCamera->RGB->front();
+		BYTE* rgb = &video.rgb.front();
 
 		if (moving_right_x){
 			diff_x += 4;
@@ -116,8 +118,7 @@ DWORD ZCamera::getFrameFromDummy(ZCamera* p_ZCamera){
 			
 			}
 		}
-
-		VideoData video(p_ZCamera->RGB);
+		
 		reverseFrameUpDown(video,4);
 
 		// notify the Mediator that new local video data has arrived
@@ -156,9 +157,9 @@ void ZCamera::stopCapture() {
 }
 
 //Reverses the image up-down
-void ZCamera::reverseFrameUpDown(VideoData vd,int channels){
+void ZCamera::reverseFrameUpDown(VideoData& vd,int channels){
 
-	BYTE* RGB = &(vd.rgb)->front();
+	BYTE* RGB = &vd.rgb.front();
 
 	int step = IMAGE_WIDTH*channels;
 	unsigned char* tmp = new BYTE[step];
@@ -174,9 +175,9 @@ void ZCamera::reverseFrameUpDown(VideoData vd,int channels){
 }
 
 //Reverses the image left-right
-void ZCamera::reverseFrameLeftRight(VideoData vd,int channels){
+void ZCamera::reverseFrameLeftRight(VideoData& vd,int channels){
 
-	BYTE* RGB = &(vd.rgb)->front();
+	BYTE* RGB = &vd.rgb.front();
 
 	int step = channels;
 	int line_step = 0;
