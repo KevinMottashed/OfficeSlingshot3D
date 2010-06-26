@@ -71,6 +71,7 @@ BuildLog.htm
 # Blender
 # don't ignore blender object files (ignored in the c++ rule)
 !HugMe v0.9.1/Blender/*.obj
+!HugMe v0.9.1/Objects/*.obj
 
 # chai3d - START
 
