@@ -4,7 +4,7 @@ ReplayFormatEvent::ReplayFormatEvent()
 {
 }
 
-ReplayFormatEvent::ReplayFormatEvent(long time, LogEvent logEvent) :
+ReplayFormatEvent::ReplayFormatEvent(long time, LogEvent_t logEvent) :
 	time(time),
 	logEvent(logEvent)
 {

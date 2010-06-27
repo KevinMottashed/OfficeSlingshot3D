@@ -6,7 +6,7 @@
 #include "GameProxy.h"
 #include "UserInterfaceProxy.h"
 #include "ZCameraProxy.h"
-#include "LogEvent.h"
+#include "LogEventEnum.h"
 #include "Projectile.h"
 #include "chai3d.h"
 
@@ -30,13 +30,13 @@ public:
 
 protected:
 	// log various events of various data types
-	virtual void log(LogEvent logEvent) = 0;
-	virtual void log(LogEvent logEvent, rc_network error) = 0;
-	virtual void log(LogEvent logEvent, const std::string& str) = 0;
-	virtual void log(LogEvent logEvent, const VideoData& video) = 0;
-	virtual void log(LogEvent logEvent, const cVector3d& vec) = 0;
-	virtual void log(LogEvent logEvent, const Projectile& projectile) = 0;
-	virtual void log(LogEvent logEvent, const UserPreferences& preferences) = 0;
+	virtual void log(LogEvent_t logEvent) = 0;
+	virtual void log(LogEvent_t logEvent, rc_network error) = 0;
+	virtual void log(LogEvent_t logEvent, const std::string& str) = 0;
+	virtual void log(LogEvent_t logEvent, const VideoData& video) = 0;
+	virtual void log(LogEvent_t logEvent, const cVector3d& vec) = 0;
+	virtual void log(LogEvent_t logEvent, const Projectile& projectile) = 0;
+	virtual void log(LogEvent_t logEvent, const UserPreferences& preferences) = 0;
 };
 
 #endif

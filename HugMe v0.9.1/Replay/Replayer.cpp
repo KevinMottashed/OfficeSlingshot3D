@@ -66,34 +66,34 @@ void Replayer::replay()
 
 			switch (replayEvent.logEvent)
 			{
-				case NETWORK_PEER_CONNECTED:
+				case LogEvent::NETWORK_PEER_CONNECTED:
 				{
 					connectionState = ConnectionState::CONNECTED;
 					NetworkSubject::notify(PEER_CONNECTED);
 					break;
 				}
-				case NETWORK_PEER_DISCONNECTED:
+				case LogEvent::NETWORK_PEER_DISCONNECTED:
 				{
 					connectionState = ConnectionState::DISCONNECTED;
 					NetworkSubject::notify(PEER_DISCONNECTED);
 					break;
 				}
-				case NETWORK_PEER_START_GAME:
+				case LogEvent::NETWORK_PEER_START_GAME:
 				{
 					NetworkSubject::notify(PEER_START_GAME);
 					break;
 				}
-				case NETWORK_PEER_PAUSE_GAME:
+				case LogEvent::NETWORK_PEER_PAUSE_GAME:
 				{
 					NetworkSubject::notify(PEER_PAUSE_GAME);
 					break;
 				}
-				case NETWORK_PEER_EXIT_GAME:
+				case LogEvent::NETWORK_PEER_EXIT_GAME:
 				{
 					NetworkSubject::notify(PEER_EXIT_GAME);
 					break;
 				}
-				case NETWORK_ERROR_OCCURED:
+				case LogEvent::NETWORK_ERROR_OCCURED:
 				{
 					connectionState = ConnectionState::DISCONNECTED;
 
@@ -103,7 +103,7 @@ void Replayer::replay()
 					NetworkSubject::notify(NETWORK_ERROR, &code);
 					break;
 				}
-				case NETWORK_USER_NAME:
+				case LogEvent::NETWORK_USER_NAME:
 				{
 					string str;
 					archive >> str;
@@ -111,7 +111,7 @@ void Replayer::replay()
 					NetworkSubject::notify(RECEIVED_USER_NAME, &str);
 					break;
 				}
-				case NETWORK_CHAT_MESSAGE:
+				case LogEvent::NETWORK_CHAT_MESSAGE:
 				{
 					string str;
 					archive >> str;
@@ -119,7 +119,7 @@ void Replayer::replay()
 					NetworkSubject::notify(RECEIVED_CHAT_MESSAGE, &str);
 					break;
 				}
-				case NETWORK_VIDEO_DATA:
+				case LogEvent::NETWORK_VIDEO_DATA:
 				{
 					VideoData video;
 					archive >> video;
@@ -127,7 +127,7 @@ void Replayer::replay()
 					NetworkSubject::notify(RECEIVED_VIDEO, &video);
 					break;
 				}
-				case NETWORK_SLINGSHOT_POSITION:
+				case LogEvent::NETWORK_SLINGSHOT_POSITION:
 				{
 					cVector3d vec;
 					archive >> vec;
@@ -135,7 +135,7 @@ void Replayer::replay()
 					NetworkSubject::notify(RECEIVED_SLINGSHOT_POSITION, &vec);
 					break;
 				}
-				case NETWORK_PROJECTILE:
+				case LogEvent::NETWORK_PROJECTILE:
 				{
 					Projectile p;
 					archive >> p;
@@ -143,17 +143,17 @@ void Replayer::replay()
 					NetworkSubject::notify(RECEIVED_PROJECTILE, &p);
 					break;
 				}
-				case NETWORK_SLINGSHOT_PULLBACK:
+				case LogEvent::NETWORK_SLINGSHOT_PULLBACK:
 				{
 					NetworkSubject::notify(RECEIVED_PULLBACK);
 					break;
 				}
-				case NETWORK_SLINGSHOT_RELEASE:
+				case LogEvent::NETWORK_SLINGSHOT_RELEASE:
 				{
 					NetworkSubject::notify(RECEIVED_RELEASE);
 					break;
 				}
-				case NETWORK_PLAYER_POSITION:
+				case LogEvent::NETWORK_PLAYER_POSITION:
 				{
 					cVector3d vec;
 					archive >> vec;
@@ -161,22 +161,22 @@ void Replayer::replay()
 					NetworkSubject::notify(RECEIVED_PLAYER_POSITION, &vec);
 					break;
 				}
-				case UI_CONNECT:
+				case LogEvent::UI_CONNECT:
 				{
 					UserInterfaceSubject::notify(CONNECT);
 					break;
 				}
-				case UI_LISTEN:
+				case LogEvent::UI_LISTEN:
 				{
 					UserInterfaceSubject::notify(LISTEN);
 					break;
 				}
-				case UI_DISCONNECT:
+				case LogEvent::UI_DISCONNECT:
 				{
 					UserInterfaceSubject::notify(DISCONNECT);
 					break;
 				}
-				case UI_PREFERENCES:
+				case LogEvent::UI_PREFERENCES:
 				{
 					UserPreferences preferences;
 					archive >> preferences;
@@ -184,22 +184,22 @@ void Replayer::replay()
 					UserInterfaceSubject::notify(PREFERENCES, &preferences);
 					break;
 				}
-				case UI_START_GAME:
+				case LogEvent::UI_START_GAME:
 				{
 					UserInterfaceSubject::notify(START_GAME);
 					break;
 				}
-				case UI_PAUSE_GAME:
+				case LogEvent::UI_PAUSE_GAME:
 				{
 					UserInterfaceSubject::notify(PAUSE_GAME);
 					break;
 				}
-				case UI_EXIT_GAME:
+				case LogEvent::UI_EXIT_GAME:
 				{
 					UserInterfaceSubject::notify(EXIT_GAME);
 					break;
 				}
-				case UI_CLOSE_APPLICATION:
+				case LogEvent::UI_CLOSE_APPLICATION:
 				{
 					UserInterfaceSubject::notify(EXIT_APPLICATION);
 
@@ -209,7 +209,7 @@ void Replayer::replay()
 									
 					break;
 				}
-				case UI_CHAT_MESSAGE:
+				case LogEvent::UI_CHAT_MESSAGE:
 				{
 					string str;
 					archive >> str;
@@ -220,7 +220,7 @@ void Replayer::replay()
 					UserInterfaceSubject::notify(CHAT_MESSAGE, &str);
 					break;
 				}
-				case FALCON_SLINGSHOT_POSITION:
+				case LogEvent::FALCON_SLINGSHOT_POSITION:
 				{
 					cVector3d vec;
 					archive >> vec;
@@ -228,7 +228,7 @@ void Replayer::replay()
 					FalconSubject::notify(SLINGSHOT_POSITION, &vec);
 					break;
 				}
-				case ZCAM_VIDEO_DATA:
+				case LogEvent::ZCAM_VIDEO_DATA:
 				{
 					VideoData video;
 					archive >> video;

@@ -3,7 +3,7 @@
 
 #include "stdafx.h"
 #include "boost.h"
-#include "LogEvent.h"
+#include "LogEventEnum.h"
 
 // The replay format event class is used to represent a replay event
 // A replay event contains a time at which the event occured where the 
@@ -13,11 +13,11 @@ class ReplayFormatEvent
 {
 public:
 	ReplayFormatEvent();
-	ReplayFormatEvent(long time, LogEvent logEvent);
+	ReplayFormatEvent(long time, LogEvent_t logEvent);
 	~ReplayFormatEvent();
 
 	long time;
-	LogEvent logEvent;
+	LogEvent_t logEvent;
 
 private:
 	// the boost serialization library requires access to the serialize function

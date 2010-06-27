@@ -31,13 +31,13 @@ public:
 
 protected:
 	// log various event of various data types
-	virtual void log(LogEvent logEvent);
-	virtual void log(LogEvent logEvent, rc_network error);
-	virtual void log(LogEvent logEvent, const std::string& str);
-	virtual void log(LogEvent logEvent, const VideoData& video);
-	virtual void log(LogEvent logEvent, const cVector3d& vec);
-	virtual void log(LogEvent logEvent, const Projectile& projectile);
-	virtual void log(LogEvent logEvent, const UserPreferences& preferences);
+	virtual void log(LogEvent_t logEvent);
+	virtual void log(LogEvent_t logEvent, rc_network error);
+	virtual void log(LogEvent_t logEvent, const std::string& str);
+	virtual void log(LogEvent_t logEvent, const VideoData& video);
+	virtual void log(LogEvent_t logEvent, const cVector3d& vec);
+	virtual void log(LogEvent_t logEvent, const Projectile& projectile);
+	virtual void log(LogEvent_t logEvent, const UserPreferences& preferences);
 
 private:
 	HumanFormatLogger(const HumanFormatLogger& c); // intentionally not implemented
@@ -79,49 +79,49 @@ HumanFormatLogger<Stream>::~HumanFormatLogger()
 }
 
 template <typename Stream>
-void HumanFormatLogger<Stream>::log(LogEvent logEvent)
+void HumanFormatLogger<Stream>::log(LogEvent_t logEvent)
 {
 	ostream << lookup(logEvent) << std::endl;
 	return;
 }
 
 template <typename Stream>
-void HumanFormatLogger<Stream>::log(LogEvent logEvent, rc_network error)
+void HumanFormatLogger<Stream>::log(LogEvent_t logEvent, rc_network error)
 {
 	ostream << lookup(logEvent) << " - " << lookup(error) << std::endl;
 	return;
 }
 
 template <typename Stream>
-void HumanFormatLogger<Stream>::log(LogEvent logEvent, const std::string& str)
+void HumanFormatLogger<Stream>::log(LogEvent_t logEvent, const std::string& str)
 {
 	ostream << lookup(logEvent) << " - " << str << std::endl;
 	return;
 }
 
 template <typename Stream>
-void HumanFormatLogger<Stream>::log(LogEvent logEvent, const VideoData& video)
+void HumanFormatLogger<Stream>::log(LogEvent_t logEvent, const VideoData& video)
 {
 	ostream << lookup(logEvent) << std::endl;
 	return;
 }
 
 template <typename Stream>
-void HumanFormatLogger<Stream>::log(LogEvent logEvent, const cVector3d& vec)
+void HumanFormatLogger<Stream>::log(LogEvent_t logEvent, const cVector3d& vec)
 {
 	ostream << lookup(logEvent) << " - " << vec << std::endl;
 	return;
 }
 
 template <typename Stream>
-void HumanFormatLogger<Stream>::log(LogEvent logEvent, const Projectile& projectile)
+void HumanFormatLogger<Stream>::log(LogEvent_t logEvent, const Projectile& projectile)
 {
 	ostream << lookup(logEvent) << " - " << projectile << std::endl;
 	return;
 }
 
 template <typename Stream>
-void HumanFormatLogger<Stream>::log(LogEvent logEvent, const UserPreferences& preferences)
+void HumanFormatLogger<Stream>::log(LogEvent_t logEvent, const UserPreferences& preferences)
 {
 	ostream << lookup(logEvent) << " - " << preferences << std::endl;
 	return;

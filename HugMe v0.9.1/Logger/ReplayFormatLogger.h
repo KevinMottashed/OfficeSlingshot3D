@@ -33,13 +33,13 @@ public:
 
 protected:
 	// log various event of various data types
-	virtual void log(LogEvent logEvent);
-	virtual void log(LogEvent logEvent, rc_network error);
-	virtual void log(LogEvent logEvent, const std::string& str);
-	virtual void log(LogEvent logEvent, const VideoData& video);
-	virtual void log(LogEvent logEvent, const cVector3d& vec);
-	virtual void log(LogEvent logEvent, const Projectile& projectile);
-	virtual void log(LogEvent logEvent, const UserPreferences& preferences);
+	virtual void log(LogEvent_t logEvent);
+	virtual void log(LogEvent_t logEvent, rc_network error);
+	virtual void log(LogEvent_t logEvent, const std::string& str);
+	virtual void log(LogEvent_t logEvent, const VideoData& video);
+	virtual void log(LogEvent_t logEvent, const cVector3d& vec);
+	virtual void log(LogEvent_t logEvent, const Projectile& projectile);
+	virtual void log(LogEvent_t logEvent, const UserPreferences& preferences);
 
 private:
 	ReplayFormatLogger(const ReplayFormatLogger& c); // intentionally not implemented
@@ -50,7 +50,7 @@ private:
 	// This function is a helper for serializing the ReplayFormatEvent type
 	// The serialization library doesn't like to serialize non-const types
 	// so this creates and returns a const ReplayFormatEvent
-	const ReplayFormatEvent toReplayEvent(LogEvent e) const;
+	const ReplayFormatEvent toReplayEvent(LogEvent_t e) const;
 
 	Stream ostream;
 	const boost::posix_time::ptime start;
@@ -103,49 +103,49 @@ ReplayFormatLogger<Stream>::~ReplayFormatLogger()
 }
 
 template <typename Stream>
-void ReplayFormatLogger<Stream>::log(LogEvent e)
+void ReplayFormatLogger<Stream>::log(LogEvent_t e)
 {
 	archive << toReplayEvent(e);
 	return;
 }
 
 template <typename Stream>
-void ReplayFormatLogger<Stream>::log(LogEvent e, rc_network error)
+void ReplayFormatLogger<Stream>::log(LogEvent_t e, rc_network error)
 {
 	archive << toReplayEvent(e) << error;
 	return;
 }
 
 template <typename Stream>
-void ReplayFormatLogger<Stream>::log(LogEvent e, const std::string& str)
+void ReplayFormatLogger<Stream>::log(LogEvent_t e, const std::string& str)
 {
 	archive << toReplayEvent(e) << str;
 	return;
 }
 
 template <typename Stream>
-void ReplayFormatLogger<Stream>::log(LogEvent e, const VideoData& video)
+void ReplayFormatLogger<Stream>::log(LogEvent_t e, const VideoData& video)
 {
 	archive << toReplayEvent(e) << video;
 	return;
 }
 
 template <typename Stream>
-void ReplayFormatLogger<Stream>::log(LogEvent e, const cVector3d& vec)
+void ReplayFormatLogger<Stream>::log(LogEvent_t e, const cVector3d& vec)
 {
 	archive << toReplayEvent(e) << vec;
 	return;
 }
 
 template <typename Stream>
-void ReplayFormatLogger<Stream>::log(LogEvent e, const Projectile& projectile)
+void ReplayFormatLogger<Stream>::log(LogEvent_t e, const Projectile& projectile)
 {
 	archive << toReplayEvent(e) << projectile;
 	return;
 }
 
 template <typename Stream>
-void ReplayFormatLogger<Stream>::log(LogEvent e, const UserPreferences& preferences)
+void ReplayFormatLogger<Stream>::log(LogEvent_t e, const UserPreferences& preferences)
 {
 	archive << toReplayEvent(e) << preferences;
 	return;
@@ -160,7 +160,7 @@ long ReplayFormatLogger<Stream>::getElapsedTimeInMs() const
 }
 
 template <typename Stream>
-const ReplayFormatEvent ReplayFormatLogger<Stream>::toReplayEvent(LogEvent e) const
+const ReplayFormatEvent ReplayFormatLogger<Stream>::toReplayEvent(LogEvent_t e) const
 {
 	return ReplayFormatEvent(getElapsedTimeInMs(), e);
 }

@@ -571,7 +571,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Logger\LogEvent.h"
+				RelativePath=".\Logger\LogEventEnum.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Logger\LogEventEnum.h"
 				>
 			</File>
 			<File
