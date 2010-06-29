@@ -104,6 +104,10 @@ chai3d*/lib/*/*.lib
 # the preferences file for the UI
 HugMe v0.9.1/userPreferences.txt
 
+# some library and object file that get compiled
+HugMe v0.9.1/Debug/Chat.exp
+HugMe v0.9.1/Debug/Chat.lib
+
 # Log files
 *.log
 
