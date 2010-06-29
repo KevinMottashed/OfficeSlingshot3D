@@ -99,7 +99,8 @@ shared_ptr<OfficeSlingshot3D> OfficeSlingshot3DFactory::createFromConfigFile(con
 		if (configVMap["Replayer.ReplayNetwork"].as<int>())
 		{
 			// the user wants to replay network events
-			network = replayer;
+			replayer->initializeNetworkReplayer();
+			network = replayer->getNetworkReplayer();
 		}
 
 		if (configVMap["Replayer.ReplayUI"].as<int>())

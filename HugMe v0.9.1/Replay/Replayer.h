@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include "boost.h"
 #include "NetworkProxy.h"
+#include "NetworkReplayer.h"
 #include "UserInterfaceProxy.h"
 #include "FalconProxy.h"
 #include "ZCameraProxy.h"
@@ -16,7 +17,7 @@
 // The replayer is meant as a testing class to produce predictable user inputs.
 // This facilates unit testing as a we can give the application a set of inputs and
 // expect the same output each time.
-class Replayer : public Network, public MFCUserInterface, public Falcon, public ZCamera
+class Replayer : public MFCUserInterface, public Falcon, public ZCamera
 {
 public:
 	// Replay inputs are loaded from a file and we need the user preferences
@@ -28,33 +29,14 @@ public:
 	void startReplay();
 	void stopReplay();
 
-	//---------------------------------------------------------------------
-	// Network
-	//---------------------------------------------------------------------
+	// initialize the various replayers
+	void initializeNetworkReplayer();
 
-	// modify the connection status
-	virtual rc_network listen(const std::string& userName);	
-	virtual rc_network connect(const std::string& ipAddress, const std::string& userName);
-	virtual rc_network disconnect();
+	// remove the various replayers
+	void removeNetworkReplayer();
 
-	// send a message to modify the game state
-	virtual rc_network sendStartGame();
-	virtual rc_network sendPauseGame();
-	virtual rc_network sendEndGame();
-
-	// send data to the other player
-	virtual rc_network sendUserName(const std::string& userName);
-	virtual rc_network sendChatMessage(const std::string& message);
-	virtual rc_network sendVideoData(const VideoData& video);
-	virtual rc_network sendPlayerPosition(const cVector3d& position);
-	virtual rc_network sendSlingshotPosition(const cVector3d& position);
-	virtual rc_network sendProjectile(const Projectile& projectile);
-	virtual rc_network sendSlingshotPullback();
-	virtual rc_network sendSlingshotRelease();
-
-	// network state retrievers
-	virtual bool isConnected() const;
-	virtual bool isListening() const;
+	// get the various replayers
+	boost::shared_ptr<NetworkReplayer> getNetworkReplayer();	
 
 	//---------------------------------------------------------------------
 	// Falcon
@@ -81,14 +63,19 @@ private:
 	boost::posix_time::ptime startTime;
 
 	// the file and the serialization archive for the file
-	std::ifstream file;
-	boost::archive::text_iarchive archive;
+	// These pointers are shared between this class and all the other replayers
+	boost::shared_ptr<std::ifstream> file;
+	boost::shared_ptr<boost::archive::text_iarchive> archive;
 
 	// the state of the network connection
 	ConnectionState_t connectionState;
 
 	// holds the replay thread
 	std::auto_ptr<boost::thread> replayThread;
+
+	// the replayers for each component, these pointers are shared between this class
+	// and the mediator
+	boost::shared_ptr<NetworkReplayer> networkReplayer;
 };
 
 #endif

@@ -10,6 +10,7 @@
 #include "Logger.h"
 #include "HumanFormatLogger.h"
 #include "ReplayFormatLogger.h"
+#include "LogEventEnum.h"
 
 // forward declarations
 class Logger;
