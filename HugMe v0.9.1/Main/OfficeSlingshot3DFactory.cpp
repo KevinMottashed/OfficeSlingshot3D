@@ -106,7 +106,8 @@ shared_ptr<OfficeSlingshot3D> OfficeSlingshot3DFactory::createFromConfigFile(con
 		if (configVMap["Replayer.ReplayUI"].as<int>())
 		{
 			// the user wants to replay UI events
-			userInterface = replayer;
+			replayer->initializeUserInterfaceReplayer();
+			userInterface = replayer->getUserInterfaceReplayer();
 		}
 
 		if (configVMap["Replayer.ReplayFalcon"].as<int>())

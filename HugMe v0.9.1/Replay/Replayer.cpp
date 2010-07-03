@@ -4,14 +4,11 @@
 using namespace std;
 using namespace boost;
 
-Replayer::Replayer(string fileName, const UserPreferences& preferences) :
-	MFCUserInterface(preferences),
-
+Replayer::Replayer(const string& fileName, const UserPreferences& preferences) :
 	// The file needs to be opened in binary mode to avoid any endline conversions
-	file(shared_ptr<ifstream>(new ifstream(fileName.c_str(), ios::in | ios::binary))),
-
-	archive(shared_ptr<archive::text_iarchive>(new archive::text_iarchive(*file))),
-	connectionState(ConnectionState::DISCONNECTED)
+	preferences(preferences),
+	file(shared_ptr<ifstream>(new ifstream(fileName.c_str(), ios::in | ios::binary))),	
+	archive(shared_ptr<archive::text_iarchive>(new archive::text_iarchive(*file)))
 {
 }
 
@@ -49,15 +46,37 @@ void Replayer::initializeNetworkReplayer()
 	return;
 }
 
+void Replayer::initializeUserInterfaceReplayer()
+{
+	if (uiReplayer)
+	{
+		// the ui replayer is already initialized
+		return;		
+	}
+	uiReplayer = boost::shared_ptr<UserInterfaceReplayer>(new UserInterfaceReplayer(preferences, file, archive));
+	return;
+}
+
 void Replayer::removeNetworkReplayer()
 {
 	networkReplayer.reset();
 	return;
 }
 
+void Replayer::removeUserInterfaceReplayer()
+{
+	uiReplayer.reset();
+	return;
+}
+
 boost::shared_ptr<NetworkReplayer> Replayer::getNetworkReplayer()
 {
 	return networkReplayer;
+}
+
+boost::shared_ptr<UserInterfaceReplayer> Replayer::getUserInterfaceReplayer()
+{
+	return uiReplayer;
 }
 
 void Replayer::replay()
@@ -100,67 +119,17 @@ void Replayer::replay()
 				continue;
 			}
 
+			if (LogEvent::isUIEvent(replayEvent.logEvent))
+			{
+				if (uiReplayer)
+				{
+					uiReplayer->replay(replayEvent.logEvent);
+				}
+				continue;
+			}
+
 			switch (replayEvent.logEvent)
 			{
-				case LogEvent::UI_CONNECT:
-				{
-					UserInterfaceSubject::notify(CONNECT);
-					break;
-				}
-				case LogEvent::UI_LISTEN:
-				{
-					UserInterfaceSubject::notify(LISTEN);
-					break;
-				}
-				case LogEvent::UI_DISCONNECT:
-				{
-					UserInterfaceSubject::notify(DISCONNECT);
-					break;
-				}
-				case LogEvent::UI_PREFERENCES:
-				{
-					UserPreferences preferences;
-					*archive >> preferences;
-
-					UserInterfaceSubject::notify(PREFERENCES, &preferences);
-					break;
-				}
-				case LogEvent::UI_START_GAME:
-				{
-					UserInterfaceSubject::notify(START_GAME);
-					break;
-				}
-				case LogEvent::UI_PAUSE_GAME:
-				{
-					UserInterfaceSubject::notify(PAUSE_GAME);
-					break;
-				}
-				case LogEvent::UI_EXIT_GAME:
-				{
-					UserInterfaceSubject::notify(EXIT_GAME);
-					break;
-				}
-				case LogEvent::UI_CLOSE_APPLICATION:
-				{
-					UserInterfaceSubject::notify(EXIT_APPLICATION);
-
-					// notify the replay watcher that the application would have been closed
-					// by not closing the application we can inspect the UI, debug, etc...
-					m_pMainDlg->MessageBox("APPLICATION CLOSED");
-									
-					break;
-				}
-				case LogEvent::UI_CHAT_MESSAGE:
-				{
-					string str;
-					*archive >> str;
-
-					// add the message to the UI
-					m_pMainDlg->displayLocalChatMessage(str);
-
-					UserInterfaceSubject::notify(CHAT_MESSAGE, &str);
-					break;
-				}
 				case LogEvent::FALCON_SLINGSHOT_POSITION:
 				{
 					cVector3d vec;
