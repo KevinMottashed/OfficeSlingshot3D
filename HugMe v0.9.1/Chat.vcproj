@@ -508,6 +508,14 @@
 				RelativePath=".\Game\GameSubject.h"
 				>
 			</File>
+			<File
+				RelativePath=".\Game\VirtualEnvironment.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Game\VirtualEnvironment.h"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Utils"

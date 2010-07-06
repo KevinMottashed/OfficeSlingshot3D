@@ -4,7 +4,7 @@
 #include <gl/gl.h>
 #include <gl/glu.h>
 
-#include "chai3d.h"
+#include "VirtualEnvironment.h"
 
 class MFCOpenGLControl : public CWnd
 {
@@ -18,7 +18,9 @@ private:
 	CRect   m_originalRect;
 
 	cCamera* camera;
-	cLabel* label;
+	cWorld* world;
+
+	VirtualEnvironment* ve;
 
 	int displayW;
 	int displayH;
@@ -32,8 +34,6 @@ public:
 
 	void oglCreate(CRect rect, CWnd *parent);
 	void oglInitialize(void);
-	void chaiInitialize(void);
-	void createRectangle(cMesh* a_mesh, double width, double height, double depth);
 
 	DECLARE_MESSAGE_MAP()
 	afx_msg void OnPaint();
