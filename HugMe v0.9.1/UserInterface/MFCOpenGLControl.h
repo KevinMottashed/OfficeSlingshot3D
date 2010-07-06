@@ -17,9 +17,6 @@ private:
 	CRect   m_oldWindow;
 	CRect   m_originalRect;
 
-	cCamera* camera;
-	cWorld* world;
-
 	VirtualEnvironment* ve;
 
 	int displayW;

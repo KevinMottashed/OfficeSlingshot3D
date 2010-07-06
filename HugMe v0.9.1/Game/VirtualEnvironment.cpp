@@ -2,34 +2,48 @@
 
 VirtualEnvironment::VirtualEnvironment(void)
 {
+	world = new cWorld();
+	camera = new cCamera(world);
+	light = new cLight(world);
+	slinghot = new cMesh(world);
+	avatar = new cMesh(world);
+	ground = new cMesh(world);
+	reflexion = new cGenericObject();
 }
 
 VirtualEnvironment::~VirtualEnvironment(void)
 {
 }
 
-void VirtualEnvironment::initialize(cWorld* world, cCamera* camera){
+cCamera* VirtualEnvironment::getCamera(void)
+{
+	return camera;
+}
+
+void VirtualEnvironment::initialize(void){
 
 	//**************************************//
 	//                WORLD                 //
 	//**************************************//
 
+	world->addChild(camera);
+
     // set the background color of the environment
     // the color is defined by its (R,G,B) components.
-    world->setBackgroundColor(0.5, 0.37, 0.28);
+    world->setBackgroundColor(0.5f, 0.37f, 0.28f);
 
 	//**************************************//
 	//               CAMERA                 //
 	//**************************************//
 
     // position and oriente the camera
-    camera->set( cVector3d (7.0, 0.0, 0.3),    // camera position (eye)
-        cVector3d (0.0, 0.0, 0.0),    // lookat position (target)
-        cVector3d (0.0, 0.0, 1.0));   // direction of the "up" vector
+    camera->set( cVector3d (7.0f, 0.0f, 0.3f),    // camera position (eye)
+        cVector3d (0.0f, 0.0f, 0.0f),    // lookat position (target)
+        cVector3d (0.0f, 0.0f, 1.0f));   // direction of the "up" vector
 
     // set the near and far clipping planes of the camera
     // anything in front/behind these clipping planes will not be rendered
-    camera->setClippingPlanes(0.01, 1000.0);
+    camera->setClippingPlanes(0.0f, 1000.0f);
 
     // enable high quality rendering
     camera->enableMultipassTransparency(true);
@@ -39,53 +53,72 @@ void VirtualEnvironment::initialize(cWorld* world, cCamera* camera){
 	//**************************************//
 
     // create a light source and attach it to the camera
-    cLight* light = new cLight(world);
     camera->addChild(light);                   // attach light to camera
     light->setEnabled(true);                   // enable light source
-    light->setPos(cVector3d( 2.0, 0.5, 1.0));  // position the light source
-    light->setDir(cVector3d(-2.0, 0.5, 1.0));  // define the direction of the light beam
-    light->m_ambient.set(0.6, 0.6, 0.6);
-    light->m_diffuse.set(0.8, 0.8, 0.8);
-    light->m_specular.set(0.8, 0.8, 0.8);
+    light->setPos(cVector3d( 2.0f, 0.5f, 1.0f));  // position the light source
+    light->setDir(cVector3d(-2.0f, 0.5f, 1.0f));  // define the direction of the light beam
+    light->m_ambient.set(0.6f, 0.6f, 0.6f);
+    light->m_diffuse.set(0.8f, 0.8f, 0.8f);
+    light->m_specular.set(0.8f, 0.8f, 0.8f);
 
 	//**************************************//
 	//              SLINGSHOT               //
 	//**************************************//
 
-	cMesh* slinghot = new cMesh(world);
-
     // add object to world
     world->addChild(slinghot);
 
-    slinghot->setPos(1.0, 0.0, -0.5);
+    slinghot->setPos(5.0f, 0.0f, -1.4f);
 
 	slinghot->rotate( cVector3d(0, 1, 0), cDegToRad(90));
 	slinghot->rotate( cVector3d(1, 0, 0), cDegToRad(90));
 
-	bool test = slinghot->loadFromFile("Objects\\slingshot\\slingshot.obj");
-	slinghot->scale(4);
+	slinghot->loadFromFile("Objects\\slingshot\\slingshot.obj");
+	slinghot->scale(3);
 
     // compute a boundary box
     slinghot->computeBoundaryBox(true);
 
     // define some haptic friction properties
-    slinghot->setFriction(0.1, 0.2, true);
+    slinghot->setFriction(0.1f, 0.2f, true);
 
 	slinghot->setUseCulling(false, true);
+
+	//**************************************//
+	//                AVATAR                //
+	//**************************************//
+
+    // add object to world
+    world->addChild(avatar);
+
+    avatar->setPos(-3.0f, 0.0f, -1.0f);
+
+	avatar->rotate( cVector3d(0, 1, 0), cDegToRad(90));
+	avatar->rotate( cVector3d(1, 0, 0), cDegToRad(90));
+
+	avatar->loadFromFile("Objects\\avatar\\avatar.obj");
+	avatar->scale(0.5f);
+
+    // compute a boundary box
+    //slinghot->computeBoundaryBox(true);
+
+    // define some haptic friction properties
+    //slinghot->setFriction(0.1, 0.2, true);
+
+	avatar->setUseCulling(false, true);
 
 	//**************************************//
 	//               GROUND                 //
 	//**************************************//
 
-	cMesh* ground = new cMesh(world);
     world->addChild(ground);
 
     // create 4 vertices (one at each corner)
     double groundSize = 10.0;
-    int vertices0 = ground->newVertex(-groundSize, -groundSize, 0.0);
-    int vertices1 = ground->newVertex( groundSize, -groundSize, 0.0);
-    int vertices2 = ground->newVertex( groundSize,  groundSize, 0.0);
-    int vertices3 = ground->newVertex(-groundSize,  groundSize, 0.0);
+    int vertices0 = ground->newVertex(-groundSize, -groundSize, 0.0f);
+    int vertices1 = ground->newVertex( groundSize, -groundSize, 0.0f);
+    int vertices2 = ground->newVertex( groundSize,  groundSize, 0.0f);
+    int vertices3 = ground->newVertex(-groundSize,  groundSize, 0.0f);
 
     // compose surface with 2 triangles
     ground->newTriangle(vertices0, vertices1, vertices2);
@@ -95,28 +128,24 @@ void VirtualEnvironment::initialize(cWorld* world, cCamera* camera){
     ground->computeAllNormals();
 
     // position ground at the right level
-    ground->setPos(0.0, 0.0, -1.0);
+    ground->setPos(0.0f, 0.0f, -1.0f);
 
     // define some material properties and apply to mesh
     cMaterial matGround;
-    matGround.setDynamicFriction(0.7);
-    matGround.setStaticFriction(1.0);
-    matGround.m_ambient.set(0.0, 0.0, 0.0);
-    matGround.m_diffuse.set(0.0, 0.0, 0.0);
-    matGround.m_specular.set(0.0, 0.0, 0.0);
+    matGround.setDynamicFriction(0.7f);
+    matGround.setStaticFriction(1.0f);
+    matGround.m_ambient.set(0.0f, 0.0f, 0.0f);
+    matGround.m_diffuse.set(0.0f, 0.0f, 0.0f);
+    matGround.m_specular.set(0.0f, 0.0f, 0.0f);
     ground->setMaterial(matGround);
 
     // enable and set transparency level of ground
-    ground->setTransparencyLevel(0.75);
+    ground->setTransparencyLevel(0.75f);
     ground->setUseTransparency(true);
 
 	//**************************************//
 	//              REFLEXION               //
 	//**************************************//
-
-	// we create an intermediate node to which we will attach
-    // a copy of the object located inside the world
-    cGenericObject* reflexion = new cGenericObject();
 
     // set this object as a ghost node so that no haptic interactions or
     // collision detecting take place within the child nodes added to the
@@ -128,14 +157,15 @@ void VirtualEnvironment::initialize(cWorld* world, cCamera* camera){
 
     // create a symmetry rotation matrix (z-plane)
     cMatrix3d rotRefexion;
-    rotRefexion.set(1.0, 0.0, 0.0,
-                    0.0, 1.0, 0.0,
-                    0.0, 0.0, -1.0);
+    rotRefexion.set(1.0f, 0.0f, 0.0f,
+                    0.0f, 1.0f, 0.0f,
+                    0.0f, 0.0f, -1.0f);
     reflexion->setRot(rotRefexion);
-    reflexion->setPos(0.0, 0.0, -2.005);
+    reflexion->setPos(0.0f, 0.0f, -2.005f);
 
     // add objects to the world
     reflexion->addChild(slinghot);
+	reflexion->addChild(avatar);
 }
 
 void VirtualEnvironment::createRectangle(cMesh* a_mesh, double width, double height, double depth)

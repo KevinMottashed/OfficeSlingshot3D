@@ -46,11 +46,7 @@ int MFCOpenGLControl::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	
 	oglInitialize();
 
-	world = new cWorld();
-	camera = new cCamera(world);
-    world->addChild(camera);
-
-	ve->initialize(world, camera);
+	ve->initialize();
 	
 	return 0;
 }
@@ -119,7 +115,7 @@ void MFCOpenGLControl::OnSize(UINT nType, int cx, int cy)
    glLoadIdentity();
 
    // Set our current view perspective
-   gluPerspective(35.0f, (float)cx / (float)cy, 0.01f, 2000.0f);
+   gluPerspective(35.0f, (float)cx / (float)cy, 0.0f, 1000.0f);
 
    // Model view
    glMatrixMode(GL_MODELVIEW);
@@ -137,7 +133,7 @@ void MFCOpenGLControl::OnTimer(UINT_PTR nIDEvent)
          glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
          // Draw Virtual Environment
-		 camera->renderView(displayW, displayH);
+		 ve->getCamera()->renderView(displayW, displayH);
 
          // Swap buffers
          SwapBuffers(hdc);
