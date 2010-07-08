@@ -800,6 +800,14 @@
 				RelativePath=".\Replay\UserInterfaceReplayer.h"
 				>
 			</File>
+			<File
+				RelativePath=".\Replay\ZCameraReplayer.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Replay\ZCameraReplayer.h"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Serialization"

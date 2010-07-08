@@ -67,6 +67,17 @@ void Replayer::initializeFalconReplayer()
 	return;	
 }
 
+void Replayer::initializeZCameraReplayer()
+{
+	if (zCameraReplayer)
+	{
+		// the falcon replayers
+		return;
+	}
+	zCameraReplayer = boost::shared_ptr<ZCameraReplayer>(new ZCameraReplayer(file, archive));
+	return;	
+}
+
 void Replayer::removeNetworkReplayer()
 {
 	networkReplayer.reset();
@@ -83,6 +94,12 @@ void Replayer::removeFalconReplayer()
 {
 	falconReplayer.reset();
 	return;
+}
+
+void Replayer::removeZCameraReplayer()
+{
+	zCameraReplayer.reset();
+	return;
 } 
 
 shared_ptr<NetworkReplayer> Replayer::getNetworkReplayer()
@@ -98,6 +115,11 @@ shared_ptr<UserInterfaceReplayer> Replayer::getUserInterfaceReplayer()
 shared_ptr<FalconReplayer> Replayer::getFalconReplayer()
 {
 	return falconReplayer;
+}
+
+shared_ptr<ZCameraReplayer> Replayer::getZCameraReplayer()
+{
+	return zCameraReplayer;
 }
 
 void Replayer::replay()
@@ -158,17 +180,15 @@ void Replayer::replay()
 				continue;
 			}
 
-			switch (replayEvent.logEvent)
+			if (LogEvent::isZCamEvent(replayEvent.logEvent))
 			{
-				case LogEvent::ZCAM_VIDEO_DATA:
+				if (zCameraReplayer)
 				{
-					VideoData video;
-					*archive >> video;
-
-					ZCameraSubject::notify(VIDEO, &video);
-					break;
+					zCameraReplayer->replay(replayEvent.logEvent);
 				}
-			}		
+				continue;
+			}
+					
 		}
 	}
 	catch (boost::archive::archive_exception& e)
@@ -185,12 +205,3 @@ void Replayer::replay()
 	return;
 }
 
-void Replayer::startCapture()
-{
-	return;
-}
-
-void Replayer::stopCapture()
-{
-	return;
-}
