@@ -2,6 +2,7 @@
 #define HUMAN_FORMAT_LOGGER_H
 
 #include "stdafx.h"
+#include "boost.h"
 #include "Logger.h"
 #include "ConsoleStream.h"
 
@@ -44,6 +45,7 @@ private:
 	HumanFormatLogger& operator=(const HumanFormatLogger& c); // intentionally not implemented
 
 	Stream ostream;
+	boost::mutex stream_mutex;
 };
 
 //---------------------------------------------
@@ -81,6 +83,7 @@ HumanFormatLogger<Stream>::~HumanFormatLogger()
 template <typename Stream>
 void HumanFormatLogger<Stream>::log(LogEvent_t logEvent)
 {
+	boost::mutex::scoped_lock lock(stream_mutex);
 	ostream << lookup(logEvent) << std::endl;
 	return;
 }
@@ -88,6 +91,7 @@ void HumanFormatLogger<Stream>::log(LogEvent_t logEvent)
 template <typename Stream>
 void HumanFormatLogger<Stream>::log(LogEvent_t logEvent, rc_network error)
 {
+	boost::mutex::scoped_lock lock(stream_mutex);
 	ostream << lookup(logEvent) << " - " << lookup(error) << std::endl;
 	return;
 }
@@ -95,6 +99,7 @@ void HumanFormatLogger<Stream>::log(LogEvent_t logEvent, rc_network error)
 template <typename Stream>
 void HumanFormatLogger<Stream>::log(LogEvent_t logEvent, const std::string& str)
 {
+	boost::mutex::scoped_lock lock(stream_mutex);
 	ostream << lookup(logEvent) << " - " << str << std::endl;
 	return;
 }
@@ -102,6 +107,7 @@ void HumanFormatLogger<Stream>::log(LogEvent_t logEvent, const std::string& str)
 template <typename Stream>
 void HumanFormatLogger<Stream>::log(LogEvent_t logEvent, const VideoData& video)
 {
+	boost::mutex::scoped_lock lock(stream_mutex);
 	ostream << lookup(logEvent) << std::endl;
 	return;
 }
@@ -109,6 +115,7 @@ void HumanFormatLogger<Stream>::log(LogEvent_t logEvent, const VideoData& video)
 template <typename Stream>
 void HumanFormatLogger<Stream>::log(LogEvent_t logEvent, const cVector3d& vec)
 {
+	boost::mutex::scoped_lock lock(stream_mutex);
 	ostream << lookup(logEvent) << " - " << vec << std::endl;
 	return;
 }
@@ -116,6 +123,7 @@ void HumanFormatLogger<Stream>::log(LogEvent_t logEvent, const cVector3d& vec)
 template <typename Stream>
 void HumanFormatLogger<Stream>::log(LogEvent_t logEvent, const Projectile& projectile)
 {
+	boost::mutex::scoped_lock lock(stream_mutex);
 	ostream << lookup(logEvent) << " - " << projectile << std::endl;
 	return;
 }
@@ -123,6 +131,7 @@ void HumanFormatLogger<Stream>::log(LogEvent_t logEvent, const Projectile& proje
 template <typename Stream>
 void HumanFormatLogger<Stream>::log(LogEvent_t logEvent, const UserPreferences& preferences)
 {
+	boost::mutex::scoped_lock lock(stream_mutex);
 	ostream << lookup(logEvent) << " - " << preferences << std::endl;
 	return;
 }

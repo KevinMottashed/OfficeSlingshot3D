@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 #include "boost.h"
+
 #include "Logger.h"
 #include "ConsoleStream.h"
 #include "Projectile.h"
@@ -54,7 +55,9 @@ private:
 
 	Stream ostream;
 	const boost::posix_time::ptime start;
+
 	boost::archive::text_oarchive archive;
+	boost::mutex archive_mutex;
 };
 
 //---------------------------------------------
@@ -105,6 +108,7 @@ ReplayFormatLogger<Stream>::~ReplayFormatLogger()
 template <typename Stream>
 void ReplayFormatLogger<Stream>::log(LogEvent_t e)
 {
+	boost::mutex::scoped_lock lock(archive_mutex);
 	archive << toReplayEvent(e);
 	return;
 }
@@ -112,6 +116,7 @@ void ReplayFormatLogger<Stream>::log(LogEvent_t e)
 template <typename Stream>
 void ReplayFormatLogger<Stream>::log(LogEvent_t e, rc_network error)
 {
+	boost::mutex::scoped_lock lock(archive_mutex);
 	archive << toReplayEvent(e) << error;
 	return;
 }
@@ -119,6 +124,7 @@ void ReplayFormatLogger<Stream>::log(LogEvent_t e, rc_network error)
 template <typename Stream>
 void ReplayFormatLogger<Stream>::log(LogEvent_t e, const std::string& str)
 {
+	boost::mutex::scoped_lock lock(archive_mutex);
 	archive << toReplayEvent(e) << str;
 	return;
 }
@@ -126,6 +132,7 @@ void ReplayFormatLogger<Stream>::log(LogEvent_t e, const std::string& str)
 template <typename Stream>
 void ReplayFormatLogger<Stream>::log(LogEvent_t e, const VideoData& video)
 {
+	boost::mutex::scoped_lock lock(archive_mutex);
 	archive << toReplayEvent(e) << video;
 	return;
 }
@@ -133,6 +140,7 @@ void ReplayFormatLogger<Stream>::log(LogEvent_t e, const VideoData& video)
 template <typename Stream>
 void ReplayFormatLogger<Stream>::log(LogEvent_t e, const cVector3d& vec)
 {
+	boost::mutex::scoped_lock lock(archive_mutex);
 	archive << toReplayEvent(e) << vec;
 	return;
 }
@@ -140,6 +148,7 @@ void ReplayFormatLogger<Stream>::log(LogEvent_t e, const cVector3d& vec)
 template <typename Stream>
 void ReplayFormatLogger<Stream>::log(LogEvent_t e, const Projectile& projectile)
 {
+	boost::mutex::scoped_lock lock(archive_mutex);
 	archive << toReplayEvent(e) << projectile;
 	return;
 }
@@ -147,6 +156,7 @@ void ReplayFormatLogger<Stream>::log(LogEvent_t e, const Projectile& projectile)
 template <typename Stream>
 void ReplayFormatLogger<Stream>::log(LogEvent_t e, const UserPreferences& preferences)
 {
+	boost::mutex::scoped_lock lock(archive_mutex);
 	archive << toReplayEvent(e) << preferences;
 	return;
 }
