@@ -133,6 +133,7 @@ void MFCOpenGLControl::OnTimer(UINT_PTR nIDEvent)
          glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
          // Draw Virtual Environment
+		 ve->moveBall();
 		 ve->getCamera()->renderView(displayW, displayH);
 
          // Swap buffers

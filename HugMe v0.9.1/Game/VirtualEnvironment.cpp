@@ -7,6 +7,7 @@ VirtualEnvironment::VirtualEnvironment(void)
 	light = new cLight(world);
 	slinghot = new cMesh(world);
 	avatar = new cMesh(world);
+	ball = new cMesh(world);
 	ground = new cMesh(world);
 	reflexion = new cGenericObject();
 }
@@ -18,6 +19,11 @@ VirtualEnvironment::~VirtualEnvironment(void)
 cCamera* VirtualEnvironment::getCamera(void)
 {
 	return camera;
+}
+
+void VirtualEnvironment::moveBall(void)
+{
+	ball->translate( cVector3d(-0.01f, 0.0f, 0.0f) );
 }
 
 void VirtualEnvironment::initialize(void){
@@ -100,12 +106,37 @@ void VirtualEnvironment::initialize(void){
 	avatar->scale(0.5f);
 
     // compute a boundary box
-    //slinghot->computeBoundaryBox(true);
+    avatar->computeBoundaryBox(true);
+	avatar->setShowBox(true);
 
     // define some haptic friction properties
-    //slinghot->setFriction(0.1, 0.2, true);
+    //avatar->setFriction(0.1, 0.2, true);
 
 	avatar->setUseCulling(false, true);
+
+	//**************************************//
+	//                 BALL                 //
+	//**************************************//
+
+    // add object to world
+    world->addChild(ball);
+
+    ball->setPos(0.0f, 0.5f, 1.0f);
+
+	ball->rotate( cVector3d(0, 1, 0), cDegToRad(90));
+	ball->rotate( cVector3d(1, 0, 0), cDegToRad(90));
+
+	ball->loadFromFile("Objects\\ball\\ball.obj");
+	ball->scale(0.05f);
+
+    // compute a boundary box
+    ball->computeBoundaryBox(true);
+	ball->setShowBox(true);
+
+    // define some haptic friction properties
+    //ball->setFriction(0.1, 0.2, true);
+
+	ball->setUseCulling(false, true);
 
 	//**************************************//
 	//               GROUND                 //

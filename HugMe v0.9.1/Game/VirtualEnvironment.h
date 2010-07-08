@@ -10,6 +10,7 @@ private:
 	cLight* light;
 	cMesh* slinghot;
 	cMesh* avatar;
+	cMesh* ball;
 	cMesh* ground;
 	cGenericObject* reflexion;
 
@@ -20,4 +21,5 @@ public:
 	void initialize(void);
 	void createRectangle(cMesh* a_mesh, double width, double height, double depth);
 	cCamera* getCamera(void);
+	void moveBall(void);
 };
