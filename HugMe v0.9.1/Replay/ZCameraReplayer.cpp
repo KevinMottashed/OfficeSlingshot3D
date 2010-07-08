@@ -28,7 +28,7 @@ void ZCameraReplayer::replay(LogEvent_t logEvent)
 			VideoData video;
 			*archive >> video;
 
-			ZCameraSubject::notify(VIDEO, &video);
+			notify(VIDEO, &video);
 			break;
 		}
 	}

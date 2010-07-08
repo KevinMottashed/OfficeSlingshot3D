@@ -30,17 +30,17 @@ void UserInterfaceReplayer::replay(LogEvent_t logEvent)
 	{
 		case LogEvent::UI_CONNECT:
 		{
-			UserInterfaceSubject::notify(CONNECT);
+			notify(CONNECT);
 			break;
 		}
 		case LogEvent::UI_LISTEN:
 		{
-			UserInterfaceSubject::notify(LISTEN);
+			notify(LISTEN);
 			break;
 		}
 		case LogEvent::UI_DISCONNECT:
 		{
-			UserInterfaceSubject::notify(DISCONNECT);
+			notify(DISCONNECT);
 			break;
 		}
 		case LogEvent::UI_PREFERENCES:
@@ -48,27 +48,27 @@ void UserInterfaceReplayer::replay(LogEvent_t logEvent)
 			UserPreferences preferences;
 			*archive >> preferences;
 
-			UserInterfaceSubject::notify(PREFERENCES, &preferences);
+			notify(PREFERENCES, &preferences);
 			break;
 		}
 		case LogEvent::UI_START_GAME:
 		{
-			UserInterfaceSubject::notify(START_GAME);
+			notify(START_GAME);
 			break;
 		}
 		case LogEvent::UI_PAUSE_GAME:
 		{
-			UserInterfaceSubject::notify(PAUSE_GAME);
+			notify(PAUSE_GAME);
 			break;
 		}
 		case LogEvent::UI_EXIT_GAME:
 		{
-			UserInterfaceSubject::notify(EXIT_GAME);
+			notify(EXIT_GAME);
 			break;
 		}
 		case LogEvent::UI_CLOSE_APPLICATION:
 		{
-			UserInterfaceSubject::notify(EXIT_APPLICATION);
+			notify(EXIT_APPLICATION);
 
 			// notify the replay watcher that the application would have been closed
 			// by not closing the application we can inspect the UI, debug, etc...
@@ -84,7 +84,7 @@ void UserInterfaceReplayer::replay(LogEvent_t logEvent)
 			// add the message to the UI
 			m_pMainDlg->displayLocalChatMessage(str);
 
-			UserInterfaceSubject::notify(CHAT_MESSAGE, &str);
+			notify(CHAT_MESSAGE, &str);
 			break;
 		}
 	}

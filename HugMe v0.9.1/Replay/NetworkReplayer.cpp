@@ -26,28 +26,28 @@ void NetworkReplayer::replay(LogEvent_t logEvent)
 		case LogEvent::NETWORK_PEER_CONNECTED:
 		{
 			connectionState = ConnectionState::CONNECTED;
-			NetworkSubject::notify(PEER_CONNECTED);
+			notify(PEER_CONNECTED);
 			break;
 		}
 		case LogEvent::NETWORK_PEER_DISCONNECTED:
 		{
 			connectionState = ConnectionState::DISCONNECTED;
-			NetworkSubject::notify(PEER_DISCONNECTED);
+			notify(PEER_DISCONNECTED);
 			break;
 		}
 		case LogEvent::NETWORK_PEER_START_GAME:
 		{
-			NetworkSubject::notify(PEER_START_GAME);
+			notify(PEER_START_GAME);
 			break;
 		}
 		case LogEvent::NETWORK_PEER_PAUSE_GAME:
 		{
-			NetworkSubject::notify(PEER_PAUSE_GAME);
+			notify(PEER_PAUSE_GAME);
 			break;
 		}
 		case LogEvent::NETWORK_PEER_EXIT_GAME:
 		{
-			NetworkSubject::notify(PEER_EXIT_GAME);
+			notify(PEER_EXIT_GAME);
 			break;
 		}
 		case LogEvent::NETWORK_ERROR_OCCURED:
@@ -57,7 +57,7 @@ void NetworkReplayer::replay(LogEvent_t logEvent)
 			rc_network code;
 			*archive >> code;
 
-			NetworkSubject::notify(NETWORK_ERROR, &code);
+			notify(NETWORK_ERROR, &code);
 			break;
 		}
 		case LogEvent::NETWORK_USER_NAME:
@@ -65,7 +65,7 @@ void NetworkReplayer::replay(LogEvent_t logEvent)
 			string str;
 			*archive >> str;
 
-			NetworkSubject::notify(RECEIVED_USER_NAME, &str);
+			notify(RECEIVED_USER_NAME, &str);
 			break;
 		}
 		case LogEvent::NETWORK_CHAT_MESSAGE:
@@ -73,7 +73,7 @@ void NetworkReplayer::replay(LogEvent_t logEvent)
 			string str;
 			*archive >> str;
 
-			NetworkSubject::notify(RECEIVED_CHAT_MESSAGE, &str);
+			notify(RECEIVED_CHAT_MESSAGE, &str);
 			break;
 		}
 		case LogEvent::NETWORK_VIDEO_DATA:
@@ -81,7 +81,7 @@ void NetworkReplayer::replay(LogEvent_t logEvent)
 			VideoData video;
 			*archive >> video;
 
-			NetworkSubject::notify(RECEIVED_VIDEO, &video);
+			notify(RECEIVED_VIDEO, &video);
 			break;
 		}
 		case LogEvent::NETWORK_SLINGSHOT_POSITION:
@@ -89,7 +89,7 @@ void NetworkReplayer::replay(LogEvent_t logEvent)
 			cVector3d vec;
 			*archive >> vec;
 
-			NetworkSubject::notify(RECEIVED_SLINGSHOT_POSITION, &vec);
+			notify(RECEIVED_SLINGSHOT_POSITION, &vec);
 			break;
 		}
 		case LogEvent::NETWORK_PROJECTILE:
@@ -97,17 +97,17 @@ void NetworkReplayer::replay(LogEvent_t logEvent)
 			Projectile p;
 			*archive >> p;
 
-			NetworkSubject::notify(RECEIVED_PROJECTILE, &p);
+			notify(RECEIVED_PROJECTILE, &p);
 			break;
 		}
 		case LogEvent::NETWORK_SLINGSHOT_PULLBACK:
 		{
-			NetworkSubject::notify(RECEIVED_PULLBACK);
+			notify(RECEIVED_PULLBACK);
 			break;
 		}
 		case LogEvent::NETWORK_SLINGSHOT_RELEASE:
 		{
-			NetworkSubject::notify(RECEIVED_RELEASE);
+			notify(RECEIVED_RELEASE);
 			break;
 		}
 		case LogEvent::NETWORK_PLAYER_POSITION:
@@ -115,7 +115,7 @@ void NetworkReplayer::replay(LogEvent_t logEvent)
 			cVector3d vec;
 			*archive >> vec;
 
-			NetworkSubject::notify(RECEIVED_PLAYER_POSITION, &vec);
+			notify(RECEIVED_PLAYER_POSITION, &vec);
 			break;
 		}
 	}
