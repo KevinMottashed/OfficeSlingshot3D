@@ -765,6 +765,14 @@
 			Name="Replay"
 			>
 			<File
+				RelativePath=".\Replay\FalconReplayer.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Replay\FalconReplayer.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Replay\NetworkReplayer.cpp"
 				>
 			</File>

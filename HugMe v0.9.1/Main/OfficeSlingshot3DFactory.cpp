@@ -113,7 +113,8 @@ shared_ptr<OfficeSlingshot3D> OfficeSlingshot3DFactory::createFromConfigFile(con
 		if (configVMap["Replayer.ReplayFalcon"].as<int>())
 		{
 			// the user wants to replay falcon events
-			falcon = replayer;
+			replayer->initializeFalconReplayer();
+			falcon = replayer->getFalconReplayer();
 		}
 
 		if (configVMap["Replayer.ReplayZCamera"].as<int>())
@@ -201,7 +202,7 @@ shared_ptr<OfficeSlingshot3D> OfficeSlingshot3DFactory::createFromConfigFile(con
 		}
 
 		// find out if the user wants to log in a human readable format or the replay format
-		// use case insensitive comparisons for a more user friendly log file
+		// use case insensitive comparisons for a more user friendly config file
 		if (iequals(configVMap["Logger.Format"].as<string>(),"Human"))
 		{
 			// the user wants human readable output

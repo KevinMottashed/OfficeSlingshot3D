@@ -3,9 +3,10 @@
 
 #include "stdafx.h"
 #include "boost.h"
+
 #include "NetworkReplayer.h"
 #include "UserInterfaceReplayer.h"
-#include "FalconProxy.h"
+#include "FalconReplayer.h"
 #include "ZCameraProxy.h"
 #include "LoggerProxy.h"
 #include "UserPreferences.h"
@@ -16,7 +17,7 @@
 // The replayer is meant as a testing class to produce predictable user inputs.
 // This facilates unit testing as a we can give the application a set of inputs and
 // expect the same output each time.
-class Replayer : public Falcon, public ZCamera
+class Replayer : public ZCamera
 {
 public:
 	// Replay inputs are loaded from a file
@@ -30,22 +31,17 @@ public:
 	// initialize the various replayers
 	void initializeNetworkReplayer();
 	void initializeUserInterfaceReplayer();
+	void initializeFalconReplayer();
 
 	// remove the various replayers
 	void removeNetworkReplayer();
 	void removeUserInterfaceReplayer();
+	void removeFalconReplayer();
 
 	// get the various replayers
 	boost::shared_ptr<NetworkReplayer> getNetworkReplayer();
 	boost::shared_ptr<UserInterfaceReplayer> getUserInterfaceReplayer();
-
-	//---------------------------------------------------------------------
-	// Falcon
-	//---------------------------------------------------------------------
-
-	// start/stop polling the falcon
-	virtual void startPolling();
-	virtual void stopPolling();
+	boost::shared_ptr<FalconReplayer> getFalconReplayer();	
 
 	//---------------------------------------------------------------------
 	// Z-Camera
@@ -78,6 +74,7 @@ private:
 	// and the mediator
 	boost::shared_ptr<NetworkReplayer> networkReplayer;
 	boost::shared_ptr<UserInterfaceReplayer> uiReplayer;
+	boost::shared_ptr<FalconReplayer> falconReplayer;	
 };
 
 #endif

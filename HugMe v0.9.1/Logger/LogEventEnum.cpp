@@ -72,7 +72,7 @@ bool LogEvent::isUIEvent(LogEvent::LogEventEnum e)
 
 bool LogEvent::isFalconEvent(LogEvent::LogEventEnum e)
 {
-	return e >= START_FALCON && e < END_UI;	
+	return e >= START_FALCON && e < END_FALCON;	
 }
 
 bool LogEvent::isZCamEvent(LogEvent::LogEventEnum e)

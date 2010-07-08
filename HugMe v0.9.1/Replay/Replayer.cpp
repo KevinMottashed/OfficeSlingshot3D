@@ -1,5 +1,4 @@
 #include "Replayer.h"
-#include "ConsoleStream.h"
 
 using namespace std;
 using namespace boost;
@@ -57,6 +56,17 @@ void Replayer::initializeUserInterfaceReplayer()
 	return;
 }
 
+void Replayer::initializeFalconReplayer()
+{
+	if (falconReplayer)
+	{
+		// the falcon replayers
+		return;
+	}
+	falconReplayer = boost::shared_ptr<FalconReplayer>(new FalconReplayer(file, archive));
+	return;	
+}
+
 void Replayer::removeNetworkReplayer()
 {
 	networkReplayer.reset();
@@ -69,14 +79,25 @@ void Replayer::removeUserInterfaceReplayer()
 	return;
 }
 
-boost::shared_ptr<NetworkReplayer> Replayer::getNetworkReplayer()
+void Replayer::removeFalconReplayer()
+{
+	falconReplayer.reset();
+	return;
+} 
+
+shared_ptr<NetworkReplayer> Replayer::getNetworkReplayer()
 {
 	return networkReplayer;
 }
 
-boost::shared_ptr<UserInterfaceReplayer> Replayer::getUserInterfaceReplayer()
+shared_ptr<UserInterfaceReplayer> Replayer::getUserInterfaceReplayer()
 {
 	return uiReplayer;
+}
+
+shared_ptr<FalconReplayer> Replayer::getFalconReplayer()
+{
+	return falconReplayer;
 }
 
 void Replayer::replay()
@@ -128,16 +149,17 @@ void Replayer::replay()
 				continue;
 			}
 
+			if (LogEvent::isFalconEvent(replayEvent.logEvent))
+			{
+				if (falconReplayer)
+				{
+					falconReplayer->replay(replayEvent.logEvent);
+				}
+				continue;
+			}
+
 			switch (replayEvent.logEvent)
 			{
-				case LogEvent::FALCON_SLINGSHOT_POSITION:
-				{
-					cVector3d vec;
-					*archive >> vec;
-
-					FalconSubject::notify(SLINGSHOT_POSITION, &vec);
-					break;
-				}
 				case LogEvent::ZCAM_VIDEO_DATA:
 				{
 					VideoData video;
@@ -160,16 +182,6 @@ void Replayer::replay()
 			throw;
 		}		
 	}
-	return;
-}
-
-void Replayer::startPolling()
-{
-	return;
-}
-
-void Replayer::stopPolling()
-{
 	return;
 }
 
