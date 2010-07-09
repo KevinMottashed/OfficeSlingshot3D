@@ -70,60 +70,74 @@ void Replayer::replay()
 	// get the start time
 	startTime = microsec_clock::local_time();
 
-	try
+	// keep going until we have an exception,
+	// an exception will occur when we reach the end of the file
+	while (true)
 	{
-		// keep going until we have an exception,
-		// an exception will occur when we reach the end of the file
-		while (true)
+		ReplayFormatEvent replayEvent;
+
+		try
 		{
-			ReplayFormatEvent replayEvent;
 			*archive >> replayEvent;
-
-			// only set the timer if there is a valid wait time
-			if (replayEvent.time > 0)
+		}
+		catch (boost::archive::archive_exception& e)
+		{
+			// the only exception that we are expecting is the stream_error one
+			// this indicates an end of stream which will happen when the
+			// file runs out of replay events, any other exception is
+			// bad so rethrow it
+			if (e.code == boost::archive::archive_exception::stream_error)
 			{
-				time_duration nextEvent = milliseconds(replayEvent.time);
-				time_duration current = microsec_clock::local_time() - startTime;
-				time_duration wait = nextEvent - current;
-				timer.expires_from_now(wait);
-				timer.wait();
+				// we have reached the end of the replay file
+				break;
 			}
+			else
+			{
+				// we were not expecting this exception, throw it back into the wild
+				throw;
+			}
+		}
 
-			if (LogEvent::isNetworkEvent(replayEvent.logEvent))
+		// only set the timer if there is a valid wait time
+		if (replayEvent.time > 0)
+		{
+			time_duration nextEvent = milliseconds(replayEvent.time);
+			time_duration current = microsec_clock::local_time() - startTime;
+			time_duration wait = nextEvent - current;
+			timer.expires_from_now(wait);
+			timer.wait();
+		}
+
+		// send the event to the appropriate replayer
+		switch (LogEventCategory::lookupCategory(replayEvent.logEvent))
+		{
+			case LogEventCategory::NETWORK:
 			{
 				networkReplayer->replay(replayEvent.logEvent);
-				continue;
+				break;
 			}
-
-			if (LogEvent::isUIEvent(replayEvent.logEvent))
+			case LogEventCategory::UI:
 			{
 				uiReplayer->replay(replayEvent.logEvent);
-				continue;
+				break;
 			}
-
-			if (LogEvent::isFalconEvent(replayEvent.logEvent))
+			case LogEventCategory::FALCON:
 			{
 				falconReplayer->replay(replayEvent.logEvent);
-				continue;
+				break;
 			}
-
-			if (LogEvent::isZCamEvent(replayEvent.logEvent))
+			case LogEventCategory::ZCAM:
 			{
 				zCameraReplayer->replay(replayEvent.logEvent);
-				continue;
-			}					
-		}
-	}
-	catch (boost::archive::archive_exception& e)
-	{
-		// the only exception that we are expecting is the stream_error one
-		// this indicates an end of stream which will happen when the
-		// file runs out of replay events, any other exception is
-		// bad so rethrow it
-		if (e.code != boost::archive::archive_exception::stream_error)
-		{
-			throw;
-		}		
+				break;
+			}
+			default:
+			{
+				// all events need a category
+				assert(false);
+				return;
+			}										
+		}					
 	}
 	return;
 }

@@ -19,7 +19,7 @@ FalconReplayer::~FalconReplayer()
 void FalconReplayer::replay(LogEvent_t logEvent)
 {
 	// don't try handling an event that isnt a falcon event
-	assert(LogEvent::isFalconEvent(logEvent));
+	assert(LogEventCategory::lookupCategory(logEvent) == LogEventCategory::FALCON);
 
 	switch (logEvent)
 	{

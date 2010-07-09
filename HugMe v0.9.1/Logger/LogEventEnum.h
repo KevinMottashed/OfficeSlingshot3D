@@ -3,6 +3,8 @@
 
 #include "stdafx.h"
 
+// This enum represents all input events that the system can receive
+// These include inputs from the network, the user interface, the falcon and the zcamera
 namespace LogEvent
 {
 	// all the input events that can be logged
@@ -51,13 +53,7 @@ namespace LogEvent
 	};
 
 	// convert the enum to a string
-	const std::string lookup(LogEventEnum logEvent);
-
-	// find the type of the enum
-	bool isNetworkEvent(LogEventEnum e);
-	bool isUIEvent(LogEventEnum e);
-	bool isFalconEvent(LogEventEnum e);	
-	bool isZCamEvent(LogEventEnum e);	
+	std::string lookup(LogEventEnum logEvent);
 }
 
 typedef LogEvent::LogEventEnum LogEvent_t;

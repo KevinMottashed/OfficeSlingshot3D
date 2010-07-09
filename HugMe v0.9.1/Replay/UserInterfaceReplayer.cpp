@@ -24,7 +24,7 @@ UserInterfaceReplayer::~UserInterfaceReplayer()
 void UserInterfaceReplayer::replay(LogEvent_t logEvent)
 {
 	// don't try handling an event that isnt a ui event
-	assert(LogEvent::isUIEvent(logEvent));
+	assert(LogEventCategory::lookupCategory(logEvent) == LogEventCategory::UI);
 	
 	switch (logEvent)
 	{

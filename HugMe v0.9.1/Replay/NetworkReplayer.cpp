@@ -19,7 +19,7 @@ NetworkReplayer::~NetworkReplayer()
 void NetworkReplayer::replay(LogEvent_t logEvent)
 {
 	// don't try handling an event that isnt a network event
-	assert(LogEvent::isNetworkEvent(logEvent));
+	assert(LogEventCategory::lookupCategory(logEvent) == LogEventCategory::NETWORK);
 
 	switch (logEvent)
 	{

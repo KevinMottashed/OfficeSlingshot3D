@@ -1,7 +1,7 @@
 #include "LogEventEnum.h"
 
 // convert the enum to a string
-const std::string LogEvent::lookup(LogEvent::LogEventEnum logEvent)
+std::string LogEvent::lookup(LogEvent::LogEventEnum logEvent)
 {
 	switch(logEvent)
 	{
@@ -58,25 +58,5 @@ const std::string LogEvent::lookup(LogEvent::LogEventEnum logEvent)
 	default:
 		return "Unknown - log event";
 	}
-}
-
-bool LogEvent::isNetworkEvent(LogEvent::LogEventEnum e)
-{
-	return e >= START_NETWORK && e < END_NETWORK;
-}
-
-bool LogEvent::isUIEvent(LogEvent::LogEventEnum e)
-{
-	return e >= START_UI && e < END_UI;
-}
-
-bool LogEvent::isFalconEvent(LogEvent::LogEventEnum e)
-{
-	return e >= START_FALCON && e < END_FALCON;	
-}
-
-bool LogEvent::isZCamEvent(LogEvent::LogEventEnum e)
-{
-	return e >= START_ZCAM && e < END_ZCAM;
 }
 

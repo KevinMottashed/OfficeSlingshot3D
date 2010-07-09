@@ -11,6 +11,7 @@
 #include "HumanFormatLogger.h"
 #include "ReplayFormatLogger.h"
 #include "LogEventEnum.h"
+#include "LogEventCategoryEnum.h"
 
 // forward declarations
 class Logger;

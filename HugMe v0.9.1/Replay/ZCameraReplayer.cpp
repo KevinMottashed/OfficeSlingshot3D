@@ -19,7 +19,7 @@ ZCameraReplayer::~ZCameraReplayer()
 void ZCameraReplayer::replay(LogEvent_t logEvent)
 {
 	// don't try handling an event that isnt a zcam event
-	assert(LogEvent::isZCamEvent(logEvent));
+	assert(LogEventCategory::lookupCategory(logEvent) == LogEventCategory::ZCAM);
 
 	switch (logEvent)
 	{
