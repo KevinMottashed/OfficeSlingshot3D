@@ -28,18 +28,6 @@ public:
 	void startReplay();
 	void stopReplay();
 
-	// initialize the various replayers
-	void initializeNetworkReplayer();
-	void initializeUserInterfaceReplayer();
-	void initializeFalconReplayer();
-	void initializeZCameraReplayer();	
-
-	// remove the various replayers
-	void removeNetworkReplayer();
-	void removeUserInterfaceReplayer();
-	void removeFalconReplayer();
-	void removeZCameraReplayer();
-
 	// get the various replayers
 	boost::shared_ptr<NetworkReplayer> getNetworkReplayer();
 	boost::shared_ptr<UserInterfaceReplayer> getUserInterfaceReplayer();

@@ -99,28 +99,24 @@ shared_ptr<OfficeSlingshot3D> OfficeSlingshot3DFactory::createFromConfigFile(con
 		if (configVMap["Replayer.ReplayNetwork"].as<int>())
 		{
 			// the user wants to replay network events
-			replayer->initializeNetworkReplayer();
 			network = replayer->getNetworkReplayer();
 		}
 
 		if (configVMap["Replayer.ReplayUI"].as<int>())
 		{
 			// the user wants to replay UI events
-			replayer->initializeUserInterfaceReplayer();
 			userInterface = replayer->getUserInterfaceReplayer();
 		}
 
 		if (configVMap["Replayer.ReplayFalcon"].as<int>())
 		{
 			// the user wants to replay falcon events
-			replayer->initializeFalconReplayer();
 			falcon = replayer->getFalconReplayer();
 		}
 
 		if (configVMap["Replayer.ReplayZCamera"].as<int>())
 		{
 			// the user wants to replay zcamera events
-			replayer->initializeZCameraReplayer();
 			zcamera = replayer->getZCameraReplayer();
 		}
 	}

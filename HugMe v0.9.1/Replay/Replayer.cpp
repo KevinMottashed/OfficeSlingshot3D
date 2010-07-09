@@ -4,10 +4,14 @@ using namespace std;
 using namespace boost;
 
 Replayer::Replayer(const string& fileName, const UserPreferences& preferences) :
-	// The file needs to be opened in binary mode to avoid any endline conversions
 	preferences(preferences),
+	// The file needs to be opened in binary mode to avoid any endline conversions
 	file(shared_ptr<ifstream>(new ifstream(fileName.c_str(), ios::in | ios::binary))),	
-	archive(shared_ptr<archive::text_iarchive>(new archive::text_iarchive(*file)))
+	archive(shared_ptr<archive::text_iarchive>(new archive::text_iarchive(*file))),
+	networkReplayer(new NetworkReplayer(file, archive)),
+	uiReplayer(new UserInterfaceReplayer(preferences, file, archive)),
+	falconReplayer(new FalconReplayer(file, archive)),
+	zCameraReplayer(new ZCameraReplayer(file, archive))
 {
 }
 
@@ -33,74 +37,6 @@ void Replayer::stopReplay()
 	replayThread->interrupt();
 	return;
 }
-
-void Replayer::initializeNetworkReplayer()
-{
-	if (networkReplayer)
-	{
-		// the network replayer is already initialized
-		return;
-	}
-	networkReplayer = boost::shared_ptr<NetworkReplayer>(new NetworkReplayer(file, archive));
-	return;
-}
-
-void Replayer::initializeUserInterfaceReplayer()
-{
-	if (uiReplayer)
-	{
-		// the ui replayer is already initialized
-		return;		
-	}
-	uiReplayer = boost::shared_ptr<UserInterfaceReplayer>(new UserInterfaceReplayer(preferences, file, archive));
-	return;
-}
-
-void Replayer::initializeFalconReplayer()
-{
-	if (falconReplayer)
-	{
-		// the falcon replayers
-		return;
-	}
-	falconReplayer = boost::shared_ptr<FalconReplayer>(new FalconReplayer(file, archive));
-	return;	
-}
-
-void Replayer::initializeZCameraReplayer()
-{
-	if (zCameraReplayer)
-	{
-		// the falcon replayers
-		return;
-	}
-	zCameraReplayer = boost::shared_ptr<ZCameraReplayer>(new ZCameraReplayer(file, archive));
-	return;	
-}
-
-void Replayer::removeNetworkReplayer()
-{
-	networkReplayer.reset();
-	return;
-}
-
-void Replayer::removeUserInterfaceReplayer()
-{
-	uiReplayer.reset();
-	return;
-}
-
-void Replayer::removeFalconReplayer()
-{
-	falconReplayer.reset();
-	return;
-}
-
-void Replayer::removeZCameraReplayer()
-{
-	zCameraReplayer.reset();
-	return;
-} 
 
 shared_ptr<NetworkReplayer> Replayer::getNetworkReplayer()
 {
@@ -155,40 +91,27 @@ void Replayer::replay()
 
 			if (LogEvent::isNetworkEvent(replayEvent.logEvent))
 			{
-				if (networkReplayer)
-				{
-					networkReplayer->replay(replayEvent.logEvent);
-				}
+				networkReplayer->replay(replayEvent.logEvent);
 				continue;
 			}
 
 			if (LogEvent::isUIEvent(replayEvent.logEvent))
 			{
-				if (uiReplayer)
-				{
-					uiReplayer->replay(replayEvent.logEvent);
-				}
+				uiReplayer->replay(replayEvent.logEvent);
 				continue;
 			}
 
 			if (LogEvent::isFalconEvent(replayEvent.logEvent))
 			{
-				if (falconReplayer)
-				{
-					falconReplayer->replay(replayEvent.logEvent);
-				}
+				falconReplayer->replay(replayEvent.logEvent);
 				continue;
 			}
 
 			if (LogEvent::isZCamEvent(replayEvent.logEvent))
 			{
-				if (zCameraReplayer)
-				{
-					zCameraReplayer->replay(replayEvent.logEvent);
-				}
+				zCameraReplayer->replay(replayEvent.logEvent);
 				continue;
-			}
-					
+			}					
 		}
 	}
 	catch (boost::archive::archive_exception& e)
