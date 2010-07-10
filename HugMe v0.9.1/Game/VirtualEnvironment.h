@@ -1,6 +1,7 @@
 #pragma once
 
 #include "chai3d.h"
+#include "CODE.h"
 
 class VirtualEnvironment
 {
@@ -14,6 +15,10 @@ private:
 	cMesh* ground;
 	cGenericObject* reflexion;
 
+	cODEWorld* ODEWorld;
+	cODEGenericBody* ODEBall;
+	cODEGenericBody* ODEGround;
+
 public:
 	VirtualEnvironment(void);
 	~VirtualEnvironment(void);
@@ -21,5 +26,5 @@ public:
 	void initialize(void);
 	void createRectangle(cMesh* a_mesh, double width, double height, double depth);
 	cCamera* getCamera(void);
-	void moveBall(void);
+	void updateFrame(void);
 };

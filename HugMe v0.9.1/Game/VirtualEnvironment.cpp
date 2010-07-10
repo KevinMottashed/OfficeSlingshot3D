@@ -10,6 +10,7 @@ VirtualEnvironment::VirtualEnvironment(void)
 	ball = new cMesh(world);
 	ground = new cMesh(world);
 	reflexion = new cGenericObject();
+
 }
 
 VirtualEnvironment::~VirtualEnvironment(void)
@@ -20,10 +21,12 @@ cCamera* VirtualEnvironment::getCamera(void)
 {
 	return camera;
 }
-
-void VirtualEnvironment::moveBall(void)
+void VirtualEnvironment::updateFrame(void)
 {
-	ball->translate( cVector3d(-0.01f, 0.0f, 0.0f) );
+	ODEWorld->updateDynamics(0.02);
+	camera->set( cVector3d (7.0f, 0.0f, 0.3f),    // camera position (eye)
+		ODEBall->getPos(),    // lookat position (target)
+        cVector3d (0.0f, 0.0f, 1.0f));   // direction of the "up" vector
 }
 
 void VirtualEnvironment::initialize(void){
@@ -37,6 +40,16 @@ void VirtualEnvironment::initialize(void){
     // set the background color of the environment
     // the color is defined by its (R,G,B) components.
     world->setBackgroundColor(0.5f, 0.37f, 0.28f);
+
+    // create an ODE world to simulate dynamic bodies
+    ODEWorld = new cODEWorld(world);
+
+    // add ODE world as a node inside world
+    world->addChild(ODEWorld);
+
+    // set some gravity
+    ODEWorld->setGravity(cVector3d(0.0, 0.0, -9.81));
+
 
 	//**************************************//
 	//               CAMERA                 //
@@ -118,13 +131,6 @@ void VirtualEnvironment::initialize(void){
 	//                 BALL                 //
 	//**************************************//
 
-    // add object to world
-    world->addChild(ball);
-
-    ball->setPos(0.0f, 0.5f, 1.0f);
-
-	ball->rotate( cVector3d(0, 1, 0), cDegToRad(90));
-	ball->rotate( cVector3d(1, 0, 0), cDegToRad(90));
 
 	ball->loadFromFile("Objects\\ball\\ball.obj");
 	ball->scale(0.05f);
@@ -132,9 +138,6 @@ void VirtualEnvironment::initialize(void){
     // compute a boundary box
     ball->computeBoundaryBox(true);
 	ball->setShowBox(true);
-
-    // define some haptic friction properties
-    //ball->setFriction(0.1, 0.2, true);
 
 	ball->setUseCulling(false, true);
 
@@ -165,9 +168,9 @@ void VirtualEnvironment::initialize(void){
     cMaterial matGround;
     matGround.setDynamicFriction(0.7f);
     matGround.setStaticFriction(1.0f);
-    matGround.m_ambient.set(0.0f, 0.0f, 0.0f);
-    matGround.m_diffuse.set(0.0f, 0.0f, 0.0f);
-    matGround.m_specular.set(0.0f, 0.0f, 0.0f);
+    matGround.m_ambient.set(1.0f, 1.0f, 1.0f);
+    matGround.m_diffuse.set(1.0f, 1.0f,1.0f);
+    matGround.m_specular.set(1.0f, 1.0f, 1.0f);
     ground->setMaterial(matGround);
 
     // enable and set transparency level of ground
@@ -197,6 +200,28 @@ void VirtualEnvironment::initialize(void){
     // add objects to the world
     reflexion->addChild(slinghot);
 	reflexion->addChild(avatar);
+
+
+	//**************************************//
+	//           PHYSICS OBJECTS            //
+	//**************************************//
+
+	//Create physic ball
+	ODEBall = new cODEGenericBody(ODEWorld);
+    ODEBall->setImageModel(ball);
+
+	//Calculate boundaries of physical ball
+	cVector3d min = ball->getBoundaryMin();
+	cVector3d max = ball->getBoundaryMax();
+    ODEBall->createDynamicBox(max.x-min.x,max.y-min.y,max.z-min.z);
+	ODEBall->setPosition(*new cVector3d(0,0.5,1));
+
+	//Add a force just for show
+	ODEBall->addGlobalForceAtGlobalPos(*new cVector3d(0,100,0),ODEBall->getPos());
+
+	//Create a static ground plane
+    ODEGround = new cODEGenericBody(ODEWorld);
+    ODEGround->createStaticPlane(cVector3d(0.0, 0.0, -1), cVector3d(0.0, 0.0 , 1.0));
 }
 
 void VirtualEnvironment::createRectangle(cMesh* a_mesh, double width, double height, double depth)
