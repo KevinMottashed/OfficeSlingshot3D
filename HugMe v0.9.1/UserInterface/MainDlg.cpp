@@ -323,11 +323,11 @@ BOOL CMainDlg::PreTranslateMessage(MSG* pMsg)
 			
 	}
 	// perform the default action
-	return CDialog::PreTranslateMessage(pMsg);
+	return m_oglWindow.PreTranslateMessage(pMsg);
 }
 
 // method that gets called right before the Dialog is destroyed
-void CMainDlg::OnDestroy() 
+void CMainDlg::OnDestroy()
 {
 	// close video DIB and application
 	closeLocalVideoArea();

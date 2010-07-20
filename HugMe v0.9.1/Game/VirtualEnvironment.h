@@ -3,13 +3,17 @@
 #include "chai3d.h"
 #include "CODE.h"
 
+#include <iostream>
+#include <fstream>
+using namespace std;
+
 class VirtualEnvironment
 {
 private:
 	cCamera* camera;
 	cWorld* world;
 	cLight* light;
-	cMesh* slinghot;
+	cMesh* slingshot;
 	cMesh* avatar;
 	cMesh* ball;
 	cMesh* ground;
@@ -17,6 +21,7 @@ private:
 
 	cODEWorld* ODEWorld;
 	cODEGenericBody* ODEBall;
+	cODEGenericBody* ODEAvatar;
 	cODEGenericBody* ODEGround;
 
 public:
@@ -26,5 +31,6 @@ public:
 	void initialize(void);
 	void createRectangle(cMesh* a_mesh, double width, double height, double depth);
 	cCamera* getCamera(void);
-	void updateFrame(void);
+	cVector3d updateFrame(void);
+	void shootBall(void);
 };

@@ -3,14 +3,14 @@
 VirtualEnvironment::VirtualEnvironment(void)
 {
 	world = new cWorld();
+	ODEWorld = new cODEWorld(world);
 	camera = new cCamera(world);
 	light = new cLight(world);
-	slinghot = new cMesh(world);
+	slingshot = new cMesh(world);
 	avatar = new cMesh(world);
 	ball = new cMesh(world);
 	ground = new cMesh(world);
 	reflexion = new cGenericObject();
-
 }
 
 VirtualEnvironment::~VirtualEnvironment(void)
@@ -21,18 +21,30 @@ cCamera* VirtualEnvironment::getCamera(void)
 {
 	return camera;
 }
-void VirtualEnvironment::updateFrame(void)
+
+cVector3d VirtualEnvironment::updateFrame(void)
 {
 	ODEWorld->updateDynamics(0.02);
-	camera->set( cVector3d (7.0f, 0.0f, 0.3f),    // camera position (eye)
-		ODEBall->getPos(),    // lookat position (target)
+
+	camera->set( ODEBall->getPos(),    // camera position (eye)
+        ODEBall->getPos(),    // lookat position (target)
         cVector3d (0.0f, 0.0f, 1.0f));   // direction of the "up" vector
+
+	return ODEBall->getPos();
 }
 
-void VirtualEnvironment::initialize(void){
+void VirtualEnvironment::shootBall(void)
+{
+	ODEBall->setPosition(cVector3d(5.0f, 0.0f, -0.2f));
 
+	//Add a force just for show
+	ODEBall->addGlobalForceAtGlobalPos(cVector3d(-500.0f, 0.0f, 300.0f),ODEBall->getPos());
+}
+
+void VirtualEnvironment::initialize(void)
+{
 	//**************************************//
-	//                WORLD                 //
+	//                WORLD                 // 
 	//**************************************//
 
 	world->addChild(camera);
@@ -41,14 +53,11 @@ void VirtualEnvironment::initialize(void){
     // the color is defined by its (R,G,B) components.
     world->setBackgroundColor(0.5f, 0.37f, 0.28f);
 
-    // create an ODE world to simulate dynamic bodies
-    ODEWorld = new cODEWorld(world);
-
     // add ODE world as a node inside world
     world->addChild(ODEWorld);
 
     // set some gravity
-    ODEWorld->setGravity(cVector3d(0.0, 0.0, -9.81));
+	ODEWorld->setGravity(cVector3d(0.0, 0.0, -9.81));
 
 
 	//**************************************//
@@ -62,7 +71,7 @@ void VirtualEnvironment::initialize(void){
 
     // set the near and far clipping planes of the camera
     // anything in front/behind these clipping planes will not be rendered
-    camera->setClippingPlanes(0.0f, 1000.0f);
+    camera->setClippingPlanes(0.0f, 7.0f);
 
     // enable high quality rendering
     camera->enableMultipassTransparency(true);
@@ -85,32 +94,27 @@ void VirtualEnvironment::initialize(void){
 	//**************************************//
 
     // add object to world
-    world->addChild(slinghot);
+    world->addChild(slingshot);
 
-    slinghot->setPos(5.0f, 0.0f, -1.4f);
+    slingshot->setPos(5.0f, 0.0f, -1.4f);
 
-	slinghot->rotate( cVector3d(0, 1, 0), cDegToRad(90));
-	slinghot->rotate( cVector3d(1, 0, 0), cDegToRad(90));
+	slingshot->rotate( cVector3d(0, 1, 0), cDegToRad(90));
+	slingshot->rotate( cVector3d(1, 0, 0), cDegToRad(90));
 
-	slinghot->loadFromFile("Objects\\slingshot\\slingshot.obj");
-	slinghot->scale(3);
+	slingshot->loadFromFile("Objects\\slingshot\\slingshot.obj");
+	slingshot->scale(3);
 
     // compute a boundary box
-    slinghot->computeBoundaryBox(true);
+    slingshot->computeBoundaryBox(true);
 
     // define some haptic friction properties
-    slinghot->setFriction(0.1f, 0.2f, true);
+    slingshot->setFriction(0.1f, 0.2f, true);
 
-	slinghot->setUseCulling(false, true);
+	slingshot->setUseCulling(false, true);
 
 	//**************************************//
 	//                AVATAR                //
 	//**************************************//
-
-    // add object to world
-    world->addChild(avatar);
-
-    avatar->setPos(-3.0f, 0.0f, -1.0f);
 
 	avatar->rotate( cVector3d(0, 1, 0), cDegToRad(90));
 	avatar->rotate( cVector3d(1, 0, 0), cDegToRad(90));
@@ -118,28 +122,24 @@ void VirtualEnvironment::initialize(void){
 	avatar->loadFromFile("Objects\\avatar\\avatar.obj");
 	avatar->scale(0.5f);
 
-    // compute a boundary box
-    avatar->computeBoundaryBox(true);
-	avatar->setShowBox(true);
+	avatar->setPos(cVector3d(-5.0f, 0.0f, 0.0f));
 
-    // define some haptic friction properties
-    //avatar->setFriction(0.1, 0.2, true);
+	// compute collision detection algorithm
+    avatar->createAABBCollisionDetector(1.01, true, true);
 
-	avatar->setUseCulling(false, true);
+	avatar->setUseCulling(false, false);
 
 	//**************************************//
 	//                 BALL                 //
 	//**************************************//
 
-
 	ball->loadFromFile("Objects\\ball\\ball.obj");
-	ball->scale(0.05f);
+	ball->scale(0.02f);
 
-    // compute a boundary box
-    ball->computeBoundaryBox(true);
-	ball->setShowBox(true);
+	// compute collision detection algorithm
+    ball->createAABBCollisionDetector(1.01, true, true);
 
-	ball->setUseCulling(false, true);
+	ball->setUseCulling(false, false);
 
 	//**************************************//
 	//               GROUND                 //
@@ -198,7 +198,7 @@ void VirtualEnvironment::initialize(void){
     reflexion->setPos(0.0f, 0.0f, -2.005f);
 
     // add objects to the world
-    reflexion->addChild(slinghot);
+    reflexion->addChild(slingshot);
 	reflexion->addChild(avatar);
 
 
@@ -211,78 +211,23 @@ void VirtualEnvironment::initialize(void){
     ODEBall->setImageModel(ball);
 
 	//Calculate boundaries of physical ball
-	cVector3d min = ball->getBoundaryMin();
-	cVector3d max = ball->getBoundaryMax();
-    ODEBall->createDynamicBox(max.x-min.x,max.y-min.y,max.z-min.z);
-	ODEBall->setPosition(*new cVector3d(0,0.5,1));
+	ODEBall->createDynamicMesh(false);
 
-	//Add a force just for show
-	ODEBall->addGlobalForceAtGlobalPos(*new cVector3d(0,100,0),ODEBall->getPos());
+	ODEBall->setPosition(cVector3d(5.0f, 0.0f, -0.2f));
+	
+	//Create physic avatar
+	ODEAvatar = new cODEGenericBody(ODEWorld);
+    ODEAvatar->setImageModel(avatar);
+
+	//Calculate boundaries of physical ball
+	ODEAvatar->createDynamicBoundingBox(true);
+
+	ODEAvatar->setPos(cVector3d(0.0f, 0.0f, -1.0f));
+
+	ODEAvatar->getBoundaryMax();
+	ODEAvatar->getBoundaryMin();
 
 	//Create a static ground plane
     ODEGround = new cODEGenericBody(ODEWorld);
-    ODEGround->createStaticPlane(cVector3d(0.0, 0.0, -1), cVector3d(0.0, 0.0 , 1.0));
-}
-
-void VirtualEnvironment::createRectangle(cMesh* a_mesh, double width, double height, double depth)
-{
-    const double HALFWIDTH = width / 2.0;
-    const double HALFHEIGTH = height / 2.0;
-    const double HALFDEPTH = depth / 2.0;
-    int vertices [6][6];
-
-    // face -x
-    vertices[0][0] = a_mesh->newVertex(-HALFDEPTH,  HALFWIDTH, -HALFHEIGTH);
-    vertices[0][1] = a_mesh->newVertex(-HALFDEPTH, -HALFWIDTH, -HALFHEIGTH);
-    vertices[0][2] = a_mesh->newVertex(-HALFDEPTH, -HALFWIDTH,  HALFHEIGTH);
-    vertices[0][3] = a_mesh->newVertex(-HALFDEPTH,  HALFWIDTH,  HALFHEIGTH);
-
-    // face +x
-    vertices[1][0] = a_mesh->newVertex( HALFDEPTH, -HALFWIDTH, -HALFHEIGTH);
-    vertices[1][1] = a_mesh->newVertex( HALFDEPTH,  HALFWIDTH, -HALFHEIGTH);
-    vertices[1][2] = a_mesh->newVertex( HALFDEPTH,  HALFWIDTH,  HALFHEIGTH);
-    vertices[1][3] = a_mesh->newVertex( HALFDEPTH, -HALFWIDTH,  HALFHEIGTH);
-
-    // face -y
-    vertices[2][0] = a_mesh->newVertex(-HALFDEPTH,  -HALFWIDTH, -HALFHEIGTH);
-    vertices[2][1] = a_mesh->newVertex( HALFDEPTH,  -HALFWIDTH, -HALFHEIGTH);
-    vertices[2][2] = a_mesh->newVertex( HALFDEPTH,  -HALFWIDTH,  HALFHEIGTH);
-    vertices[2][3] = a_mesh->newVertex(-HALFDEPTH,  -HALFWIDTH,  HALFHEIGTH);
-
-    // face +y
-    vertices[3][0] = a_mesh->newVertex( HALFDEPTH,   HALFWIDTH, -HALFHEIGTH);
-    vertices[3][1] = a_mesh->newVertex(-HALFDEPTH,   HALFWIDTH, -HALFHEIGTH);
-    vertices[3][2] = a_mesh->newVertex(-HALFDEPTH,   HALFWIDTH,  HALFHEIGTH);
-    vertices[3][3] = a_mesh->newVertex( HALFDEPTH,   HALFWIDTH,  HALFHEIGTH);
-
-    // face -z
-    vertices[4][0] = a_mesh->newVertex(-HALFDEPTH,  -HALFWIDTH, -HALFHEIGTH);
-    vertices[4][1] = a_mesh->newVertex(-HALFDEPTH,   HALFWIDTH, -HALFHEIGTH);
-    vertices[4][2] = a_mesh->newVertex( HALFDEPTH,   HALFWIDTH, -HALFHEIGTH);
-    vertices[4][3] = a_mesh->newVertex( HALFDEPTH,  -HALFWIDTH, -HALFHEIGTH);
-
-    // face +z
-    vertices[5][0] = a_mesh->newVertex( HALFDEPTH,  -HALFWIDTH,  HALFHEIGTH);
-    vertices[5][1] = a_mesh->newVertex( HALFDEPTH,   HALFWIDTH,  HALFHEIGTH);
-    vertices[5][2] = a_mesh->newVertex(-HALFDEPTH,   HALFWIDTH,  HALFHEIGTH);
-    vertices[5][3] = a_mesh->newVertex(-HALFDEPTH,  -HALFWIDTH,  HALFHEIGTH);
-
-    // create triangles
-    for (int i=0; i<6; i++)
-    {
-    a_mesh->newTriangle(vertices[i][0], vertices[i][1], vertices[i][2]);
-    a_mesh->newTriangle(vertices[i][0], vertices[i][2], vertices[i][3]);
-    }
-
-    // set material properties to light gray
-    a_mesh->m_material.m_ambient.set(0.5f, 0.5f, 0.5f, 1.0f);
-    a_mesh->m_material.m_diffuse.set(0.7f, 0.7f, 0.7f, 1.0f);
-    a_mesh->m_material.m_specular.set(1.0f, 1.0f, 1.0f, 1.0f);
-    a_mesh->m_material.m_emission.set(0.0f, 0.0f, 0.0f, 1.0f);
-
-    // compute normals
-    a_mesh->computeAllNormals();
-
-    // compute collision detection algorithm
-   // a_mesh->createAABBCollisionDetector(1.01 * proxyRadius, true, false);
+    ODEGround->createStaticPlane(cVector3d(0.0f, 0.0f, -1.0f), cVector3d(0.0f, 0.0f, 1.0f));
 }

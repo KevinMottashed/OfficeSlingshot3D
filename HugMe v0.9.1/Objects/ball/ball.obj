@@ -6,7 +6,7 @@ mtllib ball.mtl
 
 g Mesh1 Ball1 Model
 
-usemtl Material1
+usemtl Color_A01
 v -0.0297402 -5.20586 0.960732
 vt 4.63516 39.0786
 vn 0.0154532 0.985941 -0.166378

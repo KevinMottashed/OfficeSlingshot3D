@@ -6,7 +6,7 @@
 
 #include "VirtualEnvironment.h"
 
-class MFCOpenGLControl : public CWnd
+class MFCOpenGLControl : public CDialog
 {
 private:
 	CWnd    *hWnd;
@@ -28,7 +28,7 @@ public:
 	MFCOpenGLControl(void);
 
 	virtual ~MFCOpenGLControl(void);
-
+	
 	void oglCreate(CRect rect, CWnd *parent);
 	void oglInitialize(void);
 
@@ -38,4 +38,6 @@ public:
 	afx_msg void OnDraw(CDC *pDC);
 	afx_msg void OnSize(UINT nType, int cx, int cy);
 	afx_msg void OnTimer(UINT_PTR nIDEvent);
+public:
+	virtual BOOL PreTranslateMessage(MSG* pMsg);
 };

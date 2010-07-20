@@ -115,7 +115,7 @@ void MFCOpenGLControl::OnSize(UINT nType, int cx, int cy)
    glLoadIdentity();
 
    // Set our current view perspective
-   gluPerspective(35.0f, (float)cx / (float)cy, 0.0f, 1000.0f);
+   gluPerspective(35.0f, (float)cx / (float)cy, 0.0f, 7.0f);
 
    // Model view
    glMatrixMode(GL_MODELVIEW);
@@ -125,26 +125,40 @@ void MFCOpenGLControl::OnSize(UINT nType, int cx, int cy)
 
 void MFCOpenGLControl::OnTimer(UINT_PTR nIDEvent)
 {
-	switch (nIDEvent)
-   {
-      case 1:
-      {
-         // Clear color and depth buffer bits
-         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	switch (nIDEvent) {
+	case 1:
+		{
+		// Clear color and depth buffer bits
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-         // Draw Virtual Environment
-		 ve->updateFrame();
-		 ve->getCamera()->renderView(displayW, displayH);
+		// Draw Virtual Environment
+		cVector3d ballPosition = ve->updateFrame();
 
-         // Swap buffers
-         SwapBuffers(hdc);
+		ve->getCamera()->renderView(displayW, displayH);
 
-         break;
-      }
+		// Swap buffers
+		SwapBuffers(hdc);
 
-      default:
-         break;
-   }
+		break;
+	}
 
-   CWnd::OnTimer(nIDEvent);
+	default:
+		break;
+	}
+
+	CWnd::OnTimer(nIDEvent);
+}
+BOOL MFCOpenGLControl::PreTranslateMessage(MSG* pMsg)
+{
+	// catches the message when the user presses the Escape key
+	if (pMsg->message == WM_KEYDOWN)
+	{
+		if (pMsg->wParam == VK_SPACE)
+		{
+			ve->shootBall();
+		}
+			
+	}
+	// perform the default action
+	return CDialog::PreTranslateMessage(pMsg);
 }

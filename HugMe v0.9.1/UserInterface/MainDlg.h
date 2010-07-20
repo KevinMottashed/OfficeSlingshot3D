@@ -41,6 +41,9 @@ public:
 	// update the peers user name
 	void setPeerUserName(const std::string& name);
 
+	// Method to add a string in a new line in the text box
+	void AddChatContent(CString strCont);
+
 private:
 
 	MFCOpenGLControl m_oglWindow;
@@ -81,9 +84,6 @@ private:
 
 	void initRemoteVideoArea();
 	void closeRemoteVideoArea();
-
-	// Method to add a string in a new line in the text box
-	void AddChatContent(CString strCont);
 	
 	// Inherited method to catch messages before they are sent to the UI
 	virtual BOOL CMainDlg::PreTranslateMessage(MSG* pMsg);
