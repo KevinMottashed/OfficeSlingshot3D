@@ -48,8 +48,6 @@ END_MESSAGE_MAP()
 // method that gets called right before the Dialog is displayed on the user's screen
 BOOL CMainDlg::OnInitDialog()
 {
-	CDialog::OnInitDialog();
-
 	// start the video before displaying the Dialog
 	initLocalVideoArea();
 	initRemoteVideoArea();
@@ -68,7 +66,7 @@ BOOL CMainDlg::OnInitDialog()
 	// Setup the OpenGL Window's timer to render
 	m_oglWindow.m_unpTimer = m_oglWindow.SetTimer(1, 1, 0);
 	
-	return TRUE;  // return TRUE  unless you set the focus to a control
+	return CDialog::OnInitDialog();
 }
 
 // method used to connect the user to a remote user
@@ -333,6 +331,8 @@ void CMainDlg::OnDestroy()
 	closeLocalVideoArea();
 	closeRemoteVideoArea();
 	pUserInterface->closeApplication();
+
+	CDialog::OnDestroy();
 }
 
 void CMainDlg::displayConnectionStateChanged(ConnectionState_t state, Player_t player)

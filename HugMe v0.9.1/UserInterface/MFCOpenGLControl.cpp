@@ -2,7 +2,7 @@
 
 MFCOpenGLControl::MFCOpenGLControl(void)
 {
-	ve = new VirtualEnvironment();
+	ve = boost::shared_ptr<VirtualEnvironment>(new VirtualEnvironment());
 	displayW = 0;
 	displayH = 0;
 }
@@ -148,6 +148,7 @@ void MFCOpenGLControl::OnTimer(UINT_PTR nIDEvent)
 
 	CWnd::OnTimer(nIDEvent);
 }
+
 BOOL MFCOpenGLControl::PreTranslateMessage(MSG* pMsg)
 {
 	// catches the message when the user presses the Escape key

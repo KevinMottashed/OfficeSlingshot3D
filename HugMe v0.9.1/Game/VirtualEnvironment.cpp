@@ -10,11 +10,17 @@ VirtualEnvironment::VirtualEnvironment(void)
 	avatar = new cMesh(world);
 	ball = new cMesh(world);
 	ground = new cMesh(world);
-	reflexion = new cGenericObject();
 }
 
 VirtualEnvironment::~VirtualEnvironment(void)
 {
+	delete [] world;
+	delete [] camera;
+	delete [] light;
+	delete [] slingshot;
+	delete [] avatar;
+	delete [] ball;
+	delete [] ground;
 }
 
 cCamera* VirtualEnvironment::getCamera(void)
@@ -122,8 +128,6 @@ void VirtualEnvironment::initialize(void)
 	avatar->loadFromFile("Objects\\avatar\\avatar.obj");
 	avatar->scale(0.5f);
 
-	avatar->setPos(cVector3d(-5.0f, 0.0f, 0.0f));
-
 	// compute collision detection algorithm
     avatar->createAABBCollisionDetector(1.01, true, true);
 
@@ -178,31 +182,6 @@ void VirtualEnvironment::initialize(void)
     ground->setUseTransparency(true);
 
 	//**************************************//
-	//              REFLEXION               //
-	//**************************************//
-
-    // set this object as a ghost node so that no haptic interactions or
-    // collision detecting take place within the child nodes added to the
-    // reflexion node.
-    reflexion->setAsGhost(true);
-
-    // add reflexion node to world
-    world->addChild(reflexion);    
-
-    // create a symmetry rotation matrix (z-plane)
-    cMatrix3d rotRefexion;
-    rotRefexion.set(1.0f, 0.0f, 0.0f,
-                    0.0f, 1.0f, 0.0f,
-                    0.0f, 0.0f, -1.0f);
-    reflexion->setRot(rotRefexion);
-    reflexion->setPos(0.0f, 0.0f, -2.005f);
-
-    // add objects to the world
-    reflexion->addChild(slingshot);
-	reflexion->addChild(avatar);
-
-
-	//**************************************//
 	//           PHYSICS OBJECTS            //
 	//**************************************//
 
@@ -219,13 +198,13 @@ void VirtualEnvironment::initialize(void)
 	ODEAvatar = new cODEGenericBody(ODEWorld);
     ODEAvatar->setImageModel(avatar);
 
-	//Calculate boundaries of physical ball
+	//Calculate boundaries of physical avatar
 	ODEAvatar->createDynamicBoundingBox(true);
 
-	ODEAvatar->setPos(cVector3d(0.0f, 0.0f, -1.0f));
+	ODEAvatar->setPos(cVector3d(-5.0f, 0.0f, -1.0f));
 
-	ODEAvatar->getBoundaryMax();
-	ODEAvatar->getBoundaryMin();
+	avatar->getBoundaryMax();
+	avatar->getBoundaryMin();
 
 	//Create a static ground plane
     ODEGround = new cODEGenericBody(ODEWorld);

@@ -1,10 +1,13 @@
-#pragma once
+#ifndef MFCOPENGLCONTROL_H
+#define MFCOPENGLCONTROL_H
+
 #include "afxwin.h"
 
 #include <gl/gl.h>
 #include <gl/glu.h>
 
 #include "VirtualEnvironment.h"
+#include "boost.h"
 
 class MFCOpenGLControl : public CDialog
 {
@@ -17,14 +20,14 @@ private:
 	CRect   m_oldWindow;
 	CRect   m_originalRect;
 
-	VirtualEnvironment* ve;
+	boost::shared_ptr<VirtualEnvironment> ve;
 
 	int displayW;
 	int displayH;
 
 public:
-	UINT_PTR m_unpTimer;
 
+	UINT_PTR m_unpTimer;
 	MFCOpenGLControl(void);
 
 	virtual ~MFCOpenGLControl(void);
@@ -41,3 +44,4 @@ public:
 public:
 	virtual BOOL PreTranslateMessage(MSG* pMsg);
 };
+#endif

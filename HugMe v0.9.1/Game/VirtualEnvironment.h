@@ -1,11 +1,8 @@
-#pragma once
+#ifndef VIRTUAL_ENVIRONMENT_H
+#define VIRTUAL_ENVIRONMENT_H
 
 #include "chai3d.h"
 #include "CODE.h"
-
-#include <iostream>
-#include <fstream>
-using namespace std;
 
 class VirtualEnvironment
 {
@@ -17,7 +14,6 @@ private:
 	cMesh* avatar;
 	cMesh* ball;
 	cMesh* ground;
-	cGenericObject* reflexion;
 
 	cODEWorld* ODEWorld;
 	cODEGenericBody* ODEBall;
@@ -34,3 +30,4 @@ public:
 	cVector3d updateFrame(void);
 	void shootBall(void);
 };
+#endif
