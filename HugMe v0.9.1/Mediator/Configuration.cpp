@@ -15,15 +15,25 @@ Configuration::~Configuration()
 void Configuration::readFromFile()
 {
 	std::ifstream file (fileName.c_str());
+	bool failed = false;
+
 	if (file.is_open()) 
 	{
 		// grab the preferences from the file
-		// assume that no errors will occurr
 		file >> preferences;
+		if (file.fail())
+		{
+			failed = true;
+		}
 	}
 	else
 	{
-		// fill in default preferences if no file is present
+		failed = true;
+	}
+
+	if (failed)
+	{
+		// fill in default preferences if we fail to retrieve from the file
 		preferences.ipAddress = default_ip_address;
 		preferences.name = default_name;
 		preferences.armBandPort = default_arm_band_port;
@@ -32,6 +42,7 @@ void Configuration::readFromFile()
 		// write the defaults to the file
 		writeToFile();
 	}
+
 	return;
 }
 
