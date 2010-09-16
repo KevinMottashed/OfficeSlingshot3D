@@ -14,13 +14,9 @@ VirtualEnvironment::VirtualEnvironment(void)
 
 VirtualEnvironment::~VirtualEnvironment(void)
 {
+	// we only need to delete world because it is the parent object
+	// and will delete all its children when it is deleted
 	delete world;
-	delete camera;
-	delete light;
-	delete slingshot;
-	delete avatar;
-	delete ball;
-	delete ground;
 }
 
 cCamera* VirtualEnvironment::getCamera(void)
