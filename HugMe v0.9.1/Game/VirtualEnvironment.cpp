@@ -14,13 +14,13 @@ VirtualEnvironment::VirtualEnvironment(void)
 
 VirtualEnvironment::~VirtualEnvironment(void)
 {
-	delete [] world;
-	delete [] camera;
-	delete [] light;
-	delete [] slingshot;
-	delete [] avatar;
-	delete [] ball;
-	delete [] ground;
+	delete world;
+	delete camera;
+	delete light;
+	delete slingshot;
+	delete avatar;
+	delete ball;
+	delete ground;
 }
 
 cCamera* VirtualEnvironment::getCamera(void)
