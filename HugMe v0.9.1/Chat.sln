@@ -2,6 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chat", "Chat.vcproj", "{8D13CAB1-842C-478B-8092-B9DC6F317FD0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A9F01342-5463-4634-B1F9-BF98CD5591B0} = {A9F01342-5463-4634-B1F9-BF98CD5591B0}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CHAI 3D", "..\chai3d-2.0.0\projects\msvc8\chai3d_complete.vcproj", "{A9F01342-5463-4634-B1F9-BF98CD5591B0}"
 EndProject
@@ -16,6 +19,7 @@ Global
 		{8D13CAB1-842C-478B-8092-B9DC6F317FD0}.Release|Win32.ActiveCfg = Release|Win32
 		{8D13CAB1-842C-478B-8092-B9DC6F317FD0}.Release|Win32.Build.0 = Release|Win32
 		{A9F01342-5463-4634-B1F9-BF98CD5591B0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A9F01342-5463-4634-B1F9-BF98CD5591B0}.Debug|Win32.Build.0 = Debug|Win32
 		{A9F01342-5463-4634-B1F9-BF98CD5591B0}.Release|Win32.ActiveCfg = Release|Win32
 		{A9F01342-5463-4634-B1F9-BF98CD5591B0}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
