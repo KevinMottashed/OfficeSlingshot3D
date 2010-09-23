@@ -39,6 +39,7 @@ typedef LONG LONG_PTR;
 #include <algorithm>
 #pragma warning (default : 4996)
 
+#include <exception>
 #include <fstream>
 #include <iostream>
 #include <memory>

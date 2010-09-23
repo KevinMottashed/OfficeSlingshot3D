@@ -3,6 +3,7 @@
 #include "Chat.h"
 #include "OfficeSlingshot3D.h"
 #include "OfficeSlingshot3DFactory.h"
+#include "TestRunner.h"
 
 using namespace std;
 using namespace boost;
@@ -60,7 +61,8 @@ BOOL CChatApp::InitInstance()
 
 	po::options_description cmdLineOptions("Allowed Options");
 	cmdLineOptions.add_options()
-		("config", po::value<string>(&configFileName)->default_value("config.ini"), "configuration file name");
+		("config", po::value<string>(&configFileName)->default_value("config.ini"), "configuration file name")
+		("test", "unit test the application");
 
 	// convert the windows style command arguments to a vector of arguments
 	vector<string> args = po::split_winmain(m_lpCmdLine);	
@@ -69,6 +71,15 @@ BOOL CChatApp::InitInstance()
 	po::variables_map cmdVMap;
 	po::store(po::command_line_parser(args).options(cmdLineOptions).run(), cmdVMap);
 	po::notify(cmdVMap);
+
+	if (cmdVMap.count("test"))
+	{
+		TestRunner tester;
+		tester.run();
+		std::ofstream resultsFile("TestResults.txt");
+		resultsFile << tester << std::endl;
+		return EXIT_SUCCESS;
+	}
 
 	// create the app from the config file
 	shared_ptr<OfficeSlingshot3D> app = OfficeSlingshot3DFactory::createFromConfigFile(configFileName);
