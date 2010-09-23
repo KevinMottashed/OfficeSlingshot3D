@@ -37,18 +37,20 @@ void MFCOpenGLControl::oglCreate(CRect rect, CWnd *parent)
 void MFCOpenGLControl::OnPaint()
 {
 	ValidateRect(NULL);
+
+	CDialog::OnPaint();
 }
 
 int MFCOpenGLControl::OnCreate(LPCREATESTRUCT lpCreateStruct)
 {
-	if (CWnd::OnCreate(lpCreateStruct) == -1)
+	if (CDialog::OnCreate(lpCreateStruct) == -1)
       return -1;
 	
 	oglInitialize();
 
 	ve->initialize();
 	
-	return 0;
+	return CDialog::OnCreate(lpCreateStruct);
 }
 
 void MFCOpenGLControl::oglInitialize(void)
@@ -98,7 +100,6 @@ void MFCOpenGLControl::OnDraw(CDC *pDC)
 
 void MFCOpenGLControl::OnSize(UINT nType, int cx, int cy)
 {
-	CWnd::OnSize(nType, cx, cy);
 
 	// update the size of the viewport
     displayW = cx;
@@ -121,6 +122,8 @@ void MFCOpenGLControl::OnSize(UINT nType, int cx, int cy)
    glMatrixMode(GL_MODELVIEW);
 
    glLoadIdentity();
+
+   CDialog::OnSize(nType, cx, cy);
 }
 
 void MFCOpenGLControl::OnTimer(UINT_PTR nIDEvent)
@@ -146,20 +149,15 @@ void MFCOpenGLControl::OnTimer(UINT_PTR nIDEvent)
 		break;
 	}
 
-	CWnd::OnTimer(nIDEvent);
+	CDialog::OnTimer(nIDEvent);
 }
 
-BOOL MFCOpenGLControl::PreTranslateMessage(MSG* pMsg)
+void MFCOpenGLControl::spaceBarPressed(void)
 {
-	// catches the message when the user presses the Escape key
-	if (pMsg->message == WM_KEYDOWN)
-	{
-		if (pMsg->wParam == VK_SPACE)
-		{
-			ve->shootBall();
-		}
-			
-	}
-	// perform the default action
-	return CDialog::PreTranslateMessage(pMsg);
+	ve->shootBall();
+}
+
+void MFCOpenGLControl::shiftPressed(void)
+{
+	ve->receiveBall();
 }

@@ -34,6 +34,8 @@ public:
 	
 	void oglCreate(CRect rect, CWnd *parent);
 	void oglInitialize(void);
+	void spaceBarPressed(void);
+	void shiftPressed(void);
 
 	DECLARE_MESSAGE_MAP()
 	afx_msg void OnPaint();
@@ -41,7 +43,5 @@ public:
 	afx_msg void OnDraw(CDC *pDC);
 	afx_msg void OnSize(UINT nType, int cx, int cy);
 	afx_msg void OnTimer(UINT_PTR nIDEvent);
-public:
-	virtual BOOL PreTranslateMessage(MSG* pMsg);
 };
 #endif

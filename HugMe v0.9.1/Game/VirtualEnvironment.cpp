@@ -35,6 +35,14 @@ cVector3d VirtualEnvironment::updateFrame(void)
 	return ODEBall->getPos();
 }
 
+void VirtualEnvironment::receiveBall(void)
+{
+	ODEBall->setPosition(cVector3d(-5.0f, 0.0f, -0.2f));
+
+	//Add a force just for show
+	ODEBall->addGlobalForceAtGlobalPos(cVector3d(500.0f, 0.0f, 300.0f),ODEBall->getPos());
+}
+
 void VirtualEnvironment::shootBall(void)
 {
 	ODEBall->setPosition(cVector3d(5.0f, 0.0f, -0.2f));

@@ -11,6 +11,8 @@
 #include "PlayerEnum.h"
 #include "GameStateEnum.h"
 
+#include "boost.h"
+
 /////////////////////////////////////////////////////////////////////////////
 // CMainDlg dialog
 
@@ -35,8 +37,6 @@ public:
 	// visual feedback for peer interaction
 	void displayPeerChatMessage(const std::string& message);
 	void displayLocalChatMessage(const std::string& message);
-	void displayLocalFrame(const VideoData& video);
-	void displayRemoteFrame(const VideoData& video);
 
 	// update the peers user name
 	void setPeerUserName(const std::string& name);
@@ -46,44 +46,13 @@ public:
 
 private:
 
-	MFCOpenGLControl m_oglWindow;
+	boost::shared_ptr<MFCOpenGLControl> m_oglWindow;
 
 	UserInterface* pUserInterface;
 	UserPreferences m_preferences;
 
 	// peers user name
 	std::string m_peerUserName;
-
-	// Local video processing variables
-	CWnd *wnd_local;
-
-	int m_localWndWidth_local;
-	int m_localWndHeight_local;
-
-	PBITMAPINFO m_bmpinfo_local;
-
-	HDC m_hdc_local;
-	HDRAWDIB hdib_local;
-
-	// Remote video processing variables
-	CWnd *wnd_remote;
-
-	int m_localWndWidth_remote;
-	int m_localWndHeight_remote;
-
-	PBITMAPINFO m_bmpinfo_remote;
-
-	HDC m_hdc_remote;
-	HDRAWDIB hdib_remote;
-
-
-
-	// Methods to initialize and close video sessions
-	void initLocalVideoArea();
-	void closeLocalVideoArea();
-
-	void initRemoteVideoArea();
-	void closeRemoteVideoArea();
 	
 	// Inherited method to catch messages before they are sent to the UI
 	virtual BOOL CMainDlg::PreTranslateMessage(MSG* pMsg);
@@ -97,7 +66,6 @@ private:
 		CRichEditCtrl m_richChat;
 		CEdit m_editChatInput;
 		CButton m_sendChatButton;
-		CStatic m_videoBitmap;
 	//}}AFX_DATA
 
 	//{{AFX_VIRTUAL(CMainDlg)

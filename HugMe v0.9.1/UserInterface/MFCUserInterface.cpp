@@ -103,13 +103,13 @@ void MFCUserInterface::displayPeerChatMessage(const string& message)
 
 void MFCUserInterface::displayLocalFrame(const VideoData& video)
 {
-	m_pMainDlg->displayLocalFrame(video);
+	//m_pMainDlg->displayLocalFrame(video);
 	return;	
 }
 
 void MFCUserInterface::displayRemoteFrame(const VideoData& video)
 {
-	m_pMainDlg->displayRemoteFrame(video);
+	//m_pMainDlg->displayRemoteFrame(video);
 	return;
 }
 

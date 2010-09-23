@@ -29,5 +29,6 @@ public:
 	cCamera* getCamera(void);
 	cVector3d updateFrame(void);
 	void shootBall(void);
+	void receiveBall(void);
 };
 #endif

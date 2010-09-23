@@ -12,6 +12,7 @@ CMainDlg::CMainDlg(UserInterface* pUserInterface, const UserPreferences& prefere
 {
 	//{{AFX_DATA_INIT(CMainDlg)
 	//}}AFX_DATA_INIT
+	m_oglWindow = boost::shared_ptr<MFCOpenGLControl>(new MFCOpenGLControl());
 }
 
 
@@ -22,7 +23,6 @@ void CMainDlg::DoDataExchange(CDataExchange* pDX)
 		DDX_Control(pDX, IDC_CHAT, m_richChat);
 		DDX_Control(pDX, IDC_CHAT_INPUT, m_editChatInput);
 		DDX_Control(pDX, IDC_SEND_CHAT, m_sendChatButton);
-		DDX_Control(pDX, IDC_VIDEO, m_videoBitmap);
 	//}}AFX_DATA_MAP
 }
 
@@ -48,10 +48,6 @@ END_MESSAGE_MAP()
 // method that gets called right before the Dialog is displayed on the user's screen
 BOOL CMainDlg::OnInitDialog()
 {
-	// start the video before displaying the Dialog
-	initLocalVideoArea();
-	initRemoteVideoArea();
-
 	CRect rect;
 
 	// Get size and position of the picture control
@@ -61,12 +57,14 @@ BOOL CMainDlg::OnInitDialog()
 	ScreenToClient(rect);
 
 	// Create OpenGL Control window
-	m_oglWindow.oglCreate(rect, this);
+	m_oglWindow->oglCreate(rect, this);
+
+	BOOL result = CDialog::OnInitDialog();
 
 	// Setup the OpenGL Window's timer to render
-	m_oglWindow.m_unpTimer = m_oglWindow.SetTimer(1, 1, 0);
-	
-	return CDialog::OnInitDialog();
+	// m_oglWindow->m_unpTimer = m_oglWindow->SetTimer(1, 1, 0);
+
+	return result;
 }
 
 // method used to connect the user to a remote user
@@ -84,7 +82,7 @@ void CMainDlg::OnNetworkDisconnect()
 	pUserInterface->networkDisconnectButtonPushed();
 	return;
 }
-
+  
 // method used to listen for incoming connection attempts
 void CMainDlg::OnNetworkListen() 
 {
@@ -174,122 +172,6 @@ void CMainDlg::OnChangeChatInput()
 	}
 }
 
-// method used to initiate a new local DIB
-void CMainDlg::initLocalVideoArea()
-{
-	// assemble the bitmap header
-	m_bmpinfo_local=new BITMAPINFO;
-	m_bmpinfo_local->bmiHeader.biSize=sizeof(BITMAPINFOHEADER);
-	m_bmpinfo_local->bmiHeader.biWidth=320;
-	m_bmpinfo_local->bmiHeader.biHeight=240;
-	m_bmpinfo_local->bmiHeader.biPlanes=1;
-	m_bmpinfo_local->bmiHeader.biBitCount=32;
-	m_bmpinfo_local->bmiHeader.biCompression=0;
-	m_bmpinfo_local->bmiHeader.biSizeImage=0;
-	m_bmpinfo_local->bmiHeader.biXPelsPerMeter=0;
-	m_bmpinfo_local->bmiHeader.biYPelsPerMeter=0;
-	m_bmpinfo_local->bmiHeader.biClrUsed=0;
-	m_bmpinfo_local->bmiHeader.biClrImportant=0;
-
-	RECT localWndRect;
-
-	//video display window
-	wnd_local = this->GetDlgItem(IDC_VIDEO_LOCAL);
-
-	wnd_local->GetWindowRect(&localWndRect);
-
-	// set the height and width to match the video window
-	m_localWndWidth_local = localWndRect.right - localWndRect.left;
-	m_localWndHeight_local = localWndRect.bottom - localWndRect.top;
-
-	//get Dialog DC
-	m_hdc_local=wnd_local->GetDC()->m_hDC;
-	
-	//initialize DIB for drawing
-	hdib_local=DrawDibOpen();
-	if(hdib_local!=NULL)
-	{
-		::DrawDibBegin(hdib_local,
-					   m_hdc_local,
-					   m_localWndWidth_local,		//don't stretch
-					   m_localWndHeight_local,	//don't stretch
-					   &m_bmpinfo_local->bmiHeader,
-					   IMAGE_WIDTH,          //width of image
-					   IMAGE_HEIGHT,         //height of image
-					   0				
-					   );
-	
-	}
-}
-
-// method used to close the DIB
-void CMainDlg::closeLocalVideoArea()
-{
-	// ends and closes the DIB if it was previously initialized
-	if(hdib_local!=NULL) {
-		DrawDibEnd(hdib_local);
-		DrawDibClose(hdib_local);
-	}
-}
-
-// method used to initiate a new local DIB
-void CMainDlg::initRemoteVideoArea()
-{
-	// assemble the bitmap header
-	m_bmpinfo_remote=new BITMAPINFO;
-	m_bmpinfo_remote->bmiHeader.biSize=sizeof(BITMAPINFOHEADER);
-	m_bmpinfo_remote->bmiHeader.biWidth=320;
-	m_bmpinfo_remote->bmiHeader.biHeight=240;
-	m_bmpinfo_remote->bmiHeader.biPlanes=1;
-	m_bmpinfo_remote->bmiHeader.biBitCount=32;
-	m_bmpinfo_remote->bmiHeader.biCompression=0;
-	m_bmpinfo_remote->bmiHeader.biSizeImage=0;
-	m_bmpinfo_remote->bmiHeader.biXPelsPerMeter=0;
-	m_bmpinfo_remote->bmiHeader.biYPelsPerMeter=0;
-	m_bmpinfo_remote->bmiHeader.biClrUsed=0;
-	m_bmpinfo_remote->bmiHeader.biClrImportant=0;
-
-	RECT localWndRect;
-
-	//video display window
-	wnd_remote = this->GetDlgItem(IDC_VIDEO_REMOTE);
-
-	wnd_remote->GetWindowRect(&localWndRect);
-
-	// set the height and width to match the video window
-	m_localWndWidth_remote = localWndRect.right - localWndRect.left;
-	m_localWndHeight_remote = localWndRect.bottom - localWndRect.top;
-
-	//get Dialog DC
-	m_hdc_remote=wnd_remote->GetDC()->m_hDC;
-	
-	//initialize DIB for drawing
-	hdib_remote=DrawDibOpen();
-	if(hdib_remote!=NULL)
-	{
-		::DrawDibBegin(hdib_remote,
-					   m_hdc_remote,
-					   m_localWndWidth_remote,		//don't stretch
-					   m_localWndHeight_remote,	//don't stretch
-					   &m_bmpinfo_remote->bmiHeader,
-					   IMAGE_WIDTH,          //width of image
-					   IMAGE_HEIGHT,         //height of image
-					   0				
-					   );
-	
-	}
-}
-
-// method used to close the DIB
-void CMainDlg::closeRemoteVideoArea()
-{
-	// ends and closes the DIB if it was previously initialized
-	if(hdib_remote!=NULL) {
-		DrawDibEnd(hdib_remote);
-		DrawDibClose(hdib_remote);
-	}
-}
-
 // util method facilitating the addition of text on the text area
 void CMainDlg::AddChatContent(CString strCont)
 {
@@ -314,22 +196,26 @@ BOOL CMainDlg::PreTranslateMessage(MSG* pMsg)
 	{
 		if (pMsg->wParam == VK_ESCAPE)
 		{
-			//MessageBox("Escape");
-			// TODO Perform Escape action
 			return TRUE;
 		}
-			
+		else if (pMsg->wParam == VK_SPACE)
+		{
+			m_oglWindow->spaceBarPressed();
+			return TRUE;
+		}
+		else if (pMsg->wParam == VK_SHIFT)
+		{
+			m_oglWindow->shiftPressed();
+			return TRUE;
+		}
 	}
 	// perform the default action
-	return m_oglWindow.PreTranslateMessage(pMsg);
+	return CDialog::PreTranslateMessage(pMsg);
 }
 
 // method that gets called right before the Dialog is destroyed
 void CMainDlg::OnDestroy()
 {
-	// close video DIB and application
-	closeLocalVideoArea();
-	closeRemoteVideoArea();
 	pUserInterface->closeApplication();
 
 	CDialog::OnDestroy();
@@ -483,6 +369,10 @@ void CMainDlg::displayGameStateChanged(GameState_t state, Player_t player)
 			{
 				message << m_peerUserName << " has started the game";
 			}
+
+			// Setup the OpenGL Window's timer to render
+			m_oglWindow->m_unpTimer = m_oglWindow->SetTimer(1, 1, 0);
+
 			break;
 		}
 	}
@@ -552,51 +442,5 @@ void CMainDlg::displayLocalChatMessage(const std::string& message)
 	// add feedback message on the text area
 	AddChatContent(os.str().c_str());
 
-	return;
-}
-
-void CMainDlg::displayLocalFrame(const VideoData& video)
-{
-	// get a pointer to the start of the pixel array
-	BYTE* vRGB = const_cast<BYTE*>(&video.rgb.front());
-
-	// updates the specified m_hdc dialog element using the vRGB variable
-	::DrawDibDraw(hdib_local,
-				  m_hdc_local,
-				  0,		// dest : left pos
-				  0,		// dest : top pos
-				  m_localWndWidth_local,					 // don't zoom x
-				  m_localWndHeight_local,					 // don't zoom y
-				  &m_bmpinfo_local->bmiHeader,			 // bmp header info
-				  vRGB,					 // bmp data
-				  0,					 // src :left
-				  0,					 // src :top
-				  IMAGE_WIDTH,          // src : width
-				  IMAGE_HEIGHT,			// src : height
-				  DDF_SAME_DRAW			 // use prev params....
-				  );
-	return;
-}
-
-void CMainDlg::displayRemoteFrame(const VideoData& video)
-{
-	// get a pointer to the start of the pixel array
-	BYTE* vRGB = const_cast<BYTE*>(&video.rgb.front());
-
-	// updates the specified m_hdc dialog element using the vRGB variable
-	::DrawDibDraw(hdib_remote,
-				  m_hdc_remote,
-				  0,		// dest : left pos
-				  0,		// dest : top pos
-				  m_localWndWidth_remote,					 // don't zoom x
-				  m_localWndHeight_remote,					 // don't zoom y
-				  &m_bmpinfo_remote->bmiHeader,			 // bmp header info
-				  vRGB,					 // bmp data
-				  0,					 // src :left
-				  0,					 // src :top
-				  IMAGE_WIDTH,          // src : width
-				  IMAGE_HEIGHT,			// src : height
-				  DDF_SAME_DRAW			 // use prev params....
-				  );
 	return;
 }
