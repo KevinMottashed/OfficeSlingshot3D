@@ -1,5 +1,5 @@
-#ifndef NETWORK_TEST_SUITE_H
-#define NETWORK_TEST_SUITE_H
+#ifndef SAMPLE_TEST_SUITE_H
+#define SAMPLE_TEST_SUITE_H
 
 #include "stdafx.h"
 #include "TestSuite.h"
