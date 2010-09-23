@@ -114,5 +114,8 @@ HugMe v0.9.1/Debug/Chat.lib
 # Replay files
 *.replay
 
+# Test results
+TestResults.txt
+
 # Office Slingshot 3D - END
 

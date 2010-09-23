@@ -50,7 +50,7 @@
 				Name="VCCLCompilerTool"
 				AdditionalOptions="/D /NODEFAULTLIB:library&quot; &quot; /D _CRT_SECURE_NO_DEPRECATE /D &quot;WINVER=0x0501&quot;"
 				Optimization="0"
-				AdditionalIncludeDirectories="include;&quot;include\ARToolKit-2.72.1&quot;;&quot;include\Z-Cam&quot;;include\ODE;include\HandTracker;&quot;..\chai3d-2.0.0\external\OpenGL\msvc&quot;;&quot;..\chai3d-2.0.0\external\ODE\include&quot;;&quot;..\chai3d-2.0.0\modules\ODE&quot;;&quot;..\chai3d-2.0.0\src&quot;;Utils\;Mediator\;Falcon\;Game\;Jacket\;Network\;UserInterface\;ZCamera\;Objects\;Logger\;Common\;Main\;Replay\;res\;&quot;C:\Program Files\boost\boost_1_43_0&quot;;Serialization\"
+				AdditionalIncludeDirectories="include;&quot;include\ARToolKit-2.72.1&quot;;&quot;include\Z-Cam&quot;;include\ODE;include\HandTracker;&quot;..\chai3d-2.0.0\external\OpenGL\msvc&quot;;&quot;..\chai3d-2.0.0\external\ODE\include&quot;;&quot;..\chai3d-2.0.0\modules\ODE&quot;;&quot;..\chai3d-2.0.0\src&quot;;Utils\;Mediator\;Falcon\;Game\;Jacket\;Network\;UserInterface\;ZCamera\;Objects\;Logger\;Common\;Main\;Replay\;res\;&quot;C:\Program Files\boost\boost_1_43_0&quot;;Serialization\;Test/Framework;Test/;Test/Sample"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_MSVC;dDOUBLE"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -824,6 +824,134 @@
 				RelativePath=".\Serialization\chai3DSerialization.h"
 				>
 			</File>
+		</Filter>
+		<Filter
+			Name="Test"
+			>
+			<File
+				RelativePath=".\Test\TestRunner.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Test\TestRunner.h"
+				>
+			</File>
+			<Filter
+				Name="Framework"
+				>
+				<File
+					RelativePath=".\Test\Framework\TestFailedException.cpp"
+					>
+					<FileConfiguration
+						Name="Debug|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath=".\Test\Framework\TestFailedException.h"
+					>
+				</File>
+				<File
+					RelativePath=".\Test\Framework\TestSuite.cpp"
+					>
+					<FileConfiguration
+						Name="Debug|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath=".\Test\Framework\TestSuite.h"
+					>
+				</File>
+				<File
+					RelativePath=".\Test\Framework\UnitTestAsserts.cpp"
+					>
+					<FileConfiguration
+						Name="Debug|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath=".\Test\Framework\UnitTestAsserts.h"
+					>
+				</File>
+				<File
+					RelativePath=".\Test\Framework\UnitTestMacros.h"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="Sample"
+				>
+				<File
+					RelativePath=".\Test\Sample\SampleTestSuite.cpp"
+					>
+					<FileConfiguration
+						Name="Debug|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath=".\Test\Sample\SampleTestSuite.h"
+					>
+				</File>
+			</Filter>
 		</Filter>
 		<File
 			RelativePath=".\config.ini"
