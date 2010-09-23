@@ -36,6 +36,7 @@ public:
 	void oglInitialize(void);
 	void spaceBarPressed(void);
 	void shiftPressed(void);
+	void StopTimers(void);
 
 	DECLARE_MESSAGE_MAP()
 	afx_msg void OnPaint();

@@ -353,6 +353,10 @@ void CMainDlg::displayGameStateChanged(GameState_t state, Player_t player)
 			{
 				message << m_peerUserName << " has paused the game";
 			}
+
+			// Setup the OpenGL Window's timer to render
+			m_oglWindow->StopTimers();
+
 			break;
 		}
 		case GameState::RUNNING:

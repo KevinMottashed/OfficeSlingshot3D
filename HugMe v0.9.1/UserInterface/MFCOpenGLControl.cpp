@@ -161,3 +161,8 @@ void MFCOpenGLControl::shiftPressed(void)
 {
 	ve->receiveBall();
 }
+
+void MFCOpenGLControl::StopTimers(void)
+{
+	KillTimer(m_unpTimer);
+}

@@ -3,7 +3,6 @@
 VirtualEnvironment::VirtualEnvironment(void)
 {
 	world = new cWorld();
-	ODEWorld = new cODEWorld(world);
 	camera = new cCamera(world);
 	light = new cLight(world);
 	slingshot = new cMesh(world);
@@ -26,6 +25,8 @@ cCamera* VirtualEnvironment::getCamera(void)
 
 cVector3d VirtualEnvironment::updateFrame(void)
 {
+	ODEWorld->computeGlobalPositions(true);
+
 	ODEWorld->updateDynamics(0.02);
 
 	camera->set( ODEBall->getPos(),    // camera position (eye)
@@ -63,13 +64,6 @@ void VirtualEnvironment::initialize(void)
     // the color is defined by its (R,G,B) components.
     world->setBackgroundColor(0.5f, 0.37f, 0.28f);
 
-    // add ODE world as a node inside world
-    world->addChild(ODEWorld);
-
-    // set some gravity
-	ODEWorld->setGravity(cVector3d(0.0, 0.0, -9.81));
-
-
 	//**************************************//
 	//               CAMERA                 //
 	//**************************************//
@@ -100,6 +94,18 @@ void VirtualEnvironment::initialize(void)
     light->m_specular.set(0.8f, 0.8f, 0.8f);
 
 	//**************************************//
+	//              ODE WORLD               //
+	//**************************************//
+
+	ODEWorld = new cODEWorld(world);
+
+	// add ODE world as a node inside world
+    world->addChild(ODEWorld);
+
+    // set some gravity
+	ODEWorld->setGravity(cVector3d(0.0, 0.0, -9.81));
+
+	//**************************************//
 	//              SLINGSHOT               //
 	//**************************************//
 
@@ -126,28 +132,44 @@ void VirtualEnvironment::initialize(void)
 	//                AVATAR                //
 	//**************************************//
 
-	avatar->rotate( cVector3d(0, 1, 0), cDegToRad(90));
-	avatar->rotate( cVector3d(1, 0, 0), cDegToRad(90));
+	ODEAvatar = new cODEGenericBody(ODEWorld);
 
 	avatar->loadFromFile("Objects\\avatar\\avatar.obj");
 	avatar->scale(0.5f);
 
-	// compute collision detection algorithm
-    avatar->createAABBCollisionDetector(1.01, true, true);
+	avatar->createAABBCollisionDetector(1.01, true, false);
 
-	avatar->setUseCulling(false, false);
+    ODEAvatar->setImageModel(avatar);
+
+	//Calculate boundaries of physical avatar
+	ODEAvatar->createDynamicMesh(true);
+
+	ODEAvatar->rotate( cVector3d(0, 1, 0), cDegToRad(90));
+	ODEAvatar->rotate( cVector3d(1, 0, 0), cDegToRad(90));
+
+	ODEAvatar->setPosition(cVector3d(-5.0f, 0.0f, -1.0f));
+
+	ODEAvatar->setUseCulling(false, true);
 
 	//**************************************//
 	//                 BALL                 //
 	//**************************************//
 
+	ODEBall = new cODEGenericBody(ODEWorld);
+
 	ball->loadFromFile("Objects\\ball\\ball.obj");
 	ball->scale(0.02f);
 
-	// compute collision detection algorithm
-    ball->createAABBCollisionDetector(1.01, true, true);
+	ball->createAABBCollisionDetector(1.01, true, false);
 
-	ball->setUseCulling(false, false);
+    ODEBall->setImageModel(ball);
+
+	//Calculate boundaries of physical ball
+	ODEBall->createDynamicMesh(false);
+
+	ODEBall->setPosition(cVector3d(5.0f, 0.0f, -0.2f));
+
+	ODEBall->setUseCulling(false, true);
 
 	//**************************************//
 	//               GROUND                 //
@@ -184,31 +206,6 @@ void VirtualEnvironment::initialize(void)
     // enable and set transparency level of ground
     ground->setTransparencyLevel(0.75f);
     ground->setUseTransparency(true);
-
-	//**************************************//
-	//           PHYSICS OBJECTS            //
-	//**************************************//
-
-	//Create physic ball
-	ODEBall = new cODEGenericBody(ODEWorld);
-    ODEBall->setImageModel(ball);
-
-	//Calculate boundaries of physical ball
-	ODEBall->createDynamicMesh(false);
-
-	ODEBall->setPosition(cVector3d(5.0f, 0.0f, -0.2f));
-	
-	//Create physic avatar
-	ODEAvatar = new cODEGenericBody(ODEWorld);
-    ODEAvatar->setImageModel(avatar);
-
-	//Calculate boundaries of physical avatar
-	ODEAvatar->createDynamicBoundingBox(true);
-
-	ODEAvatar->setPos(cVector3d(-5.0f, 0.0f, -1.0f));
-
-	avatar->getBoundaryMax();
-	avatar->getBoundaryMin();
 
 	//Create a static ground plane
     ODEGround = new cODEGenericBody(ODEWorld);
