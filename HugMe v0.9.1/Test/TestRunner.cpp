@@ -4,7 +4,7 @@
 
 TestRunner::TestRunner()
 {
-	suites.push_back(new SampleTestSuite("Sample"));
+	suites.push_back(new ConnectionTestSuite("Network Connection"));
 }
 
 TestRunner::~TestRunner()

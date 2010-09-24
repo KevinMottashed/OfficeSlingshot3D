@@ -4,7 +4,7 @@
 #include "stdafx.h"
 
 #include "TestSuite.h"
-#include "SampleTestSuite.h"
+#include "ConnectionTestSuite.h"
 
 /**
  * This class is used to start all the unit tests
