@@ -119,6 +119,16 @@ void MFCUserInterface::setPeerUserName(const std::string& name)
 	return;
 }
 
+void MFCUserInterface::notifyNewBallShot(const cVector3d& force)
+{
+	notify(NEW_BALL, &force);
+}
+
+void MFCUserInterface::receiveNewBall(const cVector3d& force)
+{
+	m_pMainDlg->receiveNewBall(force);
+}
+
 void MFCUserInterface::changePreferences(const UserPreferences& preferences)
 {
 	notify(PREFERENCES, &preferences);

@@ -44,6 +44,9 @@ public:
 	// Method to add a string in a new line in the text box
 	void AddChatContent(CString strCont);
 
+	void receiveNewBall(const cVector3d& force);
+	void shootNewBall(const cVector3d& force);
+
 private:
 
 	boost::shared_ptr<MFCOpenGLControl> m_oglWindow;

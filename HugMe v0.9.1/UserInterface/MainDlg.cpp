@@ -59,12 +59,7 @@ BOOL CMainDlg::OnInitDialog()
 	// Create OpenGL Control window
 	m_oglWindow->oglCreate(rect, this);
 
-	BOOL result = CDialog::OnInitDialog();
-
-	// Setup the OpenGL Window's timer to render
-	// m_oglWindow->m_unpTimer = m_oglWindow->SetTimer(1, 1, 0);
-
-	return result;
+	return CDialog::OnInitDialog();
 }
 
 // method used to connect the user to a remote user
@@ -200,12 +195,12 @@ BOOL CMainDlg::PreTranslateMessage(MSG* pMsg)
 		}
 		else if (pMsg->wParam == VK_SPACE)
 		{
-			m_oglWindow->spaceBarPressed();
+			shootNewBall(cVector3d(-500.0f, 0.0f, 280.0f));
 			return TRUE;
 		}
 		else if (pMsg->wParam == VK_SHIFT)
 		{
-			m_oglWindow->shiftPressed();
+			shootNewBall(cVector3d(-400.0f, 0.0f, 200.0f));
 			return TRUE;
 		}
 	}
@@ -337,6 +332,7 @@ void CMainDlg::displayGameStateChanged(GameState_t state, Player_t player)
 			{
 				message << m_peerUserName << " has exited the game";
 			}
+			m_oglWindow->stopGame();
 			break;
 		}
 		case GameState::PAUSED:
@@ -353,10 +349,6 @@ void CMainDlg::displayGameStateChanged(GameState_t state, Player_t player)
 			{
 				message << m_peerUserName << " has paused the game";
 			}
-
-			// Setup the OpenGL Window's timer to render
-			m_oglWindow->StopTimers();
-
 			break;
 		}
 		case GameState::RUNNING:
@@ -373,9 +365,7 @@ void CMainDlg::displayGameStateChanged(GameState_t state, Player_t player)
 			{
 				message << m_peerUserName << " has started the game";
 			}
-
-			// Setup the OpenGL Window's timer to render
-			m_oglWindow->m_unpTimer = m_oglWindow->SetTimer(1, 1, 0);
+			m_oglWindow->m_unpTimer = m_oglWindow->startGame();
 
 			break;
 		}
@@ -448,3 +438,21 @@ void CMainDlg::displayLocalChatMessage(const std::string& message)
 
 	return;
 }
+
+void CMainDlg::receiveNewBall(const cVector3d& force)
+{
+	m_oglWindow->receiveNewBall(force);
+}
+
+void CMainDlg::shootNewBall(const cVector3d& force)
+{
+	m_oglWindow->shootNewBall(force);
+
+	// reverse the x force of the vector for the remote side
+	cVector3d& remoteForce = cVector3d();
+	force.copyto(remoteForce);
+	remoteForce.x = -remoteForce.x;
+
+	// send the force to the peer
+	pUserInterface->notifyNewBallShot(remoteForce);
+} 

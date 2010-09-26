@@ -5,8 +5,10 @@ VirtualEnvironment::VirtualEnvironment(void)
 	world = new cWorld();
 	camera = new cCamera(world);
 	light = new cLight(world);
-	slingshot = new cMesh(world);
-	avatar = new cMesh(world);
+	rSlingshot = new cMesh(world);
+	lSlingshot = new cMesh(world);
+	rAvatar = new cMesh(world);
+	lAvatar = new cMesh(world);
 	ball = new cMesh(world);
 	ground = new cMesh(world);
 }
@@ -18,38 +20,47 @@ VirtualEnvironment::~VirtualEnvironment(void)
 	delete world;
 }
 
-cCamera* VirtualEnvironment::getCamera(void)
+void VirtualEnvironment::updateFrame(int displayW, int displayH)
 {
-	return camera;
-}
-
-cVector3d VirtualEnvironment::updateFrame(void)
-{
-	ODEWorld->computeGlobalPositions(true);
+	camera->renderView(displayW, displayH);
 
 	ODEWorld->updateDynamics(0.02);
 
-	camera->set( ODEBall->getPos(),    // camera position (eye)
-        ODEBall->getPos(),    // lookat position (target)
-        cVector3d (0.0f, 0.0f, 1.0f));   // direction of the "up" vector
-
-	return ODEBall->getPos();
+	ODEWorld->computeGlobalPositions(true);
 }
 
-void VirtualEnvironment::receiveBall(void)
+void VirtualEnvironment::createNewBall(int numBalls)
 {
-	ODEBall->setPosition(cVector3d(-5.0f, 0.0f, -0.2f));
+	ODEBall[numBalls]->setImageModel(ball);
 
-	//Add a force just for show
-	ODEBall->addGlobalForceAtGlobalPos(cVector3d(500.0f, 0.0f, 300.0f),ODEBall->getPos());
+	//Calculate boundaries of physical ball
+	ODEBall[numBalls]->createDynamicMesh(false);
+
+	ODEBall[numBalls]->setUseCulling(false, true);
 }
 
-void VirtualEnvironment::shootBall(void)
+void VirtualEnvironment::receiveBall(cVector3d force)
 {
-	ODEBall->setPosition(cVector3d(5.0f, 0.0f, -0.2f));
+	createNewBall((rNumBalls%2)+2);
+
+	ODEBall[(rNumBalls%2)+2]->setPosition(cVector3d(-5.0f, 0.0f, -0.2f));
 
 	//Add a force just for show
-	ODEBall->addGlobalForceAtGlobalPos(cVector3d(-500.0f, 0.0f, 300.0f),ODEBall->getPos());
+	ODEBall[(rNumBalls%2)+2]->addGlobalForceAtGlobalPos(force,ODEBall[(rNumBalls%2)+2]->getPos());
+	
+	rNumBalls++;
+}
+
+void VirtualEnvironment::shootBall(cVector3d force)
+{
+	createNewBall(lNumBalls%2);
+
+	ODEBall[lNumBalls%2]->setPosition(cVector3d(5.0f, 0.0f, -0.2f));
+
+	//Add a force just for show
+	ODEBall[lNumBalls%2]->addGlobalForceAtGlobalPos(force,ODEBall[lNumBalls%2]->getPos());
+
+	lNumBalls++;
 }
 
 void VirtualEnvironment::initialize(void)
@@ -69,7 +80,7 @@ void VirtualEnvironment::initialize(void)
 	//**************************************//
 
     // position and oriente the camera
-    camera->set( cVector3d (7.0f, 0.0f, 0.3f),    // camera position (eye)
+    camera->set( cVector3d (7.0f, 0.0f, 0.0f),    // camera position (eye)
         cVector3d (0.0f, 0.0f, 0.0f),    // lookat position (target)
         cVector3d (0.0f, 0.0f, 1.0f));   // direction of the "up" vector
 
@@ -110,66 +121,81 @@ void VirtualEnvironment::initialize(void)
 	//**************************************//
 
     // add object to world
-    world->addChild(slingshot);
+    world->addChild(rSlingshot);
+	world->addChild(lSlingshot);
 
-    slingshot->setPos(5.0f, 0.0f, -1.4f);
+    rSlingshot->setPos(-5.0f, 0.0f, -1.2f);
+	lSlingshot->setPos(5.0f, 0.0f, -1.2f);
 
-	slingshot->rotate( cVector3d(0, 1, 0), cDegToRad(90));
-	slingshot->rotate( cVector3d(1, 0, 0), cDegToRad(90));
+	rSlingshot->rotate( cVector3d(0, 1, 0), cDegToRad(90));
+	rSlingshot->rotate( cVector3d(1, 0, 0), cDegToRad(90));
+	lSlingshot->rotate( cVector3d(0, 1, 0), cDegToRad(90));
+	lSlingshot->rotate( cVector3d(1, 0, 0), cDegToRad(90));
 
-	slingshot->loadFromFile("Objects\\slingshot\\slingshot.obj");
-	slingshot->scale(3);
+	rSlingshot->loadFromFile("Objects\\slingshot\\slingshot.obj");
+	rSlingshot->scale(2);
+	lSlingshot->loadFromFile("Objects\\slingshot\\slingshot.obj");
+	lSlingshot->scale(2);
 
     // compute a boundary box
-    slingshot->computeBoundaryBox(true);
+    rSlingshot->computeBoundaryBox(true);
+	lSlingshot->computeBoundaryBox(true);
 
     // define some haptic friction properties
-    slingshot->setFriction(0.1f, 0.2f, true);
+    rSlingshot->setFriction(0.1f, 0.2f, true);
+	lSlingshot->setFriction(0.1f, 0.2f, true);
 
-	slingshot->setUseCulling(false, true);
+	rSlingshot->setUseCulling(false, true);
+	lSlingshot->setUseCulling(false, true);
 
 	//**************************************//
-	//                AVATAR                //
+	//                AVATARS               //
 	//**************************************//
 
-	ODEAvatar = new cODEGenericBody(ODEWorld);
+	lAvatar->loadFromFile("Objects\\avatar\\avatar.obj");
+	lAvatar->scale(0.045f);
 
-	avatar->loadFromFile("Objects\\avatar\\avatar.obj");
-	avatar->scale(0.5f);
+	lAvatar->createAABBCollisionDetector(1.01, true, false);
 
-	avatar->createAABBCollisionDetector(1.01, true, false);
+	lAvatar->setTransparencyLevel(0.25, true, true);
 
-    ODEAvatar->setImageModel(avatar);
+	rAvatar->loadFromFile("Objects\\avatar\\avatar.obj");
+	rAvatar->scale(0.045f);
+
+	rAvatar->createAABBCollisionDetector(1.01, true, false);
+
+	rODEAvatar = new cODEGenericBody(ODEWorld);
+	lODEAvatar = new cODEGenericBody(ODEWorld);
+
+    rODEAvatar->setImageModel(rAvatar);
+	lODEAvatar->setImageModel(lAvatar);
 
 	//Calculate boundaries of physical avatar
-	ODEAvatar->createDynamicMesh(true);
+	rODEAvatar->createDynamicMesh(true);
+	lODEAvatar->createDynamicMesh(true);
 
-	ODEAvatar->rotate( cVector3d(0, 1, 0), cDegToRad(90));
-	ODEAvatar->rotate( cVector3d(1, 0, 0), cDegToRad(90));
+	rODEAvatar->rotate( cVector3d(1, 0, 0), cDegToRad(90));
+	lODEAvatar->rotate( cVector3d(1, 0, 0), cDegToRad(90));
 
-	ODEAvatar->setPosition(cVector3d(-5.0f, 0.0f, -1.0f));
+	rODEAvatar->setPosition(cVector3d(-6.0f, 0.0f, -1.0f));
+	lODEAvatar->setPosition(cVector3d(6.0f, 0.0f, -1.0f));
 
-	ODEAvatar->setUseCulling(false, true);
+	rODEAvatar->setUseCulling(true, true);
+	lODEAvatar->setUseCulling(true, true);
 
 	//**************************************//
 	//                 BALL                 //
 	//**************************************//
 
-	ODEBall = new cODEGenericBody(ODEWorld);
+	ODEBall[0] = new cODEGenericBody(ODEWorld);
+	ODEBall[1] = new cODEGenericBody(ODEWorld);
+	ODEBall[2] = new cODEGenericBody(ODEWorld);
+	ODEBall[3] = new cODEGenericBody(ODEWorld);
 
 	ball->loadFromFile("Objects\\ball\\ball.obj");
-	ball->scale(0.02f);
+	ball->scale(0.015f);
 
 	ball->createAABBCollisionDetector(1.01, true, false);
-
-    ODEBall->setImageModel(ball);
-
-	//Calculate boundaries of physical ball
-	ODEBall->createDynamicMesh(false);
-
-	ODEBall->setPosition(cVector3d(5.0f, 0.0f, -0.2f));
-
-	ODEBall->setUseCulling(false, true);
 
 	//**************************************//
 	//               GROUND                 //
@@ -203,11 +229,10 @@ void VirtualEnvironment::initialize(void)
     matGround.m_specular.set(1.0f, 1.0f, 1.0f);
     ground->setMaterial(matGround);
 
-    // enable and set transparency level of ground
-    ground->setTransparencyLevel(0.75f);
-    ground->setUseTransparency(true);
-
 	//Create a static ground plane
     ODEGround = new cODEGenericBody(ODEWorld);
     ODEGround->createStaticPlane(cVector3d(0.0f, 0.0f, -1.0f), cVector3d(0.0f, 0.0f, 1.0f));
+
+	rNumBalls = 0;
+	lNumBalls = 0;
 }

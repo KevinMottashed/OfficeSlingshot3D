@@ -357,6 +357,11 @@ void Mediator::update(UserInterfaceUpdateContext context, const void* data)
 			sendChatMessage(*(std::string*) data);
 			break;
 		}
+		case NEW_BALL:
+		{
+			notifyNewBallShot(*(cVector3d*)data);
+			break;
+		}
 		default:
 		{
 			// all updates should be handled
@@ -586,3 +591,17 @@ void Mediator::update(GameUpdateContext context, const void* data)
 	return;
 }
 
+void Mediator::notifyNewBallShot(const cVector3d& force)
+{
+	// let the peer know that a new ball was shot
+	// TODO: point to the network to send this info to the peer
+	receiveNewBall(force);
+	return;
+}
+
+void Mediator::receiveNewBall(const cVector3d& force)
+{
+	// show the peer ball on the local side
+	userInterface->receiveNewBall(force);
+	return;
+}

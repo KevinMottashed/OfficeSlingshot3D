@@ -18,7 +18,8 @@ enum UserInterfaceUpdateContext
 	CHAT_MESSAGE,
 	ARM_BAND_PORT,
 	JACKET_PORT,
-	PREFERENCES
+	PREFERENCES,
+	NEW_BALL
 };
 
 class UserInterfaceObserver

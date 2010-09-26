@@ -10,15 +10,21 @@ private:
 	cCamera* camera;
 	cWorld* world;
 	cLight* light;
-	cMesh* slingshot;
-	cMesh* avatar;
+	cMesh* rSlingshot;
+	cMesh* lSlingshot;
+	cMesh* rAvatar;
+	cMesh* lAvatar;
 	cMesh* ball;
 	cMesh* ground;
 
 	cODEWorld* ODEWorld;
-	cODEGenericBody* ODEBall;
-	cODEGenericBody* ODEAvatar;
+	cODEGenericBody* ODEBall[4];
+	cODEGenericBody* rODEAvatar;
+	cODEGenericBody* lODEAvatar;
 	cODEGenericBody* ODEGround;
+
+	int rNumBalls;
+	int lNumBalls;
 
 public:
 	VirtualEnvironment(void);
@@ -26,9 +32,9 @@ public:
 
 	void initialize(void);
 	void createRectangle(cMesh* a_mesh, double width, double height, double depth);
-	cCamera* getCamera(void);
-	cVector3d updateFrame(void);
-	void shootBall(void);
-	void receiveBall(void);
+	void updateFrame(int displayW, int displayH);
+	void createNewBall(int numBalls);
+	void shootBall(cVector3d force);
+	void receiveBall(cVector3d force);
 };
 #endif

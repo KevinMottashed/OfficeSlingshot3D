@@ -135,9 +135,7 @@ void MFCOpenGLControl::OnTimer(UINT_PTR nIDEvent)
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		// Draw Virtual Environment
-		cVector3d ballPosition = ve->updateFrame();
-
-		ve->getCamera()->renderView(displayW, displayH);
+		ve->updateFrame(displayW, displayH);
 
 		// Swap buffers
 		SwapBuffers(hdc);
@@ -152,17 +150,21 @@ void MFCOpenGLControl::OnTimer(UINT_PTR nIDEvent)
 	CDialog::OnTimer(nIDEvent);
 }
 
-void MFCOpenGLControl::spaceBarPressed(void)
+void MFCOpenGLControl::shootNewBall(cVector3d force)
 {
-	ve->shootBall();
+	ve->shootBall(force);
 }
 
-void MFCOpenGLControl::shiftPressed(void)
+void MFCOpenGLControl::receiveNewBall(cVector3d force)
 {
-	ve->receiveBall();
+	ve->receiveBall(force);
 }
 
-void MFCOpenGLControl::StopTimers(void)
+UINT_PTR MFCOpenGLControl::startGame(void)
+{
+	return SetTimer(1, 20, 0);
+}
+void MFCOpenGLControl::stopGame(void)
 {
 	KillTimer(m_unpTimer);
 }

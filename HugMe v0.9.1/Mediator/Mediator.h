@@ -122,6 +122,10 @@ private:
 	// slingshot related
 	void handleLocalSlingshotPosition(const cVector3d& position);
 
+	// notify that a new ball was shot
+	void notifyNewBallShot(const cVector3d& force);
+	void receiveNewBall(const cVector3d& force);
+
 };
 
 #endif
