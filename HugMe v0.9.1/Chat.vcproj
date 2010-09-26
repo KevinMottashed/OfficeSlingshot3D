@@ -50,7 +50,7 @@
 				Name="VCCLCompilerTool"
 				AdditionalOptions="/D /NODEFAULTLIB:library&quot; &quot; /D _CRT_SECURE_NO_DEPRECATE /D &quot;WINVER=0x0501&quot;"
 				Optimization="0"
-				AdditionalIncludeDirectories="include;&quot;include\ARToolKit-2.72.1&quot;;&quot;include\Z-Cam&quot;;include\ODE;include\HandTracker;&quot;..\chai3d-2.0.0\external\OpenGL\msvc&quot;;&quot;..\chai3d-2.0.0\external\ODE\include&quot;;&quot;..\chai3d-2.0.0\modules\ODE&quot;;&quot;..\chai3d-2.0.0\src&quot;;Utils\;Mediator\;Falcon\;Game\;Jacket\;Network\;UserInterface\;ZCamera\;Objects\;Logger\;Common\;Main\;Replay\;res\;&quot;C:\Program Files\boost\boost_1_43_0&quot;;Serialization\;Test/Framework;Test/;Test/Sample;Test/Network"
+				AdditionalIncludeDirectories="include;&quot;include\ARToolKit-2.72.1&quot;;&quot;include\Z-Cam&quot;;include\ODE;include\HandTracker;&quot;..\chai3d-2.0.0\external\OpenGL\msvc&quot;;&quot;..\chai3d-2.0.0\external\ODE\include&quot;;&quot;..\chai3d-2.0.0\modules\ODE&quot;;&quot;..\chai3d-2.0.0\src&quot;;Utils\;Mediator\;Falcon\;Game\;Jacket\;Network\;UserInterface\;ZCamera\;Objects\;Logger\;Common\;Main\;Replay\;res\;&quot;C:\Program Files\boost\boost_1_43_0&quot;;Serialization\;Test/Framework;Test/;Test/Sample;Test/Network;../FMOD/api/inc;Test/Audio"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_MSVC;dDOUBLE"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -78,11 +78,11 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="strmiids.lib opengl32.lib glu32.lib glut32.lib libARd.lib libARvideod.lib libARgsub_MFCd.lib vfw32.lib winmm.lib hdl.lib ConnectDM_VC80.lib tinyxmld.lib TDVHandsTracking.lib depthCameraLibrary2.lib chai3d-debug.lib ode_double.lib odbc32.lib odbccp32.lib"
+				AdditionalDependencies="strmiids.lib opengl32.lib glu32.lib glut32.lib libARd.lib libARvideod.lib libARgsub_MFCd.lib vfw32.lib winmm.lib hdl.lib ConnectDM_VC80.lib tinyxmld.lib TDVHandsTracking.lib depthCameraLibrary2.lib chai3d-debug.lib ode_double.lib odbc32.lib odbccp32.lib fmodex_vc.lib"
 				OutputFile=".\Debug/Chat.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="&quot;..\chai3d-2.0.0\external\OpenGL\msvc&quot;;&quot;..\chai3d-2.0.0\lib\msvc8&quot;;&quot;..\chai3d-2.0.0\external\ODE\lib\msvc&quot;;&quot;lib\ARToolKit-2.72.1&quot;;&quot;lib/Z-Cam&quot;;lib;lib\HandTracker;lib\chai3d;&quot;C:\Program Files\boost\boost_1_43_0\stage\lib&quot;"
+				AdditionalLibraryDirectories="&quot;..\chai3d-2.0.0\external\OpenGL\msvc&quot;;&quot;..\chai3d-2.0.0\lib\msvc8&quot;;&quot;..\chai3d-2.0.0\external\ODE\lib\msvc&quot;;&quot;lib\ARToolKit-2.72.1&quot;;&quot;lib/Z-Cam&quot;;lib;lib\HandTracker;lib\chai3d;&quot;C:\Program Files\boost\boost_1_43_0\stage\lib&quot;;..\FMOD\api\lib"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile=".\Debug/Chat.pdb"
 				SubSystem="2"
@@ -961,6 +961,18 @@
 				</File>
 				<File
 					RelativePath=".\Test\Network\ConnectionTestSuite.h"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="Audio"
+				>
+				<File
+					RelativePath=".\Test\Audio\AudioTestSuite.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\Test\Audio\AudioTestSuite.h"
 					>
 				</File>
 			</Filter>

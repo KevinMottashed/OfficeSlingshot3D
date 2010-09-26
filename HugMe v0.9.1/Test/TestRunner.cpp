@@ -5,6 +5,7 @@
 TestRunner::TestRunner()
 {
 	suites.push_back(new ConnectionTestSuite("Network Connection"));
+	suites.push_back(new AudioTestSuite("Audio"));
 }
 
 TestRunner::~TestRunner()

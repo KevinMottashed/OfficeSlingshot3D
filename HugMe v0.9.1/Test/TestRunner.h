@@ -5,6 +5,7 @@
 
 #include "TestSuite.h"
 #include "ConnectionTestSuite.h"
+#include "AudioTestSuite.h"
 
 /**
  * This class is used to start all the unit tests
