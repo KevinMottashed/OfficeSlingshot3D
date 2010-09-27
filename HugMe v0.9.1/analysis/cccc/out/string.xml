@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module string-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="0" level="0" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="0" />
+<lines_of_code value="0" level="0" />
+<lines_of_code_per_member_function value="********" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="13" level="0" />
+<IF4 value="0" level="0" />
+<IF4_per_member_function value="********" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_visible_per_member_function value="********" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete_per_member_function value="********" level="0" />
+</module_summary>
+<module_detail>
+</module_detail>
+<procedural_detail>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>string</name>
+<client_module>
+<name>CMainDlg</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MainDlg.cpp" line="412" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MainDlg.cpp" line="418" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MainDlg.cpp" line="430" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MainDlg.h" line="38" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MainDlg.h" line="39" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MainDlg.h" line="42" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../UserInterface/MainDlg.h" line="58" />
+</extent>
+<name>Configuration</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Mediator/Configuration.cpp" line="6" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Mediator/Configuration.h" line="12" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Mediator/Configuration.h" line="22" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Mediator/Configuration.h" line="23" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Mediator/Configuration.h" line="28" />
+</extent>
+<name>HumanFormatLogger</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Logger/HumanFormatLogger.h" line="100" />
+</extent>
+<name>Logger</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Logger/Logger.h" line="35" />
+</extent>
+<name>MFCUserInterface</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="92" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="98" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="116" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="38" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="52" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="66" />
+</extent>
+<name>Mediator</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="255" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="262" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="526" />
+</extent>
+<name>Network</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Network/Network.h" line="20" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Network/Network.h" line="21" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Network/Network.h" line="21" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Network/Network.h" line="30" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Network/Network.h" line="31" />
+</extent>
+<name>NetworkReplayer</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="125" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="131" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="131" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="158" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="163" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="27" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="28" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="28" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="37" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="38" />
+</extent>
+<name>OfficeSlingshot3DFactory</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Main/OfficeSlingshot3DFactory.cpp" line="10" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Main/OfficeSlingshot3DFactory.h" line="14" />
+</extent>
+<name>ReplayFormatLogger</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="125" />
+</extent>
+<name>Replayer</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/Replayer.cpp" line="6" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/Replayer.h" line="24" />
+</extent>
+<name>UserInterface</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="37" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="51" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="65" />
+</extent>
+<name>WinsockNetwork</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Network/WinsockNetwork.h" line="52" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Network/WinsockNetwork.h" line="55" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Network/WinsockNetwork.h" line="55" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Network/WinsockNetwork.h" line="61" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Network/WinsockNetwork.h" line="64" />
+</extent>
+</client_module>
+<supplier_module>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>

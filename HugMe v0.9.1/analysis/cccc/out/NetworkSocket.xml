@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module NetworkSocket-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="39" level="0" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="4" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
+<lines_of_code value="14" level="0" />
+<lines_of_code_per_member_function value="********" level="2" />
+<lines_of_code_per_line_of_comment value="2.786" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+<weighted_methods_per_class_unity value="5" level="0" />
+<weighted_methods_per_class_visibility value="5" level="0" />
+<depth_of_inheritance_tree value="1" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="4" level="0" />
+<IF4 value="9" level="0" />
+<IF4_per_member_function value="********" level="2" />
+<IF4_visible value="0" level="0" />
+<IF4_visible_per_member_function value="********" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete_per_member_function value="********" level="0" />
+</module_summary>
+<module_detail>
+<description>definition</description>
+<source_reference file="../../Network/NetworkSocket.h" line="15" />
+<lines_of_code value="12" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="13" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+<description>declaration</description>
+<source_reference file="../../Network/WinsockNetwork.h" line="14" />
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module_detail>
+<procedural_detail>
+<member_function>
+<name>Detach()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Network/NetworkSocket.cpp" line="13" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Network/NetworkSocket.h" line="25" />
+</extent>
+<lines_of_code value="10" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>NetworkSocket(WinsockNetwork *)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Network/NetworkSocket.cpp" line="3" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Network/NetworkSocket.h" line="22" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>OnAccept(int)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Network/NetworkSocket.h" line="34" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>isServer()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Network/NetworkSocket.cpp" line="46" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Network/NetworkSocket.h" line="26" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>~NetworkSocket()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Network/NetworkSocket.cpp" line="8" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Network/NetworkSocket.h" line="23" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>NetworkSocket</name>
+<client_module>
+<name>WinsockNetwork</name>
+<visible>false</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Network/WinsockNetwork.h" line="96" />
+</extent>
+<extent>
+<description>has by reference</description>
+<source_reference file="../../Network/WinsockNetwork.h" line="115" />
+</extent>
+</client_module>
+<supplier_module>
+<name>CSocket</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>inheritance</description>
+<source_reference file="../../Network/NetworkSocket.h" line="15" />
+</extent>
+<name>WinsockNetwork</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Network/NetworkSocket.cpp" line="3" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Network/NetworkSocket.h" line="22" />
+</extent>
+<extent>
+<description>has by reference</description>
+<source_reference file="../../Network/NetworkSocket.h" line="45" />
+</extent>
+<name>bool</name>
+<visible>false</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Network/NetworkSocket.h" line="46" />
+</extent>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>

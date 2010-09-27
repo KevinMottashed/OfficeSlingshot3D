@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module ReplayFormatLogger-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="109" level="0" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="9" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
+<lines_of_code value="9" level="0" />
+<lines_of_code_per_member_function value="********" level="2" />
+<lines_of_code_per_line_of_comment value="12.111" level="1" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="1.000" level="0" />
+<weighted_methods_per_class_unity value="14" level="0" />
+<weighted_methods_per_class_visibility value="1" level="0" />
+<depth_of_inheritance_tree value="2" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="8" level="0" />
+<IF4 value="0" level="0" />
+<IF4_per_member_function value="********" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_visible_per_member_function value="********" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete_per_member_function value="********" level="0" />
+</module_summary>
+<module_detail>
+<description>declaration</description>
+<source_reference file="../../Logger/LoggerProxy.h" line="19" />
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+<description>definition</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="16" />
+<lines_of_code value="28" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="6" level="0" />
+<lines_of_code_per_line_of_comment value="4.667" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module_detail>
+<procedural_detail>
+<member_function>
+<name>ReplayFormatLogger()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="22" />
+</extent>
+<extent>
+<description>definition</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="68" />
+</extent>
+<lines_of_code value="7" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="3" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>ReplayFormatLogger(T1)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="77" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>ReplayFormatLogger(T1,T2)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="86" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>ReplayFormatLogger(T1,T2,T3)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="95" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getElapsedTimeInMs()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="165" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>log(LogEvent_t)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="109" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>log(LogEvent_t,const Projectile &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="149" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>log(LogEvent_t,const UserPreferences &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="157" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>log(LogEvent_t,const VideoData &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="133" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>log(LogEvent_t,const cVector3d &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="141" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>log(LogEvent_t,const string &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="125" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>log(LogEvent_t,rc_network)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="117" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>toReplayEvent(LogEvent_t)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="173" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>~ReplayFormatLogger()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="104" />
+</extent>
+<lines_of_code value="3" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>ReplayFormatLogger</name>
+<client_module>
+</client_module>
+<supplier_module>
+<name>LogEvent_t</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="109" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="117" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="125" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="133" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="141" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="149" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="157" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="173" />
+</extent>
+<name>Logger</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>inheritance</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="16" />
+</extent>
+<name>Projectile</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="149" />
+</extent>
+<name>T1</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="77" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="86" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="95" />
+</extent>
+<name>T2</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="86" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="95" />
+</extent>
+<name>T3</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="95" />
+</extent>
+<name>cVector3d</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="141" />
+</extent>
+<name>string</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="125" />
+</extent>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>

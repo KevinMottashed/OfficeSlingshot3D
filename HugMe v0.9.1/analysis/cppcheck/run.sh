@@ -1,0 +1,1 @@
+cppcheck --xml --enable=all ../../Audio ../../Common ../../Falcon ../../Game ../../Jacket ../../Logger ../../Main ../../Mediator ../../Network ../../Replay ../../Serialization ../../Test ../../UserInterface ../../Utils ../../ZCamera 2> results.xml

@@ -1,0 +1,109 @@
+\hypertarget{classNetworkReplayer}{
+\section{NetworkReplayer Class Reference}
+\label{classNetworkReplayer}\index{NetworkReplayer@{NetworkReplayer}}
+}
+Inheritance diagram for NetworkReplayer:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classNetworkReplayer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classNetworkReplayer_ad91a8bed9fc2c9e69163c5290a823fee}{
+{\bfseries NetworkReplayer} (boost::shared\_\-ptr$<$ std::ifstream $>$ file, boost::shared\_\-ptr$<$ boost::archive::text\_\-iarchive $>$ archive)}
+\label{classNetworkReplayer_ad91a8bed9fc2c9e69163c5290a823fee}
+
+\item 
+\hypertarget{classNetworkReplayer_ab4162db2236a7b337bcef679682f8609}{
+void {\bfseries replay} (LogEvent\_\-t logEvent)}
+\label{classNetworkReplayer_ab4162db2236a7b337bcef679682f8609}
+
+\item 
+\hypertarget{classNetworkReplayer_a54f644fe92941370481c45989bad6615}{
+virtual rc\_\-network {\bfseries listen} (const std::string \&userName)}
+\label{classNetworkReplayer_a54f644fe92941370481c45989bad6615}
+
+\item 
+\hypertarget{classNetworkReplayer_a6d4deeeede0cd5c07b44489a33c113f5}{
+virtual rc\_\-network {\bfseries connect} (const std::string \&ipAddress, const std::string \&userName)}
+\label{classNetworkReplayer_a6d4deeeede0cd5c07b44489a33c113f5}
+
+\item 
+\hypertarget{classNetworkReplayer_a3aab774a33a87446aa874871fea54655}{
+virtual rc\_\-network {\bfseries disconnect} ()}
+\label{classNetworkReplayer_a3aab774a33a87446aa874871fea54655}
+
+\item 
+\hypertarget{classNetworkReplayer_aa9f70d4eee3d630c36c2bbc71bb7e195}{
+virtual rc\_\-network {\bfseries sendStartGame} ()}
+\label{classNetworkReplayer_aa9f70d4eee3d630c36c2bbc71bb7e195}
+
+\item 
+\hypertarget{classNetworkReplayer_aa54ba87a728ebdb0f23a82e409094468}{
+virtual rc\_\-network {\bfseries sendPauseGame} ()}
+\label{classNetworkReplayer_aa54ba87a728ebdb0f23a82e409094468}
+
+\item 
+\hypertarget{classNetworkReplayer_a33c840b356485101092fe220d4aa73fb}{
+virtual rc\_\-network {\bfseries sendEndGame} ()}
+\label{classNetworkReplayer_a33c840b356485101092fe220d4aa73fb}
+
+\item 
+\hypertarget{classNetworkReplayer_a49bb75f65853c34c0bdafa6aba066056}{
+virtual rc\_\-network {\bfseries sendUserName} (const std::string \&userName)}
+\label{classNetworkReplayer_a49bb75f65853c34c0bdafa6aba066056}
+
+\item 
+\hypertarget{classNetworkReplayer_a689bc26f935bb0d7f72d3f69cea6e98c}{
+virtual rc\_\-network {\bfseries sendChatMessage} (const std::string \&message)}
+\label{classNetworkReplayer_a689bc26f935bb0d7f72d3f69cea6e98c}
+
+\item 
+\hypertarget{classNetworkReplayer_ab7f69701316a3387da91d2146ea97b5e}{
+virtual rc\_\-network {\bfseries sendVideoData} (const \hyperlink{structVideoData}{VideoData} \&video)}
+\label{classNetworkReplayer_ab7f69701316a3387da91d2146ea97b5e}
+
+\item 
+\hypertarget{classNetworkReplayer_a7c9a5203b80840fee0157d506ff14f61}{
+virtual rc\_\-network {\bfseries sendPlayerPosition} (const cVector3d \&position)}
+\label{classNetworkReplayer_a7c9a5203b80840fee0157d506ff14f61}
+
+\item 
+\hypertarget{classNetworkReplayer_ad8ad840c17aa86b890857ef714eb019a}{
+virtual rc\_\-network {\bfseries sendSlingshotPosition} (const cVector3d \&position)}
+\label{classNetworkReplayer_ad8ad840c17aa86b890857ef714eb019a}
+
+\item 
+\hypertarget{classNetworkReplayer_a7ebdbb74bb8e3b1fdc877d3c8157d342}{
+virtual rc\_\-network {\bfseries sendProjectile} (const \hyperlink{classProjectile}{Projectile} \&projectile)}
+\label{classNetworkReplayer_a7ebdbb74bb8e3b1fdc877d3c8157d342}
+
+\item 
+\hypertarget{classNetworkReplayer_a98342ea3e802e9108b6d3329d977eade}{
+virtual rc\_\-network {\bfseries sendSlingshotPullback} ()}
+\label{classNetworkReplayer_a98342ea3e802e9108b6d3329d977eade}
+
+\item 
+\hypertarget{classNetworkReplayer_a8bc7c3c55dd7f7227d63335206a905a0}{
+virtual rc\_\-network {\bfseries sendSlingshotRelease} ()}
+\label{classNetworkReplayer_a8bc7c3c55dd7f7227d63335206a905a0}
+
+\item 
+\hypertarget{classNetworkReplayer_a3656c06c32e76a30ac48055a0695d99a}{
+virtual bool {\bfseries isConnected} () const }
+\label{classNetworkReplayer_a3656c06c32e76a30ac48055a0695d99a}
+
+\item 
+\hypertarget{classNetworkReplayer_a869c34b845f18eb262ead68542662aa4}{
+virtual bool {\bfseries isListening} () const }
+\label{classNetworkReplayer_a869c34b845f18eb262ead68542662aa4}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/NetworkReplayer.h\item 
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/NetworkReplayer.cpp\end{DoxyCompactItemize}

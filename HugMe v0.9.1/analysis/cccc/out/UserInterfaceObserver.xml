@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module UserInterfaceObserver-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="14" level="0" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="0" />
+<lines_of_code value="1" level="0" />
+<lines_of_code_per_member_function value="********" level="2" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+<weighted_methods_per_class_unity value="3" level="0" />
+<weighted_methods_per_class_visibility value="3" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="2" level="0" />
+<coupling_between_objects value="3" level="0" />
+<IF4 value="0" level="0" />
+<IF4_per_member_function value="********" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_visible_per_member_function value="********" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete_per_member_function value="********" level="0" />
+</module_summary>
+<module_detail>
+<description>definition</description>
+<source_reference file="../../UserInterface/UserInterfaceObserver.h" line="25" />
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+<description>declaration</description>
+<source_reference file="../../UserInterface/UserInterfaceProxy.h" line="10" />
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module_detail>
+<procedural_detail>
+<member_function>
+<name>UserInterfaceObserver()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/UserInterfaceObserver.cpp" line="3" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/UserInterfaceObserver.h" line="28" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>update(UserInterfaceUpdateContext,const void *)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/UserInterfaceObserver.h" line="32" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>~UserInterfaceObserver()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/UserInterfaceObserver.cpp" line="7" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/UserInterfaceObserver.h" line="29" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>UserInterfaceObserver</name>
+<client_module>
+<name>Logger</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>inheritance</description>
+<source_reference file="../../Logger/Logger.h" line="17" />
+</extent>
+<name>Mediator</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>inheritance</description>
+<source_reference file="../../Mediator/Mediator.h" line="20" />
+</extent>
+<name>UserInterfaceSubject</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/UserInterfaceSubject.cpp" line="11" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/UserInterfaceSubject.cpp" line="20" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/UserInterfaceSubject.h" line="13" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/UserInterfaceSubject.h" line="14" />
+</extent>
+</client_module>
+<supplier_module>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>

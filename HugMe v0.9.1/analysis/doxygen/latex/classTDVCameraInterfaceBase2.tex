@@ -1,0 +1,433 @@
+\hypertarget{classTDVCameraInterfaceBase2}{
+\section{TDVCameraInterfaceBase2 Class Reference}
+\label{classTDVCameraInterfaceBase2}\index{TDVCameraInterfaceBase2@{TDVCameraInterfaceBase2}}
+}
+Inheritance diagram for TDVCameraInterfaceBase2:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classTDVCameraInterfaceBase2}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a684145d3ee389c45eb5677eab1e55759}{
+virtual HRESULT {\bfseries setCameraCommand} (int cmdID, int value)=0}
+\label{classTDVCameraInterfaceBase2_a684145d3ee389c45eb5677eab1e55759}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_ab6322af8ebc298d65d06b5194441e43b}{
+virtual HRESULT {\bfseries getCameraCommandVal} (int cmdID, int \&value) const =0}
+\label{classTDVCameraInterfaceBase2_ab6322af8ebc298d65d06b5194441e43b}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a3019b4da3230741db16d122ac7980503}{
+virtual HRESULT {\bfseries getCameraCommandLimits} (int cmdID, int \&minValue, int \&maxValue) const =0}
+\label{classTDVCameraInterfaceBase2_a3019b4da3230741db16d122ac7980503}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a51410aae9341c6809bedea5c79091d82}{
+virtual HRESULT {\bfseries getVideoBuffer} (int bufferType, unsigned char $\ast$\&pBuffer)=0}
+\label{classTDVCameraInterfaceBase2_a51410aae9341c6809bedea5c79091d82}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a54e310f7c97367f393a05439b260bc05}{
+void {\bfseries cmdColorCameraSetting} (int iColorCommandID, int iValue)}
+\label{classTDVCameraInterfaceBase2_a54e310f7c97367f393a05439b260bc05}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a63c1f5ddf8b9af6e7b8b156088c5f789}{
+bool {\bfseries getColorCameraSetting} (int iColorCommandID, int \&iValue) const }
+\label{classTDVCameraInterfaceBase2_a63c1f5ddf8b9af6e7b8b156088c5f789}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_af269978a958edc2dc7baea5bc5bcdef6}{
+bool {\bfseries getColorCameraSettingLimit} (int iColorCommandID, int \&min, int \&max) const }
+\label{classTDVCameraInterfaceBase2_af269978a958edc2dc7baea5bc5bcdef6}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a8c02c4da359f4e0125c7065819d1e8c7}{
+void {\bfseries cmdCameraOn} ()}
+\label{classTDVCameraInterfaceBase2_a8c02c4da359f4e0125c7065819d1e8c7}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a6c7e30c193de170600f89a9d057412f7}{
+void {\bfseries cmdCameraOff} ()}
+\label{classTDVCameraInterfaceBase2_a6c7e30c193de170600f89a9d057412f7}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a988c6da99531b00c8071b9869748417b}{
+bool {\bfseries isCameraOn} () const }
+\label{classTDVCameraInterfaceBase2_a988c6da99531b00c8071b9869748417b}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_aa7e00476c05bf11c55016d2e3923ba5a}{
+int {\bfseries getMaxBrightness} () const }
+\label{classTDVCameraInterfaceBase2_aa7e00476c05bf11c55016d2e3923ba5a}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_aab905160ffcd2009c6a90aacd95301a2}{
+int {\bfseries getMinBrightness} () const }
+\label{classTDVCameraInterfaceBase2_aab905160ffcd2009c6a90aacd95301a2}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_ab343a20c0bb19fe8ae30bab85d401baa}{
+void {\bfseries cmdPrimaryBrightness} (int value)}
+\label{classTDVCameraInterfaceBase2_ab343a20c0bb19fe8ae30bab85d401baa}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_aa616448268d8472c195278ac9b3aee0b}{
+int {\bfseries getPrimaryBrightness} () const }
+\label{classTDVCameraInterfaceBase2_aa616448268d8472c195278ac9b3aee0b}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_ae5c5e7f25aca037e483ac1236d58fe5f}{
+void {\bfseries cmdSecondaryBrightness} (int value)}
+\label{classTDVCameraInterfaceBase2_ae5c5e7f25aca037e483ac1236d58fe5f}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_aa0bf4daab59df0e592768a68cfab8c43}{
+int {\bfseries getSecondaryBrightness} () const }
+\label{classTDVCameraInterfaceBase2_aa0bf4daab59df0e592768a68cfab8c43}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a63ac302b5a4e2f27b66ba08f11911f70}{
+int {\bfseries getMaxWidth} () const }
+\label{classTDVCameraInterfaceBase2_a63ac302b5a4e2f27b66ba08f11911f70}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_acfc463b8b3f949de11b589fed48638a6}{
+int {\bfseries getMinWidth} () const }
+\label{classTDVCameraInterfaceBase2_acfc463b8b3f949de11b589fed48638a6}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a7c11a0dfa3230006f7b870dd9f5c950c}{
+void {\bfseries cmdPrimaryWidth} (int value)}
+\label{classTDVCameraInterfaceBase2_a7c11a0dfa3230006f7b870dd9f5c950c}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a714dd64055e8ecdf851f5cdc8c899c25}{
+int {\bfseries getPrimaryWidth} () const }
+\label{classTDVCameraInterfaceBase2_a714dd64055e8ecdf851f5cdc8c899c25}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a5062371499a5f5fa262f8fef22efdfc9}{
+void {\bfseries cmdSecondaryWidth} (int value)}
+\label{classTDVCameraInterfaceBase2_a5062371499a5f5fa262f8fef22efdfc9}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a52828a04c73328758d67b6f381653428}{
+int {\bfseries getSecondaryWidth} () const }
+\label{classTDVCameraInterfaceBase2_a52828a04c73328758d67b6f381653428}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_ad7b72ddc0bdac856e4dc5fb6bbb99cfc}{
+int {\bfseries getMaxDistance} () const }
+\label{classTDVCameraInterfaceBase2_ad7b72ddc0bdac856e4dc5fb6bbb99cfc}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_ac87c6734afdc4dd27cf37d7d92d128ab}{
+int {\bfseries getMinDistance} () const }
+\label{classTDVCameraInterfaceBase2_ac87c6734afdc4dd27cf37d7d92d128ab}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a60fad90a7ebd5354ccca87e19abdfd28}{
+void {\bfseries cmdPrimaryDist} (int value)}
+\label{classTDVCameraInterfaceBase2_a60fad90a7ebd5354ccca87e19abdfd28}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_aea0a3141dae5b18e66b81862be286e90}{
+int {\bfseries getPrimaryDist} () const }
+\label{classTDVCameraInterfaceBase2_aea0a3141dae5b18e66b81862be286e90}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a711d6c76704fb19d4cf17612a131ed18}{
+void {\bfseries cmdSecondaryDist} (int value)}
+\label{classTDVCameraInterfaceBase2_a711d6c76704fb19d4cf17612a131ed18}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_acfa0c0769263b2852ffb7893cff1179e}{
+int {\bfseries getSecondaryDist} () const }
+\label{classTDVCameraInterfaceBase2_acfa0c0769263b2852ffb7893cff1179e}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a91c347ac98df9fce1bdae10ac0988d5b}{
+int {\bfseries getMaxGain} () const }
+\label{classTDVCameraInterfaceBase2_a91c347ac98df9fce1bdae10ac0988d5b}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a2ebfb11b935fac730c9aa973a67e2bac}{
+int {\bfseries getMinGain} () const }
+\label{classTDVCameraInterfaceBase2_a2ebfb11b935fac730c9aa973a67e2bac}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_ac7cd647d5f8ea76b305c0ba4d434acd4}{
+void {\bfseries cmdGain} (int value)}
+\label{classTDVCameraInterfaceBase2_ac7cd647d5f8ea76b305c0ba4d434acd4}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a78a534aa9676766be2338ef68302e640}{
+int {\bfseries getGain} () const }
+\label{classTDVCameraInterfaceBase2_a78a534aa9676766be2338ef68302e640}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_aafed77798e0cf7c8e2c5093782a16361}{
+int {\bfseries getMinFilterVal} () const }
+\label{classTDVCameraInterfaceBase2_aafed77798e0cf7c8e2c5093782a16361}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_acc7400a53f77b2c5d94aed93009579b7}{
+int {\bfseries getMaxFilterVal} () const }
+\label{classTDVCameraInterfaceBase2_acc7400a53f77b2c5d94aed93009579b7}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a153203745fb70783b166d29935d05adf}{
+int {\bfseries getMinSoftnessVal} () const }
+\label{classTDVCameraInterfaceBase2_a153203745fb70783b166d29935d05adf}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a177b2e039f3abdb3a8b75f9f41c7d78d}{
+int {\bfseries getMaxSoftnessVal} () const }
+\label{classTDVCameraInterfaceBase2_a177b2e039f3abdb3a8b75f9f41c7d78d}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_aa76b67341fee260a64c81419125822b0}{
+void {\bfseries cmdBinVal} (int value)}
+\label{classTDVCameraInterfaceBase2_aa76b67341fee260a64c81419125822b0}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a306c0eda9013f9236de4bfc77d75d011}{
+int {\bfseries getBinVal} () const }
+\label{classTDVCameraInterfaceBase2_a306c0eda9013f9236de4bfc77d75d011}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a0e4ca14432e810b4d0c44da6d41371ac}{
+void {\bfseries cmdBinarizeOnOff} (bool value)}
+\label{classTDVCameraInterfaceBase2_a0e4ca14432e810b4d0c44da6d41371ac}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a0f313e34b1e754bfefa21cbccd4d914c}{
+bool {\bfseries getBinarizeOnOff} () const }
+\label{classTDVCameraInterfaceBase2_a0f313e34b1e754bfefa21cbccd4d914c}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a7565271a8464c7de45e470218b19f2fc}{
+void {\bfseries cmdMedianOnOff} (bool value)}
+\label{classTDVCameraInterfaceBase2_a7565271a8464c7de45e470218b19f2fc}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a209bf23c6415591265b1fa9655f9be0a}{
+bool {\bfseries getMedianOnOff} () const }
+\label{classTDVCameraInterfaceBase2_a209bf23c6415591265b1fa9655f9be0a}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a5424cfc75464477533219db9407f1810}{
+void {\bfseries cmdInvertOnOff} (bool value)}
+\label{classTDVCameraInterfaceBase2_a5424cfc75464477533219db9407f1810}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a1e5ef180ec2dcbc7dafdcf536c4b907f}{
+bool {\bfseries getInvertOnOff} () const }
+\label{classTDVCameraInterfaceBase2_a1e5ef180ec2dcbc7dafdcf536c4b907f}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a25480b123cc8ea96b76055d47fef3705}{
+void {\bfseries cmdTemporalFilterOnOff} (bool value)}
+\label{classTDVCameraInterfaceBase2_a25480b123cc8ea96b76055d47fef3705}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a4aba5abd0c3f72115d4d84ab42bff89b}{
+bool {\bfseries getTemporalFilterOnOff} () const }
+\label{classTDVCameraInterfaceBase2_a4aba5abd0c3f72115d4d84ab42bff89b}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_aee223c818363239f0b7308b589a676b5}{
+void {\bfseries cmdSmoothOnOff} (bool value)}
+\label{classTDVCameraInterfaceBase2_aee223c818363239f0b7308b589a676b5}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a489f0ed0b9bbd69b259e5f08f96f1cb8}{
+bool {\bfseries getSmoothOnOff} () const }
+\label{classTDVCameraInterfaceBase2_a489f0ed0b9bbd69b259e5f08f96f1cb8}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_ab1d2c9cc2676b858c0dbf50035ee36f4}{
+void {\bfseries cmdSoftness} (int value)}
+\label{classTDVCameraInterfaceBase2_ab1d2c9cc2676b858c0dbf50035ee36f4}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a3cc4d16af60928ede441533b47792db0}{
+int {\bfseries getSoftness} () const }
+\label{classTDVCameraInterfaceBase2_a3cc4d16af60928ede441533b47792db0}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a278bad41877f7cc67010513edddcb371}{
+void {\bfseries cmdMaskSmoothOnOff} (bool value)}
+\label{classTDVCameraInterfaceBase2_a278bad41877f7cc67010513edddcb371}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a5a643241c1c220a61ecf0c0a22e58229}{
+bool {\bfseries getMaskSmoothOnOff} () const }
+\label{classTDVCameraInterfaceBase2_a5a643241c1c220a61ecf0c0a22e58229}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a7fd8c3ef57e1a603d8341e1b8f605d82}{
+void {\bfseries cmdMaskSoftness} (int value)}
+\label{classTDVCameraInterfaceBase2_a7fd8c3ef57e1a603d8341e1b8f605d82}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_aa9e8296220d1f6dfd0b3e80b186ce2fc}{
+int {\bfseries getMaskSoftness} () const }
+\label{classTDVCameraInterfaceBase2_aa9e8296220d1f6dfd0b3e80b186ce2fc}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a79660c40a44100ab0162dc1691d742ad}{
+void {\bfseries cmdAutomaticBackgroundOnOff} (bool value)}
+\label{classTDVCameraInterfaceBase2_a79660c40a44100ab0162dc1691d742ad}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a06af73ceaff68f12f4854ba1eb529c08}{
+bool {\bfseries getAutomaticBackground} ()}
+\label{classTDVCameraInterfaceBase2_a06af73ceaff68f12f4854ba1eb529c08}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a4267605549783aba6499aa07cf35f3d1}{
+void {\bfseries cmdAutomaticDepthPositionOnOff} (bool value)}
+\label{classTDVCameraInterfaceBase2_a4267605549783aba6499aa07cf35f3d1}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a854c8f778aa3f13c66c2639b5905e428}{
+bool {\bfseries getAutomaticDepthPosition} ()}
+\label{classTDVCameraInterfaceBase2_a854c8f778aa3f13c66c2639b5905e428}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a941bef4b230eabf386507dca5299ecff}{
+void {\bfseries cmdClean} (int value)}
+\label{classTDVCameraInterfaceBase2_a941bef4b230eabf386507dca5299ecff}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a56a29cde8078bcc26ce736a104a46ecc}{
+int {\bfseries getClean} () const }
+\label{classTDVCameraInterfaceBase2_a56a29cde8078bcc26ce736a104a46ecc}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_acae599e652152613bcfaab6334349471}{
+bool {\bfseries cmdSaveStatus} (int index)}
+\label{classTDVCameraInterfaceBase2_acae599e652152613bcfaab6334349471}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a2a676dabbdbd67950e3cb764d97207f4}{
+bool {\bfseries cmdRestoreStatus} (int index)}
+\label{classTDVCameraInterfaceBase2_a2a676dabbdbd67950e3cb764d97207f4}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a9479b1f2083c5135bc4ed758f87eb826}{
+void {\bfseries cmdStartAutomaticFind} ()}
+\label{classTDVCameraInterfaceBase2_a9479b1f2083c5135bc4ed758f87eb826}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_ab2d29930d4ddbaf855e43ccaa139c4c2}{
+bool {\bfseries isDuringAutomaticFind} () const }
+\label{classTDVCameraInterfaceBase2_ab2d29930d4ddbaf855e43ccaa139c4c2}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a88da987cea5ee76654e64525c2938c57}{
+void {\bfseries cmdAutomaticTracking} (bool state)}
+\label{classTDVCameraInterfaceBase2_a88da987cea5ee76654e64525c2938c57}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a248c84bbb1232285fa00069d6263e8c7}{
+bool {\bfseries isAutomaticTrackingOn} () const }
+\label{classTDVCameraInterfaceBase2_a248c84bbb1232285fa00069d6263e8c7}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_ab0839cd442d3a1c47b7c55578cf7ab0a}{
+void {\bfseries cmdAutomaticBrightness} (bool state)}
+\label{classTDVCameraInterfaceBase2_ab0839cd442d3a1c47b7c55578cf7ab0a}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a54c95ac82e08bb3a2ee0ef847af2fd8d}{
+bool {\bfseries isAutomaticBrightnessOn} () const }
+\label{classTDVCameraInterfaceBase2_a54c95ac82e08bb3a2ee0ef847af2fd8d}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_ab1bfb1c5500793508cbe2c1c7d8d9a2b}{
+void {\bfseries cmdSaveImage} ()}
+\label{classTDVCameraInterfaceBase2_ab1bfb1c5500793508cbe2c1c7d8d9a2b}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a528e6c9ab7b284456571e5c954e0663a}{
+void {\bfseries cmdSaveImageAverage} ()}
+\label{classTDVCameraInterfaceBase2_a528e6c9ab7b284456571e5c954e0663a}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a7efb94988412cbb758d3b8971f4463a9}{
+void {\bfseries cmdSaveSequence} (int length, bool saveAVI)}
+\label{classTDVCameraInterfaceBase2_a7efb94988412cbb758d3b8971f4463a9}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_aa2705a831908bb92aea85cb3cde82854}{
+void {\bfseries cmdVideoFreeze} (bool state, bool useAverage=false)}
+\label{classTDVCameraInterfaceBase2_aa2705a831908bb92aea85cb3cde82854}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a649b5e579d9f165c3fd08ca224bac40a}{
+void {\bfseries cmdRGBProcessing} (bool status)}
+\label{classTDVCameraInterfaceBase2_a649b5e579d9f165c3fd08ca224bac40a}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a662d62abb6a0b268e9fe95fd545c360c}{
+bool {\bfseries getRGBProcessing} () const }
+\label{classTDVCameraInterfaceBase2_a662d62abb6a0b268e9fe95fd545c360c}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a6f2b9e9efbbaddfc80801ab5cd0a99f1}{
+void {\bfseries cmdConfidenceMapProcessing} (bool status)}
+\label{classTDVCameraInterfaceBase2_a6f2b9e9efbbaddfc80801ab5cd0a99f1}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a326817d66da92c7f7b022d8460097019}{
+bool {\bfseries getConfidenceMapProcessing} () const }
+\label{classTDVCameraInterfaceBase2_a326817d66da92c7f7b022d8460097019}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_ab1bea9c049e62e010f0f62a168bc30d2}{
+void {\bfseries cmdIRTransfer} (bool status)}
+\label{classTDVCameraInterfaceBase2_ab1bea9c049e62e010f0f62a168bc30d2}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_ab3f3b322e7216a5222306e1fc2debcbe}{
+bool {\bfseries getIRTransfer} () const }
+\label{classTDVCameraInterfaceBase2_ab3f3b322e7216a5222306e1fc2debcbe}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a8030d68df7c717b78af36d151cdf618f}{
+void {\bfseries cmdRGBFullRes} (bool status)}
+\label{classTDVCameraInterfaceBase2_a8030d68df7c717b78af36d151cdf618f}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a49c8dd40ebb60cf565b6163dae3c5777}{
+bool {\bfseries getRGBFullRes} () const }
+\label{classTDVCameraInterfaceBase2_a49c8dd40ebb60cf565b6163dae3c5777}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a41bafb7ada57dd229420462eb74e7e9a}{
+bool {\bfseries getConfidenceFrame} (unsigned char $\ast$\&pConfidence)}
+\label{classTDVCameraInterfaceBase2_a41bafb7ada57dd229420462eb74e7e9a}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_ad7be19b42aa545d68a03b742105fa5fd}{
+bool {\bfseries getSourceIRFrames} (unsigned char $\ast$\&pPrimary, unsigned char $\ast$\&pSecondary)}
+\label{classTDVCameraInterfaceBase2_ad7be19b42aa545d68a03b742105fa5fd}
+
+\item 
+\hypertarget{classTDVCameraInterfaceBase2_a559c0138bfc30147bdadbc765caa3e54}{
+bool {\bfseries getRGBFullResolutionFrame} (unsigned char $\ast$\&pRGBFullRes)}
+\label{classTDVCameraInterfaceBase2_a559c0138bfc30147bdadbc765caa3e54}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h\end{DoxyCompactItemize}

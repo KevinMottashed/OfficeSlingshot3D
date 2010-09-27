@@ -1,0 +1,104 @@
+\hypertarget{classWinsockNetwork}{
+\section{WinsockNetwork Class Reference}
+\label{classWinsockNetwork}\index{WinsockNetwork@{WinsockNetwork}}
+}
+Inheritance diagram for WinsockNetwork:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classWinsockNetwork}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classWinsockNetwork_a6f2f806a0e246a46ff6d0c2006cddd43}{
+virtual rc\_\-network {\bfseries listen} (const std::string \&userName)}
+\label{classWinsockNetwork_a6f2f806a0e246a46ff6d0c2006cddd43}
+
+\item 
+\hypertarget{classWinsockNetwork_a0f7f289635183b1082894f230a989006}{
+virtual rc\_\-network {\bfseries connect} (const std::string \&ipAddress, const std::string \&userName)}
+\label{classWinsockNetwork_a0f7f289635183b1082894f230a989006}
+
+\item 
+\hypertarget{classWinsockNetwork_abd947a2edb4d5053286f25b4c9f041c1}{
+virtual rc\_\-network {\bfseries disconnect} ()}
+\label{classWinsockNetwork_abd947a2edb4d5053286f25b4c9f041c1}
+
+\item 
+\hypertarget{classWinsockNetwork_ae76b6c306ef15d162fe652c38c78d4e2}{
+virtual rc\_\-network {\bfseries sendUserName} (const std::string \&userName)}
+\label{classWinsockNetwork_ae76b6c306ef15d162fe652c38c78d4e2}
+
+\item 
+\hypertarget{classWinsockNetwork_a420d4e6b5c698476a94dcdb503233de7}{
+virtual rc\_\-network {\bfseries sendChatMessage} (const std::string \&message)}
+\label{classWinsockNetwork_a420d4e6b5c698476a94dcdb503233de7}
+
+\item 
+\hypertarget{classWinsockNetwork_a20ed4411ec34336c6a213b15cc3fcad9}{
+virtual rc\_\-network {\bfseries sendStartGame} ()}
+\label{classWinsockNetwork_a20ed4411ec34336c6a213b15cc3fcad9}
+
+\item 
+\hypertarget{classWinsockNetwork_ae4412629d2ee052afc41c81f36cfad50}{
+virtual rc\_\-network {\bfseries sendPauseGame} ()}
+\label{classWinsockNetwork_ae4412629d2ee052afc41c81f36cfad50}
+
+\item 
+\hypertarget{classWinsockNetwork_a877c8001bbd880295e0458c3377dca25}{
+virtual rc\_\-network {\bfseries sendEndGame} ()}
+\label{classWinsockNetwork_a877c8001bbd880295e0458c3377dca25}
+
+\item 
+\hypertarget{classWinsockNetwork_a36362dbaa70fbe00dd48fded21464888}{
+virtual rc\_\-network {\bfseries sendVideoData} (const \hyperlink{structVideoData}{VideoData} \&video)}
+\label{classWinsockNetwork_a36362dbaa70fbe00dd48fded21464888}
+
+\item 
+\hypertarget{classWinsockNetwork_ab27dd7393a89573f9e75e1a50efbc833}{
+virtual rc\_\-network {\bfseries sendPlayerPosition} (const cVector3d \&position)}
+\label{classWinsockNetwork_ab27dd7393a89573f9e75e1a50efbc833}
+
+\item 
+\hypertarget{classWinsockNetwork_af0456294cf39244cc59f1ca81e2aa2d3}{
+virtual rc\_\-network {\bfseries sendSlingshotPosition} (const cVector3d \&position)}
+\label{classWinsockNetwork_af0456294cf39244cc59f1ca81e2aa2d3}
+
+\item 
+\hypertarget{classWinsockNetwork_accb610c314dd94a1649bcfe101c93997}{
+virtual rc\_\-network {\bfseries sendProjectile} (const \hyperlink{classProjectile}{Projectile} \&projectile)}
+\label{classWinsockNetwork_accb610c314dd94a1649bcfe101c93997}
+
+\item 
+\hypertarget{classWinsockNetwork_a0a8ced3a30f215e71114b9fa94b3d1e3}{
+virtual rc\_\-network {\bfseries sendSlingshotPullback} ()}
+\label{classWinsockNetwork_a0a8ced3a30f215e71114b9fa94b3d1e3}
+
+\item 
+\hypertarget{classWinsockNetwork_ac4076b605f2378bf8728be6730512f95}{
+virtual rc\_\-network {\bfseries sendSlingshotRelease} ()}
+\label{classWinsockNetwork_ac4076b605f2378bf8728be6730512f95}
+
+\item 
+\hypertarget{classWinsockNetwork_a8c621566b7ce641d86797569346fcaad}{
+virtual bool {\bfseries isConnected} () const }
+\label{classWinsockNetwork_a8c621566b7ce641d86797569346fcaad}
+
+\item 
+\hypertarget{classWinsockNetwork_a7cbc0e15323359b9bdb862342e406f23}{
+virtual bool {\bfseries isListening} () const }
+\label{classWinsockNetwork_a7cbc0e15323359b9bdb862342e406f23}
+
+\item 
+\hypertarget{classWinsockNetwork_a011b39d509309dd98f3b798e7c6b7c62}{
+void {\bfseries notifyAccept} (\hyperlink{classNetworkSocket}{NetworkSocket} $\ast$socket)}
+\label{classWinsockNetwork_a011b39d509309dd98f3b798e7c6b7c62}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/WinsockNetwork.h\item 
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/WinsockNetwork.cpp\end{DoxyCompactItemize}

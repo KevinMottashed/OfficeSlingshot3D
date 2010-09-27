@@ -1,0 +1,119 @@
+\hypertarget{classUserInterface}{
+\section{UserInterface Class Reference}
+\label{classUserInterface}\index{UserInterface@{UserInterface}}
+}
+Inheritance diagram for UserInterface:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4cm]{classUserInterface}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classUserInterface_a80c9af3149653a9fcca77994ff921520}{
+virtual void {\bfseries displayConnectionStateChanged} (ConnectionState\_\-t state, Player\_\-t player)=0}
+\label{classUserInterface_a80c9af3149653a9fcca77994ff921520}
+
+\item 
+\hypertarget{classUserInterface_aea6b02914ae2d7ffe561189d7c7c7802}{
+virtual void {\bfseries displayGameStateChanged} (GameState\_\-t state, Player\_\-t player)=0}
+\label{classUserInterface_aea6b02914ae2d7ffe561189d7c7c7802}
+
+\item 
+\hypertarget{classUserInterface_aa5d1fd621af37b9d57269ea57ea1470a}{
+virtual void {\bfseries displayConnectionFailed} ()=0}
+\label{classUserInterface_aa5d1fd621af37b9d57269ea57ea1470a}
+
+\item 
+\hypertarget{classUserInterface_a62d5eb6ee2406546e588dcd640e50b9d}{
+virtual void {\bfseries displayFailedToListen} ()=0}
+\label{classUserInterface_a62d5eb6ee2406546e588dcd640e50b9d}
+
+\item 
+\hypertarget{classUserInterface_a4dfc4010db770d8be0a7a9dd4d9eaa98}{
+virtual void {\bfseries displayNetworkError} ()=0}
+\label{classUserInterface_a4dfc4010db770d8be0a7a9dd4d9eaa98}
+
+\item 
+\hypertarget{classUserInterface_aa88e0b9f1ca62c294de672b5104f4592}{
+virtual void {\bfseries displayPeerChatMessage} (const std::string \&message)=0}
+\label{classUserInterface_aa88e0b9f1ca62c294de672b5104f4592}
+
+\item 
+\hypertarget{classUserInterface_aa8ca05eacdd98bba205f549c2bbc739c}{
+virtual void {\bfseries displayLocalFrame} (const \hyperlink{structVideoData}{VideoData} \&video)=0}
+\label{classUserInterface_aa8ca05eacdd98bba205f549c2bbc739c}
+
+\item 
+\hypertarget{classUserInterface_ac3afeafc97a2bad45b124975a24cb633}{
+virtual void {\bfseries displayRemoteFrame} (const \hyperlink{structVideoData}{VideoData} \&video)=0}
+\label{classUserInterface_ac3afeafc97a2bad45b124975a24cb633}
+
+\item 
+\hypertarget{classUserInterface_a1b12a2289689bd1d907c87421b78bfb3}{
+virtual void {\bfseries networkConnectButtonPushed} ()=0}
+\label{classUserInterface_a1b12a2289689bd1d907c87421b78bfb3}
+
+\item 
+\hypertarget{classUserInterface_a0bcb21302e8bad1fab6864e688f90600}{
+virtual void {\bfseries networkListenButtonPushed} ()=0}
+\label{classUserInterface_a0bcb21302e8bad1fab6864e688f90600}
+
+\item 
+\hypertarget{classUserInterface_a5b58c16329d4c76efdc2e27b7a3ad3f6}{
+virtual void {\bfseries networkDisconnectButtonPushed} ()=0}
+\label{classUserInterface_a5b58c16329d4c76efdc2e27b7a3ad3f6}
+
+\item 
+\hypertarget{classUserInterface_a9016f77640f4197afee05e7e3368f951}{
+virtual void {\bfseries sendChatButtonPushed} (const std::string \&message)=0}
+\label{classUserInterface_a9016f77640f4197afee05e7e3368f951}
+
+\item 
+\hypertarget{classUserInterface_ae6b475f54fc90a950718312ab1c5ac6e}{
+virtual void {\bfseries startGameButtonPushed} ()=0}
+\label{classUserInterface_ae6b475f54fc90a950718312ab1c5ac6e}
+
+\item 
+\hypertarget{classUserInterface_acff5ed6d4703ee489e00eab5463e7227}{
+virtual void {\bfseries exitGameButtonPushed} ()=0}
+\label{classUserInterface_acff5ed6d4703ee489e00eab5463e7227}
+
+\item 
+\hypertarget{classUserInterface_aee390b73f66a0ed6f8511bf5eff7edb1}{
+virtual void {\bfseries pauseGameButtonPushed} ()=0}
+\label{classUserInterface_aee390b73f66a0ed6f8511bf5eff7edb1}
+
+\item 
+\hypertarget{classUserInterface_a9cd95da39bf37d49427d8f5b0b8eb862}{
+virtual void {\bfseries changePreferences} (const \hyperlink{structUserPreferences}{UserPreferences} \&preferences)=0}
+\label{classUserInterface_a9cd95da39bf37d49427d8f5b0b8eb862}
+
+\item 
+\hypertarget{classUserInterface_a00fb412f6a4ac0da2ca57053ad6d1515}{
+virtual void {\bfseries closeApplication} ()=0}
+\label{classUserInterface_a00fb412f6a4ac0da2ca57053ad6d1515}
+
+\item 
+\hypertarget{classUserInterface_a4b8e1fe5649f204600bf356a5b356e10}{
+virtual void {\bfseries setPeerUserName} (const std::string \&name)=0}
+\label{classUserInterface_a4b8e1fe5649f204600bf356a5b356e10}
+
+\item 
+\hypertarget{classUserInterface_aa2084b47ac3d2f6dea1414a63b5abc7d}{
+virtual void {\bfseries notifyNewBallShot} (const cVector3d \&force)=0}
+\label{classUserInterface_aa2084b47ac3d2f6dea1414a63b5abc7d}
+
+\item 
+\hypertarget{classUserInterface_a82f8b682701aa8ba1dedae0886fa27b9}{
+virtual void {\bfseries receiveNewBall} (const cVector3d \&force)=0}
+\label{classUserInterface_a82f8b682701aa8ba1dedae0886fa27b9}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h\item 
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.cpp\end{DoxyCompactItemize}

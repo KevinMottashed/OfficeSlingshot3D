@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module UserInterface-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="33" level="0" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="0" />
+<lines_of_code value="20" level="0" />
+<lines_of_code_per_member_function value="********" level="2" />
+<lines_of_code_per_line_of_comment value="1.650" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+<weighted_methods_per_class_unity value="22" level="0" />
+<weighted_methods_per_class_visibility value="7" level="0" />
+<depth_of_inheritance_tree value="1" level="0" />
+<number_of_children value="1" level="0" />
+<coupling_between_objects value="8" level="0" />
+<IF4 value="144" level="1" />
+<IF4_per_member_function value="********" level="2" />
+<IF4_visible value="144" level="2" />
+<IF4_visible_per_member_function value="********" level="2" />
+<IF4_concrete value="16" level="0" />
+<IF4_concrete_per_member_function value="********" level="2" />
+</module_summary>
+<module_detail>
+<description>declaration</description>
+<source_reference file="../../UserInterface/MainDlg.h" line="19" />
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="2" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+<description>definition</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="15" />
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+<description>declaration</description>
+<source_reference file="../../UserInterface/UserInterfaceProxy.h" line="8" />
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module_detail>
+<procedural_detail>
+<member_function>
+<name>UserInterface()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/UserInterface.cpp" line="3" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="18" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>changePreferences(const UserPreferences &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="59" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>closeApplication()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="62" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>displayConnectionFailed()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="32" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>displayConnectionStateChanged(ConnectionState_t,Player_t)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="26" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>displayFailedToListen()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="33" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>displayGameStateChanged(GameState_t,Player_t)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="29" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>displayLocalFrame(const VideoData &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="38" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>displayNetworkError()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="34" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>displayPeerChatMessage(const string &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="37" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>displayRemoteFrame(const VideoData &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="39" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>exitGameButtonPushed()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="55" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>networkConnectButtonPushed()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="46" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>networkDisconnectButtonPushed()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="48" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>networkListenButtonPushed()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="47" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>notifyNewBallShot(const cVector3d &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="68" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>pauseGameButtonPushed()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="56" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>receiveNewBall(const cVector3d &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="69" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>sendChatButtonPushed(const string &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="51" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>setPeerUserName(const string &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="65" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>startGameButtonPushed()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="54" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>~UserInterface()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/UserInterface.cpp" line="7" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="19" />
+</extent>
+<lines_of_code value="3" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>UserInterface</name>
+<client_module>
+<name>CMainDlg</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MainDlg.cpp" line="8" />
+</extent>
+<extent>
+<description>has by reference</description>
+<source_reference file="../../UserInterface/MainDlg.h" line="54" />
+</extent>
+<name>MFCUserInterface</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>inheritance</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="16" />
+</extent>
+</client_module>
+<supplier_module>
+<name>ConnectionState_t</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="26" />
+</extent>
+<name>GameState_t</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="29" />
+</extent>
+<name>Player_t</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="26" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="29" />
+</extent>
+<name>UserInterfaceSubject</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>inheritance</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="15" />
+</extent>
+<name>cVector3d</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="68" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="69" />
+</extent>
+<name>string</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="37" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="51" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="65" />
+</extent>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>

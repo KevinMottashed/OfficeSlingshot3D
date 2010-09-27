@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module cVector3d-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="0" level="0" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="0" />
+<lines_of_code value="0" level="0" />
+<lines_of_code_per_member_function value="********" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="14" level="0" />
+<IF4 value="0" level="0" />
+<IF4_per_member_function value="********" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_visible_per_member_function value="********" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete_per_member_function value="********" level="0" />
+</module_summary>
+<module_detail>
+</module_detail>
+<procedural_detail>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>cVector3d</name>
+<client_module>
+<name>CMainDlg</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MainDlg.cpp" line="442" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MainDlg.cpp" line="447" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MainDlg.h" line="47" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MainDlg.h" line="48" />
+</extent>
+<name>Game</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Game/Game.cpp" line="40" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Game/Game.cpp" line="52" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Game/Game.cpp" line="64" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Game/Game.cpp" line="76" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Game/Game.h" line="23" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Game/Game.h" line="27" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Game/Game.h" line="31" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Game/Game.h" line="35" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/Game.h" line="48" />
+</extent>
+<name>HumanFormatLogger</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Logger/HumanFormatLogger.h" line="116" />
+</extent>
+<name>Logger</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Logger/Logger.h" line="37" />
+</extent>
+<name>MFCOpenGLControl</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="153" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="158" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="37" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="38" />
+</extent>
+<name>MFCUserInterface</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="122" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="127" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="69" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="70" />
+</extent>
+<name>Mediator</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="276" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="290" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="585" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="602" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="610" />
+</extent>
+<name>Network</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Network/Network.h" line="33" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Network/Network.h" line="34" />
+</extent>
+<name>NetworkReplayer</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="173" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="178" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="40" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="41" />
+</extent>
+<name>Projectile</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Common/Projectile.cpp" line="14" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Common/Projectile.cpp" line="14" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Common/Projectile.cpp" line="41" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Common/Projectile.cpp" line="54" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Common/Projectile.h" line="12" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Common/Projectile.h" line="12" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Common/Projectile.h" line="18" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Common/Projectile.h" line="23" />
+</extent>
+<name>ReplayFormatLogger</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="141" />
+</extent>
+<name>UserInterface</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="68" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="69" />
+</extent>
+<name>VirtualEnvironment</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="42" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="54" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/VirtualEnvironment.h" line="37" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/VirtualEnvironment.h" line="38" />
+</extent>
+<name>WinsockNetwork</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Network/WinsockNetwork.h" line="75" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Network/WinsockNetwork.h" line="78" />
+</extent>
+</client_module>
+<supplier_module>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>

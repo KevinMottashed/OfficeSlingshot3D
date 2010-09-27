@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module NetworkReplayer-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="201" level="0" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="32" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
+<lines_of_code value="15" level="0" />
+<lines_of_code_per_member_function value="********" level="2" />
+<lines_of_code_per_line_of_comment value="13.400" level="1" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="2.133" level="0" />
+<weighted_methods_per_class_unity value="19" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="2" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="7" level="0" />
+<IF4 value="0" level="0" />
+<IF4_per_member_function value="********" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_visible_per_member_function value="********" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete_per_member_function value="********" level="0" />
+</module_summary>
+<module_detail>
+<description>definition</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="15" />
+<lines_of_code value="8" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="5" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module_detail>
+<procedural_detail>
+<member_function>
+<name>NetworkReplayer(shared_ptr,shared_ptr)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="3" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="19" />
+</extent>
+<lines_of_code value="8" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>connect(const string &amp;,const string &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="131" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="28" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>disconnect()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="137" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="29" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>isConnected()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="198" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="47" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>isListening()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="203" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="48" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>listen(const string &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="125" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="27" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>replay(LogEvent_t)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="19" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="24" />
+</extent>
+<lines_of_code value="96" level="1" />
+<McCabes_cyclomatic_complexity value="16" level="1" />
+<lines_of_comment value="2" level="0" />
+<lines_of_code_per_line_of_comment value="48.000" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="8.000" level="1" />
+</member_function>
+<member_function>
+<name>sendChatMessage(const string &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="163" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="38" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>sendEndGame()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="153" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="34" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>sendPauseGame()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="148" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="33" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>sendPlayerPosition(const cVector3d &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="173" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="40" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>sendProjectile(const Projectile &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="183" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="42" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>sendSlingshotPosition(const cVector3d &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="178" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="41" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>sendSlingshotPullback()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="188" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="43" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>sendSlingshotRelease()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="193" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="44" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>sendStartGame()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="143" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="32" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>sendUserName(const string &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="158" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="37" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>sendVideoData(const VideoData &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="168" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="39" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>~NetworkReplayer()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="10" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="21" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="3" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>NetworkReplayer</name>
+<client_module>
+</client_module>
+<supplier_module>
+<name>ConnectionState_t</name>
+<visible>false</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="51" />
+</extent>
+<name>LogEvent_t</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="19" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="24" />
+</extent>
+<name>Network</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>inheritance</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="15" />
+</extent>
+<name>Projectile</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="183" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="42" />
+</extent>
+<name>cVector3d</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="173" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="178" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="40" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="41" />
+</extent>
+<name>shared_ptr</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="3" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="4" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="19" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="20" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="54" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="55" />
+</extent>
+<name>string</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="125" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="131" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="131" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="158" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="163" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="27" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="28" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="28" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="37" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="38" />
+</extent>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>

@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module anonymous-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="172" level="0" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="39" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
+<lines_of_code value="77" level="0" />
+<lines_of_code_per_member_function value="********" level="2" />
+<lines_of_code_per_line_of_comment value="2.234" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.506" level="0" />
+<weighted_methods_per_class_unity value="19" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="0" level="0" />
+<IF4 value="0" level="0" />
+<IF4_per_member_function value="********" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_visible_per_member_function value="********" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete_per_member_function value="********" level="0" />
+</module_summary>
+<module_detail>
+</module_detail>
+<procedural_detail>
+<member_function>
+<name>BEGIN_MESSAGE_MAP(CChatApp,CWinApp)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Main/Chat.cpp" line="14" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="10" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>BEGIN_MESSAGE_MAP(CMainDlg,CDialog)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MainDlg.cpp" line="30" />
+</extent>
+<lines_of_code value="20" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="8" level="0" />
+<lines_of_code_per_line_of_comment value="2.500" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>BEGIN_MESSAGE_MAP(CPreferences,CDialog)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/Preferences.cpp" line="47" />
+</extent>
+<lines_of_code value="2" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="2" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>BEGIN_MESSAGE_MAP(MFCOpenGLControl,CWnd)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="14" />
+</extent>
+<lines_of_code value="17" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>BEGIN_MESSAGE_MAP(NetworkSocket,CSocket)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Network/NetworkSocket.cpp" line="26" />
+</extent>
+<lines_of_code value="10" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="5" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>cmdCallBack(int,void *)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="50" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../ZCamera/DepthCamera.h" line="25" />
+</extent>
+<lines_of_code value="11" level="0" />
+<McCabes_cyclomatic_complexity value="4" level="0" />
+<lines_of_comment value="14" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>lookup(ConnectionStateEnum)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Common/ConnectionStateEnum.h" line="17" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>lookup(GameStateEnum)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Common/GameStateEnum.h" line="17" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>lookup(LogEventCategoryEnum)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Logger/LogEventCategoryEnum.h" line="21" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>lookup(LogEventEnum)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Logger/LogEventEnum.h" line="56" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>lookup(PlayerEnum)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Common/PlayerEnum.h" line="15" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>lookup(rc_network)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Network/NetworkCodes.h" line="27" />
+</extent>
+<lines_of_code value="36" level="1" />
+<McCabes_cyclomatic_complexity value="16" level="1" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="36.000" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="16.000" level="2" />
+</member_function>
+<member_function>
+<name>lookupCategory(LogEvent_t)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Logger/LogEventCategoryEnum.h" line="24" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>operator &lt;&lt;(ostream &amp;,const Projectile &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Common/Projectile.cpp" line="60" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Common/Projectile.h" line="39" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>operator &lt;&lt;(ostream &amp;,const TestRunner &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Test/TestRunner.cpp" line="35" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Test/TestRunner.h" line="29" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>operator &lt;&lt;(ostream &amp;,const UserPreferences &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Common/UserPreferences.cpp" line="3" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Common/UserPreferences.h" line="27" />
+</extent>
+<lines_of_code value="9" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>operator &gt;&gt;(istream &amp;,UserPreferences &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Common/UserPreferences.cpp" line="12" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Common/UserPreferences.h" line="28" />
+</extent>
+<lines_of_code value="9" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>serialize(Archive &amp;,cVector3d &amp;,const int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Serialization/chai3DSerialization.h" line="17" />
+</extent>
+<lines_of_code value="7" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>videoCallBack(char *,char *,int,void *)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="19" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../ZCamera/DepthCamera.h" line="22" />
+</extent>
+<lines_of_code value="27" level="0" />
+<McCabes_cyclomatic_complexity value="13" level="1" />
+<lines_of_comment value="28" level="0" />
+<lines_of_code_per_line_of_comment value="0.964" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.464" level="0" />
+</member_function>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>anonymous</name>
+<client_module>
+</client_module>
+<supplier_module>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>

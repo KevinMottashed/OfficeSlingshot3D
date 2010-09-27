@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module Mediator-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="539" level="1" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="90" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
+<lines_of_code value="107" level="0" />
+<lines_of_code_per_member_function value="********" level="2" />
+<lines_of_code_per_line_of_comment value="5.037" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.841" level="0" />
+<weighted_methods_per_class_unity value="39" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="1" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="11" level="0" />
+<IF4 value="0" level="0" />
+<IF4_per_member_function value="********" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_visible_per_member_function value="********" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete_per_member_function value="********" level="0" />
+</module_summary>
+<module_detail>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.h" line="19" />
+<lines_of_code value="49" level="1" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="29" level="0" />
+<lines_of_code_per_line_of_comment value="1.690" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+<description>declaration</description>
+<source_reference file="../../Mediator/MediatorProxy.h" line="5" />
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module_detail>
+<procedural_detail>
+<member_function>
+<name>Mediator(const Mediator &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Mediator/Mediator.h" line="41" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>Mediator(shared_ptr,shared_ptr,shared_ptr,shared_ptr,shared_ptr)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="8" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Mediator/Mediator.h" line="26" />
+</extent>
+<lines_of_code value="26" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="2" level="0" />
+<lines_of_code_per_line_of_comment value="13.000" level="1" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>changePreferences(const UserPreferences &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="441" />
+</extent>
+<lines_of_code value="17" level="0" />
+<McCabes_cyclomatic_complexity value="4" level="0" />
+<lines_of_comment value="3" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>closeApplication()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="514" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="6" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>connect()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="375" />
+</extent>
+<lines_of_code value="15" level="0" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
+<lines_of_comment value="2" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>disconnect()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="417" />
+</extent>
+<lines_of_code value="17" level="0" />
+<McCabes_cyclomatic_complexity value="4" level="0" />
+<lines_of_comment value="5" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>exitGame()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="63" />
+</extent>
+<lines_of_code value="11" level="0" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>handleChatMessage(const string &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="262" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>handleLocalSlingshotPosition(const cVector3d &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="585" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="2" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>handleLocalVideoData(VideoData &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="554" />
+</extent>
+<lines_of_code value="7" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>handleNetworkError(rc_network)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="215" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="2" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>handlePeerConnected()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="198" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>handlePeerDisconnected()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="205" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="2" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>handlePeerExitGame()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="245" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="2" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>handlePeerPauseGame()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="235" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="2" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>handlePeerStartGame()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="225" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="2" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>handleRemotePlayerPosition(const cVector3d &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="290" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>handleRemoteProjectile(const Projectile &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="283" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>handleRemotePullback()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="297" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>handleRemoteRelease()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="303" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>handleRemoteSlingshotPosition(const cVector3d &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="276" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>handleRemoteVideoData(const VideoData &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="269" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>handleUserName(const string &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="255" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>listen()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="395" />
+</extent>
+<lines_of_code value="15" level="0" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
+<lines_of_comment value="2" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>localExitGame()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="501" />
+</extent>
+<lines_of_code value="10" level="0" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>localPauseGame()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="488" />
+</extent>
+<lines_of_code value="10" level="0" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>localStartGame()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="467" />
+</extent>
+<lines_of_code value="12" level="0" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
+<lines_of_comment value="6" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>notifyNewBallShot(const cVector3d &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="602" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="2" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>operator =(const Mediator &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Mediator/Mediator.h" line="42" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>pauseGame()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="51" />
+</extent>
+<lines_of_code value="11" level="0" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>receiveNewBall(const cVector3d &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="610" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>sendChatMessage(const string &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="526" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>startGame()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="39" />
+</extent>
+<lines_of_code value="11" level="0" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>update(FalconUpdateContext,const void *)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="562" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Mediator/Mediator.h" line="37" />
+</extent>
+<lines_of_code value="22" level="0" />
+<McCabes_cyclomatic_complexity value="5" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="22.000" level="1" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="5.000" level="0" />
+</member_function>
+<member_function>
+<name>update(GameUpdateContext,const void *)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="595" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Mediator/Mediator.h" line="38" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>update(NetworkUpdateContext,const void *)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="75" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Mediator/Mediator.h" line="34" />
+</extent>
+<lines_of_code value="108" level="2" />
+<McCabes_cyclomatic_complexity value="23" level="1" />
+<lines_of_comment value="16" level="0" />
+<lines_of_code_per_line_of_comment value="6.750" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="1.437" level="0" />
+</member_function>
+<member_function>
+<name>update(UserInterfaceUpdateContext,const void *)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="309" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Mediator/Mediator.h" line="35" />
+</extent>
+<lines_of_code value="65" level="1" />
+<McCabes_cyclomatic_complexity value="13" level="1" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="65.000" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="13.000" level="2" />
+</member_function>
+<member_function>
+<name>update(ZCameraUpdateContext,const void *)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="532" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Mediator/Mediator.h" line="36" />
+</extent>
+<lines_of_code value="21" level="0" />
+<McCabes_cyclomatic_complexity value="4" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="21.000" level="1" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>~Mediator()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="34" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Mediator/Mediator.h" line="31" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>Mediator</name>
+<client_module>
+</client_module>
+<supplier_module>
+<name>Audio</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Mediator/Mediator.h" line="50" />
+</extent>
+<name>FalconObserver</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>inheritance</description>
+<source_reference file="../../Mediator/Mediator.h" line="22" />
+</extent>
+<name>Game</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Mediator/Mediator.h" line="53" />
+</extent>
+<name>GameObserver</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>inheritance</description>
+<source_reference file="../../Mediator/Mediator.h" line="23" />
+</extent>
+<name>NetworkObserver</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>inheritance</description>
+<source_reference file="../../Mediator/Mediator.h" line="19" />
+</extent>
+<name>Projectile</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="283" />
+</extent>
+<name>UserInterfaceObserver</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>inheritance</description>
+<source_reference file="../../Mediator/Mediator.h" line="20" />
+</extent>
+<name>ZCameraObserver</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>inheritance</description>
+<source_reference file="../../Mediator/Mediator.h" line="21" />
+</extent>
+<name>cVector3d</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="276" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="290" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="585" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="602" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="610" />
+</extent>
+<name>shared_ptr</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="8" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="9" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="10" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="11" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="12" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Mediator/Mediator.h" line="26" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Mediator/Mediator.h" line="27" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Mediator/Mediator.h" line="28" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Mediator/Mediator.h" line="29" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Mediator/Mediator.h" line="30" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Mediator/Mediator.h" line="45" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Mediator/Mediator.h" line="46" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Mediator/Mediator.h" line="47" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Mediator/Mediator.h" line="48" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Mediator/Mediator.h" line="49" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Mediator/Mediator.h" line="56" />
+</extent>
+<name>string</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="255" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="262" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="526" />
+</extent>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>

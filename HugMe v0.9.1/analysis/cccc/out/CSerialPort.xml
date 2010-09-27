@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module CSerialPort-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="460" level="0" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="74" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
+<lines_of_code value="285" level="0" />
+<lines_of_code_per_member_function value="********" level="2" />
+<lines_of_code_per_line_of_comment value="1.614" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.260" level="0" />
+<weighted_methods_per_class_unity value="21" level="0" />
+<weighted_methods_per_class_visibility value="20" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="14" level="0" />
+<IF4 value="169" level="1" />
+<IF4_per_member_function value="********" level="2" />
+<IF4_visible value="0" level="0" />
+<IF4_visible_per_member_function value="********" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete_per_member_function value="********" level="0" />
+</module_summary>
+<module_detail>
+<description>definition</description>
+<source_reference file="../../Jacket/Serialport.h" line="35" />
+<lines_of_code value="25" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="30" level="0" />
+<lines_of_code_per_line_of_comment value="0.833" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module_detail>
+<procedural_detail>
+<member_function>
+<name>CSerialPort()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Jacket/Serialport.cpp" line="27" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Jacket/Serialport.h" line="40" />
+</extent>
+<lines_of_code value="15" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="20" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>ClosePort()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Jacket/Serialport.cpp" line="209" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Jacket/Serialport.h" line="46" />
+</extent>
+<lines_of_code value="10" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>CommThread(LPVOID)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Jacket/Serialport.cpp" line="223" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Jacket/Serialport.h" line="103" />
+</extent>
+<lines_of_code value="66" level="1" />
+<McCabes_cyclomatic_complexity value="14" level="1" />
+<lines_of_comment value="88" level="0" />
+<lines_of_code_per_line_of_comment value="0.750" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.159" level="0" />
+</member_function>
+<member_function>
+<name>GetCommEvents()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Jacket/Serialport.cpp" line="691" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Jacket/Serialport.h" line="54" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="3" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>GetDCB()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Jacket/Serialport.cpp" line="683" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Jacket/Serialport.h" line="55" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="3" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>GetWriteBufferSize()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Jacket/Serialport.cpp" line="699" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Jacket/Serialport.h" line="53" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="3" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>InitPort(...)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Jacket/Serialport.h" line="45" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="2" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>InitPort(UINT,UINT,char,UINT,UINT,DWORD,UINT)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Jacket/Serialport.cpp" line="68" />
+</extent>
+<lines_of_code value="97" level="1" />
+<McCabes_cyclomatic_complexity value="16" level="1" />
+<lines_of_comment value="41" level="0" />
+<lines_of_code_per_line_of_comment value="2.366" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.390" level="0" />
+</member_function>
+<member_function>
+<name>ProcessErrorMessage(char *)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Jacket/Serialport.cpp" line="431" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Jacket/Serialport.h" line="102" />
+</extent>
+<lines_of_code value="19" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="5" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>ReceiveChar(CSerialPort *,COMSTAT)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Jacket/Serialport.cpp" line="542" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Jacket/Serialport.h" line="104" />
+</extent>
+<lines_of_code value="62" level="1" />
+<McCabes_cyclomatic_complexity value="10" level="0" />
+<lines_of_comment value="39" level="0" />
+<lines_of_code_per_line_of_comment value="1.590" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.256" level="0" />
+</member_function>
+<member_function>
+<name>RestartMonitoring()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Jacket/Serialport.cpp" line="401" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Jacket/Serialport.h" line="50" />
+</extent>
+<lines_of_code value="11" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_comment value="3" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>StartMonitoring()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Jacket/Serialport.cpp" line="390" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Jacket/Serialport.h" line="49" />
+</extent>
+<lines_of_code value="8" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>StopMonitoring()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Jacket/Serialport.cpp" line="416" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Jacket/Serialport.h" line="51" />
+</extent>
+<lines_of_code value="11" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_comment value="3" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>WriteChar(CSerialPort *)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Jacket/Serialport.cpp" line="458" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Jacket/Serialport.h" line="105" />
+</extent>
+<lines_of_code value="59" level="1" />
+<McCabes_cyclomatic_complexity value="7" level="0" />
+<lines_of_comment value="24" level="0" />
+<lines_of_code_per_line_of_comment value="2.458" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.292" level="0" />
+</member_function>
+<member_function>
+<name>WriteToPort(char *,int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Jacket/Serialport.cpp" line="648" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Jacket/Serialport.h" line="57" />
+</extent>
+<lines_of_code value="11" level="0" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
+<lines_of_comment value="7" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>WriteToPort(char)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Jacket/Serialport.cpp" line="668" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Jacket/Serialport.h" line="58" />
+</extent>
+<lines_of_code value="9" level="0" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getConnected()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Jacket/Serialport.h" line="97" />
+</extent>
+<lines_of_code value="2" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>inBufferData()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Jacket/Serialport.h" line="94" />
+</extent>
+<lines_of_code value="2" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>readInBuffer()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Jacket/Serialport.h" line="72" />
+</extent>
+<lines_of_code value="20" level="0" />
+<McCabes_cyclomatic_complexity value="6" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="******" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="******" level="2" />
+</member_function>
+<member_function>
+<name>writeInBuffer(char)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Jacket/Serialport.h" line="64" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="2" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>~CSerialPort()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Jacket/Serialport.cpp" line="52" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Jacket/Serialport.h" line="41" />
+</extent>
+<lines_of_code value="11" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="3" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>CSerialPort</name>
+<client_module>
+<name>TactileArray</name>
+<visible>false</visible>
+<concrete>false</concrete>
+<extent>
+<description>has by reference</description>
+<source_reference file="../../Jacket/TactileArray.h" line="57" />
+</extent>
+</client_module>
+<supplier_module>
+<name>BOOL</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Jacket/Serialport.h" line="112" />
+</extent>
+<name>COMMTIMEOUTS</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Jacket/Serialport.h" line="127" />
+</extent>
+<name>COMSTAT</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Jacket/Serialport.cpp" line="542" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Jacket/Serialport.h" line="104" />
+</extent>
+<name>CRITICAL_SECTION</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Jacket/Serialport.h" line="111" />
+</extent>
+<name>CWinThread</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>has by reference</description>
+<source_reference file="../../Jacket/Serialport.h" line="108" />
+</extent>
+<name>DCB</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Jacket/Serialport.h" line="128" />
+</extent>
+<name>DWORD</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Jacket/Serialport.cpp" line="73" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Jacket/Serialport.h" line="134" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Jacket/Serialport.h" line="135" />
+</extent>
+<name>HANDLE</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Jacket/Serialport.h" line="115" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Jacket/Serialport.h" line="116" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Jacket/Serialport.h" line="117" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Jacket/Serialport.h" line="123" />
+</extent>
+<name>LPVOID</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Jacket/Serialport.cpp" line="223" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Jacket/Serialport.h" line="103" />
+</extent>
+<name>OVERLAPPED</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Jacket/Serialport.h" line="126" />
+</extent>
+<name>UINT</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Jacket/Serialport.cpp" line="68" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Jacket/Serialport.cpp" line="69" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Jacket/Serialport.cpp" line="71" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Jacket/Serialport.cpp" line="72" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Jacket/Serialport.cpp" line="74" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Jacket/Serialport.h" line="131" />
+</extent>
+<name>bool</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Jacket/Serialport.h" line="62" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Jacket/Serialport.h" line="138" />
+</extent>
+<name>short</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Jacket/Serialport.h" line="133" />
+</extent>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>

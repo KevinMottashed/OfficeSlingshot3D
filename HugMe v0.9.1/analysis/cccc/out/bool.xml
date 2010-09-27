@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module bool-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="0" level="0" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="0" />
+<lines_of_code value="0" level="0" />
+<lines_of_code_per_member_function value="********" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="6" level="0" />
+<IF4 value="0" level="0" />
+<IF4_per_member_function value="********" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_visible_per_member_function value="********" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete_per_member_function value="********" level="0" />
+</module_summary>
+<module_detail>
+</module_detail>
+<procedural_detail>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>bool</name>
+<client_module>
+<name>CDepthCamera</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="350" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="364" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="379" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="394" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="480" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="486" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="497" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="502" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../ZCamera/DepthCamera.h" line="77" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../ZCamera/DepthCamera.h" line="84" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../ZCamera/DepthCamera.h" line="92" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../ZCamera/DepthCamera.h" line="98" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../ZCamera/DepthCamera.h" line="119" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../ZCamera/DepthCamera.h" line="120" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../ZCamera/DepthCamera.h" line="122" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../ZCamera/DepthCamera.h" line="123" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../ZCamera/DepthCamera.h" line="139" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../ZCamera/DepthCamera.h" line="140" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../ZCamera/DepthCamera.h" line="141" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../ZCamera/DepthCamera.h" line="149" />
+</extent>
+<name>CSerialPort</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Jacket/Serialport.h" line="62" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Jacket/Serialport.h" line="138" />
+</extent>
+<name>NetworkSocket</name>
+<visible>false</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Network/NetworkSocket.h" line="46" />
+</extent>
+<name>NovintFalcon</name>
+<visible>false</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Falcon/NovintFalcon.h" line="29" />
+</extent>
+<name>TactileArray</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Jacket/TactileArray.cpp" line="41" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Jacket/TactileArray.h" line="44" />
+</extent>
+<name>ZCamera</name>
+<visible>false</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../ZCamera/ZCamera.h" line="37" />
+</extent>
+</client_module>
+<supplier_module>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>

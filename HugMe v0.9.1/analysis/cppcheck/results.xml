@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<results>
+<error file="/Game/VirtualEnvironment.cpp" line="3" id="uninitVar" severity="style" msg="Member variable not initialized in the constructor 'VirtualEnvironment::lNumBalls'"/>
+<error file="/Game/VirtualEnvironment.cpp" line="3" id="uninitVar" severity="style" msg="Member variable not initialized in the constructor 'VirtualEnvironment::rNumBalls'"/>
+<error file="/Game/VirtualEnvironment.cpp" line="3" id="uninitVar" severity="style" msg="Member variable not initialized in the constructor 'VirtualEnvironment::ODEGround'"/>
+<error file="/Game/VirtualEnvironment.cpp" line="3" id="uninitVar" severity="style" msg="Member variable not initialized in the constructor 'VirtualEnvironment::lODEAvatar'"/>
+<error file="/Game/VirtualEnvironment.cpp" line="3" id="uninitVar" severity="style" msg="Member variable not initialized in the constructor 'VirtualEnvironment::rODEAvatar'"/>
+<error file="/Game/VirtualEnvironment.cpp" line="3" id="uninitVar" severity="style" msg="Member variable not initialized in the constructor 'VirtualEnvironment::ODEBall'"/>
+<error file="/Game/VirtualEnvironment.cpp" line="3" id="uninitVar" severity="style" msg="Member variable not initialized in the constructor 'VirtualEnvironment::ODEWorld'"/>
+<error file="/Game/VirtualEnvironment.cpp" line="6" id="exceptNew" severity="style" msg="Upon exception there is memory leak: world"/>
+<error file="/Game/VirtualEnvironment.h" line="10" id="memleak" severity="possible error" msg="Memory leak: VirtualEnvironment::camera"/>
+<error file="/Game/VirtualEnvironment.h" line="12" id="memleak" severity="possible error" msg="Memory leak: VirtualEnvironment::light"/>
+<error file="/Game/VirtualEnvironment.h" line="13" id="memleak" severity="possible error" msg="Memory leak: VirtualEnvironment::rSlingshot"/>
+<error file="/Game/VirtualEnvironment.h" line="14" id="memleak" severity="possible error" msg="Memory leak: VirtualEnvironment::lSlingshot"/>
+<error file="/Game/VirtualEnvironment.h" line="15" id="memleak" severity="possible error" msg="Memory leak: VirtualEnvironment::rAvatar"/>
+<error file="/Game/VirtualEnvironment.h" line="16" id="memleak" severity="possible error" msg="Memory leak: VirtualEnvironment::lAvatar"/>
+<error file="/Game/VirtualEnvironment.h" line="17" id="memleak" severity="possible error" msg="Memory leak: VirtualEnvironment::ball"/>
+<error file="/Game/VirtualEnvironment.h" line="18" id="memleak" severity="possible error" msg="Memory leak: VirtualEnvironment::ground"/>
+<error file="/Game/VirtualEnvironment.h" line="20" id="memleak" severity="possible error" msg="Memory leak: VirtualEnvironment::ODEWorld"/>
+<error file="/Game/VirtualEnvironment.h" line="22" id="memleak" severity="possible error" msg="Memory leak: VirtualEnvironment::rODEAvatar"/>
+<error file="/Game/VirtualEnvironment.h" line="23" id="memleak" severity="possible error" msg="Memory leak: VirtualEnvironment::lODEAvatar"/>
+<error file="/Game/VirtualEnvironment.h" line="24" id="memleak" severity="possible error" msg="Memory leak: VirtualEnvironment::ODEGround"/>
+<error file="/Jacket/Serialport.cpp" line="110" id="redundantIfDelete0" severity="style" msg="Redundant condition. It is safe to deallocate a NULL pointer"/>
+<error file="/Jacket/TactileArray.cpp" line="117" id="cstyleCast" severity="style" msg="C-style pointer casting"/>
+<error file="/Logger/ReplayFormatEvent.cpp" line="3" id="uninitVar" severity="style" msg="Member variable not initialized in the constructor 'ReplayFormatEvent::time'"/>
+<error file="/Replay/Replayer.cpp" line="12" id="exceptNew" severity="style" msg="Upon exception there is memory leak: networkReplayer"/>
+<error file="/UserInterface/MFCOpenGLControl.cpp" line="3" id="uninitVar" severity="style" msg="Member variable not initialized in the constructor 'MFCOpenGLControl::m_nPixelFormat'"/>
+<error file="/UserInterface/MFCOpenGLControl.cpp" line="3" id="uninitVar" severity="style" msg="Member variable not initialized in the constructor 'MFCOpenGLControl::hWnd'"/>
+<error file="/ZCamera/DepthCamera.cpp" line="22" id="cstyleCast" severity="style" msg="C-style pointer casting"/>
+<error file="/ZCamera/DepthCamera.cpp" line="61" id="cstyleCast" severity="style" msg="C-style pointer casting"/>
+<error file="/ZCamera/ZCamera.cpp" line="11" id="uninitVar" severity="possible style" msg="Member variable not initialized in the constructor 'ZCamera::SEC'"/>
+<error file="/ZCamera/ZCamera.cpp" line="11" id="uninitVar" severity="possible style" msg="Member variable not initialized in the constructor 'ZCamera::PRIM'"/>
+<error file="/ZCamera/ZCamera.cpp" line="11" id="uninitVar" severity="possible style" msg="Member variable not initialized in the constructor 'ZCamera::RGBFull'"/>
+<error file="/ZCamera/ZCamera.cpp" line="11" id="uninitVar" severity="possible style" msg="Member variable not initialized in the constructor 'ZCamera::DEPTH'"/>
+<error file="/Jacket/Serialport.cpp" line="1" id="unusedFunction" severity="style" msg="The function 'GetCommEvents' is never used"/>
+<error file="/Jacket/Serialport.cpp" line="1" id="unusedFunction" severity="style" msg="The function 'GetDCB' is never used"/>
+<error file="/ZCamera/DepthCamera.cpp" line="1" id="unusedFunction" severity="style" msg="The function 'GetDepthWindowPosition' is never used"/>
+<error file="/ZCamera/DepthCamera.cpp" line="1" id="unusedFunction" severity="style" msg="The function 'GetVideoSize' is never used"/>
+<error file="/Jacket/Serialport.cpp" line="1" id="unusedFunction" severity="style" msg="The function 'GetWriteBufferSize' is never used"/>
+<error file="/ZCamera/DepthCamera.cpp" line="1" id="unusedFunction" severity="style" msg="The function 'IsDepthFilterEnabled' is never used"/>
+<error file="/Network/NetworkSocket.cpp" line="1" id="unusedFunction" severity="style" msg="The function 'isServer' is never used"/>
+<error file="/Test/Framework/TestFailedException.cpp" line="1" id="unusedFunction" severity="style" msg="The function 'what' is never used"/>
+</results>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module LogEvent_t-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="0" level="0" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="0" />
+<lines_of_code value="0" level="0" />
+<lines_of_code_per_member_function value="********" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="9" level="0" />
+<IF4 value="0" level="0" />
+<IF4_per_member_function value="********" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_visible_per_member_function value="********" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete_per_member_function value="********" level="0" />
+</module_summary>
+<module_detail>
+</module_detail>
+<procedural_detail>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>LogEvent_t</name>
+<client_module>
+<name>FalconReplayer</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Replay/FalconReplayer.cpp" line="19" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Replay/FalconReplayer.h" line="23" />
+</extent>
+<name>HumanFormatLogger</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/HumanFormatLogger.h" line="84" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/HumanFormatLogger.h" line="92" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/HumanFormatLogger.h" line="100" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/HumanFormatLogger.h" line="108" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/HumanFormatLogger.h" line="116" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/HumanFormatLogger.h" line="124" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/HumanFormatLogger.h" line="132" />
+</extent>
+<name>LogEventCategory</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/LogEventCategoryEnum.cpp" line="27" />
+</extent>
+<name>Logger</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/Logger.h" line="33" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/Logger.h" line="34" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/Logger.h" line="35" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/Logger.h" line="36" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/Logger.h" line="37" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/Logger.h" line="38" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/Logger.h" line="39" />
+</extent>
+<name>NetworkReplayer</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="19" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="24" />
+</extent>
+<name>ReplayFormatEvent</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/ReplayFormatEvent.cpp" line="7" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/ReplayFormatEvent.h" line="16" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Logger/ReplayFormatEvent.h" line="20" />
+</extent>
+<name>ReplayFormatLogger</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="109" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="117" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="125" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="133" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="141" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="149" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="157" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="173" />
+</extent>
+<name>UserInterfaceReplayer</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Replay/UserInterfaceReplayer.cpp" line="24" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Replay/UserInterfaceReplayer.h" line="21" />
+</extent>
+<name>ZCameraReplayer</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Replay/ZCameraReplayer.cpp" line="19" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Replay/ZCameraReplayer.h" line="23" />
+</extent>
+</client_module>
+<supplier_module>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>

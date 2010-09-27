@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module UserInterfaceReplayer-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="84" level="0" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="11" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
+<lines_of_code value="10" level="0" />
+<lines_of_code_per_member_function value="********" level="2" />
+<lines_of_code_per_line_of_comment value="8.400" level="1" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="1.100" level="0" />
+<weighted_methods_per_class_unity value="3" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="3" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="3" level="0" />
+<IF4 value="0" level="0" />
+<IF4_per_member_function value="********" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_visible_per_member_function value="********" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete_per_member_function value="********" level="0" />
+</module_summary>
+<module_detail>
+<description>definition</description>
+<source_reference file="../../Replay/UserInterfaceReplayer.h" line="11" />
+<lines_of_code value="7" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module_detail>
+<procedural_detail>
+<member_function>
+<name>UserInterfaceReplayer(const UserPreferences &amp;,shared_ptr,shared_ptr)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Replay/UserInterfaceReplayer.cpp" line="6" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Replay/UserInterfaceReplayer.h" line="15" />
+</extent>
+<lines_of_code value="11" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>replay(LogEvent_t)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Replay/UserInterfaceReplayer.cpp" line="24" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Replay/UserInterfaceReplayer.h" line="21" />
+</extent>
+<lines_of_code value="60" level="1" />
+<McCabes_cyclomatic_complexity value="11" level="1" />
+<lines_of_comment value="5" level="0" />
+<lines_of_code_per_line_of_comment value="12.000" level="1" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="2.200" level="0" />
+</member_function>
+<member_function>
+<name>~UserInterfaceReplayer()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Replay/UserInterfaceReplayer.cpp" line="15" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Replay/UserInterfaceReplayer.h" line="18" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="3" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>UserInterfaceReplayer</name>
+<client_module>
+</client_module>
+<supplier_module>
+<name>LogEvent_t</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Replay/UserInterfaceReplayer.cpp" line="24" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Replay/UserInterfaceReplayer.h" line="21" />
+</extent>
+<name>MFCUserInterface</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>inheritance</description>
+<source_reference file="../../Replay/UserInterfaceReplayer.h" line="11" />
+</extent>
+<name>shared_ptr</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Replay/UserInterfaceReplayer.cpp" line="7" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Replay/UserInterfaceReplayer.cpp" line="8" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Replay/UserInterfaceReplayer.h" line="16" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Replay/UserInterfaceReplayer.h" line="17" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Replay/UserInterfaceReplayer.h" line="25" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Replay/UserInterfaceReplayer.h" line="26" />
+</extent>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>
