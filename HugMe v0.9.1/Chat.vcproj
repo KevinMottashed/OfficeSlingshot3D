@@ -988,6 +988,10 @@
 				RelativePath=".\Audio\Audio.h"
 				>
 			</File>
+			<File
+				RelativePath=".\Audio\AudioProxy.h"
+				>
+			</File>
 		</Filter>
 		<File
 			RelativePath=".\config.ini"

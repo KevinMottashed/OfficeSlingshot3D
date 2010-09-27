@@ -13,7 +13,7 @@
 #include "VideoData.h"
 #include "Configuration.h"
 #include "SyncLocker.h"
-#include "Audio.h"
+#include "AudioProxy.h"
 
 // The Mediator class for the program
 class Mediator :	public NetworkObserver,
