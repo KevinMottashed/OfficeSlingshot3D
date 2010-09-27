@@ -489,23 +489,7 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Game\GameObserver.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\Game\GameObserver.h"
-				>
-			</File>
-			<File
 				RelativePath=".\Game\GameProxy.h"
-				>
-			</File>
-			<File
-				RelativePath=".\Game\GameSubject.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\Game\GameSubject.h"
 				>
 			</File>
 			<File

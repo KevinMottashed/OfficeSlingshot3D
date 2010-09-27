@@ -8,19 +8,21 @@
 #include "FalconProxy.h"
 #include "ZCameraProxy.h"
 #include "JacketProxy.h"
-#include "GameProxy.h"
 #include "LoggerProxy.h"
 #include "VideoData.h"
 #include "Configuration.h"
 #include "SyncLocker.h"
 #include "AudioProxy.h"
 
-// The Mediator class for the program
+/**
+ * This class mediates the interactions between the device and the game.
+ * All device modules report events to the mediator. The mediator will then
+ * interpret these events and notify the game.
+ */
 class Mediator :	public NetworkObserver,
 					public UserInterfaceObserver,
 					public ZCameraObserver,
-					public FalconObserver,
-					public GameObserver
+					public FalconObserver
 {
 public:
 	Mediator(	boost::shared_ptr<Network> network,
@@ -35,7 +37,6 @@ public:
 	virtual void update(UserInterfaceUpdateContext context, const void* data);
 	virtual void update(ZCameraUpdateContext context, const void* data);
 	virtual void update(FalconUpdateContext context, const void* data);
-	virtual void update(GameUpdateContext context, const void* data);
 
 private:
 	Mediator(const Mediator& c); // intentionally not implemented

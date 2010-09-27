@@ -162,12 +162,6 @@ void Logger::update(FalconUpdateContext context, const void* data)
 	return;
 }
 
-void Logger::update(GameUpdateContext context, const void* data)
-{
-	// no game events to log, for now
-	return;
-}
-
 void Logger::update(ZCameraUpdateContext context, const void* data)
 {
 	switch(context)

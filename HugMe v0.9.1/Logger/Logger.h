@@ -13,7 +13,6 @@
 // abstract class used for logging
 class Logger :	public NetworkObserver,
 				public FalconObserver,
-				public GameObserver,
 				public UserInterfaceObserver,
 				public ZCameraObserver
 {
@@ -24,8 +23,7 @@ public:
 	// updates from observer patterns
 	virtual void update(NetworkUpdateContext context, const void* data);
 	virtual void update(UserInterfaceUpdateContext context, const void* data);
-	virtual void update(FalconUpdateContext context, const void* data);
-	virtual void update(GameUpdateContext context, const void* data);	
+	virtual void update(FalconUpdateContext context, const void* data);	
 	virtual void update(ZCameraUpdateContext context, const void* data);
 
 protected:

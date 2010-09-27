@@ -5,9 +5,8 @@
 #include "chai3d.h"
 
 #include "Projectile.h"
-#include "GameSubject.h"
 
-class Game : public GameSubject
+class Game
 {
 public:
 	Game();

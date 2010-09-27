@@ -14,7 +14,6 @@ Mediator::Mediator(boost::shared_ptr<Network> network,
 	userInterface(userInterface),
 	falcon(falcon),
 	zcamera(zcamera),
-	game(),
 	configuration(configuration),
 	gameState(GameState::NOT_RUNNING)
 {
@@ -26,7 +25,6 @@ Mediator::Mediator(boost::shared_ptr<Network> network,
 	userInterface->attach(this);
 	zcamera->attach(this);
 	falcon->attach(this);
-	game.attach(this);
 
 	InitializeCriticalSection(&configurationMutex);
 }
@@ -589,13 +587,6 @@ void Mediator::handleLocalSlingshotPosition(const cVector3d& position)
 
 	// let the peer know that we have moved our slingshot
 	network->sendSlingshotPosition(position);
-	return;
-}
-
-void Mediator::update(GameUpdateContext context, const void* data)
-{
-	// there are currently no updates coming from the game
-	assert(false);
 	return;
 }
 
