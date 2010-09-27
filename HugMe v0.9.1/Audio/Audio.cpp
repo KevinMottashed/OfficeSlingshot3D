@@ -5,6 +5,7 @@
 
 Audio::Audio()
 {
+	// error code
 	FMOD_RESULT result;
 
 	// create and initialize the system
@@ -14,10 +15,13 @@ Audio::Audio()
 	assert(result == FMOD_OK);
 
 	// create streams for all the sounds
+	// creating a stream will stream the file instead of preloading the whole thing
+	// this reduces the time it takes for the application to load
 	result = system->createStream("sounds/tink.mp3", FMOD_DEFAULT, 0, &hitSound);
 	assert(result == FMOD_OK);
 	result = system->createStream("sounds/round1.mp3", FMOD_DEFAULT, 0, &round1Sound);
 	assert(result == FMOD_OK);
+	// load the background music in loop mode so that it loops forever
 	result = system->createStream("sounds/doom3_theme.mp3", FMOD_LOOP_NORMAL | FMOD_2D | FMOD_HARDWARE, 0, &bgMusicSound);
 	assert(result == FMOD_OK);
 	result = system->createStream("sounds/victory.mp3", FMOD_DEFAULT, 0, &gameWonSound);
@@ -28,6 +32,7 @@ Audio::Audio()
 
 Audio::~Audio()
 {
+	// we only need to release the system, as it will free all other resources
 	FMOD_RESULT result = system->release();
 	assert(result == FMOD_OK);
 }
