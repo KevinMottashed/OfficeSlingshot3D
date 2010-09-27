@@ -13,6 +13,7 @@
 #include "VideoData.h"
 #include "Configuration.h"
 #include "SyncLocker.h"
+#include "Audio.h"
 
 // The Mediator class for the program
 class Mediator :	public NetworkObserver,
@@ -46,6 +47,7 @@ private:
 	boost::shared_ptr<Falcon> falcon;
 	boost::shared_ptr<IZCamera> zcamera;
 	boost::shared_ptr<SmartClothingManager> smartClothing;
+	Audio audio;
 
 	// the game
 	Game game;

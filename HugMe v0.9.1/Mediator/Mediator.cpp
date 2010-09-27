@@ -473,6 +473,14 @@ void Mediator::localStartGame()
 		startGame();
 
 		userInterface->displayGameStateChanged(GameState::RUNNING, Player::LOCAL);
+
+		// TODO move this to the startGame function so that music plays for both players
+		// For now it is here so that when we test 2 instances on one pc we wont hear 2 copies
+		// of the background music.
+		// This can be moved over once we add a mute option.
+		// play background music and "round 1 fight"
+		audio.playGameStart();
+		audio.playBGMusic();
 	}
 	return;
 }
