@@ -25,6 +25,11 @@ void AudioTestSuite::run()
 	UNIT_TEST(testPow);
 	UNIT_TEST(testTink);
 	UNIT_TEST(testTuck);
+	UNIT_TEST(testPlayBGMusic);
+	UNIT_TEST(testPlayHit);
+	UNIT_TEST(testPlayGameStart);
+	UNIT_TEST(testPlayGameOverWon);
+	UNIT_TEST(testPlayGameOverLost);
 }
 
 void AudioTestSuite::testAfterburn()
@@ -81,6 +86,7 @@ void AudioTestSuite::testAudioFile(const string& fileName)
 	result = system->playSound(FMOD_CHANNEL_FREE, sound, false, &channel);
 	assert_equals(result, FMOD_OK, "Failed to play sound");
 
+	// Sleep for the length of the sound
 	unsigned int length;
 	result = sound->getLength(&length, FMOD_TIMEUNIT_MS);
 	assert_equals(result, FMOD_OK, "Should be able to retrieve sound length");
@@ -89,4 +95,49 @@ void AudioTestSuite::testAudioFile(const string& fileName)
 
 	result = system->release();
 	assert_equals(result, FMOD_OK, "Should be able to release all resources");
+}
+
+void AudioTestSuite::testPlayBGMusic()
+{
+	Audio audio;
+	audio.playBGMusic();
+
+	// only play the start of the song to save time
+	Sleep(10000);
+}
+
+void AudioTestSuite::testPlayHit()
+{
+	Audio audio;
+	audio.playHit();
+
+	// 5 seconds should be enough to hear the whole sound
+	Sleep(5000);
+}
+
+void AudioTestSuite::testPlayGameStart()
+{
+	Audio audio;
+	audio.playGameStart();
+
+	// 5 seconds should be enough to hear the whole sound
+	Sleep(5000);
+}
+
+void AudioTestSuite::testPlayGameOverWon()
+{
+	Audio audio;
+	audio.playGameOverWon();
+
+	// 5 seconds should be enough to hear the whole sound
+	Sleep(5000);
+}
+
+void AudioTestSuite::testPlayGameOverLost()
+{
+	Audio audio;
+	audio.playGameOverLost();
+
+	// 5 seconds should be enough to hear the whole sound
+	Sleep(5000);
 }
