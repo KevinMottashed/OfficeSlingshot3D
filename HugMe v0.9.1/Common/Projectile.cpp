@@ -6,14 +6,14 @@
 //////////////////////////////////////////////////////////////////////
 
 Projectile::Projectile() :
-	position(cVector3d(0,0,0)),
-	speed(cVector3d(0,0,0))
+	_position(cVector3d(0,0,0)),
+	_force(cVector3d(0,0,0))
 {
 }
 
-Projectile::Projectile(cVector3d position, cVector3d speed) :
-	position(position),
-	speed(speed)
+Projectile::Projectile(cVector3d position, cVector3d force) :
+	_position(position),
+	_force(force)
 {
 }
 
@@ -21,45 +21,45 @@ Projectile::~Projectile()
 {
 }
 
-cVector3d Projectile::getPosition() const
+cVector3d Projectile::position() const
 {
-	return position;
+	return _position;
 }
 
-cVector3d Projectile::getSpeed() const
+cVector3d Projectile::force() const
 {
-	return speed;
+	return _force;
 }
 
-void Projectile::setPosition(double x, double y, double z)
+void Projectile::position(double x, double y, double z)
 {
-	position.x = x;
-	position.y = y;
-	position.z = z;
+	_position.x = x;
+	_position.y = y;
+	_position.z = z;
 }
 
-void Projectile::setPosition(const cVector3d& v)
+void Projectile::position(const cVector3d& v)
 {
-	position = v;
+	_position = v;
 	return;
 }
 
-void Projectile::setSpeed(double x, double y, double z)
+void Projectile::force(double x, double y, double z)
 {
-	speed.x = x;
-	speed.y = y;
-	speed.z = z;
+	_force.x = x;
+	_force.y = y;
+	_force.z = z;
 }
 
-void Projectile::setSpeed(const cVector3d& v)
+void Projectile::force(const cVector3d& v)
 {
-	speed = v;
+	_force = v;
 	return;
 }
 
 std::ostream& operator<<(std::ostream& os, const Projectile& projectile)
 {
-	os << "position=" << projectile.getPosition() << " speed=" << projectile.getSpeed();
+	os << "position=" << projectile.position() << " force=" << projectile.force();
 	return os;
 }
 
