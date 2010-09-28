@@ -473,7 +473,23 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Mediator\MediatorObserver.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Mediator\MediatorObserver.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Mediator\MediatorProxy.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Mediator\MediatorSubject.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Mediator\MediatorSubject.h"
 				>
 			</File>
 		</Filter>
