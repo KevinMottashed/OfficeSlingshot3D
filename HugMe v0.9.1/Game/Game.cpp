@@ -11,7 +11,7 @@ Game::Game() :
 	m_RemoteSlingshotPosition(cVector3d(0,0,0)),
 	m_LocalPlayerPosition(cVector3d(0,0,0)),
 	m_RemotePlayerPosition(cVector3d(0,0,0)),
-	m_bGameIsRunning(false)
+	state(GameState::NOT_RUNNING)
 {
 	InitializeCriticalSection(&m_csLocalSlingshotPosition);
 	InitializeCriticalSection(&m_csRemoteSlingshotPosition);
@@ -95,12 +95,12 @@ void Game::addRemoteProjectile(const Projectile& projectile)
 
 void Game::start()
 {
-	if (m_bGameIsRunning)
+	if (state == GameState::RUNNING)
 	{
 		// dont try to start the game twice
 		return;
 	}
-	m_bGameIsRunning = true;
+	state = GameState::RUNNING;
 	m_hGameLoopThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) GameLoopThread, (void*) this, 0, &m_dwIDGameLoop);
 	return;
 }
@@ -110,7 +110,7 @@ void Game::start()
 // that way we can resume from the previous state
 void Game::pause()
 {
-	m_bGameIsRunning = false;
+	state = GameState::PAUSED;
 	m_hGameLoopThread = 0;
 	m_dwIDGameLoop = 0;
 	return;
@@ -118,7 +118,7 @@ void Game::pause()
 
 void Game::stop()
 {
-	m_bGameIsRunning = false;
+	state = GameState::NOT_RUNNING;
 	m_hGameLoopThread = 0;
 	m_dwIDGameLoop = 0;
 
@@ -140,7 +140,7 @@ void Game::reset()
 
 DWORD Game::GameLoopThread(Game* pGame)
 {
-	while(pGame->m_bGameIsRunning)
+	while(pGame->state == GameState::RUNNING)
 	{
 		// slingshot positions
 		std::cout << "The local slingshot is at " << pGame->getLocalSlingshotPosition() <<  std::endl;

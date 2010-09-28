@@ -5,11 +5,24 @@
 #include "chai3d.h"
 
 #include "Projectile.h"
+#include "GameStateEnum.h"
 
+/**
+ * Represents the OfficeSlingshot3D game.
+ * Holds game data (score, health, etc ...)
+ * and the games 3d representation.
+ */
 class Game
 {
 public:
+	/**
+	 * Constructor
+	 */
 	Game();
+
+	/**
+	 * Destructor
+	 */
 	virtual ~Game();
 
 	// alter the game state
@@ -68,12 +81,20 @@ private:
 	HANDLE m_hGameLoopThread; // handle
 	DWORD m_dwIDGameLoop; // thread id
 
-	// this is the thread that controls the game
+	/**
+	 * This function is the main game loop.
+	 * A thread will run this non-stop.
+	 */
 	static DWORD GameLoopThread(Game* p_Game);
 
-	bool m_bGameIsRunning; // true when the game is running
+	/**
+	 * The current state of the game.
+	 */
+	GameState_t state;
 
-	// reset the game to its original state
+	/**
+	 * Reset the game to its original state.
+	 */
 	void reset();
 };
 #endif
