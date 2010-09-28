@@ -9,6 +9,7 @@
 #include "ZCameraProxy.h"
 #include "JacketProxy.h"
 #include "LoggerProxy.h"
+#include "GameProxy.h"
 #include "VideoData.h"
 #include "Configuration.h"
 #include "SyncLocker.h"
