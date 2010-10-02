@@ -22,6 +22,12 @@ public:
 	// Creates a random 3dVector
 	static DWORD getPositionFromFalcon(NovintFalcon* p_Falcon);
 
+	/**
+	 * Returns the box to which the slingshot is bound.
+	 * @return the box to which the slingshot is bound
+	 */
+	virtual cCollisionAABBBox boundingBox() const;
+
 private:
 	NovintFalcon(const NovintFalcon& novintFalcon); // intentionally not implemented
 	NovintFalcon& operator=(const NovintFalcon& novintFalcon); // intentionally not implemented

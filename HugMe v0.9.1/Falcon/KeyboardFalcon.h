@@ -37,6 +37,12 @@ public:
 	 */
 	virtual void keyPressed(unsigned int key);
 
+	/**
+	 * Returns the box to which the slingshot is bound.
+	 * @return the box to which the slingshot is bound
+	 */
+	virtual cCollisionAABBBox boundingBox() const;
+
 private:
 
 	/**
@@ -48,6 +54,11 @@ private:
 	 * The falcon's current position
 	 */
 	cVector3d position;
+
+	/**
+	 * The keyboard falcon cannot move outside of this box
+	 */
+	static const cCollisionAABBBox _boundingBox;
 };
 
 #endif

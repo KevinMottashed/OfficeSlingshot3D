@@ -23,7 +23,6 @@ enum MediatorUpdateContextEnum
 	LOCAL_SLINGSHOT_MOVED,
 	LOCAL_AVATAR_MOVED,
 	NETWORK_DISCONNECTED,
-
 };
 
 }

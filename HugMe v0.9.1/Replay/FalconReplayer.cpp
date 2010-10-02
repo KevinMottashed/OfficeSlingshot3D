@@ -46,3 +46,9 @@ void FalconReplayer::stopPolling()
 	return;
 }
 
+cCollisionAABBBox FalconReplayer::boundingBox() const
+{
+	cCollisionAABBBox temp;
+	return temp;
+}
+

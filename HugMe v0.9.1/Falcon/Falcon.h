@@ -2,6 +2,7 @@
 #define FALCON_H
 
 #include "FalconSubject.h"
+#include "chai3d.h"
 
 // Abstract class that represents a falcon
 class Falcon : public FalconSubject
@@ -15,6 +16,12 @@ public:
 
 	// stop polling the falcon for information (position, buttons, ...)
 	virtual void stopPolling() = 0;
+
+	/**
+	 * Returns the box to which the slingshot is bound.
+	 * @return the box to which the slingshot is bound
+	 */
+	virtual cCollisionAABBBox boundingBox() const = 0;
 };
 
 #endif

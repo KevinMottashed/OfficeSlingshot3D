@@ -1,4 +1,5 @@
 #include "VirtualEnvironment.h"
+#include "WorldConstants.h"
 
 VirtualEnvironment::VirtualEnvironment(void)
 {
@@ -67,13 +68,21 @@ cCamera* VirtualEnvironment::camera()
 
 void VirtualEnvironment::moveLocalSlingshot(cVector3d position)
 {
-	lSlingshot->setPos(position);
+	// don't move outside of the allowed area
+	if (World::local_slingshot_bounding_box.contains(position))
+	{
+		lSlingshot->setPos(position);
+	}
 	return;
 }
 
 void VirtualEnvironment::movePeerSlingshot(cVector3d position)
 {
-	rSlingshot->setPos(position);
+	// don't move outside of the allowed area
+	if (World::peer_slingshot_bounding_box.contains(position))
+	{
+		rSlingshot->setPos(position);
+	}
 	return;
 }
 
@@ -138,8 +147,8 @@ void VirtualEnvironment::initialize(void)
     world->addChild(rSlingshot);
 	world->addChild(lSlingshot);
 
-    rSlingshot->setPos(-5.0f, 0.0f, -1.2f);
-	lSlingshot->setPos(5.0f, 0.0f, -1.2f);
+	rSlingshot->setPos(World::peer_slingshot_starting_position);
+	lSlingshot->setPos(World::local_slingshot_starting_position);
 
 	rSlingshot->rotate( cVector3d(0, 1, 0), cDegToRad(90));
 	rSlingshot->rotate( cVector3d(1, 0, 0), cDegToRad(90));

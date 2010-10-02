@@ -42,6 +42,13 @@ DWORD NovintFalcon::getPositionFromFalcon(NovintFalcon* p_Falcon)
 
 }
 
+cCollisionAABBBox NovintFalcon::boundingBox() const
+{
+	// TODO: Alex, add whatever area the novint falcon is bound to here
+	cCollisionAABBBox temp;
+	return temp;
+}
+
 // TODO implement
 // start managing the falcon pen (polling it for information)
 // create a thread to poll it

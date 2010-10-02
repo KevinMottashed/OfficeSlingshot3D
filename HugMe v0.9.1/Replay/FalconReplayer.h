@@ -6,6 +6,7 @@
 
 #include "LoggerProxy.h"
 #include "FalconProxy.h"
+#include "chai3d.h"
 
 // The falcon replayer class is in charge of replaying falcon events
 // The replay function is used to replay a specific log event, at which
@@ -25,6 +26,8 @@ public:
 	// part of falcon interface, the replayer does not actually poll the falcon
 	virtual void startPolling();	
 	virtual void stopPolling();
+
+	virtual cCollisionAABBBox boundingBox() const;
 
 private:
 	// the file/archive used for retrieving the data associated with events
