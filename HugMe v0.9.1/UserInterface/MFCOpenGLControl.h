@@ -6,8 +6,8 @@
 #include <gl/gl.h>
 #include <gl/glu.h>
 
-#include "VirtualEnvironment.h"
 #include "boost.h"
+#include "chai3d.h"
 
 class MFCOpenGLControl : public CDialog
 {
@@ -20,16 +20,22 @@ private:
 	CRect   m_oldWindow;
 	CRect   m_originalRect;
 
-	boost::shared_ptr<VirtualEnvironment> ve;
-
 	int displayW;
 	int displayH;
 
+	cCamera* _camera;
+
 public:
 
-	UINT_PTR m_unpTimer;
-	MFCOpenGLControl(void);
+	/**
+	 * Set the camera that the ogl frame will use to display frames
+	 * @param camera The new camera
+	 */
+	void camera(cCamera* camera);
 
+	UINT_PTR m_unpTimer;
+
+	MFCOpenGLControl(void);
 	virtual ~MFCOpenGLControl(void);
 	
 	void oglCreate(CRect rect, CWnd *parent);

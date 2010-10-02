@@ -1,10 +1,10 @@
 #include "OfficeSlingshot3D.h"
 
-OfficeSlingshot3D::OfficeSlingshot3D(	boost::shared_ptr<Mediator> mediator,
+OfficeSlingshot3D::OfficeSlingshot3D(	boost::shared_ptr<Game> game,
 										boost::shared_ptr<Logger> logger, 
 										boost::shared_ptr<Replayer> replayer,
 										CDialog* dialog) :
-	mediator(mediator),
+	game(game),
 	logger(logger),
 	replayer(replayer),
 	dialog(dialog)

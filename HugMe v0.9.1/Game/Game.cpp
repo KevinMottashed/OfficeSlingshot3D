@@ -6,94 +6,63 @@
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-Game::Game() :
-	m_LocalSlingshotPosition(cVector3d(0,0,0)),
-	m_RemoteSlingshotPosition(cVector3d(0,0,0)),
-	m_LocalPlayerPosition(cVector3d(0,0,0)),
-	m_RemotePlayerPosition(cVector3d(0,0,0)),
+Game::Game(boost::shared_ptr<Mediator> mediator) :
+	mediator(mediator),
 	state(GameState::NOT_RUNNING)
 {
-	InitializeCriticalSection(&m_csLocalSlingshotPosition);
-	InitializeCriticalSection(&m_csRemoteSlingshotPosition);
-	InitializeCriticalSection(&m_csLocalPlayerPosition);
-	InitializeCriticalSection(&m_csRemotePlayerPosition);
-	InitializeCriticalSection(&m_csLocalProjectiles);
-	InitializeCriticalSection(&m_csRemoteProjectiles);
+	// observe the mediator
+	mediator->attach(this);
+
+	environment.initialize();
+	
+	mediator->switchCamera(environment.camera());
 }
 
 Game::~Game()
 {
-	DeleteCriticalSection(&m_csLocalSlingshotPosition);
-	DeleteCriticalSection(&m_csRemoteSlingshotPosition);
-	DeleteCriticalSection(&m_csLocalPlayerPosition);
-	DeleteCriticalSection(&m_csRemotePlayerPosition);
-	DeleteCriticalSection(&m_csLocalProjectiles);
-	DeleteCriticalSection(&m_csRemoteProjectiles);
 }
 
-cVector3d Game::getLocalSlingshotPosition() const
+void Game::update(MediatorUpdateContext_t context, const void* data)
 {
-	SyncLocker lock(m_csLocalPlayerPosition);
-	return m_LocalSlingshotPosition;
+	switch (context)
+	{
+		case MediatorUpdateContext::START_GAME:
+		{
+			start(*(Player_t*) data);
+			break;
+		}
+		case MediatorUpdateContext::PAUSE_GAME:
+		{
+			pause(*(Player_t*) data);
+			break;
+		}
+		case MediatorUpdateContext::EXIT_GAME:
+		{
+			stop(*(Player_t*) data);
+			break;
+		}
+		case MediatorUpdateContext::NETWORK_DISCONNECTED:
+		{
+			// reset the game
+			reset();
+			break;
+		}
+		case MediatorUpdateContext::LOCAL_SLINGSHOT_MOVED:
+		{
+			assert(data != NULL);
+			environment.moveLocalSlingshot(*(cVector3d*) data);
+			break;
+		}
+		case MediatorUpdateContext::PEER_SLINGSHOT_MOVED:
+		{
+			assert(data != NULL);
+			environment.movePeerSlingshot(*(cVector3d*) data);
+			break;
+		}
+	}
 }
 
-void Game::setLocalSlingshotPosition(const cVector3d& position)
-{
-	SyncLocker lock(m_csLocalPlayerPosition);
-	m_LocalSlingshotPosition = position;
-}
-
-cVector3d Game::getRemoteSlingshotPosition() const
-{
-	SyncLocker lock(m_csRemoteSlingshotPosition);
-	return m_RemoteSlingshotPosition;
-}
-
-void Game::setRemoteSlingshotPosition(const cVector3d& position)
-{
-	SyncLocker lock(m_csRemoteSlingshotPosition);
-	m_RemoteSlingshotPosition = position;
-}
-
-cVector3d Game::getLocalPlayerPosition() const
-{
-	SyncLocker lock(m_csLocalPlayerPosition);
-	return m_LocalPlayerPosition;
-}
-
-void Game::setLocalPlayerPosition(const cVector3d& position)
-{
-	SyncLocker lock(m_csLocalPlayerPosition);
-	m_LocalPlayerPosition = position;
-}
-
-cVector3d Game::getRemotePlayerPosition() const
-{
-	SyncLocker lock(m_csRemotePlayerPosition);
-	return m_RemotePlayerPosition;
-}
-
-void Game::setRemotePlayerPosition(const cVector3d& position)
-{
-	SyncLocker lock(m_csRemotePlayerPosition);
-	m_RemotePlayerPosition = position;
-}
-
-void Game::addLocalProjectile(const Projectile& projectile)
-{
-	SyncLocker lock(m_csLocalSlingshotPosition);
-	m_LocalProjectiles.push_back(projectile);
-	return;
-}
-
-void Game::addRemoteProjectile(const Projectile& projectile)
-{
-	SyncLocker lock(m_csRemoteProjectiles);
-	m_RemoteProjectiles.push_back(projectile);
-	return;
-}
-
-void Game::start()
+void Game::start(Player_t player)
 {
 	if (state == GameState::RUNNING)
 	{
@@ -102,39 +71,43 @@ void Game::start()
 	}
 	state = GameState::RUNNING;
 	m_hGameLoopThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) GameLoopThread, (void*) this, 0, &m_dwIDGameLoop);
+
+	// tell the mediator that the game has started so that it can start managing the devices
+	mediator->startGame(player);
+
 	return;
 }
 
 // a pause is the same thing as a stop
 // except that we don't reset the game state
 // that way we can resume from the previous state
-void Game::pause()
+void Game::pause(Player_t player)
 {
 	state = GameState::PAUSED;
 	m_hGameLoopThread = 0;
 	m_dwIDGameLoop = 0;
+
+	// tell the mediator that the game has been paused so that it can stop managing the devices
+	mediator->pauseGame(player);
+
 	return;
 }
 
-void Game::stop()
+void Game::stop(Player_t player)
 {
-	state = GameState::NOT_RUNNING;
-	m_hGameLoopThread = 0;
-	m_dwIDGameLoop = 0;
+	// tell the mediator that the game has been stopped so that it can stop managing the devices
+	mediator->exitGame(player);
 
 	// reset the game
 	reset();
-
 	return;
 }
 
 void Game::reset()
 {
-	// reset all the positions to the default
-	setLocalPlayerPosition(cVector3d(0,0,0));
-	setRemotePlayerPosition(cVector3d(0,0,0));
-	setLocalSlingshotPosition(cVector3d(0,0,0));
-	setRemoteSlingshotPosition(cVector3d(0,0,0));
+	state = GameState::NOT_RUNNING;
+	m_hGameLoopThread = 0;
+	m_dwIDGameLoop = 0;
 	return;
 }
 
@@ -142,36 +115,10 @@ DWORD Game::GameLoopThread(Game* pGame)
 {
 	while(pGame->state == GameState::RUNNING)
 	{
-		// slingshot positions
-		std::cout << "The local slingshot is at " << pGame->getLocalSlingshotPosition() <<  std::endl;
-		std::cout << "The remote slingshot is at " << pGame->getRemoteSlingshotPosition() <<  std::endl;
-
-		// player positions
-		std::cout << "The local player is at " << pGame->getLocalPlayerPosition() <<  std::endl;
-		std::cout << "The remote player is at " << pGame->getRemotePlayerPosition() <<  std::endl;
-
-		// friendly projectiles
-		synchronized(pGame->m_csLocalProjectiles)
-		{
-			std::vector<Projectile>::const_iterator it = pGame->m_LocalProjectiles.begin();
-			for (; it != pGame->m_LocalProjectiles.end(); ++it)
-			{
-				std::cout << "Friendly projectile at " << it->position() << " with a force of " << it->force() << std::endl;
-			}
-		}
-
-		// enemy projectiles
-		synchronized(pGame->m_csRemoteProjectiles)
-		{
-			std::vector<Projectile>::const_iterator it = pGame->m_RemoteProjectiles.begin();
-			for (; it != pGame->m_RemoteProjectiles.end(); ++it)
-			{
-				std::cout << "Enemy projectile at " << it->position() << " with a force of " << it->force() << std::endl;
-			}
-		}
+		pGame->environment.updateFrame();
 
 		// sleep for a short while
-		Sleep(5000); // 5 secs
+		Sleep(100); // 0.1 secs / 10FPS
 	}
 	return 0;
 }

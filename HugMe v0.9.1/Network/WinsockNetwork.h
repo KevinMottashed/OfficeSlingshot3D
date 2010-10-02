@@ -31,7 +31,6 @@ enum DataPacketType
 	DATA_PACKET_PLAYER_POSITION,
 	DATA_PACKET_SLINGSHOT_POSITION,
 	DATA_PACKET_SLINGSHOT_PULLBACK,
-	DATA_PACKET_SLINGSHOT_RELEASE,
 	DATA_PACKET_PROJECTILE,
 	DATA_PACKET_UNKNOWN
 };
@@ -82,9 +81,6 @@ public:
 
 	// send a slingshot pullback event over the network
 	virtual rc_network sendSlingshotPullback();
-
-	// send a slingshot release event over the network
-	virtual rc_network sendSlingshotRelease();
 
 	// true if  we are connected to a peer
 	virtual bool isConnected() const;

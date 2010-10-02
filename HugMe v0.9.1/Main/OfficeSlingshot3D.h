@@ -16,7 +16,7 @@
 class OfficeSlingshot3D
 {
 public:
-	OfficeSlingshot3D(	boost::shared_ptr<Mediator> mediator,
+	OfficeSlingshot3D(	boost::shared_ptr<Game> game,
 						boost::shared_ptr<Logger> logger, 
 						boost::shared_ptr<Replayer> replayer,
 						CDialog* dialog);
@@ -31,7 +31,7 @@ public:
 private:
 	// the different aspects of the program
 	// we need to hang on to all of these so that nothing gets destroyed
-	boost::shared_ptr<Mediator> mediator;
+	boost::shared_ptr<Game> game;
 	boost::shared_ptr<Logger> logger;
 	boost::shared_ptr<Replayer> replayer;
 

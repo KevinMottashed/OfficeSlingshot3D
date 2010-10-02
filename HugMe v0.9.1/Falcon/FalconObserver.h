@@ -7,7 +7,8 @@
 // the context represents what has changed in the observed object
 enum FalconUpdateContext
 {
-	SLINGSHOT_POSITION
+	SLINGSHOT_MOVED,
+	SLINGSHOT_FIRED,
 };
 
 class FalconObserver

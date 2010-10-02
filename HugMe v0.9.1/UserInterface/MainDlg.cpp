@@ -2,6 +2,7 @@
 #include "chat.h"
 #include "MainDlg.h"
 #include "Preferences.h"
+#include "KeyboardProxy.h"
 
 using namespace std;
 
@@ -189,20 +190,13 @@ BOOL CMainDlg::PreTranslateMessage(MSG* pMsg)
 	// catches the message when the user presses the Escape key
 	if (pMsg->message == WM_KEYDOWN)
 	{
+		// let the keyboard manager know that a key was pressed
+		Keyboard::instance()->keyPressed(pMsg->wParam);
+
 		if (pMsg->wParam == VK_ESCAPE)
 		{
 			return TRUE;
-		}
-		else if (pMsg->wParam == VK_SPACE)
-		{
-			shootNewBall(cVector3d(-500.0f, 0.0f, 280.0f));
-			return TRUE;
-		}
-		else if (pMsg->wParam == VK_SHIFT)
-		{
-			shootNewBall(cVector3d(-400.0f, 0.0f, 200.0f));
-			return TRUE;
-		}
+		}		
 	}
 	// perform the default action
 	return CDialog::PreTranslateMessage(pMsg);
@@ -455,4 +449,10 @@ void CMainDlg::shootNewBall(const cVector3d& force)
 
 	// send the force to the peer
 	pUserInterface->notifyNewBallShot(remoteForce);
-} 
+}
+
+void CMainDlg::camera(cCamera* camera)
+{
+	m_oglWindow->camera(camera);
+	return;
+}

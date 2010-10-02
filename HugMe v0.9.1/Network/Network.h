@@ -116,13 +116,6 @@ public:
 	virtual rc_network sendSlingshotPullback() = 0;
 
 	/**
-	 * Send a slingshot release event to the peer.
-	 * This lets the peer know that we have released our slingshot.
-	 * @return The error code, SUCCESS if the message was sent and received
-	 */
-	virtual rc_network sendSlingshotRelease() = 0;
-
-	/**
 	 * Determines if we are connected to a peer
 	 * @return true if we are connected to a peer
 	 */	

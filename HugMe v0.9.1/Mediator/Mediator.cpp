@@ -14,8 +14,7 @@ Mediator::Mediator(boost::shared_ptr<Network> network,
 	userInterface(userInterface),
 	falcon(falcon),
 	zcamera(zcamera),
-	configuration(configuration),
-	gameState(GameState::NOT_RUNNING)
+	configuration(configuration)
 {
 	// create the various components
 	smartClothing = shared_ptr<SmartClothingManager>(new SmartClothingManager());
@@ -34,40 +33,71 @@ Mediator::~Mediator()
 	DeleteCriticalSection(&configurationMutex);
 }
 
-void Mediator::startGame()
+void Mediator::startGame(Player_t player)
 {
-	if (gameState == GameState::RUNNING)
+	if (player == Player::LOCAL)
 	{
-		return; // already started
+		rc_network error = network->sendStartGame();
+		if (error != SUCCESS)
+		{
+			handleNetworkError(error);
+		}
+
+		// TODO move this to out of this if statement so that music plays for both players
+		// For now it is here so that when we test 2 instances on one pc we wont hear 2 copies
+		// of the background music.
+		// This can be moved over once we add a mute option.
+		// play background music and "round 1 fight"
+		audio.playGameStart();
+		audio.playBGMusic();
 	}
-	gameState = GameState::RUNNING;
-	game.start();
+
 	falcon->startPolling();
 	zcamera->startCapture();
+	userInterface->displayGameStateChanged(GameState::RUNNING, player);
+	return;
 }
 
-void Mediator::pauseGame()
+void Mediator::pauseGame(Player_t player)
 {
-	if (gameState != GameState::RUNNING)
+	if (player == Player::LOCAL)
 	{
-		return; // nothing to do, the game is either already paused or not started
+		rc_network error = network->sendPauseGame();
+		if (error != SUCCESS)
+		{
+			handleNetworkError(error);
+			return;
+		}
 	}
-	gameState = GameState::PAUSED;
-	game.pause();
+
 	falcon->stopPolling();
 	zcamera->stopCapture();
+	userInterface->displayGameStateChanged(GameState::PAUSED, player);
+	return;
 }
 
-void Mediator::exitGame()
+void Mediator::exitGame(Player_t player)
 {
-	if (gameState == GameState::NOT_RUNNING)
+	if (player == Player::LOCAL)
 	{
-		return; // nothing to do, the game is not running
+		rc_network error = network->sendEndGame();
+		if (error != SUCCESS)
+		{
+			handleNetworkError(error);
+			return;
+		}
 	}
-	gameState = GameState::NOT_RUNNING;
-	game.stop();
+
 	falcon->stopPolling();
 	zcamera->stopCapture();
+	userInterface->displayGameStateChanged(GameState::NOT_RUNNING, player);
+	return;
+}
+
+void Mediator::switchCamera(cCamera* camera)
+{
+	userInterface->switchCamera(camera);
+	return;
 }
 
 void Mediator::update(NetworkUpdateContext context, const void* data)
@@ -89,19 +119,22 @@ void Mediator::update(NetworkUpdateContext context, const void* data)
 		case PEER_START_GAME:
 		{
 			// the peer has started the game
-			handlePeerStartGame();
+			Player_t player = Player::PEER;
+			notify(MediatorUpdateContext::START_GAME, &player);
 			break;
 		}
 		case PEER_PAUSE_GAME:
 		{
 			// the peer has paused the game
-			handlePeerPauseGame();
+			Player_t player = Player::PEER;
+			notify(MediatorUpdateContext::PAUSE_GAME, &player);
 			break;
 		}
 		case PEER_EXIT_GAME:
 		{
 			// the peer has exited the game
-			handlePeerExitGame();
+			Player_t player = Player::PEER;
+			notify(MediatorUpdateContext::EXIT_GAME, &player);
 			break;
 		}
 		case NETWORK_ERROR:
@@ -127,60 +160,41 @@ void Mediator::update(NetworkUpdateContext context, const void* data)
 		}
 		case RECEIVED_VIDEO:
 		{
-			// the network has received some new video
-			assert(data != NULL);
-			if (gameState == GameState::RUNNING)
-			{
-				handleRemoteVideoData(*(VideoData*) data);
-			}
+			// TODO remove video data
 			break;
 		}
 		case RECEIVED_SLINGSHOT_POSITION:
 		{
 			// the network has received a slingshot position
 			assert(data != NULL);
-			if (gameState == GameState::RUNNING)
-			{
-				handleRemoteSlingshotPosition(*(cVector3d*) data);
-			}
+
+			// adjust the received vector for our perspective
+			cVector3d adjusted = *(cVector3d*) data;
+			adjusted.x = -adjusted.x; // invert x axis
+			adjusted.y = -adjusted.y; // invert y axis
+						
+			
+			notify(MediatorUpdateContext::PEER_SLINGSHOT_MOVED, &adjusted);
 			break;
 		}
 		case RECEIVED_PROJECTILE:
 		{
 			// the network has received a projectile
 			assert(data != NULL);
-			if (gameState == GameState::RUNNING)
-			{
-				handleRemoteProjectile(*(Projectile*) data);
-			}
+			notify(MediatorUpdateContext::PEER_FIRED_PROJECTILE, data);
 			break;
 		}
 		case RECEIVED_PULLBACK:
 		{
 			// the network has received a slingshot pullback
-			if (gameState == GameState::RUNNING)
-			{
-				handleRemotePullback();
-			}
-			break;
-		}
-		case RECEIVED_RELEASE:
-		{
-			// the network has received a slingshot release
-			if (gameState == GameState::RUNNING)
-			{
-				handleRemoteRelease();
-			}
+			notify(MediatorUpdateContext::PEER_PULLBACK_SLINGSHOT);
 			break;
 		}
 		case RECEIVED_PLAYER_POSITION:
 		{
 			// the network has received a player position
 			assert(data != NULL);
-			if (gameState == GameState::RUNNING)
-			{
-				handleRemotePlayerPosition(*(cVector3d*) data);
-			}
+			notify(MediatorUpdateContext::PEER_AVATAR_MOVED, data);
 			break;
 		}
 		default:
@@ -203,7 +217,8 @@ void Mediator::handlePeerConnected()
 void Mediator::handlePeerDisconnected()
 {
 	// exit the game when the peer disconnects
-	exitGame();
+	notify(MediatorUpdateContext::NETWORK_DISCONNECTED);
+	stopDevices();
 
 	// display the change in connection state in the UI
 	userInterface->displayConnectionStateChanged(ConnectionState::DISCONNECTED, Player::PEER);
@@ -213,40 +228,11 @@ void Mediator::handlePeerDisconnected()
 void Mediator::handleNetworkError(rc_network error)
 {
 	// exit the game when a network error occurs
-	exitGame();
+	notify(MediatorUpdateContext::NETWORK_DISCONNECTED);
+	stopDevices();
 
 	// notify the user interface that the network connection as been disconnected
 	userInterface->displayNetworkError();
-	return;
-}
-
-void Mediator::handlePeerStartGame()
-{
-	// start our own game
-	startGame();
-
-	// let the UI know that the game has been started
-	userInterface->displayGameStateChanged(GameState::RUNNING, Player::PEER);
-	return;
-}
-
-void Mediator::handlePeerPauseGame()
-{
-	// pause our game
-	pauseGame();
-
-	// let the UI know that the game has been paused
-	userInterface->displayGameStateChanged(GameState::PAUSED, Player::PEER);
-	return;
-}
-
-void Mediator::handlePeerExitGame()
-{
-	// exit our own game
-	exitGame();
-
-	// let the UI know that the game has been ended
-	userInterface->displayGameStateChanged(GameState::NOT_RUNNING, Player::PEER);
 	return;
 }
 
@@ -261,46 +247,6 @@ void Mediator::handleChatMessage(const std::string& message)
 {
 	// tell the UI to display the chat message
 	userInterface->displayPeerChatMessage(message);
-	return;
-}
-
-void Mediator::handleRemoteVideoData(const VideoData& video)
-{
-	// tell the UI to display the video
-	userInterface->displayRemoteFrame(video);
-	return;
-}
-
-void Mediator::handleRemoteSlingshotPosition(const cVector3d& position)
-{
-	// update the slingshot position in the game module
-	game.setRemoteSlingshotPosition(position);
-	return;
-}
-
-void Mediator::handleRemoteProjectile(const Projectile& projectile)
-{
-	// add this new projectile to the game
-	game.addRemoteProjectile(projectile);
-	return;
-}
-
-void Mediator::handleRemotePlayerPosition(const cVector3d& position)
-{
-	// update our game to reflect that our opponent has moved
-	game.setRemotePlayerPosition(position);
-	return;
-}
-
-void Mediator::handleRemotePullback()
-{
-	// TODO implement
-	return;
-}
-
-void Mediator::handleRemoteRelease()
-{
-	// TODO implement
 	return;
 }
 
@@ -331,17 +277,20 @@ void Mediator::update(UserInterfaceUpdateContext context, const void* data)
 		}
 		case START_GAME:
 		{
-			localStartGame();
+			Player_t player = Player::LOCAL;
+			notify(MediatorUpdateContext::START_GAME, &player);
 			break;
 		}
 		case PAUSE_GAME:
 		{
-			localPauseGame();
+			Player_t player = Player::LOCAL;
+			notify(MediatorUpdateContext::PAUSE_GAME, &player);
 			break;
 		}
 		case EXIT_GAME:
 		{
-			localExitGame();
+			Player_t player = Player::LOCAL;
+			notify(MediatorUpdateContext::EXIT_GAME, &player);
 			break;
 		}
 		case EXIT_APPLICATION:
@@ -417,21 +366,17 @@ void Mediator::disconnect()
 	if (network->isConnected() || network->isListening())
 	{
 		// exit the game when we disconnect
-		exitGame();
+		notify(MediatorUpdateContext::NETWORK_DISCONNECTED);
+		stopDevices();
 
 		// tell the network manager to disconnect us
 		rc_network error = network->disconnect();
 
-		if (error == SUCCESS)
-		{
-			// display the change in connection state in the UI
-			userInterface->displayConnectionStateChanged(ConnectionState::DISCONNECTED, Player::LOCAL);
-		}
-		else
-		{
-			// this should never happen, we must always be able to disconnect from a peer
-			assert(false);
-		}
+		// we must always be able to disconnect from a peer
+		assert(error == SUCCESS);
+
+		// display the change in connection state in the UI
+		userInterface->displayConnectionStateChanged(ConnectionState::DISCONNECTED, Player::LOCAL);
 	}	
 	return;
 }
@@ -462,53 +407,6 @@ void Mediator::changePreferences(const UserPreferences& preferences)
 	return;
 }
 
-void Mediator::localStartGame()
-{
-	rc_network code = network->sendStartGame();
-	if (code == SUCCESS)
-	{
-		// start the game
-		startGame();
-
-		userInterface->displayGameStateChanged(GameState::RUNNING, Player::LOCAL);
-
-		// TODO move this to the startGame function so that music plays for both players
-		// For now it is here so that when we test 2 instances on one pc we wont hear 2 copies
-		// of the background music.
-		// This can be moved over once we add a mute option.
-		// play background music and "round 1 fight"
-		audio.playGameStart();
-		audio.playBGMusic();
-	}
-	return;
-}
-
-void Mediator::localPauseGame()
-{
-	rc_network code = network->sendPauseGame();
-	if (code == SUCCESS)
-	{
-		// pause the game
-		pauseGame();
-
-		userInterface->displayGameStateChanged(GameState::PAUSED, Player::LOCAL);
-	}
-	return;
-}
-
-void Mediator::localExitGame()
-{
-	rc_network code = network->sendEndGame();
-	if (code == SUCCESS)
-	{
-		// pause the game
-		exitGame();
-
-		userInterface->displayGameStateChanged(GameState::NOT_RUNNING, Player::LOCAL);
-	}
-	return;
-}
-
 void Mediator::closeApplication()
 {
 	// the only thing to do is to close the sockets so the other end has a clean disconnect
@@ -533,11 +431,7 @@ void Mediator::update(ZCameraUpdateContext context, const void* data)
 	{
 		case VIDEO:
 		{
-			assert(data != NULL);
-			if (gameState == GameState::RUNNING)
-			{
-				handleLocalVideoData(*(VideoData*) data);
-			}
+			// TODO remove video data
 			break;
 		}
 		default:
@@ -561,13 +455,19 @@ void Mediator::update(FalconUpdateContext context, const void* data)
 {
 	switch(context)
 	{
-		case SLINGSHOT_POSITION:
+		case SLINGSHOT_MOVED:
 		{
 			assert(data != NULL);
-			if (gameState == GameState::RUNNING)
+
+			// let the peer know that we have moved our slingshot
+			rc_network error = network->sendSlingshotPosition(*(cVector3d*) data);
+			if (error != SUCCESS)
 			{
-				handleLocalSlingshotPosition(*(cVector3d*) data);
+				handleNetworkError(error);
+				return;
 			}
+
+			notify(MediatorUpdateContext::LOCAL_SLINGSHOT_MOVED, data);
 			break;
 		}
 		default:
@@ -577,16 +477,6 @@ void Mediator::update(FalconUpdateContext context, const void* data)
 			break;
 		}
 	}
-	return;
-}
-
-void Mediator::handleLocalSlingshotPosition(const cVector3d& position)
-{
-	// update our game with the new slingshot position
-	game.setLocalSlingshotPosition(position);
-
-	// let the peer know that we have moved our slingshot
-	network->sendSlingshotPosition(position);
 	return;
 }
 
@@ -602,5 +492,12 @@ void Mediator::receiveNewBall(const cVector3d& force)
 {
 	// show the peer ball on the local side
 	userInterface->receiveNewBall(force);
+	return;
+}
+
+void Mediator::stopDevices()
+{
+	falcon->stopPolling();
+	zcamera->stopCapture();
 	return;
 }

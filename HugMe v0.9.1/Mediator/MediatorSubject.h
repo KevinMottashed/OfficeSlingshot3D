@@ -35,7 +35,7 @@ public:
 	/**
 	 * Notify all observers that an event happened
 	 */
-	void notify(MediatorUpdateContext context, const void* data = NULL);
+	void notify(MediatorUpdateContext_t context, const void* data = NULL);
 
 private:
 	/**

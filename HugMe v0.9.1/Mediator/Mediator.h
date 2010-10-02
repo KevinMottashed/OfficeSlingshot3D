@@ -8,22 +8,23 @@
 #include "FalconProxy.h"
 #include "ZCameraProxy.h"
 #include "JacketProxy.h"
-#include "LoggerProxy.h"
-#include "GameProxy.h"
 #include "VideoData.h"
 #include "Configuration.h"
 #include "SyncLocker.h"
 #include "AudioProxy.h"
+#include "MediatorSubject.h"
 
 /**
- * This class mediates the interactions between the device and the game.
+ * This class mediates the interactions between the devices and the game.
  * All device modules report events to the mediator. The mediator will then
- * interpret these events and notify the game.
+ * interpret these events and notify the game. The mediator also synchronizes
+ * both clients via the network connection.
  */
 class Mediator :	public NetworkObserver,
 					public UserInterfaceObserver,
 					public ZCameraObserver,
-					public FalconObserver
+					public FalconObserver,
+					public MediatorSubject
 {
 public:
 	Mediator(	boost::shared_ptr<Network> network,
@@ -39,6 +40,35 @@ public:
 	virtual void update(ZCameraUpdateContext context, const void* data);
 	virtual void update(FalconUpdateContext context, const void* data);
 
+	/**
+	 * Take action when the game is started.
+	 * This will start polling the devices and let the user know that the game was started.
+	 * @param player the player that started the game
+	 */
+	void startGame(Player_t player);
+
+	/**
+	 * Take action when the game is paused.
+	 * This will stop polling the devices and let the user know that the game was paused.
+	 * @param player the player that started the game
+	 */
+	void pauseGame(Player_t player);
+	
+	/**
+	 * Take action when the game is exited.
+	 * This will stop polling the devices and let the user know that the game was exited.
+	 * @param player the player that started the game
+	 */	
+	void exitGame(Player_t player);
+
+	/**
+	 * Switches the camera whose frames need to be displayed.
+	 * This instructs the UI to display the game environment from a camera.
+	 * @param camera The new camera
+	 */
+	void switchCamera(cCamera* camera);
+
+
 private:
 	Mediator(const Mediator& c); // intentionally not implemented
 	Mediator& operator=(const Mediator& c); // intentionally not implemented
@@ -51,20 +81,9 @@ private:
 	boost::shared_ptr<SmartClothingManager> smartClothing;
 	Audio audio;
 
-	// the game
-	Game game;
-
 	// the user preferences
 	boost::shared_ptr<Configuration> configuration;
 	mutable CRITICAL_SECTION configurationMutex;
-
-	// the current state of the game
-	GameState_t gameState;
-
-	// alter the game state
-	void startGame();
-	void pauseGame();
-	void exitGame();
 
 	//--------------------------------------------
 	// Network Related updates
@@ -75,20 +94,9 @@ private:
 	void handlePeerDisconnected();
 	void handleNetworkError(rc_network error);
 
-	// game status
-	void handlePeerStartGame();
-	void handlePeerPauseGame();
-	void handlePeerExitGame();
-
 	// data reception
 	void handleUserName(const std::string& name);
 	void handleChatMessage(const std::string& message);
-	void handleRemoteVideoData(const VideoData& video);
-	void handleRemoteSlingshotPosition(const cVector3d& position);
-	void handleRemoteProjectile(const Projectile& projectile);
-	void handleRemotePlayerPosition(const cVector3d& position);
-	void handleRemotePullback();
-	void handleRemoteRelease();
 
 	//--------------------------------------------
 	// User Interface Related updates
@@ -102,11 +110,6 @@ private:
 
 	// the user changed his preferences
 	void changePreferences(const UserPreferences& preferences);
-
-	// the user wants to start/exit/pause the game
-	void localStartGame();
-	void localExitGame();
-	void localPauseGame();
 
 	// user wants to close the application
 	void closeApplication();
@@ -123,12 +126,14 @@ private:
 	// Falcon Related updates
 	//--------------------------------------------
 
-	// slingshot related
-	void handleLocalSlingshotPosition(const cVector3d& position);
-
 	// notify that a new ball was shot
 	void notifyNewBallShot(const cVector3d& force);
 	void receiveNewBall(const cVector3d& force);
+
+	/**
+	 * Stop polling the devices (slingshot + zcamera).
+	 */
+	void stopDevices();
 
 };
 

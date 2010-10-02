@@ -29,8 +29,6 @@ std::string LogEvent::lookup(LogEvent::LogEventEnum logEvent)
 		return "Network - projectile";
 	case LogEvent::NETWORK_SLINGSHOT_PULLBACK:
 		return "Network - slingshot pullback";
-	case LogEvent::NETWORK_SLINGSHOT_RELEASE:
-		return "Network - slingshot release";
 	case LogEvent::NETWORK_PLAYER_POSITION:
 		return "Network - player position";
 	case LogEvent::UI_CONNECT:

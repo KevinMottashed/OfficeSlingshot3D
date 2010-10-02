@@ -105,11 +105,6 @@ void NetworkReplayer::replay(LogEvent_t logEvent)
 			notify(RECEIVED_PULLBACK);
 			break;
 		}
-		case LogEvent::NETWORK_SLINGSHOT_RELEASE:
-		{
-			notify(RECEIVED_RELEASE);
-			break;
-		}
 		case LogEvent::NETWORK_PLAYER_POSITION:
 		{
 			cVector3d vec;

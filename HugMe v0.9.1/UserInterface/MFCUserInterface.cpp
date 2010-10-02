@@ -12,6 +12,12 @@ MFCUserInterface::~MFCUserInterface()
 	delete m_pMainDlg;
 }
 
+void MFCUserInterface::switchCamera(cCamera* camera)
+{
+	m_pMainDlg->camera(camera);
+	return;
+}
+
 void MFCUserInterface::networkConnectButtonPushed()
 {
 	notify(CONNECT);	

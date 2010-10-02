@@ -3,7 +3,7 @@
 VirtualEnvironment::VirtualEnvironment(void)
 {
 	world = new cWorld();
-	camera = new cCamera(world);
+	_camera = new cCamera(world);
 	light = new cLight(world);
 	rSlingshot = new cMesh(world);
 	lSlingshot = new cMesh(world);
@@ -20,12 +20,9 @@ VirtualEnvironment::~VirtualEnvironment(void)
 	delete world;
 }
 
-void VirtualEnvironment::updateFrame(int displayW, int displayH)
+void VirtualEnvironment::updateFrame()
 {
-	camera->renderView(displayW, displayH);
-
 	ODEWorld->updateDynamics(0.02);
-
 	ODEWorld->computeGlobalPositions(true);
 }
 
@@ -63,13 +60,30 @@ void VirtualEnvironment::shootBall(cVector3d force)
 	lNumBalls++;
 }
 
+cCamera* VirtualEnvironment::camera()
+{
+	return _camera;
+}
+
+void VirtualEnvironment::moveLocalSlingshot(cVector3d position)
+{
+	lSlingshot->setPos(position);
+	return;
+}
+
+void VirtualEnvironment::movePeerSlingshot(cVector3d position)
+{
+	rSlingshot->setPos(position);
+	return;
+}
+
 void VirtualEnvironment::initialize(void)
 {
 	//**************************************//
 	//                WORLD                 // 
 	//**************************************//
 
-	world->addChild(camera);
+	world->addChild(_camera);
 
     // set the background color of the environment
     // the color is defined by its (R,G,B) components.
@@ -80,23 +94,23 @@ void VirtualEnvironment::initialize(void)
 	//**************************************//
 
     // position and oriente the camera
-    camera->set( cVector3d (7.0f, 0.0f, 0.0f),    // camera position (eye)
+	_camera->set( cVector3d (7.0f, 0.0f, 0.0f),    // camera position (eye)
         cVector3d (0.0f, 0.0f, 0.0f),    // lookat position (target)
         cVector3d (0.0f, 0.0f, 1.0f));   // direction of the "up" vector
 
     // set the near and far clipping planes of the camera
     // anything in front/behind these clipping planes will not be rendered
-    camera->setClippingPlanes(0.0f, 7.0f);
+    _camera->setClippingPlanes(0.0f, 7.0f);
 
     // enable high quality rendering
-    camera->enableMultipassTransparency(true);
+    _camera->enableMultipassTransparency(true);
 
 	//**************************************//
 	//                LIGHT                 //
 	//**************************************//
 
     // create a light source and attach it to the camera
-    camera->addChild(light);                   // attach light to camera
+    _camera->addChild(light);                   // attach light to camera
     light->setEnabled(true);                   // enable light source
     light->setPos(cVector3d( 2.0f, 0.5f, 1.0f));  // position the light source
     light->setDir(cVector3d(-2.0f, 0.5f, 1.0f));  // define the direction of the light beam

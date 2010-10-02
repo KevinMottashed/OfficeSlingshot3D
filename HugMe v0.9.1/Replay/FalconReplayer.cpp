@@ -28,7 +28,7 @@ void FalconReplayer::replay(LogEvent_t logEvent)
 			cVector3d vec;
 			*archive >> vec;
 
-			notify(SLINGSHOT_POSITION, &vec);
+			notify(SLINGSHOT_MOVED, &vec);
 			break;
 		}
 	}

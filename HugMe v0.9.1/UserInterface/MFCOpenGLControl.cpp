@@ -2,13 +2,17 @@
 
 MFCOpenGLControl::MFCOpenGLControl(void)
 {
-	ve = boost::shared_ptr<VirtualEnvironment>(new VirtualEnvironment());
 	displayW = 0;
 	displayH = 0;
 }
 
 MFCOpenGLControl::~MFCOpenGLControl(void)
 {
+}
+
+void MFCOpenGLControl::camera(cCamera* camera)
+{
+	_camera = camera;
 }
 
 BEGIN_MESSAGE_MAP(MFCOpenGLControl, CWnd)
@@ -48,7 +52,7 @@ int MFCOpenGLControl::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	
 	oglInitialize();
 
-	ve->initialize();
+	//ve->initialize();
 	
 	return CDialog::OnCreate(lpCreateStruct);
 }
@@ -134,8 +138,7 @@ void MFCOpenGLControl::OnTimer(UINT_PTR nIDEvent)
 		// Clear color and depth buffer bits
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		// Draw Virtual Environment
-		ve->updateFrame(displayW, displayH);
+		_camera->renderView(displayW, displayH);
 
 		// Swap buffers
 		SwapBuffers(hdc);
@@ -152,12 +155,12 @@ void MFCOpenGLControl::OnTimer(UINT_PTR nIDEvent)
 
 void MFCOpenGLControl::shootNewBall(cVector3d force)
 {
-	ve->shootBall(force);
+	//ve->shootBall(force);
 }
 
 void MFCOpenGLControl::receiveNewBall(cVector3d force)
 {
-	ve->receiveBall(force);
+	//ve->receiveBall(force);
 }
 
 UINT_PTR MFCOpenGLControl::startGame(void)

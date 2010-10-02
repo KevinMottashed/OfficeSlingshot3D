@@ -2,14 +2,7 @@
 #define MEDIATOR_OBSERVER_H
 
 #include "stdafx.h"
-
-/** 
- * Each update has a context.
- * The context represents what has changed in the observed object
- */
-enum MediatorUpdateContext
-{
-};
+#include "MediatorUpdateContextEnum.h"
 
 /**
  * Abstract class in the observer pattern.
@@ -32,7 +25,7 @@ public:
 	 * Function that is called everytime the mediator has a notification to deliver.
 	 * This function should be used to handle the notifications.
 	 */
-	virtual void update(MediatorUpdateContext context, const void* data) = 0;
+	virtual void update(MediatorUpdateContext_t context, const void* data) = 0;
 };
 
 #endif

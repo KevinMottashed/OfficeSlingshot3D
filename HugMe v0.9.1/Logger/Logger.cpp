@@ -78,11 +78,6 @@ void Logger::update(NetworkUpdateContext context, const void *data)
 			log(LogEvent::NETWORK_SLINGSHOT_PULLBACK);
 			break;
 		}
-		case RECEIVED_RELEASE:
-		{
-			log(LogEvent::NETWORK_SLINGSHOT_RELEASE);
-			break;
-		}
 		case RECEIVED_PLAYER_POSITION:
 		{
 			assert(data != NULL);
@@ -152,7 +147,7 @@ void Logger::update(FalconUpdateContext context, const void* data)
 {
 	switch(context)
 	{
-		case SLINGSHOT_POSITION:
+		case SLINGSHOT_MOVED:
 		{
 			assert(data != NULL);
 			log(LogEvent::FALCON_SLINGSHOT_POSITION, *(cVector3d*) data);

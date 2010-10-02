@@ -32,7 +32,7 @@ DWORD NovintFalcon::getPositionFromFalcon(NovintFalcon* p_Falcon)
 		position.y = y;
 		position.z = z;
 
-		p_Falcon->notify(SLINGSHOT_POSITION, &position);		
+		p_Falcon->notify(SLINGSHOT_MOVED, &position);		
 
 		// sleep for 1000ms
 		Sleep(1000);

@@ -9,6 +9,7 @@
 #include "ConnectionStateEnum.h"
 #include "PlayerEnum.h"
 #include "GameStateEnum.h"
+#include "chai3d.h"
 
 class CMainDlg;
 
@@ -17,6 +18,12 @@ class UserInterface : public UserInterfaceSubject
 public:
 	UserInterface();
 	virtual ~UserInterface();
+
+	/**
+	 * Changes the camera from which the vritual world will be displayed
+	 * @param camera The new camera
+	 */
+	virtual void switchCamera(cCamera* camera) = 0;
 
 	//----------------------------------------
 	// Display updates

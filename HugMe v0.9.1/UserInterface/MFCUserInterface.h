@@ -19,6 +19,12 @@ public:
 	MFCUserInterface(const UserPreferences& preferences);
 	virtual ~MFCUserInterface();
 
+	/**
+	 * Changes the camera from which the vritual world will be displayed
+	 * @param camera The new camera
+	 */
+	virtual void switchCamera(cCamera* camera);
+
 	//----------------------------------------
 	// Display updates
 	//----------------------------------------

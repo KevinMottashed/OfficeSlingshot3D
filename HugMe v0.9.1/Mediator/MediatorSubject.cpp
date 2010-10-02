@@ -23,7 +23,7 @@ void MediatorSubject::detach(MediatorObserver* observer)
 	return;
 }
 
-void MediatorSubject::notify(MediatorUpdateContext context, const void* data)
+void MediatorSubject::notify(MediatorUpdateContext_t context, const void* data)
 {
 	std::vector<MediatorObserver*>::iterator it;
 	for (it = observers.begin(); it != observers.end(); ++it)

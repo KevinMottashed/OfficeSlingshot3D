@@ -6,8 +6,37 @@
 
 class VirtualEnvironment
 {
+public:
+	VirtualEnvironment(void);
+	~VirtualEnvironment(void);
+
+	/**
+	 * Get the environments camera
+	 * @return the camera
+	 */
+	cCamera* camera();
+
+	/**
+	 * Move the local slingshot to a new position
+	 * @param position The new position
+	 */
+	void moveLocalSlingshot(cVector3d position);
+
+	/**
+	 * Move the peer slingshot to a new position
+	 * @param position The new position
+	 */
+	void movePeerSlingshot(cVector3d position);
+
+	void initialize(void);
+	void createRectangle(cMesh* a_mesh, double width, double height, double depth);
+	void updateFrame();
+	void createNewBall(int numBalls);
+	void shootBall(cVector3d force);
+	void receiveBall(cVector3d force);
+
 private:
-	cCamera* camera;
+	cCamera* _camera;
 	cWorld* world;
 	cLight* light;
 	cMesh* rSlingshot;
@@ -26,15 +55,5 @@ private:
 	int rNumBalls;
 	int lNumBalls;
 
-public:
-	VirtualEnvironment(void);
-	~VirtualEnvironment(void);
-
-	void initialize(void);
-	void createRectangle(cMesh* a_mesh, double width, double height, double depth);
-	void updateFrame(int displayW, int displayH);
-	void createNewBall(int numBalls);
-	void shootBall(cVector3d force);
-	void receiveBall(cVector3d force);
 };
 #endif

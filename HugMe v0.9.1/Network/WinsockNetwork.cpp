@@ -650,13 +650,6 @@ rc_network WinsockNetwork::sendSlingshotPullback()
 	return syncSendDataMessage(packet);
 }
 
-rc_network WinsockNetwork::sendSlingshotRelease()
-{
-	DataPacket packet;
-	packet.write(DATA_PACKET_SLINGSHOT_RELEASE);
-	return syncSendDataMessage(packet);
-}
-
 bool WinsockNetwork::isConnected() const
 {
 	return getConnectionState() == ConnectionState::CONNECTED;
@@ -781,11 +774,6 @@ void WinsockNetwork::handleDataMessage(const DataPacket& message)
 		case DATA_PACKET_SLINGSHOT_PULLBACK:
 		{
 			notify(RECEIVED_PULLBACK);
-			break;
-		}
-		case DATA_PACKET_SLINGSHOT_RELEASE:
-		{
-			notify(RECEIVED_RELEASE);
 			break;
 		}
 		case DATA_PACKET_UNKNOWN:

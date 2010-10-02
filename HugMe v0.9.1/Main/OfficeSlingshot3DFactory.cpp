@@ -19,6 +19,7 @@ shared_ptr<OfficeSlingshot3D> OfficeSlingshot3DFactory::createFromConfigFile(con
 	}
 
 	// the different components which may or may not be needed to create the OfficeSlingshot3D instance
+	boost::shared_ptr<Game> game; // must initialize
 	boost::shared_ptr<Mediator> mediator; // must initialize
 	boost::shared_ptr<Logger> logger; // may initialize
 	boost::shared_ptr<Replayer> replayer; // may initialize
@@ -43,7 +44,8 @@ shared_ptr<OfficeSlingshot3D> OfficeSlingshot3DFactory::createFromConfigFile(con
 		("Replayer.ReplayNetwork",	po::value<int>(),		"1 to replay network, 0 otherwise")
 		("Replayer.ReplayUI",		po::value<int>(),		"1 to replay UI, 0 otherwise")
 		("Replayer.ReplayFalcon",	po::value<int>(),		"1 to replay falcon, 0 otherwise")
-		("Replayer.ReplayZCamera",	po::value<int>(),		"1 to replay zcamera, 0 otherwise");
+		("Replayer.ReplayZCamera",	po::value<int>(),		"1 to replay zcamera, 0 otherwise")
+		("Falcon.Type",				po::value<string>(),	"Novint for real falcon, Keyboard for keyboard emulation");
 
 	// the variable map for this configuration
 	po::variables_map configVMap;
@@ -135,7 +137,15 @@ shared_ptr<OfficeSlingshot3D> OfficeSlingshot3DFactory::createFromConfigFile(con
 
 	if (!falcon)
 	{
-		falcon = shared_ptr<Falcon>(new NovintFalcon());
+		// determine if the user wants a novint or keyboard falcon
+		if (iequals(configVMap["Falcon.Type"].as<string>(),"Keyboard"))
+		{
+			falcon = shared_ptr<Falcon>(new KeyboardFalcon());
+		}
+		else
+		{
+			falcon = shared_ptr<Falcon>(new NovintFalcon());
+		}
 	}
 
 	if (!zcamera)
@@ -145,6 +155,9 @@ shared_ptr<OfficeSlingshot3D> OfficeSlingshot3DFactory::createFromConfigFile(con
 
 	// we now have enough stuff to create the mediator
 	mediator = shared_ptr<Mediator>(new Mediator(network, falcon, zcamera, userInterface, configuration));
+
+	// create the game now that we have the mediator
+	game = shared_ptr<Game>(new Game(mediator));
 
 	// check if the user wants a logger
 	if (configVMap["Logger.Enabled"].as<int>())
@@ -250,5 +263,5 @@ shared_ptr<OfficeSlingshot3D> OfficeSlingshot3DFactory::createFromConfigFile(con
 	dialog = userInterface->getMainWindow();
 
 	// we now finally have everything we need to create a OfficeSlingshot3D object
-	return shared_ptr<OfficeSlingshot3D>(new OfficeSlingshot3D(mediator, logger, replayer, dialog));
+	return shared_ptr<OfficeSlingshot3D>(new OfficeSlingshot3D(game, logger, replayer, dialog));
 }
