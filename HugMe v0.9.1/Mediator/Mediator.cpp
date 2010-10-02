@@ -100,6 +100,26 @@ void Mediator::switchCamera(cCamera* camera)
 	return;
 }
 
+void Mediator::fireSlingshot(Projectile projectile, Player_t player)
+{
+	// Notify the peer that we fired our slingshot
+	if (player == Player::LOCAL)
+	{
+		rc_network error = network->sendProjectile(projectile);
+		if (error != SUCCESS)
+		{
+			handleNetworkError(error);
+			return;
+		}
+
+		// Play the slingshot fired sound
+		// Only for local player till mute option
+		audio.playSlingshotFired();
+	}
+
+	return;
+}
+
 void Mediator::update(NetworkUpdateContext context, const void* data)
 {
 	switch (context)
@@ -170,9 +190,7 @@ void Mediator::update(NetworkUpdateContext context, const void* data)
 
 			// adjust the received vector for our perspective
 			cVector3d adjusted = *(cVector3d*) data;
-			adjusted.x = -adjusted.x; // invert x axis
-			adjusted.y = -adjusted.y; // invert y axis
-						
+			PerspectiveMath::invertPerspective(adjusted);						
 			
 			notify(MediatorUpdateContext::PEER_SLINGSHOT_MOVED, &adjusted);
 			break;
@@ -181,7 +199,12 @@ void Mediator::update(NetworkUpdateContext context, const void* data)
 		{
 			// the network has received a projectile
 			assert(data != NULL);
-			notify(MediatorUpdateContext::PEER_FIRED_PROJECTILE, data);
+
+			// adjust the received vector for our perspective
+			Projectile adjusted = *(Projectile*) data;
+			PerspectiveMath::invertPerspective(adjusted);
+
+			notify(MediatorUpdateContext::PEER_SLINGSHOT_FIRED, &adjusted);
 			break;
 		}
 		case RECEIVED_PULLBACK:
@@ -468,6 +491,11 @@ void Mediator::update(FalconUpdateContext context, const void* data)
 			}
 
 			notify(MediatorUpdateContext::LOCAL_SLINGSHOT_MOVED, data);
+			break;
+		}
+		case SLINGSHOT_FIRED:
+		{
+			notify(MediatorUpdateContext::LOCAL_SLINGSHOT_FIRED);
 			break;
 		}
 		default:

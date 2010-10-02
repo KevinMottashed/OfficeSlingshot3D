@@ -62,6 +62,13 @@ private:
 	 */
 	VirtualEnvironment environment;
 
+	/**
+	 * Mutex to protect the virtual environment
+	 * The environment cannot be modified (move slingshot, etc ...)
+	 * and displayed (update frame) at the same time without synchronization issues.
+	 * This mutex must be locked before doing either of those operations.
+	 */
+	boost::mutex environment_mutex;
 
 	/**
 	 * Reset the game to its original state.

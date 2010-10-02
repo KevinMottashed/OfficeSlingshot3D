@@ -19,6 +19,8 @@ Audio::Audio()
 	// this reduces the time it takes for the application to load
 	result = system->createStream("sounds/tink.mp3", FMOD_DEFAULT, 0, &hitSound);
 	assert(result == FMOD_OK);
+	result = system->createStream("sounds/slingshot.mp3", FMOD_DEFAULT, 0, &slingshotFiredSound);
+	assert(result == FMOD_OK);
 	result = system->createStream("sounds/round1.mp3", FMOD_DEFAULT, 0, &round1Sound);
 	assert(result == FMOD_OK);
 	// load the background music in loop mode so that it loops forever
@@ -46,6 +48,12 @@ void Audio::playBGMusic()
 void Audio::playHit()
 {
 	FMOD_RESULT result = system->playSound(FMOD_CHANNEL_FREE, hitSound, false, NULL);
+	assert(result == FMOD_OK);
+}
+
+void Audio::playSlingshotFired()
+{
+	FMOD_RESULT result = system->playSound(FMOD_CHANNEL_FREE, slingshotFiredSound, false, NULL);
 	assert(result == FMOD_OK);
 }
 

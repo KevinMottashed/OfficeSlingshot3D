@@ -13,6 +13,7 @@
 #include "SyncLocker.h"
 #include "AudioProxy.h"
 #include "MediatorSubject.h"
+#include "PerspectiveMath.h"
 
 /**
  * This class mediates the interactions between the devices and the game.
@@ -68,6 +69,14 @@ public:
 	 */
 	void switchCamera(cCamera* camera);
 
+	/**
+	 * Provide the user with feedback when a slingshot is fired
+	 * This will also let the peer know that a slingshot was fired
+	 * if the fired slingshot was our own
+	 * @param projectile The projectile that was fired
+	 * @param player The play that fired his slingshot
+	 */
+	void fireSlingshot(Projectile projectile, Player_t player);
 
 private:
 	Mediator(const Mediator& c); // intentionally not implemented

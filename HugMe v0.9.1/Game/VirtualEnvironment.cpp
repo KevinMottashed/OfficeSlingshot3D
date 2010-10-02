@@ -1,7 +1,13 @@
 #include "VirtualEnvironment.h"
 #include "WorldConstants.h"
 
-VirtualEnvironment::VirtualEnvironment(void)
+const unsigned int VirtualEnvironment::ball_limit = 2;
+const cVector3d VirtualEnvironment::slingshot_sling_offset = cVector3d(0,0,1.0f);
+const cVector3d VirtualEnvironment::firing_force = cVector3d(-500.0f,0,280.0f);
+
+VirtualEnvironment::VirtualEnvironment(void) :
+	localBalls(ball_limit),
+	peerBalls(ball_limit)
 {
 	world = new cWorld();
 	_camera = new cCamera(world);
@@ -27,40 +33,6 @@ void VirtualEnvironment::updateFrame()
 	ODEWorld->computeGlobalPositions(true);
 }
 
-void VirtualEnvironment::createNewBall(int numBalls)
-{
-	ODEBall[numBalls]->setImageModel(ball);
-
-	//Calculate boundaries of physical ball
-	ODEBall[numBalls]->createDynamicMesh(false);
-
-	ODEBall[numBalls]->setUseCulling(false, true);
-}
-
-void VirtualEnvironment::receiveBall(cVector3d force)
-{
-	createNewBall((rNumBalls%2)+2);
-
-	ODEBall[(rNumBalls%2)+2]->setPosition(cVector3d(-5.0f, 0.0f, -0.2f));
-
-	//Add a force just for show
-	ODEBall[(rNumBalls%2)+2]->addGlobalForceAtGlobalPos(force,ODEBall[(rNumBalls%2)+2]->getPos());
-	
-	rNumBalls++;
-}
-
-void VirtualEnvironment::shootBall(cVector3d force)
-{
-	createNewBall(lNumBalls%2);
-
-	ODEBall[lNumBalls%2]->setPosition(cVector3d(5.0f, 0.0f, -0.2f));
-
-	//Add a force just for show
-	ODEBall[lNumBalls%2]->addGlobalForceAtGlobalPos(force,ODEBall[lNumBalls%2]->getPos());
-
-	lNumBalls++;
-}
-
 cCamera* VirtualEnvironment::camera()
 {
 	return _camera;
@@ -83,6 +55,44 @@ void VirtualEnvironment::movePeerSlingshot(cVector3d position)
 	{
 		rSlingshot->setPos(position);
 	}
+	return;
+}
+
+Projectile VirtualEnvironment::fireLocalSlingshot()
+{
+	cVector3d ballPosition = lSlingshot->getPos() + slingshot_sling_offset;
+	localBalls[lNumBalls % ball_limit]->setPosition(ballPosition);
+
+	cVector3d force = firing_force;
+
+	//Add a force just for show
+	localBalls[lNumBalls % ball_limit]->addGlobalForceAtGlobalPos(force,ballPosition);
+
+	// make the ball visible
+	localBalls[lNumBalls % ball_limit]->setShowEnabled(true);
+	
+	// increment the number of balls that were fired, so we know which one to use next
+	lNumBalls++;
+
+	// the resulting projectile
+	Projectile p;
+	p.position(ballPosition);
+	p.force(firing_force);
+	return p;
+}
+
+void VirtualEnvironment::firePeerSlingshot(Projectile p)
+{
+	peerBalls[rNumBalls % ball_limit]->setPosition(p.position());
+
+	//Add a force just for show
+	peerBalls[rNumBalls % ball_limit]->addGlobalForceAtGlobalPos(p.force(), p.position());
+
+	// make the ball visible
+	peerBalls[rNumBalls % ball_limit]->setShowEnabled(true);
+	
+	// increment the number of balls that were fired, so we know which one to use next
+	rNumBalls++;
 	return;
 }
 
@@ -210,15 +220,38 @@ void VirtualEnvironment::initialize(void)
 	//                 BALL                 //
 	//**************************************//
 
-	ODEBall[0] = new cODEGenericBody(ODEWorld);
-	ODEBall[1] = new cODEGenericBody(ODEWorld);
-	ODEBall[2] = new cODEGenericBody(ODEWorld);
-	ODEBall[3] = new cODEGenericBody(ODEWorld);
-
 	ball->loadFromFile("Objects\\ball\\ball.obj");
 	ball->scale(0.015f);
 
 	ball->createAABBCollisionDetector(1.01, true, false);
+
+	foreach (cODEGenericBody*& odeBall, localBalls)
+	{
+		odeBall = new cODEGenericBody(ODEWorld);
+		odeBall->setImageModel(ball);
+
+		//Calculate boundaries of physical ball
+		odeBall->createDynamicMesh(false);
+
+		odeBall->setUseCulling(false, true);
+
+		// hide the ball until fired
+		odeBall->setShowEnabled(false);
+	}
+
+	foreach (cODEGenericBody*& odeBall, peerBalls)
+	{
+		odeBall = new cODEGenericBody(ODEWorld);
+		odeBall->setImageModel(ball);
+
+		//Calculate boundaries of physical ball
+		odeBall->createDynamicMesh(false);
+
+		odeBall->setUseCulling(false, true);
+
+		// hide the ball until fired
+		odeBall->setShowEnabled(false);
+	}
 
 	//**************************************//
 	//               GROUND                 //

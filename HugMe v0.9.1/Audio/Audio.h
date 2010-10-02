@@ -32,6 +32,11 @@ public:
 	void playHit();
 
 	/**
+	 * play slingshot fired sound
+	 */
+	void playSlingshotFired();
+
+	/**
 	 * play game start sound
 	 */
 	void playGameStart();
@@ -70,6 +75,11 @@ private:
 	 * The sound when a player gets hit.
 	 */
 	FMOD::Sound* hitSound;
+
+	/**
+	 * The sound when a slingshot is fired.
+	 */
+	FMOD::Sound* slingshotFiredSound;
 
 	/**
 	 * The announcer when the game starts "round 1 .. fight!"

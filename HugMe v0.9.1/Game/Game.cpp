@@ -50,13 +50,47 @@ void Game::update(MediatorUpdateContext_t context, const void* data)
 		case MediatorUpdateContext::LOCAL_SLINGSHOT_MOVED:
 		{
 			assert(data != NULL);
+
+			// we can't update the game and change it at the same time
+			boost::mutex::scoped_lock lock(environment_mutex);
+
 			environment.moveLocalSlingshot(*(cVector3d*) data);
 			break;
 		}
 		case MediatorUpdateContext::PEER_SLINGSHOT_MOVED:
 		{
 			assert(data != NULL);
+			
+			// we can't update the game and change it at the same time
+			boost::mutex::scoped_lock lock(environment_mutex);
+
 			environment.movePeerSlingshot(*(cVector3d*) data);
+			break;
+		}
+		case MediatorUpdateContext::LOCAL_SLINGSHOT_FIRED:
+		{
+			// we can't update the game and change it at the same time
+			boost::mutex::scoped_lock lock(environment_mutex);
+
+			// fire the slingshot and get the resulting projectile
+			Projectile p = environment.fireLocalSlingshot();
+
+			// Tell the mediator to provide adequate feedback for when the slingshot is fired
+			mediator->fireSlingshot(p, Player::LOCAL);
+			break;
+		}
+		case MediatorUpdateContext::PEER_SLINGSHOT_FIRED:
+		{
+			assert(data != NULL);
+
+			// we can't update the game and change it at the same time
+			boost::mutex::scoped_lock lock(environment_mutex);
+
+			Projectile p = *(Projectile*) data;
+			environment.firePeerSlingshot(p);
+
+			// Tell the mediator to provide adequate feedback for when the slingshot is fired
+			mediator->fireSlingshot(p, Player::PEER);
 			break;
 		}
 	}
@@ -115,10 +149,13 @@ DWORD Game::GameLoopThread(Game* pGame)
 {
 	while(pGame->state == GameState::RUNNING)
 	{
-		pGame->environment.updateFrame();
+		{
+			boost::mutex::scoped_lock lock(pGame->environment_mutex);
+			pGame->environment.updateFrame();
+		} // release the lock before sleeping
 
-		// sleep for a short while
-		Sleep(100); // 0.1 secs / 10FPS
+		// yield to other threads
+		Sleep(1);
 	}
 	return 0;
 }
