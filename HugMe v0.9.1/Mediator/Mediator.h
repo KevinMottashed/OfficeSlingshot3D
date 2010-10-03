@@ -131,14 +131,6 @@ private:
 	// new local video
 	void handleLocalVideoData(VideoData& video);
 
-	//--------------------------------------------
-	// Falcon Related updates
-	//--------------------------------------------
-
-	// notify that a new ball was shot
-	void notifyNewBallShot(const cVector3d& force);
-	void receiveNewBall(const cVector3d& force);
-
 	/**
 	 * Stop polling the devices (slingshot + zcamera).
 	 */

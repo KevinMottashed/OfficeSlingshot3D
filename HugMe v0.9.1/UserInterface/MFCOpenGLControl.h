@@ -25,6 +25,8 @@ private:
 
 	cCamera* _camera;
 
+	UINT_PTR m_unpTimer;
+
 public:
 
 	/**
@@ -33,16 +35,12 @@ public:
 	 */
 	void camera(cCamera* camera);
 
-	UINT_PTR m_unpTimer;
-
 	MFCOpenGLControl(void);
 	virtual ~MFCOpenGLControl(void);
 	
 	void oglCreate(CRect rect, CWnd *parent);
 	void oglInitialize(void);
-	void shootNewBall(cVector3d force);
-	void receiveNewBall(cVector3d force);
-	UINT_PTR startGame(void);
+	void startGame(void);
 	void stopGame(void);
 
 	DECLARE_MESSAGE_MAP()

@@ -51,8 +51,6 @@ int MFCOpenGLControl::OnCreate(LPCREATESTRUCT lpCreateStruct)
       return -1;
 	
 	oglInitialize();
-
-	//ve->initialize();
 	
 	return CDialog::OnCreate(lpCreateStruct);
 }
@@ -134,7 +132,7 @@ void MFCOpenGLControl::OnTimer(UINT_PTR nIDEvent)
 {
 	switch (nIDEvent) {
 	case 1:
-		{
+	{
 		// Clear color and depth buffer bits
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -153,19 +151,9 @@ void MFCOpenGLControl::OnTimer(UINT_PTR nIDEvent)
 	CDialog::OnTimer(nIDEvent);
 }
 
-void MFCOpenGLControl::shootNewBall(cVector3d force)
+void MFCOpenGLControl::startGame(void)
 {
-	//ve->shootBall(force);
-}
-
-void MFCOpenGLControl::receiveNewBall(cVector3d force)
-{
-	//ve->receiveBall(force);
-}
-
-UINT_PTR MFCOpenGLControl::startGame(void)
-{
-	return SetTimer(1, 20, 0);
+	m_unpTimer = SetTimer(1, 20, 0);
 }
 void MFCOpenGLControl::stopGame(void)
 {

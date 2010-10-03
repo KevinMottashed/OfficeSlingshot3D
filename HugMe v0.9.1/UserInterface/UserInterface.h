@@ -69,11 +69,7 @@ public:
 	virtual void closeApplication() = 0;
 	
 	// update the peers user name
-	virtual void setPeerUserName(const std::string& name) = 0;	
-
-	// update when player shoots a new ball
-	virtual void notifyNewBallShot(const cVector3d& force) = 0;
-	virtual void receiveNewBall(const cVector3d& force) = 0;
+	virtual void setPeerUserName(const std::string& name) = 0;
 };
 
 #endif

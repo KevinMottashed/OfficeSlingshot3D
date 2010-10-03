@@ -19,7 +19,6 @@ enum UserInterfaceUpdateContext
 	ARM_BAND_PORT,
 	JACKET_PORT,
 	PREFERENCES,
-	NEW_BALL
 };
 
 class UserInterfaceObserver

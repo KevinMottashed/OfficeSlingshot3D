@@ -359,7 +359,7 @@ void CMainDlg::displayGameStateChanged(GameState_t state, Player_t player)
 			{
 				message << m_peerUserName << " has started the game";
 			}
-			m_oglWindow->m_unpTimer = m_oglWindow->startGame();
+			m_oglWindow->startGame();
 
 			break;
 		}
@@ -431,24 +431,6 @@ void CMainDlg::displayLocalChatMessage(const std::string& message)
 	AddChatContent(os.str().c_str());
 
 	return;
-}
-
-void CMainDlg::receiveNewBall(const cVector3d& force)
-{
-	m_oglWindow->receiveNewBall(force);
-}
-
-void CMainDlg::shootNewBall(const cVector3d& force)
-{
-	m_oglWindow->shootNewBall(force);
-
-	// reverse the x force of the vector for the remote side
-	cVector3d& remoteForce = cVector3d();
-	force.copyto(remoteForce);
-	remoteForce.x = -remoteForce.x;
-
-	// send the force to the peer
-	pUserInterface->notifyNewBallShot(remoteForce);
 }
 
 void CMainDlg::camera(cCamera* camera)

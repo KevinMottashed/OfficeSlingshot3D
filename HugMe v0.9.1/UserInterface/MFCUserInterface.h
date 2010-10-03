@@ -71,10 +71,6 @@ public:
 	// update the peers user name
 	virtual void setPeerUserName(const std::string& name);	
 
-	// update when player shoots a new ball
-	virtual void notifyNewBallShot(const cVector3d& force);
-	virtual void receiveNewBall(const cVector3d& force);
-
 	// returns the applications main window
 	CDialog* getMainWindow();
 
