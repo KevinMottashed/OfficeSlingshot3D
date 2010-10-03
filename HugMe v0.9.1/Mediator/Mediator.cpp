@@ -91,6 +91,7 @@ void Mediator::exitGame(Player_t player)
 	falcon->stopPolling();
 	zcamera->stopCapture();
 	userInterface->displayGameStateChanged(GameState::NOT_RUNNING, player);
+	audio.stopBGMusic();
 	return;
 }
 

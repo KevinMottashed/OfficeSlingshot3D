@@ -3,7 +3,8 @@
 #include "stdafx.h"
 #include "fmod_errors.h"
 
-Audio::Audio()
+Audio::Audio() :
+	bgMusicChannel(NULL)
 {
 	// error code
 	FMOD_RESULT result;
@@ -41,8 +42,22 @@ Audio::~Audio()
 
 void Audio::playBGMusic()
 {
-	FMOD_RESULT result = system->playSound(FMOD_CHANNEL_FREE, bgMusicSound, false, NULL);
+	FMOD_RESULT result = system->playSound(FMOD_CHANNEL_FREE, bgMusicSound, false, &bgMusicChannel);
 	assert(result == FMOD_OK);
+}
+
+void Audio::stopBGMusic()
+{
+	if (bgMusicChannel == NULL)
+	{
+		// it's not playing
+		return;
+	}
+
+	// stop it
+	bgMusicChannel->stop();
+	bgMusicChannel = NULL;
+	return;
 }
 
 void Audio::playHit()
@@ -74,3 +89,5 @@ void Audio::playGameOverLost()
 	FMOD_RESULT result = system->playSound(FMOD_CHANNEL_FREE, gameLostSound, false, NULL);
 	assert(result == FMOD_OK);
 }
+
+

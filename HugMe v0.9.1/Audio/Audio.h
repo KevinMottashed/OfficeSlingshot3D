@@ -27,6 +27,11 @@ public:
 	void playBGMusic();
 
 	/**
+	 * stop the background music
+	 */
+	void stopBGMusic();
+
+	/**
 	 * play hit sound (when a player gets hit)
 	 */
 	void playHit();
@@ -90,6 +95,11 @@ private:
 	 * The background music, currently doom3 theme
 	 */
 	FMOD::Sound* bgMusicSound;
+
+	/**
+	 * The channel on which the background music is playing
+	 */
+	FMOD::Channel* bgMusicChannel;
 
 	/**
 	 * The announcer for when the game is won
