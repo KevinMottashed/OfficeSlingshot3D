@@ -173,6 +173,7 @@ DWORD Game::GameLoopThread(Game* pGame)
 		{
 			boost::mutex::scoped_lock lock(pGame->environment_mutex);
 			pGame->environment.updateFrame();
+			bool colliding = pGame->environment.isColliding();
 		} // release the lock before sleeping
 
 		// yield to other threads

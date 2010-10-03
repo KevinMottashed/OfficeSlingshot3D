@@ -33,6 +33,11 @@ void VirtualEnvironment::updateFrame()
 	ODEWorld->computeGlobalPositions(true);
 }
 
+bool VirtualEnvironment::isColliding()
+{
+	return false;
+}
+
 cCamera* VirtualEnvironment::camera()
 {
 	return _camera;
@@ -103,16 +108,21 @@ void VirtualEnvironment::moveLocalAvatar(cVector3d position)
 
 	//Reset rotation to upright
 	lAvatar->rotate(lAvatar->getRot().inv());
+	localHitBox->rotate(localHitBox->getRot().inv());
 
-	//Calulate angle of rotation, limit to 45 degrees either way
+	lAvatar->rotate(cVector3d(1, 0, 0), cDegToRad(90));
+
+	//Calculate angle of rotation, limit to 45 degrees either way
 	double ang = -(cRadToDeg(atan(position.x / position.y)));
 	ang = cClamp<double>(ang,-45,45);
 
 	//Apply rotation
 	lAvatar->rotate(cVector3d(1, 0, 0), cDegToRad(ang));
+	localHitBox->rotate(cVector3d(1, 0, 0), cDegToRad(ang));
 
-	//Apply translation based on rotattion
-	lAvatar->setPos(0,0,ang/75);
+	//Apply translation based on rotation
+	//lAvatar->setPos(lAvatar->getPos().x, lAvatar->getPos().y, lAvatar->getPos().z+(ang/75));
+	//localHitBox->setPos(lAvatar->getPos());
 
 	return;
 }
@@ -227,36 +237,41 @@ void VirtualEnvironment::initialize(void)
 	//                AVATARS               //
 	//**************************************//
 
+	world->addChild(lAvatar);
+	world->addChild(rAvatar);
+
 	lAvatar->loadFromFile("Objects\\avatar\\avatar.obj");
 	lAvatar->scale(0.045f);
 
 	lAvatar->createAABBCollisionDetector(1.01, true, false);
 
-	lAvatar->setTransparencyLevel(0.25, true, true);
+	lAvatar->setTransparencyLevel(0.15, true, true);
 
 	rAvatar->loadFromFile("Objects\\avatar\\avatar.obj");
 	rAvatar->scale(0.045f);
 
 	rAvatar->createAABBCollisionDetector(1.01, true, false);
 
-	rODEAvatar = new cODEGenericBody(ODEWorld);
-	lODEAvatar = new cODEGenericBody(ODEWorld);
+	rAvatar->rotate(cVector3d(1, 0, 0), cDegToRad(90));
+	lAvatar->rotate(cVector3d(1, 0, 0), cDegToRad(90));
 
-    rODEAvatar->setImageModel(rAvatar);
-	lODEAvatar->setImageModel(lAvatar);
+	rAvatar->setPos(cVector3d(-6.0f, 0.0f, -1.0f));
+	lAvatar->setPos(cVector3d(6.0f, 0.0f, -1.0f));
 
-	//Calculate boundaries of physical avatar
-	rODEAvatar->createDynamicMesh(true);
-	lODEAvatar->createDynamicMesh(true);
+	rAvatar->setUseCulling(true, true);
+	lAvatar->setUseCulling(true, true);
 
-	rODEAvatar->rotate( cVector3d(1, 0, 0), cDegToRad(90));
-	lODEAvatar->rotate( cVector3d(1, 0, 0), cDegToRad(90));
+	lvAvatar = new VirtualAvatar(lAvatar->getPos());
+	rvAvatar = new VirtualAvatar(rAvatar->getPos());
 
-	rODEAvatar->setPosition(cVector3d(-6.0f, 0.0f, -1.0f));
-	lODEAvatar->setPosition(cVector3d(6.0f, 0.0f, -1.0f));
+	localHitBox = new cMesh(world);
+	peerHitBox = new cMesh(world);
+	localHitBox->setTransparencyLevel(0.15, true, true);
+	createCube(localHitBox, lvAvatar);
+	createCube(peerHitBox, rvAvatar);
 
-	rODEAvatar->setUseCulling(true, true);
-	lODEAvatar->setUseCulling(true, true);
+	world->addChild(localHitBox);
+	world->addChild(peerHitBox);
 
 	//**************************************//
 	//                 BALL                 //
@@ -333,4 +348,65 @@ void VirtualEnvironment::initialize(void)
 
 	rNumBalls = 0;
 	lNumBalls = 0;
+}
+
+void VirtualEnvironment::createCube(cMesh* a_mesh, VirtualAvatar* vAvatar)
+{
+	cVector3d minPos = vAvatar->getMinPos();
+	cVector3d maxPos = vAvatar->getMaxPos();
+
+	double xMin = minPos.x;
+	double yMin = minPos.y;
+	double zMin = minPos.z;
+
+	double xMax = maxPos.x;
+	double yMax = maxPos.y;
+	double zMax = maxPos.z;
+
+    int vertices [6][6];
+
+    // face -x
+    vertices[0][0] = a_mesh->newVertex( xMin,  yMax,  zMin );
+    vertices[0][1] = a_mesh->newVertex( xMin,  yMin,  zMin );
+    vertices[0][2] = a_mesh->newVertex( xMin,  yMin,  zMax );
+    vertices[0][3] = a_mesh->newVertex( xMin,  yMax,  zMax );
+
+    // face +x
+    vertices[1][0] = a_mesh->newVertex( xMax,  yMin,  zMin );
+    vertices[1][1] = a_mesh->newVertex( xMax,  yMax,  zMin );
+    vertices[1][2] = a_mesh->newVertex( xMax,  yMax,  zMax );
+    vertices[1][3] = a_mesh->newVertex( xMax,  yMin,  zMax );
+
+    // face -y
+    vertices[2][0] = a_mesh->newVertex( xMin,  yMin,  zMin );
+    vertices[2][1] = a_mesh->newVertex( xMax,  yMin,  zMin );
+    vertices[2][2] = a_mesh->newVertex( xMax,  yMin,  zMax );
+    vertices[2][3] = a_mesh->newVertex( xMin,  yMin,  zMax );
+
+    // face +y
+    vertices[3][0] = a_mesh->newVertex( xMax,  yMax,  zMin );
+    vertices[3][1] = a_mesh->newVertex( xMin,  yMax,  zMin );
+    vertices[3][2] = a_mesh->newVertex( xMin,  yMax,  zMax );
+    vertices[3][3] = a_mesh->newVertex( xMax,  yMax,  zMax );
+
+    // face -z
+    vertices[4][0] = a_mesh->newVertex( xMin,  yMin,  zMin );
+    vertices[4][1] = a_mesh->newVertex( xMin,  yMax,  zMin );
+    vertices[4][2] = a_mesh->newVertex( xMax,  yMax,  zMin );
+    vertices[4][3] = a_mesh->newVertex( xMax,  yMin,  zMin );
+
+    // face +z
+    vertices[5][0] = a_mesh->newVertex( xMax,  yMin,  zMax );
+    vertices[5][1] = a_mesh->newVertex( xMax,  yMax,  zMax );
+    vertices[5][2] = a_mesh->newVertex( xMin,  yMax,  zMax );
+    vertices[5][3] = a_mesh->newVertex( xMin,  yMin,  zMax );
+
+    // create triangles
+    for (int i=0; i<6; i++)
+    {
+		a_mesh->newTriangle(vertices[i][0], vertices[i][1], vertices[i][2]);
+		a_mesh->newTriangle(vertices[i][0], vertices[i][2], vertices[i][3]);
+    }
+	a_mesh->setWireMode(true);
+	a_mesh->computeBoundaryBox(true);
 }

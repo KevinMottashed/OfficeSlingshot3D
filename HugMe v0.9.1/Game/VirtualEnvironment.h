@@ -6,6 +6,7 @@
 #include "chai3d.h"
 #include "CODE.h"
 #include "Projectile.h"
+#include "VirtualAvatar.h"
 
 class VirtualEnvironment
 {
@@ -56,8 +57,8 @@ public:
 	void firePeerSlingshot(Projectile p);
 
 	void initialize(void);
-	void createRectangle(cMesh* a_mesh, double width, double height, double depth);
 	void updateFrame();
+	bool isColliding();
 
 private:
 	cCamera* _camera;
@@ -74,9 +75,12 @@ private:
 	std::vector<cODEGenericBody*> localBalls;
 	std::vector<cODEGenericBody*> peerBalls;
 
-	cODEGenericBody* rODEAvatar;
-	cODEGenericBody* lODEAvatar;
 	cODEGenericBody* ODEGround;
+
+	cMesh* localHitBox;
+	cMesh* peerHitBox;
+	VirtualAvatar* lvAvatar;
+	VirtualAvatar* rvAvatar;
 
 	int rNumBalls;
 	int lNumBalls;
@@ -99,5 +103,6 @@ private:
 	 */
 	static const cVector3d firing_force;
 
+	void createCube(cMesh* a_mesh, VirtualAvatar* vAvatar);
 };
 #endif
