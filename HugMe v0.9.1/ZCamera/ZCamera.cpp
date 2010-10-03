@@ -45,10 +45,15 @@ DWORD ZCamera::getFrameFromCamera(ZCamera* p_ZCamera){
 		p_ZCamera->m_depthCamera->GetNextFrame(p_ZCamera->DEPTH,rgb,p_ZCamera->RGBFull,p_ZCamera->PRIM,p_ZCamera->SEC,1000);		
 
 		//Flip the image up-down
-		reverseFrameUpDown(video,4);
+	//	reverseFrameUpDown(video,4);
 
 		//Send to the observers
-		p_ZCamera->notify(VIDEO, &video);
+	//	p_ZCamera->notify(VIDEO, &video);
+
+		
+		cVector3d pos = getPlayerPosition(p_ZCamera, 0);
+
+		p_ZCamera->notify(AVATAR_POSITION, &pos);
 
 		Sleep(31); // 32 fps
 	}
@@ -59,77 +64,17 @@ DWORD ZCamera::getFrameFromCamera(ZCamera* p_ZCamera){
 //Dummy data generator
 DWORD ZCamera::getFrameFromDummy(ZCamera* p_ZCamera){
 	
-	//Shortcut to access each pixel of every line
-	int step = IMAGE_WIDTH*4;
-
-	int diff_x = 0;
-	bool moving_right_x = true;
-	int diff_y = 0;
-	bool moving_up_y = true;
+	p_ZCamera->dummyCounter=0;
 
 	//While the thread is active
 	while(p_ZCamera->zcam_started){
 
-		VideoData video;
+		p_ZCamera->dummyCounter++;
 
-		// get a pointer to the video array
-		BYTE* rgb = &video.rgb.front();
+		cVector3d pos = getPlayerPosition(p_ZCamera, 0);
 
-		if (moving_right_x){
-			diff_x += 4;
-			if (diff_x>30){
-				moving_right_x = false;
-			}
-		}else{
-			diff_x -= 4;
-			if (diff_x<0){
-				moving_right_x = true;
-			}
-		}
+		p_ZCamera->notify(AVATAR_POSITION, &pos);
 
-		if (moving_up_y){
-			diff_y += 4;
-			if (diff_y>20){
-				moving_up_y = false;
-			}
-		}else{
-			diff_y -= 4;
-			if (diff_y<0){
-				moving_up_y = true;
-			}
-		}
-
-		//Go through each row and column and fill all 4 values for each pixel
-		for (int i=0;i<IMAGE_HEIGHT;i++){
-			for(int j=0;j<IMAGE_WIDTH;j++){
-				if ((i>(IMAGE_HEIGHT*0.66 -15+diff_x) && j>(IMAGE_WIDTH*0.15 -10+diff_y) && j<(IMAGE_WIDTH*0.85 -10+diff_y)	)||(	//BODY
-					 i>(IMAGE_HEIGHT*0.33 -15+diff_x) && j>(IMAGE_WIDTH*0.35 -10+diff_y) && j<(IMAGE_WIDTH*0.65 -10+diff_y)			//HEAD
-					)){
-					rgb[i*step+j*4]		=	0;			//blue
-					rgb[i*step+j*4+1]	=	0;			//green	
-					rgb[i*step+j*4+2]	=	255;			//red
-					rgb[i*step+j*4+3]	=	1;			//will be used for collision detection	
-				}else{
-					rgb[i*step+j*4]		=	255;			//blue
-					rgb[i*step+j*4+1]	=	0;			//green	
-					rgb[i*step+j*4+2]	=	0;			//red
-					rgb[i*step+j*4+3]	=	0;			//will be used for collision detection		
-				}
-			
-			}
-		}
-		
-		reverseFrameUpDown(video,4);
-
-		// notify the Mediator that new local video data has arrived
-		p_ZCamera->notify(VIDEO, &video);
-/*
-		cVector3d vec;
-		vec.x = rand() % 10;
-		vec.y = rand() % 10;
-		vec.z = rand() % 10;
-		Mediator::instance()->notifyNewLocalPlayerPosition(vec);
-*/
 		Sleep(31); // 32 fps
 	}
 	return 0;
@@ -193,5 +138,65 @@ void ZCamera::reverseFrameLeftRight(VideoData& vd,int channels){
 	}
 
 	delete []tmp;
+
+}
+
+
+//Finds the head of the player in the depth image and returns a 3d vector.
+cVector3d ZCamera::getPlayerPosition(ZCamera* p_ZCamera, bool isCameraConnected){
+
+	cVector3d pos;
+
+	if (isCameraConnected){
+
+		int rowCount=10;
+
+		int minCol=321;
+		int maxCol=-1;
+		int finalRow=-1;
+
+		for (int i=0;i<240 && finalRow<0;i++){
+			for (int j=0;j<320;j++){
+				if ((int)p_ZCamera->DEPTH[(i*320)+j] > 64){
+
+					if (rowCount==0){
+						finalRow=i;
+						if (j<minCol){minCol=j;}
+						if (j>maxCol){maxCol=j;}
+					}else{
+						rowCount--;
+						break;
+					}
+				}
+				else{
+				}
+			}
+		}
+		
+		/* Testing X Y values - Could be removed, but I'm keeping to test camera
+		ofstream myfile2;
+		myfile2.open ("c://DAN_HEAD.txtwordpad");
+		myfile2<< "x: " << ((maxCol-minCol)/2 + minCol) - 160;
+		myfile2<< "\n";
+		myfile2<< "y: " << 240 - finalRow;
+		myfile2.close();
+		*/
+
+		pos.x = ((maxCol-minCol)/2 + minCol) - 160;
+		pos.y = 240 - finalRow;
+		pos.z = 0;
+	
+	}
+	else
+	{
+		//Number of "camera pixels" we want the body to move left to right
+		int rangeOfMovement=260;
+
+		pos.x = (p_ZCamera->dummyCounter % rangeOfMovement) - rangeOfMovement/2;
+		pos.y = 120;
+		pos.z = 0;
+	}
+
+	return pos;
 
 }

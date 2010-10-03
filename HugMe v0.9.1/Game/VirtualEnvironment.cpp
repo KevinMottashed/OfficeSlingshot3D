@@ -96,6 +96,50 @@ void VirtualEnvironment::firePeerSlingshot(Projectile p)
 	return;
 }
 
+void VirtualEnvironment::moveLocalAvatar(cVector3d position)
+{
+
+	//TODO make collision boxes follow these movements
+
+	//Reset rotation to upright
+	lAvatar->rotate(lAvatar->getRot().inv());
+
+	//Calulate angle of rotation, limit to 45 degrees either way
+	double ang = -(cRadToDeg(atan(position.x / position.y)));
+	ang = cClamp<double>(ang,-45,45);
+
+	//Apply rotation
+	lAvatar->rotate(cVector3d(1, 0, 0), cDegToRad(ang));
+
+	//Apply translation based on rotattion
+	lAvatar->setPos(0,0,ang/75);
+
+	return;
+}
+
+void VirtualEnvironment::movePeerAvatar(cVector3d position)
+{
+	
+	//TODO make collision boxes follow these movements
+	//TODO change perspective
+
+
+	//Reset rotation to upright
+	rAvatar->rotate(rAvatar->getRot().inv());
+
+	//Calulate angle of rotation, limit to 45 degrees either way
+	double ang = -(cRadToDeg(atan(position.x / position.y)));
+	ang = cClamp<double>(ang,-45,45);
+
+	//Apply rotation
+	rAvatar->rotate(cVector3d(1, 0, 0), cDegToRad(ang));
+
+	//Apply translation based on rotattion
+	rAvatar->setPos(0,0,ang/75);
+	
+	return;
+}
+
 void VirtualEnvironment::initialize(void)
 {
 	//**************************************//
@@ -113,7 +157,7 @@ void VirtualEnvironment::initialize(void)
 	//**************************************//
 
     // position and oriente the camera
-	_camera->set( cVector3d (7.0f, 0.0f, 0.0f),    // camera position (eye)
+	_camera->set( cVector3d (9.0f, 0.0f, 0.0f),    // camera position (eye)
         cVector3d (0.0f, 0.0f, 0.0f),    // lookat position (target)
         cVector3d (0.0f, 0.0f, 1.0f));   // direction of the "up" vector
 

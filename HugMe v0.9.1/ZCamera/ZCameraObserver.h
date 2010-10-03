@@ -7,7 +7,8 @@
 // the context represents what has changed in the observed object
 enum ZCameraUpdateContext
 {
-	VIDEO
+	VIDEO,
+	AVATAR_POSITION
 };
 
 class ZCameraObserver

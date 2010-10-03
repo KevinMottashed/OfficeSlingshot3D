@@ -30,6 +30,18 @@ public:
 	 * @param position The new position
 	 */
 	void movePeerSlingshot(cVector3d position);
+	
+	/**
+	 * Move the local avatar to a new position
+	 * @param position The new position
+	 */
+	void moveLocalAvatar(cVector3d position);
+	
+	/**
+	 * Move the peer avatar to a new position
+	 * @param position The new position
+	 */
+	void movePeerAvatar(cVector3d position);
 
 	/**
 	 * Shoot a projectile from the local slingshot

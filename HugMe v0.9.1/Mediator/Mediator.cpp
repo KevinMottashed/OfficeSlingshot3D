@@ -457,6 +457,22 @@ void Mediator::update(ZCameraUpdateContext context, const void* data)
 			// TODO remove video data
 			break;
 		}
+		case AVATAR_POSITION:
+		{
+			assert(data != NULL);
+
+			// TODO send player position over network
+			rc_network error = network->sendPlayerPosition(*(cVector3d*) data);
+			if (error != SUCCESS)
+			{
+				handleNetworkError(error);
+				return;
+			}
+			
+
+			notify(MediatorUpdateContext::LOCAL_AVATAR_MOVED, data);
+			break;
+		}
 		default:
 		{
 			// all updates should be handled

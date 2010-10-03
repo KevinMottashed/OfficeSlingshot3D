@@ -30,6 +30,9 @@ public:
 	static void reverseFrameUpDown(VideoData& vd, int channels);	
 	static void reverseFrameLeftRight(VideoData& vd, int channels);	
 
+	//Get player position
+	static cVector3d getPlayerPosition(ZCamera* p_ZCamera, bool isCameraConnected);
+
 private:
 	ZCamera(const ZCamera& zCamera); // intentionally not implemented
 	ZCamera& operator=(const ZCamera& zCamera); // intentionally not implemented
@@ -42,6 +45,9 @@ private:
 	unsigned char* RGBFull;
 	unsigned char* PRIM;
 	unsigned char* SEC;
+
+	//Counter to move avatar 
+	int dummyCounter;
 
 };
 

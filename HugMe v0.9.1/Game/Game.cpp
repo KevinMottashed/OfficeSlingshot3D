@@ -93,6 +93,18 @@ void Game::update(MediatorUpdateContext_t context, const void* data)
 			mediator->fireSlingshot(p, Player::PEER);
 			break;
 		}
+		case MediatorUpdateContext::LOCAL_AVATAR_MOVED:
+		{
+			assert(data != NULL);
+			environment.moveLocalAvatar(*(cVector3d*) data);
+			break;
+		}
+		case MediatorUpdateContext::PEER_AVATAR_MOVED:
+		{
+			assert(data != NULL);
+			environment.movePeerAvatar(*(cVector3d*) data);
+			break;
+		}
 	}
 }
 
