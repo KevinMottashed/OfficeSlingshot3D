@@ -8,6 +8,7 @@
 #include "GameStateEnum.h"
 #include "MediatorProxy.h"
 #include "VirtualEnvironment.h"
+#include "TitleScreen.h"
 
 
 /**
@@ -61,6 +62,12 @@ private:
 	 * The games virtual environment
 	 */
 	VirtualEnvironment environment;
+
+	/**
+	 * The game's title screen.
+	 * This is a 3d environment that is displayed when the game isn't running
+	 */
+	TitleScreen titleScreen;
 
 	/**
 	 * Mutex to protect the virtual environment

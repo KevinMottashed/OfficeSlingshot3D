@@ -15,7 +15,7 @@ Game::Game(boost::shared_ptr<Mediator> mediator) :
 
 	environment.initialize();
 	
-	mediator->switchCamera(environment.camera());
+	mediator->switchCamera(titleScreen.camera());
 }
 
 Game::~Game()
@@ -45,6 +45,9 @@ void Game::update(MediatorUpdateContext_t context, const void* data)
 		{
 			// reset the game
 			reset();
+
+			// change camera to the title screen environment
+			mediator->switchCamera(titleScreen.camera());
 			break;
 		}
 		case MediatorUpdateContext::LOCAL_SLINGSHOT_MOVED:
@@ -121,6 +124,9 @@ void Game::start(Player_t player)
 	// tell the mediator that the game has started so that it can start managing the devices
 	mediator->startGame(player);
 
+	// change camera to the virtual environment
+	mediator->switchCamera(environment.camera());
+
 	return;
 }
 
@@ -143,6 +149,9 @@ void Game::stop(Player_t player)
 {
 	// tell the mediator that the game has been stopped so that it can stop managing the devices
 	mediator->exitGame(player);
+
+	// change camera to the title screen environment
+	mediator->switchCamera(titleScreen.camera());
 
 	// reset the game
 	reset();

@@ -40,8 +40,6 @@ public:
 	
 	void oglCreate(CRect rect, CWnd *parent);
 	void oglInitialize(void);
-	void startGame(void);
-	void stopGame(void);
 
 	DECLARE_MESSAGE_MAP()
 	afx_msg void OnPaint();

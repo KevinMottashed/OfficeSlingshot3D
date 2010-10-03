@@ -121,8 +121,6 @@ void VirtualEnvironment::movePeerAvatar(cVector3d position)
 {
 	
 	//TODO make collision boxes follow these movements
-	//TODO change perspective
-
 
 	//Reset rotation to upright
 	rAvatar->rotate(rAvatar->getRot().inv());

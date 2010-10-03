@@ -3,7 +3,7 @@
 MFCOpenGLControl::MFCOpenGLControl(void)
 {
 	displayW = 0;
-	displayH = 0;
+	displayH = 0;	
 }
 
 MFCOpenGLControl::~MFCOpenGLControl(void)
@@ -92,6 +92,9 @@ void MFCOpenGLControl::oglInitialize(void)
    glEnable(GL_DEPTH_TEST);
    glDepthFunc(GL_LEQUAL);
 
+   // start the refresh timer
+   m_unpTimer = SetTimer(1, 20, 0);
+
    // Send draw request
    OnDraw(NULL);
 }
@@ -149,13 +152,4 @@ void MFCOpenGLControl::OnTimer(UINT_PTR nIDEvent)
 	}
 
 	CDialog::OnTimer(nIDEvent);
-}
-
-void MFCOpenGLControl::startGame(void)
-{
-	m_unpTimer = SetTimer(1, 20, 0);
-}
-void MFCOpenGLControl::stopGame(void)
-{
-	KillTimer(m_unpTimer);
 }

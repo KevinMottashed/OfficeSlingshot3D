@@ -529,6 +529,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Game\TitleScreen.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Game\TitleScreen.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Game\VirtualEnvironment.cpp"
 				>
 			</File>

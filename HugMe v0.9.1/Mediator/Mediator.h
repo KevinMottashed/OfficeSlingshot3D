@@ -74,7 +74,7 @@ public:
 	 * This will also let the peer know that a slingshot was fired
 	 * if the fired slingshot was our own
 	 * @param projectile The projectile that was fired
-	 * @param player The play that fired his slingshot
+	 * @param player The player that fired his slingshot
 	 */
 	void fireSlingshot(Projectile projectile, Player_t player);
 

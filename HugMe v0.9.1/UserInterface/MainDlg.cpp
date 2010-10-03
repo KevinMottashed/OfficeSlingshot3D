@@ -326,7 +326,6 @@ void CMainDlg::displayGameStateChanged(GameState_t state, Player_t player)
 			{
 				message << m_peerUserName << " has exited the game";
 			}
-			m_oglWindow->stopGame();
 			break;
 		}
 		case GameState::PAUSED:
@@ -359,8 +358,6 @@ void CMainDlg::displayGameStateChanged(GameState_t state, Player_t player)
 			{
 				message << m_peerUserName << " has started the game";
 			}
-			m_oglWindow->startGame();
-
 			break;
 		}
 	}
