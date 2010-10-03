@@ -12,16 +12,22 @@ class PerspectiveMath
 {
 public:
 	/**
-	 * Invert the perspective on a vector
-	 * @param vector The vector to invert
+	 * Invert the perspective on a coordinate in a 2D space
+	 * @param vector The coordinate to invert
 	 */
-	static void invertPerspective(cVector3d& vector);
+	static void invert2DCoordinate(cVector3d& vector);
 
 	/**
-	 * Invert the perspective on a projectile
-	 * @param projectile The vector to invert
+	 * Invert the perspective on a coordinate in a 3D space
+	 * @param vector The coordinate to invert
 	 */
-	static void invertPerspective(Projectile& projectile);
+	static void invert3DCoordinate(cVector3d& vector);
+
+	/**
+	 * Invert the perspective on a projectile traveling in a 3D space
+	 * @param projectile The projectile to invert
+	 */
+	static void invert3DProjectile(Projectile& projectile);
 };
 
 #endif

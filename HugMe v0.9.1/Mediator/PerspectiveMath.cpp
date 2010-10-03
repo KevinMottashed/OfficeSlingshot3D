@@ -1,20 +1,25 @@
 #include "PerspectiveMath.h"
 
-void PerspectiveMath::invertPerspective(cVector3d& vector)
+void PerspectiveMath::invert2DCoordinate(cVector3d& vector)
+{
+	vector.x = -vector.x;
+}
+
+void PerspectiveMath::invert3DCoordinate(cVector3d& vector)
 {
 	vector.x = -vector.x;
 	vector.y = -vector.y;
 }
 
-void PerspectiveMath::invertPerspective(Projectile& projectile)
+void PerspectiveMath::invert3DProjectile(Projectile& projectile)
 {
 	// invert position
 	cVector3d adjustedPosition = projectile.position();
-	invertPerspective(adjustedPosition);
+	invert3DCoordinate(adjustedPosition);
 	projectile.position(adjustedPosition);
 
 	// invert force
 	cVector3d adjustedForce = projectile.force();
-	invertPerspective(adjustedForce);
+	invert3DCoordinate(adjustedForce);
 	projectile.force(adjustedForce);
 }

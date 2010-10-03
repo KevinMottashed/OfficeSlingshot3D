@@ -191,7 +191,7 @@ void Mediator::update(NetworkUpdateContext context, const void* data)
 
 			// adjust the received vector for our perspective
 			cVector3d adjusted = *(cVector3d*) data;
-			PerspectiveMath::invertPerspective(adjusted);						
+			PerspectiveMath::invert3DCoordinate(adjusted);						
 			
 			notify(MediatorUpdateContext::PEER_SLINGSHOT_MOVED, &adjusted);
 			break;
@@ -203,7 +203,7 @@ void Mediator::update(NetworkUpdateContext context, const void* data)
 
 			// adjust the received vector for our perspective
 			Projectile adjusted = *(Projectile*) data;
-			PerspectiveMath::invertPerspective(adjusted);
+			PerspectiveMath::invert3DProjectile(adjusted);
 
 			notify(MediatorUpdateContext::PEER_SLINGSHOT_FIRED, &adjusted);
 			break;
@@ -218,7 +218,12 @@ void Mediator::update(NetworkUpdateContext context, const void* data)
 		{
 			// the network has received a player position
 			assert(data != NULL);
-			notify(MediatorUpdateContext::PEER_AVATAR_MOVED, data);
+			
+			// adjust the received vector for our perspective
+			cVector3d adjusted = *(cVector3d*) data;
+			PerspectiveMath::invert2DCoordinate(adjusted);
+
+			notify(MediatorUpdateContext::PEER_AVATAR_MOVED, &adjusted);
 			break;
 		}
 		default:
