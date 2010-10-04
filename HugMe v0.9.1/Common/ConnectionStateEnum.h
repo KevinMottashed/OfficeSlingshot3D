@@ -3,20 +3,34 @@
 
 #include "stdafx.h"
 
+/**
+ * Namespace for holding the ConnectionState enum.
+ * This prevents naming conflicts.
+ */
 namespace ConnectionState
 {
+	/**
+	 * Enum representing all the different connection states
+	 */
 	enum ConnectionStateEnum
 	{
-		LISTENING,
-		ESTABLISHING,
-		CONNECTED,
-		DISCONNECTED
+		LISTENING, /**< Listening for incoming connections, ie waiting for a peer to connect */
+		ESTABLISHING, /**< Establishing the connection, in this state the players are trading information such as usernames */
+		CONNECTED, /**< Connected to the peer */
+		DISCONNECTED /**< Not connected to anyone */
 	};
 
-	// get a string from the enum
+	/**
+	 * Get a string representation of the enum
+	 * @param e The enum to convert to a string
+	 * @return The string representation
+	 */
 	std::string lookup(ConnectionStateEnum e);
 }
 
+/**
+ * Typedef for convinience
+ */
 typedef ConnectionState::ConnectionStateEnum ConnectionState_t;
 
 #endif

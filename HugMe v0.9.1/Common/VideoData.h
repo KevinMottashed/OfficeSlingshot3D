@@ -4,24 +4,64 @@
 #include "stdafx.h" // STL + windows
 #include "boost.h" // boost libraries
 
+/**
+ * The width of the image.
+ */
 static const unsigned int IMAGE_WIDTH = 320;
+
+/**
+ * The height of the image.
+ */
 static const unsigned int IMAGE_HEIGHT = 240;
+
+/**
+ * The number of bytes per pixel.
+ * The camera takes pictures in RBGA red-green-blue-alpha so we need 4 bytes per pixel.
+ */
 static const unsigned int BYTES_PER_PIXEL = 4;
+
+/**
+ * The size of a picture
+ */
 static const unsigned int IMAGE_ARRAY_SIZE = IMAGE_WIDTH * IMAGE_HEIGHT * BYTES_PER_PIXEL;
 
+/**
+ * Represent a frame of video data.
+ */
 struct VideoData
 {
 public:
+	/**
+	 * Constructor
+	 */
 	VideoData() : rgb(IMAGE_ARRAY_SIZE) {}
 
+	/**
+	 * The rgb data of the video frame
+	 */
 	std::vector<BYTE> rgb;
 private:
-	VideoData(const VideoData& videoData); // intentionally not implemented
-	VideoData& operator=(const VideoData& videoData); // intentionally not implemented
+	/**
+	 * Copy constructor. Not implemented to protect from use.
+	 * @param videoData The object to copy.
+	 */
+	VideoData(const VideoData& videoData);
+	
+	/**
+	 * Assignment operator. Not implemented to protect from use.
+	 * @param videoData The object to copy.
+	 */
+	VideoData& operator=(const VideoData& videoData); 
 
 	// the boost serialization library requires access to the serialize function
 	friend class boost::serialization::access;
 
+	/**
+	 * Serialize or deserialize the video data.
+	 * This function is used by the boost library and should not be called directly.
+	 * @param ar The archive to serialize to or deserialize from.
+	 * @param version The archive version.
+	 */
 	template <typename Archive>
 	void serialize(Archive& ar, const unsigned int version);
 };
