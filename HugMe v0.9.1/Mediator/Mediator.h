@@ -124,6 +124,8 @@ private:
 	void closeApplication();
 	void sendChatMessage(const std::string& message);
 
+	void collisionDetected(void);
+
 	//--------------------------------------------
 	// ZCamera Related updates
 	//--------------------------------------------

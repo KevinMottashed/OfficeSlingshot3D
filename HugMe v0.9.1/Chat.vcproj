@@ -537,14 +537,6 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Game\VirtualAvatar.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\Game\VirtualAvatar.h"
-				>
-			</File>
-			<File
 				RelativePath=".\Game\VirtualEnvironment.cpp"
 				>
 			</File>

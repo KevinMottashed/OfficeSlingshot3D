@@ -3,7 +3,7 @@
 
 const unsigned int VirtualEnvironment::ball_limit = 2;
 const cVector3d VirtualEnvironment::slingshot_sling_offset = cVector3d(0,0,1.0f);
-const cVector3d VirtualEnvironment::firing_force = cVector3d(-500.0f,0,280.0f);
+const cVector3d VirtualEnvironment::firing_force = cVector3d(-450.0f,0,280.0f);
 
 VirtualEnvironment::VirtualEnvironment(void) :
 	localBalls(ball_limit),
@@ -35,7 +35,15 @@ void VirtualEnvironment::updateFrame()
 
 bool VirtualEnvironment::isColliding()
 {
-	return false;
+	localHitBox->computeGlobalPositions(true, localHitBox->getGlobalPos(), localHitBox->getGlobalRot());
+	cVector3d maxPos = localHitBox->getBoundaryMax()+localHitBox->getPos();
+	cVector3d minPos = localHitBox->getBoundaryMin()+localHitBox->getPos();
+
+	cVector3d ballPos = peerBalls[rNumBalls % ball_limit]->getPos();
+
+	return (minPos.x<=ballPos.x && minPos.y<=ballPos.y && 
+		minPos.z<=ballPos.z && maxPos.x>ballPos.x && 
+		maxPos.y>ballPos.y && maxPos.z>ballPos.z);
 }
 
 cCamera* VirtualEnvironment::camera()
@@ -103,9 +111,6 @@ void VirtualEnvironment::firePeerSlingshot(Projectile p)
 
 void VirtualEnvironment::moveLocalAvatar(cVector3d position)
 {
-
-	//TODO make collision boxes follow these movements
-
 	//Reset rotation to upright
 	lAvatar->rotate(lAvatar->getRot().inv());
 	localHitBox->rotate(localHitBox->getRot().inv());
@@ -114,36 +119,35 @@ void VirtualEnvironment::moveLocalAvatar(cVector3d position)
 
 	//Calculate angle of rotation, limit to 45 degrees either way
 	double ang = -(cRadToDeg(atan(position.x / position.y)));
-	ang = cClamp<double>(ang,-45,45);
+	ang = cClamp<double>(ang, -45, 45);
 
 	//Apply rotation
 	lAvatar->rotate(cVector3d(1, 0, 0), cDegToRad(ang));
 	localHitBox->rotate(cVector3d(1, 0, 0), cDegToRad(ang));
 
 	//Apply translation based on rotation
-	//lAvatar->setPos(lAvatar->getPos().x, lAvatar->getPos().y, lAvatar->getPos().z+(ang/75));
-	//localHitBox->setPos(lAvatar->getPos());
-
+	lAvatar->setPos(6.0f, -(ang/75), -1.0f);
+	localHitBox->setPos(6.0f, -(ang/75), -1.0f);
+	
 	return;
 }
 
 void VirtualEnvironment::movePeerAvatar(cVector3d position)
 {
-	
-	//TODO make collision boxes follow these movements
-
 	//Reset rotation to upright
 	rAvatar->rotate(rAvatar->getRot().inv());
 
+	rAvatar->rotate(cVector3d(1, 0, 0), cDegToRad(90));
+
 	//Calulate angle of rotation, limit to 45 degrees either way
 	double ang = -(cRadToDeg(atan(position.x / position.y)));
-	ang = cClamp<double>(ang,-45,45);
+	ang = cClamp<double>(ang, -45, 45);
 
 	//Apply rotation
 	rAvatar->rotate(cVector3d(1, 0, 0), cDegToRad(ang));
 
-	//Apply translation based on rotattion
-	rAvatar->setPos(0,0,ang/75);
+	//Apply translation based on rotation
+	rAvatar->setPos(-6.0f, -(ang/75), -1.0f);
 	
 	return;
 }
@@ -243,14 +247,10 @@ void VirtualEnvironment::initialize(void)
 	lAvatar->loadFromFile("Objects\\avatar\\avatar.obj");
 	lAvatar->scale(0.045f);
 
-	lAvatar->createAABBCollisionDetector(1.01, true, false);
-
 	lAvatar->setTransparencyLevel(0.15, true, true);
 
 	rAvatar->loadFromFile("Objects\\avatar\\avatar.obj");
 	rAvatar->scale(0.045f);
-
-	rAvatar->createAABBCollisionDetector(1.01, true, false);
 
 	rAvatar->rotate(cVector3d(1, 0, 0), cDegToRad(90));
 	lAvatar->rotate(cVector3d(1, 0, 0), cDegToRad(90));
@@ -261,17 +261,15 @@ void VirtualEnvironment::initialize(void)
 	rAvatar->setUseCulling(true, true);
 	lAvatar->setUseCulling(true, true);
 
-	lvAvatar = new VirtualAvatar(lAvatar->getPos());
-	rvAvatar = new VirtualAvatar(rAvatar->getPos());
-
+	// hit box used for manual collision detection
 	localHitBox = new cMesh(world);
-	peerHitBox = new cMesh(world);
-	localHitBox->setTransparencyLevel(0.15, true, true);
-	createCube(localHitBox, lvAvatar);
-	createCube(peerHitBox, rvAvatar);
+
+	//localHitBox->setShowEnabled(false, true);
+	localHitBox->setPos(cVector3d(6.0f, 0.0f, -1.0f));
+
+	createHitBox(localHitBox);
 
 	world->addChild(localHitBox);
-	world->addChild(peerHitBox);
 
 	//**************************************//
 	//                 BALL                 //
@@ -350,18 +348,15 @@ void VirtualEnvironment::initialize(void)
 	lNumBalls = 0;
 }
 
-void VirtualEnvironment::createCube(cMesh* a_mesh, VirtualAvatar* vAvatar)
+void VirtualEnvironment::createHitBox(cMesh* a_mesh)
 {
-	cVector3d minPos = vAvatar->getMinPos();
-	cVector3d maxPos = vAvatar->getMaxPos();
+	double xMin = -0.4;
+	double yMin = -0.5;
+	double zMin = 0.0;
 
-	double xMin = minPos.x;
-	double yMin = minPos.y;
-	double zMin = minPos.z;
-
-	double xMax = maxPos.x;
-	double yMax = maxPos.y;
-	double zMax = maxPos.z;
+	double xMax = 0.4;
+	double yMax = 0.5;
+	double zMax = 1.0;
 
     int vertices [6][6];
 
@@ -407,6 +402,6 @@ void VirtualEnvironment::createCube(cMesh* a_mesh, VirtualAvatar* vAvatar)
 		a_mesh->newTriangle(vertices[i][0], vertices[i][1], vertices[i][2]);
 		a_mesh->newTriangle(vertices[i][0], vertices[i][2], vertices[i][3]);
     }
-	a_mesh->setWireMode(true);
 	a_mesh->computeBoundaryBox(true);
+	a_mesh->setWireMode(true);
 }

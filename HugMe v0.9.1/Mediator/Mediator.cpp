@@ -49,7 +49,7 @@ void Mediator::startGame(Player_t player)
 		// This can be moved over once we add a mute option.
 		// play background music and "round 1 fight"
 		audio.playGameStart();
-		audio.playBGMusic();
+		//audio.playBGMusic();
 	}
 
 	falcon->startPolling();
@@ -446,6 +446,14 @@ void Mediator::closeApplication()
 void Mediator::sendChatMessage(const std::string& message)
 {
 	network->sendChatMessage(message);
+	return;
+}
+
+void Mediator::collisionDetected(void)
+{
+	audio.playHit();
+	//TODO: play sound on the peer's end
+	//network->notifyCollisionDetected();
 	return;
 }
 

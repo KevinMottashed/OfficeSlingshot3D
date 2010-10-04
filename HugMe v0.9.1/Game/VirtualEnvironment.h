@@ -6,7 +6,6 @@
 #include "chai3d.h"
 #include "CODE.h"
 #include "Projectile.h"
-#include "VirtualAvatar.h"
 
 class VirtualEnvironment
 {
@@ -78,9 +77,6 @@ private:
 	cODEGenericBody* ODEGround;
 
 	cMesh* localHitBox;
-	cMesh* peerHitBox;
-	VirtualAvatar* lvAvatar;
-	VirtualAvatar* rvAvatar;
 
 	int rNumBalls;
 	int lNumBalls;
@@ -103,6 +99,6 @@ private:
 	 */
 	static const cVector3d firing_force;
 
-	void createCube(cMesh* a_mesh, VirtualAvatar* vAvatar);
+	void createHitBox(cMesh* a_mesh);
 };
 #endif
