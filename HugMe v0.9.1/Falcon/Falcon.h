@@ -1,6 +1,7 @@
 #ifndef FALCON_H
 #define FALCON_H
 
+#include "stdafx.h"
 #include "FalconSubject.h"
 #include "chai3d.h"
 
