@@ -5,32 +5,54 @@
 #include "FalconProxy.h"
 #include "chai3d.h"
 
-// a concrete implementation of the falcon class
+/**
+ * The novint falcon. This class controls the slingshot via a novint falcon.
+ */
 class NovintFalcon : public Falcon
 {
 public:
+	/**
+	 * Constructor.
+	 */
 	NovintFalcon();
+
+	/**
+	 * Destructor.
+	 */
 	virtual ~NovintFalcon();
 
-	// start managing the falcon pen (polling it for information)
-	// create a thread to poll it
+	/**
+	 * Start polling the falcon for information
+	 */
 	virtual void startPolling();
 
-	// stop managing the falcon pen
-	// stop the thread that's polling it
+	/**
+	 * Stop polling the falcon for information
+	 */
 	virtual void stopPolling();
+
 	/**
 	 * Returns the box to which the slingshot is bound.
 	 * @return the box to which the slingshot is bound
 	 */
 	virtual cCollisionAABBBox boundingBox() const;
 
-	
-
 private:
-	NovintFalcon(const NovintFalcon& novintFalcon); // intentionally not implemented
-	NovintFalcon& operator=(const NovintFalcon& novintFalcon); // intentionally not implemented
+	/**
+	 * Copy constructor. Not implemented to protect from use.
+	 * @param novintFalcon The object to copy.
+	 */
+	NovintFalcon(const NovintFalcon& novintFalcon);
+ 
+	/**
+	 * Assignment operator. Not implemented to protect from use.
+	 * @param videoData The object to copy.
+	 */
+	NovintFalcon& operator=(const NovintFalcon& novintFalcon); 
 
+	/**
+	 * True when the falcon should notify observers that an event occured.
+	 */ 
 	bool reporting;
 
 	/**

@@ -5,17 +5,31 @@
 #include "FalconSubject.h"
 #include "chai3d.h"
 
-// Abstract class that represents a falcon
+/**
+ * Abstract class that represents a falcon.
+ * The falcon will report events such as slingshot movement and slingshot firing.
+ */
 class Falcon : public FalconSubject
 {
 public:
+	/**
+	 * Constructor
+	 */
 	Falcon();
+
+	/**
+	 * Destructor.
+	 */
 	virtual ~Falcon();
 
-	// start polling the falcon for information (position, buttons, ...)
+	/**
+	 * Start polling the falcon for information
+	 */
 	virtual void startPolling() = 0;
 
-	// stop polling the falcon for information (position, buttons, ...)
+	/**
+	 * Stop polling the falcon for information
+	 */
 	virtual void stopPolling() = 0;
 
 	/**
