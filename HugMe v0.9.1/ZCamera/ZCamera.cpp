@@ -182,7 +182,7 @@ cVector3d ZCamera::getPlayerPosition(ZCamera* p_ZCamera, bool isCameraConnected)
 		myfile2.close();
 		*/
 
-		pos.x = -((maxCol-minCol)/2 + minCol) - 160);
+		pos.x = -(((maxCol-minCol)/2 + minCol) - 160);
 		pos.y = 240 - finalRow;
 		pos.z = 0;
 	
