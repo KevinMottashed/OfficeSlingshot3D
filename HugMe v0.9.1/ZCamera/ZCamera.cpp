@@ -51,7 +51,7 @@ DWORD ZCamera::getFrameFromCamera(ZCamera* p_ZCamera){
 	//	p_ZCamera->notify(VIDEO, &video);
 
 		
-		cVector3d pos = getPlayerPosition(p_ZCamera, 0);
+		cVector3d pos = getPlayerPosition(p_ZCamera, 1);
 
 		p_ZCamera->notify(AVATAR_POSITION, &pos);
 
@@ -182,7 +182,7 @@ cVector3d ZCamera::getPlayerPosition(ZCamera* p_ZCamera, bool isCameraConnected)
 		myfile2.close();
 		*/
 
-		pos.x = ((maxCol-minCol)/2 + minCol) - 160;
+		pos.x = -((maxCol-minCol)/2 + minCol) - 160);
 		pos.y = 240 - finalRow;
 		pos.z = 0;
 	
