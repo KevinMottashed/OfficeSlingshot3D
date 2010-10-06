@@ -2,13 +2,13 @@
 
 void PerspectiveMath::invert2DCoordinate(cVector3d& vector)
 {
-	vector.x = -vector.x;
+	vector.z = -vector.z;
 }
 
 void PerspectiveMath::invert3DCoordinate(cVector3d& vector)
 {
+	vector.z = -vector.z;
 	vector.x = -vector.x;
-	vector.y = -vector.y;
 }
 
 void PerspectiveMath::invert3DProjectile(Projectile& projectile)
