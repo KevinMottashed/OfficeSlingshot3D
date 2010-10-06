@@ -20,26 +20,26 @@ namespace World
 	/**
 	 * Our slingshot's starting position
 	 */
-	static const cVector3d local_slingshot_starting_position = cVector3d(5.0f, 0.0f, -1.2f);
+	static const cVector3d local_slingshot_starting_position = cVector3d(0.0f, -0.2f, 5.0f);
 	
 	/**
 	 * The peers slingshot's starting position
 	 */
-	static const cVector3d peer_slingshot_starting_position = cVector3d(-5.0f, 0.0f, -1.2f);
+	static const cVector3d peer_slingshot_starting_position = cVector3d(0.0f, -0.2f, -5.0f);
 
 	/**
 	 * Local slingshot bounding box
 	 */
 	static const cCollisionAABBBox local_slingshot_bounding_box = cCollisionAABBBox(
-		cVector3d(4.0f - error_margin, -1.0f - error_margin, -1.4f - error_margin), 
-		cVector3d(5.0f + error_margin, 1.0f + error_margin, -1.0f + error_margin));
+		cVector3d(-1.0f - error_margin, -0.4f - error_margin, 4.0f - error_margin), 
+		cVector3d(1.0f + error_margin, 0.0f + error_margin, 5.0f + error_margin));
 
 	/**
 	 * Peer slingshot bounding box
 	 */
 	static const cCollisionAABBBox peer_slingshot_bounding_box = cCollisionAABBBox(
-		cVector3d(-5.0f - error_margin, -1.0f - error_margin, -1.4f - error_margin), 
-		cVector3d(-4.0f + error_margin, 1.0f + error_margin, -1.0f + error_margin));
+		cVector3d(-0.4f - error_margin, 4.0f - error_margin, -5.0f - error_margin), 
+		cVector3d(0.0f + error_margin, 5.0f + error_margin, -4.0f + error_margin));
 }
 
 #endif

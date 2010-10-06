@@ -2,8 +2,8 @@
 #include "WorldConstants.h"
 
 const unsigned int VirtualEnvironment::ball_limit = 2;
-const cVector3d VirtualEnvironment::slingshot_sling_offset = cVector3d(0,0,1.0f);
-const cVector3d VirtualEnvironment::firing_force = cVector3d(-450.0f,0,280.0f);
+const cVector3d VirtualEnvironment::slingshot_sling_offset = cVector3d(0,1.0,0.0f);
+const cVector3d VirtualEnvironment::firing_force = cVector3d(0,280.0f,-450.0f);
 
 VirtualEnvironment::VirtualEnvironment(void) :
 	localBalls(ball_limit),
@@ -113,21 +113,21 @@ void VirtualEnvironment::moveLocalAvatar(cVector3d position)
 {
 	//Reset rotation to upright
 	lAvatar->rotate(lAvatar->getRot().inv());
+	lAvatar->rotate(cVector3d(0, 1, 0), cDegToRad(-90));
+
 	localHitBox->rotate(localHitBox->getRot().inv());
 
-	lAvatar->rotate(cVector3d(1, 0, 0), cDegToRad(90));
-
 	//Calculate angle of rotation, limit to 45 degrees either way
-	double ang = -(cRadToDeg(atan(position.x / position.y)));
+	double ang = cRadToDeg(atan(position.x / position.y));
 	ang = cClamp<double>(ang, -45, 45);
 
 	//Apply rotation
-	lAvatar->rotate(cVector3d(1, 0, 0), cDegToRad(ang));
-	localHitBox->rotate(cVector3d(1, 0, 0), cDegToRad(ang));
+	lAvatar->rotate(cVector3d(0, 0, 1), cDegToRad(-ang));
+	localHitBox->rotate(cVector3d(0, 0, 1), cDegToRad(-ang));
 
 	//Apply translation based on rotation
-	lAvatar->setPos(6.0f, -(ang/75), -1.0f);
-	localHitBox->setPos(6.0f, -(ang/75), -1.0f);
+	lAvatar->setPos(ang/75, 0, 6.0f);
+	localHitBox->setPos(ang/75, 0, 6.0f);
 	
 	return;
 }
@@ -136,18 +136,17 @@ void VirtualEnvironment::movePeerAvatar(cVector3d position)
 {
 	//Reset rotation to upright
 	rAvatar->rotate(rAvatar->getRot().inv());
-
-	rAvatar->rotate(cVector3d(1, 0, 0), cDegToRad(90));
+	rAvatar->rotate(cVector3d(0, 1, 0), cDegToRad(90));
 
 	//Calulate angle of rotation, limit to 45 degrees either way
-	double ang = -(cRadToDeg(atan(position.x / position.y)));
+	double ang = cRadToDeg(atan(position.x / position.y));
 	ang = cClamp<double>(ang, -45, 45);
 
 	//Apply rotation
-	rAvatar->rotate(cVector3d(1, 0, 0), cDegToRad(ang));
+	rAvatar->rotate(cVector3d(0, 0, 1), cDegToRad(-ang));
 
 	//Apply translation based on rotation
-	rAvatar->setPos(-6.0f, -(ang/75), -1.0f);
+	rAvatar->setPos(ang/75, 0, -6.0f);
 	
 	return;
 }
@@ -169,9 +168,9 @@ void VirtualEnvironment::initialize(void)
 	//**************************************//
 
     // position and oriente the camera
-	_camera->set( cVector3d (9.0f, 0.0f, 0.0f),    // camera position (eye)
+	_camera->set( cVector3d (0.0f, 1.0f, 9.0f),    // camera position (eye)
         cVector3d (0.0f, 0.0f, 0.0f),    // lookat position (target)
-        cVector3d (0.0f, 0.0f, 1.0f));   // direction of the "up" vector
+        cVector3d (0.0f, 1.0f, 0.0f));   // direction of the "up" vector
 
     // set the near and far clipping planes of the camera
     // anything in front/behind these clipping planes will not be rendered
@@ -179,6 +178,9 @@ void VirtualEnvironment::initialize(void)
 
     // enable high quality rendering
     _camera->enableMultipassTransparency(true);
+
+
+
 
 	//**************************************//
 	//                LIGHT                 //
@@ -203,7 +205,7 @@ void VirtualEnvironment::initialize(void)
     world->addChild(ODEWorld);
 
     // set some gravity
-	ODEWorld->setGravity(cVector3d(0.0, 0.0, -9.81));
+	ODEWorld->setGravity(cVector3d(0.0, -9.81, 0.0));
 
 	//**************************************//
 	//              SLINGSHOT               //
@@ -215,12 +217,12 @@ void VirtualEnvironment::initialize(void)
 
 	rSlingshot->setPos(World::peer_slingshot_starting_position);
 	lSlingshot->setPos(World::local_slingshot_starting_position);
-
+/*
 	rSlingshot->rotate( cVector3d(0, 1, 0), cDegToRad(90));
 	rSlingshot->rotate( cVector3d(1, 0, 0), cDegToRad(90));
 	lSlingshot->rotate( cVector3d(0, 1, 0), cDegToRad(90));
 	lSlingshot->rotate( cVector3d(1, 0, 0), cDegToRad(90));
-
+*/
 	rSlingshot->loadFromFile("Objects\\slingshot\\slingshot.obj");
 	rSlingshot->scale(2);
 	lSlingshot->loadFromFile("Objects\\slingshot\\slingshot.obj");
@@ -252,11 +254,13 @@ void VirtualEnvironment::initialize(void)
 	rAvatar->loadFromFile("Objects\\avatar\\avatar.obj");
 	rAvatar->scale(0.045f);
 
-	rAvatar->rotate(cVector3d(1, 0, 0), cDegToRad(90));
-	lAvatar->rotate(cVector3d(1, 0, 0), cDegToRad(90));
+	/*
+	rAvatar->rotate(cVector3d(0, 1, 0), cDegToRad(-90));
+	lAvatar->rotate(cVector3d(0, 1, 0), cDegToRad(90));
 
-	rAvatar->setPos(cVector3d(-6.0f, 0.0f, -1.0f));
-	lAvatar->setPos(cVector3d(6.0f, 0.0f, -1.0f));
+	rAvatar->setPos(cVector3d(0, 0, 6.0f));
+	lAvatar->setPos(cVector3d(0, 0, -6.0f));
+	*/
 
 	rAvatar->setUseCulling(true, true);
 	lAvatar->setUseCulling(true, true);
@@ -265,7 +269,7 @@ void VirtualEnvironment::initialize(void)
 	localHitBox = new cMesh(world);
 
 	//localHitBox->setShowEnabled(false, true);
-	localHitBox->setPos(cVector3d(6.0f, 0.0f, -1.0f));
+	//localHitBox->setPos(cVector3d(0,0,-6.0f));
 
 	createHitBox(localHitBox);
 
@@ -316,20 +320,20 @@ void VirtualEnvironment::initialize(void)
 
     // create 4 vertices (one at each corner)
     double groundSize = 10.0;
-    int vertices0 = ground->newVertex(-groundSize, -groundSize, 0.0f);
-    int vertices1 = ground->newVertex( groundSize, -groundSize, 0.0f);
-    int vertices2 = ground->newVertex( groundSize,  groundSize, 0.0f);
-    int vertices3 = ground->newVertex(-groundSize,  groundSize, 0.0f);
+    int vertices0 = ground->newVertex(-groundSize,0, -groundSize);
+    int vertices1 = ground->newVertex( groundSize,0, -groundSize);
+    int vertices2 = ground->newVertex( groundSize,0,  groundSize);
+    int vertices3 = ground->newVertex(-groundSize,0,  groundSize);
 
     // compose surface with 2 triangles
-    ground->newTriangle(vertices0, vertices1, vertices2);
-    ground->newTriangle(vertices0, vertices2, vertices3);
+    ground->newTriangle(vertices0, vertices2, vertices1);
+    ground->newTriangle(vertices0, vertices3, vertices2);
 
     // compute surface normals
     ground->computeAllNormals();
 
     // position ground at the right level
-    ground->setPos(0.0f, 0.0f, -1.0f);
+    ground->setPos(0.0f, 0.0f, 0.0f);
 
     // define some material properties and apply to mesh
     cMaterial matGround;
@@ -342,7 +346,7 @@ void VirtualEnvironment::initialize(void)
 
 	//Create a static ground plane
     ODEGround = new cODEGenericBody(ODEWorld);
-    ODEGround->createStaticPlane(cVector3d(0.0f, 0.0f, -1.0f), cVector3d(0.0f, 0.0f, 1.0f));
+    ODEGround->createStaticPlane(cVector3d(0.0f, 0.0f, 0.0f), cVector3d(0.0f, 1.0f, 0.0f));
 
 	rNumBalls = 0;
 	lNumBalls = 0;
@@ -350,13 +354,13 @@ void VirtualEnvironment::initialize(void)
 
 void VirtualEnvironment::createHitBox(cMesh* a_mesh)
 {
-	double xMin = -0.4;
-	double yMin = -0.5;
-	double zMin = 0.0;
+	double xMin = -0.5;
+	double yMin = 0.0;
+	double zMin = -0.4;
 
-	double xMax = 0.4;
-	double yMax = 0.5;
-	double zMax = 1.0;
+	double xMax = 0.5;
+	double yMax = 1.0;
+	double zMax = 0.4;
 
     int vertices [6][6];
 
