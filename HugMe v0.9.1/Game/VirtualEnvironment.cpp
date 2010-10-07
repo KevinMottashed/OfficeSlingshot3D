@@ -2,7 +2,6 @@
 #include "WorldConstants.h"
 
 const unsigned int VirtualEnvironment::ball_limit = 2;
-const cVector3d VirtualEnvironment::slingshot_sling_offset = cVector3d(0, 1.0, 0.0f);
 const cVector3d VirtualEnvironment::firing_force = cVector3d(0, 280.0f, -450.0f);
 
 VirtualEnvironment::VirtualEnvironment(void) :
@@ -12,11 +11,6 @@ VirtualEnvironment::VirtualEnvironment(void) :
 	world = new cWorld();
 	_camera = new cCamera(world);
 	light = new cLight(world);
-	rSlingshot = new cMesh(world);
-	lSlingshot = new cMesh(world);
-	rAvatar = new cMesh(world);
-	lAvatar = new cMesh(world);
-	ball = new cMesh(world);
 	background = new cBitmap();
 }
 
@@ -35,15 +29,9 @@ void VirtualEnvironment::updateFrame()
 
 bool VirtualEnvironment::isColliding()
 {
-	localHitBox->computeGlobalPositions(true, localHitBox->getGlobalPos(), localHitBox->getGlobalRot());
-	cVector3d maxPos = localHitBox->getBoundaryMax()+localHitBox->getPos();
-	cVector3d minPos = localHitBox->getBoundaryMin()+localHitBox->getPos();
+	cVector3d ballPos = peerBalls[rNumBalls % ball_limit]->getMeshPos();
 
-	cVector3d ballPos = peerBalls[rNumBalls % ball_limit]->getPos();
-
-	return (minPos.x<=ballPos.x && minPos.y<=ballPos.y && 
-		minPos.z<=ballPos.z && maxPos.x>ballPos.x && 
-		maxPos.y>ballPos.y && maxPos.z>ballPos.z);
+	return lAvatar->isInHitBox(ballPos);
 }
 
 cCamera* VirtualEnvironment::camera()
@@ -53,100 +41,62 @@ cCamera* VirtualEnvironment::camera()
 
 void VirtualEnvironment::moveLocalSlingshot(cVector3d position)
 {
-	// don't move outside of the allowed area
-	if (World::local_slingshot_bounding_box.contains(position))
-	{
-		lSlingshot->setPos(position);
-	}
-	return;
+	lSlingshot->move(position);
 }
 
 void VirtualEnvironment::movePeerSlingshot(cVector3d position)
 {
-	// don't move outside of the allowed area
-	if (World::peer_slingshot_bounding_box.contains(position))
-	{
-		rSlingshot->setPos(position);
-	}
-	return;
+	rSlingshot->move(position);
 }
 
 Projectile VirtualEnvironment::fireLocalSlingshot()
 {
-	cVector3d ballPosition = lSlingshot->getPos() + slingshot_sling_offset;
-	localBalls[lNumBalls % ball_limit]->setPosition(ballPosition);
-
-	cVector3d force = firing_force;
-
-	//Add a force just for show
-	localBalls[lNumBalls % ball_limit]->addGlobalForceAtGlobalPos(force,ballPosition);
-
-	// make the ball visible
-	localBalls[lNumBalls % ball_limit]->setShowEnabled(true);
-	
-	// increment the number of balls that were fired, so we know which one to use next
-	lNumBalls++;
+	cVector3d ballPosition = lSlingshot->getBallPosition();
 
 	// the resulting projectile
 	Projectile p;
 	p.position(ballPosition);
 	p.force(firing_force);
+
+	localBalls[lNumBalls % ball_limit]->fire(p);
+	
+	// increment the number of balls that were fired, so we know which one to use next
+	lNumBalls++;
+
 	return p;
 }
 
 void VirtualEnvironment::firePeerSlingshot(Projectile p)
 {
-	peerBalls[rNumBalls % ball_limit]->setPosition(p.position());
-
-	//Add a force just for show
-	peerBalls[rNumBalls % ball_limit]->addGlobalForceAtGlobalPos(p.force(), p.position());
-
-	// make the ball visible
-	peerBalls[rNumBalls % ball_limit]->setShowEnabled(true);
+	peerBalls[rNumBalls % ball_limit]->fire(p);
 	
 	// increment the number of balls that were fired, so we know which one to use next
 	rNumBalls++;
+
 	return;
 }
 
 void VirtualEnvironment::moveLocalAvatar(cVector3d position)
 {
-	//Reset rotation to upright
-	lAvatar->rotate(lAvatar->getRot().inv());
-	lAvatar->rotate(cVector3d(0, 1, 0), cDegToRad(-90));
-
-	localHitBox->rotate(localHitBox->getRot().inv());
-
 	//Calculate angle of rotation, limit to 45 degrees either way
 	double ang = cRadToDeg(atan(position.x / position.y));
 	ang = cClamp<double>(ang, -45, 45);
 
-	//Apply rotation
-	lAvatar->rotate(cVector3d(0, 0, 1), cDegToRad(-ang));
-	localHitBox->rotate(cVector3d(0, 0, 1), cDegToRad(-ang));
-
-	//Apply translation based on rotation
-	lAvatar->setPos(ang/75, 0, 6.0f);
-	localHitBox->setPos(ang/75, 0, 6.0f);
+	lAvatar->rotate(ang);
+	lAvatar->translate(ang);
+	lAvatar->updateBoundaries(ang, position);
 	
 	return;
 }
 
 void VirtualEnvironment::movePeerAvatar(cVector3d position)
 {
-	//Reset rotation to upright
-	rAvatar->rotate(rAvatar->getRot().inv());
-	rAvatar->rotate(cVector3d(0, 1, 0), cDegToRad(90));
-
 	//Calulate angle of rotation, limit to 45 degrees either way
 	double ang = cRadToDeg(atan(position.x / position.y));
 	ang = cClamp<double>(ang, -45, 45);
 
-	//Apply rotation
-	rAvatar->rotate(cVector3d(0, 0, 1), cDegToRad(-ang));
-
-	//Apply translation based on rotation
-	rAvatar->setPos(ang/75, 0, -6.0f);
+	rAvatar->rotate(ang);
+	rAvatar->translate(ang);
 	
 	return;
 }
@@ -201,90 +151,33 @@ void VirtualEnvironment::initialize(void)
 	ODEWorld->setGravity(cVector3d(0.0, -9.81, 0.0));
 
 	//**************************************//
-	//              SLINGSHOT               //
+	//              SLINGSHOTS              //
 	//**************************************//
 
-    // add object to world
-    world->addChild(rSlingshot);
-	world->addChild(lSlingshot);
-
-	rSlingshot->setPos(World::peer_slingshot_starting_position);
-	lSlingshot->setPos(World::local_slingshot_starting_position);
-
-	rSlingshot->loadFromFile("Objects\\slingshot\\slingshot.obj");
-	rSlingshot->scale(2);
-	lSlingshot->loadFromFile("Objects\\slingshot\\slingshot.obj");
-	lSlingshot->scale(2);
-
-    // compute a boundary box
-    rSlingshot->computeBoundaryBox(true);
-	lSlingshot->computeBoundaryBox(true);
-
-    // define some haptic friction properties
-    rSlingshot->setFriction(0.1f, 0.2f, true);
-	lSlingshot->setFriction(0.1f, 0.2f, true);
-
-	rSlingshot->setUseCulling(false, true);
-	lSlingshot->setUseCulling(false, true);
+	// Create both slingshots
+	lSlingshot = new VirtualSlingshot(world, World::local_slingshot_starting_position);
+	rSlingshot = new VirtualSlingshot(world, World::peer_slingshot_starting_position);
 
 	//**************************************//
 	//                AVATARS               //
 	//**************************************//
 
-	world->addChild(lAvatar);
-	world->addChild(rAvatar);
-
-	lAvatar->loadFromFile("Objects\\avatar\\avatar.obj");
-	lAvatar->scale(0.045f);
-
-	rAvatar->loadFromFile("Objects\\avatar\\avatar.obj");
-	rAvatar->scale(0.045f);
-
-	rAvatar->setUseCulling(true, true);
-	lAvatar->setUseCulling(true, true);
-
-	// hit box used for manual collision detection
-	localHitBox = new cMesh(world);
-
-	createHitBox(localHitBox);
-
-	world->addChild(localHitBox);
+	lAvatar = new VirtualAvatar(world, World::local_avatar_starting_position, true);
+	rAvatar = new VirtualAvatar(world, World::peer_avatar_starting_position, false);
+	
 
 	//**************************************//
-	//                 BALL                 //
+	//                BALLS                 //
 	//**************************************//
 
-	ball->loadFromFile("Objects\\ball\\ball.obj");
-	ball->scale(0.015f);
-
-	ball->createAABBCollisionDetector(1.01, true, false);
-
-	foreach (cODEGenericBody*& odeBall, localBalls)
+	foreach (VirtualBall*& odeBall, localBalls)
 	{
-		odeBall = new cODEGenericBody(ODEWorld);
-		odeBall->setImageModel(ball);
-
-		//Calculate boundaries of physical ball
-		odeBall->createDynamicMesh(false);
-
-		odeBall->setUseCulling(false, true);
-
-		// hide the ball until fired
-		odeBall->setShowEnabled(false);
+		odeBall = new VirtualBall(world, ODEWorld);
 	}
 
-	foreach (cODEGenericBody*& odeBall, peerBalls)
+	foreach (VirtualBall*& odeBall, peerBalls)
 	{
-		odeBall = new cODEGenericBody(ODEWorld);
-		odeBall->setImageModel(ball);
-
-		//Calculate boundaries of physical ball
-		odeBall->createDynamicMesh(false);
-
-		odeBall->setUseCulling(false, true);
-
-		// hide the ball until fired
-		odeBall->setShowEnabled(false);
+		odeBall = new VirtualBall(world, ODEWorld);
 	}
 
 	//**************************************//
@@ -310,62 +203,4 @@ void VirtualEnvironment::initialize(void)
 
 	rNumBalls = 0;
 	lNumBalls = 0;
-}
-
-void VirtualEnvironment::createHitBox(cMesh* a_mesh)
-{
-	double xMin = -0.5;
-	double yMin = 0.0;
-	double zMin = -0.4;
-
-	double xMax = 0.5;
-	double yMax = 0.8;
-	double zMax = 0.4;
-
-    int vertices [6][6];
-
-    // face -x
-    vertices[0][0] = a_mesh->newVertex( xMin,  yMax,  zMin );
-    vertices[0][1] = a_mesh->newVertex( xMin,  yMin,  zMin );
-    vertices[0][2] = a_mesh->newVertex( xMin,  yMin,  zMax );
-    vertices[0][3] = a_mesh->newVertex( xMin,  yMax,  zMax );
-
-    // face +x
-    vertices[1][0] = a_mesh->newVertex( xMax,  yMin,  zMin );
-    vertices[1][1] = a_mesh->newVertex( xMax,  yMax,  zMin );
-    vertices[1][2] = a_mesh->newVertex( xMax,  yMax,  zMax );
-    vertices[1][3] = a_mesh->newVertex( xMax,  yMin,  zMax );
-
-    // face -y
-    vertices[2][0] = a_mesh->newVertex( xMin,  yMin,  zMin );
-    vertices[2][1] = a_mesh->newVertex( xMax,  yMin,  zMin );
-    vertices[2][2] = a_mesh->newVertex( xMax,  yMin,  zMax );
-    vertices[2][3] = a_mesh->newVertex( xMin,  yMin,  zMax );
-
-    // face +y
-    vertices[3][0] = a_mesh->newVertex( xMax,  yMax,  zMin );
-    vertices[3][1] = a_mesh->newVertex( xMin,  yMax,  zMin );
-    vertices[3][2] = a_mesh->newVertex( xMin,  yMax,  zMax );
-    vertices[3][3] = a_mesh->newVertex( xMax,  yMax,  zMax );
-
-    // face -z
-    vertices[4][0] = a_mesh->newVertex( xMin,  yMin,  zMin );
-    vertices[4][1] = a_mesh->newVertex( xMin,  yMax,  zMin );
-    vertices[4][2] = a_mesh->newVertex( xMax,  yMax,  zMin );
-    vertices[4][3] = a_mesh->newVertex( xMax,  yMin,  zMin );
-
-    // face +z
-    vertices[5][0] = a_mesh->newVertex( xMax,  yMin,  zMax );
-    vertices[5][1] = a_mesh->newVertex( xMax,  yMax,  zMax );
-    vertices[5][2] = a_mesh->newVertex( xMin,  yMax,  zMax );
-    vertices[5][3] = a_mesh->newVertex( xMin,  yMin,  zMax );
-
-    // create triangles
-    for (int i=0; i<6; i++)
-    {
-		a_mesh->newTriangle(vertices[i][0], vertices[i][1], vertices[i][2]);
-		a_mesh->newTriangle(vertices[i][0], vertices[i][2], vertices[i][3]);
-    }
-	a_mesh->computeBoundaryBox(true);
-	a_mesh->setWireMode(true);
 }

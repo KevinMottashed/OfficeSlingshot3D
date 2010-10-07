@@ -1,9 +1,8 @@
 #ifndef PROJECTILE_H
 #define PROJECTILE_H
 
-#include "chai3d.h"
-#include "stdafx.h"
 #include "boost.h"
+#include "chai3d.h"
 
 /**
  * Represents a projectile

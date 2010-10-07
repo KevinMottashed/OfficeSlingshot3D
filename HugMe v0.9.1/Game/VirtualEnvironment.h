@@ -6,6 +6,9 @@
 #include "chai3d.h"
 #include "CODE.h"
 #include "Projectile.h"
+#include "VirtualAvatar.h"
+#include "VirtualSlingshot.h"
+#include "VirtualBall.h"
 
 class VirtualEnvironment
 {
@@ -63,20 +66,17 @@ private:
 	cCamera* _camera;
 	cWorld* world;
 	cLight* light;
-	cMesh* rSlingshot;
-	cMesh* lSlingshot;
-	cMesh* rAvatar;
-	cMesh* lAvatar;
-	cMesh* ball;
+	VirtualSlingshot* lSlingshot;
+	VirtualSlingshot* rSlingshot;
+	VirtualAvatar* rAvatar;
+	VirtualAvatar* lAvatar;
 	cBitmap* background;
 
 	cODEWorld* ODEWorld;
-	std::vector<cODEGenericBody*> localBalls;
-	std::vector<cODEGenericBody*> peerBalls;
+	std::vector<VirtualBall*> localBalls;
+	std::vector<VirtualBall*> peerBalls;
 
 	cODEGenericBody* ODEGround;
-
-	cMesh* localHitBox;
 
 	int rNumBalls;
 	int lNumBalls;
@@ -87,18 +87,10 @@ private:
 	static const unsigned int ball_limit;
 
 	/**
-	 * This is the offset used when firing balls from the slingshot
-	 * This offset makes the balls come out of the sling instead of the handle
-	 */
-	static const cVector3d slingshot_sling_offset;
-
-	/**
 	 * The force at which balls are fired.
 	 * This should eventually be changed for a force that is
 	 * calculated based on how far the sling is pulled.
 	 */
 	static const cVector3d firing_force;
-
-	void createHitBox(cMesh* a_mesh);
 };
 #endif

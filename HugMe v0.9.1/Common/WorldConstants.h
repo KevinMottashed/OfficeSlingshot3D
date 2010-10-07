@@ -28,6 +28,16 @@ namespace World
 	static const cVector3d peer_slingshot_starting_position = cVector3d(0.0f, -0.2f, -5.0f);
 
 	/**
+	 * Our avatar's starting position
+	 */
+	static const cVector3d local_avatar_starting_position = cVector3d(0.0f, 0.0f, 6.0f);
+	
+	/**
+	 * The peers avatar's starting position
+	 */
+	static const cVector3d peer_avatar_starting_position = cVector3d(0.0f, 0.0f, -6.0f);
+
+	/**
 	 * Local slingshot bounding box
 	 */
 	static const cCollisionAABBBox local_slingshot_bounding_box = cCollisionAABBBox(
