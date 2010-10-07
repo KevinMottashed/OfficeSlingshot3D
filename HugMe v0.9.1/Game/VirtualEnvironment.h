@@ -68,7 +68,7 @@ private:
 	cMesh* rAvatar;
 	cMesh* lAvatar;
 	cMesh* ball;
-	cMesh* ground;
+	cBitmap* background;
 
 	cODEWorld* ODEWorld;
 	std::vector<cODEGenericBody*> localBalls;
