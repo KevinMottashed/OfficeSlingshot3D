@@ -59,6 +59,8 @@ private:
 	 * The falcon's current position
 	 */
 	cVector3d position;
+
+	cCollisionAABBBox falconBox;
 };
 
 #endif

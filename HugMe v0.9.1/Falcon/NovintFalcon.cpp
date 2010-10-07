@@ -1,6 +1,5 @@
 #include "NovintFalcon.h"
 #include "devices/CHapticDeviceHandler.h"
-#include "WorldConstants.h"
 
 //---------------------------------------------------------------------------
 
@@ -39,8 +38,7 @@ void updateHaptics(void);
 //////////////////////////////////////////////////////////////////////
 
 NovintFalcon::NovintFalcon() : 
-	reporting(false),
-	position(World::local_slingshot_starting_position)
+	reporting(false)
 {
 
 	resourceRoot = "C:\\cygwin\\home\\Administrator\\HugMe\\HugMe v0.9.1\\Debug";
@@ -73,14 +71,21 @@ NovintFalcon::NovintFalcon() :
         // retrieve information about the current haptic device
         cHapticDeviceInfo info = newHapticDevice->getSpecifications();
 
+		/**
+		* Local slingshot bounding box
+		*/
+		double cube_side = info.m_workspaceRadius * 0.707106;
+
+		falconBox = cCollisionAABBBox(
+		cVector3d(-cube_side, -cube_side, -cube_side), 
+		cVector3d(cube_side, cube_side, cube_side));
+
         // create a string that concatenates the device number and model name.
         string strID;
         cStr(strID, i);
         string strDevice = "#" + strID + " - " +info.m_modelName;
 
 		printf("%s\n", strDevice);
-
-		
 
 		// increment counter
         i++;
@@ -97,6 +102,7 @@ NovintFalcon::~NovintFalcon()
 void updateHaptics(void)
 {
     // main haptic simulation loop
+
     while(true)
     {
         // for each device
@@ -106,25 +112,25 @@ void updateHaptics(void)
             // read position of haptic device
             cVector3d newPosition;
             hapticDevices[i]->getPosition(newPosition);
-			p_Falcon->notify(SLINGSHOT_MOVED, &newPosition);
 
 			// read linear velocity from device
             cVector3d linearVelocity;
             hapticDevices[i]->getLinearVelocity(linearVelocity);
 
+			// CURRENTLY CAUSES FALCON TO GO CRAZY
 			// compute a reaction force
-			cVector3d newForce (0,0,0);
+//            cVector3d newForce (0,0,0);
+//
+            // apply force field
+//            if (true)
+//            {
+//                double Kp = 20.0; // [N/m]
+//                cVector3d force = cMul(-Kp, newPosition);
+//                newForce.add(force);
+//            }
 
-			// apply force field
-			if (true)
-			{
-			   double Kp = 20.0; // [N/m]
-			   cVector3d force = cMul(-Kp, newPosition);
-			   newForce.add(force);
-			}
-
-			// send computed force to haptic device
-            hapticDevices[i]->setForce(newForce);
+            // send computed force to haptic device
+//            hapticDevices[i]->setForce(newForce);
 
             // read user button status
             bool buttonStatus;
@@ -141,6 +147,8 @@ void updateHaptics(void)
                 
             }
 
+			p_Falcon->notify(SLINGSHOT_MOVED, &newPosition);
+
             // increment counter
             i++;
         }
@@ -153,8 +161,7 @@ void updateHaptics(void)
 cCollisionAABBBox NovintFalcon::boundingBox() const
 {
 	// TODO: Alex, add whatever area the novint falcon is bound to here
-	cCollisionAABBBox temp;
-	return temp;
+	return falconBox;
 }
 
 // TODO implement

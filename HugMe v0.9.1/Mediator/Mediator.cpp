@@ -1,5 +1,6 @@
 #include "Mediator.h"
 #include "ConsoleStream.h"
+#include "WorldConstants.h"
 
 using namespace std;
 using namespace boost; 
@@ -507,15 +508,20 @@ void Mediator::update(FalconUpdateContext context, const void* data)
 		{
 			assert(data != NULL);
 
+			cVector3d correctedFalconPosition = *(cVector3d*) data;
+			PerspectiveMath::convertOrientationXYZtoYZX(correctedFalconPosition);
+			
+			PerspectiveMath::convertBoxToBox(correctedFalconPosition, falcon->boundingBox(), World::local_slingshot_bounding_box);
+
 			// let the peer know that we have moved our slingshot
-			rc_network error = network->sendSlingshotPosition(*(cVector3d*) data);
+			rc_network error = network->sendSlingshotPosition(correctedFalconPosition);
 			if (error != SUCCESS)
 			{
 				handleNetworkError(error);
 				return;
 			}
 
-			notify(MediatorUpdateContext::LOCAL_SLINGSHOT_MOVED, data);
+			notify(MediatorUpdateContext::LOCAL_SLINGSHOT_MOVED, &correctedFalconPosition);
 			break;
 		}
 		case SLINGSHOT_FIRED:

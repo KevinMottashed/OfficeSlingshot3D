@@ -28,6 +28,10 @@ public:
 	 * @param projectile The projectile to invert
 	 */
 	static void invert3DProjectile(Projectile& projectile);
+
+	static void convertOrientationXYZtoYZX(cVector3d& vector);
+
+	static void convertBoxToBox(cVector3d& vector, const cCollisionAABBBox& boxOrigin, const cCollisionAABBBox& boxTarget);
 };
 
 #endif
