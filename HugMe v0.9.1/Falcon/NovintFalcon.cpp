@@ -52,7 +52,13 @@ NovintFalcon::NovintFalcon() :
 
 NovintFalcon::~NovintFalcon()
 {
-
+	if (pollingThread.get() != NULL)
+	{
+		// interrupt and delete the thread
+		pollingThread->interrupt();
+		pollingThread->join();
+		pollingThread.reset();
+	}
 }
 
 void NovintFalcon::poll()
@@ -99,6 +105,9 @@ void NovintFalcon::poll()
 
 			notify(SLINGSHOT_MOVED, &newPosition);
         }
+
+		// sleep for a while so we don't hog cpu (interruption point)
+		boost::this_thread::sleep(boost::posix_time::milliseconds(100));
     }
 }
 
@@ -132,6 +141,7 @@ void NovintFalcon::stopPolling()
 	{
 		// interrupt and delete the thread
 		pollingThread->interrupt();
+		pollingThread->join();
 		pollingThread.reset();
 	}
 	return;

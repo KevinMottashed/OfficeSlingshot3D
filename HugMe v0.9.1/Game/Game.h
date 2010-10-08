@@ -2,6 +2,7 @@
 #define GAME_H
 
 #include "stdafx.h"
+#include "boost.h"
 #include "chai3d.h"
 
 #include "Projectile.h"
@@ -43,10 +44,15 @@ private:
 	DWORD m_dwIDGameLoop; // thread id
 
 	/**
+	 * Holds the thread which will run the main game loop
+	 */
+	std::auto_ptr<boost::thread> gameThread;
+
+	/**
 	 * This function is the main game loop.
 	 * A thread will run this non-stop.
 	 */
-	static DWORD GameLoopThread(Game* p_Game);
+	void gameLoop();
 
 	/**
 	 * The current state of the game.

@@ -2,6 +2,9 @@
 #include "Game.h"
 #include "SyncLocker.h"
 
+using namespace std;
+using namespace boost;
+
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
@@ -20,6 +23,13 @@ Game::Game(boost::shared_ptr<Mediator> mediator) :
 
 Game::~Game()
 {
+	if (gameThread.get() != NULL)
+	{
+		// kill the thread if its still running
+		gameThread->interrupt();
+		gameThread->join();
+		gameThread.reset();
+	}
 }
 
 void Game::update(MediatorUpdateContext_t context, const void* data)
@@ -119,7 +129,12 @@ void Game::start(Player_t player)
 		return;
 	}
 	state = GameState::RUNNING;
-	m_hGameLoopThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) GameLoopThread, (void*) this, 0, &m_dwIDGameLoop);
+	
+	// make sure we arn't trying to start it twice
+	assert(gameThread.get() == NULL);
+
+	// create the thread that runs the main game loop
+	gameThread = auto_ptr<thread>(new thread(boost::bind(&Game::gameLoop, this)));
 
 	// tell the mediator that the game has started so that it can start managing the devices
 	mediator->startGame(player);
@@ -135,12 +150,23 @@ void Game::start(Player_t player)
 // that way we can resume from the previous state
 void Game::pause(Player_t player)
 {
+	// make sure it's actually running
+	if (state != GameState::RUNNING)
+	{
+		return;
+	}
 	state = GameState::PAUSED;
-	m_hGameLoopThread = 0;
-	m_dwIDGameLoop = 0;
 
 	// tell the mediator that the game has been paused so that it can stop managing the devices
 	mediator->pauseGame(player);
+
+	// the thread should be running if the game is running
+	assert(gameThread.get() != NULL);
+
+	// kill the thread
+	gameThread->interrupt();
+	gameThread->join();
+	gameThread.reset();
 
 	return;
 }
@@ -161,26 +187,35 @@ void Game::stop(Player_t player)
 void Game::reset()
 {
 	state = GameState::NOT_RUNNING;
-	m_hGameLoopThread = 0;
-	m_dwIDGameLoop = 0;
+
+	if (gameThread.get() != NULL)
+	{
+		// kill the thread
+		gameThread->interrupt();
+		gameThread->join();
+		gameThread.reset();
+	}
+
 	return;
 }
 
-DWORD Game::GameLoopThread(Game* pGame)
+void Game::gameLoop()
 {
-	while(pGame->state == GameState::RUNNING)
+	// keep going until the thread is interrupted
+	while(true)
 	{
 		{
-			boost::mutex::scoped_lock lock(pGame->environment_mutex);
-			pGame->environment.updateFrame();
-			if (pGame->environment.isColliding()) {
-				pGame->mediator->collisionDetected();
+			boost::mutex::scoped_lock lock(environment_mutex);
+			environment.updateFrame();
+			
+			if (environment.isColliding()) 
+			{
+				mediator->collisionDetected();
 			}
 		} // release the lock before sleeping
 
-		// yield to other threads
-		Sleep(1);
+		// yield to other threads (interruption point)
+		boost::this_thread::sleep(boost::posix_time::milliseconds(1));
 	}
-	return 0;
 }
 
