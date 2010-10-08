@@ -5,7 +5,9 @@
 #include "TestSuite.h"
 #include "NetworkProxy.h"
 
-// This test suite tests the network connection establishment.
+/**
+ * This test suite tests the network module.
+ */
 class ConnectionTestSuite : public TestSuite
 {
 public:

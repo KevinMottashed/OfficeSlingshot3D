@@ -2,10 +2,15 @@
 
 #include "boost.h"
 
+#include "ConnectionTestSuite.h"
+#include "AudioTestSuite.h"
+#include "PerspectiveMathTestSuite.h"
+
 TestRunner::TestRunner()
 {
 	suites.push_back(new ConnectionTestSuite("Network Connection"));
 	suites.push_back(new AudioTestSuite("Audio"));
+	suites.push_back(new PerspectiveMathTestSuite("Perspective Math"));
 }
 
 TestRunner::~TestRunner()
