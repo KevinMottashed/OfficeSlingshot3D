@@ -10,18 +10,21 @@ using namespace boost;
 
 ZCamera::ZCamera()
 {
-	//Initiate thread flag to false
-	zcam_started = false;
-
 	//Create the depth camera object
 	m_depthCamera = new CDepthCamera();
 
 	//Allocate memory for the video frame
 	RGB = shared_ptr<vector<BYTE> >(new vector<BYTE>(IMAGE_ARRAY_SIZE));
+
+	// Initialize the camera
+	zcamPresent = m_depthCamera->Initialize(5000);
 }
 
 ZCamera::~ZCamera()
 {
+	// stop pulling from the camera
+	stopCapture();
+
 	//delete resources
 	delete m_depthCamera;
 }
@@ -31,10 +34,10 @@ ZCamera::~ZCamera()
 //////////////////////////////////////////////////////////////////////
 
 //Camera thread to poll for new pictures
-DWORD ZCamera::getFrameFromCamera(ZCamera* p_ZCamera){
-	
+void ZCamera::getFrameFromCamera()
+{	
 	//While the thread is active
-	while(p_ZCamera->zcam_started)
+	while(true)
 	{
 		VideoData video;
 
@@ -42,42 +45,44 @@ DWORD ZCamera::getFrameFromCamera(ZCamera* p_ZCamera){
 		BYTE* rgb = &video.rgb.front();
 		
 		//Get frame from camera, updates the values of the char arrays
-		p_ZCamera->m_depthCamera->GetNextFrame(p_ZCamera->DEPTH,rgb,p_ZCamera->RGBFull,p_ZCamera->PRIM,p_ZCamera->SEC,1000);		
-
-		//Flip the image up-down
-	//	reverseFrameUpDown(video,4);
-
-		//Send to the observers
-	//	p_ZCamera->notify(VIDEO, &video);
-
+		m_depthCamera->GetNextFrame(DEPTH, rgb, RGBFull, PRIM, SEC, 1000);		
 		
-		cVector3d pos = getPlayerPosition(p_ZCamera);
+		cVector3d pos = getPlayerPosition();
 
-		p_ZCamera->notify(AVATAR_POSITION, &pos);
+		notify(AVATAR_POSITION, &pos);
 
-		Sleep(31); // 32 fps
+		// sleep so we don't hog CPU (interruption point)
+		boost::this_thread::sleep(boost::posix_time::milliseconds(31)); // 32 fps
 	}
 
-	return 0;
+	return;
 }
 
 //Starts the thread that captures frames from the camera
-void ZCamera::startCapture() {	
-	zcam_started = true;
+void ZCamera::startCapture() 
+{	
+	if (!zcamPresent)
+	{
+		// no camera connected
+		return;
+	}
 
-	DWORD threadId;
-	HANDLE hThread;
-
-	//Check if the camera is connection, if not we use dummy data for frames.
-	//TODO: Change 500 delay time to 5000 when we expect the zcam to be connected. (Reduced wait time for the summer)
-	if (m_depthCamera->Initialize(500)){
-		hThread = CreateThread( 0, 0, (LPTHREAD_START_ROUTINE) getFrameFromCamera,  (void*) this, 0, &threadId);
+	// don't try starting 2 threads
+	if (zcameraThread.get() == NULL)
+	{
+		zcameraThread = auto_ptr<thread>(new thread(boost::bind(&ZCamera::getFrameFromCamera, this)));
 	}
 }
 
 //stop the thread that captures frames from the camera
-void ZCamera::stopCapture() {
-	zcam_started = false;
+void ZCamera::stopCapture() 
+{
+	if (zcameraThread.get() != NULL)
+	{
+		zcameraThread->interrupt();
+		zcameraThread->join();
+		zcameraThread.reset();
+	}
 }
 
 //Reverses the image up-down
@@ -122,7 +127,7 @@ void ZCamera::reverseFrameLeftRight(VideoData& vd,int channels){
 
 
 //Finds the head of the player in the depth image and returns a 3d vector.
-cVector3d ZCamera::getPlayerPosition(ZCamera* p_ZCamera){
+cVector3d ZCamera::getPlayerPosition(){
 
 	cVector3d pos;
 
@@ -134,7 +139,7 @@ cVector3d ZCamera::getPlayerPosition(ZCamera* p_ZCamera){
 
 	for (int i=0;i<240 && finalRow<0;i++){
 		for (int j=0;j<320;j++){
-			if ((int)p_ZCamera->DEPTH[(i*320)+j] > 64){
+			if ((int)DEPTH[(i*320)+j] > 64){
 
 				if (rowCount==0){
 					finalRow=i;

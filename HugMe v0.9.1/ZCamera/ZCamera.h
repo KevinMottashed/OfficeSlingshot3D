@@ -23,20 +23,21 @@ public:
 	
 	// Camera loop that fetches frames and player position.
 	// runs at 32 fps and continually sends information to controller
-	static DWORD getFrameFromCamera(ZCamera* p_ZCamera);
+	void getFrameFromCamera();
 
 	//Reverse the image array, so it displays correctly on the UI
 	static void reverseFrameUpDown(VideoData& vd, int channels);	
 	static void reverseFrameLeftRight(VideoData& vd, int channels);	
 
-	//Get player position
-	static cVector3d getPlayerPosition(ZCamera* p_ZCamera);
-
 private:
 	ZCamera(const ZCamera& zCamera); // intentionally not implemented
 	ZCamera& operator=(const ZCamera& zCamera); // intentionally not implemented
 
-	bool zcam_started;
+	// thread for capturing frames from the camera
+	std::auto_ptr<boost::thread> zcameraThread;
+
+	// true if a camera is present
+	bool zcamPresent;
 
 	CDepthCamera * m_depthCamera;
 	boost::shared_ptr<std::vector<BYTE> > RGB;
@@ -44,6 +45,9 @@ private:
 	unsigned char* RGBFull;
 	unsigned char* PRIM;
 	unsigned char* SEC;
+
+	//Get player position
+	cVector3d getPlayerPosition();
 };
 
 #endif
