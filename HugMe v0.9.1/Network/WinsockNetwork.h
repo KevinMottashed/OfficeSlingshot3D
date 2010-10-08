@@ -1,11 +1,12 @@
 #ifndef WINSOCK_NETWORK_H
 #define WINSOCK_NETWORK_H
 
+#include "Stdafx.h"
+#include "boost.h"
 #include "NetworkSocket.h"
 #include "NetworkCodes.h"
 #include "Network.h"
 #include "Packet.h"
-#include "Stdafx.h"
 #include "SyncReaderWriters.h"
 #include "VideoData.h"
 #include "ConnectionStateEnum.h"
@@ -114,11 +115,13 @@ private:
 	mutable CRITICAL_SECTION m_csControlSocketSend; // mutex for sending control messages
 
 	// the control receive thread, receives messages through the network
-	HANDLE m_hControlReceiveThread; // handle
-	DWORD m_dwIDControlReceive; // thread id
+	std::auto_ptr<boost::thread> controlReceiveThread;
 
-	// the threads managing the control socket
-	static DWORD ControlReceiveThread(WinsockNetwork* network);
+	/**
+	 * Receive messages from the control socket.
+	 * This is an infinite loop and is meant to be run in a thread
+	 */
+	void controlReceive();
 
 	//-----------------------
 	// Data Socket
@@ -130,11 +133,10 @@ private:
 	mutable CRITICAL_SECTION m_csDataSocketSend; // mutex for sending data message
 
 	// the data receive thread, receives messages through the network
-	HANDLE m_hDataReceiveThread; // handle
-	DWORD m_dwIDDataReceive; // thread id
+	std::auto_ptr<boost::thread> dataReceiveThread;
 
 	// the threads managing the data socket
-	static DWORD DataReceiveThread(WinsockNetwork* network);
+	void dataReceive();
 
 	//--------------------------
 	// Private Member functions

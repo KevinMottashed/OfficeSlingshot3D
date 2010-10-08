@@ -25,14 +25,10 @@ WinsockNetwork::WinsockNetwork() :
 	m_pControlSocket(NULL),
 	m_hControlSocket(0),
 	m_bControlConnected(false),
-	m_hControlReceiveThread(0),
-	m_dwIDControlReceive(0),
 	// the data socket
 	m_pDataSocket(NULL),
 	m_hDataSocket(0),
 	m_bDataConnected(false),
-	m_hDataReceiveThread(0),
-	m_dwIDDataReceive(0),
 	// control members
 	m_bIsServer(false),
 	m_connectionState(ConnectionState::DISCONNECTED),
@@ -54,6 +50,21 @@ WinsockNetwork::~WinsockNetwork()
 	delete m_pControlSocket;
 	delete m_pDataSocket;
 	delete m_sEstablished;
+
+	// kill threads
+	if (controlReceiveThread.get() != NULL)
+	{
+		controlReceiveThread->interrupt();
+		controlReceiveThread->join();
+		controlReceiveThread.reset();
+	}
+	
+	if (dataReceiveThread.get() != NULL)
+	{
+		dataReceiveThread->interrupt();
+		dataReceiveThread->join();	
+		dataReceiveThread.reset();
+	}
 }
 
 // start listening to for connections
@@ -364,10 +375,24 @@ void WinsockNetwork::closeSockets()
 	delete m_pDataSocket;
 	m_pDataSocket = NULL;
 
+	// kill threads listening on the sockets
+	if (controlReceiveThread.get() != NULL)
+	{
+		controlReceiveThread->interrupt();
+		controlReceiveThread->join();
+		controlReceiveThread.reset();
+	}
+	if (dataReceiveThread.get() != NULL)
+	{
+		dataReceiveThread->interrupt();
+		dataReceiveThread->join();
+		dataReceiveThread.reset();
+	}
+
 	return;
 }
 
-DWORD WinsockNetwork::ControlReceiveThread(WinsockNetwork* network)
+void WinsockNetwork::controlReceive()
 {
 	char receivedBuffer[maximum_control_packet_size];
 	std::vector<char> queue;
@@ -377,7 +402,7 @@ DWORD WinsockNetwork::ControlReceiveThread(WinsockNetwork* network)
 	// this thread will use read access to receive data so when a disconnect or error occurs
 	// we will release the read access and obtain write access to react to the disconnect/error
 	// we do this because a deadlock occurs if a thread tries to obtain both read an write access
-	bool peerDisconnect = false;
+	bool peerDisconnected = false;
 	bool socketError = false;
 
 	// keep going until the network connection has been terminated,
@@ -385,34 +410,34 @@ DWORD WinsockNetwork::ControlReceiveThread(WinsockNetwork* network)
 	while (true)
 	{
 		// look for operations that require write access
-		if (peerDisconnect)
+		if (peerDisconnected)
 		{
-			network->peerDisconnect();
-			return 0;
+			peerDisconnect();
+			return;
 		}
 		else if (socketError)
 		{
-			network->networkError(ERROR_SOCKET_ERROR);
-			return 0;
+			networkError(ERROR_SOCKET_ERROR);
+			return;
 		}
 
 		// receiving data through the control socket is an operation that reads the connection status
 		// we must therefore request read access to the connection resource before proceeding
-		SyncReaderLock statusLock = SyncReaderLock(network->m_rwsync_ConnectionStatus);
+		SyncReaderLock statusLock = SyncReaderLock(m_rwsync_ConnectionStatus);
 
-		ConnectionState_t connectionState = network->getConnectionState();
+		ConnectionState_t connectionState = getConnectionState();
 		if (connectionState != ConnectionState::CONNECTED &&
 			connectionState != ConnectionState::ESTABLISHING)
 		{
 			// we are no longer connected, we can stop receiving data
-			return 0;
+			return;
 		}
 
-		// sleep to prevent this thread from hogging the CPU
-		Sleep(100);
+		// sleep to prevent this thread from hogging the CPU (interruption point)
+		boost::this_thread::sleep(boost::posix_time::milliseconds(100));
 
 		// receive data through the network
-		int rc = recv(network->m_hControlSocket, (char*) receivedBuffer, maximum_control_packet_size, 0);
+		int rc = recv(m_hControlSocket, (char*) receivedBuffer, maximum_control_packet_size, 0);
 
 		switch (rc) {
 		case SOCKET_ERROR: // fail when a socket error occurs
@@ -430,7 +455,7 @@ DWORD WinsockNetwork::ControlReceiveThread(WinsockNetwork* network)
 		case 0:
 			// recv returns 0 to indicate an end of stream
 			// this means the peer has disconnected
-			peerDisconnect = true;
+			peerDisconnected = true;
 			continue;
 		}
 
@@ -442,16 +467,16 @@ DWORD WinsockNetwork::ControlReceiveThread(WinsockNetwork* network)
 		// in the same recv(...) call, we need to read as many messages as possible from the stream before continuing
 		while (packet.readPacket(queue))
 		{
-			network->handleControlPacket(packet);
+			handleControlPacket(packet);
 
 			// start a new packet
 			packet = ControlPacket();
 		}
 	}
-	return 1;
+	return;
 }
 
-DWORD WinsockNetwork::DataReceiveThread(WinsockNetwork* network)
+void WinsockNetwork::dataReceive()
 {
 	char receivedBuffer[maximum_data_packet_size];
 	std::vector<char> queue;
@@ -461,7 +486,7 @@ DWORD WinsockNetwork::DataReceiveThread(WinsockNetwork* network)
 	// this thread will use read access to receive data so when a disconnect or error occurs
 	// we will release the read access and obtain write access to react to the disconnect/error
 	// we do this because a deadlock occurs if a thread tries to obtain both read an write access
-	bool peerDisconnect = false;
+	bool peerDisconnected = false;
 	bool socketError = false;
 
 	// keep going until the network connection has been terminated,
@@ -469,34 +494,34 @@ DWORD WinsockNetwork::DataReceiveThread(WinsockNetwork* network)
 	while (true)
 	{
 		// look for operations that require write access
-		if (peerDisconnect)
+		if (peerDisconnected)
 		{
-			network->peerDisconnect();
-			return 0;
+			peerDisconnect();
+			return;
 		}
 		else if (socketError)
 		{
-			network->networkError(ERROR_SOCKET_ERROR);
-			return 0;
+			networkError(ERROR_SOCKET_ERROR);
+			return;
 		}		
 
 		// receiving data through the data socket is an operation that reads the connection status
 		// we must therefore request read access to the connection resource before proceeding
-		SyncReaderLock statusLock = SyncReaderLock(network->m_rwsync_ConnectionStatus);
+		SyncReaderLock statusLock = SyncReaderLock(m_rwsync_ConnectionStatus);
 
-		ConnectionState_t connectionState = network->getConnectionState();
+		ConnectionState_t connectionState = getConnectionState();
 		if (connectionState != ConnectionState::CONNECTED &&
 			connectionState != ConnectionState::ESTABLISHING)
 		{
 			// we are no longer connected, we can stop receiving data
-			return 0;
+			return;
 		}
 
-		// sleep to prevent this thread from hogging the CPU
-		Sleep(100);
+		// sleep to prevent this thread from hogging the CPU (interruption point)
+		boost::this_thread::sleep(boost::posix_time::milliseconds(100));
 
 		// receive data through the network
-		int rc = recv(network->m_hDataSocket, (char*) receivedBuffer, maximum_control_packet_size, 0);
+		int rc = recv(m_hDataSocket, (char*) receivedBuffer, maximum_control_packet_size, 0);
 
 		switch (rc) {
 		case SOCKET_ERROR: // fail when a socket error occurs
@@ -515,7 +540,7 @@ DWORD WinsockNetwork::DataReceiveThread(WinsockNetwork* network)
 		case 0:
 			// recv returns 0 to indicate an end of stream
 			// this means the peer has disconnected
-			peerDisconnect = true;
+			peerDisconnected = true;
 			continue;
 		}
 
@@ -528,10 +553,10 @@ DWORD WinsockNetwork::DataReceiveThread(WinsockNetwork* network)
 		while (packet.readPacket(queue))
 		{
 			// notify the message handler that a new packet has arrived
-			network->handleDataMessage(packet);
+			handleDataMessage(packet);
 		}
 	}
-	return 1;
+	return;
 }
 
 rc_network WinsockNetwork::initializeConnection()
@@ -541,11 +566,8 @@ rc_network WinsockNetwork::initializeConnection()
 	m_hDataSocket = m_pDataSocket->Detach();
 
 	// initialize the socket threads
-	// control socket threads
-	m_hControlReceiveThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) ControlReceiveThread, (void*) this, 0, &m_dwIDControlReceive);
-
-	// data socket threads
-	m_hDataReceiveThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) DataReceiveThread, (void*) this, 0, &m_dwIDDataReceive);
+	controlReceiveThread = auto_ptr<thread>(new thread(boost::bind(&WinsockNetwork::controlReceive, this)));
+	dataReceiveThread = auto_ptr<thread>(new thread(boost::bind(&WinsockNetwork::dataReceive, this)));
 
 	return SUCCESS;
 }
