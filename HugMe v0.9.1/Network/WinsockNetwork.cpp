@@ -375,17 +375,17 @@ void WinsockNetwork::closeSockets()
 	delete m_pDataSocket;
 	m_pDataSocket = NULL;
 
-	// kill threads listening on the sockets
+	// kill the threads
+	// we don't need to want to wait for the threads to finish by calling join()
+	// because the threads can execute this function and that would lead to deadlock
 	if (controlReceiveThread.get() != NULL)
 	{
 		controlReceiveThread->interrupt();
-		controlReceiveThread->join();
 		controlReceiveThread.reset();
 	}
 	if (dataReceiveThread.get() != NULL)
 	{
 		dataReceiveThread->interrupt();
-		dataReceiveThread->join();
 		dataReceiveThread.reset();
 	}
 
