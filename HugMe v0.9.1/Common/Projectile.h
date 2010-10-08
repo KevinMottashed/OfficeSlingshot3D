@@ -69,6 +69,16 @@ public:
 	 */
 	void force(const cVector3d& v);
 
+	/**
+	 * Compare 2 projectiles for equality.
+	 * A projectile's position and force is expressed using floating point numbers
+	 * so the epsilon paramater is provided to allow for an error margin.
+	 * @param other The other projectile.
+	 * @param epsilon The error margin allowed in the floating point comparisons
+	 * @return true if the projectiles are equal
+	 */
+	bool equals(const Projectile& other, float epsilon = 0.0f);
+
 private:
 	// the boost serialization library requires access to the serialize function
 	friend class boost::serialization::access;

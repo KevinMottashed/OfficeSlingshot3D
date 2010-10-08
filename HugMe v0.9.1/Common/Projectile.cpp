@@ -57,6 +57,12 @@ void Projectile::force(const cVector3d& v)
 	return;
 }
 
+bool Projectile::equals(const Projectile& other, float epsilon)
+{
+	return	_position.equals(other.position(), epsilon) && 
+			_force.equals(other.force(), epsilon);
+}
+
 std::ostream& operator<<(std::ostream& os, const Projectile& projectile)
 {
 	os << "position=" << projectile.position() << " force=" << projectile.force();
