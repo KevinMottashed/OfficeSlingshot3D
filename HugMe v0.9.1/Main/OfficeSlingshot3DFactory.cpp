@@ -45,7 +45,8 @@ shared_ptr<OfficeSlingshot3D> OfficeSlingshot3DFactory::createFromConfigFile(con
 		("Replayer.ReplayUI",		po::value<int>(),		"1 to replay UI, 0 otherwise")
 		("Replayer.ReplayFalcon",	po::value<int>(),		"1 to replay falcon, 0 otherwise")
 		("Replayer.ReplayZCamera",	po::value<int>(),		"1 to replay zcamera, 0 otherwise")
-		("Falcon.Type",				po::value<string>(),	"Novint for real falcon, Keyboard for keyboard emulation");
+		("Falcon.Type",				po::value<string>(),	"Novint for real falcon, Keyboard for keyboard emulation")
+		("ZCamera.Type",			po::value<string>(),	"ZCamera for real zcamera, Keyboard for keyboard emulation");
 
 	// the variable map for this configuration
 	po::variables_map configVMap;
@@ -150,7 +151,15 @@ shared_ptr<OfficeSlingshot3D> OfficeSlingshot3DFactory::createFromConfigFile(con
 
 	if (!zcamera)
 	{
-		zcamera = shared_ptr<IZCamera>(new ZCamera());
+		// determine if the user wants a novint or keyboard falcon
+		if (iequals(configVMap["ZCamera.Type"].as<string>(),"Keyboard"))
+		{
+			zcamera = shared_ptr<IZCamera>(new KeyboardZCamera());
+		}
+		else
+		{
+			zcamera = shared_ptr<IZCamera>(new ZCamera());
+		}
 	}
 
 	// we now have enough stuff to create the mediator

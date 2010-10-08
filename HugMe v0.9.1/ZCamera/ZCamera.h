@@ -24,14 +24,13 @@ public:
 	// Camera loop that fetches frames and player position.
 	// runs at 32 fps and continually sends information to controller
 	static DWORD getFrameFromCamera(ZCamera* p_ZCamera);
-	static DWORD getFrameFromDummy(ZCamera* p_ZCamera);
 
 	//Reverse the image array, so it displays correctly on the UI
 	static void reverseFrameUpDown(VideoData& vd, int channels);	
 	static void reverseFrameLeftRight(VideoData& vd, int channels);	
 
 	//Get player position
-	static cVector3d getPlayerPosition(ZCamera* p_ZCamera, bool isCameraConnected);
+	static cVector3d getPlayerPosition(ZCamera* p_ZCamera);
 
 private:
 	ZCamera(const ZCamera& zCamera); // intentionally not implemented
@@ -45,10 +44,6 @@ private:
 	unsigned char* RGBFull;
 	unsigned char* PRIM;
 	unsigned char* SEC;
-
-	//Counter to move avatar 
-	int dummyCounter;
-
 };
 
 #endif

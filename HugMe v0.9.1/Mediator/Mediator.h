@@ -78,6 +78,8 @@ public:
 	 */
 	void fireSlingshot(Projectile projectile, Player_t player);
 
+	void collisionDetected(void);
+
 private:
 	Mediator(const Mediator& c); // intentionally not implemented
 	Mediator& operator=(const Mediator& c); // intentionally not implemented
@@ -123,8 +125,6 @@ private:
 	// user wants to close the application
 	void closeApplication();
 	void sendChatMessage(const std::string& message);
-
-	void collisionDetected(void);
 
 	//--------------------------------------------
 	// ZCamera Related updates

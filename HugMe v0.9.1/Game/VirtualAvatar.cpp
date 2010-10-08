@@ -12,6 +12,12 @@ VirtualAvatar::VirtualAvatar(cWorld* world, cVector3d startingPosition, bool isL
 
 	avatarMesh->setPos(startingPosition);
 
+	if(!isLocal){
+		avatarMesh->rotate(cVector3d(0.0f, 1.0f, 0.0f), cDegToRad(-90));
+	} else {
+		avatarMesh->rotate(cVector3d(0.0f, 1.0f, 0.0f), cDegToRad(90));
+	}
+
 	avatarMesh->setUseCulling(true, true);
 }
 

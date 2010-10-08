@@ -261,6 +261,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\ZCamera\KeyboardZCamera.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\ZCamera\KeyboardZCamera.h"
+				>
+			</File>
+			<File
 				RelativePath=".\ZCamera\TDVCameraInterface.h"
 				>
 			</File>

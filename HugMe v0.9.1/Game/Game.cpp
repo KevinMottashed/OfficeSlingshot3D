@@ -174,8 +174,7 @@ DWORD Game::GameLoopThread(Game* pGame)
 			boost::mutex::scoped_lock lock(pGame->environment_mutex);
 			pGame->environment.updateFrame();
 			if (pGame->environment.isColliding()) {
-				Audio* audio = new Audio();
-				audio->playHit();
+				pGame->mediator->collisionDetected();
 			}
 		} // release the lock before sleeping
 

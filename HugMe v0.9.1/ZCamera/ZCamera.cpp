@@ -51,32 +51,13 @@ DWORD ZCamera::getFrameFromCamera(ZCamera* p_ZCamera){
 	//	p_ZCamera->notify(VIDEO, &video);
 
 		
-		cVector3d pos = getPlayerPosition(p_ZCamera, 1);
+		cVector3d pos = getPlayerPosition(p_ZCamera);
 
 		p_ZCamera->notify(AVATAR_POSITION, &pos);
 
 		Sleep(31); // 32 fps
 	}
 
-	return 0;
-}
-
-//Dummy data generator
-DWORD ZCamera::getFrameFromDummy(ZCamera* p_ZCamera){
-	
-	p_ZCamera->dummyCounter=0;
-
-	//While the thread is active
-	while(p_ZCamera->zcam_started){
-
-		p_ZCamera->dummyCounter++;
-
-		cVector3d pos = getPlayerPosition(p_ZCamera, 0);
-
-		p_ZCamera->notify(AVATAR_POSITION, &pos);
-
-		Sleep(31); // 32 fps
-	}
 	return 0;
 }
 
@@ -91,8 +72,6 @@ void ZCamera::startCapture() {
 	//TODO: Change 500 delay time to 5000 when we expect the zcam to be connected. (Reduced wait time for the summer)
 	if (m_depthCamera->Initialize(500)){
 		hThread = CreateThread( 0, 0, (LPTHREAD_START_ROUTINE) getFrameFromCamera,  (void*) this, 0, &threadId);
-	}else{
-		hThread = CreateThread( 0, 0, (LPTHREAD_START_ROUTINE) getFrameFromDummy,  (void*) this, 0, &threadId);
 	}
 }
 
@@ -102,7 +81,7 @@ void ZCamera::stopCapture() {
 }
 
 //Reverses the image up-down
-void ZCamera::reverseFrameUpDown(VideoData& vd,int channels){
+void ZCamera::reverseFrameUpDown(VideoData& vd, int channels){
 
 	BYTE* RGB = &vd.rgb.front();
 
@@ -143,59 +122,46 @@ void ZCamera::reverseFrameLeftRight(VideoData& vd,int channels){
 
 
 //Finds the head of the player in the depth image and returns a 3d vector.
-cVector3d ZCamera::getPlayerPosition(ZCamera* p_ZCamera, bool isCameraConnected){
+cVector3d ZCamera::getPlayerPosition(ZCamera* p_ZCamera){
 
 	cVector3d pos;
 
-	if (isCameraConnected){
+	int rowCount=10;
 
-		int rowCount=10;
+	int minCol=321;
+	int maxCol=-1;
+	int finalRow=-1;
 
-		int minCol=321;
-		int maxCol=-1;
-		int finalRow=-1;
+	for (int i=0;i<240 && finalRow<0;i++){
+		for (int j=0;j<320;j++){
+			if ((int)p_ZCamera->DEPTH[(i*320)+j] > 64){
 
-		for (int i=0;i<240 && finalRow<0;i++){
-			for (int j=0;j<320;j++){
-				if ((int)p_ZCamera->DEPTH[(i*320)+j] > 64){
-
-					if (rowCount==0){
-						finalRow=i;
-						if (j<minCol){minCol=j;}
-						if (j>maxCol){maxCol=j;}
-					}else{
-						rowCount--;
-						break;
-					}
-				}
-				else{
+				if (rowCount==0){
+					finalRow=i;
+					if (j<minCol){minCol=j;}
+					if (j>maxCol){maxCol=j;}
+				}else{
+					rowCount--;
+					break;
 				}
 			}
+			else{
+			}
 		}
-		
-		/* Testing X Y values - Could be removed, but I'm keeping to test camera
-		ofstream myfile2;
-		myfile2.open ("c://DAN_HEAD.txtwordpad");
-		myfile2<< "x: " << ((maxCol-minCol)/2 + minCol) - 160;
-		myfile2<< "\n";
-		myfile2<< "y: " << 240 - finalRow;
-		myfile2.close();
-		*/
-
-		pos.x = -(((maxCol-minCol)/2 + minCol) - 160);
-		pos.y = 240 - finalRow;
-		pos.z = 0;
+	}
 	
-	}
-	else
-	{
-		//Number of "camera pixels" we want the body to move left to right
-		int rangeOfMovement=260;
+	/* Testing X Y values - Could be removed, but I'm keeping to test camera
+	ofstream myfile2;
+	myfile2.open ("c://DAN_HEAD.txtwordpad");
+	myfile2<< "x: " << ((maxCol-minCol)/2 + minCol) - 160;
+	myfile2<< "\n";
+	myfile2<< "y: " << 240 - finalRow;
+	myfile2.close();
+	*/
 
-		pos.x = (p_ZCamera->dummyCounter % rangeOfMovement) - rangeOfMovement/2;
-		pos.y = 120;
-		pos.z = 0;
-	}
+	pos.x = -(((maxCol-minCol)/2 + minCol) - 160);
+	pos.y = 240 - finalRow;
+	pos.z = 0;
 
 	return pos;
 
