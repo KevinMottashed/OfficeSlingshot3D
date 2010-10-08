@@ -2,7 +2,8 @@
 #define NOVINT_FALCON__H
 
 #include "Falcon.h"
-#include "FalconProxy.h"
+#include "stdafx.h"
+#include "boost.h"
 #include "chai3d.h"
 
 /**
@@ -51,6 +52,11 @@ private:
 	NovintFalcon& operator=(const NovintFalcon& novintFalcon); 
 
 	/**
+	 * Poll the slingshot's position and firing state
+	 */
+	void poll();
+
+	/**
 	 * True when the falcon should notify observers that an event occured.
 	 */ 
 	bool reporting;
@@ -60,7 +66,35 @@ private:
 	 */
 	cVector3d position;
 
+	/**
+	 * The bounding box to which the falcon is restricted
+	 */
 	cCollisionAABBBox falconBox;
+
+	/**
+	 * Holds the thread which will poll the falcon
+	 */
+	std::auto_ptr<boost::thread> pollingThread;
+
+	/**
+	 * number of haptic devices detected
+	 */
+	int numHapticDevices;
+
+	/**
+	 * number of haptic devices supported
+	 */
+	static const int MAX_DEVICES = 4;
+
+	/**
+	 * A table containing pointers to all haptic devices detected on this computer
+	 */
+	cGenericHapticDevice* hapticDevices[MAX_DEVICES];
+
+	/**
+	 * The handler for the haptic devices
+	 */
+	cHapticDeviceHandler handler;
 };
 
 #endif

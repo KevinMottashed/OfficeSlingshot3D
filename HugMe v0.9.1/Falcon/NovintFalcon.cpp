@@ -3,61 +3,29 @@
 
 //---------------------------------------------------------------------------
 
-#include <assert.h>
-#include <math.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "stdafx.h"
 
+// cos(45 degrees)
+static const float COSINE_45DEG = 0.707106;
 
-// maximum number of haptic devices supported in this demo
-const int MAX_DEVICES           = 4;
-
-// number of haptic devices detected
-int numHapticDevices = 0;
-
-// root resource path
-string resourceRoot;
-
-// a table containing pointers to all haptic devices detected on this computer
-cGenericHapticDevice* hapticDevices[MAX_DEVICES];
-
-NovintFalcon* p_Falcon;
-
-void updateHaptics(void);
-
-//---------------------------------------------------------------------------
-// DECLARED MACROS
-//---------------------------------------------------------------------------
-// convert to resource path
-#define RESOURCE_PATH(p)    (char*)((resourceRoot+string(p)).c_str())
-
+using namespace std;
+using namespace boost;
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
 NovintFalcon::NovintFalcon() : 
-	reporting(false)
+	numHapticDevices(0)
 {
-
-	resourceRoot = "C:\\cygwin\\home\\Administrator\\HugMe\\HugMe v0.9.1\\Debug";
-
-	// a haptic device handler
-	cHapticDeviceHandler* handler;
-
-	// create a haptic device handler
-	handler = new cHapticDeviceHandler();
-
     // read the number of haptic devices currently connected to the computer
-    numHapticDevices = handler->getNumDevices();
+    numHapticDevices = handler.getNumDevices();
 
-	int i = 0;
-    while (i < numHapticDevices)
+    for (int i = 0; i < numHapticDevices; ++i)
     {
         // get a handle to the next haptic device
         cGenericHapticDevice* newHapticDevice;
-        handler->getDevice(newHapticDevice, i);
+        handler.getDevice(newHapticDevice, i);
 
         // open connection to haptic device
         newHapticDevice->open();
@@ -72,26 +40,14 @@ NovintFalcon::NovintFalcon() :
         cHapticDeviceInfo info = newHapticDevice->getSpecifications();
 
 		/**
-		* Local slingshot bounding box
-		*/
-		double cube_side = info.m_workspaceRadius * 0.707106;
+		 * Local slingshot bounding box
+		 */
+		double cube_side = info.m_workspaceRadius * COSINE_45DEG;
 
 		falconBox = cCollisionAABBBox(
-		cVector3d(-cube_side, -cube_side, -cube_side), 
-		cVector3d(cube_side, cube_side, cube_side));
-
-        // create a string that concatenates the device number and model name.
-        string strID;
-        cStr(strID, i);
-        string strDevice = "#" + strID + " - " +info.m_modelName;
-
-		printf("%s\n", strDevice);
-
-		// increment counter
-        i++;
+			cVector3d(-cube_side, -cube_side, -cube_side), 
+			cVector3d(cube_side, cube_side, cube_side));
     }
-
-	p_Falcon = this;
 }
 
 NovintFalcon::~NovintFalcon()
@@ -99,15 +55,13 @@ NovintFalcon::~NovintFalcon()
 
 }
 
-void updateHaptics(void)
+void NovintFalcon::poll()
 {
     // main haptic simulation loop
-
     while(true)
     {
         // for each device
-        int i=0;
-        while (i < numHapticDevices)
+        for (int i = 0; i < numHapticDevices; ++i)
         {
             // read position of haptic device
             cVector3d newPosition;
@@ -140,51 +94,47 @@ void updateHaptics(void)
             // the user switch (ON = TRUE / OFF = FALSE)
             if (buttonStatus)
             {
-                p_Falcon->notify(SLINGSHOT_FIRED);
-            }
-            else
-            {
-                
+                notify(SLINGSHOT_FIRED);
             }
 
-			p_Falcon->notify(SLINGSHOT_MOVED, &newPosition);
-
-            // increment counter
-            i++;
+			notify(SLINGSHOT_MOVED, &newPosition);
         }
     }
-
-	
-
 }
 
 cCollisionAABBBox NovintFalcon::boundingBox() const
 {
-	// TODO: Alex, add whatever area the novint falcon is bound to here
 	return falconBox;
 }
 
-// TODO implement
 // start managing the falcon pen (polling it for information)
 // create a thread to poll it
 void NovintFalcon::startPolling() 
 {
-	reporting = true;
+	if (pollingThread.get())
+	{
+		// the thread is already running, don't try restarting it
+		return;
+	}
 
-	// create a thread which starts the main haptics rendering loop
-    cThread* hapticsThread = new cThread();
-	hapticsThread->set(updateHaptics, CHAI_THREAD_PRIORITY_HAPTICS);
+	// create the thread
+	pollingThread = auto_ptr<thread>(new thread(boost::bind(&NovintFalcon::poll, this)));
 
+	return;
 }
 
-// TODO implement
 // stop managing the falcon pen
 // stop the thread that's polling it
 void NovintFalcon::stopPolling() 
 {
-	reporting = false;
-
-	// Kill thread here
+	// make sure it's running
+	if (pollingThread.get())
+	{
+		// interrupt and delete the thread
+		pollingThread->interrupt();
+		pollingThread.reset();
+	}
+	return;
 }
 
 
