@@ -73,7 +73,12 @@ BOOL CSerialPort::InitPort(UINT  portnr,		// portnumber (1..4)
 						   DWORD dwCommEvents,	// EV_RXCHAR, EV_CTS etc
 						   UINT  writebuffersize)	// size to the writebuffer
 {
-	assert(portnr > 0 && portnr < 100);
+	//assert(portnr > 0 && portnr < 100);
+	if (portnr > 0 && portnr < 100)
+	{
+		return false;
+	}
+
 
 	// if the thread is alive: Kill
 	if (m_bThreadAlive)

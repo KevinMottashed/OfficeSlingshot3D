@@ -64,7 +64,8 @@ private:
 	void assembleBuffer(void);
 
 public:
-	void initialize(void);
+	bool initialize(void);
+	void setPort(int a_portNum);
 
 	// Setting intensity values
 	void setIntensity(int * pIntensityArray)

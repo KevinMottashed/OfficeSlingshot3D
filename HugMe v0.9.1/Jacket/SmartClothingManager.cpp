@@ -11,14 +11,15 @@ DisplayDeviceArmband* m_pDisplayDeviceArmband;
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
-SmartClothingManager::SmartClothingManager()
-{
-	//m_pDisplayDeviceJacket = new DisplayDeviceJacket(97);//m_config.m_portNum[TACTILE_JACKET]);
-	//m_pDisplayDeviceJacket->initialize();
-	IS_TACTILE_JACKET_CONNECTED = false;
-	//m_pDisplayDeviceArmband = new DisplayDeviceArmband(3);//m_config.m_portNum[TACTILE_JACKET]);
-	//m_pDisplayDeviceArmband->initialize();
-	IS_TACTILE_ARMBAND_CONNECTED = false;
+SmartClothingManager::SmartClothingManager(boost::shared_ptr<Configuration> configuration)
+{	
+	UserPreferences prefs = configuration->getUserPreferences();
+
+	m_pDisplayDeviceJacket = new DisplayDeviceJacket(prefs.jacketPort);
+	IS_TACTILE_JACKET_CONNECTED = m_pDisplayDeviceJacket->initialize();
+	
+	m_pDisplayDeviceArmband = new DisplayDeviceArmband(prefs.armBandPort);
+	IS_TACTILE_ARMBAND_CONNECTED = m_pDisplayDeviceArmband->initialize();
 }
 
 SmartClothingManager::~SmartClothingManager()
@@ -43,6 +44,12 @@ VOID CALLBACK MySetTimerProc(
 	}
 
 	KillTimer(hwnd,idEvent);
+}
+
+void SmartClothingManager::setPorts(int armBandPort, int jacketPort)
+{
+	m_pDisplayDeviceJacket->setPort(jacketPort);
+	m_pDisplayDeviceArmband->setPort(armBandPort);
 }
 
 void SmartClothingManager::vibrate(HumanPart touchedPart, int x, int y, int time) 

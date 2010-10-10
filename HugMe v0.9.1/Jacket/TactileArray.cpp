@@ -144,7 +144,7 @@ void TactileArray::test1by1(void)
 	m_hTestThread = ::CreateThread(NULL, NULL, test1by1Thread, this, NULL, &m_dwTestThreadID);
 }
 
-void TactileArray::initialize(void)
+bool TactileArray::initialize(void)
 {
 	if(!m_pIntensityArray)
 		delete [] m_pIntensityArray;
@@ -158,6 +158,16 @@ void TactileArray::initialize(void)
 
 	m_pBuffer = new unsigned char[m_bufferSize];
 
-	openSerialPort(m_portNum);
+	return openSerialPort(m_portNum);
+}
+
+
+void TactileArray::setPort(int a_portNum)
+{
+	if (m_portNum != a_portNum)
+	{
+		m_portNum = a_portNum;
+		initialize();
+	}
 }
 

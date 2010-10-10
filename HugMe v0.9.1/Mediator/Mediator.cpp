@@ -18,7 +18,7 @@ Mediator::Mediator(boost::shared_ptr<Network> network,
 	configuration(configuration)
 {
 	// create the various components
-	smartClothing = shared_ptr<SmartClothingManager>(new SmartClothingManager());
+	smartClothing = shared_ptr<SmartClothingManager>(new SmartClothingManager(configuration));
 
 	// attach ourselves as an observer to the components
 	network->attach(this);
@@ -418,14 +418,9 @@ void Mediator::changePreferences(const UserPreferences& preferences)
 		network->sendUserName(preferences.name);
 	}
 
-	if (currentPreferences.armBandPort != preferences.armBandPort)
+	if (currentPreferences.armBandPort != preferences.armBandPort || currentPreferences.jacketPort != preferences.jacketPort)
 	{
-		// TODO, notify smart clothing manager
-	}
-
-	if (currentPreferences.jacketPort != preferences.jacketPort)
-	{
-		// TODO, notify smart clothing manager
+		smartClothing->setPorts(preferences.armBandPort, preferences.jacketPort);
 	}
 
 	configuration->setUserPreferences(preferences);

@@ -21,8 +21,8 @@ private:
 	// default preferences
 	static const std::string default_ip_address;
 	static const std::string default_name;
-	static const unsigned int default_arm_band_port = 0;
-	static const unsigned int default_jacket_port = 0;
+	static const unsigned int default_arm_band_port = 3;
+	static const unsigned int default_jacket_port = 97;
 
 	UserPreferences preferences;
 	std::string fileName;
