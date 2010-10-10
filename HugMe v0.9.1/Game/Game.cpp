@@ -211,6 +211,7 @@ void Game::gameLoop()
 			if (environment.isColliding()) 
 			{
 				mediator->collisionDetected();
+				environment.reduceLocalHp(1);
 			}
 		} // release the lock before sleeping
 

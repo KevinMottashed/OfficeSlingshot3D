@@ -537,6 +537,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Game\HpBar.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Game\HpBar.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Game\TitleScreen.cpp"
 				>
 			</File>

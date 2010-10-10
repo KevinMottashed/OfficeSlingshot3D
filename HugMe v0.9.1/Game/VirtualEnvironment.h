@@ -9,6 +9,7 @@
 #include "VirtualAvatar.h"
 #include "VirtualSlingshot.h"
 #include "VirtualBall.h"
+#include "HpBar.h"
 
 class VirtualEnvironment
 {
@@ -46,6 +47,9 @@ public:
 	 */
 	void movePeerAvatar(cVector3d position);
 
+	void reduceLocalHp(int dmg);
+	void reducePeerHp(int dmg);
+
 	/**
 	 * Shoot a projectile from the local slingshot
 	 * @return The projectile that was just fired
@@ -70,6 +74,8 @@ private:
 	VirtualSlingshot* rSlingshot;
 	VirtualAvatar* rAvatar;
 	VirtualAvatar* lAvatar;
+	HpBar* rHpBar;
+	HpBar* lHpBar;
 	cBitmap* background;
 
 	cODEWorld* ODEWorld;

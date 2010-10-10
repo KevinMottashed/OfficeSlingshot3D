@@ -449,6 +449,8 @@ void Mediator::collisionDetected(void)
 {
 	audio.playHit();
 	smartClothing->vibrate(CHEST, 0.5, 0.5, 1000);
+
+	//TODO: reducePeerHp
 	//TODO: play sound on the peer's end
 	//network->notifyCollisionDetected();
 	return;

@@ -97,7 +97,22 @@ void VirtualEnvironment::movePeerAvatar(cVector3d position)
 
 	rAvatar->rotate(ang);
 	rAvatar->translate(ang);
+
+	return;
+}
+
+
+void VirtualEnvironment::reduceLocalHp(int dmg)
+{
+	lHpBar->ReduceHP(dmg);
 	
+	return;
+}
+
+void VirtualEnvironment::reducePeerHp(int dmg)
+{
+	rHpBar->ReduceHP(dmg);
+
 	return;
 }
 
@@ -165,6 +180,12 @@ void VirtualEnvironment::initialize(void)
 	lAvatar = new VirtualAvatar(world, World::local_avatar_starting_position, true);
 	rAvatar = new VirtualAvatar(world, World::peer_avatar_starting_position, false);
 	
+	//**************************************//
+	//                 HP BAR               //
+	//**************************************//
+
+	lHpBar = new HpBar(world, true);
+	rHpBar = new HpBar(world, false);
 
 	//**************************************//
 	//                BALLS                 //
