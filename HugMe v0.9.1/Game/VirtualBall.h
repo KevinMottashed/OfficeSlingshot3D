@@ -7,18 +7,50 @@
 #include "CODE.h"
 #include "Projectile.h"
 
+/**
+ * Represents a ball in the 3d environment.
+ */
 class VirtualBall
 {
+public:
+	/**
+	 * Constructor.
+	 * @param world The chai3d world to which the ball belongs.
+	 * @param ODEWorld The physical world to which the ball belongs.
+	 */
+	VirtualBall(cWorld* world, cODEWorld* ODEWorld);
+
+	/**
+	 * Destructor
+	 */
+	~VirtualBall();
+
+	/**
+	 * Fire the ball.
+	 * The ball will take the position of the passed projectile and
+	 * it will be applied the force of the passed projectile.
+	 * @param p The projectile which the ball will become.
+	 */
+	void fire(Projectile p);
+
+	/**
+	 * Get the ball's position.
+	 * @return The position of the ball.
+	 */
+	cVector3d getMeshPos();
+
 private:
+	/**
+	 * The mesh that represents the ball.
+	 */
 	cMesh* ballMesh;
+
+	/**
+	 * The ball's physical representation.
+	 * This is used for collisions and other physics calculations.
+	 */
 	cODEGenericBody* odeBall;
 
-public:
-	VirtualBall(cWorld* world, cODEWorld* ODEWorld);
-	~VirtualBall(void);
-
-	void fire(Projectile p);
-	cVector3d getMeshPos();
 };
 
 #endif
