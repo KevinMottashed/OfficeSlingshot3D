@@ -11,10 +11,23 @@
 #include "VirtualBall.h"
 #include "HpBar.h"
 
+/**
+ * The virtual environment is the 3d environment in which the game is played.
+ * This class contains all the 3d objects that make up our game.
+ * The environment is implemented using the chai3d library.
+ * This class is responsible for all modifications to the environment.
+ */
 class VirtualEnvironment
 {
 public:
+	/**
+	 * Constructor
+	 */
 	VirtualEnvironment(void);
+
+	/**
+	 * Destructor
+	 */
 	~VirtualEnvironment(void);
 
 	/**
@@ -47,7 +60,16 @@ public:
 	 */
 	void movePeerAvatar(cVector3d position);
 
+	/**
+	 * Reduce the hit points on the local player
+	 * @param dmg The amount of hit points to remove.
+	 */
 	void reduceLocalHp(int dmg);
+	
+	/**
+	 * Reduce the hit points on the peer player
+	 * @param dmg The amount of hit points to remove.
+	 */
 	void reducePeerHp(int dmg);
 
 	/**
@@ -62,29 +84,112 @@ public:
 	 */
 	void firePeerSlingshot(Projectile p);
 
+	/**
+	 * Initialize the 3d environment.
+	 * This initializes all the 3d objects.
+	 */
 	void initialize(void);
+	
+	/**
+	 * Update the frame.
+	 * This will update the frame to display the latest changes.
+	 * This is where the physics are calculated and object positions are updated.
+	 */
 	void updateFrame();
+
+	/**
+	 * Check if an object is colliding with the local player.
+	 * @return true If an object is hitting the local player.
+	 */
 	bool isColliding();
 
 private:
+
+	/**
+	 * The virtual environments camera.
+	 * This is the camera through which the player will see the world.
+	 */
 	cCamera* _camera;
+
+	/**
+	 * The 3d world.
+	 * This is the virtual environments world, all 3d objects will be added to this world.
+	 */
 	cWorld* world;
+
+	/**
+	 * The light that illuminates the world.
+	 * This light is attached to the camera.
+	 */
 	cLight* light;
+
+	/**
+	 * The local player's slingshot.
+	 */
 	VirtualSlingshot* lSlingshot;
+	
+	/**
+	 * The peer player's slingshot.
+	 */
 	VirtualSlingshot* rSlingshot;
+
+	/**
+	 * The local player's avatar
+	 */
 	VirtualAvatar* rAvatar;
+
+	/** 
+	 * The peer player's avatar.
+	 */
 	VirtualAvatar* lAvatar;
+
+	/**
+	 * The peer's hit point bar.
+	 */
 	HpBar* rHpBar;
+
+	/**
+	 * The local player's hit point bar.\
+	 */
 	HpBar* lHpBar;
+
+	/**
+	 * The background image.
+	 */
 	cBitmap* background;
 
+	/**
+	 * The ODE world.
+	 * This is the world object used for physics.
+	 * In contrast with the chai3d world which is used for displaying objects.
+	 */
 	cODEWorld* ODEWorld;
+
+	/**
+	 * The balls that can be fired by the local player.
+	 */
 	std::vector<VirtualBall*> localBalls;
+
+	/**
+	 * The balls that can be fired by the peer player.
+	 */
 	std::vector<VirtualBall*> peerBalls;
 
+	/**
+	 * The physical ground.
+	 * This object is used for physics on the floor.
+	 * Other 3d objects can hit the floor and bounce off of it.
+	 */ 
 	cODEGenericBody* ODEGround;
 
+	/**
+	 * The number of balls that have been fired by the peer.
+	 */
 	int rNumBalls;
+
+	/**
+	 * The number of balls that have been fired by the local player.
+	 */
 	int lNumBalls;
 
 	/**
