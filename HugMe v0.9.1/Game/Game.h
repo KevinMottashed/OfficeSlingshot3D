@@ -36,8 +36,15 @@ public:
 	virtual void update(MediatorUpdateContext_t context, const void* data);
 
 private:
-	Game(const Game& game); // intentionally not implemented
-	Game& operator=(const Game& game); // intentionally not implemented
+	/**
+	 * Copy constructor, not implemented to protect from use
+	 */
+	Game(const Game& game);
+	
+	/**
+	 * Assignment operator, not implemented to protect from use
+	 */
+	Game& operator=(const Game& game);
 
 	// the main game loop thread
 	HANDLE m_hGameLoopThread; // handle
@@ -65,7 +72,8 @@ private:
 	boost::shared_ptr<Mediator> mediator;
 
 	/**
-	 * The games virtual environment
+	 * The games virtual environment.
+	 * This is the 3d environment that is displayed when the game is running.
 	 */
 	VirtualEnvironment environment;
 
