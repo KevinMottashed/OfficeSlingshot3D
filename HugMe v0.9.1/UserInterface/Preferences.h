@@ -23,6 +23,7 @@ public:
 
 	/**
 	* Getter for private attributes.
+	* @return the user preferences.
 	*/
 	UserPreferences getPreferences();
 

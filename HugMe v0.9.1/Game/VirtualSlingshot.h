@@ -3,9 +3,41 @@
 
 #include "chai3d.h"
 
+/**
+ * Represents a slingshot in the 3d environment.
+ */
+
 class VirtualSlingshot
 {
+public:
+	/**
+	 * Constructor.
+	 * @param world The world in which to add the slingshot
+	 * @param startingPosition The slingshot's starting position in the world
+	 */
+	VirtualSlingshot(cWorld* world, const cVector3d startingPosition);
+
+	/**
+	 * Destructor.
+	 */
+	~VirtualSlingshot(void);
+
+	/**
+	 * Moves the slingshot within the virtual environment.
+	 * @param position The new position.
+	 */
+	void move(cVector3d position);
+
+	/**
+	 * Retrieve the ball's position within the virtual environment.
+	 * @return the ball position.
+	 */
+	cVector3d getBallPosition();
+
 private:
+	/**
+	 * The slingshot's mesh object.
+	 */
 	cMesh* slingshotMesh;
 
 	/**
@@ -14,12 +46,6 @@ private:
 	 */
 	static const cVector3d slingshot_sling_offset;
 
-public:
-	VirtualSlingshot(cWorld* world, const cVector3d startingPosition);
-	~VirtualSlingshot(void);
-
-	void move(cVector3d position);
-	cVector3d getBallPosition();
 };
 
 #endif

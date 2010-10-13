@@ -26,9 +26,24 @@ public:
 	cCamera* camera();
 
 private:
+	/**
+	 * The virtual world.
+	 */
 	cWorld* world;
+
+	/**
+	 * The world's camera.
+	 */
 	cCamera* _camera;
+
+	/**
+	 * The environment's light.
+	 */
 	cLight* light;
+
+	/**
+	 * The background bitmap image.
+	 */
 	cBitmap* bitmap;
 };
 

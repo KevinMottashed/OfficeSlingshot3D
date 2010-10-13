@@ -146,6 +146,7 @@ public:
 
 	/**
 	 * Returns the applications main window.
+	 * @return the main window.
 	 */
 	CDialog* getMainWindow();
 
