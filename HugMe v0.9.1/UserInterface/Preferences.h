@@ -4,16 +4,26 @@
 #include "stdafx.h"
 #include "UserPreferences.h"
 
-/////////////////////////////////////////////////////////////////////////////
-// CPreferences dialog
+/**
+ * A classe used to manage the user's preferences
+ * by displaying a dialog with all the required values.
+ * This dialog is contained within the main window of
+ * the application.
+ */
 
 class CPreferences : public CDialog
 {
-// Construction
 public:
+	/**
+	 * Constructor.
+	 * @param prefs The user's preferences.
+	 * @param pParent The parent window NULL in our case.
+	 */
 	CPreferences(const UserPreferences& prefs, CWnd* pParent = NULL);   // standard constructor
 
-	// getters for private attributes
+	/**
+	* Getter for private attributes.
+	*/
 	UserPreferences getPreferences();
 
 

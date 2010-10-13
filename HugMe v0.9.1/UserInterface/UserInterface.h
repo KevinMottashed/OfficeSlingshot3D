@@ -13,63 +13,133 @@
 
 class CMainDlg;
 
+/**
+ * An interface to this package.
+ * Declares all the methods to be implemented in the
+ * MFCUserInterface class.
+ */
 class UserInterface : public UserInterfaceSubject
 {
 public:
+	/**
+	 * Constructor.
+	 */
 	UserInterface();
+
+	/**
+	 * Destructor.
+	 */
 	virtual ~UserInterface();
 
 	/**
 	 * Changes the camera from which the vritual world will be displayed
 	 * @param camera The new camera
 	 */
-	virtual void switchCamera(cCamera* camera) = 0;
+	virtual void switchCamera(cCamera* camera)=0;
 
 	//----------------------------------------
 	// Display updates
 	//----------------------------------------
 
-	// display that a certain player has changed the connection state
-	virtual void displayConnectionStateChanged(ConnectionState_t state, Player_t player) = 0;
+	/**
+	 * Display that a certain player has changed the connection state.
+	 * @param state The new connection state.
+	 * @param player The player that changed the connetion state.
+	 */
+	virtual void displayConnectionStateChanged(ConnectionState_t state, Player_t player)=0;
 
-	// display that a certain player has changed the game state
-	virtual void displayGameStateChanged(GameState_t state, Player_t player) = 0;
+	/**
+	 * Display that a certain player has changed the game state.
+	 * @param state The new game state.
+	 * @param player The player that changed the game state.
+	 */
+	virtual void displayGameStateChanged(GameState_t state, Player_t player)=0;
 
-	// update the user interface to reflect a change in the connection state
-	virtual void displayConnectionFailed() = 0;
-	virtual void displayFailedToListen() = 0;
-	virtual void displayNetworkError() = 0;
+	/**
+	 * Update the user interface to reflect that a connection has failed.
+	 */
+	virtual void displayConnectionFailed()=0;
 
-	// update the user interface to display the interaction with the peer
-	virtual void displayPeerChatMessage(const std::string& message) = 0;
-	virtual void displayLocalFrame(const VideoData& video) = 0;
-	virtual void displayRemoteFrame(const VideoData& video) = 0;
+	/**
+	 * Update the user interface to reflect that the listen has failed.
+	 */
+	virtual void displayFailedToListen()=0;
+
+	/**
+	 * Update the user interface to reflect that a network error occurred.
+	 */
+	virtual void displayNetworkError()=0;
+
+	/**
+	 * Update the user interface to display a new peer message.
+	 */
+	virtual void displayPeerChatMessage(const std::string& message)=0;
+
+	/**
+	 * Update the user interface to display a new local video frame.
+	 */
+	virtual void displayLocalFrame(const VideoData& video)=0;
+
+	/**
+	 * Update the user interface to display a new peer video frame.
+	 */
+	virtual void displayRemoteFrame(const VideoData& video)=0;
 
 	//-----------------------------------------------
 	// Notifications coming from the user interface
 	//-----------------------------------------------
 
-	// user wants to change the connection state
-	virtual void networkConnectButtonPushed() = 0;
-	virtual void networkListenButtonPushed() = 0;
-	virtual void networkDisconnectButtonPushed() = 0;
+	/**
+	 * User wants to connect to the peer.
+	 */
+	virtual void networkConnectButtonPushed()=0;
 
-	// user wants to send chat message
-	virtual void sendChatButtonPushed(const std::string& message) = 0;
+	/**
+	 * User wants to listen for connections.
+	 */
+	virtual void networkListenButtonPushed()=0;
 
-	// user wants to change the game state
-	virtual void startGameButtonPushed() = 0;
-	virtual void exitGameButtonPushed() = 0;
-	virtual void pauseGameButtonPushed() = 0;
+	/**
+	 * User wants to disconnect to the peer.
+	 */
+	virtual void networkDisconnectButtonPushed()=0;
 
-	// update the users preferences
-	virtual void changePreferences(const UserPreferences& preferences) = 0;
+	/**
+	 * User wants to send a new chat message.
+	 */
+	virtual void sendChatButtonPushed(const std::string& message)=0;
 
-	// user wants to close the application
-	virtual void closeApplication() = 0;
+	/**
+	 * User wants to start a new game.
+	 */
+	virtual void startGameButtonPushed()=0;
+
+	/**
+	 * User wants to exit the game.
+	 */
+	virtual void exitGameButtonPushed()=0;
+
+	/**
+	 * User wants to pause the game.
+	 */
+	virtual void pauseGameButtonPushed()=0;
+
+	/**
+	 * Update the user's preferences.
+	 * @param preferences The new user preferences.
+	 */
+	virtual void changePreferences(const UserPreferences& preferences)=0;
+
+	/**
+	 * User wants to close the application.
+	 */
+	virtual void closeApplication()=0;
 	
-	// update the peers user name
-	virtual void setPeerUserName(const std::string& name) = 0;
+	/**
+	 * Update the peers user name.
+	 * @param name The new user name.
+	 */
+	virtual void setPeerUserName(const std::string& name)=0;
 };
 
 #endif

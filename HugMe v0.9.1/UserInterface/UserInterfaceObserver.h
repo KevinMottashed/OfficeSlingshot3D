@@ -3,8 +3,11 @@
 
 #include "stdafx.h"
 
-// each update has a context
-// the context represents what has changed in the observed object
+/**
+ * Enum.
+ * Each update has a context.
+ * The context represents what has changed in the observed object
+ */
 enum UserInterfaceUpdateContext
 {
 	LISTEN,
@@ -21,13 +24,29 @@ enum UserInterfaceUpdateContext
 	PREFERENCES,
 };
 
+/**
+ * The observer class for the user interface.
+ */
 class UserInterfaceObserver
 {
 public:
+
+	/**
+	 * Constructor
+	 */
 	UserInterfaceObserver();
+
+	/**
+	 * Destructor
+	 */
 	virtual ~UserInterfaceObserver();
 
-	// handles an update
+	/**
+	 * Handles an update
+	 * @param context The user interface context.
+	 * @param data The data passed through the update. Can be NULL.
+	 */
+	// 
 	virtual void update(UserInterfaceUpdateContext context, const void* data) = 0;
 };
 

@@ -31,10 +31,6 @@ void MFCOpenGLControl::oglCreate(CRect rect, CWnd *parent)
    CreateEx(0, className, "OpenGL", WS_CHILD | WS_VISIBLE |
             WS_CLIPSIBLINGS | WS_CLIPCHILDREN, rect, parent, 0);
 
-   // Set initial variables' values
-   m_oldWindow    = rect;
-   m_originalRect = rect;
-
    hWnd = parent;
 }
 

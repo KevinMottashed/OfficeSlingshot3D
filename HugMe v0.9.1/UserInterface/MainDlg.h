@@ -13,35 +13,76 @@
 
 #include "boost.h"
 
-/////////////////////////////////////////////////////////////////////////////
-// CMainDlg dialog
-
 class UserInterface;
+
+/**
+ * A class representing the main UI element of OfficeSlingshot3D.
+ * The main dialog that contains all the other
+ * elements of the user interface.
+ */
 
 class CMainDlg : public CDialog
 {
 public:
+	/**
+	 * Contructor.
+	 * @param user interface class.
+	 * @param preferences.
+	 * @param parent dialog NULL in our case.
+	 */
 	CMainDlg(UserInterface* pUserInterface, const UserPreferences& preferences, CWnd* pParent = NULL);   // standard constructor
 
-	// display that a certain player has changed the connection state
+	/**
+	 * Display that a certain player has changed the connection state.
+	 * @param state The overall application's state.
+	 * @param player The player that has changed the connection's state.
+	 */
 	void displayConnectionStateChanged(ConnectionState_t state, Player_t player);
 
-	// display that a certain player has changed the game state
+	/**
+	 * Display that a certain player has changed the game state.
+	 * @param state The overall application's state.
+	 * @param player The player that has changed the game's state.
+	 */
 	void displayGameStateChanged(GameState_t state, Player_t player);
 
-	// visual feedback for connection state	
+	/**
+	 * Display that the connection to the peer has failed.
+	 */
 	void displayConnectionFailed();
+
+	/**
+	 * Display that request to listen has failed.
+	 */
 	void displayFailedToListen();
+
+	/**
+	 * Display that a network error has occurred.
+	 */
 	void displayNetworkError();
 
-	// visual feedback for peer interaction
+	/**
+	 * Display a new message in the peer's message box.
+	 * @param message The message to display in the message box.
+	 */
 	void displayPeerChatMessage(const std::string& message);
+
+	/**
+	 * Display a new message in the local user's message box.
+	 * @param message The message to display in the message box.
+	 */
 	void displayLocalChatMessage(const std::string& message);
 
-	// update the peers user name
+	/**
+	 * Update the peers user name.
+	 * @param name The new name.
+	 */
 	void setPeerUserName(const std::string& name);
 
-	// Method to add a string in a new line in the text box
+	/**
+	 * Method to add a string in a new line in the text box.
+	 * @param strCont The new string to add to the chat content.
+	 */
 	void AddChatContent(CString strCont);
 
 	/**
@@ -51,19 +92,35 @@ public:
 	void camera(cCamera* camera);
 
 private:
-
+	/**
+	 * The openGL window.
+	 */
 	boost::shared_ptr<MFCOpenGLControl> m_oglWindow;
 
+	/**
+	 * The user interface object.
+	 */
 	UserInterface* pUserInterface;
+
+	/**
+	 * The user preferences object.
+	 */
 	UserPreferences m_preferences;
 
-	// peers user name
+	/**
+	 * The peer's user name.
+	 */
 	std::string m_peerUserName;
 	
-	// Inherited method to catch messages before they are sent to the UI
+	/**
+	 * Inherited method to catch messages before they are sent to the UI.
+	 * @param pMsg the message being intercepted
+	 */
 	virtual BOOL CMainDlg::PreTranslateMessage(MSG* pMsg);
 
-	// Inherited method to perform actions before the UI is displayed
+	/**
+	 * Inherited method to perform actions before the UI is displayed.
+	 */
 	virtual BOOL CMainDlg::OnInitDialog();
 
 // Dialog Data
