@@ -4,32 +4,46 @@
 #include "stdafx.h"
 
 /*
- * The SyncReaderWriters is a utility class designed to solve the readers/writers concurrency problem
- * In this implementation the writers are given priority.
+ * DEPRECATED. Utility class designed to solve the readers/writers concurrency problem.
+ * In this implementation the writers are given priority. This is marked as deprecated as the boost library contains
+ * something similar but more powerful/flexible so that should be used instead.
  *
  * A description of the problem as well as a pseudo code implementation can be found here:
  * http://en.wikipedia.org/wiki/Readers-writers_problem
- *
  */
-
 class SyncReaderWriters  
 {
 public:
+	/**
+	 * Constructor
+	 */
 	SyncReaderWriters();
+
+	/**
+	 * Destructor
+	 */
 	virtual ~SyncReaderWriters();
 
-	// A reader is requesting access to the resource
-	// The reader will be given access if there are no writers using or waiting for the resource
+	/** 
+	 * Lock the resource as a reader.
+	 * The reader will be given access if there are no writers using or waiting for the resource.
+	 */
 	void lock_reader();
 
-	// A writer is requesting access to the resource
-	// The writer will be given access when all the other readers/writers have relinquished the resource
+	/**
+	 * Lock the resource as a writer.
+	 * The writer will be given access when all the other readers/writers have relinquished the resource.
+	 */
 	void lock_writer();
 
-	// A reader is relinquishing access to the resource
+	/**
+	 * Unlock the resource as a reader.
+	 */
 	void unlock_reader();
 
-	// A writer is relinquishing access to the resource
+	/**
+	 * Unlock the resource as a writer.
+	 */
 	void unlock_writer();
 
 private:
@@ -59,27 +73,43 @@ private:
 	CRITICAL_SECTION m_csWriterAllowed;
 };
 
-/*
- * The SyncReaderLock is a utility class to be used in conjunction with the SyncReaderWriters class
- * This class will lock the resource as a reader upon creation and release upon destruction
+/**
+ * Locks a SyncReaderWriter object in reader mode following the RIAA pattern.
+ * The resource is locked at contruction and released at destruction.
  */
 class SyncReaderLock
 {
 public:
+	/**
+	 * Constructor. Locks the resource as a reader.
+	 * @param sync The reader/writer resource to lock.
+	 */
 	SyncReaderLock(SyncReaderWriters& sync);
+
+	/**
+	 * Destructor. Unlocks the resource.
+	 */
 	~SyncReaderLock();
 private:
 	SyncReaderWriters* sync;
 };
 
-/*
- * The SyncWriterLock is a utility class to be used in conjunction with the SyncReaderWriters class
- * This class will lock the resource as a writer upon creation and release upon destruction
+/**
+ * Locks a SyncReaderWriter object in writer mode following the RIAA pattern.
+ * The resource is locked at contruction and released at destruction.
  */
 class SyncWriterLock
 {
 public:
+	/**
+	 * Constructor. Locks the resource as a writer.
+	 * @param sync The reader/writer resource to lock.
+	 */
 	SyncWriterLock(SyncReaderWriters& sync);
+	
+	/**
+	 * Destructor. Unlocks the resource.
+	 */
 	~SyncWriterLock();
 private:
 	SyncReaderWriters* sync;
