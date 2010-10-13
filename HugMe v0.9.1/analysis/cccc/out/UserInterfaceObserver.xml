@@ -24,7 +24,7 @@
 </module_summary>
 <module_detail>
 <description>definition</description>
-<source_reference file="../../UserInterface/UserInterfaceObserver.h" line="25" />
+<source_reference file="../../UserInterface/UserInterfaceObserver.h" line="24" />
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="0" level="0" />
@@ -47,7 +47,7 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/UserInterfaceObserver.h" line="28" />
+<source_reference file="../../UserInterface/UserInterfaceObserver.h" line="27" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -59,7 +59,7 @@
 <name>update(UserInterfaceUpdateContext,const void *)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/UserInterfaceObserver.h" line="32" />
+<source_reference file="../../UserInterface/UserInterfaceObserver.h" line="31" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -75,7 +75,7 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/UserInterfaceObserver.h" line="29" />
+<source_reference file="../../UserInterface/UserInterfaceObserver.h" line="28" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -93,14 +93,14 @@
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../Logger/Logger.h" line="17" />
+<source_reference file="../../Logger/Logger.h" line="16" />
 </extent>
 <name>Mediator</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../Mediator/Mediator.h" line="20" />
+<source_reference file="../../Mediator/Mediator.h" line="25" />
 </extent>
 <name>UserInterfaceSubject</name>
 <visible>true</visible>

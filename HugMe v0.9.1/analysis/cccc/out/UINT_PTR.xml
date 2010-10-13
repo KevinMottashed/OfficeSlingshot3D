@@ -31,15 +31,15 @@
 <name>UINT_PTR</name>
 <client_module>
 <name>MFCOpenGLControl</name>
-<visible>true</visible>
+<visible>false</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="129" />
+<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="134" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="30" />
+<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="28" />
 </extent>
 </client_module>
 <supplier_module>

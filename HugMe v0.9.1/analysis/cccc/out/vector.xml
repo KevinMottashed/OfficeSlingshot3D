@@ -14,7 +14,7 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="7" level="0" />
+<coupling_between_objects value="8" level="0" />
 <IF4 value="0" level="0" />
 <IF4_per_member_function value="********" level="0" />
 <IF4_visible value="0" level="0" />
@@ -35,14 +35,14 @@
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Falcon/FalconSubject.h" line="19" />
+<source_reference file="../../Falcon/FalconSubject.h" line="47" />
 </extent>
-<name>GameSubject</name>
+<name>MediatorSubject</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Game/GameSubject.h" line="19" />
+<source_reference file="../../Mediator/MediatorSubject.h" line="44" />
 </extent>
 <name>NetworkSubject</name>
 <visible>true</visible>
@@ -67,7 +67,7 @@
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Test/TestRunner.h" line="26" />
+<source_reference file="../../Test/TestRunner.h" line="39" />
 </extent>
 <name>UserInterfaceSubject</name>
 <visible>true</visible>
@@ -75,6 +75,17 @@
 <extent>
 <description>has by value</description>
 <source_reference file="../../UserInterface/UserInterfaceSubject.h" line="19" />
+</extent>
+<name>VirtualEnvironment</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualEnvironment.h" line="171" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualEnvironment.h" line="176" />
 </extent>
 <name>ZCameraSubject</name>
 <visible>true</visible>

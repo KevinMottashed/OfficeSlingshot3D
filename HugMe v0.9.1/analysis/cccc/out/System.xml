@@ -35,7 +35,7 @@
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Audio/Audio.h" line="32" />
+<source_reference file="../../Audio/Audio.h" line="77" />
 </extent>
 </client_module>
 <supplier_module>

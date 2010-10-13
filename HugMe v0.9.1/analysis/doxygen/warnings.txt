@@ -1,559 +1,450 @@
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/ZCameraObserver.h:14: Warning: Compound ZCameraObserver is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/ZCameraSubject.h:8: Warning: Compound ZCameraSubject is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/NetworkReplayer.h:16: Warning: Compound NetworkReplayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface.h:149: Warning: Compound TDVCameraInterfaceBase is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatEvent.h:13: Warning: Compound ReplayFormatEvent is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:20: Warning: Compound TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/Preferences.h:11: Warning: Compound CPreferences is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Packet.h:15: Warning: Compound PacketHeader is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Common/VideoData.h:13: Warning: Compound VideoData is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/ZCameraReplayer.h:15: Warning: Compound ZCameraReplayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/NetworkSocket.h:16: Warning: Compound NetworkSocket is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/GameSubject.h:8: Warning: Compound GameSubject is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/UserInterfaceReplayer.h:12: Warning: Compound UserInterfaceReplayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/SyncReaderWriters.h:67: Warning: Compound SyncReaderLock is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/HumanFormatLogger.h:14: Warning: Compound HumanFormatLogger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Falcon/Falcon.h:8: Warning: Compound Falcon is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/DisplayDeviceArmband.h:10: Warning: Compound DisplayDeviceArmband is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/SyncReaderWriters.h:80: Warning: Compound SyncWriterLock is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/GameObserver.h:13: Warning: Compound GameObserver is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Common/Projectile.h:9: Warning: Compound Projectile is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/Replayer.h:21: Warning: Compound Replayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/Mediator.h:24: Warning: Compound Mediator is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Main/Chat.h:18: Warning: Compound CChatApp is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/ConsoleStream.h:24: Warning: Compound ConsoleStream is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:17: Warning: Compound MFCUserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/WinsockNetwork.h:46: Warning: Compound WinsockNetwork is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:36: Warning: Compound CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Main/OfficeSlingshot3DFactory.h:10: Warning: Compound OfficeSlingshot3DFactory is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Falcon/FalconObserver.h:14: Warning: Compound FalconObserver is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/SyncReaderWriters.h:16: Warning: Compound SyncReaderWriters is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/VirtualEnvironment.h:8: Warning: Compound VirtualEnvironment is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/Logger.h:19: Warning: Compound Logger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/NetworkObserver.h:27: Warning: Compound NetworkObserver is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Main/OfficeSlingshot3D.h:17: Warning: Compound OfficeSlingshot3D is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/DisplayDeviceJacket.h:14: Warning: Compound DisplayDeviceJacket is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MainDlg.h:22: Warning: Compound CMainDlg is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Falcon/FalconSubject.h:8: Warning: Compound FalconSubject is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/ConsoleStream.h:17: Warning: Compound ConsoleSink is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/Game.h:11: Warning: Compound Game is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatLogger.h:17: Warning: Compound ReplayFormatLogger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterfaceSubject.h:8: Warning: Compound UserInterfaceSubject is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:29: Warning: Compound CDepthCamera is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterfaceObserver.h:26: Warning: Compound UserInterfaceObserver is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Falcon/NovintFalcon.h:9: Warning: Compound NovintFalcon is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/SmartClothingManager.h:13: Warning: Compound SmartClothingManager is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/SyncLocker.h:7: Warning: Compound SyncLocker is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/Configuration.h:10: Warning: Compound Configuration is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/IZCamera.h:13: Warning: Compound IZCamera is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCOpenGLControl.h:13: Warning: Compound MFCOpenGLControl is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Packet.h:29: Warning: Compound Packet is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:16: Warning: Compound UserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/NetworkSubject.h:8: Warning: Compound NetworkSubject is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Common/UserPreferences.h:9: Warning: Compound UserPreferences is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Audio/Audio.h:7: Warning: Compound Audio is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Network.h:14: Warning: Compound Network is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/FalconReplayer.h:15: Warning: Compound FalconReplayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:40: Warning: Compound TactileArray is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/ZCamera.h:13: Warning: Compound ZCamera is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/UserInterfaceReplayer.cpp:12: Warning: no matching class member found for
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/ZCameraObserver.h:15: warning: Compound ZCameraObserver is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/ZCameraSubject.h:8: warning: Compound ZCameraSubject is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/NetworkReplayer.h:16: warning: Compound NetworkReplayer is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface.h:149: warning: Compound TDVCameraInterfaceBase is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatEvent.h:13: warning: Compound ReplayFormatEvent is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:20: warning: Compound TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/Preferences.h:11: warning: Compound CPreferences is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Packet.h:15: warning: Compound PacketHeader is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/ZCameraReplayer.h:15: warning: Compound ZCameraReplayer is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/NetworkSocket.h:16: warning: Compound NetworkSocket is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/UserInterfaceReplayer.h:12: warning: Compound UserInterfaceReplayer is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/SyncReaderWriters.h:67: warning: Compound SyncReaderLock is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/HumanFormatLogger.h:14: warning: Compound HumanFormatLogger is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/DisplayDeviceArmband.h:10: warning: Compound DisplayDeviceArmband is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/VirtualSlingshot.h:7: warning: Compound VirtualSlingshot is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/SyncReaderWriters.h:80: warning: Compound SyncWriterLock is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/Replayer.h:21: warning: Compound Replayer is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Main/Chat.h:18: warning: Compound CChatApp is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/ConsoleStream.h:24: warning: Compound ConsoleStream is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:17: warning: Compound MFCUserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/WinsockNetwork.h:46: warning: Compound WinsockNetwork is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:36: warning: Compound CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Main/OfficeSlingshot3DFactory.h:10: warning: Compound OfficeSlingshot3DFactory is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/SyncReaderWriters.h:16: warning: Compound SyncReaderWriters is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/Logger.h:18: warning: Compound Logger is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/NetworkObserver.h:26: warning: Compound NetworkObserver is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Main/OfficeSlingshot3D.h:17: warning: Compound OfficeSlingshot3D is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/HpBar.h:7: warning: Compound HpBar is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/DisplayDeviceJacket.h:14: warning: Compound DisplayDeviceJacket is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MainDlg.h:22: warning: Compound CMainDlg is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/ConsoleStream.h:17: warning: Compound ConsoleSink is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatLogger.h:17: warning: Compound ReplayFormatLogger is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterfaceSubject.h:8: warning: Compound UserInterfaceSubject is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:29: warning: Compound CDepthCamera is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterfaceObserver.h:25: warning: Compound UserInterfaceObserver is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/SmartClothingManager.h:16: warning: Compound SmartClothingManager is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/SyncLocker.h:7: warning: Compound SyncLocker is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/Configuration.h:10: warning: Compound Configuration is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/IZCamera.h:13: warning: Compound IZCamera is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCOpenGLControl.h:13: warning: Compound MFCOpenGLControl is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Packet.h:29: warning: Compound Packet is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:17: warning: Compound UserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/NetworkSubject.h:8: warning: Compound NetworkSubject is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/FalconReplayer.h:16: warning: Compound FalconReplayer is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:40: warning: Compound TactileArray is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/ZCamera.h:13: warning: Compound ZCamera is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/UserInterfaceReplayer.cpp:12: warning: no matching class member found for 
   UserInterfaceReplayer::UserInterfaceReplayer(const UserPreferences &preferences, boost::shared_ptr< std::std::ifstream > file, boost::shared_ptr< boost::archive::text_iarchive > archive)
 Possible candidates:
   UserInterfaceReplayer::UserInterfaceReplayer(const UserPreferences &preferences, boost::shared_ptr< std::ifstream > file, boost::shared_ptr< boost::archive::text_iarchive > archive)
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Audio/Audio.h:13: Warning: Member playBGMusic() (function) of class Audio is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Audio/Audio.h:16: Warning: Member playHit() (function) of class Audio is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Audio/Audio.h:19: Warning: Member playGameStart() (function) of class Audio is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Audio/Audio.h:22: Warning: Member playGameOverWon() (function) of class Audio is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Audio/Audio.h:25: Warning: Member playGameOverLost() (function) of class Audio is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:45: Warning: Member Initialize(int timeout=INFINITE) (function) of class CDepthCamera is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:51: Warning: Member ChangeResolution(int resolutionMode) (function) of class CDepthCamera is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:56: Warning: Member GetVideoSize(int &width, int &height, int &rgbFullResWidth, int &rgbFullResHeight, int &depthPixelSize, int &rgbPixelSize) const  (function) of class CDepthCamera is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:59: Warning: Member GetMaxAllowedWidth() const  (function) of class CDepthCamera is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:64: Warning: Member SetDepthWindowPosition(int distance, int width) (function) of class CDepthCamera is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:68: Warning: Member GetDepthWindowPosition(int &distance, int &width) const  (function) of class CDepthCamera is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:73: Warning: Member FindObjectUsingWidth(int depthWidth) (function) of class CDepthCamera is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:77: Warning: Member EnableRGBFullResolution(bool enable) (function) of class CDepthCamera is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:80: Warning: Member IsRGBFullResolutionEnabled() const  (function) of class CDepthCamera is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:84: Warning: Member EnableIRVideoTransfer(bool enable) (function) of class CDepthCamera is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:87: Warning: Member IsIRVideoTransferEnabled() const  (function) of class CDepthCamera is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:92: Warning: Member EnableWideDepthMode(bool enable) (function) of class CDepthCamera is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:95: Warning: Member IsWideDepthModeEnabled() const  (function) of class CDepthCamera is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:98: Warning: Member EnableDepthFilter(bool enable, int intensity=25) (function) of class CDepthCamera is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:101: Warning: Member IsDepthFilterEnabled() const  (function) of class CDepthCamera is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:113: Warning: Member GetNextFrame(unsigned char *&pDepthFrame, unsigned char *&pRGBFrame, unsigned char *&pRGBFullResFrame, unsigned char *&pPrimaryIR, unsigned char *&pSecondaryIR, int timeout=INFINITE) (function) of class CDepthCamera is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:116: Warning: Member GetCameraInterface() (function) of class CDepthCamera is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:119: Warning: Member EnableTrack(bool enable) (function) of class CDepthCamera is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:120: Warning: Member EnableSmoothing(bool enable, double smoothVal) (function) of class CDepthCamera is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:121: Warning: Member SetCleanVal(double cleanVal) (function) of class CDepthCamera is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:122: Warning: Member EnableMedian(bool enable) (function) of class CDepthCamera is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:123: Warning: Member FreezeVideo(bool freeze) (function) of class CDepthCamera is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MainDlg.h:24: Warning: Member CMainDlg(UserInterface *pUserInterface, const UserPreferences &preferences, CWnd *pParent=NULL) (function) of class CMainDlg is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MainDlg.h:27: Warning: Member displayConnectionStateChanged(ConnectionState_t state, Player_t player) (function) of class CMainDlg is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MainDlg.h:30: Warning: Member displayGameStateChanged(GameState_t state, Player_t player) (function) of class CMainDlg is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MainDlg.h:33: Warning: Member displayConnectionFailed() (function) of class CMainDlg is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MainDlg.h:34: Warning: Member displayFailedToListen() (function) of class CMainDlg is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MainDlg.h:35: Warning: Member displayNetworkError() (function) of class CMainDlg is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MainDlg.h:38: Warning: Member displayPeerChatMessage(const std::string &message) (function) of class CMainDlg is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MainDlg.h:39: Warning: Member displayLocalChatMessage(const std::string &message) (function) of class CMainDlg is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MainDlg.h:42: Warning: Member setPeerUserName(const std::string &name) (function) of class CMainDlg is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MainDlg.h:45: Warning: Member AddChatContent(CString strCont) (function) of class CMainDlg is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MainDlg.h:47: Warning: Member receiveNewBall(const cVector3d &force) (function) of class CMainDlg is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MainDlg.h:48: Warning: Member shootNewBall(const cVector3d &force) (function) of class CMainDlg is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/Configuration.h:12: Warning: Member Configuration(const std::string &fileName) (function) of class Configuration is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/Configuration.h:15: Warning: Member getUserPreferences() const  (function) of class Configuration is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/Configuration.h:16: Warning: Member setUserPreferences(const UserPreferences &pref) (function) of class Configuration is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/ConsoleStream.h:19: Warning: Member write(const char *s, std::streamsize n) (function) of class ConsoleSink is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/Preferences.h:14: Warning: Member CPreferences(const UserPreferences &prefs, CWnd *pParent=NULL) (function) of class CPreferences is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/Preferences.h:17: Warning: Member getPreferences() (function) of class CPreferences is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:45: Warning: Member InitPort(UINT portnr=5, UINT baud=115000, char parity= 'N', UINT databits=8, UINT stopsbits=1, DWORD dwCommEvents=EV_RXCHAR|EV_CTS, UINT nBufferSize=512) (function) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:46: Warning: Member ClosePort() (function) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:49: Warning: Member StartMonitoring() (function) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:50: Warning: Member RestartMonitoring() (function) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:51: Warning: Member StopMonitoring() (function) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:53: Warning: Member GetWriteBufferSize() (function) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:54: Warning: Member GetCommEvents() (function) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:55: Warning: Member GetDCB() (function) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:57: Warning: Member WriteToPort(unsigned char *string, int len) (function) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:58: Warning: Member WriteToPort(unsigned char chr) (function) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:65: Warning: Member writeInBuffer(unsigned char in) (function) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:73: Warning: Member readInBuffer() (function) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:95: Warning: Member inBufferData() const  (function) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:98: Warning: Member getConnected() const  (function) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:62: Warning: Member sentPacket (variable) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:102: Warning: Member ProcessErrorMessage(char *ErrorText) (function) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:103: Warning: Member CommThread(LPVOID pParam) (function) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:104: Warning: Member ReceiveChar(CSerialPort *port, COMSTAT comstat) (function) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:105: Warning: Member WriteChar(CSerialPort *port) (function) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:108: Warning: Member m_Thread (variable) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:111: Warning: Member m_csCommunicationSync (variable) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:112: Warning: Member m_bThreadAlive (variable) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:115: Warning: Member m_hShutdownEvent (variable) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:116: Warning: Member m_hComm (variable) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:117: Warning: Member m_hWriteEvent (variable) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:123: Warning: Member m_hEventArray[3] (variable) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:126: Warning: Member m_ov (variable) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:127: Warning: Member m_CommTimeouts (variable) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:128: Warning: Member m_dcb (variable) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:131: Warning: Member m_nPortNr (variable) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:132: Warning: Member m_szWriteBuffer (variable) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:133: Warning: Member m_WriteBufferSize (variable) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:134: Warning: Member m_dwCommEvents (variable) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:135: Warning: Member m_nWriteBufferSize (variable) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:138: Warning: Member connected (variable) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:143: Warning: Member inBuffer[IN_BUFFER_SIZE] (variable) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:144: Warning: Member bufferWrite (variable) of class CSerialPort is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:145: Warning: Member bufferRead (variable) of class CSerialPort is not documented.
-Error: Problems running epstopdf. Check your TeX installation!
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/DisplayDeviceArmband.h:12: Warning: Member DisplayDeviceArmband(int a_portNum) (function) of class DisplayDeviceArmband is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/DisplayDeviceArmband.h:18: Warning: Member setActReset() (function) of class DisplayDeviceArmband is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/DisplayDeviceArmband.h:21: Warning: Member setActForearm(double a_actX, double a_actY) (function) of class DisplayDeviceArmband is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/DisplayDeviceArmband.h:15: Warning: Member m_array[ARMBAND_ARRAY_SIZE_X][ARMBAND_ARRAY_SIZE_Y] (variable) of class DisplayDeviceArmband is not documented.
-Error: Problems running epstopdf. Check your TeX installation!
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/DisplayDeviceJacket.h:16: Warning: Member DisplayDeviceJacket(int a_portNum) (function) of class DisplayDeviceJacket is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/DisplayDeviceJacket.h:24: Warning: Member setActReset() (function) of class DisplayDeviceJacket is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/DisplayDeviceJacket.h:27: Warning: Member setActChest(double a_actX, double a_actY) (function) of class DisplayDeviceJacket is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/DisplayDeviceJacket.h:28: Warning: Member setActUpperArm(double a_actX, double a_actY) (function) of class DisplayDeviceJacket is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/DisplayDeviceJacket.h:29: Warning: Member setActNeck(int a_actX, double a_intensity) (function) of class DisplayDeviceJacket is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/DisplayDeviceJacket.h:19: Warning: Member m_chestArray[CHEST_ARRAY_SIZE_X][CHEST_ARRAY_SIZE_Y] (variable) of class DisplayDeviceJacket is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/DisplayDeviceJacket.h:20: Warning: Member m_armArray[ARM_ARRAY_SIZE_X][ARM_ARRAY_SIZE_Y] (variable) of class DisplayDeviceJacket is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/DisplayDeviceJacket.h:21: Warning: Member m_neckArray[NECK_ARRAY_SIZE_X][NECK_ARRAY_SIZE_Y] (variable) of class DisplayDeviceJacket is not documented.
-Error: Problems running epstopdf. Check your TeX installation!
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Falcon/Falcon.h:14: Warning: Member startPolling()=0 (function) of class Falcon is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Falcon/Falcon.h:17: Warning: Member stopPolling()=0 (function) of class Falcon is not documented.
-Error: Problems running epstopdf. Check your TeX installation!
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Falcon/FalconObserver.h:20: Warning: Member update(FalconUpdateContext context, const void *data)=0 (function) of class FalconObserver is not documented.
-Error: Problems running epstopdf. Check your TeX installation!
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/FalconReplayer.h:19: Warning: Member FalconReplayer(boost::shared_ptr< std::ifstream > file, boost::shared_ptr< boost::archive::text_iarchive > archive) (function) of class FalconReplayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/FalconReplayer.h:23: Warning: Member replay(LogEvent_t logEvent) (function) of class FalconReplayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/FalconReplayer.h:26: Warning: Member startPolling() (function) of class FalconReplayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/FalconReplayer.h:27: Warning: Member stopPolling() (function) of class FalconReplayer is not documented.
-Error: Problems running epstopdf. Check your TeX installation!
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Falcon/FalconSubject.h:13: Warning: Member attach(FalconObserver *observer) (function) of class FalconSubject is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Falcon/FalconSubject.h:14: Warning: Member detach(FalconObserver *observer) (function) of class FalconSubject is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Falcon/FalconSubject.h:16: Warning: Member notify(FalconUpdateContext context, const void *data=NULL) (function) of class FalconSubject is not documented.
-Error: Problems running epstopdf. Check your TeX installation!
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/Game.h:17: Warning: Member start() (function) of class Game is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/Game.h:18: Warning: Member pause() (function) of class Game is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/Game.h:19: Warning: Member stop() (function) of class Game is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/Game.h:22: Warning: Member getLocalSlingshotPosition() const  (function) of class Game is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/Game.h:23: Warning: Member setLocalSlingshotPosition(const cVector3d &position) (function) of class Game is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/Game.h:26: Warning: Member getRemoteSlingshotPosition() const  (function) of class Game is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/Game.h:27: Warning: Member setRemoteSlingshotPosition(const cVector3d &position) (function) of class Game is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/Game.h:30: Warning: Member getLocalPlayerPosition() const  (function) of class Game is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/Game.h:31: Warning: Member setLocalPlayerPosition(const cVector3d &position) (function) of class Game is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/Game.h:34: Warning: Member getRemotePlayerPosition() const  (function) of class Game is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/Game.h:35: Warning: Member setRemotePlayerPosition(const cVector3d &position) (function) of class Game is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/Game.h:38: Warning: Member addLocalProjectile(const Projectile &projectile) (function) of class Game is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/Game.h:39: Warning: Member addRemoteProjectile(const Projectile &projectile) (function) of class Game is not documented.
-Error: Problems running epstopdf. Check your TeX installation!
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/GameObserver.h:19: Warning: Member update(GameUpdateContext context, const void *data)=0 (function) of class GameObserver is not documented.
-Error: Problems running epstopdf. Check your TeX installation!
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/GameSubject.h:13: Warning: Member attach(GameObserver *observer) (function) of class GameSubject is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/GameSubject.h:14: Warning: Member detach(GameObserver *observer) (function) of class GameSubject is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/GameSubject.h:16: Warning: Member notify(GameUpdateContext context, const void *data=NULL) (function) of class GameSubject is not documented.
-Error: Problems running epstopdf. Check your TeX installation!
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/HumanFormatLogger.h:15: Warning: Member HumanFormatLogger(T1 param) (function) of class HumanFormatLogger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/HumanFormatLogger.h:18: Warning: Member HumanFormatLogger(T1 param1, T2 param2) (function) of class HumanFormatLogger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/HumanFormatLogger.h:21: Warning: Member HumanFormatLogger(T1 param1, T2 param2, T3 param3) (function) of class HumanFormatLogger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/HumanFormatLogger.h:28: Warning: Member log(LogEvent_t logEvent) (function) of class HumanFormatLogger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/HumanFormatLogger.h:29: Warning: Member log(LogEvent_t logEvent, rc_network error) (function) of class HumanFormatLogger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/HumanFormatLogger.h:30: Warning: Member log(LogEvent_t logEvent, const std::string &str) (function) of class HumanFormatLogger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/HumanFormatLogger.h:31: Warning: Member log(LogEvent_t logEvent, const VideoData &video) (function) of class HumanFormatLogger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/HumanFormatLogger.h:32: Warning: Member log(LogEvent_t logEvent, const cVector3d &vec) (function) of class HumanFormatLogger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/HumanFormatLogger.h:33: Warning: Member log(LogEvent_t logEvent, const Projectile &projectile) (function) of class HumanFormatLogger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/HumanFormatLogger.h:34: Warning: Member log(LogEvent_t logEvent, const UserPreferences &preferences) (function) of class HumanFormatLogger is not documented.
-Error: Problems running epstopdf. Check your TeX installation!
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/IZCamera.h:19: Warning: Member startCapture()=0 (function) of class IZCamera is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/IZCamera.h:22: Warning: Member stopCapture()=0 (function) of class IZCamera is not documented.
-Error: Problems running epstopdf. Check your TeX installation!
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/Logger.h:25: Warning: Member update(NetworkUpdateContext context, const void *data) (function) of class Logger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/Logger.h:26: Warning: Member update(UserInterfaceUpdateContext context, const void *data) (function) of class Logger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/Logger.h:27: Warning: Member update(FalconUpdateContext context, const void *data) (function) of class Logger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/Logger.h:28: Warning: Member update(GameUpdateContext context, const void *data) (function) of class Logger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/Logger.h:29: Warning: Member update(ZCameraUpdateContext context, const void *data) (function) of class Logger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/Logger.h:33: Warning: Member log(LogEvent_t logEvent)=0 (function) of class Logger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/Logger.h:34: Warning: Member log(LogEvent_t logEvent, rc_network error)=0 (function) of class Logger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/Logger.h:35: Warning: Member log(LogEvent_t logEvent, const std::string &str)=0 (function) of class Logger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/Logger.h:36: Warning: Member log(LogEvent_t logEvent, const VideoData &video)=0 (function) of class Logger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/Logger.h:37: Warning: Member log(LogEvent_t logEvent, const cVector3d &vec)=0 (function) of class Logger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/Logger.h:38: Warning: Member log(LogEvent_t logEvent, const Projectile &projectile)=0 (function) of class Logger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/Logger.h:39: Warning: Member log(LogEvent_t logEvent, const UserPreferences &preferences)=0 (function) of class Logger is not documented.
-Error: Problems running epstopdf. Check your TeX installation!
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/Mediator.h:30: Warning: Member Mediator(boost::shared_ptr< Network > network, boost::shared_ptr< Falcon > falcon, boost::shared_ptr< IZCamera > zcamera, boost::shared_ptr< UserInterface > userInterface, boost::shared_ptr< Configuration > configuration) (function) of class Mediator is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/Mediator.h:34: Warning: Member update(NetworkUpdateContext context, const void *data) (function) of class Mediator is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/Mediator.h:35: Warning: Member update(UserInterfaceUpdateContext context, const void *data) (function) of class Mediator is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/Mediator.h:36: Warning: Member update(ZCameraUpdateContext context, const void *data) (function) of class Mediator is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/Mediator.h:37: Warning: Member update(FalconUpdateContext context, const void *data) (function) of class Mediator is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/Mediator.h:38: Warning: Member update(GameUpdateContext context, const void *data) (function) of class Mediator is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCOpenGLControl.h:35: Warning: Member oglCreate(CRect rect, CWnd *parent) (function) of class MFCOpenGLControl is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCOpenGLControl.h:36: Warning: Member oglInitialize(void) (function) of class MFCOpenGLControl is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCOpenGLControl.h:37: Warning: Member shootNewBall(cVector3d force) (function) of class MFCOpenGLControl is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCOpenGLControl.h:38: Warning: Member receiveNewBall(cVector3d force) (function) of class MFCOpenGLControl is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCOpenGLControl.h:39: Warning: Member startGame(void) (function) of class MFCOpenGLControl is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCOpenGLControl.h:40: Warning: Member stopGame(void) (function) of class MFCOpenGLControl is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCOpenGLControl.h:43: Warning: Member OnPaint() (function) of class MFCOpenGLControl is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCOpenGLControl.h:44: Warning: Member OnCreate(LPCREATESTRUCT lpCreateStruct) (function) of class MFCOpenGLControl is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCOpenGLControl.h:45: Warning: Member OnDraw(CDC *pDC) (function) of class MFCOpenGLControl is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCOpenGLControl.h:46: Warning: Member OnSize(UINT nType, int cx, int cy) (function) of class MFCOpenGLControl is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCOpenGLControl.h:47: Warning: Member OnTimer(UINT_PTR nIDEvent) (function) of class MFCOpenGLControl is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCOpenGLControl.h:30: Warning: Member m_unpTimer (variable) of class MFCOpenGLControl is not documented.
-Error: Problems running epstopdf. Check your TeX installation!
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:19: Warning: Member MFCUserInterface(const UserPreferences &preferences) (function) of class MFCUserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:27: Warning: Member displayConnectionStateChanged(ConnectionState_t state, Player_t player) (function) of class MFCUserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:30: Warning: Member displayGameStateChanged(GameState_t state, Player_t player) (function) of class MFCUserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:33: Warning: Member displayConnectionFailed() (function) of class MFCUserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:34: Warning: Member displayFailedToListen() (function) of class MFCUserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:35: Warning: Member displayNetworkError() (function) of class MFCUserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:38: Warning: Member displayPeerChatMessage(const std::string &message) (function) of class MFCUserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:39: Warning: Member displayLocalFrame(const VideoData &video) (function) of class MFCUserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:40: Warning: Member displayRemoteFrame(const VideoData &video) (function) of class MFCUserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:47: Warning: Member networkConnectButtonPushed() (function) of class MFCUserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:48: Warning: Member networkListenButtonPushed() (function) of class MFCUserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:49: Warning: Member networkDisconnectButtonPushed() (function) of class MFCUserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:52: Warning: Member sendChatButtonPushed(const std::string &message) (function) of class MFCUserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:55: Warning: Member startGameButtonPushed() (function) of class MFCUserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:56: Warning: Member exitGameButtonPushed() (function) of class MFCUserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:57: Warning: Member pauseGameButtonPushed() (function) of class MFCUserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:60: Warning: Member changePreferences(const UserPreferences &preferences) (function) of class MFCUserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:63: Warning: Member closeApplication() (function) of class MFCUserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:66: Warning: Member setPeerUserName(const std::string &name) (function) of class MFCUserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:69: Warning: Member notifyNewBallShot(const cVector3d &force) (function) of class MFCUserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:70: Warning: Member receiveNewBall(const cVector3d &force) (function) of class MFCUserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:73: Warning: Member getMainWindow() (function) of class MFCUserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:76: Warning: Member m_pMainDlg (variable) of class MFCUserInterface is not documented.
-Error: Problems running epstopdf. Check your TeX installation!
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Network.h:20: Warning: Member listen(const std::string &userName)=0 (function) of class Network is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Network.h:21: Warning: Member connect(const std::string &ipAddress, const std::string &userName)=0 (function) of class Network is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Network.h:22: Warning: Member disconnect()=0 (function) of class Network is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Network.h:25: Warning: Member sendStartGame()=0 (function) of class Network is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Network.h:26: Warning: Member sendPauseGame()=0 (function) of class Network is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Network.h:27: Warning: Member sendEndGame()=0 (function) of class Network is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Network.h:30: Warning: Member sendUserName(const std::string &userName)=0 (function) of class Network is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Network.h:31: Warning: Member sendChatMessage(const std::string &message)=0 (function) of class Network is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Network.h:32: Warning: Member sendVideoData(const VideoData &video)=0 (function) of class Network is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Network.h:33: Warning: Member sendPlayerPosition(const cVector3d &position)=0 (function) of class Network is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Network.h:34: Warning: Member sendSlingshotPosition(const cVector3d &position)=0 (function) of class Network is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Network.h:35: Warning: Member sendProjectile(const Projectile &projectile)=0 (function) of class Network is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Network.h:36: Warning: Member sendSlingshotPullback()=0 (function) of class Network is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Network.h:37: Warning: Member sendSlingshotRelease()=0 (function) of class Network is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Network.h:40: Warning: Member isConnected() const =0 (function) of class Network is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Network.h:43: Warning: Member isListening() const =0 (function) of class Network is not documented.
-Error: Problems running epstopdf. Check your TeX installation!
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/NetworkObserver.h:33: Warning: Member update(NetworkUpdateContext context, const void *data)=0 (function) of class NetworkObserver is not documented.
-Error: Problems running epstopdf. Check your TeX installation!
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/NetworkReplayer.h:20: Warning: Member NetworkReplayer(boost::shared_ptr< std::ifstream > file, boost::shared_ptr< boost::archive::text_iarchive > archive) (function) of class NetworkReplayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/NetworkReplayer.h:24: Warning: Member replay(LogEvent_t logEvent) (function) of class NetworkReplayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/NetworkReplayer.h:27: Warning: Member listen(const std::string &userName) (function) of class NetworkReplayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/NetworkReplayer.h:28: Warning: Member connect(const std::string &ipAddress, const std::string &userName) (function) of class NetworkReplayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/NetworkReplayer.h:29: Warning: Member disconnect() (function) of class NetworkReplayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/NetworkReplayer.h:32: Warning: Member sendStartGame() (function) of class NetworkReplayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/NetworkReplayer.h:33: Warning: Member sendPauseGame() (function) of class NetworkReplayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/NetworkReplayer.h:34: Warning: Member sendEndGame() (function) of class NetworkReplayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/NetworkReplayer.h:37: Warning: Member sendUserName(const std::string &userName) (function) of class NetworkReplayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/NetworkReplayer.h:38: Warning: Member sendChatMessage(const std::string &message) (function) of class NetworkReplayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/NetworkReplayer.h:39: Warning: Member sendVideoData(const VideoData &video) (function) of class NetworkReplayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/NetworkReplayer.h:40: Warning: Member sendPlayerPosition(const cVector3d &position) (function) of class NetworkReplayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/NetworkReplayer.h:41: Warning: Member sendSlingshotPosition(const cVector3d &position) (function) of class NetworkReplayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/NetworkReplayer.h:42: Warning: Member sendProjectile(const Projectile &projectile) (function) of class NetworkReplayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/NetworkReplayer.h:43: Warning: Member sendSlingshotPullback() (function) of class NetworkReplayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/NetworkReplayer.h:44: Warning: Member sendSlingshotRelease() (function) of class NetworkReplayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/NetworkReplayer.h:47: Warning: Member isConnected() const  (function) of class NetworkReplayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/NetworkReplayer.h:48: Warning: Member isListening() const  (function) of class NetworkReplayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/NetworkSocket.h:22: Warning: Member NetworkSocket(WinsockNetwork *network) (function) of class NetworkSocket is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/NetworkSocket.h:25: Warning: Member Detach() (function) of class NetworkSocket is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/NetworkSocket.h:26: Warning: Member isServer() const  (function) of class NetworkSocket is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/NetworkSocket.h:34: Warning: Member OnAccept(int nErrorCode) (function) of class NetworkSocket is not documented.
-Error: Problems running epstopdf. Check your TeX installation!
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/NetworkSubject.h:13: Warning: Member attach(NetworkObserver *observer) (function) of class NetworkSubject is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/NetworkSubject.h:14: Warning: Member detach(NetworkObserver *observer) (function) of class NetworkSubject is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/NetworkSubject.h:16: Warning: Member notify(NetworkUpdateContext context, const void *data=NULL) (function) of class NetworkSubject is not documented.
-Error: Problems running epstopdf. Check your TeX installation!
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Falcon/NovintFalcon.h:16: Warning: Member startPolling() (function) of class NovintFalcon is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Falcon/NovintFalcon.h:20: Warning: Member stopPolling() (function) of class NovintFalcon is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Falcon/NovintFalcon.h:23: Warning: Member getPositionFromFalcon(NovintFalcon *p_Falcon) (function) of class NovintFalcon is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Main/OfficeSlingshot3D.h:22: Warning: Member OfficeSlingshot3D(boost::shared_ptr< Mediator > mediator, boost::shared_ptr< Logger > logger, boost::shared_ptr< Replayer > replayer, CDialog *dialog) (function) of class OfficeSlingshot3D is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Main/OfficeSlingshot3D.h:28: Warning: Member run() (function) of class OfficeSlingshot3D is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Main/OfficeSlingshot3D.h:29: Warning: Member operator()() (function) of class OfficeSlingshot3D is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Main/OfficeSlingshot3DFactory.h:14: Warning: Member createFromConfigFile(const std::string &fileName) (function) of class OfficeSlingshot3DFactory is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Packet.h:36: Warning: Member getType() const  (function) of class Packet is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Packet.h:39: Warning: Member getHeader() const  (function) of class Packet is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Packet.h:42: Warning: Member getData() const  (function) of class Packet is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Packet.h:48: Warning: Member readPacket(std::vector< char > &input) (function) of class Packet is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Packet.h:52: Warning: Member write(PacketType type, const T &t) (function) of class Packet is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Packet.h:55: Warning: Member write(PacketType type, const VideoData &video) (function) of class Packet is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Packet.h:58: Warning: Member write(PacketType type) (function) of class Packet is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Packet.h:62: Warning: Member read(T &t) const  (function) of class Packet is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Packet.h:65: Warning: Member read(VideoData &video) const  (function) of class Packet is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Packet.h:68: Warning: Member clear() (function) of class Packet is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Packet.h:16: Warning: Member size (variable) of class PacketHeader is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Packet.h:17: Warning: Member type (variable) of class PacketHeader is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Common/Projectile.h:12: Warning: Member Projectile(cVector3d position, cVector3d speed) (function) of class Projectile is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Common/Projectile.h:16: Warning: Member getPosition() const  (function) of class Projectile is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Common/Projectile.h:17: Warning: Member setPosition(double x, double y, double z) (function) of class Projectile is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Common/Projectile.h:18: Warning: Member setPosition(const cVector3d &v) (function) of class Projectile is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Common/Projectile.h:21: Warning: Member getSpeed() const  (function) of class Projectile is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Common/Projectile.h:22: Warning: Member setSpeed(double x, double y, double z) (function) of class Projectile is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Common/Projectile.h:23: Warning: Member setSpeed(const cVector3d &v) (function) of class Projectile is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/Replayer.h:24: Warning: Member Replayer(const std::string &fileName, const UserPreferences &preferences) (function) of class Replayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/Replayer.h:28: Warning: Member startReplay() (function) of class Replayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/Replayer.h:29: Warning: Member stopReplay() (function) of class Replayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/Replayer.h:32: Warning: Member getNetworkReplayer() (function) of class Replayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/Replayer.h:33: Warning: Member getUserInterfaceReplayer() (function) of class Replayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/Replayer.h:34: Warning: Member getFalconReplayer() (function) of class Replayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/Replayer.h:35: Warning: Member getZCameraReplayer() (function) of class Replayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatEvent.h:16: Warning: Member ReplayFormatEvent(long time, LogEvent_t logEvent) (function) of class ReplayFormatEvent is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatEvent.h:19: Warning: Member time (variable) of class ReplayFormatEvent is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatEvent.h:20: Warning: Member logEvent (variable) of class ReplayFormatEvent is not documented.
-Error: Problems running epstopdf. Check your TeX installation!
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatLogger.h:25: Warning: Member ReplayFormatLogger(T1 param) (function) of class ReplayFormatLogger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatLogger.h:28: Warning: Member ReplayFormatLogger(T1 param1, T2 param2) (function) of class ReplayFormatLogger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatLogger.h:31: Warning: Member ReplayFormatLogger(T1 param1, T2 param2, T3 param3) (function) of class ReplayFormatLogger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatLogger.h:37: Warning: Member log(LogEvent_t logEvent) (function) of class ReplayFormatLogger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatLogger.h:38: Warning: Member log(LogEvent_t logEvent, rc_network error) (function) of class ReplayFormatLogger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatLogger.h:39: Warning: Member log(LogEvent_t logEvent, const std::string &str) (function) of class ReplayFormatLogger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatLogger.h:40: Warning: Member log(LogEvent_t logEvent, const VideoData &video) (function) of class ReplayFormatLogger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatLogger.h:41: Warning: Member log(LogEvent_t logEvent, const cVector3d &vec) (function) of class ReplayFormatLogger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatLogger.h:42: Warning: Member log(LogEvent_t logEvent, const Projectile &projectile) (function) of class ReplayFormatLogger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatLogger.h:43: Warning: Member log(LogEvent_t logEvent, const UserPreferences &preferences) (function) of class ReplayFormatLogger is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/SmartClothingManager.h:22: Warning: Member vibrate(HumanPart touchedPart, int x, int y, int time) (function) of class SmartClothingManager is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/SyncLocker.h:11: Warning: Member SyncLocker(CRITICAL_SECTION &cs) (function) of class SyncLocker is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/SyncLocker.h:20: Warning: Member operator bool() (function) of class SyncLocker is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/SyncReaderWriters.h:69: Warning: Member SyncReaderLock(SyncReaderWriters &sync) (function) of class SyncReaderLock is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/SyncReaderWriters.h:23: Warning: Member lock_reader() (function) of class SyncReaderWriters is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/SyncReaderWriters.h:27: Warning: Member lock_writer() (function) of class SyncReaderWriters is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/SyncReaderWriters.h:30: Warning: Member unlock_reader() (function) of class SyncReaderWriters is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/SyncReaderWriters.h:33: Warning: Member unlock_writer() (function) of class SyncReaderWriters is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/SyncReaderWriters.h:82: Warning: Member SyncWriterLock(SyncReaderWriters &sync) (function) of class SyncWriterLock is not documented.
-Error: Problems running epstopdf. Check your TeX installation!
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:42: Warning: Member TactileArray(int a_portNum) (function) of class TactileArray is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:44: Warning: Member openSerialPort(int pNo=1, bool announce=false) (function) of class TactileArray is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:45: Warning: Member closeSerialPort() (function) of class TactileArray is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:67: Warning: Member initialize(void) (function) of class TactileArray is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:71: Warning: Member setIntensity(int *pIntensityArray) (function) of class TactileArray is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:76: Warning: Member setIntensity(double *pIntensityArray) (function) of class TactileArray is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:83: Warning: Member setIntensity(int arrayX, int arrayY, int intensity) (function) of class TactileArray is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:92: Warning: Member setIntensity(int arrayX, int arrayY, double intensity) (function) of class TactileArray is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:101: Warning: Member setIntensityAll(int intensity=0) (function) of class TactileArray is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:111: Warning: Member setIntensityAll(double intensity) (function) of class TactileArray is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:122: Warning: Member setArraySize(int a_arraySizeX, int a_arraySizeY) (function) of class TactileArray is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:127: Warning: Member actuate(void) (function) of class TactileArray is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:128: Warning: Member test1by1(void) (function) of class TactileArray is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:131: Warning: Member getMaxIntensity(void) const  (function) of class TactileArray is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:136: Warning: Member getArraySizeX(void) const  (function) of class TactileArray is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:141: Warning: Member getArraySizeY(void) const  (function) of class TactileArray is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:146: Warning: Member getArraySize(void) const  (function) of class TactileArray is not documented.
-Error: Problems running epstopdf. Check your TeX installation!
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface.h:156: Warning: Member isVideoActive() const  (function) of class TDVCameraInterfaceBase is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface.h:158: Warning: Member isCommActive() const  (function) of class TDVCameraInterfaceBase is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface.h:162: Warning: Member setVideoCallBack(videoCallBackFunc videoCBF, void *pObject=0) (function) of class TDVCameraInterfaceBase is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface.h:166: Warning: Member setCommandCallBack(cmdCallBackFunc cmdCBF, void *pObject=0) (function) of class TDVCameraInterfaceBase is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface.h:173: Warning: Member getVideoSize(int &width, int &height, int &rgbPixelSize, int &depthPixelSize) const  (function) of class TDVCameraInterfaceBase is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface.h:177: Warning: Member getRGBFullResSize(int &width, int &height, int &rgbPixelSize) (function) of class TDVCameraInterfaceBase is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface.h:180: Warning: Member setCameraCommand(int cmdID, int value) (function) of class TDVCameraInterfaceBase is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface.h:182: Warning: Member getCameraCommandVal(int cmdID, int &value) const  (function) of class TDVCameraInterfaceBase is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface.h:184: Warning: Member getCameraCommandLimits(int cmdID, int &minValue, int &maxValue) const  (function) of class TDVCameraInterfaceBase is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface.h:188: Warning: Member getVideoBuffer(int bufferType, unsigned char *&pBuffer) (function) of class TDVCameraInterfaceBase is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface.h:191: Warning: Member SetMaintenanceCmd(int ID, int val) (function) of class TDVCameraInterfaceBase is not documented.
-Error: Problems running epstopdf. Check your TeX installation!
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:25: Warning: Member setCameraCommand(int cmdID, int value)=0 (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:26: Warning: Member getCameraCommandVal(int cmdID, int &value) const =0 (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:27: Warning: Member getCameraCommandLimits(int cmdID, int &minValue, int &maxValue) const =0 (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:28: Warning: Member getVideoBuffer(int bufferType, unsigned char *&pBuffer)=0 (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:33: Warning: Member cmdColorCameraSetting(int iColorCommandID, int iValue) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:37: Warning: Member getColorCameraSetting(int iColorCommandID, int &iValue) const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:42: Warning: Member getColorCameraSettingLimit(int iColorCommandID, int &min, int &max) const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:46: Warning: Member cmdCameraOn() (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:48: Warning: Member cmdCameraOff() (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:50: Warning: Member isCameraOn() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:53: Warning: Member getMaxBrightness() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:54: Warning: Member getMinBrightness() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:57: Warning: Member cmdPrimaryBrightness(int value) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:59: Warning: Member getPrimaryBrightness() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:61: Warning: Member cmdSecondaryBrightness(int value) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:63: Warning: Member getSecondaryBrightness() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:66: Warning: Member getMaxWidth() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:67: Warning: Member getMinWidth() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:70: Warning: Member cmdPrimaryWidth(int value) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:72: Warning: Member getPrimaryWidth() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:74: Warning: Member cmdSecondaryWidth(int value) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:76: Warning: Member getSecondaryWidth() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:79: Warning: Member getMaxDistance() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:80: Warning: Member getMinDistance() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:83: Warning: Member cmdPrimaryDist(int value) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:85: Warning: Member getPrimaryDist() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:87: Warning: Member cmdSecondaryDist(int value) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:89: Warning: Member getSecondaryDist() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:93: Warning: Member getMaxGain() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:94: Warning: Member getMinGain() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:97: Warning: Member cmdGain(int value) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:99: Warning: Member getGain() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:104: Warning: Member getMinFilterVal() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:105: Warning: Member getMaxFilterVal() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:107: Warning: Member getMinSoftnessVal() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:108: Warning: Member getMaxSoftnessVal() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:111: Warning: Member cmdBinVal(int value) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:113: Warning: Member getBinVal() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:115: Warning: Member cmdBinarizeOnOff(bool value) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:117: Warning: Member getBinarizeOnOff() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:119: Warning: Member cmdMedianOnOff(bool value) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:121: Warning: Member getMedianOnOff() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:123: Warning: Member cmdInvertOnOff(bool value) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:125: Warning: Member getInvertOnOff() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:127: Warning: Member cmdTemporalFilterOnOff(bool value) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:129: Warning: Member getTemporalFilterOnOff() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:132: Warning: Member cmdSmoothOnOff(bool value) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:134: Warning: Member getSmoothOnOff() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:136: Warning: Member cmdSoftness(int value) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:138: Warning: Member getSoftness() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:141: Warning: Member cmdMaskSmoothOnOff(bool value) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:143: Warning: Member getMaskSmoothOnOff() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:145: Warning: Member cmdMaskSoftness(int value) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:147: Warning: Member getMaskSoftness() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:150: Warning: Member cmdAutomaticBackgroundOnOff(bool value) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:152: Warning: Member getAutomaticBackground() (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:155: Warning: Member cmdAutomaticDepthPositionOnOff(bool value) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:157: Warning: Member getAutomaticDepthPosition() (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:160: Warning: Member cmdClean(int value) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:162: Warning: Member getClean() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:166: Warning: Member cmdSaveStatus(int index) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:169: Warning: Member cmdRestoreStatus(int index) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:173: Warning: Member cmdStartAutomaticFind() (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:175: Warning: Member isDuringAutomaticFind() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:177: Warning: Member cmdAutomaticTracking(bool state) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:179: Warning: Member isAutomaticTrackingOn() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:181: Warning: Member cmdAutomaticBrightness(bool state) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:183: Warning: Member isAutomaticBrightnessOn() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:188: Warning: Member cmdSaveImage() (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:192: Warning: Member cmdSaveImageAverage() (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:196: Warning: Member cmdSaveSequence(int length, bool saveAVI) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:202: Warning: Member cmdVideoFreeze(bool state, bool useAverage=false) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:207: Warning: Member cmdRGBProcessing(bool status) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:209: Warning: Member getRGBProcessing() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:215: Warning: Member cmdConfidenceMapProcessing(bool status) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:218: Warning: Member getConfidenceMapProcessing() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:221: Warning: Member cmdIRTransfer(bool status) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:223: Warning: Member getIRTransfer() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:226: Warning: Member cmdRGBFullRes(bool status) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:228: Warning: Member getRGBFullRes() const  (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:233: Warning: Member getConfidenceFrame(unsigned char *&pConfidence) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:238: Warning: Member getSourceIRFrames(unsigned char *&pPrimary, unsigned char *&pSecondary) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:242: Warning: Member getRGBFullResolutionFrame(unsigned char *&pRGBFullRes) (function) of class TDVCameraInterfaceBase2 is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Test/TestRunner.h:20: Warning: Member run() (function) of class TestRunner is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Test/TestRunner.h:23: Warning: Member toStream(std::ostream &os) const  (function) of class TestRunner is not documented.
-Error: Problems running epstopdf. Check your TeX installation!
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:26: Warning: Member displayConnectionStateChanged(ConnectionState_t state, Player_t player)=0 (function) of class UserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:29: Warning: Member displayGameStateChanged(GameState_t state, Player_t player)=0 (function) of class UserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:32: Warning: Member displayConnectionFailed()=0 (function) of class UserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:33: Warning: Member displayFailedToListen()=0 (function) of class UserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:34: Warning: Member displayNetworkError()=0 (function) of class UserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:37: Warning: Member displayPeerChatMessage(const std::string &message)=0 (function) of class UserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:38: Warning: Member displayLocalFrame(const VideoData &video)=0 (function) of class UserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:39: Warning: Member displayRemoteFrame(const VideoData &video)=0 (function) of class UserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:46: Warning: Member networkConnectButtonPushed()=0 (function) of class UserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:47: Warning: Member networkListenButtonPushed()=0 (function) of class UserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:48: Warning: Member networkDisconnectButtonPushed()=0 (function) of class UserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:51: Warning: Member sendChatButtonPushed(const std::string &message)=0 (function) of class UserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:54: Warning: Member startGameButtonPushed()=0 (function) of class UserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:55: Warning: Member exitGameButtonPushed()=0 (function) of class UserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:56: Warning: Member pauseGameButtonPushed()=0 (function) of class UserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:59: Warning: Member changePreferences(const UserPreferences &preferences)=0 (function) of class UserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:62: Warning: Member closeApplication()=0 (function) of class UserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:65: Warning: Member setPeerUserName(const std::string &name)=0 (function) of class UserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:68: Warning: Member notifyNewBallShot(const cVector3d &force)=0 (function) of class UserInterface is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:69: Warning: Member receiveNewBall(const cVector3d &force)=0 (function) of class UserInterface is not documented.
-Error: Problems running epstopdf. Check your TeX installation!
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterfaceObserver.h:32: Warning: Member update(UserInterfaceUpdateContext context, const void *data)=0 (function) of class UserInterfaceObserver is not documented.
-Error: Problems running epstopdf. Check your TeX installation!
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/UserInterfaceReplayer.h:17: Warning: Member UserInterfaceReplayer(const UserPreferences &preferences, boost::shared_ptr< std::ifstream > file, boost::shared_ptr< boost::archive::text_iarchive > archive) (function) of class UserInterfaceReplayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/UserInterfaceReplayer.h:21: Warning: Member replay(LogEvent_t logEvent) (function) of class UserInterfaceReplayer is not documented.
-Error: Problems running epstopdf. Check your TeX installation!
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterfaceSubject.h:13: Warning: Member attach(UserInterfaceObserver *observer) (function) of class UserInterfaceSubject is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterfaceSubject.h:14: Warning: Member detach(UserInterfaceObserver *observer) (function) of class UserInterfaceSubject is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterfaceSubject.h:16: Warning: Member notify(UserInterfaceUpdateContext context, const void *data=NULL) (function) of class UserInterfaceSubject is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Common/UserPreferences.h:11: Warning: Member ipAddress (variable) of class UserPreferences is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Common/UserPreferences.h:12: Warning: Member name (variable) of class UserPreferences is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Common/UserPreferences.h:13: Warning: Member armBandPort (variable) of class UserPreferences is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Common/UserPreferences.h:14: Warning: Member jacketPort (variable) of class UserPreferences is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Common/VideoData.h:17: Warning: Member rgb (variable) of class VideoData is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/VirtualEnvironment.h:33: Warning: Member initialize(void) (function) of class VirtualEnvironment is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/VirtualEnvironment.h:34: Warning: Member createRectangle(cMesh *a_mesh, double width, double height, double depth) (function) of class VirtualEnvironment is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/VirtualEnvironment.h:35: Warning: Member updateFrame(int displayW, int displayH) (function) of class VirtualEnvironment is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/VirtualEnvironment.h:36: Warning: Member createNewBall(int numBalls) (function) of class VirtualEnvironment is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/VirtualEnvironment.h:37: Warning: Member shootBall(cVector3d force) (function) of class VirtualEnvironment is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/VirtualEnvironment.h:38: Warning: Member receiveBall(cVector3d force) (function) of class VirtualEnvironment is not documented.
-Error: Problems running epstopdf. Check your TeX installation!
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/WinsockNetwork.h:52: Warning: Member listen(const std::string &userName) (function) of class WinsockNetwork is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/WinsockNetwork.h:55: Warning: Member connect(const std::string &ipAddress, const std::string &userName) (function) of class WinsockNetwork is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/WinsockNetwork.h:58: Warning: Member disconnect() (function) of class WinsockNetwork is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/WinsockNetwork.h:61: Warning: Member sendUserName(const std::string &userName) (function) of class WinsockNetwork is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/WinsockNetwork.h:64: Warning: Member sendChatMessage(const std::string &message) (function) of class WinsockNetwork is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/WinsockNetwork.h:67: Warning: Member sendStartGame() (function) of class WinsockNetwork is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/WinsockNetwork.h:68: Warning: Member sendPauseGame() (function) of class WinsockNetwork is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/WinsockNetwork.h:69: Warning: Member sendEndGame() (function) of class WinsockNetwork is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/WinsockNetwork.h:72: Warning: Member sendVideoData(const VideoData &video) (function) of class WinsockNetwork is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/WinsockNetwork.h:75: Warning: Member sendPlayerPosition(const cVector3d &position) (function) of class WinsockNetwork is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/WinsockNetwork.h:78: Warning: Member sendSlingshotPosition(const cVector3d &position) (function) of class WinsockNetwork is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/WinsockNetwork.h:81: Warning: Member sendProjectile(const Projectile &projectile) (function) of class WinsockNetwork is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/WinsockNetwork.h:84: Warning: Member sendSlingshotPullback() (function) of class WinsockNetwork is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/WinsockNetwork.h:87: Warning: Member sendSlingshotRelease() (function) of class WinsockNetwork is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/WinsockNetwork.h:90: Warning: Member isConnected() const  (function) of class WinsockNetwork is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/WinsockNetwork.h:93: Warning: Member isListening() const  (function) of class WinsockNetwork is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/WinsockNetwork.h:96: Warning: Member notifyAccept(NetworkSocket *socket) (function) of class WinsockNetwork is not documented.
-Error: Problems running epstopdf. Check your TeX installation!
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/ZCamera.h:19: Warning: Member startCapture() (function) of class ZCamera is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/ZCamera.h:22: Warning: Member stopCapture() (function) of class ZCamera is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/ZCamera.h:26: Warning: Member getFrameFromCamera(ZCamera *p_ZCamera) (function) of class ZCamera is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/ZCamera.h:27: Warning: Member getFrameFromDummy(ZCamera *p_ZCamera) (function) of class ZCamera is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/ZCamera.h:30: Warning: Member reverseFrameUpDown(VideoData &vd, int channels) (function) of class ZCamera is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/ZCamera.h:31: Warning: Member reverseFrameLeftRight(VideoData &vd, int channels) (function) of class ZCamera is not documented.
-Error: Problems running epstopdf. Check your TeX installation!
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/ZCameraObserver.h:20: Warning: Member update(ZCameraUpdateContext context, const void *data)=0 (function) of class ZCameraObserver is not documented.
-Error: Problems running epstopdf. Check your TeX installation!
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/ZCameraReplayer.h:19: Warning: Member ZCameraReplayer(boost::shared_ptr< std::ifstream > file, boost::shared_ptr< boost::archive::text_iarchive > archive) (function) of class ZCameraReplayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/ZCameraReplayer.h:23: Warning: Member replay(LogEvent_t logEvent) (function) of class ZCameraReplayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/ZCameraReplayer.h:27: Warning: Member startCapture() (function) of class ZCameraReplayer is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/ZCameraReplayer.h:28: Warning: Member stopCapture() (function) of class ZCameraReplayer is not documented.
-Error: Problems running epstopdf. Check your TeX installation!
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/ZCameraSubject.h:13: Warning: Member attach(ZCameraObserver *observer) (function) of class ZCameraSubject is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/ZCameraSubject.h:14: Warning: Member detach(ZCameraObserver *observer) (function) of class ZCameraSubject is not documented.
-/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/ZCameraSubject.h:16: Warning: Member notify(ZCameraUpdateContext context, const void *data=NULL) (function) of class ZCameraSubject is not documented.
+
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:45: warning: Member Initialize(int timeout=INFINITE) (function) of class CDepthCamera is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:51: warning: Member ChangeResolution(int resolutionMode) (function) of class CDepthCamera is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:56: warning: Member GetVideoSize(int &width, int &height, int &rgbFullResWidth, int &rgbFullResHeight, int &depthPixelSize, int &rgbPixelSize) const  (function) of class CDepthCamera is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:59: warning: Member GetMaxAllowedWidth() const  (function) of class CDepthCamera is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:64: warning: Member SetDepthWindowPosition(int distance, int width) (function) of class CDepthCamera is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:68: warning: Member GetDepthWindowPosition(int &distance, int &width) const  (function) of class CDepthCamera is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:73: warning: Member FindObjectUsingWidth(int depthWidth) (function) of class CDepthCamera is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:77: warning: Member EnableRGBFullResolution(bool enable) (function) of class CDepthCamera is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:80: warning: Member IsRGBFullResolutionEnabled() const  (function) of class CDepthCamera is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:84: warning: Member EnableIRVideoTransfer(bool enable) (function) of class CDepthCamera is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:87: warning: Member IsIRVideoTransferEnabled() const  (function) of class CDepthCamera is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:92: warning: Member EnableWideDepthMode(bool enable) (function) of class CDepthCamera is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:95: warning: Member IsWideDepthModeEnabled() const  (function) of class CDepthCamera is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:98: warning: Member EnableDepthFilter(bool enable, int intensity=25) (function) of class CDepthCamera is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:101: warning: Member IsDepthFilterEnabled() const  (function) of class CDepthCamera is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:113: warning: Member GetNextFrame(unsigned char *&pDepthFrame, unsigned char *&pRGBFrame, unsigned char *&pRGBFullResFrame, unsigned char *&pPrimaryIR, unsigned char *&pSecondaryIR, int timeout=INFINITE) (function) of class CDepthCamera is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:116: warning: Member GetCameraInterface() (function) of class CDepthCamera is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:119: warning: Member EnableTrack(bool enable) (function) of class CDepthCamera is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:120: warning: Member EnableSmoothing(bool enable, double smoothVal) (function) of class CDepthCamera is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:121: warning: Member SetCleanVal(double cleanVal) (function) of class CDepthCamera is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:122: warning: Member EnableMedian(bool enable) (function) of class CDepthCamera is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h:123: warning: Member FreezeVideo(bool freeze) (function) of class CDepthCamera is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MainDlg.h:24: warning: Member CMainDlg(UserInterface *pUserInterface, const UserPreferences &preferences, CWnd *pParent=NULL) (function) of class CMainDlg is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MainDlg.h:27: warning: Member displayConnectionStateChanged(ConnectionState_t state, Player_t player) (function) of class CMainDlg is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MainDlg.h:30: warning: Member displayGameStateChanged(GameState_t state, Player_t player) (function) of class CMainDlg is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MainDlg.h:33: warning: Member displayConnectionFailed() (function) of class CMainDlg is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MainDlg.h:34: warning: Member displayFailedToListen() (function) of class CMainDlg is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MainDlg.h:35: warning: Member displayNetworkError() (function) of class CMainDlg is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MainDlg.h:38: warning: Member displayPeerChatMessage(const std::string &message) (function) of class CMainDlg is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MainDlg.h:39: warning: Member displayLocalChatMessage(const std::string &message) (function) of class CMainDlg is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MainDlg.h:42: warning: Member setPeerUserName(const std::string &name) (function) of class CMainDlg is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MainDlg.h:45: warning: Member AddChatContent(CString strCont) (function) of class CMainDlg is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/Configuration.h:12: warning: Member Configuration(const std::string &fileName) (function) of class Configuration is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/Configuration.h:15: warning: Member getUserPreferences() const  (function) of class Configuration is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/Configuration.h:16: warning: Member setUserPreferences(const UserPreferences &pref) (function) of class Configuration is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/ConsoleStream.h:19: warning: Member write(const char *s, std::streamsize n) (function) of class ConsoleSink is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/Preferences.h:14: warning: Member CPreferences(const UserPreferences &prefs, CWnd *pParent=NULL) (function) of class CPreferences is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/Preferences.h:17: warning: Member getPreferences() (function) of class CPreferences is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:45: warning: Member InitPort(UINT portnr=5, UINT baud=115000, char parity= 'N', UINT databits=8, UINT stopsbits=1, DWORD dwCommEvents=EV_RXCHAR|EV_CTS, UINT nBufferSize=512) (function) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:46: warning: Member ClosePort() (function) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:49: warning: Member StartMonitoring() (function) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:50: warning: Member RestartMonitoring() (function) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:51: warning: Member StopMonitoring() (function) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:53: warning: Member GetWriteBufferSize() (function) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:54: warning: Member GetCommEvents() (function) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:55: warning: Member GetDCB() (function) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:57: warning: Member WriteToPort(unsigned char *string, int len) (function) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:58: warning: Member WriteToPort(unsigned char chr) (function) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:65: warning: Member writeInBuffer(unsigned char in) (function) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:73: warning: Member readInBuffer() (function) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:95: warning: Member inBufferData() const  (function) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:98: warning: Member getConnected() const  (function) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:62: warning: Member sentPacket (variable) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:102: warning: Member ProcessErrorMessage(char *ErrorText) (function) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:103: warning: Member CommThread(LPVOID pParam) (function) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:104: warning: Member ReceiveChar(CSerialPort *port, COMSTAT comstat) (function) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:105: warning: Member WriteChar(CSerialPort *port) (function) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:108: warning: Member m_Thread (variable) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:111: warning: Member m_csCommunicationSync (variable) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:112: warning: Member m_bThreadAlive (variable) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:115: warning: Member m_hShutdownEvent (variable) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:116: warning: Member m_hComm (variable) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:117: warning: Member m_hWriteEvent (variable) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:123: warning: Member m_hEventArray[3] (variable) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:126: warning: Member m_ov (variable) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:127: warning: Member m_CommTimeouts (variable) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:128: warning: Member m_dcb (variable) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:131: warning: Member m_nPortNr (variable) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:132: warning: Member m_szWriteBuffer (variable) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:133: warning: Member m_WriteBufferSize (variable) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:134: warning: Member m_dwCommEvents (variable) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:135: warning: Member m_nWriteBufferSize (variable) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:138: warning: Member connected (variable) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:143: warning: Member inBuffer[IN_BUFFER_SIZE] (variable) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:144: warning: Member bufferWrite (variable) of class CSerialPort is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h:145: warning: Member bufferRead (variable) of class CSerialPort is not documented.
+error: Problems running epstopdf. Check your TeX installation!
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/DisplayDeviceArmband.h:12: warning: Member DisplayDeviceArmband(int a_portNum) (function) of class DisplayDeviceArmband is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/DisplayDeviceArmband.h:18: warning: Member setActReset() (function) of class DisplayDeviceArmband is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/DisplayDeviceArmband.h:21: warning: Member setActForearm(double a_actX, double a_actY) (function) of class DisplayDeviceArmband is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/DisplayDeviceArmband.h:15: warning: Member m_array[ARMBAND_ARRAY_SIZE_X][ARMBAND_ARRAY_SIZE_Y] (variable) of class DisplayDeviceArmband is not documented.
+error: Problems running epstopdf. Check your TeX installation!
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/DisplayDeviceJacket.h:16: warning: Member DisplayDeviceJacket(int a_portNum) (function) of class DisplayDeviceJacket is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/DisplayDeviceJacket.h:24: warning: Member setActReset() (function) of class DisplayDeviceJacket is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/DisplayDeviceJacket.h:27: warning: Member setActChest(double a_actX, double a_actY) (function) of class DisplayDeviceJacket is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/DisplayDeviceJacket.h:28: warning: Member setActUpperArm(double a_actX, double a_actY) (function) of class DisplayDeviceJacket is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/DisplayDeviceJacket.h:29: warning: Member setActNeck(int a_actX, double a_intensity) (function) of class DisplayDeviceJacket is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/DisplayDeviceJacket.h:19: warning: Member m_chestArray[CHEST_ARRAY_SIZE_X][CHEST_ARRAY_SIZE_Y] (variable) of class DisplayDeviceJacket is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/DisplayDeviceJacket.h:20: warning: Member m_armArray[ARM_ARRAY_SIZE_X][ARM_ARRAY_SIZE_Y] (variable) of class DisplayDeviceJacket is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/DisplayDeviceJacket.h:21: warning: Member m_neckArray[NECK_ARRAY_SIZE_X][NECK_ARRAY_SIZE_Y] (variable) of class DisplayDeviceJacket is not documented.
+error: Problems running epstopdf. Check your TeX installation!
+error: Problems running epstopdf. Check your TeX installation!
+error: Problems running epstopdf. Check your TeX installation!
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/FalconReplayer.h:20: warning: Member FalconReplayer(boost::shared_ptr< std::ifstream > file, boost::shared_ptr< boost::archive::text_iarchive > archive) (function) of class FalconReplayer is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/FalconReplayer.h:24: warning: Member replay(LogEvent_t logEvent) (function) of class FalconReplayer is not documented.
+error: Problems running epstopdf. Check your TeX installation!
+error: Problems running epstopdf. Check your TeX installation!
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/HpBar.h:16: warning: Member HpBar(cWorld *world, bool isLocal) (function) of class HpBar is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/HpBar.h:18: warning: Member ReduceHP(int hpLost) (function) of class HpBar is not documented.
+error: Problems running epstopdf. Check your TeX installation!
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/HumanFormatLogger.h:15: warning: Member HumanFormatLogger(T1 param) (function) of class HumanFormatLogger is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/HumanFormatLogger.h:18: warning: Member HumanFormatLogger(T1 param1, T2 param2) (function) of class HumanFormatLogger is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/HumanFormatLogger.h:21: warning: Member HumanFormatLogger(T1 param1, T2 param2, T3 param3) (function) of class HumanFormatLogger is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/HumanFormatLogger.h:28: warning: Member log(LogEvent_t logEvent) (function) of class HumanFormatLogger is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/HumanFormatLogger.h:29: warning: Member log(LogEvent_t logEvent, rc_network error) (function) of class HumanFormatLogger is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/HumanFormatLogger.h:30: warning: Member log(LogEvent_t logEvent, const std::string &str) (function) of class HumanFormatLogger is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/HumanFormatLogger.h:31: warning: Member log(LogEvent_t logEvent, const VideoData &video) (function) of class HumanFormatLogger is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/HumanFormatLogger.h:32: warning: Member log(LogEvent_t logEvent, const cVector3d &vec) (function) of class HumanFormatLogger is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/HumanFormatLogger.h:33: warning: Member log(LogEvent_t logEvent, const Projectile &projectile) (function) of class HumanFormatLogger is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/HumanFormatLogger.h:34: warning: Member log(LogEvent_t logEvent, const UserPreferences &preferences) (function) of class HumanFormatLogger is not documented.
+error: Problems running epstopdf. Check your TeX installation!
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/IZCamera.h:19: warning: Member startCapture()=0 (function) of class IZCamera is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/IZCamera.h:22: warning: Member stopCapture()=0 (function) of class IZCamera is not documented.
+error: Problems running epstopdf. Check your TeX installation!
+error: Problems running epstopdf. Check your TeX installation!
+error: Problems running epstopdf. Check your TeX installation!
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/Logger.h:24: warning: Member update(NetworkUpdateContext context, const void *data) (function) of class Logger is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/Logger.h:25: warning: Member update(UserInterfaceUpdateContext context, const void *data) (function) of class Logger is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/Logger.h:26: warning: Member update(FalconUpdateContext context, const void *data) (function) of class Logger is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/Logger.h:27: warning: Member update(ZCameraUpdateContext context, const void *data) (function) of class Logger is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/Logger.h:31: warning: Member log(LogEvent_t logEvent)=0 (function) of class Logger is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/Logger.h:32: warning: Member log(LogEvent_t logEvent, rc_network error)=0 (function) of class Logger is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/Logger.h:33: warning: Member log(LogEvent_t logEvent, const std::string &str)=0 (function) of class Logger is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/Logger.h:34: warning: Member log(LogEvent_t logEvent, const VideoData &video)=0 (function) of class Logger is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/Logger.h:35: warning: Member log(LogEvent_t logEvent, const cVector3d &vec)=0 (function) of class Logger is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/Logger.h:36: warning: Member log(LogEvent_t logEvent, const Projectile &projectile)=0 (function) of class Logger is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/Logger.h:37: warning: Member log(LogEvent_t logEvent, const UserPreferences &preferences)=0 (function) of class Logger is not documented.
+error: Problems running epstopdf. Check your TeX installation!
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/Mediator.h:35: warning: Member Mediator(boost::shared_ptr< Network > network, boost::shared_ptr< Falcon > falcon, boost::shared_ptr< IZCamera > zcamera, boost::shared_ptr< UserInterface > userInterface, boost::shared_ptr< Configuration > configuration) (function) of class Mediator is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/Mediator.h:39: warning: Member update(NetworkUpdateContext context, const void *data) (function) of class Mediator is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/Mediator.h:40: warning: Member update(UserInterfaceUpdateContext context, const void *data) (function) of class Mediator is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/Mediator.h:41: warning: Member update(ZCameraUpdateContext context, const void *data) (function) of class Mediator is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/Mediator.h:42: warning: Member update(FalconUpdateContext context, const void *data) (function) of class Mediator is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/Mediator.h:81: warning: Member collisionDetected(void) (function) of class Mediator is not documented.
+error: Problems running epstopdf. Check your TeX installation!
+error: Problems running epstopdf. Check your TeX installation!
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCOpenGLControl.h:41: warning: Member oglCreate(CRect rect, CWnd *parent) (function) of class MFCOpenGLControl is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCOpenGLControl.h:42: warning: Member oglInitialize(void) (function) of class MFCOpenGLControl is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCOpenGLControl.h:45: warning: Member OnPaint() (function) of class MFCOpenGLControl is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCOpenGLControl.h:46: warning: Member OnCreate(LPCREATESTRUCT lpCreateStruct) (function) of class MFCOpenGLControl is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCOpenGLControl.h:47: warning: Member OnDraw(CDC *pDC) (function) of class MFCOpenGLControl is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCOpenGLControl.h:48: warning: Member OnSize(UINT nType, int cx, int cy) (function) of class MFCOpenGLControl is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCOpenGLControl.h:49: warning: Member OnTimer(UINT_PTR nIDEvent) (function) of class MFCOpenGLControl is not documented.
+error: Problems running epstopdf. Check your TeX installation!
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:19: warning: Member MFCUserInterface(const UserPreferences &preferences) (function) of class MFCUserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:33: warning: Member displayConnectionStateChanged(ConnectionState_t state, Player_t player) (function) of class MFCUserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:36: warning: Member displayGameStateChanged(GameState_t state, Player_t player) (function) of class MFCUserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:39: warning: Member displayConnectionFailed() (function) of class MFCUserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:40: warning: Member displayFailedToListen() (function) of class MFCUserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:41: warning: Member displayNetworkError() (function) of class MFCUserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:44: warning: Member displayPeerChatMessage(const std::string &message) (function) of class MFCUserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:45: warning: Member displayLocalFrame(const VideoData &video) (function) of class MFCUserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:46: warning: Member displayRemoteFrame(const VideoData &video) (function) of class MFCUserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:53: warning: Member networkConnectButtonPushed() (function) of class MFCUserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:54: warning: Member networkListenButtonPushed() (function) of class MFCUserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:55: warning: Member networkDisconnectButtonPushed() (function) of class MFCUserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:58: warning: Member sendChatButtonPushed(const std::string &message) (function) of class MFCUserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:61: warning: Member startGameButtonPushed() (function) of class MFCUserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:62: warning: Member exitGameButtonPushed() (function) of class MFCUserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:63: warning: Member pauseGameButtonPushed() (function) of class MFCUserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:66: warning: Member changePreferences(const UserPreferences &preferences) (function) of class MFCUserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:69: warning: Member closeApplication() (function) of class MFCUserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:72: warning: Member setPeerUserName(const std::string &name) (function) of class MFCUserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:75: warning: Member getMainWindow() (function) of class MFCUserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h:78: warning: Member m_pMainDlg (variable) of class MFCUserInterface is not documented.
+error: Problems running epstopdf. Check your TeX installation!
+error: Problems running epstopdf. Check your TeX installation!
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/NetworkObserver.h:32: warning: Member update(NetworkUpdateContext context, const void *data)=0 (function) of class NetworkObserver is not documented.
+error: Problems running epstopdf. Check your TeX installation!
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/NetworkReplayer.h:20: warning: Member NetworkReplayer(boost::shared_ptr< std::ifstream > file, boost::shared_ptr< boost::archive::text_iarchive > archive) (function) of class NetworkReplayer is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/NetworkReplayer.h:24: warning: Member replay(LogEvent_t logEvent) (function) of class NetworkReplayer is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/NetworkReplayer.h:44: warning: Member sendSlingshotRelease() (function) of class NetworkReplayer is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/NetworkSocket.h:22: warning: Member NetworkSocket(WinsockNetwork *network) (function) of class NetworkSocket is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/NetworkSocket.h:25: warning: Member Detach() (function) of class NetworkSocket is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/NetworkSocket.h:26: warning: Member isServer() const  (function) of class NetworkSocket is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/NetworkSocket.h:34: warning: Member OnAccept(int nErrorCode) (function) of class NetworkSocket is not documented.
+error: Problems running epstopdf. Check your TeX installation!
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/NetworkSubject.h:13: warning: Member attach(NetworkObserver *observer) (function) of class NetworkSubject is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/NetworkSubject.h:14: warning: Member detach(NetworkObserver *observer) (function) of class NetworkSubject is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/NetworkSubject.h:16: warning: Member notify(NetworkUpdateContext context, const void *data=NULL) (function) of class NetworkSubject is not documented.
+error: Problems running epstopdf. Check your TeX installation!
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Main/OfficeSlingshot3D.h:22: warning: Member OfficeSlingshot3D(boost::shared_ptr< Game > game, boost::shared_ptr< Logger > logger, boost::shared_ptr< Replayer > replayer, CDialog *dialog) (function) of class OfficeSlingshot3D is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Main/OfficeSlingshot3D.h:28: warning: Member run() (function) of class OfficeSlingshot3D is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Main/OfficeSlingshot3D.h:29: warning: Member operator()() (function) of class OfficeSlingshot3D is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Main/OfficeSlingshot3DFactory.h:14: warning: Member createFromConfigFile(const std::string &fileName) (function) of class OfficeSlingshot3DFactory is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Packet.h:36: warning: Member getType() const  (function) of class Packet is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Packet.h:39: warning: Member getHeader() const  (function) of class Packet is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Packet.h:42: warning: Member getData() const  (function) of class Packet is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Packet.h:48: warning: Member readPacket(std::vector< char > &input) (function) of class Packet is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Packet.h:52: warning: Member write(PacketType type, const T &t) (function) of class Packet is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Packet.h:55: warning: Member write(PacketType type, const VideoData &video) (function) of class Packet is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Packet.h:58: warning: Member write(PacketType type) (function) of class Packet is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Packet.h:62: warning: Member read(T &t) const  (function) of class Packet is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Packet.h:65: warning: Member read(VideoData &video) const  (function) of class Packet is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Packet.h:68: warning: Member clear() (function) of class Packet is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Packet.h:16: warning: Member size (variable) of class PacketHeader is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Packet.h:17: warning: Member type (variable) of class PacketHeader is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/PerspectiveMath.h:32: warning: Member convertOrientationXYZtoYZX(cVector3d &vector) (function) of class PerspectiveMath is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/PerspectiveMath.h:34: warning: Member convertBoxToBox(cVector3d &vector, const cCollisionAABBBox &boxOrigin, const cCollisionAABBBox &boxTarget) (function) of class PerspectiveMath is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/Replayer.h:24: warning: Member Replayer(const std::string &fileName, const UserPreferences &preferences) (function) of class Replayer is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/Replayer.h:28: warning: Member startReplay() (function) of class Replayer is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/Replayer.h:29: warning: Member stopReplay() (function) of class Replayer is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/Replayer.h:32: warning: Member getNetworkReplayer() (function) of class Replayer is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/Replayer.h:33: warning: Member getUserInterfaceReplayer() (function) of class Replayer is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/Replayer.h:34: warning: Member getFalconReplayer() (function) of class Replayer is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/Replayer.h:35: warning: Member getZCameraReplayer() (function) of class Replayer is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatEvent.h:16: warning: Member ReplayFormatEvent(long time, LogEvent_t logEvent) (function) of class ReplayFormatEvent is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatEvent.h:19: warning: Member time (variable) of class ReplayFormatEvent is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatEvent.h:20: warning: Member logEvent (variable) of class ReplayFormatEvent is not documented.
+error: Problems running epstopdf. Check your TeX installation!
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatLogger.h:25: warning: Member ReplayFormatLogger(T1 param) (function) of class ReplayFormatLogger is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatLogger.h:28: warning: Member ReplayFormatLogger(T1 param1, T2 param2) (function) of class ReplayFormatLogger is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatLogger.h:31: warning: Member ReplayFormatLogger(T1 param1, T2 param2, T3 param3) (function) of class ReplayFormatLogger is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatLogger.h:37: warning: Member log(LogEvent_t logEvent) (function) of class ReplayFormatLogger is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatLogger.h:38: warning: Member log(LogEvent_t logEvent, rc_network error) (function) of class ReplayFormatLogger is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatLogger.h:39: warning: Member log(LogEvent_t logEvent, const std::string &str) (function) of class ReplayFormatLogger is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatLogger.h:40: warning: Member log(LogEvent_t logEvent, const VideoData &video) (function) of class ReplayFormatLogger is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatLogger.h:41: warning: Member log(LogEvent_t logEvent, const cVector3d &vec) (function) of class ReplayFormatLogger is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatLogger.h:42: warning: Member log(LogEvent_t logEvent, const Projectile &projectile) (function) of class ReplayFormatLogger is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatLogger.h:43: warning: Member log(LogEvent_t logEvent, const UserPreferences &preferences) (function) of class ReplayFormatLogger is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/SmartClothingManager.h:18: warning: Member SmartClothingManager(boost::shared_ptr< Configuration > configuration) (function) of class SmartClothingManager is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/SmartClothingManager.h:25: warning: Member vibrate(HumanPart touchedPart, int x, int y, int time) (function) of class SmartClothingManager is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/SmartClothingManager.h:26: warning: Member setPorts(int armBandPort, int jacketPort) (function) of class SmartClothingManager is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/SyncLocker.h:11: warning: Member SyncLocker(CRITICAL_SECTION &cs) (function) of class SyncLocker is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/SyncLocker.h:20: warning: Member operator bool() (function) of class SyncLocker is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/SyncReaderWriters.h:69: warning: Member SyncReaderLock(SyncReaderWriters &sync) (function) of class SyncReaderLock is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/SyncReaderWriters.h:23: warning: Member lock_reader() (function) of class SyncReaderWriters is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/SyncReaderWriters.h:27: warning: Member lock_writer() (function) of class SyncReaderWriters is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/SyncReaderWriters.h:30: warning: Member unlock_reader() (function) of class SyncReaderWriters is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/SyncReaderWriters.h:33: warning: Member unlock_writer() (function) of class SyncReaderWriters is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/SyncReaderWriters.h:82: warning: Member SyncWriterLock(SyncReaderWriters &sync) (function) of class SyncWriterLock is not documented.
+error: Problems running epstopdf. Check your TeX installation!
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:42: warning: Member TactileArray(int a_portNum) (function) of class TactileArray is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:44: warning: Member openSerialPort(int pNo=1, bool announce=false) (function) of class TactileArray is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:45: warning: Member closeSerialPort() (function) of class TactileArray is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:67: warning: Member initialize(void) (function) of class TactileArray is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:68: warning: Member setPort(int a_portNum) (function) of class TactileArray is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:72: warning: Member setIntensity(int *pIntensityArray) (function) of class TactileArray is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:77: warning: Member setIntensity(double *pIntensityArray) (function) of class TactileArray is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:84: warning: Member setIntensity(int arrayX, int arrayY, int intensity) (function) of class TactileArray is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:93: warning: Member setIntensity(int arrayX, int arrayY, double intensity) (function) of class TactileArray is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:102: warning: Member setIntensityAll(int intensity=0) (function) of class TactileArray is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:112: warning: Member setIntensityAll(double intensity) (function) of class TactileArray is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:123: warning: Member setArraySize(int a_arraySizeX, int a_arraySizeY) (function) of class TactileArray is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:128: warning: Member actuate(void) (function) of class TactileArray is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:129: warning: Member test1by1(void) (function) of class TactileArray is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:132: warning: Member getMaxIntensity(void) const  (function) of class TactileArray is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:137: warning: Member getArraySizeX(void) const  (function) of class TactileArray is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:142: warning: Member getArraySizeY(void) const  (function) of class TactileArray is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h:147: warning: Member getArraySize(void) const  (function) of class TactileArray is not documented.
+error: Problems running epstopdf. Check your TeX installation!
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface.h:156: warning: Member isVideoActive() const  (function) of class TDVCameraInterfaceBase is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface.h:158: warning: Member isCommActive() const  (function) of class TDVCameraInterfaceBase is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface.h:162: warning: Member setVideoCallBack(videoCallBackFunc videoCBF, void *pObject=0) (function) of class TDVCameraInterfaceBase is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface.h:166: warning: Member setCommandCallBack(cmdCallBackFunc cmdCBF, void *pObject=0) (function) of class TDVCameraInterfaceBase is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface.h:173: warning: Member getVideoSize(int &width, int &height, int &rgbPixelSize, int &depthPixelSize) const  (function) of class TDVCameraInterfaceBase is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface.h:177: warning: Member getRGBFullResSize(int &width, int &height, int &rgbPixelSize) (function) of class TDVCameraInterfaceBase is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface.h:180: warning: Member setCameraCommand(int cmdID, int value) (function) of class TDVCameraInterfaceBase is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface.h:182: warning: Member getCameraCommandVal(int cmdID, int &value) const  (function) of class TDVCameraInterfaceBase is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface.h:184: warning: Member getCameraCommandLimits(int cmdID, int &minValue, int &maxValue) const  (function) of class TDVCameraInterfaceBase is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface.h:188: warning: Member getVideoBuffer(int bufferType, unsigned char *&pBuffer) (function) of class TDVCameraInterfaceBase is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface.h:191: warning: Member SetMaintenanceCmd(int ID, int val) (function) of class TDVCameraInterfaceBase is not documented.
+error: Problems running epstopdf. Check your TeX installation!
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:25: warning: Member setCameraCommand(int cmdID, int value)=0 (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:26: warning: Member getCameraCommandVal(int cmdID, int &value) const =0 (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:27: warning: Member getCameraCommandLimits(int cmdID, int &minValue, int &maxValue) const =0 (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:28: warning: Member getVideoBuffer(int bufferType, unsigned char *&pBuffer)=0 (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:33: warning: Member cmdColorCameraSetting(int iColorCommandID, int iValue) (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:37: warning: Member getColorCameraSetting(int iColorCommandID, int &iValue) const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:42: warning: Member getColorCameraSettingLimit(int iColorCommandID, int &min, int &max) const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:46: warning: Member cmdCameraOn() (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:48: warning: Member cmdCameraOff() (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:50: warning: Member isCameraOn() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:53: warning: Member getMaxBrightness() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:54: warning: Member getMinBrightness() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:57: warning: Member cmdPrimaryBrightness(int value) (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:59: warning: Member getPrimaryBrightness() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:61: warning: Member cmdSecondaryBrightness(int value) (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:63: warning: Member getSecondaryBrightness() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:66: warning: Member getMaxWidth() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:67: warning: Member getMinWidth() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:70: warning: Member cmdPrimaryWidth(int value) (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:72: warning: Member getPrimaryWidth() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:74: warning: Member cmdSecondaryWidth(int value) (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:76: warning: Member getSecondaryWidth() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:79: warning: Member getMaxDistance() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:80: warning: Member getMinDistance() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:83: warning: Member cmdPrimaryDist(int value) (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:85: warning: Member getPrimaryDist() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:87: warning: Member cmdSecondaryDist(int value) (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:89: warning: Member getSecondaryDist() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:93: warning: Member getMaxGain() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:94: warning: Member getMinGain() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:97: warning: Member cmdGain(int value) (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:99: warning: Member getGain() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:104: warning: Member getMinFilterVal() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:105: warning: Member getMaxFilterVal() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:107: warning: Member getMinSoftnessVal() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:108: warning: Member getMaxSoftnessVal() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:111: warning: Member cmdBinVal(int value) (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:113: warning: Member getBinVal() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:115: warning: Member cmdBinarizeOnOff(bool value) (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:117: warning: Member getBinarizeOnOff() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:119: warning: Member cmdMedianOnOff(bool value) (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:121: warning: Member getMedianOnOff() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:123: warning: Member cmdInvertOnOff(bool value) (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:125: warning: Member getInvertOnOff() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:127: warning: Member cmdTemporalFilterOnOff(bool value) (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:129: warning: Member getTemporalFilterOnOff() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:132: warning: Member cmdSmoothOnOff(bool value) (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:134: warning: Member getSmoothOnOff() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:136: warning: Member cmdSoftness(int value) (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:138: warning: Member getSoftness() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:141: warning: Member cmdMaskSmoothOnOff(bool value) (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:143: warning: Member getMaskSmoothOnOff() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:145: warning: Member cmdMaskSoftness(int value) (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:147: warning: Member getMaskSoftness() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:150: warning: Member cmdAutomaticBackgroundOnOff(bool value) (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:152: warning: Member getAutomaticBackground() (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:155: warning: Member cmdAutomaticDepthPositionOnOff(bool value) (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:157: warning: Member getAutomaticDepthPosition() (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:160: warning: Member cmdClean(int value) (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:162: warning: Member getClean() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:166: warning: Member cmdSaveStatus(int index) (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:169: warning: Member cmdRestoreStatus(int index) (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:173: warning: Member cmdStartAutomaticFind() (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:175: warning: Member isDuringAutomaticFind() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:177: warning: Member cmdAutomaticTracking(bool state) (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:179: warning: Member isAutomaticTrackingOn() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:181: warning: Member cmdAutomaticBrightness(bool state) (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:183: warning: Member isAutomaticBrightnessOn() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:188: warning: Member cmdSaveImage() (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:192: warning: Member cmdSaveImageAverage() (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:196: warning: Member cmdSaveSequence(int length, bool saveAVI) (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:202: warning: Member cmdVideoFreeze(bool state, bool useAverage=false) (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:207: warning: Member cmdRGBProcessing(bool status) (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:209: warning: Member getRGBProcessing() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:215: warning: Member cmdConfidenceMapProcessing(bool status) (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:218: warning: Member getConfidenceMapProcessing() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:221: warning: Member cmdIRTransfer(bool status) (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:223: warning: Member getIRTransfer() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:226: warning: Member cmdRGBFullRes(bool status) (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:228: warning: Member getRGBFullRes() const  (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:233: warning: Member getConfidenceFrame(unsigned char *&pConfidence) (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:238: warning: Member getSourceIRFrames(unsigned char *&pPrimary, unsigned char *&pSecondary) (function) of class TDVCameraInterfaceBase2 is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/TDVCameraInterface2.h:242: warning: Member getRGBFullResolutionFrame(unsigned char *&pRGBFullRes) (function) of class TDVCameraInterfaceBase2 is not documented.
+error: Problems running epstopdf. Check your TeX installation!
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:33: warning: Member displayConnectionStateChanged(ConnectionState_t state, Player_t player)=0 (function) of class UserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:36: warning: Member displayGameStateChanged(GameState_t state, Player_t player)=0 (function) of class UserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:39: warning: Member displayConnectionFailed()=0 (function) of class UserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:40: warning: Member displayFailedToListen()=0 (function) of class UserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:41: warning: Member displayNetworkError()=0 (function) of class UserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:44: warning: Member displayPeerChatMessage(const std::string &message)=0 (function) of class UserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:45: warning: Member displayLocalFrame(const VideoData &video)=0 (function) of class UserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:46: warning: Member displayRemoteFrame(const VideoData &video)=0 (function) of class UserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:53: warning: Member networkConnectButtonPushed()=0 (function) of class UserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:54: warning: Member networkListenButtonPushed()=0 (function) of class UserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:55: warning: Member networkDisconnectButtonPushed()=0 (function) of class UserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:58: warning: Member sendChatButtonPushed(const std::string &message)=0 (function) of class UserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:61: warning: Member startGameButtonPushed()=0 (function) of class UserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:62: warning: Member exitGameButtonPushed()=0 (function) of class UserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:63: warning: Member pauseGameButtonPushed()=0 (function) of class UserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:66: warning: Member changePreferences(const UserPreferences &preferences)=0 (function) of class UserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:69: warning: Member closeApplication()=0 (function) of class UserInterface is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterface.h:72: warning: Member setPeerUserName(const std::string &name)=0 (function) of class UserInterface is not documented.
+error: Problems running epstopdf. Check your TeX installation!
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterfaceObserver.h:31: warning: Member update(UserInterfaceUpdateContext context, const void *data)=0 (function) of class UserInterfaceObserver is not documented.
+error: Problems running epstopdf. Check your TeX installation!
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/UserInterfaceReplayer.h:17: warning: Member UserInterfaceReplayer(const UserPreferences &preferences, boost::shared_ptr< std::ifstream > file, boost::shared_ptr< boost::archive::text_iarchive > archive) (function) of class UserInterfaceReplayer is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/UserInterfaceReplayer.h:21: warning: Member replay(LogEvent_t logEvent) (function) of class UserInterfaceReplayer is not documented.
+error: Problems running epstopdf. Check your TeX installation!
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterfaceSubject.h:13: warning: Member attach(UserInterfaceObserver *observer) (function) of class UserInterfaceSubject is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterfaceSubject.h:14: warning: Member detach(UserInterfaceObserver *observer) (function) of class UserInterfaceSubject is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterfaceSubject.h:16: warning: Member notify(UserInterfaceUpdateContext context, const void *data=NULL) (function) of class UserInterfaceSubject is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/VirtualAvatar.h:12: warning: argument 'true' of command @param is not found in the argument list of VirtualAvatar::VirtualAvatar(cWorld *world, cVector3d startingPosition, bool isLocal)
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/VirtualAvatar.h:12: warning: The following parameters of VirtualAvatar::VirtualAvatar(cWorld *world, cVector3d startingPosition, bool isLocal) are not documented:
+  parameter 'isLocal'
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/VirtualSlingshot.h:18: warning: Member VirtualSlingshot(cWorld *world, const cVector3d startingPosition) (function) of class VirtualSlingshot is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/VirtualSlingshot.h:21: warning: Member move(cVector3d position) (function) of class VirtualSlingshot is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/VirtualSlingshot.h:22: warning: Member getBallPosition() (function) of class VirtualSlingshot is not documented.
+error: Problems running epstopdf. Check your TeX installation!
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/WinsockNetwork.h:93: warning: Member notifyAccept(NetworkSocket *socket) (function) of class WinsockNetwork is not documented.
+error: Problems running epstopdf. Check your TeX installation!
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/ZCamera.h:19: warning: Member startCapture() (function) of class ZCamera is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/ZCamera.h:22: warning: Member stopCapture() (function) of class ZCamera is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/ZCamera.h:26: warning: Member getFrameFromCamera() (function) of class ZCamera is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/ZCamera.h:29: warning: Member reverseFrameUpDown(VideoData &vd, int channels) (function) of class ZCamera is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/ZCamera.h:30: warning: Member reverseFrameLeftRight(VideoData &vd, int channels) (function) of class ZCamera is not documented.
+error: Problems running epstopdf. Check your TeX installation!
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/ZCameraObserver.h:21: warning: Member update(ZCameraUpdateContext context, const void *data)=0 (function) of class ZCameraObserver is not documented.
+error: Problems running epstopdf. Check your TeX installation!
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/ZCameraReplayer.h:19: warning: Member ZCameraReplayer(boost::shared_ptr< std::ifstream > file, boost::shared_ptr< boost::archive::text_iarchive > archive) (function) of class ZCameraReplayer is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/ZCameraReplayer.h:23: warning: Member replay(LogEvent_t logEvent) (function) of class ZCameraReplayer is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/ZCameraReplayer.h:27: warning: Member startCapture() (function) of class ZCameraReplayer is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/ZCameraReplayer.h:28: warning: Member stopCapture() (function) of class ZCameraReplayer is not documented.
+error: Problems running epstopdf. Check your TeX installation!
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/ZCameraSubject.h:13: warning: Member attach(ZCameraObserver *observer) (function) of class ZCameraSubject is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/ZCameraSubject.h:14: warning: Member detach(ZCameraObserver *observer) (function) of class ZCameraSubject is not documented.
+/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/ZCameraSubject.h:16: warning: Member notify(ZCameraUpdateContext context, const void *data=NULL) (function) of class ZCameraSubject is not documented.

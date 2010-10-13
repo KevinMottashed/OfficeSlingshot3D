@@ -35,7 +35,7 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="8" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="9" />
 </extent>
 <name>CPreferences</name>
 <visible>true</visible>
@@ -53,7 +53,7 @@
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="35" />
+<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="41" />
 </extent>
 </client_module>
 <supplier_module>

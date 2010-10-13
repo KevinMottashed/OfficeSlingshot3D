@@ -14,7 +14,7 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="3" level="0" />
+<coupling_between_objects value="4" level="0" />
 <IF4 value="0" level="0" />
 <IF4_per_member_function value="********" level="0" />
 <IF4_visible value="0" level="0" />
@@ -35,29 +35,36 @@
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="309" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="303" />
 </extent>
 <extent>
 <description>pass by value</description>
 <source_reference file="../../UserInterface/MainDlg.h" line="30" />
+</extent>
+<name>Game</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/Game.h" line="67" />
 </extent>
 <name>MFCUserInterface</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="68" />
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="74" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="30" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="36" />
 </extent>
 <name>UserInterface</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/UserInterface.h" line="29" />
+<source_reference file="../../UserInterface/UserInterface.h" line="36" />
 </extent>
 </client_module>
 <supplier_module>

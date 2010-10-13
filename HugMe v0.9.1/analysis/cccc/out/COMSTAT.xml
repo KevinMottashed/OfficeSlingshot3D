@@ -35,7 +35,7 @@
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Jacket/Serialport.cpp" line="542" />
+<source_reference file="../../Jacket/Serialport.cpp" line="547" />
 </extent>
 <extent>
 <description>pass by value</description>

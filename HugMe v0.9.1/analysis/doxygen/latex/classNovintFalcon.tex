@@ -2,33 +2,89 @@
 \section{NovintFalcon Class Reference}
 \label{classNovintFalcon}\index{NovintFalcon@{NovintFalcon}}
 }
+
+
+The novint falcon.  
+
+
+
+
+{\ttfamily \#include $<$NovintFalcon.h$>$}
+
 Inheritance diagram for NovintFalcon:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=3cm]{classNovintFalcon}
+\includegraphics[height=3.000000cm]{classNovintFalcon}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\hyperlink{classNovintFalcon_ac36e7148131ecbdfff97289f2c9e3b9c}{NovintFalcon} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{classNovintFalcon_afb0ece97317db2eb6da852e219cc85eb}{
+virtual \hyperlink{classNovintFalcon_afb0ece97317db2eb6da852e219cc85eb}{$\sim$NovintFalcon} ()}
+\label{classNovintFalcon_afb0ece97317db2eb6da852e219cc85eb}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
 \hypertarget{classNovintFalcon_a3e82b6e9d7c393684b809971208922bf}{
-virtual void {\bfseries startPolling} ()}
+virtual void \hyperlink{classNovintFalcon_a3e82b6e9d7c393684b809971208922bf}{startPolling} ()}
 \label{classNovintFalcon_a3e82b6e9d7c393684b809971208922bf}
 
-\item 
+\begin{DoxyCompactList}\small\item\em Start polling the falcon for information. \item\end{DoxyCompactList}\item 
 \hypertarget{classNovintFalcon_a3bc94cd6f05df1d327f79fb87001039d}{
-virtual void {\bfseries stopPolling} ()}
+virtual void \hyperlink{classNovintFalcon_a3bc94cd6f05df1d327f79fb87001039d}{stopPolling} ()}
 \label{classNovintFalcon_a3bc94cd6f05df1d327f79fb87001039d}
 
-\end{DoxyCompactItemize}
-\subsection*{Static Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-\hypertarget{classNovintFalcon_a2825832a87b1005d7b74baff0fd05f55}{
-static DWORD {\bfseries getPositionFromFalcon} (\hyperlink{classNovintFalcon}{NovintFalcon} $\ast$p\_\-Falcon)}
-\label{classNovintFalcon_a2825832a87b1005d7b74baff0fd05f55}
+\begin{DoxyCompactList}\small\item\em Stop polling the falcon for information. \item\end{DoxyCompactList}\item 
+virtual cCollisionAABBBox \hyperlink{classNovintFalcon_a8226c5b4a2cb0d2e88b6a41e2c7c3af9}{boundingBox} () const 
+\begin{DoxyCompactList}\small\item\em Returns the box to which the slingshot is bound. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 
-\end{DoxyCompactItemize}
+
+\subsection{Detailed Description}
+The novint falcon. This class controls the slingshot via a novint falcon. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classNovintFalcon_ac36e7148131ecbdfff97289f2c9e3b9c}{
+\index{NovintFalcon@{NovintFalcon}!NovintFalcon@{NovintFalcon}}
+\index{NovintFalcon@{NovintFalcon}!NovintFalcon@{NovintFalcon}}
+\subsubsection[{NovintFalcon}]{\setlength{\rightskip}{0pt plus 5cm}NovintFalcon::NovintFalcon (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classNovintFalcon_ac36e7148131ecbdfff97289f2c9e3b9c}
+
+
+Constructor. 
+
+
+
+Local slingshot bounding box
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classNovintFalcon_a8226c5b4a2cb0d2e88b6a41e2c7c3af9}{
+\index{NovintFalcon@{NovintFalcon}!boundingBox@{boundingBox}}
+\index{boundingBox@{boundingBox}!NovintFalcon@{NovintFalcon}}
+\subsubsection[{boundingBox}]{\setlength{\rightskip}{0pt plus 5cm}cCollisionAABBBox NovintFalcon::boundingBox (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classNovintFalcon_a8226c5b4a2cb0d2e88b6a41e2c7c3af9}
+
+
+Returns the box to which the slingshot is bound. 
+
+\begin{DoxyReturn}{Returns}
+the box to which the slingshot is bound 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classFalcon_a8113221c67437ed4f726af6d68c0e66e}{Falcon}.
+
 
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}

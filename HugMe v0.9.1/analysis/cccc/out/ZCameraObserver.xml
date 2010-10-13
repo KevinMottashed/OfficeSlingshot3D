@@ -24,14 +24,14 @@
 </module_summary>
 <module_detail>
 <description>definition</description>
-<source_reference file="../../ZCamera/ZCameraObserver.h" line="13" />
+<source_reference file="../../ZCamera/ZCameraObserver.h" line="14" />
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="0" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 <description>declaration</description>
-<source_reference file="../../ZCamera/ZCameraProxy.h" line="11" />
+<source_reference file="../../ZCamera/ZCameraProxy.h" line="12" />
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="0" level="0" />
@@ -47,7 +47,7 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/ZCameraObserver.h" line="16" />
+<source_reference file="../../ZCamera/ZCameraObserver.h" line="17" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -59,7 +59,7 @@
 <name>update(ZCameraUpdateContext,const void *)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/ZCameraObserver.h" line="20" />
+<source_reference file="../../ZCamera/ZCameraObserver.h" line="21" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -75,7 +75,7 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/ZCameraObserver.h" line="17" />
+<source_reference file="../../ZCamera/ZCameraObserver.h" line="18" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -93,14 +93,14 @@
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../Logger/Logger.h" line="18" />
+<source_reference file="../../Logger/Logger.h" line="17" />
 </extent>
 <name>Mediator</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../Mediator/Mediator.h" line="21" />
+<source_reference file="../../Mediator/Mediator.h" line="26" />
 </extent>
 <name>ZCameraSubject</name>
 <visible>true</visible>

@@ -2,19 +2,19 @@
 <!--Detailed report on module MFCOpenGLControl-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="124" level="0" />
+<lines_of_code value="109" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
-<McCabes_cyclomatic_complexity value="11" level="0" />
+<McCabes_cyclomatic_complexity value="10" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
-<lines_of_code value="17" level="0" />
+<lines_of_code value="21" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="7.294" level="1" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.647" level="0" />
-<weighted_methods_per_class_unity value="13" level="0" />
-<weighted_methods_per_class_visibility value="8" level="0" />
+<lines_of_code_per_line_of_comment value="5.190" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.476" level="0" />
+<weighted_methods_per_class_unity value="10" level="0" />
+<weighted_methods_per_class_visibility value="5" level="0" />
 <depth_of_inheritance_tree value="1" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="11" level="0" />
+<coupling_between_objects value="10" level="0" />
 <IF4 value="0" level="0" />
 <IF4_per_member_function value="********" level="0" />
 <IF4_visible value="0" level="0" />
@@ -40,9 +40,9 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="31" />
+<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="38" />
 </extent>
-<lines_of_code value="7" level="0" />
+<lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="0" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
@@ -52,9 +52,9 @@
 <name>OnCreate(LPCREATESTRUCT)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="44" />
+<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="48" />
 </extent>
-<lines_of_code value="8" level="0" />
+<lines_of_code value="7" level="0" />
 <McCabes_cyclomatic_complexity value="3" level="0" />
 <lines_of_comment value="0" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
@@ -64,7 +64,7 @@
 <name>OnDraw(CDC *)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="97" />
+<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="102" />
 </extent>
 <lines_of_code value="3" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -76,7 +76,7 @@
 <name>OnPaint()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="37" />
+<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="41" />
 </extent>
 <lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -88,7 +88,7 @@
 <name>OnSize(UINT,int,int)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="101" />
+<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="106" />
 </extent>
 <lines_of_code value="13" level="0" />
 <McCabes_cyclomatic_complexity value="4" level="0" />
@@ -100,11 +100,27 @@
 <name>OnTimer(UINT_PTR)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="129" />
+<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="134" />
 </extent>
 <lines_of_code value="15" level="0" />
 <McCabes_cyclomatic_complexity value="3" level="0" />
-<lines_of_comment value="3" level="0" />
+<lines_of_comment value="2" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>camera(cCamera *)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="13" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="36" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -112,7 +128,7 @@
 <name>oglCreate(CRect,CWnd *)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="35" />
+<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="41" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -124,91 +140,27 @@
 <name>oglInitialize(void)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="56" />
+<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="58" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="36" />
+<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="42" />
 </extent>
-<lines_of_code value="27" level="0" />
+<lines_of_code value="28" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="9" level="0" />
-<lines_of_code_per_line_of_comment value="3.000" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>receiveNewBall(cVector3d)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="158" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="38" />
-</extent>
-<lines_of_code value="5" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>shootNewBall(cVector3d)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="153" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="37" />
-</extent>
-<lines_of_code value="5" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>startGame(void)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="163" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="39" />
-</extent>
-<lines_of_code value="5" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="0" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>stopGame(void)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="167" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="40" />
-</extent>
-<lines_of_code value="4" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
+<lines_of_comment value="10" level="0" />
+<lines_of_code_per_line_of_comment value="2.800" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
 <name>~MFCOpenGLControl(void)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="10" />
+<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="9" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="33" />
+<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="39" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -228,7 +180,7 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="97" />
+<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="102" />
 </extent>
 <name>CDialog</name>
 <visible>true</visible>
@@ -254,7 +206,7 @@
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="35" />
+<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="41" />
 </extent>
 <name>CWnd</name>
 <visible>true</visible>
@@ -265,7 +217,7 @@
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="35" />
+<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="41" />
 </extent>
 <name>HDC</name>
 <visible>false</visible>
@@ -286,51 +238,40 @@
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="44" />
+<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="48" />
 </extent>
 <name>UINT</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="101" />
+<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="106" />
 </extent>
 <name>UINT_PTR</name>
-<visible>true</visible>
+<visible>false</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="129" />
+<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="134" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="30" />
+<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="28" />
 </extent>
-<name>cVector3d</name>
+<name>cCamera</name>
 <visible>true</visible>
-<concrete>true</concrete>
+<concrete>false</concrete>
 <extent>
-<description>pass by value</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="153" />
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="13" />
 </extent>
 <extent>
-<description>pass by value</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="158" />
+<description>has by reference</description>
+<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="26" />
 </extent>
 <extent>
-<description>pass by value</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="37" />
-</extent>
-<extent>
-<description>pass by value</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="38" />
-</extent>
-<name>shared_ptr</name>
-<visible>true</visible>
-<concrete>true</concrete>
-<extent>
-<description>has by value</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="23" />
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="36" />
 </extent>
 </supplier_module>
 </module>

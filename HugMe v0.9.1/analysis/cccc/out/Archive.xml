@@ -35,7 +35,7 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Common/Projectile.h" line="46" />
+<source_reference file="../../Common/Projectile.h" line="114" />
 </extent>
 <name>ReplayFormatEvent</name>
 <visible>true</visible>

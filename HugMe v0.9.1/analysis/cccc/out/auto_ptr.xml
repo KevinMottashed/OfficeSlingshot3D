@@ -14,7 +14,7 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="1" level="0" />
+<coupling_between_objects value="4" level="0" />
 <IF4 value="0" level="0" />
 <IF4_per_member_function value="********" level="0" />
 <IF4_visible value="0" level="0" />
@@ -30,12 +30,33 @@
 <module>
 <name>auto_ptr</name>
 <client_module>
+<name>Game</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/Game.h" line="56" />
+</extent>
+<name>NovintFalcon</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Falcon/NovintFalcon.h" line="77" />
+</extent>
 <name>Replayer</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
 <source_reference file="../../Replay/Replayer.h" line="54" />
+</extent>
+<name>ZCamera</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../ZCamera/ZCamera.h" line="37" />
 </extent>
 </client_module>
 <supplier_module>

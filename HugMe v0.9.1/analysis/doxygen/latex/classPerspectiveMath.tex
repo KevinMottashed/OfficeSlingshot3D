@@ -1,0 +1,92 @@
+\hypertarget{classPerspectiveMath}{
+\section{PerspectiveMath Class Reference}
+\label{classPerspectiveMath}\index{PerspectiveMath@{PerspectiveMath}}
+}
+
+
+Utility class that the mediator will use to adjust the players perspectives so that they match.  
+
+
+
+
+{\ttfamily \#include $<$PerspectiveMath.h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classPerspectiveMath_a65c41921db4ee62a8f3a92fb887cc8ce}{invert2DCoordinate} (cVector3d \&vector)
+\begin{DoxyCompactList}\small\item\em Invert the perspective on a coordinate in a 2D space. \item\end{DoxyCompactList}\item 
+static void \hyperlink{classPerspectiveMath_a37100d823fa9ed299d9987fd38c9e1f5}{invert3DCoordinate} (cVector3d \&vector)
+\begin{DoxyCompactList}\small\item\em Invert the perspective on a coordinate in a 3D space. \item\end{DoxyCompactList}\item 
+static void \hyperlink{classPerspectiveMath_a13cbb76a51ce78db12d4013b96586bd1}{invert3DProjectile} (\hyperlink{classProjectile}{Projectile} \&projectile)
+\begin{DoxyCompactList}\small\item\em Invert the perspective on a projectile traveling in a 3D space. \item\end{DoxyCompactList}\item 
+\hypertarget{classPerspectiveMath_a3a535221683e28fc95c5edae6c15d360}{
+static void {\bfseries convertOrientationXYZtoYZX} (cVector3d \&vector)}
+\label{classPerspectiveMath_a3a535221683e28fc95c5edae6c15d360}
+
+\item 
+\hypertarget{classPerspectiveMath_aa8fa5bbda93edd97ee3f0c280914fa6b}{
+static void {\bfseries convertBoxToBox} (cVector3d \&vector, const cCollisionAABBBox \&boxOrigin, const cCollisionAABBBox \&boxTarget)}
+\label{classPerspectiveMath_aa8fa5bbda93edd97ee3f0c280914fa6b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Utility class that the mediator will use to adjust the players perspectives so that they match. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classPerspectiveMath_a65c41921db4ee62a8f3a92fb887cc8ce}{
+\index{PerspectiveMath@{PerspectiveMath}!invert2DCoordinate@{invert2DCoordinate}}
+\index{invert2DCoordinate@{invert2DCoordinate}!PerspectiveMath@{PerspectiveMath}}
+\subsubsection[{invert2DCoordinate}]{\setlength{\rightskip}{0pt plus 5cm}void PerspectiveMath::invert2DCoordinate (
+\begin{DoxyParamCaption}
+\item[{cVector3d \&}]{ vector}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classPerspectiveMath_a65c41921db4ee62a8f3a92fb887cc8ce}
+
+
+Invert the perspective on a coordinate in a 2D space. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em vector}]The coordinate to invert \end{DoxyParams}
+\hypertarget{classPerspectiveMath_a37100d823fa9ed299d9987fd38c9e1f5}{
+\index{PerspectiveMath@{PerspectiveMath}!invert3DCoordinate@{invert3DCoordinate}}
+\index{invert3DCoordinate@{invert3DCoordinate}!PerspectiveMath@{PerspectiveMath}}
+\subsubsection[{invert3DCoordinate}]{\setlength{\rightskip}{0pt plus 5cm}void PerspectiveMath::invert3DCoordinate (
+\begin{DoxyParamCaption}
+\item[{cVector3d \&}]{ vector}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classPerspectiveMath_a37100d823fa9ed299d9987fd38c9e1f5}
+
+
+Invert the perspective on a coordinate in a 3D space. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em vector}]The coordinate to invert \end{DoxyParams}
+\hypertarget{classPerspectiveMath_a13cbb76a51ce78db12d4013b96586bd1}{
+\index{PerspectiveMath@{PerspectiveMath}!invert3DProjectile@{invert3DProjectile}}
+\index{invert3DProjectile@{invert3DProjectile}!PerspectiveMath@{PerspectiveMath}}
+\subsubsection[{invert3DProjectile}]{\setlength{\rightskip}{0pt plus 5cm}void PerspectiveMath::invert3DProjectile (
+\begin{DoxyParamCaption}
+\item[{{\bf Projectile} \&}]{ projectile}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classPerspectiveMath_a13cbb76a51ce78db12d4013b96586bd1}
+
+
+Invert the perspective on a projectile traveling in a 3D space. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em projectile}]The projectile to invert \end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/PerspectiveMath.h\item 
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/PerspectiveMath.cpp\end{DoxyCompactItemize}

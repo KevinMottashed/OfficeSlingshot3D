@@ -35,7 +35,7 @@
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="219" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="213" />
 </extent>
 <extent>
 <description>pass by value</description>
@@ -46,11 +46,11 @@
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="62" />
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="68" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="27" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="33" />
 </extent>
 <name>NetworkReplayer</name>
 <visible>false</visible>
@@ -64,7 +64,7 @@
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/UserInterface.h" line="26" />
+<source_reference file="../../UserInterface/UserInterface.h" line="33" />
 </extent>
 </client_module>
 <supplier_module>

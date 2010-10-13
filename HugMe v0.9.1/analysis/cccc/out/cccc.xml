@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--Report on software metrics-->
 <CCCC_Project>
-<timestamp>Mon Sep 27 13:38:25 2010
+<timestamp>Tue Oct 12 22:25:08 2010
 </timestamp>
 <project_summary>
-<number_of_modules value="123" level="0" />
-<lines_of_code value="5792" level="0" />
-<lines_of_code_per_module value="47.089" level="0" />
-<McCabes_cyclomatic_complexity value="710" level="0" />
-<McCabes_cyclomatic_complexity_per_module value="5.772" level="0" />
-<lines_of_comment value="1547" level="0" />
-<lines_of_comment_per_module value="12.577" level="0" />
-<lines_of_code_per_line_of_comment value="3.744" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.459" level="0" />
-<IF4 value="1411" level="0" />
-<IF4_per_module value="11.472" level="0" />
-<IF4_visible value="1123" level="0" />
-<IF4_visible_per_module value="9.130" level="0" />
-<IF4_concrete value="237" level="0" />
-<IF4_concrete value="1.927" level="0" />
-<rejected_lines_of_code value="381" level="0" />
+<number_of_modules value="139" level="0" />
+<lines_of_code value="6210" level="0" />
+<lines_of_code_per_module value="44.676" level="0" />
+<McCabes_cyclomatic_complexity value="758" level="0" />
+<McCabes_cyclomatic_complexity_per_module value="5.453" level="0" />
+<lines_of_comment value="2472" level="0" />
+<lines_of_comment_per_module value="17.784" level="0" />
+<lines_of_code_per_line_of_comment value="2.512" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.307" level="0" />
+<IF4 value="1696" level="0" />
+<IF4_per_module value="12.201" level="0" />
+<IF4_visible value="1231" level="0" />
+<IF4_visible_per_module value="8.856" level="0" />
+<IF4_concrete value="221" level="0" />
+<IF4_concrete value="1.590" level="0" />
+<rejected_lines_of_code value="435" level="0" />
 </project_summary>
 <procedural_summary>
 <module>
@@ -32,10 +32,10 @@
 </module>
 <module>
 <name>Audio</name>
-<lines_of_code value="69" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="9" level="0" />
-<lines_of_code_per_line_of_comment value="7.667" level="1" />
+<lines_of_code value="91" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_comment value="74" level="0" />
+<lines_of_code_per_line_of_comment value="1.230" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module>
 <module>
@@ -104,11 +104,11 @@
 </module>
 <module>
 <name>CMainDlg</name>
-<lines_of_code value="335" level="0" />
-<McCabes_cyclomatic_complexity value="39" level="0" />
-<lines_of_comment value="76" level="0" />
-<lines_of_code_per_line_of_comment value="4.408" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.513" level="0" />
+<lines_of_code value="317" level="0" />
+<McCabes_cyclomatic_complexity value="36" level="0" />
+<lines_of_comment value="79" level="0" />
+<lines_of_code_per_line_of_comment value="4.013" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.456" level="0" />
 </module>
 <module>
 <name>COMMTIMEOUTS</name>
@@ -160,11 +160,11 @@
 </module>
 <module>
 <name>CSerialPort</name>
-<lines_of_code value="460" level="0" />
-<McCabes_cyclomatic_complexity value="74" level="0" />
-<lines_of_comment value="285" level="0" />
-<lines_of_code_per_line_of_comment value="1.614" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.260" level="0" />
+<lines_of_code value="463" level="0" />
+<McCabes_cyclomatic_complexity value="76" level="0" />
+<lines_of_comment value="286" level="0" />
+<lines_of_code_per_line_of_comment value="1.619" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.266" level="0" />
 </module>
 <module>
 <name>CSocket</name>
@@ -200,6 +200,14 @@
 </module>
 <module>
 <name>CWnd</name>
+<lines_of_code value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
+<name>Channel</name>
 <lines_of_code value="0" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="0" level="0" />
@@ -280,9 +288,9 @@
 </module>
 <module>
 <name>Falcon</name>
-<lines_of_code value="15" level="0" />
+<lines_of_code value="16" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="4" level="0" />
+<lines_of_comment value="21" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module>
@@ -290,41 +298,33 @@
 <name>FalconObserver</name>
 <lines_of_code value="14" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="16" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module>
 <module>
 <name>FalconReplayer</name>
-<lines_of_code value="47" level="0" />
-<McCabes_cyclomatic_complexity value="5" level="0" />
+<lines_of_code value="53" level="0" />
+<McCabes_cyclomatic_complexity value="6" level="0" />
 <lines_of_comment value="12" level="0" />
-<lines_of_code_per_line_of_comment value="3.917" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.417" level="0" />
+<lines_of_code_per_line_of_comment value="4.417" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.500" level="0" />
 </module>
 <module>
 <name>FalconSubject</name>
 <lines_of_code value="38" level="0" />
 <McCabes_cyclomatic_complexity value="4" level="0" />
-<lines_of_comment value="1" level="0" />
-<lines_of_code_per_line_of_comment value="38.000" level="2" />
+<lines_of_comment value="27" level="0" />
+<lines_of_code_per_line_of_comment value="1.407" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module>
 <module>
 <name>Game</name>
-<lines_of_code value="176" level="0" />
-<McCabes_cyclomatic_complexity value="16" level="0" />
-<lines_of_comment value="38" level="0" />
-<lines_of_code_per_line_of_comment value="4.632" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.421" level="0" />
-</module>
-<module>
-<name>GameObserver</name>
-<lines_of_code value="14" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+<lines_of_code value="171" level="0" />
+<McCabes_cyclomatic_complexity value="23" level="0" />
+<lines_of_comment value="99" level="0" />
+<lines_of_code_per_line_of_comment value="1.727" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.232" level="0" />
 </module>
 <module>
 <name>GameState</name>
@@ -340,14 +340,6 @@
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="0" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</module>
-<module>
-<name>GameSubject</name>
-<lines_of_code value="38" level="0" />
-<McCabes_cyclomatic_complexity value="4" level="0" />
-<lines_of_comment value="1" level="0" />
-<lines_of_code_per_line_of_comment value="38.000" level="2" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module>
 <module>
@@ -375,6 +367,14 @@
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module>
 <module>
+<name>HpBar</name>
+<lines_of_code value="65" level="0" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
+<lines_of_comment value="6" level="0" />
+<lines_of_code_per_line_of_comment value="10.833" level="1" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
 <name>HumanFormatLogger</name>
 <lines_of_code value="83" level="0" />
 <McCabes_cyclomatic_complexity value="7" level="0" />
@@ -399,6 +399,30 @@
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module>
 <module>
+<name>KeyboardFalcon</name>
+<lines_of_code value="106" level="0" />
+<McCabes_cyclomatic_complexity value="17" level="0" />
+<lines_of_comment value="35" level="0" />
+<lines_of_code_per_line_of_comment value="3.029" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.486" level="0" />
+</module>
+<module>
+<name>KeyboardListener</name>
+<lines_of_code value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
+<name>KeyboardZCamera</name>
+<lines_of_code value="56" level="0" />
+<McCabes_cyclomatic_complexity value="5" level="0" />
+<lines_of_comment value="27" level="0" />
+<lines_of_code_per_line_of_comment value="2.074" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.185" level="0" />
+</module>
+<module>
 <name>LPCREATESTRUCT</name>
 <lines_of_code value="0" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -416,11 +440,11 @@
 </module>
 <module>
 <name>LogEvent</name>
-<lines_of_code value="58" level="0" />
-<McCabes_cyclomatic_complexity value="27" level="0" />
+<lines_of_code value="56" level="0" />
+<McCabes_cyclomatic_complexity value="26" level="0" />
 <lines_of_comment value="1" level="0" />
-<lines_of_code_per_line_of_comment value="58.000" level="2" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="27.000" level="2" />
+<lines_of_code_per_line_of_comment value="56.000" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="26.000" level="2" />
 </module>
 <module>
 <name>LogEventCategory</name>
@@ -440,27 +464,27 @@
 </module>
 <module>
 <name>Logger</name>
-<lines_of_code value="198" level="0" />
-<McCabes_cyclomatic_complexity value="34" level="0" />
-<lines_of_comment value="11" level="0" />
-<lines_of_code_per_line_of_comment value="18.000" level="1" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="3.091" level="0" />
+<lines_of_code value="187" level="0" />
+<McCabes_cyclomatic_complexity value="32" level="0" />
+<lines_of_comment value="10" level="0" />
+<lines_of_code_per_line_of_comment value="18.700" level="1" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="3.200" level="0" />
 </module>
 <module>
 <name>MFCOpenGLControl</name>
-<lines_of_code value="124" level="0" />
-<McCabes_cyclomatic_complexity value="11" level="0" />
-<lines_of_comment value="17" level="0" />
-<lines_of_code_per_line_of_comment value="7.294" level="1" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.647" level="0" />
+<lines_of_code value="109" level="0" />
+<McCabes_cyclomatic_complexity value="10" level="0" />
+<lines_of_comment value="21" level="0" />
+<lines_of_code_per_line_of_comment value="5.190" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.476" level="0" />
 </module>
 <module>
 <name>MFCUserInterface</name>
-<lines_of_code value="138" level="0" />
-<McCabes_cyclomatic_complexity value="19" level="0" />
-<lines_of_comment value="20" level="0" />
-<lines_of_code_per_line_of_comment value="6.900" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.950" level="0" />
+<lines_of_code value="134" level="0" />
+<McCabes_cyclomatic_complexity value="20" level="0" />
+<lines_of_comment value="23" level="0" />
+<lines_of_code_per_line_of_comment value="5.826" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.870" level="0" />
 </module>
 <module>
 <name>MSG</name>
@@ -472,18 +496,42 @@
 </module>
 <module>
 <name>Mediator</name>
-<lines_of_code value="539" level="1" />
-<McCabes_cyclomatic_complexity value="90" level="0" />
-<lines_of_comment value="107" level="0" />
-<lines_of_code_per_line_of_comment value="5.037" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.841" level="0" />
+<lines_of_code value="465" level="0" />
+<McCabes_cyclomatic_complexity value="78" level="0" />
+<lines_of_comment value="118" level="0" />
+<lines_of_code_per_line_of_comment value="3.941" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.661" level="0" />
+</module>
+<module>
+<name>MediatorObserver</name>
+<lines_of_code value="14" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="14" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
+<name>MediatorSubject</name>
+<lines_of_code value="38" level="0" />
+<McCabes_cyclomatic_complexity value="4" level="0" />
+<lines_of_comment value="24" level="0" />
+<lines_of_code_per_line_of_comment value="1.583" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
+<name>MediatorUpdateContext_t</name>
+<lines_of_code value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module>
 <module>
 <name>Network</name>
-<lines_of_code value="29" level="0" />
+<lines_of_code value="28" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="7" level="0" />
-<lines_of_code_per_line_of_comment value="4.143" level="0" />
+<lines_of_comment value="82" level="0" />
+<lines_of_code_per_line_of_comment value="0.341" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module>
 <module>
@@ -496,11 +544,11 @@
 </module>
 <module>
 <name>NetworkReplayer</name>
-<lines_of_code value="201" level="0" />
-<McCabes_cyclomatic_complexity value="32" level="0" />
+<lines_of_code value="196" level="0" />
+<McCabes_cyclomatic_complexity value="31" level="0" />
 <lines_of_comment value="15" level="0" />
-<lines_of_code_per_line_of_comment value="13.400" level="1" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="2.133" level="0" />
+<lines_of_code_per_line_of_comment value="13.067" level="1" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="2.067" level="0" />
 </module>
 <module>
 <name>NetworkSocket</name>
@@ -520,11 +568,11 @@
 </module>
 <module>
 <name>NovintFalcon</name>
-<lines_of_code value="48" level="0" />
-<McCabes_cyclomatic_complexity value="2" level="0" />
-<lines_of_comment value="20" level="0" />
-<lines_of_code_per_line_of_comment value="2.400" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+<lines_of_code value="93" level="0" />
+<McCabes_cyclomatic_complexity value="11" level="0" />
+<lines_of_comment value="96" level="0" />
+<lines_of_code_per_line_of_comment value="0.969" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.115" level="0" />
 </module>
 <module>
 <name>OVERLAPPED</name>
@@ -544,11 +592,11 @@
 </module>
 <module>
 <name>OfficeSlingshot3DFactory</name>
-<lines_of_code value="163" level="0" />
-<McCabes_cyclomatic_complexity value="42" level="0" />
-<lines_of_comment value="61" level="0" />
-<lines_of_code_per_line_of_comment value="2.672" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.689" level="0" />
+<lines_of_code value="181" level="0" />
+<McCabes_cyclomatic_complexity value="44" level="0" />
+<lines_of_comment value="65" level="0" />
+<lines_of_code_per_line_of_comment value="2.785" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.677" level="0" />
 </module>
 <module>
 <name>Packet</name>
@@ -564,6 +612,14 @@
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="0" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
+<name>PerspectiveMath</name>
+<lines_of_code value="42" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="19" level="0" />
+<lines_of_code_per_line_of_comment value="2.211" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module>
 <module>
@@ -584,11 +640,11 @@
 </module>
 <module>
 <name>Projectile</name>
-<lines_of_code value="67" level="0" />
-<McCabes_cyclomatic_complexity value="5" level="0" />
-<lines_of_comment value="7" level="0" />
-<lines_of_code_per_line_of_comment value="9.571" level="1" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.714" level="0" />
+<lines_of_code value="73" level="0" />
+<McCabes_cyclomatic_complexity value="7" level="0" />
+<lines_of_comment value="67" level="0" />
+<lines_of_code_per_line_of_comment value="1.090" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.104" level="0" />
 </module>
 <module>
 <name>ReplayFormatEvent</name>
@@ -624,10 +680,10 @@
 </module>
 <module>
 <name>SmartClothingManager</name>
-<lines_of_code value="19" level="0" />
+<lines_of_code value="23" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="14" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
+<lines_of_comment value="10" level="0" />
+<lines_of_code_per_line_of_comment value="2.300" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module>
 <module>
@@ -736,18 +792,26 @@
 </module>
 <module>
 <name>TactileArray</name>
-<lines_of_code value="174" level="0" />
+<lines_of_code value="175" level="0" />
 <McCabes_cyclomatic_complexity value="33" level="0" />
 <lines_of_comment value="27" level="0" />
-<lines_of_code_per_line_of_comment value="6.444" level="0" />
+<lines_of_code_per_line_of_comment value="6.481" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="1.222" level="0" />
 </module>
 <module>
 <name>TestRunner</name>
-<lines_of_code value="36" level="0" />
+<lines_of_code value="37" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="5" level="0" />
-<lines_of_code_per_line_of_comment value="7.200" level="1" />
+<lines_of_comment value="19" level="0" />
+<lines_of_code_per_line_of_comment value="1.947" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
+<name>TitleScreen</name>
+<lines_of_code value="13" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="13" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module>
 <module>
@@ -768,10 +832,10 @@
 </module>
 <module>
 <name>UserInterface</name>
-<lines_of_code value="33" level="0" />
+<lines_of_code value="32" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="20" level="0" />
-<lines_of_code_per_line_of_comment value="1.650" level="0" />
+<lines_of_comment value="23" level="0" />
+<lines_of_code_per_line_of_comment value="1.391" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module>
 <module>
@@ -799,28 +863,52 @@
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module>
 <module>
+<name>VirtualAvatar</name>
+<lines_of_code value="62" level="0" />
+<McCabes_cyclomatic_complexity value="9" level="0" />
+<lines_of_comment value="42" level="0" />
+<lines_of_code_per_line_of_comment value="1.476" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.214" level="0" />
+</module>
+<module>
+<name>VirtualBall</name>
+<lines_of_code value="35" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="32" level="0" />
+<lines_of_code_per_line_of_comment value="1.094" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
 <name>VirtualEnvironment</name>
-<lines_of_code value="155" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="55" level="0" />
-<lines_of_code_per_line_of_comment value="2.818" level="0" />
+<lines_of_code value="156" level="0" />
+<McCabes_cyclomatic_complexity value="8" level="0" />
+<lines_of_comment value="177" level="0" />
+<lines_of_code_per_line_of_comment value="0.881" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.045" level="0" />
+</module>
+<module>
+<name>VirtualSlingshot</name>
+<lines_of_code value="37" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_comment value="6" level="0" />
+<lines_of_code_per_line_of_comment value="6.167" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module>
 <module>
 <name>WinsockNetwork</name>
-<lines_of_code value="82" level="0" />
+<lines_of_code value="75" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="85" level="0" />
-<lines_of_code_per_line_of_comment value="0.965" level="0" />
+<lines_of_comment value="83" level="0" />
+<lines_of_code_per_line_of_comment value="0.904" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module>
 <module>
 <name>ZCamera</name>
-<lines_of_code value="138" level="0" />
-<McCabes_cyclomatic_complexity value="22" level="0" />
-<lines_of_comment value="61" level="0" />
-<lines_of_code_per_line_of_comment value="2.262" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.361" level="0" />
+<lines_of_code value="121" level="0" />
+<McCabes_cyclomatic_complexity value="18" level="0" />
+<lines_of_comment value="49" level="0" />
+<lines_of_code_per_line_of_comment value="2.469" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.367" level="0" />
 </module>
 <module>
 <name>ZCameraObserver</name>
@@ -858,9 +946,9 @@
 <name>anonymous</name>
 <lines_of_code value="172" level="0" />
 <McCabes_cyclomatic_complexity value="39" level="0" />
-<lines_of_comment value="77" level="0" />
-<lines_of_code_per_line_of_comment value="2.234" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.506" level="0" />
+<lines_of_comment value="110" level="0" />
+<lines_of_code_per_line_of_comment value="1.564" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.355" level="0" />
 </module>
 <module>
 <name>auto_ptr</name>
@@ -879,7 +967,39 @@
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module>
 <module>
+<name>cBitmap</name>
+<lines_of_code value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
 <name>cCamera</name>
+<lines_of_code value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
+<name>cCollisionAABBBox</name>
+<lines_of_code value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
+<name>cGenericHapticDevice</name>
+<lines_of_code value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
+<name>cHapticDeviceHandler</name>
 <lines_of_code value="0" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="0" level="0" />
@@ -928,6 +1048,14 @@
 </module>
 <module>
 <name>cWorld</name>
+<lines_of_code value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
+<name>mutex</name>
 <lines_of_code value="0" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="0" level="0" />
@@ -1018,11 +1146,11 @@
 </module>
 <module>
 <name>Audio</name>
-<weighted_methods_per_class_unity value="9" level="0" />
-<weighted_methods_per_class_visibility value="7" level="0" />
+<weighted_methods_per_class_unity value="11" level="0" />
+<weighted_methods_per_class_visibility value="9" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="3" level="0" />
+<coupling_between_objects value="4" level="0" />
 </module>
 <module>
 <name>BOOL</name>
@@ -1090,7 +1218,7 @@
 </module>
 <module>
 <name>CMainDlg</name>
-<weighted_methods_per_class_unity value="26" level="0" />
+<weighted_methods_per_class_unity value="25" level="0" />
 <weighted_methods_per_class_visibility value="6" level="0" />
 <depth_of_inheritance_tree value="1" level="0" />
 <number_of_children value="0" level="0" />
@@ -1193,6 +1321,14 @@
 <coupling_between_objects value="3" level="0" />
 </module>
 <module>
+<name>Channel</name>
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="1" level="0" />
+</module>
+<module>
 <name>Configuration</name>
 <weighted_methods_per_class_unity value="6" level="0" />
 <weighted_methods_per_class_visibility value="0" level="0" />
@@ -1246,7 +1382,7 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="2" level="0" />
+<coupling_between_objects value="3" level="0" />
 </module>
 <module>
 <name>DisplayDeviceArmband</name>
@@ -1266,11 +1402,11 @@
 </module>
 <module>
 <name>Falcon</name>
-<weighted_methods_per_class_unity value="4" level="0" />
-<weighted_methods_per_class_visibility value="4" level="0" />
+<weighted_methods_per_class_unity value="5" level="0" />
+<weighted_methods_per_class_visibility value="5" level="0" />
 <depth_of_inheritance_tree value="1" level="0" />
-<number_of_children value="2" level="0" />
-<coupling_between_objects value="3" level="0" />
+<number_of_children value="3" level="0" />
+<coupling_between_objects value="4" level="0" />
 </module>
 <module>
 <name>FalconObserver</name>
@@ -1282,7 +1418,7 @@
 </module>
 <module>
 <name>FalconReplayer</name>
-<weighted_methods_per_class_unity value="5" level="0" />
+<weighted_methods_per_class_unity value="6" level="0" />
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="2" level="0" />
 <number_of_children value="0" level="0" />
@@ -1298,19 +1434,11 @@
 </module>
 <module>
 <name>Game</name>
-<weighted_methods_per_class_unity value="19" level="0" />
-<weighted_methods_per_class_visibility value="15" level="1" />
+<weighted_methods_per_class_unity value="10" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="1" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="4" level="0" />
-</module>
-<module>
-<name>GameObserver</name>
-<weighted_methods_per_class_unity value="3" level="0" />
-<weighted_methods_per_class_visibility value="3" level="0" />
-<depth_of_inheritance_tree value="0" level="0" />
-<number_of_children value="2" level="0" />
-<coupling_between_objects value="3" level="0" />
+<coupling_between_objects value="11" level="0" />
 </module>
 <module>
 <name>GameState</name>
@@ -1326,15 +1454,7 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="3" level="0" />
-</module>
-<module>
-<name>GameSubject</name>
-<weighted_methods_per_class_unity value="6" level="0" />
-<weighted_methods_per_class_visibility value="5" level="0" />
-<depth_of_inheritance_tree value="0" level="0" />
-<number_of_children value="1" level="0" />
-<coupling_between_objects value="3" level="0" />
+<coupling_between_objects value="4" level="0" />
 </module>
 <module>
 <name>HANDLE</name>
@@ -1342,7 +1462,7 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="3" level="0" />
+<coupling_between_objects value="4" level="0" />
 </module>
 <module>
 <name>HDC</name>
@@ -1359,6 +1479,14 @@
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
 <coupling_between_objects value="1" level="0" />
+</module>
+<module>
+<name>HpBar</name>
+<weighted_methods_per_class_unity value="3" level="0" />
+<weighted_methods_per_class_visibility value="3" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="4" level="0" />
 </module>
 <module>
 <name>HumanFormatLogger</name>
@@ -1381,8 +1509,32 @@
 <weighted_methods_per_class_unity value="6" level="0" />
 <weighted_methods_per_class_visibility value="4" level="0" />
 <depth_of_inheritance_tree value="1" level="0" />
+<number_of_children value="3" level="0" />
+<coupling_between_objects value="4" level="0" />
+</module>
+<module>
+<name>KeyboardFalcon</name>
+<weighted_methods_per_class_unity value="6" level="0" />
+<weighted_methods_per_class_visibility value="6" level="0" />
+<depth_of_inheritance_tree value="2" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="5" level="0" />
+</module>
+<module>
+<name>KeyboardListener</name>
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="2" level="0" />
-<coupling_between_objects value="3" level="0" />
+<coupling_between_objects value="2" level="0" />
+</module>
+<module>
+<name>KeyboardZCamera</name>
+<weighted_methods_per_class_unity value="5" level="0" />
+<weighted_methods_per_class_visibility value="5" level="0" />
+<depth_of_inheritance_tree value="2" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="4" level="0" />
 </module>
 <module>
 <name>LPCREATESTRUCT</name>
@@ -1426,24 +1578,24 @@
 </module>
 <module>
 <name>Logger</name>
-<weighted_methods_per_class_unity value="14" level="0" />
-<weighted_methods_per_class_visibility value="9" level="0" />
-<depth_of_inheritance_tree value="1" level="0" />
-<number_of_children value="2" level="0" />
-<coupling_between_objects value="11" level="0" />
-</module>
-<module>
-<name>MFCOpenGLControl</name>
 <weighted_methods_per_class_unity value="13" level="0" />
 <weighted_methods_per_class_visibility value="8" level="0" />
 <depth_of_inheritance_tree value="1" level="0" />
+<number_of_children value="2" level="0" />
+<coupling_between_objects value="10" level="0" />
+</module>
+<module>
+<name>MFCOpenGLControl</name>
+<weighted_methods_per_class_unity value="10" level="0" />
+<weighted_methods_per_class_visibility value="5" level="0" />
+<depth_of_inheritance_tree value="1" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="11" level="0" />
+<coupling_between_objects value="10" level="0" />
 </module>
 <module>
 <name>MFCUserInterface</name>
-<weighted_methods_per_class_unity value="23" level="0" />
-<weighted_methods_per_class_visibility value="7" level="0" />
+<weighted_methods_per_class_unity value="22" level="0" />
+<weighted_methods_per_class_visibility value="8" level="0" />
 <depth_of_inheritance_tree value="2" level="0" />
 <number_of_children value="1" level="0" />
 <coupling_between_objects value="8" level="0" />
@@ -1458,15 +1610,39 @@
 </module>
 <module>
 <name>Mediator</name>
-<weighted_methods_per_class_unity value="39" level="1" />
+<weighted_methods_per_class_unity value="27" level="0" />
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="1" level="0" />
 <number_of_children value="0" level="0" />
 <coupling_between_objects value="11" level="0" />
 </module>
 <module>
+<name>MediatorObserver</name>
+<weighted_methods_per_class_unity value="3" level="0" />
+<weighted_methods_per_class_visibility value="3" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="1" level="0" />
+<coupling_between_objects value="3" level="0" />
+</module>
+<module>
+<name>MediatorSubject</name>
+<weighted_methods_per_class_unity value="6" level="0" />
+<weighted_methods_per_class_visibility value="5" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="1" level="0" />
+<coupling_between_objects value="4" level="0" />
+</module>
+<module>
+<name>MediatorUpdateContext_t</name>
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="3" level="0" />
+</module>
+<module>
 <name>Network</name>
-<weighted_methods_per_class_unity value="18" level="0" />
+<weighted_methods_per_class_unity value="17" level="0" />
 <weighted_methods_per_class_visibility value="2" level="0" />
 <depth_of_inheritance_tree value="1" level="0" />
 <number_of_children value="2" level="0" />
@@ -1506,11 +1682,11 @@
 </module>
 <module>
 <name>NovintFalcon</name>
-<weighted_methods_per_class_unity value="7" level="0" />
+<weighted_methods_per_class_unity value="8" level="0" />
 <weighted_methods_per_class_visibility value="5" level="0" />
 <depth_of_inheritance_tree value="2" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="2" level="0" />
+<coupling_between_objects value="7" level="0" />
 </module>
 <module>
 <name>OVERLAPPED</name>
@@ -1553,6 +1729,14 @@
 <coupling_between_objects value="1" level="0" />
 </module>
 <module>
+<name>PerspectiveMath</name>
+<weighted_methods_per_class_unity value="5" level="0" />
+<weighted_methods_per_class_visibility value="5" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="3" level="0" />
+</module>
+<module>
 <name>Player</name>
 <weighted_methods_per_class_unity value="1" level="0" />
 <weighted_methods_per_class_visibility value="0" level="0" />
@@ -1566,15 +1750,15 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="3" level="0" />
+<coupling_between_objects value="5" level="0" />
 </module>
 <module>
 <name>Projectile</name>
-<weighted_methods_per_class_unity value="10" level="0" />
-<weighted_methods_per_class_visibility value="9" level="0" />
+<weighted_methods_per_class_unity value="12" level="0" />
+<weighted_methods_per_class_visibility value="10" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="10" level="0" />
+<coupling_between_objects value="12" level="0" />
 </module>
 <module>
 <name>ReplayFormatEvent</name>
@@ -1610,11 +1794,11 @@
 </module>
 <module>
 <name>SmartClothingManager</name>
-<weighted_methods_per_class_unity value="5" level="0" />
-<weighted_methods_per_class_visibility value="3" level="0" />
+<weighted_methods_per_class_unity value="6" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="1" level="0" />
+<coupling_between_objects value="2" level="0" />
 </module>
 <module>
 <name>Sound</name>
@@ -1722,8 +1906,8 @@
 </module>
 <module>
 <name>TactileArray</name>
-<weighted_methods_per_class_unity value="19" level="0" />
-<weighted_methods_per_class_visibility value="18" level="1" />
+<weighted_methods_per_class_unity value="20" level="0" />
+<weighted_methods_per_class_visibility value="19" level="1" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="2" level="0" />
 <coupling_between_objects value="6" level="0" />
@@ -1735,6 +1919,14 @@
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
 <coupling_between_objects value="2" level="0" />
+</module>
+<module>
+<name>TitleScreen</name>
+<weighted_methods_per_class_unity value="3" level="0" />
+<weighted_methods_per_class_visibility value="3" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="5" level="0" />
 </module>
 <module>
 <name>UINT</name>
@@ -1754,8 +1946,8 @@
 </module>
 <module>
 <name>UserInterface</name>
-<weighted_methods_per_class_unity value="22" level="0" />
-<weighted_methods_per_class_visibility value="7" level="0" />
+<weighted_methods_per_class_unity value="21" level="0" />
+<weighted_methods_per_class_visibility value="8" level="0" />
 <depth_of_inheritance_tree value="1" level="0" />
 <number_of_children value="1" level="0" />
 <coupling_between_objects value="8" level="0" />
@@ -1785,16 +1977,40 @@
 <coupling_between_objects value="3" level="0" />
 </module>
 <module>
-<name>VirtualEnvironment</name>
-<weighted_methods_per_class_unity value="8" level="0" />
-<weighted_methods_per_class_visibility value="8" level="0" />
+<name>VirtualAvatar</name>
+<weighted_methods_per_class_unity value="6" level="0" />
+<weighted_methods_per_class_visibility value="6" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="7" level="0" />
+<coupling_between_objects value="5" level="0" />
+</module>
+<module>
+<name>VirtualBall</name>
+<weighted_methods_per_class_unity value="5" level="0" />
+<weighted_methods_per_class_visibility value="4" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="5" level="0" />
+</module>
+<module>
+<name>VirtualEnvironment</name>
+<weighted_methods_per_class_unity value="14" level="0" />
+<weighted_methods_per_class_visibility value="14" level="1" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="13" level="1" />
+</module>
+<module>
+<name>VirtualSlingshot</name>
+<weighted_methods_per_class_unity value="4" level="0" />
+<weighted_methods_per_class_visibility value="4" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="4" level="0" />
 </module>
 <module>
 <name>WinsockNetwork</name>
-<weighted_methods_per_class_unity value="19" level="0" />
+<weighted_methods_per_class_unity value="18" level="0" />
 <weighted_methods_per_class_visibility value="2" level="0" />
 <depth_of_inheritance_tree value="2" level="0" />
 <number_of_children value="0" level="0" />
@@ -1803,10 +2019,10 @@
 <module>
 <name>ZCamera</name>
 <weighted_methods_per_class_unity value="10" level="0" />
-<weighted_methods_per_class_visibility value="8" level="0" />
+<weighted_methods_per_class_visibility value="7" level="0" />
 <depth_of_inheritance_tree value="2" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="4" level="0" />
+<coupling_between_objects value="5" level="0" />
 </module>
 <module>
 <name>ZCameraObserver</name>
@@ -1854,7 +2070,7 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="1" level="0" />
+<coupling_between_objects value="4" level="0" />
 </module>
 <module>
 <name>bool</name>
@@ -1862,10 +2078,42 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="6" level="0" />
+<coupling_between_objects value="10" level="0" />
+</module>
+<module>
+<name>cBitmap</name>
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="2" level="0" />
 </module>
 <module>
 <name>cCamera</name>
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="7" level="0" />
+</module>
+<module>
+<name>cCollisionAABBBox</name>
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="3" level="0" />
+</module>
+<module>
+<name>cGenericHapticDevice</name>
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="1" level="0" />
+</module>
+<module>
+<name>cHapticDeviceHandler</name>
 <weighted_methods_per_class_unity value="0" level="0" />
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
@@ -1878,7 +2126,7 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="1" level="0" />
+<coupling_between_objects value="2" level="0" />
 </module>
 <module>
 <name>cMesh</name>
@@ -1886,7 +2134,7 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="1" level="0" />
+<coupling_between_objects value="4" level="0" />
 </module>
 <module>
 <name>cODEGenericBody</name>
@@ -1894,7 +2142,7 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="1" level="0" />
+<coupling_between_objects value="2" level="0" />
 </module>
 <module>
 <name>cODEWorld</name>
@@ -1902,7 +2150,7 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="1" level="0" />
+<coupling_between_objects value="2" level="0" />
 </module>
 <module>
 <name>cVector3d</name>
@@ -1914,6 +2162,14 @@
 </module>
 <module>
 <name>cWorld</name>
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="6" level="0" />
+</module>
+<module>
+<name>mutex</name>
 <weighted_methods_per_class_unity value="0" level="0" />
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
@@ -1942,7 +2198,7 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="10" level="0" />
+<coupling_between_objects value="11" level="0" />
 </module>
 <module>
 <name>short</name>
@@ -1990,7 +2246,7 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="7" level="0" />
+<coupling_between_objects value="8" level="0" />
 </module>
 </oo_design>
 <structural_summary>
@@ -2011,12 +2267,12 @@
 <fan_out_visible value="1" level="0" />
 <fan_out_concrete value="1" level="0" />
 <fan_out value="1" level="0" />
-<fan_in_visible value="2" level="0" />
+<fan_in_visible value="3" level="0" />
 <fan_in_concrete value="0" level="0" />
-<fan_in value="2" level="0" />
-<IF4_visible value="4" level="0" />
+<fan_in value="3" level="0" />
+<IF4_visible value="9" level="0" />
 <IF4_concrete value="0" level="0" />
-<IF4 value="4" level="0" />
+<IF4 value="9" level="0" />
 </module>
 <module>
 <name>BOOL</name>
@@ -2080,13 +2336,13 @@
 </module>
 <module>
 <name>CDepthCamera</name>
-<fan_out_visible value="0" level="0" />
+<fan_out_visible value="1" level="0" />
 <fan_out_concrete value="0" level="0" />
 <fan_out value="1" level="0" />
 <fan_in_visible value="1" level="0" />
 <fan_in_concrete value="2" level="0" />
 <fan_in value="3" level="0" />
-<IF4_visible value="0" level="0" />
+<IF4_visible value="1" level="0" />
 <IF4_concrete value="0" level="0" />
 <IF4 value="9" level="0" />
 </module>
@@ -2271,6 +2527,18 @@
 <IF4 value="0" level="0" />
 </module>
 <module>
+<name>Channel</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
 <name>Configuration</name>
 <fan_out_visible value="0" level="0" />
 <fan_out_concrete value="0" level="0" />
@@ -2345,8 +2613,8 @@
 <module>
 <name>DWORD</name>
 <fan_out_visible value="1" level="0" />
-<fan_out_concrete value="2" level="0" />
-<fan_out value="2" level="0" />
+<fan_out_concrete value="3" level="0" />
+<fan_out value="3" level="0" />
 <fan_in_visible value="0" level="0" />
 <fan_in_concrete value="0" level="0" />
 <fan_in value="0" level="0" />
@@ -2380,15 +2648,15 @@
 </module>
 <module>
 <name>Falcon</name>
-<fan_out_visible value="2" level="0" />
-<fan_out_concrete value="2" level="0" />
-<fan_out value="2" level="0" />
+<fan_out_visible value="3" level="0" />
+<fan_out_concrete value="3" level="0" />
+<fan_out value="3" level="0" />
 <fan_in_visible value="1" level="0" />
 <fan_in_concrete value="1" level="0" />
 <fan_in value="1" level="0" />
-<IF4_visible value="4" level="0" />
-<IF4_concrete value="4" level="0" />
-<IF4 value="4" level="0" />
+<IF4_visible value="9" level="0" />
+<IF4_concrete value="9" level="0" />
+<IF4 value="9" level="0" />
 </module>
 <module>
 <name>FalconObserver</name>
@@ -2428,24 +2696,12 @@
 </module>
 <module>
 <name>Game</name>
-<fan_out_visible value="1" level="0" />
-<fan_out_concrete value="1" level="0" />
-<fan_out value="1" level="0" />
-<fan_in_visible value="3" level="0" />
-<fan_in_concrete value="2" level="0" />
-<fan_in value="3" level="0" />
-<IF4_visible value="9" level="0" />
-<IF4_concrete value="4" level="0" />
-<IF4 value="9" level="0" />
-</module>
-<module>
-<name>GameObserver</name>
-<fan_out_visible value="3" level="0" />
-<fan_out_concrete value="2" level="0" />
-<fan_out value="3" level="0" />
-<fan_in_visible value="0" level="0" />
-<fan_in_concrete value="0" level="0" />
-<fan_in value="0" level="0" />
+<fan_out_visible value="0" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="0" level="0" />
+<fan_in_visible value="9" level="1" />
+<fan_in_concrete value="11" level="1" />
+<fan_in value="11" level="0" />
 <IF4_visible value="0" level="0" />
 <IF4_concrete value="0" level="0" />
 <IF4 value="0" level="0" />
@@ -2464,9 +2720,9 @@
 </module>
 <module>
 <name>GameState_t</name>
-<fan_out_visible value="3" level="0" />
-<fan_out_concrete value="3" level="0" />
-<fan_out value="3" level="0" />
+<fan_out_visible value="4" level="0" />
+<fan_out_concrete value="4" level="0" />
+<fan_out value="4" level="0" />
 <fan_in_visible value="0" level="0" />
 <fan_in_concrete value="0" level="0" />
 <fan_in value="0" level="0" />
@@ -2475,22 +2731,10 @@
 <IF4 value="0" level="0" />
 </module>
 <module>
-<name>GameSubject</name>
-<fan_out_visible value="1" level="0" />
-<fan_out_concrete value="1" level="0" />
-<fan_out value="1" level="0" />
-<fan_in_visible value="2" level="0" />
-<fan_in_concrete value="1" level="0" />
-<fan_in value="2" level="0" />
-<IF4_visible value="4" level="0" />
-<IF4_concrete value="1" level="0" />
-<IF4 value="4" level="0" />
-</module>
-<module>
 <name>HANDLE</name>
 <fan_out_visible value="1" level="0" />
-<fan_out_concrete value="3" level="0" />
-<fan_out value="3" level="0" />
+<fan_out_concrete value="4" level="0" />
+<fan_out value="4" level="0" />
 <fan_in_visible value="0" level="0" />
 <fan_in_concrete value="0" level="0" />
 <fan_in value="0" level="0" />
@@ -2523,6 +2767,18 @@
 <IF4 value="0" level="0" />
 </module>
 <module>
+<name>HpBar</name>
+<fan_out_visible value="0" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="2" level="0" />
+<fan_in_concrete value="1" level="0" />
+<fan_in value="3" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="9" level="0" />
+</module>
+<module>
 <name>HumanFormatLogger</name>
 <fan_out_visible value="0" level="0" />
 <fan_out_concrete value="0" level="0" />
@@ -2548,15 +2804,51 @@
 </module>
 <module>
 <name>IZCamera</name>
-<fan_out_visible value="2" level="0" />
-<fan_out_concrete value="2" level="0" />
-<fan_out value="2" level="0" />
+<fan_out_visible value="3" level="0" />
+<fan_out_concrete value="3" level="0" />
+<fan_out value="3" level="0" />
 <fan_in_visible value="1" level="0" />
 <fan_in_concrete value="1" level="0" />
 <fan_in value="1" level="0" />
-<IF4_visible value="4" level="0" />
-<IF4_concrete value="4" level="0" />
-<IF4 value="4" level="0" />
+<IF4_visible value="9" level="0" />
+<IF4_concrete value="9" level="0" />
+<IF4 value="9" level="0" />
+</module>
+<module>
+<name>KeyboardFalcon</name>
+<fan_out_visible value="0" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="0" level="0" />
+<fan_in_visible value="2" level="0" />
+<fan_in_concrete value="5" level="0" />
+<fan_in value="5" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>KeyboardListener</name>
+<fan_out_visible value="2" level="0" />
+<fan_out_concrete value="2" level="0" />
+<fan_out value="2" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>KeyboardZCamera</name>
+<fan_out_visible value="0" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="0" level="0" />
+<fan_in_visible value="2" level="0" />
+<fan_in_concrete value="4" level="0" />
+<fan_in value="4" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
 </module>
 <module>
 <name>LPCREATESTRUCT</name>
@@ -2623,21 +2915,21 @@
 <fan_out_visible value="2" level="0" />
 <fan_out_concrete value="2" level="0" />
 <fan_out value="2" level="0" />
-<fan_in_visible value="9" level="1" />
-<fan_in_concrete value="6" level="0" />
-<fan_in value="9" level="0" />
-<IF4_visible value="324" level="2" />
-<IF4_concrete value="144" level="2" />
-<IF4 value="324" level="1" />
+<fan_in_visible value="8" level="1" />
+<fan_in_concrete value="5" level="0" />
+<fan_in value="8" level="0" />
+<IF4_visible value="256" level="2" />
+<IF4_concrete value="100" level="1" />
+<IF4 value="256" level="1" />
 </module>
 <module>
 <name>MFCOpenGLControl</name>
 <fan_out_visible value="0" level="0" />
 <fan_out_concrete value="0" level="0" />
 <fan_out value="0" level="0" />
-<fan_in_visible value="9" level="1" />
-<fan_in_concrete value="9" level="1" />
-<fan_in value="11" level="0" />
+<fan_in_visible value="7" level="1" />
+<fan_in_concrete value="7" level="1" />
+<fan_in value="10" level="0" />
 <IF4_visible value="0" level="0" />
 <IF4_concrete value="0" level="0" />
 <IF4 value="0" level="0" />
@@ -2672,8 +2964,44 @@
 <fan_out_concrete value="0" level="0" />
 <fan_out value="0" level="0" />
 <fan_in_visible value="11" level="1" />
-<fan_in_concrete value="8" level="1" />
+<fan_in_concrete value="9" level="1" />
 <fan_in value="11" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>MediatorObserver</name>
+<fan_out_visible value="2" level="0" />
+<fan_out_concrete value="1" level="0" />
+<fan_out value="2" level="0" />
+<fan_in_visible value="1" level="0" />
+<fan_in_concrete value="1" level="0" />
+<fan_in value="1" level="0" />
+<IF4_visible value="4" level="0" />
+<IF4_concrete value="1" level="0" />
+<IF4 value="4" level="0" />
+</module>
+<module>
+<name>MediatorSubject</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="1" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="3" level="0" />
+<fan_in_concrete value="2" level="0" />
+<fan_in value="3" level="0" />
+<IF4_visible value="9" level="0" />
+<IF4_concrete value="4" level="0" />
+<IF4 value="9" level="0" />
+</module>
+<module>
+<name>MediatorUpdateContext_t</name>
+<fan_out_visible value="3" level="0" />
+<fan_out_concrete value="3" level="0" />
+<fan_out value="3" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
 <IF4_visible value="0" level="0" />
 <IF4_concrete value="0" level="0" />
 <IF4 value="0" level="0" />
@@ -2743,9 +3071,9 @@
 <fan_out_visible value="0" level="0" />
 <fan_out_concrete value="0" level="0" />
 <fan_out value="0" level="0" />
-<fan_in_visible value="1" level="0" />
-<fan_in_concrete value="2" level="0" />
-<fan_in value="2" level="0" />
+<fan_in_visible value="4" level="0" />
+<fan_in_concrete value="6" level="0" />
+<fan_in value="7" level="0" />
 <IF4_visible value="0" level="0" />
 <IF4_concrete value="0" level="0" />
 <IF4 value="0" level="0" />
@@ -2811,6 +3139,18 @@
 <IF4 value="0" level="0" />
 </module>
 <module>
+<name>PerspectiveMath</name>
+<fan_out_visible value="0" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="0" level="0" />
+<fan_in_visible value="3" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="3" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
 <name>Player</name>
 <fan_out_visible value="0" level="0" />
 <fan_out_concrete value="0" level="0" />
@@ -2824,9 +3164,9 @@
 </module>
 <module>
 <name>Player_t</name>
-<fan_out_visible value="3" level="0" />
-<fan_out_concrete value="3" level="0" />
-<fan_out value="3" level="0" />
+<fan_out_visible value="5" level="0" />
+<fan_out_concrete value="5" level="0" />
+<fan_out value="5" level="0" />
 <fan_in_visible value="0" level="0" />
 <fan_in_concrete value="0" level="0" />
 <fan_in value="0" level="0" />
@@ -2836,15 +3176,15 @@
 </module>
 <module>
 <name>Projectile</name>
-<fan_out_visible value="8" level="1" />
-<fan_out_concrete value="0" level="0" />
-<fan_out value="8" level="0" />
+<fan_out_visible value="10" level="1" />
+<fan_out_concrete value="3" level="0" />
+<fan_out value="10" level="0" />
 <fan_in_visible value="2" level="0" />
 <fan_in_concrete value="1" level="0" />
 <fan_in value="2" level="0" />
-<IF4_visible value="256" level="2" />
-<IF4_concrete value="0" level="0" />
-<IF4 value="256" level="1" />
+<IF4_visible value="400" level="2" />
+<IF4_concrete value="9" level="0" />
+<IF4 value="400" level="1" />
 </module>
 <module>
 <name>ReplayFormatEvent</name>
@@ -2899,9 +3239,9 @@
 <fan_out_visible value="0" level="0" />
 <fan_out_concrete value="0" level="0" />
 <fan_out value="0" level="0" />
-<fan_in_visible value="1" level="0" />
-<fan_in_concrete value="1" level="0" />
-<fan_in value="1" level="0" />
+<fan_in_visible value="2" level="0" />
+<fan_in_concrete value="2" level="0" />
+<fan_in value="2" level="0" />
 <IF4_visible value="0" level="0" />
 <IF4_concrete value="0" level="0" />
 <IF4 value="0" level="0" />
@@ -3087,6 +3427,18 @@
 <IF4 value="0" level="0" />
 </module>
 <module>
+<name>TitleScreen</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="1" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="4" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="16" level="0" />
+</module>
+<module>
 <name>UINT</name>
 <fan_out_visible value="2" level="0" />
 <fan_out_concrete value="2" level="0" />
@@ -3100,7 +3452,7 @@
 </module>
 <module>
 <name>UINT_PTR</name>
-<fan_out_visible value="1" level="0" />
+<fan_out_visible value="0" level="0" />
 <fan_out_concrete value="1" level="0" />
 <fan_out value="1" level="0" />
 <fan_in_visible value="0" level="0" />
@@ -3159,16 +3511,52 @@
 <IF4 value="4" level="0" />
 </module>
 <module>
-<name>VirtualEnvironment</name>
+<name>VirtualAvatar</name>
+<fan_out_visible value="0" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="3" level="0" />
+<fan_in_concrete value="2" level="0" />
+<fan_in value="4" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="16" level="0" />
+</module>
+<module>
+<name>VirtualBall</name>
 <fan_out_visible value="0" level="0" />
 <fan_out_concrete value="0" level="0" />
 <fan_out value="0" level="0" />
-<fan_in_visible value="2" level="0" />
+<fan_in_visible value="3" level="0" />
 <fan_in_concrete value="1" level="0" />
-<fan_in value="7" level="0" />
+<fan_in value="5" level="0" />
 <IF4_visible value="0" level="0" />
 <IF4_concrete value="0" level="0" />
 <IF4 value="0" level="0" />
+</module>
+<module>
+<name>VirtualEnvironment</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="1" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="4" level="0" />
+<fan_in_concrete value="3" level="0" />
+<fan_in value="12" level="0" />
+<IF4_visible value="16" level="0" />
+<IF4_concrete value="9" level="0" />
+<IF4 value="144" level="1" />
+</module>
+<module>
+<name>VirtualSlingshot</name>
+<fan_out_visible value="0" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="2" level="0" />
+<fan_in_concrete value="1" level="0" />
+<fan_in value="3" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="9" level="0" />
 </module>
 <module>
 <name>WinsockNetwork</name>
@@ -3187,9 +3575,9 @@
 <fan_out_visible value="0" level="0" />
 <fan_out_concrete value="0" level="0" />
 <fan_out value="0" level="0" />
-<fan_in_visible value="2" level="0" />
-<fan_in_concrete value="3" level="0" />
-<fan_in value="4" level="0" />
+<fan_in_visible value="5" level="0" />
+<fan_in_concrete value="4" level="0" />
+<fan_in value="5" level="0" />
 <IF4_visible value="0" level="0" />
 <IF4_concrete value="0" level="0" />
 <IF4 value="0" level="0" />
@@ -3256,9 +3644,9 @@
 </module>
 <module>
 <name>auto_ptr</name>
-<fan_out_visible value="1" level="0" />
-<fan_out_concrete value="1" level="0" />
-<fan_out value="1" level="0" />
+<fan_out_visible value="4" level="0" />
+<fan_out_concrete value="4" level="0" />
+<fan_out value="4" level="0" />
 <fan_in_visible value="0" level="0" />
 <fan_in_concrete value="0" level="0" />
 <fan_in value="0" level="0" />
@@ -3268,9 +3656,21 @@
 </module>
 <module>
 <name>bool</name>
-<fan_out_visible value="3" level="0" />
-<fan_out_concrete value="6" level="0" />
-<fan_out value="6" level="0" />
+<fan_out_visible value="6" level="0" />
+<fan_out_concrete value="10" level="1" />
+<fan_out value="10" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>cBitmap</name>
+<fan_out_visible value="0" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="2" level="0" />
 <fan_in_visible value="0" level="0" />
 <fan_in_concrete value="0" level="0" />
 <fan_in value="0" level="0" />
@@ -3280,8 +3680,44 @@
 </module>
 <module>
 <name>cCamera</name>
-<fan_out_visible value="0" level="0" />
+<fan_out_visible value="5" level="0" />
 <fan_out_concrete value="0" level="0" />
+<fan_out value="7" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>cCollisionAABBBox</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="2" level="0" />
+<fan_out value="3" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>cGenericHapticDevice</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>cHapticDeviceHandler</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="1" level="0" />
 <fan_out value="1" level="0" />
 <fan_in_visible value="0" level="0" />
 <fan_in_concrete value="0" level="0" />
@@ -3294,7 +3730,7 @@
 <name>cLight</name>
 <fan_out_visible value="0" level="0" />
 <fan_out_concrete value="0" level="0" />
-<fan_out value="1" level="0" />
+<fan_out value="2" level="0" />
 <fan_in_visible value="0" level="0" />
 <fan_in_concrete value="0" level="0" />
 <fan_in value="0" level="0" />
@@ -3304,9 +3740,9 @@
 </module>
 <module>
 <name>cMesh</name>
-<fan_out_visible value="1" level="0" />
+<fan_out_visible value="0" level="0" />
 <fan_out_concrete value="0" level="0" />
-<fan_out value="1" level="0" />
+<fan_out value="4" level="0" />
 <fan_in_visible value="0" level="0" />
 <fan_in_concrete value="0" level="0" />
 <fan_in value="0" level="0" />
@@ -3316,9 +3752,9 @@
 </module>
 <module>
 <name>cODEGenericBody</name>
-<fan_out_visible value="0" level="0" />
+<fan_out_visible value="1" level="0" />
 <fan_out_concrete value="0" level="0" />
-<fan_out value="1" level="0" />
+<fan_out value="2" level="0" />
 <fan_in_visible value="0" level="0" />
 <fan_in_concrete value="0" level="0" />
 <fan_in value="0" level="0" />
@@ -3328,9 +3764,9 @@
 </module>
 <module>
 <name>cODEWorld</name>
-<fan_out_visible value="0" level="0" />
+<fan_out_visible value="1" level="0" />
 <fan_out_concrete value="0" level="0" />
-<fan_out value="1" level="0" />
+<fan_out value="2" level="0" />
 <fan_in_visible value="0" level="0" />
 <fan_in_concrete value="0" level="0" />
 <fan_in value="0" level="0" />
@@ -3340,8 +3776,8 @@
 </module>
 <module>
 <name>cVector3d</name>
-<fan_out_visible value="14" level="2" />
-<fan_out_concrete value="4" level="0" />
+<fan_out_visible value="11" level="1" />
+<fan_out_concrete value="7" level="1" />
 <fan_out value="14" level="1" />
 <fan_in_visible value="0" level="0" />
 <fan_in_concrete value="0" level="0" />
@@ -3352,8 +3788,20 @@
 </module>
 <module>
 <name>cWorld</name>
-<fan_out_visible value="0" level="0" />
+<fan_out_visible value="4" level="0" />
 <fan_out_concrete value="0" level="0" />
+<fan_out value="6" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>mutex</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="1" level="0" />
 <fan_out value="1" level="0" />
 <fan_in_visible value="0" level="0" />
 <fan_in_concrete value="0" level="0" />
@@ -3388,9 +3836,9 @@
 </module>
 <module>
 <name>shared_ptr</name>
-<fan_out_visible value="10" level="1" />
-<fan_out_concrete value="10" level="1" />
-<fan_out value="10" level="0" />
+<fan_out_visible value="11" level="1" />
+<fan_out_concrete value="11" level="1" />
+<fan_out value="11" level="0" />
 <fan_in_visible value="0" level="0" />
 <fan_in_concrete value="0" level="0" />
 <fan_in value="0" level="0" />
@@ -3460,9 +3908,9 @@
 </module>
 <module>
 <name>vector</name>
-<fan_out_visible value="7" level="1" />
-<fan_out_concrete value="6" level="0" />
-<fan_out value="7" level="0" />
+<fan_out_visible value="8" level="1" />
+<fan_out_concrete value="7" level="1" />
+<fan_out value="8" level="0" />
 <fan_in_visible value="0" level="0" />
 <fan_in_concrete value="0" level="0" />
 <fan_in value="0" level="0" />
@@ -3504,7 +3952,7 @@
 <name>&lt;file scope items&gt;</name>
 <source_reference file="../../Common/ConnectionStateEnum.h" line="1" />
 <lines_of_code value="12" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="14" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 </rejected_extent>
 <rejected_extent>
@@ -3518,7 +3966,7 @@
 <name>&lt;file scope items&gt;</name>
 <source_reference file="../../Common/GameStateEnum.h" line="1" />
 <lines_of_code value="11" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="13" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 </rejected_extent>
 <rejected_extent>
@@ -3532,7 +3980,7 @@
 <name>&lt;file scope items&gt;</name>
 <source_reference file="../../Common/PlayerEnum.h" line="1" />
 <lines_of_code value="10" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="12" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 </rejected_extent>
 <rejected_extent>
@@ -3567,7 +4015,14 @@
 <name>&lt;file scope items&gt;</name>
 <source_reference file="../../Common/VideoData.h" line="1" />
 <lines_of_code value="6" level="0" />
-<lines_of_comment value="3" level="0" />
+<lines_of_comment value="16" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+</rejected_extent>
+<rejected_extent>
+<name>&lt;file scope items&gt;</name>
+<source_reference file="../../Common/WorldConstants.h" line="1" />
+<lines_of_code value="15" level="0" />
+<lines_of_comment value="28" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 </rejected_extent>
 <rejected_extent>
@@ -3594,8 +4049,8 @@
 <rejected_extent>
 <name>&lt;file scope items&gt;</name>
 <source_reference file="../../Falcon/FalconObserver.h" line="1" />
-<lines_of_code value="5" level="0" />
-<lines_of_comment value="2" level="0" />
+<lines_of_code value="6" level="0" />
+<lines_of_comment value="6" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 </rejected_extent>
 <rejected_extent>
@@ -3621,9 +4076,23 @@
 </rejected_extent>
 <rejected_extent>
 <name>&lt;file scope items&gt;</name>
-<source_reference file="../../Falcon/NovintFalcon.cpp" line="1" />
+<source_reference file="../../Falcon/KeyboardFalcon.cpp" line="1" />
+<lines_of_code value="2" level="0" />
+<lines_of_comment value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+</rejected_extent>
+<rejected_extent>
+<name>&lt;file scope items&gt;</name>
+<source_reference file="../../Falcon/KeyboardFalcon.h" line="1" />
 <lines_of_code value="1" level="0" />
 <lines_of_comment value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+</rejected_extent>
+<rejected_extent>
+<name>&lt;file scope items&gt;</name>
+<source_reference file="../../Falcon/NovintFalcon.cpp" line="1" />
+<lines_of_code value="4" level="0" />
+<lines_of_comment value="2" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 </rejected_extent>
 <rejected_extent>
@@ -3636,7 +4105,7 @@
 <rejected_extent>
 <name>&lt;file scope items&gt;</name>
 <source_reference file="../../Game/Game.cpp" line="1" />
-<lines_of_code value="1" level="0" />
+<lines_of_code value="3" level="0" />
 <lines_of_comment value="0" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 </rejected_extent>
@@ -3649,20 +4118,6 @@
 </rejected_extent>
 <rejected_extent>
 <name>&lt;file scope items&gt;</name>
-<source_reference file="../../Game/GameObserver.cpp" line="1" />
-<lines_of_code value="1" level="0" />
-<lines_of_comment value="0" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-</rejected_extent>
-<rejected_extent>
-<name>&lt;file scope items&gt;</name>
-<source_reference file="../../Game/GameObserver.h" line="1" />
-<lines_of_code value="4" level="0" />
-<lines_of_comment value="2" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-</rejected_extent>
-<rejected_extent>
-<name>&lt;file scope items&gt;</name>
 <source_reference file="../../Game/GameProxy.h" line="1" />
 <lines_of_code value="1" level="0" />
 <lines_of_comment value="1" level="0" />
@@ -3670,14 +4125,49 @@
 </rejected_extent>
 <rejected_extent>
 <name>&lt;file scope items&gt;</name>
-<source_reference file="../../Game/GameSubject.cpp" line="1" />
+<source_reference file="../../Game/HpBar.cpp" line="1" />
 <lines_of_code value="1" level="0" />
 <lines_of_comment value="0" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 </rejected_extent>
 <rejected_extent>
 <name>&lt;file scope items&gt;</name>
-<source_reference file="../../Game/GameSubject.h" line="1" />
+<source_reference file="../../Game/HpBar.h" line="1" />
+<lines_of_code value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+</rejected_extent>
+<rejected_extent>
+<name>&lt;file scope items&gt;</name>
+<source_reference file="../../Game/TitleScreen.h" line="1" />
+<lines_of_code value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+</rejected_extent>
+<rejected_extent>
+<name>&lt;file scope items&gt;</name>
+<source_reference file="../../Game/VirtualAvatar.cpp" line="1" />
+<lines_of_code value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+</rejected_extent>
+<rejected_extent>
+<name>&lt;file scope items&gt;</name>
+<source_reference file="../../Game/VirtualAvatar.h" line="1" />
+<lines_of_code value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+</rejected_extent>
+<rejected_extent>
+<name>&lt;file scope items&gt;</name>
+<source_reference file="../../Game/VirtualBall.cpp" line="1" />
+<lines_of_code value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+</rejected_extent>
+<rejected_extent>
+<name>&lt;file scope items&gt;</name>
+<source_reference file="../../Game/VirtualBall.h" line="1" />
 <lines_of_code value="1" level="0" />
 <lines_of_comment value="0" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -3685,13 +4175,27 @@
 <rejected_extent>
 <name>&lt;file scope items&gt;</name>
 <source_reference file="../../Game/VirtualEnvironment.cpp" line="1" />
-<lines_of_code value="1" level="0" />
+<lines_of_code value="3" level="0" />
 <lines_of_comment value="0" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 </rejected_extent>
 <rejected_extent>
 <name>&lt;file scope items&gt;</name>
 <source_reference file="../../Game/VirtualEnvironment.h" line="1" />
+<lines_of_code value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+</rejected_extent>
+<rejected_extent>
+<name>&lt;file scope items&gt;</name>
+<source_reference file="../../Game/VirtualSlingshot.cpp" line="1" />
+<lines_of_code value="2" level="0" />
+<lines_of_comment value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+</rejected_extent>
+<rejected_extent>
+<name>&lt;file scope items&gt;</name>
+<source_reference file="../../Game/VirtualSlingshot.h" line="1" />
 <lines_of_code value="1" level="0" />
 <lines_of_comment value="0" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -3797,7 +4301,7 @@
 <rejected_extent>
 <name>&lt;file scope items&gt;</name>
 <source_reference file="../../Logger/LogEventEnum.h" line="1" />
-<lines_of_code value="41" level="0" />
+<lines_of_code value="40" level="0" />
 <lines_of_comment value="7" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 </rejected_extent>
@@ -3915,9 +4419,58 @@
 </rejected_extent>
 <rejected_extent>
 <name>&lt;file scope items&gt;</name>
+<source_reference file="../../Mediator/MediatorObserver.cpp" line="1" />
+<lines_of_code value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+</rejected_extent>
+<rejected_extent>
+<name>&lt;file scope items&gt;</name>
+<source_reference file="../../Mediator/MediatorObserver.h" line="1" />
+<lines_of_code value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+</rejected_extent>
+<rejected_extent>
+<name>&lt;file scope items&gt;</name>
 <source_reference file="../../Mediator/MediatorProxy.h" line="1" />
 <lines_of_code value="1" level="0" />
 <lines_of_comment value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+</rejected_extent>
+<rejected_extent>
+<name>&lt;file scope items&gt;</name>
+<source_reference file="../../Mediator/MediatorSubject.cpp" line="1" />
+<lines_of_code value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+</rejected_extent>
+<rejected_extent>
+<name>&lt;file scope items&gt;</name>
+<source_reference file="../../Mediator/MediatorSubject.h" line="1" />
+<lines_of_code value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+</rejected_extent>
+<rejected_extent>
+<name>&lt;file scope items&gt;</name>
+<source_reference file="../../Mediator/MediatorUpdateContextEnum.h" line="1" />
+<lines_of_code value="20" level="0" />
+<lines_of_comment value="7" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+</rejected_extent>
+<rejected_extent>
+<name>&lt;file scope items&gt;</name>
+<source_reference file="../../Mediator/PerspectiveMath.cpp" line="1" />
+<lines_of_code value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+</rejected_extent>
+<rejected_extent>
+<name>&lt;file scope items&gt;</name>
+<source_reference file="../../Mediator/PerspectiveMath.h" line="1" />
+<lines_of_code value="1" level="0" />
+<lines_of_comment value="0" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 </rejected_extent>
 <rejected_extent>
@@ -3951,7 +4504,7 @@
 <rejected_extent>
 <name>&lt;file scope items&gt;</name>
 <source_reference file="../../Network/NetworkObserver.h" line="1" />
-<lines_of_code value="18" level="0" />
+<lines_of_code value="17" level="0" />
 <lines_of_comment value="2" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 </rejected_extent>
@@ -4000,7 +4553,7 @@
 <rejected_extent>
 <name>&lt;file scope items&gt;</name>
 <source_reference file="../../Network/WinsockNetwork.h" line="1" />
-<lines_of_code value="22" level="0" />
+<lines_of_code value="21" level="0" />
 <lines_of_comment value="8" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 </rejected_extent>
@@ -4091,6 +4644,13 @@
 <rejected_extent>
 <name>&lt;file scope items&gt;</name>
 <source_reference file="../../Test/Framework" line="1" />
+<lines_of_code value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+</rejected_extent>
+<rejected_extent>
+<name>&lt;file scope items&gt;</name>
+<source_reference file="../../Test/Mediator" line="1" />
 <lines_of_code value="0" level="0" />
 <lines_of_comment value="0" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -4203,7 +4763,7 @@
 <rejected_extent>
 <name>&lt;file scope items&gt;</name>
 <source_reference file="../../UserInterface/UserInterfaceObserver.h" line="1" />
-<lines_of_code value="17" level="0" />
+<lines_of_code value="16" level="0" />
 <lines_of_comment value="2" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 </rejected_extent>
@@ -4321,6 +4881,20 @@
 </rejected_extent>
 <rejected_extent>
 <name>&lt;file scope items&gt;</name>
+<source_reference file="../../ZCamera/KeyboardZCamera.cpp" line="1" />
+<lines_of_code value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+</rejected_extent>
+<rejected_extent>
+<name>&lt;file scope items&gt;</name>
+<source_reference file="../../ZCamera/KeyboardZCamera.h" line="1" />
+<lines_of_code value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+</rejected_extent>
+<rejected_extent>
+<name>&lt;file scope items&gt;</name>
 <source_reference file="../../ZCamera/ZCamera.cpp" line="1" />
 <lines_of_code value="3" level="0" />
 <lines_of_comment value="0" level="0" />
@@ -4343,7 +4917,7 @@
 <rejected_extent>
 <name>&lt;file scope items&gt;</name>
 <source_reference file="../../ZCamera/ZCameraObserver.h" line="1" />
-<lines_of_code value="5" level="0" />
+<lines_of_code value="6" level="0" />
 <lines_of_comment value="2" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 </rejected_extent>

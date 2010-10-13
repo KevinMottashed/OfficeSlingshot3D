@@ -2,30 +2,95 @@
 \section{FalconSubject Class Reference}
 \label{classFalconSubject}\index{FalconSubject@{FalconSubject}}
 }
+
+
+Abstract class in the observer pattern for the falcon.  
+
+
+
+
+{\ttfamily \#include $<$FalconSubject.h$>$}
+
 Inheritance diagram for FalconSubject:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=3cm]{classFalconSubject}
+\includegraphics[height=3.000000cm]{classFalconSubject}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\hypertarget{classFalconSubject_a1c7a53a4d28fbb83d305fd62470bfaa2}{
+\hyperlink{classFalconSubject_a1c7a53a4d28fbb83d305fd62470bfaa2}{FalconSubject} ()}
+\label{classFalconSubject_a1c7a53a4d28fbb83d305fd62470bfaa2}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{classFalconSubject_afd64db787e2371dc09b73917209f3566}{
+virtual \hyperlink{classFalconSubject_afd64db787e2371dc09b73917209f3566}{$\sim$FalconSubject} ()}
+\label{classFalconSubject_afd64db787e2371dc09b73917209f3566}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+void \hyperlink{classFalconSubject_a081d12a24abd16b88b69230f82ce1ec7}{attach} (\hyperlink{classFalconObserver}{FalconObserver} $\ast$observer)
+\begin{DoxyCompactList}\small\item\em Attach a new observer to this subject. \item\end{DoxyCompactList}\item 
+void \hyperlink{classFalconSubject_aaa69f14bf9659f783b9d95da47e55868}{detach} (\hyperlink{classFalconObserver}{FalconObserver} $\ast$observer)
+\begin{DoxyCompactList}\small\item\em Detach an observer from this subject. \item\end{DoxyCompactList}\item 
+void \hyperlink{classFalconSubject_abd19e56b3ffb433705576e361cc5b28f}{notify} (FalconUpdateContext context, const void $\ast$data=NULL)
+\begin{DoxyCompactList}\small\item\em Notifies all observers that a new update is available. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract class in the observer pattern for the falcon. This class is used to report falcon related updates to the observers. 
+
+\subsection{Member Function Documentation}
 \hypertarget{classFalconSubject_a081d12a24abd16b88b69230f82ce1ec7}{
-void {\bfseries attach} (\hyperlink{classFalconObserver}{FalconObserver} $\ast$observer)}
+\index{FalconSubject@{FalconSubject}!attach@{attach}}
+\index{attach@{attach}!FalconSubject@{FalconSubject}}
+\subsubsection[{attach}]{\setlength{\rightskip}{0pt plus 5cm}void FalconSubject::attach (
+\begin{DoxyParamCaption}
+\item[{{\bf FalconObserver} $\ast$}]{ observer}
+\end{DoxyParamCaption}
+)}}
 \label{classFalconSubject_a081d12a24abd16b88b69230f82ce1ec7}
 
-\item 
+
+Attach a new observer to this subject. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em observer}]The observer to attach to this subject. No duplicated are allowed. \end{DoxyParams}
 \hypertarget{classFalconSubject_aaa69f14bf9659f783b9d95da47e55868}{
-void {\bfseries detach} (\hyperlink{classFalconObserver}{FalconObserver} $\ast$observer)}
+\index{FalconSubject@{FalconSubject}!detach@{detach}}
+\index{detach@{detach}!FalconSubject@{FalconSubject}}
+\subsubsection[{detach}]{\setlength{\rightskip}{0pt plus 5cm}void FalconSubject::detach (
+\begin{DoxyParamCaption}
+\item[{{\bf FalconObserver} $\ast$}]{ observer}
+\end{DoxyParamCaption}
+)}}
 \label{classFalconSubject_aaa69f14bf9659f783b9d95da47e55868}
 
-\item 
+
+Detach an observer from this subject. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em observer}]The observer to detach from this subject. \end{DoxyParams}
 \hypertarget{classFalconSubject_abd19e56b3ffb433705576e361cc5b28f}{
-void {\bfseries notify} (FalconUpdateContext context, const void $\ast$data=NULL)}
+\index{FalconSubject@{FalconSubject}!notify@{notify}}
+\index{notify@{notify}!FalconSubject@{FalconSubject}}
+\subsubsection[{notify}]{\setlength{\rightskip}{0pt plus 5cm}void FalconSubject::notify (
+\begin{DoxyParamCaption}
+\item[{FalconUpdateContext}]{ context, }
+\item[{const void $\ast$}]{ data = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}
 \label{classFalconSubject_abd19e56b3ffb433705576e361cc5b28f}
 
-\end{DoxyCompactItemize}
+
+Notifies all observers that a new update is available. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em context}]The context of the update, ex: slingshot moved. \item[{\em data}]The data associated with the update, ex: the slingshot's new position. \end{DoxyParams}
 
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}

@@ -14,7 +14,7 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="3" level="0" />
+<coupling_between_objects value="5" level="0" />
 <IF4 value="0" level="0" />
 <IF4_per_member_function value="********" level="0" />
 <IF4_visible value="0" level="0" />
@@ -35,11 +35,11 @@
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="219" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="213" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="309" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="303" />
 </extent>
 <extent>
 <description>pass by value</description>
@@ -49,35 +49,97 @@
 <description>pass by value</description>
 <source_reference file="../../UserInterface/MainDlg.h" line="30" />
 </extent>
-<name>MFCUserInterface</name>
+<name>Game</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="62" />
+<source_reference file="../../Game/Game.cpp" line="124" />
 </extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/Game.cpp" line="151" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/Game.cpp" line="174" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/Game.h" line="103" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/Game.h" line="109" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/Game.h" line="115" />
+</extent>
+<name>MFCUserInterface</name>
+<visible>true</visible>
+<concrete>true</concrete>
 <extent>
 <description>pass by value</description>
 <source_reference file="../../UserInterface/MFCUserInterface.cpp" line="68" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="27" />
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="74" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="30" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="33" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="36" />
+</extent>
+<name>Mediator</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="37" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="62" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="80" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="105" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Mediator/Mediator.h" line="49" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Mediator/Mediator.h" line="56" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Mediator/Mediator.h" line="63" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Mediator/Mediator.h" line="79" />
 </extent>
 <name>UserInterface</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/UserInterface.h" line="26" />
+<source_reference file="../../UserInterface/UserInterface.h" line="33" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/UserInterface.h" line="29" />
+<source_reference file="../../UserInterface/UserInterface.h" line="36" />
 </extent>
 </client_module>
 <supplier_module>

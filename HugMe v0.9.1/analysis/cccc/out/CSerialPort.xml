@@ -2,14 +2,14 @@
 <!--Detailed report on module CSerialPort-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="460" level="0" />
+<lines_of_code value="463" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
-<McCabes_cyclomatic_complexity value="74" level="0" />
+<McCabes_cyclomatic_complexity value="76" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
-<lines_of_code value="285" level="0" />
+<lines_of_code value="286" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="1.614" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.260" level="0" />
+<lines_of_code_per_line_of_comment value="1.619" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.266" level="0" />
 <weighted_methods_per_class_unity value="21" level="0" />
 <weighted_methods_per_class_visibility value="20" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
@@ -52,7 +52,7 @@
 <name>ClosePort()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Jacket/Serialport.cpp" line="209" />
+<source_reference file="../../Jacket/Serialport.cpp" line="214" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -68,7 +68,7 @@
 <name>CommThread(LPVOID)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Jacket/Serialport.cpp" line="223" />
+<source_reference file="../../Jacket/Serialport.cpp" line="228" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -84,7 +84,7 @@
 <name>GetCommEvents()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Jacket/Serialport.cpp" line="691" />
+<source_reference file="../../Jacket/Serialport.cpp" line="696" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -100,7 +100,7 @@
 <name>GetDCB()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Jacket/Serialport.cpp" line="683" />
+<source_reference file="../../Jacket/Serialport.cpp" line="688" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -116,7 +116,7 @@
 <name>GetWriteBufferSize()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Jacket/Serialport.cpp" line="699" />
+<source_reference file="../../Jacket/Serialport.cpp" line="704" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -146,17 +146,17 @@
 <description>definition</description>
 <source_reference file="../../Jacket/Serialport.cpp" line="68" />
 </extent>
-<lines_of_code value="97" level="1" />
-<McCabes_cyclomatic_complexity value="16" level="1" />
-<lines_of_comment value="41" level="0" />
-<lines_of_code_per_line_of_comment value="2.366" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.390" level="0" />
+<lines_of_code value="100" level="1" />
+<McCabes_cyclomatic_complexity value="18" level="1" />
+<lines_of_comment value="42" level="0" />
+<lines_of_code_per_line_of_comment value="2.381" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.429" level="0" />
 </member_function>
 <member_function>
 <name>ProcessErrorMessage(char *)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Jacket/Serialport.cpp" line="431" />
+<source_reference file="../../Jacket/Serialport.cpp" line="436" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -172,7 +172,7 @@
 <name>ReceiveChar(CSerialPort *,COMSTAT)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Jacket/Serialport.cpp" line="542" />
+<source_reference file="../../Jacket/Serialport.cpp" line="547" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -188,7 +188,7 @@
 <name>RestartMonitoring()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Jacket/Serialport.cpp" line="401" />
+<source_reference file="../../Jacket/Serialport.cpp" line="406" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -204,7 +204,7 @@
 <name>StartMonitoring()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Jacket/Serialport.cpp" line="390" />
+<source_reference file="../../Jacket/Serialport.cpp" line="395" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -220,7 +220,7 @@
 <name>StopMonitoring()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Jacket/Serialport.cpp" line="416" />
+<source_reference file="../../Jacket/Serialport.cpp" line="421" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -236,7 +236,7 @@
 <name>WriteChar(CSerialPort *)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Jacket/Serialport.cpp" line="458" />
+<source_reference file="../../Jacket/Serialport.cpp" line="463" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -252,7 +252,7 @@
 <name>WriteToPort(char *,int)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Jacket/Serialport.cpp" line="648" />
+<source_reference file="../../Jacket/Serialport.cpp" line="653" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -268,7 +268,7 @@
 <name>WriteToPort(char)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Jacket/Serialport.cpp" line="668" />
+<source_reference file="../../Jacket/Serialport.cpp" line="673" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -377,7 +377,7 @@
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Jacket/Serialport.cpp" line="542" />
+<source_reference file="../../Jacket/Serialport.cpp" line="547" />
 </extent>
 <extent>
 <description>pass by value</description>
@@ -443,7 +443,7 @@
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Jacket/Serialport.cpp" line="223" />
+<source_reference file="../../Jacket/Serialport.cpp" line="228" />
 </extent>
 <extent>
 <description>pass by value</description>

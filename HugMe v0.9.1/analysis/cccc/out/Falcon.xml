@@ -2,36 +2,36 @@
 <!--Detailed report on module Falcon-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="15" level="0" />
+<lines_of_code value="16" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="0" />
-<lines_of_code value="4" level="0" />
+<lines_of_code value="21" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-<weighted_methods_per_class_unity value="4" level="0" />
-<weighted_methods_per_class_visibility value="4" level="0" />
+<weighted_methods_per_class_unity value="5" level="0" />
+<weighted_methods_per_class_visibility value="5" level="0" />
 <depth_of_inheritance_tree value="1" level="0" />
-<number_of_children value="2" level="0" />
-<coupling_between_objects value="3" level="0" />
-<IF4 value="4" level="0" />
+<number_of_children value="3" level="0" />
+<coupling_between_objects value="4" level="0" />
+<IF4 value="9" level="0" />
 <IF4_per_member_function value="********" level="2" />
-<IF4_visible value="4" level="0" />
+<IF4_visible value="9" level="0" />
 <IF4_visible_per_member_function value="********" level="2" />
-<IF4_concrete value="4" level="0" />
+<IF4_concrete value="9" level="0" />
 <IF4_concrete_per_member_function value="********" level="2" />
 </module_summary>
 <module_detail>
 <description>definition</description>
-<source_reference file="../../Falcon/Falcon.h" line="7" />
+<source_reference file="../../Falcon/Falcon.h" line="12" />
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 <description>declaration</description>
-<source_reference file="../../Falcon/FalconProxy.h" line="8" />
+<source_reference file="../../Falcon/FalconProxy.h" line="9" />
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="1" level="0" />
@@ -47,11 +47,23 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Falcon/Falcon.h" line="10" />
+<source_reference file="../../Falcon/Falcon.h" line="18" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="3" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>boundingBox()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Falcon/Falcon.h" line="39" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -59,11 +71,11 @@
 <name>startPolling()</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Falcon/Falcon.h" line="14" />
+<source_reference file="../../Falcon/Falcon.h" line="28" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -71,11 +83,11 @@
 <name>stopPolling()</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Falcon/Falcon.h" line="17" />
+<source_reference file="../../Falcon/Falcon.h" line="33" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -87,11 +99,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Falcon/Falcon.h" line="11" />
+<source_reference file="../../Falcon/Falcon.h" line="23" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -105,14 +117,21 @@
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../Replay/FalconReplayer.h" line="14" />
+<source_reference file="../../Replay/FalconReplayer.h" line="15" />
+</extent>
+<name>KeyboardFalcon</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>inheritance</description>
+<source_reference file="../../Falcon/KeyboardFalcon.h" line="12" />
 </extent>
 <name>NovintFalcon</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../Falcon/NovintFalcon.h" line="8" />
+<source_reference file="../../Falcon/NovintFalcon.h" line="12" />
 </extent>
 </client_module>
 <supplier_module>
@@ -121,7 +140,7 @@
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../Falcon/Falcon.h" line="7" />
+<source_reference file="../../Falcon/Falcon.h" line="12" />
 </extent>
 </supplier_module>
 </module>

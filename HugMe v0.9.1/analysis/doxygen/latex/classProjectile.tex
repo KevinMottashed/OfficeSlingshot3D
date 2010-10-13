@@ -2,44 +2,41 @@
 \section{Projectile Class Reference}
 \label{classProjectile}\index{Projectile@{Projectile}}
 }
+
+
+Represents a projectile Each projectile has a position and a force behind it.  
+
+
+
+
+{\ttfamily \#include $<$Projectile.h$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classProjectile_ae83eedae52dc89c07f13d9af3844c0de}{
-{\bfseries Projectile} (cVector3d position, cVector3d speed)}
-\label{classProjectile_ae83eedae52dc89c07f13d9af3844c0de}
+\hyperlink{classProjectile_ac536ed2aad56af866a2078b9a85aa16d}{Projectile} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{classProjectile_aa6b1d062ff11e1cb71941d8c4bc834ff}{Projectile} (cVector3d position, cVector3d force)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{classProjectile_a94903e021fa2edab60ba3836ca0b937d}{
+virtual \hyperlink{classProjectile_a94903e021fa2edab60ba3836ca0b937d}{$\sim$Projectile} ()}
+\label{classProjectile_a94903e021fa2edab60ba3836ca0b937d}
 
-\item 
-\hypertarget{classProjectile_aa55d774bc476f9612a4cdf6bbe886458}{
-cVector3d {\bfseries getPosition} () const }
-\label{classProjectile_aa55d774bc476f9612a4cdf6bbe886458}
-
-\item 
-\hypertarget{classProjectile_ab296c86308ef3ee4d4fc62a3379ebf8b}{
-void {\bfseries setPosition} (double x, double y, double z)}
-\label{classProjectile_ab296c86308ef3ee4d4fc62a3379ebf8b}
-
-\item 
-\hypertarget{classProjectile_ab1ae409448bf2ef3bb96a639621fcb46}{
-void {\bfseries setPosition} (const cVector3d \&v)}
-\label{classProjectile_ab1ae409448bf2ef3bb96a639621fcb46}
-
-\item 
-\hypertarget{classProjectile_a2bb207bbf1c0244f0e896de5950ee6b1}{
-cVector3d {\bfseries getSpeed} () const }
-\label{classProjectile_a2bb207bbf1c0244f0e896de5950ee6b1}
-
-\item 
-\hypertarget{classProjectile_a290fb17761a6a523df80791413c1f7b5}{
-void {\bfseries setSpeed} (double x, double y, double z)}
-\label{classProjectile_a290fb17761a6a523df80791413c1f7b5}
-
-\item 
-\hypertarget{classProjectile_a0564d5a2db445e6abf2423f19624f4fb}{
-void {\bfseries setSpeed} (const cVector3d \&v)}
-\label{classProjectile_a0564d5a2db445e6abf2423f19624f4fb}
-
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+cVector3d \hyperlink{classProjectile_a365ac17f48bff5a1a29b20f7810db86b}{position} () const 
+\begin{DoxyCompactList}\small\item\em Get the position. \item\end{DoxyCompactList}\item 
+void \hyperlink{classProjectile_a8216e973c892e18a1ace6f3385b6264c}{position} (double x, double y, double z)
+\begin{DoxyCompactList}\small\item\em Set the position. \item\end{DoxyCompactList}\item 
+void \hyperlink{classProjectile_a1bcec53ee3a1f27424a9d2aaef660014}{position} (const cVector3d \&v)
+\begin{DoxyCompactList}\small\item\em Set the position. \item\end{DoxyCompactList}\item 
+cVector3d \hyperlink{classProjectile_a710fc08eff87beb2984937c52dd180a8}{force} () const 
+\begin{DoxyCompactList}\small\item\em Get the force. \item\end{DoxyCompactList}\item 
+void \hyperlink{classProjectile_a32d86dffbc2aa5621a62479e0a1ed68d}{force} (double x, double y, double z)
+\begin{DoxyCompactList}\small\item\em Set the force. \item\end{DoxyCompactList}\item 
+void \hyperlink{classProjectile_a87d54cff36cc5f6e1fe92811476079fd}{force} (const cVector3d \&v)
+\begin{DoxyCompactList}\small\item\em Set the force. \item\end{DoxyCompactList}\item 
+bool \hyperlink{classProjectile_abb98fb2ad23ddeb32102d7d3b924878c}{equals} (const \hyperlink{classProjectile}{Projectile} \&other, float epsilon=0.0f)
+\begin{DoxyCompactList}\small\item\em Compare 2 projectiles for equality. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -48,6 +45,165 @@ class {\bfseries boost::serialization::access}}
 \label{classProjectile_ac98d07dd8f7b70e16ccb9a01abf56b9c}
 
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents a projectile Each projectile has a position and a force behind it. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classProjectile_ac536ed2aad56af866a2078b9a85aa16d}{
+\index{Projectile@{Projectile}!Projectile@{Projectile}}
+\index{Projectile@{Projectile}!Projectile@{Projectile}}
+\subsubsection[{Projectile}]{\setlength{\rightskip}{0pt plus 5cm}Projectile::Projectile (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classProjectile_ac536ed2aad56af866a2078b9a85aa16d}
+
+
+Default constructor. 
+
+Initializes the position and force to (0,0,0) \hypertarget{classProjectile_aa6b1d062ff11e1cb71941d8c4bc834ff}{
+\index{Projectile@{Projectile}!Projectile@{Projectile}}
+\index{Projectile@{Projectile}!Projectile@{Projectile}}
+\subsubsection[{Projectile}]{\setlength{\rightskip}{0pt plus 5cm}Projectile::Projectile (
+\begin{DoxyParamCaption}
+\item[{cVector3d}]{ position, }
+\item[{cVector3d}]{ force}
+\end{DoxyParamCaption}
+)}}
+\label{classProjectile_aa6b1d062ff11e1cb71941d8c4bc834ff}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em position}]The position for this projectile \item[{\em force}]The force applied to this projectile \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classProjectile_abb98fb2ad23ddeb32102d7d3b924878c}{
+\index{Projectile@{Projectile}!equals@{equals}}
+\index{equals@{equals}!Projectile@{Projectile}}
+\subsubsection[{equals}]{\setlength{\rightskip}{0pt plus 5cm}bool Projectile::equals (
+\begin{DoxyParamCaption}
+\item[{const {\bf Projectile} \&}]{ other, }
+\item[{float}]{ epsilon = {\ttfamily 0.0f}}
+\end{DoxyParamCaption}
+)}}
+\label{classProjectile_abb98fb2ad23ddeb32102d7d3b924878c}
+
+
+Compare 2 projectiles for equality. 
+
+A projectile's position and force is expressed using floating point numbers so the epsilon paramater is provided to allow for an error margin. 
+\begin{DoxyParams}{Parameters}
+\item[{\em other}]The other projectile. \item[{\em epsilon}]The error margin allowed in the floating point comparisons \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the projectiles are equal 
+\end{DoxyReturn}
+\hypertarget{classProjectile_a87d54cff36cc5f6e1fe92811476079fd}{
+\index{Projectile@{Projectile}!force@{force}}
+\index{force@{force}!Projectile@{Projectile}}
+\subsubsection[{force}]{\setlength{\rightskip}{0pt plus 5cm}void Projectile::force (
+\begin{DoxyParamCaption}
+\item[{const cVector3d \&}]{ v}
+\end{DoxyParamCaption}
+)}}
+\label{classProjectile_a87d54cff36cc5f6e1fe92811476079fd}
+
+
+Set the force. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em v}]The new force \end{DoxyParams}
+\hypertarget{classProjectile_a32d86dffbc2aa5621a62479e0a1ed68d}{
+\index{Projectile@{Projectile}!force@{force}}
+\index{force@{force}!Projectile@{Projectile}}
+\subsubsection[{force}]{\setlength{\rightskip}{0pt plus 5cm}void Projectile::force (
+\begin{DoxyParamCaption}
+\item[{double}]{ x, }
+\item[{double}]{ y, }
+\item[{double}]{ z}
+\end{DoxyParamCaption}
+)}}
+\label{classProjectile_a32d86dffbc2aa5621a62479e0a1ed68d}
+
+
+Set the force. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em x}]The x coordinate \item[{\em y}]The y coordinate \item[{\em z}]The z coordinate \end{DoxyParams}
+\hypertarget{classProjectile_a710fc08eff87beb2984937c52dd180a8}{
+\index{Projectile@{Projectile}!force@{force}}
+\index{force@{force}!Projectile@{Projectile}}
+\subsubsection[{force}]{\setlength{\rightskip}{0pt plus 5cm}cVector3d Projectile::force (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classProjectile_a710fc08eff87beb2984937c52dd180a8}
+
+
+Get the force. 
+
+\begin{DoxyReturn}{Returns}
+The projectile's force 
+\end{DoxyReturn}
+\hypertarget{classProjectile_a8216e973c892e18a1ace6f3385b6264c}{
+\index{Projectile@{Projectile}!position@{position}}
+\index{position@{position}!Projectile@{Projectile}}
+\subsubsection[{position}]{\setlength{\rightskip}{0pt plus 5cm}void Projectile::position (
+\begin{DoxyParamCaption}
+\item[{double}]{ x, }
+\item[{double}]{ y, }
+\item[{double}]{ z}
+\end{DoxyParamCaption}
+)}}
+\label{classProjectile_a8216e973c892e18a1ace6f3385b6264c}
+
+
+Set the position. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em x}]The x coordinate \item[{\em y}]The y coordinate \item[{\em z}]The z coordinate \end{DoxyParams}
+\hypertarget{classProjectile_a365ac17f48bff5a1a29b20f7810db86b}{
+\index{Projectile@{Projectile}!position@{position}}
+\index{position@{position}!Projectile@{Projectile}}
+\subsubsection[{position}]{\setlength{\rightskip}{0pt plus 5cm}cVector3d Projectile::position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classProjectile_a365ac17f48bff5a1a29b20f7810db86b}
+
+
+Get the position. 
+
+\begin{DoxyReturn}{Returns}
+The projectile's position 
+\end{DoxyReturn}
+\hypertarget{classProjectile_a1bcec53ee3a1f27424a9d2aaef660014}{
+\index{Projectile@{Projectile}!position@{position}}
+\index{position@{position}!Projectile@{Projectile}}
+\subsubsection[{position}]{\setlength{\rightskip}{0pt plus 5cm}void Projectile::position (
+\begin{DoxyParamCaption}
+\item[{const cVector3d \&}]{ v}
+\end{DoxyParamCaption}
+)}}
+\label{classProjectile_a1bcec53ee3a1f27424a9d2aaef660014}
+
+
+Set the position. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em v}]The new position \end{DoxyParams}
 
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}

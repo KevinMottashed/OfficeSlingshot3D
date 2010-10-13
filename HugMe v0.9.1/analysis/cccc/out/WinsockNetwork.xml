@@ -2,15 +2,15 @@
 <!--Detailed report on module WinsockNetwork-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="82" level="0" />
+<lines_of_code value="75" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="0" />
-<lines_of_code value="85" level="0" />
+<lines_of_code value="83" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="0.965" level="0" />
+<lines_of_code_per_line_of_comment value="0.904" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-<weighted_methods_per_class_unity value="19" level="0" />
+<weighted_methods_per_class_unity value="18" level="0" />
 <weighted_methods_per_class_visibility value="2" level="0" />
 <depth_of_inheritance_tree value="2" level="0" />
 <number_of_children value="0" level="0" />
@@ -39,10 +39,10 @@
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 <description>definition</description>
 <source_reference file="../../Network/WinsockNetwork.h" line="45" />
-<lines_of_code value="47" level="1" />
+<lines_of_code value="45" level="1" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="64" level="0" />
-<lines_of_code_per_line_of_comment value="0.734" level="0" />
+<lines_of_comment value="63" level="0" />
+<lines_of_code_per_line_of_comment value="0.714" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module_detail>
 <procedural_detail>
@@ -56,7 +56,7 @@
 <description>declaration</description>
 <source_reference file="../../Network/WinsockNetwork.h" line="48" />
 </extent>
-<lines_of_code value="15" level="0" />
+<lines_of_code value="11" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
@@ -90,7 +90,7 @@
 <name>isConnected()</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="90" />
+<source_reference file="../../Network/WinsockNetwork.h" line="87" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -102,7 +102,7 @@
 <name>isListening()</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="93" />
+<source_reference file="../../Network/WinsockNetwork.h" line="90" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -126,7 +126,7 @@
 <name>notifyAccept(NetworkSocket *)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="96" />
+<source_reference file="../../Network/WinsockNetwork.h" line="93" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -219,18 +219,6 @@
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
-<name>sendSlingshotRelease()</name>
-<extent>
-<description>declaration</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="87" />
-</extent>
-<lines_of_code value="1" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
 <name>sendStartGame()</name>
 <extent>
 <description>declaration</description>
@@ -305,7 +293,7 @@
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="117" />
+<source_reference file="../../Network/WinsockNetwork.h" line="114" />
 </extent>
 <name>Network</name>
 <visible>true</visible>
@@ -319,11 +307,11 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="96" />
+<source_reference file="../../Network/WinsockNetwork.h" line="93" />
 </extent>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="115" />
+<source_reference file="../../Network/WinsockNetwork.h" line="112" />
 </extent>
 <name>Projectile</name>
 <visible>true</visible>
@@ -337,7 +325,7 @@
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="116" />
+<source_reference file="../../Network/WinsockNetwork.h" line="113" />
 </extent>
 <name>cVector3d</name>
 <visible>true</visible>

@@ -2,16 +2,16 @@
 <!--Detailed report on module MFCUserInterface-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="138" level="0" />
+<lines_of_code value="134" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
-<McCabes_cyclomatic_complexity value="19" level="0" />
+<McCabes_cyclomatic_complexity value="20" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
-<lines_of_code value="20" level="0" />
+<lines_of_code value="23" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="6.900" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.950" level="0" />
-<weighted_methods_per_class_unity value="23" level="0" />
-<weighted_methods_per_class_visibility value="7" level="0" />
+<lines_of_code_per_line_of_comment value="5.826" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.870" level="0" />
+<weighted_methods_per_class_unity value="22" level="0" />
+<weighted_methods_per_class_visibility value="8" level="0" />
 <depth_of_inheritance_tree value="2" level="0" />
 <number_of_children value="1" level="0" />
 <coupling_between_objects value="8" level="0" />
@@ -59,311 +59,7 @@
 <name>changePreferences(const UserPreferences &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="132" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="60" />
-</extent>
-<lines_of_code value="6" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>closeApplication()</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="51" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="63" />
-</extent>
-<lines_of_code value="6" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>displayConnectionFailed()</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="74" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="33" />
-</extent>
-<lines_of_code value="6" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>displayConnectionStateChanged(ConnectionState_t,Player_t)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="62" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="27" />
-</extent>
-<lines_of_code value="6" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="4" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>displayFailedToListen()</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="80" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="34" />
-</extent>
-<lines_of_code value="6" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="0" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>displayGameStateChanged(GameState_t,Player_t)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="68" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="30" />
-</extent>
-<lines_of_code value="6" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>displayLocalFrame(const VideoData &amp;)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="104" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="39" />
-</extent>
-<lines_of_code value="5" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>displayNetworkError()</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="86" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="35" />
-</extent>
-<lines_of_code value="6" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="0" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>displayPeerChatMessage(const string &amp;)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="98" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="38" />
-</extent>
-<lines_of_code value="6" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>displayRemoteFrame(const VideoData &amp;)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="110" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="40" />
-</extent>
-<lines_of_code value="5" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>exitGameButtonPushed()</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="39" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="56" />
-</extent>
-<lines_of_code value="6" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="0" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>getMainWindow()</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="57" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="73" />
-</extent>
-<lines_of_code value="5" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>networkConnectButtonPushed()</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="15" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="47" />
-</extent>
-<lines_of_code value="6" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="4" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>networkDisconnectButtonPushed()</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="21" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="49" />
-</extent>
-<lines_of_code value="6" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="0" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>networkListenButtonPushed()</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="27" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="48" />
-</extent>
-<lines_of_code value="6" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="0" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>notifyNewBallShot(const cVector3d &amp;)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="122" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="69" />
-</extent>
-<lines_of_code value="5" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>pauseGameButtonPushed()</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="45" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="57" />
-</extent>
-<lines_of_code value="6" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="0" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>receiveNewBall(const cVector3d &amp;)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="127" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="70" />
-</extent>
-<lines_of_code value="5" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>sendChatButtonPushed(const string &amp;)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="92" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="52" />
-</extent>
-<lines_of_code value="6" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>setPeerUserName(const string &amp;)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="116" />
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="128" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -376,10 +72,202 @@
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
-<name>startGameButtonPushed()</name>
+<name>closeApplication()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="33" />
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="57" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="69" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>displayConnectionFailed()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="80" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="39" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>displayConnectionStateChanged(ConnectionState_t,Player_t)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="68" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="33" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>displayFailedToListen()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="86" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="40" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>displayGameStateChanged(GameState_t,Player_t)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="74" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="36" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>displayLocalFrame(const VideoData &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="110" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="45" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>displayNetworkError()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="92" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="41" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>displayPeerChatMessage(const string &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="104" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="44" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>displayRemoteFrame(const VideoData &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="116" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="46" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>exitGameButtonPushed()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="45" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="62" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getMainWindow()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="63" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="75" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>networkConnectButtonPushed()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="21" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="53" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>networkDisconnectButtonPushed()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="27" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -387,7 +275,103 @@
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>networkListenButtonPushed()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="33" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="54" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>pauseGameButtonPushed()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="51" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="63" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>sendChatButtonPushed(const string &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="98" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="58" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
 <lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>setPeerUserName(const string &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="122" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="72" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>startGameButtonPushed()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="39" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="61" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>switchCamera(cCamera *)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="15" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="26" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -426,48 +410,48 @@
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="76" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="78" />
 </extent>
 <name>ConnectionState_t</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="62" />
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="68" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="27" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="33" />
 </extent>
 <name>GameState_t</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="68" />
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="74" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="30" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="36" />
 </extent>
 <name>Player_t</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="62" />
-</extent>
-<extent>
-<description>pass by value</description>
 <source_reference file="../../UserInterface/MFCUserInterface.cpp" line="68" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="27" />
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="74" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="30" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="33" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="36" />
 </extent>
 <name>UserInterface</name>
 <visible>true</visible>
@@ -476,51 +460,43 @@
 <description>inheritance</description>
 <source_reference file="../../UserInterface/MFCUserInterface.h" line="16" />
 </extent>
-<name>cVector3d</name>
+<name>cCamera</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="122" />
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="15" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="127" />
-</extent>
-<extent>
-<description>pass by reference</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="69" />
-</extent>
-<extent>
-<description>pass by reference</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="70" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="26" />
 </extent>
 <name>string</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="92" />
-</extent>
-<extent>
-<description>pass by reference</description>
 <source_reference file="../../UserInterface/MFCUserInterface.cpp" line="98" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="116" />
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="104" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="38" />
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="122" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="52" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="44" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="66" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="58" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="72" />
 </extent>
 </supplier_module>
 </module>

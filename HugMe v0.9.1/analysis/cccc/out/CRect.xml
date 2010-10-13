@@ -47,7 +47,7 @@
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="35" />
+<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="41" />
 </extent>
 </client_module>
 <supplier_module>

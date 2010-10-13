@@ -137,7 +137,7 @@
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../Network/Network.h" line="13" />
+<source_reference file="../../Network/Network.h" line="15" />
 </extent>
 </client_module>
 <supplier_module>

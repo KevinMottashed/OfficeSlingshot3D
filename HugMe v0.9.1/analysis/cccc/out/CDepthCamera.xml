@@ -17,8 +17,8 @@
 <coupling_between_objects value="4" level="0" />
 <IF4 value="9" level="0" />
 <IF4_per_member_function value="********" level="2" />
-<IF4_visible value="0" level="0" />
-<IF4_visible_per_member_function value="********" level="0" />
+<IF4_visible value="1" level="0" />
+<IF4_visible_per_member_function value="********" level="2" />
 <IF4_concrete value="0" level="0" />
 <IF4_concrete_per_member_function value="********" level="0" />
 </module_summary>
@@ -526,11 +526,11 @@
 <name>CDepthCamera</name>
 <client_module>
 <name>ZCamera</name>
-<visible>false</visible>
+<visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../ZCamera/ZCamera.h" line="39" />
+<source_reference file="../../ZCamera/ZCamera.h" line="42" />
 </extent>
 </client_module>
 <supplier_module>

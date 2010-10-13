@@ -24,7 +24,7 @@
 </module_summary>
 <module_detail>
 <description>definition</description>
-<source_reference file="../../Network/NetworkObserver.h" line="26" />
+<source_reference file="../../Network/NetworkObserver.h" line="25" />
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="0" level="0" />
@@ -47,7 +47,7 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/NetworkObserver.h" line="29" />
+<source_reference file="../../Network/NetworkObserver.h" line="28" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -59,7 +59,7 @@
 <name>update(NetworkUpdateContext,const void *)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/NetworkObserver.h" line="33" />
+<source_reference file="../../Network/NetworkObserver.h" line="32" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -75,7 +75,7 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/NetworkObserver.h" line="30" />
+<source_reference file="../../Network/NetworkObserver.h" line="29" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -100,7 +100,7 @@
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../Mediator/Mediator.h" line="19" />
+<source_reference file="../../Mediator/Mediator.h" line="24" />
 </extent>
 <name>NetworkSubject</name>
 <visible>true</visible>

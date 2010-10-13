@@ -39,7 +39,7 @@
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Replay/FalconReplayer.h" line="23" />
+<source_reference file="../../Replay/FalconReplayer.h" line="24" />
 </extent>
 <name>HumanFormatLogger</name>
 <visible>true</visible>
@@ -84,6 +84,14 @@
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
+<source_reference file="../../Logger/Logger.h" line="31" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/Logger.h" line="32" />
+</extent>
+<extent>
+<description>pass by value</description>
 <source_reference file="../../Logger/Logger.h" line="33" />
 </extent>
 <extent>
@@ -101,14 +109,6 @@
 <extent>
 <description>pass by value</description>
 <source_reference file="../../Logger/Logger.h" line="37" />
-</extent>
-<extent>
-<description>pass by value</description>
-<source_reference file="../../Logger/Logger.h" line="38" />
-</extent>
-<extent>
-<description>pass by value</description>
-<source_reference file="../../Logger/Logger.h" line="39" />
 </extent>
 <name>NetworkReplayer</name>
 <visible>true</visible>

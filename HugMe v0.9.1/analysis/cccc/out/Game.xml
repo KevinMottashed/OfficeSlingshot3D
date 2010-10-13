@@ -2,36 +2,36 @@
 <!--Detailed report on module Game-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="176" level="0" />
+<lines_of_code value="171" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
-<McCabes_cyclomatic_complexity value="16" level="0" />
+<McCabes_cyclomatic_complexity value="23" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
-<lines_of_code value="38" level="0" />
+<lines_of_code value="99" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="4.632" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.421" level="0" />
-<weighted_methods_per_class_unity value="19" level="0" />
-<weighted_methods_per_class_visibility value="15" level="0" />
+<lines_of_code_per_line_of_comment value="1.727" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.232" level="0" />
+<weighted_methods_per_class_unity value="10" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="1" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="4" level="0" />
-<IF4 value="9" level="0" />
-<IF4_per_member_function value="********" level="2" />
-<IF4_visible value="9" level="0" />
-<IF4_visible_per_member_function value="********" level="2" />
-<IF4_concrete value="4" level="0" />
-<IF4_concrete_per_member_function value="********" level="2" />
+<coupling_between_objects value="11" level="0" />
+<IF4 value="0" level="0" />
+<IF4_per_member_function value="********" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_visible_per_member_function value="********" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete_per_member_function value="********" level="0" />
 </module_summary>
 <module_detail>
 <description>definition</description>
-<source_reference file="../../Game/Game.h" line="10" />
-<lines_of_code value="22" level="0" />
+<source_reference file="../../Game/Game.h" line="20" />
+<lines_of_code value="13" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="14" level="0" />
-<lines_of_code_per_line_of_comment value="1.571" level="0" />
+<lines_of_comment value="31" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 <description>declaration</description>
-<source_reference file="../../Game/GameProxy.h" line="7" />
+<source_reference file="../../Game/GameProxy.h" line="5" />
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="1" level="0" />
@@ -40,22 +40,6 @@
 </module_detail>
 <procedural_detail>
 <member_function>
-<name>Game()</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../Game/Game.cpp" line="9" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../Game/Game.h" line="13" />
-</extent>
-<lines_of_code value="15" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="3" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
 <name>Game(const Game &amp;)</name>
 <extent>
 <description>declaration</description>
@@ -63,115 +47,39 @@
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
-<name>GameLoopThread(Game *)</name>
+<name>Game(shared_ptr)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Game/Game.cpp" line="141" />
-</extent>
-<lines_of_code value="28" level="0" />
-<McCabes_cyclomatic_complexity value="4" level="0" />
-<lines_of_comment value="6" level="0" />
-<lines_of_code_per_line_of_comment value="4.667" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>addLocalProjectile(const Projectile &amp;)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../Game/Game.cpp" line="82" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../Game/Game.h" line="38" />
-</extent>
-<lines_of_code value="7" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>addRemoteProjectile(const Projectile &amp;)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../Game/Game.cpp" line="89" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../Game/Game.h" line="39" />
-</extent>
-<lines_of_code value="7" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="0" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>getLocalPlayerPosition()</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../Game/Game.cpp" line="58" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../Game/Game.h" line="30" />
-</extent>
-<lines_of_code value="6" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>getLocalSlingshotPosition()</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../Game/Game.cpp" line="34" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../Game/Game.h" line="22" />
-</extent>
-<lines_of_code value="6" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>getRemotePlayerPosition()</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../Game/Game.cpp" line="70" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../Game/Game.h" line="34" />
-</extent>
-<lines_of_code value="6" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>getRemoteSlingshotPosition()</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../Game/Game.cpp" line="46" />
+<source_reference file="../../Game/Game.cpp" line="12" />
 </extent>
 <extent>
 <description>declaration</description>
 <source_reference file="../../Game/Game.h" line="26" />
 </extent>
-<lines_of_code value="6" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_code value="9" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="7" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>gameLoop()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/Game.cpp" line="202" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/Game.h" line="62" />
+</extent>
+<lines_of_code value="17" level="0" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
+<lines_of_comment value="7" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -179,27 +87,27 @@
 <name>operator =(const Game &amp;)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Game/Game.h" line="43" />
+<source_reference file="../../Game/Game.h" line="47" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
-<name>pause()</name>
+<name>pause(Player_t)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Game/Game.cpp" line="111" />
+<source_reference file="../../Game/Game.cpp" line="151" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Game/Game.h" line="18" />
+<source_reference file="../../Game/Game.h" line="109" />
 </extent>
-<lines_of_code value="8" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="3" level="0" />
+<lines_of_code value="15" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_comment value="11" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -207,109 +115,65 @@
 <name>reset()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Game/Game.cpp" line="131" />
+<source_reference file="../../Game/Game.cpp" line="187" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/Game.h" line="97" />
+</extent>
+<lines_of_code value="12" level="0" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>start(Player_t)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/Game.cpp" line="124" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/Game.h" line="103" />
+</extent>
+<lines_of_code value="14" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_comment value="9" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>stop(Player_t)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/Game.cpp" line="174" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/Game.h" line="115" />
 </extent>
 <lines_of_code value="8" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="7" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
-<name>setLocalPlayerPosition(const cVector3d &amp;)</name>
+<name>update(MediatorUpdateContext_t,const void *)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Game/Game.cpp" line="64" />
+<source_reference file="../../Game/Game.cpp" line="35" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Game/Game.h" line="31" />
+<source_reference file="../../Game/Game.h" line="36" />
 </extent>
-<lines_of_code value="6" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>setLocalSlingshotPosition(const cVector3d &amp;)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../Game/Game.cpp" line="40" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../Game/Game.h" line="23" />
-</extent>
-<lines_of_code value="6" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>setRemotePlayerPosition(const cVector3d &amp;)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../Game/Game.cpp" line="76" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../Game/Game.h" line="35" />
-</extent>
-<lines_of_code value="6" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>setRemoteSlingshotPosition(const cVector3d &amp;)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../Game/Game.cpp" line="52" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../Game/Game.h" line="27" />
-</extent>
-<lines_of_code value="6" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>start()</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../Game/Game.cpp" line="96" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../Game/Game.h" line="17" />
-</extent>
-<lines_of_code value="11" level="0" />
-<McCabes_cyclomatic_complexity value="3" level="0" />
-<lines_of_comment value="2" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>stop()</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../Game/Game.cpp" line="119" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../Game/Game.h" line="19" />
-</extent>
-<lines_of_code value="9" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+<lines_of_code value="70" level="1" />
+<McCabes_cyclomatic_complexity value="11" level="1" />
+<lines_of_comment value="12" level="0" />
+<lines_of_code_per_line_of_comment value="5.833" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.917" level="0" />
 </member_function>
 <member_function>
 <name>~Game()</name>
@@ -319,11 +183,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Game/Game.h" line="14" />
+<source_reference file="../../Game/Game.h" line="31" />
 </extent>
 <lines_of_code value="10" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -332,79 +196,116 @@
 <module>
 <name>Game</name>
 <client_module>
-<name>Mediator</name>
+</client_module>
+<supplier_module>
+<name>DWORD</name>
+<visible>false</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/Game.h" line="51" />
+</extent>
+<name>GameState_t</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Mediator/Mediator.h" line="53" />
+<source_reference file="../../Game/Game.h" line="67" />
 </extent>
-</client_module>
-<supplier_module>
-<name>GameSubject</name>
+<name>HANDLE</name>
+<visible>false</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/Game.h" line="50" />
+</extent>
+<name>MediatorObserver</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../Game/Game.h" line="10" />
+<source_reference file="../../Game/Game.h" line="20" />
 </extent>
-<name>Projectile</name>
-<visible>true</visible>
-<concrete>false</concrete>
-<extent>
-<description>pass by reference</description>
-<source_reference file="../../Game/Game.cpp" line="82" />
-</extent>
-<extent>
-<description>pass by reference</description>
-<source_reference file="../../Game/Game.cpp" line="89" />
-</extent>
-<extent>
-<description>pass by reference</description>
-<source_reference file="../../Game/Game.h" line="38" />
-</extent>
-<extent>
-<description>pass by reference</description>
-<source_reference file="../../Game/Game.h" line="39" />
-</extent>
-<name>cVector3d</name>
+<name>MediatorUpdateContext_t</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
-<description>pass by reference</description>
-<source_reference file="../../Game/Game.cpp" line="40" />
+<description>pass by value</description>
+<source_reference file="../../Game/Game.cpp" line="35" />
 </extent>
 <extent>
-<description>pass by reference</description>
-<source_reference file="../../Game/Game.cpp" line="52" />
+<description>pass by value</description>
+<source_reference file="../../Game/Game.h" line="36" />
+</extent>
+<name>Player_t</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/Game.cpp" line="124" />
 </extent>
 <extent>
-<description>pass by reference</description>
-<source_reference file="../../Game/Game.cpp" line="64" />
+<description>pass by value</description>
+<source_reference file="../../Game/Game.cpp" line="151" />
 </extent>
 <extent>
-<description>pass by reference</description>
-<source_reference file="../../Game/Game.cpp" line="76" />
+<description>pass by value</description>
+<source_reference file="../../Game/Game.cpp" line="174" />
 </extent>
 <extent>
-<description>pass by reference</description>
-<source_reference file="../../Game/Game.h" line="23" />
+<description>pass by value</description>
+<source_reference file="../../Game/Game.h" line="103" />
 </extent>
 <extent>
-<description>pass by reference</description>
-<source_reference file="../../Game/Game.h" line="27" />
+<description>pass by value</description>
+<source_reference file="../../Game/Game.h" line="109" />
 </extent>
 <extent>
-<description>pass by reference</description>
-<source_reference file="../../Game/Game.h" line="31" />
+<description>pass by value</description>
+<source_reference file="../../Game/Game.h" line="115" />
+</extent>
+<name>TitleScreen</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/Game.h" line="84" />
+</extent>
+<name>VirtualEnvironment</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/Game.h" line="78" />
+</extent>
+<name>auto_ptr</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/Game.h" line="56" />
+</extent>
+<name>mutex</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/Game.h" line="92" />
+</extent>
+<name>shared_ptr</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/Game.cpp" line="12" />
 </extent>
 <extent>
-<description>pass by reference</description>
-<source_reference file="../../Game/Game.h" line="35" />
+<description>pass by value</description>
+<source_reference file="../../Game/Game.h" line="26" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Game/Game.h" line="48" />
+<source_reference file="../../Game/Game.h" line="72" />
 </extent>
 </supplier_module>
 </module>

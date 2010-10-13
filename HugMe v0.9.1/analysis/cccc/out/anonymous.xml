@@ -6,10 +6,10 @@
 <lines_of_code_per_member_function value="******" level="0" />
 <McCabes_cyclomatic_complexity value="39" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
-<lines_of_code value="77" level="0" />
+<lines_of_code value="110" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="2.234" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.506" level="0" />
+<lines_of_code_per_line_of_comment value="1.564" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.355" level="0" />
 <weighted_methods_per_class_unity value="19" level="0" />
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
@@ -41,7 +41,7 @@
 <name>BEGIN_MESSAGE_MAP(CMainDlg,CDialog)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="30" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="31" />
 </extent>
 <lines_of_code value="20" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
@@ -65,7 +65,7 @@
 <name>BEGIN_MESSAGE_MAP(MFCOpenGLControl,CWnd)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="14" />
+<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="18" />
 </extent>
 <lines_of_code value="17" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -105,11 +105,11 @@
 <name>lookup(ConnectionStateEnum)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Common/ConnectionStateEnum.h" line="17" />
+<source_reference file="../../Common/ConnectionStateEnum.h" line="28" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -117,11 +117,11 @@
 <name>lookup(GameStateEnum)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Common/GameStateEnum.h" line="17" />
+<source_reference file="../../Common/GameStateEnum.h" line="27" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -141,7 +141,7 @@
 <name>lookup(LogEventEnum)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Logger/LogEventEnum.h" line="56" />
+<source_reference file="../../Logger/LogEventEnum.h" line="55" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -153,11 +153,11 @@
 <name>lookup(PlayerEnum)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Common/PlayerEnum.h" line="15" />
+<source_reference file="../../Common/PlayerEnum.h" line="26" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -189,11 +189,11 @@
 <name>operator &lt;&lt;(ostream &amp;,const Projectile &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Common/Projectile.cpp" line="60" />
+<source_reference file="../../Common/Projectile.cpp" line="66" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Common/Projectile.h" line="39" />
+<source_reference file="../../Common/Projectile.h" line="107" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
@@ -205,15 +205,15 @@
 <name>operator &lt;&lt;(ostream &amp;,const TestRunner &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Test/TestRunner.cpp" line="35" />
+<source_reference file="../../Test/TestRunner.cpp" line="40" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Test/TestRunner.h" line="29" />
+<source_reference file="../../Test/TestRunner.h" line="48" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="6" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -225,11 +225,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Common/UserPreferences.h" line="27" />
+<source_reference file="../../Common/UserPreferences.h" line="60" />
 </extent>
 <lines_of_code value="9" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="8" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -241,11 +241,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Common/UserPreferences.h" line="28" />
+<source_reference file="../../Common/UserPreferences.h" line="70" />
 </extent>
 <lines_of_code value="9" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="8" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>

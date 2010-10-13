@@ -35,15 +35,15 @@
 <concrete>true</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="412" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="403" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="418" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="409" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="430" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="421" />
 </extent>
 <extent>
 <description>pass by reference</description>
@@ -59,7 +59,7 @@
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="58" />
+<source_reference file="../../UserInterface/MainDlg.h" line="61" />
 </extent>
 <name>Configuration</name>
 <visible>true</visible>
@@ -96,95 +96,95 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Logger/Logger.h" line="35" />
+<source_reference file="../../Logger/Logger.h" line="33" />
 </extent>
 <name>MFCUserInterface</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="92" />
-</extent>
-<extent>
-<description>pass by reference</description>
 <source_reference file="../../UserInterface/MFCUserInterface.cpp" line="98" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="116" />
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="104" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="38" />
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="122" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="52" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="44" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="66" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="58" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="72" />
 </extent>
 <name>Mediator</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/Mediator.cpp" line="255" />
+<source_reference file="../../Mediator/Mediator.cpp" line="269" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/Mediator.cpp" line="262" />
+<source_reference file="../../Mediator/Mediator.cpp" line="276" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/Mediator.cpp" line="526" />
+<source_reference file="../../Mediator/Mediator.cpp" line="442" />
 </extent>
 <name>Network</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/Network.h" line="20" />
+<source_reference file="../../Network/Network.h" line="33" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/Network.h" line="21" />
+<source_reference file="../../Network/Network.h" line="41" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/Network.h" line="21" />
+<source_reference file="../../Network/Network.h" line="41" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/Network.h" line="30" />
+<source_reference file="../../Network/Network.h" line="74" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/Network.h" line="31" />
+<source_reference file="../../Network/Network.h" line="81" />
 </extent>
 <name>NetworkReplayer</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Replay/NetworkReplayer.cpp" line="125" />
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="120" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Replay/NetworkReplayer.cpp" line="131" />
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="126" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Replay/NetworkReplayer.cpp" line="131" />
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="126" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="153" />
 </extent>
 <extent>
 <description>pass by reference</description>
 <source_reference file="../../Replay/NetworkReplayer.cpp" line="158" />
-</extent>
-<extent>
-<description>pass by reference</description>
-<source_reference file="../../Replay/NetworkReplayer.cpp" line="163" />
 </extent>
 <extent>
 <description>pass by reference</description>
@@ -240,15 +240,15 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/UserInterface.h" line="37" />
+<source_reference file="../../UserInterface/UserInterface.h" line="44" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/UserInterface.h" line="51" />
+<source_reference file="../../UserInterface/UserInterface.h" line="58" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/UserInterface.h" line="65" />
+<source_reference file="../../UserInterface/UserInterface.h" line="72" />
 </extent>
 <name>WinsockNetwork</name>
 <visible>true</visible>

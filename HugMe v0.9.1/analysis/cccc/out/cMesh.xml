@@ -14,7 +14,7 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="1" level="0" />
+<coupling_between_objects value="4" level="0" />
 <IF4 value="0" level="0" />
 <IF4_per_member_function value="********" level="0" />
 <IF4_visible value="0" level="0" />
@@ -30,36 +30,33 @@
 <module>
 <name>cMesh</name>
 <client_module>
-<name>VirtualEnvironment</name>
-<visible>true</visible>
+<name>HpBar</name>
+<visible>false</visible>
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="13" />
+<source_reference file="../../Game/HpBar.h" line="11" />
 </extent>
+<name>VirtualAvatar</name>
+<visible>false</visible>
+<concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="14" />
+<source_reference file="../../Game/VirtualAvatar.h" line="52" />
 </extent>
+<name>VirtualBall</name>
+<visible>false</visible>
+<concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="15" />
+<source_reference file="../../Game/VirtualBall.h" line="46" />
 </extent>
+<name>VirtualSlingshot</name>
+<visible>false</visible>
+<concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="16" />
-</extent>
-<extent>
-<description>has by reference</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="17" />
-</extent>
-<extent>
-<description>has by reference</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="18" />
-</extent>
-<extent>
-<description>pass by reference</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="34" />
+<source_reference file="../../Game/VirtualSlingshot.h" line="9" />
 </extent>
 </client_module>
 <supplier_module>

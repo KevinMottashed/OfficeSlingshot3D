@@ -31,7 +31,7 @@
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 <description>declaration</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="14" />
+<source_reference file="../../Network/WinsockNetwork.h" line="15" />
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="1" level="0" />
@@ -125,11 +125,11 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="96" />
+<source_reference file="../../Network/WinsockNetwork.h" line="93" />
 </extent>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="115" />
+<source_reference file="../../Network/WinsockNetwork.h" line="112" />
 </extent>
 </client_module>
 <supplier_module>

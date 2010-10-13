@@ -5,7 +5,7 @@
 Inheritance diagram for MFCUserInterface:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=4cm]{classMFCUserInterface}
+\includegraphics[height=4.000000cm]{classMFCUserInterface}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -16,13 +16,15 @@ Inheritance diagram for MFCUserInterface:\begin{figure}[H]
 \label{classMFCUserInterface_a7ac72f8cddb94419db9c9ed261ace1b1}
 
 \item 
+virtual void \hyperlink{classMFCUserInterface_aad532c59dfe347b8a69f92b5b6ee7563}{switchCamera} (cCamera $\ast$camera)
+\begin{DoxyCompactList}\small\item\em Changes the camera from which the vritual world will be displayed. \item\end{DoxyCompactList}\item 
 \hypertarget{classMFCUserInterface_affc39ae32cd234575ce95db40701db01}{
-virtual void {\bfseries displayConnectionStateChanged} (ConnectionState\_\-t state, Player\_\-t player)}
+virtual void {\bfseries displayConnectionStateChanged} (\hyperlink{namespaceConnectionState_ad1b6674b6f1c58f17e9db75d0a77149f}{ConnectionState\_\-t} state, \hyperlink{namespacePlayer_acc4ced29e6b7e20f602b3c8b60c75228}{Player\_\-t} player)}
 \label{classMFCUserInterface_affc39ae32cd234575ce95db40701db01}
 
 \item 
 \hypertarget{classMFCUserInterface_a5cf1751505da89dc55df1fb12318bd96}{
-virtual void {\bfseries displayGameStateChanged} (GameState\_\-t state, Player\_\-t player)}
+virtual void {\bfseries displayGameStateChanged} (\hyperlink{namespaceGameState_a1026e99904938017415f188e2daba514}{GameState\_\-t} state, \hyperlink{namespacePlayer_acc4ced29e6b7e20f602b3c8b60c75228}{Player\_\-t} player)}
 \label{classMFCUserInterface_a5cf1751505da89dc55df1fb12318bd96}
 
 \item 
@@ -106,16 +108,6 @@ virtual void {\bfseries setPeerUserName} (const std::string \&name)}
 \label{classMFCUserInterface_a37ad511facfb8e5b6f34059a3ebf9f57}
 
 \item 
-\hypertarget{classMFCUserInterface_afbd06e08b7e16ff1df6df06cdd3429e5}{
-virtual void {\bfseries notifyNewBallShot} (const cVector3d \&force)}
-\label{classMFCUserInterface_afbd06e08b7e16ff1df6df06cdd3429e5}
-
-\item 
-\hypertarget{classMFCUserInterface_aa592d72e4c2e6e482f363ce69b46250f}{
-virtual void {\bfseries receiveNewBall} (const cVector3d \&force)}
-\label{classMFCUserInterface_aa592d72e4c2e6e482f363ce69b46250f}
-
-\item 
 \hypertarget{classMFCUserInterface_a03a72e69e2586b52ba3acac1e6b39700}{
 CDialog $\ast$ {\bfseries getMainWindow} ()}
 \label{classMFCUserInterface_a03a72e69e2586b52ba3acac1e6b39700}
@@ -129,6 +121,29 @@ CDialog $\ast$ {\bfseries getMainWindow} ()}
 \label{classMFCUserInterface_a548760ec3e8f659b262ef3aab3709e7f}
 
 \end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMFCUserInterface_aad532c59dfe347b8a69f92b5b6ee7563}{
+\index{MFCUserInterface@{MFCUserInterface}!switchCamera@{switchCamera}}
+\index{switchCamera@{switchCamera}!MFCUserInterface@{MFCUserInterface}}
+\subsubsection[{switchCamera}]{\setlength{\rightskip}{0pt plus 5cm}void MFCUserInterface::switchCamera (
+\begin{DoxyParamCaption}
+\item[{cCamera $\ast$}]{ camera}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classMFCUserInterface_aad532c59dfe347b8a69f92b5b6ee7563}
+
+
+Changes the camera from which the vritual world will be displayed. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em camera}]The new camera \end{DoxyParams}
+
+
+Implements \hyperlink{classUserInterface_ac43bf70dfea5b28e4cc185a0a72334c3}{UserInterface}.
+
 
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}

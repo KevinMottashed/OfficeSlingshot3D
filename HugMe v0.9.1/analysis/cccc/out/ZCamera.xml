@@ -2,19 +2,19 @@
 <!--Detailed report on module ZCamera-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="138" level="0" />
+<lines_of_code value="121" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
-<McCabes_cyclomatic_complexity value="22" level="0" />
+<McCabes_cyclomatic_complexity value="18" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
-<lines_of_code value="61" level="0" />
+<lines_of_code value="49" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="2.262" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.361" level="0" />
+<lines_of_code_per_line_of_comment value="2.469" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.367" level="0" />
 <weighted_methods_per_class_unity value="10" level="0" />
-<weighted_methods_per_class_visibility value="8" level="0" />
+<weighted_methods_per_class_visibility value="7" level="0" />
 <depth_of_inheritance_tree value="2" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="4" level="0" />
+<coupling_between_objects value="5" level="0" />
 <IF4 value="0" level="0" />
 <IF4_per_member_function value="********" level="0" />
 <IF4_visible value="0" level="0" />
@@ -25,13 +25,13 @@
 <module_detail>
 <description>definition</description>
 <source_reference file="../../ZCamera/ZCamera.h" line="12" />
-<lines_of_code value="12" level="0" />
+<lines_of_code value="13" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 <description>declaration</description>
-<source_reference file="../../ZCamera/ZCameraProxy.h" line="9" />
+<source_reference file="../../ZCamera/ZCameraProxy.h" line="10" />
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="0" level="0" />
@@ -59,7 +59,7 @@
 <name>ZCamera(const ZCamera &amp;)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/ZCamera.h" line="34" />
+<source_reference file="../../ZCamera/ZCamera.h" line="33" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -68,42 +68,42 @@
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
-<name>getFrameFromCamera(ZCamera *)</name>
+<name>getFrameFromCamera()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../ZCamera/ZCamera.cpp" line="34" />
+<source_reference file="../../ZCamera/ZCamera.cpp" line="37" />
 </extent>
 <extent>
 <description>declaration</description>
 <source_reference file="../../ZCamera/ZCamera.h" line="26" />
 </extent>
-<lines_of_code value="13" level="0" />
+<lines_of_code value="14" level="0" />
 <McCabes_cyclomatic_complexity value="2" level="0" />
-<lines_of_comment value="12" level="0" />
+<lines_of_comment value="11" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
-<name>getFrameFromDummy(ZCamera *)</name>
+<name>getPlayerPosition()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../ZCamera/ZCamera.cpp" line="60" />
+<source_reference file="../../ZCamera/ZCamera.cpp" line="130" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/ZCamera.h" line="27" />
+<source_reference file="../../ZCamera/ZCamera.h" line="50" />
 </extent>
-<lines_of_code value="55" level="1" />
-<McCabes_cyclomatic_complexity value="16" level="1" />
-<lines_of_comment value="24" level="0" />
-<lines_of_code_per_line_of_comment value="2.292" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.667" level="0" />
+<lines_of_code value="28" level="0" />
+<McCabes_cyclomatic_complexity value="9" level="0" />
+<lines_of_comment value="10" level="0" />
+<lines_of_code_per_line_of_comment value="2.800" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.900" level="0" />
 </member_function>
 <member_function>
 <name>operator =(const ZCamera &amp;)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/ZCamera.h" line="35" />
+<source_reference file="../../ZCamera/ZCamera.h" line="34" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -115,11 +115,11 @@
 <name>reverseFrameLeftRight(VideoData &amp;,int)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../ZCamera/ZCamera.cpp" line="178" />
+<source_reference file="../../ZCamera/ZCamera.cpp" line="107" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/ZCamera.h" line="31" />
+<source_reference file="../../ZCamera/ZCamera.h" line="30" />
 </extent>
 <lines_of_code value="16" level="0" />
 <McCabes_cyclomatic_complexity value="2" level="0" />
@@ -131,11 +131,11 @@
 <name>reverseFrameUpDown(VideoData &amp;,int)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../ZCamera/ZCamera.cpp" line="160" />
+<source_reference file="../../ZCamera/ZCamera.cpp" line="89" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/ZCamera.h" line="30" />
+<source_reference file="../../ZCamera/ZCamera.h" line="29" />
 </extent>
 <lines_of_code value="12" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
@@ -147,14 +147,14 @@
 <name>startCapture()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../ZCamera/ZCamera.cpp" line="139" />
+<source_reference file="../../ZCamera/ZCamera.cpp" line="62" />
 </extent>
 <extent>
 <description>declaration</description>
 <source_reference file="../../ZCamera/ZCamera.h" line="19" />
 </extent>
-<lines_of_code value="11" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_code value="12" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
 <lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
@@ -163,14 +163,14 @@
 <name>stopCapture()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../ZCamera/ZCamera.cpp" line="155" />
+<source_reference file="../../ZCamera/ZCamera.cpp" line="78" />
 </extent>
 <extent>
 <description>declaration</description>
 <source_reference file="../../ZCamera/ZCamera.h" line="22" />
 </extent>
-<lines_of_code value="4" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_code value="10" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
 <lines_of_comment value="2" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
@@ -185,9 +185,9 @@
 <description>declaration</description>
 <source_reference file="../../ZCamera/ZCamera.h" line="16" />
 </extent>
-<lines_of_code value="5" level="0" />
+<lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="2" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -199,11 +199,11 @@
 </client_module>
 <supplier_module>
 <name>CDepthCamera</name>
-<visible>false</visible>
+<visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../ZCamera/ZCamera.h" line="39" />
+<source_reference file="../../ZCamera/ZCamera.h" line="42" />
 </extent>
 <name>IZCamera</name>
 <visible>true</visible>
@@ -212,19 +212,26 @@
 <description>inheritance</description>
 <source_reference file="../../ZCamera/ZCamera.h" line="12" />
 </extent>
-<name>bool</name>
-<visible>false</visible>
+<name>auto_ptr</name>
+<visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
 <source_reference file="../../ZCamera/ZCamera.h" line="37" />
+</extent>
+<name>bool</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../ZCamera/ZCamera.h" line="40" />
 </extent>
 <name>shared_ptr</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../ZCamera/ZCamera.h" line="40" />
+<source_reference file="../../ZCamera/ZCamera.h" line="43" />
 </extent>
 </supplier_module>
 </module>

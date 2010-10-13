@@ -2,95 +2,395 @@
 \section{Network Class Reference}
 \label{classNetwork}\index{Network@{Network}}
 }
+
+
+Abstract class representing the networking component of the application all network interfaces should be able to send and receive data.  
+
+
+
+
+{\ttfamily \#include $<$Network.h$>$}
+
 Inheritance diagram for Network:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=3cm]{classNetwork}
+\includegraphics[height=3.000000cm]{classNetwork}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classNetwork_afb5306e2b769c01780aaa44d2c14306d}{
-virtual rc\_\-network {\bfseries listen} (const std::string \&userName)=0}
-\label{classNetwork_afb5306e2b769c01780aaa44d2c14306d}
+\hypertarget{classNetwork_a3cc2fb4f8fa4d507077e8da85ce5a1c8}{
+\hyperlink{classNetwork_a3cc2fb4f8fa4d507077e8da85ce5a1c8}{Network} ()}
+\label{classNetwork_a3cc2fb4f8fa4d507077e8da85ce5a1c8}
 
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{classNetwork_a7a4e19cdb4bf0c7ecf82baa643831492}{
+virtual \hyperlink{classNetwork_a7a4e19cdb4bf0c7ecf82baa643831492}{$\sim$Network} ()}
+\label{classNetwork_a7a4e19cdb4bf0c7ecf82baa643831492}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual rc\_\-network \hyperlink{classNetwork_afb5306e2b769c01780aaa44d2c14306d}{listen} (const std::string \&userName)=0
+\begin{DoxyCompactList}\small\item\em Start listening for connections. \item\end{DoxyCompactList}\item 
+virtual rc\_\-network \hyperlink{classNetwork_a105f5e229e0ac9ff2b718dd34112c292}{connect} (const std::string \&ipAddress, const std::string \&userName)=0
+\begin{DoxyCompactList}\small\item\em Attempt to connect to a peer. \item\end{DoxyCompactList}\item 
+virtual rc\_\-network \hyperlink{classNetwork_a1b0e29fc9936615e76c1db95caba0a9e}{disconnect} ()=0
+\begin{DoxyCompactList}\small\item\em Disconnect from a peer. \item\end{DoxyCompactList}\item 
+virtual rc\_\-network \hyperlink{classNetwork_a3f6b451fd546f2e44eb2c14661bc1ad3}{sendStartGame} ()=0
+\begin{DoxyCompactList}\small\item\em Send a start game message to the peer. \item\end{DoxyCompactList}\item 
+virtual rc\_\-network \hyperlink{classNetwork_ac60291a8d99468ebc38d085fc0455df0}{sendPauseGame} ()=0
+\begin{DoxyCompactList}\small\item\em Send a pause game message to the peer. \item\end{DoxyCompactList}\item 
+virtual rc\_\-network \hyperlink{classNetwork_ae3f72f3003309c6d38105f504db8ce05}{sendEndGame} ()=0
+\begin{DoxyCompactList}\small\item\em Send an end game message to the peer. \item\end{DoxyCompactList}\item 
+virtual rc\_\-network \hyperlink{classNetwork_a741e75b2e9adfc188c53e150b4dd4610}{sendUserName} (const std::string \&userName)=0
+\begin{DoxyCompactList}\small\item\em Send our username to the peer. \item\end{DoxyCompactList}\item 
+virtual rc\_\-network \hyperlink{classNetwork_aa5e1e44e3cb4862b2c343999c89ce3b5}{sendChatMessage} (const std::string \&message)=0
+\begin{DoxyCompactList}\small\item\em Send a chat message to the peer. \item\end{DoxyCompactList}\item 
+virtual rc\_\-network \hyperlink{classNetwork_a189df8819d21d4f1a277ca753453045b}{sendVideoData} (const \hyperlink{structVideoData}{VideoData} \&video)=0
+\begin{DoxyCompactList}\small\item\em Send video data to the peer. \item\end{DoxyCompactList}\item 
+virtual rc\_\-network \hyperlink{classNetwork_a9a2eb94c34d8d93f7490184cd2526e62}{sendPlayerPosition} (const cVector3d \&position)=0
+\begin{DoxyCompactList}\small\item\em Send the players position to the peer. \item\end{DoxyCompactList}\item 
+virtual rc\_\-network \hyperlink{classNetwork_aa105332ed8a1325a89f1f3e0a9d27521}{sendSlingshotPosition} (const cVector3d \&position)=0
+\begin{DoxyCompactList}\small\item\em Send the slingshot position to the peer. \item\end{DoxyCompactList}\item 
+virtual rc\_\-network \hyperlink{classNetwork_a477324500341f146fc7fc7411290a424}{sendProjectile} (const \hyperlink{classProjectile}{Projectile} \&projectile)=0
+\begin{DoxyCompactList}\small\item\em Send a projectile to the peer. \item\end{DoxyCompactList}\item 
+virtual rc\_\-network \hyperlink{classNetwork_ad4fd766e5bae5a3f002a26218b60b426}{sendSlingshotPullback} ()=0
+\begin{DoxyCompactList}\small\item\em Send a slingshot pullback event to the peer. \item\end{DoxyCompactList}\item 
+virtual bool \hyperlink{classNetwork_ab84ebbf03390c5ee99a27e2b340e3518}{isConnected} () const =0
+\begin{DoxyCompactList}\small\item\em Determines if we are connected to a peer. \item\end{DoxyCompactList}\item 
+virtual bool \hyperlink{classNetwork_a1e8342d061f8e1b28d50d966e946650b}{isListening} () const =0
+\begin{DoxyCompactList}\small\item\em Determines if we are listening for connections. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract class representing the networking component of the application all network interfaces should be able to send and receive data. 
+
+\subsection{Member Function Documentation}
 \hypertarget{classNetwork_a105f5e229e0ac9ff2b718dd34112c292}{
-virtual rc\_\-network {\bfseries connect} (const std::string \&ipAddress, const std::string \&userName)=0}
+\index{Network@{Network}!connect@{connect}}
+\index{connect@{connect}!Network@{Network}}
+\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}virtual rc\_\-network Network::connect (
+\begin{DoxyParamCaption}
+\item[{const std::string \&}]{ ipAddress, }
+\item[{const std::string \&}]{ userName}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
 \label{classNetwork_a105f5e229e0ac9ff2b718dd34112c292}
 
-\item 
+
+Attempt to connect to a peer. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em ipAddress}]The ip address that we will connect to \item[{\em userName}]The username that will be used to establish the connection \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The error code, SUCCESS if we are now connected to the peer 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classWinsockNetwork_a0f7f289635183b1082894f230a989006}{WinsockNetwork}, and \hyperlink{classNetworkReplayer_a6d4deeeede0cd5c07b44489a33c113f5}{NetworkReplayer}.
+
 \hypertarget{classNetwork_a1b0e29fc9936615e76c1db95caba0a9e}{
-virtual rc\_\-network {\bfseries disconnect} ()=0}
+\index{Network@{Network}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!Network@{Network}}
+\subsubsection[{disconnect}]{\setlength{\rightskip}{0pt plus 5cm}virtual rc\_\-network Network::disconnect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
 \label{classNetwork_a1b0e29fc9936615e76c1db95caba0a9e}
 
-\item 
-\hypertarget{classNetwork_a3f6b451fd546f2e44eb2c14661bc1ad3}{
-virtual rc\_\-network {\bfseries sendStartGame} ()=0}
-\label{classNetwork_a3f6b451fd546f2e44eb2c14661bc1ad3}
 
-\item 
-\hypertarget{classNetwork_ac60291a8d99468ebc38d085fc0455df0}{
-virtual rc\_\-network {\bfseries sendPauseGame} ()=0}
-\label{classNetwork_ac60291a8d99468ebc38d085fc0455df0}
+Disconnect from a peer. 
 
-\item 
-\hypertarget{classNetwork_ae3f72f3003309c6d38105f504db8ce05}{
-virtual rc\_\-network {\bfseries sendEndGame} ()=0}
-\label{classNetwork_ae3f72f3003309c6d38105f504db8ce05}
+\begin{DoxyReturn}{Returns}
+The error code, SUCCESS if we successfully disconnected 
+\end{DoxyReturn}
 
-\item 
-\hypertarget{classNetwork_a741e75b2e9adfc188c53e150b4dd4610}{
-virtual rc\_\-network {\bfseries sendUserName} (const std::string \&userName)=0}
-\label{classNetwork_a741e75b2e9adfc188c53e150b4dd4610}
 
-\item 
-\hypertarget{classNetwork_aa5e1e44e3cb4862b2c343999c89ce3b5}{
-virtual rc\_\-network {\bfseries sendChatMessage} (const std::string \&message)=0}
-\label{classNetwork_aa5e1e44e3cb4862b2c343999c89ce3b5}
+Implemented in \hyperlink{classWinsockNetwork_abd947a2edb4d5053286f25b4c9f041c1}{WinsockNetwork}, and \hyperlink{classNetworkReplayer_a3aab774a33a87446aa874871fea54655}{NetworkReplayer}.
 
-\item 
-\hypertarget{classNetwork_a189df8819d21d4f1a277ca753453045b}{
-virtual rc\_\-network {\bfseries sendVideoData} (const \hyperlink{structVideoData}{VideoData} \&video)=0}
-\label{classNetwork_a189df8819d21d4f1a277ca753453045b}
-
-\item 
-\hypertarget{classNetwork_a9a2eb94c34d8d93f7490184cd2526e62}{
-virtual rc\_\-network {\bfseries sendPlayerPosition} (const cVector3d \&position)=0}
-\label{classNetwork_a9a2eb94c34d8d93f7490184cd2526e62}
-
-\item 
-\hypertarget{classNetwork_aa105332ed8a1325a89f1f3e0a9d27521}{
-virtual rc\_\-network {\bfseries sendSlingshotPosition} (const cVector3d \&position)=0}
-\label{classNetwork_aa105332ed8a1325a89f1f3e0a9d27521}
-
-\item 
-\hypertarget{classNetwork_a477324500341f146fc7fc7411290a424}{
-virtual rc\_\-network {\bfseries sendProjectile} (const \hyperlink{classProjectile}{Projectile} \&projectile)=0}
-\label{classNetwork_a477324500341f146fc7fc7411290a424}
-
-\item 
-\hypertarget{classNetwork_ad4fd766e5bae5a3f002a26218b60b426}{
-virtual rc\_\-network {\bfseries sendSlingshotPullback} ()=0}
-\label{classNetwork_ad4fd766e5bae5a3f002a26218b60b426}
-
-\item 
-\hypertarget{classNetwork_ad78d42da064c3a74151fee25a2bd9044}{
-virtual rc\_\-network {\bfseries sendSlingshotRelease} ()=0}
-\label{classNetwork_ad78d42da064c3a74151fee25a2bd9044}
-
-\item 
 \hypertarget{classNetwork_ab84ebbf03390c5ee99a27e2b340e3518}{
-virtual bool {\bfseries isConnected} () const =0}
+\index{Network@{Network}!isConnected@{isConnected}}
+\index{isConnected@{isConnected}!Network@{Network}}
+\subsubsection[{isConnected}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Network::isConnected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
 \label{classNetwork_ab84ebbf03390c5ee99a27e2b340e3518}
 
-\item 
+
+Determines if we are connected to a peer. 
+
+\begin{DoxyReturn}{Returns}
+true if we are connected to a peer 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classWinsockNetwork_a8c621566b7ce641d86797569346fcaad}{WinsockNetwork}, and \hyperlink{classNetworkReplayer_a3656c06c32e76a30ac48055a0695d99a}{NetworkReplayer}.
+
 \hypertarget{classNetwork_a1e8342d061f8e1b28d50d966e946650b}{
-virtual bool {\bfseries isListening} () const =0}
+\index{Network@{Network}!isListening@{isListening}}
+\index{isListening@{isListening}!Network@{Network}}
+\subsubsection[{isListening}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Network::isListening (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
 \label{classNetwork_a1e8342d061f8e1b28d50d966e946650b}
 
-\end{DoxyCompactItemize}
+
+Determines if we are listening for connections. 
+
+\begin{DoxyReturn}{Returns}
+true if we are listening for connections 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classWinsockNetwork_a7cbc0e15323359b9bdb862342e406f23}{WinsockNetwork}, and \hyperlink{classNetworkReplayer_a869c34b845f18eb262ead68542662aa4}{NetworkReplayer}.
+
+\hypertarget{classNetwork_afb5306e2b769c01780aaa44d2c14306d}{
+\index{Network@{Network}!listen@{listen}}
+\index{listen@{listen}!Network@{Network}}
+\subsubsection[{listen}]{\setlength{\rightskip}{0pt plus 5cm}virtual rc\_\-network Network::listen (
+\begin{DoxyParamCaption}
+\item[{const std::string \&}]{ userName}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classNetwork_afb5306e2b769c01780aaa44d2c14306d}
+
+
+Start listening for connections. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em userName}]The username used to establish the connection \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The error code, SUCCESS if listening was successful 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classWinsockNetwork_a6f2f806a0e246a46ff6d0c2006cddd43}{WinsockNetwork}, and \hyperlink{classNetworkReplayer_a54f644fe92941370481c45989bad6615}{NetworkReplayer}.
+
+\hypertarget{classNetwork_aa5e1e44e3cb4862b2c343999c89ce3b5}{
+\index{Network@{Network}!sendChatMessage@{sendChatMessage}}
+\index{sendChatMessage@{sendChatMessage}!Network@{Network}}
+\subsubsection[{sendChatMessage}]{\setlength{\rightskip}{0pt plus 5cm}virtual rc\_\-network Network::sendChatMessage (
+\begin{DoxyParamCaption}
+\item[{const std::string \&}]{ message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classNetwork_aa5e1e44e3cb4862b2c343999c89ce3b5}
+
+
+Send a chat message to the peer. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em message}]The chat message that will be sent to the peer. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The error code, SUCCESS if the message was sent and received 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classWinsockNetwork_a420d4e6b5c698476a94dcdb503233de7}{WinsockNetwork}, and \hyperlink{classNetworkReplayer_a689bc26f935bb0d7f72d3f69cea6e98c}{NetworkReplayer}.
+
+\hypertarget{classNetwork_ae3f72f3003309c6d38105f504db8ce05}{
+\index{Network@{Network}!sendEndGame@{sendEndGame}}
+\index{sendEndGame@{sendEndGame}!Network@{Network}}
+\subsubsection[{sendEndGame}]{\setlength{\rightskip}{0pt plus 5cm}virtual rc\_\-network Network::sendEndGame (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classNetwork_ae3f72f3003309c6d38105f504db8ce05}
+
+
+Send an end game message to the peer. 
+
+\begin{DoxyReturn}{Returns}
+The error code, SUCCESS if the message was sent and received 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classWinsockNetwork_a877c8001bbd880295e0458c3377dca25}{WinsockNetwork}, and \hyperlink{classNetworkReplayer_a33c840b356485101092fe220d4aa73fb}{NetworkReplayer}.
+
+\hypertarget{classNetwork_ac60291a8d99468ebc38d085fc0455df0}{
+\index{Network@{Network}!sendPauseGame@{sendPauseGame}}
+\index{sendPauseGame@{sendPauseGame}!Network@{Network}}
+\subsubsection[{sendPauseGame}]{\setlength{\rightskip}{0pt plus 5cm}virtual rc\_\-network Network::sendPauseGame (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classNetwork_ac60291a8d99468ebc38d085fc0455df0}
+
+
+Send a pause game message to the peer. 
+
+\begin{DoxyReturn}{Returns}
+The error code, SUCCESS if the message was sent and received 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classWinsockNetwork_ae4412629d2ee052afc41c81f36cfad50}{WinsockNetwork}, and \hyperlink{classNetworkReplayer_aa54ba87a728ebdb0f23a82e409094468}{NetworkReplayer}.
+
+\hypertarget{classNetwork_a9a2eb94c34d8d93f7490184cd2526e62}{
+\index{Network@{Network}!sendPlayerPosition@{sendPlayerPosition}}
+\index{sendPlayerPosition@{sendPlayerPosition}!Network@{Network}}
+\subsubsection[{sendPlayerPosition}]{\setlength{\rightskip}{0pt plus 5cm}virtual rc\_\-network Network::sendPlayerPosition (
+\begin{DoxyParamCaption}
+\item[{const cVector3d \&}]{ position}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classNetwork_a9a2eb94c34d8d93f7490184cd2526e62}
+
+
+Send the players position to the peer. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em position}]Our player position that will be sent to the peer. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The error code, SUCCESS if the message was sent and received 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classWinsockNetwork_ab27dd7393a89573f9e75e1a50efbc833}{WinsockNetwork}, and \hyperlink{classNetworkReplayer_a7c9a5203b80840fee0157d506ff14f61}{NetworkReplayer}.
+
+\hypertarget{classNetwork_a477324500341f146fc7fc7411290a424}{
+\index{Network@{Network}!sendProjectile@{sendProjectile}}
+\index{sendProjectile@{sendProjectile}!Network@{Network}}
+\subsubsection[{sendProjectile}]{\setlength{\rightskip}{0pt plus 5cm}virtual rc\_\-network Network::sendProjectile (
+\begin{DoxyParamCaption}
+\item[{const {\bf Projectile} \&}]{ projectile}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classNetwork_a477324500341f146fc7fc7411290a424}
+
+
+Send a projectile to the peer. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em projectile}]The projectile that will be sent to the peer. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The error code, SUCCESS if the message was sent and received 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classWinsockNetwork_accb610c314dd94a1649bcfe101c93997}{WinsockNetwork}, and \hyperlink{classNetworkReplayer_a7ebdbb74bb8e3b1fdc877d3c8157d342}{NetworkReplayer}.
+
+\hypertarget{classNetwork_aa105332ed8a1325a89f1f3e0a9d27521}{
+\index{Network@{Network}!sendSlingshotPosition@{sendSlingshotPosition}}
+\index{sendSlingshotPosition@{sendSlingshotPosition}!Network@{Network}}
+\subsubsection[{sendSlingshotPosition}]{\setlength{\rightskip}{0pt plus 5cm}virtual rc\_\-network Network::sendSlingshotPosition (
+\begin{DoxyParamCaption}
+\item[{const cVector3d \&}]{ position}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classNetwork_aa105332ed8a1325a89f1f3e0a9d27521}
+
+
+Send the slingshot position to the peer. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em position}]Our slingshot position that will be sent to the peer. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The error code, SUCCESS if the message was sent and received 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classWinsockNetwork_af0456294cf39244cc59f1ca81e2aa2d3}{WinsockNetwork}, and \hyperlink{classNetworkReplayer_ad8ad840c17aa86b890857ef714eb019a}{NetworkReplayer}.
+
+\hypertarget{classNetwork_ad4fd766e5bae5a3f002a26218b60b426}{
+\index{Network@{Network}!sendSlingshotPullback@{sendSlingshotPullback}}
+\index{sendSlingshotPullback@{sendSlingshotPullback}!Network@{Network}}
+\subsubsection[{sendSlingshotPullback}]{\setlength{\rightskip}{0pt plus 5cm}virtual rc\_\-network Network::sendSlingshotPullback (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classNetwork_ad4fd766e5bae5a3f002a26218b60b426}
+
+
+Send a slingshot pullback event to the peer. 
+
+This lets the peer know that we have started to pull back our slingshot. \begin{DoxyReturn}{Returns}
+The error code, SUCCESS if the message was sent and received 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classWinsockNetwork_a0a8ced3a30f215e71114b9fa94b3d1e3}{WinsockNetwork}, and \hyperlink{classNetworkReplayer_a98342ea3e802e9108b6d3329d977eade}{NetworkReplayer}.
+
+\hypertarget{classNetwork_a3f6b451fd546f2e44eb2c14661bc1ad3}{
+\index{Network@{Network}!sendStartGame@{sendStartGame}}
+\index{sendStartGame@{sendStartGame}!Network@{Network}}
+\subsubsection[{sendStartGame}]{\setlength{\rightskip}{0pt plus 5cm}virtual rc\_\-network Network::sendStartGame (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classNetwork_a3f6b451fd546f2e44eb2c14661bc1ad3}
+
+
+Send a start game message to the peer. 
+
+\begin{DoxyReturn}{Returns}
+The error code, SUCCESS if the message was sent and received 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classWinsockNetwork_a20ed4411ec34336c6a213b15cc3fcad9}{WinsockNetwork}, and \hyperlink{classNetworkReplayer_aa9f70d4eee3d630c36c2bbc71bb7e195}{NetworkReplayer}.
+
+\hypertarget{classNetwork_a741e75b2e9adfc188c53e150b4dd4610}{
+\index{Network@{Network}!sendUserName@{sendUserName}}
+\index{sendUserName@{sendUserName}!Network@{Network}}
+\subsubsection[{sendUserName}]{\setlength{\rightskip}{0pt plus 5cm}virtual rc\_\-network Network::sendUserName (
+\begin{DoxyParamCaption}
+\item[{const std::string \&}]{ userName}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classNetwork_a741e75b2e9adfc188c53e150b4dd4610}
+
+
+Send our username to the peer. 
+
+The user name is sent when the connection is established so this should only be used if a user changes there username 
+\begin{DoxyParams}{Parameters}
+\item[{\em userName}]Our new username that will be sent to the peer \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The error code, SUCCESS if the message was sent and received 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classWinsockNetwork_ae76b6c306ef15d162fe652c38c78d4e2}{WinsockNetwork}, and \hyperlink{classNetworkReplayer_a49bb75f65853c34c0bdafa6aba066056}{NetworkReplayer}.
+
+\hypertarget{classNetwork_a189df8819d21d4f1a277ca753453045b}{
+\index{Network@{Network}!sendVideoData@{sendVideoData}}
+\index{sendVideoData@{sendVideoData}!Network@{Network}}
+\subsubsection[{sendVideoData}]{\setlength{\rightskip}{0pt plus 5cm}virtual rc\_\-network Network::sendVideoData (
+\begin{DoxyParamCaption}
+\item[{const {\bf VideoData} \&}]{ video}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classNetwork_a189df8819d21d4f1a277ca753453045b}
+
+
+Send video data to the peer. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em video}]The video data that will be sent to the peer. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The error code, SUCCESS if the message was sent and received 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classWinsockNetwork_a36362dbaa70fbe00dd48fded21464888}{WinsockNetwork}, and \hyperlink{classNetworkReplayer_ab7f69701316a3387da91d2146ea97b5e}{NetworkReplayer}.
+
 
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}

@@ -35,11 +35,11 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Test/TestRunner.cpp" line="27" />
+<source_reference file="../../Test/TestRunner.cpp" line="32" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Test/TestRunner.h" line="23" />
+<source_reference file="../../Test/TestRunner.h" line="33" />
 </extent>
 </client_module>
 <supplier_module>

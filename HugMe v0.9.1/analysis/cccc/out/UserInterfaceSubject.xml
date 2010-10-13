@@ -137,7 +137,7 @@
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../UserInterface/UserInterface.h" line="15" />
+<source_reference file="../../UserInterface/UserInterface.h" line="16" />
 </extent>
 </client_module>
 <supplier_module>

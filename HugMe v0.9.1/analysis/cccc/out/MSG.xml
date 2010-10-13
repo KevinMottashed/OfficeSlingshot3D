@@ -35,11 +35,11 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="187" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="188" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="61" />
+<source_reference file="../../UserInterface/MainDlg.h" line="64" />
 </extent>
 </client_module>
 <supplier_module>

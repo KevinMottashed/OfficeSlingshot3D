@@ -35,23 +35,27 @@
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Audio/Audio.h" line="33" />
+<source_reference file="../../Audio/Audio.h" line="82" />
 </extent>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Audio/Audio.h" line="34" />
+<source_reference file="../../Audio/Audio.h" line="87" />
 </extent>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Audio/Audio.h" line="35" />
+<source_reference file="../../Audio/Audio.h" line="92" />
 </extent>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Audio/Audio.h" line="36" />
+<source_reference file="../../Audio/Audio.h" line="97" />
 </extent>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Audio/Audio.h" line="37" />
+<source_reference file="../../Audio/Audio.h" line="107" />
+</extent>
+<extent>
+<description>has by reference</description>
+<source_reference file="../../Audio/Audio.h" line="112" />
 </extent>
 </client_module>
 <supplier_module>

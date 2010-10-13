@@ -1,0 +1,82 @@
+\hypertarget{namespaceConnectionState}{
+\section{ConnectionState Namespace Reference}
+\label{namespaceConnectionState}\index{ConnectionState@{ConnectionState}}
+}
+
+
+Namespace for holding the \hyperlink{namespaceConnectionState}{ConnectionState} enum.  
+
+
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespaceConnectionState_ad1b6674b6f1c58f17e9db75d0a77149f}{ConnectionStateEnum} \{ \hyperlink{namespaceConnectionState_ad1b6674b6f1c58f17e9db75d0a77149fa29532bebee105202d6575b23b3fb8df6}{LISTENING}, 
+\hyperlink{namespaceConnectionState_ad1b6674b6f1c58f17e9db75d0a77149fa3be514d893d22241ee8bd05f1f128641}{ESTABLISHING}, 
+\hyperlink{namespaceConnectionState_ad1b6674b6f1c58f17e9db75d0a77149fa9a42fe676b268943da19108e9f5cb2a2}{CONNECTED}, 
+\hyperlink{namespaceConnectionState_ad1b6674b6f1c58f17e9db75d0a77149fa7388bea4debc0d7ee1b10fd6cc53012e}{DISCONNECTED}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum representing all the different connection states. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std::string \hyperlink{namespaceConnectionState_aec53b086156059b62bbbf5e2e24ec50b}{lookup} (\hyperlink{namespaceConnectionState_ad1b6674b6f1c58f17e9db75d0a77149f}{ConnectionStateEnum} e)
+\begin{DoxyCompactList}\small\item\em Get a string representation of the enum. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Namespace for holding the \hyperlink{namespaceConnectionState}{ConnectionState} enum. This prevents naming conflicts. 
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{namespaceConnectionState_ad1b6674b6f1c58f17e9db75d0a77149f}{
+\index{ConnectionState@{ConnectionState}!ConnectionStateEnum@{ConnectionStateEnum}}
+\index{ConnectionStateEnum@{ConnectionStateEnum}!ConnectionState@{ConnectionState}}
+\subsubsection[{ConnectionStateEnum}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ConnectionState::ConnectionStateEnum}}}
+\label{namespaceConnectionState_ad1b6674b6f1c58f17e9db75d0a77149f}
+
+
+Enum representing all the different connection states. 
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{LISTENING@{LISTENING}!ConnectionState@{ConnectionState}}\index{ConnectionState@{ConnectionState}!LISTENING@{LISTENING}}\item[{\em 
+\hypertarget{namespaceConnectionState_ad1b6674b6f1c58f17e9db75d0a77149fa29532bebee105202d6575b23b3fb8df6}{
+LISTENING}
+\label{namespaceConnectionState_ad1b6674b6f1c58f17e9db75d0a77149fa29532bebee105202d6575b23b3fb8df6}
+}]Listening for incoming connections, ie waiting for a peer to connect. \index{ESTABLISHING@{ESTABLISHING}!ConnectionState@{ConnectionState}}\index{ConnectionState@{ConnectionState}!ESTABLISHING@{ESTABLISHING}}\item[{\em 
+\hypertarget{namespaceConnectionState_ad1b6674b6f1c58f17e9db75d0a77149fa3be514d893d22241ee8bd05f1f128641}{
+ESTABLISHING}
+\label{namespaceConnectionState_ad1b6674b6f1c58f17e9db75d0a77149fa3be514d893d22241ee8bd05f1f128641}
+}]Establishing the connection, in this state the players are trading information such as usernames. \index{CONNECTED@{CONNECTED}!ConnectionState@{ConnectionState}}\index{ConnectionState@{ConnectionState}!CONNECTED@{CONNECTED}}\item[{\em 
+\hypertarget{namespaceConnectionState_ad1b6674b6f1c58f17e9db75d0a77149fa9a42fe676b268943da19108e9f5cb2a2}{
+CONNECTED}
+\label{namespaceConnectionState_ad1b6674b6f1c58f17e9db75d0a77149fa9a42fe676b268943da19108e9f5cb2a2}
+}]Connected to the peer. \index{DISCONNECTED@{DISCONNECTED}!ConnectionState@{ConnectionState}}\index{ConnectionState@{ConnectionState}!DISCONNECTED@{DISCONNECTED}}\item[{\em 
+\hypertarget{namespaceConnectionState_ad1b6674b6f1c58f17e9db75d0a77149fa7388bea4debc0d7ee1b10fd6cc53012e}{
+DISCONNECTED}
+\label{namespaceConnectionState_ad1b6674b6f1c58f17e9db75d0a77149fa7388bea4debc0d7ee1b10fd6cc53012e}
+}]Not connected to anyone. \end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{namespaceConnectionState_aec53b086156059b62bbbf5e2e24ec50b}{
+\index{ConnectionState@{ConnectionState}!lookup@{lookup}}
+\index{lookup@{lookup}!ConnectionState@{ConnectionState}}
+\subsubsection[{lookup}]{\setlength{\rightskip}{0pt plus 5cm}std::string ConnectionState::lookup (
+\begin{DoxyParamCaption}
+\item[{{\bf ConnectionState::ConnectionStateEnum}}]{ e}
+\end{DoxyParamCaption}
+)}}
+\label{namespaceConnectionState_aec53b086156059b62bbbf5e2e24ec50b}
+
+
+Get a string representation of the enum. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em e}]The enum to convert to a string \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The string representation 
+\end{DoxyReturn}

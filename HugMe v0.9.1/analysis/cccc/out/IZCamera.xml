@@ -13,13 +13,13 @@
 <weighted_methods_per_class_unity value="6" level="0" />
 <weighted_methods_per_class_visibility value="4" level="0" />
 <depth_of_inheritance_tree value="1" level="0" />
-<number_of_children value="2" level="0" />
-<coupling_between_objects value="3" level="0" />
-<IF4 value="4" level="0" />
+<number_of_children value="3" level="0" />
+<coupling_between_objects value="4" level="0" />
+<IF4 value="9" level="0" />
 <IF4_per_member_function value="********" level="2" />
-<IF4_visible value="4" level="0" />
+<IF4_visible value="9" level="0" />
 <IF4_visible_per_member_function value="********" level="2" />
-<IF4_concrete value="4" level="0" />
+<IF4_concrete value="9" level="0" />
 <IF4_concrete_per_member_function value="********" level="2" />
 </module_summary>
 <module_detail>
@@ -31,7 +31,7 @@
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 <description>declaration</description>
-<source_reference file="../../ZCamera/ZCameraProxy.h" line="8" />
+<source_reference file="../../ZCamera/ZCameraProxy.h" line="9" />
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="1" level="0" />
@@ -124,6 +124,13 @@
 <module>
 <name>IZCamera</name>
 <client_module>
+<name>KeyboardZCamera</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>inheritance</description>
+<source_reference file="../../ZCamera/KeyboardZCamera.h" line="11" />
+</extent>
 <name>ZCamera</name>
 <visible>true</visible>
 <concrete>true</concrete>

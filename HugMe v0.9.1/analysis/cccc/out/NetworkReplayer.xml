@@ -2,14 +2,14 @@
 <!--Detailed report on module NetworkReplayer-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="201" level="0" />
+<lines_of_code value="196" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
-<McCabes_cyclomatic_complexity value="32" level="0" />
+<McCabes_cyclomatic_complexity value="31" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
 <lines_of_code value="15" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="13.400" level="1" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="2.133" level="0" />
+<lines_of_code_per_line_of_comment value="13.067" level="1" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="2.067" level="0" />
 <weighted_methods_per_class_unity value="19" level="0" />
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="2" level="0" />
@@ -52,7 +52,7 @@
 <name>connect(const string &amp;,const string &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Replay/NetworkReplayer.cpp" line="131" />
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="126" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -68,7 +68,7 @@
 <name>disconnect()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Replay/NetworkReplayer.cpp" line="137" />
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="132" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -84,7 +84,7 @@
 <name>isConnected()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Replay/NetworkReplayer.cpp" line="198" />
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="193" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -100,7 +100,7 @@
 <name>isListening()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Replay/NetworkReplayer.cpp" line="203" />
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="198" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -116,7 +116,7 @@
 <name>listen(const string &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Replay/NetworkReplayer.cpp" line="125" />
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="120" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -138,17 +138,17 @@
 <description>declaration</description>
 <source_reference file="../../Replay/NetworkReplayer.h" line="24" />
 </extent>
-<lines_of_code value="96" level="1" />
-<McCabes_cyclomatic_complexity value="16" level="1" />
+<lines_of_code value="91" level="1" />
+<McCabes_cyclomatic_complexity value="15" level="1" />
 <lines_of_comment value="2" level="0" />
-<lines_of_code_per_line_of_comment value="48.000" level="2" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="8.000" level="1" />
+<lines_of_code_per_line_of_comment value="45.500" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="7.500" level="1" />
 </member_function>
 <member_function>
 <name>sendChatMessage(const string &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Replay/NetworkReplayer.cpp" line="163" />
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="158" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -164,7 +164,7 @@
 <name>sendEndGame()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Replay/NetworkReplayer.cpp" line="153" />
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="148" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -180,7 +180,7 @@
 <name>sendPauseGame()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Replay/NetworkReplayer.cpp" line="148" />
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="143" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -196,7 +196,7 @@
 <name>sendPlayerPosition(const cVector3d &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Replay/NetworkReplayer.cpp" line="173" />
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="168" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -212,7 +212,7 @@
 <name>sendProjectile(const Projectile &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Replay/NetworkReplayer.cpp" line="183" />
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="178" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -228,7 +228,7 @@
 <name>sendSlingshotPosition(const cVector3d &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Replay/NetworkReplayer.cpp" line="178" />
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="173" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -244,7 +244,7 @@
 <name>sendSlingshotPullback()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Replay/NetworkReplayer.cpp" line="188" />
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="183" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -260,7 +260,7 @@
 <name>sendSlingshotRelease()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Replay/NetworkReplayer.cpp" line="193" />
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="188" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -276,7 +276,7 @@
 <name>sendStartGame()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Replay/NetworkReplayer.cpp" line="143" />
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="138" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -292,7 +292,7 @@
 <name>sendUserName(const string &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Replay/NetworkReplayer.cpp" line="158" />
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="153" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -308,7 +308,7 @@
 <name>sendVideoData(const VideoData &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Replay/NetworkReplayer.cpp" line="168" />
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="163" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -373,7 +373,7 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Replay/NetworkReplayer.cpp" line="183" />
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="178" />
 </extent>
 <extent>
 <description>pass by reference</description>
@@ -384,11 +384,11 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Replay/NetworkReplayer.cpp" line="173" />
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="168" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Replay/NetworkReplayer.cpp" line="178" />
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="173" />
 </extent>
 <extent>
 <description>pass by reference</description>
@@ -430,23 +430,23 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Replay/NetworkReplayer.cpp" line="125" />
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="120" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Replay/NetworkReplayer.cpp" line="131" />
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="126" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Replay/NetworkReplayer.cpp" line="131" />
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="126" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="153" />
 </extent>
 <extent>
 <description>pass by reference</description>
 <source_reference file="../../Replay/NetworkReplayer.cpp" line="158" />
-</extent>
-<extent>
-<description>pass by reference</description>
-<source_reference file="../../Replay/NetworkReplayer.cpp" line="163" />
 </extent>
 <extent>
 <description>pass by reference</description>

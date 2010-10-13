@@ -1,0 +1,81 @@
+\hypertarget{classKeyboardFalcon}{
+\section{KeyboardFalcon Class Reference}
+\label{classKeyboardFalcon}\index{KeyboardFalcon@{KeyboardFalcon}}
+}
+
+
+\hyperlink{classFalcon}{Falcon} emulator that uses the keyboard instead of a novint falcon.  
+
+
+
+
+{\ttfamily \#include $<$KeyboardFalcon.h$>$}
+
+Inheritance diagram for KeyboardFalcon:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classKeyboardFalcon}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classKeyboardFalcon_a7b79d2129b322900cc65f6f250469875}{
+\hyperlink{classKeyboardFalcon_a7b79d2129b322900cc65f6f250469875}{KeyboardFalcon} ()}
+\label{classKeyboardFalcon_a7b79d2129b322900cc65f6f250469875}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{classKeyboardFalcon_a1db3b6a58d955521253dfc7067a88f36}{
+virtual \hyperlink{classKeyboardFalcon_a1db3b6a58d955521253dfc7067a88f36}{$\sim$KeyboardFalcon} ()}
+\label{classKeyboardFalcon_a1db3b6a58d955521253dfc7067a88f36}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+\hypertarget{classKeyboardFalcon_af9a2c400cb05910d806861eb8af566f9}{
+virtual void \hyperlink{classKeyboardFalcon_af9a2c400cb05910d806861eb8af566f9}{startPolling} ()}
+\label{classKeyboardFalcon_af9a2c400cb05910d806861eb8af566f9}
+
+\begin{DoxyCompactList}\small\item\em Start reporting falcon events to the mediator. \item\end{DoxyCompactList}\item 
+\hypertarget{classKeyboardFalcon_adf5bf86dd3610843b0db8b8795f6049b}{
+virtual void \hyperlink{classKeyboardFalcon_adf5bf86dd3610843b0db8b8795f6049b}{stopPolling} ()}
+\label{classKeyboardFalcon_adf5bf86dd3610843b0db8b8795f6049b}
+
+\begin{DoxyCompactList}\small\item\em Stop reporting falcon events to the mediator. \item\end{DoxyCompactList}\item 
+\hypertarget{classKeyboardFalcon_a496423ca690aa227530ac8e3f4ce06a0}{
+virtual void \hyperlink{classKeyboardFalcon_a496423ca690aa227530ac8e3f4ce06a0}{keyPressed} (unsigned int key)}
+\label{classKeyboardFalcon_a496423ca690aa227530ac8e3f4ce06a0}
+
+\begin{DoxyCompactList}\small\item\em Handle a key pressed event. \item\end{DoxyCompactList}\item 
+virtual cCollisionAABBBox \hyperlink{classKeyboardFalcon_a5f4b4e7d349e46f2662f8da3baa09086}{boundingBox} () const 
+\begin{DoxyCompactList}\small\item\em Returns the box to which the slingshot is bound. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classFalcon}{Falcon} emulator that uses the keyboard instead of a novint falcon. This class should mainly be used for testing purposes as we only have 1 falcon. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classKeyboardFalcon_a5f4b4e7d349e46f2662f8da3baa09086}{
+\index{KeyboardFalcon@{KeyboardFalcon}!boundingBox@{boundingBox}}
+\index{boundingBox@{boundingBox}!KeyboardFalcon@{KeyboardFalcon}}
+\subsubsection[{boundingBox}]{\setlength{\rightskip}{0pt plus 5cm}cCollisionAABBBox KeyboardFalcon::boundingBox (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classKeyboardFalcon_a5f4b4e7d349e46f2662f8da3baa09086}
+
+
+Returns the box to which the slingshot is bound. 
+
+\begin{DoxyReturn}{Returns}
+the box to which the slingshot is bound 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classFalcon_a8113221c67437ed4f726af6d68c0e66e}{Falcon}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Falcon/KeyboardFalcon.h\item 
+/home/kevin/workspace/HugMe/HugMe v0.9.1/Falcon/KeyboardFalcon.cpp\end{DoxyCompactItemize}

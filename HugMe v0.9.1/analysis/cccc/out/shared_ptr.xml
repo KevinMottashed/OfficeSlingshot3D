@@ -14,7 +14,7 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="10" level="0" />
+<coupling_between_objects value="11" level="0" />
 <IF4 value="0" level="0" />
 <IF4_per_member_function value="********" level="0" />
 <IF4_visible value="0" level="0" />
@@ -35,7 +35,7 @@
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="52" />
+<source_reference file="../../UserInterface/MainDlg.h" line="55" />
 </extent>
 <name>FalconReplayer</name>
 <visible>true</visible>
@@ -50,34 +50,38 @@
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Replay/FalconReplayer.h" line="18" />
-</extent>
-<extent>
-<description>pass by value</description>
 <source_reference file="../../Replay/FalconReplayer.h" line="19" />
 </extent>
 <extent>
-<description>has by value</description>
-<source_reference file="../../Replay/FalconReplayer.h" line="31" />
+<description>pass by value</description>
+<source_reference file="../../Replay/FalconReplayer.h" line="20" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Replay/FalconReplayer.h" line="32" />
+<source_reference file="../../Replay/FalconReplayer.h" line="34" />
 </extent>
-<name>MFCOpenGLControl</name>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Replay/FalconReplayer.h" line="35" />
+</extent>
+<name>Game</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
+<description>pass by value</description>
+<source_reference file="../../Game/Game.cpp" line="12" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/Game.h" line="26" />
+</extent>
+<extent>
 <description>has by value</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="23" />
+<source_reference file="../../Game/Game.h" line="72" />
 </extent>
 <name>Mediator</name>
 <visible>true</visible>
 <concrete>true</concrete>
-<extent>
-<description>pass by value</description>
-<source_reference file="../../Mediator/Mediator.cpp" line="8" />
-</extent>
 <extent>
 <description>pass by value</description>
 <source_reference file="../../Mediator/Mediator.cpp" line="9" />
@@ -96,47 +100,51 @@
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Mediator/Mediator.h" line="26" />
+<source_reference file="../../Mediator/Mediator.cpp" line="13" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Mediator/Mediator.h" line="27" />
+<source_reference file="../../Mediator/Mediator.h" line="31" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Mediator/Mediator.h" line="28" />
+<source_reference file="../../Mediator/Mediator.h" line="32" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Mediator/Mediator.h" line="29" />
+<source_reference file="../../Mediator/Mediator.h" line="33" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Mediator/Mediator.h" line="30" />
+<source_reference file="../../Mediator/Mediator.h" line="34" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Mediator/Mediator.h" line="35" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Mediator/Mediator.h" line="45" />
+<source_reference file="../../Mediator/Mediator.h" line="88" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Mediator/Mediator.h" line="46" />
+<source_reference file="../../Mediator/Mediator.h" line="89" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Mediator/Mediator.h" line="47" />
+<source_reference file="../../Mediator/Mediator.h" line="90" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Mediator/Mediator.h" line="48" />
+<source_reference file="../../Mediator/Mediator.h" line="91" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Mediator/Mediator.h" line="49" />
+<source_reference file="../../Mediator/Mediator.h" line="92" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Mediator/Mediator.h" line="56" />
+<source_reference file="../../Mediator/Mediator.h" line="96" />
 </extent>
 <name>NetworkReplayer</name>
 <visible>true</visible>
@@ -231,6 +239,17 @@
 <description>has by value</description>
 <source_reference file="../../Replay/Replayer.h" line="61" />
 </extent>
+<name>SmartClothingManager</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Jacket/SmartClothingManager.cpp" line="14" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Jacket/SmartClothingManager.h" line="18" />
+</extent>
 <name>UserInterfaceReplayer</name>
 <visible>true</visible>
 <concrete>true</concrete>
@@ -263,7 +282,7 @@
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../ZCamera/ZCamera.h" line="40" />
+<source_reference file="../../ZCamera/ZCamera.h" line="43" />
 </extent>
 <name>ZCameraReplayer</name>
 <visible>true</visible>

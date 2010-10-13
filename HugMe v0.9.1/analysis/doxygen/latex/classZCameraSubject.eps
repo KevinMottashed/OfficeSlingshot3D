@@ -5,7 +5,7 @@
 %%For: 
 %Magnification: 1.00
 %%Orientation: Portrait
-%%BoundingBox: 0 0 500 241.935
+%%BoundingBox: 0 0 500 156.250000
 %%Pages: 0
 %%BeginSetup
 %%EndSetup
@@ -19,13 +19,13 @@
 /marginwidth 10 def
 /distx 20 def
 /disty 40 def
-/boundaspect 2.06667 def  % aspect ratio of the BoundingBox (width/height)
+/boundaspect 3.200000 def  % aspect ratio of the BoundingBox (width/height)
 /boundx 500 def
 /boundy boundx boundaspect div def
 /xspacing 0 def
 /yspacing 0 def
 /rows 3 def
-/cols 2 def
+/cols 3 def
 /scalefactor 0 def
 /boxfont /Times-Roman findfont fontheight scalefont def
 
@@ -175,6 +175,7 @@ boxfont setfont
 1 boundaspect scale
 (ZCameraSubject) cw
 (IZCamera) cw
+(KeyboardZCamera) cw
 (ZCamera) cw
 (ZCameraReplayer) cw
 /boxwidth boxwidth marginwidth 2 mul add def
@@ -188,22 +189,25 @@ boundx scalefactor div boundy scalefactor div scale
 
 % ----- classes -----
 
- (ZCameraSubject) 0.5 2 box
- (IZCamera) 0.5 1 box
- (ZCamera) 0 0 box
- (ZCameraReplayer) 1 0 box
+ (ZCameraSubject) 1.000000 2.000000 box
+ (IZCamera) 1.000000 1.000000 box
+ (KeyboardZCamera) 0.000000 0.000000 box
+ (ZCamera) 1.000000 0.000000 box
+ (ZCameraReplayer) 2.000000 0.000000 box
 
 % ----- relations -----
 
 solid
-1 0.5 1.25 out
+1 1.000000 1.250000 out
 solid
-0 0.5 1.75 in
+0 1.000000 1.750000 in
 solid
-1 0.5 0.25 out
+1 1.000000 0.250000 out
 solid
-0 1 1 conn
+0.000000 2.000000 1.000000 conn
 solid
-0 0 0.75 in
+0 0.000000 0.750000 in
 solid
-0 1 0.75 in
+0 1.000000 0.750000 in
+solid
+0 2.000000 0.750000 in

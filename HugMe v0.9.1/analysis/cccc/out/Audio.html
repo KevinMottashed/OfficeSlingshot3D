@@ -8,29 +8,29 @@ Detailed report on module Audio
 <TR>
 <TH BGCOLOR="AQUA" WIDTH=70%>Metric</TH><TH BGCOLOR="AQUA" WIDTH=10%>Tag</TH><TH BGCOLOR="AQUA" WIDTH=10%>Overall</TH><TH BGCOLOR="AQUA" WIDTH=10%>Per Function</TH></TR>
 <TR>
-<TD>Lines of Code</TD><TD>LOC</TD><TD ALIGN=RIGHT>    69</TD><TD ALIGN=RIGHT>******</TD></TR>
+<TD>Lines of Code</TD><TD>LOC</TD><TD ALIGN=RIGHT>    91</TD><TD ALIGN=RIGHT>******</TD></TR>
 <TR>
-<TD>McCabe's Cyclomatic Number</TD><TD>MVG</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>******</TD></TR>
+<TD>McCabe's Cyclomatic Number</TD><TD>MVG</TD><TD ALIGN=RIGHT>     3</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>******</STRONG></TD></TR>
 <TR>
-<TD>Lines of Comment</TD><TD>COM</TD><TD ALIGN=RIGHT>     9</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>********</STRONG></TD></TR>
+<TD>Lines of Comment</TD><TD>COM</TD><TD ALIGN=RIGHT>    74</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>********</STRONG></TD></TR>
 <TR>
-<TD>LOC/COM</TD><TD>L_C</TD><TD ALIGN=RIGHT BGCOLOR="YELLOW"><EM> 7.667</EM></TD><TD>&nbsp;</TD></TR>
+<TD>LOC/COM</TD><TD>L_C</TD><TD ALIGN=RIGHT> 1.230</TD><TD>&nbsp;</TD></TR>
 <TR>
 <TD>MVG/COM</TD><TD>M_C</TD><TD ALIGN=RIGHT>------</TD><TD>&nbsp;</TD></TR>
 <TR>
-<TD>Weighted Methods per Class ( &nbsp;weighting = unity&nbsp;)</TD><TD>WMC1</TD><TD ALIGN=RIGHT>     9</TD><TD>&nbsp;</TD></TR>
+<TD>Weighted Methods per Class ( &nbsp;weighting = unity&nbsp;)</TD><TD>WMC1</TD><TD ALIGN=RIGHT>    11</TD><TD>&nbsp;</TD></TR>
 <TR>
-<TD>Weighted Methods per Class ( &nbsp;weighting = visible&nbsp;)</TD><TD>WMCv</TD><TD ALIGN=RIGHT>     7</TD><TD>&nbsp;</TD></TR>
+<TD>Weighted Methods per Class ( &nbsp;weighting = visible&nbsp;)</TD><TD>WMCv</TD><TD ALIGN=RIGHT>     9</TD><TD>&nbsp;</TD></TR>
 <TR>
 <TD>Depth of Inheritance Tree</TD><TD>DIT</TD><TD ALIGN=RIGHT>     0</TD><TD>&nbsp;</TD></TR>
 <TR>
 <TD>Number of Children</TD><TD>NOC</TD><TD ALIGN=RIGHT>     0</TD><TD>&nbsp;</TD></TR>
 <TR>
-<TD>Coupling between objects</TD><TD>CBO</TD><TD ALIGN=RIGHT>     3</TD><TD>&nbsp;</TD></TR>
+<TD>Coupling between objects</TD><TD>CBO</TD><TD ALIGN=RIGHT>     4</TD><TD>&nbsp;</TD></TR>
 <TR>
-<TD>Information Flow measure ( &nbsp;inclusive&nbsp;)</TD><TD>IF4</TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>********</STRONG></TD></TR>
+<TD>Information Flow measure ( &nbsp;inclusive&nbsp;)</TD><TD>IF4</TD><TD ALIGN=RIGHT>     9</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>********</STRONG></TD></TR>
 <TR>
-<TD>Information Flow measure ( &nbsp;visible&nbsp;)</TD><TD>IF4v</TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>********</STRONG></TD></TR>
+<TD>Information Flow measure ( &nbsp;visible&nbsp;)</TD><TD>IF4v</TD><TD ALIGN=RIGHT>     9</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>********</STRONG></TD></TR>
 <TR>
 <TD>Information Flow measure ( &nbsp;concrete&nbsp;)</TD><TD>IF4c</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>********</TD></TR>
 </TABLE>
@@ -38,9 +38,9 @@ Detailed report on module Audio
 <TABLE BORDER WIDTH=100%><TR>
 <TD WIDTH=50%>Description</TD><TH BGCOLOR="AQUA" WIDTH=10%>LOC</TH><TH BGCOLOR="AQUA" WIDTH=10%>MVG</TH><TH BGCOLOR="AQUA" WIDTH=10%>COM</TH><TH BGCOLOR="AQUA" WIDTH=10%>L_C</TH><TH BGCOLOR="AQUA" WIDTH=10%>M_C</TH><TR>
 <TD>definition &nbsp;
-<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:         6">../../Audio/Audio.h:6</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:         9">../../Audio/Audio.h:9</A></CODE><BR>
 </TD>
-<TD ALIGN=RIGHT>    11</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+<TD ALIGN=RIGHT>    13</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>    28</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>declaration &nbsp;
 <CODE><A HREF="cccc_src.html#../../Audio/AudioProxy.h:         4">../../Audio/AudioProxy.h:4</A></CODE><BR>
@@ -55,69 +55,85 @@ Detailed report on module Audio
 definition &nbsp;
 <CODE><A HREF="cccc_src.html#../../Audio/Audio.cpp:         6">../../Audio/Audio.cpp:6</A></CODE><BR>
 declaration &nbsp;
-<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:         9">../../Audio/Audio.h:9</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:        16">../../Audio/Audio.h:16</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>    19</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     2</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT>    22</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>    10</TD><TD ALIGN=RIGHT> 2.200</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>Audio( &nbsp;const Audio &amp;&nbsp;)<BR>
 declaration &nbsp;
-<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:        29">../../Audio/Audio.h:29</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:        65">../../Audio/Audio.h:65</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>operator =( &nbsp;const Audio &amp;&nbsp;)<BR>
 declaration &nbsp;
-<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:        30">../../Audio/Audio.h:30</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:        71">../../Audio/Audio.h:71</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>playBGMusic( &nbsp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#../../Audio/Audio.cpp:        35">../../Audio/Audio.cpp:35</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Audio/Audio.cpp:        43">../../Audio/Audio.cpp:43</A></CODE><BR>
 declaration &nbsp;
-<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:        13">../../Audio/Audio.h:13</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:        27">../../Audio/Audio.h:27</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     3</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>playGameOverLost( &nbsp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#../../Audio/Audio.cpp:        59">../../Audio/Audio.cpp:59</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Audio/Audio.cpp:        87">../../Audio/Audio.cpp:87</A></CODE><BR>
 declaration &nbsp;
-<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:        25">../../Audio/Audio.h:25</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:        57">../../Audio/Audio.h:57</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     3</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>playGameOverWon( &nbsp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#../../Audio/Audio.cpp:        53">../../Audio/Audio.cpp:53</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Audio/Audio.cpp:        81">../../Audio/Audio.cpp:81</A></CODE><BR>
 declaration &nbsp;
-<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:        22">../../Audio/Audio.h:22</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:        52">../../Audio/Audio.h:52</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     3</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>playGameStart( &nbsp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#../../Audio/Audio.cpp:        47">../../Audio/Audio.cpp:47</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Audio/Audio.cpp:        75">../../Audio/Audio.cpp:75</A></CODE><BR>
 declaration &nbsp;
-<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:        19">../../Audio/Audio.h:19</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:        47">../../Audio/Audio.h:47</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     3</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>playHit( &nbsp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#../../Audio/Audio.cpp:        41">../../Audio/Audio.cpp:41</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Audio/Audio.cpp:        63">../../Audio/Audio.cpp:63</A></CODE><BR>
 declaration &nbsp;
-<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:        16">../../Audio/Audio.h:16</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:        37">../../Audio/Audio.h:37</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     3</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+<TR>
+<TD>playSlingshotFired( &nbsp;&nbsp;)<BR>
+definition &nbsp;
+<CODE><A HREF="cccc_src.html#../../Audio/Audio.cpp:        69">../../Audio/Audio.cpp:69</A></CODE><BR>
+declaration &nbsp;
+<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:        42">../../Audio/Audio.h:42</A></CODE><BR>
+<BR>
+</TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     3</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+<TR>
+<TD>stopBGMusic( &nbsp;&nbsp;)<BR>
+definition &nbsp;
+<CODE><A HREF="cccc_src.html#../../Audio/Audio.cpp:        49">../../Audio/Audio.cpp:49</A></CODE><BR>
+declaration &nbsp;
+<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:        32">../../Audio/Audio.h:32</A></CODE><BR>
+<BR>
+</TD><TD ALIGN=RIGHT>    11</TD><TD ALIGN=RIGHT>     3</TD><TD ALIGN=RIGHT>     5</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>~Audio( &nbsp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#../../Audio/Audio.cpp:        29">../../Audio/Audio.cpp:29</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Audio/Audio.cpp:        36">../../Audio/Audio.cpp:36</A></CODE><BR>
 declaration &nbsp;
-<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:        10">../../Audio/Audio.h:10</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:        22">../../Audio/Audio.h:22</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     5</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR><TD HEIGHT=12 COLSPAN=6></TD></TR>
 </TR></TABLE>
 <H2><A NAME="structdet">Relationships</A></H2>
@@ -127,28 +143,35 @@ declaration &nbsp;
 <TD WIDTH=50%>
 Mediator [CV] <BR>
 has by value &nbsp;
-<CODE><A HREF="cccc_src.html#../../Mediator/Mediator.h:        50">../../Mediator/Mediator.h:50</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Mediator/Mediator.h:        93">../../Mediator/Mediator.h:93</A></CODE><BR>
 <BR>
 <BR>
 &nbsp;
 </TD>
 <TD WIDTH=50%>
+Channel [V] <BR>
+has by reference &nbsp;
+<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:       102">../../Audio/Audio.h:102</A></CODE><BR>
+<BR>
+<BR>
 Sound [V] <BR>
 has by reference &nbsp;
-<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:        33">../../Audio/Audio.h:33</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:        82">../../Audio/Audio.h:82</A></CODE><BR>
 has by reference &nbsp;
-<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:        34">../../Audio/Audio.h:34</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:        87">../../Audio/Audio.h:87</A></CODE><BR>
 has by reference &nbsp;
-<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:        35">../../Audio/Audio.h:35</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:        92">../../Audio/Audio.h:92</A></CODE><BR>
 has by reference &nbsp;
-<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:        36">../../Audio/Audio.h:36</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:        97">../../Audio/Audio.h:97</A></CODE><BR>
 has by reference &nbsp;
-<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:        37">../../Audio/Audio.h:37</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:       107">../../Audio/Audio.h:107</A></CODE><BR>
+has by reference &nbsp;
+<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:       112">../../Audio/Audio.h:112</A></CODE><BR>
 <BR>
 <BR>
 System [V] <BR>
 has by reference &nbsp;
-<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:        32">../../Audio/Audio.h:32</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Audio/Audio.h:        77">../../Audio/Audio.h:77</A></CODE><BR>
 <BR>
 <BR>
 &nbsp;

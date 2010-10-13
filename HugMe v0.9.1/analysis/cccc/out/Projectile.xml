@@ -2,32 +2,32 @@
 <!--Detailed report on module Projectile-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="67" level="0" />
+<lines_of_code value="73" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
-<McCabes_cyclomatic_complexity value="5" level="0" />
+<McCabes_cyclomatic_complexity value="7" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
-<lines_of_code value="7" level="0" />
+<lines_of_code value="67" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="9.571" level="1" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.714" level="0" />
-<weighted_methods_per_class_unity value="10" level="0" />
-<weighted_methods_per_class_visibility value="9" level="0" />
+<lines_of_code_per_line_of_comment value="1.090" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.104" level="0" />
+<weighted_methods_per_class_unity value="12" level="0" />
+<weighted_methods_per_class_visibility value="10" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="10" level="0" />
-<IF4 value="256" level="1" />
+<coupling_between_objects value="12" level="0" />
+<IF4 value="400" level="1" />
 <IF4_per_member_function value="********" level="2" />
-<IF4_visible value="256" level="2" />
+<IF4_visible value="400" level="2" />
 <IF4_visible_per_member_function value="********" level="2" />
-<IF4_concrete value="0" level="0" />
-<IF4_concrete_per_member_function value="********" level="0" />
+<IF4_concrete value="9" level="0" />
+<IF4_concrete_per_member_function value="********" level="2" />
 </module_summary>
 <module_detail>
 <description>definition</description>
-<source_reference file="../../Common/Projectile.h" line="8" />
+<source_reference file="../../Common/Projectile.h" line="11" />
 <lines_of_code value="9" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="2" level="0" />
+<lines_of_comment value="16" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module_detail>
@@ -40,11 +40,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Common/Projectile.h" line="11" />
+<source_reference file="../../Common/Projectile.h" line="18" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="3" level="0" />
+<lines_of_comment value="7" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -56,43 +56,131 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Common/Projectile.h" line="12" />
+<source_reference file="../../Common/Projectile.h" line="25" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="5" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>equals(...)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Common/Projectile.h" line="80" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="8" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>equals(const Projectile &amp;,float)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Common/Projectile.cpp" line="60" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
 <lines_of_comment value="0" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
-<name>getPosition()</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../Common/Projectile.cpp" line="24" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../Common/Projectile.h" line="16" />
-</extent>
-<lines_of_code value="5" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>getSpeed()</name>
+<name>force()</name>
 <extent>
 <description>definition</description>
 <source_reference file="../../Common/Projectile.cpp" line="29" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Common/Projectile.h" line="21" />
+<source_reference file="../../Common/Projectile.h" line="56" />
 </extent>
 <lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>force(const cVector3d &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Common/Projectile.cpp" line="54" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Common/Projectile.h" line="70" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>force(double,double,double)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Common/Projectile.cpp" line="47" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Common/Projectile.h" line="64" />
+</extent>
+<lines_of_code value="7" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="6" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>position()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Common/Projectile.cpp" line="24" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Common/Projectile.h" line="36" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>position(const cVector3d &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Common/Projectile.cpp" line="41" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Common/Projectile.h" line="50" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>position(double,double,double)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Common/Projectile.cpp" line="34" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Common/Projectile.h" line="44" />
+</extent>
+<lines_of_code value="7" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="6" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -100,74 +188,10 @@
 <name>serialize(Archive &amp;,const int)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Common/Projectile.h" line="46" />
+<source_reference file="../../Common/Projectile.h" line="114" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="0" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>setPosition(const cVector3d &amp;)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../Common/Projectile.cpp" line="41" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../Common/Projectile.h" line="18" />
-</extent>
-<lines_of_code value="6" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="0" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>setPosition(double,double,double)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../Common/Projectile.cpp" line="34" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../Common/Projectile.h" line="17" />
-</extent>
-<lines_of_code value="7" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>setSpeed(const cVector3d &amp;)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../Common/Projectile.cpp" line="54" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../Common/Projectile.h" line="23" />
-</extent>
-<lines_of_code value="6" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="0" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>setSpeed(double,double,double)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../Common/Projectile.cpp" line="47" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../Common/Projectile.h" line="22" />
-</extent>
-<lines_of_code value="7" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="0" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
@@ -180,11 +204,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Common/Projectile.h" line="13" />
+<source_reference file="../../Common/Projectile.h" line="30" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -193,25 +217,6 @@
 <module>
 <name>Projectile</name>
 <client_module>
-<name>Game</name>
-<visible>true</visible>
-<concrete>false</concrete>
-<extent>
-<description>pass by reference</description>
-<source_reference file="../../Game/Game.cpp" line="82" />
-</extent>
-<extent>
-<description>pass by reference</description>
-<source_reference file="../../Game/Game.cpp" line="89" />
-</extent>
-<extent>
-<description>pass by reference</description>
-<source_reference file="../../Game/Game.h" line="38" />
-</extent>
-<extent>
-<description>pass by reference</description>
-<source_reference file="../../Game/Game.h" line="39" />
-</extent>
 <name>HumanFormatLogger</name>
 <visible>true</visible>
 <concrete>false</concrete>
@@ -224,32 +229,47 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Logger/Logger.h" line="38" />
+<source_reference file="../../Logger/Logger.h" line="36" />
 </extent>
 <name>Mediator</name>
 <visible>true</visible>
-<concrete>false</concrete>
+<concrete>true</concrete>
 <extent>
-<description>pass by reference</description>
-<source_reference file="../../Mediator/Mediator.cpp" line="283" />
+<description>pass by value</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="105" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Mediator/Mediator.h" line="79" />
 </extent>
 <name>Network</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/Network.h" line="35" />
+<source_reference file="../../Network/Network.h" line="109" />
 </extent>
 <name>NetworkReplayer</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Replay/NetworkReplayer.cpp" line="183" />
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="178" />
 </extent>
 <extent>
 <description>pass by reference</description>
 <source_reference file="../../Replay/NetworkReplayer.h" line="42" />
+</extent>
+<name>PerspectiveMath</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Mediator/PerspectiveMath.cpp" line="14" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Mediator/PerspectiveMath.h" line="30" />
 </extent>
 <name>ReplayFormatLogger</name>
 <visible>true</visible>
@@ -257,6 +277,28 @@
 <extent>
 <description>pass by reference</description>
 <source_reference file="../../Logger/ReplayFormatLogger.h" line="149" />
+</extent>
+<name>VirtualBall</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/VirtualBall.cpp" line="28" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/VirtualBall.h" line="34" />
+</extent>
+<name>VirtualEnvironment</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="69" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/VirtualEnvironment.h" line="85" />
 </extent>
 <name>WinsockNetwork</name>
 <visible>true</visible>
@@ -272,7 +314,7 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Common/Projectile.h" line="46" />
+<source_reference file="../../Common/Projectile.h" line="114" />
 </extent>
 <name>cVector3d</name>
 <visible>true</visible>
@@ -295,19 +337,19 @@
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Common/Projectile.h" line="12" />
+<source_reference file="../../Common/Projectile.h" line="25" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Common/Projectile.h" line="12" />
+<source_reference file="../../Common/Projectile.h" line="25" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Common/Projectile.h" line="18" />
+<source_reference file="../../Common/Projectile.h" line="50" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Common/Projectile.h" line="23" />
+<source_reference file="../../Common/Projectile.h" line="70" />
 </extent>
 </supplier_module>
 </module>

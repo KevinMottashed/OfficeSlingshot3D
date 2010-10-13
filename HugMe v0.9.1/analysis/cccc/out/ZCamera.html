@@ -8,25 +8,25 @@ Detailed report on module ZCamera
 <TR>
 <TH BGCOLOR="AQUA" WIDTH=70%>Metric</TH><TH BGCOLOR="AQUA" WIDTH=10%>Tag</TH><TH BGCOLOR="AQUA" WIDTH=10%>Overall</TH><TH BGCOLOR="AQUA" WIDTH=10%>Per Function</TH></TR>
 <TR>
-<TD>Lines of Code</TD><TD>LOC</TD><TD ALIGN=RIGHT>   138</TD><TD ALIGN=RIGHT>******</TD></TR>
+<TD>Lines of Code</TD><TD>LOC</TD><TD ALIGN=RIGHT>   121</TD><TD ALIGN=RIGHT>******</TD></TR>
 <TR>
-<TD>McCabe's Cyclomatic Number</TD><TD>MVG</TD><TD ALIGN=RIGHT>    22</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>******</STRONG></TD></TR>
+<TD>McCabe's Cyclomatic Number</TD><TD>MVG</TD><TD ALIGN=RIGHT>    18</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>******</STRONG></TD></TR>
 <TR>
-<TD>Lines of Comment</TD><TD>COM</TD><TD ALIGN=RIGHT>    61</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>********</STRONG></TD></TR>
+<TD>Lines of Comment</TD><TD>COM</TD><TD ALIGN=RIGHT>    49</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>********</STRONG></TD></TR>
 <TR>
-<TD>LOC/COM</TD><TD>L_C</TD><TD ALIGN=RIGHT> 2.262</TD><TD>&nbsp;</TD></TR>
+<TD>LOC/COM</TD><TD>L_C</TD><TD ALIGN=RIGHT> 2.469</TD><TD>&nbsp;</TD></TR>
 <TR>
-<TD>MVG/COM</TD><TD>M_C</TD><TD ALIGN=RIGHT> 0.361</TD><TD>&nbsp;</TD></TR>
+<TD>MVG/COM</TD><TD>M_C</TD><TD ALIGN=RIGHT> 0.367</TD><TD>&nbsp;</TD></TR>
 <TR>
 <TD>Weighted Methods per Class ( &nbsp;weighting = unity&nbsp;)</TD><TD>WMC1</TD><TD ALIGN=RIGHT>    10</TD><TD>&nbsp;</TD></TR>
 <TR>
-<TD>Weighted Methods per Class ( &nbsp;weighting = visible&nbsp;)</TD><TD>WMCv</TD><TD ALIGN=RIGHT>     8</TD><TD>&nbsp;</TD></TR>
+<TD>Weighted Methods per Class ( &nbsp;weighting = visible&nbsp;)</TD><TD>WMCv</TD><TD ALIGN=RIGHT>     7</TD><TD>&nbsp;</TD></TR>
 <TR>
 <TD>Depth of Inheritance Tree</TD><TD>DIT</TD><TD ALIGN=RIGHT>     2</TD><TD>&nbsp;</TD></TR>
 <TR>
 <TD>Number of Children</TD><TD>NOC</TD><TD ALIGN=RIGHT>     0</TD><TD>&nbsp;</TD></TR>
 <TR>
-<TD>Coupling between objects</TD><TD>CBO</TD><TD ALIGN=RIGHT>     4</TD><TD>&nbsp;</TD></TR>
+<TD>Coupling between objects</TD><TD>CBO</TD><TD ALIGN=RIGHT>     5</TD><TD>&nbsp;</TD></TR>
 <TR>
 <TD>Information Flow measure ( &nbsp;inclusive&nbsp;)</TD><TD>IF4</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>********</TD></TR>
 <TR>
@@ -40,10 +40,10 @@ Detailed report on module ZCamera
 <TD>definition &nbsp;
 <CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.h:        12">../../ZCamera/ZCamera.h:12</A></CODE><BR>
 </TD>
-<TD ALIGN=RIGHT>    12</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+<TD ALIGN=RIGHT>    13</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     3</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>declaration &nbsp;
-<CODE><A HREF="cccc_src.html#../../ZCamera/ZCameraProxy.h:         9">../../ZCamera/ZCameraProxy.h:9</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../ZCamera/ZCameraProxy.h:        10">../../ZCamera/ZCameraProxy.h:10</A></CODE><BR>
 </TD>
 <TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR><TD HEIGHT=12 COLSPAN=6></TD></TR>
@@ -61,63 +61,63 @@ declaration &nbsp;
 <TR>
 <TD>ZCamera( &nbsp;const ZCamera &amp;&nbsp;)<BR>
 declaration &nbsp;
-<CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.h:        34">../../ZCamera/ZCamera.h:34</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.h:        33">../../ZCamera/ZCamera.h:33</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
-<TD>getFrameFromCamera( &nbsp;ZCamera *&nbsp;)<BR>
+<TD>getFrameFromCamera( &nbsp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.cpp:        34">../../ZCamera/ZCamera.cpp:34</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.cpp:        37">../../ZCamera/ZCamera.cpp:37</A></CODE><BR>
 declaration &nbsp;
 <CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.h:        26">../../ZCamera/ZCamera.h:26</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>    13</TD><TD ALIGN=RIGHT>     2</TD><TD ALIGN=RIGHT>    12</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT>    14</TD><TD ALIGN=RIGHT>     2</TD><TD ALIGN=RIGHT>    11</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
-<TD>getFrameFromDummy( &nbsp;ZCamera *&nbsp;)<BR>
+<TD>getPlayerPosition( &nbsp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.cpp:        60">../../ZCamera/ZCamera.cpp:60</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.cpp:       130">../../ZCamera/ZCamera.cpp:130</A></CODE><BR>
 declaration &nbsp;
-<CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.h:        27">../../ZCamera/ZCamera.h:27</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.h:        50">../../ZCamera/ZCamera.h:50</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT BGCOLOR="YELLOW"><EM>    55</EM></TD><TD ALIGN=RIGHT BGCOLOR="YELLOW"><EM>    16</EM></TD><TD ALIGN=RIGHT>    24</TD><TD ALIGN=RIGHT> 2.292</TD><TD ALIGN=RIGHT> 0.667</TD></TR>
+</TD><TD ALIGN=RIGHT>    28</TD><TD ALIGN=RIGHT>     9</TD><TD ALIGN=RIGHT>    10</TD><TD ALIGN=RIGHT> 2.800</TD><TD ALIGN=RIGHT> 0.900</TD></TR>
 <TR>
 <TD>operator =( &nbsp;const ZCamera &amp;&nbsp;)<BR>
 declaration &nbsp;
-<CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.h:        35">../../ZCamera/ZCamera.h:35</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.h:        34">../../ZCamera/ZCamera.h:34</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>reverseFrameLeftRight( &nbsp;VideoData &amp;, &nbsp;int&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.cpp:       178">../../ZCamera/ZCamera.cpp:178</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.cpp:       107">../../ZCamera/ZCamera.cpp:107</A></CODE><BR>
 declaration &nbsp;
-<CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.h:        31">../../ZCamera/ZCamera.h:31</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.h:        30">../../ZCamera/ZCamera.h:30</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>    16</TD><TD ALIGN=RIGHT>     2</TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>reverseFrameUpDown( &nbsp;VideoData &amp;, &nbsp;int&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.cpp:       160">../../ZCamera/ZCamera.cpp:160</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.cpp:        89">../../ZCamera/ZCamera.cpp:89</A></CODE><BR>
 declaration &nbsp;
-<CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.h:        30">../../ZCamera/ZCamera.h:30</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.h:        29">../../ZCamera/ZCamera.h:29</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>    12</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     5</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>startCapture( &nbsp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.cpp:       139">../../ZCamera/ZCamera.cpp:139</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.cpp:        62">../../ZCamera/ZCamera.cpp:62</A></CODE><BR>
 declaration &nbsp;
 <CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.h:        19">../../ZCamera/ZCamera.h:19</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>    11</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT>    12</TD><TD ALIGN=RIGHT>     3</TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>stopCapture( &nbsp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.cpp:       155">../../ZCamera/ZCamera.cpp:155</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.cpp:        78">../../ZCamera/ZCamera.cpp:78</A></CODE><BR>
 declaration &nbsp;
 <CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.h:        22">../../ZCamera/ZCamera.h:22</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     2</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT>    10</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     2</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>~ZCamera( &nbsp;&nbsp;)<BR>
 definition &nbsp;
@@ -125,7 +125,7 @@ definition &nbsp;
 declaration &nbsp;
 <CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.h:        16">../../ZCamera/ZCamera.h:16</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>     5</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     2</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR><TD HEIGHT=12 COLSPAN=6></TD></TR>
 </TR></TABLE>
 <H2><A NAME="structdet">Relationships</A></H2>
@@ -136,9 +136,9 @@ declaration &nbsp;
 &nbsp;
 </TD>
 <TD WIDTH=50%>
-CDepthCamera <BR>
+CDepthCamera [V] <BR>
 has by reference &nbsp;
-<CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.h:        39">../../ZCamera/ZCamera.h:39</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.h:        42">../../ZCamera/ZCamera.h:42</A></CODE><BR>
 <BR>
 <BR>
 IZCamera [CV] <BR>
@@ -146,14 +146,19 @@ inheritance &nbsp;
 <CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.h:        12">../../ZCamera/ZCamera.h:12</A></CODE><BR>
 <BR>
 <BR>
-bool [C] <BR>
+auto_ptr [CV] <BR>
 has by value &nbsp;
 <CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.h:        37">../../ZCamera/ZCamera.h:37</A></CODE><BR>
 <BR>
 <BR>
-shared_ptr [CV] <BR>
+bool [CV] <BR>
 has by value &nbsp;
 <CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.h:        40">../../ZCamera/ZCamera.h:40</A></CODE><BR>
+<BR>
+<BR>
+shared_ptr [CV] <BR>
+has by value &nbsp;
+<CODE><A HREF="cccc_src.html#../../ZCamera/ZCamera.h:        43">../../ZCamera/ZCamera.h:43</A></CODE><BR>
 <BR>
 <BR>
 &nbsp;

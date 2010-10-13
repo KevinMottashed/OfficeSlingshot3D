@@ -2,81 +2,43 @@
 \section{Game Class Reference}
 \label{classGame}\index{Game@{Game}}
 }
+
+
+Represents the \hyperlink{classOfficeSlingshot3D}{OfficeSlingshot3D} game.  
+
+
+
+
+{\ttfamily \#include $<$Game.h$>$}
+
 Inheritance diagram for Game:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2cm]{classGame}
+\includegraphics[height=2.000000cm]{classGame}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classGame_a3d9b98f7c4a96ecf578f75b96c9f0e90}{
-void {\bfseries start} ()}
-\label{classGame_a3d9b98f7c4a96ecf578f75b96c9f0e90}
+\hypertarget{classGame_ae4a3e825c02c218e3a110586dbc964f5}{
+\hyperlink{classGame_ae4a3e825c02c218e3a110586dbc964f5}{Game} (boost::shared\_\-ptr$<$ \hyperlink{classMediator}{Mediator} $>$ mediator)}
+\label{classGame_ae4a3e825c02c218e3a110586dbc964f5}
 
-\item 
-\hypertarget{classGame_a4b507ab6c09910b3a621cf1980d65604}{
-void {\bfseries pause} ()}
-\label{classGame_a4b507ab6c09910b3a621cf1980d65604}
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{classGame_ae3d112ca6e0e55150d2fdbc704474530}{
+virtual \hyperlink{classGame_ae3d112ca6e0e55150d2fdbc704474530}{$\sim$Game} ()}
+\label{classGame_ae3d112ca6e0e55150d2fdbc704474530}
 
-\item 
-\hypertarget{classGame_a17fbb36fd4a2085f9ff4f1fa93d7d08b}{
-void {\bfseries stop} ()}
-\label{classGame_a17fbb36fd4a2085f9ff4f1fa93d7d08b}
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+\hypertarget{classGame_a1e83402bc85f4ef4150bee568e4f8986}{
+virtual void \hyperlink{classGame_a1e83402bc85f4ef4150bee568e4f8986}{update} (\hyperlink{namespaceMediatorUpdateContext_aa3a9bed543f2a2237dc2b6feea170a1d}{MediatorUpdateContext\_\-t} context, const void $\ast$data)}
+\label{classGame_a1e83402bc85f4ef4150bee568e4f8986}
 
-\item 
-\hypertarget{classGame_aab451f2c3ec02c5a0282b58ab19ebdab}{
-cVector3d {\bfseries getLocalSlingshotPosition} () const }
-\label{classGame_aab451f2c3ec02c5a0282b58ab19ebdab}
+\begin{DoxyCompactList}\small\item\em Updates from the mediator. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 
-\item 
-\hypertarget{classGame_a1cd832f27a46802def164569fc2dd6ed}{
-void {\bfseries setLocalSlingshotPosition} (const cVector3d \&position)}
-\label{classGame_a1cd832f27a46802def164569fc2dd6ed}
 
-\item 
-\hypertarget{classGame_add72eb62274c4401f4176cf3a46f3e2c}{
-cVector3d {\bfseries getRemoteSlingshotPosition} () const }
-\label{classGame_add72eb62274c4401f4176cf3a46f3e2c}
-
-\item 
-\hypertarget{classGame_acd24ee64929223da87840f28d7a5fade}{
-void {\bfseries setRemoteSlingshotPosition} (const cVector3d \&position)}
-\label{classGame_acd24ee64929223da87840f28d7a5fade}
-
-\item 
-\hypertarget{classGame_acf57e15005800c867112028148507649}{
-cVector3d {\bfseries getLocalPlayerPosition} () const }
-\label{classGame_acf57e15005800c867112028148507649}
-
-\item 
-\hypertarget{classGame_abfdbfb316ff74d0cd5f5a175e84a4e66}{
-void {\bfseries setLocalPlayerPosition} (const cVector3d \&position)}
-\label{classGame_abfdbfb316ff74d0cd5f5a175e84a4e66}
-
-\item 
-\hypertarget{classGame_ae4280d23a5374831afe17ad884247903}{
-cVector3d {\bfseries getRemotePlayerPosition} () const }
-\label{classGame_ae4280d23a5374831afe17ad884247903}
-
-\item 
-\hypertarget{classGame_a24eea0f5f958f43274073caad37b2317}{
-void {\bfseries setRemotePlayerPosition} (const cVector3d \&position)}
-\label{classGame_a24eea0f5f958f43274073caad37b2317}
-
-\item 
-\hypertarget{classGame_a6b906a1b84bf44af941965dc0328e4c9}{
-void {\bfseries addLocalProjectile} (const \hyperlink{classProjectile}{Projectile} \&projectile)}
-\label{classGame_a6b906a1b84bf44af941965dc0328e4c9}
-
-\item 
-\hypertarget{classGame_a548fc57b9d7ab59fc00e2fcdcf373950}{
-void {\bfseries addRemoteProjectile} (const \hyperlink{classProjectile}{Projectile} \&projectile)}
-\label{classGame_a548fc57b9d7ab59fc00e2fcdcf373950}
-
-\end{DoxyCompactItemize}
-
+\subsection{Detailed Description}
+Represents the \hyperlink{classOfficeSlingshot3D}{OfficeSlingshot3D} game. Holds game data (score, health, etc ...) and the games 3d representation. 
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
 \item 

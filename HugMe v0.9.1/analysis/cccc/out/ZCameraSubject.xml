@@ -24,7 +24,7 @@
 </module_summary>
 <module_detail>
 <description>declaration</description>
-<source_reference file="../../ZCamera/ZCameraProxy.h" line="10" />
+<source_reference file="../../ZCamera/ZCameraProxy.h" line="11" />
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="0" level="0" />

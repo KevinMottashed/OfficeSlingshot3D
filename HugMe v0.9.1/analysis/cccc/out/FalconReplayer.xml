@@ -2,15 +2,15 @@
 <!--Detailed report on module FalconReplayer-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="47" level="0" />
+<lines_of_code value="53" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
-<McCabes_cyclomatic_complexity value="5" level="0" />
+<McCabes_cyclomatic_complexity value="6" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
 <lines_of_code value="12" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="3.917" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.417" level="0" />
-<weighted_methods_per_class_unity value="5" level="0" />
+<lines_of_code_per_line_of_comment value="4.417" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.500" level="0" />
+<weighted_methods_per_class_unity value="6" level="0" />
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="2" level="0" />
 <number_of_children value="0" level="0" />
@@ -24,7 +24,7 @@
 </module_summary>
 <module_detail>
 <description>definition</description>
-<source_reference file="../../Replay/FalconReplayer.h" line="14" />
+<source_reference file="../../Replay/FalconReplayer.h" line="15" />
 <lines_of_code value="7" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="5" level="0" />
@@ -40,11 +40,27 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Replay/FalconReplayer.h" line="18" />
+<source_reference file="../../Replay/FalconReplayer.h" line="19" />
 </extent>
 <lines_of_code value="8" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>boundingBox()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Replay/FalconReplayer.cpp" line="49" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Replay/FalconReplayer.h" line="30" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -56,7 +72,7 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Replay/FalconReplayer.h" line="23" />
+<source_reference file="../../Replay/FalconReplayer.h" line="24" />
 </extent>
 <lines_of_code value="16" level="0" />
 <McCabes_cyclomatic_complexity value="3" level="0" />
@@ -72,7 +88,7 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Replay/FalconReplayer.h" line="26" />
+<source_reference file="../../Replay/FalconReplayer.h" line="27" />
 </extent>
 <lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
@@ -88,7 +104,7 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Replay/FalconReplayer.h" line="27" />
+<source_reference file="../../Replay/FalconReplayer.h" line="28" />
 </extent>
 <lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
@@ -104,7 +120,7 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Replay/FalconReplayer.h" line="20" />
+<source_reference file="../../Replay/FalconReplayer.h" line="21" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -124,7 +140,7 @@
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../Replay/FalconReplayer.h" line="14" />
+<source_reference file="../../Replay/FalconReplayer.h" line="15" />
 </extent>
 <name>LogEvent_t</name>
 <visible>true</visible>
@@ -135,7 +151,7 @@
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Replay/FalconReplayer.h" line="23" />
+<source_reference file="../../Replay/FalconReplayer.h" line="24" />
 </extent>
 <name>shared_ptr</name>
 <visible>true</visible>
@@ -150,19 +166,19 @@
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Replay/FalconReplayer.h" line="18" />
-</extent>
-<extent>
-<description>pass by value</description>
 <source_reference file="../../Replay/FalconReplayer.h" line="19" />
 </extent>
 <extent>
-<description>has by value</description>
-<source_reference file="../../Replay/FalconReplayer.h" line="31" />
+<description>pass by value</description>
+<source_reference file="../../Replay/FalconReplayer.h" line="20" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Replay/FalconReplayer.h" line="32" />
+<source_reference file="../../Replay/FalconReplayer.h" line="34" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Replay/FalconReplayer.h" line="35" />
 </extent>
 </supplier_module>
 </module>

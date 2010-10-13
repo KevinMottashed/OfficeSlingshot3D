@@ -35,11 +35,11 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="19" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="20" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="76" />
+<source_reference file="../../UserInterface/MainDlg.h" line="79" />
 </extent>
 <name>CPreferences</name>
 <visible>false</visible>
