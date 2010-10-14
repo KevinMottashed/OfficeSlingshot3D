@@ -61,6 +61,7 @@ void Mediator::startGame(Player_t player)
 
 void Mediator::pauseGame(Player_t player)
 {
+	// notify the peer if we are pausing the game
 	if (player == Player::LOCAL)
 	{
 		rc_network error = network->sendPauseGame();
@@ -79,6 +80,7 @@ void Mediator::pauseGame(Player_t player)
 
 void Mediator::exitGame(Player_t player)
 {
+	// notify the peer if we are exiting the game
 	if (player == Player::LOCAL)
 	{
 		rc_network error = network->sendEndGame();
