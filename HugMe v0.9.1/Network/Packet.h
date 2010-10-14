@@ -9,69 +9,110 @@
 #include "Projectile.h"
 #include "VideoData.h"
 
-// This is the header for all data packets
+/**
+ * The header for all packets.
+ * The header contains a size which is the size of the whole packet and
+ * a type which should be a enum representing what the packet is.
+ */
 template <typename PacketType>
 struct PacketHeader
 {
-	unsigned int size;
-	PacketType type;
+	unsigned int size; /**< The size of the packet */
+	PacketType type; /**< The packet type */
 };
 
-// The Packet class is used to represent all
-// packets that our network can send.
-// All packets include a header and data section.
-// The header is the type of the packet and the
-// size of the data section. This class uses the
-// boost serialization library to serialize
-// types for transmission and deserialize types upon reception
+/** 
+ * The Packet class is used to represent all packets that our network can send.
+ * All packets include a header and data section. The header is the type of the packet and the
+ * size of the data section. This class uses the boost serialization library to serialize
+ * types for transmission and deserialize types upon reception. A packet has 2 sections and 
+ * they are ordered as follows <header><data>.
+ */
 template <typename PacketType>
 class Packet
 {
 public:
-	// the default constructor creates an empty packet
+	/**
+	 * Constructor. Creates an empty packet.
+	 */
 	Packet();
+
+	/**
+	 * Destructor.
+	 */
 	virtual ~Packet();
 
-	// get the packets type
+	/** 
+	 * Get the packet's type.
+	 * @return the type
+	 */
 	PacketType getType() const;
 
-	// get the packet header in bytes
+	/**
+	 * Get the packet's header in bytes.
+	 * @return a vector of chars containing the packet's header.
+	 */
 	boost::shared_ptr<const std::vector<char> > getHeader() const;
 
-	// get the packet data in bytes
+	/**
+	 * Get the packet's data in bytes.
+	 * @return a vector of chars containing the packet's data.
+	 */
 	boost::shared_ptr<const std::vector<char> > getData() const;
 
-	// attempt to create a data packet from a stream of bytes
-	// if we could create a packet from the bytes then the contents of this packet will be replaced with contents from the stream
-	// the bytes that were used to create the packet will also be removed from the stream
-	// the function returns false if a packet could not be created
+	/**
+	 * Attempt to create a data packet from a stream of bytes.
+	 * If we could create a packet from the bytes then the contents of this packet will be replaced with contents from the stream.
+	 * The bytes that were used to create the packet will also be removed from the stream
+	 * the function returns false if a packet could not be created.
+	 * @param input The bytes used to try to create a packet.
+	 * @return true if a packet was created.
+	 */
 	bool readPacket(std::vector<char>& input);
 
-	// write data into the packet, including the header
+	/**
+	 * Write data into the packet, including the header.
+	 * @param type The type of packet that this will become.
+	 * @param t The data to write into the packet.
+	 */
 	template <typename T>
 	void write(PacketType type, const T& t);
 
-	// write video data into the packet
+	/**
+	 * Write video data into the packet.
+	 * Video data is considered a special case as the data is so huge.
+	 * @param type The type of packet that this will become.
+	 * @param video The video to write into the packet.
+	 */
 	void write(PacketType type, const VideoData& video);
 
-	// a version for header only packets
+	/**
+	 * Write a header into the packet. This version is provided for header only packets.
+	 * @param type The type of packet that this will become.
+	 */
 	void write(PacketType type);
 
-	// read data from the packet
+	/**
+	 * Read data from the packet.
+	 * @param t The extracted data.
+	 */
 	template <typename T>
 	void read(T& t) const;
 
-	// read video data from the packet
+	/**
+	 * Read video data from the packet.
+	 * @param t The extracted video.
+	 */
 	void read(VideoData& video) const;
 
-	// clear the header and data
+	/**
+	 * Clear the packets header and data.
+	 */
 	void clear();
 
 private:
-	// a packet has 2 sections
-	// <header><data>
-	boost::shared_ptr<std::vector<char> > header;
-	boost::shared_ptr<std::vector<char> > data;
+	boost::shared_ptr<std::vector<char> > header; /**< The header section */
+	boost::shared_ptr<std::vector<char> > data; /**< The data section */
 };
 
 //--------------------------------------------
