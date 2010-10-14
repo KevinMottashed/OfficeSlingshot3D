@@ -3,7 +3,7 @@
 
 #include "stdafx.h"
 
-/*
+/**
  * DEPRECATED. Utility class designed to solve the readers/writers concurrency problem.
  * In this implementation the writers are given priority. This is marked as deprecated as the boost library contains
  * something similar but more powerful/flexible so that should be used instead.
