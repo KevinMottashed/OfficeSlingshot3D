@@ -5,6 +5,7 @@
 #include "MediatorObserver.h"
 
 /**
+ * @ingroup Mediator
  * This class represents the mediator in the observer pattern
  * Observers will receive notifications about various updates 
  * when the user interacts with the system.

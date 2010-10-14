@@ -5,6 +5,7 @@
 #include "MediatorUpdateContextEnum.h"
 
 /**
+ * @ingroup Mediator
  * Abstract class in the observer pattern.
  * The observer will receive notifications relating to user interaction with the system.
  */

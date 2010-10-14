@@ -16,6 +16,7 @@
 #include "PerspectiveMath.h"
 
 /**
+ * @ingroup Mediator
  * This class mediates the interactions between the devices and the game.
  * All device modules report events to the mediator. The mediator will then
  * interpret these events and notify the game. The mediator also synchronizes
