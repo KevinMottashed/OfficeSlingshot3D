@@ -42,7 +42,9 @@ class CDepthCamera
 	 * @param bufIndex The buffer index
 	 */
 	friend void videoCallBack(unsigned char * pDepthBuf, unsigned char * pRgbBuf, 
-							  int bufIndex, void* pObject);/**
+							  int bufIndex, void* pObject);
+	
+	/**
 	 * Define the command callback as friend functions, 
 	 * to enable full access to CDepthCamera object
 	 * @param cmd The command
@@ -200,6 +202,7 @@ public:
 					  unsigned char* &pPrimaryIR,
 					  unsigned char* &pSecondaryIR,
 					  int timeout = INFINITE);
+
 	/**
 	 * when you wish to get full control over other parameters, you can get the
 	 * internal TDVCameraInterfaceBase object and handle things by yourself
@@ -326,6 +329,7 @@ private:
 	 * Is the DepthCamera initialized?
 	 */
 	bool					m_bIsInitialized;
+};
 
 #endif
 
