@@ -11,31 +11,60 @@
 #include "LoggerProxy.h"
 #include "ReplayProxy.h"
 
-// The office slingshot 3D class is the class that runs the game
-// The game can be started by calling run() or operator ()
+/**
+ * The office slingshot 3D class is the class that runs the game
+ * The game can be started by calling run() or operator ()
+ */
 class OfficeSlingshot3D
 {
 public:
+	/**
+	 * Constructor
+	 * @param game The game object
+	 * @param logger The application's logger
+	 * @param replayer The application's replayer
+	 * @param dialog The main window of the application
+	 */
 	OfficeSlingshot3D(	boost::shared_ptr<Game> game,
 						boost::shared_ptr<Logger> logger, 
 						boost::shared_ptr<Replayer> replayer,
 						CDialog* dialog);
+
+	/**
+	 * Destructor
+	 */
 	~OfficeSlingshot3D();
 
-	// both of these function start the application
-	// operator () is provided so that we can easily create a boost::thread from this object
-	// as boost::thread expects a functor
+	/**
+	 * Starts the application
+	 */
 	void run();
+
+	/**
+	 * Starts the application
+	 * Provided so that we can easily create a boost::thread from this object
+	 */
 	void operator()();
 
 private:
-	// the different aspects of the program
-	// we need to hang on to all of these so that nothing gets destroyed
+	/**
+	 * The game object
+	 */
 	boost::shared_ptr<Game> game;
+
+	/**
+	 * The logger object
+	 */
 	boost::shared_ptr<Logger> logger;
+
+	/**
+	 * The replayer object
+	 */
 	boost::shared_ptr<Replayer> replayer;
 
-	// used to start the application
+	/**
+	 * Used to start the application
+	 */
 	CDialog* dialog;
 };
 

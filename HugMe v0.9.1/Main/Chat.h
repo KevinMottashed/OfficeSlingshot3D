@@ -9,14 +9,16 @@
 
 #include "resource.h"		// main symbols
 
-/////////////////////////////////////////////////////////////////////////////
-// CChatApp:
-// See Chat.cpp for the implementation of this class
-//
-
+/**
+ * The main class of the window
+ * application
+ */
 class CChatApp : public CWinApp
 {
 public:
+	/**
+	 * Constructor
+	 */
 	CChatApp();
 
 // Overrides
