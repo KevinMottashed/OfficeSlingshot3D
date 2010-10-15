@@ -8,21 +8,41 @@
 #include "VideoData.h"
 #include "boost.h"
 
-// abstract interface for a z camera
+/**
+ * Abstract interface for a z camera
+ */
 class IZCamera : public ZCameraSubject
 {
-public:	
+public:
+	/**
+	 * Constructor
+	 */
 	IZCamera();
+
+	/**
+	 * Destructor
+	 */
 	virtual ~IZCamera();
 
-	// create a thread to start capturing frames from the camera
+	/*
+	 * Create a thread to start capturing frames from the camera
+	 */
 	virtual void startCapture() = 0;
 
-	// stop the thread that's capturing frames from the camera
+	/**
+	 * Stop the thread that's capturing frames from the camera
+	 */
 	virtual void stopCapture() = 0;
 
 private:
+	/**
+	 * Copy-Constructor
+	 */
 	IZCamera(const IZCamera& zCamera); // intentionally not implemented
+	
+	/**
+	 * Copy-Constructor
+	 */
 	IZCamera& operator=(const IZCamera& zCamera); // intentionally not implemented
 };
 

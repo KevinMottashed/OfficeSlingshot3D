@@ -8,45 +8,107 @@
 #include "VideoData.h"
 #include "boost.h"
 
-// concrete implementation of the z camera manager
+/**
+ * Concrete implementation of the z camera manager
+ */
 class ZCamera : public IZCamera 
 {
-public:	
+public:
+	/**
+	 * Constructor
+	 */
 	ZCamera();
+
+	/**
+	 * Destructor
+	 */
 	virtual ~ZCamera();
 
-	// create a thread to start capturing frames from the camera
+	/**
+	 * Create a thread to start capturing frames from the camera
+	 */
 	virtual void startCapture();
 
-	// stop the thread that's capturing frames from the camera
+	/**
+	 * Stop the thread that's capturing frames from the camera
+	 */
 	virtual void stopCapture();
 	
-	// Camera loop that fetches frames and player position.
-	// runs at 32 fps and continually sends information to controller
+	/**
+	 * Camera loop that fetches frames and player position.
+	 * runs at 32 fps and continually sends information to controller
+	 */
 	void getFrameFromCamera();
 
-	//Reverse the image array, so it displays correctly on the UI
-	static void reverseFrameUpDown(VideoData& vd, int channels);	
+	/**
+	 * Reverse the image array vertically, so it displays correctly on the UI
+	 * @param vd Video data object
+	 * @param channels Video channels
+	 */
+	static void reverseFrameUpDown(VideoData& vd, int channels);
+
+	/**
+	 * Reverse the image array horizontally, so it displays correctly on the UI
+	 * @param vd Video data object
+	 * @param channels Video channels
+	 */
 	static void reverseFrameLeftRight(VideoData& vd, int channels);	
 
 private:
+	/**
+	 * Copy-Constructor
+	 */
 	ZCamera(const ZCamera& zCamera); // intentionally not implemented
+
+	/**
+	 * Copy-Constructor
+	 */
 	ZCamera& operator=(const ZCamera& zCamera); // intentionally not implemented
 
-	// thread for capturing frames from the camera
+	/**
+	 * Thread for capturing frames from the camera
+	 */
 	std::auto_ptr<boost::thread> zcameraThread;
 
-	// true if a camera is present
+	/**
+	 * True if a camera is present
+	 */
 	bool zcamPresent;
 
+	/**
+	 * The CDepthCamera object
+	 */
 	CDepthCamera * m_depthCamera;
+
+	/**
+	 * A reference to the RGB bytes
+	 */
 	boost::shared_ptr<std::vector<BYTE> > RGB;
+
+	/**
+	 * The depth data
+	 */
 	unsigned char* DEPTH;
+
+	/**
+	 * The RGB data
+	 */
 	unsigned char* RGBFull;
+
+	/**
+	 * The primary IR data
+	 */
 	unsigned char* PRIM;
+
+	/**
+	 * The secondary IR data
+	 */
 	unsigned char* SEC;
 
-	//Get player position
+	/**
+	 * Get player position
+	 * @return the player position
+	 */
 	cVector3d getPlayerPosition();
 };
 
