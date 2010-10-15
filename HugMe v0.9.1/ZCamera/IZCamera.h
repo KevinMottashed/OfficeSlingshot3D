@@ -24,7 +24,7 @@ public:
 	 */
 	virtual ~IZCamera();
 
-	/*
+	/**
 	 * Create a thread to start capturing frames from the camera
 	 */
 	virtual void startCapture() = 0;
