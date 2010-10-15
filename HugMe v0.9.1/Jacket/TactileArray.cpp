@@ -166,3 +166,80 @@ void TactileArray::setPort(int a_portNum)
 	}
 }
 
+void TactileArray::setIntensity(int * pIntensityArray)
+{
+	memcpy(m_pIntensityArray, pIntensityArray, m_arraySize);
+}
+
+void TactileArray::setIntensity(double * pIntensityArray)
+{
+	for(int i=0; i<m_arraySizeX; i++)
+		for(int j=0; j<m_arraySizeY; j++)
+			setIntensity(i, j, pIntensityArray[i*m_arraySizeX+m_arraySizeY]);
+}
+
+void TactileArray::setIntensity(int arrayX, int arrayY, int intensity)
+{
+	if(intensity >= m_maxIntensity)
+		intensity = m_maxIntensity;
+	if(intensity <= 0)
+		intensity = 0;		
+	m_pIntensityArray[arrayX*m_arraySizeX + arrayY] = intensity;
+}
+
+void TactileArray::setIntensity(int arrayX, int arrayY, double intensity)
+{
+	if(intensity >= 1.0)
+		intensity = 1.0;
+	if(intensity <= 0)
+		intensity = 0.0;
+	m_pIntensityArray[arrayX*m_arraySizeX + arrayY] = (int)(intensity*(double)m_maxIntensity);
+}
+
+void TactileArray::setIntensityAll(int intensity)
+{
+	if(intensity >= m_maxIntensity)
+		intensity = m_maxIntensity;
+	if(intensity <= 0)
+		intensity = 0;
+	for(int i=0; i<m_arraySize; i++)
+		m_pIntensityArray[i] = intensity;
+}
+
+void TactileArray::setIntensityAll(double intensity)
+{
+	if(intensity >= 1.0)
+		intensity = 1.0;
+	if(intensity <= 0)
+		intensity = 0.0;
+	int scaledIntensity = (int)(intensity*(double)m_maxIntensity);
+	for(int i=0; i<m_arraySize; i++)
+		m_pIntensityArray[i] = scaledIntensity;
+}
+
+void TactileArray::setArraySize(int a_arraySizeX, int a_arraySizeY)
+{
+	m_arraySizeX = a_arraySizeX;
+	m_arraySizeY = a_arraySizeY;
+	m_arraySize = m_arraySizeX*m_arraySizeY;
+}
+
+int TactileArray::getMaxIntensity(void) const
+{
+	return m_maxIntensity;
+}
+
+int TactileArray::getArraySizeX(void) const
+{
+	return m_arraySizeX;
+}
+
+int TactileArray::getArraySizeY(void) const
+{
+	return m_arraySizeY;
+}
+
+int TactileArray::getArraySize(void) const
+{
+	return m_arraySize;
+}

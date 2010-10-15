@@ -58,30 +58,32 @@ public:
 
 	/**
 	 * Closes the serial port
+	 * @return true if successful
 	 */
 	bool closeSerialPort();
 
+	/**
+	 * Initialize the tactile array
+	 * @return true if successful
+	 */
 	bool initialize(void);
+
+	/**
+	 * Sets the array's port number
+	 * @param a_portNum The new port number
+	 */
 	void setPort(int a_portNum);
 	/**
 	 * Setting intensity values
 	 * @param pIntensityArray The intensity array
 	 */
-	void setIntensity(int * pIntensityArray)
-	{
-		memcpy(m_pIntensityArray, pIntensityArray, m_arraySize);
-	}
+	void setIntensity(int * pIntensityArray);
 
 	/**
 	 * Setting intensity values
 	 * @param pIntensityArray The intensity array
 	 */
-	void setIntensity(double * pIntensityArray)
-	{
-		for(int i=0; i<m_arraySizeX; i++)
-			for(int j=0; j<m_arraySizeY; j++)
-				setIntensity(i, j, pIntensityArray[i*m_arraySizeX+m_arraySizeY]);
-	}
+	void setIntensity(double * pIntensityArray);
 
 	/**
 	 * Setting intensity values
@@ -89,14 +91,7 @@ public:
 	 * @param arrayY The y value of the array
 	 * @param intensity The intensity to be set
 	 */
-	void setIntensity(int arrayX, int arrayY, int intensity)
-	{
-		if(intensity >= m_maxIntensity)
-			intensity = m_maxIntensity;
-		if(intensity <= 0)
-			intensity = 0;		
-		m_pIntensityArray[arrayX*m_arraySizeX + arrayY] = intensity;
-	}
+	void setIntensity(int arrayX, int arrayY, int intensity);
 
 	/**
 	 * Setting intensity values
@@ -104,55 +99,26 @@ public:
 	 * @param arrayY The y value of the array
 	 * @param intensity The intensity to be set
 	 */
-	void setIntensity(int arrayX, int arrayY, double intensity)
-	{
-		if(intensity >= 1.0)
-			intensity = 1.0;
-		if(intensity <= 0)
-			intensity = 0.0;
-		m_pIntensityArray[arrayX*m_arraySizeX + arrayY] = (int)(intensity*(double)m_maxIntensity);
-	}
+	void setIntensity(int arrayX, int arrayY, double intensity);
 
 	/**
 	 * Setting intensity values for all the array
 	 * @param intensity The intensity to be set. 0 by default
 	 */
-	void setIntensityAll(int intensity = 0)
-	{
-		if(intensity >= m_maxIntensity)
-			intensity = m_maxIntensity;
-		if(intensity <= 0)
-			intensity = 0;
-		for(int i=0; i<m_arraySize; i++)
-			m_pIntensityArray[i] = intensity;
-	}
+	void setIntensityAll(int intensity = 0);
 
 	/**
 	 * Setting intensity values for all the array
 	 * @param intensity The intensity to be set
 	 */
-	void setIntensityAll(double intensity)
-	{
-		if(intensity >= 1.0)
-			intensity = 1.0;
-		if(intensity <= 0)
-			intensity = 0.0;
-		int scaledIntensity = (int)(intensity*(double)m_maxIntensity);
-		for(int i=0; i<m_arraySize; i++)
-			m_pIntensityArray[i] = scaledIntensity;
-	}
+	void setIntensityAll(double intensity);
 
 	/**
 	 * Sets the array size
 	 * @param a_arraySizeX The x value
 	 * @param a_arraySizeY The y value
 	 */
-	void setArraySize(int a_arraySizeX, int a_arraySizeY)
-	{
-		m_arraySizeX = a_arraySizeX;
-		m_arraySizeY = a_arraySizeY;
-		m_arraySize = m_arraySizeX*m_arraySizeY;
-	}
+	void setArraySize(int a_arraySizeX, int a_arraySizeY);
 
 	/**
 	 * Actuates the array
@@ -163,37 +129,25 @@ public:
 	 * Retreive the intensity
 	 * @return the intensity
 	 */
-	int getMaxIntensity(void) const
-	{
-		return m_maxIntensity;
-	}
+	int getMaxIntensity(void) const;
 
 	/**
 	 * Retreive the array size in x
 	 * @return array size in x
 	 */
-	int getArraySizeX(void) const
-	{
-		return m_arraySizeX;
-	}
+	int getArraySizeX(void) const;
 
 	/**
 	 * Retreive the array size in y
 	 * @return array size in y
 	 */
-	int getArraySizeY(void) const
-	{
-		return m_arraySizeY;
-	}
+	int getArraySizeY(void) const;
 
 	/**
 	 * Retreive the array size
 	 * @return array size
 	 */
-	int getArraySize(void) const
-	{
-		return m_arraySize;
-	}
+	int getArraySize(void) const;
 
 private:
 	/**
