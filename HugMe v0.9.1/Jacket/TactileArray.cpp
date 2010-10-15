@@ -139,11 +139,6 @@ DWORD WINAPI test1by1Thread(LPVOID lp)
 	return 0;
 }
 
-void TactileArray::test1by1(void)
-{
-	m_hTestThread = ::CreateThread(NULL, NULL, test1by1Thread, this, NULL, &m_dwTestThreadID);
-}
-
 bool TactileArray::initialize(void)
 {
 	if(!m_pIntensityArray)
