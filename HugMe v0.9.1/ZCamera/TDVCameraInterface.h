@@ -144,55 +144,124 @@ typedef void (__cdecl * videoCallBackFunc)(unsigned char * pDepthBuf,
 // communication callback definition
 typedef void (__cdecl * cmdCallBackFunc)(int cmd, void* pObject);
 
-
-// main camera control interface
+/**
+ * Main camera control interface
+ */
 class CONNECTDM_DLL_API TDVCameraInterfaceBase : public TDVCameraInterfaceBase2 {
 public:
+	/**
+	 * Constructor
+	 */
 	TDVCameraInterfaceBase();
+
+	/**
+	 * Destructor
+	 */
 	virtual ~TDVCameraInterfaceBase();
 
-	// check status of video. Should be valid once the main DMachine application is active
-	// and the 1394 video connectors of the camera are set correctly
+	/**
+	 * Check status of video. Should be valid once the main DMachine application is active
+	 * and the 1394 video connectors of the camera are set correctly
+	 * @return true if video is active
+	 */
 	bool isVideoActive() const;
-	// check the status of communication with the main DMachine application
+
+	/**
+	 * Check the status of communication with the main DMachine application
+	 * @return true is communication with DMachine is active
+	 */
 	bool isCommActive() const;
 
-	// initialize the video callback. pObject will be a parameter to the callback.
-	// this enables passing of a specific parameter to the callback function.
+	/**
+	 * Initialize the video callback. pObject will be a parameter to the callback.
+	 * this enables passing of a specific parameter to the callback function.
+	 * @param videoCBF The video callback function
+	 * @param pObject Parameter to the callback
+	 */
 	void setVideoCallBack(videoCallBackFunc videoCBF, void* pObject = 0);
 
-	// initialize the communication callback. pObject will be a parameter to the callback.
-	// this enables passing of a specific parameter to the callback function.
+	/**
+	 * Initialize the communication callback. pObject will be a parameter to the callback.
+	 * this enables passing of a specific parameter to the callback function.
+	 * @param cmdCBF The command callback function
+	 * @param pObject Parameter to the callback
+	 */
 	void setCommandCallBack(cmdCallBackFunc cmdCBF, void* pObject = 0);
 
-	// get various parameters for the video: width, height, pixel size for 
-	// the depth video and for the rgb info. returns false in case there is no
-	// video connection yet (for example, if the main DMachine application is not running)
+	/**
+	 * Get various parameters for the video: width, height, pixel size for 
+	 * the depth video and for the rgb info. returns false in case there is no
+	 * video connection yet (for example, if the main DMachine application is not running)
+	 * @param width The video width
+	 * @param height The video height
+	 * @param rgbPixelSize The pixel size for the RGB info
+	 * @param depthPixelSize The pixel size for the depth info
+	 * @return true if successful
+	 */
 	bool getVideoSize(int &width, int& height,
 					  int &rgbPixelSize,
 					  int &depthPixelSize) const;
 
-	// It is possible to get full resolution RGB even when working in low resolution IR.
-	// The width\height\pixel size can be retrieved using getRGBFullResSize
+	/**
+	 * It is possible to get full resolution RGB even when working in low resolution IR.
+	 * The width\height\pixel size can be retrieved using getRGBFullResSize
+	 * @param width The full resolution with
+	 * @param height The full resolution height
+	 * @param rgbPixelSize The pixel size for the RGB info
+	 * @return true if successful
+	 */
 	bool getRGBFullResSize(int &width, int& height, int &rgbPixelSize);
 
-	// send a specific command (cmdID = CMD_*****) to the camera
+	/**
+	 * Send a specific command (cmdID = CMD_*****) to the camera
+	 * @param cmdID The command ID
+	 * @param value The value of the command
+	 * @return 1 if successful
+	 */
 	virtual HRESULT setCameraCommand(int cmdID, int value);
-	// get the current value for specific camera parameter (cmdID = CMD_*****)
+
+	/**
+	 * Get the current value for specific camera parameter (cmdID = CMD_*****)
+	 * @param cmdID The command ID
+	 * @param value The value of the command
+	 * @return 1 if successful
+	 */
 	virtual HRESULT getCameraCommandVal(int cmdID, int &value)const ;
-	// get the value range for specific camera parameter (cmdID = CMD_*****)
+
+	/**
+	 * Get the value range for specific camera parameter (cmdID = CMD_*****)
+	 * @param cmdID The command ID
+	 * @param value The value of the command
+	 * @param maxValue The maximum allowed value
+	 * @return 1 if successful
+	 */
 	virtual HRESULT	getCameraCommandLimits(int cmdID, int &minValue, int &maxValue) const;
 
-	// must be called from within the video callback. If the frame type 
-	// transfer was enabled, you will be able to get the buffer.
+	/**
+	 * Must be called from within the video callback. If the frame type 
+	 * transfer was enabled, you will be able to get the buffer.
+	 * @param bufferType The video buffer type
+	 * @param pBuffer A reference to the video buffer
+	 * @return 1 if successful
+	 */
 	virtual HRESULT getVideoBuffer(int bufferType, unsigned char*& pBuffer);
 
-	// for 3DV Systems maintenance use only
+	/**
+	 * for 3DV Systems maintenance use only
+	 * @param ID The maintenance command ID
+	 * @param val The value of the maintenance command
+	 */
 	void SetMaintenanceCmd(int ID, int val);
-private:
 
-	// internal objects
+private:
+	/**
+	 * The video thread
+	 */
 	TDVVideoThread* m_pVideoThread;
+
+	/**
+	 * The command thread
+	 */
 	TDVCommThread * m_pCommThread;
 };
 

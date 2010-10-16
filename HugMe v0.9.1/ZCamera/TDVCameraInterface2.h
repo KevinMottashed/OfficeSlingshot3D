@@ -16,229 +16,563 @@
 #ifndef TDV_CAMERA_INTERFACE2_H
 #define TDV_CAMERA_INTERFACE2_H
 
-// TDVCameraInterfaceBase2 contains 
+/**
+ * TDVCameraInterfaceBase2 contains 
+ */
 class CONNECTDM_DLL_API TDVCameraInterfaceBase2 {
+
 public:
+	/**
+	 * Constructor
+	 */
 	TDVCameraInterfaceBase2() {};
+
+	/**
+	 * Destructor
+	 */
 	virtual ~TDVCameraInterfaceBase2() {};
 
+	/**
+	 * Set the camera command
+	 * @param cmdID The camera command ID
+	 * @param value The value of the camera command
+	 */
 	virtual HRESULT setCameraCommand(int cmdID, int value) = 0;
+
+	/**
+	 * Retrieve the camera command
+	 * @param cmdID The camera command ID
+	 * @param value The value of the camera command
+	 */
 	virtual HRESULT getCameraCommandVal(int cmdID, int &value) const = 0;
+
+	/**
+	 * Retrieve the camera command limits
+	 * @param cmdID The camera command ID
+	 * @param minValue The minimal value of the camera command
+	 * @param minValue The maximal value of the camera command
+	 */
 	virtual HRESULT	getCameraCommandLimits(int cmdID, int &minValue, int &maxValue) const = 0;
+
+	/**
+	 * Retrieves the video buffer
+	 * @param bufferType The type of video buffer
+	 * @param pBuffer A reference to the video buffer
+	 */
 	virtual HRESULT getVideoBuffer(int bufferType, unsigned char*& pBuffer) = 0;
 
-	// changing the color camera settings. for changing on\off parameters use 
-	// value 1\0 correspondingly.
-	// valid only for ZSense camera
+	/**
+	 * Changing the color camera settings. for changing on\off parameters use 
+	 * value 1\0 correspondingly.
+	 * valid only for ZSense camera
+	 * @param iColorCommandID The command for the color camera setting
+	 * @param iValue The value of the command
+	 */
 	void cmdColorCameraSetting(int iColorCommandID, int iValue);
 
-	// get the current color camera setting. Returns false if iColorCommandID is invalid
-	// valid only for ZSense camera
+	/**
+	 * Get the current color camera setting. Returns false if iColorCommandID is invalid
+	 * valid only for ZSense camera
+	 * @param iColorCommandID The command for the color camera setting
+	 * @param iValue The value of the command
+	 * @return true if successful
+	 */
 	bool getColorCameraSetting(int iColorCommandID, int &iValue) const;
 
-	// get the limit values for color camera settings.
-	// returns false if iColorCommandID is invalid
-	// valid only for ZSense camera
+	/**
+	 * Get the limit values for color camera settings.
+	 * returns false if iColorCommandID is invalid
+	 * valid only for ZSense camera
+	 * @param iColorCommandID The command for the color camera setting
+	 * @param min The minimal color camera setting
+	 * @param max The maximal color camera setting
+	 * @return false if iColorCommandID is invalid
+	 */
 	bool getColorCameraSettingLimit(int iColorCommandID, int& min, int& max) const;
 
-
-	// turn on illumination
+	/**
+	 * Turn on illumination
+	 */
 	void cmdCameraOn();
-	// turn off illumination
+
+	/**
+	 * Turn off illumination
+	 */
 	void cmdCameraOff();
-	// get status of illumination
+
+	/**
+	 * Get status of illumination
+	 * @return the status of illumination
+	 */
 	bool isCameraOn() const;
 
-	// get limit values for the brightness parameters
+	/**
+	 * Get maximal value for the brightness parameter
+	 * @return the maximal value for the brightness parameter
+	 */
 	int  getMaxBrightness() const;
+
+	/**
+	 * Get minimal value for the brightness parameter
+	 * @return the minimal value for the brightness parameter
+	 */
 	int  getMinBrightness() const;
 
-	// update the primary camera brightness
+	/**
+	 * Update the primary camera brightness
+	 * @param value The new brightness value
+	 */
 	void cmdPrimaryBrightness(int value);
-	// retrieve the current value of the primary camera brightness
+
+	/**
+	 * Retrieve the current value of the primary camera brightness
+	 * @return the current value of the primary camera brightness
+	 */
 	int	 getPrimaryBrightness() const;
-	// update the secondary camera brightness
+
+	/**
+	 * Update the secondary camera brightness
+	 * @param value The new brightness value
+	 */
 	void cmdSecondaryBrightness(int value);
-	// retrieve the current value of the secondary camera brightness
+
+	/**
+	 * Retrieve the current value of the secondary camera brightness
+	 * @return the current value of the secondary camera brightness
+	 */
 	int	 getSecondaryBrightness() const;
 
-	// get limit values for the width parameters
+	/**
+	 * Retrive maximum width
+	 * @return the maximum width
+	 */
 	int  getMaxWidth() const;
+
+	/**
+	 * Retrive minimum width
+	 * @return the minimum width
+	 */
 	int  getMinWidth() const;
 
-	// update the primary camera width
+	/**
+	 * Update the primary camera width
+	 * @param value The new width
+	 */
 	void cmdPrimaryWidth(int value);
-	// retrieve the current value of the primary camera width
+
+	/**
+	 * Retrieve the current value of the primary camera width
+	 * @return the current value of the primary camera width
+	 */
 	int	 getPrimaryWidth() const;
-	// update the secondary camera width
+
+	/**
+	 * Update the secondary camera width
+	 * @param value The new width
+	 */
 	void cmdSecondaryWidth(int value);
-	// retrieve the current value of the secondary camera width
+
+	/**
+	 * Retrieve the current value of the secondary camera width
+	 * @return the current value of the secondary camera width
+	 */
 	int	 getSecondaryWidth() const;
 
-	// get limit values for the distance parameters
+	/**
+	 * Retrive maximum distance
+	 * @return the maximum distance
+	 */
 	int  getMaxDistance() const;
+
+	/**
+	 * Retrive minimum distance
+	 * @return the minimum distance
+	 */
 	int  getMinDistance() const;
 
-	// update the primary camera distance
+	/**
+	 * Update the primary camera distance
+	 * @param value The new primary camera distance
+	 */
 	void cmdPrimaryDist(int value);
-	// retrieve the current value of the primary camera distance
+
+	/**
+	 * Retrieve the current value of the primary camera distance
+	 * @return the current value of the primary camera distance
+	 */
 	int	 getPrimaryDist() const;
-	// update the secondary camera distance
+
+	/**
+	 * Update the secondary camera distance
+	 * @param value The new secondary camera distance
+	 */
 	void cmdSecondaryDist(int value);
-	// retrieve the current value of the secondary camera distance
+
+	/**
+	 * Retrieve the current value of the secondary camera distance
+	 * @return the current value of the secondary camera distance
+	 */
 	int	 getSecondaryDist() const;
 
-	// get limit values for the gain parameters. The gain parameter 
-	// is only valid in certain camera models
+	/**
+	 * Get maximum value for the gain parameters. The gain parameter 
+	 * is only valid in certain camera models
+	 * @return the maximum value for the gain parameters
+	 */
 	int  getMaxGain() const;
+
+	/**
+	 * Get minimum value for the gain parameters. The gain parameter 
+	 * is only valid in certain camera models
+	 * @return the minimum value for the gain parameters
+	 */
 	int  getMinGain() const;
 
-	// update the gain
+	/**
+	 * Update the gain
+	 * @param value The new gain value
+	 */
 	void cmdGain(int value);
-	// retrieve the current value of the gain
+
+	/**
+	 * Retrieve the current value of the gain
+	 * @return the current value of the gain
+	 */
 	int	 getGain() const;
 
-
-	// get limit values for the various filtering parameters. The only
-	// filter which has different limit values is the softness filter.
+	/**
+	 * Get minimal value for the filtering parameters. The only
+	 * filter which has different limit values is the softness filter.
+	 * @return the minimal value for the filtering parameters
+	 */
 	int  getMinFilterVal() const;
+
+	/**
+	 * Get maximal value for the filtering parameters. The only
+	 * filter which has different limit values is the softness filter.
+	 * @return the maximal value for the filtering parameters
+	 */
 	int  getMaxFilterVal() const;
-	// get limit values for the softness filter 
+
+	/**
+	 * Get minimal value for the softness filter
+	 * @return the minimal value for the softness filter
+	 */
 	int  getMinSoftnessVal() const;
+
+	/**
+	 * Get maximal value for the softness filter
+	 * @return the maximal value for the softness filter
+	 */
 	int  getMaxSoftnessVal() const;
 
-	// update the binarization level
+	/**
+	 * Update the binarization level
+	 * @param value The new Binarization level
+	 */
 	void cmdBinVal(int value);
-	// retrieve the current binarization level
+
+	/**
+	 * Retrieve the current binarization level
+	 * @return the current binarization level
+	 */
 	int	 getBinVal() const;
-	// binarize the depth image (on\off)
+
+	/**
+	 * Binarize the depth image (on\off)
+	 * @param value True to enable the depth image
+	 */
 	void cmdBinarizeOnOff(bool value);
-	// is binarization on\off
+
+	/**
+	 * Is binarization on\off
+	 * @return true if binarization is on
+	 */
 	bool getBinarizeOnOff() const;
-	// turn median filter on\off
+	
+	/**
+	 * Turn median filter on\off
+	 * @param value True to turn median filter on
+	 */
 	void cmdMedianOnOff(bool value);
-	// is median filter on\off
+
+	/**
+	 * Is median filter on\off
+	 * @return true if median filtering is on
+	 */
 	bool getMedianOnOff() const;
-	// invert the depth video (on\off)
+
+	/**
+	 * Invert the depth video (on\off)
+	 * @param value True to invert the depth video
+	 */
 	void cmdInvertOnOff(bool value);
-	// is the depth image inverted (on\off)
+
+	/**
+	 * Is the depth image inverted (on\off)
+	 * @return true if the depth image is inverted
+	 */
 	bool getInvertOnOff() const;
-	// turn the temporal filter on\off
+
+	/**
+	 * Turn the temporal filter on\off
+	 * @param value True to turn the temporal filter on
+	 */
 	void cmdTemporalFilterOnOff(bool value);
-	// is the temporal filter on\off
+
+	/**
+	 * Is the temporal filter on\off
+	 * @return true if temporal filter is on
+	 */
 	bool getTemporalFilterOnOff() const;
 
-	// turn the depth smooth filter on\off
+	/**
+	 * Turn the depth smooth filter on\off
+	 * @param value True to enable depth smooth filter
+	 */
 	void cmdSmoothOnOff(bool value);
-	// is the depth smooth filter on\off
+
+	/**
+	 * Is the depth smooth filter on\off
+	 * @return true if depth smooth filter is on
+	 */
 	bool getSmoothOnOff() const;
-	// update the depth smooth filter level
+
+	/**
+	 * Update the depth smooth filter level
+	 * @param value The new depth smooth filter level
+	 */
 	void cmdSoftness(int value);
-	// retrieve the current depth smooth filter level
+
+	/**
+	 * Retrieve the current depth smooth filter level
+	 * @return the current depth smooth filter level
+	 */
 	int  getSoftness() const;
 
-	// turn the mask smooth filter on\off
+	/**
+	 * Turn the mask smooth filter on\off
+	 * @param value True to enable mask smooth filter
+	 */
 	void cmdMaskSmoothOnOff(bool value);
-	// is the mask smooth filter on\off
+
+	/**
+	 * Is the mask smooth filter on\off
+	 * @return true is mask smooth filter is on
+	 */
 	bool getMaskSmoothOnOff() const;
-	// update the mask smooth filter level
+
+	/**
+	 * Update the mask smooth filter level
+	 * @param value The new mask smooth filter level
+	 */
 	void cmdMaskSoftness(int value);
-	// retrieve the current mask smooth filter level
+
+	/**
+	 * Retrieve the current mask smooth filter level
+	 * @return the current mask smooth filter level
+	 */
 	int  getMaskSoftness() const;
 
-	// turn the automatic background options on\off
+	/**
+	 * Turn the automatic background options on\off
+	 * @param value True to turn automatic background options on
+	 */
 	void cmdAutomaticBackgroundOnOff(bool value);
-	// retrieve the current setting background status
+
+	/**
+	 * Retrieve the current setting background status
+	 * @return true if automatic background options are on
+	 */
 	bool getAutomaticBackground();
 
-	// turn the automatic depth positions for secondary window on\off
+	/**
+	 * Turn the automatic depth positions for secondary window on\off
+	 * @param value True to enable automatic depth positions for secondary window
+	 */
 	void cmdAutomaticDepthPositionOnOff(bool value);
-	// retrieve the current setting background status
+
+	/**
+	 * Retrieve the automatic depth positions for secondary window
+	 * @return true if automatic depth positions for secondary window is enabled
+	 */
 	bool getAutomaticDepthPosition();
 
-	// update the clean filter level
+	/**
+	 * Update the clean filter level
+	 * @param value The new clean filter level
+	 */
 	void cmdClean(int value);
-	// retrieve the current clean level
+
+	/**
+	 * Retrieve the current clean level
+	 * @ return the current clean level
+	 */
 	int	 getClean() const;
 
-	// saves the current camera parameters in the camera (index must be 0-7)
-	// returns false for invalid index
+	/**
+	 * Saves the current camera parameters in the camera (index must be 0-7)
+	 * Returns false for invalid index
+	 * @param index The index of the camera parameter
+	 * @return false for invalid index
+	 */
 	bool cmdSaveStatus(int index);
-	// restores the camera parameters to those save in index (index must be 0-7)
-	// returns false for invalid index
+
+	/**
+	 * Restores the camera parameters to those save in index (index must be 0-7)
+	 * returns false for invalid index
+	 * @param index The index of the camera parameter
+	 * @return false for invalid index
+	 */
 	bool cmdRestoreStatus(int index);
 
-	// start the automatic find operation. Once the object is detected, the
-	// automatic brightness will be turned on
+	/**
+	 * Start the automatic find operation. Once the object is detected, the
+	 * automatic brightness will be turned on
+	 */
 	void cmdStartAutomaticFind();
-	// are we during the "find" operation 
+
+	/**
+	 * Are we during the "find" operation
+	 * @return true is in the find operation
+	 */
 	bool isDuringAutomaticFind() const;
-	// turn automatic tracking on. Automatic brightness will also be turned on 
+
+	/**
+	 * Turn automatic tracking on. Automatic brightness will also be turned on 
+	 * @param state True to turn on automatic tracking
+	 */
 	void cmdAutomaticTracking(bool state);
-	// is the automatic trakcing option on\off
+
+	/**
+	 * Is the automatic tracking option on\off
+	 * @return true if automatic tracking is on
+	 */
 	bool isAutomaticTrackingOn() const;
-	// turn automatic brightness on
+
+	/**
+	 * Turn automatic brightness on/off
+	 * @param state True to enable automatic brightness
+	 */
 	void cmdAutomaticBrightness(bool state);
-	// is the automatic brightness turned on\off
+
+	/**
+	 * Is the automatic brightness turned on\off
+	 * @return true if automatic brightness is on
+	 */
 	bool isAutomaticBrightnessOn() const;
 
-	// forces the DMAchine to save an image (or two images if 
-	// the camera supports color), as if "Save Img" was pressed
-	// in the "camera control" application
+	/**
+	 * Forces the DMAchine to save an image (or two images if 
+	 * the camera supports color), as if "Save Img" was pressed
+	 * in the "camera control" application
+	 */
 	void cmdSaveImage();
-	// forces the DMAchine to save an image (or two images if 
-	// the camera supports color), as if "Save Avg" was pressed
-	// in the "camera control" application
+
+	/**
+	 * Forces the DMAchine to save an image (or two images if 
+	 * the camera supports color), as if "Save Avg" was pressed
+	 * in the "camera control" application
+	 */
 	void cmdSaveImageAverage();
-	// forces the DMAchine to save a sequence of images, or AVI movies
-	// as if saving sequence was pressed in the "camera control" application
-	// if saveAVI is true, the DMachine will save AVI files, otherwise tga sequence
+
+	/**
+	 * Forces the DMAchine to save a sequence of images, or AVI movies
+	 * as if saving sequence was pressed in the "camera control" application
+	 * if saveAVI is true, the DMachine will save AVI files, otherwise tga sequence
+	 * @param length The length of the sequence of images
+	 * @param saveAVI If true, will save AVI files
+	 */
 	void cmdSaveSequence(int length, bool saveAVI);
 
-	// Freezes the video output of the DMachine, as if "freeze video" was pressed 
-	// in the "camera control" application. If useAverage is true, then an 
-	// average of the last 8 input frames is averages, and constantly outputted 
-	// as the DMachine output.
+	/**
+	 * Freezes the video output of the DMachine, as if "freeze video" was pressed 
+	 * in the "camera control" application. If useAverage is true, then an 
+	 * average of the last 8 input frames is averages, and constantly outputted 
+	 * as the DMachine output.
+	 * @param state True to freeze the video output of the DMachine
+	 * @param useAverage If true, anaverage of the last 8 input frames is averaged, and constantly outputted as the DMachine output. False by default
+	 */
 	void cmdVideoFreeze(bool state, bool useAverage = false);
 
-
-	// Enable\disable RGB processing. Saves CPU power when the RGB
-	// is not needed.
+	/**
+	 * Enable\disable RGB processing. Saves CPU power when the RGB
+	 * is not needed.
+	 * @param status True to enable RGB processing
+	 */
 	void cmdRGBProcessing(bool status);
-	// Is RGB being processed? (might consume more CPU)
+
+	/**
+	 * Is RGB being processed? (might consume more CPU)
+	 * @return true if RGB processing is enabled
+	 */
 	bool getRGBProcessing() const;
 	
-	// enable\disable Confidence map processing. When enabled, you also receive
-	// a frame for each depth frame containing confidence levels per pixel.
-	// the higher the value is, the more accurate the corresponding 
-	// depth level is.
+	/**
+	 * Enable\disable Confidence map processing. When enabled, you also receive
+	 * a frame for each depth frame containing confidence levels per pixel.
+	 * the higher the value is, the more accurate the corresponding 
+	 * depth level is.
+	 * @param status True to enable confidence map processing
+	 */
 	void cmdConfidenceMapProcessing(bool status);
-	// is Confidence map being created? 
-	// check cmdConfidenceMapProcessing() for more infomation
+
+	/**
+	 * Is Confidence map being created? 
+	 * check cmdConfidenceMapProcessing() for more infomation
+	 * @return true if confidence map processing is enabled
+	 */
 	bool getConfidenceMapProcessing() const;
 
-	// enable\disable IR input source transfer for processing by the SDK user
+	/**
+	 * Enable\disable IR input source transfer for processing by the SDK user
+	 * @param status True to enable IR input source transfer
+	 */
 	void cmdIRTransfer(bool status);
-	// check if valid IR video source is provided.
+
+	/**
+	 * Check if valid IR video source is provided.
+	 * @return true if IR video source is provided
+	 */
 	bool getIRTransfer() const;
 
-	// enable\disable full resolution rgb transfer for processing by the SDK user
+	/**
+	 * Enable\disable full resolution rgb transfer for processing by the SDK user
+	 * @param status True to enable full resolution RGB transfer
+	 */
 	void cmdRGBFullRes(bool status);
-	// check if valid full resolution rgb video source is provided.
+
+	/**
+	 * Check if valid full resolution rgb video source is provided.
+	 * @return true if full resolution RGB is provided
+	 */
 	bool getRGBFullRes() const;
 
-	// must be called from within the callback function in order to get synchronized 
-	// confidence map. Will contain valid data only after calling 
-	// cmdConfidenceMapProcessing(true)
+	/**
+	 * Must be called from within the callback function in order to get synchronized 
+	 * confidence map. Will contain valid data only after calling 
+	 * cmdConfidenceMapProcessing(true)
+	 * @param pConfidence A reference to the confidence map
+	 * @ return true if successful
+	 */
 	bool getConfidenceFrame(unsigned char* &pConfidence);
 
-	// must be called from within the callback function in order to get synchronized 
-	// primary and secondary frames. Will contain valid data only after calling 
-	// cmdIRTransfer(true)
+	/**
+	 * Must be called from within the callback function in order to get synchronized 
+	 * primary and secondary frames. Will contain valid data only after calling 
+	 * cmdIRTransfer(true)
+	 * @param pPrimary The primary frame
+	 * @param pSecondary The secondary frame
+	 * @return true if successful
+	 */
 	bool getSourceIRFrames(unsigned char* &pPrimary, unsigned char* &pSecondary);
 
-	// must be called from within the callback function in order to get synchronized 
-	// video data. Will contain valid data only after calling cmdRGBFullRes(true)
+	/**
+	 * Must be called from within the callback function in order to get synchronized 
+	 * video data. Will contain valid data only after calling cmdRGBFullRes(true)
+	 * @param pRGBFullRes The full resolution RGB frame
+	 * @return true if successful
+	 */
 	bool getRGBFullResolutionFrame(unsigned char* &pRGBFullRes);
 };
 
