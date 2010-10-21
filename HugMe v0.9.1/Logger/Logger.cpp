@@ -167,6 +167,12 @@ void Logger::update(ZCameraUpdateContext context, const void* data)
 			log(LogEvent::ZCAM_VIDEO_DATA, *(VideoData*) data);
 			break;
 		}
+		case AVATAR_POSITION:
+		{
+			assert(data != NULL);
+			log(LogEvent::ZCAM_AVATAR_POSITION, *(cVector3d*) data);
+			break;
+		}
 	}
 	return;
 }

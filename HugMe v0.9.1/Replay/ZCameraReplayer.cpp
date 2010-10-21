@@ -31,6 +31,14 @@ void ZCameraReplayer::replay(LogEvent_t logEvent)
 			notify(VIDEO, &video);
 			break;
 		}
+		case LogEvent::ZCAM_AVATAR_POSITION:
+		{
+			cVector3d position;
+			*archive >> position;
+
+			notify(AVATAR_POSITION, &position);
+			break;
+		}
 	}
 
 	return;

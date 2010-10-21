@@ -48,6 +48,7 @@ namespace LogEvent
 		// ZCam events (300-399)
 		START_ZCAM = END_FALCON,
 		ZCAM_VIDEO_DATA = START_ZCAM,
+		ZCAM_AVATAR_POSITION,
 		END_ZCAM = 400
 	};
 
