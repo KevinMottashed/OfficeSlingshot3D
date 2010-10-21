@@ -33,7 +33,7 @@ void KeyboardZCamera::keyPressed(unsigned int key)
 		return;
 	}
 
-	static const float move_increment = 3.0f;
+	static const float move_increment = 6.0f;
 	static const float head_position = 120.0f;
 
 	switch (key)

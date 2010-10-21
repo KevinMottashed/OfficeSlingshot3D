@@ -45,6 +45,7 @@ public:
 	 * Returns true if the point is in the balls hit box.
 	 */
 	bool isInHitBox(cVector3d ballPos);
+
 private:
 	/**
 	 * The mesh that displays the avatar.
@@ -52,20 +53,46 @@ private:
 	cMesh* avatarMesh;
 
 	/**
-	 * The minimum values of the bounding box.
+	 * The mesh for the hit box.
 	 */
-	cVector3d boundaryMin;
+	cMesh* a_mesh;
 
 	/**
-	 * The maximum values of the bounding box.
+	 * The top-left corner of the bounding box
 	 */
-	cVector3d boundaryMax;
+	cVector3d boundary0;
+
+	/**
+	 * The top-right corner of the bounding box
+	 */
+	cVector3d boundary1;
+
+	/**
+	 * The bottom-right corner of the bounding box
+	 */
+	cVector3d boundary2;
+
+	/**
+	 * The bottom-left corner of the bounding box
+	 */
+	cVector3d boundary3;
 
 	/**
 	 * True if the avatar belongs to the local player.
 	 */
 	bool isLocal;
 
+	/**
+	 * Creates the vertices associated to the boundary
+	 * box for hit detection
+	 * @param startingPosition The avatar's starting position
+	 */
+	void createBoundaries(cVector3d startingPosition);
+
+	/**
+	 * Creates the mesh object with the correct boundary points
+	 */
+	void createMeshCube();
 };
 
 #endif

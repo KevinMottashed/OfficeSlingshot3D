@@ -38,5 +38,5 @@ void VirtualBall::fire(Projectile p)
 
 cVector3d VirtualBall::getMeshPos()
 {
-	return ballMesh->getPos();
+	return odeBall->getPos();
 }

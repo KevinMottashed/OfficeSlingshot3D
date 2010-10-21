@@ -1,3 +1,4 @@
+
 #include "VirtualEnvironment.h"
 #include "WorldConstants.h"
 
@@ -29,7 +30,7 @@ void VirtualEnvironment::updateFrame()
 
 bool VirtualEnvironment::isColliding()
 {
-	cVector3d ballPos = peerBalls[rNumBalls % ball_limit]->getMeshPos();
+	cVector3d ballPos = peerBalls[(rNumBalls-1) % ball_limit]->getMeshPos();
 
 	return lAvatar->isInHitBox(ballPos);
 }
@@ -84,7 +85,7 @@ void VirtualEnvironment::moveLocalAvatar(cVector3d position)
 
 	lAvatar->rotate(ang);
 	lAvatar->translate(ang);
-	lAvatar->updateBoundaries(ang, position);
+	//lAvatar->updateBoundaries(ang, position);
 	
 	return;
 }
