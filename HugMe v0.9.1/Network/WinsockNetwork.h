@@ -14,82 +14,161 @@
 // Forward declarations (files include each other)
 class NetworkSocket;
 
-// all the different packet types for a control packet
+/**
+ * The different packet types for a control packet
+ */
 enum ControlPacketType
 {
-	CONTROL_PACKET_NAME, // a user name packet
-	CONTROL_PACKET_CHAT, // a chat message packet
-	CONTROL_PACKET_START_GAME, // tell the peer the game is starting
-	CONTROL_PACKET_PAUSE_GAME, // tell the peer the game is paused
-	CONTROL_PACKET_END_GAME, // tell the peer the game is ending
-	CONTROL_PACKET_UNKNOWN
+	CONTROL_PACKET_NAME, /**< a user name packet */
+	CONTROL_PACKET_CHAT, /**< a chat message packet */
+	CONTROL_PACKET_START_GAME, /**< tell the peer the game is starting */
+	CONTROL_PACKET_PAUSE_GAME, /**< tell the peer the game is paused */
+	CONTROL_PACKET_END_GAME, /**< tell the peer the game is ending */
+	CONTROL_PACKET_UNKNOWN /**< unknown packet type */
 };
 
-// all the different packet types for a data packet
+/**
+ * The different packet types for a data packet
+ */
 enum DataPacketType
 {
-	DATA_PACKET_VIDEO,
-	DATA_PACKET_PLAYER_POSITION,
-	DATA_PACKET_SLINGSHOT_POSITION,
-	DATA_PACKET_SLINGSHOT_PULLBACK,
-	DATA_PACKET_PROJECTILE,
-	DATA_PACKET_UNKNOWN
+	DATA_PACKET_VIDEO, /**< Video data */
+	DATA_PACKET_PLAYER_POSITION, /**< Player position */
+	DATA_PACKET_SLINGSHOT_POSITION, /**< Slingshot position */
+	DATA_PACKET_SLINGSHOT_PULLBACK, /**< Slingshot pullback */
+	DATA_PACKET_PROJECTILE, /**< Projectile */
+	DATA_PACKET_UNKNOWN /**< Unknown packet type */
 };
 
 // the 2 packet types
 typedef Packet<ControlPacketType> ControlPacket;
 typedef Packet<DataPacketType> DataPacket;
 
-// A concrete implementation of the network class
-// this class uses windows sockets to implement the send/receive functionality
+/** 
+ * A concrete implementation of the network class using windows sockets.
+ * This class uses windows sockets to implement the send/receive functionality.
+ */
 class WinsockNetwork : public Network 
 {
 public:
+	/**
+	 * Constructor.
+	 */
 	WinsockNetwork();
+
+	/**
+	 * Destructor.
+	 * This will close any open resources (sockets)
+	 */
 	virtual ~WinsockNetwork();
 
-	// start listening for connections with the given user name
+	/**
+	 * Start listening for connections with the given user name.
+	 * @param userName The user name to be used when establishing the connection.
+	 * @return error code
+	 */
 	virtual rc_network listen(const std::string& userName);
 
-	// connect to a host
+	/**
+	 * Connect to an ip address with the given user name.
+	 * @param ipAddress The ipaddress to connect to.
+	 * @param userName The user name to be used when establishing the connection.
+	 * @return error code
+	 */
 	virtual rc_network connect(const std::string& ipAddress, const std::string& userName);
 
-	// disconnect from a host
+	/**
+	 * Disconnect from the peer.
+	 * @return error code
+	 */
 	virtual rc_network disconnect();
 
-	// send the player's user name over the network
+	/**
+	 * Send our user name to the peer.
+	 * @param userName Our user name.
+	 * @return error code
+	 */
 	virtual rc_network sendUserName(const std::string& userName);
 
-	// send a chat message to the other player
+	/**
+	 * Send a chat message to the other player.
+	 * @param message The chat message to send.
+	 * @return error code.
+	 */
 	virtual rc_network sendChatMessage(const std::string& message);
 
-	// send a start/pause/exit game message
+	/**
+	 * Send a start game message to the peer.
+	 * This is used to tell the peer that we have started the game.
+	 * @return 
+	 */
 	virtual rc_network sendStartGame();
+
+	/**
+	 * Send a pause game message to the peer.
+	 * This is used to tell the peer that we have paused the game.
+	 * @return 
+	 */
 	virtual rc_network sendPauseGame();
+
+	/**
+	 * Send an end game message to the peer.
+	 * This is used to tell the peer that we have ended the game.
+	 * @return 
+	 */
 	virtual rc_network sendEndGame();
 
-	// send a video data to the other player
+	/**
+	 * Send video data to the other player.
+	 * @param video The video data to send.
+	 * @return error code.
+	 */
 	virtual rc_network sendVideoData(const VideoData& video);
 
-	// send a player position to the other player
+	/**
+	 * Send a player position to the other player.
+	 * @param position The position to send.
+	 * @return error code.
+	 */
 	virtual rc_network sendPlayerPosition(const cVector3d& position);
 
-	// send a slingshot position to the other player
+	/**
+	 * Send a slingshot position to the other player.
+	 * @param position The position to send.
+	 * @return error code.
+	 */
 	virtual rc_network sendSlingshotPosition(const cVector3d& position);
 
-	// send a projectile over the network
+	/**
+	 * Send a projectile to the other player.
+	 * @param projectile The projectile to send.
+	 * @return error code.
+	 */
 	virtual rc_network sendProjectile(const Projectile& projectile);
 
-	// send a slingshot pullback event over the network
+	/**
+	 * Send a slingshot pullback event over the network.
+	 * @return error code
+	 */
 	virtual rc_network sendSlingshotPullback();
 
-	// true if  we are connected to a peer
+	/**
+	 * Determines if we are connected to a peer.
+	 * @return true if we are connected
+	 */
 	virtual bool isConnected() const;
 
-	// true if  we are listening for connections
+	/**
+	 * Determines if we are listening for connections.
+	 * @return true if we are listening
+	 */
 	virtual bool isListening() const;
 
-	// notify the network interface that a network connection has been accepted
+	/**
+	 * Notify the network interface that a network connection has been accepted.
+	 * This is called by the sockets to let us know when a connection has been accepted.
+	 * @param socket The socket that has accepted the connection.
+	 */
 	void notifyAccept(NetworkSocket* socket);
 
 private:

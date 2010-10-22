@@ -1,3 +1,8 @@
+/**
+ * @file
+ * Convinience header for including all public members of the network module.
+ */
+
 // public members of the network module
 #include "WinsockNetwork.h"
 #include "Network.h"
