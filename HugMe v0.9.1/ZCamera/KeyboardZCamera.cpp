@@ -40,16 +40,20 @@ void KeyboardZCamera::keyPressed(unsigned int key)
 	{
 		case VK_LEFT:
 		{
-			position.x -= move_increment;
-			position.y = 120.0f;
-			notify(AVATAR_POSITION, &position);
+			if (position.x - move_increment > -120 ){
+				position.x -= move_increment;
+				position.y = 120.0f;
+				notify(AVATAR_POSITION, &position);
+			}
 			break;
 		}
 		case VK_RIGHT:
 		{
-			position.x += move_increment;
-			position.y = 120.0f;
-			notify(AVATAR_POSITION, &position);
+			if (position.x + move_increment < 120 ){
+				position.x += move_increment;
+				position.y = 120.0f;
+				notify(AVATAR_POSITION, &position);
+			}
 			break;
 		}
 	}

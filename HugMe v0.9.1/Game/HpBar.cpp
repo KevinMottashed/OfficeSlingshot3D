@@ -36,7 +36,10 @@ HpBar::HpBar(cWorld* world, bool isLocal):
     hpBarMesh->computeAllNormals();
 
 	cMaterial mat0;
-    mat0.m_ambient.set(0.0, 0.2, 0.0);
+    mat0.m_ambient.set(0.0, 1.0, 0.0);
+    mat0.m_diffuse.set(0.0, 1.0, 0.0);
+    mat0.m_specular.set(0.0, 1.0, 0.0);
+    mat0.m_emission.set(0.0, 1.0, 0.0);
     hpBarMesh->setMaterial(mat0);
 
 	world->addChild(hpBarMesh);

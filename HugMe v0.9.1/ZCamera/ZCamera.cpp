@@ -131,26 +131,35 @@ cVector3d ZCamera::getPlayerPosition(){
 
 	cVector3d pos;
 
+	//Threshold for how many lines to ignore (to avoid detecting specs and loose hair)
 	int rowCount=10;
 
+	//Counters
 	int minCol=321;
 	int maxCol=-1;
 	int finalRow=-1;
 
+	//Go through from top-left to bottom-right. Stop when a finalRow is found
 	for (int i=0;i<240 && finalRow<0;i++){
 		for (int j=0;j<320;j++){
+
+			//If the pixel is white enough(value>64)
 			if ((int)DEPTH[(i*320)+j] > 64){
 
+				//If this is the 10th line with a white pixel, we assume this is the head
 				if (rowCount==0){
 					finalRow=i;
+
+					//Update counters to find the max and min of white pixels on this line
 					if (j<minCol){minCol=j;}
 					if (j>maxCol){maxCol=j;}
-				}else{
+				}
+				
+				//If it hasn't been 10 lines with a white pixel, reduce the counter and skip to next line
+				else{
 					rowCount--;
 					break;
 				}
-			}
-			else{
 			}
 		}
 	}
@@ -164,6 +173,7 @@ cVector3d ZCamera::getPlayerPosition(){
 	myfile2.close();
 	*/
 
+	//Find the middle white pixel of the horizontal line
 	pos.x = -(((maxCol-minCol)/2 + minCol) - 160);
 	pos.y = 240 - finalRow;
 	pos.z = 0;
