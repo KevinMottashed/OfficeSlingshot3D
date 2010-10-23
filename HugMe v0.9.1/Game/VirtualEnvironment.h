@@ -109,6 +109,12 @@ public:
 	 */
 	bool isColliding();
 
+	/**
+	 * Get the current ball's position
+	 * @return The current ball's position
+	 */
+	cVector3d getCurrentBallPosition();
+
 private:
 
 	/**

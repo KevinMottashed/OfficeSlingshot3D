@@ -2,6 +2,8 @@
 
 VirtualBall::VirtualBall(cWorld* world, cODEWorld* ODEWorld)
 {
+	alreadyCollided = false;
+
 	ballMesh = new cMesh(world);
 
 	ballMesh->loadFromFile("Objects\\ball\\ball.obj");
@@ -27,6 +29,8 @@ VirtualBall::~VirtualBall(void)
 
 void VirtualBall::fire(Projectile p)
 {
+	alreadyCollided = false;
+
 	odeBall->setPosition(p.position());
 
 	//Add a force just for show
@@ -34,6 +38,16 @@ void VirtualBall::fire(Projectile p)
 
 	// make the ball visible
 	odeBall->setShowEnabled(true);
+}
+
+bool VirtualBall::getAlreadyCollided()
+{
+	return alreadyCollided;
+}
+
+void VirtualBall::collided()
+{
+	alreadyCollided = true;
 }
 
 cVector3d VirtualBall::getMeshPos()

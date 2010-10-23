@@ -114,8 +114,9 @@ public:
 
 	/**
 	 * Provide the appropriate user feedback for when the local player is hit by the slingshot.
+	 * @param ballPos The position of the ball when the collision was detected
 	 */
-	void collisionDetected(void);
+	void collisionDetected(cVector3d ballPos);
 
 private:
 	/**

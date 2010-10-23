@@ -447,7 +447,7 @@ void Mediator::sendChatMessage(const std::string& message)
 	return;
 }
 
-void Mediator::collisionDetected(void)
+void Mediator::collisionDetected(cVector3d ballPos)
 {
 	audio.playHit();
 	smartClothing->vibrate(CHEST, 0.5, 0.5, 1000);

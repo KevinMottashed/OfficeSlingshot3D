@@ -39,11 +39,28 @@ public:
 	 */
 	cVector3d getMeshPos();
 
+	/**
+	 * Get the alreadyCollided flag
+	 * @return The alreadyCollided flag
+	 */
+	bool getAlreadyCollided();
+
+	/**
+	 * Sets the alreadyCollided flag to true to make sure that
+	 * the ball only collides once for each time it was fired
+	 */
+	void collided();
+
 private:
 	/**
 	 * The mesh that represents the ball.
 	 */
 	cMesh* ballMesh;
+
+	/**
+	 * Flag to know if the ball has already collided
+	 */
+	bool alreadyCollided;
 
 	/**
 	 * The ball's physical representation.

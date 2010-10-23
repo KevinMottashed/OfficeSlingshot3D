@@ -211,7 +211,8 @@ void Game::gameLoop()
 			
 			if (environment.isColliding()) 
 			{
-				mediator->collisionDetected();
+				cVector3d ballPos = environment.getCurrentBallPosition();
+				mediator->collisionDetected(ballPos);
 				environment.reduceLocalHp(1);
 			}
 		} // release the lock before sleeping
