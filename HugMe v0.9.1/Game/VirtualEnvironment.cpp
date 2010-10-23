@@ -215,7 +215,7 @@ void VirtualEnvironment::initialize(void)
 	//**************************************//
 
 	cBitmap* background = new cBitmap();
-	background->m_image.loadFromFile("Objects\\table2.bmp");
+	background->m_image.loadFromFile("Objects\\table3.bmp");
 
 	background->setPos(cVector3d(-13.1f, -10.6f, -9.0f));
 
