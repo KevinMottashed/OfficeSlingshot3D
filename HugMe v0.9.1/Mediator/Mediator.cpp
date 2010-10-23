@@ -450,7 +450,7 @@ void Mediator::sendChatMessage(const std::string& message)
 void Mediator::collisionDetected(cVector3d ballPos)
 {
 	audio.playHit();
-	smartClothing->vibrate(CHEST, 0.5, 0.5, 1000);
+	smartClothing->vibrate(CHEST, ballPos);
 
 	//TODO: reducePeerHp
 	//TODO: play sound on the peer's end

@@ -52,7 +52,19 @@ void SmartClothingManager::setPorts(int armBandPort, int jacketPort)
 	m_pDisplayDeviceArmband->setPort(armBandPort);
 }
 
-void SmartClothingManager::vibrate(HumanPart touchedPart, int x, int y, int time) 
+void SmartClothingManager::vibrate(HumanPart hitPart, cVector3d position)
+{
+	// x position coming from the game will be between -0.4 and 0.4
+	// Add 0.4 to have a value from 0 to 0.8 then divide by 0.8 to get a value from 0 to 1
+	double xPos = (position.x + 0.4)/0.8;
+
+	// y position coming from the game will be between 0 and 0.8
+	// Divide by 0.8 to get a value from 0 to 1
+	double yPos = position.y/0.8;
+
+	vibrate(CHEST, xPos, yPos, 1000);
+}
+void SmartClothingManager::vibrate(HumanPart touchedPart, double x, double y, int time) 
 {
 	//if(m_pHugMe->m_localHumanModel.m_contactInfo.isContacted) {
 		switch(touchedPart) {

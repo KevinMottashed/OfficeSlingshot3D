@@ -46,7 +46,15 @@ public:
 	 * @param y The y coordinate
 	 * @param time The vibration time in milliseconds
 	 */
-	void vibrate(HumanPart touchedPart, int x, int y, int time);
+	void vibrate(HumanPart touchedPart, double x, double y, int time);
+
+	/**
+	 * Determines where the smart clothing is to vibrate according to the position
+	 * of the collision detected
+	 * @param hitPart The part of the body where the hit was detected
+	 * @param position The position of the ball at the moment of the collision
+	 */
+	void vibrate(HumanPart hitPart, cVector3d position);
 
 	/**
 	 * Set the armband and jacket ports
