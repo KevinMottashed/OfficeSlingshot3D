@@ -21,12 +21,12 @@ VirtualAvatar::VirtualAvatar(cWorld* world, cVector3d startingPosition, bool isL
 	avatarMesh->setUseCulling(true, true);
 
 	if(isLocal){
-		a_mesh = new cMesh(world);
-		a_mesh->setPos(startingPosition);
+		chestHitBox = new cMesh(world);
+		chestHitBox->setPos(startingPosition);
 		createBoundaries(startingPosition);
-		createMeshCube();
+		createMeshCube(chestHitBox, chestMin, chestMax);
 		
-		world->addChild(a_mesh);
+		world->addChild(chestHitBox);
 	}
 }
 
@@ -57,14 +57,12 @@ void VirtualAvatar::translate(double ang)
 	cVector3d prevPos = avatarMesh->getPos();
 	avatarMesh->setPos(ang/75, prevPos.y, prevPos.z);
 
-	boundary0 = cVector3d(-0.4+ang/60, boundary0.y, boundary0.z);
-	boundary1 = cVector3d(0.4+ang/60, boundary1.y, boundary1.z);
-	boundary2 = cVector3d(0.4+ang/60, boundary2.y, boundary2.z);
-	boundary3 = cVector3d(-0.4+ang/60, boundary3.y, boundary3.z);
+	chestMin = cVector3d(-0.4+ang/60, chestMin.y, chestMin.z);
+	chestMax = cVector3d(0.4+ang/60, chestMax.y, chestMax.z);
 
 	if(isLocal){
-		cVector3d prevHitPos = a_mesh->getPos();
-		a_mesh->setPos(ang/60, prevHitPos.y, prevHitPos.z);
+		cVector3d prevChestPos = chestHitBox->getPos();
+		chestHitBox->setPos(ang/60, prevChestPos.y, prevChestPos.z);
 	}
 }
 
@@ -76,10 +74,12 @@ void VirtualAvatar::updateBoundaries(double ang, cVector3d position)
 	double halfOpp = opposed/2;
 	double halfAdj = adjacent/2;
 
+	/*
 	boundary0 = cVector3d(-halfAdj+opposed, adjacent+halfOpp, boundary0.z);
 	boundary1 = cVector3d(opposed+halfAdj, adjacent-halfOpp, boundary1.z);
 	boundary2 = cVector3d(halfAdj, -halfOpp, boundary2.z);
 	boundary3 = cVector3d(-halfAdj, halfOpp, boundary3.z);
+	*/
 
 	//// Translate the boundaries
 	//boundaryMin.x += ang/75;
@@ -88,29 +88,27 @@ void VirtualAvatar::updateBoundaries(double ang, cVector3d position)
 
 bool VirtualAvatar::isInHitBox(cVector3d ballPos)
 {
-	return ((boundary0.x < ballPos.x) && (boundary1.x > ballPos.x) &&
-			(boundary3.x < ballPos.y) && (boundary0.y > ballPos.y) &&
-			(boundary0.z < ballPos.z) && ((boundary0.z+0.8) > ballPos.z));
+	return ((chestMin.x < ballPos.x) && (chestMax.x > ballPos.x) &&
+			(chestMin.y < ballPos.y) && (chestMax.y > ballPos.y) &&
+			(chestMin.z < ballPos.z) && (chestMax.z > ballPos.z));
 }
 
 void VirtualAvatar::createBoundaries(cVector3d startingPosition)
 {
-	boundary0 = startingPosition + cVector3d(-0.4, 0.8, -0.4);
-	boundary1 = startingPosition + cVector3d(0.4, 0.8, -0.4);
-	boundary2 = startingPosition + cVector3d(0.4, 0.0, -0.4);
-	boundary3 = startingPosition + cVector3d(-0.4, 0.0, -0.4);
+	chestMax = startingPosition + cVector3d(0.4, 0.8, 0.4);
+	chestMin = startingPosition + cVector3d(-0.4, 0.0, -0.4);
 }
 
-void VirtualAvatar::createMeshCube()
+void VirtualAvatar::createMeshCube(cMesh* a_mesh, cVector3d minVector, cVector3d maxVector)
 {
     int vertices [6][6];
 
-	double xMin = -0.4;
-	double xMax = 0.4;
-	double yMin = 0.0;
-	double yMax = 0.8;
-	double zMin = -0.4;
-	double zMax = 0.4;
+	double xMin = minVector.x;
+	double xMax = maxVector.x;
+	double yMin = minVector.y;
+	double yMax = maxVector.y;
+	double zMin = minVector.z - 6.0;
+	double zMax = maxVector.z - 6.0;
 
     // face -x
     vertices[0][0] = a_mesh->newVertex(xMin, yMax, zMin);

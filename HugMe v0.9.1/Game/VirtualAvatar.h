@@ -53,29 +53,19 @@ private:
 	cMesh* avatarMesh;
 
 	/**
-	 * The mesh for the hit box.
+	 * The mesh for the chest hit box.
 	 */
-	cMesh* a_mesh;
+	cMesh* chestHitBox;
 
 	/**
-	 * The top-left corner of the bounding box
+	 * The bottom-left corner of the chest bounding box 
 	 */
-	cVector3d boundary0;
+	cVector3d chestMin;
 
 	/**
-	 * The top-right corner of the bounding box
+	 * The top-right corner of the chest bounding box
 	 */
-	cVector3d boundary1;
-
-	/**
-	 * The bottom-right corner of the bounding box
-	 */
-	cVector3d boundary2;
-
-	/**
-	 * The bottom-left corner of the bounding box
-	 */
-	cVector3d boundary3;
+	cVector3d chestMax;
 
 	/**
 	 * True if the avatar belongs to the local player.
@@ -91,8 +81,11 @@ private:
 
 	/**
 	 * Creates the mesh object with the correct boundary points
+	 * @param a_mesh The mesh object
+	 * @param minVector Vector representing the minimum of the box
+	 * @param maxVector Vector representing the maximum of the box
 	 */
-	void createMeshCube();
+	void createMeshCube(cMesh* a_mesh, cVector3d minVector, cVector3d maxVector);
 };
 
 #endif
