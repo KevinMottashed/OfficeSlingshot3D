@@ -49,6 +49,34 @@ HpBar::~HpBar(void)
 {
 }
 
+
+void HpBar::ResetHp()
+{
+	hp = totalHp;
+    int vertices [4];
+
+	hpBarMesh->clear();
+
+	if (isLocal)
+	{
+		vertices[0] = hpBarMesh->newVertex(-0.1, 1.9, 6);
+		vertices[1] = hpBarMesh->newVertex(-0.1, 2.0, 6);
+		vertices[2] = hpBarMesh->newVertex(-1.7, 2.0, 6);
+		vertices[3] = hpBarMesh->newVertex(-1.7, 1.9, 6);
+	}
+	else
+	{
+		vertices[0] = hpBarMesh->newVertex(1.7, 1.9, 6);
+		vertices[1] = hpBarMesh->newVertex(1.7, 2.0, 6);
+		vertices[2] = hpBarMesh->newVertex(0.1, 2.0, 6);
+		vertices[3] = hpBarMesh->newVertex(0.1, 1.9, 6);
+	}
+
+	hpBarMesh->newTriangle(vertices[0], vertices[1], vertices[2]);
+	hpBarMesh->newTriangle(vertices[0], vertices[2], vertices[3]);
+    hpBarMesh->computeAllNormals();
+}
+
 void HpBar::ReduceHP(int hpLost)
 {
 	hp -= hpLost;

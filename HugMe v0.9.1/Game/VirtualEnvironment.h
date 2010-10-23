@@ -72,6 +72,12 @@ public:
 	 */
 	void reducePeerHp(int dmg);
 
+
+	/**
+	 * Resets the hit points of both players
+	 */
+	void resetHp();
+
 	/**
 	 * Shoot a projectile from the local slingshot
 	 * @return The projectile that was just fired

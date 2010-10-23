@@ -117,6 +117,14 @@ void VirtualEnvironment::reducePeerHp(int dmg)
 	return;
 }
 
+void VirtualEnvironment::resetHp()
+{
+	rHpBar->ResetHp();
+	lHpBar->ResetHp();
+
+	return;
+}
+
 void VirtualEnvironment::initialize(void)
 {
 	//**************************************//

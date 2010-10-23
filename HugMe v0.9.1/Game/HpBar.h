@@ -24,6 +24,11 @@ public:
 	 */
 	void ReduceHP(int hpLost);
 
+	/**
+	 * Reset HP of the users
+	 */
+	void ResetHp();
+
 private:
 	/**
 	 * The current HP
