@@ -10,6 +10,8 @@
 #include "MediatorProxy.h"
 #include "VirtualEnvironment.h"
 #include "TitleScreen.h"
+#include "WinScreen.h"
+#include "LoseScreen.h"
 
 
 /**
@@ -82,6 +84,18 @@ private:
 	 * This is a 3d environment that is displayed when the game isn't running
 	 */
 	TitleScreen titleScreen;
+
+	/**
+	 * The game's win screen.
+	 * This is a 3d environment that is displayed when the game is over and the local player is the winner
+	 */
+	WinScreen winScreen;
+
+	/**
+	 * The game's lose screen.
+	 * This is a 3d environment that is displayed when the game is over and the local player is the loser
+	 */
+	LoseScreen loseScreen;
 
 	/**
 	 * Mutex to protect the virtual environment

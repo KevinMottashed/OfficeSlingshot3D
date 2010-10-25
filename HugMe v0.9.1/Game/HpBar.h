@@ -29,6 +29,13 @@ public:
 	 */
 	void ResetHp();
 
+
+	/**
+	 * Reset HP of the users
+	 */
+	double getHP(){ return hp;}
+
+
 private:
 	/**
 	 * The current HP

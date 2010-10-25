@@ -459,6 +459,14 @@ void Mediator::collisionDetected(HumanPart hitPart, cVector3d ballPos, cVector3d
 	return;
 }
 
+void Mediator::localPlayerLost()
+{
+	audio.playGameOverLost();
+	//TODO: network->notifyGameOver();
+	//Stop the game
+	return;
+}
+
 void Mediator::update(ZCameraUpdateContext context, const void* data)
 {
 	switch(context)

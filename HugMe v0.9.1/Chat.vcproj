@@ -545,6 +545,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Game\LoseScreen.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Game\LoseScreen.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Game\TitleScreen.cpp"
 				>
 			</File>
@@ -582,6 +590,14 @@
 			</File>
 			<File
 				RelativePath=".\Game\VirtualSlingshot.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Game\WinScreen.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Game\WinScreen.h"
 				>
 			</File>
 		</Filter>

@@ -79,6 +79,11 @@ public:
 	void resetHp();
 
 	/**
+	 * Check if the local player has no more HP
+	 */
+	bool isLocalPlayerDead();
+
+	/**
 	 * Shoot a projectile from the local slingshot
 	 * @return The projectile that was just fired
 	 */

@@ -121,6 +121,11 @@ public:
 	 */
 	void collisionDetected(HumanPart hitPart, cVector3d ballPos, cVector3d minValue, cVector3d maxValue);
 
+	/**
+	 * Displays lose screen and sends GAME_OVER to peer
+	 */
+	void localPlayerLost();
+
 private:
 	/**
 	 * Copy constructor. Not implemented to protect from use.

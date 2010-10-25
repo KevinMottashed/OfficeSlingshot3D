@@ -133,6 +133,10 @@ void VirtualEnvironment::resetHp()
 	return;
 }
 
+bool VirtualEnvironment::isLocalPlayerDead(){
+	return (lHpBar->getHP() <= 0);
+}
+
 cVector3d VirtualEnvironment::getCurrentBallPosition()
 {
 	return peerBalls[(rNumBalls-1) % ball_limit]->getMeshPos();

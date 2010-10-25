@@ -231,6 +231,11 @@ void Game::gameLoop()
 					environment.reduceLocalHp(3);
 					break;
 				}
+				//Check if the local player is dead, if he is, we notify the mediator and change camera to loseScreen
+				if (environment.isLocalPlayerDead()){
+					mediator->switchCamera(loseScreen.camera());
+					mediator->localPlayerLost();
+				}
 			}
 		} // release the lock before sleeping
 
