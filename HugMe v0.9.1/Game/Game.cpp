@@ -226,6 +226,10 @@ void Game::gameLoop()
 					mediator->collisionDetected(LEFT_UPPER_ARM, ballPos, environment.getLocalAvatarLeftArmMin(), environment.getLocalAvatarLeftArmMax());
 					environment.reduceLocalHp(1);
 					break;
+				case HEAD:
+					mediator->collisionDetected(HEAD, ballPos, environment.getLocalAvatarHeadMin(), environment.getLocalAvatarHeadMax());
+					environment.reduceLocalHp(3);
+					break;
 				}
 			}
 		} // release the lock before sleeping

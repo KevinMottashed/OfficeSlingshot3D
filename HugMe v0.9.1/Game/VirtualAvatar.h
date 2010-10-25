@@ -29,12 +29,6 @@ public:
 	void rotate(double ang);
 
 	/**
-	 * Translate (move) the avatar.
-	 * @param ang The angle to which the avatar was rotated.
-	 */
-	void translate(double ang);
-
-	/**
 	 * Update boundaries when the avatar is moved or rotated.
 	 * @param ang The angle from which the avatar was moved.
 	 * @param position The avatar's position.
@@ -90,6 +84,18 @@ public:
 	 */
 	cVector3d getLeftArmMax();
 
+	/**
+	 * Retrieve the head hit box minimum value
+	 * @return The head hit box's minimum
+	 */
+	cVector3d getHeadMin();
+
+	/**
+	 * Retrieve the head hit box maximum value
+	 * @return The head hit box's maximum
+	 */
+	cVector3d getHeadMax();
+
 private:
 	/**
 	 * The mesh that displays the avatar.
@@ -142,6 +148,20 @@ private:
 	cVector3d lArmMax;
 
 	/**
+	 * The mesh for the left arm hit box.
+	 */
+	cMesh* headHitBox;
+
+	/**
+	 * The bottom-left corner of the left arm bounding box 
+	 */
+	cVector3d headMin;
+
+	/**
+	 * The top-right corner of the left arm bounding box
+	 */
+	cVector3d headMax;
+	/**
 	 * True if the avatar belongs to the local player.
 	 */
 	bool isLocal;
@@ -150,6 +170,46 @@ private:
 	 * The body part index hit by the collision
 	 */
 	int hitPart;
+
+	/**
+	 * The initial position of the chest hit box's minimum value
+	 */
+	static const cVector3d iniChestMin;
+
+	/**
+	 * The initial position of the chest hit box's maximum value
+	 */
+	static const cVector3d iniChestMax;
+
+	/**
+	 * The initial position of the left arm hit box's minimum value
+	 */
+	static const cVector3d iniLeftArmMin;
+
+	/**
+	 * The initial position of the left arm hit box's maximum value
+	 */
+	static const cVector3d iniLeftArmMax;
+
+	/**
+	 * The initial position of the right arm hit box's minimum value
+	 */
+	static const cVector3d iniRightArmMin;
+
+	/**
+	 * The initial position of the right arm hit box's maximum value
+	 */
+	static const cVector3d iniRightArmMax;
+
+	/**
+	 * The initial position of the head hit box's minimum value
+	 */
+	static const cVector3d iniHeadMin;
+
+	/**
+	 * The initial position of the head hit box's maximum value
+	 */
+	static const cVector3d iniHeadMax;
 
 	/**
 	 * Creates the vertices associated to the boundary
@@ -165,6 +225,13 @@ private:
 	 * @param maxVector Vector representing the maximum of the box
 	 */
 	void createMeshCube(cMesh* a_mesh, cVector3d minVector, cVector3d maxVector);
+
+	/**
+	 * Translate (move) the avatar.
+	 * @param xTrans The x value to translate
+	 * @param yTrans The y value to translate
+	 */
+	void translate(double xTrans, double yTrans);
 };
 
 #endif

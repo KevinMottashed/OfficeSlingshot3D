@@ -54,42 +54,13 @@ void SmartClothingManager::setPorts(int armBandPort, int jacketPort)
 
 void SmartClothingManager::vibrate(HumanPart hitPart, cVector3d position, cVector3d minValue, cVector3d maxValue)
 {
-	double xPos = 0.5;
-	double yPos = 0.5;
+	// Take the difference from the x position of the collision and the x minimum value
+	// Divide by width of the box to get a value from 0-1
+	double xPos = (position.x - minValue.x)/(maxValue.x - minValue.x);
 
-	switch(hitPart){
-	case CHEST:
-		// Take the difference from the position of the collision and the minimum value
-		// Divide by 0.6 to get a value from 0-1
-		xPos = (position.x - minValue.x)/0.6;
-
-		// y position coming from the game will be between 0 and 0.8
-		// Divide by 0.8 to get a value from 0 to 1
-		yPos = position.y/maxValue.y;
-		break;
-
-	case RIGHT_UPPER_ARM:
-		
-		// Take the difference from the position of the collision and the minimum value
-		// Divide by 0.2 to get a value from 0-1
-		xPos = (position.x - minValue.x)/0.2;
-
-		// y position coming from the game will be between 0 and 0.8
-		// Divide by 0.8 to get a value from 0 to 1
-		yPos = position.y/maxValue.y;
-		break;
-
-	case LEFT_UPPER_ARM:
-		
-		// Take the difference from the position of the collision and the minimum value
-		// Divide by 0.2 to get a value from 0-1
-		xPos = (position.x - minValue.x)/0.2;
-
-		// y position coming from the game will be between 0 and 0.8
-		// Divide by 0.8 to get a value from 0 to 1
-		yPos = position.y/maxValue.y;
-		break;
-	}
+	// Take the difference from the y position of the collision and the y minimum value
+	// Divide by height of the box to get a value from 0-1
+	double yPos = 1 - (position.y - minValue.y)/(maxValue.y - minValue.y);
 
 	vibrate(hitPart, xPos, yPos, 1000);
 }

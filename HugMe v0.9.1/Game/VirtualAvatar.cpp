@@ -1,5 +1,17 @@
 #include "VirtualAvatar.h"
 
+const cVector3d VirtualAvatar::iniChestMax = cVector3d(0.3, 0.8, 0.4);
+const cVector3d VirtualAvatar::iniChestMin = cVector3d(-0.3, 0.0, -0.4);
+
+const cVector3d VirtualAvatar::iniLeftArmMax = cVector3d(-0.3, 0.8, 0.4);
+const cVector3d VirtualAvatar::iniLeftArmMin = cVector3d(-0.5, 0.0, -0.4);
+
+const cVector3d VirtualAvatar::iniRightArmMax = cVector3d(0.5, 0.8, 0.4);
+const cVector3d VirtualAvatar::iniRightArmMin = cVector3d(0.3, 0.0, -0.4);
+
+const cVector3d VirtualAvatar::iniHeadMax = cVector3d(0.15, 1.3, 0.4);
+const cVector3d VirtualAvatar::iniHeadMin = cVector3d(-0.15, 0.8, -0.4);
+
 VirtualAvatar::VirtualAvatar(cWorld* world, cVector3d startingPosition, bool isLocal): 
 	isLocal(isLocal)
 {
@@ -26,6 +38,7 @@ VirtualAvatar::VirtualAvatar(cWorld* world, cVector3d startingPosition, bool isL
 		chestHitBox = new cMesh(world);
 		rArmHitBox = new cMesh(world);
 		lArmHitBox = new cMesh(world);
+		headHitBox = new cMesh(world);
 
 		chestHitBox->setPos(startingPosition);
 		createMeshCube(chestHitBox, chestMin, chestMax);
@@ -35,10 +48,14 @@ VirtualAvatar::VirtualAvatar(cWorld* world, cVector3d startingPosition, bool isL
 
 		lArmHitBox->setPos(startingPosition);
 		createMeshCube(lArmHitBox, lArmMin, lArmMax);
+
+		headHitBox->setPos(startingPosition);
+		createMeshCube(headHitBox, headMin, headMax);
 		
 		world->addChild(chestHitBox);
 		world->addChild(rArmHitBox);
 		world->addChild(lArmHitBox);
+		world->addChild(headHitBox);
 	}
 }
 
@@ -48,6 +65,12 @@ VirtualAvatar::~VirtualAvatar(void)
 
 void VirtualAvatar::rotate(double ang)
 {
+	double xTrans = (cSinDeg(ang)*0.8)*2;
+	double yTrans = 0.8-(cCosDeg(ang)*0.8);
+
+	translate(xTrans, yTrans);
+
+	/*
 	//Reset rotation to upright
 	avatarMesh->rotate(avatarMesh->getRot().inv());
 
@@ -60,36 +83,42 @@ void VirtualAvatar::rotate(double ang)
 
 	//Apply rotation
 	avatarMesh->rotate(cVector3d(0.0f, 0.0f, 1.0f), cDegToRad(-ang));
+	*/
 }
 
-void VirtualAvatar::translate(double ang)
+void VirtualAvatar::translate(double xTrans, double yTrans)
 {
-	if(!isLocal) ang = -ang;
-
 	cVector3d prevPos = avatarMesh->getPos();
-	avatarMesh->setPos(ang/75, prevPos.y, prevPos.z);
+	avatarMesh->setPos(xTrans, -yTrans, prevPos.z);
 
-	chestMin = cVector3d(-0.3+ang/50, chestMin.y, chestMin.z);
-	chestMax = cVector3d(0.3+ang/50, chestMax.y, chestMax.z);
+	chestMin = cVector3d(iniChestMin.x+xTrans, iniChestMin.y-yTrans, chestMin.z);
+	chestMax = cVector3d(iniChestMax.x+xTrans, iniChestMax.y-yTrans, chestMax.z);
 
-	rArmMin = cVector3d(0.3+ang/50, rArmMin.y, rArmMin.z);
-	rArmMax = cVector3d(0.5+ang/50, rArmMax.y, rArmMax.z);
+	rArmMin = cVector3d(iniRightArmMin.x+xTrans, iniRightArmMin.y-yTrans, rArmMin.z);
+	rArmMax = cVector3d(iniRightArmMax.x+xTrans, iniRightArmMax.y-yTrans, rArmMax.z);
 
-	lArmMin = cVector3d(-0.5+ang/50, lArmMin.y, lArmMin.z);
-	lArmMax = cVector3d(-0.3+ang/50, lArmMax.y, lArmMax.z);
+	lArmMin = cVector3d(iniLeftArmMin.x+xTrans, iniLeftArmMin.y-yTrans, lArmMin.z);
+	lArmMax = cVector3d(iniLeftArmMax.x+xTrans, iniLeftArmMax.y-yTrans, lArmMax.z);
+
+	headMin = cVector3d(iniHeadMin.x+xTrans, iniHeadMin.y-yTrans, iniHeadMin.z);
+	headMax = cVector3d(iniHeadMax.x+xTrans, iniHeadMax.y-yTrans, iniHeadMax.z);
 
 	if(isLocal){
 		cVector3d prevChestPos = chestHitBox->getPos();
-		chestHitBox->setPos(ang/50, prevChestPos.y, prevChestPos.z);
+		chestHitBox->setPos(xTrans, -yTrans, prevChestPos.z);
 
 		cVector3d prevRArmPos = rArmHitBox->getPos();
-		rArmHitBox->setPos(ang/50, prevRArmPos.y, prevRArmPos.z);
+		rArmHitBox->setPos(xTrans, -yTrans, prevRArmPos.z);
 
 		cVector3d prevLArmPos = lArmHitBox->getPos();
-		lArmHitBox->setPos(ang/50, prevLArmPos.y, prevLArmPos.z);
+		lArmHitBox->setPos(xTrans, -yTrans, prevLArmPos.z);
+
+		cVector3d prevHeadPos = headHitBox->getPos();
+		headHitBox->setPos(xTrans, -yTrans, prevHeadPos.z);
 	}
 }
 
+// TODO: Remove if rotation is not needed !!
 void VirtualAvatar::updateBoundaries(double ang, cVector3d position)
 {
 	// Rotate the boundaries
@@ -115,18 +144,26 @@ bool VirtualAvatar::isInHitBox(cVector3d ballPos)
 	if (((chestMin.x < ballPos.x) && (chestMax.x > ballPos.x) &&
 			(chestMin.y < ballPos.y) && (chestMax.y > ballPos.y) &&
 			(chestMin.z < ballPos.z) && (chestMax.z > ballPos.z))) {
-		// CHEST = 0
+		// HumanPart::CHEST = 0
 		hitPart = 0;
 		return true;
 	} else if (((rArmMin.x < ballPos.x) && (rArmMax.x > ballPos.x) &&
 			(rArmMin.y < ballPos.y) && (rArmMax.y > ballPos.y) &&
 			(rArmMin.z < ballPos.z) && (rArmMax.z > ballPos.z))) {
+		// HumanPart::LEFT_UPPER_ARM = 1
 		hitPart = 1;
 		return true;
 	} else if (((lArmMin.x < ballPos.x) && (lArmMax.x > ballPos.x) &&
 			(lArmMin.y < ballPos.y) && (lArmMax.y > ballPos.y) &&
 			(lArmMin.z < ballPos.z) && (lArmMax.z > ballPos.z))) {
+		// HumanPart::RIGHT_UPPER_ARM = 3
 		hitPart = 3;
+		return true;
+	} else if (((headMin.x < ballPos.x) && (headMax.x > ballPos.x) &&
+			(headMin.y < ballPos.y) && (headMax.y > ballPos.y) &&
+			(headMin.z < ballPos.z) && (headMax.z > ballPos.z))) {
+		// HumanPart::HEAD = 5
+		hitPart = 5;
 		return true;
 	}
 	return false;
@@ -134,14 +171,17 @@ bool VirtualAvatar::isInHitBox(cVector3d ballPos)
 
 void VirtualAvatar::createBoundaries(cVector3d startingPosition)
 {
-	chestMax = startingPosition + cVector3d(0.3, 0.8, 0.4);
-	chestMin = startingPosition + cVector3d(-0.3, 0.0, -0.4);
+	chestMax = startingPosition + iniChestMax;
+	chestMin = startingPosition + iniChestMin;
 
-	rArmMax = startingPosition + cVector3d(0.5, 0.8, 0.4);
-	rArmMin = startingPosition + cVector3d(0.3, 0.0, -0.4);
+	rArmMax = startingPosition + iniRightArmMax;
+	rArmMin = startingPosition + iniRightArmMin;
 
-	lArmMax = startingPosition + cVector3d(-0.3, 0.8, 0.4);
-	lArmMin = startingPosition + cVector3d(-0.5, 0.0, -0.4);
+	lArmMax = startingPosition + iniLeftArmMax;
+	lArmMin = startingPosition + iniLeftArmMin;
+
+	headMax = startingPosition + iniHeadMax;
+	headMin = startingPosition + iniHeadMin;
 }
 
 int VirtualAvatar::getHitBodyPart()
@@ -177,6 +217,16 @@ cVector3d VirtualAvatar::getLeftArmMin()
 cVector3d VirtualAvatar::getLeftArmMax()
 {
 	return lArmMax;
+}
+
+cVector3d VirtualAvatar::getHeadMin()
+{
+	return headMin;
+}
+
+cVector3d VirtualAvatar::getHeadMax()
+{
+	return headMax;
 }
 
 void VirtualAvatar::createMeshCube(cMesh* a_mesh, cVector3d minVector, cVector3d maxVector)

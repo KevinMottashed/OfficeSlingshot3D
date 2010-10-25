@@ -14,6 +14,7 @@ typedef enum tagHumanPart {
 	RIGHT_LOWER_ARM,
 	LEFT_UPPER_ARM,
 	LEFT_LOWER_ARM,
+	HEAD,
 	TOTAL_NUM_PART
 } HumanPart;
 

@@ -157,6 +157,18 @@ public:
 	 */
 	cVector3d getLocalAvatarLeftArmMax();
 
+	/**
+	 * Retrieve the head hit box minimum value from the local avatar object
+	 * @return The local avatar's head hit box's minimum
+	 */
+	cVector3d getLocalAvatarHeadMin();
+
+	/**
+	 * Retrieve the head hit box maximum value from the local avatar object
+	 * @return The local avatar's head hit box's maximum
+	 */
+	cVector3d getLocalAvatarHeadMax();
+
 private:
 
 	/**

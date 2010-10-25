@@ -3,7 +3,7 @@
 #include "WorldConstants.h"
 
 const unsigned int VirtualEnvironment::ball_limit = 2;
-const cVector3d VirtualEnvironment::firing_force = cVector3d(0, 280.0f, -450.0f);
+const cVector3d VirtualEnvironment::firing_force = cVector3d(0, 300.0f, -450.0f);
 
 VirtualEnvironment::VirtualEnvironment(void) :
 	localBalls(ball_limit),
@@ -92,7 +92,7 @@ void VirtualEnvironment::moveLocalAvatar(cVector3d position)
 	ang = cClamp<double>(ang, -45, 45);
 
 	lAvatar->rotate(ang);
-	lAvatar->translate(ang);
+	//lAvatar->translate(ang);
 	//lAvatar->updateBoundaries(ang, position);
 	
 	return;
@@ -104,8 +104,8 @@ void VirtualEnvironment::movePeerAvatar(cVector3d position)
 	double ang = cRadToDeg(atan(position.x / position.y));
 	ang = cClamp<double>(ang, -45, 45);
 
-	rAvatar->rotate(ang);
-	rAvatar->translate(ang);
+	rAvatar->rotate(-ang);
+	//rAvatar->translate(ang);
 
 	return;
 }
@@ -171,6 +171,16 @@ cVector3d VirtualEnvironment::getLocalAvatarLeftArmMin()
 cVector3d VirtualEnvironment::getLocalAvatarLeftArmMax()
 {
 	return lAvatar->getLeftArmMax();
+}
+
+cVector3d VirtualEnvironment::getLocalAvatarHeadMin()
+{
+	return lAvatar->getHeadMin();
+}
+
+cVector3d VirtualEnvironment::getLocalAvatarHeadMax()
+{
+	return lAvatar->getHeadMax();
 }
 
 void VirtualEnvironment::initialize(void)
