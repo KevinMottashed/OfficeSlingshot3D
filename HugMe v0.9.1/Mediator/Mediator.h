@@ -114,9 +114,12 @@ public:
 
 	/**
 	 * Provide the appropriate user feedback for when the local player is hit by the slingshot.
+	 * @param hitPart The HumanPart body part hit by the ball
 	 * @param ballPos The position of the ball when the collision was detected
+	 * @param minValue The hit box's minimum value
+	 * @param maxValue The hit box's maximum value
 	 */
-	void collisionDetected(cVector3d ballPos);
+	void collisionDetected(HumanPart hitPart, cVector3d ballPos, cVector3d minValue, cVector3d maxValue);
 
 private:
 	/**

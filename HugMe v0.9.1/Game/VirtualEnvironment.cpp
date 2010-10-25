@@ -138,6 +138,41 @@ cVector3d VirtualEnvironment::getCurrentBallPosition()
 	return peerBalls[(rNumBalls-1) % ball_limit]->getMeshPos();
 }
 
+int VirtualEnvironment::getAvatarHitBodyPart()
+{
+	return lAvatar->getHitBodyPart();
+}
+
+cVector3d VirtualEnvironment::getLocalAvatarChestMin()
+{
+	return lAvatar->getChestMin();
+}
+
+cVector3d VirtualEnvironment::getLocalAvatarChestMax()
+{
+	return lAvatar->getChestMax();
+}
+
+cVector3d VirtualEnvironment::getLocalAvatarRightArmMin()
+{
+	return lAvatar->getRightArmMin();
+}
+
+cVector3d VirtualEnvironment::getLocalAvatarRightArmMax()
+{
+	return lAvatar->getRightArmMax();
+}
+
+cVector3d VirtualEnvironment::getLocalAvatarLeftArmMin()
+{
+	return lAvatar->getLeftArmMin();
+}
+
+cVector3d VirtualEnvironment::getLocalAvatarLeftArmMax()
+{
+	return lAvatar->getLeftArmMax();
+}
+
 void VirtualEnvironment::initialize(void)
 {
 	//**************************************//

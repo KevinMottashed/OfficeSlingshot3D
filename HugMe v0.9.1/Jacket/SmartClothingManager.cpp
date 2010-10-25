@@ -52,17 +52,46 @@ void SmartClothingManager::setPorts(int armBandPort, int jacketPort)
 	m_pDisplayDeviceArmband->setPort(armBandPort);
 }
 
-void SmartClothingManager::vibrate(HumanPart hitPart, cVector3d position)
+void SmartClothingManager::vibrate(HumanPart hitPart, cVector3d position, cVector3d minValue, cVector3d maxValue)
 {
-	// x position coming from the game will be between -0.4 and 0.4
-	// Add 0.4 to have a value from 0 to 0.8 then divide by 0.8 to get a value from 0 to 1
-	double xPos = (position.x + 0.4)/0.8;
+	double xPos = 0.5;
+	double yPos = 0.5;
 
-	// y position coming from the game will be between 0 and 0.8
-	// Divide by 0.8 to get a value from 0 to 1
-	double yPos = position.y/0.8;
+	switch(hitPart){
+	case CHEST:
+		// Take the difference from the position of the collision and the minimum value
+		// Divide by 0.6 to get a value from 0-1
+		xPos = (position.x - minValue.x)/0.6;
 
-	vibrate(CHEST, xPos, yPos, 1000);
+		// y position coming from the game will be between 0 and 0.8
+		// Divide by 0.8 to get a value from 0 to 1
+		yPos = position.y/maxValue.y;
+		break;
+
+	case RIGHT_UPPER_ARM:
+		
+		// Take the difference from the position of the collision and the minimum value
+		// Divide by 0.2 to get a value from 0-1
+		xPos = (position.x - minValue.x)/0.2;
+
+		// y position coming from the game will be between 0 and 0.8
+		// Divide by 0.8 to get a value from 0 to 1
+		yPos = position.y/maxValue.y;
+		break;
+
+	case LEFT_UPPER_ARM:
+		
+		// Take the difference from the position of the collision and the minimum value
+		// Divide by 0.2 to get a value from 0-1
+		xPos = (position.x - minValue.x)/0.2;
+
+		// y position coming from the game will be between 0 and 0.8
+		// Divide by 0.8 to get a value from 0 to 1
+		yPos = position.y/maxValue.y;
+		break;
+	}
+
+	vibrate(hitPart, xPos, yPos, 1000);
 }
 void SmartClothingManager::vibrate(HumanPart touchedPart, double x, double y, int time) 
 {

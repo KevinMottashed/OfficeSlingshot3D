@@ -12,6 +12,8 @@ typedef enum tagHumanPart {
 	CHEST = 0,
 	RIGHT_UPPER_ARM,
 	RIGHT_LOWER_ARM,
+	LEFT_UPPER_ARM,
+	LEFT_LOWER_ARM,
 	TOTAL_NUM_PART
 } HumanPart;
 
@@ -53,8 +55,10 @@ public:
 	 * of the collision detected
 	 * @param hitPart The part of the body where the hit was detected
 	 * @param position The position of the ball at the moment of the collision
+	 * @param minValue The hit box's minimum value
+	 * @param maxValue The hit box's maximum value
 	 */
-	void vibrate(HumanPart hitPart, cVector3d position);
+	void vibrate(HumanPart hitPart, cVector3d position, cVector3d minValue, cVector3d maxValue);
 
 	/**
 	 * Set the armband and jacket ports

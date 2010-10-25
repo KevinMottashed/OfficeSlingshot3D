@@ -115,6 +115,48 @@ public:
 	 */
 	cVector3d getCurrentBallPosition();
 
+	/**
+	 * Get the body part hit by the ball
+	 * @return The HumanPart body part index
+	 */
+	int getAvatarHitBodyPart();
+
+	/**
+	 * Retrieve the chest hit box minimum value from the local avatar object
+	 * @return The local avatar's chest hit box's minimum
+	 */
+	cVector3d getLocalAvatarChestMin();
+
+	/**
+	 * Retrieve the chest hit box maximum value from the local avatar object
+	 * @return The local avatar's chest hit box's maximum
+	 */
+	cVector3d getLocalAvatarChestMax();
+
+	/**
+	 * Retrieve the right arm hit box minimum value from the local avatar object
+	 * @return The local avatar's right arm hit box's minimum
+	 */
+	cVector3d getLocalAvatarRightArmMin();
+
+	/**
+	 * Retrieve the right arm hit box maximum value from the local avatar object
+	 * @return The local avatar's right arm hit box's maximum
+	 */
+	cVector3d getLocalAvatarRightArmMax();
+
+	/**
+	 * Retrieve the left arm hit box minimum value from the local avatar object
+	 * @return The local avatar's left arm hit box's minimum
+	 */
+	cVector3d getLocalAvatarLeftArmMin();
+
+	/**
+	 * Retrieve the left arm hit box maximum value from the local avatar object
+	 * @return The local avatar's left arm hit box's maximum
+	 */
+	cVector3d getLocalAvatarLeftArmMax();
+
 private:
 
 	/**

@@ -212,8 +212,21 @@ void Game::gameLoop()
 			if (environment.isColliding()) 
 			{
 				cVector3d ballPos = environment.getCurrentBallPosition();
-				mediator->collisionDetected(ballPos);
-				environment.reduceLocalHp(1);
+				switch(environment.getAvatarHitBodyPart()) {
+				
+				case CHEST:
+					mediator->collisionDetected(CHEST, ballPos, environment.getLocalAvatarChestMin(), environment.getLocalAvatarChestMax());
+					environment.reduceLocalHp(2);
+					break;
+				case RIGHT_UPPER_ARM:
+					mediator->collisionDetected(RIGHT_UPPER_ARM, ballPos, environment.getLocalAvatarRightArmMin(), environment.getLocalAvatarRightArmMax());
+					environment.reduceLocalHp(1);
+					break;
+				case LEFT_UPPER_ARM:
+					mediator->collisionDetected(LEFT_UPPER_ARM, ballPos, environment.getLocalAvatarLeftArmMin(), environment.getLocalAvatarLeftArmMax());
+					environment.reduceLocalHp(1);
+					break;
+				}
 			}
 		} // release the lock before sleeping
 

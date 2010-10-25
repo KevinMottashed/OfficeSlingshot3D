@@ -43,8 +43,52 @@ public:
 
 	/**
 	 * Returns true if the point is in the balls hit box.
+	 * @param ballPos The position of the ball
+	 * @return True if the ball collided with the local avatar
 	 */
 	bool isInHitBox(cVector3d ballPos);
+
+	/**
+	 * Retrieves the body part hit by the ball
+	 * @return The body part index hit by the ball
+	 */
+	int getHitBodyPart();
+
+	/**
+	 * Retrieve the chest hit box minimum value
+	 * @return The chest hit box's minimum
+	 */
+	cVector3d getChestMin();
+
+	/**
+	 * Retrieve the chest hit box maximum value
+	 * @return The chest hit box's maximum
+	 */
+	cVector3d getChestMax();
+
+	/**
+	 * Retrieve the right arm hit box minimum value
+	 * @return The right arm hit box's minimum
+	 */
+	cVector3d getRightArmMin();
+
+	/**
+	 * Retrieve the right arm hit box maximum value
+	 * @return The right arm hit box's maximum
+	 */
+	cVector3d getRightArmMax();
+
+	/**
+	 * Retrieve the left arm hit box minimum value
+	 * @return The left arm hit box's minimum
+	 */
+	cVector3d getLeftArmMin();
+
+	/**
+	 * Retrieve the left arm hit box maximum value
+	 * @return The left arm hit box's maximum
+	 */
+	cVector3d getLeftArmMax();
 
 private:
 	/**
@@ -68,9 +112,44 @@ private:
 	cVector3d chestMax;
 
 	/**
+	 * The mesh for the right arm hit box.
+	 */
+	cMesh* rArmHitBox;
+
+	/**
+	 * The bottom-left corner of the right arm bounding box 
+	 */
+	cVector3d rArmMin;
+
+	/**
+	 * The top-right corner of the right arm bounding box
+	 */
+	cVector3d rArmMax;
+
+	/**
+	 * The mesh for the left arm hit box.
+	 */
+	cMesh* lArmHitBox;
+
+	/**
+	 * The bottom-left corner of the left arm bounding box 
+	 */
+	cVector3d lArmMin;
+
+	/**
+	 * The top-right corner of the left arm bounding box
+	 */
+	cVector3d lArmMax;
+
+	/**
 	 * True if the avatar belongs to the local player.
 	 */
 	bool isLocal;
+
+	/**
+	 * The body part index hit by the collision
+	 */
+	int hitPart;
 
 	/**
 	 * Creates the vertices associated to the boundary

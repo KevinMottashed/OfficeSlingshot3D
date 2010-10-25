@@ -21,12 +21,24 @@ VirtualAvatar::VirtualAvatar(cWorld* world, cVector3d startingPosition, bool isL
 	avatarMesh->setUseCulling(true, true);
 
 	if(isLocal){
-		chestHitBox = new cMesh(world);
-		chestHitBox->setPos(startingPosition);
 		createBoundaries(startingPosition);
+
+		chestHitBox = new cMesh(world);
+		rArmHitBox = new cMesh(world);
+		lArmHitBox = new cMesh(world);
+
+		chestHitBox->setPos(startingPosition);
 		createMeshCube(chestHitBox, chestMin, chestMax);
 		
+		rArmHitBox->setPos(startingPosition);
+		createMeshCube(rArmHitBox, rArmMin, rArmMax);
+
+		lArmHitBox->setPos(startingPosition);
+		createMeshCube(lArmHitBox, lArmMin, lArmMax);
+		
 		world->addChild(chestHitBox);
+		world->addChild(rArmHitBox);
+		world->addChild(lArmHitBox);
 	}
 }
 
@@ -57,12 +69,24 @@ void VirtualAvatar::translate(double ang)
 	cVector3d prevPos = avatarMesh->getPos();
 	avatarMesh->setPos(ang/75, prevPos.y, prevPos.z);
 
-	chestMin = cVector3d(-0.4+ang/60, chestMin.y, chestMin.z);
-	chestMax = cVector3d(0.4+ang/60, chestMax.y, chestMax.z);
+	chestMin = cVector3d(-0.3+ang/50, chestMin.y, chestMin.z);
+	chestMax = cVector3d(0.3+ang/50, chestMax.y, chestMax.z);
+
+	rArmMin = cVector3d(0.3+ang/50, rArmMin.y, rArmMin.z);
+	rArmMax = cVector3d(0.5+ang/50, rArmMax.y, rArmMax.z);
+
+	lArmMin = cVector3d(-0.5+ang/50, lArmMin.y, lArmMin.z);
+	lArmMax = cVector3d(-0.3+ang/50, lArmMax.y, lArmMax.z);
 
 	if(isLocal){
 		cVector3d prevChestPos = chestHitBox->getPos();
-		chestHitBox->setPos(ang/60, prevChestPos.y, prevChestPos.z);
+		chestHitBox->setPos(ang/50, prevChestPos.y, prevChestPos.z);
+
+		cVector3d prevRArmPos = rArmHitBox->getPos();
+		rArmHitBox->setPos(ang/50, prevRArmPos.y, prevRArmPos.z);
+
+		cVector3d prevLArmPos = lArmHitBox->getPos();
+		lArmHitBox->setPos(ang/50, prevLArmPos.y, prevLArmPos.z);
 	}
 }
 
@@ -88,15 +112,71 @@ void VirtualAvatar::updateBoundaries(double ang, cVector3d position)
 
 bool VirtualAvatar::isInHitBox(cVector3d ballPos)
 {
-	return ((chestMin.x < ballPos.x) && (chestMax.x > ballPos.x) &&
+	if (((chestMin.x < ballPos.x) && (chestMax.x > ballPos.x) &&
 			(chestMin.y < ballPos.y) && (chestMax.y > ballPos.y) &&
-			(chestMin.z < ballPos.z) && (chestMax.z > ballPos.z));
+			(chestMin.z < ballPos.z) && (chestMax.z > ballPos.z))) {
+		// CHEST = 0
+		hitPart = 0;
+		return true;
+	} else if (((rArmMin.x < ballPos.x) && (rArmMax.x > ballPos.x) &&
+			(rArmMin.y < ballPos.y) && (rArmMax.y > ballPos.y) &&
+			(rArmMin.z < ballPos.z) && (rArmMax.z > ballPos.z))) {
+		hitPart = 1;
+		return true;
+	} else if (((lArmMin.x < ballPos.x) && (lArmMax.x > ballPos.x) &&
+			(lArmMin.y < ballPos.y) && (lArmMax.y > ballPos.y) &&
+			(lArmMin.z < ballPos.z) && (lArmMax.z > ballPos.z))) {
+		hitPart = 3;
+		return true;
+	}
+	return false;
 }
 
 void VirtualAvatar::createBoundaries(cVector3d startingPosition)
 {
-	chestMax = startingPosition + cVector3d(0.4, 0.8, 0.4);
-	chestMin = startingPosition + cVector3d(-0.4, 0.0, -0.4);
+	chestMax = startingPosition + cVector3d(0.3, 0.8, 0.4);
+	chestMin = startingPosition + cVector3d(-0.3, 0.0, -0.4);
+
+	rArmMax = startingPosition + cVector3d(0.5, 0.8, 0.4);
+	rArmMin = startingPosition + cVector3d(0.3, 0.0, -0.4);
+
+	lArmMax = startingPosition + cVector3d(-0.3, 0.8, 0.4);
+	lArmMin = startingPosition + cVector3d(-0.5, 0.0, -0.4);
+}
+
+int VirtualAvatar::getHitBodyPart()
+{
+	return hitPart;
+}
+
+cVector3d VirtualAvatar::getChestMin()
+{
+	return chestMin;
+}
+
+cVector3d VirtualAvatar::getChestMax()
+{
+	return chestMax;
+}
+
+cVector3d VirtualAvatar::getRightArmMin()
+{
+	return rArmMin;
+}
+
+cVector3d VirtualAvatar::getRightArmMax()
+{
+	return rArmMax;
+}
+
+cVector3d VirtualAvatar::getLeftArmMin()
+{
+	return lArmMin;
+}
+
+cVector3d VirtualAvatar::getLeftArmMax()
+{
+	return lArmMax;
 }
 
 void VirtualAvatar::createMeshCube(cMesh* a_mesh, cVector3d minVector, cVector3d maxVector)
