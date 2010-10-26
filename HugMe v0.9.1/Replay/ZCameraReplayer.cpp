@@ -54,3 +54,8 @@ void ZCameraReplayer::stopCapture()
 	return;
 }
 
+void ZCameraReplayer::resetPosition()
+{
+	return;
+}
+

@@ -194,7 +194,7 @@ void Game::reset()
 		gameThread->interrupt();
 		gameThread->join();
 		gameThread.reset();
-		environment.resetHp();
+		environment.resetAll();
 	}
 
 	return;

@@ -74,12 +74,13 @@ public:
 
 
 	/**
-	 * Resets the hit points of both players
+	 * Resets all the environment objects
 	 */
-	void resetHp();
+	void resetAll();
 
 	/**
 	 * Check if the local player has no more HP
+	 * @return True if local player has no more HP
 	 */
 	bool isLocalPlayerDead();
 

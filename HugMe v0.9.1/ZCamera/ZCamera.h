@@ -33,6 +33,11 @@ public:
 	 * Stop the thread that's capturing frames from the camera
 	 */
 	virtual void stopCapture();
+
+	/**
+	 * Reset the camera's position
+	 */
+	virtual void resetPosition();
 	
 	/**
 	 * Camera loop that fetches frames and player position.

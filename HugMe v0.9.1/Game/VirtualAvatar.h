@@ -96,6 +96,13 @@ public:
 	 */
 	cVector3d getHeadMax();
 
+	/**
+	 * Resets the avatar to its starting position
+	 * @param startingPosition The avatar's starting position within the world
+	 * @param isLocal True if the avatar is the local one
+	 */
+	void resetPosition(cVector3d startingPosition, bool isLocal);
+
 private:
 	/**
 	 * The mesh that displays the avatar.

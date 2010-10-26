@@ -229,6 +229,19 @@ cVector3d VirtualAvatar::getHeadMax()
 	return headMax;
 }
 
+void VirtualAvatar::resetPosition(cVector3d startingPosition, bool isLocal)
+{
+	avatarMesh->setPos(startingPosition);
+	createBoundaries(startingPosition);
+
+	if(isLocal) {
+		chestHitBox->setPos(startingPosition);
+		rArmHitBox->setPos(startingPosition);
+		lArmHitBox->setPos(startingPosition);
+		headHitBox->setPos(startingPosition);
+	}
+}
+
 void VirtualAvatar::createMeshCube(cMesh* a_mesh, cVector3d minVector, cVector3d maxVector)
 {
     int vertices [6][6];

@@ -25,6 +25,11 @@ void KeyboardZCamera::stopCapture()
 	reporting = false;
 }
 
+void KeyboardZCamera::resetPosition()
+{
+	position = World::local_avatar_starting_position;
+}
+
 void KeyboardZCamera::keyPressed(unsigned int key)
 {
 	// make sure mediator wants the input (game started)
