@@ -54,3 +54,8 @@ cVector3d VirtualBall::getMeshPos()
 {
 	return odeBall->getPos();
 }
+
+void VirtualBall::reset()
+{
+	odeBall->setShowEnabled(false);
+}

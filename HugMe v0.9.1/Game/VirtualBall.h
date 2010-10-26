@@ -51,6 +51,11 @@ public:
 	 */
 	void collided();
 
+	/**
+	 * Resets the ball by disabling it
+	 */
+	void reset();
+
 private:
 	/**
 	 * The mesh that represents the ball.

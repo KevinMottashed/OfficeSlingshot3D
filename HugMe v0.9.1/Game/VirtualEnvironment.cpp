@@ -129,8 +129,19 @@ void VirtualEnvironment::resetAll()
 {
 	rHpBar->ResetHp();
 	lHpBar->ResetHp();
+
 	lAvatar->resetPosition(World::local_avatar_starting_position, true);
 	rAvatar->resetPosition(World::peer_avatar_starting_position, false);
+
+	foreach (VirtualBall*& odeBall, localBalls)
+	{
+		odeBall->reset();
+	}
+
+	foreach (VirtualBall*& odeBall, peerBalls)
+	{
+		odeBall->reset();
+	}
 
 	return;
 }
