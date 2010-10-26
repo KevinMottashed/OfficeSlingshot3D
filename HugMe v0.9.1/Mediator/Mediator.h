@@ -124,7 +124,7 @@ public:
 	/**
 	 * Displays lose screen and sends GAME_OVER to peer
 	 */
-	void localPlayerLost();
+	void playerLost(Player_t player);
 
 private:
 	/**

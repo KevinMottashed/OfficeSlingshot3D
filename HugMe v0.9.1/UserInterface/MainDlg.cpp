@@ -430,6 +430,31 @@ void CMainDlg::displayLocalChatMessage(const std::string& message)
 	return;
 }
 
+void CMainDlg::displayGameOver(Player_t player)
+{
+	// construct message
+	ostringstream os;
+	if (player == Player::LOCAL)
+	{
+		os << m_preferences.name;
+	}
+	else
+	{
+		os << m_peerUserName;
+	}
+	os << " has won the game";
+
+	// add feedback message on the text area
+	AddChatContent(os.str().c_str());
+
+	// change state of game buttons
+	CMenu* pMenu = GetMenu();
+	pMenu->EnableMenuItem(ID_GAME_STARTGAME, MF_ENABLED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_EXITGAME, MF_GRAYED | MF_BYCOMMAND);
+	pMenu->EnableMenuItem(ID_GAME_PAUSEGAME, MF_GRAYED | MF_BYCOMMAND);
+	return;	
+}
+
 void CMainDlg::camera(cCamera* camera)
 {
 	m_oglWindow->camera(camera);

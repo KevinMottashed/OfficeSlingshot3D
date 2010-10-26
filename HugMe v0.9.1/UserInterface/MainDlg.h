@@ -74,6 +74,12 @@ public:
 	void displayLocalChatMessage(const std::string& message);
 
 	/**
+	 * Update the user interface to display game over.
+	 * @param player The player that has won the game.
+	 */
+	void displayGameOver(Player_t player);
+
+	/**
 	 * Update the peers user name.
 	 * @param name The new name.
 	 */

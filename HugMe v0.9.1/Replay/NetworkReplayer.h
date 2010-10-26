@@ -139,6 +139,13 @@ public:
 	virtual rc_network sendSlingshotRelease();
 
 	/**
+	 * Send a game over message to the peer.
+	 * The replayer won't actually do anything, this is just to implement the network interface.
+	 * @return SUCCESS
+	 */
+	virtual rc_network sendGameOver();
+
+	/**
 	 * Determines if we are connected to a peer
 	 * @return true if we are connected to a peer
 	 */	

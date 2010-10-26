@@ -190,6 +190,11 @@ rc_network NetworkReplayer::sendSlingshotRelease()
 	return SUCCESS;
 }
 
+rc_network NetworkReplayer::sendGameOver()
+{
+	return SUCCESS;
+}
+
 bool NetworkReplayer::isConnected() const
 {
 	return connectionState == ConnectionState::CONNECTED;

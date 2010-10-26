@@ -119,6 +119,12 @@ void MFCUserInterface::displayRemoteFrame(const VideoData& video)
 	return;
 }
 
+void MFCUserInterface::displayGameOver(Player_t player)
+{
+	m_pMainDlg->displayGameOver(player);
+	return;
+}
+
 void MFCUserInterface::setPeerUserName(const std::string& name)
 {
 	m_pMainDlg->setPeerUserName(name);

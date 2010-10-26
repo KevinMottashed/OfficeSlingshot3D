@@ -84,6 +84,11 @@ void Logger::update(NetworkUpdateContext context, const void *data)
 			log(LogEvent::NETWORK_PLAYER_POSITION, *(cVector3d*) data);
 			break;
 		}
+		case RECEIVED_GAME_OVER:
+		{
+			log(LogEvent::NETWORK_GAME_OVER);
+			break;
+		}
 	}
 	return;
 }

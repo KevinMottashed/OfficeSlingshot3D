@@ -118,6 +118,12 @@ void Game::update(MediatorUpdateContext_t context, const void* data)
 			environment.movePeerAvatar(*(cVector3d*) data);
 			break;
 		}
+		case MediatorUpdateContext::PEER_LOST:
+		{
+			mediator->switchCamera(winScreen.camera());
+			reset();
+			break;
+		}
 	}
 }
 
@@ -192,7 +198,12 @@ void Game::reset()
 	{
 		// kill the thread
 		gameThread->interrupt();
-		gameThread->join();
+		
+		// The join should be uncommented but it causes issues.
+		// We would need to add an update handler thread to uncomment this.
+		// TODO: kevin, add the update handler.
+		//gameThread->join();
+
 		gameThread.reset();
 		environment.resetAll();
 	}
@@ -231,10 +242,14 @@ void Game::gameLoop()
 					environment.reduceLocalHp(3);
 					break;
 				}
+				
 				//Check if the local player is dead, if he is, we notify the mediator and change camera to loseScreen
-				if (environment.isLocalPlayerDead()){
+				if (environment.isLocalPlayerDead())
+				{					
+					mediator->playerLost(Player::LOCAL);
 					mediator->switchCamera(loseScreen.camera());
-					mediator->localPlayerLost();
+					reset();
+					return;
 				}
 			}
 		} // release the lock before sleeping

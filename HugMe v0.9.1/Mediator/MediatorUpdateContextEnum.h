@@ -25,6 +25,7 @@ enum MediatorUpdateContextEnum
 	LOCAL_AVATAR_MOVED,
 	PEER_AVATAR_MOVED,
 	NETWORK_DISCONNECTED,
+	PEER_LOST,
 };
 
 }

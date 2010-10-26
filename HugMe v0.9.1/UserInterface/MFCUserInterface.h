@@ -88,6 +88,12 @@ public:
 	 */
 	virtual void displayRemoteFrame(const VideoData& video);
 
+	/**
+	 * Update the user interface to display game over.
+	 * @param player The player that has won the game.
+	 */
+	virtual void displayGameOver(Player_t player);
+
 	//-----------------------------------------------
 	// Notifications coming from the user interface
 	//-----------------------------------------------

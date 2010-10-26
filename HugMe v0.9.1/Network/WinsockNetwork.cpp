@@ -672,6 +672,13 @@ rc_network WinsockNetwork::sendSlingshotPullback()
 	return syncSendDataMessage(packet);
 }
 
+rc_network WinsockNetwork::sendGameOver()
+{
+	DataPacket packet;
+	packet.write(DATA_PACKET_GAME_OVER);
+	return syncSendDataMessage(packet);
+}
+
 bool WinsockNetwork::isConnected() const
 {
 	return getConnectionState() == ConnectionState::CONNECTED;
@@ -796,6 +803,11 @@ void WinsockNetwork::handleDataMessage(const DataPacket& message)
 		case DATA_PACKET_SLINGSHOT_PULLBACK:
 		{
 			notify(RECEIVED_PULLBACK);
+			break;
+		}
+		case DATA_PACKET_GAME_OVER:
+		{
+			notify(RECEIVED_GAME_OVER);
 			break;
 		}
 		case DATA_PACKET_UNKNOWN:

@@ -230,6 +230,11 @@ void Mediator::update(NetworkUpdateContext context, const void* data)
 			notify(MediatorUpdateContext::PEER_AVATAR_MOVED, &adjusted);
 			break;
 		}
+		case RECEIVED_GAME_OVER:
+		{
+			playerLost(Player::PEER);
+			break;
+		}
 		default:
 		{
 			// All updates should be handled
@@ -460,11 +465,20 @@ void Mediator::collisionDetected(HumanPart hitPart, cVector3d ballPos, cVector3d
 	return;
 }
 
-void Mediator::localPlayerLost()
+void Mediator::playerLost(Player_t player)
 {
-	audio.playGameOverLost();
-	//TODO: network->notifyGameOver();
-	//Stop the game
+	if (player == Player::LOCAL)
+	{
+		audio.playGameOverLost();
+		network->sendGameOver();
+	}	
+	else
+	{
+		audio.playGameOverWon();			
+		notify(MediatorUpdateContext::PEER_LOST);
+	}
+	userInterface->displayGameOver(player);
+	stopDevices();
 	return;
 }
 
