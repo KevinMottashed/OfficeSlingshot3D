@@ -117,5 +117,11 @@ HugMe v0.9.1/Debug/Chat.lib
 # Test results
 TestResults.txt
 
+# Annoying analysis files that always show up as modified
+HugMe v0.9.1/analysis/cccc/out/BOOL.html
+HugMe v0.9.1/analysis/cccc/out/BOOL.xml
+HugMe v0.9.1/analysis/cccc/out/bool.html
+HugMe v0.9.1/analysis/cccc/out/bool.xml
+
 # Office Slingshot 3D - END
 
