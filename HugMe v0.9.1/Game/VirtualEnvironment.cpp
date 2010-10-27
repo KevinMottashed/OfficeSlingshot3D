@@ -30,17 +30,19 @@ void VirtualEnvironment::updateFrame()
 
 bool VirtualEnvironment::isColliding()
 {
-	if (!peerBalls[(rNumBalls-1) % ball_limit]->getAlreadyCollided()) {
-		cVector3d ballPos = peerBalls[(rNumBalls-1) % ball_limit]->getMeshPos();
-		bool collided = lAvatar->isInHitBox(ballPos);
+	foreach (VirtualBall*& odeBall, peerBalls)
+	{
+		if (!odeBall->getAlreadyCollided()) {
+			cVector3d ballPos = odeBall->getMeshPos();
+			bool collided = lAvatar->isInHitBox(ballPos);
 
-		if(collided) {
-			peerBalls[(rNumBalls-1) % ball_limit]->collided();
+			if(collided) {
+				odeBall->collided();
+			}
+			return collided;
 		}
-		return collided;
-	} else {
-		return false;
 	}
+	return false;
 }
 
 cCamera* VirtualEnvironment::camera()

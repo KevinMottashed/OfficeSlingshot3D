@@ -91,9 +91,7 @@ void Mediator::exitGame(Player_t player)
 		}
 	}
 
-	falcon->stopPolling();
-	zcamera->stopCapture();
-	zcamera->resetPosition();
+	stopDevices();
 	userInterface->displayGameStateChanged(GameState::NOT_RUNNING, player);
 	audio.stopBGMusic();
 	return;
@@ -567,5 +565,6 @@ void Mediator::stopDevices()
 {
 	falcon->stopPolling();
 	zcamera->stopCapture();
+	zcamera->resetPosition();
 	return;
 }
