@@ -30,6 +30,8 @@ void AudioTestSuite::run()
 	UNIT_TEST(testPlayGameStart);
 	UNIT_TEST(testPlayGameOverWon);
 	UNIT_TEST(testPlayGameOverLost);
+	UNIT_TEST(testMute);
+	UNIT_TEST(testVolumeAdjust);
 }
 
 void AudioTestSuite::testAfterburn()
@@ -140,4 +142,29 @@ void AudioTestSuite::testPlayGameOverLost()
 
 	// 5 seconds should be enough to hear the whole sound
 	Sleep(5000);
+}
+
+void AudioTestSuite::testMute()
+{
+	// play music, mute then unmute
+	Audio audio;
+	audio.playBGMusic();
+	Sleep(5000);
+	audio.mute();
+	Sleep(5000);
+	audio.unmute();
+	Sleep(5000);
+	return;
+}
+
+void AudioTestSuite::testVolumeAdjust()
+{
+	Audio audio;
+	audio.playBGMusic();
+	Sleep(5000);
+	audio.volume(0.5f);
+	Sleep(5000);
+	audio.volume(0.3f);
+	Sleep(5000);
+	return;
 }

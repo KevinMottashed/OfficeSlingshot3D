@@ -93,6 +93,16 @@ private:
 	 * Test playing the game over lost sound
 	 */
 	void testPlayGameOverLost();
+
+	/**
+	 * Test mute/unmute.
+	 */
+	void testMute();
+
+	/**
+	 * Test volume adjust.
+	 */
+	void testVolumeAdjust();
 };
 
 #endif

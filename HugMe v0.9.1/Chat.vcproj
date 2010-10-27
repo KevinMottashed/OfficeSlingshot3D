@@ -1092,6 +1092,14 @@
 				RelativePath=".\Audio\AudioProxy.h"
 				>
 			</File>
+			<File
+				RelativePath=".\Audio\Sound.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Audio\Sound.h"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Keyboard"

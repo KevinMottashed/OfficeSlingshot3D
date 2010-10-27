@@ -1,9 +1,13 @@
 #ifndef AUDIO_H
 #define AUDIO_H
 
+#include "stdafx.h"
 #include "FMOD.hpp"
 
+#include "Sound.h"
+
 /**
+ * @ingroup Audio
  * Manages everything audio related.
  */
 class Audio
@@ -56,6 +60,22 @@ public:
 	 */
 	void playGameOverLost();
 
+	/**
+	 * Mute all audio
+	 */
+	void mute();
+
+	/**
+	 * Unmute all audio
+	 */
+	void unmute();
+
+	/**
+	 * Set the volume level.
+	 * @param level 0 for minimum, 1 for maximum
+	 */
+	void volume(float level);
+
 private:
 	
 	/**
@@ -76,40 +96,12 @@ private:
 	 */
 	FMOD::System* system;
 
-	/**
-	 * The sound when a player gets hit.
-	 */
-	FMOD::Sound* hitSound;
-
-	/**
-	 * The sound when a slingshot is fired.
-	 */
-	FMOD::Sound* slingshotFiredSound;
-
-	/**
-	 * The announcer when the game starts "round 1 .. fight!"
-	 */
-	FMOD::Sound* round1Sound;
-
-	/**
-	 * The background music, currently doom3 theme
-	 */
-	FMOD::Sound* bgMusicSound;
-
-	/**
-	 * The channel on which the background music is playing
-	 */
-	FMOD::Channel* bgMusicChannel;
-
-	/**
-	 * The announcer for when the game is won
-	 */
-	FMOD::Sound* gameWonSound;
-
-	/**
-	 * The announcer for when the game is lost
-	 */
-	FMOD::Sound* gameLostSound;
+	std::auto_ptr<Sound> hitSound; /**< The sound when a player gets hit. */
+	std::auto_ptr<Sound> slingshotFiredSound; /**< The sound when a slingshot is fired. */
+	std::auto_ptr<Sound> round1Sound; /**< The announcer when the game starts "round 1 .. fight!" */
+	std::auto_ptr<Sound> bgMusicSound; /**< The background music, currently doom3 theme */
+	std::auto_ptr<Sound> gameWonSound; /**< The announcer for when the game is won */
+	std::auto_ptr<Sound> gameLostSound; /**< The announcer for when the game is lost */
 };
 
 #endif
