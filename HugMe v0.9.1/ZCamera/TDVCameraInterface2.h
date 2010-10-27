@@ -50,7 +50,7 @@ public:
 	 * Retrieve the camera command limits
 	 * @param cmdID The camera command ID
 	 * @param minValue The minimal value of the camera command
-	 * @param minValue The maximal value of the camera command
+	 * @param maxValue The maximal value of the camera command
 	 */
 	virtual HRESULT	getCameraCommandLimits(int cmdID, int &minValue, int &maxValue) const = 0;
 
@@ -62,8 +62,8 @@ public:
 	virtual HRESULT getVideoBuffer(int bufferType, unsigned char*& pBuffer) = 0;
 
 	/**
-	 * Changing the color camera settings. for changing on\off parameters use 
-	 * value 1\0 correspondingly.
+	 * Changing the color camera settings. for changing on or off parameters use 
+	 * value 1 or 0 correspondingly.
 	 * valid only for ZSense camera
 	 * @param iColorCommandID The command for the color camera setting
 	 * @param iValue The value of the command
@@ -279,61 +279,61 @@ public:
 	int	 getBinVal() const;
 
 	/**
-	 * Binarize the depth image (on\off)
+	 * Binarize the depth image (on or off)
 	 * @param value True to enable the depth image
 	 */
 	void cmdBinarizeOnOff(bool value);
 
 	/**
-	 * Is binarization on\off
+	 * Is binarization on or off
 	 * @return true if binarization is on
 	 */
 	bool getBinarizeOnOff() const;
 	
 	/**
-	 * Turn median filter on\off
+	 * Turn median filter on or off
 	 * @param value True to turn median filter on
 	 */
 	void cmdMedianOnOff(bool value);
 
 	/**
-	 * Is median filter on\off
+	 * Is median filter on or off
 	 * @return true if median filtering is on
 	 */
 	bool getMedianOnOff() const;
 
 	/**
-	 * Invert the depth video (on\off)
+	 * Invert the depth video (on or off)
 	 * @param value True to invert the depth video
 	 */
 	void cmdInvertOnOff(bool value);
 
 	/**
-	 * Is the depth image inverted (on\off)
+	 * Is the depth image inverted (on or off)
 	 * @return true if the depth image is inverted
 	 */
 	bool getInvertOnOff() const;
 
 	/**
-	 * Turn the temporal filter on\off
+	 * Turn the temporal filter on or off
 	 * @param value True to turn the temporal filter on
 	 */
 	void cmdTemporalFilterOnOff(bool value);
 
 	/**
-	 * Is the temporal filter on\off
+	 * Is the temporal filter on or off
 	 * @return true if temporal filter is on
 	 */
 	bool getTemporalFilterOnOff() const;
 
 	/**
-	 * Turn the depth smooth filter on\off
+	 * Turn the depth smooth filter on or off
 	 * @param value True to enable depth smooth filter
 	 */
 	void cmdSmoothOnOff(bool value);
 
 	/**
-	 * Is the depth smooth filter on\off
+	 * Is the depth smooth filter on or off
 	 * @return true if depth smooth filter is on
 	 */
 	bool getSmoothOnOff() const;
@@ -351,13 +351,13 @@ public:
 	int  getSoftness() const;
 
 	/**
-	 * Turn the mask smooth filter on\off
+	 * Turn the mask smooth filter on or off
 	 * @param value True to enable mask smooth filter
 	 */
 	void cmdMaskSmoothOnOff(bool value);
 
 	/**
-	 * Is the mask smooth filter on\off
+	 * Is the mask smooth filter on or off
 	 * @return true is mask smooth filter is on
 	 */
 	bool getMaskSmoothOnOff() const;
@@ -375,7 +375,7 @@ public:
 	int  getMaskSoftness() const;
 
 	/**
-	 * Turn the automatic background options on\off
+	 * Turn the automatic background options on or off
 	 * @param value True to turn automatic background options on
 	 */
 	void cmdAutomaticBackgroundOnOff(bool value);
@@ -387,7 +387,7 @@ public:
 	bool getAutomaticBackground();
 
 	/**
-	 * Turn the automatic depth positions for secondary window on\off
+	 * Turn the automatic depth positions for secondary window on or off
 	 * @param value True to enable automatic depth positions for secondary window
 	 */
 	void cmdAutomaticDepthPositionOnOff(bool value);
@@ -445,19 +445,19 @@ public:
 	void cmdAutomaticTracking(bool state);
 
 	/**
-	 * Is the automatic tracking option on\off
+	 * Is the automatic tracking option on or off
 	 * @return true if automatic tracking is on
 	 */
 	bool isAutomaticTrackingOn() const;
 
 	/**
-	 * Turn automatic brightness on/off
+	 * Turn automatic brightness on or off
 	 * @param state True to enable automatic brightness
 	 */
 	void cmdAutomaticBrightness(bool state);
 
 	/**
-	 * Is the automatic brightness turned on\off
+	 * Is the automatic brightness turned on or off
 	 * @return true if automatic brightness is on
 	 */
 	bool isAutomaticBrightnessOn() const;
@@ -496,7 +496,7 @@ public:
 	void cmdVideoFreeze(bool state, bool useAverage = false);
 
 	/**
-	 * Enable\disable RGB processing. Saves CPU power when the RGB
+	 * Enable or disable RGB processing. Saves CPU power when the RGB
 	 * is not needed.
 	 * @param status True to enable RGB processing
 	 */
@@ -509,7 +509,7 @@ public:
 	bool getRGBProcessing() const;
 	
 	/**
-	 * Enable\disable Confidence map processing. When enabled, you also receive
+	 * Enable or disable Confidence map processing. When enabled, you also receive
 	 * a frame for each depth frame containing confidence levels per pixel.
 	 * the higher the value is, the more accurate the corresponding 
 	 * depth level is.
@@ -525,7 +525,7 @@ public:
 	bool getConfidenceMapProcessing() const;
 
 	/**
-	 * Enable\disable IR input source transfer for processing by the SDK user
+	 * Enable or disable IR input source transfer for processing by the SDK user
 	 * @param status True to enable IR input source transfer
 	 */
 	void cmdIRTransfer(bool status);
@@ -537,7 +537,7 @@ public:
 	bool getIRTransfer() const;
 
 	/**
-	 * Enable\disable full resolution rgb transfer for processing by the SDK user
+	 * Enable or disable full resolution rgb transfer for processing by the SDK user
 	 * @param status True to enable full resolution RGB transfer
 	 */
 	void cmdRGBFullRes(bool status);
@@ -553,7 +553,7 @@ public:
 	 * confidence map. Will contain valid data only after calling 
 	 * cmdConfidenceMapProcessing(true)
 	 * @param pConfidence A reference to the confidence map
-	 * @ return true if successful
+	 * @return true if successful
 	 */
 	bool getConfidenceFrame(unsigned char* &pConfidence);
 

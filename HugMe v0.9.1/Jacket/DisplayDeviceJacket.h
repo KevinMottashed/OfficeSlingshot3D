@@ -54,7 +54,7 @@ public:
 	/**
 	 * Actuates the neck actuators at the given coordinates
 	 * @param a_actX The x value
-	 * @param a_actY The y value
+	 * @param a_intensity The intensity
 	 */
 	void setActNeck(int a_actX, double a_intensity);
 

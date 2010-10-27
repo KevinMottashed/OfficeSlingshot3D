@@ -204,7 +204,7 @@ public:
 
 	/**
 	 * It is possible to get full resolution RGB even when working in low resolution IR.
-	 * The width\height\pixel size can be retrieved using getRGBFullResSize
+	 * The width, height and pixel size can be retrieved using getRGBFullResSize
 	 * @param width The full resolution with
 	 * @param height The full resolution height
 	 * @param rgbPixelSize The pixel size for the RGB info
@@ -231,7 +231,7 @@ public:
 	/**
 	 * Get the value range for specific camera parameter (cmdID = CMD_*****)
 	 * @param cmdID The command ID
-	 * @param value The value of the command
+	 * @param minValue ue The value of the command
 	 * @param maxValue The maximum allowed value
 	 * @return 1 if successful
 	 */

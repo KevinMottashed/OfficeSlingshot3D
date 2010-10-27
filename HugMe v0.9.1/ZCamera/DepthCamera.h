@@ -40,6 +40,7 @@ class CDepthCamera
 	 * @param pDepthBuf The depth buffer
 	 * @param pRgbBuf The RGB buffer
 	 * @param bufIndex The buffer index
+	 * @param pObject The object for the callback
 	 */
 	friend void videoCallBack(unsigned char * pDepthBuf, unsigned char * pRgbBuf, 
 							  int bufIndex, void* pObject);
@@ -48,6 +49,7 @@ class CDepthCamera
 	 * Define the command callback as friend functions, 
 	 * to enable full access to CDepthCamera object
 	 * @param cmd The command
+	 * @param pObject an object for the callback
 	 */
 	friend void cmdCallBack(int cmd, void* pObject);
 
@@ -105,8 +107,8 @@ public:
 	int GetMaxAllowedWidth() const;
 
 	/**
-	 * @et the depth range manually. This function chooses default settings
-	 * that will best fit the distance\width specified
+	 * Get the depth range manually. This function chooses default settings
+	 * that will best fit the distance and width specified
 	 * the depth range will be between distance and distance+width, measured in centemeters
 	 * @param distance The distance from the camera
 	 * @param width The width
@@ -114,8 +116,8 @@ public:
 	void SetDepthWindowPosition(int distance, int width);
 
 	/**
-	 * Get the depth range distance\width
-	 * the depth range will be between distance and distance+width, measured in centemeters
+	 * Get the depth range distance and width
+	 * the depth range will be between distance and distance and width, measured in centemeters
 	 * @param distance The distance from the camera
 	 * @param width The width
 	 */
@@ -130,7 +132,7 @@ public:
 	void FindObjectUsingWidth(int depthWidth);
 
 	/**
-	 * Enable\disable the transfer of RGB in 640x480 resolution. 
+	 * Enable or disable the transfer of RGB in 640x480 resolution. 
 	 * When enabled, this consumes more CPU
 	 * @param enable True to enable RGB
 	 */
@@ -143,7 +145,7 @@ public:
 	bool IsRGBFullResolutionEnabled() const;
 
 	/**
-	 * enable\disable the transfer of IR Video (Primary and secondary IR).
+	 * Enable or disable the transfer of IR Video (Primary and secondary IR).
 	 * When enabled, this consumes more CPU
 	 * @param enable True to enable IR video
 	 */
@@ -170,7 +172,7 @@ public:
 	bool IsWideDepthModeEnabled() const;
 
 	/**
-	 * enable\disable the "smooth" filter. also set the filter's intensity
+	 * Enable or disable the "smooth" filter. also set the filter's intensity
 	 * @param enable True to enable "smooth" filter
 	 * @param intensity The intensity. 25 by default
 	 */
@@ -218,7 +220,8 @@ public:
 
 	/**
 	 * Enables smoothing
-	 * @param enable True to enable smoothing
+	 * @param enable true to enable smoothing
+	 * @param smoothVal The new value for smoothing
 	 */
 	void EnableSmoothing(bool enable, double smoothVal);
 

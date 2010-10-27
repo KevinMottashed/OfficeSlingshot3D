@@ -26,9 +26,9 @@ class CMainDlg : public CDialog
 public:
 	/**
 	 * Contructor.
-	 * @param user interface class.
-	 * @param preferences.
-	 * @param parent dialog NULL in our case.
+	 * @param pUserInterface The user interface class.
+	 * @param preferences The user preferences.
+	 * @param pParent The parent dialog NULL in our case.
 	 */
 	CMainDlg(UserInterface* pUserInterface, const UserPreferences& preferences, CWnd* pParent = NULL);   // standard constructor
 

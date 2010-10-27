@@ -13,7 +13,7 @@ public:
 	 * Contructor.
 	 * @param world The chai3d world to which the avatar belongs.
 	 * @param startingPosition The avatar's position.
-	 * @param true if the avatar is the local avatar.
+	 * @param isLocal True if the avatar is the local avatar.
 	 */
 	VirtualAvatar(cWorld* world, cVector3d startingPosition, bool isLocal);
 
