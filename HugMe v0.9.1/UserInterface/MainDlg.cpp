@@ -437,12 +437,13 @@ void CMainDlg::displayGameOver(Player_t player)
 	if (player == Player::LOCAL)
 	{
 		os << m_preferences.name;
+		os << " has lost the game";
 	}
 	else
 	{
 		os << m_peerUserName;
-	}
-	os << " has won the game";
+		os << " has won the game";
+	}	
 
 	// add feedback message on the text area
 	AddChatContent(os.str().c_str());
