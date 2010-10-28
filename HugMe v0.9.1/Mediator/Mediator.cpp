@@ -50,16 +50,12 @@ void Mediator::startGame(Player_t player)
 		if (error != SUCCESS)
 		{
 			handleNetworkError(error);
-		}
-
-		// TODO move this to out of this if statement so that music plays for both players
-		// For now it is here so that when we test 2 instances on one pc we wont hear 2 copies
-		// of the background music.
-		// This can be moved over once we add a mute option.
-		// play background music and "round 1 fight"
-		audio.playGameStart();
-		//audio.playBGMusic();
+		}		
 	}
+
+	// play background music and "round 1 fight"
+	audio.playGameStart();
+	//audio.playBGMusic();
 
 	falcon->startPolling();
 	zcamera->startCapture();
@@ -121,13 +117,11 @@ void Mediator::fireSlingshot(Projectile projectile, Player_t player)
 		{
 			handleNetworkError(error);
 			return;
-		}
-
-		// Play the slingshot fired sound
-		// Only for local player till mute option
-		audio.playSlingshotFired();
+		}		
 	}
 
+	// Play the slingshot fired sound		
+	audio.playSlingshotFired();
 	return;
 }
 
