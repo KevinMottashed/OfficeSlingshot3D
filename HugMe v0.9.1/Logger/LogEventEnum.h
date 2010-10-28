@@ -45,6 +45,7 @@ namespace LogEvent
 		// Falcon events (200-299)
 		START_FALCON = END_UI,
 		FALCON_SLINGSHOT_POSITION = START_FALCON,
+		FALCON_SLINGSHOT_FIRED,
 		END_FALCON = 300,
 
 		// ZCam events (300-399)

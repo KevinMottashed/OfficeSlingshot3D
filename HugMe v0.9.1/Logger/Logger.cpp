@@ -164,6 +164,11 @@ void Logger::update(FalconUpdateContext context, const void* data)
 			log(LogEvent::FALCON_SLINGSHOT_POSITION, *(cVector3d*) data);
 			break;
 		}
+		case SLINGSHOT_FIRED:
+		{
+			log(LogEvent::FALCON_SLINGSHOT_FIRED);
+			break;
+		}
 	}
 	return;
 }

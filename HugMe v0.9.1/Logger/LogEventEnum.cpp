@@ -55,6 +55,8 @@ std::string LogEvent::lookup(LogEvent::LogEventEnum logEvent)
 		return "UI - chat message";
 	case LogEvent::FALCON_SLINGSHOT_POSITION:
 		return "Falcon - slingshot position";
+	case LogEvent::FALCON_SLINGSHOT_FIRED:
+		return "Falcon - slingshot fired";
 	case LogEvent::ZCAM_VIDEO_DATA:
 		return "ZCam - video data";
 	default:

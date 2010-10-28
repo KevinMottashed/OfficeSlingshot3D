@@ -31,6 +31,11 @@ void FalconReplayer::replay(LogEvent_t logEvent)
 			notify(SLINGSHOT_MOVED, &vec);
 			break;
 		}
+		case LogEvent::FALCON_SLINGSHOT_FIRED:
+		{
+			notify(SLINGSHOT_FIRED);
+			break;
+		}
 	}
 		
 	return;
