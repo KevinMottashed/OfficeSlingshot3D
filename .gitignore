@@ -70,8 +70,8 @@ BuildLog.htm
 
 # Blender
 # don't ignore blender object files (ignored in the c++ rule)
-!HugMe v0.9.1/Blender/*.obj
-!HugMe v0.9.1/Objects/*/*.obj
+!OfficeSlingshot3D/Blender/*.obj
+!OfficeSlingshot3D/Objects/*/*.obj
 
 # chai3d - START
 
@@ -102,11 +102,11 @@ chai3d*/lib/*/*.lib
 # Office Slingshot 3D - START
 
 # the preferences file for the UI
-HugMe v0.9.1/UserPreferences.ini
+OfficeSlingshot3D/UserPreferences.ini
 
 # some library and object file that get compiled
-HugMe v0.9.1/Debug/Chat.exp
-HugMe v0.9.1/Debug/Chat.lib
+OfficeSlingshot3D/Debug/OfficeSlingshot3D.exp
+OfficeSlingshot3D/Debug/OfficeSlingshot3D.lib
 
 # Log files
 *.log
@@ -118,10 +118,10 @@ HugMe v0.9.1/Debug/Chat.lib
 TestResults.txt
 
 # Annoying analysis files that always show up as modified
-HugMe v0.9.1/analysis/cccc/out/BOOL.html
-HugMe v0.9.1/analysis/cccc/out/BOOL.xml
-HugMe v0.9.1/analysis/cccc/out/bool.html
-HugMe v0.9.1/analysis/cccc/out/bool.xml
+OfficeSlingshot3D/analysis/cccc/out/BOOL.html
+OfficeSlingshot3D/analysis/cccc/out/BOOL.xml
+OfficeSlingshot3D/analysis/cccc/out/bool.html
+OfficeSlingshot3D/analysis/cccc/out/bool.xml
 
 # Office Slingshot 3D - END
 

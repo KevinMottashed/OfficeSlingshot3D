@@ -50,7 +50,7 @@ BEGIN
     "LANGUAGE 18, 1\r\n"
     "#pragma code_page(949)\r\n"
     "#endif //_WIN32\r\n"
-    "#include ""res\\Chat.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""res\\OfficeSlingshot3D.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
     "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
     "#endif\r\n"
     "\0"
@@ -78,7 +78,7 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_CAN
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-IDR_MAINFRAME           ICON                    "..\\res\\Chat.ico"
+IDR_MAINFRAME           ICON                    "..\\res\\OfficeSlingshot3D.ico"
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -102,12 +102,12 @@ BEGIN
     BEGIN
         BLOCK "041204b0"
         BEGIN
-            VALUE "FileDescription", "Chat MFC 응용 프로그램"
+            VALUE "FileDescription", "OfficeSlingshot3D MFC 응용 프로그램"
             VALUE "FileVersion", "1, 0, 0, 1"
-            VALUE "InternalName", "Chat"
+            VALUE "InternalName", "OfficeSlingshot3D"
             VALUE "LegalCopyright", "Copyright (C) 2006"
-            VALUE "OriginalFilename", "Chat.EXE"
-            VALUE "ProductName", "Chat 응용 프로그램"
+            VALUE "OriginalFilename", "OfficeSlingshot3D.EXE"
+            VALUE "ProductName", "OfficeSlingshot3D 응용 프로그램"
             VALUE "ProductVersion", "1, 0, 0, 1"
         END
     END
@@ -213,7 +213,7 @@ END
 
 STRINGTABLE 
 BEGIN
-    IDS_ABOUTBOX            "Chat ??(&A)..."
+    IDS_ABOUTBOX            "OfficeSlingshot3D ??(&A)..."
     IDP_SOCKETS_INIT_FAILED "Windows ?? ???? ???????."
 END
 
@@ -237,7 +237,7 @@ END
 LANGUAGE 18, 1
 #pragma code_page(949)
 #endif //_WIN32
-#include "res\Chat.rc2"  // non-Microsoft Visual C++ edited resources
+#include "res\OfficeSlingshot3D.rc2"  // non-Microsoft Visual C++ edited resources
 #include "l.kor\afxres.rc"          // Standard components
 #endif
 

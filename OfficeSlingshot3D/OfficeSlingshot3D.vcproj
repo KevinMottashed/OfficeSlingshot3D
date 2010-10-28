@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="8.00"
-	Name="Chat"
+	Name="OfficeSlingshot3D"
 	ProjectGUID="{8D13CAB1-842C-478B-8092-B9DC6F317FD0}"
-	RootNamespace="Chat"
+	RootNamespace="OfficeSlingshot3D"
 	Keyword="MFCProj"
 	>
 	<Platforms>
@@ -43,7 +43,7 @@
 				MkTypLibCompatible="true"
 				SuppressStartupBanner="true"
 				TargetEnvironment="1"
-				TypeLibraryName=".\Debug/Chat.tlb"
+				TypeLibraryName=".\Debug/OfficeSlingshot3D.tlb"
 				HeaderFileName=""
 			/>
 			<Tool
@@ -55,7 +55,7 @@
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
-				PrecompiledHeaderFile=".\Debug/Chat.pch"
+				PrecompiledHeaderFile=".\Debug/OfficeSlingshot3D.pch"
 				AssemblerListingLocation=".\Debug/"
 				ObjectFile=".\Debug/"
 				ProgramDataBaseFileName=".\Debug/"
@@ -79,12 +79,12 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="strmiids.lib opengl32.lib glu32.lib glut32.lib libARd.lib libARvideod.lib libARgsub_MFCd.lib vfw32.lib winmm.lib hdl.lib ConnectDM_VC80.lib tinyxmld.lib TDVHandsTracking.lib depthCameraLibrary2.lib chai3d-debug.lib ode_double.lib odbc32.lib odbccp32.lib fmodex_vc.lib"
-				OutputFile=".\Debug/Chat.exe"
+				OutputFile=".\Debug/OfficeSlingshot3D.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="&quot;..\chai3d-2.0.0\external\OpenGL\msvc&quot;;&quot;..\chai3d-2.0.0\lib\msvc8&quot;;&quot;..\chai3d-2.0.0\external\ODE\lib\msvc&quot;;&quot;lib\ARToolKit-2.72.1&quot;;&quot;lib/Z-Cam&quot;;lib;lib\HandTracker;lib\chai3d;&quot;C:\Program Files\boost\boost_1_43_0\stage\lib&quot;;..\FMOD\api\lib"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile=".\Debug/Chat.pdb"
+				ProgramDatabaseFile=".\Debug/OfficeSlingshot3D.pdb"
 				SubSystem="2"
 				TargetMachine="1"
 			/>
@@ -100,7 +100,7 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\Debug/Chat.bsc"
+				OutputFile=".\Debug/OfficeSlingshot3D.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -143,7 +143,7 @@
 				MkTypLibCompatible="true"
 				SuppressStartupBanner="true"
 				TargetEnvironment="1"
-				TypeLibraryName=".\Release/Chat.tlb"
+				TypeLibraryName=".\Release/OfficeSlingshot3D.tlb"
 				HeaderFileName=""
 			/>
 			<Tool
@@ -155,7 +155,7 @@
 				StringPooling="true"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
-				PrecompiledHeaderFile=".\Release/Chat.pch"
+				PrecompiledHeaderFile=".\Release/OfficeSlingshot3D.pch"
 				AssemblerListingLocation=".\Release/"
 				ObjectFile=".\Release/"
 				ProgramDataBaseFileName=".\Release/"
@@ -176,12 +176,12 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="strmiids.lib opengl32.lib glu32.lib glut32.lib libAR.lib libARvideo.lib libARgsub_MFC.lib vfw32.lib chai3d_complete.lib winmm.lib hdl.lib ConnectDM_VC80.lib tinyxmld.lib depthCameraLibrary2.lib"
-				OutputFile=".\Release/Chat.exe"
+				OutputFile=".\Release/OfficeSlingshot3D.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="lib,lib\ARToolKit-2.72.1,lib\chai3d\msvc6,lib/Z-Cam,lib/HandTracker"
 				IgnoreDefaultLibraryNames="libcd"
-				ProgramDatabaseFile=".\Release/Chat.pdb"
+				ProgramDatabaseFile=".\Release/OfficeSlingshot3D.pdb"
 				SubSystem="2"
 				TargetMachine="1"
 			/>
@@ -197,7 +197,7 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\Release/Chat.bsc"
+				OutputFile=".\Release/OfficeSlingshot3D.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -221,15 +221,15 @@
 			Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"
 			>
 			<File
-				RelativePath="res\Chat.ico"
+				RelativePath="res\OfficeSlingshot3D.ico"
 				>
 			</File>
 			<File
-				RelativePath=".\res\Chat.rc"
+				RelativePath=".\res\OfficeSlingshot3D.rc"
 				>
 			</File>
 			<File
-				RelativePath="res\Chat.rc2"
+				RelativePath="res\OfficeSlingshot3D.rc2"
 				>
 			</File>
 			<File
@@ -1153,7 +1153,7 @@
 	<Globals>
 		<Global
 			Name="RESOURCE_FILE"
-			Value="res\Chat.rc"
+			Value="res\OfficeSlingshot3D.rc"
 		/>
 	</Globals>
 </VisualStudioProject>
