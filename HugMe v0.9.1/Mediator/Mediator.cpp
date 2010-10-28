@@ -26,6 +26,14 @@ Mediator::Mediator(boost::shared_ptr<Network> network,
 	zcamera->attach(this);
 	falcon->attach(this);
 
+	// set the audio preferences
+	UserPreferences prefs = configuration->getUserPreferences();
+	if (prefs.muted)
+	{
+		audio.mute();
+	}
+	audio.volume(prefs.volume);
+
 	InitializeCriticalSection(&configurationMutex);
 }
 
@@ -427,6 +435,23 @@ void Mediator::changePreferences(const UserPreferences& preferences)
 	if (currentPreferences.armBandPort != preferences.armBandPort || currentPreferences.jacketPort != preferences.jacketPort)
 	{
 		smartClothing->setPorts(preferences.armBandPort, preferences.jacketPort);
+	}
+
+	if (currentPreferences.muted != preferences.muted)
+	{
+		if (preferences.muted)
+		{
+			audio.mute();
+		}
+		else
+		{
+			audio.unmute();
+		}
+	}
+
+	if (currentPreferences.volume != preferences.volume)
+	{
+		audio.volume(preferences.volume);
 	}
 
 	configuration->setUserPreferences(preferences);

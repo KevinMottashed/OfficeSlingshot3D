@@ -35,10 +35,15 @@ public:
 	 */
 	unsigned int jacketPort;
 
+	bool muted; /**< True if the audio should be muted */
+	float volume; /**< The volume on a scale of 0.0 to 1.0 */
+
 	static const std::string default_ip_address; /**< Default IP Address */
 	static const std::string default_name; /**< Default user name */
 	static const unsigned int default_arm_band_port; /**< Default blue tooth port for the arm band */
 	static const unsigned int default_jacket_port; /**< Default blue tooth port for the jacket. */
+	static const bool default_muted; /**< Default for if the application is muted or not */
+	static const float default_volume; /**< Default volume level */
 
 	/**
 	 * Reset all the preferences to the defaults
@@ -98,6 +103,8 @@ void UserPreferences::serialize(Archive& ar, const unsigned int version)
 	ar & name;
 	ar & armBandPort;
 	ar & jacketPort;
+	ar & muted;
+	ar & volume;
 	return;
 }
 

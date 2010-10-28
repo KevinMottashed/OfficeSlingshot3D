@@ -22,7 +22,7 @@ void CommonTestSuite::run()
 
 void CommonTestSuite::testGoodPreferences()
 {
-	const string prefString = "IpAddress=127.0.0.1\nName=Player3\nArmBandPort=3\nJacketPort=67\n";
+	const string prefString = "IpAddress=127.0.0.1\nName=Player3\nArmBandPort=3\nJacketPort=67\nMuted=0\nVolume=1\n";
 
 	// create the good preferences
 	stringstream s;
@@ -37,6 +37,8 @@ void CommonTestSuite::testGoodPreferences()
 	assert_equals(pref.name, "Player3");
 	assert_equals(pref.armBandPort, 3);
 	assert_equals(pref.jacketPort, 67);
+	assert_equals(pref.muted, false);
+	assert_equals(pref.volume, 1.0f);
 
 	// write the preferences to a stream
 	ostringstream os;
@@ -48,7 +50,7 @@ void CommonTestSuite::testGoodPreferences()
 
 void CommonTestSuite::testMalformedPreferences()
 {
-	const string prefString = "IpAddress=127.0.0.1\nName=Player18\nArmBandPort=abc\nJacketPort=67\n";
+	const string prefString = "IpAddress=127.0.0.1\nName=Player18\nArmBandPort=abc\nJacketPort=67\nMuted=0\nVolume=1\n";
 
 	// create the malformed preferences
 	stringstream s;
@@ -63,18 +65,20 @@ void CommonTestSuite::testMalformedPreferences()
 	assert_equals(pref.name, "Player");
 	assert_equals(pref.armBandPort, 3);
 	assert_equals(pref.jacketPort, 97);
+	assert_equals(pref.muted, false);
+	assert_equals(pref.volume, 1.0f);
 
 	// write the preferences to a stream
 	ostringstream os;
 	os << pref;
 
 	// make sure they have been defaulted
-	assert_equals(os.str(), "IpAddress=127.0.0.1\nName=Player\nArmBandPort=3\nJacketPort=97\n");
+	assert_equals(os.str(), "IpAddress=127.0.0.1\nName=Player\nArmBandPort=3\nJacketPort=97\nMuted=0\nVolume=1\n");
 }
 
 void CommonTestSuite::testMissingPreferences()
 {
-	const string prefString = "Name=Player18\nArmBandPort=abc\nJacketPort=67\n";
+	const string prefString = "Name=Player18\nArmBandPort=abc\nJacketPort=67\nMuted=0\nVolume=1\n";
 
 	// create the preferences with a missing field (IpAddress)
 	stringstream s;
@@ -89,11 +93,13 @@ void CommonTestSuite::testMissingPreferences()
 	assert_equals(pref.name, "Player");
 	assert_equals(pref.armBandPort, 3);
 	assert_equals(pref.jacketPort, 97);
+	assert_equals(pref.muted, false);
+	assert_equals(pref.volume, 1.0f);
 
 	// write the preferences to a stream
 	ostringstream os;
 	os << pref;
 
 	// make sure they have been defaulted
-	assert_equals(os.str(), "IpAddress=127.0.0.1\nName=Player\nArmBandPort=3\nJacketPort=97\n");
+	assert_equals(os.str(), "IpAddress=127.0.0.1\nName=Player\nArmBandPort=3\nJacketPort=97\nMuted=0\nVolume=1\n");
 }
