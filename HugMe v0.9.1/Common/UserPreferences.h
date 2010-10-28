@@ -35,6 +35,16 @@ public:
 	 */
 	unsigned int jacketPort;
 
+	static const std::string default_ip_address; /**< Default IP Address */
+	static const std::string default_name; /**< Default user name */
+	static const unsigned int default_arm_band_port; /**< Default blue tooth port for the arm band */
+	static const unsigned int default_jacket_port; /**< Default blue tooth port for the jacket. */
+
+	/**
+	 * Reset all the preferences to the defaults
+	 */
+	void setDefaults();
+
 private:
 	// the boost serialization library requires access to the serialize function
 	friend class boost::serialization::access;
@@ -51,21 +61,29 @@ private:
 
 /**
  * Output operator.
- * The output is saved as one field per line in the following order.
- * ip address
- * name
- * arm band port
- * jacket port
+ * The output is saved as one field per line in the .ini style.
+ * IpAddress=<ip>
+ * Name=<name>
+ * ArmBandPort=<port#>
+ * JacketPort=<port#>
+ * @param os The output stream.
+ * @param pref The preferences that will saved to the file.
+ * @return The output stream.
  */
 std::ostream& operator<<(std::ostream& os, const UserPreferences& pref);
 
 /**
  * Input operator.
- * The input is assumed to come in as one field per line in the following order.
- * ip address
- * name
- * arm band port
- * jacket port
+ * The input is assumed to come in as one field per line in the .ini style.
+ * IpAddress=<ip>
+ * Name=<name>
+ * ArmBandPort=<port#>
+ * JacketPort=<port#>
+ * If a field is missing or the parameter is not correct (ex: string instead of number)
+ * Then the defaults will be used.
+ * @param is The input stream.
+ * @param pref The preferences that will read from the file.
+ * @return The input stream.
  */
 std::istream& operator>>(std::istream& is, UserPreferences& pref);
 

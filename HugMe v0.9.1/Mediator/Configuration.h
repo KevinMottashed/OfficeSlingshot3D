@@ -32,6 +32,7 @@ public:
 	 * @param pref The new preferences.
 	 */
 	void setUserPreferences(const UserPreferences& pref);
+
 private:
 	/**
 	 * Read the preferences from a file.
@@ -42,26 +43,6 @@ private:
 	 * Write the preferences to a file.
 	 */
 	void writeToFile();
-
-	/**
-	 * Default IP address.
-	 */
-	static const std::string default_ip_address;
-
-	/**
-	 * Default user name.
-	 */
-	static const std::string default_name;
-
-	/**
-	 * Default blue tooth port for the arm band.
-	 */
-	static const unsigned int default_arm_band_port = 3;
-
-	/**
-	 * Default blue tooth port for the jacket.
-	 */
-	static const unsigned int default_jacket_port = 97;
 
 	/**
 	 * The user preferences.

@@ -34,7 +34,7 @@ public:
 
 private:
 	/**
-	 * A collection of a the test suites
+	 * A collection of all the test suites
 	 */
 	std::vector<TestSuite*> suites;
 };

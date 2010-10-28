@@ -50,7 +50,7 @@
 				Name="VCCLCompilerTool"
 				AdditionalOptions="/D /NODEFAULTLIB:library&quot; &quot; /D _CRT_SECURE_NO_DEPRECATE /D &quot;WINVER=0x0501&quot;"
 				Optimization="0"
-				AdditionalIncludeDirectories="include;&quot;include\ARToolKit-2.72.1&quot;;&quot;include\Z-Cam&quot;;include\ODE;include\HandTracker;&quot;..\chai3d-2.0.0\external\OpenGL\msvc&quot;;&quot;..\chai3d-2.0.0\external\ODE\include&quot;;&quot;..\chai3d-2.0.0\modules\ODE&quot;;&quot;..\chai3d-2.0.0\src&quot;;Utils\;Mediator\;Falcon\;Game\;Jacket\;Network\;UserInterface\;ZCamera\;Objects\;Logger\;Common\;Main\;Replay\;res\;&quot;C:\Program Files\boost\boost_1_43_0&quot;;Serialization\;Test/Framework;Test/;Test/Sample;Test/Network;../FMOD/api/inc;Test/Audio;Audio;Keyboard;Test/Mediator"
+				AdditionalIncludeDirectories="include;&quot;include\ARToolKit-2.72.1&quot;;&quot;include\Z-Cam&quot;;include\ODE;include\HandTracker;&quot;..\chai3d-2.0.0\external\OpenGL\msvc&quot;;&quot;..\chai3d-2.0.0\external\ODE\include&quot;;&quot;..\chai3d-2.0.0\modules\ODE&quot;;&quot;..\chai3d-2.0.0\src&quot;;Utils\;Mediator\;Falcon\;Game\;Jacket\;Network\;UserInterface\;ZCamera\;Objects\;Logger\;Common\;Main\;Replay\;res\;&quot;C:\Program Files\boost\boost_1_43_0&quot;;Serialization\;Test/Framework;Test/;Test/Sample;Test/Network;../FMOD/api/inc;Test/Audio;Audio;Keyboard;Test/Mediator;Test/Common"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_MSVC;dDOUBLE"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -1073,6 +1073,18 @@
 				</File>
 				<File
 					RelativePath=".\Test\Mediator\PerspectiveMathTestSuite.h"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="Common"
+				>
+				<File
+					RelativePath=".\Test\Common\CommonTestSuite.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\Test\Common\CommonTestSuite.h"
 					>
 				</File>
 			</Filter>

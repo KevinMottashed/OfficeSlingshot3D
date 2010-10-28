@@ -102,7 +102,7 @@ chai3d*/lib/*/*.lib
 # Office Slingshot 3D - START
 
 # the preferences file for the UI
-HugMe v0.9.1/userPreferences.txt
+HugMe v0.9.1/UserPreferences.ini
 
 # some library and object file that get compiled
 HugMe v0.9.1/Debug/Chat.exp

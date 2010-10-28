@@ -5,12 +5,14 @@
 #include "ConnectionTestSuite.h"
 #include "AudioTestSuite.h"
 #include "PerspectiveMathTestSuite.h"
+#include "CommonTestSuite.h"
 
 TestRunner::TestRunner()
 {
 	suites.push_back(new ConnectionTestSuite("Network Connection"));
 	suites.push_back(new AudioTestSuite("Audio"));
 	suites.push_back(new PerspectiveMathTestSuite("Perspective Math"));
+	suites.push_back(new CommonTestSuite("Common"));
 }
 
 TestRunner::~TestRunner()
