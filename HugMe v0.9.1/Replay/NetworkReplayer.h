@@ -146,6 +146,13 @@ public:
 	virtual rc_network sendGameOver();
 
 	/**
+	 * Send a message to the peer letting him know that we have lost some health.
+	 * The replayer won't actually do anything, this is just to implement the network interface.
+	 * @return SUCCESS
+	 */
+	virtual rc_network sendHealthLost(unsigned int healthLost);
+
+	/**
 	 * Determines if we are connected to a peer
 	 * @return true if we are connected to a peer
 	 */	

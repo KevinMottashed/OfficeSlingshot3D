@@ -113,14 +113,14 @@ void VirtualEnvironment::movePeerAvatar(cVector3d position)
 }
 
 
-void VirtualEnvironment::reduceLocalHp(int dmg)
+void VirtualEnvironment::reduceLocalHp(unsigned int dmg)
 {
 	lHpBar->ReduceHP(dmg);
 	
 	return;
 }
 
-void VirtualEnvironment::reducePeerHp(int dmg)
+void VirtualEnvironment::reducePeerHp(unsigned int dmg)
 {
 	rHpBar->ReduceHP(dmg);
 

@@ -20,9 +20,9 @@ public:
 
 	/**
 	 * Reduces the HP of the user
-	 * @ param hpLost The amount of HP to be reduced
+	 * @param hpLost The amount of HP to be reduced
 	 */
-	void ReduceHP(int hpLost);
+	void ReduceHP(unsigned int hpLost);
 
 	/**
 	 * Reset HP of the users

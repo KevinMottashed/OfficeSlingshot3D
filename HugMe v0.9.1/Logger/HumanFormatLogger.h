@@ -33,6 +33,7 @@ public:
 protected:
 	// log various event of various data types
 	virtual void log(LogEvent_t logEvent);
+	virtual void log(LogEvent_t logEvent, unsigned int uInt);
 	virtual void log(LogEvent_t logEvent, rc_network error);
 	virtual void log(LogEvent_t logEvent, const std::string& str);
 	virtual void log(LogEvent_t logEvent, const VideoData& video);
@@ -85,6 +86,14 @@ void HumanFormatLogger<Stream>::log(LogEvent_t logEvent)
 {
 	boost::mutex::scoped_lock lock(stream_mutex);
 	ostream << lookup(logEvent) << std::endl;
+	return;
+}
+
+template <typename Stream>
+void HumanFormatLogger<Stream>::log(LogEvent_t logEvent, unsigned int uInt)
+{
+	boost::mutex::scoped_lock lock(stream_mutex);
+	ostream << lookup(logEvent) << " - " << uInt << std::endl;
 	return;
 }
 

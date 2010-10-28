@@ -235,6 +235,12 @@ void Mediator::update(NetworkUpdateContext context, const void* data)
 			playerLost(Player::PEER);
 			break;
 		}
+		case RECEIVED_HEALTH_LOST:
+		{
+			assert(data != NULL);
+			peerHit(*(unsigned int*)data);
+			break;
+		}
 		default:
 		{
 			// All updates should be handled
@@ -470,16 +476,21 @@ void Mediator::sendChatMessage(const std::string& message)
 	return;
 }
 
-void Mediator::collisionDetected(HumanPart hitPart, cVector3d ballPos, cVector3d minValue, cVector3d maxValue)
+void Mediator::collisionDetected(HumanPart hitPart, cVector3d ballPos, cVector3d minValue, cVector3d maxValue, unsigned int healthLost)
 {
 	audio.playHit();
 
 	smartClothing->vibrate(hitPart, ballPos, minValue, maxValue);
 
-	//TODO: reducePeerHp
-	//TODO: play sound on the peer's end
-	//network->notifyCollisionDetected();
+	// let the peer know that we were hit and lost some health
+	network->sendHealthLost(healthLost);
 	return;
+}
+
+void Mediator::peerHit(unsigned int healthLost)
+{
+	audio.playHit();
+	notify(MediatorUpdateContext::PEER_HIT, &healthLost);
 }
 
 void Mediator::playerLost(Player_t player)

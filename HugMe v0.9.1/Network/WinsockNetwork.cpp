@@ -679,6 +679,13 @@ rc_network WinsockNetwork::sendGameOver()
 	return syncSendDataMessage(packet);
 }
 
+rc_network WinsockNetwork::sendHealthLost(unsigned int healthLost)
+{
+	DataPacket packet;
+	packet.write(DATA_PACKET_HEALTH_LOST, healthLost);
+	return syncSendDataMessage(packet);
+}
+
 bool WinsockNetwork::isConnected() const
 {
 	return getConnectionState() == ConnectionState::CONNECTED;
@@ -808,6 +815,13 @@ void WinsockNetwork::handleDataMessage(const DataPacket& message)
 		case DATA_PACKET_GAME_OVER:
 		{
 			notify(RECEIVED_GAME_OVER);
+			break;
+		}
+		case DATA_PACKET_HEALTH_LOST:
+		{
+			unsigned int healthLost;
+			message.read(healthLost);
+			notify(RECEIVED_HEALTH_LOST, &healthLost);
 			break;
 		}
 		case DATA_PACKET_UNKNOWN:

@@ -113,6 +113,19 @@ void NetworkReplayer::replay(LogEvent_t logEvent)
 			notify(RECEIVED_PLAYER_POSITION, &vec);
 			break;
 		}
+		case LogEvent::NETWORK_GAME_OVER:
+		{
+			notify(RECEIVED_GAME_OVER);
+			break;
+		}
+		case LogEvent::NETWORK_HEALTH_LOST:
+		{
+			unsigned int healthLost;
+			*archive >> healthLost;
+
+			notify(RECEIVED_HEALTH_LOST, &healthLost);
+			break;
+		}
 	}
 	return;
 }
@@ -191,6 +204,11 @@ rc_network NetworkReplayer::sendSlingshotRelease()
 }
 
 rc_network NetworkReplayer::sendGameOver()
+{
+	return SUCCESS;
+}
+
+rc_network NetworkReplayer::sendHealthLost(unsigned int healthLost)
 {
 	return SUCCESS;
 }

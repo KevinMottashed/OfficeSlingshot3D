@@ -118,8 +118,19 @@ public:
 	 * @param ballPos The position of the ball when the collision was detected
 	 * @param minValue The hit box's minimum value
 	 * @param maxValue The hit box's maximum value
+	 * @param healthLost The amount of health that was lost as a result of the collision
 	 */
-	void collisionDetected(HumanPart hitPart, cVector3d ballPos, cVector3d minValue, cVector3d maxValue);
+	void collisionDetected(	HumanPart hitPart, 
+							cVector3d ballPos, 
+							cVector3d minValue, 
+							cVector3d maxValue, 
+							unsigned int healthLost);
+
+	/**
+	 * Provide the appropriate user feedback for when the peer player is hit by the slingshot.
+	 * @param healthLost The amount of health that was lost as a result of the collision
+	 */
+	void peerHit(unsigned int healthLost);
 
 	/**
 	 * Displays lose screen and sends GAME_OVER to peer

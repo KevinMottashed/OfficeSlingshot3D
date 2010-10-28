@@ -77,7 +77,7 @@ void HpBar::ResetHp()
     hpBarMesh->computeAllNormals();
 }
 
-void HpBar::ReduceHP(int hpLost)
+void HpBar::ReduceHP(unsigned int hpLost)
 {
 	hp -= hpLost;
     int vertices [4];

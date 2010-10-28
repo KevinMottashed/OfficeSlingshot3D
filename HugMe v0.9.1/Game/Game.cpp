@@ -124,6 +124,12 @@ void Game::update(MediatorUpdateContext_t context, const void* data)
 			reset();
 			break;
 		}
+		case MediatorUpdateContext::PEER_HIT:
+		{
+			assert(data != NULL);
+			environment.reducePeerHp(*(unsigned int*) data);
+			break;
+		}
 	}
 }
 
@@ -226,19 +232,19 @@ void Game::gameLoop()
 				switch(environment.getAvatarHitBodyPart()) {
 				
 				case CHEST:
-					mediator->collisionDetected(CHEST, ballPos, environment.getLocalAvatarChestMin(), environment.getLocalAvatarChestMax());
+					mediator->collisionDetected(CHEST, ballPos, environment.getLocalAvatarChestMin(), environment.getLocalAvatarChestMax(), 2);
 					environment.reduceLocalHp(2);
 					break;
 				case RIGHT_UPPER_ARM:
-					mediator->collisionDetected(RIGHT_UPPER_ARM, ballPos, environment.getLocalAvatarRightArmMin(), environment.getLocalAvatarRightArmMax());
+					mediator->collisionDetected(RIGHT_UPPER_ARM, ballPos, environment.getLocalAvatarRightArmMin(), environment.getLocalAvatarRightArmMax(), 1);
 					environment.reduceLocalHp(1);
 					break;
 				case LEFT_UPPER_ARM:
-					mediator->collisionDetected(LEFT_UPPER_ARM, ballPos, environment.getLocalAvatarLeftArmMin(), environment.getLocalAvatarLeftArmMax());
+					mediator->collisionDetected(LEFT_UPPER_ARM, ballPos, environment.getLocalAvatarLeftArmMin(), environment.getLocalAvatarLeftArmMax(), 1);
 					environment.reduceLocalHp(1);
 					break;
 				case HEAD:
-					mediator->collisionDetected(HEAD, ballPos, environment.getLocalAvatarHeadMin(), environment.getLocalAvatarHeadMax());
+					mediator->collisionDetected(HEAD, ballPos, environment.getLocalAvatarHeadMin(), environment.getLocalAvatarHeadMax(), 3);
 					environment.reduceLocalHp(3);
 					break;
 				}

@@ -21,6 +21,7 @@ enum NetworkUpdateContext
 	RECEIVED_PULLBACK,
 	RECEIVED_PLAYER_POSITION,
 	RECEIVED_GAME_OVER,
+	RECEIVED_HEALTH_LOST,
 };
 
 class NetworkObserver

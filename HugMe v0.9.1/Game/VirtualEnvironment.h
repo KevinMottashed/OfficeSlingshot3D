@@ -64,13 +64,13 @@ public:
 	 * Reduce the hit points on the local player
 	 * @param dmg The amount of hit points to remove.
 	 */
-	void reduceLocalHp(int dmg);
+	void reduceLocalHp(unsigned int dmg);
 	
 	/**
 	 * Reduce the hit points on the peer player
 	 * @param dmg The amount of hit points to remove.
 	 */
-	void reducePeerHp(int dmg);
+	void reducePeerHp(unsigned int dmg);
 
 
 	/**

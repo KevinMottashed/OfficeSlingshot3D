@@ -38,6 +38,7 @@ enum DataPacketType
 	DATA_PACKET_SLINGSHOT_PULLBACK, /**< Slingshot pullback */
 	DATA_PACKET_PROJECTILE, /**< Projectile */
 	DATA_PACKET_GAME_OVER, /**< Let the peer know that we have lost the game */
+	DATA_PACKET_HEALTH_LOST, /**< Let the peer know that we have lost some health */
 	DATA_PACKET_UNKNOWN /**< Unknown packet type */
 };
 
@@ -158,6 +159,13 @@ public:
 	 * @return The error code, SUCCESS if the message was sent and received
 	 */
 	virtual rc_network sendGameOver();
+
+	/**
+	 * Send a message to the peer letting him know that we have lost some health.
+	 * @param healthLost The amount of health that we have lost.
+	 * @return The error code, SUCCESS if the message was sent and received.
+	 */
+	virtual rc_network sendHealthLost(unsigned int healthLost);
 
 	/**
 	 * Determines if we are connected to a peer.

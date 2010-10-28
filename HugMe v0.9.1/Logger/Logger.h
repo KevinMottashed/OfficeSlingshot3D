@@ -29,6 +29,7 @@ public:
 protected:
 	// log various events of various data types
 	virtual void log(LogEvent_t logEvent) = 0;
+	virtual void log(LogEvent_t logEvent, unsigned int uInt) = 0;
 	virtual void log(LogEvent_t logEvent, rc_network error) = 0;
 	virtual void log(LogEvent_t logEvent, const std::string& str) = 0;
 	virtual void log(LogEvent_t logEvent, const VideoData& video) = 0;
