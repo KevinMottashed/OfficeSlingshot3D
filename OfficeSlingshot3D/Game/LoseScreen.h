@@ -25,6 +25,12 @@ public:
 	 */
 	cCamera* camera();
 
+	/**
+	 * Changes between the mute and unmute icons
+	 * @param soundOn True if the sound is currently on
+	 */
+	void changeVolumeIcon(bool soundOn);
+
 private:
 	/**
 	 * The virtual world.
@@ -45,6 +51,11 @@ private:
 	 * The background bitmap image.
 	 */
 	cBitmap* bitmap;
+
+	/**
+	 * The volume control bitmap image.
+	 */
+	cBitmap* muteControl;
 };
 
 #endif

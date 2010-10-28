@@ -175,6 +175,12 @@ public:
 	 */
 	cVector3d getLocalAvatarHeadMax();
 
+	/**
+	 * Changes between the mute and unmute icons
+	 * @param soundOn True if the sound is currently on
+	 */
+	void changeVolumeIcon(bool soundOn);
+
 private:
 
 	/**
@@ -229,6 +235,11 @@ private:
 	 * The background image.
 	 */
 	cBitmap* background;
+
+	/**
+	 * The volume control bitmap image.
+	 */
+	cBitmap* muteControl;
 
 	/**
 	 * The ODE world.

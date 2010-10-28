@@ -22,6 +22,7 @@ enum UserInterfaceUpdateContext
 	ARM_BAND_PORT,
 	JACKET_PORT,
 	PREFERENCES,
+	MUTE_VOLUME,
 };
 
 /**

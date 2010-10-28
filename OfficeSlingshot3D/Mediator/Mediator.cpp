@@ -348,6 +348,13 @@ void Mediator::update(UserInterfaceUpdateContext context, const void* data)
 			sendChatMessage(*(std::string*) data);
 			break;
 		}
+		case MUTE_VOLUME:
+		{
+			assert(data != NULL);
+			notify(MediatorUpdateContext::CHANGE_MUTE_ICON, data);
+			muteVolume(*(bool*) data);
+			break;
+		}
 		default:
 		{
 			// all updates should be handled
@@ -474,6 +481,15 @@ void Mediator::sendChatMessage(const std::string& message)
 {
 	network->sendChatMessage(message);
 	return;
+}
+
+void Mediator::muteVolume(const bool soundOn)
+{
+	if (soundOn) {
+		audio.mute();
+	} else {
+		audio.unmute();
+	}
 }
 
 void Mediator::collisionDetected(HumanPart hitPart, cVector3d ballPos, cVector3d minValue, cVector3d maxValue, unsigned int healthLost)

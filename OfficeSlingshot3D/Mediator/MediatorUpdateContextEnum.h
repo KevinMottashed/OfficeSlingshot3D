@@ -27,6 +27,7 @@ enum MediatorUpdateContextEnum
 	NETWORK_DISCONNECTED,
 	PEER_LOST,
 	PEER_HIT,
+	CHANGE_MUTE_ICON,
 };
 
 }

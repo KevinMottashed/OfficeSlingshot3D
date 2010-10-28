@@ -10,6 +10,7 @@
 #include "ConnectionStateEnum.h"
 #include "PlayerEnum.h"
 #include "GameStateEnum.h"
+#include "Audio.h"
 
 #include "boost.h"
 
@@ -117,6 +118,11 @@ private:
 	 * The peer's user name.
 	 */
 	std::string m_peerUserName;
+
+	/**
+	 * A flag to determine if the sound is on or off
+	 */
+	bool m_soundOn;
 	
 	/**
 	 * Inherited method to catch messages before they are sent to the UI.
@@ -156,6 +162,7 @@ private:
 	afx_msg void OnChangeChatInput();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
+	afx_msg void OnStnClickedVolumeCtrl();
 };
 
 //{{AFX_INSERT_LOCATION}}

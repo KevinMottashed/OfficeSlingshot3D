@@ -13,6 +13,7 @@ VirtualEnvironment::VirtualEnvironment(void) :
 	_camera = new cCamera(world);
 	light = new cLight(world);
 	background = new cBitmap();
+	muteControl = new cBitmap();
 }
 
 VirtualEnvironment::~VirtualEnvironment(void)
@@ -202,6 +203,17 @@ cVector3d VirtualEnvironment::getLocalAvatarHeadMax()
 	return lAvatar->getHeadMax();
 }
 
+void VirtualEnvironment::changeVolumeIcon(bool soundOn)
+{
+	if(soundOn) {
+		muteControl->m_image.loadFromFile("pictures/mute.tga");
+		assert(muteControl->m_image.initialized() == 1);
+	} else {
+		muteControl->m_image.loadFromFile("pictures/sound.tga");
+		assert(muteControl->m_image.initialized() == 1);
+	}
+}
+
 void VirtualEnvironment::initialize(void)
 {
 	//**************************************//
@@ -310,4 +322,17 @@ void VirtualEnvironment::initialize(void)
 
 	rNumBalls = 0;
 	lNumBalls = 0;
+
+	//**************************************//
+	//              MUTE ICON               //
+	//**************************************//
+
+	// .tga seems to work better then .bmp
+	muteControl->m_image.loadFromFile("pictures/sound.tga");
+	assert(muteControl->m_image.initialized() == 1);
+
+	// there might be a better way to add the bitmap
+	// so that it fits perfectly, but this is good enough
+	_camera->m_front_2Dscene.addChild(muteControl);
+	muteControl->setPos(570, 370, 0);
 }

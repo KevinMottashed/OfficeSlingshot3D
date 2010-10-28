@@ -137,6 +137,12 @@ public:
 	 */
 	void playerLost(Player_t player);
 
+	/**
+	 * Mutes the volume
+	 * @param soundOn True if the sound is on currently and is to be muted
+	 */
+	void muteVolume(const bool soundOn);
+	
 private:
 	/**
 	 * Copy constructor. Not implemented to protect from use.

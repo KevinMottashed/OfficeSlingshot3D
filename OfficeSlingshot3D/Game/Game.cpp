@@ -130,6 +130,15 @@ void Game::update(MediatorUpdateContext_t context, const void* data)
 			environment.reducePeerHp(*(unsigned int*) data);
 			break;
 		}
+		case MediatorUpdateContext::CHANGE_MUTE_ICON:
+		{
+			assert(data != NULL);
+			environment.changeVolumeIcon(*(bool*) data);
+			titleScreen.changeVolumeIcon(*(bool*) data);
+			loseScreen.changeVolumeIcon(*(bool*) data);
+			winScreen.changeVolumeIcon(*(bool*) data);
+			break;
+		}
 	}
 }
 

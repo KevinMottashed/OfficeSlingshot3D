@@ -9,6 +9,7 @@ using namespace std;
 CMainDlg::CMainDlg(UserInterface* pUserInterface, const UserPreferences& preferences, CWnd* pParent /*=NULL*/)
 	: pUserInterface(pUserInterface),
 		m_preferences(preferences),
+		m_soundOn(true),
 		CDialog(CMainDlg::IDD, pParent)
 {
 	//{{AFX_DATA_INIT(CMainDlg)
@@ -21,9 +22,9 @@ void CMainDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialog::DoDataExchange(pDX);
 	//{{AFX_DATA_MAP(CMainDlg)
-		DDX_Control(pDX, IDC_CHAT, m_richChat);
-		DDX_Control(pDX, IDC_CHAT_INPUT, m_editChatInput);
-		DDX_Control(pDX, IDC_SEND_CHAT, m_sendChatButton);
+	DDX_Control(pDX, IDC_CHAT, m_richChat);
+	DDX_Control(pDX, IDC_CHAT_INPUT, m_editChatInput);
+	DDX_Control(pDX, IDC_SEND_CHAT, m_sendChatButton);
 	//}}AFX_DATA_MAP
 }
 
@@ -40,6 +41,7 @@ BEGIN_MESSAGE_MAP(CMainDlg, CDialog)
 	ON_COMMAND(IDC_SEND_CHAT, OnSendChat)
 	ON_WM_DESTROY()
 	ON_EN_CHANGE(IDC_CHAT_INPUT, OnChangeChatInput)
+	ON_STN_CLICKED(IDC_MUTE_CTRL, &CMainDlg::OnStnClickedVolumeCtrl)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -460,4 +462,10 @@ void CMainDlg::camera(cCamera* camera)
 {
 	m_oglWindow->camera(camera);
 	return;
+}
+
+void CMainDlg::OnStnClickedVolumeCtrl()
+{
+	pUserInterface->muteVolume(m_soundOn);
+	m_soundOn = !m_soundOn;
 }

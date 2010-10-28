@@ -146,6 +146,12 @@ public:
 	 * @param name The new user name.
 	 */
 	virtual void setPeerUserName(const std::string& name)=0;
+
+	/**
+	 * Mutes the volume
+	 * @param soundOn True if the sound is currently on and is to be muted
+	 */
+	virtual void muteVolume(const bool soundOn)=0;
 };
 
 #endif

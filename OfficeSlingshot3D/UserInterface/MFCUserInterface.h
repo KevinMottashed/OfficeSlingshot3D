@@ -151,6 +151,12 @@ public:
 	virtual void setPeerUserName(const std::string& name);	
 
 	/**
+	 * Mutes the volume
+	 * @param soundOn True if the sound is currently on and is to be muted
+	 */
+	virtual void muteVolume(const bool soundOn);
+
+	/**
 	 * Returns the applications main window.
 	 * @return the main window.
 	 */

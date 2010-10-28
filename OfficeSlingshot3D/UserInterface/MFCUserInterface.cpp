@@ -137,3 +137,9 @@ void MFCUserInterface::changePreferences(const UserPreferences& preferences)
 	return;
 }
 
+void MFCUserInterface::muteVolume(const bool soundOn)
+{
+	notify(MUTE_VOLUME, &soundOn);
+	return;
+}
+

@@ -221,6 +221,10 @@
 			Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"
 			>
 			<File
+				RelativePath=".\pictures\mute.ico"
+				>
+			</File>
+			<File
 				RelativePath="res\OfficeSlingshot3D.ico"
 				>
 			</File>
@@ -234,6 +238,10 @@
 			</File>
 			<File
 				RelativePath=".\UserInterface\resource.h"
+				>
+			</File>
+			<File
+				RelativePath=".\pictures\sound.ico"
 				>
 			</File>
 			<File
