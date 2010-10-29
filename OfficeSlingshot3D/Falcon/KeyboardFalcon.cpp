@@ -46,24 +46,6 @@ void KeyboardFalcon::keyPressed(unsigned int key)
 		}
 		case VK_NUMPAD8:
 		{
-			if (position.z - move_increment >= _boundingBox.getLowerZ())
-			{
-				position.z -= move_increment;
-				notify(SLINGSHOT_MOVED, &position);
-			}
-			break;
-		}
-		case VK_NUMPAD5:
-		{
-			if (position.z + move_increment <= _boundingBox.getUpperZ())
-			{
-				position.z += move_increment;
-				notify(SLINGSHOT_MOVED, &position);
-			}
-			break;
-		}
-		case VK_NUMPAD4:
-		{
 			if (position.x - move_increment >= _boundingBox.getLowerX())
 			{
 				position.x -= move_increment;
@@ -71,7 +53,7 @@ void KeyboardFalcon::keyPressed(unsigned int key)
 			}
 			break;
 		}
-		case VK_NUMPAD6:
+		case VK_NUMPAD5:
 		{
 			if (position.x + move_increment <= _boundingBox.getUpperX())
 			{
@@ -80,7 +62,16 @@ void KeyboardFalcon::keyPressed(unsigned int key)
 			}
 			break;
 		}
-		case VK_NUMPAD7:
+		case VK_NUMPAD4:
+		{
+			if (position.y - move_increment >= _boundingBox.getLowerY())
+			{
+				position.y -= move_increment;
+				notify(SLINGSHOT_MOVED, &position);
+			}
+			break;
+		}
+		case VK_NUMPAD6:
 		{
 			if (position.y + move_increment <= _boundingBox.getUpperY())
 			{
@@ -89,11 +80,20 @@ void KeyboardFalcon::keyPressed(unsigned int key)
 			}
 			break;
 		}
+		case VK_NUMPAD7:
+		{
+			if (position.z + move_increment <= _boundingBox.getUpperZ())
+			{
+				position.z += move_increment;
+				notify(SLINGSHOT_MOVED, &position);
+			}
+			break;
+		}
 		case VK_NUMPAD1:
 		{
-			if (position.y - move_increment >= _boundingBox.getLowerY())
+			if (position.z - move_increment >= _boundingBox.getLowerZ())
 			{
-				position.y -= move_increment;
+				position.z -= move_increment;
 				notify(SLINGSHOT_MOVED, &position);
 			}
 			break;
