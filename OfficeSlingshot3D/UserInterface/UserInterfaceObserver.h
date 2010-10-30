@@ -23,6 +23,7 @@ enum UserInterfaceUpdateContext
 	JACKET_PORT,
 	PREFERENCES,
 	MUTE_VOLUME,
+	CHANGE_VOLUME,
 };
 
 /**

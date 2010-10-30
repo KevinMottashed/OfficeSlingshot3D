@@ -133,6 +133,15 @@ void Game::update(MediatorUpdateContext_t context, const void* data)
 		case MediatorUpdateContext::CHANGE_MUTE_ICON:
 		{
 			assert(data != NULL);
+			environment.changeMuteIcon(*(bool*) data);
+			titleScreen.changeMuteIcon(*(bool*) data);
+			loseScreen.changeMuteIcon(*(bool*) data);
+			winScreen.changeMuteIcon(*(bool*) data);
+			break;
+		}
+		case MediatorUpdateContext::CHANGE_VOL_ICON:
+		{
+			assert(data != NULL);
 			environment.changeVolumeIcon(*(bool*) data);
 			titleScreen.changeVolumeIcon(*(bool*) data);
 			loseScreen.changeVolumeIcon(*(bool*) data);

@@ -42,6 +42,11 @@ BEGIN_MESSAGE_MAP(CMainDlg, CDialog)
 	ON_WM_DESTROY()
 	ON_EN_CHANGE(IDC_CHAT_INPUT, OnChangeChatInput)
 	ON_STN_CLICKED(IDC_MUTE_CTRL, &CMainDlg::OnStnClickedVolumeCtrl)
+	ON_STN_CLICKED(IDC_VOL1, &CMainDlg::OnStnClickedVol1)
+	ON_STN_CLICKED(IDC_VOL2, &CMainDlg::OnStnClickedVol2)
+	ON_STN_CLICKED(IDC_VOL3, &CMainDlg::OnStnClickedVol3)
+	ON_STN_CLICKED(IDC_VOL4, &CMainDlg::OnStnClickedVol4)
+	ON_STN_CLICKED(IDC_VOL5, &CMainDlg::OnStnClickedVol5)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -468,4 +473,34 @@ void CMainDlg::OnStnClickedVolumeCtrl()
 {
 	pUserInterface->muteVolume(m_soundOn);
 	m_soundOn = !m_soundOn;
+}
+
+void CMainDlg::OnStnClickedVol1()
+{
+	pUserInterface->changeVolume(1);
+	m_soundOn = true;
+}
+
+void CMainDlg::OnStnClickedVol2()
+{
+	pUserInterface->changeVolume(2);
+	m_soundOn = true;
+}
+
+void CMainDlg::OnStnClickedVol3()
+{
+	pUserInterface->changeVolume(3);
+	m_soundOn = true;
+}
+
+void CMainDlg::OnStnClickedVol4()
+{
+	pUserInterface->changeVolume(4);
+	m_soundOn = true;
+}
+
+void CMainDlg::OnStnClickedVol5()
+{
+	pUserInterface->changeVolume(5);
+	m_soundOn = true;
 }

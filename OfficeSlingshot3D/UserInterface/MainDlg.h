@@ -163,6 +163,11 @@ private:
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 	afx_msg void OnStnClickedVolumeCtrl();
+	afx_msg void OnStnClickedVol1();
+	afx_msg void OnStnClickedVol2();
+	afx_msg void OnStnClickedVol3();
+	afx_msg void OnStnClickedVol4();
+	afx_msg void OnStnClickedVol5();
 };
 
 //{{AFX_INSERT_LOCATION}}

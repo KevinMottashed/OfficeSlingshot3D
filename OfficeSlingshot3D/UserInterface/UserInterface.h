@@ -152,6 +152,12 @@ public:
 	 * @param soundOn True if the sound is currently on and is to be muted
 	 */
 	virtual void muteVolume(const bool soundOn)=0;
+
+	/**
+	 * Changes the volume
+	 * @param vol The new volume
+	 */
+	virtual void changeVolume(const int vol)=0;
 };
 
 #endif

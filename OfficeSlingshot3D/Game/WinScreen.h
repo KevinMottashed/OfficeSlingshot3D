@@ -1,7 +1,10 @@
 #ifndef WIN_SCREEN_H
 #define WIN_SCREEN_H
 
+#include "stdafx.h"
 #include "chai3d.h"
+
+using namespace std;
 
 /**
  * The win screen is a 3D environment that is displayed when the local player won the game
@@ -29,7 +32,13 @@ public:
 	 * Changes between the mute and unmute icons
 	 * @param soundOn True if the sound is currently on
 	 */
-	void changeVolumeIcon(bool soundOn);
+	void changeMuteIcon(bool soundOn);
+
+	/**
+	 * Changes the volume control image
+	 * @param vol The new volume
+	 */
+	void changeVolumeIcon(int vol);
 
 private:
 	/**
@@ -53,9 +62,14 @@ private:
 	cBitmap* bitmap;
 
 	/**
-	 * The volume control bitmap image.
+	 * The mute control bitmap image.
 	 */
 	cBitmap* muteControl;
+
+	/**
+	 * The volume control bitmap image.
+	 */
+	cBitmap* volumeControl;
 };
 
 #endif

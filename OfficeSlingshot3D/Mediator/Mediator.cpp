@@ -26,13 +26,7 @@ Mediator::Mediator(boost::shared_ptr<Network> network,
 	zcamera->attach(this);
 	falcon->attach(this);
 
-	// set the audio preferences
-	UserPreferences prefs = configuration->getUserPreferences();
-	if (prefs.muted)
-	{
-		audio.mute();
-	}
-	audio.volume(prefs.volume);
+	audio.volume(5);
 
 	InitializeCriticalSection(&configurationMutex);
 }
@@ -355,6 +349,13 @@ void Mediator::update(UserInterfaceUpdateContext context, const void* data)
 			muteVolume(*(bool*) data);
 			break;
 		}
+		case CHANGE_VOLUME:
+		{
+			assert(data != NULL);
+			notify(MediatorUpdateContext::CHANGE_VOL_ICON, data);
+			changeVolume(*(int*) data);
+			break;
+		}
 		default:
 		{
 			// all updates should be handled
@@ -444,23 +445,6 @@ void Mediator::changePreferences(const UserPreferences& preferences)
 		smartClothing->setPorts(preferences.armBandPort, preferences.jacketPort);
 	}
 
-	if (currentPreferences.muted != preferences.muted)
-	{
-		if (preferences.muted)
-		{
-			audio.mute();
-		}
-		else
-		{
-			audio.unmute();
-		}
-	}
-
-	if (currentPreferences.volume != preferences.volume)
-	{
-		audio.volume(preferences.volume);
-	}
-
 	configuration->setUserPreferences(preferences);
 	return;
 }
@@ -490,6 +474,11 @@ void Mediator::muteVolume(const bool soundOn)
 	} else {
 		audio.unmute();
 	}
+}
+
+void Mediator::changeVolume(const int vol)
+{
+		audio.volume(vol);
 }
 
 void Mediator::collisionDetected(HumanPart hitPart, cVector3d ballPos, cVector3d minValue, cVector3d maxValue, unsigned int healthLost)

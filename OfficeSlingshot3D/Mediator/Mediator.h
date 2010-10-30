@@ -142,6 +142,12 @@ public:
 	 * @param soundOn True if the sound is on currently and is to be muted
 	 */
 	void muteVolume(const bool soundOn);
+
+	/**
+	 * Changes the volume
+	 * @param vol The new volume
+	 */
+	void changeVolume(const int vol);
 	
 private:
 	/**

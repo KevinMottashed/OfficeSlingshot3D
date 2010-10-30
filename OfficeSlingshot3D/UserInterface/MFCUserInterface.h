@@ -157,6 +157,12 @@ public:
 	virtual void muteVolume(const bool soundOn);
 
 	/**
+	 * Changes the volume
+	 * @param vol The new volume
+	 */
+	virtual void changeVolume(const int vol);
+
+	/**
 	 * Returns the applications main window.
 	 * @return the main window.
 	 */

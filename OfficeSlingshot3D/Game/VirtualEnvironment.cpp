@@ -14,6 +14,7 @@ VirtualEnvironment::VirtualEnvironment(void) :
 	light = new cLight(world);
 	background = new cBitmap();
 	muteControl = new cBitmap();
+	volumeControl = new cBitmap();
 }
 
 VirtualEnvironment::~VirtualEnvironment(void)
@@ -203,15 +204,32 @@ cVector3d VirtualEnvironment::getLocalAvatarHeadMax()
 	return lAvatar->getHeadMax();
 }
 
-void VirtualEnvironment::changeVolumeIcon(bool soundOn)
+void VirtualEnvironment::changeMuteIcon(bool soundOn)
 {
 	if(soundOn) {
 		muteControl->m_image.loadFromFile("pictures/mute.tga");
 		assert(muteControl->m_image.initialized() == 1);
+
+		volumeControl->m_image.loadFromFile("pictures/vol0.tga");
+		assert(volumeControl->m_image.initialized() == 1);
 	} else {
 		muteControl->m_image.loadFromFile("pictures/sound.tga");
 		assert(muteControl->m_image.initialized() == 1);
+
+		volumeControl->m_image.loadFromFile("pictures/vol5.tga");
+		assert(volumeControl->m_image.initialized() == 1);
 	}
+}
+
+void VirtualEnvironment::changeVolumeIcon(int vol)
+{
+	ostringstream os;
+	os << "pictures/vol" << vol << ".tga";
+	volumeControl->m_image.loadFromFile(os.str().c_str());
+	assert(volumeControl->m_image.initialized() == 1);
+
+	muteControl->m_image.loadFromFile("pictures/sound.tga");
+	assert(muteControl->m_image.initialized() == 1);
 }
 
 void VirtualEnvironment::initialize(void)
@@ -324,7 +342,7 @@ void VirtualEnvironment::initialize(void)
 	lNumBalls = 0;
 
 	//**************************************//
-	//              MUTE ICON               //
+	//            VOLUME CONTROLS           //
 	//**************************************//
 
 	// .tga seems to work better then .bmp
@@ -334,5 +352,14 @@ void VirtualEnvironment::initialize(void)
 	// there might be a better way to add the bitmap
 	// so that it fits perfectly, but this is good enough
 	_camera->m_front_2Dscene.addChild(muteControl);
-	muteControl->setPos(570, 370, 0);
+	muteControl->setPos(505, 370, 0);
+
+	// .tga seems to work better then .bmp
+	volumeControl->m_image.loadFromFile("pictures/vol5.tga");
+	assert(volumeControl->m_image.initialized() == 1);
+
+	// there might be a better way to add the bitmap
+	// so that it fits perfectly, but this is good enough
+	_camera->m_front_2Dscene.addChild(volumeControl);
+	volumeControl->setPos(537, 370, 0);
 }
