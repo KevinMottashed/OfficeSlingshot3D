@@ -478,7 +478,8 @@ void Mediator::muteVolume(const bool soundOn)
 
 void Mediator::changeVolume(const int vol)
 {
-		audio.volume(vol);
+	audio.unmute();
+	audio.volume(vol);
 }
 
 void Mediator::collisionDetected(HumanPart hitPart, cVector3d ballPos, cVector3d minValue, cVector3d maxValue, unsigned int healthLost)
