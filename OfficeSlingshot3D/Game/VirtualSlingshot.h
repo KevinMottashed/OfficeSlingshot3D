@@ -15,7 +15,7 @@ public:
 	 * @param world The world in which to add the slingshot
 	 * @param startingPosition The slingshot's starting position in the world
 	 */
-	VirtualSlingshot(cWorld* world, const cVector3d startingPosition);
+	VirtualSlingshot(cWorld* world, const cVector3d& startingPosition, const cCollisionAABBBox& boundingBox);
 
 	/**
 	 * Destructor.
@@ -34,6 +34,8 @@ public:
 	 */
 	cVector3d getBallPosition();
 
+	
+
 private:
 	/**
 	 * The slingshot's mesh object.
@@ -46,6 +48,7 @@ private:
 	 */
 	static const cVector3d slingshot_sling_offset;
 
+	cCollisionAABBBox boundingBox;
 };
 
 #endif

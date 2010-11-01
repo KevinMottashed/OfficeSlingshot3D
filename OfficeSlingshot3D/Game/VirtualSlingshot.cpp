@@ -3,7 +3,7 @@
 
 const cVector3d VirtualSlingshot::slingshot_sling_offset = cVector3d(0, 1.0, 0.0f);
 
-VirtualSlingshot::VirtualSlingshot(cWorld* world, const cVector3d startingPosition)
+VirtualSlingshot::VirtualSlingshot(cWorld* world, const cVector3d& startingPosition, const cCollisionAABBBox& boundingBox):boundingBox(boundingBox)
 {
 	slingshotMesh = new cMesh(world);
 
@@ -29,7 +29,7 @@ VirtualSlingshot::~VirtualSlingshot(void)
 
 void VirtualSlingshot::move(cVector3d position)
 {
-	if (World::local_slingshot_bounding_box.contains(position))
+	if (boundingBox.contains(position))
 	{
 		slingshotMesh->setPos(position);
 	}

@@ -48,8 +48,8 @@ namespace World
 	 * Peer slingshot bounding box
 	 */
 	static const cCollisionAABBBox peer_slingshot_bounding_box = cCollisionAABBBox(
-		cVector3d(-0.4f - error_margin, 4.0f - error_margin, -5.0f - error_margin), 
-		cVector3d(0.0f + error_margin, 5.0f + error_margin, -4.0f + error_margin));
+		cVector3d(-1.0f - error_margin, -0.4f - error_margin, -5.0f - error_margin), 
+		cVector3d(1.0f + error_margin, 0.0f + error_margin, -4.0f + error_margin));
 }
 
 #endif

@@ -286,8 +286,8 @@ void VirtualEnvironment::initialize(void)
 	//**************************************//
 
 	// Create both slingshots
-	lSlingshot = new VirtualSlingshot(world, World::local_slingshot_starting_position);
-	rSlingshot = new VirtualSlingshot(world, World::peer_slingshot_starting_position);
+	lSlingshot = new VirtualSlingshot(world, World::local_slingshot_starting_position, World::local_slingshot_bounding_box);
+	rSlingshot = new VirtualSlingshot(world, World::peer_slingshot_starting_position, World::peer_slingshot_bounding_box);
 
 	//**************************************//
 	//                AVATARS               //
