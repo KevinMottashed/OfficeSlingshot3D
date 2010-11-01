@@ -28,6 +28,7 @@ VirtualAvatar::VirtualAvatar(cWorld* world, cVector3d startingPosition, bool isL
 		avatarMesh->rotate(cVector3d(0.0f, 1.0f, 0.0f), cDegToRad(-90));
 	} else {
 		avatarMesh->rotate(cVector3d(0.0f, 1.0f, 0.0f), cDegToRad(90));
+		avatarMesh->setWireMode(true);
 	}
 
 	avatarMesh->setUseCulling(true, true);
@@ -51,11 +52,6 @@ VirtualAvatar::VirtualAvatar(cWorld* world, cVector3d startingPosition, bool isL
 
 		headHitBox->setPos(startingPosition);
 		createMeshCube(headHitBox, headMin, headMax);
-		
-		world->addChild(chestHitBox);
-		world->addChild(rArmHitBox);
-		world->addChild(lArmHitBox);
-		world->addChild(headHitBox);
 	}
 }
 
