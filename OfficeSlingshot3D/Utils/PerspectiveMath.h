@@ -35,7 +35,19 @@ public:
 	 * a perspective where x is left-right, y is height and z is depth.
 	 * @param vector The vector to convert.
 	 */
-	static void convertOrientationXYZtoYZX(cVector3d& vector);
+	static void convertOrientationNovintToGame(cVector3d& vector);
+
+	static void convertOrientationGameToNovint(cVector3d& vector);
+
+
+	/**
+	 * Converts the orientation of a bounding box from XYZ to YZX
+	 * See convertOrientationXYZtoYZX for more details
+	 * @param box The bounding box to convert.
+	 */
+	static void convertBoxOrientationNovintToGame(cCollisionAABBBox& box);
+
+	static void convertBoxOrientationGameToNovint(cCollisionAABBBox& box);
 
 	/**
 	 * Translates a point from one box to the other.

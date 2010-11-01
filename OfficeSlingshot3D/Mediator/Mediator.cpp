@@ -568,9 +568,12 @@ void Mediator::update(FalconUpdateContext context, const void* data)
 			assert(data != NULL);
 
 			cVector3d correctedFalconPosition = *(cVector3d*) data;
-			PerspectiveMath::convertOrientationXYZtoYZX(correctedFalconPosition);
+			PerspectiveMath::convertOrientationNovintToGame(correctedFalconPosition);
+
+			cCollisionAABBBox mediatorBoundingBox = cCollisionAABBBox(falcon->boundingBox());
+			PerspectiveMath::convertBoxOrientationNovintToGame(mediatorBoundingBox);
 			
-			PerspectiveMath::convertBoxToBox(correctedFalconPosition, falcon->boundingBox(), World::local_slingshot_bounding_box);
+			PerspectiveMath::convertBoxToBox(correctedFalconPosition, mediatorBoundingBox, World::local_slingshot_bounding_box);
 
 			// let the peer know that we have moved our slingshot
 			rc_network error = network->sendSlingshotPosition(correctedFalconPosition);

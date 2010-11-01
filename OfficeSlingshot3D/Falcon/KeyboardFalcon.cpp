@@ -1,13 +1,18 @@
 #include "KeyboardFalcon.h"
 #include "WorldConstants.h"
+#include "PerspectiveMath.h"
 
-const cCollisionAABBBox KeyboardFalcon::_boundingBox = World::local_slingshot_bounding_box;
+
 
 KeyboardFalcon::KeyboardFalcon() : 
 	reporting(false), 
-	position(World::local_slingshot_starting_position)
+	position(	World::local_slingshot_starting_position.z, 
+		World::local_slingshot_starting_position.x, 
+		World::local_slingshot_starting_position.y)
 {
-	// add ourselves as a keyboard listener
+	_boundingBox = cCollisionAABBBox(World::local_slingshot_bounding_box);
+	PerspectiveMath::convertBoxOrientationGameToNovint(_boundingBox);
+	// add ourselves as a keyboard listener	
 	Keyboard::instance()->attach(this);
 }
 

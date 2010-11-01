@@ -520,14 +520,6 @@
 				RelativePath=".\Mediator\MediatorUpdateContextEnum.h"
 				>
 			</File>
-			<File
-				RelativePath=".\Mediator\PerspectiveMath.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\Mediator\PerspectiveMath.h"
-				>
-			</File>
 		</Filter>
 		<Filter
 			Name="Game"
@@ -622,6 +614,14 @@
 			</File>
 			<File
 				RelativePath=".\Utils\ConsoleStream.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Utils\PerspectiveMath.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Utils\PerspectiveMath.h"
 				>
 			</File>
 			<File

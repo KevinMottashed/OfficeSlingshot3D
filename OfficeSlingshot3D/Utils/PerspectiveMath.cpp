@@ -24,13 +24,35 @@ void PerspectiveMath::invert3DProjectile(Projectile& projectile)
 	projectile.force(adjustedForce);
 }
 
-void PerspectiveMath::convertOrientationXYZtoYZX(cVector3d& vector) 
+void PerspectiveMath::convertOrientationNovintToGame(cVector3d& vector) 
 {
+	//XYZ to YZX
 	double temp = vector.x;
 	vector.x = vector.y;
 	vector.y = vector.z;
 	vector.z = temp;
 }
+
+void PerspectiveMath::convertOrientationGameToNovint(cVector3d& vector) 
+{
+	//YZX to XYZ
+	double temp = vector.y;
+	vector.y = vector.x;
+	vector.x = vector.z;
+	vector.z = temp;
+}
+
+void PerspectiveMath::convertBoxOrientationNovintToGame(cCollisionAABBBox& box)
+{
+	PerspectiveMath::convertOrientationNovintToGame(box.m_min);
+	PerspectiveMath::convertOrientationNovintToGame(box.m_max);
+}
+
+void PerspectiveMath::convertBoxOrientationGameToNovint(cCollisionAABBBox& box)
+{
+	PerspectiveMath::convertOrientationGameToNovint(box.m_min);
+	PerspectiveMath::convertOrientationGameToNovint(box.m_max);
+} 
 
 void PerspectiveMath::convertBoxToBox(cVector3d& vector, const cCollisionAABBBox& boxOrigin, const cCollisionAABBBox& boxTarget) 
 {

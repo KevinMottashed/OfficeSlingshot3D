@@ -47,7 +47,7 @@ private:
 	/**
 	 * Tests the convert orientation XYZ to YZX function
 	 */
-	void testConvertOrientationXYZtoYZX();
+	void testConvertOrientationNovintToGame();
 
 	/**
 	 * Tests the convert box to box function

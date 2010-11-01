@@ -18,7 +18,7 @@ void PerspectiveMathTestSuite::run()
 	UNIT_TEST(testInvert2DCoordinate);
 	UNIT_TEST(testInvert3DCoordinate);
 	UNIT_TEST(testInvert3DProjectile);
-	UNIT_TEST(testConvertOrientationXYZtoYZX);
+	UNIT_TEST(testConvertOrientationNovintToGame);
 	UNIT_TEST(testConvertBoxToBox_n1);
 	UNIT_TEST(testConvertBoxToBox_n2);
 	UNIT_TEST(testConvertBoxToBox_n3);
@@ -54,10 +54,10 @@ void PerspectiveMathTestSuite::testInvert3DProjectile()
 	return;
 }
 
-void PerspectiveMathTestSuite::testConvertOrientationXYZtoYZX()
+void PerspectiveMathTestSuite::testConvertOrientationNovintToGame()
 {
 	cVector3d actual(1.0, 2.0, 3.0);
-	PerspectiveMath::convertOrientationXYZtoYZX(actual);
+	PerspectiveMath::convertOrientationNovintToGame(actual);
 
 	cVector3d expected(2.0, 3.0, 1.0);
 	assert_true(actual.equals(expected, 0.001f));

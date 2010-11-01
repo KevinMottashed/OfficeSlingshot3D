@@ -58,7 +58,7 @@ private:
 	/**
 	 * The keyboard falcon cannot move outside of this box
 	 */
-	static const cCollisionAABBBox _boundingBox;
+	cCollisionAABBBox _boundingBox;
 };
 
 #endif
