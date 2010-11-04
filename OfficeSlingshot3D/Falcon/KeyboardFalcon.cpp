@@ -7,9 +7,9 @@
 KeyboardFalcon::KeyboardFalcon() : 
 	reporting(false),
 	firing(false),
-	position(	World::local_slingshot_position.z, 
-		World::local_slingshot_position.x, 
-		World::local_slingshot_position.y)
+	position(	World::local_ball_starting_position.z, 
+		World::local_ball_starting_position.x, 
+		World::local_ball_starting_position.y)
 {
 	_boundingBox = cCollisionAABBBox(World::local_ball_bounding_box);
 	PerspectiveMath::convertBoxOrientationGameToNovint(_boundingBox);
@@ -56,10 +56,11 @@ void KeyboardFalcon::keyPressed(unsigned int key)
 			{
 				firing = false;
 				notify(SLINGSHOT_FIRED, &position);
+				resetPosition();
 			}
 			break;
 		}
-		case VK_NUMPAD8: // move forward
+		case VK_NUMPAD7: // move forward
 		{
 			if (position.x - move_increment >= _boundingBox.getLowerX())
 			{
@@ -71,7 +72,7 @@ void KeyboardFalcon::keyPressed(unsigned int key)
 			}
 			break;
 		}
-		case VK_NUMPAD5: // move backwards
+		case VK_NUMPAD1: // move backwards
 		{
 			if (position.x + move_increment <= _boundingBox.getUpperX())
 			{
@@ -107,7 +108,7 @@ void KeyboardFalcon::keyPressed(unsigned int key)
 			}
 			break;
 		}
-		case VK_NUMPAD7: // move up
+		case VK_NUMPAD8: // move up
 		{
 			if (position.z + move_increment <= _boundingBox.getUpperZ())
 			{
@@ -119,7 +120,7 @@ void KeyboardFalcon::keyPressed(unsigned int key)
 			}
 			break;
 		}
-		case VK_NUMPAD1: // move down
+		case VK_NUMPAD5: // move down
 		{
 			if (position.z - move_increment >= _boundingBox.getLowerZ())
 			{
@@ -137,4 +138,10 @@ void KeyboardFalcon::keyPressed(unsigned int key)
 cCollisionAABBBox KeyboardFalcon::boundingBox() const
 {
 	return _boundingBox;
+}
+
+void KeyboardFalcon::resetPosition(){
+	position = cVector3d(World::local_ball_starting_position.z, 
+		World::local_ball_starting_position.x, 
+		World::local_ball_starting_position.y);
 }

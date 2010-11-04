@@ -87,6 +87,12 @@ public:
 	void firePeerSlingshot(Projectile p);
 
 	/**
+	 * Moves the local ball as the user is pulling back the slingshot before shooting it
+	 * @param relBallPos The position of the ball relative to its original position
+	 */
+	void pullBackLocalBall(cVector3d relBallPos);
+
+	/**
 	 * Initialize the 3d environment.
 	 * This initializes all the 3d objects.
 	 */

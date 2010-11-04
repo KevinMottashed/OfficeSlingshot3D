@@ -6,6 +6,7 @@
 #include "chai3d.h"
 #include "CODE.h"
 #include "Projectile.h"
+#include "WorldConstants.h"
 
 /**
  * Represents a ball in the 3d environment.
@@ -56,6 +57,13 @@ public:
 	 */
 	void reset();
 
+	/**
+	 * Moves the ball within the ball boundaries
+	 */
+	void move(cVector3d newBallPos);
+
+	cVector3d calculateForceVector();
+
 private:
 	/**
 	 * The mesh that represents the ball.
@@ -72,6 +80,10 @@ private:
 	 * This is used for collisions and other physics calculations.
 	 */
 	cODEGenericBody* odeBall;
+
+	bool firstPullBack;
+
+	cVector3d startingOffset;
 
 };
 

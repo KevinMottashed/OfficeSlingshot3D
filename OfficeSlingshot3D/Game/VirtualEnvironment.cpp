@@ -3,7 +3,6 @@
 #include "WorldConstants.h"
 
 const unsigned int VirtualEnvironment::ball_limit = 2;
-const cVector3d VirtualEnvironment::firing_force = cVector3d(0, 300.0f, -450.0f);
 
 VirtualEnvironment::VirtualEnvironment(void) :
 	localBalls(ball_limit),
@@ -55,8 +54,9 @@ cCamera* VirtualEnvironment::camera()
 Projectile VirtualEnvironment::fireLocalSlingshot()
 {
 	// TODO calulate force and fire
-	/*
-	cVector3d ballPosition = lSlingshot->getBallPosition();
+	cVector3d firing_force = localBalls[lNumBalls % ball_limit]->calculateForceVector();
+
+	cVector3d ballPosition = localBalls[lNumBalls % ball_limit]->getMeshPos();
 
 	// the resulting projectile
 	Projectile p;
@@ -67,9 +67,7 @@ Projectile VirtualEnvironment::fireLocalSlingshot()
 	
 	// increment the number of balls that were fired, so we know which one to use next
 	lNumBalls++;
-	*/
-
-	Projectile p;
+	
 	return p;
 }
 
@@ -106,6 +104,11 @@ void VirtualEnvironment::movePeerAvatar(cVector3d position)
 	//rAvatar->translate(ang);
 
 	return;
+}
+
+void VirtualEnvironment::pullBackLocalBall(cVector3d relBallPos)
+{
+	localBalls[lNumBalls % ball_limit]->move(relBallPos);
 }
 
 

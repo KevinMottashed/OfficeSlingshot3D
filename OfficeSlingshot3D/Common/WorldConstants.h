@@ -40,18 +40,18 @@ namespace World
 	static const cVector3d peer_avatar_starting_position = cVector3d(0.0f, 0.0f, -6.0f);
 
 	/**
-	 * Local slingshot bounding box
+	 * Local ball bounding box
 	 */
 	static const cCollisionAABBBox local_ball_bounding_box = cCollisionAABBBox(
-		cVector3d(-0.1f - error_margin, 0.6f - error_margin, 4.5f - error_margin), 
-		cVector3d(0.1f + error_margin, 0.8f + error_margin, 5.0f + error_margin));
+		cVector3d(-0.5f - error_margin, 0.2f - error_margin, 5.0f - error_margin), 
+		cVector3d(0.5f + error_margin, 0.8f + error_margin, 6.0f + error_margin));
 
 	/**
-	 * Peer slingshot bounding box
+	 * Peer ball bounding box
 	 */
 	static const cCollisionAABBBox peer_ball_bounding_box = cCollisionAABBBox(
-		cVector3d(-0.1f - error_margin, 0.6f - error_margin, -5.0f - error_margin), 
-		cVector3d(0.1f + error_margin, 0.8f + error_margin, -4.5f + error_margin));
+		cVector3d(-0.5f - error_margin, 0.2f - error_margin, -5.0f - error_margin), 
+		cVector3d(0.5f + error_margin, 0.8f + error_margin, -6.0f + error_margin));
 }
 
 #endif

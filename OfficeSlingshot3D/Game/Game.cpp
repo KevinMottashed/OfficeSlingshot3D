@@ -67,7 +67,9 @@ void Game::update(MediatorUpdateContext_t context, const void* data)
 			// we can't update the game and change it at the same time
 			boost::mutex::scoped_lock lock(environment_mutex);
 
-			// TODO move the ball in the slingshot
+			cVector3d relBallPos = *(cVector3d*) data;
+			environment.pullBackLocalBall(relBallPos);
+
 			break;
 		}
 		case MediatorUpdateContext::PEER_SLINGSHOT_PULLBACK:

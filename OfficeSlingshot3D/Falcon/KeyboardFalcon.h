@@ -61,6 +61,8 @@ private:
 	 * The keyboard falcon cannot move outside of this box
 	 */
 	cCollisionAABBBox _boundingBox;
+
+	void resetPosition();
 };
 
 #endif
