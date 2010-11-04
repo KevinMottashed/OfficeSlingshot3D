@@ -52,18 +52,10 @@ cCamera* VirtualEnvironment::camera()
 	return _camera;
 }
 
-void VirtualEnvironment::moveLocalSlingshot(cVector3d position)
-{
-	lSlingshot->move(position);
-}
-
-void VirtualEnvironment::movePeerSlingshot(cVector3d position)
-{
-	rSlingshot->move(position);
-}
-
 Projectile VirtualEnvironment::fireLocalSlingshot()
 {
+	// TODO calulate force and fire
+	/*
 	cVector3d ballPosition = lSlingshot->getBallPosition();
 
 	// the resulting projectile
@@ -75,7 +67,9 @@ Projectile VirtualEnvironment::fireLocalSlingshot()
 	
 	// increment the number of balls that were fired, so we know which one to use next
 	lNumBalls++;
+	*/
 
+	Projectile p;
 	return p;
 }
 
@@ -286,8 +280,8 @@ void VirtualEnvironment::initialize(void)
 	//**************************************//
 
 	// Create both slingshots
-	lSlingshot = new VirtualSlingshot(world, World::local_slingshot_starting_position, World::local_slingshot_bounding_box);
-	rSlingshot = new VirtualSlingshot(world, World::peer_slingshot_starting_position, World::peer_slingshot_bounding_box);
+	lSlingshot = new VirtualSlingshot(world, World::local_slingshot_position);
+	rSlingshot = new VirtualSlingshot(world, World::peer_slingshot_position);
 
 	//**************************************//
 	//                AVATARS               //

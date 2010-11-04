@@ -34,7 +34,6 @@ enum DataPacketType
 {
 	DATA_PACKET_VIDEO, /**< Video data */
 	DATA_PACKET_PLAYER_POSITION, /**< Player position */
-	DATA_PACKET_SLINGSHOT_POSITION, /**< Slingshot position */
 	DATA_PACKET_SLINGSHOT_PULLBACK, /**< Slingshot pullback */
 	DATA_PACKET_PROJECTILE, /**< Projectile */
 	DATA_PACKET_GAME_OVER, /**< Let the peer know that we have lost the game */
@@ -135,11 +134,12 @@ public:
 	virtual rc_network sendPlayerPosition(const cVector3d& position);
 
 	/**
-	 * Send a slingshot position to the other player.
+	 * Send the slingshot pullback position to the peer.
+	 * The pullback position is the position of the sling when the slingshot is being fired.
 	 * @param position The position to send.
 	 * @return error code.
 	 */
-	virtual rc_network sendSlingshotPosition(const cVector3d& position);
+	virtual rc_network sendSlingshotPullback(const cVector3d& position);
 
 	/**
 	 * Send a projectile to the other player.
@@ -147,12 +147,6 @@ public:
 	 * @return error code.
 	 */
 	virtual rc_network sendProjectile(const Projectile& projectile);
-
-	/**
-	 * Send a slingshot pullback event over the network.
-	 * @return error code
-	 */
-	virtual rc_network sendSlingshotPullback();
 
 	/**
 	 * Send a message to the peer letting him know that we have lost the game.

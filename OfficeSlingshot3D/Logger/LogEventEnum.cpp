@@ -23,12 +23,10 @@ std::string LogEvent::lookup(LogEvent::LogEventEnum logEvent)
 		return "Network - chat message";
 	case LogEvent::NETWORK_VIDEO_DATA:
 		return "Network - video data";
-	case LogEvent::NETWORK_SLINGSHOT_POSITION:
-		return "Network - slingshot position";
-	case LogEvent::NETWORK_PROJECTILE:
-		return "Network - projectile";
 	case LogEvent::NETWORK_SLINGSHOT_PULLBACK:
 		return "Network - slingshot pullback";
+	case LogEvent::NETWORK_PROJECTILE:
+		return "Network - projectile";
 	case LogEvent::NETWORK_PLAYER_POSITION:
 		return "Network - player position";
 	case LogEvent::NETWORK_GAME_OVER:
@@ -53,8 +51,8 @@ std::string LogEvent::lookup(LogEvent::LogEventEnum logEvent)
 		return "UI - close application";
 	case LogEvent::UI_CHAT_MESSAGE:
 		return "UI - chat message";
-	case LogEvent::FALCON_SLINGSHOT_POSITION:
-		return "Falcon - slingshot position";
+	case LogEvent::FALCON_SLINGSHOT_PULLBACK:
+		return "Falcon - slingshot pullback";
 	case LogEvent::FALCON_SLINGSHOT_FIRED:
 		return "Falcon - slingshot fired";
 	case LogEvent::ZCAM_VIDEO_DATA:

@@ -103,7 +103,7 @@ void NovintFalcon::poll()
                 notify(SLINGSHOT_FIRED);
             }
 
-			notify(SLINGSHOT_MOVED, &newPosition);
+			//notify(SLINGSHOT_MOVED, &newPosition);
         }
 
 		// sleep for a while so we don't hog cpu (interruption point)

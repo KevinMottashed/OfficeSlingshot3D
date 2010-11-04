@@ -61,21 +61,16 @@ void Logger::update(NetworkUpdateContext context, const void *data)
 			log(LogEvent::NETWORK_VIDEO_DATA, *(VideoData*) data);
 			break;
 		}
-		case RECEIVED_SLINGSHOT_POSITION:
+		case RECEIVED_SLINGSHOT_PULLBACK:
 		{
 			assert(data != NULL);
-			log(LogEvent::NETWORK_SLINGSHOT_POSITION, *(cVector3d*) data);
+			log(LogEvent::NETWORK_SLINGSHOT_PULLBACK, *(cVector3d*) data);
 			break;
 		}
 		case RECEIVED_PROJECTILE:
 		{
 			assert(data != NULL);
 			log(LogEvent::NETWORK_PROJECTILE, *(Projectile*) data);
-			break;
-		}
-		case RECEIVED_PULLBACK:
-		{			
-			log(LogEvent::NETWORK_SLINGSHOT_PULLBACK);
 			break;
 		}
 		case RECEIVED_PLAYER_POSITION:
@@ -158,10 +153,10 @@ void Logger::update(FalconUpdateContext context, const void* data)
 {
 	switch(context)
 	{
-		case SLINGSHOT_MOVED:
+		case SLINGSHOT_PULLBACK:
 		{
 			assert(data != NULL);
-			log(LogEvent::FALCON_SLINGSHOT_POSITION, *(cVector3d*) data);
+			log(LogEvent::FALCON_SLINGSHOT_PULLBACK, *(cVector3d*) data);
 			break;
 		}
 		case SLINGSHOT_FIRED:

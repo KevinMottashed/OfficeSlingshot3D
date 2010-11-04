@@ -37,18 +37,6 @@ public:
 	 * @return the camera
 	 */
 	cCamera* camera();
-
-	/**
-	 * Move the local slingshot to a new position
-	 * @param position The new position
-	 */
-	void moveLocalSlingshot(cVector3d position);
-
-	/**
-	 * Move the peer slingshot to a new position
-	 * @param position The new position
-	 */
-	void movePeerSlingshot(cVector3d position);
 	
 	/**
 	 * Move the local avatar to a new position

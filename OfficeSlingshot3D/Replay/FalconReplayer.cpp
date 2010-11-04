@@ -23,12 +23,12 @@ void FalconReplayer::replay(LogEvent_t logEvent)
 
 	switch (logEvent)
 	{
-		case LogEvent::FALCON_SLINGSHOT_POSITION:
+		case LogEvent::FALCON_SLINGSHOT_PULLBACK:
 		{
 			cVector3d vec;
 			*archive >> vec;
 
-			notify(SLINGSHOT_MOVED, &vec);
+			notify(SLINGSHOT_PULLBACK, &vec);
 			break;
 		}
 		case LogEvent::FALCON_SLINGSHOT_FIRED:

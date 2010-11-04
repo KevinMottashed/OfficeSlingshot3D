@@ -651,10 +651,10 @@ rc_network WinsockNetwork::sendPlayerPosition(const cVector3d& position)
 	return syncSendDataMessage(packet);
 }
 
-rc_network WinsockNetwork::sendSlingshotPosition(const cVector3d& position)
+rc_network WinsockNetwork::sendSlingshotPullback(const cVector3d& position)
 {
 	DataPacket packet;
-	packet.write(DATA_PACKET_SLINGSHOT_POSITION, position);
+	packet.write(DATA_PACKET_SLINGSHOT_PULLBACK, position);
 	return syncSendDataMessage(packet);
 }
 
@@ -662,13 +662,6 @@ rc_network WinsockNetwork::sendProjectile(const Projectile& projectile)
 {
 	DataPacket packet;
 	packet.write(DATA_PACKET_PROJECTILE, projectile);
-	return syncSendDataMessage(packet);
-}
-
-rc_network WinsockNetwork::sendSlingshotPullback()
-{
-	DataPacket packet;
-	packet.write(DATA_PACKET_SLINGSHOT_PULLBACK);
 	return syncSendDataMessage(packet);
 }
 
@@ -793,11 +786,11 @@ void WinsockNetwork::handleDataMessage(const DataPacket& message)
 			notify(RECEIVED_PLAYER_POSITION, &vec);
 			break;
 		}
-		case DATA_PACKET_SLINGSHOT_POSITION:
+		case DATA_PACKET_SLINGSHOT_PULLBACK:
 		{
 			cVector3d vec;
 			message.read(vec);
-			notify(RECEIVED_SLINGSHOT_POSITION, &vec);			
+			notify(RECEIVED_SLINGSHOT_PULLBACK, &vec);			
 			break;
 		}
 		case DATA_PACKET_PROJECTILE:
@@ -805,11 +798,6 @@ void WinsockNetwork::handleDataMessage(const DataPacket& message)
 			Projectile projectile;
 			message.read(projectile);
 			notify(RECEIVED_PROJECTILE, &projectile);
-			break;
-		}
-		case DATA_PACKET_SLINGSHOT_PULLBACK:
-		{
-			notify(RECEIVED_PULLBACK);
 			break;
 		}
 		case DATA_PACKET_GAME_OVER:

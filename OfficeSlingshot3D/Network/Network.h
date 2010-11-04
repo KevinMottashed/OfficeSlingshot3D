@@ -95,11 +95,12 @@ public:
 	virtual rc_network sendPlayerPosition(const cVector3d& position) = 0;
 
 	/**
-	 * Send the slingshot position to the peer.
+	 * Send the slingshot pullback position to the peer.
+	 * The pullback position is the position of the sling when the slingshot is being fired.
 	 * @param position Our slingshot position that will be sent to the peer.
 	 * @return The error code, SUCCESS if the message was sent and received
 	 */
-	virtual rc_network sendSlingshotPosition(const cVector3d& position) = 0;
+	virtual rc_network sendSlingshotPullback(const cVector3d& position) = 0;
 
 	/**
 	 * Send a projectile to the peer.
@@ -107,13 +108,6 @@ public:
 	 * @return The error code, SUCCESS if the message was sent and received
 	 */
 	virtual rc_network sendProjectile(const Projectile& projectile) = 0;
-
-	/**
-	 * Send a slingshot pullback event to the peer.
-	 * This lets the peer know that we have started to pull back our slingshot.
-	 * @return The error code, SUCCESS if the message was sent and received
-	 */
-	virtual rc_network sendSlingshotPullback() = 0;
 
 	/**
 	 * Send a message to the peer letting him know that we have lost the game.

@@ -1,9 +1,7 @@
 #include "VirtualSlingshot.h"
 #include "WorldConstants.h"
 
-const cVector3d VirtualSlingshot::slingshot_sling_offset = cVector3d(0, 1.0, 0.0f);
-
-VirtualSlingshot::VirtualSlingshot(cWorld* world, const cVector3d& startingPosition, const cCollisionAABBBox& boundingBox):boundingBox(boundingBox)
+VirtualSlingshot::VirtualSlingshot(cWorld* world, const cVector3d& startingPosition)
 {
 	slingshotMesh = new cMesh(world);
 
@@ -25,18 +23,4 @@ VirtualSlingshot::VirtualSlingshot(cWorld* world, const cVector3d& startingPosit
 
 VirtualSlingshot::~VirtualSlingshot(void)
 {
-}
-
-void VirtualSlingshot::move(cVector3d position)
-{
-	if (boundingBox.contains(position))
-	{
-		slingshotMesh->setPos(position);
-	}
-	return;
-}
-
-cVector3d VirtualSlingshot::getBallPosition()
-{
-	return slingshotMesh->getPos() + slingshot_sling_offset;
 }

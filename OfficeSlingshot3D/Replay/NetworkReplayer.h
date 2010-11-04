@@ -111,11 +111,12 @@ public:
 	virtual rc_network sendPlayerPosition(const cVector3d& position);
 
 	/**
-	 * Send a slingshot position to the peer.
+	 * Send the slingshot pullback position to the peer.
+	 * The pullback position is the position of the sling when the slingshot is being fired.
 	 * The replayer won't actually do anything, this is just to implement the network interface.
 	 * @return SUCCESS 
 	 */
-	virtual rc_network sendSlingshotPosition(const cVector3d& position);
+	virtual rc_network sendSlingshotPullback(const cVector3d& position);
 
 	/**
 	 * Send a projectile to the peer.
@@ -123,13 +124,6 @@ public:
 	 * @return SUCCESS 
 	 */
 	virtual rc_network sendProjectile(const Projectile& projectile);
-
-	/**
-	 * Send a slingshot pullback event to the peer.
-	 * The replayer won't actually do anything, this is just to implement the network interface.
-	 * @return SUCCESS 
-	 */
-	virtual rc_network sendSlingshotPullback();
 
 	/**
 	 * Send a slingshot release event to the peer.

@@ -7,11 +7,11 @@
 KeyboardFalcon::KeyboardFalcon() : 
 	reporting(false),
 	firing(false),
-	position(	World::local_slingshot_starting_position.z, 
-		World::local_slingshot_starting_position.x, 
-		World::local_slingshot_starting_position.y)
+	position(	World::local_slingshot_position.z, 
+		World::local_slingshot_position.x, 
+		World::local_slingshot_position.y)
 {
-	_boundingBox = cCollisionAABBBox(World::local_slingshot_bounding_box);
+	_boundingBox = cCollisionAABBBox(World::local_ball_bounding_box);
 	PerspectiveMath::convertBoxOrientationGameToNovint(_boundingBox);
 	// add ourselves as a keyboard listener	
 	Keyboard::instance()->attach(this);

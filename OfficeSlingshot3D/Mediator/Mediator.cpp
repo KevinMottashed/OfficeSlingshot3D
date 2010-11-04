@@ -182,7 +182,7 @@ void Mediator::update(NetworkUpdateContext context, const void* data)
 			// TODO remove video data
 			break;
 		}
-		case RECEIVED_SLINGSHOT_POSITION:
+		case RECEIVED_SLINGSHOT_PULLBACK:
 		{
 			// the network has received a slingshot position
 			assert(data != NULL);
@@ -191,7 +191,7 @@ void Mediator::update(NetworkUpdateContext context, const void* data)
 			cVector3d adjusted = *(cVector3d*) data;
 			PerspectiveMath::invert3DCoordinate(adjusted);						
 			
-			notify(MediatorUpdateContext::PEER_SLINGSHOT_MOVED, &adjusted);
+			notify(MediatorUpdateContext::PEER_SLINGSHOT_PULLBACK, &adjusted);
 			break;
 		}
 		case RECEIVED_PROJECTILE:
@@ -204,12 +204,6 @@ void Mediator::update(NetworkUpdateContext context, const void* data)
 			PerspectiveMath::invert3DProjectile(adjusted);
 
 			notify(MediatorUpdateContext::PEER_SLINGSHOT_FIRED, &adjusted);
-			break;
-		}
-		case RECEIVED_PULLBACK:
-		{
-			// the network has received a slingshot pullback
-			notify(MediatorUpdateContext::PEER_PULLBACK_SLINGSHOT);
 			break;
 		}
 		case RECEIVED_PLAYER_POSITION:
@@ -563,32 +557,35 @@ void Mediator::update(FalconUpdateContext context, const void* data)
 {
 	switch(context)
 	{
-		case SLINGSHOT_MOVED:
+		case SLINGSHOT_PULLBACK:
+		case SLINGSHOT_FIRED:
 		{
 			assert(data != NULL);
 
+			// convert the falcon's position to the game equivalent for the ball
+			// The falcon controls where the ball is when it is about to be fired.
 			cVector3d correctedFalconPosition = *(cVector3d*) data;
 			PerspectiveMath::convertOrientationNovintToGame(correctedFalconPosition);
+			cCollisionAABBBox falconBoundingBox = cCollisionAABBBox(falcon->boundingBox());
+			PerspectiveMath::convertBoxOrientationNovintToGame(falconBoundingBox);			
+			PerspectiveMath::convertBoxToBox(correctedFalconPosition, falconBoundingBox, World::local_ball_bounding_box);
 
-			cCollisionAABBBox mediatorBoundingBox = cCollisionAABBBox(falcon->boundingBox());
-			PerspectiveMath::convertBoxOrientationNovintToGame(mediatorBoundingBox);
-			
-			PerspectiveMath::convertBoxToBox(correctedFalconPosition, mediatorBoundingBox, World::local_slingshot_bounding_box);
-
-			// let the peer know that we have moved our slingshot
-			rc_network error = network->sendSlingshotPosition(correctedFalconPosition);
-			if (error != SUCCESS)
+			if (context == SLINGSHOT_PULLBACK)
 			{
-				handleNetworkError(error);
-				return;
+				// let the peer know that we have moved our slingshot
+				rc_network error = network->sendSlingshotPullback(correctedFalconPosition);
+				if (error != SUCCESS)
+				{
+					handleNetworkError(error);
+					return;
+				}
+				notify(MediatorUpdateContext::LOCAL_SLINGSHOT_PULLBACK, &correctedFalconPosition);
 			}
-
-			notify(MediatorUpdateContext::LOCAL_SLINGSHOT_MOVED, &correctedFalconPosition);
-			break;
-		}
-		case SLINGSHOT_FIRED:
-		{
-			notify(MediatorUpdateContext::LOCAL_SLINGSHOT_FIRED);
+			else // fired
+			{
+				// let the game know that we have fired our slingshot
+				notify(MediatorUpdateContext::LOCAL_SLINGSHOT_FIRED, &correctedFalconPosition);
+			}
 			break;
 		}
 		default:

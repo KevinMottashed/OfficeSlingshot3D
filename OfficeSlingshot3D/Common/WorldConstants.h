@@ -20,12 +20,14 @@ namespace World
 	/**
 	 * Our slingshot's starting position
 	 */
-	static const cVector3d local_slingshot_starting_position = cVector3d(0.0f, -0.2f, 5.0f);
+	static const cVector3d local_slingshot_position = cVector3d(0.0f, -0.2f, 5.0f);
 	
 	/**
 	 * The peers slingshot's starting position
 	 */
-	static const cVector3d peer_slingshot_starting_position = cVector3d(0.0f, -0.2f, -5.0f);
+	static const cVector3d peer_slingshot_position = cVector3d(0.0f, -0.2f, -5.0f);
+
+	static const cVector3d local_ball_starting_position = cVector3d(0.0f, 0.8, 5.0);
 
 	/**
 	 * Our avatar's starting position
@@ -40,16 +42,16 @@ namespace World
 	/**
 	 * Local slingshot bounding box
 	 */
-	static const cCollisionAABBBox local_slingshot_bounding_box = cCollisionAABBBox(
-		cVector3d(-1.0f - error_margin, -0.4f - error_margin, 4.0f - error_margin), 
-		cVector3d(1.0f + error_margin, 0.0f + error_margin, 5.0f + error_margin));
+	static const cCollisionAABBBox local_ball_bounding_box = cCollisionAABBBox(
+		cVector3d(-0.1f - error_margin, 0.6f - error_margin, 4.5f - error_margin), 
+		cVector3d(0.1f + error_margin, 0.8f + error_margin, 5.0f + error_margin));
 
 	/**
 	 * Peer slingshot bounding box
 	 */
-	static const cCollisionAABBBox peer_slingshot_bounding_box = cCollisionAABBBox(
-		cVector3d(-1.0f - error_margin, -0.4f - error_margin, -5.0f - error_margin), 
-		cVector3d(1.0f + error_margin, 0.0f + error_margin, -4.0f + error_margin));
+	static const cCollisionAABBBox peer_ball_bounding_box = cCollisionAABBBox(
+		cVector3d(-0.1f - error_margin, 0.6f - error_margin, -5.0f - error_margin), 
+		cVector3d(0.1f + error_margin, 0.8f + error_margin, -4.5f + error_margin));
 }
 
 #endif

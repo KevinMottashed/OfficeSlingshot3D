@@ -60,24 +60,24 @@ void Game::update(MediatorUpdateContext_t context, const void* data)
 			mediator->switchCamera(titleScreen.camera());
 			break;
 		}
-		case MediatorUpdateContext::LOCAL_SLINGSHOT_MOVED:
+		case MediatorUpdateContext::LOCAL_SLINGSHOT_PULLBACK:
 		{
 			assert(data != NULL);
 
 			// we can't update the game and change it at the same time
 			boost::mutex::scoped_lock lock(environment_mutex);
 
-			environment.moveLocalSlingshot(*(cVector3d*) data);
+			// TODO move the ball in the slingshot
 			break;
 		}
-		case MediatorUpdateContext::PEER_SLINGSHOT_MOVED:
+		case MediatorUpdateContext::PEER_SLINGSHOT_PULLBACK:
 		{
 			assert(data != NULL);
 			
 			// we can't update the game and change it at the same time
 			boost::mutex::scoped_lock lock(environment_mutex);
 
-			environment.movePeerSlingshot(*(cVector3d*) data);
+			// TODO move the ball in the slingshot
 			break;
 		}
 		case MediatorUpdateContext::LOCAL_SLINGSHOT_FIRED:

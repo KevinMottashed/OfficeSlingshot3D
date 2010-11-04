@@ -84,12 +84,12 @@ void NetworkReplayer::replay(LogEvent_t logEvent)
 			notify(RECEIVED_VIDEO, &video);
 			break;
 		}
-		case LogEvent::NETWORK_SLINGSHOT_POSITION:
+		case LogEvent::NETWORK_SLINGSHOT_PULLBACK:
 		{
 			cVector3d vec;
 			*archive >> vec;
 
-			notify(RECEIVED_SLINGSHOT_POSITION, &vec);
+			notify(RECEIVED_SLINGSHOT_PULLBACK, &vec);
 			break;
 		}
 		case LogEvent::NETWORK_PROJECTILE:
@@ -98,11 +98,6 @@ void NetworkReplayer::replay(LogEvent_t logEvent)
 			*archive >> p;
 
 			notify(RECEIVED_PROJECTILE, &p);
-			break;
-		}
-		case LogEvent::NETWORK_SLINGSHOT_PULLBACK:
-		{
-			notify(RECEIVED_PULLBACK);
 			break;
 		}
 		case LogEvent::NETWORK_PLAYER_POSITION:
@@ -183,17 +178,12 @@ rc_network NetworkReplayer::sendPlayerPosition(const cVector3d& position)
 	return SUCCESS;
 }
 
-rc_network NetworkReplayer::sendSlingshotPosition(const cVector3d& position)
+rc_network NetworkReplayer::sendSlingshotPullback(const cVector3d& position)
 {
 	return SUCCESS;
 }
 
 rc_network NetworkReplayer::sendProjectile(const Projectile& projectile)
-{
-	return SUCCESS;
-}
-
-rc_network NetworkReplayer::sendSlingshotPullback()
 {
 	return SUCCESS;
 }
