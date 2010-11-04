@@ -444,7 +444,7 @@ void CMainDlg::displayGameOver(Player_t player)
 	if (player == Player::LOCAL)
 	{
 		os << m_preferences.name;
-		os << " has lost the game";
+		os << " has won the game";
 	}
 	else
 	{
