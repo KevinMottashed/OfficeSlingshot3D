@@ -5,7 +5,8 @@
 
 
 KeyboardFalcon::KeyboardFalcon() : 
-	reporting(false), 
+	reporting(false),
+	firing(false),
 	position(	World::local_slingshot_starting_position.z, 
 		World::local_slingshot_starting_position.x, 
 		World::local_slingshot_starting_position.y)
@@ -44,62 +45,89 @@ void KeyboardFalcon::keyPressed(unsigned int key)
 
 	switch (key)
 	{
-		case VK_SPACE:
+		case VK_SPACE: // pullback/shoot
 		{
-			notify(SLINGSHOT_FIRED);
+			if (!firing)
+			{
+				firing = true;
+				notify(SLINGSHOT_PULLBACK, &position);
+			}
+			else
+			{
+				firing = false;
+				notify(SLINGSHOT_FIRED, &position);
+			}
 			break;
 		}
-		case VK_NUMPAD8:
+		case VK_NUMPAD8: // move forward
 		{
 			if (position.x - move_increment >= _boundingBox.getLowerX())
 			{
 				position.x -= move_increment;
-				notify(SLINGSHOT_MOVED, &position);
+				if (firing)
+				{
+					notify(SLINGSHOT_PULLBACK, &position);
+				}
 			}
 			break;
 		}
-		case VK_NUMPAD5:
+		case VK_NUMPAD5: // move backwards
 		{
 			if (position.x + move_increment <= _boundingBox.getUpperX())
 			{
 				position.x += move_increment;
-				notify(SLINGSHOT_MOVED, &position);
+				if (firing)
+				{
+					notify(SLINGSHOT_PULLBACK, &position);
+				}
 			}
 			break;
 		}
-		case VK_NUMPAD4:
+		case VK_NUMPAD4: // move left
 		{
 			if (position.y - move_increment >= _boundingBox.getLowerY())
 			{
 				position.y -= move_increment;
-				notify(SLINGSHOT_MOVED, &position);
+				if (firing)
+				{
+					notify(SLINGSHOT_PULLBACK, &position);
+				}
 			}
 			break;
 		}
-		case VK_NUMPAD6:
+		case VK_NUMPAD6: // move right
 		{
 			if (position.y + move_increment <= _boundingBox.getUpperY())
 			{
 				position.y += move_increment;
-				notify(SLINGSHOT_MOVED, &position);
+				if (firing)
+				{
+					notify(SLINGSHOT_PULLBACK, &position);
+				}
 			}
 			break;
 		}
-		case VK_NUMPAD7:
+		case VK_NUMPAD7: // move up
 		{
 			if (position.z + move_increment <= _boundingBox.getUpperZ())
 			{
 				position.z += move_increment;
-				notify(SLINGSHOT_MOVED, &position);
+				if (firing)
+				{
+					notify(SLINGSHOT_PULLBACK, &position);
+				}
 			}
 			break;
 		}
-		case VK_NUMPAD1:
+		case VK_NUMPAD1: // move down
 		{
 			if (position.z - move_increment >= _boundingBox.getLowerZ())
 			{
 				position.z -= move_increment;
-				notify(SLINGSHOT_MOVED, &position);
+				if (firing)
+				{
+					notify(SLINGSHOT_PULLBACK, &position);
+				}
 			}
 			break;
 		}

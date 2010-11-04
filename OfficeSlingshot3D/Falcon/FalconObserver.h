@@ -11,6 +11,7 @@ enum FalconUpdateContext
 {
 	SLINGSHOT_MOVED, /**< The slingshot has been moved to a new position */
 	SLINGSHOT_FIRED, /**< The slingshot has been fired */
+	SLINGSHOT_PULLBACK, /**< The slingshot is currently been pulled back */
 };
 
 /**

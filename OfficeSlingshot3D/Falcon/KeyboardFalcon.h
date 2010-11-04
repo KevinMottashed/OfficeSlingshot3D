@@ -55,6 +55,8 @@ private:
 	 */
 	cVector3d position;
 
+	bool firing; /**< True if the slingshot is currently in firing mode */
+
 	/**
 	 * The keyboard falcon cannot move outside of this box
 	 */
