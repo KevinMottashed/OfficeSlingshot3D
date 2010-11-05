@@ -66,6 +66,7 @@ void VirtualBall::move(cVector3d newBallPos)
 		cVector3d initPos = World::local_ball_starting_position;
 		startingOffset = newBallPos - initPos;
 
+		// Disable gravity for the ball
 		odeBall->disableDynamics();
 
 		odeBall->setPosition(initPos);
@@ -75,18 +76,20 @@ void VirtualBall::move(cVector3d newBallPos)
 		firstPullBack = false;
 
 	} else {
-		odeBall->setPosition(newBallPos);
+		odeBall->setPosition(newBallPos-startingOffset);
 	}
 }
 
 cVector3d VirtualBall::calculateForceVector()
 {
 	cVector3d startPos = startingOffset;
-	cVector3d endPos = World::local_ball_starting_position - odeBall->getPos();
+	cVector3d endPos = (World::local_ball_starting_position + startingOffset) - odeBall->getPos();
 
 	cVector3d force = endPos-startPos;
-	force.z *= 1000;
+	
+	force.x *= 200;
 	force.y *= 500;
+	force.z *= 1500;
 
 	return force;
 }
