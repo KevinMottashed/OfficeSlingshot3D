@@ -33,8 +33,12 @@ void VirtualBall::fire(Projectile p)
 	alreadyCollided = false;
 	firstPullBack = true;
 
+	odeBall->setShowEnabled(true);
+
 	// make the ball dynamic
 	odeBall->enableDynamics();
+
+	odeBall->setPosition(p.position());
 
 	//Add a force just for show
 	odeBall->addGlobalForceAtGlobalPos(p.force(), p.position());
