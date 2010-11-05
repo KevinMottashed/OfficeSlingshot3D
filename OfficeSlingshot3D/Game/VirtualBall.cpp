@@ -1,16 +1,15 @@
 #include "VirtualBall.h"
 
-VirtualBall::VirtualBall(cWorld* world, cODEWorld* ODEWorld)
+VirtualBall::VirtualBall(cWorld* world, cODEWorld* ODEWorld, bool _isLocal)
 {
 	alreadyCollided = false;
 	firstPullBack = true;
+	isLocal = _isLocal;
 
 	ballMesh = new cMesh(world);
 
 	ballMesh->loadFromFile("Objects\\ball\\ball.obj");
 	ballMesh->scale(0.015f);
-
-	ballMesh->createAABBCollisionDetector(1.01, true, false);
 
 	odeBall = new cODEGenericBody(ODEWorld);
 	odeBall->setImageModel(ballMesh);
@@ -54,9 +53,20 @@ void VirtualBall::collided()
 	alreadyCollided = true;
 }
 
-cVector3d VirtualBall::getMeshPos()
+cVector3d VirtualBall::getBallPos()
 {
 	return odeBall->getPos();
+}
+
+cVector3d VirtualBall::getBallCenter()
+{
+	cVector3d ballPos = odeBall->getPos();
+	if(isLocal) {
+		return cVector3d(ballPos.x, ballPos.y+0.18f, ballPos.z-5.1f);
+	}
+	else {
+		return cVector3d(ballPos.x, ballPos.y+0.18f, ballPos.z+5.1f);
+	}
 }
 
 void VirtualBall::reset()
@@ -67,7 +77,12 @@ void VirtualBall::reset()
 void VirtualBall::move(cVector3d newBallPos)
 {
 	if (firstPullBack) {
-		cVector3d initPos = World::local_ball_starting_position;
+		cVector3d initPos;
+		if(isLocal) {
+			initPos = World::local_ball_starting_position;
+		} else {
+			initPos = World::peer_ball_starting_position;
+		}
 		startingOffset = newBallPos - initPos;
 
 		// Disable gravity for the ball
@@ -91,9 +106,9 @@ cVector3d VirtualBall::calculateForceVector()
 
 	cVector3d force = endPos-startPos;
 	
-	force.x *= 200;
-	force.y *= 500;
-	force.z *= 1500;
+	force.x *= 200.0f;
+	force.y *= 500.0f;
+	force.z *= 1500.0f;
 
 	return force;
 }

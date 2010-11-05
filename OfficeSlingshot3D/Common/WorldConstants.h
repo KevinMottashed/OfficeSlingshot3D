@@ -27,7 +27,15 @@ namespace World
 	 */
 	static const cVector3d peer_slingshot_position = cVector3d(0.0f, -0.2f, -5.0f);
 
+	/**
+	 * The local ball's starting position
+	 */
 	static const cVector3d local_ball_starting_position = cVector3d(0.0f, 0.5f, 5.1f);
+
+	/**
+	 * The local ball's starting position
+	 */
+	static const cVector3d peer_ball_starting_position = cVector3d(0.0f, 0.5f, -5.1f);
 
 	/**
 	 * Our avatar's starting position

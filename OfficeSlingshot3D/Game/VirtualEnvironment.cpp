@@ -34,7 +34,7 @@ bool VirtualEnvironment::isColliding()
 	foreach (VirtualBall*& odeBall, peerBalls)
 	{
 		if (!odeBall->getAlreadyCollided()) {
-			cVector3d ballPos = odeBall->getMeshPos();
+			cVector3d ballPos = odeBall->getBallPos();
 			bool collided = lAvatar->isInHitBox(ballPos);
 
 			if(collided) {
@@ -56,7 +56,7 @@ Projectile VirtualEnvironment::fireLocalSlingshot()
 	// TODO calulate force and fire
 	cVector3d firing_force = localBalls[lNumBalls % ball_limit]->calculateForceVector();
 
-	cVector3d ballPosition = localBalls[lNumBalls % ball_limit]->getMeshPos();
+	cVector3d ballPosition = localBalls[lNumBalls % ball_limit]->getBallPos();
 
 	// the resulting projectile
 	Projectile p;
@@ -67,6 +67,9 @@ Projectile VirtualEnvironment::fireLocalSlingshot()
 	
 	// increment the number of balls that were fired, so we know which one to use next
 	lNumBalls++;
+
+	// Hide the peer elastic
+	lElastics->hide();
 	
 	return p;
 }
@@ -77,6 +80,9 @@ void VirtualEnvironment::firePeerSlingshot(Projectile p)
 	
 	// increment the number of balls that were fired, so we know which one to use next
 	rNumBalls++;
+
+	// Hide the peer elastic
+	rElastics->hide();
 
 	return;
 }
@@ -108,9 +114,25 @@ void VirtualEnvironment::movePeerAvatar(cVector3d position)
 
 void VirtualEnvironment::pullBackLocalBall(cVector3d relBallPos)
 {
+	// Move the local ball
 	localBalls[lNumBalls % ball_limit]->move(relBallPos);
+
+	cVector3d ballPos = localBalls[lNumBalls % ball_limit]->getBallCenter();
+
+	// Update the local elastic
+	lElastics->updateElasticMesh(lSlingshot->upperLeft(), lSlingshot->upperRight(), ballPos);
 }
 
+void VirtualEnvironment::pullBackPeerBall(cVector3d relBallPos)
+{
+	// Move the peer ball
+	peerBalls[rNumBalls % ball_limit]->move(relBallPos);
+
+	cVector3d ballPos = peerBalls[rNumBalls % ball_limit]->getBallCenter();
+
+	// Update the peer elastic
+	rElastics->updateElasticMesh(rSlingshot->upperLeft(), rSlingshot->upperRight(), ballPos);
+}
 
 void VirtualEnvironment::reduceLocalHp(unsigned int dmg)
 {
@@ -153,7 +175,7 @@ bool VirtualEnvironment::isLocalPlayerDead(){
 
 cVector3d VirtualEnvironment::getCurrentBallPosition()
 {
-	return peerBalls[(rNumBalls-1) % ball_limit]->getMeshPos();
+	return peerBalls[(rNumBalls-1) % ball_limit]->getBallPos();
 }
 
 int VirtualEnvironment::getAvatarHitBodyPart()
@@ -285,6 +307,13 @@ void VirtualEnvironment::initialize(void)
 	// Create both slingshots
 	lSlingshot = new VirtualSlingshot(world, World::local_slingshot_position);
 	rSlingshot = new VirtualSlingshot(world, World::peer_slingshot_position);
+	
+	//**************************************//
+	//               ELASTICS               //
+	//**************************************//
+
+	lElastics = new VirtualElastic(world, World::local_slingshot_position, true);
+	rElastics = new VirtualElastic(world, World::peer_slingshot_position, false);
 
 	//**************************************//
 	//                AVATARS               //
@@ -306,12 +335,12 @@ void VirtualEnvironment::initialize(void)
 
 	foreach (VirtualBall*& odeBall, localBalls)
 	{
-		odeBall = new VirtualBall(world, ODEWorld);
+		odeBall = new VirtualBall(world, ODEWorld, true);
 	}
 
 	foreach (VirtualBall*& odeBall, peerBalls)
 	{
-		odeBall = new VirtualBall(world, ODEWorld);
+		odeBall = new VirtualBall(world, ODEWorld, false);
 	}
 
 	//**************************************//

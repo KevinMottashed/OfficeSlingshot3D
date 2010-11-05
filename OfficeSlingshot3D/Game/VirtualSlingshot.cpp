@@ -24,3 +24,16 @@ VirtualSlingshot::VirtualSlingshot(cWorld* world, const cVector3d& startingPosit
 VirtualSlingshot::~VirtualSlingshot(void)
 {
 }
+
+cVector3d VirtualSlingshot::upperLeft()
+{
+	cVector3d min = slingshotMesh->getBoundaryMin();
+	cVector3d max = slingshotMesh->getBoundaryMax();
+
+	return cVector3d(min.x, max.y, max.z);
+}
+
+cVector3d VirtualSlingshot::upperRight()
+{
+	return slingshotMesh->getBoundaryMax();
+}

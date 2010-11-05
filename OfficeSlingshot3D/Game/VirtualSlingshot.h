@@ -21,6 +21,16 @@ public:
 	 */
 	~VirtualSlingshot(void);
 
+	/**
+	 * Retrieves the upper left corner of the slinshot object (left fork)
+	 */
+	cVector3d upperLeft();
+
+	/**
+	 * Retrieves the upper right corner of the slinshot object (right fork)
+	 */
+	cVector3d upperRight();
+
 private:
 	/**
 	 * The slingshot's mesh object.

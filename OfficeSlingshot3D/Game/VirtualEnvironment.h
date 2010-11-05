@@ -10,6 +10,7 @@
 #include "VirtualSlingshot.h"
 #include "VirtualBall.h"
 #include "HpBar.h"
+#include "VirtualElastic.h"
 
 using namespace std;
 
@@ -91,6 +92,12 @@ public:
 	 * @param relBallPos The position of the ball relative to its original position
 	 */
 	void pullBackLocalBall(cVector3d relBallPos);
+
+	/**
+	 * Moves the peer ball as the user is pulling back the slingshot before shooting it
+	 * @param relBallPos The position of the ball relative to its original position
+	 */
+	void pullBackPeerBall(cVector3d relBallPos);
 
 	/**
 	 * Initialize the 3d environment.
@@ -229,9 +236,19 @@ private:
 	HpBar* rHpBar;
 
 	/**
-	 * The local player's hit point bar.\
+	 * The local player's hit point bar.
 	 */
 	HpBar* lHpBar;
+
+	/**
+	 * The left elastic.
+	 */
+	VirtualElastic* lElastics;
+
+	/**
+	 * The right elastic.
+	 */
+	VirtualElastic* rElastics;
 
 	/**
 	 * The background image.
