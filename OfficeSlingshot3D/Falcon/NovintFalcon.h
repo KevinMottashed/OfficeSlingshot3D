@@ -66,6 +66,8 @@ private:
 	 */
 	cVector3d position;
 
+	bool firing; /**< True if the slingshot is currently in firing mode */
+
 	/**
 	 * The bounding box to which the falcon is restricted
 	 */

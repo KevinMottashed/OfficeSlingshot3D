@@ -16,7 +16,8 @@ using namespace boost;
 //////////////////////////////////////////////////////////////////////
 
 NovintFalcon::NovintFalcon() : 
-	numHapticDevices(0)
+	numHapticDevices(0),
+	firing(false)
 {
     // read the number of haptic devices currently connected to the computer
     numHapticDevices = handler.getNumDevices();
@@ -100,8 +101,24 @@ void NovintFalcon::poll()
             // the user switch (ON = TRUE / OFF = FALSE)
             if (buttonStatus)
             {
-                notify(SLINGSHOT_FIRED);
+				if (!firing)
+				{
+					firing = true;
+					notify(SLINGSHOT_PULLBACK, &newPosition);
+				}				
+				else if (firing)
+				{
+					notify(SLINGSHOT_PULLBACK, &newPosition);
+				}
             }
+			else
+			{
+				if (firing)
+				{
+					firing = false;
+					notify(SLINGSHOT_FIRED, &position);
+				}
+			}
 
 			//notify(SLINGSHOT_MOVED, &newPosition);
         }
