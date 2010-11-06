@@ -64,22 +64,8 @@ void VirtualAvatar::rotate(double ang)
 	double xTrans = (cSinDeg(ang)*0.8)*2;
 	double yTrans = 0.8-(cCosDeg(ang)*0.8);
 
+	// Simulate the rotation with x and y translations
 	translate(xTrans, yTrans);
-
-	/*
-	//Reset rotation to upright
-	avatarMesh->rotate(avatarMesh->getRot().inv());
-
-	if(!isLocal){
-		ang = -ang;
-		avatarMesh->rotate(cVector3d(0.0f, 1.0f, 0.0f), cDegToRad(-90));
-	} else {
-		avatarMesh->rotate(cVector3d(0.0f, 1.0f, 0.0f), cDegToRad(90));
-	}
-
-	//Apply rotation
-	avatarMesh->rotate(cVector3d(0.0f, 0.0f, 1.0f), cDegToRad(-ang));
-	*/
 }
 
 void VirtualAvatar::translate(double xTrans, double yTrans)
@@ -112,27 +98,6 @@ void VirtualAvatar::translate(double xTrans, double yTrans)
 		cVector3d prevHeadPos = headHitBox->getPos();
 		headHitBox->setPos(xTrans, -yTrans, prevHeadPos.z);
 	}
-}
-
-// TODO: Remove if rotation is not needed !!
-void VirtualAvatar::updateBoundaries(double ang, cVector3d position)
-{
-	// Rotate the boundaries
-	double opposed = cSinDeg(ang)*0.8;
-	double adjacent = cCosDeg(ang)*0.8;
-	double halfOpp = opposed/2;
-	double halfAdj = adjacent/2;
-
-	/*
-	boundary0 = cVector3d(-halfAdj+opposed, adjacent+halfOpp, boundary0.z);
-	boundary1 = cVector3d(opposed+halfAdj, adjacent-halfOpp, boundary1.z);
-	boundary2 = cVector3d(halfAdj, -halfOpp, boundary2.z);
-	boundary3 = cVector3d(-halfAdj, halfOpp, boundary3.z);
-	*/
-
-	//// Translate the boundaries
-	//boundaryMin.x += ang/75;
-	//boundaryMax.x += ang/75;
 }
 
 bool VirtualAvatar::isInHitBox(cVector3d ballPos)

@@ -19,6 +19,7 @@ Game::Game(boost::shared_ptr<Mediator> mediator) :
 	environment.initialize();
 	
 	mediator->switchCamera(titleScreen.camera());
+	mediator->setVolumePreferences();
 }
 
 Game::~Game()

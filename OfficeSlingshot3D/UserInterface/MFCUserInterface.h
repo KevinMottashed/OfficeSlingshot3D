@@ -163,6 +163,18 @@ public:
 	virtual void changeVolume(const int vol);
 
 	/**
+	 * Sets the mute preference
+	 * @param mute True if the sound needs to be muted
+	 */
+	virtual void setMutePref(const bool mute);
+
+	/**
+	 * Sets the volume preference
+	 * @param vol The new volume
+	 */
+	virtual void setVolPref(const int vol);
+
+	/**
 	 * Returns the applications main window.
 	 * @return the main window.
 	 */

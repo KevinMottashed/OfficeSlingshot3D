@@ -148,6 +148,11 @@ public:
 	 * @param vol The new volume
 	 */
 	void changeVolume(const int vol);
+
+	/**
+	 * Sets the config volume preferences to the game and UI
+	 */
+	void setVolumePreferences();
 	
 private:
 	/**

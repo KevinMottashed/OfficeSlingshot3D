@@ -29,13 +29,6 @@ public:
 	void rotate(double ang);
 
 	/**
-	 * Update boundaries when the avatar is moved or rotated.
-	 * @param ang The angle from which the avatar was moved.
-	 * @param position The avatar's position.
-	 */
-	void updateBoundaries(double ang, cVector3d position);
-
-	/**
 	 * Returns true if the point is in the balls hit box.
 	 * @param ballPos The position of the ball
 	 * @return True if the ball collided with the local avatar

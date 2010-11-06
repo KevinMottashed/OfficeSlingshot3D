@@ -26,8 +26,6 @@ Mediator::Mediator(boost::shared_ptr<Network> network,
 	zcamera->attach(this);
 	falcon->attach(this);
 
-	audio.volume(5);
-
 	InitializeCriticalSection(&configurationMutex);
 }
 
@@ -467,7 +465,6 @@ void Mediator::muteVolume(const bool soundOn)
 		audio.mute();
 	} else {
 		audio.unmute();
-		audio.volume(1);
 	}
 }
 
@@ -596,6 +593,25 @@ void Mediator::update(FalconUpdateContext context, const void* data)
 		}
 	}
 	return;
+}
+
+void Mediator::setVolumePreferences()
+{
+	// Set mute preferences
+	bool muted = configuration->getUserPreferences().muted;
+	if(muted) {
+		audio.mute();
+		userInterface->setMutePref(muted);
+		notify(MediatorUpdateContext::CHANGE_VOL_ICON, &muted);
+	}
+
+	// Set volume preferences
+	int vol = configuration->getUserPreferences().volume;
+	if(vol > 0 && !muted) {
+		changeVolume(vol);
+		userInterface->setVolPref(vol);
+		notify(MediatorUpdateContext::CHANGE_VOL_ICON, &vol);
+	}
 }
 
 void Mediator::stopDevices()

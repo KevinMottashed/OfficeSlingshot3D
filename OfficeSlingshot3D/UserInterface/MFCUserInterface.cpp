@@ -149,3 +149,14 @@ void MFCUserInterface::changeVolume(const int vol)
 	return;
 }
 
+void MFCUserInterface::setMutePref(const bool mute)
+{
+	m_pMainDlg->setMutePref(mute);
+	return;
+}
+
+void MFCUserInterface::setVolPref(const int newVolume)
+{
+	m_pMainDlg->setVolPref(newVolume);
+	return;
+}

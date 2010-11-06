@@ -10,6 +10,7 @@ CMainDlg::CMainDlg(UserInterface* pUserInterface, const UserPreferences& prefere
 	: pUserInterface(pUserInterface),
 		m_preferences(preferences),
 		m_soundOn(true),
+		m_volume(1),
 		CDialog(CMainDlg::IDD, pParent)
 {
 	//{{AFX_DATA_INIT(CMainDlg)
@@ -443,12 +444,12 @@ void CMainDlg::displayGameOver(Player_t player)
 	ostringstream os;
 	if (player == Player::LOCAL)
 	{
-		os << m_preferences.name;
+		os << m_peerUserName;
 		os << " has won the game";
 	}
 	else
 	{
-		os << m_peerUserName;
+		os << m_preferences.name;
 		os << " has won the game";
 	}	
 
@@ -472,35 +473,53 @@ void CMainDlg::camera(cCamera* camera)
 void CMainDlg::OnStnClickedVolumeCtrl()
 {
 	pUserInterface->muteVolume(m_soundOn);
+	if(!m_soundOn) {
+		pUserInterface->changeVolume(m_volume);
+	}
 	m_soundOn = !m_soundOn;
 }
 
 void CMainDlg::OnStnClickedVol1()
 {
-	pUserInterface->changeVolume(1);
+	m_volume = 1;
+	pUserInterface->changeVolume(m_volume);
 	m_soundOn = true;
 }
 
 void CMainDlg::OnStnClickedVol2()
 {
-	pUserInterface->changeVolume(2);
+	m_volume = 2;
+	pUserInterface->changeVolume(m_volume);
 	m_soundOn = true;
 }
 
 void CMainDlg::OnStnClickedVol3()
 {
-	pUserInterface->changeVolume(3);
+	m_volume = 3;
+	pUserInterface->changeVolume(m_volume);
 	m_soundOn = true;
 }
 
 void CMainDlg::OnStnClickedVol4()
 {
-	pUserInterface->changeVolume(4);
+	m_volume = 4;
+	pUserInterface->changeVolume(m_volume);
 	m_soundOn = true;
 }
 
 void CMainDlg::OnStnClickedVol5()
 {
-	pUserInterface->changeVolume(5);
+	m_volume = 5;
+	pUserInterface->changeVolume(m_volume);
 	m_soundOn = true;
+}
+
+void CMainDlg::setMutePref(const bool mute)
+{
+	m_soundOn = mute;
+}
+
+void CMainDlg::setVolPref(const int vol)
+{
+	m_volume = vol;
 }

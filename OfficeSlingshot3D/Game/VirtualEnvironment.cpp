@@ -94,8 +94,6 @@ void VirtualEnvironment::moveLocalAvatar(cVector3d position)
 	ang = cClamp<double>(ang, -45, 45);
 
 	lAvatar->rotate(ang);
-	//lAvatar->translate(ang);
-	//lAvatar->updateBoundaries(ang, position);
 	
 	return;
 }
@@ -107,7 +105,6 @@ void VirtualEnvironment::movePeerAvatar(cVector3d position)
 	ang = cClamp<double>(ang, -45, 45);
 
 	rAvatar->rotate(-ang);
-	//rAvatar->translate(ang);
 
 	return;
 }

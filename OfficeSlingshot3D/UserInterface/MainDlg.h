@@ -98,6 +98,18 @@ public:
 	 */
 	void camera(cCamera* camera);
 
+	/**
+	 * Sets the mute preference
+	 * @param mute True if the sound needs to be muted
+	 */
+	void setMutePref(const bool mute);
+
+	/**
+	 * Sets the volume preference
+	 * @param vol The new volume
+	 */
+	void setVolPref(const int vol);
+
 private:
 	/**
 	 * The openGL window.
@@ -123,6 +135,11 @@ private:
 	 * A flag to determine if the sound is on or off
 	 */
 	bool m_soundOn;
+
+	/**
+	 * Volume intensity
+	 */
+	int m_volume;
 	
 	/**
 	 * Inherited method to catch messages before they are sent to the UI.
