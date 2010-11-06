@@ -27,7 +27,7 @@ VirtualBall::~VirtualBall(void)
 {
 }
 
-void VirtualBall::fire(Projectile p)
+void VirtualBall::fire(const Projectile& p)
 {
 	alreadyCollided = false;
 	firstPullBack = true;
@@ -43,7 +43,7 @@ void VirtualBall::fire(Projectile p)
 	odeBall->addGlobalForceAtGlobalPos(p.force(), p.position());
 }
 
-bool VirtualBall::getAlreadyCollided()
+bool VirtualBall::getAlreadyCollided() const
 {
 	return alreadyCollided;
 }
@@ -53,12 +53,12 @@ void VirtualBall::collided()
 	alreadyCollided = true;
 }
 
-cVector3d VirtualBall::getBallPos()
+cVector3d VirtualBall::getBallPos() const
 {
 	return odeBall->getPos();
 }
 
-cVector3d VirtualBall::getBallCenter()
+cVector3d VirtualBall::getBallCenter() const
 {
 	cVector3d ballPos = odeBall->getPos();
 	if(isLocal) {
@@ -74,7 +74,7 @@ void VirtualBall::reset()
 	odeBall->setShowEnabled(false);
 }
 
-void VirtualBall::move(cVector3d newBallPos)
+void VirtualBall::move(const cVector3d& newBallPos)
 {
 	if (firstPullBack) {
 		cVector3d initPos;

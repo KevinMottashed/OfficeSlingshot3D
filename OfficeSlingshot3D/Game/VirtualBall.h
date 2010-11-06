@@ -33,25 +33,25 @@ public:
 	 * it will be applied the force of the passed projectile.
 	 * @param p The projectile which the ball will become.
 	 */
-	void fire(Projectile p);
+	void fire(const Projectile& p);
 
 	/**
 	 * Get the ball's position.
 	 * @return The position of the ball.
 	 */
-	cVector3d getBallPos();
+	cVector3d getBallPos() const;
 
 	/**
 	 * Get the ball's center.
 	 * @return The center of the ball.
 	 */
-	cVector3d getBallCenter();
+	cVector3d getBallCenter() const;
 
 	/**
 	 * Get the alreadyCollided flag
 	 * @return The alreadyCollided flag
 	 */
-	bool getAlreadyCollided();
+	bool getAlreadyCollided() const;
 
 	/**
 	 * Sets the alreadyCollided flag to true to make sure that
@@ -67,7 +67,7 @@ public:
 	/**
 	 * Moves the ball within the ball boundaries
 	 */
-	void move(cVector3d newBallPos);
+	void move(const cVector3d& newBallPos);
 
 	/**
 	 * Translates the initial and final positions of the ball to a force
