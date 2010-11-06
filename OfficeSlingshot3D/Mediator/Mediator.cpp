@@ -602,7 +602,7 @@ void Mediator::setVolumePreferences()
 	if(muted) {
 		audio.mute();
 		userInterface->setMutePref(muted);
-		notify(MediatorUpdateContext::CHANGE_VOL_ICON, &muted);
+		notify(MediatorUpdateContext::CHANGE_MUTE_ICON, &muted);
 	}
 
 	// Set volume preferences

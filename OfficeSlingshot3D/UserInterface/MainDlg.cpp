@@ -525,7 +525,7 @@ void CMainDlg::OnStnClickedVol5()
 
 void CMainDlg::setMutePref(const bool mute)
 {
-	m_soundOn = mute;
+	m_soundOn = !mute;
 }
 
 void CMainDlg::setVolPref(const int vol)
