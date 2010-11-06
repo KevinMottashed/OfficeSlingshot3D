@@ -48,10 +48,6 @@ private:
 	 */
 	Game& operator=(const Game& game);
 
-	// the main game loop thread
-	HANDLE m_hGameLoopThread; // handle
-	DWORD m_dwIDGameLoop; // thread id
-
 	/**
 	 * Holds the thread which will run the main game loop
 	 */
