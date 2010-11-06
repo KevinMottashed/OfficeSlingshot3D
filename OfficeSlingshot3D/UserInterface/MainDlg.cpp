@@ -410,7 +410,16 @@ void CMainDlg::displayNetworkError()
 
 void CMainDlg::setPeerUserName(const std::string& name)
 {
+	if (m_peerUserName != "") {
+		// construct message
+		ostringstream os;
+		os << m_peerUserName << " has changed his name to " << name;
+
+		// add feedback message on the text area
+		AddChatContent(os.str().c_str());
+	}
 	m_peerUserName = name;
+
 	return;
 }
 
