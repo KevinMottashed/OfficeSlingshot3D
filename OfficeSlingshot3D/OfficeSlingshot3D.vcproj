@@ -723,6 +723,14 @@
 			Name="Common"
 			>
 			<File
+				RelativePath=".\Common\BodyPartEnum.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Common\BodyPartEnum.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Common\ConnectionStateEnum.cpp"
 				>
 			</File>

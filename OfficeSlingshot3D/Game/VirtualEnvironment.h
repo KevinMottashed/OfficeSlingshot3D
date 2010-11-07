@@ -11,6 +11,7 @@
 #include "VirtualBall.h"
 #include "HpBar.h"
 #include "VirtualElastic.h"
+#include "BodyPartEnum.h"
 
 using namespace std;
 
@@ -126,9 +127,9 @@ public:
 
 	/**
 	 * Get the body part hit by the ball
-	 * @return The HumanPart body part index
+	 * @return The body part that was hit
 	 */
-	int getAvatarHitBodyPart();
+	BodyPart_t getAvatarHitBodyPart();
 
 	/**
 	 * Retrieve the chest hit box minimum value from the local avatar object

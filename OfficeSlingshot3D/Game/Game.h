@@ -12,6 +12,7 @@
 #include "TitleScreen.h"
 #include "WinScreen.h"
 #include "LoseScreen.h"
+#include "BodyPartEnum.h"
 
 
 /**
@@ -123,6 +124,13 @@ private:
 	 * @param player the player that exited the game (local or peer)
 	 */
 	void stop(Player_t player);
+
+	/**
+	 * Calculate the damage done when a player is hit on a certain body part.
+	 * @param bodyPart The body part where the player was hit.
+	 * @return The damage done
+	 */
+	static unsigned int calculateHitDamage(BodyPart_t bodyPart);
 };
 #endif
 

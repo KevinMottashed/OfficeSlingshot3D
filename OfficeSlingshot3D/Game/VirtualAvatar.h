@@ -1,7 +1,9 @@
 #ifndef VIRTUAL_AVATAR_H
 #define VIRTUAL_AVATAR_H
 
+#include "stdafx.h"
 #include "chai3d.h"
+#include "BodyPartEnum.h"
 
 /**
  * Represents an avatar in the 3d environment.
@@ -39,7 +41,7 @@ public:
 	 * Retrieves the body part hit by the ball
 	 * @return The body part index hit by the ball
 	 */
-	int getHitBodyPart();
+	BodyPart_t getHitBodyPart();
 
 	/**
 	 * Retrieve the chest hit box minimum value
@@ -167,9 +169,9 @@ private:
 	bool isLocal;
 
 	/**
-	 * The body part index hit by the collision
+	 * The body part hit by the collision
 	 */
-	int hitPart;
+	BodyPart_t hitPart;
 
 	/**
 	 * The initial position of the chest hit box's minimum value

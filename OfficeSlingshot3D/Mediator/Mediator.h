@@ -114,23 +114,21 @@ public:
 
 	/**
 	 * Provide the appropriate user feedback for when the local player is hit by the slingshot.
-	 * @param hitPart The HumanPart body part hit by the ball
+	 * @param hitPart The body part hit by the ball
 	 * @param ballPos The position of the ball when the collision was detected
 	 * @param minValue The hit box's minimum value
 	 * @param maxValue The hit box's maximum value
-	 * @param healthLost The amount of health that was lost as a result of the collision
 	 */
-	void collisionDetected(	HumanPart hitPart, 
+	void collisionDetected(	BodyPart_t hitPart, 
 							cVector3d ballPos, 
 							cVector3d minValue, 
-							cVector3d maxValue, 
-							unsigned int healthLost);
+							cVector3d maxValue);
 
 	/**
 	 * Provide the appropriate user feedback for when the peer player is hit by the slingshot.
-	 * @param healthLost The amount of health that was lost as a result of the collision
+	 * @param bodyPart The body part where the peer was hit.
 	 */
-	void peerHit(unsigned int healthLost);
+	void peerHit(BodyPart_t bodyPart);
 
 	/**
 	 * Displays lose screen and sends GAME_OVER to peer

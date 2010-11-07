@@ -84,10 +84,10 @@ void Logger::update(NetworkUpdateContext context, const void *data)
 			log(LogEvent::NETWORK_GAME_OVER);
 			break;
 		}
-		case RECEIVED_HEALTH_LOST:
+		case RECEIVED_PLAYER_HIT:
 		{
 			assert(data != NULL);
-			log(LogEvent::NETWORK_HEALTH_LOST, *(unsigned int*) data);
+			log(LogEvent::NETWORK_PLAYER_HIT, *(BodyPart_t*) data);
 			break;
 		}
 	}

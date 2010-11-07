@@ -3,20 +3,7 @@
 
 #include "boost.h" // boost
 #include "Configuration.h"
-
-/**
- * Enum
- * Represents the different parts of the jacket.
- */
-typedef enum tagHumanPart {
-	CHEST = 0,
-	RIGHT_UPPER_ARM,
-	RIGHT_LOWER_ARM,
-	LEFT_UPPER_ARM,
-	LEFT_LOWER_ARM,
-	HEAD,
-	TOTAL_NUM_PART
-} HumanPart;
+#include "BodyPartEnum.h"
 
 /**
  * Manager in charge of enabling other modules to
@@ -44,12 +31,12 @@ public:
 
 	/**
 	 * Vibrates the smart clothing at a cetain point for a given amount of milliseconds
-	 * @param touchedPart The HumainPart to be vibrated
+	 * @param touchedPart The body part to be vibrated
 	 * @param x The x coordinate
 	 * @param y The y coordinate
 	 * @param time The vibration time in milliseconds
 	 */
-	void vibrate(HumanPart touchedPart, double x, double y, int time);
+	void vibrate(BodyPart_t touchedPart, double x, double y, int time);
 
 	/**
 	 * Determines where the smart clothing is to vibrate according to the position
@@ -59,7 +46,7 @@ public:
 	 * @param minValue The hit box's minimum value
 	 * @param maxValue The hit box's maximum value
 	 */
-	void vibrate(HumanPart hitPart, cVector3d position, cVector3d minValue, cVector3d maxValue);
+	void vibrate(BodyPart_t hitPart, cVector3d position, cVector3d minValue, cVector3d maxValue);
 
 	/**
 	 * Set the armband and jacket ports

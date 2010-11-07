@@ -113,12 +113,12 @@ void NetworkReplayer::replay(LogEvent_t logEvent)
 			notify(RECEIVED_GAME_OVER);
 			break;
 		}
-		case LogEvent::NETWORK_HEALTH_LOST:
+		case LogEvent::NETWORK_PLAYER_HIT:
 		{
-			unsigned int healthLost;
-			*archive >> healthLost;
+			BodyPart_t bodyPart;
+			*archive >> bodyPart;
 
-			notify(RECEIVED_HEALTH_LOST, &healthLost);
+			notify(RECEIVED_PLAYER_HIT, &bodyPart);
 			break;
 		}
 	}
@@ -198,7 +198,7 @@ rc_network NetworkReplayer::sendGameOver()
 	return SUCCESS;
 }
 
-rc_network NetworkReplayer::sendHealthLost(unsigned int healthLost)
+rc_network NetworkReplayer::sendPlayerHit(BodyPart_t bodyPart)
 {
 	return SUCCESS;
 }

@@ -31,8 +31,8 @@ std::string LogEvent::lookup(LogEvent::LogEventEnum logEvent)
 		return "Network - player position";
 	case LogEvent::NETWORK_GAME_OVER:
 		return "Network - game over";
-	case LogEvent::NETWORK_HEALTH_LOST:
-		return "Network - health lost";
+	case LogEvent::NETWORK_PLAYER_HIT:
+		return "Network - player hit";
 	case LogEvent::UI_CONNECT:
 		return "UI - connect";
 	case LogEvent::UI_LISTEN:

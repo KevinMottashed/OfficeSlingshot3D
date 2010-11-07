@@ -140,11 +140,12 @@ public:
 	virtual rc_network sendGameOver();
 
 	/**
-	 * Send a message to the peer letting him know that we have lost some health.
+	 * Send a message to the peer letting him know that we have been hit.	 
 	 * The replayer won't actually do anything, this is just to implement the network interface.
+	 * @param bodyPart The body part that was hit.
 	 * @return SUCCESS
 	 */
-	virtual rc_network sendHealthLost(unsigned int healthLost);
+	virtual rc_network sendPlayerHit(BodyPart_t bodyPart);
 
 	/**
 	 * Determines if we are connected to a peer

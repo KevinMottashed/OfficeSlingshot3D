@@ -1,12 +1,13 @@
 #ifndef NETWORK_H
 #define NETWORK_H
 
-#include "NetworkSubject.h"
 #include "stdafx.h"
-#include "VideoData.h"
 #include "chai3d.h"
+#include "NetworkSubject.h"
+#include "VideoData.h"
 #include "NetworkCodes.h"
 #include "Projectile.h"
+#include "BodyPartEnum.h"
 
 /**
  * Abstract class representing the networking component of the application
@@ -116,11 +117,11 @@ public:
 	virtual rc_network sendGameOver() = 0;
 
 	/**
-	 * Send a message to the peer letting him know that we have lost some health.
-	 * @param healthLost The amount of health that we have lost.
+	 * Send a message to the peer letting him know that we have been hit.
+	 * @param bodyPart The body part that was hit.
 	 * @return The error code, SUCCESS if the message was sent and received.
 	 */
-	virtual rc_network sendHealthLost(unsigned int healthLost) = 0;
+	virtual rc_network sendPlayerHit(BodyPart_t bodyPart) = 0;
 
 	/**
 	 * Determines if we are connected to a peer

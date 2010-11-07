@@ -105,26 +105,22 @@ bool VirtualAvatar::isInHitBox(cVector3d ballPos)
 	if (((chestMin.x < ballPos.x) && (chestMax.x > ballPos.x) &&
 			(chestMin.y < ballPos.y) && (chestMax.y > ballPos.y) &&
 			(chestMin.z < ballPos.z) && (chestMax.z > ballPos.z))) {
-		// HumanPart::CHEST = 0
-		hitPart = 0;
+		hitPart = BodyPart::CHEST;
 		return true;
 	} else if (((rArmMin.x < ballPos.x) && (rArmMax.x > ballPos.x) &&
 			(rArmMin.y < ballPos.y) && (rArmMax.y > ballPos.y) &&
 			(rArmMin.z < ballPos.z) && (rArmMax.z > ballPos.z))) {
-		// HumanPart::LEFT_UPPER_ARM = 1
-		hitPart = 1;
+		hitPart = BodyPart::UPPER_LEFT_ARM;
 		return true;
 	} else if (((lArmMin.x < ballPos.x) && (lArmMax.x > ballPos.x) &&
 			(lArmMin.y < ballPos.y) && (lArmMax.y > ballPos.y) &&
 			(lArmMin.z < ballPos.z) && (lArmMax.z > ballPos.z))) {
-		// HumanPart::RIGHT_UPPER_ARM = 3
-		hitPart = 3;
+		hitPart = BodyPart::UPPER_RIGHT_ARM;
 		return true;
 	} else if (((headMin.x < ballPos.x) && (headMax.x > ballPos.x) &&
 			(headMin.y < ballPos.y) && (headMax.y > ballPos.y) &&
 			(headMin.z < ballPos.z) && (headMax.z > ballPos.z))) {
-		// HumanPart::HEAD = 5
-		hitPart = 5;
+		hitPart = BodyPart::HEAD;
 		return true;
 	}
 	return false;
@@ -145,7 +141,7 @@ void VirtualAvatar::createBoundaries(cVector3d startingPosition)
 	headMin = startingPosition + iniHeadMin;
 }
 
-int VirtualAvatar::getHitBodyPart()
+BodyPart_t VirtualAvatar::getHitBodyPart()
 {
 	return hitPart;
 }

@@ -672,10 +672,10 @@ rc_network WinsockNetwork::sendGameOver()
 	return syncSendDataMessage(packet);
 }
 
-rc_network WinsockNetwork::sendHealthLost(unsigned int healthLost)
+rc_network WinsockNetwork::sendPlayerHit(BodyPart_t bodyPart)
 {
 	DataPacket packet;
-	packet.write(DATA_PACKET_HEALTH_LOST, healthLost);
+	packet.write(DATA_PACKET_PLAYER_HIT, bodyPart);
 	return syncSendDataMessage(packet);
 }
 
@@ -805,11 +805,11 @@ void WinsockNetwork::handleDataMessage(const DataPacket& message)
 			notify(RECEIVED_GAME_OVER);
 			break;
 		}
-		case DATA_PACKET_HEALTH_LOST:
+		case DATA_PACKET_PLAYER_HIT:
 		{
-			unsigned int healthLost;
-			message.read(healthLost);
-			notify(RECEIVED_HEALTH_LOST, &healthLost);
+			BodyPart_t bodyPart;
+			message.read(bodyPart);
+			notify(RECEIVED_PLAYER_HIT, &bodyPart);
 			break;
 		}
 		case DATA_PACKET_UNKNOWN:

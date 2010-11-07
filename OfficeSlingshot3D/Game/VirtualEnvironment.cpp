@@ -175,7 +175,7 @@ cVector3d VirtualEnvironment::getCurrentBallPosition()
 	return peerBalls[(rNumBalls-1) % ball_limit]->getBallPos();
 }
 
-int VirtualEnvironment::getAvatarHitBodyPart()
+BodyPart_t VirtualEnvironment::getAvatarHitBodyPart()
 {
 	return lAvatar->getHitBodyPart();
 }
