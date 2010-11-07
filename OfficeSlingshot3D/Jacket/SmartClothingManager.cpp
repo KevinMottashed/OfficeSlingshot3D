@@ -86,6 +86,12 @@ void SmartClothingManager::vibrate(BodyPart_t touchedPart, double x, double y, i
 			m_pDisplayDeviceArmband->actuate();
 		}
 	break;
+	case BodyPart::HEAD:
+		if (IS_TACTILE_JACKET_CONNECTED){
+			m_pDisplayDeviceJacket->setIntensityAll(1);
+			m_pDisplayDeviceJacket->actuate();
+		}
+	break;
 	}
 
 	SetTimer(NULL,1, 2000, MySetTimerProc);
