@@ -74,7 +74,7 @@ BOOL CSerialPort::InitPort(UINT  portnr,		// portnumber (1..4)
 						   UINT  writebuffersize)	// size to the writebuffer
 {
 	//assert(portnr > 0 && portnr < 100);
-	if (portnr > 0 && portnr < 100)
+	if (portnr < 0 || portnr > 100)
 	{
 		return false;
 	}
