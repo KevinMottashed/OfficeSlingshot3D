@@ -32,22 +32,14 @@ void VirtualBall::fire(const Projectile& p)
 	alreadyCollided = false;
 	firstPullBack = true;
 
-	//// Delete the ball to remove the force
-	//cODEWorld* ODEWorld = odeBall->m_ODEWorld;
-	//delete odeBall;
-
-	//// Recreate the ball
-	//odeBall = new cODEGenericBody(ODEWorld);
-	//odeBall->setImageModel(ballMesh);
-	//odeBall->createDynamicMesh(false);
-	//odeBall->setUseCulling(false, true);
-
 	odeBall->setShowEnabled(true);
 
 	// make the ball dynamic
 	odeBall->enableDynamics();
 
 	odeBall->setPosition(p.position());
+	odeBall->setLinearVelocity(cVector3d(0,0,0));
+	odeBall->setAngularVelocity(cVector3d(0,0,0));
 
 	//Add a force just for show
 	odeBall->addGlobalForceAtGlobalPos(p.force(), p.position());
