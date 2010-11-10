@@ -133,6 +133,88 @@ void cODEGenericBody::setPosition(cVector3d &a_position)
     }
 }
 
+//===========================================================================
+/*!
+    Set a desired linear velocity.
+
+    \fn       void cODEGenericBody::setLinearVelocity(cVector3d &a_velocity);
+    \param    a_velocity  New desired linear velocity.
+*/
+//===========================================================================
+void cODEGenericBody::setLinearVelocity(cVector3d &a_velocity)
+{
+    // check if body defined
+    if (m_ode_body != NULL)
+    {
+        // adjust position
+		dBodySetLinearVel(m_ode_body, a_velocity.x, a_velocity.y, a_velocity.z);
+    }	
+}
+
+//===========================================================================
+/*!
+    Read the objects linear velocity.
+
+    \fn       void cODEGenericBody::getLinearVelocity(cVector3d &a_velocity);
+	\return	  A vector representing the linear velocity
+*/
+//===========================================================================
+cVector3d cODEGenericBody::getLinearVelocity() const
+{
+	// check if body defined
+    if (m_ode_body != NULL)
+    {
+		const dReal* linear_velocity;
+		linear_velocity = dBodyGetLinearVel(m_ode_body);
+		return cVector3d(linear_velocity[0], linear_velocity[1], linear_velocity[2]);
+	}
+	else
+	{
+		return cVector3d(0,0,0);
+	}
+}
+
+//===========================================================================
+/*!
+    Set a desired angular velocity.
+
+    \fn       void cODEGenericBody::setAngularVelocity(cVector3d &a_velocity);
+    \param    a_velocity  New desired angular velocity.
+*/
+//===========================================================================
+void cODEGenericBody::setAngularVelocity(cVector3d &a_velocity)
+{
+    // check if body defined
+    if (m_ode_body != NULL)
+    {
+        // adjust position
+		dBodySetAngularVel(m_ode_body, a_velocity.x, a_velocity.y, a_velocity.z);
+    }	
+}
+
+//===========================================================================
+/*!
+    Read the objects angular velocity.
+
+    \fn       void cODEGenericBody::getAngularVelocity(cVector3d &a_velocity);
+	\return	  A vector representing the angular velocity
+*/
+//===========================================================================
+cVector3d cODEGenericBody::getAngularVelocity() const
+{
+	// check if body defined
+    if (m_ode_body != NULL)
+    {
+		const dReal* angular_velocity;
+		angular_velocity = dBodyGetAngularVel(m_ode_body);
+		return cVector3d(angular_velocity[0], angular_velocity[1], angular_velocity[2]);
+	}
+	else
+	{
+		return cVector3d(0,0,0);
+	}
+}
+
 
 //===========================================================================
 /*!

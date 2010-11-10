@@ -82,6 +82,18 @@ class cODEGenericBody : public cGenericObject
     //! Set the position of object.
     void setPosition(cVector3d &a_position);
 
+	//! Set the linear velocity of object
+	void setLinearVelocity(cVector3d &a_velocity);
+
+	//! Read the linear velocity of object
+	cVector3d getLinearVelocity() const;
+
+	//! Set the angular velocity of object
+	void setAngularVelocity(cVector3d &a_velocity);
+
+	//! Read the angular velocity of object
+	cVector3d getAngularVelocity() const;
+
     //! Set the orientation of object.
     void setRotation(cMatrix3d &a_rotation);
 
