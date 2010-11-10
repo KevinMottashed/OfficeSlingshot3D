@@ -4,8 +4,8 @@
 
 const std::string UserPreferences::default_ip_address = "127.0.0.1";
 const std::string UserPreferences::default_name = "Player";
-const unsigned int UserPreferences::default_arm_band_port = 3;
-const unsigned int UserPreferences::default_jacket_port = 97;
+const unsigned int UserPreferences::default_arm_band_port = 7;
+const unsigned int UserPreferences::default_jacket_port = 8;
 const bool UserPreferences::default_muted = false;
 const float UserPreferences::default_volume = 5.0f;
 

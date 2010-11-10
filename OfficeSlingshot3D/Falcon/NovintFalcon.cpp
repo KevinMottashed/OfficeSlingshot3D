@@ -43,7 +43,8 @@ NovintFalcon::NovintFalcon() :
 		/**
 		 * Local slingshot bounding box
 		 */
-		double cube_side = info.m_workspaceRadius * COSINE_45DEG;
+		double cube_side = info.m_workspaceRadius;
+		//* COSINE_45DEG;
 
 		falconBox = cCollisionAABBBox(
 			cVector3d(-cube_side, -cube_side, -cube_side), 
@@ -80,7 +81,7 @@ void NovintFalcon::poll()
 
 			// CURRENTLY CAUSES FALCON TO GO CRAZY
 			// compute a reaction force
-//            cVector3d newForce (0,0,0);
+            cVector3d newForce (0,0,0);
 //
             // apply force field
 //            if (true)
@@ -104,11 +105,17 @@ void NovintFalcon::poll()
 				if (!firing)
 				{
 					firing = true;
-					notify(SLINGSHOT_PULLBACK, &newPosition);
-				}				
-				else if (firing)
+					
+				}
+				
+				notify(SLINGSHOT_PULLBACK, &newPosition);
+				if (true)
 				{
-					notify(SLINGSHOT_PULLBACK, &newPosition);
+					cHapticDeviceInfo info = hapticDevices[i]->getSpecifications();
+					double Kv = info.m_maxLinearDamping;
+					cVector3d force = cMul(-100.0, newPosition);
+					force.x = (-info.m_workspaceRadius - newPosition.x) * 200;
+					newForce.add(force);
 				}
             }
 			else
@@ -116,12 +123,16 @@ void NovintFalcon::poll()
 				if (firing)
 				{
 					firing = false;
-					notify(SLINGSHOT_FIRED, &position);
+					notify(SLINGSHOT_FIRED, &newPosition);
 				}
 			}
 
-			//notify(SLINGSHOT_MOVED, &newPosition);
+			// send computed force to haptic device
+			hapticDevices[i]->setForce(newForce);
+
         }
+
+		
 
 		// sleep for a while so we don't hog cpu (interruption point)
 		boost::this_thread::sleep(boost::posix_time::milliseconds(100));

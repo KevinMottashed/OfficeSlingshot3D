@@ -62,7 +62,7 @@ void PerspectiveMath::convertBoxToBox(cVector3d& vector, const cCollisionAABBBox
 	vector.z = (vector.z - boxOrigin.getLowerZ()) / (boxOrigin.getUpperZ() - boxOrigin.getLowerZ());
 
 	// translate the vector to the relative position in the target box
-	vector.x = vector.x * (boxTarget.getUpperX() - boxTarget.getLowerX()) + boxTarget.getLowerX();
-	vector.y = vector.y * (boxTarget.getUpperY() - boxTarget.getLowerY()) + boxTarget.getLowerY();
-	vector.z = vector.z * (boxTarget.getUpperZ() - boxTarget.getLowerZ()) + boxTarget.getLowerZ();
+	vector.x = (vector.x * (boxTarget.getUpperX() - boxTarget.getLowerX())) + boxTarget.getLowerX();
+	vector.y = (vector.y * (boxTarget.getUpperY() - boxTarget.getLowerY())) + boxTarget.getLowerY();
+	vector.z = (vector.z * (boxTarget.getUpperZ() - boxTarget.getLowerZ())) + boxTarget.getLowerZ();
 }
