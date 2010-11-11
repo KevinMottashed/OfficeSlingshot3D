@@ -43,14 +43,6 @@ WinsockNetwork::WinsockNetwork() :
 
 WinsockNetwork::~WinsockNetwork()
 {
-	DeleteCriticalSection(&m_csControlSocketSend);
-	DeleteCriticalSection(&m_csDataSocketSend);
-	DeleteCriticalSection(&m_csConnectionState);
-	DeleteCriticalSection(&m_csLocalDisconnect);
-	delete m_pControlSocket;
-	delete m_pDataSocket;
-	delete m_sEstablished;
-
 	// kill threads
 	if (controlReceiveThread.get() != NULL)
 	{
@@ -65,6 +57,14 @@ WinsockNetwork::~WinsockNetwork()
 		dataReceiveThread->join();	
 		dataReceiveThread.reset();
 	}
+
+	DeleteCriticalSection(&m_csControlSocketSend);
+	DeleteCriticalSection(&m_csDataSocketSend);
+	DeleteCriticalSection(&m_csConnectionState);
+	DeleteCriticalSection(&m_csLocalDisconnect);
+	delete m_pControlSocket;
+	delete m_pDataSocket;
+	delete m_sEstablished;
 }
 
 // start listening to for connections
