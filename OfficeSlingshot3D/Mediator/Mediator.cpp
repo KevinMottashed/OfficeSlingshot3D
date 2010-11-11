@@ -252,6 +252,9 @@ void Mediator::handlePeerDisconnected()
 
 	// display the change in connection state in the UI
 	userInterface->displayConnectionStateChanged(ConnectionState::DISCONNECTED, Player::PEER);
+
+	// we are no longer connected to the peer so the user name becomes unknown
+	userInterface->setPeerUserName("");
 	return;
 }
 
@@ -263,6 +266,9 @@ void Mediator::handleNetworkError(rc_network error)
 
 	// notify the user interface that the network connection as been disconnected
 	userInterface->displayNetworkError();
+
+	// we are no longer connected to the peer so the user name becomes unknown
+	userInterface->setPeerUserName("");
 	return;
 }
 
@@ -416,6 +422,9 @@ void Mediator::disconnect()
 
 		// display the change in connection state in the UI
 		userInterface->displayConnectionStateChanged(ConnectionState::DISCONNECTED, Player::LOCAL);
+
+		// we are no longer connected to the peer so the user name becomes unknown
+		userInterface->setPeerUserName("");
 	}	
 	return;
 }

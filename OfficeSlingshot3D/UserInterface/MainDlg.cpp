@@ -410,7 +410,7 @@ void CMainDlg::displayNetworkError()
 
 void CMainDlg::setPeerUserName(const std::string& name)
 {
-	if (m_peerUserName != "") {
+	if (m_peerUserName != "" && name != "") {
 		// construct message
 		ostringstream os;
 		os << m_peerUserName << " has changed his name to " << name;
