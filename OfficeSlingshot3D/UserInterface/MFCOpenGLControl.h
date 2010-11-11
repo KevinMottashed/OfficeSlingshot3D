@@ -47,12 +47,18 @@ public:
 	 */
 	void oglInitialize(void);
 
+	/**
+	 * Sends an OnPaint request to the opengl scene
+	 */
+	void paint();
+
+// all this stuff is protected
 	DECLARE_MESSAGE_MAP()
 	afx_msg void OnPaint();
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
 	afx_msg void OnDraw(CDC *pDC);
+	afx_msg LRESULT OnOpenGlDraw(WPARAM, LPARAM);
 	afx_msg void OnSize(UINT nType, int cx, int cy);
-	afx_msg void OnTimer(UINT_PTR nIDEvent);
 
 private:
 
@@ -91,9 +97,6 @@ private:
 	 */
 	cCamera* _camera;
 
-	/**
-	 * A timer used to re-render the OpenGL window periodically.
-	 */
-	UINT_PTR m_unpTimer;
+	bool openGlInitialized; /**< True if the open gl component has been initialized */
 };
 #endif

@@ -473,6 +473,11 @@ void CMainDlg::displayGameOver(Player_t player)
 	return;	
 }
 
+void CMainDlg::paint()
+{
+	m_oglWindow->paint();
+}
+
 void CMainDlg::camera(cCamera* camera)
 {
 	m_oglWindow->camera(camera);

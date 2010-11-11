@@ -2,6 +2,7 @@
 #define KEYBOARD_H
 
 #include "stdafx.h"
+#include "boost.h"
 #include "KeyboardListener.h"
 
 /**
@@ -52,6 +53,16 @@ private:
 	 * The list of listeners
 	 */
 	std::vector<KeyboardListener*> listeners;
+
+	std::auto_ptr<boost::thread> updateThread; /**< Thread that handles keyboard updates. */
+	std::queue<unsigned int> queue; /**< Queue containing all the pressed keys that havent been handled */
+	boost::mutex queueMutex; /**< Guards the queue */
+	boost::condition_variable queueEmptyCondition; /**< Condition variable for when the queue is empty */
+
+	/**
+	 * Start handling key presses.
+	 */
+	void run();
 
 	/**
 	 * The singleton instance

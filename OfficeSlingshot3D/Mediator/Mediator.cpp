@@ -614,6 +614,11 @@ void Mediator::setVolumePreferences()
 	}
 }
 
+void Mediator::paint()
+{
+	userInterface->paint();
+}
+
 void Mediator::stopDevices()
 {
 	falcon->stopPolling();

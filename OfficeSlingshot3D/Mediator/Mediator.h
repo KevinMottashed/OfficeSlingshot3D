@@ -151,6 +151,11 @@ public:
 	 * Sets the config volume preferences to the game and UI
 	 */
 	void setVolumePreferences();
+
+	/**
+	 * Redraw the screen.
+	 */
+	void paint();
 	
 private:
 	/**

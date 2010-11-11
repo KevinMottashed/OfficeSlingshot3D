@@ -81,6 +81,11 @@ public:
 	void displayGameOver(Player_t player);
 
 	/**
+	 * Redraw the screen.
+	 */
+	void paint();
+
+	/**
 	 * Update the peers user name.
 	 * @param name The new name.
 	 */

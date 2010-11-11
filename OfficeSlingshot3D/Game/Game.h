@@ -34,7 +34,8 @@ public:
 	virtual ~Game();
 
 	/**
-	 * Updates from the mediator
+	 * Updates from the mediator.
+	 * All these updates are placed in the update queue which the game loop will handle.
 	 */
 	virtual void update(MediatorUpdateContext_t context, const void* data);
 
@@ -59,6 +60,23 @@ private:
 	 * A thread will run this non-stop.
 	 */
 	void gameLoop();
+
+	/**
+	 * Helper for the game loop.
+	 * This will handle all updates in the updateQueue.
+	 */
+	void processUpdateQueue();
+
+	/**
+	 * Handle a single update.
+	 */
+	void handleUpdate(MediatorUpdateContext_t& context, boost::any& data);
+
+	/**
+	 * Helper for the game loop.
+	 * This will check for collisions and handle them.
+	 */
+	void checkForCollisions();
 
 	/**
 	 * The current state of the game.
@@ -95,12 +113,15 @@ private:
 	LoseScreen loseScreen;
 
 	/**
-	 * Mutex to protect the virtual environment
-	 * The environment cannot be modified (move slingshot, etc ...)
-	 * and displayed (update frame) at the same time without synchronization issues.
-	 * This mutex must be locked before doing either of those operations.
+	 * The game's update queue.
+	 * All game affecting updates are added to this queue so that they can be processed one at a time.
 	 */
-	boost::mutex environment_mutex;
+	std::queue<std::pair<MediatorUpdateContext_t, boost::any> > updateQueue;
+
+	/**
+	 * Protect the update queue from simultaneous access.
+	 */
+	boost::mutex updateQueueMutex;
 
 	/**
 	 * Reset the game to its original state.

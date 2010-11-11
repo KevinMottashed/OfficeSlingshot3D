@@ -53,9 +53,7 @@ cCamera* VirtualEnvironment::camera()
 
 Projectile VirtualEnvironment::fireLocalSlingshot()
 {
-	// TODO calulate force and fire
 	cVector3d firing_force = localBalls[lNumBalls % ball_limit]->calculateForceVector();
-
 	cVector3d ballPosition = localBalls[lNumBalls % ball_limit]->getBallPos();
 
 	// the resulting projectile

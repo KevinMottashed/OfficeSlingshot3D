@@ -1,6 +1,8 @@
 #include "MFCOpenGLControl.h"
+#include "UserInterfaceSignals.h"
 
-MFCOpenGLControl::MFCOpenGLControl(void)
+MFCOpenGLControl::MFCOpenGLControl(void) :
+	openGlInitialized(false)
 {
 	displayW = 0;
 	displayH = 0;	
@@ -19,7 +21,7 @@ BEGIN_MESSAGE_MAP(MFCOpenGLControl, CWnd)
 	ON_WM_PAINT()
 	ON_WM_CREATE()
 	ON_WM_SIZE()
-	ON_WM_TIMER()
+	ON_MESSAGE(WM_ON_OPENGLDRAW, OnOpenGlDraw)
 END_MESSAGE_MAP()
 
 void MFCOpenGLControl::oglCreate(CRect rect, CWnd *parent)
@@ -88,15 +90,42 @@ void MFCOpenGLControl::oglInitialize(void)
    glEnable(GL_DEPTH_TEST);
    glDepthFunc(GL_LEQUAL);
 
-   // start the refresh timer
-   m_unpTimer = SetTimer(1, 20, 0);
+   openGlInitialized = true;
 
    // Send draw request
    OnDraw(NULL);
 }
 
+void MFCOpenGLControl::paint()
+{
+	// make sure the open gl component has been initialized before trying to paint it
+	if (openGlInitialized && _camera != NULL)
+	{
+		SendMessage(WM_ON_OPENGLDRAW);
+	}
+}
+
 void MFCOpenGLControl::OnDraw(CDC *pDC)
 {
+}
+
+LRESULT MFCOpenGLControl::OnOpenGlDraw(WPARAM, LPARAM)
+{
+	// open gl must be initialized
+	assert(openGlInitialized);
+
+	// we must have a camera to render
+	assert(_camera != NULL);
+
+	// Clear color and depth buffer bits
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	_camera->renderView(displayW, displayH);
+
+	// Swap buffers
+	SwapBuffers(hdc);
+
+	return 0;
 }
 
 void MFCOpenGLControl::OnSize(UINT nType, int cx, int cy)
@@ -127,25 +156,3 @@ void MFCOpenGLControl::OnSize(UINT nType, int cx, int cy)
    CDialog::OnSize(nType, cx, cy);
 }
 
-void MFCOpenGLControl::OnTimer(UINT_PTR nIDEvent)
-{
-	switch (nIDEvent) {
-	case 1:
-	{
-		// Clear color and depth buffer bits
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-		_camera->renderView(displayW, displayH);
-
-		// Swap buffers
-		SwapBuffers(hdc);
-
-		break;
-	}
-
-	default:
-		break;
-	}
-
-	CDialog::OnTimer(nIDEvent);
-}

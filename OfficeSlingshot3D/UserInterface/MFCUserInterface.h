@@ -94,6 +94,11 @@ public:
 	 */
 	virtual void displayGameOver(Player_t player);
 
+	/**
+	 * Redraw the screen.
+	 */
+	virtual void paint();
+
 	//-----------------------------------------------
 	// Notifications coming from the user interface
 	//-----------------------------------------------

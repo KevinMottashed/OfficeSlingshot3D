@@ -125,6 +125,11 @@ void MFCUserInterface::displayGameOver(Player_t player)
 	return;
 }
 
+void MFCUserInterface::paint()
+{
+	m_pMainDlg->paint();
+}
+
 void MFCUserInterface::setPeerUserName(const std::string& name)
 {
 	m_pMainDlg->setPeerUserName(name);
