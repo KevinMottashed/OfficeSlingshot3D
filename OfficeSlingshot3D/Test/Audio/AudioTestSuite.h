@@ -42,6 +42,9 @@ private:
 	 */
 	void testExplosion();
 
+	void testHeadshot(); /**< Test the headshot sound */
+	void testPain(); /**< Test the pain sound */
+
 	/**
 	 * Test the pew sound
 	 */

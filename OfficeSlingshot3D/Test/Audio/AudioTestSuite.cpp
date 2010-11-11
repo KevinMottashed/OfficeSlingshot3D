@@ -21,6 +21,8 @@ void AudioTestSuite::run()
 	UNIT_TEST(testAfterburn);
 	UNIT_TEST(testBigExplosion);
 	UNIT_TEST(testExplosion);
+	UNIT_TEST(testHeadshot);
+	UNIT_TEST(testPain);
 	UNIT_TEST(testPew);
 	UNIT_TEST(testPow);
 	UNIT_TEST(testTink);
@@ -47,6 +49,16 @@ void AudioTestSuite::testBigExplosion()
 void AudioTestSuite::testExplosion()
 {
 	testAudioFile("sounds/explosion.mp3");
+}
+
+void AudioTestSuite::testHeadshot()
+{
+	testAudioFile("sounds/headshot.mp3");
+}
+
+void AudioTestSuite::testPain()
+{
+	testAudioFile("sounds/pain.mp3");
 }
 
 void AudioTestSuite::testPew()

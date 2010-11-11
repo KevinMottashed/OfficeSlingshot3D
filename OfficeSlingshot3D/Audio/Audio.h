@@ -41,6 +41,11 @@ public:
 	void playHit();
 
 	/**
+	 * play headshot sound (when a player gets hit in the head)
+	 */
+	void playHeadshot();
+
+	/**
 	 * play slingshot fired sound
 	 */
 	void playSlingshotFired();
@@ -97,6 +102,7 @@ private:
 	FMOD::System* system;
 
 	std::auto_ptr<Sound> hitSound; /**< The sound when a player gets hit. */
+	std::auto_ptr<Sound> headshotSound; /**< The sound when a player gets hit in the head. */
 	std::auto_ptr<Sound> slingshotFiredSound; /**< The sound when a slingshot is fired. */
 	std::auto_ptr<Sound> round1Sound; /**< The announcer when the game starts "round 1 .. fight!" */
 	std::auto_ptr<Sound> bgMusicSound; /**< The background music, currently doom3 theme */

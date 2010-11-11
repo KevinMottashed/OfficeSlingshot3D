@@ -14,7 +14,8 @@ Audio::Audio()
 	result = system->init(100, FMOD_INIT_NORMAL, 0);
 	assert(result == FMOD_OK);
 
-	hitSound = std::auto_ptr<Sound>(new Sound(system, "sounds/tink.mp3", false));
+	hitSound = std::auto_ptr<Sound>(new Sound(system, "sounds/pain.mp3", false));
+	headshotSound = std::auto_ptr<Sound>(new Sound(system, "sounds/headshot.mp3", false));
 	slingshotFiredSound = std::auto_ptr<Sound>(new Sound(system, "sounds/slingshot.mp3", false));
 	round1Sound = std::auto_ptr<Sound>(new Sound(system, "sounds/round1.mp3", false));
 	bgMusicSound = std::auto_ptr<Sound>(new Sound(system, "sounds/doom3_theme.mp3", true));
@@ -37,6 +38,11 @@ void Audio::playBGMusic()
 void Audio::stopBGMusic()
 {
 	bgMusicSound->stop();
+}
+
+void Audio::playHeadshot()
+{
+	headshotSound->play();
 }
 
 void Audio::playHit()
@@ -67,6 +73,7 @@ void Audio::playGameOverLost()
 void Audio::mute()
 {
 	hitSound->mute();
+	headshotSound->mute();
 	slingshotFiredSound->mute();
 	round1Sound->mute();
 	bgMusicSound->mute();
@@ -77,6 +84,7 @@ void Audio::mute()
 void Audio::unmute()
 {
 	hitSound->unmute();
+	headshotSound->unmute();
 	slingshotFiredSound->unmute();
 	round1Sound->unmute();
 	bgMusicSound->unmute();
@@ -87,6 +95,7 @@ void Audio::unmute()
 void Audio::volume(float level)
 {
 	hitSound->volume(level);
+	headshotSound->volume(level);
 	slingshotFiredSound->volume(level);
 	round1Sound->volume(level);
 	bgMusicSound->volume(level);

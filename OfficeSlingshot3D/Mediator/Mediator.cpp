@@ -476,6 +476,10 @@ void Mediator::changeVolume(const int vol)
 
 void Mediator::collisionDetected(BodyPart_t hitPart, cVector3d ballPos, cVector3d minValue, cVector3d maxValue)
 {
+	if (hitPart == BodyPart::HEAD)
+	{
+		audio.playHeadshot();
+	}
 	audio.playHit();
 
 	smartClothing->vibrate(hitPart, ballPos, minValue, maxValue);
@@ -487,6 +491,10 @@ void Mediator::collisionDetected(BodyPart_t hitPart, cVector3d ballPos, cVector3
 
 void Mediator::peerHit(BodyPart_t bodyPart)
 {
+	if (bodyPart == BodyPart::HEAD)
+	{
+		audio.playHeadshot();
+	}
 	audio.playHit();
 	notify(MediatorUpdateContext::PEER_HIT, &bodyPart);
 }
