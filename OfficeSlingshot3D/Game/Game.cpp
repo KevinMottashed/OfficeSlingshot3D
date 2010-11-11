@@ -157,11 +157,18 @@ void Game::reset()
 
 void Game::gameLoop()
 {
-	// keep going until the thread is interrupted
+	// keep going until the thread is interrupted,
+	// We will check for an interruption after each step in the loop.
+	// There are 2 reasons for doing this.
+	// 1. Some steps are time consuming and we want to interrupt as fast as possible.
+	// 2. If the application is being closed the UI will no longer respond to paint requests (could crash or deadlock).
 	while(true)
 	{
 		// handle all the updates in the queue
 		processUpdateQueue();
+
+		// check for an interruption
+		boost::this_thread::interruption_requested();
 
 		// update game environment if it is needed
 		if (state == GameState::RUNNING)
@@ -171,6 +178,9 @@ void Game::gameLoop()
 
 			// check for collisions and handle them
 			checkForCollisions();
+
+			// check for an interruption
+			boost::this_thread::interruption_requested();
 		}
 
 		// We repaint the game after each iteration so that the user can see the changes.

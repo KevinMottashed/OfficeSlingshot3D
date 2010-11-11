@@ -101,7 +101,13 @@ void MFCOpenGLControl::paint()
 	// make sure the open gl component has been initialized before trying to paint it
 	if (openGlInitialized && _camera != NULL)
 	{
-		SendMessage(WM_ON_OPENGLDRAW);
+		// make sure this window's handle hasn't been released.
+		// for some reason the handle can get released before the destructor is called.
+		// If this check fails it means the app is shutting down
+		if (m_hWnd != NULL)
+		{
+			SendMessage(WM_ON_OPENGLDRAW);
+		}
 	}
 }
 
