@@ -7,6 +7,8 @@
 #include "LoggerProxy.h"
 #include "NetworkProxy.h"
 #include "ConnectionStateEnum.h"
+#include "BodyPartEnum.h"
+#include "PhysicsSync.h"
 
 /**
  * The network replayer class is in charge of replaying network events.
@@ -139,6 +141,14 @@ public:
 	 * @return SUCCESS
 	 */
 	virtual rc_network sendPlayerHit(BodyPart_t bodyPart);
+
+	/**
+	 * Send a physics sync object to the peer so that he can synchronize his game.
+	 * The replayer won't actually do anything, this is just to implement the network interface.
+	 * @param sync The sync object.
+	 * @return SUCCESS.
+	 */
+	virtual rc_network sendPhysicsSync(const PhysicsSync& sync);
 
 	/**
 	 * Determines if we are connected to a peer

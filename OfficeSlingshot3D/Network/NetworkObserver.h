@@ -21,6 +21,7 @@ enum NetworkUpdateContext
 	RECEIVED_PLAYER_POSITION,
 	RECEIVED_GAME_OVER,
 	RECEIVED_PLAYER_HIT,
+	RECEIVED_PHYSICS_SYNC,
 };
 
 class NetworkObserver

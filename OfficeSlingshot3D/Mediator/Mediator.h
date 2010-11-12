@@ -13,6 +13,7 @@
 #include "AudioProxy.h"
 #include "MediatorSubject.h"
 #include "PerspectiveMath.h"
+#include "PhysicsSync.h"
 
 /**
  * @ingroup Mediator
@@ -155,6 +156,12 @@ public:
 	 * Redraw the screen.
 	 */
 	void paint();
+
+	/**
+	 * Synchronize the physics of both games.
+	 * @param sync The physics data that is used for the synchronization.
+	 */
+	void synchronizePhysics(const PhysicsSync& sync);
 	
 private:
 	/**

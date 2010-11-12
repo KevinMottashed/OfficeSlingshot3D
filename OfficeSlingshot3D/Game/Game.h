@@ -69,8 +69,16 @@ private:
 
 	/**
 	 * Handle a single update.
+	 * @param context The update's context
+	 * @param data The update's data
 	 */
 	void handleUpdate(MediatorUpdateContext_t& context, boost::any& data);
+
+	/**
+	 * Update the game world for the next frame.
+	 * This will update projectile positions and check for collisions.
+	 */
+	void updateWorld();
 
 	/**
 	 * Helper for the game loop.
@@ -79,9 +87,27 @@ private:
 	void checkForCollisions();
 
 	/**
+	 * This gathers the current state of our game and sends it to the peer.
+	 * The peer can use the information to synchronize his copy of the game to ours.
+	 */
+	void sendPhysicsSync();
+
+	/**
+	 * Handle a physics sync packet from the peer.
+	 * This will update our game to reflect the peer's game.
+	 * @param sync The physics sync packet to handle
+	 */
+	void handlePhysicsSync(const PhysicsSync& sync);
+
+	/**
 	 * The current state of the game.
 	 */
 	GameState_t state;
+
+	/**
+	 * The age (in frames) of the current game.
+	 */
+	unsigned long age;
 
 	/**
 	 * The mediator for interpreting user input and synchronizing with the peer
@@ -152,6 +178,15 @@ private:
 	 * @return The damage done
 	 */
 	static unsigned int calculateHitDamage(BodyPart_t bodyPart);
+
+	/**
+	 * Determine if the update context is world related.
+	 * A world related update changes the world (avatar positions, projectiles, etc...)
+	 * @param context The update to check.
+	 * @return true if the update will modify the world.
+	 */
+	static bool isWorldRelatedUpdate(MediatorUpdateContext_t context);
+
 };
 #endif
 

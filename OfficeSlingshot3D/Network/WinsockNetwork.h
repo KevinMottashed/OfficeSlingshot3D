@@ -11,6 +11,7 @@
 #include "VideoData.h"
 #include "ConnectionStateEnum.h"
 #include "BodyPartEnum.h"
+#include "PhysicsSync.h"
 
 // Forward declarations (files include each other)
 class NetworkSocket;
@@ -39,6 +40,7 @@ enum DataPacketType
 	DATA_PACKET_PROJECTILE, /**< Projectile */
 	DATA_PACKET_GAME_OVER, /**< Let the peer know that we have lost the game */
 	DATA_PACKET_PLAYER_HIT, /**< Let the peer know that we have been hit by a projectile */
+	DATA_PACKET_PHYSICS_SYNC, /**< Give the peer information so that he can synchronize his game to ours. */
 	DATA_PACKET_UNKNOWN /**< Unknown packet type */
 };
 
@@ -154,6 +156,13 @@ public:
 	 * @return The error code, SUCCESS if the message was sent and received.
 	 */
 	virtual rc_network sendPlayerHit(BodyPart_t bodyPart);
+
+	/**
+	 * Send a physics sync object to the peer so that he can synchronize his game.
+	 * @param sync The sync object.
+	 * @return The error code, SUCCESS if the message was sent and received.
+	 */
+	virtual rc_network sendPhysicsSync(const PhysicsSync& sync);
 
 	/**
 	 * Determines if we are connected to a peer.

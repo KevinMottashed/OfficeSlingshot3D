@@ -672,6 +672,13 @@ rc_network WinsockNetwork::sendPlayerHit(BodyPart_t bodyPart)
 	return syncSendDataMessage(packet);
 }
 
+rc_network WinsockNetwork::sendPhysicsSync(const PhysicsSync& sync)
+{
+	DataPacket packet;
+	packet.write(DATA_PACKET_PHYSICS_SYNC, sync);
+	return syncSendDataMessage(packet);
+}
+
 bool WinsockNetwork::isConnected() const
 {
 	return getConnectionState() == ConnectionState::CONNECTED;
@@ -796,6 +803,13 @@ void WinsockNetwork::handleDataMessage(const DataPacket& message)
 			BodyPart_t bodyPart;
 			message.read(bodyPart);
 			notify(RECEIVED_PLAYER_HIT, &bodyPart);
+			break;
+		}
+		case DATA_PACKET_PHYSICS_SYNC:
+		{
+			PhysicsSync sync;
+			message.read(sync);
+			notify(RECEIVED_PHYSICS_SYNC, &sync);
 			break;
 		}
 		case DATA_PACKET_UNKNOWN:

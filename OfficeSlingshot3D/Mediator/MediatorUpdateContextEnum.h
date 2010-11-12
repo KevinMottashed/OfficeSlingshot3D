@@ -27,6 +27,7 @@ enum MediatorUpdateContextEnum
 	PEER_HIT,
 	CHANGE_MUTE_ICON,
 	CHANGE_VOL_ICON,
+	PEER_PHYSICS_SYNC,
 };
 
 }

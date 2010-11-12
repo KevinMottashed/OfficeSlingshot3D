@@ -41,6 +41,7 @@ protected:
 	virtual void log(LogEvent_t logEvent, const cVector3d& vec);
 	virtual void log(LogEvent_t logEvent, const Projectile& projectile);
 	virtual void log(LogEvent_t logEvent, const UserPreferences& preferences);
+	virtual void log(LogEvent_t logEvent, const PhysicsSync& sync);
 
 private:
 	ReplayFormatLogger(const ReplayFormatLogger& c); // intentionally not implemented
@@ -158,6 +159,14 @@ void ReplayFormatLogger<Stream>::log(LogEvent_t e, const UserPreferences& prefer
 {
 	boost::mutex::scoped_lock lock(archive_mutex);
 	archive << toReplayEvent(e) << preferences;
+	return;
+}
+
+template <typename Stream>
+void ReplayFormatLogger<Stream>::log(LogEvent_t e, const PhysicsSync& sync)
+{
+	boost::mutex::scoped_lock lock(archive_mutex);
+	archive << toReplayEvent(e) << sync;
 	return;
 }
 

@@ -84,6 +84,12 @@ void Logger::update(NetworkUpdateContext context, const void *data)
 			log(LogEvent::NETWORK_PLAYER_HIT, *(BodyPart_t*) data);
 			break;
 		}
+		case RECEIVED_PHYSICS_SYNC:
+		{
+			assert(data != NULL);
+			log(LogEvent::NETWORK_PHYSICS_SYNC, *(PhysicsSync*) data);
+			break;
+		}
 	}
 	return;
 }

@@ -9,6 +9,7 @@
 #include "LogEventEnum.h"
 #include "Projectile.h"
 #include "chai3d.h"
+#include "PhysicsSync.h"
 
 // abstract class used for logging
 class Logger :	public NetworkObserver,
@@ -35,6 +36,7 @@ protected:
 	virtual void log(LogEvent_t logEvent, const cVector3d& vec) = 0;
 	virtual void log(LogEvent_t logEvent, const Projectile& projectile) = 0;
 	virtual void log(LogEvent_t logEvent, const UserPreferences& preferences) = 0;
+	virtual void log(LogEvent_t logEvent, const PhysicsSync& sync) = 0;
 };
 
 #endif

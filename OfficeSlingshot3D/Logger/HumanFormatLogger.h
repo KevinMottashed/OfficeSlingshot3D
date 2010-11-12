@@ -39,6 +39,7 @@ protected:
 	virtual void log(LogEvent_t logEvent, const cVector3d& vec);
 	virtual void log(LogEvent_t logEvent, const Projectile& projectile);
 	virtual void log(LogEvent_t logEvent, const UserPreferences& preferences);
+	virtual void log(LogEvent_t logEvent, const PhysicsSync& sync);
 
 private:
 	HumanFormatLogger(const HumanFormatLogger& c); // intentionally not implemented
@@ -133,6 +134,14 @@ void HumanFormatLogger<Stream>::log(LogEvent_t logEvent, const UserPreferences& 
 {
 	boost::mutex::scoped_lock lock(stream_mutex);
 	ostream << lookup(logEvent) << " - " << preferences << std::endl;
+	return;
+}
+
+template <typename Stream>
+void HumanFormatLogger<Stream>::log(LogEvent_t logEvent, const PhysicsSync& sync)
+{
+	boost::mutex::scoped_lock lock(stream_mutex);
+	ostream << lookup(logEvent) << " - " << sync << std::endl;
 	return;
 }
 

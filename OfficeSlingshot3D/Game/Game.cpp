@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Game.h"
 #include "SyncLocker.h"
+#include "PhysicsSync.h"
 
 using namespace std;
 using namespace boost;
@@ -11,7 +12,8 @@ using namespace boost;
 
 Game::Game(boost::shared_ptr<Mediator> mediator) :
 	mediator(mediator),
-	state(GameState::NOT_RUNNING)
+	state(GameState::NOT_RUNNING),
+	age(0)
 {
 	// observe the mediator
 	mediator->attach(this);
@@ -97,6 +99,13 @@ void Game::update(MediatorUpdateContext_t context, const void* data)
 			updateQueue.push(std::pair<MediatorUpdateContext_t, boost::any>(context, *(int*) data));
 			break;
 		}
+
+		// all updates where data is of type PhysicsSync
+		case MediatorUpdateContext::PEER_PHYSICS_SYNC:
+		{
+			updateQueue.push(std::pair<MediatorUpdateContext_t, boost::any>(context, *(PhysicsSync*) data));
+			break;
+		}
 	}
 }
 
@@ -151,12 +160,15 @@ void Game::stop(Player_t player)
 void Game::reset()
 {
 	state = GameState::NOT_RUNNING;
+	age = 0;
 	environment.resetAll();
 	return;
 }
 
 void Game::gameLoop()
 {
+	unsigned int updatesSinceLastSync = 0;
+
 	// keep going until the thread is interrupted,
 	// We will check for an interruption after each step in the loop.
 	// There are 2 reasons for doing this.
@@ -173,11 +185,18 @@ void Game::gameLoop()
 		// update game environment if it is needed
 		if (state == GameState::RUNNING)
 		{
-			// update the environment, this will move the projectiles
-			environment.updateFrame();			
+			// update the environment, check for collisions, etc..
+			updateWorld();
 
-			// check for collisions and handle them
-			checkForCollisions();
+			// we want to sync with the peer every 5 "regular" updates.
+			// as opposed to updates imposed upon us by received physics sync packets
+			++updatesSinceLastSync;
+			if (updatesSinceLastSync == 5)
+			{
+				// send a physics sync packet to the peer so that the games stay synchronised.
+				sendPhysicsSync();
+				updatesSinceLastSync = 0;
+			}			
 
 			// check for an interruption
 			boost::this_thread::interruption_requested();
@@ -207,6 +226,13 @@ void Game::processUpdateQueue()
 
 void Game::handleUpdate(MediatorUpdateContext_t& context, boost::any& data)
 {
+	if (isWorldRelatedUpdate(context) && state != GameState::RUNNING)
+	{
+		// we don't handle world related updates (avatar positions, projectiles, etc...)
+		// while the game isn't running
+		return;
+	}
+
 	switch (context)
 	{
 		case MediatorUpdateContext::START_GAME:
@@ -306,7 +332,26 @@ void Game::handleUpdate(MediatorUpdateContext_t& context, boost::any& data)
 			winScreen.changeVolumeIcon(vol);
 			break;
 		}
+		case MediatorUpdateContext::PEER_PHYSICS_SYNC:
+		{
+			PhysicsSync sync = boost::any_cast<PhysicsSync>(data);
+			handlePhysicsSync(sync);
+			break;
+		}
 	}
+}
+
+void Game::updateWorld()
+{
+	// increment the age of the game, the age goes up once per frame
+	++age;
+
+	// update the environment, this will move the projectiles
+	environment.updateFrame();			
+
+	// check for collisions and handle them
+	checkForCollisions();
+	return;
 }
 
 void Game::checkForCollisions()
@@ -346,6 +391,34 @@ void Game::checkForCollisions()
 	}
 }
 
+void Game::sendPhysicsSync()
+{
+	// gather all information related to the physics simulation
+	PhysicsSync sync;
+	sync.age(age);
+
+	mediator->synchronizePhysics(sync);
+}
+
+void Game::handlePhysicsSync(const PhysicsSync& sync)
+{
+	unsigned long peerAge = sync.age();
+
+	// Fast forward our game if we have fallen behind.
+	// We advance our game to peerAge - 1. The "-1" is there so that
+	// we don't fast forward past the peer. The updateWorld() that will sync us with the
+	// peer (age==peerAge) will be done in the main game loop
+	while (peerAge - 1 > age)
+	{
+		updateWorld();		
+	}
+
+	// We don't care if we are ahead of the peer. 
+	// It's the peer's responsibility to catch up.
+
+	return;
+}
+
 unsigned int Game::calculateHitDamage(BodyPart_t bodyPart)
 {
 	switch(bodyPart)
@@ -360,5 +433,24 @@ unsigned int Game::calculateHitDamage(BodyPart_t bodyPart)
 	}
 	assert(false); // should handle all body parts
 	return 0;
+}
+
+bool Game::isWorldRelatedUpdate(MediatorUpdateContext_t context)
+{
+	switch(context)
+	{
+	case MediatorUpdateContext::LOCAL_SLINGSHOT_PULLBACK:
+	case MediatorUpdateContext::PEER_SLINGSHOT_PULLBACK:
+	case MediatorUpdateContext::LOCAL_SLINGSHOT_FIRED:
+	case MediatorUpdateContext::PEER_SLINGSHOT_FIRED:
+	case MediatorUpdateContext::LOCAL_AVATAR_MOVED:
+	case MediatorUpdateContext::PEER_AVATAR_MOVED:
+	case MediatorUpdateContext::PEER_LOST:
+	case MediatorUpdateContext::PEER_HIT:
+	case MediatorUpdateContext::PEER_PHYSICS_SYNC:
+		return true;
+	default:
+		return false;
+	}
 }
 

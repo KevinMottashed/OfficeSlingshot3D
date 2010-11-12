@@ -222,6 +222,12 @@ void Mediator::update(NetworkUpdateContext context, const void* data)
 			peerHit(*(BodyPart_t*)data);
 			break;
 		}
+		case RECEIVED_PHYSICS_SYNC:
+		{
+			assert(data != NULL);
+			notify(MediatorUpdateContext::PEER_PHYSICS_SYNC, data);
+			break;
+		}
 		default:
 		{
 			// All updates should be handled
@@ -616,6 +622,12 @@ void Mediator::setVolumePreferences()
 void Mediator::paint()
 {
 	userInterface->paint();
+}
+
+void Mediator::synchronizePhysics(const PhysicsSync& sync)
+{
+	// send the synchronization data to the peer so that he can sync his game to ours.
+	network->sendPhysicsSync(sync);
 }
 
 void Mediator::stopDevices()

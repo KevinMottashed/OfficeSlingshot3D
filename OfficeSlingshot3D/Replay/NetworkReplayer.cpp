@@ -113,6 +113,14 @@ void NetworkReplayer::replay(LogEvent_t logEvent)
 			notify(RECEIVED_PLAYER_HIT, &bodyPart);
 			break;
 		}
+		case LogEvent::NETWORK_PHYSICS_SYNC:
+		{
+			PhysicsSync sync;
+			*archive >> sync;
+
+			notify(RECEIVED_PHYSICS_SYNC, &sync);
+			break;
+		}
 	}
 	return;
 }
@@ -186,6 +194,11 @@ rc_network NetworkReplayer::sendGameOver()
 }
 
 rc_network NetworkReplayer::sendPlayerHit(BodyPart_t bodyPart)
+{
+	return SUCCESS;
+}
+
+rc_network NetworkReplayer::sendPhysicsSync(const PhysicsSync& sync)
 {
 	return SUCCESS;
 }

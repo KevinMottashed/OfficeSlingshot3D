@@ -739,6 +739,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Common\PhysicsSync.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Common\PhysicsSync.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Common\PlayerEnum.cpp"
 				>
 			</File>

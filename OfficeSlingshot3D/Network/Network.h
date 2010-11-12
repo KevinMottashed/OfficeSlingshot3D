@@ -8,6 +8,7 @@
 #include "NetworkCodes.h"
 #include "Projectile.h"
 #include "BodyPartEnum.h"
+#include "PhysicsSync.h"
 
 /**
  * Abstract class representing the networking component of the application
@@ -115,6 +116,13 @@ public:
 	 * @return The error code, SUCCESS if the message was sent and received.
 	 */
 	virtual rc_network sendPlayerHit(BodyPart_t bodyPart) = 0;
+
+	/**
+	 * Send a physics sync object to the peer so that he can synchronize his game.
+	 * @param sync The sync object.
+	 * @return The error code, SUCCESS if the message was sent and received.
+	 */
+	virtual rc_network sendPhysicsSync(const PhysicsSync& sync) = 0;
 
 	/**
 	 * Determines if we are connected to a peer
