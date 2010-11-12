@@ -38,7 +38,6 @@ protected:
 	virtual void log(LogEvent_t logEvent, unsigned int uInt);
 	virtual void log(LogEvent_t logEvent, rc_network error);
 	virtual void log(LogEvent_t logEvent, const std::string& str);
-	virtual void log(LogEvent_t logEvent, const VideoData& video);
 	virtual void log(LogEvent_t logEvent, const cVector3d& vec);
 	virtual void log(LogEvent_t logEvent, const Projectile& projectile);
 	virtual void log(LogEvent_t logEvent, const UserPreferences& preferences);
@@ -135,14 +134,6 @@ void ReplayFormatLogger<Stream>::log(LogEvent_t e, const std::string& str)
 {
 	boost::mutex::scoped_lock lock(archive_mutex);
 	archive << toReplayEvent(e) << str;
-	return;
-}
-
-template <typename Stream>
-void ReplayFormatLogger<Stream>::log(LogEvent_t e, const VideoData& video)
-{
-	boost::mutex::scoped_lock lock(archive_mutex);
-	archive << toReplayEvent(e) << video;
 	return;
 }
 

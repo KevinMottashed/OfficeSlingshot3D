@@ -55,12 +55,6 @@ void Logger::update(NetworkUpdateContext context, const void *data)
 			log(LogEvent::NETWORK_CHAT_MESSAGE, *(const std::string*) data);
 			break;
 		}
-		case RECEIVED_VIDEO:
-		{
-			assert(data != NULL);
-			log(LogEvent::NETWORK_VIDEO_DATA, *(VideoData*) data);
-			break;
-		}
 		case RECEIVED_SLINGSHOT_PULLBACK:
 		{
 			assert(data != NULL);
@@ -172,12 +166,6 @@ void Logger::update(ZCameraUpdateContext context, const void* data)
 {
 	switch(context)
 	{
-		case VIDEO:
-		{
-			assert(data != NULL);
-			log(LogEvent::ZCAM_VIDEO_DATA, *(VideoData*) data);
-			break;
-		}
 		case AVATAR_POSITION:
 		{
 			assert(data != NULL);
@@ -187,4 +175,3 @@ void Logger::update(ZCameraUpdateContext context, const void* data)
 	}
 	return;
 }
-

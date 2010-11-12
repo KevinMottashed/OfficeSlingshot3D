@@ -82,13 +82,6 @@ public:
 	virtual rc_network sendChatMessage(const std::string& message) = 0;
 	
 	/**
-	 * Send video data to the peer.
-	 * @param video The video data that will be sent to the peer.
-	 * @return The error code, SUCCESS if the message was sent and received
-	 */
-	virtual rc_network sendVideoData(const VideoData& video) = 0;
-
-	/**
 	 * Send the players position to the peer.
 	 * @param position Our player position that will be sent to the peer.
 	 * @return The error code, SUCCESS if the message was sent and received

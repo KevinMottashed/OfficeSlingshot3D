@@ -8,7 +8,6 @@
 #include "FalconProxy.h"
 #include "ZCameraProxy.h"
 #include "JacketProxy.h"
-#include "VideoData.h"
 #include "Configuration.h"
 #include "SyncLocker.h"
 #include "AudioProxy.h"
@@ -283,13 +282,6 @@ private:
 	//--------------------------------------------
 	// ZCamera Related updates
 	//--------------------------------------------
-
-	/**
-	 * Handle new local video data.
-	 * This function should no longer be used as video data has been "temporarily" been removed from the application.
-	 * @param video The new video data.
-	 */
-	void handleLocalVideoData(VideoData& video);
 
 	/**
 	 * Stop polling the devices (slingshot + zcamera).

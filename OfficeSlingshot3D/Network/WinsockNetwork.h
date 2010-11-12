@@ -121,13 +121,6 @@ public:
 	virtual rc_network sendEndGame();
 
 	/**
-	 * Send video data to the other player.
-	 * @param video The video data to send.
-	 * @return error code.
-	 */
-	virtual rc_network sendVideoData(const VideoData& video);
-
-	/**
 	 * Send a player position to the other player.
 	 * @param position The position to send.
 	 * @return error code.

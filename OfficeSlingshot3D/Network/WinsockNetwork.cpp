@@ -637,13 +637,6 @@ rc_network WinsockNetwork::sendEndGame()
 	return syncSendControlMessage(packet);
 }
 
-rc_network WinsockNetwork::sendVideoData(const VideoData& video)
-{
-	DataPacket packet;
-	packet.write(DATA_PACKET_VIDEO, video);
-	return syncSendDataMessage(packet);
-}
-
 rc_network WinsockNetwork::sendPlayerPosition(const cVector3d& position)
 {
 	DataPacket packet;
@@ -772,13 +765,6 @@ void WinsockNetwork::handleDataMessage(const DataPacket& message)
 {
 	switch (message.getType())
 	{
-		case DATA_PACKET_VIDEO:
-		{
-			VideoData videoData;
-			message.read(videoData);
-			notify(RECEIVED_VIDEO, &videoData);			
-			break;
-		}
 		case DATA_PACKET_PLAYER_POSITION:
 		{
 			cVector3d vec;

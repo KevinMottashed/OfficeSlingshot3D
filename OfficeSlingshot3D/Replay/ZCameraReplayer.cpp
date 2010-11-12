@@ -23,14 +23,6 @@ void ZCameraReplayer::replay(LogEvent_t logEvent)
 
 	switch (logEvent)
 	{
-		case LogEvent::ZCAM_VIDEO_DATA:
-		{
-			VideoData video;
-			*archive >> video;
-
-			notify(VIDEO, &video);
-			break;
-		}
 		case LogEvent::ZCAM_AVATAR_POSITION:
 		{
 			cVector3d position;

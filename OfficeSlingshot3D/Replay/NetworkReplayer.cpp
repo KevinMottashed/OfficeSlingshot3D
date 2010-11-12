@@ -76,14 +76,6 @@ void NetworkReplayer::replay(LogEvent_t logEvent)
 			notify(RECEIVED_CHAT_MESSAGE, &str);
 			break;
 		}
-		case LogEvent::NETWORK_VIDEO_DATA:
-		{
-			VideoData video;
-			*archive >> video;
-
-			notify(RECEIVED_VIDEO, &video);
-			break;
-		}
 		case LogEvent::NETWORK_SLINGSHOT_PULLBACK:
 		{
 			cVector3d vec;
@@ -164,11 +156,6 @@ rc_network NetworkReplayer::sendUserName(const std::string& userName)
 }
 
 rc_network NetworkReplayer::sendChatMessage(const std::string& message)
-{
-	return SUCCESS;
-}
-
-rc_network NetworkReplayer::sendVideoData(const VideoData& video)
 {
 	return SUCCESS;
 }

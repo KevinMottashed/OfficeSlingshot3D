@@ -107,18 +107,6 @@ void MFCUserInterface::displayPeerChatMessage(const string& message)
 	return;
 }
 
-void MFCUserInterface::displayLocalFrame(const VideoData& video)
-{
-	//m_pMainDlg->displayLocalFrame(video);
-	return;	
-}
-
-void MFCUserInterface::displayRemoteFrame(const VideoData& video)
-{
-	//m_pMainDlg->displayRemoteFrame(video);
-	return;
-}
-
 void MFCUserInterface::displayGameOver(Player_t player)
 {
 	m_pMainDlg->displayGameOver(player);

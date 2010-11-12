@@ -175,11 +175,6 @@ void Mediator::update(NetworkUpdateContext context, const void* data)
 			handleChatMessage(*(const std::string*) data);
 			break;
 		}
-		case RECEIVED_VIDEO:
-		{
-			// TODO remove video data
-			break;
-		}
 		case RECEIVED_SLINGSHOT_PULLBACK:
 		{
 			// the network has received a slingshot position
@@ -529,11 +524,6 @@ void Mediator::update(ZCameraUpdateContext context, const void* data)
 {
 	switch(context)
 	{
-		case VIDEO:
-		{
-			// TODO remove video data
-			break;
-		}
 		case AVATAR_POSITION:
 		{
 			assert(data != NULL);
@@ -556,14 +546,6 @@ void Mediator::update(ZCameraUpdateContext context, const void* data)
 			assert(false);
 		}
 	}
-	return;
-}
-
-void Mediator::handleLocalVideoData(VideoData& video)
-{
-	network->sendVideoData(video);
-	ZCamera::reverseFrameLeftRight(video,4);
-	userInterface->displayLocalFrame(video);
 	return;
 }
 

@@ -97,13 +97,6 @@ public:
 	virtual rc_network sendChatMessage(const std::string& message);
 	
 	/**
-	 * Send video data to the peer.
-	 * The replayer won't actually do anything, this is just to implement the network interface.
-	 * @return SUCCESS 
-	 */ 
-	virtual rc_network sendVideoData(const VideoData& video);
-
-	/**
 	 * Send a player position to the peer.
 	 * The replayer won't actually do anything, this is just to implement the network interface.
 	 * @return SUCCESS 

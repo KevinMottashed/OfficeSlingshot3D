@@ -21,8 +21,6 @@ std::string LogEvent::lookup(LogEvent::LogEventEnum logEvent)
 		return "Network - user name";
 	case LogEvent::NETWORK_CHAT_MESSAGE:
 		return "Network - chat message";
-	case LogEvent::NETWORK_VIDEO_DATA:
-		return "Network - video data";
 	case LogEvent::NETWORK_SLINGSHOT_PULLBACK:
 		return "Network - slingshot pullback";
 	case LogEvent::NETWORK_PROJECTILE:
@@ -55,8 +53,6 @@ std::string LogEvent::lookup(LogEvent::LogEventEnum logEvent)
 		return "Falcon - slingshot pullback";
 	case LogEvent::FALCON_SLINGSHOT_FIRED:
 		return "Falcon - slingshot fired";
-	case LogEvent::ZCAM_VIDEO_DATA:
-		return "ZCam - video data";
 	default:
 		return "Unknown - log event";
 	}

@@ -79,14 +79,6 @@ public:
 	void write(PacketType type, const T& t);
 
 	/**
-	 * Write video data into the packet.
-	 * Video data is considered a special case as the data is so huge.
-	 * @param type The type of packet that this will become.
-	 * @param video The video to write into the packet.
-	 */
-	void write(PacketType type, const VideoData& video);
-
-	/**
 	 * Write a header into the packet. This version is provided for header only packets.
 	 * @param type The type of packet that this will become.
 	 */
@@ -98,12 +90,6 @@ public:
 	 */
 	template <typename T>
 	void read(T& t) const;
-
-	/**
-	 * Read video data from the packet.
-	 * @param t The extracted video.
-	 */
-	void read(VideoData& video) const;
 
 	/**
 	 * Clear the packets header and data.
@@ -240,34 +226,6 @@ void Packet<PacketType>::write(PacketType type, const T& t)
 }
 
 template <typename PacketType>
-void Packet<PacketType>::write(PacketType type, const VideoData& video)
-{
-	// clear the existing content
-	clear();
-
-	// create a header for this packet
-	PacketHeader<PacketType> temp;
-	temp.type = type;
-
-	// serialize the data, note that the archive must be destroyed before we can determine the size
-	// of the data, otherwise the data vector will still be empty
-	{
-		boost::iostreams::filtering_ostream dataOStream(boost::iostreams::back_inserter(*data), ios::out | ios::binary);
-		boost::archive::binary_oarchive archive(dataOStream);
-		archive << video;
-	}
-
-	// we can now calculate the total size of the packet (excluding the header)
-	temp.size = data->size();
-
-	// copy the header into the packet
-	header->insert(header->end(), (char*) &temp, ((char*) &temp) + sizeof(PacketHeader<PacketType>));
-
-	return;
-}
-
-
-template <typename PacketType>
 template <typename T>
 void Packet<PacketType>::read(T& t) const
 {
@@ -277,21 +235,6 @@ void Packet<PacketType>::read(T& t) const
 	// create an archive from the vector stream and read the data
 	boost::archive::text_iarchive archive(dataIStream);
 	archive >> t;
-	return;
-}
-
-// The VideoData class requires a special consideration because it is so big.
-// We will be using a binary archive, which is more efficient then a text archive
-// for this kind of data (array of bytes).
-template <typename PacketType>
-void Packet<PacketType>::read(VideoData& video) const
-{
-	// create a binary stream that will read from the data vector
-	boost::iostreams::filtering_istream dataIStream(boost::make_iterator_range(*data), ios::in | ios::binary);
-
-	// create an archive from the vector stream and read the data
-	boost::archive::binary_iarchive archive(dataIStream);
-	archive >> video;
 	return;
 }
 

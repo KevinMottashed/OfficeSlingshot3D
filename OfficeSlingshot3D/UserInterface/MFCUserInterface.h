@@ -3,7 +3,6 @@
 
 #include "stdafx.h"
 #include "MainDlg.h"
-#include "VideoData.h"
 #include "UserInterfaceSignals.h"
 #include "UserInterface.h"
 #include "UserPreferences.h"
@@ -77,16 +76,6 @@ public:
 	 * Update the user interface to display a new peer message.
 	 */
 	virtual void displayPeerChatMessage(const std::string& message);
-
-	/**
-	 * Update the user interface to display a new local video frame.
-	 */
-	virtual void displayLocalFrame(const VideoData& video);
-
-	/**
-	 * Update the user interface to display a new peer video frame.
-	 */
-	virtual void displayRemoteFrame(const VideoData& video);
 
 	/**
 	 * Update the user interface to display game over.
