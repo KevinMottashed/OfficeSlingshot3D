@@ -20,14 +20,14 @@ VirtualAvatar::VirtualAvatar(cWorld* world, cVector3d startingPosition, bool isL
 	world->addChild(avatarMesh);
 
 	avatarMesh->loadFromFile("Objects\\avatar\\avatar.obj");
-	avatarMesh->scale(0.045f);
+	avatarMesh->scale(2.1f);
 
 	avatarMesh->setPos(startingPosition);
 
 	if(!isLocal){
-		avatarMesh->rotate(cVector3d(0.0f, 1.0f, 0.0f), cDegToRad(-90));
-	} else {
 		avatarMesh->rotate(cVector3d(0.0f, 1.0f, 0.0f), cDegToRad(90));
+	} else {
+		avatarMesh->rotate(cVector3d(0.0f, 1.0f, 0.0f), cDegToRad(-90));
 		avatarMesh->setWireMode(true);
 	}
 
