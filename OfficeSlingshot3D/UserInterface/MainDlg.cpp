@@ -2,7 +2,6 @@
 #include "chat.h"
 #include "MainDlg.h"
 #include "Preferences.h"
-#include "KeyboardProxy.h"
 
 using namespace std;
 
@@ -48,6 +47,7 @@ BEGIN_MESSAGE_MAP(CMainDlg, CDialog)
 	ON_STN_CLICKED(IDC_VOL3, &CMainDlg::OnStnClickedVol3)
 	ON_STN_CLICKED(IDC_VOL4, &CMainDlg::OnStnClickedVol4)
 	ON_STN_CLICKED(IDC_VOL5, &CMainDlg::OnStnClickedVol5)
+	ON_STN_CLICKED(IDC_GAME_WINDOW, &CMainDlg::OnStnClickedGameWindow)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -192,15 +192,12 @@ void CMainDlg::AddChatContent(CString strCont)
 	m_richChat.LineScroll(newLineCnt - oldLineCnt);
 }
 
-// method used to intercept messages before they are processed by the UI
+// Method used to intercept messages before they are processed by the UI
 BOOL CMainDlg::PreTranslateMessage(MSG* pMsg)
 {
 	// catches the message when the user presses the Escape key
 	if (pMsg->message == WM_KEYDOWN)
 	{
-		// let the keyboard manager know that a key was pressed
-		Keyboard::instance()->keyPressed(pMsg->wParam);
-
 		if (pMsg->wParam == VK_ESCAPE)
 		{
 			return TRUE;
@@ -536,4 +533,9 @@ void CMainDlg::setMutePref(const bool mute)
 void CMainDlg::setVolPref(const int vol)
 {
 	m_volume = vol;
+}
+
+void CMainDlg::OnStnClickedGameWindow()
+{
+	m_oglWindow->SetFocus();
 }

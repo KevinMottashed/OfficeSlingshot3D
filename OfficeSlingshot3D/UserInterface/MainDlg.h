@@ -190,6 +190,7 @@ private:
 	afx_msg void OnStnClickedVol3();
 	afx_msg void OnStnClickedVol4();
 	afx_msg void OnStnClickedVol5();
+	afx_msg void OnStnClickedGameWindow();
 };
 
 //{{AFX_INSERT_LOCATION}}

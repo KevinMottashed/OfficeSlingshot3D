@@ -98,5 +98,11 @@ private:
 	cCamera* _camera;
 
 	bool openGlInitialized; /**< True if the open gl component has been initialized */
+
+	/**
+	 * Inherited method to catch messages before they are sent to the UI.
+	 * @param pMsg the message being intercepted
+	 */
+	virtual BOOL MFCOpenGLControl::PreTranslateMessage(MSG* pMsg);
 };
 #endif

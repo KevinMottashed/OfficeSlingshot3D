@@ -240,14 +240,6 @@
 				RelativePath=".\UserInterface\resource.h"
 				>
 			</File>
-			<File
-				RelativePath=".\pictures\sound.ico"
-				>
-			</File>
-			<File
-				RelativePath="Objects\table_blurred.bmp"
-				>
-			</File>
 		</Filter>
 		<Filter
 			Name="ZCamera"

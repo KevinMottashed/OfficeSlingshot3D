@@ -1,5 +1,6 @@
 #include "MFCOpenGLControl.h"
 #include "UserInterfaceSignals.h"
+#include "KeyboardProxy.h"
 
 MFCOpenGLControl::MFCOpenGLControl(void) :
 	openGlInitialized(false)
@@ -162,3 +163,15 @@ void MFCOpenGLControl::OnSize(UINT nType, int cx, int cy)
    CDialog::OnSize(nType, cx, cy);
 }
 
+// Method used to intercept messages before they are processed by the UI
+BOOL MFCOpenGLControl::PreTranslateMessage(MSG* pMsg)
+{
+	// catches the message when the user presses the Escape key
+	if (pMsg->message == WM_KEYDOWN)
+	{
+		// let the keyboard manager know that a key was pressed
+		Keyboard::instance()->keyPressed(pMsg->wParam);
+	}
+	// perform the default action
+	return CDialog::PreTranslateMessage(pMsg);
+}
