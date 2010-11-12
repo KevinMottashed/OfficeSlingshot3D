@@ -16,17 +16,9 @@ std::string BodyPart::lookup(BodyPart::BodyPartEnum e)
 		{
 			return "upper right arm";
 		}
-		case BodyPart::LOWER_RIGHT_ARM:
-		{
-			return "lower right arm";
-		}
 		case BodyPart::UPPER_LEFT_ARM:
 		{
 			return "upper left arm";
-		}
-		case BodyPart::LOWER_LEFT_ARM:
-		{
-			return "lower left arm";
 		}
 	}
 	return "unknown";

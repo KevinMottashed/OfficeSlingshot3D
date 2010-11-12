@@ -17,9 +17,7 @@ namespace BodyPart
 		HEAD, /**< Head */
 		CHEST, /**< Chest */
 		UPPER_RIGHT_ARM, /**< Upper right arm, shoulder to elbow */
-		LOWER_RIGHT_ARM, /**< Lower right arm, elbow to wrist */
 		UPPER_LEFT_ARM, /**< Upper left arm, shoulder to elbow */
-		LOWER_LEFT_ARM, /**< Lower left arm, elbow to wrist */
 	};
 
 	/**

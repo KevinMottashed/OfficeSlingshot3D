@@ -355,9 +355,7 @@ unsigned int Game::calculateHitDamage(BodyPart_t bodyPart)
 	case BodyPart::CHEST:
 		return 2;
 	case BodyPart::UPPER_LEFT_ARM:
-	case BodyPart::LOWER_LEFT_ARM:
 	case BodyPart::UPPER_RIGHT_ARM:
-	case BodyPart::LOWER_RIGHT_ARM:
 		return 1;
 	}
 	assert(false); // should handle all body parts

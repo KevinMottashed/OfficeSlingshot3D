@@ -72,7 +72,7 @@ public:
 	 * Sets the array's port number
 	 * @param a_portNum The new port number
 	 */
-	void setPort(int a_portNum);
+	bool setPort(int a_portNum);
 	/**
 	 * Setting intensity values
 	 * @param pIntensityArray The intensity array

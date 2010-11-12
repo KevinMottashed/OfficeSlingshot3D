@@ -32,8 +32,8 @@ SmartClothingManager::~SmartClothingManager()
 
 void SmartClothingManager::setPorts(int armBandPort, int jacketPort)
 {
-	m_pDisplayDeviceJacket->setPort(jacketPort);
-	m_pDisplayDeviceArmband->setPort(armBandPort);
+	IS_TACTILE_JACKET_CONNECTED = m_pDisplayDeviceJacket->setPort(jacketPort);
+	IS_TACTILE_ARMBAND_CONNECTED = m_pDisplayDeviceArmband->setPort(armBandPort);
 }
 
 void SmartClothingManager::TimerProc()
@@ -64,31 +64,25 @@ void SmartClothingManager::vibrate(BodyPart_t hitPart, cVector3d position, cVect
 
 void SmartClothingManager::vibrate(BodyPart_t touchedPart, double x, double y) 
 {
-	switch(touchedPart) {
-	case BodyPart::CHEST:
-		if(IS_TACTILE_JACKET_CONNECTED) {
-			m_pDisplayDeviceJacket->setActChest(x,y);
-			m_pDisplayDeviceJacket->actuate();
+	if(IS_TACTILE_JACKET_CONNECTED) {
+		switch(touchedPart) {
+			case BodyPart::CHEST:
+				m_pDisplayDeviceJacket->setActChest(x,y);
+				break;
+			case BodyPart::UPPER_RIGHT_ARM:
+				m_pDisplayDeviceJacket->setActUpperArm(x,y);
+				break;
+			case BodyPart::HEAD:
+				m_pDisplayDeviceJacket->setIntensityAll(1);
+				break;
 		}
-	break;
-	case BodyPart::UPPER_RIGHT_ARM:
-		if(IS_TACTILE_JACKET_CONNECTED) {
-			m_pDisplayDeviceJacket->setActUpperArm(x,y);
-			m_pDisplayDeviceJacket->actuate();
-		}
-	break;
-	case BodyPart::LOWER_RIGHT_ARM:
-		if(IS_TACTILE_ARMBAND_CONNECTED) {
-			m_pDisplayDeviceArmband->setActForearm(x,y);
-			m_pDisplayDeviceArmband->actuate();
-		}
-	break;
-	case BodyPart::HEAD:
-		if (IS_TACTILE_JACKET_CONNECTED){
-			m_pDisplayDeviceJacket->setIntensityAll(1);
-			m_pDisplayDeviceJacket->actuate();
-		}
-	break;
+		m_pDisplayDeviceJacket->actuate();
+	}
+
+	//if armband is connected, always rumble
+	if(IS_TACTILE_ARMBAND_CONNECTED) {
+		m_pDisplayDeviceArmband->setIntensityAll(1);
+		m_pDisplayDeviceArmband->actuate();
 	}
 
 	smartClothingThread = auto_ptr<thread>(new thread(boost::bind(&SmartClothingManager::TimerProc, this)));

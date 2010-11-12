@@ -157,13 +157,10 @@ bool TactileArray::initialize(void)
 }
 
 
-void TactileArray::setPort(int a_portNum)
+bool TactileArray::setPort(int a_portNum)
 {
-	if (m_portNum != a_portNum)
-	{
-		m_portNum = a_portNum;
-		initialize();
-	}
+	m_portNum = a_portNum;
+	return initialize();
 }
 
 void TactileArray::setIntensity(int * pIntensityArray)
