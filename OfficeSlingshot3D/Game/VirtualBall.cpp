@@ -108,7 +108,7 @@ cVector3d VirtualBall::calculateForceVector()
 
 	cVector3d force = endPos-startPos;
 	
-	force.x *= 200.0f;
+	force.x *= 250.0f;
 	force.y *= 500.0f;
 	force.z *= 1500.0f;
 

@@ -51,15 +51,15 @@ namespace World
 	 * Local ball bounding box
 	 */
 	static const cCollisionAABBBox local_ball_bounding_box = cCollisionAABBBox(
-		cVector3d(-0.5f - error_margin, 0.0f - error_margin, 5.0f - error_margin), 
-		cVector3d(0.5f + error_margin, 0.5f + error_margin, 6.0f + error_margin));
+		cVector3d(-0.3f - error_margin, 0.0f - error_margin, 5.0f - error_margin), 
+		cVector3d(0.3f + error_margin, 0.5f + error_margin, 6.0f + error_margin));
 
 	/**
 	 * Peer ball bounding box
 	 */
 	static const cCollisionAABBBox peer_ball_bounding_box = cCollisionAABBBox(
-		cVector3d(-0.5f - error_margin, 0.0f - error_margin, -5.0f - error_margin), 
-		cVector3d(0.5f + error_margin, 0.5f + error_margin, -6.0f + error_margin));
+		cVector3d(-0.3f - error_margin, 0.0f - error_margin, -5.0f - error_margin), 
+		cVector3d(0.3f + error_margin, 0.5f + error_margin, -6.0f + error_margin));
 }
 
 #endif
