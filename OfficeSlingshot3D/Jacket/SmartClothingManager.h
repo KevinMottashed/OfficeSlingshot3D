@@ -24,19 +24,14 @@ public:
 	 */
 	virtual ~SmartClothingManager();
 
-	// implement this with a proper type for position, probably Vector3D from chai3d
-	// implement this with a thread/event/timer
-	// the Mediator shouldn't be blocked while the jacket vibrates (don't put a sleep)
-	// if possible, make the time in ms
 
 	/**
-	 * Vibrates the smart clothing at a cetain point for a given amount of milliseconds
+	 * Vibrates the smart clothing at a cetain point for a 1000 milliseconds
 	 * @param touchedPart The body part to be vibrated
 	 * @param x The x coordinate
 	 * @param y The y coordinate
-	 * @param time The vibration time in milliseconds
 	 */
-	void vibrate(BodyPart_t touchedPart, double x, double y, int time);
+	void vibrate(BodyPart_t touchedPart, double x, double y);
 
 	/**
 	 * Determines where the smart clothing is to vibrate according to the position
@@ -56,6 +51,12 @@ public:
 	void setPorts(int armBandPort, int jacketPort);
 
 private:
+	
+	/**
+	 * Stops the vibration after 1000 ms
+	 */
+	void TimerProc();
+
 	/**
 	 * Copy-Constructor
 	 */

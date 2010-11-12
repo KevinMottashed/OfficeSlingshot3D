@@ -3,10 +3,14 @@
 #include "DisplayDeviceJacket.h"
 #include "DisplayDeviceArmband.h"
 
+using namespace std;
+using namespace boost;
+
 bool IS_TACTILE_JACKET_CONNECTED;
 bool IS_TACTILE_ARMBAND_CONNECTED;
 DisplayDeviceJacket* m_pDisplayDeviceJacket;
 DisplayDeviceArmband* m_pDisplayDeviceArmband;
+std::auto_ptr<boost::thread> smartClothingThread;
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
@@ -26,14 +30,15 @@ SmartClothingManager::~SmartClothingManager()
 {
 }
 
-
-VOID CALLBACK MySetTimerProc(
-  HWND hwnd,     // handle of window for timer messages
-  UINT uMsg,     // WM_TIMER message
-  UINT idEvent,  // timer identifier
-  DWORD dwTime   // current system time
-)
+void SmartClothingManager::setPorts(int armBandPort, int jacketPort)
 {
+	m_pDisplayDeviceJacket->setPort(jacketPort);
+	m_pDisplayDeviceArmband->setPort(armBandPort);
+}
+
+void SmartClothingManager::TimerProc()
+{
+	boost::this_thread::sleep(boost::posix_time::milliseconds(1000));
 	if(IS_TACTILE_JACKET_CONNECTED) {
 		m_pDisplayDeviceJacket->setIntensityAll(0);
 		m_pDisplayDeviceJacket->actuate();
@@ -42,14 +47,6 @@ VOID CALLBACK MySetTimerProc(
 		m_pDisplayDeviceArmband->setIntensityAll(0);
 		m_pDisplayDeviceArmband->actuate();
 	}
-
-	KillTimer(hwnd,idEvent);
-}
-
-void SmartClothingManager::setPorts(int armBandPort, int jacketPort)
-{
-	m_pDisplayDeviceJacket->setPort(jacketPort);
-	m_pDisplayDeviceArmband->setPort(armBandPort);
 }
 
 void SmartClothingManager::vibrate(BodyPart_t hitPart, cVector3d position, cVector3d minValue, cVector3d maxValue)
@@ -62,10 +59,10 @@ void SmartClothingManager::vibrate(BodyPart_t hitPart, cVector3d position, cVect
 	// Divide by height of the box to get a value from 0-1
 	double yPos = 1 - (position.y - minValue.y)/(maxValue.y - minValue.y);
 
-	vibrate(hitPart, xPos, yPos, 1000);
+	vibrate(hitPart, xPos, yPos);
 }
 
-void SmartClothingManager::vibrate(BodyPart_t touchedPart, double x, double y, int time) 
+void SmartClothingManager::vibrate(BodyPart_t touchedPart, double x, double y) 
 {
 	switch(touchedPart) {
 	case BodyPart::CHEST:
@@ -94,6 +91,6 @@ void SmartClothingManager::vibrate(BodyPart_t touchedPart, double x, double y, i
 	break;
 	}
 
-	SetTimer(NULL,1, 2000, MySetTimerProc);
+	smartClothingThread = auto_ptr<thread>(new thread(boost::bind(&SmartClothingManager::TimerProc, this)));
 }
 
