@@ -110,12 +110,12 @@ bool VirtualAvatar::isInHitBox(cVector3d ballPos)
 	} else if (((rArmMin.x < ballPos.x) && (rArmMax.x > ballPos.x) &&
 			(rArmMin.y < ballPos.y) && (rArmMax.y > ballPos.y) &&
 			(rArmMin.z < ballPos.z) && (rArmMax.z > ballPos.z))) {
-		hitPart = BodyPart::UPPER_LEFT_ARM;
+		hitPart = BodyPart::UPPER_RIGHT_ARM;
 		return true;
 	} else if (((lArmMin.x < ballPos.x) && (lArmMax.x > ballPos.x) &&
 			(lArmMin.y < ballPos.y) && (lArmMax.y > ballPos.y) &&
 			(lArmMin.z < ballPos.z) && (lArmMax.z > ballPos.z))) {
-		hitPart = BodyPart::UPPER_RIGHT_ARM;
+		hitPart = BodyPart::UPPER_LEFT_ARM;
 		return true;
 	} else if (((headMin.x < ballPos.x) && (headMax.x > ballPos.x) &&
 			(headMin.y < ballPos.y) && (headMax.y > ballPos.y) &&
