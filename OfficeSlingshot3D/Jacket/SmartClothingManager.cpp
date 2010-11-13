@@ -53,7 +53,7 @@ void SmartClothingManager::vibrate(BodyPart_t hitPart, cVector3d position, cVect
 {
 	// Take the difference from the x position of the collision and the x minimum value
 	// Divide by width of the box to get a value from 0-1
-	double xPos = (position.x - minValue.x)/(maxValue.x - minValue.x);
+	double xPos = 1 - (position.x - minValue.x)/(maxValue.x - minValue.x);
 
 	// Take the difference from the y position of the collision and the y minimum value
 	// Divide by height of the box to get a value from 0-1
