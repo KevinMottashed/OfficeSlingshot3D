@@ -8,90 +8,91 @@
 
 /**
  * @ingroup Audio
+ * @b public
  * Manages everything audio related.
  */
 class Audio
 {
 public:
 	/**
-	 * Constructor
+	 * Constructor.
 	 * This will preload all the audio files.
 	 */
 	Audio();
 
 	/**
-	 * Destructor
+	 * Destructor.
 	 * Releases all resources related to the audio files.
 	 */
 	virtual ~Audio();
 
 	/**
-	 * play the background music (loops forever)
+	 * play the background music (loops forever).
 	 */
 	void playBGMusic();
 
 	/**
-	 * stop the background music
+	 * stop the background music.
 	 */
 	void stopBGMusic();
 
 	/**
-	 * play hit sound (when a player gets hit)
+	 * play hit sound (when a player gets hit).
 	 */
 	void playHit();
 
 	/**
-	 * play headshot sound (when a player gets hit in the head)
+	 * play headshot sound (when a player gets hit in the head).
 	 */
 	void playHeadshot();
 
 	/**
-	 * play slingshot fired sound
+	 * play slingshot fired sound.
 	 */
 	void playSlingshotFired();
 
 	/**
-	 * play game start sound
+	 * play game start sound.
 	 */
 	void playGameStart();
 
 	/**
-	 * play game over sound (when the player has won)
+	 * play game over sound (when the player has won).
 	 */
 	void playGameOverWon();
 
 	/**
-	 * play game over sound (when the player has lost)
+	 * play game over sound (when the player has lost).
 	 */
 	void playGameOverLost();
 
 	/**
-	 * Mute all audio
+	 * Mute all audio.
 	 */
 	void mute();
 
 	/**
-	 * Unmute all audio
+	 * Unmute all audio.
 	 */
 	void unmute();
 
 	/**
 	 * Set the volume level.
-	 * @param level 0 for minimum, 1 for maximum
+	 * @param[in] level 0 for minimum, 1 for maximum
 	 */
 	void volume(float level);
 
 private:
 	
 	/**
-	 * Copy constructor
-	 * Not-implemented to protect from use
+	 * Copy constructor. Not implemented to protect from use.
+	 * @param[in] other The object to copy.
 	 */
 	Audio(const Audio& other);
 
 	/**
-	 * Assignment operator
-	 * Not-implemented to protect from use
+	 * Assignment operator. Not implemented to protect from use.
+	 * @param[in] other The object to copy.
 	 */
 	Audio& operator=(const Audio& other);
 

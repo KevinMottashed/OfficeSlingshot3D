@@ -5,6 +5,8 @@
 #include "FMOD.hpp"
 
 /**
+ * @ingroup Audio
+ * @b package
  * Abstraction for a Sound in the FMOD library.
  * This class makes it easier the play, stop and adjust volume levels.
  */
@@ -13,9 +15,9 @@ class Sound
 public:
 	/**
 	 * Constructor.
-	 * @param system The FMOD system who will initialize the sound.
-	 * @param fileName the file from which to load the sound.
-	 * @param loop true if the sound should loop forever.
+	 * @param[in] system The FMOD system who will initialize the sound.
+	 * @param[in] fileName the file from which to load the sound.
+	 * @param[in] loop true if the sound should loop forever.
 	 */
 	Sound(FMOD::System* system, std::string fileName, bool loop);
 
@@ -43,7 +45,7 @@ public:
 
 	/**
 	 * Set the volume for this sound on a scale of 0 to 1 (max).
-	 * @param volume The volume level for this sound.
+	 * @param[in] volume The volume level for this sound.
 	 */
 	void volume(float volume);
 
