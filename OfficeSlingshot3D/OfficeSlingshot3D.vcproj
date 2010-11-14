@@ -148,10 +148,11 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
+				AdditionalOptions="/D /NODEFAULTLIB:library&quot; &quot; /D _CRT_SECURE_NO_DEPRECATE /D &quot;WINVER=0x0501&quot;"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="include,include\ARToolKit-2.72.1,include\chai3d,include/Z-Cam,include/HandTracker"
-				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS"
+				AdditionalIncludeDirectories="include;&quot;include\ARToolKit-2.72.1&quot;;&quot;include\Z-Cam&quot;;include\ODE;include\HandTracker;&quot;..\chai3d-2.0.0\external\OpenGL\msvc&quot;;&quot;..\chai3d-2.0.0\external\ODE\include&quot;;&quot;..\chai3d-2.0.0\modules\ODE&quot;;&quot;..\chai3d-2.0.0\src&quot;;Utils\;Mediator\;Falcon\;Game\;Jacket\;Network\;UserInterface\;ZCamera\;Objects\;Logger\;Common\;Main\;Replay\;res\;Serialization\;Test/Framework;Test/;Test/Sample;Test/Network;../FMOD/api/inc;Test/Audio;Audio;Keyboard;Test/Utils;Test/Common"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_MSVC;dDOUBLE;_DEBUG"
 				StringPooling="true"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
@@ -175,11 +176,11 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="strmiids.lib opengl32.lib glu32.lib glut32.lib libAR.lib libARvideo.lib libARgsub_MFC.lib vfw32.lib chai3d_complete.lib winmm.lib hdl.lib ConnectDM_VC80.lib tinyxmld.lib depthCameraLibrary2.lib"
+				AdditionalDependencies="strmiids.lib opengl32.lib glu32.lib glut32.lib libARd.lib libARvideod.lib libARgsub_MFCd.lib vfw32.lib winmm.lib hdl.lib ConnectDM_VC80.lib tinyxmld.lib TDVHandsTracking.lib depthCameraLibrary2.lib chai3d-debug.lib ode_double.lib odbc32.lib odbccp32.lib fmodex_vc.lib"
 				OutputFile=".\Release/OfficeSlingshot3D.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="lib,lib\ARToolKit-2.72.1,lib\chai3d\msvc6,lib/Z-Cam,lib/HandTracker"
+				AdditionalLibraryDirectories="&quot;..\chai3d-2.0.0\external\OpenGL\msvc&quot;;&quot;..\chai3d-2.0.0\lib\msvc8&quot;;&quot;..\chai3d-2.0.0\external\ODE\lib\msvc&quot;;&quot;lib\ARToolKit-2.72.1&quot;;&quot;lib/Z-Cam&quot;;lib;lib\HandTracker;lib\chai3d;lib/boost/msvc8;..\FMOD\api\lib"
 				IgnoreDefaultLibraryNames="libcd"
 				ProgramDatabaseFile=".\Release/OfficeSlingshot3D.pdb"
 				SubSystem="2"
