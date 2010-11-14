@@ -13,7 +13,7 @@ std::string LogEvent::lookup(LogEvent::LogEventEnum logEvent)
 		return "Network - peer start game";
 	case LogEvent::NETWORK_PEER_PAUSE_GAME:
 		return "Network - peer pause game";
-	case LogEvent:: NETWORK_PEER_EXIT_GAME:
+	case LogEvent::NETWORK_PEER_EXIT_GAME:
 		return "Network - peer exit game";
 	case LogEvent::NETWORK_ERROR_OCCURED:
 		return "Network - error occured";
