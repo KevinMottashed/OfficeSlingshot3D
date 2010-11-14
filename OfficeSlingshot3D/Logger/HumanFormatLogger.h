@@ -6,37 +6,94 @@
 #include "Logger.h"
 #include "ConsoleStream.h"
 
-// concrete logger class
-// this logger outputs the log in a human readable format
-// Stream is the stream type
+/**
+ * @ingroup Logger
+ * @b public
+ * Concrete logger class that outputs in a human readable format
+ */
 template <typename Stream>
 class HumanFormatLogger : public Logger
 {
 public:
-	// Constructors
-	// many stream types cannot be copied (including the STL ones)
-	// so we must provide templated constructors to be able to initialize the stream
+	/**
+	 * Constructor.
+	 * @param[in] ostream The stream that the log will be outputed to.
+	 */
 	HumanFormatLogger(std::auto_ptr<Stream> ostream);
 
-	virtual ~HumanFormatLogger();
+	virtual ~HumanFormatLogger(); /**< Destructor. */
 
 protected:
-	// log various event of various data types
+	/**
+	 * Log an event that has no associated data.
+	 * @param[in] logEvent The event to be logged.
+	 */
 	virtual void log(LogEvent_t logEvent);
+
+	/**
+	 * Log an event with data of type unsigned int.
+	 * @param[in] logEvent The event to be logged.
+	 * @param[in] uInt The associated data.
+	 */
 	virtual void log(LogEvent_t logEvent, unsigned int uInt);
+
+	/**
+	 * Log an event with data of type rc_network.
+	 * @param[in] logEvent The event to be logged.
+	 * @param[in] error The associated data.
+	 */
 	virtual void log(LogEvent_t logEvent, rc_network error);
+
+	/**
+	 * Log an event with data of type string.
+	 * @param[in] logEvent The event to be logged.
+	 * @param[in] str The associated data.
+	 */
 	virtual void log(LogEvent_t logEvent, const std::string& str);
+
+	/**
+	 * Log an event with data of type cVector3d.
+	 * @param[in] logEvent The event to be logged.
+	 * @param[in] vec The associated data.
+	 */
 	virtual void log(LogEvent_t logEvent, const cVector3d& vec);
+
+	/**
+	 * Log an event with data of type Projectile.
+	 * @param[in] logEvent The event to be logged.
+	 * @param[in] projectile The associated data.
+	 */
 	virtual void log(LogEvent_t logEvent, const Projectile& projectile);
+
+	/**
+	 * Log an event with data of type UserPreferences.
+	 * @param[in] logEvent The event to be logged.
+	 * @param[in] preferences The associated data.
+	 */
 	virtual void log(LogEvent_t logEvent, const UserPreferences& preferences);
+
+	/**
+	 * Log an event with data of type PhysicsSync.
+	 * @param[in] logEvent The event to be logged.
+	 * @param[in] sync The associated data.
+	 */
 	virtual void log(LogEvent_t logEvent, const PhysicsSync& sync);
 
 private:
-	HumanFormatLogger(const HumanFormatLogger& c); // intentionally not implemented
-	HumanFormatLogger& operator=(const HumanFormatLogger& c); // intentionally not implemented
+	/**
+	 * Copy constructor. Not implemented to protect from use.
+	 * @param[in] c The object to copy.
+	 */
+	HumanFormatLogger(const HumanFormatLogger& c);
 
-	std::auto_ptr<Stream> ostream;
-	boost::mutex stream_mutex;
+	/**
+	 * Assignment operator. Not implemented to protect from use.
+	 * @param[in] c The object to copy.
+	 */
+	HumanFormatLogger& operator=(const HumanFormatLogger& c);
+
+	std::auto_ptr<Stream> ostream; /**< The stream where the log will be writen. */
+	boost::mutex stream_mutex; /**< Mutex to protect the stream */
 };
 
 //---------------------------------------------

@@ -9,47 +9,112 @@
 #include "Projectile.h"
 #include "ReplayFormatEvent.h"
 
-// concrete logger class
-// this logger outputs the log in the replay format
-// Stream is the stream type
+/**
+ * @ingroup Logger
+ * @b public
+ * Concrete logger class that outputs in the replay format
+ */
 template <typename Stream>
 class ReplayFormatLogger : public Logger
 {
 public:
-	// Constructors
-	// many stream types cannot be copied (including the STL ones)
-	// so we must provide templated constructors to be able to initialize the stream
+	/**
+	 * Constructor.
+	 * @param[in] ostream The stream that the log will be outputed to.
+	 */
 	ReplayFormatLogger(std::auto_ptr<Stream> ostream);
 
-	virtual ~ReplayFormatLogger();
+	virtual ~ReplayFormatLogger(); /**< Destructor. */
 
 protected:
-	// log various event of various data types
+	/**
+	 * Log an event that has no associated data.
+	 * @param[in] logEvent The event to be logged.
+	 */
 	virtual void log(LogEvent_t logEvent);
+	
+	/**
+	 * Log an event with data of type unsigned int.
+	 * @param[in] logEvent The event to be logged.
+	 * @param[in] uInt The associated data.
+	 */
 	virtual void log(LogEvent_t logEvent, unsigned int uInt);
+	
+	/**
+	 * Log an event with data of type rc_network.
+	 * @param[in] logEvent The event to be logged.
+	 * @param[in] error The associated data.
+	 */
 	virtual void log(LogEvent_t logEvent, rc_network error);
+	
+	/**
+	 * Log an event with data of type string.
+	 * @param[in] logEvent The event to be logged.
+	 * @param[in] str The associated data.
+	 */
 	virtual void log(LogEvent_t logEvent, const std::string& str);
+	
+	/**
+	 * Log an event with data of type cVector3d.
+	 * @param[in] logEvent The event to be logged.
+	 * @param[in] vec The associated data.
+	 */
 	virtual void log(LogEvent_t logEvent, const cVector3d& vec);
+	
+	/**
+	 * Log an event with data of type Projectile.
+	 * @param[in] logEvent The event to be logged.
+	 * @param[in] projectile The associated data.
+	 */
 	virtual void log(LogEvent_t logEvent, const Projectile& projectile);
+	
+	/**
+	 * Log an event with data of type UserPreferences.
+	 * @param[in] logEvent The event to be logged.
+	 * @param[in] preferences The associated data.
+	 */
 	virtual void log(LogEvent_t logEvent, const UserPreferences& preferences);
+	
+	/**
+	 * Log an event with data of type PhysicsSync.
+	 * @param[in] logEvent The event to be logged.
+	 * @param[in] sync The associated data.
+	 */
 	virtual void log(LogEvent_t logEvent, const PhysicsSync& sync);
 
 private:
-	ReplayFormatLogger(const ReplayFormatLogger& c); // intentionally not implemented
-	ReplayFormatLogger& operator=(const ReplayFormatLogger& c); // intentionally not implemented
+	/**
+	 * Copy constructor. Not implemented to protect from use.
+	 * @param[in] c The object to copy.
+	 */
+	ReplayFormatLogger(const ReplayFormatLogger& c);
 
+	/**
+	 * Assignment operator. Not implemented to protect from use.
+	 * @param[in] c The object to copy.
+	 */
+	ReplayFormatLogger& operator=(const ReplayFormatLogger& c);
+
+	/**
+	 * Get the elapsed time since the application was initialized.
+	 * @return The elapsed time in ms.
+	 */
 	long getElapsedTimeInMs() const;
 
-	// This function is a helper for serializing the ReplayFormatEvent type
-	// The serialization library doesn't like to serialize non-const types
-	// so this creates and returns a const ReplayFormatEvent
+	/**
+	 * This function is a helper for serializing the ReplayFormatEvent type
+	 * The serialization library doesn't like to serialize non-const types
+	 * so this creates and returns a const ReplayFormatEvent.
+	 * @param[in] e The event to convert
+	 * @return The converted replay format event.
+	 */
 	const ReplayFormatEvent toReplayEvent(LogEvent_t e) const;
 
-	std::auto_ptr<Stream> ostream;
-	const boost::posix_time::ptime start;
+	std::auto_ptr<Stream> ostream; /**< The stream that the archive uses. */
+	const boost::posix_time::ptime start; /**< The time at which the application was initialized. */ 
 
-	boost::archive::text_oarchive archive;
-	boost::mutex archive_mutex;
+	boost::archive::text_oarchive archive; /**< The archive to save the events to. */
+	boost::mutex archive_mutex; /**< Protects the archive from synchronous usage. */
 };
 
 //---------------------------------------------

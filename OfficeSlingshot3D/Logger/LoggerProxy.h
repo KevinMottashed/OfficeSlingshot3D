@@ -1,3 +1,8 @@
+/**
+ * @file
+ * Convinience header for including all public members of the logger module.
+ */
+
 // public interface for the logger module
 
 // The following loggers are provided:
@@ -6,7 +11,13 @@
 // ReplayFormatFileLogger - output log in replay format to a file
 // ReplayFormatConsoleLogger - output log in replay format to the console
 
-// public members of the logger module
+/**
+ * @defgroup Logger Logger
+ * The logger module is responsible for creating replay files.
+ * The logger will save events coming from the network, zcamera, falcon and user interface module.
+ * These events are saved in a file so that the replayer can replay those events.
+ * The logger can also output in a human readable output.
+ */
 #include "Logger.h"
 #include "HumanFormatLogger.h"
 #include "ReplayFormatLogger.h"

@@ -5,22 +5,37 @@
 
 #include "LogEventEnum.h"
 
-// This enum represents the different categories of input events that the system can receive
-// These categories are network, user interface, falcon and zcamera
+/**
+ * Namespace that holds the log event category enum.
+ * This protects from naming conflicts.
+ */
 namespace LogEventCategory
 {
+	/**
+	 * @ingroup Logger
+	 * @b package
+	 * Enum that contains all the different categories of log events.
+	 */
 	enum LogEventCategoryEnum
 	{
-		NETWORK,
-		UI,
-		FALCON,
-		ZCAM
+		NETWORK, /**< Events originating from the network. */
+		UI, /**< Events originating from the user interface. */
+		FALCON, /**< Events originating from the falcon. */
+		ZCAM, /**< Events originating from the zcamera. */
 	};
 
-	// convert the enum to a string
+	/**
+	 * Convert the enum to a string.
+	 * @param[in] category The enum to convert to a string.
+	 * @return The converted enum.
+	 */
 	std::string lookup(LogEventCategoryEnum category);
 
-	// determine which category an input event belongs to
+	/**
+	 * Determine which category a log event belongs to.
+	 * @param[in] logEvent The log event.
+	 * @return The category that the event belongs to.
+	 */
 	LogEventCategoryEnum lookupCategory(LogEvent_t logEvent);
 }
 
