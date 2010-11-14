@@ -2,23 +2,26 @@
 #define KEYBOARD_LISTENER_H
 
 /**
- * Interface for a class that listens to keyboard events
+ * @ingroup Keyboard
+ * @b public
+ * Interface for a class that listens to keyboard events.
  */
 class KeyboardListener
 {
 public:
 	/**
-	 * Constructor
+	 * Constructor.
 	 */
 	KeyboardListener();
 
 	/**
-	 * Destructor
+	 * Destructor.
 	 */
 	~KeyboardListener();
 
 	/**
-	 * Notifies the listener that a key was pressed
+	 * Notifies the listener that a key was pressed.
+	 * @param[in] key The key that was pressed.
 	 */
 	virtual void keyPressed(unsigned int key) = 0;
 };

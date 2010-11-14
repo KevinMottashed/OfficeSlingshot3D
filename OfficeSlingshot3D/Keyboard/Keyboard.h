@@ -6,47 +6,55 @@
 #include "KeyboardListener.h"
 
 /**
- * Singleton class that represents the keyboard
+ * @ingroup Keyboard
+ * @b public
+ * Singleton class that represents the keyboard.
  * The active window should monitor keystrokes and report them here.
  * Only the active window should monitor keystrokes otherwise we won't be
  * able to test 2 instances on 1 pc.
  */
 class Keyboard
 {
-public:
-	/**
-	 * Kill me now
-	 */
-	~Keyboard();
+public:	
+	~Keyboard(); /**< Destructor. */
 
 	/**
-	 * Retrieve the singleton
+	 * Retrieve the singleton.
 	 * @return the singleton
 	 */
 	static Keyboard* instance();
 
 	/**
-	 * Attach a listener to the keyboard
-	 * @param listener The listener to attach
+	 * Attach a listener to the keyboard.
+	 * @param[in] listener The listener to attach.
 	 */
 	void attach(KeyboardListener* listener);
 
 	/**
-	 * Detach a listener from the keyboard
-	 * @param listener The listener to detach
+	 * Detach a listener from the keyboard.
+	 * @param[in] listener The listener to detach.
 	 */
 	void detach(KeyboardListener* listener);
 
 	/**
-	 * Let all the listeners know that a key was pressed
-	 * @param key The key that was pressed
+	 * Let all the listeners know that a key was pressed.
+	 * @param[in] key The key that was pressed.
 	 */
 	void keyPressed(unsigned int key);
 
 private:
-	// all private for singleton
-	Keyboard();
+	Keyboard(); /**< Constructor. Private for singleton pattern. */
+
+	/**
+	 * Copy constructor. Not implemented to protect from use.
+	 * @param[in] other The object to copy.
+	 */
 	Keyboard(const Keyboard& other);
+
+	/**
+	 * Assignment operator. Not implemented to protect from use.
+	 * @param[in] other The object to copy.
+	 */
 	Keyboard& operator= (const Keyboard& other);
 
 	/**
