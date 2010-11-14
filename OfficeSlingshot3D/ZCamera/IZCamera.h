@@ -34,11 +34,6 @@ public:
 	 */
 	virtual void stopCapture() = 0;
 
-	/**
-	 * Resets the camera's position
-	 */
-	virtual void resetPosition() = 0;
-
 private:
 	/**
 	 * Copy-Constructor

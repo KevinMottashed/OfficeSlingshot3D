@@ -26,7 +26,6 @@ public:
 	// the replayer doesn't actually capture frames from a camera
 	virtual void startCapture();
 	virtual void stopCapture();
-	virtual void resetPosition();
 
 private:
 	// the file/archive used for retrieving the data associated with events

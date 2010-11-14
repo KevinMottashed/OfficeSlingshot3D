@@ -32,11 +32,6 @@ public:
 	virtual void stopCapture();
 
 	/**
-	 * Resets the camera's position
-	 */
-	virtual void resetPosition();
-
-	/**
 	 * Handle a key pressed event
 	 */
 	virtual void keyPressed(unsigned int key);

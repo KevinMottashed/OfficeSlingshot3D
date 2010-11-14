@@ -634,6 +634,5 @@ void Mediator::stopDevices()
 {
 	falcon->stopPolling();
 	zcamera->stopCapture();
-	zcamera->resetPosition();
 	return;
 }

@@ -85,11 +85,6 @@ void ZCamera::stopCapture()
 	}
 }
 
-void ZCamera::resetPosition()
-{
-	return;
-}
-
 //Reverses the image up-down
 void ZCamera::reverseFrameUpDown(VideoData& vd, int channels){
 

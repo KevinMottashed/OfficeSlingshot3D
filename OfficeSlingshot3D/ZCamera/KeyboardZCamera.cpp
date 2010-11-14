@@ -22,12 +22,9 @@ void KeyboardZCamera::startCapture()
 
 void KeyboardZCamera::stopCapture()
 {
-	reporting = false;
-}
-
-void KeyboardZCamera::resetPosition()
-{
+	// reset the player's position when the camera is stopped
 	position = World::local_avatar_starting_position;
+	reporting = false;
 }
 
 void KeyboardZCamera::keyPressed(unsigned int key)
