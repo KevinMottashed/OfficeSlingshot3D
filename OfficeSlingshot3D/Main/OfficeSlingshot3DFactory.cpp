@@ -3,6 +3,7 @@
 #include "UserInterfaceProxy.h"
 #include "FalconProxy.h"
 #include "ZCameraProxy.h"
+#include "ConsoleStream.h"
 
 using namespace std;
 using namespace boost;
@@ -242,23 +243,27 @@ shared_ptr<OfficeSlingshot3D> OfficeSlingshot3DFactory::createFromConfigFile(con
 		if (logToFile && logWithHumanOutput)
 		{
 			// the user wants a human logger to file
-			logger = shared_ptr<Logger>(new HumanFormatFileLogger(logFileName.c_str()));
+			std::auto_ptr<ofstream> stream = std::auto_ptr<ofstream>(new ofstream(logFileName.c_str()));
+			logger = shared_ptr<Logger>(new HumanFormatFileLogger(stream));
 		}
 		else if (logToFile && !logWithHumanOutput)
 		{
 			// the user wants a replay logger to file
 			// note that the file must be opened in binary mode
-			logger = shared_ptr<Logger>(new ReplayFormatFileLogger(logFileName.c_str(), ios::out | ios::binary));
+			auto_ptr<ofstream> stream = auto_ptr<ofstream>(new ofstream(logFileName.c_str(), ios::out | ios::binary));
+			logger = shared_ptr<Logger>(new ReplayFormatFileLogger(stream));
 		}
 		else if (!logToFile && logWithHumanOutput)
 		{
 			// the user wants a human logger to console
-			logger = shared_ptr<Logger>(new HumanFormatConsoleLogger());
+			auto_ptr<ConsoleStream> stream = auto_ptr<ConsoleStream>(new ConsoleStream());
+			logger = shared_ptr<Logger>(new HumanFormatConsoleLogger(stream));
 		}
 		else if (!logToFile && !logWithHumanOutput)
 		{
 			// the user wants a replay logger to console
-			logger = shared_ptr<Logger>(new ReplayFormatConsoleLogger());
+			auto_ptr<ConsoleStream> stream = auto_ptr<ConsoleStream>(new ConsoleStream());
+			logger = shared_ptr<Logger>(new ReplayFormatConsoleLogger(stream));
 		}
 
 		// attach the logger to the components

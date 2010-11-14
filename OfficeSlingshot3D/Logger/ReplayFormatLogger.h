@@ -19,16 +19,7 @@ public:
 	// Constructors
 	// many stream types cannot be copied (including the STL ones)
 	// so we must provide templated constructors to be able to initialize the stream
-	ReplayFormatLogger();
-
-	template <typename T1>
-	ReplayFormatLogger(T1 param);
-
-	template <typename T1, typename T2>
-	ReplayFormatLogger(T1 param1, T2 param2);
-
-	template <typename T1, typename T2, typename T3>
-	ReplayFormatLogger(T1 param1, T2 param2, T3 param3);
+	ReplayFormatLogger(std::auto_ptr<Stream> ostream);
 
 	virtual ~ReplayFormatLogger();
 
@@ -54,7 +45,7 @@ private:
 	// so this creates and returns a const ReplayFormatEvent
 	const ReplayFormatEvent toReplayEvent(LogEvent_t e) const;
 
-	Stream ostream;
+	std::auto_ptr<Stream> ostream;
 	const boost::posix_time::ptime start;
 
 	boost::archive::text_oarchive archive;
@@ -66,40 +57,12 @@ private:
 //---------------------------------------------
 
 template <typename Stream>
-ReplayFormatLogger<Stream>::ReplayFormatLogger() : 
-	ostream(), 
+ReplayFormatLogger<Stream>::ReplayFormatLogger(std::auto_ptr<Stream> stream) : 
+	ostream(stream), 
 	start(boost::posix_time::microsec_clock::local_time()),
-	archive(ostream)
+	archive(*ostream)
 {
 }
-
-template <typename Stream>
-template <typename T1>
-ReplayFormatLogger<Stream>::ReplayFormatLogger(T1 param) : 
-	ostream(param), 
-	start(boost::posix_time::microsec_clock::local_time()),
-	archive(ostream)
-{
-}
-
-template <typename Stream>
-template <typename T1, typename T2>
-ReplayFormatLogger<Stream>::ReplayFormatLogger(T1 param1, T2 param2) : 
-	ostream(param1, param2), 
-	start(boost::posix_time::microsec_clock::local_time()),
-	archive(ostream)
-{
-}
-
-template <typename Stream>
-template <typename T1, typename T2, typename T3>
-ReplayFormatLogger<Stream>::ReplayFormatLogger(T1 param1, T2 param2, T3 param3) : 
-	ostream(param1, param2, param3), 
-	start(boost::posix_time::microsec_clock::local_time()),
-	archive(ostream)
-{
-}
-
 
 template <typename Stream>
 ReplayFormatLogger<Stream>::~ReplayFormatLogger()
