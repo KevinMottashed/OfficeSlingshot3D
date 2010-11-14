@@ -6,6 +6,7 @@
 
 /**
  * @ingroup Mediator
+ * @b public
  * Abstract class in the observer pattern.
  * The observer will receive notifications relating to user interaction with the system.
  */
@@ -13,20 +14,20 @@ class MediatorObserver
 {
 public:
 	/**
-	 * Constructor
+	 * Constructor.
 	 */
 	MediatorObserver();
 
 	/**
-	 * Destructor
+	 * Destructor.
 	 */
 	virtual ~MediatorObserver();
 
 	/**
 	 * Function that is called everytime the mediator has a notification to deliver.
 	 * This function should be used to handle the notifications.
-	 * @param context The update's context.
-	 * @param data The data associated with the update.
+	 * @param[in] context The update's context.
+	 * @param[in] data The data associated with the update.
 	 */
 	virtual void update(MediatorUpdateContext_t context, const void* data) = 0;
 };

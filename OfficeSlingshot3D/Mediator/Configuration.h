@@ -5,14 +5,16 @@
 #include "UserPreferences.h"
 
 /**
- * Manages the software's configuration and stores it in a file
+ * @ingroup Mediator
+ * @b package
+ * Manages the software's configuration and stores it in a file.
  */
 class Configuration
 {
 public:
 	/**
 	 * Constructor.
-	 * @param fileName The file where the configuration is stored
+	 * @param[in] fileName The file where the configuration is stored.
 	 */
 	Configuration(const std::string& fileName);
 
@@ -29,7 +31,7 @@ public:
 
 	/**
 	 * Set the user preferences.
-	 * @param pref The new preferences.
+	 * @param[in] pref The new preferences.
 	 */
 	void setUserPreferences(const UserPreferences& pref);
 

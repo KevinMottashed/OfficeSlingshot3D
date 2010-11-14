@@ -17,6 +17,7 @@
 
 /**
  * @ingroup Mediator
+ * @b public
  * This class mediates the interactions between the devices and the game.
  * All device modules report events to the mediator. The mediator will then
  * interpret these events and notify the game. The mediator also synchronizes
@@ -31,11 +32,11 @@ class Mediator :	public NetworkObserver,
 public:
 	/**
 	 * Constructor.
-	 * @param network The network component to be mediated.
-	 * @param falcon The falcon component to be mediated.
-	 * @param zcamera The zcamera component to be mediated.
-	 * @param userInterface The user interface component to be mediated.
-	 * @param configuration The configuration to use.
+	 * @param[in] network The network component to be mediated.
+	 * @param[in] falcon The falcon component to be mediated.
+	 * @param[in] zcamera The zcamera component to be mediated.
+	 * @param[in] userInterface The user interface component to be mediated.
+	 * @param[in] configuration The configuration to use.
 	 */
 	Mediator(	boost::shared_ptr<Network> network,
 				boost::shared_ptr<Falcon> falcon,
@@ -49,75 +50,75 @@ public:
 
 	/**
 	 * Handle an update from the network component.
-	 * @param context The update's context.
-	 * @param data The data associated with the update.
+	 * @param[in] context The update's context.
+	 * @param[in] data The data associated with the update.
 	 */ 
 	virtual void update(NetworkUpdateContext context, const void* data);
 
 	/**
 	 * Handle an update from the user interface component.
-	 * @param context The update's context.
-	 * @param data The data associated with the update.
+	 * @param[in] context The update's context.
+	 * @param[in] data The data associated with the update.
 	 */ 
 	virtual void update(UserInterfaceUpdateContext context, const void* data);
 	
 	/**
 	 * Handle an update from the zcamera component.
-	 * @param context The update's context.
-	 * @param data The data associated with the update.
+	 * @param[in] context The update's context.
+	 * @param[in] data The data associated with the update.
 	 */ 
 	virtual void update(ZCameraUpdateContext context, const void* data);
 	
 	/**
 	 * Handle an update from the falcon component.
-	 * @param context The update's context.
-	 * @param data The data associated with the update.
+	 * @param[in] context The update's context.
+	 * @param[in] data The data associated with the update.
 	 */ 
 	virtual void update(FalconUpdateContext context, const void* data);
 
 	/**
 	 * Take action when the game is started.
 	 * This will start polling the devices and let the user know that the game was started.
-	 * @param player the player that started the game
+	 * @param[in] player the player that started the game.
 	 */
 	void startGame(Player_t player);
 
 	/**
 	 * Take action when the game is paused.
 	 * This will stop polling the devices and let the user know that the game was paused.
-	 * @param player the player that started the game
+	 * @param[in] player the player that started the game.
 	 */
 	void pauseGame(Player_t player);
 	
 	/**
 	 * Take action when the game is exited.
 	 * This will stop polling the devices and let the user know that the game was exited.
-	 * @param player the player that started the game
+	 * @param[in] player the player that started the game.
 	 */	
 	void exitGame(Player_t player);
 
 	/**
 	 * Switches the camera whose frames need to be displayed.
 	 * This instructs the UI to display the game environment from a camera.
-	 * @param camera The new camera
+	 * @param[in] camera The new camera.
 	 */
 	void switchCamera(cCamera* camera);
 
 	/**
-	 * Provide the user with feedback when a slingshot is fired
-	 * This will also let the peer know that a slingshot was fired
-	 * if the fired slingshot was our own
-	 * @param projectile The projectile that was fired
-	 * @param player The player that fired his slingshot
+	 * Provide the user with feedback when a slingshot is fired.
+	 * This will also let the peer know that a slingshot was fired.
+	 * if the fired slingshot was our own.
+	 * @param[in] projectile The projectile that was fired.
+	 * @param[in] player The player that fired his slingshot.
 	 */
 	void fireSlingshot(Projectile projectile, Player_t player);
 
 	/**
 	 * Provide the appropriate user feedback for when the local player is hit by the slingshot.
-	 * @param hitPart The body part hit by the ball
-	 * @param ballPos The position of the ball when the collision was detected
-	 * @param minValue The hit box's minimum value
-	 * @param maxValue The hit box's maximum value
+	 * @param[in] hitPart The body part hit by the ball.
+	 * @param[in] ballPos The position of the ball when the collision was detected.
+	 * @param[in] minValue The hit box's minimum value.
+	 * @param[in] maxValue The hit box's maximum value.
 	 */
 	void collisionDetected(	BodyPart_t hitPart, 
 							cVector3d ballPos, 
@@ -126,29 +127,30 @@ public:
 
 	/**
 	 * Provide the appropriate user feedback for when the peer player is hit by the slingshot.
-	 * @param bodyPart The body part where the peer was hit.
+	 * @param[in] bodyPart The body part where the peer was hit.
 	 */
 	void peerHit(BodyPart_t bodyPart);
 
 	/**
-	 * Displays lose screen and sends GAME_OVER to peer
+	 * Displays lose screen and sends GAME_OVER to peer.
+	 * @param[in] player The player that lost the game.
 	 */
 	void playerLost(Player_t player);
 
 	/**
-	 * Mutes the volume
-	 * @param soundOn True if the sound is on currently and is to be muted
+	 * Mutes the volume.
+	 * @param[in] soundOn True if the sound is on currently and is to be muted.
 	 */
 	void muteVolume(const bool soundOn);
 
 	/**
-	 * Changes the volume
-	 * @param vol The new volume
+	 * Changes the volume.
+	 * @param[in] vol The new volume.
 	 */
 	void changeVolume(const int vol);
 
 	/**
-	 * Sets the config volume preferences to the game and UI
+	 * Sets the config volume preferences to the game and UI.
 	 */
 	void setVolumePreferences();
 
@@ -159,20 +161,20 @@ public:
 
 	/**
 	 * Synchronize the physics of both games.
-	 * @param sync The physics data that is used for the synchronization.
+	 * @param[in] sync The physics data that is used for the synchronization.
 	 */
 	void synchronizePhysics(const PhysicsSync& sync);
 	
 private:
 	/**
 	 * Copy constructor. Not implemented to protect from use.
-	 * @param c The mediator to copy from.
+	 * @param[in] c The mediator to copy from.
 	 */	
 	Mediator(const Mediator& c);
 
 	/**
 	 * Assignment Operator. Not implemented to protect from use.
-	 * @param c The mediator to assign from.
+	 * @param[in] c The mediator to assign from.
 	 */
 	Mediator& operator=(const Mediator& c); 
 
@@ -232,19 +234,19 @@ private:
 
 	/**
 	 * Handle a network error.
-	 * @param error The error code to handle.
+	 * @param[in] error The error code to handle.
 	 */
 	void handleNetworkError(rc_network error);
 
 	/**
 	 * Handle receiving a user name through the network.
-	 * @param name The received user name.	
+	 * @param[in] name The received user name.	
 	 */ 
 	void handleUserName(const std::string& name);
 
 	/**
 	 * Handle a chat message received through the network.
-	 * @param message The chat message received.
+	 * @param[in] message The chat message received.
 	 */
 	void handleChatMessage(const std::string& message);
 
@@ -271,7 +273,7 @@ private:
 
 	/**
 	 * Handle a change in user preferences.
-	 * @param preferences The new preferences.
+	 * @param[in] preferences The new preferences.
 	 */
 	void changePreferences(const UserPreferences& preferences);
 
@@ -282,7 +284,7 @@ private:
 
 	/**
 	 * Send a chat message to the peer.
-	 * @param message The chat message to send.
+	 * @param[in] message The chat message to send.
 	 */
 	void sendChatMessage(const std::string& message);
 

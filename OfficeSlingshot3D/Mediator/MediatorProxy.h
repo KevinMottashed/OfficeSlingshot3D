@@ -13,6 +13,7 @@
 #include "Mediator.h"
 #include "MediatorObserver.h"
 #include "MediatorSubject.h"
+#include "MediatorUpdateContextEnum.h"
 
 // public members
 class Mediator;
