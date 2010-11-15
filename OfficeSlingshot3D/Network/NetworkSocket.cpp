@@ -20,18 +20,6 @@ SOCKET NetworkSocket::Detach()
 	return CSocket::Detach();
 }
 
-
-// Do not edit the following lines, which are needed by ClassWizard.
-#if 0
-BEGIN_MESSAGE_MAP(NetworkSocket, CSocket)
-	//{{AFX_MSG_MAP(NetworkSocket)
-	//}}AFX_MSG_MAP
-END_MESSAGE_MAP()
-#endif	// 0
-
-/////////////////////////////////////////////////////////////////////////////
-// NetworkSocket member functions
-
 void NetworkSocket::OnAccept(int nErrorCode) 
 {
 	m_bIsServer = true;

@@ -3,24 +3,32 @@
 
 #include "stdafx.h"
 
-// All the possible return codes from network related functions
+/**
+ * @ingroup Network
+ * @b public
+ * All the possible return codes from network related functions.
+ */
 enum rc_network
 {
-	SUCCESS,
-	ERROR_ALREADY_LISTENING,
-	ERROR_CREATE_CONTROL_SOCKET,
-	ERROR_CREATE_DATA_SOCKET,
-	ERROR_LISTEN_CONTROL_SOCKET,
-	ERROR_LISTEN_DATA_SOCKET,
-	ERROR_ALREADY_CONNECTED,
-	ERROR_CONNECT_CONTROL_SOCKET,
-	ERROR_CONNECT_DATA_SOCKET,
-	ERROR_SOCKET_ERROR,
-	ERROR_NO_CONNECTION,
-	ERROR_USER_NAME_NOT_RECEIVED,
+	SUCCESS, /**< Success */
+	ERROR_ALREADY_LISTENING, /**< Error could not perform operation, already listening. */
+	ERROR_CREATE_CONTROL_SOCKET, /**< Error could not create the control socket. */
+	ERROR_CREATE_DATA_SOCKET, /**< Error could not create the data socket. */
+	ERROR_LISTEN_CONTROL_SOCKET, /**< Error could not listen on the control socket. */
+	ERROR_LISTEN_DATA_SOCKET, /**< Error could not listen on the data socket. */
+	ERROR_ALREADY_CONNECTED, /**< Error could not perform operation, already connected. */
+	ERROR_CONNECT_CONTROL_SOCKET, /**< Error could not connect the control socket. */
+	ERROR_CONNECT_DATA_SOCKET, /**< Error could not connect the data socket. */
+	ERROR_SOCKET_ERROR, /**< A socket error has occured. */
+	ERROR_NO_CONNECTION, /**< Error could not perform operation, not connected to a peer. */
+	ERROR_USER_NAME_NOT_RECEIVED, /**< Error the peer's username was not received while establishing the connection. */
 };
 
-// Get the error message for a return code
+/**
+ * Convert the error code to a string.
+ * @param[in] code The enum to convert.
+ * @return The string representation of the enum.
+ */
 static std::string lookup(rc_network code)
 {
 	switch(code)

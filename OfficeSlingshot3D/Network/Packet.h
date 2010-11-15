@@ -10,6 +10,8 @@
 #include "VideoData.h"
 
 /**
+ * @ingroup Network
+ * @b package
  * The header for all packets.
  * The header contains a size which is the size of the whole packet and
  * a type which should be a enum representing what the packet is.
@@ -17,16 +19,18 @@
 template <typename PacketType>
 struct PacketHeader
 {
-	unsigned int size; /**< The size of the packet */
-	PacketType type; /**< The packet type */
+	unsigned int size; /**< The size of the packet. */
+	PacketType type; /**< The packet type. */
 };
 
-/** 
+/**
+ * @ingroup Network
+ * @b package
  * The Packet class is used to represent all packets that our network can send.
  * All packets include a header and data section. The header is the type of the packet and the
  * size of the data section. This class uses the boost serialization library to serialize
  * types for transmission and deserialize types upon reception. A packet has 2 sections and 
- * they are ordered as follows <header><data>.
+ * they are ordered as follows [header][data].
  */
 template <typename PacketType>
 class Packet
@@ -44,7 +48,7 @@ public:
 
 	/** 
 	 * Get the packet's type.
-	 * @return the type
+	 * @return the packet's type.
 	 */
 	PacketType getType() const;
 
@@ -65,28 +69,28 @@ public:
 	 * If we could create a packet from the bytes then the contents of this packet will be replaced with contents from the stream.
 	 * The bytes that were used to create the packet will also be removed from the stream
 	 * the function returns false if a packet could not be created.
-	 * @param input The bytes used to try to create a packet.
+	 * @param[in,out] input The bytes used to try to create a packet.
 	 * @return true if a packet was created.
 	 */
 	bool readPacket(std::vector<char>& input);
 
 	/**
 	 * Write data into the packet, including the header.
-	 * @param type The type of packet that this will become.
-	 * @param t The data to write into the packet.
+	 * @param[in] type The type of packet that this will become.
+	 * @param[in] t The data to write into the packet.
 	 */
 	template <typename T>
 	void write(PacketType type, const T& t);
 
 	/**
 	 * Write a header into the packet. This version is provided for header only packets.
-	 * @param type The type of packet that this will become.
+	 * @param[in] type The type of packet that this will become.
 	 */
 	void write(PacketType type);
 
 	/**
 	 * Read data from the packet.
-	 * @param t The extracted data.
+	 * @param[out] t The extracted data.
 	 */
 	template <typename T>
 	void read(T& t) const;
@@ -97,8 +101,8 @@ public:
 	void clear();
 
 private:
-	boost::shared_ptr<std::vector<char> > header; /**< The header section */
-	boost::shared_ptr<std::vector<char> > data; /**< The data section */
+	boost::shared_ptr<std::vector<char> > header; /**< The header section. */
+	boost::shared_ptr<std::vector<char> > data; /**< The data section. */
 };
 
 //--------------------------------------------
