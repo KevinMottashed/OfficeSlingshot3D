@@ -18,7 +18,7 @@ VirtualElastic::~VirtualElastic(void)
 {
 }
 
-void VirtualElastic::hide()
+void VirtualElastic::reset()
 {
 	elasticMesh->setShowEnabled(false);
 }

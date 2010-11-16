@@ -74,6 +74,9 @@ cVector3d VirtualBall::getBallCenter() const
 void VirtualBall::reset()
 {
 	odeBall->setShowEnabled(false);
+
+	alreadyCollided = false;
+	firstPullBack = true;
 }
 
 void VirtualBall::move(const cVector3d& newBallPos)

@@ -67,7 +67,7 @@ Projectile VirtualEnvironment::fireLocalSlingshot()
 	lNumBalls++;
 
 	// Hide the peer elastic
-	lElastics->hide();
+	lElastics->reset();
 	
 	return p;
 }
@@ -80,7 +80,7 @@ void VirtualEnvironment::firePeerSlingshot(Projectile p)
 	rNumBalls++;
 
 	// Hide the peer elastic
-	rElastics->hide();
+	rElastics->reset();
 
 	return;
 }
@@ -145,12 +145,15 @@ void VirtualEnvironment::reducePeerHp(unsigned int dmg)
 
 void VirtualEnvironment::resetAll()
 {
+	// Reset health bars
 	rHpBar->ResetHp();
 	lHpBar->ResetHp();
 
+	// Reset both avatars
 	lAvatar->resetPosition(World::local_avatar_starting_position, true);
 	rAvatar->resetPosition(World::peer_avatar_starting_position, false);
 
+	// Reset all the balls
 	foreach (VirtualBall*& odeBall, localBalls)
 	{
 		odeBall->reset();
@@ -160,6 +163,10 @@ void VirtualEnvironment::resetAll()
 	{
 		odeBall->reset();
 	}
+
+	// Reset elastics and force
+	lElastics->reset();
+	rElastics->reset();
 
 	return;
 }

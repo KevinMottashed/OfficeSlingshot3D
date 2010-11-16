@@ -30,7 +30,7 @@ public:
 	/**
 	 * Hides the elastics after the ball has been shot
 	 */
-	void hide();
+	void reset();
 
 private:
 	/**

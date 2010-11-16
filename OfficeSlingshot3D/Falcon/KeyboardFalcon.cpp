@@ -31,6 +31,11 @@ void KeyboardFalcon::startPolling()
 void KeyboardFalcon::stopPolling()
 {
 	reporting = false;
+	firing = false;
+
+	position = cVector3d(World::local_ball_starting_position.z, 
+		World::local_ball_starting_position.x, 
+		World::local_ball_starting_position.y);
 }
 
 void KeyboardFalcon::keyPressed(unsigned int key)

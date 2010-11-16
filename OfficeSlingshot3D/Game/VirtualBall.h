@@ -60,7 +60,7 @@ public:
 	void collided();
 
 	/**
-	 * Resets the ball by disabling it
+	 * Resets the ball by disabling it and resetting all flags
 	 */
 	void reset();
 
