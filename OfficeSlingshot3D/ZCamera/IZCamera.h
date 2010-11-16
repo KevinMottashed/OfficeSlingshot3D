@@ -5,7 +5,6 @@
 #include "chai3d.h"
 #include "DepthCamera.h"
 #include "ZCameraSubject.h"
-#include "VideoData.h"
 #include "boost.h"
 
 /**

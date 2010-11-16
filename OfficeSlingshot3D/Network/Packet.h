@@ -7,7 +7,6 @@
 
 // we need to send some data types from the game module
 #include "Projectile.h"
-#include "VideoData.h"
 
 /**
  * @ingroup Network

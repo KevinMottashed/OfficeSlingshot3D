@@ -4,7 +4,6 @@
 #include "stdafx.h"
 #include "chai3d.h"
 #include "NetworkSubject.h"
-#include "VideoData.h"
 #include "NetworkCodes.h"
 #include "Projectile.h"
 #include "BodyPartEnum.h"

@@ -13,9 +13,6 @@ ZCamera::ZCamera()
 	//Create the depth camera object
 	m_depthCamera = new CDepthCamera();
 
-	//Allocate memory for the video frame
-	RGB = shared_ptr<vector<BYTE> >(new vector<BYTE>(IMAGE_ARRAY_SIZE));
-
 	// Initialize the camera
 	zcamPresent = m_depthCamera->Initialize(5000);
 }
@@ -39,13 +36,8 @@ void ZCamera::getFrameFromCamera()
 	//While the thread is active
 	while(true)
 	{
-		VideoData video;
-
-		// get a pointer to the video array
-		BYTE* rgb = &video.rgb.front();
-		
-		//Get frame from camera, updates the values of the char arrays
-		m_depthCamera->GetNextFrame(DEPTH, rgb, RGBFull, PRIM, SEC, 1000);		
+		//Get frame from camera, updates the pointers that point to the video data
+		m_depthCamera->GetNextFrame(DEPTH, RGBFrame, RGBFull, PRIM, SEC, 1000);		
 		
 		cVector3d pos = getPlayerPosition();
 
@@ -84,47 +76,6 @@ void ZCamera::stopCapture()
 		zcameraThread.reset();
 	}
 }
-
-//Reverses the image up-down
-void ZCamera::reverseFrameUpDown(VideoData& vd, int channels){
-
-	BYTE* RGB = &vd.rgb.front();
-
-	int step = IMAGE_WIDTH*channels;
-	unsigned char* tmp = new BYTE[step];
-
-	for(int i=0; i<IMAGE_HEIGHT/2; i++){
-		memcpy(tmp,RGB + step*(IMAGE_HEIGHT-i-1),step);				//tmp = b
-		memcpy(RGB + step*(IMAGE_HEIGHT-i-1),RGB+i*step,step);		//b = a
-		memcpy(RGB+i*step,tmp,step);												//a = tmp
-	}
-
-	delete []tmp;
-
-}
-
-//Reverses the image left-right
-void ZCamera::reverseFrameLeftRight(VideoData& vd,int channels){
-
-	BYTE* RGB = &vd.rgb.front();
-
-	int step = channels;
-	int line_step = 0;
-	unsigned char* tmp = new BYTE[step];
-
-	for(int i=0; i<IMAGE_HEIGHT; i++){
-		line_step = step * i * IMAGE_WIDTH;
-		for (int j=0;j<IMAGE_WIDTH/2;j++){
-			memcpy(tmp,RGB + line_step + step*(IMAGE_WIDTH-j-1),step);				//tmp = b
-			memcpy(RGB + line_step + step*(IMAGE_WIDTH-j-1),RGB + line_step + step*j,step);		//b = a
-			memcpy(RGB + line_step + step*j,tmp,step);								//a = tmp
-		}
-	}
-
-	delete []tmp;
-
-}
-
 
 //Finds the head of the player in the depth image and returns a 3d vector.
 cVector3d ZCamera::getPlayerPosition(){

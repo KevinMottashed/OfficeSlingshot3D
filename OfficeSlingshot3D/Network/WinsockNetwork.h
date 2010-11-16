@@ -8,7 +8,6 @@
 #include "Network.h"
 #include "Packet.h"
 #include "SyncReaderWriters.h"
-#include "VideoData.h"
 #include "ConnectionStateEnum.h"
 #include "BodyPartEnum.h"
 #include "PhysicsSync.h"

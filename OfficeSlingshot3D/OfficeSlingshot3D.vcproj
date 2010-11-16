@@ -772,10 +772,6 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Common\VideoData.h"
-				>
-			</File>
-			<File
 				RelativePath=".\Common\WorldConstants.h"
 				>
 			</File>

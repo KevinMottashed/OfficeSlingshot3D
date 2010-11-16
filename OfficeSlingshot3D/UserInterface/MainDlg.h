@@ -4,7 +4,6 @@
 #include "stdafx.h"
 #include "Resource.h"
 #include "UserInterface.h"
-#include "VideoData.h"
 #include "UserPreferences.h"
 #include "MFCOpenGLControl.h"
 #include "ConnectionStateEnum.h"

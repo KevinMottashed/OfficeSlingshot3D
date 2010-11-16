@@ -5,7 +5,6 @@
 #include "chai3d.h"
 #include "DepthCamera.h"
 #include "IZCamera.h"
-#include "VideoData.h"
 #include "boost.h"
 
 /**
@@ -39,20 +38,6 @@ public:
 	 * runs at 32 fps and continually sends information to controller
 	 */
 	void getFrameFromCamera();
-
-	/**
-	 * Reverse the image array vertically, so it displays correctly on the UI
-	 * @param vd Video data object
-	 * @param channels Video channels
-	 */
-	static void reverseFrameUpDown(VideoData& vd, int channels);
-
-	/**
-	 * Reverse the image array horizontally, so it displays correctly on the UI
-	 * @param vd Video data object
-	 * @param channels Video channels
-	 */
-	static void reverseFrameLeftRight(VideoData& vd, int channels);	
 
 private:
 	/**
@@ -90,8 +75,10 @@ private:
 	 */
 	unsigned char* DEPTH;
 
+	unsigned char* RGBFrame; /**< A frame of RGB. */
+
 	/**
-	 * The RGB data
+	 * A frame of RGB, full resolution.
 	 */
 	unsigned char* RGBFull;
 
