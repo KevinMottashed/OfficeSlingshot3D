@@ -10,7 +10,9 @@
 namespace BodyPart
 {
 	/**
-	 * Enum representing different parts of the human body
+	 * @ingroup Common
+	 * @b public
+	 * Enum representing different parts of the human body.
 	 */
 	enum BodyPartEnum
 	{
@@ -22,14 +24,14 @@ namespace BodyPart
 
 	/**
 	 * Get a string representation of the enum
-	 * @param e The enum to convert to a string
+	 * @param[in] e The enum to convert to a string
 	 * @return The string representation
 	 */
 	std::string lookup(BodyPartEnum e);
 }
 
 /**
- * Typedef for convinience
+ * Typedef for convinience.
  */
 typedef BodyPart::BodyPartEnum BodyPart_t;
 

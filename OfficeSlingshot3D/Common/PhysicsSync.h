@@ -5,6 +5,8 @@
 #include "boost.h"
 
 /**
+ * @ingroup Common
+ * @b public
  * This data structure is used to synchronize 2 virtual environments.
  * This class contains the age of the physics simulation and the current 
  * position and velocity of each projectile.
@@ -26,7 +28,7 @@ public:
 
 	/**
 	 * Set the age of the game in frames
-	 * @param age the age of the game in frames
+	 * @param[in] age the age of the game in frames
 	 */
 	void age(unsigned long age);
 
@@ -37,8 +39,8 @@ private:
 	/**
 	 * Serialize/Deserialize a physics sync object
 	 * This function is used by boost for transmiting and saving physics sync objects
-	 * @param ar The archive where the sync object will be serialized to or deserialized from
-	 * @param version The archive's version
+	 * @param[in,out] ar The archive where the sync object will be serialized to or deserialized from
+	 * @param[in] version The archive's version
 	 */
 	template <typename Archive>
 	void serialize(Archive& ar, const unsigned int version);
@@ -47,7 +49,12 @@ private:
 	unsigned long _age;
 };
 
-// output operator
+/**
+ * Output operator.
+ * @param[out] os Output stream to add to.
+ * @param[in] sync Object to write to stream.
+ * @return Returns the param os.
+ */
 std::ostream& operator<<(std::ostream& os, const PhysicsSync& sync);
 
 //--------------------------------------------

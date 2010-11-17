@@ -10,24 +10,26 @@
 namespace Player
 {
 	/**
-	 * Enum representing all the different players 
+	 * @ingroup Common
+	 * @b public
+	 * Enum representing all the different players.
 	 */
 	enum PlayerEnum
 	{
-		LOCAL, /**< The local player */
-		PEER /**< The remote player */
+		LOCAL, /**< The local player. */
+		PEER /**< The remote player. */
 	};
 
 	/**
 	 * Get a string representation of the enum
-	 * @param e The enum to convert to a string
+	 * @param[in] e The enum to convert to a string
 	 * @return The string representation
 	 */
 	std::string lookup(PlayerEnum e);
 }
 
 /**
- * Typedef for convinience
+ * Typedef for convinience.
  */
 typedef Player::PlayerEnum Player_t;
 

@@ -19,8 +19,8 @@ public:
 
 	/**
 	 * Constructor
-	 * @param position The position for this projectile
-	 * @param force The force applied to this projectile
+	 * @param[in] position The position for this projectile
+	 * @param[in] force The force applied to this projectile
 	 */
 	Projectile(cVector3d position, cVector3d force);
 	
@@ -37,15 +37,15 @@ public:
 
 	/**
 	 * Set the position
-	 * @param x The x coordinate
-	 * @param y The y coordinate
-	 * @param z The z coordinate
+	 * @param[in] x The x coordinate
+	 * @param[in] y The y coordinate
+	 * @param[in] z The z coordinate
 	 */
 	void position(double x, double y, double z);
 
 	/**
-	 * Set the position
-	 * @param v The new position
+	 * Set the position.
+	 * @param[in] v The new position.
 	 */
 	void position(const cVector3d& v);
 
@@ -56,16 +56,16 @@ public:
 	cVector3d force() const;
 
 	/**
-	 * Set the force
-	 * @param x The x coordinate
-	 * @param y The y coordinate
-	 * @param z The z coordinate
+	 * Set the force.
+	 * @param[in] x The x coordinate
+	 * @param[in] y The y coordinate
+	 * @param[in] z The z coordinate
 	 */
 	void force(double x, double y, double z);
 
 	/**
 	 * Set the force
-	 * @param v The new force
+	 * @param[in] v The new force
 	 */
 	void force(const cVector3d& v);
 
@@ -73,9 +73,9 @@ public:
 	 * Compare 2 projectiles for equality.
 	 * A projectile's position and force is expressed using floating point numbers
 	 * so the epsilon paramater is provided to allow for an error margin.
-	 * @param other The other projectile.
-	 * @param epsilon The error margin allowed in the floating point comparisons
-	 * @return true if the projectiles are equal
+	 * @param[in] other The other projectile.
+	 * @param[in] epsilon The error margin allowed in the floating point comparisons.
+	 * @return true if the projectiles are equal.
 	 */
 	bool equals(const Projectile& other, float epsilon = 0.0f);
 
@@ -86,8 +86,8 @@ private:
 	/**
 	 * Serialize/Deserialize a projectile
 	 * This function is used by boost for transmiting and saving projectiles
-	 * @param ar The archive where the projectile will be serialized to or deserialized from
-	 * @param version The archive's version
+	 * @param[in,out] ar The archive where the projectile will be serialized to or deserialized from
+	 * @param[in] version The archive's version
 	 */
 	template <typename Archive>
 	void serialize(Archive& ar, const unsigned int version);
@@ -103,7 +103,12 @@ private:
 	cVector3d _force;
 };
 
-// output operator to make things easier
+/**
+ * Output operator.
+ * @param[out] os Output stream to add to.
+ * @param[in] projectile Object to write to stream.
+ * @return Returns the param os.
+ */
 std::ostream& operator<<(std::ostream& os, const Projectile& projectile);
 
 //--------------------------------------------

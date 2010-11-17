@@ -724,6 +724,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Common\CommonProxy.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Common\ConnectionStateEnum.cpp"
 				>
 			</File>

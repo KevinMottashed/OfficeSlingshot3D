@@ -78,7 +78,7 @@ public:
 
 	/**
 	 * Send a chat message to the peer.
-	 * @param message The chat message that will be sent to the peer.
+	 * @param[in] message The chat message that will be sent to the peer.
 	 * @return The error code, SUCCESS if the message was sent and received.
 	 */
 	virtual rc_network sendChatMessage(const std::string& message) = 0;
