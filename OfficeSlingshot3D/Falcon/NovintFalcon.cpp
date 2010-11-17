@@ -54,13 +54,7 @@ NovintFalcon::NovintFalcon() :
 
 NovintFalcon::~NovintFalcon()
 {
-	if (pollingThread.get() != NULL)
-	{
-		// interrupt and delete the thread
-		pollingThread->interrupt();
-		pollingThread->join();
-		pollingThread.reset();
-	}
+	stopPolling();
 }
 
 void NovintFalcon::poll()
@@ -160,7 +154,7 @@ void NovintFalcon::startPolling()
 	return;
 }
 
-// stop managing the falcon pen
+// stop managing the novint falcon
 // stop the thread that's polling it
 void NovintFalcon::stopPolling() 
 {
@@ -171,6 +165,12 @@ void NovintFalcon::stopPolling()
 		pollingThread->interrupt();
 		pollingThread->join();
 		pollingThread.reset();
+	}
+
+	// set the force on each device to zero
+	for (int i = 0; i < numHapticDevices; ++i)
+    {
+		hapticDevices[i]->setForce(cVector3d(0,0,0));
 	}
 	return;
 }
