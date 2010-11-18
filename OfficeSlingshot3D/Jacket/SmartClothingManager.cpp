@@ -73,7 +73,7 @@ void SmartClothingManager::vibrate(BodyPart_t touchedPart, double x, double y)
 				m_pDisplayDeviceJacket->setActUpperArm(x,y);
 				break;
 			case BodyPart::HEAD:
-				m_pDisplayDeviceJacket->setIntensityAll(1);
+				m_pDisplayDeviceJacket->setIntensityAll(.9);
 				break;
 		}
 		m_pDisplayDeviceJacket->actuate();
