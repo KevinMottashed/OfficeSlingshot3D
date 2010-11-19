@@ -172,6 +172,10 @@ void NovintFalcon::stopPolling()
     {
 		hapticDevices[i]->setForce(cVector3d(0,0,0));
 	}
+
+	firing = false;
+
+
 	return;
 }
 
