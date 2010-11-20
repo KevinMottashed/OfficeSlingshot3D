@@ -8,6 +8,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OfficeSlingshot3D", "Office
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CHAI 3D", "..\chai3d-2.0.0\projects\msvc8\chai3d_complete.vcproj", "{A9F01342-5463-4634-B1F9-BF98CD5591B0}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "OfficeSlingshot3DSetup", "..\OfficeSlingshot3DSetup\OfficeSlingshot3DSetup.vdproj", "{09400C58-ED38-403B-9C9F-7C08AE2EDCF3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -22,6 +24,8 @@ Global
 		{A9F01342-5463-4634-B1F9-BF98CD5591B0}.Debug|Win32.Build.0 = Debug|Win32
 		{A9F01342-5463-4634-B1F9-BF98CD5591B0}.Release|Win32.ActiveCfg = Debug|Win32
 		{A9F01342-5463-4634-B1F9-BF98CD5591B0}.Release|Win32.Build.0 = Debug|Win32
+		{09400C58-ED38-403B-9C9F-7C08AE2EDCF3}.Debug|Win32.ActiveCfg = Debug
+		{09400C58-ED38-403B-9C9F-7C08AE2EDCF3}.Release|Win32.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

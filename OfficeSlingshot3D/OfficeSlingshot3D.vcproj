@@ -79,7 +79,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="strmiids.lib opengl32.lib glu32.lib glut32.lib libARd.lib libARvideod.lib libARgsub_MFCd.lib vfw32.lib winmm.lib hdl.lib ConnectDM_VC80.lib tinyxmld.lib TDVHandsTracking.lib depthCameraLibrary2.lib chai3d-debug.lib ode_double.lib odbc32.lib odbccp32.lib fmodex_vc.lib"
-				OutputFile=".\Debug/OfficeSlingshot3D.exe"
+				OutputFile=".\OfficeSlingshot3D.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="&quot;..\chai3d-2.0.0\external\OpenGL\msvc&quot;;&quot;..\chai3d-2.0.0\lib\msvc8&quot;;&quot;..\chai3d-2.0.0\external\ODE\lib\msvc&quot;;&quot;lib\ARToolKit-2.72.1&quot;;&quot;lib/Z-Cam&quot;;lib;lib\HandTracker;lib\chai3d;lib/boost/msvc8;..\FMOD\api\lib"
@@ -177,7 +177,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="strmiids.lib opengl32.lib glu32.lib glut32.lib libARd.lib libARvideod.lib libARgsub_MFCd.lib vfw32.lib winmm.lib hdl.lib ConnectDM_VC80.lib tinyxmld.lib TDVHandsTracking.lib depthCameraLibrary2.lib chai3d-debug.lib ode_double.lib odbc32.lib odbccp32.lib fmodex_vc.lib"
-				OutputFile=".\Release/OfficeSlingshot3D.exe"
+				OutputFile=".\OfficeSlingshot3D.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="&quot;..\chai3d-2.0.0\external\OpenGL\msvc&quot;;&quot;..\chai3d-2.0.0\lib\msvc8&quot;;&quot;..\chai3d-2.0.0\external\ODE\lib\msvc&quot;;&quot;lib\ARToolKit-2.72.1&quot;;&quot;lib/Z-Cam&quot;;lib;lib\HandTracker;lib\chai3d;lib/boost/msvc8;..\FMOD\api\lib"
