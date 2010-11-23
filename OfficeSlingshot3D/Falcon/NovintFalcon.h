@@ -5,6 +5,8 @@
 #include "stdafx.h"
 #include "boost.h"
 #include "chai3d.h"
+#include "UserPreferences.h"
+#include "Configuration.h"
 
 /**
  * The novint falcon. This class controls the slingshot via a novint falcon.
@@ -14,8 +16,9 @@ class NovintFalcon : public Falcon
 public:
 	/**
 	 * Constructor.
+	 * @param configuration A reference to the configuration file
 	 */
-	NovintFalcon();
+	NovintFalcon(boost::shared_ptr<Configuration> configuration);
 
 	/**
 	 * Destructor.
@@ -67,6 +70,8 @@ private:
 	cVector3d position;
 
 	bool firing; /**< True if the slingshot is currently in firing mode */
+
+	bool forceEnabled; /**< True if the force feedback from the falcon device is used */
 
 	/**
 	 * The bounding box to which the falcon is restricted

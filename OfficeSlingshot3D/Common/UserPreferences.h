@@ -40,12 +40,15 @@ public:
 	bool muted; /**< True if the audio should be muted. */
 	float volume; /**< The volume on a scale of 0.0 to 1.0. */
 
+	bool forceEnabled; /**< True if the audio should be muted. */
+
 	static const std::string default_ip_address; /**< Default IP Address. */
 	static const std::string default_name; /**< Default user name. */
 	static const unsigned int default_arm_band_port; /**< Default blue tooth port for the arm band. */
 	static const unsigned int default_jacket_port; /**< Default blue tooth port for the jacket. */
 	static const bool default_muted; /**< Default for if the application is muted or not. */
 	static const float default_volume; /**< Default volume level. */
+	static const bool default_force_enabled; /**< Default force enabled. */
 
 	/**
 	 * Reset all the preferences to the defaults.

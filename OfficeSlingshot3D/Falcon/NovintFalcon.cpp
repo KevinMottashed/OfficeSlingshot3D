@@ -15,7 +15,7 @@ using namespace boost;
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-NovintFalcon::NovintFalcon() : 
+NovintFalcon::NovintFalcon(boost::shared_ptr<Configuration> configuration) : 
 	numHapticDevices(0),
 	firing(false)
 {
@@ -50,6 +50,9 @@ NovintFalcon::NovintFalcon() :
 			cVector3d(-cube_side, -cube_side, -cube_side), 
 			cVector3d(cube_side, cube_side, cube_side));
     }
+
+	UserPreferences prefs = configuration->getUserPreferences();
+	forceEnabled = prefs.forceEnabled;
 }
 
 NovintFalcon::~NovintFalcon()

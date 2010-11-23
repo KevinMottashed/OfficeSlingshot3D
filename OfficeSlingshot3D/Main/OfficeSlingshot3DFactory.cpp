@@ -146,7 +146,7 @@ shared_ptr<OfficeSlingshot3D> OfficeSlingshot3DFactory::createFromConfigFile(con
 		}
 		else
 		{
-			falcon = shared_ptr<Falcon>(new NovintFalcon());
+			falcon = shared_ptr<Falcon>(new NovintFalcon(configuration));
 		}
 	}
 

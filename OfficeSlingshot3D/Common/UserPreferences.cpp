@@ -8,6 +8,7 @@ const unsigned int UserPreferences::default_arm_band_port = 7;
 const unsigned int UserPreferences::default_jacket_port = 8;
 const bool UserPreferences::default_muted = false;
 const float UserPreferences::default_volume = 5.0f;
+const bool UserPreferences::default_force_enabled = true;
 
 void UserPreferences::setDefaults()
 {
@@ -17,6 +18,7 @@ void UserPreferences::setDefaults()
 	jacketPort = default_jacket_port;
 	muted = default_muted;
 	volume = default_volume;
+	forceEnabled = default_force_enabled;
 	return;
 }
 
@@ -28,6 +30,7 @@ std::ostream& operator<<(std::ostream& os, const UserPreferences& pref)
 	os << "JacketPort=" << pref.jacketPort << std::endl;
 	os << "Muted=" << (pref.muted ? "1" : "0") << std::endl;
 	os << "Volume=" << pref.volume << std::endl;
+	os << "ForceEnabled=" << (pref.forceEnabled ? "1" : "0") << std::endl;
 	return os;
 }
 
@@ -43,7 +46,8 @@ std::istream& operator>>(std::istream& is, UserPreferences& pref)
 		("ArmBandPort",		po::value<unsigned int>(),	"The blue tooth port for the armband")
 		("JacketPort",		po::value<unsigned int>(),	"The blue tooth port for the jacket")
 		("Muted",			po::value<unsigned int>(),	"True if the application should be muted")
-		("Volume",			po::value<float>(),			"The volume on a scale of 0 to 1");
+		("Volume",			po::value<float>(),			"The volume on a scale of 0 to 1")
+		("ForceEnabled",	po::value<unsigned int>(),	"True if the forces from the falcon should be enabled");
 
 	// the variable map for this configuration
 	po::variables_map configVMap;
@@ -68,7 +72,8 @@ std::istream& operator>>(std::istream& is, UserPreferences& pref)
 		configVMap.count("ArmBandPort") == 0 ||
 		configVMap.count("JacketPort") == 0 || 
 		configVMap.count("Muted") == 0 ||
-		configVMap.count("Volume") == 0)
+		configVMap.count("Volume") == 0 ||
+		configVMap.count("ForceEnabled") == 0)
 	{
 		// missing option, set the defaults and return
 		pref.setDefaults();
@@ -81,6 +86,7 @@ std::istream& operator>>(std::istream& is, UserPreferences& pref)
 	pref.jacketPort = configVMap["JacketPort"].as<unsigned int>();
 	pref.muted = (configVMap["Muted"].as<unsigned int>() == 1);
 	pref.volume = configVMap["Volume"].as<float>();
+	pref.forceEnabled = (configVMap["ForceEnabled"].as<unsigned int>() == 1);
 	return is;
 }
 
