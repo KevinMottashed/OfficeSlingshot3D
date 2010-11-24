@@ -79,17 +79,6 @@ void NovintFalcon::poll()
 			// CURRENTLY CAUSES FALCON TO GO CRAZY
 			// compute a reaction force
             cVector3d newForce (0,0,0);
-//
-            // apply force field
-//            if (true)
-//            {
-//                double Kp = 20.0; // [N/m]
-//                cVector3d force = cMul(-Kp, newPosition);
-//                newForce.add(force);
-//            }
-
-            // send computed force to haptic device
-//            hapticDevices[i]->setForce(newForce);
 
             // read user button status
             bool buttonStatus;
@@ -106,7 +95,7 @@ void NovintFalcon::poll()
 				}
 				
 				notify(SLINGSHOT_PULLBACK, &newPosition);
-				if (true)
+				if (forceEnabled)
 				{
 					cHapticDeviceInfo info = hapticDevices[i]->getSpecifications();
 					double Kv = info.m_maxLinearDamping;
@@ -123,13 +112,12 @@ void NovintFalcon::poll()
 					notify(SLINGSHOT_FIRED, &newPosition);
 				}
 			}
-
-			// send computed force to haptic device
-			hapticDevices[i]->setForce(newForce);
+			if (forceEnabled) {
+				// send computed force to haptic device
+				hapticDevices[i]->setForce(newForce);
+			}
 
         }
-
-		
 
 		// sleep for a while so we don't hog cpu (interruption point)
 		boost::this_thread::sleep(boost::posix_time::milliseconds(100));
