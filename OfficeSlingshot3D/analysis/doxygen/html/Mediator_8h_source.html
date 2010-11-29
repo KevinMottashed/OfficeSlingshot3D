@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OfficeSlingshot3D: /home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/Mediator.h Source File</title>
+<title>OfficeSlingshot3D: /home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Mediator/Mediator.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -41,121 +42,143 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/Mediator.h</h1>  </div>
+<h1>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Mediator/Mediator.h</h1>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef MEDIATOR_H</span>
+<a href="Mediator_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef MEDIATOR_H</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define MEDIATOR_H</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &quot;stdafx.h&quot;</span> <span class="comment">// STL + windows</span>
-<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;boost.h&quot;</span> <span class="comment">// boost</span>
-<a name="l00006"></a>00006 <span class="preprocessor">#include &quot;NetworkProxy.h&quot;</span>
-<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;UserInterfaceProxy.h&quot;</span>
-<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;FalconProxy.h&quot;</span>
-<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;ZCameraProxy.h&quot;</span>
-<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;JacketProxy.h&quot;</span>
-<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;VideoData.h&quot;</span>
-<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;Configuration.h&quot;</span>
-<a name="l00013"></a>00013 <span class="preprocessor">#include &quot;SyncLocker.h&quot;</span>
-<a name="l00014"></a>00014 <span class="preprocessor">#include &quot;AudioProxy.h&quot;</span>
-<a name="l00015"></a>00015 <span class="preprocessor">#include &quot;MediatorSubject.h&quot;</span>
-<a name="l00016"></a>00016 <span class="preprocessor">#include &quot;PerspectiveMath.h&quot;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;<a class="code" href="boost_8h.html">boost.h</a>&quot;</span> <span class="comment">// boost</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include &quot;<a class="code" href="NetworkProxy_8h.html" title="Convinience header for including all public members of the network module.">NetworkProxy.h</a>&quot;</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;<a class="code" href="UserInterfaceProxy_8h.html">UserInterfaceProxy.h</a>&quot;</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;<a class="code" href="FalconProxy_8h.html">FalconProxy.h</a>&quot;</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;<a class="code" href="ZCameraProxy_8h.html">ZCameraProxy.h</a>&quot;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="JacketProxy_8h.html">JacketProxy.h</a>&quot;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="Configuration_8h.html">Configuration.h</a>&quot;</span>
+<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;<a class="code" href="SyncLocker_8h.html">SyncLocker.h</a>&quot;</span>
+<a name="l00013"></a>00013 <span class="preprocessor">#include &quot;<a class="code" href="AudioProxy_8h.html" title="Convinience header for including all public members of the audio module.">AudioProxy.h</a>&quot;</span>
+<a name="l00014"></a>00014 <span class="preprocessor">#include &quot;<a class="code" href="MediatorSubject_8h.html">MediatorSubject.h</a>&quot;</span>
+<a name="l00015"></a>00015 <span class="preprocessor">#include &quot;<a class="code" href="PerspectiveMath_8h.html">PerspectiveMath.h</a>&quot;</span>
+<a name="l00016"></a>00016 <span class="preprocessor">#include &quot;<a class="code" href="PhysicsSync_8h.html">PhysicsSync.h</a>&quot;</span>
 <a name="l00017"></a>00017 
-<a name="l00024"></a><a class="code" href="classMediator.html">00024</a> <span class="keyword">class </span><a class="code" href="classMediator.html" title="This class mediates the interactions between the devices and the game.">Mediator</a> :    <span class="keyword">public</span> <a class="code" href="classNetworkObserver.html">NetworkObserver</a>,
-<a name="l00025"></a>00025                     <span class="keyword">public</span> <a class="code" href="classUserInterfaceObserver.html">UserInterfaceObserver</a>,
-<a name="l00026"></a>00026                     <span class="keyword">public</span> <a class="code" href="classZCameraObserver.html">ZCameraObserver</a>,
-<a name="l00027"></a>00027                     <span class="keyword">public</span> <a class="code" href="classFalconObserver.html" title="Abstract class in the observer patern for the falcon.">FalconObserver</a>,
-<a name="l00028"></a>00028                     <span class="keyword">public</span> <a class="code" href="classMediatorSubject.html" title="This class represents the mediator in the observer pattern Observers will receive notifications about...">MediatorSubject</a>
-<a name="l00029"></a>00029 {
-<a name="l00030"></a>00030 <span class="keyword">public</span>:
-<a name="l00031"></a>00031     <a class="code" href="classMediator.html" title="This class mediates the interactions between the devices and the game.">Mediator</a>(   boost::shared_ptr&lt;Network&gt; network,
-<a name="l00032"></a>00032                 boost::shared_ptr&lt;Falcon&gt; falcon,
-<a name="l00033"></a>00033                 boost::shared_ptr&lt;IZCamera&gt; zcamera,
-<a name="l00034"></a>00034                 boost::shared_ptr&lt;UserInterface&gt; userInterface,
-<a name="l00035"></a>00035                 boost::shared_ptr&lt;Configuration&gt; configuration);
-<a name="l00036"></a>00036     <span class="keyword">virtual</span> ~<a class="code" href="classMediator.html" title="This class mediates the interactions between the devices and the game.">Mediator</a>();
-<a name="l00037"></a>00037 
-<a name="l00038"></a>00038     <span class="comment">// updates for observer patterns</span>
-<a name="l00039"></a>00039     <span class="keyword">virtual</span> <span class="keywordtype">void</span> update(NetworkUpdateContext context, <span class="keyword">const</span> <span class="keywordtype">void</span>* data);
-<a name="l00040"></a>00040     <span class="keyword">virtual</span> <span class="keywordtype">void</span> update(UserInterfaceUpdateContext context, <span class="keyword">const</span> <span class="keywordtype">void</span>* data);
-<a name="l00041"></a>00041     <span class="keyword">virtual</span> <span class="keywordtype">void</span> update(ZCameraUpdateContext context, <span class="keyword">const</span> <span class="keywordtype">void</span>* data);
-<a name="l00042"></a>00042     <span class="keyword">virtual</span> <span class="keywordtype">void</span> update(FalconUpdateContext context, <span class="keyword">const</span> <span class="keywordtype">void</span>* data);
-<a name="l00043"></a>00043 
-<a name="l00049"></a>00049     <span class="keywordtype">void</span> <a class="code" href="classMediator.html#ad991cce4b9bea0132850b332de7ee692" title="Take action when the game is started.">startGame</a>(<a class="code" href="namespacePlayer.html#acc4ced29e6b7e20f602b3c8b60c75228" title="Enum representing all the different players.">Player_t</a> player);
+<a name="l00026"></a><a class="code" href="classMediator.html">00026</a> <span class="keyword">class </span><a class="code" href="classMediator.html" title="public This class mediates the interactions between the devices and the game.">Mediator</a> :    <span class="keyword">public</span> <a class="code" href="classNetworkObserver.html" title="public Interface for a class observing the network.">NetworkObserver</a>,
+<a name="l00027"></a>00027                     <span class="keyword">public</span> <a class="code" href="classUserInterfaceObserver.html" title="The observer class for the user interface.">UserInterfaceObserver</a>,
+<a name="l00028"></a>00028                     <span class="keyword">public</span> <a class="code" href="classZCameraObserver.html" title="Abstract class in the observer patern for the zcamera.">ZCameraObserver</a>,
+<a name="l00029"></a>00029                     <span class="keyword">public</span> <a class="code" href="classFalconObserver.html" title="Abstract class in the observer patern for the falcon.">FalconObserver</a>,
+<a name="l00030"></a>00030                     <span class="keyword">public</span> <a class="code" href="classMediatorSubject.html" title="public This class represents the mediator in the observer pattern Observers will receive notification...">MediatorSubject</a>
+<a name="l00031"></a>00031 {
+<a name="l00032"></a>00032 <span class="keyword">public</span>:
+<a name="l00041"></a>00041     <a class="code" href="classMediator.html#abbdd9e8fbf76b85a410aec8d47591876" title="Constructor.">Mediator</a>(   boost::shared_ptr&lt;Network&gt; <a class="code" href="classMediator.html#a041f251066f40e16257ce51b2df1d556" title="The network component.">network</a>,
+<a name="l00042"></a>00042                 boost::shared_ptr&lt;Falcon&gt; <a class="code" href="classMediator.html#aefba36e5ba71c7f4fa53ff51b70b54d1" title="The falcon component.">falcon</a>,
+<a name="l00043"></a>00043                 boost::shared_ptr&lt;IZCamera&gt; <a class="code" href="classMediator.html#aa718d507f8dd84ab5210eace3cc7dd38" title="The zcamera component.">zcamera</a>,
+<a name="l00044"></a>00044                 boost::shared_ptr&lt;UserInterface&gt; <a class="code" href="classMediator.html#a9b4dd955fc27b8c1e14c1e148190e011" title="The user interface component.">userInterface</a>,
+<a name="l00045"></a>00045                 boost::shared_ptr&lt;Configuration&gt; <a class="code" href="classMediator.html#a1cfaa4b26a959204e1c5037936c65b6d" title="The user preferences.">configuration</a>);
+<a name="l00049"></a>00049     <span class="keyword">virtual</span> <a class="code" href="classMediator.html#a50bae430a78a37c56c604206c5d7f302" title="Destructor.">~Mediator</a>();
 <a name="l00050"></a>00050 
-<a name="l00056"></a>00056     <span class="keywordtype">void</span> <a class="code" href="classMediator.html#a5586025cfc2d2bedf5cb439c9d70d4d0" title="Take action when the game is paused.">pauseGame</a>(<a class="code" href="namespacePlayer.html#acc4ced29e6b7e20f602b3c8b60c75228" title="Enum representing all the different players.">Player_t</a> player);
-<a name="l00057"></a>00057     
-<a name="l00063"></a>00063     <span class="keywordtype">void</span> <a class="code" href="classMediator.html#a5b30bd87401b4a547a1c92edb4e1e7e6" title="Take action when the game is exited.">exitGame</a>(<a class="code" href="namespacePlayer.html#acc4ced29e6b7e20f602b3c8b60c75228" title="Enum representing all the different players.">Player_t</a> player);
-<a name="l00064"></a>00064 
-<a name="l00070"></a>00070     <span class="keywordtype">void</span> <a class="code" href="classMediator.html#a71a8bf11835c90379b6b1bc62c2df7b4" title="Switches the camera whose frames need to be displayed.">switchCamera</a>(cCamera* camera);
-<a name="l00071"></a>00071 
-<a name="l00079"></a>00079     <span class="keywordtype">void</span> <a class="code" href="classMediator.html#a7b0a7af50706aac37b036ee381753510" title="Provide the user with feedback when a slingshot is fired This will also let the peer know that a slin...">fireSlingshot</a>(<a class="code" href="classProjectile.html" title="Represents a projectile Each projectile has a position and a force behind it.">Projectile</a> projectile, <a class="code" href="namespacePlayer.html#acc4ced29e6b7e20f602b3c8b60c75228" title="Enum representing all the different players.">Player_t</a> player);
-<a name="l00080"></a>00080 
-<a name="l00081"></a>00081     <span class="keywordtype">void</span> collisionDetected(<span class="keywordtype">void</span>);
-<a name="l00082"></a>00082 
-<a name="l00083"></a>00083 <span class="keyword">private</span>:
-<a name="l00084"></a>00084     <a class="code" href="classMediator.html" title="This class mediates the interactions between the devices and the game.">Mediator</a>(<span class="keyword">const</span> <a class="code" href="classMediator.html" title="This class mediates the interactions between the devices and the game.">Mediator</a>&amp; c); <span class="comment">// intentionally not implemented</span>
-<a name="l00085"></a>00085     <a class="code" href="classMediator.html" title="This class mediates the interactions between the devices and the game.">Mediator</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classMediator.html" title="This class mediates the interactions between the devices and the game.">Mediator</a>&amp; c); <span class="comment">// intentionally not implemented</span>
-<a name="l00086"></a>00086 
-<a name="l00087"></a>00087     <span class="comment">// managers for the different modules</span>
-<a name="l00088"></a>00088     boost::shared_ptr&lt;Network&gt; network;
-<a name="l00089"></a>00089     boost::shared_ptr&lt;UserInterface&gt; userInterface;
-<a name="l00090"></a>00090     boost::shared_ptr&lt;Falcon&gt; falcon;
-<a name="l00091"></a>00091     boost::shared_ptr&lt;IZCamera&gt; zcamera;
-<a name="l00092"></a>00092     boost::shared_ptr&lt;SmartClothingManager&gt; smartClothing;
-<a name="l00093"></a>00093     <a class="code" href="classAudio.html" title="Manages everything audio related.">Audio</a> audio;
-<a name="l00094"></a>00094 
-<a name="l00095"></a>00095     <span class="comment">// the user preferences</span>
-<a name="l00096"></a>00096     boost::shared_ptr&lt;Configuration&gt; configuration;
-<a name="l00097"></a>00097     <span class="keyword">mutable</span> CRITICAL_SECTION configurationMutex;
-<a name="l00098"></a>00098 
-<a name="l00099"></a>00099     <span class="comment">//--------------------------------------------</span>
-<a name="l00100"></a>00100     <span class="comment">// Network Related updates</span>
-<a name="l00101"></a>00101     <span class="comment">//--------------------------------------------</span>
-<a name="l00102"></a>00102 
-<a name="l00103"></a>00103     <span class="comment">// connection status</span>
-<a name="l00104"></a>00104     <span class="keywordtype">void</span> handlePeerConnected();
-<a name="l00105"></a>00105     <span class="keywordtype">void</span> handlePeerDisconnected();
-<a name="l00106"></a>00106     <span class="keywordtype">void</span> handleNetworkError(rc_network error);
-<a name="l00107"></a>00107 
-<a name="l00108"></a>00108     <span class="comment">// data reception</span>
-<a name="l00109"></a>00109     <span class="keywordtype">void</span> handleUserName(<span class="keyword">const</span> std::string&amp; name);
-<a name="l00110"></a>00110     <span class="keywordtype">void</span> handleChatMessage(<span class="keyword">const</span> std::string&amp; message);
-<a name="l00111"></a>00111 
-<a name="l00112"></a>00112     <span class="comment">//--------------------------------------------</span>
-<a name="l00113"></a>00113     <span class="comment">// User Interface Related updates</span>
-<a name="l00114"></a>00114     <span class="comment">//--------------------------------------------</span>
+<a name="l00056"></a>00056     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMediator.html#ac85a7648a8c10a5b4db08412652d668b" title="Handle an update from the network component.">update</a>(<a class="code" href="group__Network.html#ga60a60734bbc0407b2f0567078bbe20e1" title="public The context associated with an update.">NetworkUpdateContext</a> context, <span class="keyword">const</span> <span class="keywordtype">void</span>* data);
+<a name="l00057"></a>00057 
+<a name="l00063"></a>00063     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMediator.html#ac85a7648a8c10a5b4db08412652d668b" title="Handle an update from the network component.">update</a>(<a class="code" href="UserInterfaceObserver_8h.html#ad1eb8a0c335743e35a99b456afcc81ac" title="Enum.">UserInterfaceUpdateContext</a> context, <span class="keyword">const</span> <span class="keywordtype">void</span>* data);
+<a name="l00064"></a>00064     
+<a name="l00070"></a>00070     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMediator.html#ac85a7648a8c10a5b4db08412652d668b" title="Handle an update from the network component.">update</a>(<a class="code" href="ZCameraObserver_8h.html#a3af3029bde4b133ab920f268aed62718" title="Update context enum for the zcamera.">ZCameraUpdateContext</a> context, <span class="keyword">const</span> <span class="keywordtype">void</span>* data);
+<a name="l00071"></a>00071     
+<a name="l00077"></a>00077     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMediator.html#ac85a7648a8c10a5b4db08412652d668b" title="Handle an update from the network component.">update</a>(<a class="code" href="FalconObserver_8h.html#a2c11e5186fe6519d1fe5d6f763ed08e6" title="Update context enum for the falcon.">FalconUpdateContext</a> context, <span class="keyword">const</span> <span class="keywordtype">void</span>* data);
+<a name="l00078"></a>00078 
+<a name="l00084"></a>00084     <span class="keywordtype">void</span> <a class="code" href="classMediator.html#ad991cce4b9bea0132850b332de7ee692" title="Take action when the game is started.">startGame</a>(<a class="code" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228" title="public Enum representing all the different players.">Player_t</a> player);
+<a name="l00085"></a>00085 
+<a name="l00091"></a>00091     <span class="keywordtype">void</span> <a class="code" href="classMediator.html#a5586025cfc2d2bedf5cb439c9d70d4d0" title="Take action when the game is paused.">pauseGame</a>(<a class="code" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228" title="public Enum representing all the different players.">Player_t</a> player);
+<a name="l00092"></a>00092     
+<a name="l00098"></a>00098     <span class="keywordtype">void</span> <a class="code" href="classMediator.html#a5b30bd87401b4a547a1c92edb4e1e7e6" title="Take action when the game is exited.">exitGame</a>(<a class="code" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228" title="public Enum representing all the different players.">Player_t</a> player);
+<a name="l00099"></a>00099 
+<a name="l00105"></a>00105     <span class="keywordtype">void</span> <a class="code" href="classMediator.html#a71a8bf11835c90379b6b1bc62c2df7b4" title="Switches the camera whose frames need to be displayed.">switchCamera</a>(cCamera* camera);
+<a name="l00106"></a>00106 
+<a name="l00114"></a>00114     <span class="keywordtype">void</span> <a class="code" href="classMediator.html#a7b0a7af50706aac37b036ee381753510" title="Provide the user with feedback when a slingshot is fired.">fireSlingshot</a>(<a class="code" href="classProjectile.html" title="Represents a projectile Each projectile has a position and a force behind it.">Projectile</a> projectile, <a class="code" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228" title="public Enum representing all the different players.">Player_t</a> player);
 <a name="l00115"></a>00115 
-<a name="l00116"></a>00116     <span class="comment">// connection status updates</span>
-<a name="l00117"></a>00117     <span class="comment">// the user wants to change the connection status</span>
-<a name="l00118"></a>00118     <span class="keywordtype">void</span> connect();
-<a name="l00119"></a>00119     <span class="keywordtype">void</span> listen();
-<a name="l00120"></a>00120     <span class="keywordtype">void</span> disconnect();
-<a name="l00121"></a>00121 
-<a name="l00122"></a>00122     <span class="comment">// the user changed his preferences</span>
-<a name="l00123"></a>00123     <span class="keywordtype">void</span> changePreferences(<span class="keyword">const</span> <a class="code" href="structUserPreferences.html" title="Represents the user preferences.">UserPreferences</a>&amp; preferences);
-<a name="l00124"></a>00124 
-<a name="l00125"></a>00125     <span class="comment">// user wants to close the application</span>
-<a name="l00126"></a>00126     <span class="keywordtype">void</span> closeApplication();
-<a name="l00127"></a>00127     <span class="keywordtype">void</span> sendChatMessage(<span class="keyword">const</span> std::string&amp; message);
-<a name="l00128"></a>00128 
-<a name="l00129"></a>00129     <span class="comment">//--------------------------------------------</span>
-<a name="l00130"></a>00130     <span class="comment">// ZCamera Related updates</span>
-<a name="l00131"></a>00131     <span class="comment">//--------------------------------------------</span>
-<a name="l00132"></a>00132 
-<a name="l00133"></a>00133     <span class="comment">// new local video</span>
-<a name="l00134"></a>00134     <span class="keywordtype">void</span> handleLocalVideoData(<a class="code" href="structVideoData.html" title="Represent a frame of video data.">VideoData</a>&amp; video);
-<a name="l00135"></a>00135 
-<a name="l00139"></a>00139     <span class="keywordtype">void</span> stopDevices();
-<a name="l00140"></a>00140 
-<a name="l00141"></a>00141 };
-<a name="l00142"></a>00142 
-<a name="l00143"></a>00143 <span class="preprocessor">#endif</span>
-<a name="l00144"></a>00144 <span class="preprocessor"></span>
+<a name="l00123"></a>00123     <span class="keywordtype">void</span> <a class="code" href="classMediator.html#aa7e7285867c463582f29af6673d7acba" title="Provide the appropriate user feedback for when the local player is hit by the slingshot.">collisionDetected</a>( <a class="code" href="group__Common.html#gaa22d3933804e3afcd4eac294dded7434" title="public Enum representing different parts of the human body.">BodyPart_t</a> hitPart, 
+<a name="l00124"></a>00124                             cVector3d ballPos, 
+<a name="l00125"></a>00125                             cVector3d minValue, 
+<a name="l00126"></a>00126                             cVector3d maxValue);
+<a name="l00127"></a>00127 
+<a name="l00132"></a>00132     <span class="keywordtype">void</span> <a class="code" href="classMediator.html#abbf06063b76774cca0d7a66dca2fc92d" title="Provide the appropriate user feedback for when the peer player is hit by the slingshot.">peerHit</a>(<a class="code" href="group__Common.html#gaa22d3933804e3afcd4eac294dded7434" title="public Enum representing different parts of the human body.">BodyPart_t</a> bodyPart);
+<a name="l00133"></a>00133 
+<a name="l00138"></a>00138     <span class="keywordtype">void</span> <a class="code" href="classMediator.html#adf6ed4cff7865457847a5c331a70c4f0" title="Displays lose screen and sends GAME_OVER to peer.">playerLost</a>(<a class="code" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228" title="public Enum representing all the different players.">Player_t</a> player);
+<a name="l00139"></a>00139 
+<a name="l00144"></a>00144     <span class="keywordtype">void</span> <a class="code" href="classMediator.html#a97cd03d299dfb64506cf1f84956dd538" title="Mutes the volume.">muteVolume</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> soundOn);
+<a name="l00145"></a>00145 
+<a name="l00150"></a>00150     <span class="keywordtype">void</span> <a class="code" href="classMediator.html#a774c62051a8dc89df7f09a0035d570e3" title="Changes the volume.">changeVolume</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> vol);
+<a name="l00151"></a>00151 
+<a name="l00155"></a>00155     <span class="keywordtype">void</span> <a class="code" href="classMediator.html#a759e14b56bffcabc73610fda7e4cbef5" title="Sets the config volume preferences to the game and UI.">setVolumePreferences</a>();
+<a name="l00156"></a>00156 
+<a name="l00160"></a>00160     <span class="keywordtype">void</span> <a class="code" href="classMediator.html#a8ba60784fa9d1f80d6b1164c10672466" title="Redraw the screen.">paint</a>();
+<a name="l00161"></a>00161 
+<a name="l00166"></a>00166     <span class="keywordtype">void</span> <a class="code" href="classMediator.html#a9f01e870de7c2d9d28b8c87a88321f1f" title="Synchronize the physics of both games.">synchronizePhysics</a>(<span class="keyword">const</span> <a class="code" href="classPhysicsSync.html" title="public This data structure is used to synchronize 2 virtual environments.">PhysicsSync</a>&amp; sync);
+<a name="l00167"></a>00167     
+<a name="l00168"></a>00168 <span class="keyword">private</span>:
+<a name="l00173"></a>00173     <a class="code" href="classMediator.html#abbdd9e8fbf76b85a410aec8d47591876" title="Constructor.">Mediator</a>(<span class="keyword">const</span> <a class="code" href="classMediator.html" title="public This class mediates the interactions between the devices and the game.">Mediator</a>&amp; c);
+<a name="l00174"></a>00174 
+<a name="l00179"></a>00179     <a class="code" href="classMediator.html" title="public This class mediates the interactions between the devices and the game.">Mediator</a>&amp; <a class="code" href="classMediator.html#a289ce9f536a8f639c06d35dab1f0dfa1" title="Assignment Operator.">operator=</a>(<span class="keyword">const</span> <a class="code" href="classMediator.html" title="public This class mediates the interactions between the devices and the game.">Mediator</a>&amp; c); 
+<a name="l00180"></a>00180 
+<a name="l00184"></a><a class="code" href="classMediator.html#a041f251066f40e16257ce51b2df1d556">00184</a>     boost::shared_ptr&lt;Network&gt; network;
+<a name="l00185"></a>00185 
+<a name="l00189"></a><a class="code" href="classMediator.html#a9b4dd955fc27b8c1e14c1e148190e011">00189</a>     boost::shared_ptr&lt;UserInterface&gt; userInterface;
+<a name="l00190"></a>00190 
+<a name="l00194"></a><a class="code" href="classMediator.html#aefba36e5ba71c7f4fa53ff51b70b54d1">00194</a>     boost::shared_ptr&lt;Falcon&gt; falcon;
+<a name="l00195"></a>00195 
+<a name="l00199"></a><a class="code" href="classMediator.html#aa718d507f8dd84ab5210eace3cc7dd38">00199</a>     boost::shared_ptr&lt;IZCamera&gt; zcamera;
+<a name="l00200"></a>00200 
+<a name="l00204"></a><a class="code" href="classMediator.html#a66668067d6fd13224f90c93bcc30c0ed">00204</a>     boost::shared_ptr&lt;SmartClothingManager&gt; <a class="code" href="classMediator.html#a66668067d6fd13224f90c93bcc30c0ed" title="The smart clothing component.">smartClothing</a>;
+<a name="l00205"></a>00205 
+<a name="l00209"></a><a class="code" href="classMediator.html#a21c667efd3c4f6702725693efbaf8bb0">00209</a>     <a class="code" href="classAudio.html" title="public Manages everything audio related.">Audio</a> <a class="code" href="classMediator.html#a21c667efd3c4f6702725693efbaf8bb0" title="The audio component.">audio</a>;
+<a name="l00210"></a>00210 
+<a name="l00214"></a><a class="code" href="classMediator.html#a1cfaa4b26a959204e1c5037936c65b6d">00214</a>     boost::shared_ptr&lt;Configuration&gt; configuration;
+<a name="l00215"></a>00215 
+<a name="l00219"></a><a class="code" href="classMediator.html#a173297b8e33d2fe347eb492cd3d22b7e">00219</a>     <span class="keyword">mutable</span> CRITICAL_SECTION <a class="code" href="classMediator.html#a173297b8e33d2fe347eb492cd3d22b7e" title="Mutex for the user preferences.">configurationMutex</a>;
+<a name="l00220"></a>00220 
+<a name="l00221"></a>00221     <span class="comment">//--------------------------------------------</span>
+<a name="l00222"></a>00222     <span class="comment">// Network Related updates</span>
+<a name="l00223"></a>00223     <span class="comment">//--------------------------------------------</span>
+<a name="l00224"></a>00224 
+<a name="l00228"></a>00228     <span class="keywordtype">void</span> <a class="code" href="classMediator.html#a3df248f99ce7ae6b0499de8a961cc803" title="Handle a peer connect update.">handlePeerConnected</a>();
+<a name="l00229"></a>00229 
+<a name="l00233"></a>00233     <span class="keywordtype">void</span> <a class="code" href="classMediator.html#a32afc5c8dc7bbb9c8be4c1968409d492" title="Handle a peer disconnect update.">handlePeerDisconnected</a>();
+<a name="l00234"></a>00234 
+<a name="l00239"></a>00239     <span class="keywordtype">void</span> <a class="code" href="classMediator.html#a46fe646d438f386c7c3ba4290cd413d8" title="Handle a network error.">handleNetworkError</a>(<a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> error);
+<a name="l00240"></a>00240 
+<a name="l00245"></a>00245     <span class="keywordtype">void</span> <a class="code" href="classMediator.html#af333a33d2405bb4dec87b8a401bc6ad6" title="Handle receiving a user name through the network.">handleUserName</a>(<span class="keyword">const</span> std::string&amp; name);
+<a name="l00246"></a>00246 
+<a name="l00251"></a>00251     <span class="keywordtype">void</span> <a class="code" href="classMediator.html#af97dd6fbb5ca838124ef08a1f49eb129" title="Handle a chat message received through the network.">handleChatMessage</a>(<span class="keyword">const</span> std::string&amp; message);
+<a name="l00252"></a>00252 
+<a name="l00253"></a>00253     <span class="comment">//--------------------------------------------</span>
+<a name="l00254"></a>00254     <span class="comment">// User Interface Related updates</span>
+<a name="l00255"></a>00255     <span class="comment">//--------------------------------------------</span>
+<a name="l00256"></a>00256 
+<a name="l00261"></a>00261     <span class="keywordtype">void</span> <a class="code" href="classMediator.html#a8cf432ccc487dd7f8c3b575d82db5ec8" title="Connect to the peer.">connect</a>();
+<a name="l00262"></a>00262 
+<a name="l00266"></a>00266     <span class="keywordtype">void</span> <a class="code" href="classMediator.html#ae1cdf6ee22baf62d067112f16561fbc7" title="Listen for connections.">listen</a>();
+<a name="l00267"></a>00267 
+<a name="l00272"></a>00272     <span class="keywordtype">void</span> <a class="code" href="classMediator.html#a51c2fff1557fce1db40066353eb8c1aa" title="Disconnect us from the peer.">disconnect</a>();
+<a name="l00273"></a>00273 
+<a name="l00278"></a>00278     <span class="keywordtype">void</span> <a class="code" href="classMediator.html#a463893b0fc61430cf2f7ef427db0f588" title="Handle a change in user preferences.">changePreferences</a>(<span class="keyword">const</span> <a class="code" href="structUserPreferences.html" title="public Represents the user preferences.">UserPreferences</a>&amp; preferences);
+<a name="l00279"></a>00279 
+<a name="l00283"></a>00283     <span class="keywordtype">void</span> <a class="code" href="classMediator.html#a7ab7b57e8ddb36d948152b9a6e6bcb01" title="Handle a request to close the application.">closeApplication</a>();
+<a name="l00284"></a>00284 
+<a name="l00289"></a>00289     <span class="keywordtype">void</span> <a class="code" href="classMediator.html#abc91c106f50b57af8c20f15b5c8acf9d" title="Send a chat message to the peer.">sendChatMessage</a>(<span class="keyword">const</span> std::string&amp; message);
+<a name="l00290"></a>00290 
+<a name="l00291"></a>00291     <span class="comment">//--------------------------------------------</span>
+<a name="l00292"></a>00292     <span class="comment">// ZCamera Related updates</span>
+<a name="l00293"></a>00293     <span class="comment">//--------------------------------------------</span>
+<a name="l00294"></a>00294 
+<a name="l00298"></a>00298     <span class="keywordtype">void</span> <a class="code" href="classMediator.html#ad0f91a7af8f39e63fdc8ce665a04edf8" title="Stop polling the devices (slingshot + zcamera).">stopDevices</a>();
+<a name="l00299"></a>00299 
+<a name="l00300"></a>00300 };
+<a name="l00301"></a>00301 
+<a name="l00302"></a>00302 <span class="preprocessor">#endif</span>
+<a name="l00303"></a>00303 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -163,7 +186,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -172,7 +195,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:44 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

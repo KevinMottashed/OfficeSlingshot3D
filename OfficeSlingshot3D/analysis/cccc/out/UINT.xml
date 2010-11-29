@@ -62,7 +62,7 @@
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="106" />
+<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="138" />
 </extent>
 </client_module>
 <supplier_module>

@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -48,12 +49,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <h1>FalconReplayer Class Reference</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="FalconReplayer" --><!-- doxytag: inherits="Falcon" --><div class="dynheader">
+<!-- doxytag: class="FalconReplayer" --><!-- doxytag: inherits="Falcon" -->
+<p><code>#include &lt;<a class="el" href="FalconReplayer_8h_source.html">FalconReplayer.h</a>&gt;</code></p>
+<div class="dynheader">
 Inheritance diagram for FalconReplayer:</div>
 <div class="dyncontent">
  <div class="center">
@@ -66,19 +70,66 @@ Inheritance diagram for FalconReplayer:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b0921f53e7c34181b9ee8120070acea"></a><!-- doxytag: member="FalconReplayer::FalconReplayer" ref="a8b0921f53e7c34181b9ee8120070acea" args="(boost::shared_ptr&lt; std::ifstream &gt; file, boost::shared_ptr&lt; boost::archive::text_iarchive &gt; archive)" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><b>FalconReplayer</b> (boost::shared_ptr&lt; std::ifstream &gt; file, boost::shared_ptr&lt; boost::archive::text_iarchive &gt; archive)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a831a6e87b2497f0c1af4bc7fd5ed7d54"></a><!-- doxytag: member="FalconReplayer::replay" ref="a831a6e87b2497f0c1af4bc7fd5ed7d54" args="(LogEvent_t logEvent)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>replay</b> (LogEvent_t logEvent)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad75b679b3c287c4d53041988e7a0ab45"></a><!-- doxytag: member="FalconReplayer::startPolling" ref="ad75b679b3c287c4d53041988e7a0ab45" args="()" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFalconReplayer.html#ad75b679b3c287c4d53041988e7a0ab45">startPolling</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Start polling the falcon for information. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1487ef2142d0a4748f44f78e1356cffa"></a><!-- doxytag: member="FalconReplayer::stopPolling" ref="a1487ef2142d0a4748f44f78e1356cffa" args="()" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFalconReplayer.html#a1487ef2142d0a4748f44f78e1356cffa">stopPolling</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Stop polling the falcon for information. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFalconReplayer.html#a8b0921f53e7c34181b9ee8120070acea">FalconReplayer</a> (boost::shared_ptr&lt; std::ifstream &gt; <a class="el" href="classFalconReplayer.html#af03ebaa7eed1ed6179364dff5f8f0c81">file</a>, boost::shared_ptr&lt; boost::archive::text_iarchive &gt; <a class="el" href="classFalconReplayer.html#abe722d3163937255b18719029c61fefc">archive</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFalconReplayer.html#aded1f96dc6f5e1808c14f8902365ed1b">~FalconReplayer</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFalconReplayer.html#a831a6e87b2497f0c1af4bc7fd5ed7d54">replay</a> (<a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a> logEvent)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFalconReplayer.html#ad75b679b3c287c4d53041988e7a0ab45">startPolling</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Start polling the falcon for information.  <a href="#ad75b679b3c287c4d53041988e7a0ab45"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFalconReplayer.html#a1487ef2142d0a4748f44f78e1356cffa">stopPolling</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Stop polling the falcon for information.  <a href="#a1487ef2142d0a4748f44f78e1356cffa"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual cCollisionAABBBox&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFalconReplayer.html#a9ecce406249112f611f72530e942e881">boundingBox</a> () const </td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the box to which the slingshot is bound.  <a href="#a9ecce406249112f611f72530e942e881"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr&lt; std::ifstream &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFalconReplayer.html#af03ebaa7eed1ed6179364dff5f8f0c81">file</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr<br class="typebreak"/>
+&lt; boost::archive::text_iarchive &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFalconReplayer.html#abe722d3163937255b18719029c61fefc">archive</a></td></tr>
 </table>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a8b0921f53e7c34181b9ee8120070acea"></a><!-- doxytag: member="FalconReplayer::FalconReplayer" ref="a8b0921f53e7c34181b9ee8120070acea" args="(boost::shared_ptr&lt; std::ifstream &gt; file, boost::shared_ptr&lt; boost::archive::text_iarchive &gt; archive)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FalconReplayer::FalconReplayer </td>
+          <td>(</td>
+          <td class="paramtype">boost::shared_ptr&lt; std::ifstream &gt;&nbsp;</td>
+          <td class="paramname"> <em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boost::shared_ptr&lt; boost::archive::text_iarchive &gt;&nbsp;</td>
+          <td class="paramname"> <em>archive</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aded1f96dc6f5e1808c14f8902365ed1b"></a><!-- doxytag: member="FalconReplayer::~FalconReplayer" ref="aded1f96dc6f5e1808c14f8902365ed1b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FalconReplayer::~FalconReplayer </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a9ecce406249112f611f72530e942e881"></a><!-- doxytag: member="FalconReplayer::boundingBox" ref="a9ecce406249112f611f72530e942e881" args="() const " -->
 <div class="memitem">
@@ -102,9 +153,96 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 </div>
 </div>
+<a class="anchor" id="a831a6e87b2497f0c1af4bc7fd5ed7d54"></a><!-- doxytag: member="FalconReplayer::replay" ref="a831a6e87b2497f0c1af4bc7fd5ed7d54" args="(LogEvent_t logEvent)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FalconReplayer::replay </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a>&nbsp;</td>
+          <td class="paramname"> <em>logEvent</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad75b679b3c287c4d53041988e7a0ab45"></a><!-- doxytag: member="FalconReplayer::startPolling" ref="ad75b679b3c287c4d53041988e7a0ab45" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FalconReplayer::startPolling </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Start polling the falcon for information. </p>
+
+<p>Implements <a class="el" href="classFalcon.html#a4de207fe80e98bf959ed7a41dca6012d">Falcon</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1487ef2142d0a4748f44f78e1356cffa"></a><!-- doxytag: member="FalconReplayer::stopPolling" ref="a1487ef2142d0a4748f44f78e1356cffa" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FalconReplayer::stopPolling </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Stop polling the falcon for information. </p>
+
+<p>Implements <a class="el" href="classFalcon.html#ade1bdf4fb8825aa69927418045227e72">Falcon</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="abe722d3163937255b18719029c61fefc"></a><!-- doxytag: member="FalconReplayer::archive" ref="abe722d3163937255b18719029c61fefc" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::shared_ptr&lt;boost::archive::text_iarchive&gt; <a class="el" href="classFalconReplayer.html#abe722d3163937255b18719029c61fefc">FalconReplayer::archive</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af03ebaa7eed1ed6179364dff5f8f0c81"></a><!-- doxytag: member="FalconReplayer::file" ref="af03ebaa7eed1ed6179364dff5f8f0c81" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::shared_ptr&lt;std::ifstream&gt; <a class="el" href="classFalconReplayer.html#af03ebaa7eed1ed6179364dff5f8f0c81">FalconReplayer::file</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/<a class="el" href="FalconReplayer_8h_source.html">FalconReplayer.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/FalconReplayer.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Replay/<a class="el" href="FalconReplayer_8h_source.html">FalconReplayer.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Replay/<a class="el" href="FalconReplayer_8cpp.html">FalconReplayer.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -112,7 +250,7 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -121,7 +259,7 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:45 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

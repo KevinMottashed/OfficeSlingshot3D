@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OfficeSlingshot3D: /home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/DisplayDeviceJacket.h Source File</title>
+<title>OfficeSlingshot3D: /home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Jacket/DisplayDeviceJacket.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -41,46 +42,54 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/DisplayDeviceJacket.h</h1>  </div>
+<h1>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Jacket/DisplayDeviceJacket.h</h1>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef DISPLAY_DEVICE_JACKET</span>
+<a href="DisplayDeviceJacket_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef DISPLAY_DEVICE_JACKET</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define DISPLAY_DEVICE_JACKET</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
-<a name="l00004"></a>00004 <span class="preprocessor">#include &quot;TactileArray.h&quot;</span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &quot;<a class="code" href="TactileArray_8h.html">TactileArray.h</a>&quot;</span>
 <a name="l00005"></a>00005 
-<a name="l00006"></a>00006 <span class="preprocessor">#define CHEST_ARRAY_SIZE_X 6</span>
-<a name="l00007"></a>00007 <span class="preprocessor"></span><span class="preprocessor">#define CHEST_ARRAY_SIZE_Y 3</span>
-<a name="l00008"></a>00008 <span class="preprocessor"></span><span class="preprocessor">#define ARM_ARRAY_SIZE_X 4</span>
-<a name="l00009"></a>00009 <span class="preprocessor"></span><span class="preprocessor">#define ARM_ARRAY_SIZE_Y 4</span>
-<a name="l00010"></a>00010 <span class="preprocessor"></span><span class="preprocessor">#define NECK_ARRAY_SIZE_X 4</span>
-<a name="l00011"></a>00011 <span class="preprocessor"></span><span class="preprocessor">#define NECK_ARRAY_SIZE_Y 1</span>
+<a name="l00006"></a><a class="code" href="DisplayDeviceJacket_8h.html#a331a3423ca0cf9af08a366ad26ed42e7">00006</a> <span class="preprocessor">#define CHEST_ARRAY_SIZE_X 6</span>
+<a name="l00007"></a><a class="code" href="DisplayDeviceJacket_8h.html#aa307b0f23a84c3b16fcb793e30cbd371">00007</a> <span class="preprocessor"></span><span class="preprocessor">#define CHEST_ARRAY_SIZE_Y 3</span>
+<a name="l00008"></a><a class="code" href="DisplayDeviceJacket_8h.html#afa2ada2c48b5cf0cc090b6d2b49ba537">00008</a> <span class="preprocessor"></span><span class="preprocessor">#define ARM_ARRAY_SIZE_X 4</span>
+<a name="l00009"></a><a class="code" href="DisplayDeviceJacket_8h.html#a692de917c8520ff33a7177b544044cfe">00009</a> <span class="preprocessor"></span><span class="preprocessor">#define ARM_ARRAY_SIZE_Y 4</span>
+<a name="l00010"></a><a class="code" href="DisplayDeviceJacket_8h.html#a3027ea32b37045427793d1e4a1164f60">00010</a> <span class="preprocessor"></span><span class="preprocessor">#define NECK_ARRAY_SIZE_X 4</span>
+<a name="l00011"></a><a class="code" href="DisplayDeviceJacket_8h.html#a1f2706ebc20a7b46cb9bbe5a84b8c798">00011</a> <span class="preprocessor"></span><span class="preprocessor">#define NECK_ARRAY_SIZE_Y 1</span>
 <a name="l00012"></a>00012 <span class="preprocessor"></span>
-<a name="l00013"></a><a class="code" href="classDisplayDeviceJacket.html">00013</a> <span class="keyword">class </span><a class="code" href="classDisplayDeviceJacket.html">DisplayDeviceJacket</a> : <span class="keyword">public</span> <a class="code" href="classTactileArray.html">TactileArray</a>
-<a name="l00014"></a>00014 {
-<a name="l00015"></a>00015 <span class="keyword">public</span>:
-<a name="l00016"></a>00016     <a class="code" href="classDisplayDeviceJacket.html">DisplayDeviceJacket</a>(<span class="keywordtype">int</span> a_portNum);
-<a name="l00017"></a>00017     <span class="keyword">virtual</span> ~<a class="code" href="classDisplayDeviceJacket.html">DisplayDeviceJacket</a>();
-<a name="l00018"></a>00018 
-<a name="l00019"></a>00019     <span class="keywordtype">int</span> m_chestArray[CHEST_ARRAY_SIZE_X][CHEST_ARRAY_SIZE_Y];
-<a name="l00020"></a>00020     <span class="keywordtype">int</span> m_armArray[ARM_ARRAY_SIZE_X][ARM_ARRAY_SIZE_Y];
-<a name="l00021"></a>00021     <span class="keywordtype">int</span> m_neckArray[NECK_ARRAY_SIZE_X][NECK_ARRAY_SIZE_Y];
-<a name="l00022"></a>00022 
-<a name="l00023"></a>00023     <span class="keywordtype">void</span> setActReset()
-<a name="l00024"></a>00024     {
-<a name="l00025"></a>00025         setIntensityAll(0);
-<a name="l00026"></a>00026     }
-<a name="l00027"></a>00027     <span class="keywordtype">void</span> setActChest(<span class="keywordtype">double</span> a_actX, <span class="keywordtype">double</span> a_actY);
-<a name="l00028"></a>00028     <span class="keywordtype">void</span> setActUpperArm(<span class="keywordtype">double</span> a_actX, <span class="keywordtype">double</span> a_actY);
-<a name="l00029"></a>00029     <span class="keywordtype">void</span> setActNeck(<span class="keywordtype">int</span> a_actX, <span class="keywordtype">double</span> a_intensity);
-<a name="l00030"></a>00030 };
+<a name="l00018"></a><a class="code" href="classDisplayDeviceJacket.html">00018</a> <span class="keyword">class </span><a class="code" href="classDisplayDeviceJacket.html" title="Represents the Jacket device and enables us to activate the jacket actuators.">DisplayDeviceJacket</a> : <span class="keyword">public</span> <a class="code" href="classTactileArray.html" title="Interface class for any smart clothing hardware.">TactileArray</a>
+<a name="l00019"></a>00019 {
+<a name="l00020"></a>00020 <span class="keyword">public</span>:
+<a name="l00025"></a>00025     <a class="code" href="classDisplayDeviceJacket.html#a73dce07052df2ef3703406e3fdf3ef52" title="Constructor.">DisplayDeviceJacket</a>(<span class="keywordtype">int</span> a_portNum);
+<a name="l00026"></a>00026 
+<a name="l00030"></a>00030     <span class="keyword">virtual</span> <a class="code" href="classDisplayDeviceJacket.html#a8e9914ddcc4c0b0824021f650a7d2d8e" title="Destructor.">~DisplayDeviceJacket</a>();
 <a name="l00031"></a>00031 
-<a name="l00032"></a>00032 <span class="preprocessor">#endif</span>
-<a name="l00033"></a>00033 <span class="preprocessor"></span> 
+<a name="l00035"></a><a class="code" href="classDisplayDeviceJacket.html#a5b02adb89dc81459d7c869293a9f000a">00035</a>     <span class="keywordtype">void</span> <a class="code" href="classDisplayDeviceJacket.html#a5b02adb89dc81459d7c869293a9f000a" title="Resets the jacket&amp;#39;s actuators.">setActReset</a>()
+<a name="l00036"></a>00036     {
+<a name="l00037"></a>00037         <a class="code" href="classTactileArray.html#abbca9d69c0c6be1816214ebb75ecd16c" title="Setting intensity values for all the array.">setIntensityAll</a>(0);
+<a name="l00038"></a>00038     }
+<a name="l00039"></a>00039 
+<a name="l00045"></a>00045     <span class="keywordtype">void</span> <a class="code" href="classDisplayDeviceJacket.html#a1cc7bc19638a4d5e7a00677781952c29" title="Actuates the chest actuators at the given coordinates.">setActChest</a>(<span class="keywordtype">double</span> a_actX, <span class="keywordtype">double</span> a_actY);
+<a name="l00046"></a>00046 
+<a name="l00052"></a>00052     <span class="keywordtype">void</span> <a class="code" href="classDisplayDeviceJacket.html#ab8db22ff8bd0069140df975adfe05719" title="Actuates the upper arm actuators at the given coordinates.">setActUpperArm</a>(<span class="keywordtype">double</span> a_actX, <span class="keywordtype">double</span> a_actY);
+<a name="l00053"></a>00053 
+<a name="l00059"></a>00059     <span class="keywordtype">void</span> <a class="code" href="classDisplayDeviceJacket.html#a86bb0b50805faf6db0493618c3f10973" title="Actuates the neck actuators at the given coordinates.">setActNeck</a>(<span class="keywordtype">int</span> a_actX, <span class="keywordtype">double</span> a_intensity);
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061 <span class="keyword">private</span>:
+<a name="l00065"></a><a class="code" href="classDisplayDeviceJacket.html#aeeb22dbc14edfa3135d2f2d0dfbd2238">00065</a>     <span class="keywordtype">int</span> <a class="code" href="classDisplayDeviceJacket.html#aeeb22dbc14edfa3135d2f2d0dfbd2238" title="Array of all chest actuators of the jacket.">m_chestArray</a>[CHEST_ARRAY_SIZE_X][CHEST_ARRAY_SIZE_Y];
+<a name="l00066"></a>00066 
+<a name="l00070"></a><a class="code" href="classDisplayDeviceJacket.html#a08e1944626872efce9af22ade970b04d">00070</a>     <span class="keywordtype">int</span> <a class="code" href="classDisplayDeviceJacket.html#a08e1944626872efce9af22ade970b04d" title="Array of all arm actuators of the jacket.">m_armArray</a>[ARM_ARRAY_SIZE_X][ARM_ARRAY_SIZE_Y];
+<a name="l00071"></a>00071 
+<a name="l00075"></a><a class="code" href="classDisplayDeviceJacket.html#a786295631af23d5b7b970edbd30b4395">00075</a>     <span class="keywordtype">int</span> <a class="code" href="classDisplayDeviceJacket.html#a786295631af23d5b7b970edbd30b4395" title="Array of all neck actuators of the jacket.">m_neckArray</a>[NECK_ARRAY_SIZE_X][NECK_ARRAY_SIZE_Y];
+<a name="l00076"></a>00076 };
+<a name="l00077"></a>00077 
+<a name="l00078"></a>00078 <span class="preprocessor">#endif</span>
+<a name="l00079"></a>00079 <span class="preprocessor"></span> 
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -88,7 +97,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -97,7 +106,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:44 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

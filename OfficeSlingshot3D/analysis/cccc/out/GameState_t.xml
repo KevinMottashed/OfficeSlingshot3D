@@ -35,18 +35,18 @@
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="303" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="308" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="30" />
+<source_reference file="../../UserInterface/MainDlg.h" line="47" />
 </extent>
 <name>Game</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Game/Game.h" line="67" />
+<source_reference file="../../Game/Game.h" line="105" />
 </extent>
 <name>MFCUserInterface</name>
 <visible>true</visible>
@@ -57,14 +57,14 @@
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="36" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="58" />
 </extent>
 <name>UserInterface</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/UserInterface.h" line="36" />
+<source_reference file="../../UserInterface/UserInterface.h" line="55" />
 </extent>
 </client_module>
 <supplier_module>

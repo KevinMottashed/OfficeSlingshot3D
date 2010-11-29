@@ -35,7 +35,7 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="102" />
+<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="115" />
 </extent>
 </client_module>
 <supplier_module>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OfficeSlingshot3D: /home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/LogEventEnum.h Source File</title>
+<title>OfficeSlingshot3D: /home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Logger/LogEventEnum.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -41,73 +42,69 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/LogEventEnum.h</h1>  </div>
+<h1>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Logger/LogEventEnum.h</h1>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef LOG_EVENT_H</span>
+<a href="LogEventEnum_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef LOG_EVENT_H</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define LOG_EVENT_H</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &quot;stdafx.h&quot;</span>
 <a name="l00005"></a>00005 
-<a name="l00006"></a>00006 <span class="comment">// This enum represents all input events that the system can receive</span>
-<a name="l00007"></a>00007 <span class="comment">// These include inputs from the network, the user interface, the falcon and the zcamera</span>
-<a name="l00008"></a>00008 <span class="keyword">namespace </span>LogEvent
-<a name="l00009"></a>00009 {
-<a name="l00010"></a>00010     <span class="comment">// all the input events that can be logged</span>
-<a name="l00011"></a>00011     <span class="keyword">enum</span> LogEventEnum
-<a name="l00012"></a>00012     {
-<a name="l00013"></a>00013         <span class="comment">// network events (0-99)</span>
-<a name="l00014"></a>00014         START_NETWORK = 0,
-<a name="l00015"></a>00015         NETWORK_PEER_CONNECTED = START_NETWORK,
-<a name="l00016"></a>00016         NETWORK_PEER_DISCONNECTED,
-<a name="l00017"></a>00017         NETWORK_PEER_START_GAME,
-<a name="l00018"></a>00018         NETWORK_PEER_PAUSE_GAME,
-<a name="l00019"></a>00019         NETWORK_PEER_EXIT_GAME,
-<a name="l00020"></a>00020         NETWORK_ERROR_OCCURED,
-<a name="l00021"></a>00021         NETWORK_USER_NAME,
-<a name="l00022"></a>00022         NETWORK_CHAT_MESSAGE,
-<a name="l00023"></a>00023         NETWORK_VIDEO_DATA,
-<a name="l00024"></a>00024         NETWORK_SLINGSHOT_POSITION,
-<a name="l00025"></a>00025         NETWORK_PROJECTILE,
-<a name="l00026"></a>00026         NETWORK_SLINGSHOT_PULLBACK,
-<a name="l00027"></a>00027         NETWORK_PLAYER_POSITION,
-<a name="l00028"></a>00028         END_NETWORK = 100,
-<a name="l00029"></a>00029 
-<a name="l00030"></a>00030         <span class="comment">// UI events (100-199)  </span>
-<a name="l00031"></a>00031         START_UI = END_NETWORK,
-<a name="l00032"></a>00032         UI_CONNECT = START_UI,
-<a name="l00033"></a>00033         UI_LISTEN,
-<a name="l00034"></a>00034         UI_DISCONNECT,
-<a name="l00035"></a>00035         UI_PREFERENCES,
-<a name="l00036"></a>00036         UI_START_GAME,
-<a name="l00037"></a>00037         UI_PAUSE_GAME,
-<a name="l00038"></a>00038         UI_EXIT_GAME,
-<a name="l00039"></a>00039         UI_CLOSE_APPLICATION,
-<a name="l00040"></a>00040         UI_CHAT_MESSAGE,
-<a name="l00041"></a>00041         END_UI = 200,
-<a name="l00042"></a>00042 
-<a name="l00043"></a>00043         <span class="comment">// Falcon events (200-299)</span>
-<a name="l00044"></a>00044         START_FALCON = END_UI,
-<a name="l00045"></a>00045         FALCON_SLINGSHOT_POSITION = START_FALCON,
-<a name="l00046"></a>00046         END_FALCON = 300,
-<a name="l00047"></a>00047 
-<a name="l00048"></a>00048         <span class="comment">// ZCam events (300-399)</span>
-<a name="l00049"></a>00049         START_ZCAM = END_FALCON,
-<a name="l00050"></a>00050         ZCAM_VIDEO_DATA = START_ZCAM,
-<a name="l00051"></a>00051         END_ZCAM = 400
-<a name="l00052"></a>00052     };
-<a name="l00053"></a>00053 
-<a name="l00054"></a>00054     <span class="comment">// convert the enum to a string</span>
-<a name="l00055"></a>00055     std::string <a class="code" href="namespaceConnectionState.html#aec53b086156059b62bbbf5e2e24ec50b" title="Get a string representation of the enum.">lookup</a>(LogEventEnum logEvent);
-<a name="l00056"></a>00056 }
-<a name="l00057"></a>00057 
-<a name="l00058"></a>00058 <span class="keyword">typedef</span> LogEvent::LogEventEnum LogEvent_t;
-<a name="l00059"></a>00059 
-<a name="l00060"></a>00060 <span class="preprocessor">#endif</span>
+<a name="l00010"></a><a class="code" href="namespaceLogEvent.html">00010</a> <span class="keyword">namespace </span>LogEvent
+<a name="l00011"></a>00011 {
+<a name="l00018"></a><a class="code" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">00018</a>     <span class="keyword">enum</span> <a class="code" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0" title="package This enum represents all input events that the system can receive.">LogEventEnum</a>
+<a name="l00019"></a>00019     {
+<a name="l00020"></a>00020         <span class="comment">// network events (0-99)</span>
+<a name="l00021"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0a6987f1997b393a520b3888f453f9d1d1">00021</a>         <a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0a6987f1997b393a520b3888f453f9d1d1" title="The first of the network events.">START_NETWORK</a> = 0, 
+<a name="l00022"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0a4231b371b8b094eaae7930a5e340881a">00022</a>         <a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0a4231b371b8b094eaae7930a5e340881a" title="A peer has connected to us.">NETWORK_PEER_CONNECTED</a> = START_NETWORK, 
+<a name="l00023"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0aa7930d91a1e4ddb208b4c2e8a0face1b">00023</a>         NETWORK_PEER_DISCONNECTED, 
+<a name="l00024"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0a3277579b159f087f4c9b3a0e9e2dec28">00024</a>         NETWORK_PEER_START_GAME, 
+<a name="l00025"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0a1a4add90875fb7026871086cab41dbb3">00025</a>         NETWORK_PEER_PAUSE_GAME, 
+<a name="l00026"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0a8faea0cfa125f55bd4194429e089604b">00026</a>         NETWORK_PEER_EXIT_GAME, 
+<a name="l00027"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0a3f177668ab2a9bb9fb5a384a20f83471">00027</a>         NETWORK_ERROR_OCCURED, 
+<a name="l00028"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0a22d2209a2a6ac5dfc91c5537b1ec3315">00028</a>         NETWORK_USER_NAME, 
+<a name="l00029"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0a7d8fe3778b618330ba919d37becb5d87">00029</a>         NETWORK_CHAT_MESSAGE, 
+<a name="l00030"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0a24e40dafb0e37effe96d48af4d1b8601">00030</a>         NETWORK_SLINGSHOT_PULLBACK, 
+<a name="l00031"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0a2dd5ca801b1b5ed0d59b7365694ff3a5">00031</a>         NETWORK_PROJECTILE, 
+<a name="l00032"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0a66391948edefbe29fa969c1def9565d4">00032</a>         NETWORK_PLAYER_POSITION, 
+<a name="l00033"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0a65f1c64a620263fd963d7ce57805d3a6">00033</a>         NETWORK_GAME_OVER, 
+<a name="l00034"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0ae904fa0fd75e2e7345ff81f22fc6497e">00034</a>         NETWORK_PLAYER_HIT, 
+<a name="l00035"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0ac1e3d8426ef925f4310316772b617d97">00035</a>         NETWORK_PHYSICS_SYNC, 
+<a name="l00036"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0af350a834095dcec29b49a2c4c1be1878">00036</a>         <a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0af350a834095dcec29b49a2c4c1be1878" title="Last network event +1.">END_NETWORK</a> = 100, 
+<a name="l00038"></a>00038         <span class="comment">// UI events (100-199)  </span>
+<a name="l00039"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0aaac826866c43a7bf7584d989822bebfc">00039</a>         <a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0aaac826866c43a7bf7584d989822bebfc" title="The first of the ui events.">START_UI</a> = END_NETWORK, 
+<a name="l00040"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0a8c6bbc5f9463fc6e9bcb87981ff039e8">00040</a>         <a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0a8c6bbc5f9463fc6e9bcb87981ff039e8" title="The player wants to connect to a peer.">UI_CONNECT</a> = START_UI, 
+<a name="l00041"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0a9290ddc38b5dfa215225ace319a8f7a0">00041</a>         UI_LISTEN, 
+<a name="l00042"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0aef15afbeec3a4ef123026d70cf055b97">00042</a>         UI_DISCONNECT, 
+<a name="l00043"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0ad643869dba9135a3b2674aa46d2643b8">00043</a>         UI_PREFERENCES, 
+<a name="l00044"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0a414548299721730a6523b322a8e8c3e5">00044</a>         UI_START_GAME, 
+<a name="l00045"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0ade6d60e095ab4727e7e628d632a5b741">00045</a>         UI_PAUSE_GAME, 
+<a name="l00046"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0a41b9f7cd18208159948596c23af03b68">00046</a>         UI_EXIT_GAME, 
+<a name="l00047"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0affbffc829a5950fa83775eaf54feb244">00047</a>         UI_CLOSE_APPLICATION, 
+<a name="l00048"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0aec6c04e31841c937f94d22d4dcba9a82">00048</a>         UI_CHAT_MESSAGE, 
+<a name="l00049"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0a34cc4f6c962f11344a09a7d943dbb7c7">00049</a>         <a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0a34cc4f6c962f11344a09a7d943dbb7c7" title="The last of the ui events +1.">END_UI</a> = 200, 
+<a name="l00051"></a>00051         <span class="comment">// Falcon events (200-299)</span>
+<a name="l00052"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0a91dc049eb4fb949a1b1695aa2d5c0c52">00052</a>         <a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0a91dc049eb4fb949a1b1695aa2d5c0c52" title="The first of the falcon events.">START_FALCON</a> = END_UI, 
+<a name="l00053"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0ab4e01945875da77debc418e527a3dfae">00053</a>         <a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0ab4e01945875da77debc418e527a3dfae" title="The slingshot is being pulled back.">FALCON_SLINGSHOT_PULLBACK</a> = START_FALCON, 
+<a name="l00054"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0aed8c6b514500ab064fe116f4e43e6dbb">00054</a>         FALCON_SLINGSHOT_FIRED, 
+<a name="l00055"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0a39edd52009f2051b59521e154aec4121">00055</a>         <a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0a39edd52009f2051b59521e154aec4121" title="The last of the falcon events +1.">END_FALCON</a> = 300, 
+<a name="l00057"></a>00057         <span class="comment">// ZCam events (300-399)</span>
+<a name="l00058"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0a8498e5a4014a001af20990f23e034bc1">00058</a>         <a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0a8498e5a4014a001af20990f23e034bc1" title="The first of the zcamera events.">START_ZCAM</a> = END_FALCON, 
+<a name="l00059"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0ad4a3723d07c54f2886ff4a124fe2f1de">00059</a>         <a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0ad4a3723d07c54f2886ff4a124fe2f1de" title="The player has moved.">ZCAM_AVATAR_POSITION</a> = START_ZCAM, 
+<a name="l00060"></a><a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0aea9aee2bf565a3a62cbd2bdf40615c26">00060</a>         <a class="code" href="group__Logger.html#gga7955bef9cc357e9dc8f6937561479ed0aea9aee2bf565a3a62cbd2bdf40615c26" title="The last of the zcamera events +1.">END_ZCAM</a> = 400, 
+<a name="l00061"></a>00061     };
+<a name="l00062"></a>00062 
+<a name="l00068"></a>00068     std::string <a class="code" href="namespaceLogEvent.html#ada15c15e4e8b7f30e8eca0316e862516" title="Convert the enum to a string.">lookup</a>(<a class="code" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0" title="package This enum represents all input events that the system can receive.">LogEventEnum</a> logEvent);
+<a name="l00069"></a>00069 }
+<a name="l00070"></a>00070 
+<a name="l00071"></a><a class="code" href="LogEventEnum_8h.html#a9a4e6b5eeb8a92c4b64550e3822bca9b">00071</a> <span class="keyword">typedef</span> <a class="code" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0" title="package This enum represents all input events that the system can receive.">LogEvent::LogEventEnum</a> LogEvent_t;
+<a name="l00072"></a>00072 
+<a name="l00073"></a>00073 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -115,7 +112,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -124,7 +121,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:44 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

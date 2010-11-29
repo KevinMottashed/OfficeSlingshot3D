@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -50,30 +51,209 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Data Fields</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#friends">Friends</a>  </div>
   <div class="headertitle">
-<h1>ReplayFormatEvent Class Reference</h1>  </div>
+<h1>ReplayFormatEvent Class Reference<br/>
+<small>
+[<a class="el" href="group__Logger.html">Logger</a>]</small>
+</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="ReplayFormatEvent" --><table class="memberdecls">
+<!-- doxytag: class="ReplayFormatEvent" -->
+<p><b>package</b> The replay format event class is used to represent a replay event.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="ReplayFormatEvent_8h_source.html">ReplayFormatEvent.h</a>&gt;</code></p>
+<table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aefd3a06940ae986aa9c3c2b6886cf5c2"></a><!-- doxytag: member="ReplayFormatEvent::ReplayFormatEvent" ref="aefd3a06940ae986aa9c3c2b6886cf5c2" args="(long time, LogEvent_t logEvent)" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><b>ReplayFormatEvent</b> (long time, LogEvent_t logEvent)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReplayFormatEvent.html#a45a9d52a2c3e7e9b9fbf58b3d0c3a0e4">ReplayFormatEvent</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#a45a9d52a2c3e7e9b9fbf58b3d0c3a0e4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReplayFormatEvent.html#aefd3a06940ae986aa9c3c2b6886cf5c2">ReplayFormatEvent</a> (long <a class="el" href="classReplayFormatEvent.html#a8752c98de9f608ef9794efca7f08bdb9">time</a>, <a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a> <a class="el" href="classReplayFormatEvent.html#ad5f6fcaac9f58026e5a87a1320666236">logEvent</a>)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#aefd3a06940ae986aa9c3c2b6886cf5c2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReplayFormatEvent.html#aa81b1342497c6381101b3f5c8f2d8118">~ReplayFormatEvent</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#aa81b1342497c6381101b3f5c8f2d8118"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8752c98de9f608ef9794efca7f08bdb9"></a><!-- doxytag: member="ReplayFormatEvent::time" ref="a8752c98de9f608ef9794efca7f08bdb9" args="" -->
-long&nbsp;</td><td class="memItemRight" valign="bottom"><b>time</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad5f6fcaac9f58026e5a87a1320666236"></a><!-- doxytag: member="ReplayFormatEvent::logEvent" ref="ad5f6fcaac9f58026e5a87a1320666236" args="" -->
-LogEvent_t&nbsp;</td><td class="memItemRight" valign="bottom"><b>logEvent</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">long&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReplayFormatEvent.html#a8752c98de9f608ef9794efca7f08bdb9">time</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The time at which the event occured.  <a href="#a8752c98de9f608ef9794efca7f08bdb9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReplayFormatEvent.html#ad5f6fcaac9f58026e5a87a1320666236">logEvent</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The event that happened.  <a href="#ad5f6fcaac9f58026e5a87a1320666236"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;class Archive &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">void&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classReplayFormatEvent.html#a295ee0364f97e785525574ffe2acf773">serialize</a> (Archive &amp;ar, const unsigned int version)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Serialization function that the boost library will use for both serializaing and deserializing this data type.  <a href="#a295ee0364f97e785525574ffe2acf773"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac98d07dd8f7b70e16ccb9a01abf56b9c"></a><!-- doxytag: member="ReplayFormatEvent::boost::serialization::access" ref="ac98d07dd8f7b70e16ccb9a01abf56b9c" args="" -->
-class&nbsp;</td><td class="memItemRight" valign="bottom"><b>boost::serialization::access</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReplayFormatEvent.html#ac98d07dd8f7b70e16ccb9a01abf56b9c">boost::serialization::access</a></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p><b>package</b> The replay format event class is used to represent a replay event. </p>
+<p>A replay event contains a time at which the event occured where the time is the elapsed time since the application started. This class also contains an enum representing the event that occured. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a45a9d52a2c3e7e9b9fbf58b3d0c3a0e4"></a><!-- doxytag: member="ReplayFormatEvent::ReplayFormatEvent" ref="a45a9d52a2c3e7e9b9fbf58b3d0c3a0e4" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ReplayFormatEvent::ReplayFormatEvent </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="aefd3a06940ae986aa9c3c2b6886cf5c2"></a><!-- doxytag: member="ReplayFormatEvent::ReplayFormatEvent" ref="aefd3a06940ae986aa9c3c2b6886cf5c2" args="(long time, LogEvent_t logEvent)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ReplayFormatEvent::ReplayFormatEvent </td>
+          <td>(</td>
+          <td class="paramtype">long&nbsp;</td>
+          <td class="paramname"> <em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a>&nbsp;</td>
+          <td class="paramname"> <em>logEvent</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>time</em>&nbsp;</td><td>The time at which the event occured. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>logEvent</em>&nbsp;</td><td>The event that occured. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa81b1342497c6381101b3f5c8f2d8118"></a><!-- doxytag: member="ReplayFormatEvent::~ReplayFormatEvent" ref="aa81b1342497c6381101b3f5c8f2d8118" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ReplayFormatEvent::~ReplayFormatEvent </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a295ee0364f97e785525574ffe2acf773"></a><!-- doxytag: member="ReplayFormatEvent::serialize" ref="a295ee0364f97e785525574ffe2acf773" args="(Archive &amp;ar, const unsigned int version)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Archive &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void ReplayFormatEvent::serialize </td>
+          <td>(</td>
+          <td class="paramtype">Archive &amp;&nbsp;</td>
+          <td class="paramname"> <em>ar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&nbsp;</td>
+          <td class="paramname"> <em>version</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Serialization function that the boost library will use for both serializaing and deserializing this data type. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in,out]</tt>&nbsp;</td><td valign="top"><em>ar</em>&nbsp;</td><td>The archive where the serialized data will be saved or read from. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>version</em>&nbsp;</td><td>The version of the archive. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Friends And Related Function Documentation</h2>
+<a class="anchor" id="ac98d07dd8f7b70e16ccb9a01abf56b9c"></a><!-- doxytag: member="ReplayFormatEvent::boost::serialization::access" ref="ac98d07dd8f7b70e16ccb9a01abf56b9c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class boost::serialization::access<code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="ad5f6fcaac9f58026e5a87a1320666236"></a><!-- doxytag: member="ReplayFormatEvent::logEvent" ref="ad5f6fcaac9f58026e5a87a1320666236" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a> <a class="el" href="classReplayFormatEvent.html#ad5f6fcaac9f58026e5a87a1320666236">ReplayFormatEvent::logEvent</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The event that happened. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8752c98de9f608ef9794efca7f08bdb9"></a><!-- doxytag: member="ReplayFormatEvent::time" ref="a8752c98de9f608ef9794efca7f08bdb9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long <a class="el" href="classReplayFormatEvent.html#a8752c98de9f608ef9794efca7f08bdb9">ReplayFormatEvent::time</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The time at which the event occured. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/<a class="el" href="ReplayFormatEvent_8h_source.html">ReplayFormatEvent.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatEvent.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Logger/<a class="el" href="ReplayFormatEvent_8h_source.html">ReplayFormatEvent.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Logger/<a class="el" href="ReplayFormatEvent_8cpp.html">ReplayFormatEvent.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -81,7 +261,7 @@ class&nbsp;</td><td class="memItemRight" valign="bottom"><b>boost::serialization
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,7 +270,7 @@ class&nbsp;</td><td class="memItemRight" valign="bottom"><b>boost::serialization
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:46 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

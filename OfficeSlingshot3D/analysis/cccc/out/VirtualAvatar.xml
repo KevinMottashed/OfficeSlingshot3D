@@ -2,20 +2,20 @@
 <!--Detailed report on module VirtualAvatar-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="62" level="0" />
+<lines_of_code value="230" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
-<McCabes_cyclomatic_complexity value="9" level="0" />
+<McCabes_cyclomatic_complexity value="43" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
-<lines_of_code value="42" level="0" />
+<lines_of_code value="155" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="1.476" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.214" level="0" />
-<weighted_methods_per_class_unity value="6" level="0" />
-<weighted_methods_per_class_visibility value="6" level="0" />
+<lines_of_code_per_line_of_comment value="1.484" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.277" level="0" />
+<weighted_methods_per_class_unity value="17" level="0" />
+<weighted_methods_per_class_visibility value="14" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="5" level="0" />
-<IF4 value="16" level="0" />
+<coupling_between_objects value="6" level="0" />
+<IF4 value="25" level="0" />
 <IF4_per_member_function value="********" level="2" />
 <IF4_visible value="0" level="0" />
 <IF4_visible_per_member_function value="********" level="0" />
@@ -24,11 +24,11 @@
 </module_summary>
 <module_detail>
 <description>definition</description>
-<source_reference file="../../Game/VirtualAvatar.h" line="9" />
-<lines_of_code value="9" level="0" />
+<source_reference file="../../Game/VirtualAvatar.h" line="11" />
+<lines_of_code value="28" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="15" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
+<lines_of_comment value="72" level="0" />
+<lines_of_code_per_line_of_comment value="0.389" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module_detail>
 <procedural_detail>
@@ -36,15 +36,191 @@
 <name>VirtualAvatar(cWorld *,cVector3d,bool)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Game/VirtualAvatar.cpp" line="3" />
+<source_reference file="../../Game/VirtualAvatar.cpp" line="15" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Game/VirtualAvatar.h" line="18" />
+<source_reference file="../../Game/VirtualAvatar.h" line="20" />
 </extent>
-<lines_of_code value="16" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_code value="32" level="1" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
 <lines_of_comment value="6" level="0" />
+<lines_of_code_per_line_of_comment value="5.333" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>createBoundaries(cVector3d)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualAvatar.cpp" line="129" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="221" />
+</extent>
+<lines_of_code value="12" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="5" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>createMeshCube(cMesh *,cVector3d,cVector3d)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualAvatar.cpp" line="202" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="229" />
+</extent>
+<lines_of_code value="40" level="1" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="13" level="0" />
+<lines_of_code_per_line_of_comment value="3.077" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getChestMax()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualAvatar.cpp" line="154" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="56" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getChestMin()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualAvatar.cpp" line="149" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="50" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getHeadMax()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualAvatar.cpp" line="184" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="92" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getHeadMin()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualAvatar.cpp" line="179" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="86" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getHitBodyPart()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualAvatar.cpp" line="144" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="44" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getLeftArmMax()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualAvatar.cpp" line="174" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="80" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getLeftArmMin()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualAvatar.cpp" line="169" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="74" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getRightArmMax()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualAvatar.cpp" line="164" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="68" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getRightArmMin()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualAvatar.cpp" line="159" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="62" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -52,75 +228,75 @@
 <name>isInHitBox(cVector3d)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Game/VirtualAvatar.cpp" line="61" />
+<source_reference file="../../Game/VirtualAvatar.cpp" line="103" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Game/VirtualAvatar.h" line="47" />
+<source_reference file="../../Game/VirtualAvatar.h" line="38" />
 </extent>
-<lines_of_code value="6" level="0" />
-<McCabes_cyclomatic_complexity value="6" level="0" />
-<lines_of_comment value="3" level="0" />
+<lines_of_code value="26" level="0" />
+<McCabes_cyclomatic_complexity value="29" level="1" />
+<lines_of_comment value="5" level="0" />
+<lines_of_code_per_line_of_comment value="5.200" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="5.800" level="1" />
+</member_function>
+<member_function>
+<name>resetPosition(cVector3d,bool)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualAvatar.cpp" line="189" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="99" />
+</extent>
+<lines_of_code value="12" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="2.000" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
 <name>rotate(double)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Game/VirtualAvatar.cpp" line="28" />
+<source_reference file="../../Game/VirtualAvatar.cpp" line="62" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Game/VirtualAvatar.h" line="29" />
-</extent>
-<lines_of_code value="12" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="6" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>translate(double)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../Game/VirtualAvatar.cpp" line="44" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../Game/VirtualAvatar.h" line="35" />
+<source_reference file="../../Game/VirtualAvatar.h" line="31" />
 </extent>
 <lines_of_code value="7" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="4" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>updateBoundaries(double,cVector3d)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../Game/VirtualAvatar.cpp" line="52" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../Game/VirtualAvatar.h" line="42" />
-</extent>
-<lines_of_code value="8" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
-<name>~VirtualAvatar(void)</name>
+<name>translate(double,double)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Game/VirtualAvatar.cpp" line="24" />
+<source_reference file="../../Game/VirtualAvatar.cpp" line="71" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Game/VirtualAvatar.h" line="23" />
+<source_reference file="../../Game/VirtualAvatar.h" line="236" />
+</extent>
+<lines_of_code value="24" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="5" level="0" />
+<lines_of_code_per_line_of_comment value="4.800" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>~VirtualAvatar(void)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualAvatar.cpp" line="58" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="25" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -138,81 +314,200 @@
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="139" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="227" />
 </extent>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="144" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="232" />
 </extent>
 </client_module>
 <supplier_module>
+<name>BodyPart_t</name>
+<visible>false</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="174" />
+</extent>
 <name>bool</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualAvatar.cpp" line="3" />
+<source_reference file="../../Game/VirtualAvatar.cpp" line="15" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualAvatar.h" line="18" />
+<source_reference file="../../Game/VirtualAvatar.cpp" line="189" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="20" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="99" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Game/VirtualAvatar.h" line="67" />
+<source_reference file="../../Game/VirtualAvatar.h" line="169" />
 </extent>
 <name>cMesh</name>
 <visible>false</visible>
 <concrete>false</concrete>
 <extent>
+<description>pass by reference</description>
+<source_reference file="../../Game/VirtualAvatar.cpp" line="202" />
+</extent>
+<extent>
 <description>has by reference</description>
-<source_reference file="../../Game/VirtualAvatar.h" line="52" />
+<source_reference file="../../Game/VirtualAvatar.h" line="105" />
+</extent>
+<extent>
+<description>has by reference</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="110" />
+</extent>
+<extent>
+<description>has by reference</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="125" />
+</extent>
+<extent>
+<description>has by reference</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="140" />
+</extent>
+<extent>
+<description>has by reference</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="155" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="229" />
 </extent>
 <name>cVector3d</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualAvatar.cpp" line="3" />
+<source_reference file="../../Game/VirtualAvatar.cpp" line="15" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualAvatar.cpp" line="52" />
+<source_reference file="../../Game/VirtualAvatar.cpp" line="103" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualAvatar.cpp" line="61" />
+<source_reference file="../../Game/VirtualAvatar.cpp" line="129" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualAvatar.h" line="18" />
+<source_reference file="../../Game/VirtualAvatar.cpp" line="189" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualAvatar.h" line="42" />
+<source_reference file="../../Game/VirtualAvatar.cpp" line="202" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualAvatar.h" line="47" />
+<source_reference file="../../Game/VirtualAvatar.cpp" line="202" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="20" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="38" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="99" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Game/VirtualAvatar.h" line="57" />
+<source_reference file="../../Game/VirtualAvatar.h" line="115" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Game/VirtualAvatar.h" line="62" />
+<source_reference file="../../Game/VirtualAvatar.h" line="120" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="130" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="135" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="145" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="150" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="160" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="165" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="179" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="184" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="189" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="194" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="199" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="204" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="209" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="214" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="221" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="229" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="229" />
 </extent>
 <name>cWorld</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Game/VirtualAvatar.cpp" line="3" />
+<source_reference file="../../Game/VirtualAvatar.cpp" line="15" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Game/VirtualAvatar.h" line="18" />
+<source_reference file="../../Game/VirtualAvatar.h" line="20" />
 </extent>
 </supplier_module>
 </module>

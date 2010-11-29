@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -48,52 +49,514 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
-<h1>Audio Class Reference</h1>  </div>
+<h1>Audio Class Reference<br/>
+<small>
+[<a class="el" href="group__Audio.html">Audio</a>]</small>
+</h1>  </div>
 </div>
 <div class="contents">
 <!-- doxytag: class="Audio" -->
-<p>Manages everything audio related.  
+<p><b>public</b> Manages everything audio related.  
 <a href="#_details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Audio_8h_source.html">Audio.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa9d3935a2b91ab4b825bc0cb05f245ea"></a><!-- doxytag: member="Audio::Audio" ref="aa9d3935a2b91ab4b825bc0cb05f245ea" args="()" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudio.html#aa9d3935a2b91ab4b825bc0cb05f245ea">Audio</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor This will preload all the audio files. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae8f54deecb5f48511aaab469e80294d6"></a><!-- doxytag: member="Audio::~Audio" ref="ae8f54deecb5f48511aaab469e80294d6" args="()" -->
-virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudio.html#ae8f54deecb5f48511aaab469e80294d6">~Audio</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor Releases all resources related to the audio files. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abafc657b2fa6b6b622c87ecf7a3acf39"></a><!-- doxytag: member="Audio::playBGMusic" ref="abafc657b2fa6b6b622c87ecf7a3acf39" args="()" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudio.html#abafc657b2fa6b6b622c87ecf7a3acf39">playBGMusic</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">play the background music (loops forever) <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a01f3b6aac2b88e2bb2640ce70627b674"></a><!-- doxytag: member="Audio::stopBGMusic" ref="a01f3b6aac2b88e2bb2640ce70627b674" args="()" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudio.html#a01f3b6aac2b88e2bb2640ce70627b674">stopBGMusic</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">stop the background music <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5ddf491058537000fed8af79dbf2a35b"></a><!-- doxytag: member="Audio::playHit" ref="a5ddf491058537000fed8af79dbf2a35b" args="()" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudio.html#a5ddf491058537000fed8af79dbf2a35b">playHit</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">play hit sound (when a player gets hit) <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afdc5abc6b0be2303beb366901d08f183"></a><!-- doxytag: member="Audio::playSlingshotFired" ref="afdc5abc6b0be2303beb366901d08f183" args="()" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudio.html#afdc5abc6b0be2303beb366901d08f183">playSlingshotFired</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">play slingshot fired sound <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab645b7ef99ecfecaa3f2df5edd0e6d80"></a><!-- doxytag: member="Audio::playGameStart" ref="ab645b7ef99ecfecaa3f2df5edd0e6d80" args="()" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudio.html#ab645b7ef99ecfecaa3f2df5edd0e6d80">playGameStart</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">play game start sound <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8d71a98c801429602b8d8ab23f494ac9"></a><!-- doxytag: member="Audio::playGameOverWon" ref="a8d71a98c801429602b8d8ab23f494ac9" args="()" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudio.html#a8d71a98c801429602b8d8ab23f494ac9">playGameOverWon</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">play game over sound (when the player has won) <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a832770af29658fc578e81d8e1651088f"></a><!-- doxytag: member="Audio::playGameOverLost" ref="a832770af29658fc578e81d8e1651088f" args="()" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudio.html#a832770af29658fc578e81d8e1651088f">playGameOverLost</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">play game over sound (when the player has lost) <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudio.html#aa9d3935a2b91ab4b825bc0cb05f245ea">Audio</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#aa9d3935a2b91ab4b825bc0cb05f245ea"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudio.html#ae8f54deecb5f48511aaab469e80294d6">~Audio</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#ae8f54deecb5f48511aaab469e80294d6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudio.html#abafc657b2fa6b6b622c87ecf7a3acf39">playBGMusic</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">play the background music (loops forever).  <a href="#abafc657b2fa6b6b622c87ecf7a3acf39"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudio.html#a01f3b6aac2b88e2bb2640ce70627b674">stopBGMusic</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">stop the background music.  <a href="#a01f3b6aac2b88e2bb2640ce70627b674"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudio.html#a5ddf491058537000fed8af79dbf2a35b">playHit</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">play hit sound (when a player gets hit).  <a href="#a5ddf491058537000fed8af79dbf2a35b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudio.html#ab4a37d6487d34cbe79360dd8571edb4a">playHeadshot</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">play headshot sound (when a player gets hit in the head).  <a href="#ab4a37d6487d34cbe79360dd8571edb4a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudio.html#afdc5abc6b0be2303beb366901d08f183">playSlingshotFired</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">play slingshot fired sound.  <a href="#afdc5abc6b0be2303beb366901d08f183"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudio.html#ab645b7ef99ecfecaa3f2df5edd0e6d80">playGameStart</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">play game start sound.  <a href="#ab645b7ef99ecfecaa3f2df5edd0e6d80"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudio.html#a8d71a98c801429602b8d8ab23f494ac9">playGameOverWon</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">play game over sound (when the player has won).  <a href="#a8d71a98c801429602b8d8ab23f494ac9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudio.html#a832770af29658fc578e81d8e1651088f">playGameOverLost</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">play game over sound (when the player has lost).  <a href="#a832770af29658fc578e81d8e1651088f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudio.html#aa0e92b124233981ef4ac6ed5d69df270">mute</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Mute all audio.  <a href="#aa0e92b124233981ef4ac6ed5d69df270"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudio.html#a04fb3052d1f4dbb7befa514fe617b7cf">unmute</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Unmute all audio.  <a href="#a04fb3052d1f4dbb7befa514fe617b7cf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudio.html#acadf79eefa32465bd4a72a9d21670899">volume</a> (float level)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set the volume level.  <a href="#acadf79eefa32465bd4a72a9d21670899"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudio.html#acdaad83f7079d88d386d50e6e47b2b40">Audio</a> (const <a class="el" href="classAudio.html">Audio</a> &amp;other)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy constructor.  <a href="#acdaad83f7079d88d386d50e6e47b2b40"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classAudio.html">Audio</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudio.html#ad6c7d7841dd567459afe17da367cfa61">operator=</a> (const <a class="el" href="classAudio.html">Audio</a> &amp;other)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Assignment operator.  <a href="#ad6c7d7841dd567459afe17da367cfa61"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">FMOD::System *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudio.html#ae30095f34e5848ea75805f45711c027e">system</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The audio system.  <a href="#ae30095f34e5848ea75805f45711c027e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::auto_ptr&lt; <a class="el" href="classSound.html">Sound</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudio.html#a857f24f69951c035512f5f9a13f2bcf2">hitSound</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The sound when a player gets hit.  <a href="#a857f24f69951c035512f5f9a13f2bcf2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::auto_ptr&lt; <a class="el" href="classSound.html">Sound</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudio.html#af3f4c316ecaad9bc80d1c54826730307">headshotSound</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The sound when a player gets hit in the head.  <a href="#af3f4c316ecaad9bc80d1c54826730307"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::auto_ptr&lt; <a class="el" href="classSound.html">Sound</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudio.html#ae45328514dd01e613710bc5aa06547bf">slingshotFiredSound</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The sound when a slingshot is fired.  <a href="#ae45328514dd01e613710bc5aa06547bf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::auto_ptr&lt; <a class="el" href="classSound.html">Sound</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudio.html#afc3f70d9cb9adc3dd3afe4c887609d09">round1Sound</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The announcer when the game starts "round 1 .. fight!".  <a href="#afc3f70d9cb9adc3dd3afe4c887609d09"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::auto_ptr&lt; <a class="el" href="classSound.html">Sound</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudio.html#ae425293188b6d8e41b379a99c06e8b0e">bgMusicSound</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The background music, currently doom3 theme.  <a href="#ae425293188b6d8e41b379a99c06e8b0e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::auto_ptr&lt; <a class="el" href="classSound.html">Sound</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudio.html#ab5838dd880a0ee5a5d0b4d9c3eda0ac7">gameWonSound</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The announcer for when the game is won.  <a href="#ab5838dd880a0ee5a5d0b4d9c3eda0ac7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::auto_ptr&lt; <a class="el" href="classSound.html">Sound</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudio.html#a67e54b022143644db63e460961904610">gameLostSound</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The announcer for when the game is lost.  <a href="#a67e54b022143644db63e460961904610"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<p>Manages everything audio related. </p>
+<p><b>public</b> Manages everything audio related. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="aa9d3935a2b91ab4b825bc0cb05f245ea"></a><!-- doxytag: member="Audio::Audio" ref="aa9d3935a2b91ab4b825bc0cb05f245ea" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Audio::Audio </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+<p>This will preload all the audio files. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae8f54deecb5f48511aaab469e80294d6"></a><!-- doxytag: member="Audio::~Audio" ref="ae8f54deecb5f48511aaab469e80294d6" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Audio::~Audio </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+<p>Releases all resources related to the audio files. </p>
+
+</div>
+</div>
+<a class="anchor" id="acdaad83f7079d88d386d50e6e47b2b40"></a><!-- doxytag: member="Audio::Audio" ref="acdaad83f7079d88d386d50e6e47b2b40" args="(const Audio &amp;other)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Audio::Audio </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classAudio.html">Audio</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>other</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copy constructor. </p>
+<p>Not implemented to protect from use. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>other</em>&nbsp;</td><td>The object to copy. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="aa0e92b124233981ef4ac6ed5d69df270"></a><!-- doxytag: member="Audio::mute" ref="aa0e92b124233981ef4ac6ed5d69df270" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Audio::mute </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Mute all audio. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad6c7d7841dd567459afe17da367cfa61"></a><!-- doxytag: member="Audio::operator=" ref="ad6c7d7841dd567459afe17da367cfa61" args="(const Audio &amp;other)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classAudio.html">Audio</a>&amp; Audio::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classAudio.html">Audio</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>other</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Assignment operator. </p>
+<p>Not implemented to protect from use. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>other</em>&nbsp;</td><td>The object to copy. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="abafc657b2fa6b6b622c87ecf7a3acf39"></a><!-- doxytag: member="Audio::playBGMusic" ref="abafc657b2fa6b6b622c87ecf7a3acf39" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Audio::playBGMusic </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>play the background music (loops forever). </p>
+
+</div>
+</div>
+<a class="anchor" id="a832770af29658fc578e81d8e1651088f"></a><!-- doxytag: member="Audio::playGameOverLost" ref="a832770af29658fc578e81d8e1651088f" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Audio::playGameOverLost </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>play game over sound (when the player has lost). </p>
+
+</div>
+</div>
+<a class="anchor" id="a8d71a98c801429602b8d8ab23f494ac9"></a><!-- doxytag: member="Audio::playGameOverWon" ref="a8d71a98c801429602b8d8ab23f494ac9" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Audio::playGameOverWon </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>play game over sound (when the player has won). </p>
+
+</div>
+</div>
+<a class="anchor" id="ab645b7ef99ecfecaa3f2df5edd0e6d80"></a><!-- doxytag: member="Audio::playGameStart" ref="ab645b7ef99ecfecaa3f2df5edd0e6d80" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Audio::playGameStart </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>play game start sound. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab4a37d6487d34cbe79360dd8571edb4a"></a><!-- doxytag: member="Audio::playHeadshot" ref="ab4a37d6487d34cbe79360dd8571edb4a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Audio::playHeadshot </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>play headshot sound (when a player gets hit in the head). </p>
+
+</div>
+</div>
+<a class="anchor" id="a5ddf491058537000fed8af79dbf2a35b"></a><!-- doxytag: member="Audio::playHit" ref="a5ddf491058537000fed8af79dbf2a35b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Audio::playHit </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>play hit sound (when a player gets hit). </p>
+
+</div>
+</div>
+<a class="anchor" id="afdc5abc6b0be2303beb366901d08f183"></a><!-- doxytag: member="Audio::playSlingshotFired" ref="afdc5abc6b0be2303beb366901d08f183" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Audio::playSlingshotFired </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>play slingshot fired sound. </p>
+
+</div>
+</div>
+<a class="anchor" id="a01f3b6aac2b88e2bb2640ce70627b674"></a><!-- doxytag: member="Audio::stopBGMusic" ref="a01f3b6aac2b88e2bb2640ce70627b674" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Audio::stopBGMusic </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>stop the background music. </p>
+
+</div>
+</div>
+<a class="anchor" id="a04fb3052d1f4dbb7befa514fe617b7cf"></a><!-- doxytag: member="Audio::unmute" ref="a04fb3052d1f4dbb7befa514fe617b7cf" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Audio::unmute </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Unmute all audio. </p>
+
+</div>
+</div>
+<a class="anchor" id="acadf79eefa32465bd4a72a9d21670899"></a><!-- doxytag: member="Audio::volume" ref="acadf79eefa32465bd4a72a9d21670899" args="(float level)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Audio::volume </td>
+          <td>(</td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>level</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set the volume level. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>level</em>&nbsp;</td><td>0 for minimum, 1 for maximum </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="ae425293188b6d8e41b379a99c06e8b0e"></a><!-- doxytag: member="Audio::bgMusicSound" ref="ae425293188b6d8e41b379a99c06e8b0e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::auto_ptr&lt;<a class="el" href="classSound.html">Sound</a>&gt; <a class="el" href="classAudio.html#ae425293188b6d8e41b379a99c06e8b0e">Audio::bgMusicSound</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The background music, currently doom3 theme. </p>
+
+</div>
+</div>
+<a class="anchor" id="a67e54b022143644db63e460961904610"></a><!-- doxytag: member="Audio::gameLostSound" ref="a67e54b022143644db63e460961904610" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::auto_ptr&lt;<a class="el" href="classSound.html">Sound</a>&gt; <a class="el" href="classAudio.html#a67e54b022143644db63e460961904610">Audio::gameLostSound</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The announcer for when the game is lost. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab5838dd880a0ee5a5d0b4d9c3eda0ac7"></a><!-- doxytag: member="Audio::gameWonSound" ref="ab5838dd880a0ee5a5d0b4d9c3eda0ac7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::auto_ptr&lt;<a class="el" href="classSound.html">Sound</a>&gt; <a class="el" href="classAudio.html#ab5838dd880a0ee5a5d0b4d9c3eda0ac7">Audio::gameWonSound</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The announcer for when the game is won. </p>
+
+</div>
+</div>
+<a class="anchor" id="af3f4c316ecaad9bc80d1c54826730307"></a><!-- doxytag: member="Audio::headshotSound" ref="af3f4c316ecaad9bc80d1c54826730307" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::auto_ptr&lt;<a class="el" href="classSound.html">Sound</a>&gt; <a class="el" href="classAudio.html#af3f4c316ecaad9bc80d1c54826730307">Audio::headshotSound</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The sound when a player gets hit in the head. </p>
+
+</div>
+</div>
+<a class="anchor" id="a857f24f69951c035512f5f9a13f2bcf2"></a><!-- doxytag: member="Audio::hitSound" ref="a857f24f69951c035512f5f9a13f2bcf2" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::auto_ptr&lt;<a class="el" href="classSound.html">Sound</a>&gt; <a class="el" href="classAudio.html#a857f24f69951c035512f5f9a13f2bcf2">Audio::hitSound</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The sound when a player gets hit. </p>
+
+</div>
+</div>
+<a class="anchor" id="afc3f70d9cb9adc3dd3afe4c887609d09"></a><!-- doxytag: member="Audio::round1Sound" ref="afc3f70d9cb9adc3dd3afe4c887609d09" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::auto_ptr&lt;<a class="el" href="classSound.html">Sound</a>&gt; <a class="el" href="classAudio.html#afc3f70d9cb9adc3dd3afe4c887609d09">Audio::round1Sound</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The announcer when the game starts "round 1 .. fight!". </p>
+
+</div>
+</div>
+<a class="anchor" id="ae45328514dd01e613710bc5aa06547bf"></a><!-- doxytag: member="Audio::slingshotFiredSound" ref="ae45328514dd01e613710bc5aa06547bf" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::auto_ptr&lt;<a class="el" href="classSound.html">Sound</a>&gt; <a class="el" href="classAudio.html#ae45328514dd01e613710bc5aa06547bf">Audio::slingshotFiredSound</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The sound when a slingshot is fired. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae30095f34e5848ea75805f45711c027e"></a><!-- doxytag: member="Audio::system" ref="ae30095f34e5848ea75805f45711c027e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FMOD::System* <a class="el" href="classAudio.html#ae30095f34e5848ea75805f45711c027e">Audio::system</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The audio system. </p>
+<p>This variable manages all the audio. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Audio/<a class="el" href="Audio_8h_source.html">Audio.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Audio/Audio.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Audio/<a class="el" href="Audio_8h_source.html">Audio.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Audio/<a class="el" href="Audio_8cpp.html">Audio.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -101,7 +564,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -110,7 +573,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:45 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

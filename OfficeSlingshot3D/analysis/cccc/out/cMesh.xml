@@ -14,7 +14,7 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="4" level="0" />
+<coupling_between_objects value="5" level="0" />
 <IF4 value="0" level="0" />
 <IF4_per_member_function value="********" level="0" />
 <IF4_visible value="0" level="0" />
@@ -35,28 +35,59 @@
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/HpBar.h" line="11" />
+<source_reference file="../../Game/HpBar.h" line="53" />
 </extent>
 <name>VirtualAvatar</name>
 <visible>false</visible>
 <concrete>false</concrete>
 <extent>
+<description>pass by reference</description>
+<source_reference file="../../Game/VirtualAvatar.cpp" line="202" />
+</extent>
+<extent>
 <description>has by reference</description>
-<source_reference file="../../Game/VirtualAvatar.h" line="52" />
+<source_reference file="../../Game/VirtualAvatar.h" line="105" />
+</extent>
+<extent>
+<description>has by reference</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="110" />
+</extent>
+<extent>
+<description>has by reference</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="125" />
+</extent>
+<extent>
+<description>has by reference</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="140" />
+</extent>
+<extent>
+<description>has by reference</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="155" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="229" />
 </extent>
 <name>VirtualBall</name>
 <visible>false</visible>
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/VirtualBall.h" line="46" />
+<source_reference file="../../Game/VirtualBall.h" line="82" />
+</extent>
+<name>VirtualElastic</name>
+<visible>false</visible>
+<concrete>false</concrete>
+<extent>
+<description>has by reference</description>
+<source_reference file="../../Game/VirtualElastic.h" line="39" />
 </extent>
 <name>VirtualSlingshot</name>
 <visible>false</visible>
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/VirtualSlingshot.h" line="9" />
+<source_reference file="../../Game/VirtualSlingshot.h" line="38" />
 </extent>
 </client_module>
 <supplier_module>

@@ -35,21 +35,21 @@
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="21" />
+<source_reference file="../../UserInterface/MainDlg.h" line="24" />
 </extent>
 <name>CPreferences</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../UserInterface/Preferences.h" line="10" />
+<source_reference file="../../UserInterface/Preferences.h" line="14" />
 </extent>
 <name>MFCOpenGLControl</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="12" />
+<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="18" />
 </extent>
 <name>OfficeSlingshot3D</name>
 <visible>true</visible>
@@ -60,11 +60,11 @@
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Main/OfficeSlingshot3D.h" line="22" />
+<source_reference file="../../Main/OfficeSlingshot3D.h" line="31" />
 </extent>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Main/OfficeSlingshot3D.h" line="39" />
+<source_reference file="../../Main/OfficeSlingshot3D.h" line="68" />
 </extent>
 </client_module>
 <supplier_module>

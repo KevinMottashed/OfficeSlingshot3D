@@ -30,12 +30,12 @@
 <module>
 <name>Channel</name>
 <client_module>
-<name>Audio</name>
+<name>Sound</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Audio/Audio.h" line="102" />
+<source_reference file="../../Audio/Sound.h" line="61" />
 </extent>
 </client_module>
 <supplier_module>

@@ -2,14 +2,14 @@
 <!--Detailed report on module CDepthCamera-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="396" level="0" />
+<lines_of_code value="399" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
-<McCabes_cyclomatic_complexity value="65" level="0" />
+<McCabes_cyclomatic_complexity value="66" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
-<lines_of_code value="117" level="0" />
+<lines_of_code value="266" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="3.385" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.556" level="0" />
+<lines_of_code_per_line_of_comment value="1.500" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.248" level="0" />
 <weighted_methods_per_class_unity value="32" level="0" />
 <weighted_methods_per_class_visibility value="24" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
@@ -24,10 +24,10 @@
 </module_summary>
 <module_detail>
 <description>definition</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="28" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="35" />
 <lines_of_code value="17" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="13" level="0" />
+<lines_of_comment value="41" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module_detail>
@@ -40,11 +40,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="36" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="60" />
 </extent>
 <lines_of_code value="16" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -52,31 +52,31 @@
 <name>ChangeResolution(int)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../ZCamera/DepthCamera.cpp" line="189" />
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="194" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="51" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="87" />
 </extent>
 <lines_of_code value="24" level="0" />
 <McCabes_cyclomatic_complexity value="7" level="0" />
-<lines_of_comment value="11" level="0" />
-<lines_of_code_per_line_of_comment value="2.182" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.636" level="0" />
+<lines_of_comment value="15" level="0" />
+<lines_of_code_per_line_of_comment value="1.600" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.467" level="0" />
 </member_function>
 <member_function>
 <name>EnableDepthFilter(bool,int)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../ZCamera/DepthCamera.cpp" line="394" />
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="399" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="98" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="179" />
 </extent>
 <lines_of_code value="11" level="0" />
 <McCabes_cyclomatic_complexity value="3" level="0" />
-<lines_of_comment value="3" level="0" />
+<lines_of_comment value="7" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -84,15 +84,15 @@
 <name>EnableIRVideoTransfer(bool)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../ZCamera/DepthCamera.cpp" line="364" />
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="369" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="84" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="152" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="4" level="0" />
+<lines_of_comment value="7" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -100,15 +100,15 @@
 <name>EnableMedian(bool)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../ZCamera/DepthCamera.cpp" line="497" />
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="502" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="122" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="238" />
 </extent>
 <lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -116,15 +116,15 @@
 <name>EnableRGBFullResolution(bool)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../ZCamera/DepthCamera.cpp" line="350" />
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="355" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="77" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="139" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="4" level="0" />
+<lines_of_comment value="7" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -132,135 +132,11 @@
 <name>EnableSmoothing(bool,double)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../ZCamera/DepthCamera.cpp" line="486" />
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="491" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="120" />
-</extent>
-<lines_of_code value="6" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>EnableTrack(bool)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../ZCamera/DepthCamera.cpp" line="480" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="119" />
-</extent>
-<lines_of_code value="5" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>EnableWideDepthMode(bool)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../ZCamera/DepthCamera.cpp" line="379" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="92" />
-</extent>
-<lines_of_code value="7" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="7" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>FindObjectUsingWidth(int)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../ZCamera/DepthCamera.cpp" line="331" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="73" />
-</extent>
-<lines_of_code value="15" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="8" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>FreezeVideo(bool)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../ZCamera/DepthCamera.cpp" line="502" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="123" />
-</extent>
-<lines_of_code value="5" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>GetCameraInterface()</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../ZCamera/DepthCamera.cpp" line="444" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="116" />
-</extent>
-<lines_of_code value="5" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="4" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>GetDepthWindowPosition(int &amp;,int &amp;)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../ZCamera/DepthCamera.cpp" line="322" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="68" />
-</extent>
-<lines_of_code value="6" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="4" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>GetMaxAllowedWidth()</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../ZCamera/DepthCamera.cpp" line="229" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="59" />
-</extent>
-<lines_of_code value="7" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="2" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>GetNextFrame(...)</name>
-<extent>
-<description>declaration</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="108" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="226" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -269,10 +145,134 @@
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
+<name>EnableTrack(bool)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="485" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../ZCamera/DepthCamera.h" line="219" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>EnableWideDepthMode(bool)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="384" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../ZCamera/DepthCamera.h" line="166" />
+</extent>
+<lines_of_code value="7" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="10" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>FindObjectUsingWidth(int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="336" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../ZCamera/DepthCamera.h" line="132" />
+</extent>
+<lines_of_code value="15" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="11" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>FreezeVideo(bool)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="507" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../ZCamera/DepthCamera.h" line="244" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>GetCameraInterface()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="449" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../ZCamera/DepthCamera.h" line="213" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="7" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>GetDepthWindowPosition(int &amp;,int &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="327" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../ZCamera/DepthCamera.h" line="124" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="8" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>GetMaxAllowedWidth()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="234" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../ZCamera/DepthCamera.h" line="107" />
+</extent>
+<lines_of_code value="7" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="5" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>GetNextFrame(...)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../ZCamera/DepthCamera.h" line="201" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="14" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
 <name>GetNextFrame(char *&amp;,char *&amp;,char *&amp;,char *&amp;,char *&amp;,int)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../ZCamera/DepthCamera.cpp" line="417" />
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="422" />
 </extent>
 <lines_of_code value="22" level="0" />
 <McCabes_cyclomatic_complexity value="4" level="0" />
@@ -284,15 +284,15 @@
 <name>GetVideoSize(int &amp;,int &amp;,int &amp;,int &amp;,int &amp;,int &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../ZCamera/DepthCamera.cpp" line="216" />
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="221" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="54" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="99" />
 </extent>
 <lines_of_code value="13" level="0" />
 <McCabes_cyclomatic_complexity value="3" level="0" />
-<lines_of_comment value="2" level="0" />
+<lines_of_comment value="11" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -300,11 +300,11 @@
 <name>Initialize(...)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="45" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="76" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="4" level="0" />
+<lines_of_comment value="8" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -314,25 +314,25 @@
 <description>definition</description>
 <source_reference file="../../ZCamera/DepthCamera.cpp" line="105" />
 </extent>
-<lines_of_code value="54" level="1" />
-<McCabes_cyclomatic_complexity value="16" level="1" />
-<lines_of_comment value="13" level="0" />
-<lines_of_code_per_line_of_comment value="4.154" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="1.231" level="0" />
+<lines_of_code value="57" level="1" />
+<McCabes_cyclomatic_complexity value="17" level="1" />
+<lines_of_comment value="14" level="0" />
+<lines_of_code_per_line_of_comment value="4.071" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="1.214" level="0" />
 </member_function>
 <member_function>
 <name>IsDepthFilterEnabled()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../ZCamera/DepthCamera.cpp" line="406" />
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="411" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="101" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="185" />
 </extent>
 <lines_of_code value="7" level="0" />
 <McCabes_cyclomatic_complexity value="2" level="0" />
-<lines_of_comment value="2" level="0" />
+<lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -340,15 +340,15 @@
 <name>IsIRVideoTransferEnabled()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../ZCamera/DepthCamera.cpp" line="371" />
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="376" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="87" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="158" />
 </extent>
 <lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="2" level="0" />
+<lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -356,15 +356,15 @@
 <name>IsRGBFullResolutionEnabled()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../ZCamera/DepthCamera.cpp" line="357" />
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="362" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="80" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="145" />
 </extent>
 <lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="2" level="0" />
+<lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -372,15 +372,15 @@
 <name>IsWideDepthModeEnabled()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../ZCamera/DepthCamera.cpp" line="388" />
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="393" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="95" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="172" />
 </extent>
 <lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="2" level="0" />
+<lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -388,15 +388,15 @@
 <name>Lock()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../ZCamera/DepthCamera.cpp" line="468" />
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="473" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="135" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="269" />
 </extent>
 <lines_of_code value="7" level="0" />
 <McCabes_cyclomatic_complexity value="3" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -404,15 +404,15 @@
 <name>SetCleanVal(double)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../ZCamera/DepthCamera.cpp" line="492" />
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="497" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="121" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="232" />
 </extent>
 <lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -420,47 +420,47 @@
 <name>SetDepthWindowPosition(int,int)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../ZCamera/DepthCamera.cpp" line="240" />
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="245" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="64" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="116" />
 </extent>
 <lines_of_code value="71" level="1" />
 <McCabes_cyclomatic_complexity value="14" level="1" />
-<lines_of_comment value="9" level="0" />
-<lines_of_code_per_line_of_comment value="7.889" level="1" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="1.556" level="0" />
+<lines_of_comment value="13" level="0" />
+<lines_of_code_per_line_of_comment value="5.462" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="1.077" level="0" />
 </member_function>
 <member_function>
 <name>SetFrames(char *,char *,char *,char *,char *)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../ZCamera/DepthCamera.cpp" line="449" />
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="454" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="132" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="262" />
 </extent>
 <lines_of_code value="20" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="2" level="0" />
-<lines_of_code_per_line_of_comment value="10.000" level="0" />
+<lines_of_comment value="9" level="0" />
+<lines_of_code_per_line_of_comment value="2.222" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
 <name>UnInitialize()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../ZCamera/DepthCamera.cpp" line="166" />
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="171" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="129" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="252" />
 </extent>
 <lines_of_code value="17" level="0" />
 <McCabes_cyclomatic_complexity value="2" level="0" />
-<lines_of_comment value="2" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -468,15 +468,15 @@
 <name>Unlock()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../ZCamera/DepthCamera.cpp" line="475" />
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="480" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="136" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="274" />
 </extent>
 <lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -484,11 +484,11 @@
 <name>cmdCallBack(int,void *)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="33" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="54" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="6" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -496,11 +496,11 @@
 <name>videoCallBack(char *,char *,int,void *)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="31" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="45" />
 </extent>
 <lines_of_code value="2" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="8" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -512,11 +512,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="39" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="65" />
 </extent>
 <lines_of_code value="9" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="2" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -530,7 +530,7 @@
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../ZCamera/ZCamera.h" line="42" />
+<source_reference file="../../ZCamera/ZCamera.h" line="66" />
 </extent>
 </client_module>
 <supplier_module>
@@ -539,49 +539,45 @@
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="142" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="299" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="143" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="304" />
 </extent>
 <name>TDVCameraInterfaceBase</name>
 <visible>false</visible>
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="138" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="279" />
 </extent>
 <name>bool</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../ZCamera/DepthCamera.cpp" line="350" />
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="355" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../ZCamera/DepthCamera.cpp" line="364" />
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="369" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../ZCamera/DepthCamera.cpp" line="379" />
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="384" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../ZCamera/DepthCamera.cpp" line="394" />
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="399" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../ZCamera/DepthCamera.cpp" line="480" />
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="485" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../ZCamera/DepthCamera.cpp" line="486" />
-</extent>
-<extent>
-<description>pass by value</description>
-<source_reference file="../../ZCamera/DepthCamera.cpp" line="497" />
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="491" />
 </extent>
 <extent>
 <description>pass by value</description>
@@ -589,51 +585,55 @@
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="77" />
+<source_reference file="../../ZCamera/DepthCamera.cpp" line="507" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="84" />
-</extent>
-<extent>
-<description>pass by value</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="92" />
-</extent>
-<extent>
-<description>pass by value</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="98" />
-</extent>
-<extent>
-<description>pass by value</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="119" />
-</extent>
-<extent>
-<description>pass by value</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="120" />
-</extent>
-<extent>
-<description>pass by value</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="122" />
-</extent>
-<extent>
-<description>pass by value</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="123" />
-</extent>
-<extent>
-<description>has by value</description>
 <source_reference file="../../ZCamera/DepthCamera.h" line="139" />
 </extent>
 <extent>
-<description>has by value</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="140" />
+<description>pass by value</description>
+<source_reference file="../../ZCamera/DepthCamera.h" line="152" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../ZCamera/DepthCamera.h" line="166" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../ZCamera/DepthCamera.h" line="179" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../ZCamera/DepthCamera.h" line="219" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../ZCamera/DepthCamera.h" line="226" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../ZCamera/DepthCamera.h" line="238" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../ZCamera/DepthCamera.h" line="244" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="141" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="284" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="149" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="289" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../ZCamera/DepthCamera.h" line="294" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../ZCamera/DepthCamera.h" line="334" />
 </extent>
 </supplier_module>
 </module>

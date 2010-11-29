@@ -2,13 +2,13 @@
 <!--Detailed report on module Projectile-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="73" level="0" />
+<lines_of_code value="74" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
 <McCabes_cyclomatic_complexity value="7" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
 <lines_of_code value="67" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="1.090" level="0" />
+<lines_of_code_per_line_of_comment value="1.104" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="0.104" level="0" />
 <weighted_methods_per_class_unity value="12" level="0" />
 <weighted_methods_per_class_visibility value="10" level="0" />
@@ -19,10 +19,17 @@
 <IF4_per_member_function value="********" level="2" />
 <IF4_visible value="400" level="2" />
 <IF4_visible_per_member_function value="********" level="2" />
-<IF4_concrete value="9" level="0" />
+<IF4_concrete value="4" level="0" />
 <IF4_concrete_per_member_function value="********" level="2" />
 </module_summary>
 <module_detail>
+<description>declaration</description>
+<source_reference file="../../Common/CommonProxy.h" line="25" />
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 <description>definition</description>
 <source_reference file="../../Common/Projectile.h" line="11" />
 <lines_of_code value="9" level="0" />
@@ -188,7 +195,7 @@
 <name>serialize(Archive &amp;,const int)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Common/Projectile.h" line="114" />
+<source_reference file="../../Common/Projectile.h" line="119" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
@@ -222,90 +229,98 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Logger/HumanFormatLogger.h" line="124" />
+<source_reference file="../../Logger/HumanFormatLogger.h" line="66" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Logger/HumanFormatLogger.h" line="155" />
 </extent>
 <name>Logger</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Logger/Logger.h" line="36" />
+<source_reference file="../../Logger/Logger.h" line="97" />
 </extent>
 <name>Mediator</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Mediator/Mediator.cpp" line="105" />
+<source_reference file="../../Mediator/Mediator.cpp" line="102" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Mediator/Mediator.h" line="79" />
+<source_reference file="../../Mediator/Mediator.h" line="114" />
 </extent>
 <name>Network</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/Network.h" line="109" />
+<source_reference file="../../Network/Network.h" line="106" />
 </extent>
 <name>NetworkReplayer</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Replay/NetworkReplayer.cpp" line="178" />
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="181" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Replay/NetworkReplayer.h" line="42" />
+<source_reference file="../../Replay/NetworkReplayer.h" line="121" />
 </extent>
 <name>PerspectiveMath</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/PerspectiveMath.cpp" line="14" />
+<source_reference file="../../Utils/PerspectiveMath.cpp" line="14" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/PerspectiveMath.h" line="30" />
+<source_reference file="../../Utils/PerspectiveMath.h" line="30" />
 </extent>
 <name>ReplayFormatLogger</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Logger/ReplayFormatLogger.h" line="149" />
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="69" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="178" />
 </extent>
 <name>VirtualBall</name>
 <visible>true</visible>
-<concrete>true</concrete>
+<concrete>false</concrete>
 <extent>
-<description>pass by value</description>
-<source_reference file="../../Game/VirtualBall.cpp" line="28" />
+<description>pass by reference</description>
+<source_reference file="../../Game/VirtualBall.cpp" line="30" />
 </extent>
 <extent>
-<description>pass by value</description>
-<source_reference file="../../Game/VirtualBall.h" line="34" />
+<description>pass by reference</description>
+<source_reference file="../../Game/VirtualBall.h" line="36" />
 </extent>
 <name>VirtualEnvironment</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualEnvironment.cpp" line="69" />
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="75" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="85" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="89" />
 </extent>
 <name>WinsockNetwork</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="81" />
+<source_reference file="../../Network/WinsockNetwork.h" line="145" />
 </extent>
 </client_module>
 <supplier_module>
@@ -314,7 +329,7 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Common/Projectile.h" line="114" />
+<source_reference file="../../Common/Projectile.h" line="119" />
 </extent>
 <name>cVector3d</name>
 <visible>true</visible>

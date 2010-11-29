@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -48,12 +49,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <h1>UserInterfaceSubject Class Reference</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="UserInterfaceSubject" --><div class="dynheader">
+<!-- doxytag: class="UserInterfaceSubject" -->
+<p>A class needed for the subject/observer user pattern.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="UserInterfaceSubject_8h_source.html">UserInterfaceSubject.h</a>&gt;</code></p>
+<div class="dynheader">
 Inheritance diagram for UserInterfaceSubject:</div>
 <div class="dyncontent">
  <div class="center">
@@ -67,16 +74,171 @@ Inheritance diagram for UserInterfaceSubject:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac7883808bd4089614b378a8a5309b9c5"></a><!-- doxytag: member="UserInterfaceSubject::attach" ref="ac7883808bd4089614b378a8a5309b9c5" args="(UserInterfaceObserver *observer)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>attach</b> (<a class="el" href="classUserInterfaceObserver.html">UserInterfaceObserver</a> *observer)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6b897c262b4f349da028dd91a8683d7e"></a><!-- doxytag: member="UserInterfaceSubject::detach" ref="a6b897c262b4f349da028dd91a8683d7e" args="(UserInterfaceObserver *observer)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>detach</b> (<a class="el" href="classUserInterfaceObserver.html">UserInterfaceObserver</a> *observer)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a42cbee9b83c54ca6c92d66b0385b2925"></a><!-- doxytag: member="UserInterfaceSubject::notify" ref="a42cbee9b83c54ca6c92d66b0385b2925" args="(UserInterfaceUpdateContext context, const void *data=NULL)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>notify</b> (UserInterfaceUpdateContext context, const void *data=NULL)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUserInterfaceSubject.html#aba673d312f17f17ba04e5214ab501443">UserInterfaceSubject</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#aba673d312f17f17ba04e5214ab501443"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUserInterfaceSubject.html#a74605afbafb8eb92fa1f5cf939b4c5b1">~UserInterfaceSubject</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#a74605afbafb8eb92fa1f5cf939b4c5b1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUserInterfaceSubject.html#ac7883808bd4089614b378a8a5309b9c5">attach</a> (<a class="el" href="classUserInterfaceObserver.html">UserInterfaceObserver</a> *observer)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Attaches the subject to the observer.  <a href="#ac7883808bd4089614b378a8a5309b9c5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUserInterfaceSubject.html#a6b897c262b4f349da028dd91a8683d7e">detach</a> (<a class="el" href="classUserInterfaceObserver.html">UserInterfaceObserver</a> *observer)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Detaches the subject to the observer.  <a href="#a6b897c262b4f349da028dd91a8683d7e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUserInterfaceSubject.html#a42cbee9b83c54ca6c92d66b0385b2925">notify</a> (<a class="el" href="UserInterfaceObserver_8h.html#ad1eb8a0c335743e35a99b456afcc81ac">UserInterfaceUpdateContext</a> context, const void *data=NULL)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Notifies the observer of the new context.  <a href="#a42cbee9b83c54ca6c92d66b0385b2925"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::vector<br class="typebreak"/>
+&lt; <a class="el" href="classUserInterfaceObserver.html">UserInterfaceObserver</a> * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUserInterfaceSubject.html#a60c06569f75acddf0ae1a3fc6be3743c">m_observers</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">A vector of observers.  <a href="#a60c06569f75acddf0ae1a3fc6be3743c"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>A class needed for the subject/observer user pattern. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="aba673d312f17f17ba04e5214ab501443"></a><!-- doxytag: member="UserInterfaceSubject::UserInterfaceSubject" ref="aba673d312f17f17ba04e5214ab501443" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UserInterfaceSubject::UserInterfaceSubject </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a74605afbafb8eb92fa1f5cf939b4c5b1"></a><!-- doxytag: member="UserInterfaceSubject::~UserInterfaceSubject" ref="a74605afbafb8eb92fa1f5cf939b4c5b1" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UserInterfaceSubject::~UserInterfaceSubject </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ac7883808bd4089614b378a8a5309b9c5"></a><!-- doxytag: member="UserInterfaceSubject::attach" ref="ac7883808bd4089614b378a8a5309b9c5" args="(UserInterfaceObserver *observer)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UserInterfaceSubject::attach </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classUserInterfaceObserver.html">UserInterfaceObserver</a> *&nbsp;</td>
+          <td class="paramname"> <em>observer</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Attaches the subject to the observer. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>observer</em>&nbsp;</td><td>The observer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a6b897c262b4f349da028dd91a8683d7e"></a><!-- doxytag: member="UserInterfaceSubject::detach" ref="a6b897c262b4f349da028dd91a8683d7e" args="(UserInterfaceObserver *observer)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UserInterfaceSubject::detach </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classUserInterfaceObserver.html">UserInterfaceObserver</a> *&nbsp;</td>
+          <td class="paramname"> <em>observer</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Detaches the subject to the observer. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>observer</em>&nbsp;</td><td>The observer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a42cbee9b83c54ca6c92d66b0385b2925"></a><!-- doxytag: member="UserInterfaceSubject::notify" ref="a42cbee9b83c54ca6c92d66b0385b2925" args="(UserInterfaceUpdateContext context, const void *data=NULL)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UserInterfaceSubject::notify </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="UserInterfaceObserver_8h.html#ad1eb8a0c335743e35a99b456afcc81ac">UserInterfaceUpdateContext</a>&nbsp;</td>
+          <td class="paramname"> <em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&nbsp;</td>
+          <td class="paramname"> <em>data</em> = <code>NULL</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Notifies the observer of the new context. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>context</em>&nbsp;</td><td>The context to be updated. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>data</em>&nbsp;</td><td>The data being passed through with the update. Is NULL by default. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a60c06569f75acddf0ae1a3fc6be3743c"></a><!-- doxytag: member="UserInterfaceSubject::m_observers" ref="a60c06569f75acddf0ae1a3fc6be3743c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classUserInterfaceObserver.html">UserInterfaceObserver</a>*&gt; <a class="el" href="classUserInterfaceSubject.html#a60c06569f75acddf0ae1a3fc6be3743c">UserInterfaceSubject::m_observers</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>A vector of observers. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/<a class="el" href="UserInterfaceSubject_8h_source.html">UserInterfaceSubject.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterfaceSubject.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/UserInterface/<a class="el" href="UserInterfaceSubject_8h_source.html">UserInterfaceSubject.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/UserInterface/<a class="el" href="UserInterfaceSubject_8cpp.html">UserInterfaceSubject.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -84,7 +246,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>notify</b> (UserInter
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -93,7 +255,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>notify</b> (UserInter
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:10 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:46 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

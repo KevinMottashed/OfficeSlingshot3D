@@ -2,15 +2,15 @@
 <!--Detailed report on module anonymous-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="172" level="0" />
+<lines_of_code value="205" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
-<McCabes_cyclomatic_complexity value="39" level="0" />
+<McCabes_cyclomatic_complexity value="48" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
-<lines_of_code value="110" level="0" />
+<lines_of_code value="145" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="1.564" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.355" level="0" />
-<weighted_methods_per_class_unity value="19" level="0" />
+<lines_of_code_per_line_of_comment value="1.414" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.331" level="0" />
+<weighted_methods_per_class_unity value="20" level="0" />
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
@@ -41,19 +41,19 @@
 <name>BEGIN_MESSAGE_MAP(CMainDlg,CDialog)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="31" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="32" />
 </extent>
-<lines_of_code value="20" level="0" />
+<lines_of_code value="27" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
 <lines_of_comment value="8" level="0" />
-<lines_of_code_per_line_of_comment value="2.500" level="0" />
+<lines_of_code_per_line_of_comment value="3.375" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
 <name>BEGIN_MESSAGE_MAP(CPreferences,CDialog)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/Preferences.cpp" line="47" />
+<source_reference file="../../UserInterface/Preferences.cpp" line="44" />
 </extent>
 <lines_of_code value="2" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -65,23 +65,11 @@
 <name>BEGIN_MESSAGE_MAP(MFCOpenGLControl,CWnd)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="18" />
+<source_reference file="../../UserInterface/MFCOpenGLControl.cpp" line="21" />
 </extent>
-<lines_of_code value="17" level="0" />
+<lines_of_code value="15" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>BEGIN_MESSAGE_MAP(NetworkSocket,CSocket)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../Network/NetworkSocket.cpp" line="26" />
-</extent>
-<lines_of_code value="10" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="5" level="0" />
+<lines_of_comment value="0" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -93,11 +81,23 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="25" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="29" />
 </extent>
 <lines_of_code value="11" level="0" />
 <McCabes_cyclomatic_complexity value="4" level="0" />
-<lines_of_comment value="14" level="0" />
+<lines_of_comment value="16" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>lookup(BodyPartEnum)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Common/BodyPartEnum.h" line="30" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -105,7 +105,7 @@
 <name>lookup(ConnectionStateEnum)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Common/ConnectionStateEnum.h" line="28" />
+<source_reference file="../../Common/ConnectionStateEnum.h" line="30" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -117,7 +117,7 @@
 <name>lookup(GameStateEnum)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Common/GameStateEnum.h" line="27" />
+<source_reference file="../../Common/GameStateEnum.h" line="29" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -129,11 +129,11 @@
 <name>lookup(LogEventCategoryEnum)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Logger/LogEventCategoryEnum.h" line="21" />
+<source_reference file="../../Logger/LogEventCategoryEnum.h" line="32" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -141,11 +141,11 @@
 <name>lookup(LogEventEnum)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Logger/LogEventEnum.h" line="55" />
+<source_reference file="../../Logger/LogEventEnum.h" line="68" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -153,7 +153,7 @@
 <name>lookup(PlayerEnum)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Common/PlayerEnum.h" line="26" />
+<source_reference file="../../Common/PlayerEnum.h" line="28" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -165,23 +165,39 @@
 <name>lookup(rc_network)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Network/NetworkCodes.h" line="27" />
+<source_reference file="../../Network/NetworkCodes.h" line="32" />
 </extent>
-<lines_of_code value="36" level="1" />
-<McCabes_cyclomatic_complexity value="16" level="1" />
-<lines_of_comment value="1" level="0" />
-<lines_of_code_per_line_of_comment value="36.000" level="2" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="16.000" level="2" />
+<lines_of_code value="30" level="0" />
+<McCabes_cyclomatic_complexity value="13" level="1" />
+<lines_of_comment value="5" level="0" />
+<lines_of_code_per_line_of_comment value="6.000" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="2.600" level="0" />
 </member_function>
 <member_function>
 <name>lookupCategory(LogEvent_t)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Logger/LogEventCategoryEnum.h" line="24" />
+<source_reference file="../../Logger/LogEventCategoryEnum.h" line="39" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="5" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>operator &lt;&lt;(ostream &amp;,const PhysicsSync &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Common/PhysicsSync.cpp" line="21" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Common/PhysicsSync.h" line="58" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="6" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -193,11 +209,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Common/Projectile.h" line="107" />
+<source_reference file="../../Common/Projectile.h" line="112" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="6" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -205,7 +221,7 @@
 <name>operator &lt;&lt;(ostream &amp;,const TestRunner &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Test/TestRunner.cpp" line="40" />
+<source_reference file="../../Test/TestRunner.cpp" line="42" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -221,15 +237,15 @@
 <name>operator &lt;&lt;(ostream &amp;,const UserPreferences &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Common/UserPreferences.cpp" line="3" />
+<source_reference file="../../Common/UserPreferences.cpp" line="25" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Common/UserPreferences.h" line="60" />
+<source_reference file="../../Common/UserPreferences.h" line="79" />
 </extent>
-<lines_of_code value="9" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="8" level="0" />
+<lines_of_code value="12" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_comment value="7" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -237,17 +253,17 @@
 <name>operator &gt;&gt;(istream &amp;,UserPreferences &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Common/UserPreferences.cpp" line="12" />
+<source_reference file="../../Common/UserPreferences.cpp" line="37" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Common/UserPreferences.h" line="70" />
+<source_reference file="../../Common/UserPreferences.h" line="90" />
 </extent>
-<lines_of_code value="9" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="8" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+<lines_of_code value="44" level="1" />
+<McCabes_cyclomatic_complexity value="10" level="0" />
+<lines_of_comment value="14" level="0" />
+<lines_of_code_per_line_of_comment value="3.143" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.714" level="0" />
 </member_function>
 <member_function>
 <name>serialize(Archive &amp;,cVector3d &amp;,const int)</name>
@@ -269,13 +285,13 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="22" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="24" />
 </extent>
 <lines_of_code value="27" level="0" />
 <McCabes_cyclomatic_complexity value="13" level="1" />
-<lines_of_comment value="28" level="0" />
-<lines_of_code_per_line_of_comment value="0.964" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.464" level="0" />
+<lines_of_comment value="30" level="0" />
+<lines_of_code_per_line_of_comment value="0.900" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.433" level="0" />
 </member_function>
 </procedural_detail>
 <structural_detail>

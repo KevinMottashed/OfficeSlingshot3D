@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module UserPreferences-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="44" level="0" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
+<lines_of_code value="41" level="0" />
+<lines_of_code_per_member_function value="********" level="2" />
+<lines_of_code_per_line_of_comment value="1.073" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+<weighted_methods_per_class_unity value="2" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="14" level="0" />
+<IF4 value="1089" level="2" />
+<IF4_per_member_function value="********" level="2" />
+<IF4_visible value="576" level="2" />
+<IF4_visible_per_member_function value="********" level="2" />
+<IF4_concrete value="64" level="1" />
+<IF4_concrete_per_member_function value="********" level="2" />
+</module_summary>
+<module_detail>
+<description>declaration</description>
+<source_reference file="../../Common/CommonProxy.h" line="26" />
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+<description>definition</description>
+<source_reference file="../../Common/UserPreferences.h" line="17" />
+<lines_of_code value="21" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="38" level="0" />
+<lines_of_code_per_line_of_comment value="0.553" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module_detail>
+<procedural_detail>
+<member_function>
+<name>serialize(Archive &amp;,const int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Common/UserPreferences.h" line="97" />
+</extent>
+<lines_of_code value="10" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>setDefaults()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Common/UserPreferences.cpp" line="13" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Common/UserPreferences.h" line="56" />
+</extent>
+<lines_of_code value="12" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="3" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>UserPreferences</name>
+<client_module>
+<name>CMainDlg</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MainDlg.cpp" line="8" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../UserInterface/MainDlg.h" line="131" />
+</extent>
+<name>CPreferences</name>
+<visible>false</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/Preferences.cpp" line="11" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../UserInterface/Preferences.h" line="35" />
+</extent>
+<name>Configuration</name>
+<visible>false</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Mediator/Configuration.cpp" line="43" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Mediator/Configuration.h" line="36" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Mediator/Configuration.h" line="52" />
+</extent>
+<name>HumanFormatLogger</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Logger/HumanFormatLogger.h" line="73" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Logger/HumanFormatLogger.h" line="163" />
+</extent>
+<name>Logger</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Logger/Logger.h" line="104" />
+</extent>
+<name>MFCUserInterface</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="5" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="127" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="29" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="134" />
+</extent>
+<name>Mediator</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="433" />
+</extent>
+<name>ReplayFormatLogger</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="76" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="186" />
+</extent>
+<name>Replayer</name>
+<visible>false</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/Replayer.cpp" line="6" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/Replayer.h" line="24" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Replay/Replayer.h" line="43" />
+</extent>
+<name>UserInterface</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="131" />
+</extent>
+<name>UserInterfaceReplayer</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/UserInterfaceReplayer.cpp" line="6" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/UserInterfaceReplayer.h" line="15" />
+</extent>
+</client_module>
+<supplier_module>
+<name>Archive</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Common/UserPreferences.h" line="97" />
+</extent>
+<name>bool</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Common/UserPreferences.h" line="40" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Common/UserPreferences.h" line="43" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Common/UserPreferences.h" line="49" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Common/UserPreferences.h" line="51" />
+</extent>
+<name>string</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Common/UserPreferences.h" line="23" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Common/UserPreferences.h" line="28" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Common/UserPreferences.h" line="45" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Common/UserPreferences.h" line="46" />
+</extent>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>

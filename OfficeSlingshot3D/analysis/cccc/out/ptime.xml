@@ -14,7 +14,7 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="1" level="0" />
+<coupling_between_objects value="2" level="0" />
 <IF4 value="0" level="0" />
 <IF4_per_member_function value="********" level="0" />
 <IF4_visible value="0" level="0" />
@@ -30,6 +30,13 @@
 <module>
 <name>ptime</name>
 <client_module>
+<name>ReplayFormatLogger</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="114" />
+</extent>
 <name>Replayer</name>
 <visible>true</visible>
 <concrete>true</concrete>

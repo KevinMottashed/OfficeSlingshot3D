@@ -35,11 +35,11 @@
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="213" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="218" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="27" />
+<source_reference file="../../UserInterface/MainDlg.h" line="40" />
 </extent>
 <name>MFCUserInterface</name>
 <visible>true</visible>
@@ -50,21 +50,21 @@
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="33" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="51" />
 </extent>
 <name>NetworkReplayer</name>
 <visible>false</visible>
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Replay/NetworkReplayer.h" line="51" />
+<source_reference file="../../Replay/NetworkReplayer.h" line="166" />
 </extent>
 <name>UserInterface</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/UserInterface.h" line="33" />
+<source_reference file="../../UserInterface/UserInterface.h" line="48" />
 </extent>
 </client_module>
 <supplier_module>

@@ -35,7 +35,7 @@
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../Main/Chat.h" line="17" />
+<source_reference file="../../Main/Chat.h" line="16" />
 </extent>
 </client_module>
 <supplier_module>

@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -53,7 +54,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>TDVCameraInterfaceBase2 Class Reference</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="TDVCameraInterfaceBase2" --><div class="dynheader">
+<!-- doxytag: class="TDVCameraInterfaceBase2" -->
+<p><a class="el" href="classTDVCameraInterfaceBase2.html" title="TDVCameraInterfaceBase2 contains.">TDVCameraInterfaceBase2</a> contains.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="TDVCameraInterface2_8h_source.html">TDVCameraInterface2.h</a>&gt;</code></p>
+<div class="dynheader">
 Inheritance diagram for TDVCameraInterfaceBase2:</div>
 <div class="dyncontent">
  <div class="center">
@@ -65,175 +71,2253 @@ Inheritance diagram for TDVCameraInterfaceBase2:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a684145d3ee389c45eb5677eab1e55759"></a><!-- doxytag: member="TDVCameraInterfaceBase2::setCameraCommand" ref="a684145d3ee389c45eb5677eab1e55759" args="(int cmdID, int value)=0" -->
-virtual HRESULT&nbsp;</td><td class="memItemRight" valign="bottom"><b>setCameraCommand</b> (int cmdID, int value)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6322af8ebc298d65d06b5194441e43b"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getCameraCommandVal" ref="ab6322af8ebc298d65d06b5194441e43b" args="(int cmdID, int &amp;value) const =0" -->
-virtual HRESULT&nbsp;</td><td class="memItemRight" valign="bottom"><b>getCameraCommandVal</b> (int cmdID, int &amp;value) const =0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3019b4da3230741db16d122ac7980503"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getCameraCommandLimits" ref="a3019b4da3230741db16d122ac7980503" args="(int cmdID, int &amp;minValue, int &amp;maxValue) const =0" -->
-virtual HRESULT&nbsp;</td><td class="memItemRight" valign="bottom"><b>getCameraCommandLimits</b> (int cmdID, int &amp;minValue, int &amp;maxValue) const =0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a51410aae9341c6809bedea5c79091d82"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getVideoBuffer" ref="a51410aae9341c6809bedea5c79091d82" args="(int bufferType, unsigned char *&amp;pBuffer)=0" -->
-virtual HRESULT&nbsp;</td><td class="memItemRight" valign="bottom"><b>getVideoBuffer</b> (int bufferType, unsigned char *&amp;pBuffer)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a54e310f7c97367f393a05439b260bc05"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdColorCameraSetting" ref="a54e310f7c97367f393a05439b260bc05" args="(int iColorCommandID, int iValue)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdColorCameraSetting</b> (int iColorCommandID, int iValue)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a63c1f5ddf8b9af6e7b8b156088c5f789"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getColorCameraSetting" ref="a63c1f5ddf8b9af6e7b8b156088c5f789" args="(int iColorCommandID, int &amp;iValue) const " -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>getColorCameraSetting</b> (int iColorCommandID, int &amp;iValue) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af269978a958edc2dc7baea5bc5bcdef6"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getColorCameraSettingLimit" ref="af269978a958edc2dc7baea5bc5bcdef6" args="(int iColorCommandID, int &amp;min, int &amp;max) const " -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>getColorCameraSettingLimit</b> (int iColorCommandID, int &amp;min, int &amp;max) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8c02c4da359f4e0125c7065819d1e8c7"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdCameraOn" ref="a8c02c4da359f4e0125c7065819d1e8c7" args="()" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdCameraOn</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6c7e30c193de170600f89a9d057412f7"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdCameraOff" ref="a6c7e30c193de170600f89a9d057412f7" args="()" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdCameraOff</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a988c6da99531b00c8071b9869748417b"></a><!-- doxytag: member="TDVCameraInterfaceBase2::isCameraOn" ref="a988c6da99531b00c8071b9869748417b" args="() const " -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>isCameraOn</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa7e00476c05bf11c55016d2e3923ba5a"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getMaxBrightness" ref="aa7e00476c05bf11c55016d2e3923ba5a" args="() const " -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getMaxBrightness</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aab905160ffcd2009c6a90aacd95301a2"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getMinBrightness" ref="aab905160ffcd2009c6a90aacd95301a2" args="() const " -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getMinBrightness</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab343a20c0bb19fe8ae30bab85d401baa"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdPrimaryBrightness" ref="ab343a20c0bb19fe8ae30bab85d401baa" args="(int value)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdPrimaryBrightness</b> (int value)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa616448268d8472c195278ac9b3aee0b"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getPrimaryBrightness" ref="aa616448268d8472c195278ac9b3aee0b" args="() const " -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getPrimaryBrightness</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae5c5e7f25aca037e483ac1236d58fe5f"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdSecondaryBrightness" ref="ae5c5e7f25aca037e483ac1236d58fe5f" args="(int value)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdSecondaryBrightness</b> (int value)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa0bf4daab59df0e592768a68cfab8c43"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getSecondaryBrightness" ref="aa0bf4daab59df0e592768a68cfab8c43" args="() const " -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getSecondaryBrightness</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a63ac302b5a4e2f27b66ba08f11911f70"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getMaxWidth" ref="a63ac302b5a4e2f27b66ba08f11911f70" args="() const " -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getMaxWidth</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acfc463b8b3f949de11b589fed48638a6"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getMinWidth" ref="acfc463b8b3f949de11b589fed48638a6" args="() const " -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getMinWidth</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7c11a0dfa3230006f7b870dd9f5c950c"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdPrimaryWidth" ref="a7c11a0dfa3230006f7b870dd9f5c950c" args="(int value)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdPrimaryWidth</b> (int value)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a714dd64055e8ecdf851f5cdc8c899c25"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getPrimaryWidth" ref="a714dd64055e8ecdf851f5cdc8c899c25" args="() const " -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getPrimaryWidth</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5062371499a5f5fa262f8fef22efdfc9"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdSecondaryWidth" ref="a5062371499a5f5fa262f8fef22efdfc9" args="(int value)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdSecondaryWidth</b> (int value)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a52828a04c73328758d67b6f381653428"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getSecondaryWidth" ref="a52828a04c73328758d67b6f381653428" args="() const " -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getSecondaryWidth</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad7b72ddc0bdac856e4dc5fb6bbb99cfc"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getMaxDistance" ref="ad7b72ddc0bdac856e4dc5fb6bbb99cfc" args="() const " -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getMaxDistance</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac87c6734afdc4dd27cf37d7d92d128ab"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getMinDistance" ref="ac87c6734afdc4dd27cf37d7d92d128ab" args="() const " -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getMinDistance</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a60fad90a7ebd5354ccca87e19abdfd28"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdPrimaryDist" ref="a60fad90a7ebd5354ccca87e19abdfd28" args="(int value)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdPrimaryDist</b> (int value)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aea0a3141dae5b18e66b81862be286e90"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getPrimaryDist" ref="aea0a3141dae5b18e66b81862be286e90" args="() const " -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getPrimaryDist</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a711d6c76704fb19d4cf17612a131ed18"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdSecondaryDist" ref="a711d6c76704fb19d4cf17612a131ed18" args="(int value)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdSecondaryDist</b> (int value)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acfa0c0769263b2852ffb7893cff1179e"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getSecondaryDist" ref="acfa0c0769263b2852ffb7893cff1179e" args="() const " -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getSecondaryDist</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a91c347ac98df9fce1bdae10ac0988d5b"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getMaxGain" ref="a91c347ac98df9fce1bdae10ac0988d5b" args="() const " -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getMaxGain</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2ebfb11b935fac730c9aa973a67e2bac"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getMinGain" ref="a2ebfb11b935fac730c9aa973a67e2bac" args="() const " -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getMinGain</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac7cd647d5f8ea76b305c0ba4d434acd4"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdGain" ref="ac7cd647d5f8ea76b305c0ba4d434acd4" args="(int value)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdGain</b> (int value)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a78a534aa9676766be2338ef68302e640"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getGain" ref="a78a534aa9676766be2338ef68302e640" args="() const " -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getGain</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aafed77798e0cf7c8e2c5093782a16361"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getMinFilterVal" ref="aafed77798e0cf7c8e2c5093782a16361" args="() const " -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getMinFilterVal</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acc7400a53f77b2c5d94aed93009579b7"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getMaxFilterVal" ref="acc7400a53f77b2c5d94aed93009579b7" args="() const " -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getMaxFilterVal</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a153203745fb70783b166d29935d05adf"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getMinSoftnessVal" ref="a153203745fb70783b166d29935d05adf" args="() const " -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getMinSoftnessVal</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a177b2e039f3abdb3a8b75f9f41c7d78d"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getMaxSoftnessVal" ref="a177b2e039f3abdb3a8b75f9f41c7d78d" args="() const " -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getMaxSoftnessVal</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa76b67341fee260a64c81419125822b0"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdBinVal" ref="aa76b67341fee260a64c81419125822b0" args="(int value)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdBinVal</b> (int value)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a306c0eda9013f9236de4bfc77d75d011"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getBinVal" ref="a306c0eda9013f9236de4bfc77d75d011" args="() const " -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getBinVal</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0e4ca14432e810b4d0c44da6d41371ac"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdBinarizeOnOff" ref="a0e4ca14432e810b4d0c44da6d41371ac" args="(bool value)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdBinarizeOnOff</b> (bool value)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0f313e34b1e754bfefa21cbccd4d914c"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getBinarizeOnOff" ref="a0f313e34b1e754bfefa21cbccd4d914c" args="() const " -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>getBinarizeOnOff</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7565271a8464c7de45e470218b19f2fc"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdMedianOnOff" ref="a7565271a8464c7de45e470218b19f2fc" args="(bool value)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdMedianOnOff</b> (bool value)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a209bf23c6415591265b1fa9655f9be0a"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getMedianOnOff" ref="a209bf23c6415591265b1fa9655f9be0a" args="() const " -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>getMedianOnOff</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5424cfc75464477533219db9407f1810"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdInvertOnOff" ref="a5424cfc75464477533219db9407f1810" args="(bool value)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdInvertOnOff</b> (bool value)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1e5ef180ec2dcbc7dafdcf536c4b907f"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getInvertOnOff" ref="a1e5ef180ec2dcbc7dafdcf536c4b907f" args="() const " -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>getInvertOnOff</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a25480b123cc8ea96b76055d47fef3705"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdTemporalFilterOnOff" ref="a25480b123cc8ea96b76055d47fef3705" args="(bool value)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdTemporalFilterOnOff</b> (bool value)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4aba5abd0c3f72115d4d84ab42bff89b"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getTemporalFilterOnOff" ref="a4aba5abd0c3f72115d4d84ab42bff89b" args="() const " -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>getTemporalFilterOnOff</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aee223c818363239f0b7308b589a676b5"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdSmoothOnOff" ref="aee223c818363239f0b7308b589a676b5" args="(bool value)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdSmoothOnOff</b> (bool value)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a489f0ed0b9bbd69b259e5f08f96f1cb8"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getSmoothOnOff" ref="a489f0ed0b9bbd69b259e5f08f96f1cb8" args="() const " -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>getSmoothOnOff</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab1d2c9cc2676b858c0dbf50035ee36f4"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdSoftness" ref="ab1d2c9cc2676b858c0dbf50035ee36f4" args="(int value)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdSoftness</b> (int value)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3cc4d16af60928ede441533b47792db0"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getSoftness" ref="a3cc4d16af60928ede441533b47792db0" args="() const " -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getSoftness</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a278bad41877f7cc67010513edddcb371"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdMaskSmoothOnOff" ref="a278bad41877f7cc67010513edddcb371" args="(bool value)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdMaskSmoothOnOff</b> (bool value)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5a643241c1c220a61ecf0c0a22e58229"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getMaskSmoothOnOff" ref="a5a643241c1c220a61ecf0c0a22e58229" args="() const " -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>getMaskSmoothOnOff</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7fd8c3ef57e1a603d8341e1b8f605d82"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdMaskSoftness" ref="a7fd8c3ef57e1a603d8341e1b8f605d82" args="(int value)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdMaskSoftness</b> (int value)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa9e8296220d1f6dfd0b3e80b186ce2fc"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getMaskSoftness" ref="aa9e8296220d1f6dfd0b3e80b186ce2fc" args="() const " -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getMaskSoftness</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a79660c40a44100ab0162dc1691d742ad"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdAutomaticBackgroundOnOff" ref="a79660c40a44100ab0162dc1691d742ad" args="(bool value)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdAutomaticBackgroundOnOff</b> (bool value)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a06af73ceaff68f12f4854ba1eb529c08"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getAutomaticBackground" ref="a06af73ceaff68f12f4854ba1eb529c08" args="()" -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>getAutomaticBackground</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4267605549783aba6499aa07cf35f3d1"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdAutomaticDepthPositionOnOff" ref="a4267605549783aba6499aa07cf35f3d1" args="(bool value)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdAutomaticDepthPositionOnOff</b> (bool value)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a854c8f778aa3f13c66c2639b5905e428"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getAutomaticDepthPosition" ref="a854c8f778aa3f13c66c2639b5905e428" args="()" -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>getAutomaticDepthPosition</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a941bef4b230eabf386507dca5299ecff"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdClean" ref="a941bef4b230eabf386507dca5299ecff" args="(int value)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdClean</b> (int value)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a56a29cde8078bcc26ce736a104a46ecc"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getClean" ref="a56a29cde8078bcc26ce736a104a46ecc" args="() const " -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getClean</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acae599e652152613bcfaab6334349471"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdSaveStatus" ref="acae599e652152613bcfaab6334349471" args="(int index)" -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdSaveStatus</b> (int index)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2a676dabbdbd67950e3cb764d97207f4"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdRestoreStatus" ref="a2a676dabbdbd67950e3cb764d97207f4" args="(int index)" -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdRestoreStatus</b> (int index)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9479b1f2083c5135bc4ed758f87eb826"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdStartAutomaticFind" ref="a9479b1f2083c5135bc4ed758f87eb826" args="()" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdStartAutomaticFind</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab2d29930d4ddbaf855e43ccaa139c4c2"></a><!-- doxytag: member="TDVCameraInterfaceBase2::isDuringAutomaticFind" ref="ab2d29930d4ddbaf855e43ccaa139c4c2" args="() const " -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>isDuringAutomaticFind</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a88da987cea5ee76654e64525c2938c57"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdAutomaticTracking" ref="a88da987cea5ee76654e64525c2938c57" args="(bool state)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdAutomaticTracking</b> (bool state)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a248c84bbb1232285fa00069d6263e8c7"></a><!-- doxytag: member="TDVCameraInterfaceBase2::isAutomaticTrackingOn" ref="a248c84bbb1232285fa00069d6263e8c7" args="() const " -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>isAutomaticTrackingOn</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab0839cd442d3a1c47b7c55578cf7ab0a"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdAutomaticBrightness" ref="ab0839cd442d3a1c47b7c55578cf7ab0a" args="(bool state)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdAutomaticBrightness</b> (bool state)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a54c95ac82e08bb3a2ee0ef847af2fd8d"></a><!-- doxytag: member="TDVCameraInterfaceBase2::isAutomaticBrightnessOn" ref="a54c95ac82e08bb3a2ee0ef847af2fd8d" args="() const " -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>isAutomaticBrightnessOn</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab1bfb1c5500793508cbe2c1c7d8d9a2b"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdSaveImage" ref="ab1bfb1c5500793508cbe2c1c7d8d9a2b" args="()" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdSaveImage</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a528e6c9ab7b284456571e5c954e0663a"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdSaveImageAverage" ref="a528e6c9ab7b284456571e5c954e0663a" args="()" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdSaveImageAverage</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7efb94988412cbb758d3b8971f4463a9"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdSaveSequence" ref="a7efb94988412cbb758d3b8971f4463a9" args="(int length, bool saveAVI)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdSaveSequence</b> (int length, bool saveAVI)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa2705a831908bb92aea85cb3cde82854"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdVideoFreeze" ref="aa2705a831908bb92aea85cb3cde82854" args="(bool state, bool useAverage=false)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdVideoFreeze</b> (bool state, bool useAverage=false)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a649b5e579d9f165c3fd08ca224bac40a"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdRGBProcessing" ref="a649b5e579d9f165c3fd08ca224bac40a" args="(bool status)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdRGBProcessing</b> (bool status)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a662d62abb6a0b268e9fe95fd545c360c"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getRGBProcessing" ref="a662d62abb6a0b268e9fe95fd545c360c" args="() const " -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>getRGBProcessing</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6f2b9e9efbbaddfc80801ab5cd0a99f1"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdConfidenceMapProcessing" ref="a6f2b9e9efbbaddfc80801ab5cd0a99f1" args="(bool status)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdConfidenceMapProcessing</b> (bool status)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a326817d66da92c7f7b022d8460097019"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getConfidenceMapProcessing" ref="a326817d66da92c7f7b022d8460097019" args="() const " -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>getConfidenceMapProcessing</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab1bea9c049e62e010f0f62a168bc30d2"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdIRTransfer" ref="ab1bea9c049e62e010f0f62a168bc30d2" args="(bool status)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdIRTransfer</b> (bool status)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab3f3b322e7216a5222306e1fc2debcbe"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getIRTransfer" ref="ab3f3b322e7216a5222306e1fc2debcbe" args="() const " -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>getIRTransfer</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8030d68df7c717b78af36d151cdf618f"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdRGBFullRes" ref="a8030d68df7c717b78af36d151cdf618f" args="(bool status)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdRGBFullRes</b> (bool status)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a49c8dd40ebb60cf565b6163dae3c5777"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getRGBFullRes" ref="a49c8dd40ebb60cf565b6163dae3c5777" args="() const " -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>getRGBFullRes</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a41bafb7ada57dd229420462eb74e7e9a"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getConfidenceFrame" ref="a41bafb7ada57dd229420462eb74e7e9a" args="(unsigned char *&amp;pConfidence)" -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>getConfidenceFrame</b> (unsigned char *&amp;pConfidence)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad7be19b42aa545d68a03b742105fa5fd"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getSourceIRFrames" ref="ad7be19b42aa545d68a03b742105fa5fd" args="(unsigned char *&amp;pPrimary, unsigned char *&amp;pSecondary)" -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>getSourceIRFrames</b> (unsigned char *&amp;pPrimary, unsigned char *&amp;pSecondary)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a559c0138bfc30147bdadbc765caa3e54"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getRGBFullResolutionFrame" ref="a559c0138bfc30147bdadbc765caa3e54" args="(unsigned char *&amp;pRGBFullRes)" -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>getRGBFullResolutionFrame</b> (unsigned char *&amp;pRGBFullRes)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a3de15c7b475763fd69b9b84e8d6388c0">TDVCameraInterfaceBase2</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#a3de15c7b475763fd69b9b84e8d6388c0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#abeac57ab8acdedf1e9fed92b6601a53f">~TDVCameraInterfaceBase2</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#abeac57ab8acdedf1e9fed92b6601a53f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="TDVCameraInterface_8h.html#a47da19e2d1dc81e8e185a0f65c27d463">HRESULT</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a684145d3ee389c45eb5677eab1e55759">setCameraCommand</a> (int cmdID, int value)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set the camera command.  <a href="#a684145d3ee389c45eb5677eab1e55759"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="TDVCameraInterface_8h.html#a47da19e2d1dc81e8e185a0f65c27d463">HRESULT</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#ab6322af8ebc298d65d06b5194441e43b">getCameraCommandVal</a> (int cmdID, int &amp;value) const =0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve the camera command.  <a href="#ab6322af8ebc298d65d06b5194441e43b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="TDVCameraInterface_8h.html#a47da19e2d1dc81e8e185a0f65c27d463">HRESULT</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a3019b4da3230741db16d122ac7980503">getCameraCommandLimits</a> (int cmdID, int &amp;minValue, int &amp;maxValue) const =0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve the camera command limits.  <a href="#a3019b4da3230741db16d122ac7980503"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="TDVCameraInterface_8h.html#a47da19e2d1dc81e8e185a0f65c27d463">HRESULT</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a51410aae9341c6809bedea5c79091d82">getVideoBuffer</a> (int bufferType, unsigned char *&amp;pBuffer)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieves the video buffer.  <a href="#a51410aae9341c6809bedea5c79091d82"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a54e310f7c97367f393a05439b260bc05">cmdColorCameraSetting</a> (int iColorCommandID, int iValue)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Changing the color camera settings.  <a href="#a54e310f7c97367f393a05439b260bc05"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a63c1f5ddf8b9af6e7b8b156088c5f789">getColorCameraSetting</a> (int iColorCommandID, int &amp;iValue) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get the current color camera setting.  <a href="#a63c1f5ddf8b9af6e7b8b156088c5f789"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#af269978a958edc2dc7baea5bc5bcdef6">getColorCameraSettingLimit</a> (int iColorCommandID, int &amp;min, int &amp;max) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get the limit values for color camera settings.  <a href="#af269978a958edc2dc7baea5bc5bcdef6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a8c02c4da359f4e0125c7065819d1e8c7">cmdCameraOn</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Turn on illumination.  <a href="#a8c02c4da359f4e0125c7065819d1e8c7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a6c7e30c193de170600f89a9d057412f7">cmdCameraOff</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Turn off illumination.  <a href="#a6c7e30c193de170600f89a9d057412f7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a988c6da99531b00c8071b9869748417b">isCameraOn</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get status of illumination.  <a href="#a988c6da99531b00c8071b9869748417b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#aa7e00476c05bf11c55016d2e3923ba5a">getMaxBrightness</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get maximal value for the brightness parameter.  <a href="#aa7e00476c05bf11c55016d2e3923ba5a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#aab905160ffcd2009c6a90aacd95301a2">getMinBrightness</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get minimal value for the brightness parameter.  <a href="#aab905160ffcd2009c6a90aacd95301a2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#ab343a20c0bb19fe8ae30bab85d401baa">cmdPrimaryBrightness</a> (int value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Update the primary camera brightness.  <a href="#ab343a20c0bb19fe8ae30bab85d401baa"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#aa616448268d8472c195278ac9b3aee0b">getPrimaryBrightness</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve the current value of the primary camera brightness.  <a href="#aa616448268d8472c195278ac9b3aee0b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#ae5c5e7f25aca037e483ac1236d58fe5f">cmdSecondaryBrightness</a> (int value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Update the secondary camera brightness.  <a href="#ae5c5e7f25aca037e483ac1236d58fe5f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#aa0bf4daab59df0e592768a68cfab8c43">getSecondaryBrightness</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve the current value of the secondary camera brightness.  <a href="#aa0bf4daab59df0e592768a68cfab8c43"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a63ac302b5a4e2f27b66ba08f11911f70">getMaxWidth</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrive maximum width.  <a href="#a63ac302b5a4e2f27b66ba08f11911f70"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#acfc463b8b3f949de11b589fed48638a6">getMinWidth</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrive minimum width.  <a href="#acfc463b8b3f949de11b589fed48638a6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a7c11a0dfa3230006f7b870dd9f5c950c">cmdPrimaryWidth</a> (int value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Update the primary camera width.  <a href="#a7c11a0dfa3230006f7b870dd9f5c950c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a714dd64055e8ecdf851f5cdc8c899c25">getPrimaryWidth</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve the current value of the primary camera width.  <a href="#a714dd64055e8ecdf851f5cdc8c899c25"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a5062371499a5f5fa262f8fef22efdfc9">cmdSecondaryWidth</a> (int value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Update the secondary camera width.  <a href="#a5062371499a5f5fa262f8fef22efdfc9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a52828a04c73328758d67b6f381653428">getSecondaryWidth</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve the current value of the secondary camera width.  <a href="#a52828a04c73328758d67b6f381653428"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#ad7b72ddc0bdac856e4dc5fb6bbb99cfc">getMaxDistance</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrive maximum distance.  <a href="#ad7b72ddc0bdac856e4dc5fb6bbb99cfc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#ac87c6734afdc4dd27cf37d7d92d128ab">getMinDistance</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrive minimum distance.  <a href="#ac87c6734afdc4dd27cf37d7d92d128ab"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a60fad90a7ebd5354ccca87e19abdfd28">cmdPrimaryDist</a> (int value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Update the primary camera distance.  <a href="#a60fad90a7ebd5354ccca87e19abdfd28"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#aea0a3141dae5b18e66b81862be286e90">getPrimaryDist</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve the current value of the primary camera distance.  <a href="#aea0a3141dae5b18e66b81862be286e90"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a711d6c76704fb19d4cf17612a131ed18">cmdSecondaryDist</a> (int value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Update the secondary camera distance.  <a href="#a711d6c76704fb19d4cf17612a131ed18"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#acfa0c0769263b2852ffb7893cff1179e">getSecondaryDist</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve the current value of the secondary camera distance.  <a href="#acfa0c0769263b2852ffb7893cff1179e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a91c347ac98df9fce1bdae10ac0988d5b">getMaxGain</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get maximum value for the gain parameters.  <a href="#a91c347ac98df9fce1bdae10ac0988d5b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a2ebfb11b935fac730c9aa973a67e2bac">getMinGain</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get minimum value for the gain parameters.  <a href="#a2ebfb11b935fac730c9aa973a67e2bac"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#ac7cd647d5f8ea76b305c0ba4d434acd4">cmdGain</a> (int value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Update the gain.  <a href="#ac7cd647d5f8ea76b305c0ba4d434acd4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a78a534aa9676766be2338ef68302e640">getGain</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve the current value of the gain.  <a href="#a78a534aa9676766be2338ef68302e640"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#aafed77798e0cf7c8e2c5093782a16361">getMinFilterVal</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get minimal value for the filtering parameters.  <a href="#aafed77798e0cf7c8e2c5093782a16361"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#acc7400a53f77b2c5d94aed93009579b7">getMaxFilterVal</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get maximal value for the filtering parameters.  <a href="#acc7400a53f77b2c5d94aed93009579b7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a153203745fb70783b166d29935d05adf">getMinSoftnessVal</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get minimal value for the softness filter.  <a href="#a153203745fb70783b166d29935d05adf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a177b2e039f3abdb3a8b75f9f41c7d78d">getMaxSoftnessVal</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get maximal value for the softness filter.  <a href="#a177b2e039f3abdb3a8b75f9f41c7d78d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#aa76b67341fee260a64c81419125822b0">cmdBinVal</a> (int value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Update the binarization level.  <a href="#aa76b67341fee260a64c81419125822b0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a306c0eda9013f9236de4bfc77d75d011">getBinVal</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve the current binarization level.  <a href="#a306c0eda9013f9236de4bfc77d75d011"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a0e4ca14432e810b4d0c44da6d41371ac">cmdBinarizeOnOff</a> (bool value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Binarize the depth image (on or off).  <a href="#a0e4ca14432e810b4d0c44da6d41371ac"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a0f313e34b1e754bfefa21cbccd4d914c">getBinarizeOnOff</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Is binarization on or off.  <a href="#a0f313e34b1e754bfefa21cbccd4d914c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a7565271a8464c7de45e470218b19f2fc">cmdMedianOnOff</a> (bool value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Turn median filter on or off.  <a href="#a7565271a8464c7de45e470218b19f2fc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a209bf23c6415591265b1fa9655f9be0a">getMedianOnOff</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Is median filter on or off.  <a href="#a209bf23c6415591265b1fa9655f9be0a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a5424cfc75464477533219db9407f1810">cmdInvertOnOff</a> (bool value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Invert the depth video (on or off).  <a href="#a5424cfc75464477533219db9407f1810"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a1e5ef180ec2dcbc7dafdcf536c4b907f">getInvertOnOff</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Is the depth image inverted (on or off).  <a href="#a1e5ef180ec2dcbc7dafdcf536c4b907f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a25480b123cc8ea96b76055d47fef3705">cmdTemporalFilterOnOff</a> (bool value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Turn the temporal filter on or off.  <a href="#a25480b123cc8ea96b76055d47fef3705"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a4aba5abd0c3f72115d4d84ab42bff89b">getTemporalFilterOnOff</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Is the temporal filter on or off.  <a href="#a4aba5abd0c3f72115d4d84ab42bff89b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#aee223c818363239f0b7308b589a676b5">cmdSmoothOnOff</a> (bool value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Turn the depth smooth filter on or off.  <a href="#aee223c818363239f0b7308b589a676b5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a489f0ed0b9bbd69b259e5f08f96f1cb8">getSmoothOnOff</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Is the depth smooth filter on or off.  <a href="#a489f0ed0b9bbd69b259e5f08f96f1cb8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#ab1d2c9cc2676b858c0dbf50035ee36f4">cmdSoftness</a> (int value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Update the depth smooth filter level.  <a href="#ab1d2c9cc2676b858c0dbf50035ee36f4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a3cc4d16af60928ede441533b47792db0">getSoftness</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve the current depth smooth filter level.  <a href="#a3cc4d16af60928ede441533b47792db0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a278bad41877f7cc67010513edddcb371">cmdMaskSmoothOnOff</a> (bool value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Turn the mask smooth filter on or off.  <a href="#a278bad41877f7cc67010513edddcb371"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a5a643241c1c220a61ecf0c0a22e58229">getMaskSmoothOnOff</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Is the mask smooth filter on or off.  <a href="#a5a643241c1c220a61ecf0c0a22e58229"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a7fd8c3ef57e1a603d8341e1b8f605d82">cmdMaskSoftness</a> (int value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Update the mask smooth filter level.  <a href="#a7fd8c3ef57e1a603d8341e1b8f605d82"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#aa9e8296220d1f6dfd0b3e80b186ce2fc">getMaskSoftness</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve the current mask smooth filter level.  <a href="#aa9e8296220d1f6dfd0b3e80b186ce2fc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a79660c40a44100ab0162dc1691d742ad">cmdAutomaticBackgroundOnOff</a> (bool value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Turn the automatic background options on or off.  <a href="#a79660c40a44100ab0162dc1691d742ad"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a06af73ceaff68f12f4854ba1eb529c08">getAutomaticBackground</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve the current setting background status.  <a href="#a06af73ceaff68f12f4854ba1eb529c08"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a4267605549783aba6499aa07cf35f3d1">cmdAutomaticDepthPositionOnOff</a> (bool value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Turn the automatic depth positions for secondary window on or off.  <a href="#a4267605549783aba6499aa07cf35f3d1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a854c8f778aa3f13c66c2639b5905e428">getAutomaticDepthPosition</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve the automatic depth positions for secondary window.  <a href="#a854c8f778aa3f13c66c2639b5905e428"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a941bef4b230eabf386507dca5299ecff">cmdClean</a> (int value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Update the clean filter level.  <a href="#a941bef4b230eabf386507dca5299ecff"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a56a29cde8078bcc26ce736a104a46ecc">getClean</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve the current clean level @ return the current clean level.  <a href="#a56a29cde8078bcc26ce736a104a46ecc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#acae599e652152613bcfaab6334349471">cmdSaveStatus</a> (int index)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Saves the current camera parameters in the camera (index must be 0-7) Returns false for invalid index.  <a href="#acae599e652152613bcfaab6334349471"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a2a676dabbdbd67950e3cb764d97207f4">cmdRestoreStatus</a> (int index)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Restores the camera parameters to those save in index (index must be 0-7) returns false for invalid index.  <a href="#a2a676dabbdbd67950e3cb764d97207f4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a9479b1f2083c5135bc4ed758f87eb826">cmdStartAutomaticFind</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Start the automatic find operation.  <a href="#a9479b1f2083c5135bc4ed758f87eb826"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#ab2d29930d4ddbaf855e43ccaa139c4c2">isDuringAutomaticFind</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Are we during the "find" operation.  <a href="#ab2d29930d4ddbaf855e43ccaa139c4c2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a88da987cea5ee76654e64525c2938c57">cmdAutomaticTracking</a> (bool state)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Turn automatic tracking on.  <a href="#a88da987cea5ee76654e64525c2938c57"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a248c84bbb1232285fa00069d6263e8c7">isAutomaticTrackingOn</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Is the automatic tracking option on or off.  <a href="#a248c84bbb1232285fa00069d6263e8c7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#ab0839cd442d3a1c47b7c55578cf7ab0a">cmdAutomaticBrightness</a> (bool state)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Turn automatic brightness on or off.  <a href="#ab0839cd442d3a1c47b7c55578cf7ab0a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a54c95ac82e08bb3a2ee0ef847af2fd8d">isAutomaticBrightnessOn</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Is the automatic brightness turned on or off.  <a href="#a54c95ac82e08bb3a2ee0ef847af2fd8d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#ab1bfb1c5500793508cbe2c1c7d8d9a2b">cmdSaveImage</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Forces the DMAchine to save an image (or two images if the camera supports color), as if "Save Img" was pressed in the "camera control" application.  <a href="#ab1bfb1c5500793508cbe2c1c7d8d9a2b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a528e6c9ab7b284456571e5c954e0663a">cmdSaveImageAverage</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Forces the DMAchine to save an image (or two images if the camera supports color), as if "Save Avg" was pressed in the "camera control" application.  <a href="#a528e6c9ab7b284456571e5c954e0663a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a7efb94988412cbb758d3b8971f4463a9">cmdSaveSequence</a> (int length, bool saveAVI)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Forces the DMAchine to save a sequence of images, or AVI movies as if saving sequence was pressed in the "camera control" application if saveAVI is true, the DMachine will save AVI files, otherwise tga sequence.  <a href="#a7efb94988412cbb758d3b8971f4463a9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#aa2705a831908bb92aea85cb3cde82854">cmdVideoFreeze</a> (bool state, bool useAverage=false)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Freezes the video output of the DMachine, as if "freeze video" was pressed in the "camera control" application.  <a href="#aa2705a831908bb92aea85cb3cde82854"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a649b5e579d9f165c3fd08ca224bac40a">cmdRGBProcessing</a> (bool status)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Enable or disable RGB processing.  <a href="#a649b5e579d9f165c3fd08ca224bac40a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a662d62abb6a0b268e9fe95fd545c360c">getRGBProcessing</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Is RGB being processed? (might consume more CPU).  <a href="#a662d62abb6a0b268e9fe95fd545c360c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a6f2b9e9efbbaddfc80801ab5cd0a99f1">cmdConfidenceMapProcessing</a> (bool status)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Enable or disable Confidence map processing.  <a href="#a6f2b9e9efbbaddfc80801ab5cd0a99f1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a326817d66da92c7f7b022d8460097019">getConfidenceMapProcessing</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Is Confidence map being created? check <a class="el" href="classTDVCameraInterfaceBase2.html#a6f2b9e9efbbaddfc80801ab5cd0a99f1" title="Enable or disable Confidence map processing.">cmdConfidenceMapProcessing()</a> for more infomation.  <a href="#a326817d66da92c7f7b022d8460097019"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#ab1bea9c049e62e010f0f62a168bc30d2">cmdIRTransfer</a> (bool status)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Enable or disable IR input source transfer for processing by the SDK user.  <a href="#ab1bea9c049e62e010f0f62a168bc30d2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#ab3f3b322e7216a5222306e1fc2debcbe">getIRTransfer</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Check if valid IR video source is provided.  <a href="#ab3f3b322e7216a5222306e1fc2debcbe"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a8030d68df7c717b78af36d151cdf618f">cmdRGBFullRes</a> (bool status)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Enable or disable full resolution rgb transfer for processing by the SDK user.  <a href="#a8030d68df7c717b78af36d151cdf618f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a49c8dd40ebb60cf565b6163dae3c5777">getRGBFullRes</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Check if valid full resolution rgb video source is provided.  <a href="#a49c8dd40ebb60cf565b6163dae3c5777"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a41bafb7ada57dd229420462eb74e7e9a">getConfidenceFrame</a> (unsigned char *&amp;pConfidence)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Must be called from within the callback function in order to get synchronized confidence map.  <a href="#a41bafb7ada57dd229420462eb74e7e9a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#ad7be19b42aa545d68a03b742105fa5fd">getSourceIRFrames</a> (unsigned char *&amp;pPrimary, unsigned char *&amp;pSecondary)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Must be called from within the callback function in order to get synchronized primary and secondary frames.  <a href="#ad7be19b42aa545d68a03b742105fa5fd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTDVCameraInterfaceBase2.html#a559c0138bfc30147bdadbc765caa3e54">getRGBFullResolutionFrame</a> (unsigned char *&amp;pRGBFullRes)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Must be called from within the callback function in order to get synchronized video data.  <a href="#a559c0138bfc30147bdadbc765caa3e54"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p><a class="el" href="classTDVCameraInterfaceBase2.html" title="TDVCameraInterfaceBase2 contains.">TDVCameraInterfaceBase2</a> contains. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a3de15c7b475763fd69b9b84e8d6388c0"></a><!-- doxytag: member="TDVCameraInterfaceBase2::TDVCameraInterfaceBase2" ref="a3de15c7b475763fd69b9b84e8d6388c0" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TDVCameraInterfaceBase2::TDVCameraInterfaceBase2 </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="abeac57ab8acdedf1e9fed92b6601a53f"></a><!-- doxytag: member="TDVCameraInterfaceBase2::~TDVCameraInterfaceBase2" ref="abeac57ab8acdedf1e9fed92b6601a53f" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual TDVCameraInterfaceBase2::~TDVCameraInterfaceBase2 </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a79660c40a44100ab0162dc1691d742ad"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdAutomaticBackgroundOnOff" ref="a79660c40a44100ab0162dc1691d742ad" args="(bool value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdAutomaticBackgroundOnOff </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Turn the automatic background options on or off. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>True to turn automatic background options on </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab0839cd442d3a1c47b7c55578cf7ab0a"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdAutomaticBrightness" ref="ab0839cd442d3a1c47b7c55578cf7ab0a" args="(bool state)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdAutomaticBrightness </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>state</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Turn automatic brightness on or off. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>state</em>&nbsp;</td><td>True to enable automatic brightness </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4267605549783aba6499aa07cf35f3d1"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdAutomaticDepthPositionOnOff" ref="a4267605549783aba6499aa07cf35f3d1" args="(bool value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdAutomaticDepthPositionOnOff </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Turn the automatic depth positions for secondary window on or off. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>True to enable automatic depth positions for secondary window </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a88da987cea5ee76654e64525c2938c57"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdAutomaticTracking" ref="a88da987cea5ee76654e64525c2938c57" args="(bool state)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdAutomaticTracking </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>state</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Turn automatic tracking on. </p>
+<p>Automatic brightness will also be turned on </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>state</em>&nbsp;</td><td>True to turn on automatic tracking </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0e4ca14432e810b4d0c44da6d41371ac"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdBinarizeOnOff" ref="a0e4ca14432e810b4d0c44da6d41371ac" args="(bool value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdBinarizeOnOff </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Binarize the depth image (on or off). </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>True to enable the depth image </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa76b67341fee260a64c81419125822b0"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdBinVal" ref="aa76b67341fee260a64c81419125822b0" args="(int value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdBinVal </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Update the binarization level. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>The new Binarization level </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a6c7e30c193de170600f89a9d057412f7"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdCameraOff" ref="a6c7e30c193de170600f89a9d057412f7" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdCameraOff </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Turn off illumination. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8c02c4da359f4e0125c7065819d1e8c7"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdCameraOn" ref="a8c02c4da359f4e0125c7065819d1e8c7" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdCameraOn </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Turn on illumination. </p>
+
+</div>
+</div>
+<a class="anchor" id="a941bef4b230eabf386507dca5299ecff"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdClean" ref="a941bef4b230eabf386507dca5299ecff" args="(int value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdClean </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Update the clean filter level. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>The new clean filter level </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a54e310f7c97367f393a05439b260bc05"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdColorCameraSetting" ref="a54e310f7c97367f393a05439b260bc05" args="(int iColorCommandID, int iValue)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdColorCameraSetting </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>iColorCommandID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>iValue</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Changing the color camera settings. </p>
+<p>for changing on or off parameters use value 1 or 0 correspondingly. valid only for ZSense camera </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>iColorCommandID</em>&nbsp;</td><td>The command for the color camera setting </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>iValue</em>&nbsp;</td><td>The value of the command </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a6f2b9e9efbbaddfc80801ab5cd0a99f1"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdConfidenceMapProcessing" ref="a6f2b9e9efbbaddfc80801ab5cd0a99f1" args="(bool status)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdConfidenceMapProcessing </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>status</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enable or disable Confidence map processing. </p>
+<p>When enabled, you also receive a frame for each depth frame containing confidence levels per pixel. the higher the value is, the more accurate the corresponding depth level is. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>status</em>&nbsp;</td><td>True to enable confidence map processing </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ac7cd647d5f8ea76b305c0ba4d434acd4"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdGain" ref="ac7cd647d5f8ea76b305c0ba4d434acd4" args="(int value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdGain </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Update the gain. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>The new gain value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5424cfc75464477533219db9407f1810"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdInvertOnOff" ref="a5424cfc75464477533219db9407f1810" args="(bool value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdInvertOnOff </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Invert the depth video (on or off). </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>True to invert the depth video </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab1bea9c049e62e010f0f62a168bc30d2"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdIRTransfer" ref="ab1bea9c049e62e010f0f62a168bc30d2" args="(bool status)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdIRTransfer </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>status</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enable or disable IR input source transfer for processing by the SDK user. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>status</em>&nbsp;</td><td>True to enable IR input source transfer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a278bad41877f7cc67010513edddcb371"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdMaskSmoothOnOff" ref="a278bad41877f7cc67010513edddcb371" args="(bool value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdMaskSmoothOnOff </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Turn the mask smooth filter on or off. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>True to enable mask smooth filter </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7fd8c3ef57e1a603d8341e1b8f605d82"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdMaskSoftness" ref="a7fd8c3ef57e1a603d8341e1b8f605d82" args="(int value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdMaskSoftness </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Update the mask smooth filter level. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>The new mask smooth filter level </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7565271a8464c7de45e470218b19f2fc"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdMedianOnOff" ref="a7565271a8464c7de45e470218b19f2fc" args="(bool value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdMedianOnOff </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Turn median filter on or off. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>True to turn median filter on </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab343a20c0bb19fe8ae30bab85d401baa"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdPrimaryBrightness" ref="ab343a20c0bb19fe8ae30bab85d401baa" args="(int value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdPrimaryBrightness </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Update the primary camera brightness. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>The new brightness value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a60fad90a7ebd5354ccca87e19abdfd28"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdPrimaryDist" ref="a60fad90a7ebd5354ccca87e19abdfd28" args="(int value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdPrimaryDist </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Update the primary camera distance. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>The new primary camera distance </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7c11a0dfa3230006f7b870dd9f5c950c"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdPrimaryWidth" ref="a7c11a0dfa3230006f7b870dd9f5c950c" args="(int value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdPrimaryWidth </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Update the primary camera width. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>The new width </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a2a676dabbdbd67950e3cb764d97207f4"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdRestoreStatus" ref="a2a676dabbdbd67950e3cb764d97207f4" args="(int index)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TDVCameraInterfaceBase2::cmdRestoreStatus </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>index</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Restores the camera parameters to those save in index (index must be 0-7) returns false for invalid index. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>index</em>&nbsp;</td><td>The index of the camera parameter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>false for invalid index </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8030d68df7c717b78af36d151cdf618f"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdRGBFullRes" ref="a8030d68df7c717b78af36d151cdf618f" args="(bool status)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdRGBFullRes </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>status</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enable or disable full resolution rgb transfer for processing by the SDK user. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>status</em>&nbsp;</td><td>True to enable full resolution RGB transfer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a649b5e579d9f165c3fd08ca224bac40a"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdRGBProcessing" ref="a649b5e579d9f165c3fd08ca224bac40a" args="(bool status)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdRGBProcessing </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>status</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enable or disable RGB processing. </p>
+<p>Saves CPU power when the RGB is not needed. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>status</em>&nbsp;</td><td>True to enable RGB processing </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab1bfb1c5500793508cbe2c1c7d8d9a2b"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdSaveImage" ref="ab1bfb1c5500793508cbe2c1c7d8d9a2b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdSaveImage </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Forces the DMAchine to save an image (or two images if the camera supports color), as if "Save Img" was pressed in the "camera control" application. </p>
+
+</div>
+</div>
+<a class="anchor" id="a528e6c9ab7b284456571e5c954e0663a"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdSaveImageAverage" ref="a528e6c9ab7b284456571e5c954e0663a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdSaveImageAverage </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Forces the DMAchine to save an image (or two images if the camera supports color), as if "Save Avg" was pressed in the "camera control" application. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7efb94988412cbb758d3b8971f4463a9"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdSaveSequence" ref="a7efb94988412cbb758d3b8971f4463a9" args="(int length, bool saveAVI)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdSaveSequence </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>saveAVI</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Forces the DMAchine to save a sequence of images, or AVI movies as if saving sequence was pressed in the "camera control" application if saveAVI is true, the DMachine will save AVI files, otherwise tga sequence. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>length</em>&nbsp;</td><td>The length of the sequence of images </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>saveAVI</em>&nbsp;</td><td>If true, will save AVI files </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="acae599e652152613bcfaab6334349471"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdSaveStatus" ref="acae599e652152613bcfaab6334349471" args="(int index)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TDVCameraInterfaceBase2::cmdSaveStatus </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>index</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Saves the current camera parameters in the camera (index must be 0-7) Returns false for invalid index. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>index</em>&nbsp;</td><td>The index of the camera parameter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>false for invalid index </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae5c5e7f25aca037e483ac1236d58fe5f"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdSecondaryBrightness" ref="ae5c5e7f25aca037e483ac1236d58fe5f" args="(int value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdSecondaryBrightness </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Update the secondary camera brightness. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>The new brightness value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a711d6c76704fb19d4cf17612a131ed18"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdSecondaryDist" ref="a711d6c76704fb19d4cf17612a131ed18" args="(int value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdSecondaryDist </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Update the secondary camera distance. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>The new secondary camera distance </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5062371499a5f5fa262f8fef22efdfc9"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdSecondaryWidth" ref="a5062371499a5f5fa262f8fef22efdfc9" args="(int value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdSecondaryWidth </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Update the secondary camera width. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>The new width </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aee223c818363239f0b7308b589a676b5"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdSmoothOnOff" ref="aee223c818363239f0b7308b589a676b5" args="(bool value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdSmoothOnOff </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Turn the depth smooth filter on or off. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>True to enable depth smooth filter </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab1d2c9cc2676b858c0dbf50035ee36f4"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdSoftness" ref="ab1d2c9cc2676b858c0dbf50035ee36f4" args="(int value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdSoftness </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Update the depth smooth filter level. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>The new depth smooth filter level </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a9479b1f2083c5135bc4ed758f87eb826"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdStartAutomaticFind" ref="a9479b1f2083c5135bc4ed758f87eb826" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdStartAutomaticFind </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Start the automatic find operation. </p>
+<p>Once the object is detected, the automatic brightness will be turned on </p>
+
+</div>
+</div>
+<a class="anchor" id="a25480b123cc8ea96b76055d47fef3705"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdTemporalFilterOnOff" ref="a25480b123cc8ea96b76055d47fef3705" args="(bool value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdTemporalFilterOnOff </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Turn the temporal filter on or off. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>True to turn the temporal filter on </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa2705a831908bb92aea85cb3cde82854"></a><!-- doxytag: member="TDVCameraInterfaceBase2::cmdVideoFreeze" ref="aa2705a831908bb92aea85cb3cde82854" args="(bool state, bool useAverage=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TDVCameraInterfaceBase2::cmdVideoFreeze </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>useAverage</em> = <code>false</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Freezes the video output of the DMachine, as if "freeze video" was pressed in the "camera control" application. </p>
+<p>If useAverage is true, then an average of the last 8 input frames is averages, and constantly outputted as the DMachine output. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>state</em>&nbsp;</td><td>True to freeze the video output of the DMachine </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>useAverage</em>&nbsp;</td><td>If true, anaverage of the last 8 input frames is averaged, and constantly outputted as the DMachine output. False by default </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a06af73ceaff68f12f4854ba1eb529c08"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getAutomaticBackground" ref="a06af73ceaff68f12f4854ba1eb529c08" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TDVCameraInterfaceBase2::getAutomaticBackground </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the current setting background status. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if automatic background options are on </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a854c8f778aa3f13c66c2639b5905e428"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getAutomaticDepthPosition" ref="a854c8f778aa3f13c66c2639b5905e428" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TDVCameraInterfaceBase2::getAutomaticDepthPosition </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the automatic depth positions for secondary window. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if automatic depth positions for secondary window is enabled </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0f313e34b1e754bfefa21cbccd4d914c"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getBinarizeOnOff" ref="a0f313e34b1e754bfefa21cbccd4d914c" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TDVCameraInterfaceBase2::getBinarizeOnOff </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Is binarization on or off. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if binarization is on </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a306c0eda9013f9236de4bfc77d75d011"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getBinVal" ref="a306c0eda9013f9236de4bfc77d75d011" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TDVCameraInterfaceBase2::getBinVal </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the current binarization level. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the current binarization level </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3019b4da3230741db16d122ac7980503"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getCameraCommandLimits" ref="a3019b4da3230741db16d122ac7980503" args="(int cmdID, int &amp;minValue, int &amp;maxValue) const =0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="TDVCameraInterface_8h.html#a47da19e2d1dc81e8e185a0f65c27d463">HRESULT</a> TDVCameraInterfaceBase2::getCameraCommandLimits </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>cmdID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&nbsp;</td>
+          <td class="paramname"> <em>minValue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&nbsp;</td>
+          <td class="paramname"> <em>maxValue</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const<code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the camera command limits. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>cmdID</em>&nbsp;</td><td>The camera command ID </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>minValue</em>&nbsp;</td><td>The minimal value of the camera command </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maxValue</em>&nbsp;</td><td>The maximal value of the camera command </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classTDVCameraInterfaceBase.html#a8734112fa15f5cfe893a9aab872cf12a">TDVCameraInterfaceBase</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab6322af8ebc298d65d06b5194441e43b"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getCameraCommandVal" ref="ab6322af8ebc298d65d06b5194441e43b" args="(int cmdID, int &amp;value) const =0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="TDVCameraInterface_8h.html#a47da19e2d1dc81e8e185a0f65c27d463">HRESULT</a> TDVCameraInterfaceBase2::getCameraCommandVal </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>cmdID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&nbsp;</td>
+          <td class="paramname"> <em>value</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const<code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the camera command. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>cmdID</em>&nbsp;</td><td>The camera command ID </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>The value of the camera command </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classTDVCameraInterfaceBase.html#a136acd03b9cf0e8ee17af7679721d82a">TDVCameraInterfaceBase</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a56a29cde8078bcc26ce736a104a46ecc"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getClean" ref="a56a29cde8078bcc26ce736a104a46ecc" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TDVCameraInterfaceBase2::getClean </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the current clean level @ return the current clean level. </p>
+
+</div>
+</div>
+<a class="anchor" id="a63c1f5ddf8b9af6e7b8b156088c5f789"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getColorCameraSetting" ref="a63c1f5ddf8b9af6e7b8b156088c5f789" args="(int iColorCommandID, int &amp;iValue) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TDVCameraInterfaceBase2::getColorCameraSetting </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>iColorCommandID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&nbsp;</td>
+          <td class="paramname"> <em>iValue</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the current color camera setting. </p>
+<p>Returns false if iColorCommandID is invalid valid only for ZSense camera </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>iColorCommandID</em>&nbsp;</td><td>The command for the color camera setting </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>iValue</em>&nbsp;</td><td>The value of the command </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if successful </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af269978a958edc2dc7baea5bc5bcdef6"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getColorCameraSettingLimit" ref="af269978a958edc2dc7baea5bc5bcdef6" args="(int iColorCommandID, int &amp;min, int &amp;max) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TDVCameraInterfaceBase2::getColorCameraSettingLimit </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>iColorCommandID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&nbsp;</td>
+          <td class="paramname"> <em>min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&nbsp;</td>
+          <td class="paramname"> <em>max</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the limit values for color camera settings. </p>
+<p>returns false if iColorCommandID is invalid valid only for ZSense camera </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>iColorCommandID</em>&nbsp;</td><td>The command for the color camera setting </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>min</em>&nbsp;</td><td>The minimal color camera setting </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>max</em>&nbsp;</td><td>The maximal color camera setting </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>false if iColorCommandID is invalid </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a41bafb7ada57dd229420462eb74e7e9a"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getConfidenceFrame" ref="a41bafb7ada57dd229420462eb74e7e9a" args="(unsigned char *&amp;pConfidence)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TDVCameraInterfaceBase2::getConfidenceFrame </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char *&amp;&nbsp;</td>
+          <td class="paramname"> <em>pConfidence</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Must be called from within the callback function in order to get synchronized confidence map. </p>
+<p>Will contain valid data only after calling cmdConfidenceMapProcessing(true) </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pConfidence</em>&nbsp;</td><td>A reference to the confidence map </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if successful </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a326817d66da92c7f7b022d8460097019"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getConfidenceMapProcessing" ref="a326817d66da92c7f7b022d8460097019" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TDVCameraInterfaceBase2::getConfidenceMapProcessing </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Is Confidence map being created? check <a class="el" href="classTDVCameraInterfaceBase2.html#a6f2b9e9efbbaddfc80801ab5cd0a99f1" title="Enable or disable Confidence map processing.">cmdConfidenceMapProcessing()</a> for more infomation. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if confidence map processing is enabled </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a78a534aa9676766be2338ef68302e640"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getGain" ref="a78a534aa9676766be2338ef68302e640" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TDVCameraInterfaceBase2::getGain </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the current value of the gain. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the current value of the gain </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1e5ef180ec2dcbc7dafdcf536c4b907f"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getInvertOnOff" ref="a1e5ef180ec2dcbc7dafdcf536c4b907f" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TDVCameraInterfaceBase2::getInvertOnOff </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Is the depth image inverted (on or off). </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if the depth image is inverted </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab3f3b322e7216a5222306e1fc2debcbe"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getIRTransfer" ref="ab3f3b322e7216a5222306e1fc2debcbe" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TDVCameraInterfaceBase2::getIRTransfer </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Check if valid IR video source is provided. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if IR video source is provided </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5a643241c1c220a61ecf0c0a22e58229"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getMaskSmoothOnOff" ref="a5a643241c1c220a61ecf0c0a22e58229" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TDVCameraInterfaceBase2::getMaskSmoothOnOff </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Is the mask smooth filter on or off. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true is mask smooth filter is on </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa9e8296220d1f6dfd0b3e80b186ce2fc"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getMaskSoftness" ref="aa9e8296220d1f6dfd0b3e80b186ce2fc" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TDVCameraInterfaceBase2::getMaskSoftness </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the current mask smooth filter level. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the current mask smooth filter level </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa7e00476c05bf11c55016d2e3923ba5a"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getMaxBrightness" ref="aa7e00476c05bf11c55016d2e3923ba5a" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TDVCameraInterfaceBase2::getMaxBrightness </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get maximal value for the brightness parameter. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the maximal value for the brightness parameter </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad7b72ddc0bdac856e4dc5fb6bbb99cfc"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getMaxDistance" ref="ad7b72ddc0bdac856e4dc5fb6bbb99cfc" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TDVCameraInterfaceBase2::getMaxDistance </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrive maximum distance. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the maximum distance </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acc7400a53f77b2c5d94aed93009579b7"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getMaxFilterVal" ref="acc7400a53f77b2c5d94aed93009579b7" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TDVCameraInterfaceBase2::getMaxFilterVal </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get maximal value for the filtering parameters. </p>
+<p>The only filter which has different limit values is the softness filter. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the maximal value for the filtering parameters </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a91c347ac98df9fce1bdae10ac0988d5b"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getMaxGain" ref="a91c347ac98df9fce1bdae10ac0988d5b" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TDVCameraInterfaceBase2::getMaxGain </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get maximum value for the gain parameters. </p>
+<p>The gain parameter is only valid in certain camera models </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the maximum value for the gain parameters </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a177b2e039f3abdb3a8b75f9f41c7d78d"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getMaxSoftnessVal" ref="a177b2e039f3abdb3a8b75f9f41c7d78d" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TDVCameraInterfaceBase2::getMaxSoftnessVal </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get maximal value for the softness filter. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the maximal value for the softness filter </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a63ac302b5a4e2f27b66ba08f11911f70"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getMaxWidth" ref="a63ac302b5a4e2f27b66ba08f11911f70" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TDVCameraInterfaceBase2::getMaxWidth </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrive maximum width. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the maximum width </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a209bf23c6415591265b1fa9655f9be0a"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getMedianOnOff" ref="a209bf23c6415591265b1fa9655f9be0a" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TDVCameraInterfaceBase2::getMedianOnOff </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Is median filter on or off. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if median filtering is on </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aab905160ffcd2009c6a90aacd95301a2"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getMinBrightness" ref="aab905160ffcd2009c6a90aacd95301a2" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TDVCameraInterfaceBase2::getMinBrightness </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get minimal value for the brightness parameter. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the minimal value for the brightness parameter </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac87c6734afdc4dd27cf37d7d92d128ab"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getMinDistance" ref="ac87c6734afdc4dd27cf37d7d92d128ab" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TDVCameraInterfaceBase2::getMinDistance </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrive minimum distance. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the minimum distance </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aafed77798e0cf7c8e2c5093782a16361"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getMinFilterVal" ref="aafed77798e0cf7c8e2c5093782a16361" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TDVCameraInterfaceBase2::getMinFilterVal </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get minimal value for the filtering parameters. </p>
+<p>The only filter which has different limit values is the softness filter. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the minimal value for the filtering parameters </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2ebfb11b935fac730c9aa973a67e2bac"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getMinGain" ref="a2ebfb11b935fac730c9aa973a67e2bac" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TDVCameraInterfaceBase2::getMinGain </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get minimum value for the gain parameters. </p>
+<p>The gain parameter is only valid in certain camera models </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the minimum value for the gain parameters </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a153203745fb70783b166d29935d05adf"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getMinSoftnessVal" ref="a153203745fb70783b166d29935d05adf" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TDVCameraInterfaceBase2::getMinSoftnessVal </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get minimal value for the softness filter. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the minimal value for the softness filter </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acfc463b8b3f949de11b589fed48638a6"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getMinWidth" ref="acfc463b8b3f949de11b589fed48638a6" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TDVCameraInterfaceBase2::getMinWidth </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrive minimum width. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the minimum width </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa616448268d8472c195278ac9b3aee0b"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getPrimaryBrightness" ref="aa616448268d8472c195278ac9b3aee0b" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TDVCameraInterfaceBase2::getPrimaryBrightness </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the current value of the primary camera brightness. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the current value of the primary camera brightness </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aea0a3141dae5b18e66b81862be286e90"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getPrimaryDist" ref="aea0a3141dae5b18e66b81862be286e90" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TDVCameraInterfaceBase2::getPrimaryDist </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the current value of the primary camera distance. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the current value of the primary camera distance </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a714dd64055e8ecdf851f5cdc8c899c25"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getPrimaryWidth" ref="a714dd64055e8ecdf851f5cdc8c899c25" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TDVCameraInterfaceBase2::getPrimaryWidth </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the current value of the primary camera width. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the current value of the primary camera width </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a49c8dd40ebb60cf565b6163dae3c5777"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getRGBFullRes" ref="a49c8dd40ebb60cf565b6163dae3c5777" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TDVCameraInterfaceBase2::getRGBFullRes </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Check if valid full resolution rgb video source is provided. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if full resolution RGB is provided </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a559c0138bfc30147bdadbc765caa3e54"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getRGBFullResolutionFrame" ref="a559c0138bfc30147bdadbc765caa3e54" args="(unsigned char *&amp;pRGBFullRes)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TDVCameraInterfaceBase2::getRGBFullResolutionFrame </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char *&amp;&nbsp;</td>
+          <td class="paramname"> <em>pRGBFullRes</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Must be called from within the callback function in order to get synchronized video data. </p>
+<p>Will contain valid data only after calling cmdRGBFullRes(true) </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pRGBFullRes</em>&nbsp;</td><td>The full resolution RGB frame </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if successful </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a662d62abb6a0b268e9fe95fd545c360c"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getRGBProcessing" ref="a662d62abb6a0b268e9fe95fd545c360c" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TDVCameraInterfaceBase2::getRGBProcessing </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Is RGB being processed? (might consume more CPU). </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if RGB processing is enabled </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa0bf4daab59df0e592768a68cfab8c43"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getSecondaryBrightness" ref="aa0bf4daab59df0e592768a68cfab8c43" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TDVCameraInterfaceBase2::getSecondaryBrightness </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the current value of the secondary camera brightness. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the current value of the secondary camera brightness </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acfa0c0769263b2852ffb7893cff1179e"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getSecondaryDist" ref="acfa0c0769263b2852ffb7893cff1179e" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TDVCameraInterfaceBase2::getSecondaryDist </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the current value of the secondary camera distance. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the current value of the secondary camera distance </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a52828a04c73328758d67b6f381653428"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getSecondaryWidth" ref="a52828a04c73328758d67b6f381653428" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TDVCameraInterfaceBase2::getSecondaryWidth </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the current value of the secondary camera width. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the current value of the secondary camera width </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a489f0ed0b9bbd69b259e5f08f96f1cb8"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getSmoothOnOff" ref="a489f0ed0b9bbd69b259e5f08f96f1cb8" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TDVCameraInterfaceBase2::getSmoothOnOff </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Is the depth smooth filter on or off. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if depth smooth filter is on </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3cc4d16af60928ede441533b47792db0"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getSoftness" ref="a3cc4d16af60928ede441533b47792db0" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TDVCameraInterfaceBase2::getSoftness </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the current depth smooth filter level. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the current depth smooth filter level </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad7be19b42aa545d68a03b742105fa5fd"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getSourceIRFrames" ref="ad7be19b42aa545d68a03b742105fa5fd" args="(unsigned char *&amp;pPrimary, unsigned char *&amp;pSecondary)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TDVCameraInterfaceBase2::getSourceIRFrames </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char *&amp;&nbsp;</td>
+          <td class="paramname"> <em>pPrimary</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char *&amp;&nbsp;</td>
+          <td class="paramname"> <em>pSecondary</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Must be called from within the callback function in order to get synchronized primary and secondary frames. </p>
+<p>Will contain valid data only after calling cmdIRTransfer(true) </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pPrimary</em>&nbsp;</td><td>The primary frame </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pSecondary</em>&nbsp;</td><td>The secondary frame </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if successful </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4aba5abd0c3f72115d4d84ab42bff89b"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getTemporalFilterOnOff" ref="a4aba5abd0c3f72115d4d84ab42bff89b" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TDVCameraInterfaceBase2::getTemporalFilterOnOff </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Is the temporal filter on or off. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if temporal filter is on </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a51410aae9341c6809bedea5c79091d82"></a><!-- doxytag: member="TDVCameraInterfaceBase2::getVideoBuffer" ref="a51410aae9341c6809bedea5c79091d82" args="(int bufferType, unsigned char *&amp;pBuffer)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="TDVCameraInterface_8h.html#a47da19e2d1dc81e8e185a0f65c27d463">HRESULT</a> TDVCameraInterfaceBase2::getVideoBuffer </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>bufferType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char *&amp;&nbsp;</td>
+          <td class="paramname"> <em>pBuffer</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieves the video buffer. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>bufferType</em>&nbsp;</td><td>The type of video buffer </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pBuffer</em>&nbsp;</td><td>A reference to the video buffer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classTDVCameraInterfaceBase.html#a38695ddb9698f59037add68798257aac">TDVCameraInterfaceBase</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a54c95ac82e08bb3a2ee0ef847af2fd8d"></a><!-- doxytag: member="TDVCameraInterfaceBase2::isAutomaticBrightnessOn" ref="a54c95ac82e08bb3a2ee0ef847af2fd8d" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TDVCameraInterfaceBase2::isAutomaticBrightnessOn </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Is the automatic brightness turned on or off. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if automatic brightness is on </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a248c84bbb1232285fa00069d6263e8c7"></a><!-- doxytag: member="TDVCameraInterfaceBase2::isAutomaticTrackingOn" ref="a248c84bbb1232285fa00069d6263e8c7" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TDVCameraInterfaceBase2::isAutomaticTrackingOn </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Is the automatic tracking option on or off. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if automatic tracking is on </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a988c6da99531b00c8071b9869748417b"></a><!-- doxytag: member="TDVCameraInterfaceBase2::isCameraOn" ref="a988c6da99531b00c8071b9869748417b" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TDVCameraInterfaceBase2::isCameraOn </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get status of illumination. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the status of illumination </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab2d29930d4ddbaf855e43ccaa139c4c2"></a><!-- doxytag: member="TDVCameraInterfaceBase2::isDuringAutomaticFind" ref="ab2d29930d4ddbaf855e43ccaa139c4c2" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TDVCameraInterfaceBase2::isDuringAutomaticFind </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Are we during the "find" operation. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true is in the find operation </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a684145d3ee389c45eb5677eab1e55759"></a><!-- doxytag: member="TDVCameraInterfaceBase2::setCameraCommand" ref="a684145d3ee389c45eb5677eab1e55759" args="(int cmdID, int value)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="TDVCameraInterface_8h.html#a47da19e2d1dc81e8e185a0f65c27d463">HRESULT</a> TDVCameraInterfaceBase2::setCameraCommand </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>cmdID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>value</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set the camera command. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>cmdID</em>&nbsp;</td><td>The camera command ID </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>The value of the camera command </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classTDVCameraInterfaceBase.html#abc48f94311e7aadf0c6a0df157951097">TDVCameraInterfaceBase</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/<a class="el" href="TDVCameraInterface2_8h_source.html">TDVCameraInterface2.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/ZCamera/<a class="el" href="TDVCameraInterface2_8h_source.html">TDVCameraInterface2.h</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -241,7 +2325,7 @@ bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>getRGBFullResolutionF
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -250,7 +2334,7 @@ bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>getRGBFullResolutionF
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:46 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

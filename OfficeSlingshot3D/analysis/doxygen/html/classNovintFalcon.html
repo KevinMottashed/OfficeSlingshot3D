@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -48,7 +49,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a>  </div>
   <div class="headertitle">
 <h1>NovintFalcon Class Reference</h1>  </div>
 </div>
@@ -71,32 +75,62 @@ Inheritance diagram for NovintFalcon:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNovintFalcon.html#ac36e7148131ecbdfff97289f2c9e3b9c">NovintFalcon</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#ac36e7148131ecbdfff97289f2c9e3b9c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afb0ece97317db2eb6da852e219cc85eb"></a><!-- doxytag: member="NovintFalcon::~NovintFalcon" ref="afb0ece97317db2eb6da852e219cc85eb" args="()" -->
-virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNovintFalcon.html#afb0ece97317db2eb6da852e219cc85eb">~NovintFalcon</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3e82b6e9d7c393684b809971208922bf"></a><!-- doxytag: member="NovintFalcon::startPolling" ref="a3e82b6e9d7c393684b809971208922bf" args="()" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNovintFalcon.html#a3e82b6e9d7c393684b809971208922bf">startPolling</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Start polling the falcon for information. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3bc94cd6f05df1d327f79fb87001039d"></a><!-- doxytag: member="NovintFalcon::stopPolling" ref="a3bc94cd6f05df1d327f79fb87001039d" args="()" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNovintFalcon.html#a3bc94cd6f05df1d327f79fb87001039d">stopPolling</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Stop polling the falcon for information. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNovintFalcon.html#a8e01c9e377f4f52f6575e1275470cde8">NovintFalcon</a> (boost::shared_ptr&lt; <a class="el" href="classConfiguration.html">Configuration</a> &gt; configuration)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#a8e01c9e377f4f52f6575e1275470cde8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNovintFalcon.html#afb0ece97317db2eb6da852e219cc85eb">~NovintFalcon</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#afb0ece97317db2eb6da852e219cc85eb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNovintFalcon.html#a3e82b6e9d7c393684b809971208922bf">startPolling</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Start polling the falcon for information.  <a href="#a3e82b6e9d7c393684b809971208922bf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNovintFalcon.html#a3bc94cd6f05df1d327f79fb87001039d">stopPolling</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Stop polling the falcon for information.  <a href="#a3bc94cd6f05df1d327f79fb87001039d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual cCollisionAABBBox&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNovintFalcon.html#a8226c5b4a2cb0d2e88b6a41e2c7c3af9">boundingBox</a> () const </td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the box to which the slingshot is bound.  <a href="#a8226c5b4a2cb0d2e88b6a41e2c7c3af9"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNovintFalcon.html#a75e051d935bf72522f87d9db6683ad30">NovintFalcon</a> (const <a class="el" href="classNovintFalcon.html">NovintFalcon</a> &amp;novintFalcon)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy constructor.  <a href="#a75e051d935bf72522f87d9db6683ad30"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNovintFalcon.html">NovintFalcon</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNovintFalcon.html#a5ee3fe9a6271b67bda6a1dba4e1988e7">operator=</a> (const <a class="el" href="classNovintFalcon.html">NovintFalcon</a> &amp;novintFalcon)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Assignment operator.  <a href="#a5ee3fe9a6271b67bda6a1dba4e1988e7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNovintFalcon.html#af7b4b03a176c59e458c55f99a6ed5a7a">poll</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Poll the slingshot's position and firing state.  <a href="#af7b4b03a176c59e458c55f99a6ed5a7a"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNovintFalcon.html#ab6a5b86ad27c9f910245c14530fe23fb">reporting</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">True when the falcon should notify observers that an event occured.  <a href="#ab6a5b86ad27c9f910245c14530fe23fb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNovintFalcon.html#a652b205f9d3fd33c1d710dd766d63af9">position</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The falcon's current position.  <a href="#a652b205f9d3fd33c1d710dd766d63af9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNovintFalcon.html#aba58f2dd9f8cad812e399aededde67f4">firing</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">True if the slingshot is currently in firing mode.  <a href="#aba58f2dd9f8cad812e399aededde67f4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNovintFalcon.html#ac2c0979a248d5f9c7c2ffb0e35119e95">forceEnabled</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">True if the force feedback from the falcon device is used.  <a href="#ac2c0979a248d5f9c7c2ffb0e35119e95"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cCollisionAABBBox&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNovintFalcon.html#ad03bd56f8b3c5fc2ad5840528c171366">falconBox</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The bounding box to which the falcon is restricted.  <a href="#ad03bd56f8b3c5fc2ad5840528c171366"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::auto_ptr&lt; boost::thread &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNovintFalcon.html#a5a2ac7ef924757e02426be1bd7b8a275">pollingThread</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Holds the thread which will poll the falcon.  <a href="#a5a2ac7ef924757e02426be1bd7b8a275"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNovintFalcon.html#a9534753404ec44c0514aeaa729e0eb9b">numHapticDevices</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">number of haptic devices detected  <a href="#a9534753404ec44c0514aeaa729e0eb9b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cGenericHapticDevice *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNovintFalcon.html#aa6e4c2ae85c8f830c649ab236fe28778">hapticDevices</a> [<a class="el" href="classNovintFalcon.html#afe8a56e56cb2b7caccf7b7def36114db">MAX_DEVICES</a>]</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">A table containing pointers to all haptic devices detected on this computer.  <a href="#aa6e4c2ae85c8f830c649ab236fe28778"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cHapticDeviceHandler&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNovintFalcon.html#a577ea2c5df49e8b87afee93040461dee">handler</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The handler for the haptic devices.  <a href="#a577ea2c5df49e8b87afee93040461dee"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNovintFalcon.html#afe8a56e56cb2b7caccf7b7def36114db">MAX_DEVICES</a> = 4</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">number of haptic devices supported  <a href="#afe8a56e56cb2b7caccf7b7def36114db"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>The novint falcon. </p>
 <p>This class controls the slingshot via a novint falcon. </p>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ac36e7148131ecbdfff97289f2c9e3b9c"></a><!-- doxytag: member="NovintFalcon::NovintFalcon" ref="ac36e7148131ecbdfff97289f2c9e3b9c" args="()" -->
+<a class="anchor" id="a8e01c9e377f4f52f6575e1275470cde8"></a><!-- doxytag: member="NovintFalcon::NovintFalcon" ref="a8e01c9e377f4f52f6575e1275470cde8" args="(boost::shared_ptr&lt; Configuration &gt; configuration)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">NovintFalcon::NovintFalcon </td>
           <td>(</td>
-          <td class="paramname"></td>
+          <td class="paramtype">boost::shared_ptr&lt; <a class="el" href="classConfiguration.html">Configuration</a> &gt;&nbsp;</td>
+          <td class="paramname"> <em>configuration</em></td>
           <td>&nbsp;)&nbsp;</td>
           <td></td>
         </tr>
@@ -105,9 +139,61 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <div class="memdoc">
 
 <p>Constructor. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>configuration</em>&nbsp;</td><td>A reference to the configuration file </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p><p>Local slingshot bounding box</p>
 </p>
+
+</div>
+</div>
+<a class="anchor" id="afb0ece97317db2eb6da852e219cc85eb"></a><!-- doxytag: member="NovintFalcon::~NovintFalcon" ref="afb0ece97317db2eb6da852e219cc85eb" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">NovintFalcon::~NovintFalcon </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a75e051d935bf72522f87d9db6683ad30"></a><!-- doxytag: member="NovintFalcon::NovintFalcon" ref="a75e051d935bf72522f87d9db6683ad30" args="(const NovintFalcon &amp;novintFalcon)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">NovintFalcon::NovintFalcon </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classNovintFalcon.html">NovintFalcon</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>novintFalcon</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copy constructor. </p>
+<p>Not implemented to protect from use. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>novintFalcon</em>&nbsp;</td><td>The object to copy. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -134,9 +220,248 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 </div>
 </div>
+<a class="anchor" id="a5ee3fe9a6271b67bda6a1dba4e1988e7"></a><!-- doxytag: member="NovintFalcon::operator=" ref="a5ee3fe9a6271b67bda6a1dba4e1988e7" args="(const NovintFalcon &amp;novintFalcon)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classNovintFalcon.html">NovintFalcon</a>&amp; NovintFalcon::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classNovintFalcon.html">NovintFalcon</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>novintFalcon</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Assignment operator. </p>
+<p>Not implemented to protect from use. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>videoData</em>&nbsp;</td><td>The object to copy. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af7b4b03a176c59e458c55f99a6ed5a7a"></a><!-- doxytag: member="NovintFalcon::poll" ref="af7b4b03a176c59e458c55f99a6ed5a7a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NovintFalcon::poll </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Poll the slingshot's position and firing state. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3e82b6e9d7c393684b809971208922bf"></a><!-- doxytag: member="NovintFalcon::startPolling" ref="a3e82b6e9d7c393684b809971208922bf" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NovintFalcon::startPolling </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Start polling the falcon for information. </p>
+
+<p>Implements <a class="el" href="classFalcon.html#a4de207fe80e98bf959ed7a41dca6012d">Falcon</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3bc94cd6f05df1d327f79fb87001039d"></a><!-- doxytag: member="NovintFalcon::stopPolling" ref="a3bc94cd6f05df1d327f79fb87001039d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NovintFalcon::stopPolling </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Stop polling the falcon for information. </p>
+
+<p>Implements <a class="el" href="classFalcon.html#ade1bdf4fb8825aa69927418045227e72">Falcon</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="ad03bd56f8b3c5fc2ad5840528c171366"></a><!-- doxytag: member="NovintFalcon::falconBox" ref="ad03bd56f8b3c5fc2ad5840528c171366" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cCollisionAABBBox <a class="el" href="classNovintFalcon.html#ad03bd56f8b3c5fc2ad5840528c171366">NovintFalcon::falconBox</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The bounding box to which the falcon is restricted. </p>
+
+</div>
+</div>
+<a class="anchor" id="aba58f2dd9f8cad812e399aededde67f4"></a><!-- doxytag: member="NovintFalcon::firing" ref="aba58f2dd9f8cad812e399aededde67f4" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classNovintFalcon.html#aba58f2dd9f8cad812e399aededde67f4">NovintFalcon::firing</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>True if the slingshot is currently in firing mode. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac2c0979a248d5f9c7c2ffb0e35119e95"></a><!-- doxytag: member="NovintFalcon::forceEnabled" ref="ac2c0979a248d5f9c7c2ffb0e35119e95" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classNovintFalcon.html#ac2c0979a248d5f9c7c2ffb0e35119e95">NovintFalcon::forceEnabled</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>True if the force feedback from the falcon device is used. </p>
+
+</div>
+</div>
+<a class="anchor" id="a577ea2c5df49e8b87afee93040461dee"></a><!-- doxytag: member="NovintFalcon::handler" ref="a577ea2c5df49e8b87afee93040461dee" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cHapticDeviceHandler <a class="el" href="classNovintFalcon.html#a577ea2c5df49e8b87afee93040461dee">NovintFalcon::handler</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The handler for the haptic devices. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa6e4c2ae85c8f830c649ab236fe28778"></a><!-- doxytag: member="NovintFalcon::hapticDevices" ref="aa6e4c2ae85c8f830c649ab236fe28778" args="[MAX_DEVICES]" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cGenericHapticDevice* <a class="el" href="classNovintFalcon.html#aa6e4c2ae85c8f830c649ab236fe28778">NovintFalcon::hapticDevices</a>[<a class="el" href="classNovintFalcon.html#afe8a56e56cb2b7caccf7b7def36114db">MAX_DEVICES</a>]<code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>A table containing pointers to all haptic devices detected on this computer. </p>
+
+</div>
+</div>
+<a class="anchor" id="afe8a56e56cb2b7caccf7b7def36114db"></a><!-- doxytag: member="NovintFalcon::MAX_DEVICES" ref="afe8a56e56cb2b7caccf7b7def36114db" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="classNovintFalcon.html#afe8a56e56cb2b7caccf7b7def36114db">NovintFalcon::MAX_DEVICES</a> = 4<code> [static, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>number of haptic devices supported </p>
+
+</div>
+</div>
+<a class="anchor" id="a9534753404ec44c0514aeaa729e0eb9b"></a><!-- doxytag: member="NovintFalcon::numHapticDevices" ref="a9534753404ec44c0514aeaa729e0eb9b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classNovintFalcon.html#a9534753404ec44c0514aeaa729e0eb9b">NovintFalcon::numHapticDevices</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>number of haptic devices detected </p>
+
+</div>
+</div>
+<a class="anchor" id="a5a2ac7ef924757e02426be1bd7b8a275"></a><!-- doxytag: member="NovintFalcon::pollingThread" ref="a5a2ac7ef924757e02426be1bd7b8a275" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::auto_ptr&lt;boost::thread&gt; <a class="el" href="classNovintFalcon.html#a5a2ac7ef924757e02426be1bd7b8a275">NovintFalcon::pollingThread</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Holds the thread which will poll the falcon. </p>
+
+</div>
+</div>
+<a class="anchor" id="a652b205f9d3fd33c1d710dd766d63af9"></a><!-- doxytag: member="NovintFalcon::position" ref="a652b205f9d3fd33c1d710dd766d63af9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d <a class="el" href="classNovintFalcon.html#a652b205f9d3fd33c1d710dd766d63af9">NovintFalcon::position</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The falcon's current position. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab6a5b86ad27c9f910245c14530fe23fb"></a><!-- doxytag: member="NovintFalcon::reporting" ref="ab6a5b86ad27c9f910245c14530fe23fb" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classNovintFalcon.html#ab6a5b86ad27c9f910245c14530fe23fb">NovintFalcon::reporting</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>True when the falcon should notify observers that an event occured. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Falcon/<a class="el" href="NovintFalcon_8h_source.html">NovintFalcon.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Falcon/NovintFalcon.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Falcon/<a class="el" href="NovintFalcon_8h_source.html">NovintFalcon.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Falcon/<a class="el" href="NovintFalcon_8cpp.html">NovintFalcon.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -144,7 +469,7 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -153,7 +478,7 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:46 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

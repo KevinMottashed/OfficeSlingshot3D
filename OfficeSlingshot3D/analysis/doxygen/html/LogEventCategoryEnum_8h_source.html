@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OfficeSlingshot3D: /home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/LogEventCategoryEnum.h Source File</title>
+<title>OfficeSlingshot3D: /home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Logger/LogEventCategoryEnum.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -41,42 +42,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/LogEventCategoryEnum.h</h1>  </div>
+<h1>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Logger/LogEventCategoryEnum.h</h1>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef LOG_EVENT_CATEGORY_H</span>
+<a href="LogEventCategoryEnum_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef LOG_EVENT_CATEGORY_H</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define LOG_EVENT_CATEGORY_H</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &quot;stdafx.h&quot;</span>
 <a name="l00005"></a>00005 
-<a name="l00006"></a>00006 <span class="preprocessor">#include &quot;LogEventEnum.h&quot;</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include &quot;<a class="code" href="LogEventEnum_8h.html">LogEventEnum.h</a>&quot;</span>
 <a name="l00007"></a>00007 
-<a name="l00008"></a>00008 <span class="comment">// This enum represents the different categories of input events that the system can receive</span>
-<a name="l00009"></a>00009 <span class="comment">// These categories are network, user interface, falcon and zcamera</span>
-<a name="l00010"></a>00010 <span class="keyword">namespace </span>LogEventCategory
-<a name="l00011"></a>00011 {
-<a name="l00012"></a>00012     <span class="keyword">enum</span> LogEventCategoryEnum
-<a name="l00013"></a>00013     {
-<a name="l00014"></a>00014         NETWORK,
-<a name="l00015"></a>00015         UI,
-<a name="l00016"></a>00016         FALCON,
-<a name="l00017"></a>00017         ZCAM
-<a name="l00018"></a>00018     };
-<a name="l00019"></a>00019 
-<a name="l00020"></a>00020     <span class="comment">// convert the enum to a string</span>
-<a name="l00021"></a>00021     std::string <a class="code" href="namespaceConnectionState.html#aec53b086156059b62bbbf5e2e24ec50b" title="Get a string representation of the enum.">lookup</a>(LogEventCategoryEnum category);
-<a name="l00022"></a>00022 
-<a name="l00023"></a>00023     <span class="comment">// determine which category an input event belongs to</span>
-<a name="l00024"></a>00024     LogEventCategoryEnum lookupCategory(LogEvent_t logEvent);
-<a name="l00025"></a>00025 }
+<a name="l00012"></a><a class="code" href="namespaceLogEventCategory.html">00012</a> <span class="keyword">namespace </span>LogEventCategory
+<a name="l00013"></a>00013 {
+<a name="l00019"></a><a class="code" href="group__Logger.html#gaeb50ce527286d83e82330042c040755d">00019</a>     <span class="keyword">enum</span> <a class="code" href="group__Logger.html#gaeb50ce527286d83e82330042c040755d" title="package Enum that contains all the different categories of log events.">LogEventCategoryEnum</a>
+<a name="l00020"></a>00020     {
+<a name="l00021"></a><a class="code" href="group__Logger.html#ggaeb50ce527286d83e82330042c040755da3b1a0085711dea3f175db54a17f28d2f">00021</a>         NETWORK, 
+<a name="l00022"></a><a class="code" href="group__Logger.html#ggaeb50ce527286d83e82330042c040755da07a0b87ecb59383de1dd53d5cd2ebfe1">00022</a>         UI, 
+<a name="l00023"></a><a class="code" href="group__Logger.html#ggaeb50ce527286d83e82330042c040755dad5cdf496fe1947e2475fb7d5890c6ba5">00023</a>         FALCON, 
+<a name="l00024"></a><a class="code" href="group__Logger.html#ggaeb50ce527286d83e82330042c040755dab0af188807fd5594e5898628532db72c">00024</a>         ZCAM, 
+<a name="l00025"></a>00025     };
 <a name="l00026"></a>00026 
-<a name="l00027"></a>00027 <span class="keyword">typedef</span> LogEventCategory::LogEventCategoryEnum LogEventCategory_t;
-<a name="l00028"></a>00028 
-<a name="l00029"></a>00029 <span class="preprocessor">#endif</span>
+<a name="l00032"></a>00032     std::string <a class="code" href="namespaceLogEventCategory.html#af17834cb290e5ea3eb5d6d8b5791443c" title="Convert the enum to a string.">lookup</a>(<a class="code" href="group__Logger.html#gaeb50ce527286d83e82330042c040755d" title="package Enum that contains all the different categories of log events.">LogEventCategoryEnum</a> category);
+<a name="l00033"></a>00033 
+<a name="l00039"></a>00039     <a class="code" href="group__Logger.html#gaeb50ce527286d83e82330042c040755d" title="package Enum that contains all the different categories of log events.">LogEventCategoryEnum</a> <a class="code" href="namespaceLogEventCategory.html#a4be30e66b51e04d7f9ce41446cda291f" title="Determine which category a log event belongs to.">lookupCategory</a>(<a class="code" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0" title="package This enum represents all input events that the system can receive.">LogEvent_t</a> logEvent);
+<a name="l00040"></a>00040 }
+<a name="l00041"></a>00041 
+<a name="l00042"></a><a class="code" href="LogEventCategoryEnum_8h.html#a33d5bfa05f89bdb6302ec2c5987ce32f">00042</a> <span class="keyword">typedef</span> <a class="code" href="group__Logger.html#gaeb50ce527286d83e82330042c040755d" title="package Enum that contains all the different categories of log events.">LogEventCategory::LogEventCategoryEnum</a> LogEventCategory_t;
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -84,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -93,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:44 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

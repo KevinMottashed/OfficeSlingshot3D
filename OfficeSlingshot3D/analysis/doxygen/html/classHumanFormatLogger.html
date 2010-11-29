@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -49,12 +50,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a>  </div>
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
-<h1>HumanFormatLogger&lt; Stream &gt; Class Template Reference</h1>  </div>
+<h1>HumanFormatLogger&lt; Stream &gt; Class Template Reference<br/>
+<small>
+[<a class="el" href="group__Logger.html">Logger</a>]</small>
+</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="HumanFormatLogger" --><!-- doxytag: inherits="Logger" --><div class="dynheader">
+<!-- doxytag: class="HumanFormatLogger" --><!-- doxytag: inherits="Logger" -->
+<p><b>public</b> Concrete logger class that outputs in a human readable format  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="HumanFormatLogger_8h_source.html">HumanFormatLogger.h</a>&gt;</code></p>
+<div class="dynheader">
 Inheritance diagram for HumanFormatLogger&lt; Stream &gt;:</div>
 <div class="dyncontent">
  <div class="center">
@@ -70,37 +81,502 @@ Inheritance diagram for HumanFormatLogger&lt; Stream &gt;:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memTemplParams" colspan="2"><a class="anchor" id="a404b51267a3478a726242290a9515bda"></a><!-- doxytag: member="HumanFormatLogger::HumanFormatLogger" ref="a404b51267a3478a726242290a9515bda" args="(T1 param)" -->
-template&lt;typename T1 &gt; </td></tr>
-<tr><td class="memTemplItemLeft" align="right" valign="top">&nbsp;</td><td class="memTemplItemRight" valign="bottom"><b>HumanFormatLogger</b> (T1 param)</td></tr>
-<tr><td class="memTemplParams" colspan="2"><a class="anchor" id="ae8bb78a585c0870cf9b60012631414d4"></a><!-- doxytag: member="HumanFormatLogger::HumanFormatLogger" ref="ae8bb78a585c0870cf9b60012631414d4" args="(T1 param1, T2 param2)" -->
-template&lt;typename T1 , typename T2 &gt; </td></tr>
-<tr><td class="memTemplItemLeft" align="right" valign="top">&nbsp;</td><td class="memTemplItemRight" valign="bottom"><b>HumanFormatLogger</b> (T1 param1, T2 param2)</td></tr>
-<tr><td class="memTemplParams" colspan="2"><a class="anchor" id="ad8fa4b5491db92d554d3eebdb318c72e"></a><!-- doxytag: member="HumanFormatLogger::HumanFormatLogger" ref="ad8fa4b5491db92d554d3eebdb318c72e" args="(T1 param1, T2 param2, T3 param3)" -->
-template&lt;typename T1 , typename T2 , typename T3 &gt; </td></tr>
-<tr><td class="memTemplItemLeft" align="right" valign="top">&nbsp;</td><td class="memTemplItemRight" valign="bottom"><b>HumanFormatLogger</b> (T1 param1, T2 param2, T3 param3)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanFormatLogger.html#a8075149b93e307094767b627937259e3">HumanFormatLogger</a> (std::auto_ptr&lt; Stream &gt; <a class="el" href="classHumanFormatLogger.html#a34a9373eb72aa78f93228e9a57a0aabe">ostream</a>)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#a8075149b93e307094767b627937259e3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanFormatLogger.html#a5097f9c5a7f12326416e71ca9f5c1ca5">~HumanFormatLogger</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#a5097f9c5a7f12326416e71ca9f5c1ca5"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a36ded631f6095de7b0cb96ec2af0944c"></a><!-- doxytag: member="HumanFormatLogger::log" ref="a36ded631f6095de7b0cb96ec2af0944c" args="(LogEvent_t logEvent)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>log</b> (LogEvent_t logEvent)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2e419cfe25dbf748ee6b0eb2141f65fc"></a><!-- doxytag: member="HumanFormatLogger::log" ref="a2e419cfe25dbf748ee6b0eb2141f65fc" args="(LogEvent_t logEvent, rc_network error)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>log</b> (LogEvent_t logEvent, rc_network error)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adce37538632ef3b2eb7527e49a31d818"></a><!-- doxytag: member="HumanFormatLogger::log" ref="adce37538632ef3b2eb7527e49a31d818" args="(LogEvent_t logEvent, const std::string &amp;str)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>log</b> (LogEvent_t logEvent, const std::string &amp;str)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a69901184b8637645606705513f7dbc3e"></a><!-- doxytag: member="HumanFormatLogger::log" ref="a69901184b8637645606705513f7dbc3e" args="(LogEvent_t logEvent, const VideoData &amp;video)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>log</b> (LogEvent_t logEvent, const <a class="el" href="structVideoData.html">VideoData</a> &amp;video)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ace0b4baa6c6999ca4111e4bc443e6b4a"></a><!-- doxytag: member="HumanFormatLogger::log" ref="ace0b4baa6c6999ca4111e4bc443e6b4a" args="(LogEvent_t logEvent, const cVector3d &amp;vec)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>log</b> (LogEvent_t logEvent, const cVector3d &amp;vec)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a84e429003498dc59385e7e4dfd4dee64"></a><!-- doxytag: member="HumanFormatLogger::log" ref="a84e429003498dc59385e7e4dfd4dee64" args="(LogEvent_t logEvent, const Projectile &amp;projectile)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>log</b> (LogEvent_t logEvent, const <a class="el" href="classProjectile.html">Projectile</a> &amp;projectile)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3ef78598907255bd9a467932f523d2fb"></a><!-- doxytag: member="HumanFormatLogger::log" ref="a3ef78598907255bd9a467932f523d2fb" args="(LogEvent_t logEvent, const UserPreferences &amp;preferences)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>log</b> (LogEvent_t logEvent, const <a class="el" href="structUserPreferences.html">UserPreferences</a> &amp;preferences)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanFormatLogger.html#a36ded631f6095de7b0cb96ec2af0944c">log</a> (<a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a> logEvent)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Log an event that has no associated data.  <a href="#a36ded631f6095de7b0cb96ec2af0944c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanFormatLogger.html#acd608252b3f91d307872a48b33495f28">log</a> (<a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a> logEvent, unsigned int uInt)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Log an event with data of type unsigned int.  <a href="#acd608252b3f91d307872a48b33495f28"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanFormatLogger.html#a2e419cfe25dbf748ee6b0eb2141f65fc">log</a> (<a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a> logEvent, <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> error)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Log an event with data of type rc_network.  <a href="#a2e419cfe25dbf748ee6b0eb2141f65fc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanFormatLogger.html#adce37538632ef3b2eb7527e49a31d818">log</a> (<a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a> logEvent, const std::string &amp;str)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Log an event with data of type string.  <a href="#adce37538632ef3b2eb7527e49a31d818"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanFormatLogger.html#ace0b4baa6c6999ca4111e4bc443e6b4a">log</a> (<a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a> logEvent, const cVector3d &amp;vec)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Log an event with data of type cVector3d.  <a href="#ace0b4baa6c6999ca4111e4bc443e6b4a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanFormatLogger.html#a84e429003498dc59385e7e4dfd4dee64">log</a> (<a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a> logEvent, const <a class="el" href="classProjectile.html">Projectile</a> &amp;projectile)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Log an event with data of type <a class="el" href="classProjectile.html" title="Represents a projectile Each projectile has a position and a force behind it.">Projectile</a>.  <a href="#a84e429003498dc59385e7e4dfd4dee64"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanFormatLogger.html#a3ef78598907255bd9a467932f523d2fb">log</a> (<a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a> logEvent, const <a class="el" href="structUserPreferences.html">UserPreferences</a> &amp;preferences)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Log an event with data of type <a class="el" href="structUserPreferences.html" title="public Represents the user preferences.">UserPreferences</a>.  <a href="#a3ef78598907255bd9a467932f523d2fb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanFormatLogger.html#a793c554c71116f71debe8fd79399f148">log</a> (<a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a> logEvent, const <a class="el" href="classPhysicsSync.html">PhysicsSync</a> &amp;sync)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Log an event with data of type <a class="el" href="classPhysicsSync.html" title="public This data structure is used to synchronize 2 virtual environments.">PhysicsSync</a>.  <a href="#a793c554c71116f71debe8fd79399f148"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanFormatLogger.html#aa6fb5bf6b597d0e87c8eaba4c8c98d6a">HumanFormatLogger</a> (const <a class="el" href="classHumanFormatLogger.html">HumanFormatLogger</a> &amp;c)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy constructor.  <a href="#aa6fb5bf6b597d0e87c8eaba4c8c98d6a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classHumanFormatLogger.html">HumanFormatLogger</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanFormatLogger.html#a090b49168465c2786391e1e8d4d6a9f1">operator=</a> (const <a class="el" href="classHumanFormatLogger.html">HumanFormatLogger</a> &amp;c)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Assignment operator.  <a href="#a090b49168465c2786391e1e8d4d6a9f1"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::auto_ptr&lt; Stream &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanFormatLogger.html#a34a9373eb72aa78f93228e9a57a0aabe">ostream</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The stream where the log will be writen.  <a href="#a34a9373eb72aa78f93228e9a57a0aabe"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boost::mutex&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanFormatLogger.html#ae80ac3f8dd1ccf3ebc1570afad81e1b1">stream_mutex</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Mutex to protect the stream.  <a href="#ae80ac3f8dd1ccf3ebc1570afad81e1b1"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
 <h3>template&lt;typename Stream&gt;<br/>
  class HumanFormatLogger&lt; Stream &gt;</h3>
 
+<p><b>public</b> Concrete logger class that outputs in a human readable format </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a8075149b93e307094767b627937259e3"></a><!-- doxytag: member="HumanFormatLogger::HumanFormatLogger" ref="a8075149b93e307094767b627937259e3" args="(std::auto_ptr&lt; Stream &gt; ostream)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Stream &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classHumanFormatLogger.html">HumanFormatLogger</a>&lt; Stream &gt;::<a class="el" href="classHumanFormatLogger.html">HumanFormatLogger</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::auto_ptr&lt; Stream &gt;&nbsp;</td>
+          <td class="paramname"> <em>ostream</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>ostream</em>&nbsp;</td><td>The stream that the log will be outputed to. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5097f9c5a7f12326416e71ca9f5c1ca5"></a><!-- doxytag: member="HumanFormatLogger::~HumanFormatLogger" ref="a5097f9c5a7f12326416e71ca9f5c1ca5" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Stream &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classHumanFormatLogger.html">HumanFormatLogger</a>&lt; Stream &gt;::~<a class="el" href="classHumanFormatLogger.html">HumanFormatLogger</a> </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa6fb5bf6b597d0e87c8eaba4c8c98d6a"></a><!-- doxytag: member="HumanFormatLogger::HumanFormatLogger" ref="aa6fb5bf6b597d0e87c8eaba4c8c98d6a" args="(const HumanFormatLogger &amp;c)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Stream &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classHumanFormatLogger.html">HumanFormatLogger</a>&lt; Stream &gt;::<a class="el" href="classHumanFormatLogger.html">HumanFormatLogger</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classHumanFormatLogger.html">HumanFormatLogger</a>&lt; Stream &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>c</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copy constructor. </p>
+<p>Not implemented to protect from use. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>c</em>&nbsp;</td><td>The object to copy. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a36ded631f6095de7b0cb96ec2af0944c"></a><!-- doxytag: member="HumanFormatLogger::log" ref="a36ded631f6095de7b0cb96ec2af0944c" args="(LogEvent_t logEvent)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Stream &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classHumanFormatLogger.html">HumanFormatLogger</a>&lt; Stream &gt;::log </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a>&nbsp;</td>
+          <td class="paramname"> <em>logEvent</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Log an event that has no associated data. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>logEvent</em>&nbsp;</td><td>The event to be logged. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classLogger.html#a801f41e68772457e9635c68e951cc0f1">Logger</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acd608252b3f91d307872a48b33495f28"></a><!-- doxytag: member="HumanFormatLogger::log" ref="acd608252b3f91d307872a48b33495f28" args="(LogEvent_t logEvent, unsigned int uInt)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Stream &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classHumanFormatLogger.html">HumanFormatLogger</a>&lt; Stream &gt;::log </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a>&nbsp;</td>
+          <td class="paramname"> <em>logEvent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>uInt</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Log an event with data of type unsigned int. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>logEvent</em>&nbsp;</td><td>The event to be logged. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>uInt</em>&nbsp;</td><td>The associated data. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classLogger.html#a3e211b1fc9a2cb01c2a2d6231b34c134">Logger</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adce37538632ef3b2eb7527e49a31d818"></a><!-- doxytag: member="HumanFormatLogger::log" ref="adce37538632ef3b2eb7527e49a31d818" args="(LogEvent_t logEvent, const std::string &amp;str)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Stream &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classHumanFormatLogger.html">HumanFormatLogger</a>&lt; Stream &gt;::log </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a>&nbsp;</td>
+          <td class="paramname"> <em>logEvent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>str</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Log an event with data of type string. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>logEvent</em>&nbsp;</td><td>The event to be logged. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>str</em>&nbsp;</td><td>The associated data. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classLogger.html#a33d4f1b5211dccdf685210244ccbed15">Logger</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3ef78598907255bd9a467932f523d2fb"></a><!-- doxytag: member="HumanFormatLogger::log" ref="a3ef78598907255bd9a467932f523d2fb" args="(LogEvent_t logEvent, const UserPreferences &amp;preferences)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Stream &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classHumanFormatLogger.html">HumanFormatLogger</a>&lt; Stream &gt;::log </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a>&nbsp;</td>
+          <td class="paramname"> <em>logEvent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structUserPreferences.html">UserPreferences</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>preferences</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Log an event with data of type <a class="el" href="structUserPreferences.html" title="public Represents the user preferences.">UserPreferences</a>. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>logEvent</em>&nbsp;</td><td>The event to be logged. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>preferences</em>&nbsp;</td><td>The associated data. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classLogger.html#af36c61a9def35ee2e9bf4929f5633e90">Logger</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a84e429003498dc59385e7e4dfd4dee64"></a><!-- doxytag: member="HumanFormatLogger::log" ref="a84e429003498dc59385e7e4dfd4dee64" args="(LogEvent_t logEvent, const Projectile &amp;projectile)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Stream &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classHumanFormatLogger.html">HumanFormatLogger</a>&lt; Stream &gt;::log </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a>&nbsp;</td>
+          <td class="paramname"> <em>logEvent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classProjectile.html">Projectile</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>projectile</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Log an event with data of type <a class="el" href="classProjectile.html" title="Represents a projectile Each projectile has a position and a force behind it.">Projectile</a>. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>logEvent</em>&nbsp;</td><td>The event to be logged. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>projectile</em>&nbsp;</td><td>The associated data. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classLogger.html#a2ce2fc72be31a47bc11c023c2ed0ac71">Logger</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ace0b4baa6c6999ca4111e4bc443e6b4a"></a><!-- doxytag: member="HumanFormatLogger::log" ref="ace0b4baa6c6999ca4111e4bc443e6b4a" args="(LogEvent_t logEvent, const cVector3d &amp;vec)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Stream &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classHumanFormatLogger.html">HumanFormatLogger</a>&lt; Stream &gt;::log </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a>&nbsp;</td>
+          <td class="paramname"> <em>logEvent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const cVector3d &amp;&nbsp;</td>
+          <td class="paramname"> <em>vec</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Log an event with data of type cVector3d. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>logEvent</em>&nbsp;</td><td>The event to be logged. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>vec</em>&nbsp;</td><td>The associated data. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classLogger.html#a0bfc30bba95fbd89495e9a2f0f1672a3">Logger</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a793c554c71116f71debe8fd79399f148"></a><!-- doxytag: member="HumanFormatLogger::log" ref="a793c554c71116f71debe8fd79399f148" args="(LogEvent_t logEvent, const PhysicsSync &amp;sync)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Stream &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classHumanFormatLogger.html">HumanFormatLogger</a>&lt; Stream &gt;::log </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a>&nbsp;</td>
+          <td class="paramname"> <em>logEvent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classPhysicsSync.html">PhysicsSync</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>sync</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Log an event with data of type <a class="el" href="classPhysicsSync.html" title="public This data structure is used to synchronize 2 virtual environments.">PhysicsSync</a>. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>logEvent</em>&nbsp;</td><td>The event to be logged. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>sync</em>&nbsp;</td><td>The associated data. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classLogger.html#a84d4bfea797a8d06ab8d956aa04edcc3">Logger</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2e419cfe25dbf748ee6b0eb2141f65fc"></a><!-- doxytag: member="HumanFormatLogger::log" ref="a2e419cfe25dbf748ee6b0eb2141f65fc" args="(LogEvent_t logEvent, rc_network error)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Stream &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classHumanFormatLogger.html">HumanFormatLogger</a>&lt; Stream &gt;::log </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a>&nbsp;</td>
+          <td class="paramname"> <em>logEvent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td>
+          <td class="paramname"> <em>error</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Log an event with data of type rc_network. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>logEvent</em>&nbsp;</td><td>The event to be logged. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>error</em>&nbsp;</td><td>The associated data. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classLogger.html#a2c18b2cbcb7338768d69fc710e1553f5">Logger</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a090b49168465c2786391e1e8d4d6a9f1"></a><!-- doxytag: member="HumanFormatLogger::operator=" ref="a090b49168465c2786391e1e8d4d6a9f1" args="(const HumanFormatLogger &amp;c)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Stream &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classHumanFormatLogger.html">HumanFormatLogger</a>&amp; <a class="el" href="classHumanFormatLogger.html">HumanFormatLogger</a>&lt; Stream &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classHumanFormatLogger.html">HumanFormatLogger</a>&lt; Stream &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>c</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Assignment operator. </p>
+<p>Not implemented to protect from use. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>c</em>&nbsp;</td><td>The object to copy. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a34a9373eb72aa78f93228e9a57a0aabe"></a><!-- doxytag: member="HumanFormatLogger::ostream" ref="a34a9373eb72aa78f93228e9a57a0aabe" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Stream &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::auto_ptr&lt;Stream&gt; <a class="el" href="classHumanFormatLogger.html">HumanFormatLogger</a>&lt; Stream &gt;::<a class="el" href="classHumanFormatLogger.html#a34a9373eb72aa78f93228e9a57a0aabe">ostream</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The stream where the log will be writen. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae80ac3f8dd1ccf3ebc1570afad81e1b1"></a><!-- doxytag: member="HumanFormatLogger::stream_mutex" ref="ae80ac3f8dd1ccf3ebc1570afad81e1b1" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Stream &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::mutex <a class="el" href="classHumanFormatLogger.html">HumanFormatLogger</a>&lt; Stream &gt;::<a class="el" href="classHumanFormatLogger.html#ae80ac3f8dd1ccf3ebc1570afad81e1b1">stream_mutex</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Mutex to protect the stream. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/<a class="el" href="HumanFormatLogger_8h_source.html">HumanFormatLogger.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Logger/<a class="el" href="HumanFormatLogger_8h_source.html">HumanFormatLogger.h</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -108,7 +584,7 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>log</b> (LogE
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -117,7 +593,7 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>log</b> (LogE
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:45 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

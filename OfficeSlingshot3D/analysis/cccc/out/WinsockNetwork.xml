@@ -2,32 +2,32 @@
 <!--Detailed report on module WinsockNetwork-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="75" level="0" />
+<lines_of_code value="76" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="0" />
-<lines_of_code value="83" level="0" />
+<lines_of_code value="225" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="0.904" level="0" />
+<lines_of_code_per_line_of_comment value="0.338" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-<weighted_methods_per_class_unity value="18" level="0" />
+<weighted_methods_per_class_unity value="19" level="0" />
 <weighted_methods_per_class_visibility value="2" level="0" />
 <depth_of_inheritance_tree value="2" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="8" level="0" />
-<IF4 value="49" level="0" />
+<coupling_between_objects value="10" level="0" />
+<IF4 value="81" level="0" />
 <IF4_per_member_function value="********" level="2" />
-<IF4_visible value="16" level="0" />
+<IF4_visible value="36" level="1" />
 <IF4_visible_per_member_function value="********" level="2" />
 <IF4_concrete value="0" level="0" />
 <IF4_concrete_per_member_function value="********" level="0" />
 </module_summary>
 <module_detail>
 <description>declaration</description>
-<source_reference file="../../Network/NetworkProxy.h" line="9" />
+<source_reference file="../../Network/NetworkProxy.h" line="21" />
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="12" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 <description>declaration</description>
@@ -38,11 +38,11 @@
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 <description>definition</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="45" />
+<source_reference file="../../Network/WinsockNetwork.h" line="55" />
 <lines_of_code value="45" level="1" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="63" level="0" />
-<lines_of_code_per_line_of_comment value="0.714" level="0" />
+<lines_of_comment value="118" level="0" />
+<lines_of_code_per_line_of_comment value="0.381" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module_detail>
 <procedural_detail>
@@ -54,11 +54,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="48" />
+<source_reference file="../../Network/WinsockNetwork.h" line="61" />
 </extent>
 <lines_of_code value="11" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="3" level="0" />
+<lines_of_comment value="6" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -66,11 +66,11 @@
 <name>connect(const string &amp;,const string &amp;)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="55" />
+<source_reference file="../../Network/WinsockNetwork.h" line="82" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="6" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -78,11 +78,11 @@
 <name>disconnect()</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="58" />
+<source_reference file="../../Network/WinsockNetwork.h" line="88" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -90,11 +90,11 @@
 <name>isConnected()</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="87" />
+<source_reference file="../../Network/WinsockNetwork.h" line="171" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -102,11 +102,11 @@
 <name>isListening()</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="90" />
+<source_reference file="../../Network/WinsockNetwork.h" line="177" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -114,11 +114,11 @@
 <name>listen(const string &amp;)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="52" />
+<source_reference file="../../Network/WinsockNetwork.h" line="74" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -126,11 +126,11 @@
 <name>notifyAccept(NetworkSocket *)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="93" />
+<source_reference file="../../Network/WinsockNetwork.h" line="184" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -138,11 +138,11 @@
 <name>sendChatMessage(const string &amp;)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="64" />
+<source_reference file="../../Network/WinsockNetwork.h" line="102" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -150,11 +150,23 @@
 <name>sendEndGame()</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="69" />
+<source_reference file="../../Network/WinsockNetwork.h" line="123" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="5" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>sendGameOver()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Network/WinsockNetwork.h" line="151" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -162,11 +174,35 @@
 <name>sendPauseGame()</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="68" />
+<source_reference file="../../Network/WinsockNetwork.h" line="116" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="5" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>sendPhysicsSync(const PhysicsSync &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Network/WinsockNetwork.h" line="165" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="5" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>sendPlayerHit(BodyPart_t)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Network/WinsockNetwork.h" line="158" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -174,11 +210,11 @@
 <name>sendPlayerPosition(const cVector3d &amp;)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="75" />
+<source_reference file="../../Network/WinsockNetwork.h" line="130" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -186,35 +222,23 @@
 <name>sendProjectile(const Projectile &amp;)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="81" />
+<source_reference file="../../Network/WinsockNetwork.h" line="145" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
-<name>sendSlingshotPosition(const cVector3d &amp;)</name>
+<name>sendSlingshotPullback(const cVector3d &amp;)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="78" />
+<source_reference file="../../Network/WinsockNetwork.h" line="138" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>sendSlingshotPullback()</name>
-<extent>
-<description>declaration</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="84" />
-</extent>
-<lines_of_code value="1" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="6" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -222,11 +246,11 @@
 <name>sendStartGame()</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="67" />
+<source_reference file="../../Network/WinsockNetwork.h" line="109" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -234,23 +258,11 @@
 <name>sendUserName(const string &amp;)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="61" />
+<source_reference file="../../Network/WinsockNetwork.h" line="95" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>sendVideoData(const VideoData &amp;)</name>
-<extent>
-<description>declaration</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="72" />
-</extent>
-<lines_of_code value="1" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -258,11 +270,11 @@
 <name>~WinsockNetwork()</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="49" />
+<source_reference file="../../Network/WinsockNetwork.h" line="67" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -280,11 +292,11 @@
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/NetworkSocket.h" line="22" />
+<source_reference file="../../Network/NetworkSocket.h" line="24" />
 </extent>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Network/NetworkSocket.h" line="45" />
+<source_reference file="../../Network/NetworkSocket.h" line="50" />
 </extent>
 </client_module>
 <supplier_module>
@@ -293,73 +305,87 @@
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="114" />
+<source_reference file="../../Network/WinsockNetwork.h" line="199" />
+</extent>
+<name>BodyPart_t</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Network/WinsockNetwork.h" line="158" />
 </extent>
 <name>Network</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="45" />
+<source_reference file="../../Network/WinsockNetwork.h" line="55" />
 </extent>
 <name>NetworkSocket</name>
 <visible>false</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="93" />
+<source_reference file="../../Network/WinsockNetwork.h" line="184" />
 </extent>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="112" />
+<source_reference file="../../Network/WinsockNetwork.h" line="197" />
+</extent>
+<name>PhysicsSync</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Network/WinsockNetwork.h" line="165" />
 </extent>
 <name>Projectile</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="81" />
+<source_reference file="../../Network/WinsockNetwork.h" line="145" />
 </extent>
 <name>SOCKET</name>
 <visible>false</visible>
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="113" />
+<source_reference file="../../Network/WinsockNetwork.h" line="198" />
 </extent>
 <name>cVector3d</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="75" />
+<source_reference file="../../Network/WinsockNetwork.h" line="130" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="78" />
+<source_reference file="../../Network/WinsockNetwork.h" line="138" />
 </extent>
 <name>string</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="52" />
+<source_reference file="../../Network/WinsockNetwork.h" line="74" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="55" />
+<source_reference file="../../Network/WinsockNetwork.h" line="82" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="55" />
+<source_reference file="../../Network/WinsockNetwork.h" line="82" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="61" />
+<source_reference file="../../Network/WinsockNetwork.h" line="95" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="64" />
+<source_reference file="../../Network/WinsockNetwork.h" line="102" />
 </extent>
 </supplier_module>
 </module>

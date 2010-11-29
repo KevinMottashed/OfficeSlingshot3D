@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -48,13 +49,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <h1>Game Class Reference</h1>  </div>
 </div>
 <div class="contents">
 <!-- doxytag: class="Game" --><!-- doxytag: inherits="MediatorObserver" -->
-<p>Represents the <a class="el" href="classOfficeSlingshot3D.html">OfficeSlingshot3D</a> game.  
+<p>Represents the <a class="el" href="classOfficeSlingshot3D.html" title="The office slingshot 3D class is the class that runs the game The game can be started by calling run(...">OfficeSlingshot3D</a> game.  
 <a href="#_details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Game_8h_source.html">Game.h</a>&gt;</code></p>
@@ -70,22 +74,661 @@ Inheritance diagram for Game:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae4a3e825c02c218e3a110586dbc964f5"></a><!-- doxytag: member="Game::Game" ref="ae4a3e825c02c218e3a110586dbc964f5" args="(boost::shared_ptr&lt; Mediator &gt; mediator)" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#ae4a3e825c02c218e3a110586dbc964f5">Game</a> (boost::shared_ptr&lt; <a class="el" href="classMediator.html">Mediator</a> &gt; mediator)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae3d112ca6e0e55150d2fdbc704474530"></a><!-- doxytag: member="Game::~Game" ref="ae3d112ca6e0e55150d2fdbc704474530" args="()" -->
-virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#ae3d112ca6e0e55150d2fdbc704474530">~Game</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1e83402bc85f4ef4150bee568e4f8986"></a><!-- doxytag: member="Game::update" ref="a1e83402bc85f4ef4150bee568e4f8986" args="(MediatorUpdateContext_t context, const void *data)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a1e83402bc85f4ef4150bee568e4f8986">update</a> (<a class="el" href="namespaceMediatorUpdateContext.html#aa3a9bed543f2a2237dc2b6feea170a1d">MediatorUpdateContext_t</a> context, const void *data)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Updates from the mediator. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#ae4a3e825c02c218e3a110586dbc964f5">Game</a> (boost::shared_ptr&lt; <a class="el" href="classMediator.html">Mediator</a> &gt; <a class="el" href="classGame.html#a6e1d6860b46e9d865e19c33a656122e6">mediator</a>)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#ae4a3e825c02c218e3a110586dbc964f5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#ae3d112ca6e0e55150d2fdbc704474530">~Game</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#ae3d112ca6e0e55150d2fdbc704474530"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a1e83402bc85f4ef4150bee568e4f8986">update</a> (<a class="el" href="group__Mediator.html#gaa3a9bed543f2a2237dc2b6feea170a1d">MediatorUpdateContext_t</a> context, const void *data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Updates from the mediator.  <a href="#a1e83402bc85f4ef4150bee568e4f8986"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a9a89f5c68680c2e133306d6a3db5043a">Game</a> (const <a class="el" href="classGame.html">Game</a> &amp;game)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy constructor, not implemented to protect from use.  <a href="#a9a89f5c68680c2e133306d6a3db5043a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGame.html">Game</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a400871f3835fe6c8d274f464ac11302e">operator=</a> (const <a class="el" href="classGame.html">Game</a> &amp;game)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Assignment operator, not implemented to protect from use.  <a href="#a400871f3835fe6c8d274f464ac11302e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#aede5f46c8c7bbbaf8459eeec397a11e7">gameLoop</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This function is the main game loop.  <a href="#aede5f46c8c7bbbaf8459eeec397a11e7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a924888ee85f1b0aeec71b3a7ebb94398">processUpdateQueue</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Helper for the game loop.  <a href="#a924888ee85f1b0aeec71b3a7ebb94398"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#abd745aafe76f8c995f6f5d2779ea6210">handleUpdate</a> (<a class="el" href="group__Mediator.html#gaa3a9bed543f2a2237dc2b6feea170a1d">MediatorUpdateContext_t</a> &amp;context, boost::any &amp;data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Handle a single update.  <a href="#abd745aafe76f8c995f6f5d2779ea6210"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#ab71d119862a920bbecb160424e5e947f">updateWorld</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Update the game world for the next frame.  <a href="#ab71d119862a920bbecb160424e5e947f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a4dacbfb5594fbfec24eabf059c56a5df">checkForCollisions</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Helper for the game loop.  <a href="#a4dacbfb5594fbfec24eabf059c56a5df"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#ad4e4d40d7c0843aad264765d3e1e5371">sendPhysicsSync</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This gathers the current state of our game and sends it to the peer.  <a href="#ad4e4d40d7c0843aad264765d3e1e5371"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a86346ec5094641b8d3b266ba879cc61a">handlePhysicsSync</a> (const <a class="el" href="classPhysicsSync.html">PhysicsSync</a> &amp;sync)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Handle a physics sync packet from the peer.  <a href="#a86346ec5094641b8d3b266ba879cc61a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a39bb2fd26b5ea6b164f28f9f6723582e">reset</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reset the game to its original state.  <a href="#a39bb2fd26b5ea6b164f28f9f6723582e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#ac99f9b8f2fe853140727464c97128fdc">start</a> (<a class="el" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228">Player_t</a> player)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Start the game.  <a href="#ac99f9b8f2fe853140727464c97128fdc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#aaa1a4a60cb09861202ecd623946eb55b">pause</a> (<a class="el" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228">Player_t</a> player)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Pause the game.  <a href="#aaa1a4a60cb09861202ecd623946eb55b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#ad9b2e2bce281d90f4d64913b18d919b0">stop</a> (<a class="el" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228">Player_t</a> player)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Stop the game.  <a href="#ad9b2e2bce281d90f4d64913b18d919b0"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a27179f8fc227701b573cc5f7212727f8">calculateHitDamage</a> (<a class="el" href="group__Common.html#gaa22d3933804e3afcd4eac294dded7434">BodyPart_t</a> bodyPart)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calculate the damage done when a player is hit on a certain body part.  <a href="#a27179f8fc227701b573cc5f7212727f8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a1c5a25be6e6e96d318e1916aa0c75ff4">isWorldRelatedUpdate</a> (<a class="el" href="group__Mediator.html#gaa3a9bed543f2a2237dc2b6feea170a1d">MediatorUpdateContext_t</a> context)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Determine if the update context is world related.  <a href="#a1c5a25be6e6e96d318e1916aa0c75ff4"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::auto_ptr&lt; boost::thread &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a16fc73f1cc2fab7326147645fad0e9a9">gameThread</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Holds the thread which will run the main game loop.  <a href="#a16fc73f1cc2fab7326147645fad0e9a9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Common.html#ga1026e99904938017415f188e2daba514">GameState_t</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a8d7bbb10971fd5f1bedf74ba5009bc8e">state</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The current state of the game.  <a href="#a8d7bbb10971fd5f1bedf74ba5009bc8e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned long&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a9eeeeb7d3bf756e7e02366b7ebd58781">age</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The age (in frames) of the current game.  <a href="#a9eeeeb7d3bf756e7e02366b7ebd58781"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr&lt; <a class="el" href="classMediator.html">Mediator</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a6e1d6860b46e9d865e19c33a656122e6">mediator</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The mediator for interpreting user input and synchronizing with the peer.  <a href="#a6e1d6860b46e9d865e19c33a656122e6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classVirtualEnvironment.html">VirtualEnvironment</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#afdfd0899b64c6e244a23154ab830e809">environment</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The games virtual environment.  <a href="#afdfd0899b64c6e244a23154ab830e809"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTitleScreen.html">TitleScreen</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a72cffd20a06f8b5e99ac5cb15fde95fa">titleScreen</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The game's title screen.  <a href="#a72cffd20a06f8b5e99ac5cb15fde95fa"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classWinScreen.html">WinScreen</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#aef64579d52c72fd05327be979dad7c26">winScreen</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The game's win screen.  <a href="#aef64579d52c72fd05327be979dad7c26"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classLoseScreen.html">LoseScreen</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a029c31c15e0a40a2c5fe3b7a98d72d2a">loseScreen</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The game's lose screen.  <a href="#a029c31c15e0a40a2c5fe3b7a98d72d2a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::queue&lt; std::pair<br class="typebreak"/>
+&lt; <a class="el" href="group__Mediator.html#gaa3a9bed543f2a2237dc2b6feea170a1d">MediatorUpdateContext_t</a>, <br class="typebreak"/>
+boost::any &gt; &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#abb684a755d14e751d333e96e6044ce6d">updateQueue</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The game's update queue.  <a href="#abb684a755d14e751d333e96e6044ce6d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boost::mutex&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a073da4e2184847aa4a8f227b67f8009d">updateQueueMutex</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Protect the update queue from simultaneous access.  <a href="#a073da4e2184847aa4a8f227b67f8009d"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<p>Represents the <a class="el" href="classOfficeSlingshot3D.html">OfficeSlingshot3D</a> game. </p>
+<p>Represents the <a class="el" href="classOfficeSlingshot3D.html" title="The office slingshot 3D class is the class that runs the game The game can be started by calling run(...">OfficeSlingshot3D</a> game. </p>
 <p>Holds game data (score, health, etc ...) and the games 3d representation. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ae4a3e825c02c218e3a110586dbc964f5"></a><!-- doxytag: member="Game::Game" ref="ae4a3e825c02c218e3a110586dbc964f5" args="(boost::shared_ptr&lt; Mediator &gt; mediator)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Game::Game </td>
+          <td>(</td>
+          <td class="paramtype">boost::shared_ptr&lt; <a class="el" href="classMediator.html">Mediator</a> &gt;&nbsp;</td>
+          <td class="paramname"> <em>mediator</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae3d112ca6e0e55150d2fdbc704474530"></a><!-- doxytag: member="Game::~Game" ref="ae3d112ca6e0e55150d2fdbc704474530" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Game::~Game </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9a89f5c68680c2e133306d6a3db5043a"></a><!-- doxytag: member="Game::Game" ref="a9a89f5c68680c2e133306d6a3db5043a" args="(const Game &amp;game)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Game::Game </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classGame.html">Game</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>game</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copy constructor, not implemented to protect from use. </p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a27179f8fc227701b573cc5f7212727f8"></a><!-- doxytag: member="Game::calculateHitDamage" ref="a27179f8fc227701b573cc5f7212727f8" args="(BodyPart_t bodyPart)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Game::calculateHitDamage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Common.html#gaa22d3933804e3afcd4eac294dded7434">BodyPart_t</a>&nbsp;</td>
+          <td class="paramname"> <em>bodyPart</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Calculate the damage done when a player is hit on a certain body part. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>bodyPart</em>&nbsp;</td><td>The body part where the player was hit. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The damage done </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4dacbfb5594fbfec24eabf059c56a5df"></a><!-- doxytag: member="Game::checkForCollisions" ref="a4dacbfb5594fbfec24eabf059c56a5df" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game::checkForCollisions </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Helper for the game loop. </p>
+<p>This will check for collisions and handle them. </p>
+
+</div>
+</div>
+<a class="anchor" id="aede5f46c8c7bbbaf8459eeec397a11e7"></a><!-- doxytag: member="Game::gameLoop" ref="aede5f46c8c7bbbaf8459eeec397a11e7" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game::gameLoop </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>This function is the main game loop. </p>
+<p>A thread will run this non-stop. </p>
+
+</div>
+</div>
+<a class="anchor" id="a86346ec5094641b8d3b266ba879cc61a"></a><!-- doxytag: member="Game::handlePhysicsSync" ref="a86346ec5094641b8d3b266ba879cc61a" args="(const PhysicsSync &amp;sync)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game::handlePhysicsSync </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classPhysicsSync.html">PhysicsSync</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>sync</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Handle a physics sync packet from the peer. </p>
+<p>This will update our game to reflect the peer's game. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>sync</em>&nbsp;</td><td>The physics sync packet to handle </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="abd745aafe76f8c995f6f5d2779ea6210"></a><!-- doxytag: member="Game::handleUpdate" ref="abd745aafe76f8c995f6f5d2779ea6210" args="(MediatorUpdateContext_t &amp;context, boost::any &amp;data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game::handleUpdate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Mediator.html#gaa3a9bed543f2a2237dc2b6feea170a1d">MediatorUpdateContext_t</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boost::any &amp;&nbsp;</td>
+          <td class="paramname"> <em>data</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Handle a single update. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>context</em>&nbsp;</td><td>The update's context </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>data</em>&nbsp;</td><td>The update's data </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1c5a25be6e6e96d318e1916aa0c75ff4"></a><!-- doxytag: member="Game::isWorldRelatedUpdate" ref="a1c5a25be6e6e96d318e1916aa0c75ff4" args="(MediatorUpdateContext_t context)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Game::isWorldRelatedUpdate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Mediator.html#gaa3a9bed543f2a2237dc2b6feea170a1d">MediatorUpdateContext_t</a>&nbsp;</td>
+          <td class="paramname"> <em>context</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Determine if the update context is world related. </p>
+<p>A world related update changes the world (avatar positions, projectiles, etc...) </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>context</em>&nbsp;</td><td>The update to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if the update will modify the world. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a400871f3835fe6c8d274f464ac11302e"></a><!-- doxytag: member="Game::operator=" ref="a400871f3835fe6c8d274f464ac11302e" args="(const Game &amp;game)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGame.html">Game</a>&amp; Game::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classGame.html">Game</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>game</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Assignment operator, not implemented to protect from use. </p>
+
+</div>
+</div>
+<a class="anchor" id="aaa1a4a60cb09861202ecd623946eb55b"></a><!-- doxytag: member="Game::pause" ref="aaa1a4a60cb09861202ecd623946eb55b" args="(Player_t player)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game::pause </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228">Player_t</a>&nbsp;</td>
+          <td class="paramname"> <em>player</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Pause the game. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>player</em>&nbsp;</td><td>the player that paused the game (local or peer) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a924888ee85f1b0aeec71b3a7ebb94398"></a><!-- doxytag: member="Game::processUpdateQueue" ref="a924888ee85f1b0aeec71b3a7ebb94398" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game::processUpdateQueue </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Helper for the game loop. </p>
+<p>This will handle all updates in the updateQueue. </p>
+
+</div>
+</div>
+<a class="anchor" id="a39bb2fd26b5ea6b164f28f9f6723582e"></a><!-- doxytag: member="Game::reset" ref="a39bb2fd26b5ea6b164f28f9f6723582e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game::reset </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reset the game to its original state. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad4e4d40d7c0843aad264765d3e1e5371"></a><!-- doxytag: member="Game::sendPhysicsSync" ref="ad4e4d40d7c0843aad264765d3e1e5371" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game::sendPhysicsSync </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>This gathers the current state of our game and sends it to the peer. </p>
+<p>The peer can use the information to synchronize his copy of the game to ours. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac99f9b8f2fe853140727464c97128fdc"></a><!-- doxytag: member="Game::start" ref="ac99f9b8f2fe853140727464c97128fdc" args="(Player_t player)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game::start </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228">Player_t</a>&nbsp;</td>
+          <td class="paramname"> <em>player</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Start the game. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>player</em>&nbsp;</td><td>the player that started the game (local or peer) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad9b2e2bce281d90f4d64913b18d919b0"></a><!-- doxytag: member="Game::stop" ref="ad9b2e2bce281d90f4d64913b18d919b0" args="(Player_t player)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game::stop </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228">Player_t</a>&nbsp;</td>
+          <td class="paramname"> <em>player</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Stop the game. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>player</em>&nbsp;</td><td>the player that exited the game (local or peer) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1e83402bc85f4ef4150bee568e4f8986"></a><!-- doxytag: member="Game::update" ref="a1e83402bc85f4ef4150bee568e4f8986" args="(MediatorUpdateContext_t context, const void *data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game::update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Mediator.html#gaa3a9bed543f2a2237dc2b6feea170a1d">MediatorUpdateContext_t</a>&nbsp;</td>
+          <td class="paramname"> <em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&nbsp;</td>
+          <td class="paramname"> <em>data</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Updates from the mediator. </p>
+<p>All these updates are placed in the update queue which the game loop will handle. </p>
+
+<p>Implements <a class="el" href="classMediatorObserver.html#afc38ac71a1e8e0fc60fbfb4c195da44a">MediatorObserver</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab71d119862a920bbecb160424e5e947f"></a><!-- doxytag: member="Game::updateWorld" ref="ab71d119862a920bbecb160424e5e947f" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game::updateWorld </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Update the game world for the next frame. </p>
+<p>This will update projectile positions and check for collisions. </p>
+
+</div>
+</div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a9eeeeb7d3bf756e7e02366b7ebd58781"></a><!-- doxytag: member="Game::age" ref="a9eeeeb7d3bf756e7e02366b7ebd58781" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long <a class="el" href="classGame.html#a9eeeeb7d3bf756e7e02366b7ebd58781">Game::age</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The age (in frames) of the current game. </p>
+
+</div>
+</div>
+<a class="anchor" id="afdfd0899b64c6e244a23154ab830e809"></a><!-- doxytag: member="Game::environment" ref="afdfd0899b64c6e244a23154ab830e809" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classVirtualEnvironment.html">VirtualEnvironment</a> <a class="el" href="classGame.html#afdfd0899b64c6e244a23154ab830e809">Game::environment</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The games virtual environment. </p>
+<p>This is the 3d environment that is displayed when the game is running. </p>
+
+</div>
+</div>
+<a class="anchor" id="a16fc73f1cc2fab7326147645fad0e9a9"></a><!-- doxytag: member="Game::gameThread" ref="a16fc73f1cc2fab7326147645fad0e9a9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::auto_ptr&lt;boost::thread&gt; <a class="el" href="classGame.html#a16fc73f1cc2fab7326147645fad0e9a9">Game::gameThread</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Holds the thread which will run the main game loop. </p>
+
+</div>
+</div>
+<a class="anchor" id="a029c31c15e0a40a2c5fe3b7a98d72d2a"></a><!-- doxytag: member="Game::loseScreen" ref="a029c31c15e0a40a2c5fe3b7a98d72d2a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classLoseScreen.html">LoseScreen</a> <a class="el" href="classGame.html#a029c31c15e0a40a2c5fe3b7a98d72d2a">Game::loseScreen</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The game's lose screen. </p>
+<p>This is a 3d environment that is displayed when the game is over and the local player is the loser </p>
+
+</div>
+</div>
+<a class="anchor" id="a6e1d6860b46e9d865e19c33a656122e6"></a><!-- doxytag: member="Game::mediator" ref="a6e1d6860b46e9d865e19c33a656122e6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::shared_ptr&lt;<a class="el" href="classMediator.html">Mediator</a>&gt; <a class="el" href="classGame.html#a6e1d6860b46e9d865e19c33a656122e6">Game::mediator</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The mediator for interpreting user input and synchronizing with the peer. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8d7bbb10971fd5f1bedf74ba5009bc8e"></a><!-- doxytag: member="Game::state" ref="a8d7bbb10971fd5f1bedf74ba5009bc8e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Common.html#ga1026e99904938017415f188e2daba514">GameState_t</a> <a class="el" href="classGame.html#a8d7bbb10971fd5f1bedf74ba5009bc8e">Game::state</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The current state of the game. </p>
+
+</div>
+</div>
+<a class="anchor" id="a72cffd20a06f8b5e99ac5cb15fde95fa"></a><!-- doxytag: member="Game::titleScreen" ref="a72cffd20a06f8b5e99ac5cb15fde95fa" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTitleScreen.html">TitleScreen</a> <a class="el" href="classGame.html#a72cffd20a06f8b5e99ac5cb15fde95fa">Game::titleScreen</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The game's title screen. </p>
+<p>This is a 3d environment that is displayed when the game isn't running </p>
+
+</div>
+</div>
+<a class="anchor" id="abb684a755d14e751d333e96e6044ce6d"></a><!-- doxytag: member="Game::updateQueue" ref="abb684a755d14e751d333e96e6044ce6d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::queue&lt;std::pair&lt;<a class="el" href="group__Mediator.html#gaa3a9bed543f2a2237dc2b6feea170a1d">MediatorUpdateContext_t</a>, boost::any&gt; &gt; <a class="el" href="classGame.html#abb684a755d14e751d333e96e6044ce6d">Game::updateQueue</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The game's update queue. </p>
+<p>All game affecting updates are added to this queue so that they can be processed one at a time. </p>
+
+</div>
+</div>
+<a class="anchor" id="a073da4e2184847aa4a8f227b67f8009d"></a><!-- doxytag: member="Game::updateQueueMutex" ref="a073da4e2184847aa4a8f227b67f8009d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::mutex <a class="el" href="classGame.html#a073da4e2184847aa4a8f227b67f8009d">Game::updateQueueMutex</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Protect the update queue from simultaneous access. </p>
+
+</div>
+</div>
+<a class="anchor" id="aef64579d52c72fd05327be979dad7c26"></a><!-- doxytag: member="Game::winScreen" ref="aef64579d52c72fd05327be979dad7c26" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classWinScreen.html">WinScreen</a> <a class="el" href="classGame.html#aef64579d52c72fd05327be979dad7c26">Game::winScreen</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The game's win screen. </p>
+<p>This is a 3d environment that is displayed when the game is over and the local player is the winner </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/<a class="el" href="Game_8h_source.html">Game.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/Game.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Game/<a class="el" href="Game_8h_source.html">Game.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Game/<a class="el" href="Game_8cpp.html">Game.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -93,7 +736,7 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -102,7 +745,7 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:45 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

@@ -14,7 +14,7 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="2" level="0" />
+<coupling_between_objects value="4" level="0" />
 <IF4 value="0" level="0" />
 <IF4_per_member_function value="********" level="0" />
 <IF4_visible value="0" level="0" />
@@ -30,19 +30,33 @@
 <module>
 <name>Archive</name>
 <client_module>
+<name>PhysicsSync</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Common/PhysicsSync.h" line="65" />
+</extent>
 <name>Projectile</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Common/Projectile.h" line="114" />
+<source_reference file="../../Common/Projectile.h" line="119" />
 </extent>
 <name>ReplayFormatEvent</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Logger/ReplayFormatEvent.h" line="37" />
+<source_reference file="../../Logger/ReplayFormatEvent.h" line="52" />
+</extent>
+<name>UserPreferences</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Common/UserPreferences.h" line="97" />
 </extent>
 </client_module>
 <supplier_module>

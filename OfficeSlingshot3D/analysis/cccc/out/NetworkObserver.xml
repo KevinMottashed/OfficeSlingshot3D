@@ -6,7 +6,7 @@
 <lines_of_code_per_member_function value="******" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="0" />
-<lines_of_code value="1" level="0" />
+<lines_of_code value="12" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
@@ -24,14 +24,14 @@
 </module_summary>
 <module_detail>
 <description>definition</description>
-<source_reference file="../../Network/NetworkObserver.h" line="25" />
+<source_reference file="../../Network/NetworkObserver.h" line="35" />
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 <description>declaration</description>
-<source_reference file="../../Network/NetworkProxy.h" line="11" />
+<source_reference file="../../Network/NetworkProxy.h" line="23" />
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="0" level="0" />
@@ -47,11 +47,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/NetworkObserver.h" line="28" />
+<source_reference file="../../Network/NetworkObserver.h" line="38" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="1" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -59,11 +59,11 @@
 <name>update(NetworkUpdateContext,const void *)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/NetworkObserver.h" line="32" />
+<source_reference file="../../Network/NetworkObserver.h" line="46" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -75,11 +75,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/NetworkObserver.h" line="29" />
+<source_reference file="../../Network/NetworkObserver.h" line="39" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="1" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -93,14 +93,14 @@
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../Logger/Logger.h" line="14" />
+<source_reference file="../../Logger/Logger.h" line="20" />
 </extent>
 <name>Mediator</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../Mediator/Mediator.h" line="24" />
+<source_reference file="../../Mediator/Mediator.h" line="26" />
 </extent>
 <name>NetworkSubject</name>
 <visible>true</visible>
@@ -115,11 +115,11 @@
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/NetworkSubject.h" line="13" />
+<source_reference file="../../Network/NetworkSubject.h" line="24" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/NetworkSubject.h" line="14" />
+<source_reference file="../../Network/NetworkSubject.h" line="31" />
 </extent>
 </client_module>
 <supplier_module>

@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -48,38 +49,193 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <h1>CMainDlg Class Reference</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="CMainDlg" --><table class="memberdecls">
+<!-- doxytag: class="CMainDlg" -->
+<p>A class representing the main UI element of <a class="el" href="classOfficeSlingshot3D.html" title="The office slingshot 3D class is the class that runs the game The game can be started by calling run(...">OfficeSlingshot3D</a>.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="MainDlg_8h_source.html">MainDlg.h</a>&gt;</code></p>
+<table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3d1855c88836a3f933555d4ef350412b"></a><!-- doxytag: member="CMainDlg::CMainDlg" ref="a3d1855c88836a3f933555d4ef350412b" args="(UserInterface *pUserInterface, const UserPreferences &amp;preferences, CWnd *pParent=NULL)" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><b>CMainDlg</b> (<a class="el" href="classUserInterface.html">UserInterface</a> *pUserInterface, const <a class="el" href="structUserPreferences.html">UserPreferences</a> &amp;preferences, CWnd *pParent=NULL)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4f3d053547e8dd3ee376747a5899c80f"></a><!-- doxytag: member="CMainDlg::displayConnectionStateChanged" ref="a4f3d053547e8dd3ee376747a5899c80f" args="(ConnectionState_t state, Player_t player)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>displayConnectionStateChanged</b> (<a class="el" href="namespaceConnectionState.html#ad1b6674b6f1c58f17e9db75d0a77149f">ConnectionState_t</a> state, <a class="el" href="namespacePlayer.html#acc4ced29e6b7e20f602b3c8b60c75228">Player_t</a> player)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af52a54b8267d1aed20a8a7cf68af0eca"></a><!-- doxytag: member="CMainDlg::displayGameStateChanged" ref="af52a54b8267d1aed20a8a7cf68af0eca" args="(GameState_t state, Player_t player)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>displayGameStateChanged</b> (<a class="el" href="namespaceGameState.html#a1026e99904938017415f188e2daba514">GameState_t</a> state, <a class="el" href="namespacePlayer.html#acc4ced29e6b7e20f602b3c8b60c75228">Player_t</a> player)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0ed46cba2e44554234ee991f8c3ece30"></a><!-- doxytag: member="CMainDlg::displayConnectionFailed" ref="a0ed46cba2e44554234ee991f8c3ece30" args="()" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>displayConnectionFailed</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8d6808eaab0ee11cde45362ffadef5ec"></a><!-- doxytag: member="CMainDlg::displayFailedToListen" ref="a8d6808eaab0ee11cde45362ffadef5ec" args="()" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>displayFailedToListen</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae514375b2047fef42542152203a69391"></a><!-- doxytag: member="CMainDlg::displayNetworkError" ref="ae514375b2047fef42542152203a69391" args="()" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>displayNetworkError</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2afd2d4afae59cd06054e69f97fb3279"></a><!-- doxytag: member="CMainDlg::displayPeerChatMessage" ref="a2afd2d4afae59cd06054e69f97fb3279" args="(const std::string &amp;message)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>displayPeerChatMessage</b> (const std::string &amp;message)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a345af8a0634e8d49c342b51c5ccc9917"></a><!-- doxytag: member="CMainDlg::displayLocalChatMessage" ref="a345af8a0634e8d49c342b51c5ccc9917" args="(const std::string &amp;message)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>displayLocalChatMessage</b> (const std::string &amp;message)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab058737971aa5c0ba4646ab2623e6b84"></a><!-- doxytag: member="CMainDlg::setPeerUserName" ref="ab058737971aa5c0ba4646ab2623e6b84" args="(const std::string &amp;name)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>setPeerUserName</b> (const std::string &amp;name)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae693fe41d98817879fdfe7b496acea37"></a><!-- doxytag: member="CMainDlg::AddChatContent" ref="ae693fe41d98817879fdfe7b496acea37" args="(CString strCont)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>AddChatContent</b> (CString strCont)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#a3d1855c88836a3f933555d4ef350412b">CMainDlg</a> (<a class="el" href="classUserInterface.html">UserInterface</a> *<a class="el" href="classCMainDlg.html#a61d7fcec9b72bf28c8ddff24ba757294">pUserInterface</a>, const <a class="el" href="structUserPreferences.html">UserPreferences</a> &amp;preferences, CWnd *pParent=NULL)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Contructor.  <a href="#a3d1855c88836a3f933555d4ef350412b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#a4f3d053547e8dd3ee376747a5899c80f">displayConnectionStateChanged</a> (<a class="el" href="group__Common.html#gad1b6674b6f1c58f17e9db75d0a77149f">ConnectionState_t</a> state, <a class="el" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228">Player_t</a> player)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Display that a certain player has changed the connection state.  <a href="#a4f3d053547e8dd3ee376747a5899c80f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#af52a54b8267d1aed20a8a7cf68af0eca">displayGameStateChanged</a> (<a class="el" href="group__Common.html#ga1026e99904938017415f188e2daba514">GameState_t</a> state, <a class="el" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228">Player_t</a> player)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Display that a certain player has changed the game state.  <a href="#af52a54b8267d1aed20a8a7cf68af0eca"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#a0ed46cba2e44554234ee991f8c3ece30">displayConnectionFailed</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Display that the connection to the peer has failed.  <a href="#a0ed46cba2e44554234ee991f8c3ece30"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#a8d6808eaab0ee11cde45362ffadef5ec">displayFailedToListen</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Display that request to listen has failed.  <a href="#a8d6808eaab0ee11cde45362ffadef5ec"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#ae514375b2047fef42542152203a69391">displayNetworkError</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Display that a network error has occurred.  <a href="#ae514375b2047fef42542152203a69391"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#a2afd2d4afae59cd06054e69f97fb3279">displayPeerChatMessage</a> (const std::string &amp;message)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Display a new message in the peer's message box.  <a href="#a2afd2d4afae59cd06054e69f97fb3279"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#a345af8a0634e8d49c342b51c5ccc9917">displayLocalChatMessage</a> (const std::string &amp;message)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Display a new message in the local user's message box.  <a href="#a345af8a0634e8d49c342b51c5ccc9917"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#a434e1bcf20ce1ed52cb1251dd6e1590f">displayGameOver</a> (<a class="el" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228">Player_t</a> player)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Update the user interface to display game over.  <a href="#a434e1bcf20ce1ed52cb1251dd6e1590f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#a2f9e23d3ccbfed73c62ba027d0e47938">paint</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Redraw the screen.  <a href="#a2f9e23d3ccbfed73c62ba027d0e47938"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#ab058737971aa5c0ba4646ab2623e6b84">setPeerUserName</a> (const std::string &amp;name)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Update the peers user name.  <a href="#ab058737971aa5c0ba4646ab2623e6b84"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#ae693fe41d98817879fdfe7b496acea37">AddChatContent</a> (CString strCont)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Method to add a string in a new line in the text box.  <a href="#ae693fe41d98817879fdfe7b496acea37"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#a5b14164d26fb2c0fdc533503c302bdfc">camera</a> (cCamera *camera)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set the camera whose frames will be drawn in the open gl window.  <a href="#a5b14164d26fb2c0fdc533503c302bdfc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#a58105b3e82a58538f99753a4e037a193">setMutePref</a> (const bool mute)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the mute preference.  <a href="#a58105b3e82a58538f99753a4e037a193"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#ad449f28c968c3c936d2b27d133a98d5d">setVolPref</a> (const int vol)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the volume preference.  <a href="#ad449f28c968c3c936d2b27d133a98d5d"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="classCMainDlg.html#a1012b2ed66796565ea783955ba9b2095a75f08fe8911ee4f9c647ddae9d37ce11">IDD</a> =  IDD_MAIN_DIALOG
+ }</td></tr>
+<tr><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual BOOL&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#af3d8d0e7dc5db05123abf8358f939763">PreTranslateMessage</a> (MSG *pMsg)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Inherited method to catch messages before they are sent to the UI.  <a href="#af3d8d0e7dc5db05123abf8358f939763"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual BOOL&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#a4042eda8acf5ccf4ee58b69b2351aa71">OnInitDialog</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Inherited method to perform actions before the UI is displayed.  <a href="#a4042eda8acf5ccf4ee58b69b2351aa71"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#a5f98bab2b2c91cd6cf14ea8ebdf7e689">DoDataExchange</a> (CDataExchange *pDX)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">afx_msg void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#aff4a9132244f615aebe9f7d39f695016">OnNetworkConnect</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">afx_msg void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#af93cc4cd64ed7dce630d2a0ad47cc652">OnNetworkDisconnect</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">afx_msg void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#acb229de8c4cce8a9dc6e37552f7d5ad5">OnNetworkListen</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">afx_msg void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#a5dd246cb829e770fe61da4f1a8f3e3e9">OnPreferencesEdit</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">afx_msg void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#ac2216a6a546f97670cee8cdc3df6d49b">OnStartGame</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">afx_msg void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#ad6ec2aa4d3fa3cd36011544dd973853b">OnExitGame</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">afx_msg void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#a942774068f026a96de6d129be1846d3a">OnPauseGame</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">afx_msg void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#aaaf80a7f9c54f3839a09f3b92bcfaf4e">OnDestroy</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">afx_msg void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#aab8ca8faf75b616605eacb530602ce99">OnSendChat</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">afx_msg void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#a637868af2347b9aa9ecf6ca2c5929968">OnChangeChatInput</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">afx_msg void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#a4156609dd519a249c0cbe08c86070205">OnStnClickedVolumeCtrl</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">afx_msg void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#a70b8b5279232e446f534bdf40a579e7b">OnStnClickedVol1</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">afx_msg void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#a84e10e2e6deaa5aa3b0c2eab1d5456ed">OnStnClickedVol2</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">afx_msg void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#a1b181df0c5c9c711230a824d7dbbc7e0">OnStnClickedVol3</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">afx_msg void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#a18d11fca4e9cb558eb3a11b7bbf7993d">OnStnClickedVol4</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">afx_msg void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#aa182790357c0fc3b7642ffd0bc637afe">OnStnClickedVol5</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">afx_msg void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#a264f7b813913a9a1dff6d99b0c13f3aa">OnStnClickedGameWindow</a> ()</td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr<br class="typebreak"/>
+&lt; <a class="el" href="classMFCOpenGLControl.html">MFCOpenGLControl</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#a85aa455784f232140a8d8bff162a8fee">m_oglWindow</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The openGL window.  <a href="#a85aa455784f232140a8d8bff162a8fee"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classUserInterface.html">UserInterface</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#a61d7fcec9b72bf28c8ddff24ba757294">pUserInterface</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The user interface object.  <a href="#a61d7fcec9b72bf28c8ddff24ba757294"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structUserPreferences.html">UserPreferences</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#aa8836279921548c4e822e9d6c6a19518">m_preferences</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The user preferences object.  <a href="#aa8836279921548c4e822e9d6c6a19518"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#aca5081cb72f1fd612d62841c1ab32065">m_peerUserName</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The peer's user name.  <a href="#aca5081cb72f1fd612d62841c1ab32065"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#a601b964702cbae7ccfe1e4f0df8f7fb3">m_soundOn</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">A flag to determine if the sound is on or off.  <a href="#a601b964702cbae7ccfe1e4f0df8f7fb3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#ab82a0a43ac7e9dc4246f5ce25dec8cb8">m_volume</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Volume intensity.  <a href="#ab82a0a43ac7e9dc4246f5ce25dec8cb8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CRichEditCtrl&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#a7b79b0df5650cb33a22a4c53eb360429">m_richChat</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CEdit&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#a1c0ab4f56af264927c1eead020795a1e">m_editChatInput</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CButton&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMainDlg.html#aee8bcc12ec6ab8c45713dddf42fa4912">m_sendChatButton</a></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>A class representing the main UI element of <a class="el" href="classOfficeSlingshot3D.html" title="The office slingshot 3D class is the class that runs the game The game can be started by calling run(...">OfficeSlingshot3D</a>. </p>
+<p>The main dialog that contains all the other elements of the user interface. </p>
+<hr/><h2>Member Enumeration Documentation</h2>
+<a class="anchor" id="a1012b2ed66796565ea783955ba9b2095"></a><!-- doxytag: member="CMainDlg::@0" ref="a1012b2ed66796565ea783955ba9b2095" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum<code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a1012b2ed66796565ea783955ba9b2095a75f08fe8911ee4f9c647ddae9d37ce11"></a><!-- doxytag: member="IDD" ref="a1012b2ed66796565ea783955ba9b2095a75f08fe8911ee4f9c647ddae9d37ce11" args="" -->IDD</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a3d1855c88836a3f933555d4ef350412b"></a><!-- doxytag: member="CMainDlg::CMainDlg" ref="a3d1855c88836a3f933555d4ef350412b" args="(UserInterface *pUserInterface, const UserPreferences &amp;preferences, CWnd *pParent=NULL)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CMainDlg::CMainDlg </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classUserInterface.html">UserInterface</a> *&nbsp;</td>
+          <td class="paramname"> <em>pUserInterface</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structUserPreferences.html">UserPreferences</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>preferences</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CWnd *&nbsp;</td>
+          <td class="paramname"> <em>pParent</em> = <code>NULL</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Contructor. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pUserInterface</em>&nbsp;</td><td>The user interface class. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>preferences</em>&nbsp;</td><td>The user preferences. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pParent</em>&nbsp;</td><td>The parent dialog NULL in our case. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ae693fe41d98817879fdfe7b496acea37"></a><!-- doxytag: member="CMainDlg::AddChatContent" ref="ae693fe41d98817879fdfe7b496acea37" args="(CString strCont)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMainDlg::AddChatContent </td>
+          <td>(</td>
+          <td class="paramtype">CString&nbsp;</td>
+          <td class="paramname"> <em>strCont</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Method to add a string in a new line in the text box. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>strCont</em>&nbsp;</td><td>The new string to add to the chat content. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a5b14164d26fb2c0fdc533503c302bdfc"></a><!-- doxytag: member="CMainDlg::camera" ref="a5b14164d26fb2c0fdc533503c302bdfc" args="(cCamera *camera)" -->
 <div class="memitem">
 <div class="memproto">
@@ -106,9 +262,795 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>AddChatContent</b> (C
 
 </div>
 </div>
+<a class="anchor" id="a0ed46cba2e44554234ee991f8c3ece30"></a><!-- doxytag: member="CMainDlg::displayConnectionFailed" ref="a0ed46cba2e44554234ee991f8c3ece30" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMainDlg::displayConnectionFailed </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Display that the connection to the peer has failed. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4f3d053547e8dd3ee376747a5899c80f"></a><!-- doxytag: member="CMainDlg::displayConnectionStateChanged" ref="a4f3d053547e8dd3ee376747a5899c80f" args="(ConnectionState_t state, Player_t player)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMainDlg::displayConnectionStateChanged </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Common.html#gad1b6674b6f1c58f17e9db75d0a77149f">ConnectionState_t</a>&nbsp;</td>
+          <td class="paramname"> <em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228">Player_t</a>&nbsp;</td>
+          <td class="paramname"> <em>player</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Display that a certain player has changed the connection state. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>state</em>&nbsp;</td><td>The overall application's state. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>player</em>&nbsp;</td><td>The player that has changed the connection's state. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8d6808eaab0ee11cde45362ffadef5ec"></a><!-- doxytag: member="CMainDlg::displayFailedToListen" ref="a8d6808eaab0ee11cde45362ffadef5ec" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMainDlg::displayFailedToListen </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Display that request to listen has failed. </p>
+
+</div>
+</div>
+<a class="anchor" id="a434e1bcf20ce1ed52cb1251dd6e1590f"></a><!-- doxytag: member="CMainDlg::displayGameOver" ref="a434e1bcf20ce1ed52cb1251dd6e1590f" args="(Player_t player)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMainDlg::displayGameOver </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228">Player_t</a>&nbsp;</td>
+          <td class="paramname"> <em>player</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Update the user interface to display game over. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>player</em>&nbsp;</td><td>The player that has won the game. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af52a54b8267d1aed20a8a7cf68af0eca"></a><!-- doxytag: member="CMainDlg::displayGameStateChanged" ref="af52a54b8267d1aed20a8a7cf68af0eca" args="(GameState_t state, Player_t player)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMainDlg::displayGameStateChanged </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Common.html#ga1026e99904938017415f188e2daba514">GameState_t</a>&nbsp;</td>
+          <td class="paramname"> <em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228">Player_t</a>&nbsp;</td>
+          <td class="paramname"> <em>player</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Display that a certain player has changed the game state. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>state</em>&nbsp;</td><td>The overall application's state. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>player</em>&nbsp;</td><td>The player that has changed the game's state. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a345af8a0634e8d49c342b51c5ccc9917"></a><!-- doxytag: member="CMainDlg::displayLocalChatMessage" ref="a345af8a0634e8d49c342b51c5ccc9917" args="(const std::string &amp;message)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMainDlg::displayLocalChatMessage </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>message</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Display a new message in the local user's message box. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>message</em>&nbsp;</td><td>The message to display in the message box. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae514375b2047fef42542152203a69391"></a><!-- doxytag: member="CMainDlg::displayNetworkError" ref="ae514375b2047fef42542152203a69391" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMainDlg::displayNetworkError </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Display that a network error has occurred. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2afd2d4afae59cd06054e69f97fb3279"></a><!-- doxytag: member="CMainDlg::displayPeerChatMessage" ref="a2afd2d4afae59cd06054e69f97fb3279" args="(const std::string &amp;message)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMainDlg::displayPeerChatMessage </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>message</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Display a new message in the peer's message box. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>message</em>&nbsp;</td><td>The message to display in the message box. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5f98bab2b2c91cd6cf14ea8ebdf7e689"></a><!-- doxytag: member="CMainDlg::DoDataExchange" ref="a5f98bab2b2c91cd6cf14ea8ebdf7e689" args="(CDataExchange *pDX)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMainDlg::DoDataExchange </td>
+          <td>(</td>
+          <td class="paramtype">CDataExchange *&nbsp;</td>
+          <td class="paramname"> <em>pDX</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a637868af2347b9aa9ecf6ca2c5929968"></a><!-- doxytag: member="CMainDlg::OnChangeChatInput" ref="a637868af2347b9aa9ecf6ca2c5929968" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMainDlg::OnChangeChatInput </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aaaf80a7f9c54f3839a09f3b92bcfaf4e"></a><!-- doxytag: member="CMainDlg::OnDestroy" ref="aaaf80a7f9c54f3839a09f3b92bcfaf4e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMainDlg::OnDestroy </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad6ec2aa4d3fa3cd36011544dd973853b"></a><!-- doxytag: member="CMainDlg::OnExitGame" ref="ad6ec2aa4d3fa3cd36011544dd973853b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMainDlg::OnExitGame </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4042eda8acf5ccf4ee58b69b2351aa71"></a><!-- doxytag: member="CMainDlg::OnInitDialog" ref="a4042eda8acf5ccf4ee58b69b2351aa71" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL CMainDlg::OnInitDialog </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Inherited method to perform actions before the UI is displayed. </p>
+
+</div>
+</div>
+<a class="anchor" id="aff4a9132244f615aebe9f7d39f695016"></a><!-- doxytag: member="CMainDlg::OnNetworkConnect" ref="aff4a9132244f615aebe9f7d39f695016" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMainDlg::OnNetworkConnect </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af93cc4cd64ed7dce630d2a0ad47cc652"></a><!-- doxytag: member="CMainDlg::OnNetworkDisconnect" ref="af93cc4cd64ed7dce630d2a0ad47cc652" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMainDlg::OnNetworkDisconnect </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acb229de8c4cce8a9dc6e37552f7d5ad5"></a><!-- doxytag: member="CMainDlg::OnNetworkListen" ref="acb229de8c4cce8a9dc6e37552f7d5ad5" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMainDlg::OnNetworkListen </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a942774068f026a96de6d129be1846d3a"></a><!-- doxytag: member="CMainDlg::OnPauseGame" ref="a942774068f026a96de6d129be1846d3a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMainDlg::OnPauseGame </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5dd246cb829e770fe61da4f1a8f3e3e9"></a><!-- doxytag: member="CMainDlg::OnPreferencesEdit" ref="a5dd246cb829e770fe61da4f1a8f3e3e9" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMainDlg::OnPreferencesEdit </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aab8ca8faf75b616605eacb530602ce99"></a><!-- doxytag: member="CMainDlg::OnSendChat" ref="aab8ca8faf75b616605eacb530602ce99" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMainDlg::OnSendChat </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac2216a6a546f97670cee8cdc3df6d49b"></a><!-- doxytag: member="CMainDlg::OnStartGame" ref="ac2216a6a546f97670cee8cdc3df6d49b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMainDlg::OnStartGame </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a264f7b813913a9a1dff6d99b0c13f3aa"></a><!-- doxytag: member="CMainDlg::OnStnClickedGameWindow" ref="a264f7b813913a9a1dff6d99b0c13f3aa" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMainDlg::OnStnClickedGameWindow </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a70b8b5279232e446f534bdf40a579e7b"></a><!-- doxytag: member="CMainDlg::OnStnClickedVol1" ref="a70b8b5279232e446f534bdf40a579e7b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMainDlg::OnStnClickedVol1 </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a84e10e2e6deaa5aa3b0c2eab1d5456ed"></a><!-- doxytag: member="CMainDlg::OnStnClickedVol2" ref="a84e10e2e6deaa5aa3b0c2eab1d5456ed" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMainDlg::OnStnClickedVol2 </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1b181df0c5c9c711230a824d7dbbc7e0"></a><!-- doxytag: member="CMainDlg::OnStnClickedVol3" ref="a1b181df0c5c9c711230a824d7dbbc7e0" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMainDlg::OnStnClickedVol3 </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a18d11fca4e9cb558eb3a11b7bbf7993d"></a><!-- doxytag: member="CMainDlg::OnStnClickedVol4" ref="a18d11fca4e9cb558eb3a11b7bbf7993d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMainDlg::OnStnClickedVol4 </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa182790357c0fc3b7642ffd0bc637afe"></a><!-- doxytag: member="CMainDlg::OnStnClickedVol5" ref="aa182790357c0fc3b7642ffd0bc637afe" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMainDlg::OnStnClickedVol5 </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4156609dd519a249c0cbe08c86070205"></a><!-- doxytag: member="CMainDlg::OnStnClickedVolumeCtrl" ref="a4156609dd519a249c0cbe08c86070205" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMainDlg::OnStnClickedVolumeCtrl </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2f9e23d3ccbfed73c62ba027d0e47938"></a><!-- doxytag: member="CMainDlg::paint" ref="a2f9e23d3ccbfed73c62ba027d0e47938" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMainDlg::paint </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Redraw the screen. </p>
+
+</div>
+</div>
+<a class="anchor" id="af3d8d0e7dc5db05123abf8358f939763"></a><!-- doxytag: member="CMainDlg::PreTranslateMessage" ref="af3d8d0e7dc5db05123abf8358f939763" args="(MSG *pMsg)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL CMainDlg::PreTranslateMessage </td>
+          <td>(</td>
+          <td class="paramtype">MSG *&nbsp;</td>
+          <td class="paramname"> <em>pMsg</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Inherited method to catch messages before they are sent to the UI. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pMsg</em>&nbsp;</td><td>the message being intercepted </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a58105b3e82a58538f99753a4e037a193"></a><!-- doxytag: member="CMainDlg::setMutePref" ref="a58105b3e82a58538f99753a4e037a193" args="(const bool mute)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMainDlg::setMutePref </td>
+          <td>(</td>
+          <td class="paramtype">const bool&nbsp;</td>
+          <td class="paramname"> <em>mute</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the mute preference. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>mute</em>&nbsp;</td><td>True if the sound needs to be muted </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab058737971aa5c0ba4646ab2623e6b84"></a><!-- doxytag: member="CMainDlg::setPeerUserName" ref="ab058737971aa5c0ba4646ab2623e6b84" args="(const std::string &amp;name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMainDlg::setPeerUserName </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Update the peers user name. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>The new name. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad449f28c968c3c936d2b27d133a98d5d"></a><!-- doxytag: member="CMainDlg::setVolPref" ref="ad449f28c968c3c936d2b27d133a98d5d" args="(const int vol)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMainDlg::setVolPref </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>vol</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the volume preference. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>vol</em>&nbsp;</td><td>The new volume </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a1c0ab4f56af264927c1eead020795a1e"></a><!-- doxytag: member="CMainDlg::m_editChatInput" ref="a1c0ab4f56af264927c1eead020795a1e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CEdit <a class="el" href="classCMainDlg.html#a1c0ab4f56af264927c1eead020795a1e">CMainDlg::m_editChatInput</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a85aa455784f232140a8d8bff162a8fee"></a><!-- doxytag: member="CMainDlg::m_oglWindow" ref="a85aa455784f232140a8d8bff162a8fee" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::shared_ptr&lt;<a class="el" href="classMFCOpenGLControl.html">MFCOpenGLControl</a>&gt; <a class="el" href="classCMainDlg.html#a85aa455784f232140a8d8bff162a8fee">CMainDlg::m_oglWindow</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The openGL window. </p>
+
+</div>
+</div>
+<a class="anchor" id="aca5081cb72f1fd612d62841c1ab32065"></a><!-- doxytag: member="CMainDlg::m_peerUserName" ref="aca5081cb72f1fd612d62841c1ab32065" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classCMainDlg.html#aca5081cb72f1fd612d62841c1ab32065">CMainDlg::m_peerUserName</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The peer's user name. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa8836279921548c4e822e9d6c6a19518"></a><!-- doxytag: member="CMainDlg::m_preferences" ref="aa8836279921548c4e822e9d6c6a19518" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structUserPreferences.html">UserPreferences</a> <a class="el" href="classCMainDlg.html#aa8836279921548c4e822e9d6c6a19518">CMainDlg::m_preferences</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The user preferences object. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7b79b0df5650cb33a22a4c53eb360429"></a><!-- doxytag: member="CMainDlg::m_richChat" ref="a7b79b0df5650cb33a22a4c53eb360429" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CRichEditCtrl <a class="el" href="classCMainDlg.html#a7b79b0df5650cb33a22a4c53eb360429">CMainDlg::m_richChat</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aee8bcc12ec6ab8c45713dddf42fa4912"></a><!-- doxytag: member="CMainDlg::m_sendChatButton" ref="aee8bcc12ec6ab8c45713dddf42fa4912" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CButton <a class="el" href="classCMainDlg.html#aee8bcc12ec6ab8c45713dddf42fa4912">CMainDlg::m_sendChatButton</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a601b964702cbae7ccfe1e4f0df8f7fb3"></a><!-- doxytag: member="CMainDlg::m_soundOn" ref="a601b964702cbae7ccfe1e4f0df8f7fb3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classCMainDlg.html#a601b964702cbae7ccfe1e4f0df8f7fb3">CMainDlg::m_soundOn</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>A flag to determine if the sound is on or off. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab82a0a43ac7e9dc4246f5ce25dec8cb8"></a><!-- doxytag: member="CMainDlg::m_volume" ref="ab82a0a43ac7e9dc4246f5ce25dec8cb8" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classCMainDlg.html#ab82a0a43ac7e9dc4246f5ce25dec8cb8">CMainDlg::m_volume</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Volume intensity. </p>
+
+</div>
+</div>
+<a class="anchor" id="a61d7fcec9b72bf28c8ddff24ba757294"></a><!-- doxytag: member="CMainDlg::pUserInterface" ref="a61d7fcec9b72bf28c8ddff24ba757294" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classUserInterface.html">UserInterface</a>* <a class="el" href="classCMainDlg.html#a61d7fcec9b72bf28c8ddff24ba757294">CMainDlg::pUserInterface</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The user interface object. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/<a class="el" href="MainDlg_8h_source.html">MainDlg.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MainDlg.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/UserInterface/<a class="el" href="MainDlg_8h_source.html">MainDlg.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/UserInterface/<a class="el" href="MainDlg_8cpp.html">MainDlg.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -116,7 +1058,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>AddChatContent</b> (C
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -125,7 +1067,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>AddChatContent</b> (C
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:45 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

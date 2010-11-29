@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OfficeSlingshot3D: /home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/Replayer.h Source File</title>
+<title>OfficeSlingshot3D: /home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Replay/Replayer.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -41,25 +42,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/Replayer.h</h1>  </div>
+<h1>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Replay/Replayer.h</h1>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef REPLAYER_H</span>
+<a href="Replayer_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef REPLAYER_H</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define REPLAYER_H</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &quot;stdafx.h&quot;</span>
-<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;boost.h&quot;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;<a class="code" href="boost_8h.html">boost.h</a>&quot;</span>
 <a name="l00006"></a>00006 
-<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;NetworkReplayer.h&quot;</span>
-<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;UserInterfaceReplayer.h&quot;</span>
-<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;FalconReplayer.h&quot;</span>
-<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;ZCameraReplayer.h&quot;</span>
-<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;LoggerProxy.h&quot;</span>
-<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;UserPreferences.h&quot;</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;<a class="code" href="NetworkReplayer_8h.html">NetworkReplayer.h</a>&quot;</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;<a class="code" href="UserInterfaceReplayer_8h.html">UserInterfaceReplayer.h</a>&quot;</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;<a class="code" href="FalconReplayer_8h.html">FalconReplayer.h</a>&quot;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="ZCameraReplayer_8h.html">ZCameraReplayer.h</a>&quot;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="LoggerProxy_8h.html" title="Convinience header for including all public members of the logger module.">LoggerProxy.h</a>&quot;</span>
+<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;<a class="code" href="UserPreferences_8h.html">UserPreferences.h</a>&quot;</span>
 <a name="l00013"></a>00013 
 <a name="l00014"></a>00014 <span class="comment">// The Replayer class is used to replay user inputs</span>
 <a name="l00015"></a>00015 <span class="comment">// Depending on how the replayer it can replay any combination of</span>
@@ -71,44 +73,44 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00021"></a>00021 {
 <a name="l00022"></a>00022 <span class="keyword">public</span>:
 <a name="l00023"></a>00023     <span class="comment">// Replay inputs are loaded from a file</span>
-<a name="l00024"></a>00024     <a class="code" href="classReplayer.html">Replayer</a>(<span class="keyword">const</span> std::string&amp; fileName, <span class="keyword">const</span> <a class="code" href="structUserPreferences.html" title="Represents the user preferences.">UserPreferences</a>&amp; preferences);
-<a name="l00025"></a>00025     <span class="keyword">virtual</span> ~<a class="code" href="classReplayer.html">Replayer</a>();
+<a name="l00024"></a>00024     <a class="code" href="classReplayer.html#a233ae971345bbadd96ecb5d868800ed8">Replayer</a>(<span class="keyword">const</span> std::string&amp; fileName, <span class="keyword">const</span> <a class="code" href="structUserPreferences.html" title="public Represents the user preferences.">UserPreferences</a>&amp; <a class="code" href="classReplayer.html#a30ee8ad6cfe5dcb580556db94c34e0ab">preferences</a>);
+<a name="l00025"></a>00025     <span class="keyword">virtual</span> <a class="code" href="classReplayer.html#aded5af7cca5ee15fdfb15f5d409cefa8">~Replayer</a>();
 <a name="l00026"></a>00026 
 <a name="l00027"></a>00027     <span class="comment">// start/stop the replay</span>
-<a name="l00028"></a>00028     <span class="keywordtype">void</span> startReplay();
-<a name="l00029"></a>00029     <span class="keywordtype">void</span> stopReplay();
+<a name="l00028"></a>00028     <span class="keywordtype">void</span> <a class="code" href="classReplayer.html#aaeeb2f5ae160cf99f8e07401c906d07f">startReplay</a>();
+<a name="l00029"></a>00029     <span class="keywordtype">void</span> <a class="code" href="classReplayer.html#abf2424525cedca13f7321f59036a403c">stopReplay</a>();
 <a name="l00030"></a>00030 
 <a name="l00031"></a>00031     <span class="comment">// get the various replayers</span>
-<a name="l00032"></a>00032     boost::shared_ptr&lt;NetworkReplayer&gt; getNetworkReplayer();
-<a name="l00033"></a>00033     boost::shared_ptr&lt;UserInterfaceReplayer&gt; getUserInterfaceReplayer();
-<a name="l00034"></a>00034     boost::shared_ptr&lt;FalconReplayer&gt; getFalconReplayer();  
-<a name="l00035"></a>00035     boost::shared_ptr&lt;ZCameraReplayer&gt; getZCameraReplayer();    
+<a name="l00032"></a>00032     boost::shared_ptr&lt;NetworkReplayer&gt; <a class="code" href="classReplayer.html#a6d15b7b0bc222b486ddf2b86cb12e1cb">getNetworkReplayer</a>();
+<a name="l00033"></a>00033     boost::shared_ptr&lt;UserInterfaceReplayer&gt; <a class="code" href="classReplayer.html#a272dafad83fa64f509fbe1db67ed0e0c">getUserInterfaceReplayer</a>();
+<a name="l00034"></a>00034     boost::shared_ptr&lt;FalconReplayer&gt; <a class="code" href="classReplayer.html#a472e6ebecd1f0ea89d6bd19d1ab79102">getFalconReplayer</a>();  
+<a name="l00035"></a>00035     boost::shared_ptr&lt;ZCameraReplayer&gt; <a class="code" href="classReplayer.html#a56299bc514f243c88da07fe0260e5eab">getZCameraReplayer</a>();    
 <a name="l00036"></a>00036 
 <a name="l00037"></a>00037 <span class="keyword">private</span>:
 <a name="l00038"></a>00038 
 <a name="l00039"></a>00039     <span class="comment">// start replaying from the file</span>
-<a name="l00040"></a>00040     <span class="keywordtype">void</span> replay();
+<a name="l00040"></a>00040     <span class="keywordtype">void</span> <a class="code" href="classReplayer.html#ae811c02a2030a5eec0ca8a72fa67e0e5">replay</a>();
 <a name="l00041"></a>00041 
 <a name="l00042"></a>00042     <span class="comment">// The user preferences that will be used during the replay</span>
-<a name="l00043"></a>00043     <a class="code" href="structUserPreferences.html" title="Represents the user preferences.">UserPreferences</a> preferences;
+<a name="l00043"></a><a class="code" href="classReplayer.html#a30ee8ad6cfe5dcb580556db94c34e0ab">00043</a>     <a class="code" href="structUserPreferences.html" title="public Represents the user preferences.">UserPreferences</a> preferences;
 <a name="l00044"></a>00044 
 <a name="l00045"></a>00045     <span class="comment">// the time at which the replay was started</span>
-<a name="l00046"></a>00046     boost::posix_time::ptime startTime;
+<a name="l00046"></a><a class="code" href="classReplayer.html#a846f4e86a5ef9c86bbad7e7487c6d023">00046</a>     boost::posix_time::ptime <a class="code" href="classReplayer.html#a846f4e86a5ef9c86bbad7e7487c6d023">startTime</a>;
 <a name="l00047"></a>00047 
 <a name="l00048"></a>00048     <span class="comment">// the file and the serialization archive for the file</span>
 <a name="l00049"></a>00049     <span class="comment">// These pointers are shared between this class and all the other replayers</span>
-<a name="l00050"></a>00050     boost::shared_ptr&lt;std::ifstream&gt; file;
-<a name="l00051"></a>00051     boost::shared_ptr&lt;boost::archive::text_iarchive&gt; archive;
+<a name="l00050"></a><a class="code" href="classReplayer.html#a6ab8b4e4031672fe9a4664763568b2fa">00050</a>     boost::shared_ptr&lt;std::ifstream&gt; <a class="code" href="classReplayer.html#a6ab8b4e4031672fe9a4664763568b2fa">file</a>;
+<a name="l00051"></a><a class="code" href="classReplayer.html#a81d09294af859fa5602b46c94262469b">00051</a>     boost::shared_ptr&lt;boost::archive::text_iarchive&gt; <a class="code" href="classReplayer.html#a81d09294af859fa5602b46c94262469b">archive</a>;
 <a name="l00052"></a>00052 
 <a name="l00053"></a>00053     <span class="comment">// holds the replay thread</span>
-<a name="l00054"></a>00054     std::auto_ptr&lt;boost::thread&gt; replayThread;
+<a name="l00054"></a><a class="code" href="classReplayer.html#af5a69cd7b19cebf6e95b9015b37d6159">00054</a>     std::auto_ptr&lt;boost::thread&gt; <a class="code" href="classReplayer.html#af5a69cd7b19cebf6e95b9015b37d6159">replayThread</a>;
 <a name="l00055"></a>00055 
 <a name="l00056"></a>00056     <span class="comment">// the replayers for each component, these pointers are shared between this class</span>
 <a name="l00057"></a>00057     <span class="comment">// and the mediator</span>
-<a name="l00058"></a>00058     boost::shared_ptr&lt;NetworkReplayer&gt; networkReplayer;
-<a name="l00059"></a>00059     boost::shared_ptr&lt;UserInterfaceReplayer&gt; uiReplayer;
-<a name="l00060"></a>00060     boost::shared_ptr&lt;FalconReplayer&gt; falconReplayer;   
-<a name="l00061"></a>00061     boost::shared_ptr&lt;ZCameraReplayer&gt; zCameraReplayer; 
+<a name="l00058"></a><a class="code" href="classReplayer.html#ae055fc69de0cea15b74f76ba2b0275d1">00058</a>     boost::shared_ptr&lt;NetworkReplayer&gt; <a class="code" href="classReplayer.html#ae055fc69de0cea15b74f76ba2b0275d1">networkReplayer</a>;
+<a name="l00059"></a><a class="code" href="classReplayer.html#ab0143a489d8a2dae5e1eadb6fe841013">00059</a>     boost::shared_ptr&lt;UserInterfaceReplayer&gt; <a class="code" href="classReplayer.html#ab0143a489d8a2dae5e1eadb6fe841013">uiReplayer</a>;
+<a name="l00060"></a><a class="code" href="classReplayer.html#a8ee208f42df59b82efc019073e0d4cae">00060</a>     boost::shared_ptr&lt;FalconReplayer&gt; <a class="code" href="classReplayer.html#a8ee208f42df59b82efc019073e0d4cae">falconReplayer</a>;   
+<a name="l00061"></a><a class="code" href="classReplayer.html#a39bf26f1d9273b9edc9f42b78a2e0c5b">00061</a>     boost::shared_ptr&lt;ZCameraReplayer&gt; <a class="code" href="classReplayer.html#a39bf26f1d9273b9edc9f42b78a2e0c5b">zCameraReplayer</a>; 
 <a name="l00062"></a>00062 };
 <a name="l00063"></a>00063 
 <a name="l00064"></a>00064 <span class="preprocessor">#endif</span>
@@ -119,7 +121,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -128,7 +130,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:45 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

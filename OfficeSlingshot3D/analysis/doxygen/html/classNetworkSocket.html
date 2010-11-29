@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -48,26 +49,207 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
-<h1>NetworkSocket Class Reference</h1>  </div>
+<h1>NetworkSocket Class Reference<br/>
+<small>
+[<a class="el" href="group__Network.html">Network</a>]</small>
+</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="NetworkSocket" --><table class="memberdecls">
+<!-- doxytag: class="NetworkSocket" -->
+<p><b>public</b> A network socket used to transmit/receive data.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="NetworkSocket_8h_source.html">NetworkSocket.h</a>&gt;</code></p>
+<table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acdeaa6046b82c34b052231e83ed52632"></a><!-- doxytag: member="NetworkSocket::NetworkSocket" ref="acdeaa6046b82c34b052231e83ed52632" args="(WinsockNetwork *network)" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><b>NetworkSocket</b> (<a class="el" href="classWinsockNetwork.html">WinsockNetwork</a> *network)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9ac28b209fad28645fd7d92d23c98c75"></a><!-- doxytag: member="NetworkSocket::Detach" ref="a9ac28b209fad28645fd7d92d23c98c75" args="()" -->
-virtual SOCKET&nbsp;</td><td class="memItemRight" valign="bottom"><b>Detach</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1a7420b1acbee18bd95d530e6c4867e7"></a><!-- doxytag: member="NetworkSocket::isServer" ref="a1a7420b1acbee18bd95d530e6c4867e7" args="() const " -->
-virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>isServer</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2f5d8b1ef1b262fd6106b59344e4af3d"></a><!-- doxytag: member="NetworkSocket::OnAccept" ref="a2f5d8b1ef1b262fd6106b59344e4af3d" args="(int nErrorCode)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>OnAccept</b> (int nErrorCode)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkSocket.html#acdeaa6046b82c34b052231e83ed52632">NetworkSocket</a> (<a class="el" href="classWinsockNetwork.html">WinsockNetwork</a> *<a class="el" href="classNetworkSocket.html#a570842dbaf665b529a49cbbc81823bf4">network</a>)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#acdeaa6046b82c34b052231e83ed52632"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkSocket.html#a7bcbaf4a5bf2ba1ffbc767a16c078367">~NetworkSocket</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#a7bcbaf4a5bf2ba1ffbc767a16c078367"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual SOCKET&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkSocket.html#a9ac28b209fad28645fd7d92d23c98c75">Detach</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Detach the socket.  <a href="#a9ac28b209fad28645fd7d92d23c98c75"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkSocket.html#a1a7420b1acbee18bd95d530e6c4867e7">isServer</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Find out if the socket is in listen mode.  <a href="#a1a7420b1acbee18bd95d530e6c4867e7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkSocket.html#a2f5d8b1ef1b262fd6106b59344e4af3d">OnAccept</a> (int nErrorCode)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Callback function for when the socket has accepted a connection.  <a href="#a2f5d8b1ef1b262fd6106b59344e4af3d"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classWinsockNetwork.html">WinsockNetwork</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkSocket.html#a570842dbaf665b529a49cbbc81823bf4">network</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The network manager to be notified when the socket has accepted a connection.  <a href="#a570842dbaf665b529a49cbbc81823bf4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkSocket.html#a4ed9c7c9449e08ea774224ea61cf476e">m_bIsServer</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">True if the socket is acting as a server (listen mode).  <a href="#a4ed9c7c9449e08ea774224ea61cf476e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNetworkSocket.html">NetworkSocket</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkSocket.html#a6effd4d9c6c13b4c67787803bd3e309b">m_pClient</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Client socket, will be used to accept the connection.  <a href="#a6effd4d9c6c13b4c67787803bd3e309b"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p><b>public</b> A network socket used to transmit/receive data. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="acdeaa6046b82c34b052231e83ed52632"></a><!-- doxytag: member="NetworkSocket::NetworkSocket" ref="acdeaa6046b82c34b052231e83ed52632" args="(WinsockNetwork *network)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">NetworkSocket::NetworkSocket </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classWinsockNetwork.html">WinsockNetwork</a> *&nbsp;</td>
+          <td class="paramname"> <em>network</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>network</em>&nbsp;</td><td>The network manager that will be notified when the socket has accepted a connection. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7bcbaf4a5bf2ba1ffbc767a16c078367"></a><!-- doxytag: member="NetworkSocket::~NetworkSocket" ref="a7bcbaf4a5bf2ba1ffbc767a16c078367" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">NetworkSocket::~NetworkSocket </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a9ac28b209fad28645fd7d92d23c98c75"></a><!-- doxytag: member="NetworkSocket::Detach" ref="a9ac28b209fad28645fd7d92d23c98c75" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SOCKET NetworkSocket::Detach </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Detach the socket. </p>
+<p>This will detach the thread that is managing this socket so that it can be managed manually. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The socket handle that was detached. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1a7420b1acbee18bd95d530e6c4867e7"></a><!-- doxytag: member="NetworkSocket::isServer" ref="a1a7420b1acbee18bd95d530e6c4867e7" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NetworkSocket::isServer </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Find out if the socket is in listen mode. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if the socket is in listen mode. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2f5d8b1ef1b262fd6106b59344e4af3d"></a><!-- doxytag: member="NetworkSocket::OnAccept" ref="a2f5d8b1ef1b262fd6106b59344e4af3d" args="(int nErrorCode)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NetworkSocket::OnAccept </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>nErrorCode</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Callback function for when the socket has accepted a connection. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>nErrorCode</em>&nbsp;</td><td>The error code that happened when the connection was accepted. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a4ed9c7c9449e08ea774224ea61cf476e"></a><!-- doxytag: member="NetworkSocket::m_bIsServer" ref="a4ed9c7c9449e08ea774224ea61cf476e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classNetworkSocket.html#a4ed9c7c9449e08ea774224ea61cf476e">NetworkSocket::m_bIsServer</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>True if the socket is acting as a server (listen mode). </p>
+
+</div>
+</div>
+<a class="anchor" id="a6effd4d9c6c13b4c67787803bd3e309b"></a><!-- doxytag: member="NetworkSocket::m_pClient" ref="a6effd4d9c6c13b4c67787803bd3e309b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classNetworkSocket.html">NetworkSocket</a>* <a class="el" href="classNetworkSocket.html#a6effd4d9c6c13b4c67787803bd3e309b">NetworkSocket::m_pClient</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Client socket, will be used to accept the connection. </p>
+
+</div>
+</div>
+<a class="anchor" id="a570842dbaf665b529a49cbbc81823bf4"></a><!-- doxytag: member="NetworkSocket::network" ref="a570842dbaf665b529a49cbbc81823bf4" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classWinsockNetwork.html">WinsockNetwork</a>* <a class="el" href="classNetworkSocket.html#a570842dbaf665b529a49cbbc81823bf4">NetworkSocket::network</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The network manager to be notified when the socket has accepted a connection. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/<a class="el" href="NetworkSocket_8h_source.html">NetworkSocket.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/NetworkSocket.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Network/<a class="el" href="NetworkSocket_8h_source.html">NetworkSocket.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Network/<a class="el" href="NetworkSocket_8cpp.html">NetworkSocket.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -75,7 +257,7 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>OnAccept</b> 
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -84,7 +266,7 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>OnAccept</b> 
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:46 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

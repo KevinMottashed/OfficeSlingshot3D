@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -48,13 +49,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
-<h1>Mediator Class Reference</h1>  </div>
+<h1>Mediator Class Reference<br/>
+<small>
+[<a class="el" href="group__Mediator.html">Mediator</a>]</small>
+</h1>  </div>
 </div>
 <div class="contents">
 <!-- doxytag: class="Mediator" --><!-- doxytag: inherits="NetworkObserver,UserInterfaceObserver,ZCameraObserver,FalconObserver,MediatorSubject" -->
-<p>This class mediates the interactions between the devices and the game.  
+<p><b>public</b> This class mediates the interactions between the devices and the game.  
 <a href="#_details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Mediator_8h_source.html">Mediator.h</a>&gt;</code></p>
@@ -74,33 +80,363 @@ Inheritance diagram for Mediator:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abbdd9e8fbf76b85a410aec8d47591876"></a><!-- doxytag: member="Mediator::Mediator" ref="abbdd9e8fbf76b85a410aec8d47591876" args="(boost::shared_ptr&lt; Network &gt; network, boost::shared_ptr&lt; Falcon &gt; falcon, boost::shared_ptr&lt; IZCamera &gt; zcamera, boost::shared_ptr&lt; UserInterface &gt; userInterface, boost::shared_ptr&lt; Configuration &gt; configuration)" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><b>Mediator</b> (boost::shared_ptr&lt; <a class="el" href="classNetwork.html">Network</a> &gt; network, boost::shared_ptr&lt; <a class="el" href="classFalcon.html">Falcon</a> &gt; falcon, boost::shared_ptr&lt; <a class="el" href="classIZCamera.html">IZCamera</a> &gt; zcamera, boost::shared_ptr&lt; <a class="el" href="classUserInterface.html">UserInterface</a> &gt; userInterface, boost::shared_ptr&lt; <a class="el" href="classConfiguration.html">Configuration</a> &gt; configuration)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac85a7648a8c10a5b4db08412652d668b"></a><!-- doxytag: member="Mediator::update" ref="ac85a7648a8c10a5b4db08412652d668b" args="(NetworkUpdateContext context, const void *data)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>update</b> (NetworkUpdateContext context, const void *data)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae6aa511ce52b67c8e8da9a0810db0a87"></a><!-- doxytag: member="Mediator::update" ref="ae6aa511ce52b67c8e8da9a0810db0a87" args="(UserInterfaceUpdateContext context, const void *data)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>update</b> (UserInterfaceUpdateContext context, const void *data)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a86e3c5476aac2bc9858c80aef154a6f8"></a><!-- doxytag: member="Mediator::update" ref="a86e3c5476aac2bc9858c80aef154a6f8" args="(ZCameraUpdateContext context, const void *data)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>update</b> (ZCameraUpdateContext context, const void *data)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a62b886c8f9e0333f70db611947579a56"></a><!-- doxytag: member="Mediator::update" ref="a62b886c8f9e0333f70db611947579a56" args="(FalconUpdateContext context, const void *data)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>update</b> (FalconUpdateContext context, const void *data)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#ad991cce4b9bea0132850b332de7ee692">startGame</a> (<a class="el" href="namespacePlayer.html#acc4ced29e6b7e20f602b3c8b60c75228">Player_t</a> player)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#abbdd9e8fbf76b85a410aec8d47591876">Mediator</a> (boost::shared_ptr&lt; <a class="el" href="classNetwork.html">Network</a> &gt; <a class="el" href="classMediator.html#a041f251066f40e16257ce51b2df1d556">network</a>, boost::shared_ptr&lt; <a class="el" href="classFalcon.html">Falcon</a> &gt; <a class="el" href="classMediator.html#aefba36e5ba71c7f4fa53ff51b70b54d1">falcon</a>, boost::shared_ptr&lt; <a class="el" href="classIZCamera.html">IZCamera</a> &gt; <a class="el" href="classMediator.html#aa718d507f8dd84ab5210eace3cc7dd38">zcamera</a>, boost::shared_ptr&lt; <a class="el" href="classUserInterface.html">UserInterface</a> &gt; <a class="el" href="classMediator.html#a9b4dd955fc27b8c1e14c1e148190e011">userInterface</a>, boost::shared_ptr&lt; <a class="el" href="classConfiguration.html">Configuration</a> &gt; <a class="el" href="classMediator.html#a1cfaa4b26a959204e1c5037936c65b6d">configuration</a>)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#abbdd9e8fbf76b85a410aec8d47591876"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#a50bae430a78a37c56c604206c5d7f302">~Mediator</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#a50bae430a78a37c56c604206c5d7f302"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#ac85a7648a8c10a5b4db08412652d668b">update</a> (<a class="el" href="group__Network.html#ga60a60734bbc0407b2f0567078bbe20e1">NetworkUpdateContext</a> context, const void *data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Handle an update from the network component.  <a href="#ac85a7648a8c10a5b4db08412652d668b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#ae6aa511ce52b67c8e8da9a0810db0a87">update</a> (<a class="el" href="UserInterfaceObserver_8h.html#ad1eb8a0c335743e35a99b456afcc81ac">UserInterfaceUpdateContext</a> context, const void *data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Handle an update from the user interface component.  <a href="#ae6aa511ce52b67c8e8da9a0810db0a87"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#a86e3c5476aac2bc9858c80aef154a6f8">update</a> (<a class="el" href="ZCameraObserver_8h.html#a3af3029bde4b133ab920f268aed62718">ZCameraUpdateContext</a> context, const void *data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Handle an update from the zcamera component.  <a href="#a86e3c5476aac2bc9858c80aef154a6f8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#a62b886c8f9e0333f70db611947579a56">update</a> (<a class="el" href="FalconObserver_8h.html#a2c11e5186fe6519d1fe5d6f763ed08e6">FalconUpdateContext</a> context, const void *data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Handle an update from the falcon component.  <a href="#a62b886c8f9e0333f70db611947579a56"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#ad991cce4b9bea0132850b332de7ee692">startGame</a> (<a class="el" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228">Player_t</a> player)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Take action when the game is started.  <a href="#ad991cce4b9bea0132850b332de7ee692"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#a5586025cfc2d2bedf5cb439c9d70d4d0">pauseGame</a> (<a class="el" href="namespacePlayer.html#acc4ced29e6b7e20f602b3c8b60c75228">Player_t</a> player)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#a5586025cfc2d2bedf5cb439c9d70d4d0">pauseGame</a> (<a class="el" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228">Player_t</a> player)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Take action when the game is paused.  <a href="#a5586025cfc2d2bedf5cb439c9d70d4d0"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#a5b30bd87401b4a547a1c92edb4e1e7e6">exitGame</a> (<a class="el" href="namespacePlayer.html#acc4ced29e6b7e20f602b3c8b60c75228">Player_t</a> player)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#a5b30bd87401b4a547a1c92edb4e1e7e6">exitGame</a> (<a class="el" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228">Player_t</a> player)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Take action when the game is exited.  <a href="#a5b30bd87401b4a547a1c92edb4e1e7e6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#a71a8bf11835c90379b6b1bc62c2df7b4">switchCamera</a> (cCamera *camera)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Switches the camera whose frames need to be displayed.  <a href="#a71a8bf11835c90379b6b1bc62c2df7b4"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#a7b0a7af50706aac37b036ee381753510">fireSlingshot</a> (<a class="el" href="classProjectile.html">Projectile</a> projectile, <a class="el" href="namespacePlayer.html#acc4ced29e6b7e20f602b3c8b60c75228">Player_t</a> player)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Provide the user with feedback when a slingshot is fired This will also let the peer know that a slingshot was fired if the fired slingshot was our own.  <a href="#a7b0a7af50706aac37b036ee381753510"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9cb4ea7c083b77853762e1304e54e402"></a><!-- doxytag: member="Mediator::collisionDetected" ref="a9cb4ea7c083b77853762e1304e54e402" args="(void)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>collisionDetected</b> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#a7b0a7af50706aac37b036ee381753510">fireSlingshot</a> (<a class="el" href="classProjectile.html">Projectile</a> projectile, <a class="el" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228">Player_t</a> player)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Provide the user with feedback when a slingshot is fired.  <a href="#a7b0a7af50706aac37b036ee381753510"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#aa7e7285867c463582f29af6673d7acba">collisionDetected</a> (<a class="el" href="group__Common.html#gaa22d3933804e3afcd4eac294dded7434">BodyPart_t</a> hitPart, cVector3d ballPos, cVector3d minValue, cVector3d maxValue)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Provide the appropriate user feedback for when the local player is hit by the slingshot.  <a href="#aa7e7285867c463582f29af6673d7acba"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#abbf06063b76774cca0d7a66dca2fc92d">peerHit</a> (<a class="el" href="group__Common.html#gaa22d3933804e3afcd4eac294dded7434">BodyPart_t</a> bodyPart)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Provide the appropriate user feedback for when the peer player is hit by the slingshot.  <a href="#abbf06063b76774cca0d7a66dca2fc92d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#adf6ed4cff7865457847a5c331a70c4f0">playerLost</a> (<a class="el" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228">Player_t</a> player)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Displays lose screen and sends GAME_OVER to peer.  <a href="#adf6ed4cff7865457847a5c331a70c4f0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#a97cd03d299dfb64506cf1f84956dd538">muteVolume</a> (const bool soundOn)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Mutes the volume.  <a href="#a97cd03d299dfb64506cf1f84956dd538"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#a774c62051a8dc89df7f09a0035d570e3">changeVolume</a> (const int vol)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Changes the volume.  <a href="#a774c62051a8dc89df7f09a0035d570e3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#a759e14b56bffcabc73610fda7e4cbef5">setVolumePreferences</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the config volume preferences to the game and UI.  <a href="#a759e14b56bffcabc73610fda7e4cbef5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#a8ba60784fa9d1f80d6b1164c10672466">paint</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Redraw the screen.  <a href="#a8ba60784fa9d1f80d6b1164c10672466"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#a9f01e870de7c2d9d28b8c87a88321f1f">synchronizePhysics</a> (const <a class="el" href="classPhysicsSync.html">PhysicsSync</a> &amp;sync)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Synchronize the physics of both games.  <a href="#a9f01e870de7c2d9d28b8c87a88321f1f"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#acb4ff54edfd80f46460dacb94a2a1e57">Mediator</a> (const <a class="el" href="classMediator.html">Mediator</a> &amp;c)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy constructor.  <a href="#acb4ff54edfd80f46460dacb94a2a1e57"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMediator.html">Mediator</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#a289ce9f536a8f639c06d35dab1f0dfa1">operator=</a> (const <a class="el" href="classMediator.html">Mediator</a> &amp;c)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Assignment Operator.  <a href="#a289ce9f536a8f639c06d35dab1f0dfa1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#a3df248f99ce7ae6b0499de8a961cc803">handlePeerConnected</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Handle a peer connect update.  <a href="#a3df248f99ce7ae6b0499de8a961cc803"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#a32afc5c8dc7bbb9c8be4c1968409d492">handlePeerDisconnected</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Handle a peer disconnect update.  <a href="#a32afc5c8dc7bbb9c8be4c1968409d492"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#a46fe646d438f386c7c3ba4290cd413d8">handleNetworkError</a> (<a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> error)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Handle a network error.  <a href="#a46fe646d438f386c7c3ba4290cd413d8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#af333a33d2405bb4dec87b8a401bc6ad6">handleUserName</a> (const std::string &amp;name)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Handle receiving a user name through the network.  <a href="#af333a33d2405bb4dec87b8a401bc6ad6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#af97dd6fbb5ca838124ef08a1f49eb129">handleChatMessage</a> (const std::string &amp;message)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Handle a chat message received through the network.  <a href="#af97dd6fbb5ca838124ef08a1f49eb129"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#a8cf432ccc487dd7f8c3b575d82db5ec8">connect</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Connect to the peer.  <a href="#a8cf432ccc487dd7f8c3b575d82db5ec8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#ae1cdf6ee22baf62d067112f16561fbc7">listen</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Listen for connections.  <a href="#ae1cdf6ee22baf62d067112f16561fbc7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#a51c2fff1557fce1db40066353eb8c1aa">disconnect</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Disconnect us from the peer.  <a href="#a51c2fff1557fce1db40066353eb8c1aa"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#a463893b0fc61430cf2f7ef427db0f588">changePreferences</a> (const <a class="el" href="structUserPreferences.html">UserPreferences</a> &amp;preferences)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Handle a change in user preferences.  <a href="#a463893b0fc61430cf2f7ef427db0f588"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#a7ab7b57e8ddb36d948152b9a6e6bcb01">closeApplication</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Handle a request to close the application.  <a href="#a7ab7b57e8ddb36d948152b9a6e6bcb01"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#abc91c106f50b57af8c20f15b5c8acf9d">sendChatMessage</a> (const std::string &amp;message)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a chat message to the peer.  <a href="#abc91c106f50b57af8c20f15b5c8acf9d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#ad0f91a7af8f39e63fdc8ce665a04edf8">stopDevices</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Stop polling the devices (slingshot + zcamera).  <a href="#ad0f91a7af8f39e63fdc8ce665a04edf8"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr&lt; <a class="el" href="classNetwork.html">Network</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#a041f251066f40e16257ce51b2df1d556">network</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The network component.  <a href="#a041f251066f40e16257ce51b2df1d556"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr&lt; <a class="el" href="classUserInterface.html">UserInterface</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#a9b4dd955fc27b8c1e14c1e148190e011">userInterface</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The user interface component.  <a href="#a9b4dd955fc27b8c1e14c1e148190e011"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr&lt; <a class="el" href="classFalcon.html">Falcon</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#aefba36e5ba71c7f4fa53ff51b70b54d1">falcon</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The falcon component.  <a href="#aefba36e5ba71c7f4fa53ff51b70b54d1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr&lt; <a class="el" href="classIZCamera.html">IZCamera</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#aa718d507f8dd84ab5210eace3cc7dd38">zcamera</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The zcamera component.  <a href="#aa718d507f8dd84ab5210eace3cc7dd38"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr<br class="typebreak"/>
+&lt; <a class="el" href="classSmartClothingManager.html">SmartClothingManager</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#a66668067d6fd13224f90c93bcc30c0ed">smartClothing</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The smart clothing component.  <a href="#a66668067d6fd13224f90c93bcc30c0ed"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classAudio.html">Audio</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#a21c667efd3c4f6702725693efbaf8bb0">audio</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The audio component.  <a href="#a21c667efd3c4f6702725693efbaf8bb0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr&lt; <a class="el" href="classConfiguration.html">Configuration</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#a1cfaa4b26a959204e1c5037936c65b6d">configuration</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The user preferences.  <a href="#a1cfaa4b26a959204e1c5037936c65b6d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CRITICAL_SECTION&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediator.html#a173297b8e33d2fe347eb492cd3d22b7e">configurationMutex</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Mutex for the user preferences.  <a href="#a173297b8e33d2fe347eb492cd3d22b7e"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<p>This class mediates the interactions between the devices and the game. </p>
+<p><b>public</b> This class mediates the interactions between the devices and the game. </p>
 <p>All device modules report events to the mediator. The mediator will then interpret these events and notify the game. The mediator also synchronizes both clients via the network connection. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="abbdd9e8fbf76b85a410aec8d47591876"></a><!-- doxytag: member="Mediator::Mediator" ref="abbdd9e8fbf76b85a410aec8d47591876" args="(boost::shared_ptr&lt; Network &gt; network, boost::shared_ptr&lt; Falcon &gt; falcon, boost::shared_ptr&lt; IZCamera &gt; zcamera, boost::shared_ptr&lt; UserInterface &gt; userInterface, boost::shared_ptr&lt; Configuration &gt; configuration)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Mediator::Mediator </td>
+          <td>(</td>
+          <td class="paramtype">boost::shared_ptr&lt; <a class="el" href="classNetwork.html">Network</a> &gt;&nbsp;</td>
+          <td class="paramname"> <em>network</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boost::shared_ptr&lt; <a class="el" href="classFalcon.html">Falcon</a> &gt;&nbsp;</td>
+          <td class="paramname"> <em>falcon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boost::shared_ptr&lt; <a class="el" href="classIZCamera.html">IZCamera</a> &gt;&nbsp;</td>
+          <td class="paramname"> <em>zcamera</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boost::shared_ptr&lt; <a class="el" href="classUserInterface.html">UserInterface</a> &gt;&nbsp;</td>
+          <td class="paramname"> <em>userInterface</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boost::shared_ptr&lt; <a class="el" href="classConfiguration.html">Configuration</a> &gt;&nbsp;</td>
+          <td class="paramname"> <em>configuration</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>network</em>&nbsp;</td><td>The network component to be mediated. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>falcon</em>&nbsp;</td><td>The falcon component to be mediated. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>zcamera</em>&nbsp;</td><td>The zcamera component to be mediated. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>userInterface</em>&nbsp;</td><td>The user interface component to be mediated. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>configuration</em>&nbsp;</td><td>The configuration to use. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a50bae430a78a37c56c604206c5d7f302"></a><!-- doxytag: member="Mediator::~Mediator" ref="a50bae430a78a37c56c604206c5d7f302" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Mediator::~Mediator </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="acb4ff54edfd80f46460dacb94a2a1e57"></a><!-- doxytag: member="Mediator::Mediator" ref="acb4ff54edfd80f46460dacb94a2a1e57" args="(const Mediator &amp;c)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Mediator::Mediator </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classMediator.html">Mediator</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>c</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copy constructor. </p>
+<p>Not implemented to protect from use. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>c</em>&nbsp;</td><td>The mediator to copy from. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a463893b0fc61430cf2f7ef427db0f588"></a><!-- doxytag: member="Mediator::changePreferences" ref="a463893b0fc61430cf2f7ef427db0f588" args="(const UserPreferences &amp;preferences)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mediator::changePreferences </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structUserPreferences.html">UserPreferences</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>preferences</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Handle a change in user preferences. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>preferences</em>&nbsp;</td><td>The new preferences. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a774c62051a8dc89df7f09a0035d570e3"></a><!-- doxytag: member="Mediator::changeVolume" ref="a774c62051a8dc89df7f09a0035d570e3" args="(const int vol)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mediator::changeVolume </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>vol</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Changes the volume. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>vol</em>&nbsp;</td><td>The new volume. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7ab7b57e8ddb36d948152b9a6e6bcb01"></a><!-- doxytag: member="Mediator::closeApplication" ref="a7ab7b57e8ddb36d948152b9a6e6bcb01" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mediator::closeApplication </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Handle a request to close the application. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa7e7285867c463582f29af6673d7acba"></a><!-- doxytag: member="Mediator::collisionDetected" ref="aa7e7285867c463582f29af6673d7acba" args="(BodyPart_t hitPart, cVector3d ballPos, cVector3d minValue, cVector3d maxValue)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mediator::collisionDetected </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Common.html#gaa22d3933804e3afcd4eac294dded7434">BodyPart_t</a>&nbsp;</td>
+          <td class="paramname"> <em>hitPart</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cVector3d&nbsp;</td>
+          <td class="paramname"> <em>ballPos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cVector3d&nbsp;</td>
+          <td class="paramname"> <em>minValue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cVector3d&nbsp;</td>
+          <td class="paramname"> <em>maxValue</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Provide the appropriate user feedback for when the local player is hit by the slingshot. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>hitPart</em>&nbsp;</td><td>The body part hit by the ball. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>ballPos</em>&nbsp;</td><td>The position of the ball when the collision was detected. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>minValue</em>&nbsp;</td><td>The hit box's minimum value. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>maxValue</em>&nbsp;</td><td>The hit box's maximum value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8cf432ccc487dd7f8c3b575d82db5ec8"></a><!-- doxytag: member="Mediator::connect" ref="a8cf432ccc487dd7f8c3b575d82db5ec8" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mediator::connect </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Connect to the peer. </p>
+<p>The IP address to connect to is retrieved from the user preferences. </p>
+
+</div>
+</div>
+<a class="anchor" id="a51c2fff1557fce1db40066353eb8c1aa"></a><!-- doxytag: member="Mediator::disconnect" ref="a51c2fff1557fce1db40066353eb8c1aa" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mediator::disconnect </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Disconnect us from the peer. </p>
+<p>If the network is currently listening for connections then it will stop doing so. </p>
+
+</div>
+</div>
 <a class="anchor" id="a5b30bd87401b4a547a1c92edb4e1e7e6"></a><!-- doxytag: member="Mediator::exitGame" ref="a5b30bd87401b4a547a1c92edb4e1e7e6" args="(Player_t player)" -->
 <div class="memitem">
 <div class="memproto">
@@ -108,7 +444,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>collisionDetected</b>
         <tr>
           <td class="memname">void Mediator::exitGame </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacePlayer.html#acc4ced29e6b7e20f602b3c8b60c75228">Player_t</a>&nbsp;</td>
+          <td class="paramtype"><a class="el" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228">Player_t</a>&nbsp;</td>
           <td class="paramname"> <em>player</em></td>
           <td>&nbsp;)&nbsp;</td>
           <td></td>
@@ -121,7 +457,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>collisionDetected</b>
 <p>This will stop polling the devices and let the user know that the game was exited. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>player</em>&nbsp;</td><td>the player that started the game </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>player</em>&nbsp;</td><td>the player that started the game. </td></tr>
   </table>
   </dd>
 </dl>
@@ -141,7 +477,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>collisionDetected</b>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacePlayer.html#acc4ced29e6b7e20f602b3c8b60c75228">Player_t</a>&nbsp;</td>
+          <td class="paramtype"><a class="el" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228">Player_t</a>&nbsp;</td>
           <td class="paramname"> <em>player</em></td><td>&nbsp;</td>
         </tr>
         <tr>
@@ -153,14 +489,222 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>collisionDetected</b>
 </div>
 <div class="memdoc">
 
-<p>Provide the user with feedback when a slingshot is fired This will also let the peer know that a slingshot was fired if the fired slingshot was our own. </p>
+<p>Provide the user with feedback when a slingshot is fired. </p>
+<p>This will also let the peer know that a slingshot was fired. if the fired slingshot was our own. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>projectile</em>&nbsp;</td><td>The projectile that was fired </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>player</em>&nbsp;</td><td>The player that fired his slingshot </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>projectile</em>&nbsp;</td><td>The projectile that was fired. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>player</em>&nbsp;</td><td>The player that fired his slingshot. </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="af97dd6fbb5ca838124ef08a1f49eb129"></a><!-- doxytag: member="Mediator::handleChatMessage" ref="af97dd6fbb5ca838124ef08a1f49eb129" args="(const std::string &amp;message)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mediator::handleChatMessage </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>message</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Handle a chat message received through the network. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>message</em>&nbsp;</td><td>The chat message received. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a46fe646d438f386c7c3ba4290cd413d8"></a><!-- doxytag: member="Mediator::handleNetworkError" ref="a46fe646d438f386c7c3ba4290cd413d8" args="(rc_network error)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mediator::handleNetworkError </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td>
+          <td class="paramname"> <em>error</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Handle a network error. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>error</em>&nbsp;</td><td>The error code to handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a3df248f99ce7ae6b0499de8a961cc803"></a><!-- doxytag: member="Mediator::handlePeerConnected" ref="a3df248f99ce7ae6b0499de8a961cc803" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mediator::handlePeerConnected </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Handle a peer connect update. </p>
+
+</div>
+</div>
+<a class="anchor" id="a32afc5c8dc7bbb9c8be4c1968409d492"></a><!-- doxytag: member="Mediator::handlePeerDisconnected" ref="a32afc5c8dc7bbb9c8be4c1968409d492" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mediator::handlePeerDisconnected </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Handle a peer disconnect update. </p>
+
+</div>
+</div>
+<a class="anchor" id="af333a33d2405bb4dec87b8a401bc6ad6"></a><!-- doxytag: member="Mediator::handleUserName" ref="af333a33d2405bb4dec87b8a401bc6ad6" args="(const std::string &amp;name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mediator::handleUserName </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Handle receiving a user name through the network. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>name</em>&nbsp;</td><td>The received user name. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae1cdf6ee22baf62d067112f16561fbc7"></a><!-- doxytag: member="Mediator::listen" ref="ae1cdf6ee22baf62d067112f16561fbc7" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mediator::listen </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Listen for connections. </p>
+
+</div>
+</div>
+<a class="anchor" id="a97cd03d299dfb64506cf1f84956dd538"></a><!-- doxytag: member="Mediator::muteVolume" ref="a97cd03d299dfb64506cf1f84956dd538" args="(const bool soundOn)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mediator::muteVolume </td>
+          <td>(</td>
+          <td class="paramtype">const bool&nbsp;</td>
+          <td class="paramname"> <em>soundOn</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Mutes the volume. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>soundOn</em>&nbsp;</td><td>True if the sound is on currently and is to be muted. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a289ce9f536a8f639c06d35dab1f0dfa1"></a><!-- doxytag: member="Mediator::operator=" ref="a289ce9f536a8f639c06d35dab1f0dfa1" args="(const Mediator &amp;c)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMediator.html">Mediator</a>&amp; Mediator::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classMediator.html">Mediator</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>c</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Assignment Operator. </p>
+<p>Not implemented to protect from use. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>c</em>&nbsp;</td><td>The mediator to assign from. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8ba60784fa9d1f80d6b1164c10672466"></a><!-- doxytag: member="Mediator::paint" ref="a8ba60784fa9d1f80d6b1164c10672466" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mediator::paint </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Redraw the screen. </p>
 
 </div>
 </div>
@@ -171,7 +715,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>collisionDetected</b>
         <tr>
           <td class="memname">void Mediator::pauseGame </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacePlayer.html#acc4ced29e6b7e20f602b3c8b60c75228">Player_t</a>&nbsp;</td>
+          <td class="paramtype"><a class="el" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228">Player_t</a>&nbsp;</td>
           <td class="paramname"> <em>player</em></td>
           <td>&nbsp;)&nbsp;</td>
           <td></td>
@@ -184,10 +728,107 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>collisionDetected</b>
 <p>This will stop polling the devices and let the user know that the game was paused. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>player</em>&nbsp;</td><td>the player that started the game </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>player</em>&nbsp;</td><td>the player that started the game. </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="abbf06063b76774cca0d7a66dca2fc92d"></a><!-- doxytag: member="Mediator::peerHit" ref="abbf06063b76774cca0d7a66dca2fc92d" args="(BodyPart_t bodyPart)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mediator::peerHit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Common.html#gaa22d3933804e3afcd4eac294dded7434">BodyPart_t</a>&nbsp;</td>
+          <td class="paramname"> <em>bodyPart</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Provide the appropriate user feedback for when the peer player is hit by the slingshot. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>bodyPart</em>&nbsp;</td><td>The body part where the peer was hit. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="adf6ed4cff7865457847a5c331a70c4f0"></a><!-- doxytag: member="Mediator::playerLost" ref="adf6ed4cff7865457847a5c331a70c4f0" args="(Player_t player)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mediator::playerLost </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228">Player_t</a>&nbsp;</td>
+          <td class="paramname"> <em>player</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Displays lose screen and sends GAME_OVER to peer. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>player</em>&nbsp;</td><td>The player that lost the game. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="abc91c106f50b57af8c20f15b5c8acf9d"></a><!-- doxytag: member="Mediator::sendChatMessage" ref="abc91c106f50b57af8c20f15b5c8acf9d" args="(const std::string &amp;message)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mediator::sendChatMessage </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>message</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Send a chat message to the peer. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>message</em>&nbsp;</td><td>The chat message to send. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a759e14b56bffcabc73610fda7e4cbef5"></a><!-- doxytag: member="Mediator::setVolumePreferences" ref="a759e14b56bffcabc73610fda7e4cbef5" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mediator::setVolumePreferences </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the config volume preferences to the game and UI. </p>
 
 </div>
 </div>
@@ -198,7 +839,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>collisionDetected</b>
         <tr>
           <td class="memname">void Mediator::startGame </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacePlayer.html#acc4ced29e6b7e20f602b3c8b60c75228">Player_t</a>&nbsp;</td>
+          <td class="paramtype"><a class="el" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228">Player_t</a>&nbsp;</td>
           <td class="paramname"> <em>player</em></td>
           <td>&nbsp;)&nbsp;</td>
           <td></td>
@@ -211,10 +852,29 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>collisionDetected</b>
 <p>This will start polling the devices and let the user know that the game was started. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>player</em>&nbsp;</td><td>the player that started the game </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>player</em>&nbsp;</td><td>the player that started the game. </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="ad0f91a7af8f39e63fdc8ce665a04edf8"></a><!-- doxytag: member="Mediator::stopDevices" ref="ad0f91a7af8f39e63fdc8ce665a04edf8" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mediator::stopDevices </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Stop polling the devices (slingshot + zcamera). </p>
 
 </div>
 </div>
@@ -238,16 +898,307 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>collisionDetected</b>
 <p>This instructs the UI to display the game environment from a camera. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>camera</em>&nbsp;</td><td>The new camera </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>camera</em>&nbsp;</td><td>The new camera. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
+<a class="anchor" id="a9f01e870de7c2d9d28b8c87a88321f1f"></a><!-- doxytag: member="Mediator::synchronizePhysics" ref="a9f01e870de7c2d9d28b8c87a88321f1f" args="(const PhysicsSync &amp;sync)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mediator::synchronizePhysics </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classPhysicsSync.html">PhysicsSync</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>sync</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Synchronize the physics of both games. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>sync</em>&nbsp;</td><td>The physics data that is used for the synchronization. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae6aa511ce52b67c8e8da9a0810db0a87"></a><!-- doxytag: member="Mediator::update" ref="ae6aa511ce52b67c8e8da9a0810db0a87" args="(UserInterfaceUpdateContext context, const void *data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mediator::update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="UserInterfaceObserver_8h.html#ad1eb8a0c335743e35a99b456afcc81ac">UserInterfaceUpdateContext</a>&nbsp;</td>
+          <td class="paramname"> <em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&nbsp;</td>
+          <td class="paramname"> <em>data</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Handle an update from the user interface component. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>context</em>&nbsp;</td><td>The update's context. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>data</em>&nbsp;</td><td>The data associated with the update. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ac85a7648a8c10a5b4db08412652d668b"></a><!-- doxytag: member="Mediator::update" ref="ac85a7648a8c10a5b4db08412652d668b" args="(NetworkUpdateContext context, const void *data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mediator::update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Network.html#ga60a60734bbc0407b2f0567078bbe20e1">NetworkUpdateContext</a>&nbsp;</td>
+          <td class="paramname"> <em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&nbsp;</td>
+          <td class="paramname"> <em>data</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Handle an update from the network component. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>context</em>&nbsp;</td><td>The update's context. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>data</em>&nbsp;</td><td>The data associated with the update. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a62b886c8f9e0333f70db611947579a56"></a><!-- doxytag: member="Mediator::update" ref="a62b886c8f9e0333f70db611947579a56" args="(FalconUpdateContext context, const void *data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mediator::update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="FalconObserver_8h.html#a2c11e5186fe6519d1fe5d6f763ed08e6">FalconUpdateContext</a>&nbsp;</td>
+          <td class="paramname"> <em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&nbsp;</td>
+          <td class="paramname"> <em>data</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Handle an update from the falcon component. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>context</em>&nbsp;</td><td>The update's context. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>data</em>&nbsp;</td><td>The data associated with the update. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a86e3c5476aac2bc9858c80aef154a6f8"></a><!-- doxytag: member="Mediator::update" ref="a86e3c5476aac2bc9858c80aef154a6f8" args="(ZCameraUpdateContext context, const void *data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mediator::update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ZCameraObserver_8h.html#a3af3029bde4b133ab920f268aed62718">ZCameraUpdateContext</a>&nbsp;</td>
+          <td class="paramname"> <em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&nbsp;</td>
+          <td class="paramname"> <em>data</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Handle an update from the zcamera component. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>context</em>&nbsp;</td><td>The update's context. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>data</em>&nbsp;</td><td>The data associated with the update. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a21c667efd3c4f6702725693efbaf8bb0"></a><!-- doxytag: member="Mediator::audio" ref="a21c667efd3c4f6702725693efbaf8bb0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classAudio.html">Audio</a> <a class="el" href="classMediator.html#a21c667efd3c4f6702725693efbaf8bb0">Mediator::audio</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The audio component. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1cfaa4b26a959204e1c5037936c65b6d"></a><!-- doxytag: member="Mediator::configuration" ref="a1cfaa4b26a959204e1c5037936c65b6d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::shared_ptr&lt;<a class="el" href="classConfiguration.html">Configuration</a>&gt; <a class="el" href="classMediator.html#a1cfaa4b26a959204e1c5037936c65b6d">Mediator::configuration</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The user preferences. </p>
+
+</div>
+</div>
+<a class="anchor" id="a173297b8e33d2fe347eb492cd3d22b7e"></a><!-- doxytag: member="Mediator::configurationMutex" ref="a173297b8e33d2fe347eb492cd3d22b7e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CRITICAL_SECTION <a class="el" href="classMediator.html#a173297b8e33d2fe347eb492cd3d22b7e">Mediator::configurationMutex</a><code> [mutable, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Mutex for the user preferences. </p>
+
+</div>
+</div>
+<a class="anchor" id="aefba36e5ba71c7f4fa53ff51b70b54d1"></a><!-- doxytag: member="Mediator::falcon" ref="aefba36e5ba71c7f4fa53ff51b70b54d1" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::shared_ptr&lt;<a class="el" href="classFalcon.html">Falcon</a>&gt; <a class="el" href="classMediator.html#aefba36e5ba71c7f4fa53ff51b70b54d1">Mediator::falcon</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The falcon component. </p>
+
+</div>
+</div>
+<a class="anchor" id="a041f251066f40e16257ce51b2df1d556"></a><!-- doxytag: member="Mediator::network" ref="a041f251066f40e16257ce51b2df1d556" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::shared_ptr&lt;<a class="el" href="classNetwork.html">Network</a>&gt; <a class="el" href="classMediator.html#a041f251066f40e16257ce51b2df1d556">Mediator::network</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The network component. </p>
+
+</div>
+</div>
+<a class="anchor" id="a66668067d6fd13224f90c93bcc30c0ed"></a><!-- doxytag: member="Mediator::smartClothing" ref="a66668067d6fd13224f90c93bcc30c0ed" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::shared_ptr&lt;<a class="el" href="classSmartClothingManager.html">SmartClothingManager</a>&gt; <a class="el" href="classMediator.html#a66668067d6fd13224f90c93bcc30c0ed">Mediator::smartClothing</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The smart clothing component. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9b4dd955fc27b8c1e14c1e148190e011"></a><!-- doxytag: member="Mediator::userInterface" ref="a9b4dd955fc27b8c1e14c1e148190e011" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::shared_ptr&lt;<a class="el" href="classUserInterface.html">UserInterface</a>&gt; <a class="el" href="classMediator.html#a9b4dd955fc27b8c1e14c1e148190e011">Mediator::userInterface</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The user interface component. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa718d507f8dd84ab5210eace3cc7dd38"></a><!-- doxytag: member="Mediator::zcamera" ref="aa718d507f8dd84ab5210eace3cc7dd38" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::shared_ptr&lt;<a class="el" href="classIZCamera.html">IZCamera</a>&gt; <a class="el" href="classMediator.html#aa718d507f8dd84ab5210eace3cc7dd38">Mediator::zcamera</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The zcamera component. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/<a class="el" href="Mediator_8h_source.html">Mediator.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/Mediator.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Mediator/<a class="el" href="Mediator_8h_source.html">Mediator.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Mediator/<a class="el" href="Mediator_8cpp.html">Mediator.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -255,7 +1206,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>collisionDetected</b>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -264,7 +1215,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>collisionDetected</b>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:45 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

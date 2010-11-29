@@ -35,25 +35,21 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="9" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="8" />
 </extent>
 <name>CPreferences</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/Preferences.cpp" line="14" />
+<source_reference file="../../UserInterface/Preferences.cpp" line="11" />
 </extent>
 <name>MFCOpenGLControl</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
-<description>has by reference</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="15" />
-</extent>
-<extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="41" />
+<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="43" />
 </extent>
 </client_module>
 <supplier_module>

@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -48,24 +49,212 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
-<h1>Configuration Class Reference</h1>  </div>
+<h1>Configuration Class Reference<br/>
+<small>
+[<a class="el" href="group__Mediator.html">Mediator</a>]</small>
+</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="Configuration" --><table class="memberdecls">
+<!-- doxytag: class="Configuration" -->
+<p><b>package</b> Manages the software's configuration and stores it in a file.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Configuration_8h_source.html">Configuration.h</a>&gt;</code></p>
+<table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab3a2622e0fdae62c410e851036cb7a77"></a><!-- doxytag: member="Configuration::Configuration" ref="ab3a2622e0fdae62c410e851036cb7a77" args="(const std::string &amp;fileName)" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><b>Configuration</b> (const std::string &amp;fileName)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af60b6cbd2ad623fe06cf3bc274f5a292"></a><!-- doxytag: member="Configuration::getUserPreferences" ref="af60b6cbd2ad623fe06cf3bc274f5a292" args="() const " -->
-<a class="el" href="structUserPreferences.html">UserPreferences</a>&nbsp;</td><td class="memItemRight" valign="bottom"><b>getUserPreferences</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aee3e4e01d719504ed22ea7f0c8f0ef24"></a><!-- doxytag: member="Configuration::setUserPreferences" ref="aee3e4e01d719504ed22ea7f0c8f0ef24" args="(const UserPreferences &amp;pref)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>setUserPreferences</b> (const <a class="el" href="structUserPreferences.html">UserPreferences</a> &amp;pref)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfiguration.html#ab3a2622e0fdae62c410e851036cb7a77">Configuration</a> (const std::string &amp;<a class="el" href="classConfiguration.html#a7d43aa2559d9be930830f94f575f8360">fileName</a>)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#ab3a2622e0fdae62c410e851036cb7a77"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfiguration.html#a0dd0fa189e239f4c9a036303f641441e">~Configuration</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#a0dd0fa189e239f4c9a036303f641441e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structUserPreferences.html">UserPreferences</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfiguration.html#af60b6cbd2ad623fe06cf3bc274f5a292">getUserPreferences</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get the user preferences.  <a href="#af60b6cbd2ad623fe06cf3bc274f5a292"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfiguration.html#aee3e4e01d719504ed22ea7f0c8f0ef24">setUserPreferences</a> (const <a class="el" href="structUserPreferences.html">UserPreferences</a> &amp;pref)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set the user preferences.  <a href="#aee3e4e01d719504ed22ea7f0c8f0ef24"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfiguration.html#a949e696e624a5a843955ee460031a300">readFromFile</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Read the preferences from a file.  <a href="#a949e696e624a5a843955ee460031a300"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfiguration.html#a0a1e7da21d74b5ba71f1497b14550a01">writeToFile</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Write the preferences to a file.  <a href="#a0a1e7da21d74b5ba71f1497b14550a01"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structUserPreferences.html">UserPreferences</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfiguration.html#afc2873cb2c7856e629be8c1af5f6914b">preferences</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The user preferences.  <a href="#afc2873cb2c7856e629be8c1af5f6914b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfiguration.html#a7d43aa2559d9be930830f94f575f8360">fileName</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The file where the preferences are stored.  <a href="#a7d43aa2559d9be930830f94f575f8360"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p><b>package</b> Manages the software's configuration and stores it in a file. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ab3a2622e0fdae62c410e851036cb7a77"></a><!-- doxytag: member="Configuration::Configuration" ref="ab3a2622e0fdae62c410e851036cb7a77" args="(const std::string &amp;fileName)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Configuration::Configuration </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>fileName</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>fileName</em>&nbsp;</td><td>The file where the configuration is stored. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0dd0fa189e239f4c9a036303f641441e"></a><!-- doxytag: member="Configuration::~Configuration" ref="a0dd0fa189e239f4c9a036303f641441e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Configuration::~Configuration </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="af60b6cbd2ad623fe06cf3bc274f5a292"></a><!-- doxytag: member="Configuration::getUserPreferences" ref="af60b6cbd2ad623fe06cf3bc274f5a292" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structUserPreferences.html">UserPreferences</a> Configuration::getUserPreferences </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the user preferences. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The user preferences. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a949e696e624a5a843955ee460031a300"></a><!-- doxytag: member="Configuration::readFromFile" ref="a949e696e624a5a843955ee460031a300" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Configuration::readFromFile </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Read the preferences from a file. </p>
+
+</div>
+</div>
+<a class="anchor" id="aee3e4e01d719504ed22ea7f0c8f0ef24"></a><!-- doxytag: member="Configuration::setUserPreferences" ref="aee3e4e01d719504ed22ea7f0c8f0ef24" args="(const UserPreferences &amp;pref)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Configuration::setUserPreferences </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structUserPreferences.html">UserPreferences</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>pref</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set the user preferences. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>pref</em>&nbsp;</td><td>The new preferences. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0a1e7da21d74b5ba71f1497b14550a01"></a><!-- doxytag: member="Configuration::writeToFile" ref="a0a1e7da21d74b5ba71f1497b14550a01" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Configuration::writeToFile </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Write the preferences to a file. </p>
+
+</div>
+</div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a7d43aa2559d9be930830f94f575f8360"></a><!-- doxytag: member="Configuration::fileName" ref="a7d43aa2559d9be930830f94f575f8360" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classConfiguration.html#a7d43aa2559d9be930830f94f575f8360">Configuration::fileName</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The file where the preferences are stored. </p>
+
+</div>
+</div>
+<a class="anchor" id="afc2873cb2c7856e629be8c1af5f6914b"></a><!-- doxytag: member="Configuration::preferences" ref="afc2873cb2c7856e629be8c1af5f6914b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structUserPreferences.html">UserPreferences</a> <a class="el" href="classConfiguration.html#afc2873cb2c7856e629be8c1af5f6914b">Configuration::preferences</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The user preferences. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/<a class="el" href="Configuration_8h_source.html">Configuration.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/Configuration.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Mediator/<a class="el" href="Configuration_8h_source.html">Configuration.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Mediator/<a class="el" href="Configuration_8cpp.html">Configuration.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -73,7 +262,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>setUserPreferences</b
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,7 +271,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>setUserPreferences</b
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:45 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OfficeSlingshot3D: /home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/ZCamera.h Source File</title>
+<title>OfficeSlingshot3D: /home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/ZCamera/ZCamera.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -41,67 +42,63 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/ZCamera.h</h1>  </div>
+<h1>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/ZCamera/ZCamera.h</h1>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef ZCAMERA_H</span>
+<a href="ZCamera_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef ZCAMERA_H</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define ZCAMERA_H</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &quot;stdafx.h&quot;</span>
 <a name="l00005"></a>00005 <span class="preprocessor">#include &quot;chai3d.h&quot;</span>
-<a name="l00006"></a>00006 <span class="preprocessor">#include &quot;DepthCamera.h&quot;</span>
-<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;IZCamera.h&quot;</span>
-<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;VideoData.h&quot;</span>
-<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;boost.h&quot;</span>
-<a name="l00010"></a>00010 
-<a name="l00011"></a>00011 <span class="comment">// concrete implementation of the z camera manager</span>
-<a name="l00012"></a><a class="code" href="classZCamera.html">00012</a> <span class="keyword">class </span><a class="code" href="classZCamera.html">ZCamera</a> : <span class="keyword">public</span> <a class="code" href="classIZCamera.html">IZCamera</a> 
-<a name="l00013"></a>00013 {
-<a name="l00014"></a>00014 <span class="keyword">public</span>: 
-<a name="l00015"></a>00015     <a class="code" href="classZCamera.html">ZCamera</a>();
-<a name="l00016"></a>00016     <span class="keyword">virtual</span> ~<a class="code" href="classZCamera.html">ZCamera</a>();
-<a name="l00017"></a>00017 
-<a name="l00018"></a>00018     <span class="comment">// create a thread to start capturing frames from the camera</span>
-<a name="l00019"></a>00019     <span class="keyword">virtual</span> <span class="keywordtype">void</span> startCapture();
+<a name="l00006"></a>00006 <span class="preprocessor">#include &quot;<a class="code" href="DepthCamera_8h.html">DepthCamera.h</a>&quot;</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;<a class="code" href="IZCamera_8h.html">IZCamera.h</a>&quot;</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;<a class="code" href="boost_8h.html">boost.h</a>&quot;</span>
+<a name="l00009"></a>00009 
+<a name="l00013"></a><a class="code" href="classZCamera.html">00013</a> <span class="keyword">class </span><a class="code" href="classZCamera.html" title="Concrete implementation of the z camera manager.">ZCamera</a> : <span class="keyword">public</span> <a class="code" href="classIZCamera.html" title="Abstract interface for a z camera.">IZCamera</a> 
+<a name="l00014"></a>00014 {
+<a name="l00015"></a>00015 <span class="keyword">public</span>:
+<a name="l00019"></a>00019     <a class="code" href="classZCamera.html#a20dd87f5a896f366a86d9da07c095eab" title="Constructor.">ZCamera</a>();
 <a name="l00020"></a>00020 
-<a name="l00021"></a>00021     <span class="comment">// stop the thread that&#39;s capturing frames from the camera</span>
-<a name="l00022"></a>00022     <span class="keyword">virtual</span> <span class="keywordtype">void</span> stopCapture();
-<a name="l00023"></a>00023     
-<a name="l00024"></a>00024     <span class="comment">// Camera loop that fetches frames and player position.</span>
-<a name="l00025"></a>00025     <span class="comment">// runs at 32 fps and continually sends information to controller</span>
-<a name="l00026"></a>00026     <span class="keywordtype">void</span> getFrameFromCamera();
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028     <span class="comment">//Reverse the image array, so it displays correctly on the UI</span>
-<a name="l00029"></a>00029     <span class="keyword">static</span> <span class="keywordtype">void</span> reverseFrameUpDown(<a class="code" href="structVideoData.html" title="Represent a frame of video data.">VideoData</a>&amp; vd, <span class="keywordtype">int</span> channels);    
-<a name="l00030"></a>00030     <span class="keyword">static</span> <span class="keywordtype">void</span> reverseFrameLeftRight(<a class="code" href="structVideoData.html" title="Represent a frame of video data.">VideoData</a>&amp; vd, <span class="keywordtype">int</span> channels); 
-<a name="l00031"></a>00031 
-<a name="l00032"></a>00032 <span class="keyword">private</span>:
-<a name="l00033"></a>00033     <a class="code" href="classZCamera.html">ZCamera</a>(<span class="keyword">const</span> <a class="code" href="classZCamera.html">ZCamera</a>&amp; zCamera); <span class="comment">// intentionally not implemented</span>
-<a name="l00034"></a>00034     <a class="code" href="classZCamera.html">ZCamera</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classZCamera.html">ZCamera</a>&amp; zCamera); <span class="comment">// intentionally not implemented</span>
-<a name="l00035"></a>00035 
-<a name="l00036"></a>00036     <span class="comment">// thread for capturing frames from the camera</span>
-<a name="l00037"></a>00037     std::auto_ptr&lt;boost::thread&gt; zcameraThread;
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039     <span class="comment">// true if a camera is present</span>
-<a name="l00040"></a>00040     <span class="keywordtype">bool</span> zcamPresent;
+<a name="l00024"></a>00024     <span class="keyword">virtual</span> <a class="code" href="classZCamera.html#a2ef338c8a8a44360d10dddfae9482121" title="Destructor.">~ZCamera</a>();
+<a name="l00025"></a>00025 
+<a name="l00029"></a>00029     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classZCamera.html#a9eb62d7424767779dc46cc357ae77645" title="Create a thread to start capturing frames from the camera.">startCapture</a>();
+<a name="l00030"></a>00030 
+<a name="l00034"></a>00034     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classZCamera.html#af883a28008906c04065644c5e8eb4e40" title="Stop the thread that&amp;#39;s capturing frames from the camera.">stopCapture</a>();
+<a name="l00035"></a>00035     
+<a name="l00040"></a>00040     <span class="keywordtype">void</span> <a class="code" href="classZCamera.html#a9f26639f4ca64617b67fc13775d4bf84" title="Camera loop that fetches frames and player position.">getFrameFromCamera</a>();
 <a name="l00041"></a>00041 
-<a name="l00042"></a>00042     <a class="code" href="classCDepthCamera.html">CDepthCamera</a> * m_depthCamera;
-<a name="l00043"></a>00043     boost::shared_ptr&lt;std::vector&lt;BYTE&gt; &gt; RGB;
-<a name="l00044"></a>00044     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* DEPTH;
-<a name="l00045"></a>00045     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* RGBFull;
-<a name="l00046"></a>00046     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* PRIM;
-<a name="l00047"></a>00047     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* SEC;
-<a name="l00048"></a>00048 
-<a name="l00049"></a>00049     <span class="comment">//Get player position</span>
-<a name="l00050"></a>00050     cVector3d getPlayerPosition();
-<a name="l00051"></a>00051 };
+<a name="l00042"></a>00042 <span class="keyword">private</span>:
+<a name="l00046"></a>00046     <a class="code" href="classZCamera.html#a20dd87f5a896f366a86d9da07c095eab" title="Constructor.">ZCamera</a>(<span class="keyword">const</span> <a class="code" href="classZCamera.html" title="Concrete implementation of the z camera manager.">ZCamera</a>&amp; zCamera); <span class="comment">// intentionally not implemented</span>
+<a name="l00047"></a>00047 
+<a name="l00051"></a>00051     <a class="code" href="classZCamera.html" title="Concrete implementation of the z camera manager.">ZCamera</a>&amp; <a class="code" href="classZCamera.html#a8c6ebc1f3652f29272c34e57390a356f" title="Copy-Constructor.">operator=</a>(<span class="keyword">const</span> <a class="code" href="classZCamera.html" title="Concrete implementation of the z camera manager.">ZCamera</a>&amp; zCamera); <span class="comment">// intentionally not implemented</span>
 <a name="l00052"></a>00052 
-<a name="l00053"></a>00053 <span class="preprocessor">#endif</span>
-<a name="l00054"></a>00054 <span class="preprocessor"></span> 
+<a name="l00056"></a><a class="code" href="classZCamera.html#a57de8aa57e3513af3fc378d72068c2b6">00056</a>     std::auto_ptr&lt;boost::thread&gt; <a class="code" href="classZCamera.html#a57de8aa57e3513af3fc378d72068c2b6" title="Thread for capturing frames from the camera.">zcameraThread</a>;
+<a name="l00057"></a>00057 
+<a name="l00061"></a><a class="code" href="classZCamera.html#a89fb6d98d89caf877457665cf230045d">00061</a>     <span class="keywordtype">bool</span> <a class="code" href="classZCamera.html#a89fb6d98d89caf877457665cf230045d" title="True if a camera is present.">zcamPresent</a>;
+<a name="l00062"></a>00062 
+<a name="l00066"></a><a class="code" href="classZCamera.html#abc0ba6694aac9197d41b5508db311236">00066</a>     <a class="code" href="classCDepthCamera.html" title="The main class that deals with the z-camera hardware and API.">CDepthCamera</a> * <a class="code" href="classZCamera.html#abc0ba6694aac9197d41b5508db311236" title="The CDepthCamera object.">m_depthCamera</a>;
+<a name="l00067"></a>00067 
+<a name="l00071"></a><a class="code" href="classZCamera.html#a2838af74d1a9596da25e6ba2173e196b">00071</a>     boost::shared_ptr&lt;std::vector&lt;BYTE&gt; &gt; <a class="code" href="classZCamera.html#a2838af74d1a9596da25e6ba2173e196b" title="A reference to the RGB bytes.">RGB</a>;
+<a name="l00072"></a>00072 
+<a name="l00076"></a><a class="code" href="classZCamera.html#a4ff264a55fda82a28f620df67b009ced">00076</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* <a class="code" href="classZCamera.html#a4ff264a55fda82a28f620df67b009ced" title="The depth data.">DEPTH</a>;
+<a name="l00077"></a>00077 
+<a name="l00078"></a><a class="code" href="classZCamera.html#a8eb75395f704582e5e74c4888ab6f295">00078</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* <a class="code" href="classZCamera.html#a8eb75395f704582e5e74c4888ab6f295" title="A frame of RGB.">RGBFrame</a>; 
+<a name="l00083"></a><a class="code" href="classZCamera.html#a31bb3bdf7c6e5eb03557167f28fbefc3">00083</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* <a class="code" href="classZCamera.html#a31bb3bdf7c6e5eb03557167f28fbefc3" title="A frame of RGB, full resolution.">RGBFull</a>;
+<a name="l00084"></a>00084 
+<a name="l00088"></a><a class="code" href="classZCamera.html#aee9d43139d58868e6792d62046e67f74">00088</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* <a class="code" href="classZCamera.html#aee9d43139d58868e6792d62046e67f74" title="The primary IR data.">PRIM</a>;
+<a name="l00089"></a>00089 
+<a name="l00093"></a><a class="code" href="classZCamera.html#a8ed7ceabed9b6801dd2425587097a46f">00093</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* <a class="code" href="classZCamera.html#a8ed7ceabed9b6801dd2425587097a46f" title="The secondary IR data.">SEC</a>;
+<a name="l00094"></a>00094 
+<a name="l00099"></a>00099     cVector3d <a class="code" href="classZCamera.html#a6cdd8c3020ba15af70a67780c4813bcd" title="Get player position.">getPlayerPosition</a>();
+<a name="l00100"></a>00100 };
+<a name="l00101"></a>00101 
+<a name="l00102"></a>00102 <span class="preprocessor">#endif</span>
+<a name="l00103"></a>00103 <span class="preprocessor"></span> 
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -109,7 +106,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -118,7 +115,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:45 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OfficeSlingshot3D: /home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h Source File</title>
+<title>OfficeSlingshot3D: /home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/UserInterface/MFCUserInterface.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -41,90 +42,96 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.h</h1>  </div>
+<h1>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/UserInterface/MFCUserInterface.h</h1>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef MFC_USER_INTERFACE_H</span>
+<a href="MFCUserInterface_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef MFC_USER_INTERFACE_H</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define MFC_USER_INTERFACE_H</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &quot;stdafx.h&quot;</span>
-<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;MainDlg.h&quot;</span>
-<a name="l00006"></a>00006 <span class="preprocessor">#include &quot;VideoData.h&quot;</span>
-<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;UserInterfaceSignals.h&quot;</span>
-<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;UserInterface.h&quot;</span>
-<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;UserPreferences.h&quot;</span>
-<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;ConnectionStateEnum.h&quot;</span>
-<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;PlayerEnum.h&quot;</span>
-<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;GameStateEnum.h&quot;</span>
-<a name="l00013"></a>00013 
-<a name="l00014"></a>00014 <span class="keyword">class </span><a class="code" href="classCMainDlg.html">CMainDlg</a>;
-<a name="l00015"></a>00015 
-<a name="l00016"></a><a class="code" href="classMFCUserInterface.html">00016</a> <span class="keyword">class </span><a class="code" href="classMFCUserInterface.html">MFCUserInterface</a> : <span class="keyword">public</span> <a class="code" href="classUserInterface.html">UserInterface</a>
-<a name="l00017"></a>00017 {
-<a name="l00018"></a>00018 <span class="keyword">public</span>:
-<a name="l00019"></a>00019     <a class="code" href="classMFCUserInterface.html">MFCUserInterface</a>(<span class="keyword">const</span> <a class="code" href="structUserPreferences.html" title="Represents the user preferences.">UserPreferences</a>&amp; preferences);
-<a name="l00020"></a>00020     <span class="keyword">virtual</span> ~<a class="code" href="classMFCUserInterface.html">MFCUserInterface</a>();
-<a name="l00021"></a>00021 
-<a name="l00026"></a>00026     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMFCUserInterface.html#aad532c59dfe347b8a69f92b5b6ee7563" title="Changes the camera from which the vritual world will be displayed.">switchCamera</a>(cCamera* camera);
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028     <span class="comment">//----------------------------------------</span>
-<a name="l00029"></a>00029     <span class="comment">// Display updates</span>
-<a name="l00030"></a>00030     <span class="comment">//----------------------------------------</span>
-<a name="l00031"></a>00031 
-<a name="l00032"></a>00032     <span class="comment">// display that a certain player has changed the connection state</span>
-<a name="l00033"></a>00033     <span class="keyword">virtual</span> <span class="keywordtype">void</span> displayConnectionStateChanged(<a class="code" href="namespaceConnectionState.html#ad1b6674b6f1c58f17e9db75d0a77149f" title="Enum representing all the different connection states.">ConnectionState_t</a> state, <a class="code" href="namespacePlayer.html#acc4ced29e6b7e20f602b3c8b60c75228" title="Enum representing all the different players.">Player_t</a> player);
-<a name="l00034"></a>00034 
-<a name="l00035"></a>00035     <span class="comment">// display that a certain player has changed the game state</span>
-<a name="l00036"></a>00036     <span class="keyword">virtual</span> <span class="keywordtype">void</span> displayGameStateChanged(<a class="code" href="namespaceGameState.html#a1026e99904938017415f188e2daba514" title="Enum representing all the different game states.">GameState_t</a> state, <a class="code" href="namespacePlayer.html#acc4ced29e6b7e20f602b3c8b60c75228" title="Enum representing all the different players.">Player_t</a> player);
-<a name="l00037"></a>00037 
-<a name="l00038"></a>00038     <span class="comment">// update the user interface to reflect a change in the connection state</span>
-<a name="l00039"></a>00039     <span class="keyword">virtual</span> <span class="keywordtype">void</span> displayConnectionFailed();
-<a name="l00040"></a>00040     <span class="keyword">virtual</span> <span class="keywordtype">void</span> displayFailedToListen();
-<a name="l00041"></a>00041     <span class="keyword">virtual</span> <span class="keywordtype">void</span> displayNetworkError();
-<a name="l00042"></a>00042 
-<a name="l00043"></a>00043     <span class="comment">// update the user interface to display the interaction with the peer</span>
-<a name="l00044"></a>00044     <span class="keyword">virtual</span> <span class="keywordtype">void</span> displayPeerChatMessage(<span class="keyword">const</span> std::string&amp; message);
-<a name="l00045"></a>00045     <span class="keyword">virtual</span> <span class="keywordtype">void</span> displayLocalFrame(<span class="keyword">const</span> <a class="code" href="structVideoData.html" title="Represent a frame of video data.">VideoData</a>&amp; video);
-<a name="l00046"></a>00046     <span class="keyword">virtual</span> <span class="keywordtype">void</span> displayRemoteFrame(<span class="keyword">const</span> <a class="code" href="structVideoData.html" title="Represent a frame of video data.">VideoData</a>&amp; video);
-<a name="l00047"></a>00047 
-<a name="l00048"></a>00048     <span class="comment">//-----------------------------------------------</span>
-<a name="l00049"></a>00049     <span class="comment">// Notifications coming from the user interface</span>
-<a name="l00050"></a>00050     <span class="comment">//-----------------------------------------------</span>
-<a name="l00051"></a>00051 
-<a name="l00052"></a>00052     <span class="comment">// user wants to change the connection state</span>
-<a name="l00053"></a>00053     <span class="keyword">virtual</span> <span class="keywordtype">void</span> networkConnectButtonPushed();
-<a name="l00054"></a>00054     <span class="keyword">virtual</span> <span class="keywordtype">void</span> networkListenButtonPushed();
-<a name="l00055"></a>00055     <span class="keyword">virtual</span> <span class="keywordtype">void</span> networkDisconnectButtonPushed();
-<a name="l00056"></a>00056 
-<a name="l00057"></a>00057     <span class="comment">// user wants to send chat message</span>
-<a name="l00058"></a>00058     <span class="keyword">virtual</span> <span class="keywordtype">void</span> sendChatButtonPushed(<span class="keyword">const</span> std::string&amp; message);
+<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;<a class="code" href="MainDlg_8h.html">MainDlg.h</a>&quot;</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include &quot;<a class="code" href="UserInterfaceSignals_8h.html">UserInterfaceSignals.h</a>&quot;</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;<a class="code" href="UserInterface_8h.html">UserInterface.h</a>&quot;</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;<a class="code" href="UserPreferences_8h.html">UserPreferences.h</a>&quot;</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;<a class="code" href="ConnectionStateEnum_8h.html">ConnectionStateEnum.h</a>&quot;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="PlayerEnum_8h.html">PlayerEnum.h</a>&quot;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="GameStateEnum_8h.html">GameStateEnum.h</a>&quot;</span>
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013 <span class="keyword">class </span><a class="code" href="classCMainDlg.html" title="A class representing the main UI element of OfficeSlingshot3D.">CMainDlg</a>;
+<a name="l00014"></a>00014 
+<a name="l00022"></a><a class="code" href="classMFCUserInterface.html">00022</a> <span class="keyword">class </span><a class="code" href="classMFCUserInterface.html" title="A class Inprementing all the major methods of the UserInterface.h interface.">MFCUserInterface</a> : <span class="keyword">public</span> <a class="code" href="classUserInterface.html" title="An interface to this package.">UserInterface</a>
+<a name="l00023"></a>00023 {
+<a name="l00024"></a>00024 <span class="keyword">public</span>:
+<a name="l00029"></a>00029     <a class="code" href="classMFCUserInterface.html#a7ac72f8cddb94419db9c9ed261ace1b1" title="Constructor.">MFCUserInterface</a>(<span class="keyword">const</span> <a class="code" href="structUserPreferences.html" title="public Represents the user preferences.">UserPreferences</a>&amp; preferences);
+<a name="l00030"></a>00030 
+<a name="l00034"></a>00034     <span class="keyword">virtual</span> <a class="code" href="classMFCUserInterface.html#a671b11850af623cb979c72590ab31684" title="Destructor.">~MFCUserInterface</a>();
+<a name="l00035"></a>00035 
+<a name="l00040"></a>00040     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMFCUserInterface.html#aad532c59dfe347b8a69f92b5b6ee7563" title="Changes the camera from which the vritual world will be displayed.">switchCamera</a>(cCamera* camera);
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042     <span class="comment">//----------------------------------------</span>
+<a name="l00043"></a>00043     <span class="comment">// Display updates</span>
+<a name="l00044"></a>00044     <span class="comment">//----------------------------------------</span>
+<a name="l00045"></a>00045 
+<a name="l00051"></a>00051     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMFCUserInterface.html#affc39ae32cd234575ce95db40701db01" title="Display that a certain player has changed the connection state.">displayConnectionStateChanged</a>(<a class="code" href="group__Common.html#gad1b6674b6f1c58f17e9db75d0a77149f" title="public Enum representing all the different connection states.">ConnectionState_t</a> state, <a class="code" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228" title="public Enum representing all the different players.">Player_t</a> player);
+<a name="l00052"></a>00052 
+<a name="l00058"></a>00058     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMFCUserInterface.html#a5cf1751505da89dc55df1fb12318bd96" title="Display that a certain player has changed the game state.">displayGameStateChanged</a>(<a class="code" href="group__Common.html#ga1026e99904938017415f188e2daba514" title="public Enum representing all the different game states.">GameState_t</a> state, <a class="code" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228" title="public Enum representing all the different players.">Player_t</a> player);
 <a name="l00059"></a>00059 
-<a name="l00060"></a>00060     <span class="comment">// user wants to change the game state</span>
-<a name="l00061"></a>00061     <span class="keyword">virtual</span> <span class="keywordtype">void</span> startGameButtonPushed();
-<a name="l00062"></a>00062     <span class="keyword">virtual</span> <span class="keywordtype">void</span> exitGameButtonPushed();
-<a name="l00063"></a>00063     <span class="keyword">virtual</span> <span class="keywordtype">void</span> pauseGameButtonPushed();
+<a name="l00063"></a>00063     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMFCUserInterface.html#a1eb12e6f9b8729361008d9abd290d245" title="Update the user interface to reflect that a connection has failed.">displayConnectionFailed</a>();
 <a name="l00064"></a>00064 
-<a name="l00065"></a>00065     <span class="comment">// update the users preferences</span>
-<a name="l00066"></a>00066     <span class="keyword">virtual</span> <span class="keywordtype">void</span> changePreferences(<span class="keyword">const</span> <a class="code" href="structUserPreferences.html" title="Represents the user preferences.">UserPreferences</a>&amp; preferences);
-<a name="l00067"></a>00067 
-<a name="l00068"></a>00068     <span class="comment">// user wants to close the application</span>
-<a name="l00069"></a>00069     <span class="keyword">virtual</span> <span class="keywordtype">void</span> closeApplication();
-<a name="l00070"></a>00070     
-<a name="l00071"></a>00071     <span class="comment">// update the peers user name</span>
-<a name="l00072"></a>00072     <span class="keyword">virtual</span> <span class="keywordtype">void</span> setPeerUserName(<span class="keyword">const</span> std::string&amp; name);  
-<a name="l00073"></a>00073 
-<a name="l00074"></a>00074     <span class="comment">// returns the applications main window</span>
-<a name="l00075"></a>00075     CDialog* getMainWindow();
-<a name="l00076"></a>00076 
-<a name="l00077"></a>00077 <span class="keyword">protected</span>:
-<a name="l00078"></a>00078     <a class="code" href="classCMainDlg.html">CMainDlg</a>* m_pMainDlg;
-<a name="l00079"></a>00079 };
-<a name="l00080"></a>00080 
-<a name="l00081"></a>00081 <span class="preprocessor">#endif</span>
+<a name="l00068"></a>00068     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMFCUserInterface.html#a1ad6e96350df96d07b0f4de186c1677c" title="Update the user interface to reflect that the listen has failed.">displayFailedToListen</a>();
+<a name="l00069"></a>00069 
+<a name="l00073"></a>00073     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMFCUserInterface.html#a12aafbe2449d1eff42150b84e2b403b2" title="Update the user interface to reflect that a network error occurred.">displayNetworkError</a>();
+<a name="l00074"></a>00074 
+<a name="l00078"></a>00078     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMFCUserInterface.html#a211917cb2e10228e4cabd54d5b411106" title="Update the user interface to display a new peer message.">displayPeerChatMessage</a>(<span class="keyword">const</span> std::string&amp; message);
+<a name="l00079"></a>00079 
+<a name="l00084"></a>00084     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMFCUserInterface.html#a3ce2be516dadc69ae646b8dc0f37b6ec" title="Update the user interface to display game over.">displayGameOver</a>(<a class="code" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228" title="public Enum representing all the different players.">Player_t</a> player);
+<a name="l00085"></a>00085 
+<a name="l00089"></a>00089     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMFCUserInterface.html#a7786bd2d3fd4e0974824f2ef2815f48c" title="Redraw the screen.">paint</a>();
+<a name="l00090"></a>00090 
+<a name="l00091"></a>00091     <span class="comment">//-----------------------------------------------</span>
+<a name="l00092"></a>00092     <span class="comment">// Notifications coming from the user interface</span>
+<a name="l00093"></a>00093     <span class="comment">//-----------------------------------------------</span>
+<a name="l00094"></a>00094 
+<a name="l00098"></a>00098     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMFCUserInterface.html#a25bf67955e01502250d4239ea6dc9e6d" title="User wants to connect to the peer.">networkConnectButtonPushed</a>();
+<a name="l00099"></a>00099 
+<a name="l00103"></a>00103     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMFCUserInterface.html#ad19ff1d9fe21137d564c7f91d6d9638a" title="User wants to listen for connections.">networkListenButtonPushed</a>();
+<a name="l00104"></a>00104 
+<a name="l00108"></a>00108     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMFCUserInterface.html#a05124c9a819899bf74dbbbd1ba27d32d" title="User wants to disconnect to the peer.">networkDisconnectButtonPushed</a>();
+<a name="l00109"></a>00109 
+<a name="l00113"></a>00113     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMFCUserInterface.html#a645879dc2e81a2d2810d215bbc435d87" title="User wants to send a new chat message.">sendChatButtonPushed</a>(<span class="keyword">const</span> std::string&amp; message);
+<a name="l00114"></a>00114 
+<a name="l00118"></a>00118     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMFCUserInterface.html#a3ded83efa5ecbc38a21051dd90dc661e" title="User wants to start a new game.">startGameButtonPushed</a>();
+<a name="l00119"></a>00119 
+<a name="l00123"></a>00123     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMFCUserInterface.html#a0bfd2943d3cf9e704bb71880eb3aa865" title="User wants to exit the game.">exitGameButtonPushed</a>();
+<a name="l00124"></a>00124 
+<a name="l00128"></a>00128     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMFCUserInterface.html#a99a9356281a3d713e0fda41940f7a6fb" title="User wants to pause the game.">pauseGameButtonPushed</a>();
+<a name="l00129"></a>00129 
+<a name="l00134"></a>00134     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMFCUserInterface.html#ab979a02b0fb024ebdd2e8cc958e26d42" title="Update the user&amp;#39;s preferences.">changePreferences</a>(<span class="keyword">const</span> <a class="code" href="structUserPreferences.html" title="public Represents the user preferences.">UserPreferences</a>&amp; preferences);
+<a name="l00135"></a>00135 
+<a name="l00139"></a>00139     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMFCUserInterface.html#a0953b5a6a8880539f48e33828e1ebdac" title="User wants to close the application.">closeApplication</a>();
+<a name="l00140"></a>00140     
+<a name="l00145"></a>00145     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMFCUserInterface.html#a37ad511facfb8e5b6f34059a3ebf9f57" title="Update the peers user name.">setPeerUserName</a>(<span class="keyword">const</span> std::string&amp; name);  
+<a name="l00146"></a>00146 
+<a name="l00151"></a>00151     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMFCUserInterface.html#a4302b366e05790bc21e6e27c453c10b7" title="Mutes the volume.">muteVolume</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> soundOn);
+<a name="l00152"></a>00152 
+<a name="l00157"></a>00157     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMFCUserInterface.html#aa4996cba3bd2f61c42526e699f08b92b" title="Changes the volume.">changeVolume</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> vol);
+<a name="l00158"></a>00158 
+<a name="l00163"></a>00163     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMFCUserInterface.html#a421be6e758a0acf2319affc95eec8054" title="Sets the mute preference.">setMutePref</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> mute);
+<a name="l00164"></a>00164 
+<a name="l00169"></a>00169     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMFCUserInterface.html#a5fdebc1e7ea2f3138cbf66b47375cfd7" title="Sets the volume preference.">setVolPref</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> vol);
+<a name="l00170"></a>00170 
+<a name="l00175"></a>00175     CDialog* <a class="code" href="classMFCUserInterface.html#a03a72e69e2586b52ba3acac1e6b39700" title="Returns the applications main window.">getMainWindow</a>();
+<a name="l00176"></a>00176 
+<a name="l00177"></a>00177 <span class="keyword">protected</span>:
+<a name="l00181"></a><a class="code" href="classMFCUserInterface.html#a548760ec3e8f659b262ef3aab3709e7f">00181</a>     <a class="code" href="classCMainDlg.html" title="A class representing the main UI element of OfficeSlingshot3D.">CMainDlg</a>* <a class="code" href="classMFCUserInterface.html#a548760ec3e8f659b262ef3aab3709e7f" title="The applications main window.">m_pMainDlg</a>;
+<a name="l00182"></a>00182 };
+<a name="l00183"></a>00183 
+<a name="l00184"></a>00184 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -132,7 +139,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -141,7 +148,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:45 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

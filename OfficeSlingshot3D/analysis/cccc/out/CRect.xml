@@ -34,20 +34,8 @@
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
-<description>has by value</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="19" />
-</extent>
-<extent>
-<description>has by value</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="20" />
-</extent>
-<extent>
-<description>has by value</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="21" />
-</extent>
-<extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="41" />
+<source_reference file="../../UserInterface/MFCOpenGLControl.h" line="43" />
 </extent>
 </client_module>
 <supplier_module>

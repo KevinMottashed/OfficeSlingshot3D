@@ -2,13 +2,13 @@
 <!--Detailed report on module VirtualSlingshot-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="37" level="0" />
+<lines_of_code value="34" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
-<McCabes_cyclomatic_complexity value="3" level="0" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
-<lines_of_code value="6" level="0" />
+<lines_of_code value="22" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="6.167" level="0" />
+<lines_of_code_per_line_of_comment value="1.545" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 <weighted_methods_per_class_unity value="4" level="0" />
 <weighted_methods_per_class_visibility value="4" level="0" />
@@ -24,59 +24,59 @@
 </module_summary>
 <module_detail>
 <description>definition</description>
-<source_reference file="../../Game/VirtualSlingshot.h" line="6" />
-<lines_of_code value="7" level="0" />
+<source_reference file="../../Game/VirtualSlingshot.h" line="9" />
+<lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="4" level="0" />
+<lines_of_comment value="6" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module_detail>
 <procedural_detail>
 <member_function>
-<name>VirtualSlingshot(cWorld *,const cVector3d)</name>
+<name>VirtualSlingshot(cWorld *,const cVector3d &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Game/VirtualSlingshot.cpp" line="6" />
+<source_reference file="../../Game/VirtualSlingshot.cpp" line="4" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Game/VirtualSlingshot.h" line="18" />
+<source_reference file="../../Game/VirtualSlingshot.h" line="17" />
 </extent>
 <lines_of_code value="12" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="2" level="0" />
+<lines_of_comment value="7" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
-<name>getBallPosition()</name>
+<name>upperLeft()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Game/VirtualSlingshot.cpp" line="39" />
+<source_reference file="../../Game/VirtualSlingshot.cpp" line="28" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Game/VirtualSlingshot.h" line="22" />
+<source_reference file="../../Game/VirtualSlingshot.h" line="27" />
+</extent>
+<lines_of_code value="7" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="3" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>upperRight()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualSlingshot.cpp" line="36" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualSlingshot.h" line="32" />
 </extent>
 <lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="0" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>move(cVector3d)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../Game/VirtualSlingshot.cpp" line="30" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../Game/VirtualSlingshot.h" line="21" />
-</extent>
-<lines_of_code value="9" level="0" />
-<McCabes_cyclomatic_complexity value="2" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -84,15 +84,15 @@
 <name>~VirtualSlingshot(void)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Game/VirtualSlingshot.cpp" line="26" />
+<source_reference file="../../Game/VirtualSlingshot.cpp" line="24" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Game/VirtualSlingshot.h" line="19" />
+<source_reference file="../../Game/VirtualSlingshot.h" line="22" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -106,11 +106,11 @@
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="129" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="217" />
 </extent>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="134" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="222" />
 </extent>
 </client_module>
 <supplier_module>
@@ -119,41 +119,29 @@
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/VirtualSlingshot.h" line="9" />
+<source_reference file="../../Game/VirtualSlingshot.h" line="38" />
 </extent>
 <name>cVector3d</name>
 <visible>true</visible>
-<concrete>true</concrete>
+<concrete>false</concrete>
 <extent>
-<description>pass by value</description>
-<source_reference file="../../Game/VirtualSlingshot.cpp" line="6" />
+<description>pass by reference</description>
+<source_reference file="../../Game/VirtualSlingshot.cpp" line="4" />
 </extent>
 <extent>
-<description>pass by value</description>
-<source_reference file="../../Game/VirtualSlingshot.cpp" line="30" />
-</extent>
-<extent>
-<description>has by value</description>
-<source_reference file="../../Game/VirtualSlingshot.h" line="15" />
-</extent>
-<extent>
-<description>pass by value</description>
-<source_reference file="../../Game/VirtualSlingshot.h" line="18" />
-</extent>
-<extent>
-<description>pass by value</description>
-<source_reference file="../../Game/VirtualSlingshot.h" line="21" />
+<description>pass by reference</description>
+<source_reference file="../../Game/VirtualSlingshot.h" line="17" />
 </extent>
 <name>cWorld</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Game/VirtualSlingshot.cpp" line="6" />
+<source_reference file="../../Game/VirtualSlingshot.cpp" line="4" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Game/VirtualSlingshot.h" line="18" />
+<source_reference file="../../Game/VirtualSlingshot.h" line="17" />
 </extent>
 </supplier_module>
 </module>

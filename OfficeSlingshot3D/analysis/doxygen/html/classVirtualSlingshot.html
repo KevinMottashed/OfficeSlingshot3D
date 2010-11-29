@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -48,24 +49,150 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <h1>VirtualSlingshot Class Reference</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="VirtualSlingshot" --><table class="memberdecls">
+<!-- doxytag: class="VirtualSlingshot" -->
+<p>Represents a slingshot in the 3d environment.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="VirtualSlingshot_8h_source.html">VirtualSlingshot.h</a>&gt;</code></p>
+<table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5103bd90514183171736a73c02bb1940"></a><!-- doxytag: member="VirtualSlingshot::VirtualSlingshot" ref="a5103bd90514183171736a73c02bb1940" args="(cWorld *world, const cVector3d startingPosition)" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><b>VirtualSlingshot</b> (cWorld *world, const cVector3d startingPosition)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab1b888f0b9982ced892d3f4ad6cc5eb9"></a><!-- doxytag: member="VirtualSlingshot::move" ref="ab1b888f0b9982ced892d3f4ad6cc5eb9" args="(cVector3d position)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>move</b> (cVector3d position)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6ab9b13ce2ed3d9a5c4b7d09e844a62f"></a><!-- doxytag: member="VirtualSlingshot::getBallPosition" ref="a6ab9b13ce2ed3d9a5c4b7d09e844a62f" args="()" -->
-cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><b>getBallPosition</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualSlingshot.html#ac2c3c7c507abc18a9ad706cc52ac5d29">VirtualSlingshot</a> (cWorld *world, const cVector3d &amp;position)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#ac2c3c7c507abc18a9ad706cc52ac5d29"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualSlingshot.html#a19e286521f0754e62aeccd70390036bc">~VirtualSlingshot</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#a19e286521f0754e62aeccd70390036bc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualSlingshot.html#a29356e7902e7d8bf6dee489c9353cd9c">upperLeft</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieves the upper left corner of the slinshot object (left fork).  <a href="#a29356e7902e7d8bf6dee489c9353cd9c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualSlingshot.html#a2a5dfec04a8b6ea311ed73e8c9df4fa1">upperRight</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieves the upper right corner of the slinshot object (right fork).  <a href="#a2a5dfec04a8b6ea311ed73e8c9df4fa1"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cMesh *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualSlingshot.html#a25c6da374ab03ebeab60e85be7abdf26">slingshotMesh</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The slingshot's mesh object.  <a href="#a25c6da374ab03ebeab60e85be7abdf26"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Represents a slingshot in the 3d environment. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ac2c3c7c507abc18a9ad706cc52ac5d29"></a><!-- doxytag: member="VirtualSlingshot::VirtualSlingshot" ref="ac2c3c7c507abc18a9ad706cc52ac5d29" args="(cWorld *world, const cVector3d &amp;position)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VirtualSlingshot::VirtualSlingshot </td>
+          <td>(</td>
+          <td class="paramtype">cWorld *&nbsp;</td>
+          <td class="paramname"> <em>world</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const cVector3d &amp;&nbsp;</td>
+          <td class="paramname"> <em>position</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>world</em>&nbsp;</td><td>The world in which to add the slingshot </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>startingPosition</em>&nbsp;</td><td>The slingshot's starting position in the world </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a19e286521f0754e62aeccd70390036bc"></a><!-- doxytag: member="VirtualSlingshot::~VirtualSlingshot" ref="a19e286521f0754e62aeccd70390036bc" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VirtualSlingshot::~VirtualSlingshot </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a29356e7902e7d8bf6dee489c9353cd9c"></a><!-- doxytag: member="VirtualSlingshot::upperLeft" ref="a29356e7902e7d8bf6dee489c9353cd9c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d VirtualSlingshot::upperLeft </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieves the upper left corner of the slinshot object (left fork). </p>
+
+</div>
+</div>
+<a class="anchor" id="a2a5dfec04a8b6ea311ed73e8c9df4fa1"></a><!-- doxytag: member="VirtualSlingshot::upperRight" ref="a2a5dfec04a8b6ea311ed73e8c9df4fa1" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d VirtualSlingshot::upperRight </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieves the upper right corner of the slinshot object (right fork). </p>
+
+</div>
+</div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a25c6da374ab03ebeab60e85be7abdf26"></a><!-- doxytag: member="VirtualSlingshot::slingshotMesh" ref="a25c6da374ab03ebeab60e85be7abdf26" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cMesh* <a class="el" href="classVirtualSlingshot.html#a25c6da374ab03ebeab60e85be7abdf26">VirtualSlingshot::slingshotMesh</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The slingshot's mesh object. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/<a class="el" href="VirtualSlingshot_8h_source.html">VirtualSlingshot.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/VirtualSlingshot.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Game/<a class="el" href="VirtualSlingshot_8h_source.html">VirtualSlingshot.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Game/<a class="el" href="VirtualSlingshot_8cpp.html">VirtualSlingshot.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -73,7 +200,7 @@ cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><b>getBallPosition<
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,7 +209,7 @@ cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><b>getBallPosition<
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:10 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:46 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

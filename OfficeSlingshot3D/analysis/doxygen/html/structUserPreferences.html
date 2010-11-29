@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -48,42 +49,359 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Data Fields</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#friends">Friends</a>  </div>
   <div class="headertitle">
-<h1>UserPreferences Struct Reference</h1>  </div>
+<h1>UserPreferences Struct Reference<br/>
+<small>
+[<a class="el" href="group__Common.html">Common</a>]</small>
+</h1>  </div>
 </div>
 <div class="contents">
 <!-- doxytag: class="UserPreferences" -->
-<p>Represents the user preferences.  
+<p><b>public</b> Represents the user preferences.  
 <a href="#_details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="UserPreferences_8h_source.html">UserPreferences.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUserPreferences.html#af433efa63cbf5775701a4402760e22f0">setDefaults</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reset all the preferences to the defaults.  <a href="#af433efa63cbf5775701a4402760e22f0"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2b7225f2ddf069be9e4f23f426409020"></a><!-- doxytag: member="UserPreferences::ipAddress" ref="a2b7225f2ddf069be9e4f23f426409020" args="" -->
-std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUserPreferences.html#a2b7225f2ddf069be9e4f23f426409020">ipAddress</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The default ip address to connect to. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a38d4e509e3d15d642d5e9517ddffd77e"></a><!-- doxytag: member="UserPreferences::name" ref="a38d4e509e3d15d642d5e9517ddffd77e" args="" -->
-std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUserPreferences.html#a38d4e509e3d15d642d5e9517ddffd77e">name</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The user name. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac8d206952bf8799e05dbd99ec4bc4a33"></a><!-- doxytag: member="UserPreferences::armBandPort" ref="ac8d206952bf8799e05dbd99ec4bc4a33" args="" -->
-unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUserPreferences.html#ac8d206952bf8799e05dbd99ec4bc4a33">armBandPort</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The bluetooth port for the arm band. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad4bc7a7d5215b907953d7a0877dd2dec"></a><!-- doxytag: member="UserPreferences::jacketPort" ref="ad4bc7a7d5215b907953d7a0877dd2dec" args="" -->
-unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUserPreferences.html#ad4bc7a7d5215b907953d7a0877dd2dec">jacketPort</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The bluetooth port for the jacket. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUserPreferences.html#a2b7225f2ddf069be9e4f23f426409020">ipAddress</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The default ip address to connect to.  <a href="#a2b7225f2ddf069be9e4f23f426409020"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUserPreferences.html#a38d4e509e3d15d642d5e9517ddffd77e">name</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The user name.  <a href="#a38d4e509e3d15d642d5e9517ddffd77e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUserPreferences.html#ac8d206952bf8799e05dbd99ec4bc4a33">armBandPort</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The bluetooth port for the arm band.  <a href="#ac8d206952bf8799e05dbd99ec4bc4a33"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUserPreferences.html#ad4bc7a7d5215b907953d7a0877dd2dec">jacketPort</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The bluetooth port for the jacket.  <a href="#ad4bc7a7d5215b907953d7a0877dd2dec"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUserPreferences.html#a7575204faa69d0d1e805ca4552c74b57">muted</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">True if the audio should be muted.  <a href="#a7575204faa69d0d1e805ca4552c74b57"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUserPreferences.html#a7af7116a8867bb54898d97762a41cefa">volume</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The volume on a scale of 0.0 to 1.0.  <a href="#a7af7116a8867bb54898d97762a41cefa"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUserPreferences.html#ab562fae4f95bdbfbd688d504361dbbfb">forceEnabled</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">True if the audio should be muted.  <a href="#ab562fae4f95bdbfbd688d504361dbbfb"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUserPreferences.html#a1607cde77c8296f43eab64a1f3240e30">default_ip_address</a> = &quot;127.0.0.1&quot;</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default IP Address.  <a href="#a1607cde77c8296f43eab64a1f3240e30"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUserPreferences.html#a917839275305d569bde86f9f4812c09f">default_name</a> = &quot;Player&quot;</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default user name.  <a href="#a917839275305d569bde86f9f4812c09f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUserPreferences.html#ab0557f81573441e2f16ca69fb5f9ae41">default_arm_band_port</a> = 7</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default blue tooth port for the arm band.  <a href="#ab0557f81573441e2f16ca69fb5f9ae41"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUserPreferences.html#adac20eb7dd8dad9f544da8353f5b3d9e">default_jacket_port</a> = 8</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default blue tooth port for the jacket.  <a href="#adac20eb7dd8dad9f544da8353f5b3d9e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUserPreferences.html#a0161e49919e91548d1e2ac84748e4f44">default_muted</a> = false</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default for if the application is muted or not.  <a href="#a0161e49919e91548d1e2ac84748e4f44"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUserPreferences.html#a1d99b7c2272405601169e1d56447970d">default_volume</a> = 5.0f</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default volume level.  <a href="#a1d99b7c2272405601169e1d56447970d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUserPreferences.html#aeeb5858eb052cc5d6e3ff135840f9230">default_force_enabled</a> = true</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default force enabled.  <a href="#aeeb5858eb052cc5d6e3ff135840f9230"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;typename Archive &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">void&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structUserPreferences.html#adef1871ebc44afdc3c0c687ba50ae29b">serialize</a> (Archive &amp;ar, const unsigned int version)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Serialize or deserialize the user preferences.  <a href="#adef1871ebc44afdc3c0c687ba50ae29b"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac98d07dd8f7b70e16ccb9a01abf56b9c"></a><!-- doxytag: member="UserPreferences::boost::serialization::access" ref="ac98d07dd8f7b70e16ccb9a01abf56b9c" args="" -->
-class&nbsp;</td><td class="memItemRight" valign="bottom"><b>boost::serialization::access</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUserPreferences.html#ac98d07dd8f7b70e16ccb9a01abf56b9c">boost::serialization::access</a></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<p>Represents the user preferences. </p>
+<p><b>public</b> Represents the user preferences. </p>
 <p>The user preferencese consist of the following: An ip address which is the default ip to connect to. The user name. The blue tooth port for the arm band. The blue tooth port fot the jacket. </p>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Common/<a class="el" href="UserPreferences_8h_source.html">UserPreferences.h</a></li>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="adef1871ebc44afdc3c0c687ba50ae29b"></a><!-- doxytag: member="UserPreferences::serialize" ref="adef1871ebc44afdc3c0c687ba50ae29b" args="(Archive &amp;ar, const unsigned int version)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Archive &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void UserPreferences::serialize </td>
+          <td>(</td>
+          <td class="paramtype">Archive &amp;&nbsp;</td>
+          <td class="paramname"> <em>ar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&nbsp;</td>
+          <td class="paramname"> <em>version</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Serialize or deserialize the user preferences. </p>
+<p>This function is used by the boost library and should not be called directly. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in,out]</tt>&nbsp;</td><td valign="top"><em>ar</em>&nbsp;</td><td>The archive to serialize to or deserialize from. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>version</em>&nbsp;</td><td>The archive version. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af433efa63cbf5775701a4402760e22f0"></a><!-- doxytag: member="UserPreferences::setDefaults" ref="af433efa63cbf5775701a4402760e22f0" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UserPreferences::setDefaults </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reset all the preferences to the defaults. </p>
+
+</div>
+</div>
+<hr/><h2>Friends And Related Function Documentation</h2>
+<a class="anchor" id="ac98d07dd8f7b70e16ccb9a01abf56b9c"></a><!-- doxytag: member="UserPreferences::boost::serialization::access" ref="ac98d07dd8f7b70e16ccb9a01abf56b9c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class boost::serialization::access<code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="ac8d206952bf8799e05dbd99ec4bc4a33"></a><!-- doxytag: member="UserPreferences::armBandPort" ref="ac8d206952bf8799e05dbd99ec4bc4a33" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int <a class="el" href="structUserPreferences.html#ac8d206952bf8799e05dbd99ec4bc4a33">UserPreferences::armBandPort</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The bluetooth port for the arm band. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab0557f81573441e2f16ca69fb5f9ae41"></a><!-- doxytag: member="UserPreferences::default_arm_band_port" ref="ab0557f81573441e2f16ca69fb5f9ae41" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned int <a class="el" href="structUserPreferences.html#ab0557f81573441e2f16ca69fb5f9ae41">UserPreferences::default_arm_band_port</a> = 7<code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Default blue tooth port for the arm band. </p>
+
+</div>
+</div>
+<a class="anchor" id="aeeb5858eb052cc5d6e3ff135840f9230"></a><!-- doxytag: member="UserPreferences::default_force_enabled" ref="aeeb5858eb052cc5d6e3ff135840f9230" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool <a class="el" href="structUserPreferences.html#aeeb5858eb052cc5d6e3ff135840f9230">UserPreferences::default_force_enabled</a> = true<code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Default force enabled. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1607cde77c8296f43eab64a1f3240e30"></a><!-- doxytag: member="UserPreferences::default_ip_address" ref="a1607cde77c8296f43eab64a1f3240e30" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string <a class="el" href="structUserPreferences.html#a1607cde77c8296f43eab64a1f3240e30">UserPreferences::default_ip_address</a> = &quot;127.0.0.1&quot;<code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Default IP Address. </p>
+
+</div>
+</div>
+<a class="anchor" id="adac20eb7dd8dad9f544da8353f5b3d9e"></a><!-- doxytag: member="UserPreferences::default_jacket_port" ref="adac20eb7dd8dad9f544da8353f5b3d9e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned int <a class="el" href="structUserPreferences.html#adac20eb7dd8dad9f544da8353f5b3d9e">UserPreferences::default_jacket_port</a> = 8<code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Default blue tooth port for the jacket. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0161e49919e91548d1e2ac84748e4f44"></a><!-- doxytag: member="UserPreferences::default_muted" ref="a0161e49919e91548d1e2ac84748e4f44" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool <a class="el" href="structUserPreferences.html#a0161e49919e91548d1e2ac84748e4f44">UserPreferences::default_muted</a> = false<code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Default for if the application is muted or not. </p>
+
+</div>
+</div>
+<a class="anchor" id="a917839275305d569bde86f9f4812c09f"></a><!-- doxytag: member="UserPreferences::default_name" ref="a917839275305d569bde86f9f4812c09f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string <a class="el" href="structUserPreferences.html#a917839275305d569bde86f9f4812c09f">UserPreferences::default_name</a> = &quot;Player&quot;<code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Default user name. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1d99b7c2272405601169e1d56447970d"></a><!-- doxytag: member="UserPreferences::default_volume" ref="a1d99b7c2272405601169e1d56447970d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float <a class="el" href="structUserPreferences.html#a1d99b7c2272405601169e1d56447970d">UserPreferences::default_volume</a> = 5.0f<code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Default volume level. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab562fae4f95bdbfbd688d504361dbbfb"></a><!-- doxytag: member="UserPreferences::forceEnabled" ref="ab562fae4f95bdbfbd688d504361dbbfb" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="structUserPreferences.html#ab562fae4f95bdbfbd688d504361dbbfb">UserPreferences::forceEnabled</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>True if the audio should be muted. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2b7225f2ddf069be9e4f23f426409020"></a><!-- doxytag: member="UserPreferences::ipAddress" ref="a2b7225f2ddf069be9e4f23f426409020" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="structUserPreferences.html#a2b7225f2ddf069be9e4f23f426409020">UserPreferences::ipAddress</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The default ip address to connect to. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad4bc7a7d5215b907953d7a0877dd2dec"></a><!-- doxytag: member="UserPreferences::jacketPort" ref="ad4bc7a7d5215b907953d7a0877dd2dec" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int <a class="el" href="structUserPreferences.html#ad4bc7a7d5215b907953d7a0877dd2dec">UserPreferences::jacketPort</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The bluetooth port for the jacket. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7575204faa69d0d1e805ca4552c74b57"></a><!-- doxytag: member="UserPreferences::muted" ref="a7575204faa69d0d1e805ca4552c74b57" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="structUserPreferences.html#a7575204faa69d0d1e805ca4552c74b57">UserPreferences::muted</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>True if the audio should be muted. </p>
+
+</div>
+</div>
+<a class="anchor" id="a38d4e509e3d15d642d5e9517ddffd77e"></a><!-- doxytag: member="UserPreferences::name" ref="a38d4e509e3d15d642d5e9517ddffd77e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="structUserPreferences.html#a38d4e509e3d15d642d5e9517ddffd77e">UserPreferences::name</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The user name. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7af7116a8867bb54898d97762a41cefa"></a><!-- doxytag: member="UserPreferences::volume" ref="a7af7116a8867bb54898d97762a41cefa" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float <a class="el" href="structUserPreferences.html#a7af7116a8867bb54898d97762a41cefa">UserPreferences::volume</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The volume on a scale of 0.0 to 1.0. </p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following files:<ul>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Common/<a class="el" href="UserPreferences_8h_source.html">UserPreferences.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Common/<a class="el" href="UserPreferences_8cpp.html">UserPreferences.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -91,7 +409,7 @@ class&nbsp;</td><td class="memItemRight" valign="bottom"><b>boost::serialization
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -100,7 +418,7 @@ class&nbsp;</td><td class="memItemRight" valign="bottom"><b>boost::serialization
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:10 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:46 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

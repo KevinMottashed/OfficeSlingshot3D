@@ -2,32 +2,32 @@
 <!--Detailed report on module VirtualEnvironment-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="156" level="0" />
+<lines_of_code value="284" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
-<McCabes_cyclomatic_complexity value="8" level="0" />
+<McCabes_cyclomatic_complexity value="24" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
-<lines_of_code value="177" level="0" />
+<lines_of_code value="266" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="0.881" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.045" level="0" />
-<weighted_methods_per_class_unity value="14" level="0" />
-<weighted_methods_per_class_visibility value="14" level="0" />
+<lines_of_code_per_line_of_comment value="1.068" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.090" level="0" />
+<weighted_methods_per_class_unity value="28" level="0" />
+<weighted_methods_per_class_visibility value="28" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="13" level="0" />
-<IF4 value="144" level="1" />
+<coupling_between_objects value="15" level="0" />
+<IF4 value="196" level="1" />
 <IF4_per_member_function value="********" level="2" />
-<IF4_visible value="16" level="0" />
+<IF4_visible value="25" level="0" />
 <IF4_visible_per_member_function value="********" level="2" />
-<IF4_concrete value="9" level="0" />
+<IF4_concrete value="16" level="0" />
 <IF4_concrete_per_member_function value="********" level="2" />
 </module_summary>
 <module_detail>
 <description>definition</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="20" />
-<lines_of_code value="23" level="0" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="24" />
+<lines_of_code value="27" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="69" level="0" />
+<lines_of_comment value="81" level="0" />
 <lines_of_code_per_line_of_comment value="0.333" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module_detail>
@@ -40,9 +40,9 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="26" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="30" />
 </extent>
-<lines_of_code value="10" level="0" />
+<lines_of_code value="12" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
@@ -52,11 +52,11 @@
 <name>camera()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Game/VirtualEnvironment.cpp" line="37" />
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="49" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="37" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="41" />
 </extent>
 <lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
@@ -65,18 +65,50 @@
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
-<name>fireLocalSlingshot()</name>
+<name>changeMuteIcon(bool)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Game/VirtualEnvironment.cpp" line="52" />
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="228" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="79" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="186" />
 </extent>
-<lines_of_code value="11" level="0" />
+<lines_of_code value="15" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="6" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>changeVolumeIcon(int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="245" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualEnvironment.h" line="192" />
+</extent>
+<lines_of_code value="10" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>fireLocalSlingshot()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="54" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualEnvironment.h" line="83" />
+</extent>
+<lines_of_code value="13" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="7" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -84,15 +116,175 @@
 <name>firePeerSlingshot(Projectile)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Game/VirtualEnvironment.cpp" line="69" />
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="75" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="85" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="89" />
 </extent>
-<lines_of_code value="7" level="0" />
+<lines_of_code value="8" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="5" level="0" />
+<lines_of_comment value="6" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getAvatarHitBodyPart()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="183" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualEnvironment.h" line="132" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getCurrentBallPosition()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="178" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualEnvironment.h" line="126" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getLocalAvatarChestMax()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="193" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualEnvironment.h" line="144" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getLocalAvatarChestMin()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="188" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualEnvironment.h" line="138" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getLocalAvatarHeadMax()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="223" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualEnvironment.h" line="180" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getLocalAvatarHeadMin()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="218" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualEnvironment.h" line="174" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getLocalAvatarLeftArmMax()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="213" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualEnvironment.h" line="168" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getLocalAvatarLeftArmMin()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="208" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualEnvironment.h" line="162" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getLocalAvatarRightArmMax()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="203" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualEnvironment.h" line="156" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getLocalAvatarRightArmMin()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="198" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualEnvironment.h" line="150" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -100,29 +292,45 @@
 <name>initialize(void)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Game/VirtualEnvironment.cpp" line="119" />
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="256" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="91" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="107" />
 </extent>
-<lines_of_code value="42" level="1" />
+<lines_of_code value="52" level="1" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="50" level="0" />
-<lines_of_code_per_line_of_comment value="0.840" level="0" />
+<lines_of_comment value="62" level="0" />
+<lines_of_code_per_line_of_comment value="0.839" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
 <name>isColliding()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Game/VirtualEnvironment.cpp" line="30" />
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="32" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="104" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="120" />
 </extent>
-<lines_of_code value="6" level="0" />
+<lines_of_code value="16" level="0" />
+<McCabes_cyclomatic_complexity value="4" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>isLocalPlayerDead()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="174" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualEnvironment.h" line="77" />
+</extent>
+<lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
 <lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
@@ -132,31 +340,15 @@
 <name>moveLocalAvatar(cVector3d)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Game/VirtualEnvironment.cpp" line="79" />
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="88" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="55" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="47" />
 </extent>
-<lines_of_code value="10" level="0" />
+<lines_of_code value="8" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
 <lines_of_comment value="5" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>moveLocalSlingshot(cVector3d)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../Game/VirtualEnvironment.cpp" line="42" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="43" />
-</extent>
-<lines_of_code value="5" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -164,31 +356,47 @@
 <name>movePeerAvatar(cVector3d)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Game/VirtualEnvironment.cpp" line="92" />
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="99" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="61" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="53" />
 </extent>
-<lines_of_code value="9" level="0" />
+<lines_of_code value="8" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
 <lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
-<name>movePeerSlingshot(cVector3d)</name>
+<name>pullBackLocalBall(cVector3d)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Game/VirtualEnvironment.cpp" line="47" />
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="110" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="49" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="95" />
 </extent>
-<lines_of_code value="5" level="0" />
+<lines_of_code value="7" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="4" level="0" />
+<lines_of_comment value="6" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>pullBackPeerBall(cVector3d)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="121" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualEnvironment.h" line="101" />
+</extent>
+<lines_of_code value="7" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="6" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -196,11 +404,11 @@
 <name>reduceLocalHp(int)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Game/VirtualEnvironment.cpp" line="105" />
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="132" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="67" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="59" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
@@ -212,11 +420,11 @@
 <name>reducePeerHp(int)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Game/VirtualEnvironment.cpp" line="112" />
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="139" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="73" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="65" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
@@ -225,14 +433,30 @@
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
-<name>updateFrame()</name>
+<name>resetAll()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Game/VirtualEnvironment.cpp" line="24" />
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="146" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="98" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="71" />
+</extent>
+<lines_of_code value="19" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="7" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>updateFrame()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="26" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualEnvironment.h" line="114" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -244,11 +468,11 @@
 <name>~VirtualEnvironment(void)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Game/VirtualEnvironment.cpp" line="17" />
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="19" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="31" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="35" />
 </extent>
 <lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -266,7 +490,7 @@
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Game/Game.h" line="78" />
+<source_reference file="../../Game/Game.h" line="121" />
 </extent>
 </client_module>
 <supplier_module>
@@ -275,136 +499,166 @@
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="149" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="237" />
 </extent>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="154" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="242" />
 </extent>
 <name>Projectile</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualEnvironment.cpp" line="69" />
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="75" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="85" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="89" />
 </extent>
 <name>VirtualAvatar</name>
 <visible>false</visible>
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="139" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="227" />
 </extent>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="144" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="232" />
+</extent>
+<name>VirtualElastic</name>
+<visible>false</visible>
+<concrete>false</concrete>
+<extent>
+<description>has by reference</description>
+<source_reference file="../../Game/VirtualEnvironment.h" line="247" />
+</extent>
+<extent>
+<description>has by reference</description>
+<source_reference file="../../Game/VirtualEnvironment.h" line="252" />
 </extent>
 <name>VirtualSlingshot</name>
 <visible>false</visible>
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="129" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="217" />
 </extent>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="134" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="222" />
+</extent>
+<name>bool</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="228" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/VirtualEnvironment.h" line="186" />
 </extent>
 <name>cBitmap</name>
 <visible>false</visible>
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="159" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="257" />
+</extent>
+<extent>
+<description>has by reference</description>
+<source_reference file="../../Game/VirtualEnvironment.h" line="262" />
+</extent>
+<extent>
+<description>has by reference</description>
+<source_reference file="../../Game/VirtualEnvironment.h" line="267" />
 </extent>
 <name>cCamera</name>
 <visible>false</visible>
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="112" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="200" />
 </extent>
 <name>cLight</name>
 <visible>false</visible>
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="124" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="212" />
 </extent>
 <name>cODEGenericBody</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="183" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="291" />
 </extent>
 <name>cODEWorld</name>
 <visible>false</visible>
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="166" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="274" />
 </extent>
 <name>cVector3d</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualEnvironment.cpp" line="42" />
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="88" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualEnvironment.cpp" line="47" />
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="99" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualEnvironment.cpp" line="79" />
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="110" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualEnvironment.cpp" line="92" />
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="121" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="43" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="47" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="49" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="53" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="55" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="95" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="61" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="101" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="205" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="313" />
 </extent>
 <name>cWorld</name>
 <visible>false</visible>
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="118" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="206" />
 </extent>
 <name>vector</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="171" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="279" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="176" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="284" />
 </extent>
 </supplier_module>
 </module>

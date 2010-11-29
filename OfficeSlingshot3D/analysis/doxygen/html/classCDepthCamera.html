@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -49,68 +50,1204 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#friends">Friends</a>  </div>
   <div class="headertitle">
 <h1>CDepthCamera Class Reference</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="CDepthCamera" --><table class="memberdecls">
+<!-- doxytag: class="CDepthCamera" -->
+<p>The main class that deals with the z-camera hardware and API.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="DepthCamera_8h_source.html">DepthCamera.h</a>&gt;</code></p>
+<table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a96a77d7c76328eddee19dac8c506ad10"></a><!-- doxytag: member="CDepthCamera::Initialize" ref="a96a77d7c76328eddee19dac8c506ad10" args="(int timeout=INFINITE)" -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Initialize</b> (int timeout=INFINITE)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a44a96495b5cf3a644fecdaacc47f1c81"></a><!-- doxytag: member="CDepthCamera::ChangeResolution" ref="a44a96495b5cf3a644fecdaacc47f1c81" args="(int resolutionMode)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>ChangeResolution</b> (int resolutionMode)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa4e2377f5716a4be08887f1d30b90b45"></a><!-- doxytag: member="CDepthCamera::GetVideoSize" ref="aa4e2377f5716a4be08887f1d30b90b45" args="(int &amp;width, int &amp;height, int &amp;rgbFullResWidth, int &amp;rgbFullResHeight, int &amp;depthPixelSize, int &amp;rgbPixelSize) const " -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>GetVideoSize</b> (int &amp;width, int &amp;height, int &amp;rgbFullResWidth, int &amp;rgbFullResHeight, int &amp;depthPixelSize, int &amp;rgbPixelSize) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af4e2522bd2bf8bd42521998bbc3f034e"></a><!-- doxytag: member="CDepthCamera::GetMaxAllowedWidth" ref="af4e2522bd2bf8bd42521998bbc3f034e" args="() const " -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><b>GetMaxAllowedWidth</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a873d46b85b1bafb25d78910a12bd4556"></a><!-- doxytag: member="CDepthCamera::SetDepthWindowPosition" ref="a873d46b85b1bafb25d78910a12bd4556" args="(int distance, int width)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>SetDepthWindowPosition</b> (int distance, int width)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a598224eccb8d75dd8ddc73c393ca2373"></a><!-- doxytag: member="CDepthCamera::GetDepthWindowPosition" ref="a598224eccb8d75dd8ddc73c393ca2373" args="(int &amp;distance, int &amp;width) const " -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>GetDepthWindowPosition</b> (int &amp;distance, int &amp;width) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9caed017bbbeeaa2c70313d33bd7e791"></a><!-- doxytag: member="CDepthCamera::FindObjectUsingWidth" ref="a9caed017bbbeeaa2c70313d33bd7e791" args="(int depthWidth)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>FindObjectUsingWidth</b> (int depthWidth)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad8fd2a78bbadbe27373ab2a1b84e18ab"></a><!-- doxytag: member="CDepthCamera::EnableRGBFullResolution" ref="ad8fd2a78bbadbe27373ab2a1b84e18ab" args="(bool enable)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>EnableRGBFullResolution</b> (bool enable)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a282135dd5261d925a804a20c428a07d3"></a><!-- doxytag: member="CDepthCamera::IsRGBFullResolutionEnabled" ref="a282135dd5261d925a804a20c428a07d3" args="() const " -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>IsRGBFullResolutionEnabled</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a22299b77c0894b278eb4430f9f734558"></a><!-- doxytag: member="CDepthCamera::EnableIRVideoTransfer" ref="a22299b77c0894b278eb4430f9f734558" args="(bool enable)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>EnableIRVideoTransfer</b> (bool enable)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8578e6f5ab6ad17cf861dd1368530e34"></a><!-- doxytag: member="CDepthCamera::IsIRVideoTransferEnabled" ref="a8578e6f5ab6ad17cf861dd1368530e34" args="() const " -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>IsIRVideoTransferEnabled</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaeb19d95b8ca3d8444bcc98615088420"></a><!-- doxytag: member="CDepthCamera::EnableWideDepthMode" ref="aaeb19d95b8ca3d8444bcc98615088420" args="(bool enable)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>EnableWideDepthMode</b> (bool enable)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a727a74d77a7dc759b8dd551f547c6eb3"></a><!-- doxytag: member="CDepthCamera::IsWideDepthModeEnabled" ref="a727a74d77a7dc759b8dd551f547c6eb3" args="() const " -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>IsWideDepthModeEnabled</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0089ad147398b91c7419c4147a62b4d0"></a><!-- doxytag: member="CDepthCamera::EnableDepthFilter" ref="a0089ad147398b91c7419c4147a62b4d0" args="(bool enable, int intensity=25)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>EnableDepthFilter</b> (bool enable, int intensity=25)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa1450d0f09f22a6e9af15d0ec5a52d18"></a><!-- doxytag: member="CDepthCamera::IsDepthFilterEnabled" ref="aa1450d0f09f22a6e9af15d0ec5a52d18" args="() const " -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>IsDepthFilterEnabled</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aba9b4149179d4116853544b431ee060a"></a><!-- doxytag: member="CDepthCamera::GetNextFrame" ref="aba9b4149179d4116853544b431ee060a" args="(unsigned char *&amp;pDepthFrame, unsigned char *&amp;pRGBFrame, unsigned char *&amp;pRGBFullResFrame, unsigned char *&amp;pPrimaryIR, unsigned char *&amp;pSecondaryIR, int timeout=INFINITE)" -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>GetNextFrame</b> (unsigned char *&amp;pDepthFrame, unsigned char *&amp;pRGBFrame, unsigned char *&amp;pRGBFullResFrame, unsigned char *&amp;pPrimaryIR, unsigned char *&amp;pSecondaryIR, int timeout=INFINITE)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7425f9f47dbe7d963e3c7601c593701f"></a><!-- doxytag: member="CDepthCamera::GetCameraInterface" ref="a7425f9f47dbe7d963e3c7601c593701f" args="()" -->
-<a class="el" href="classTDVCameraInterfaceBase.html">TDVCameraInterfaceBase</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><b>GetCameraInterface</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad0d6687953ff85c564a3c5dbc47611ca"></a><!-- doxytag: member="CDepthCamera::EnableTrack" ref="ad0d6687953ff85c564a3c5dbc47611ca" args="(bool enable)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>EnableTrack</b> (bool enable)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a69f4c73d7f3295ff6003fb66a50f9f9d"></a><!-- doxytag: member="CDepthCamera::EnableSmoothing" ref="a69f4c73d7f3295ff6003fb66a50f9f9d" args="(bool enable, double smoothVal)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>EnableSmoothing</b> (bool enable, double smoothVal)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a06108a42c127014629a97acddfe20716"></a><!-- doxytag: member="CDepthCamera::SetCleanVal" ref="a06108a42c127014629a97acddfe20716" args="(double cleanVal)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>SetCleanVal</b> (double cleanVal)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a62c9bc3fac5283b334e7bb6697601529"></a><!-- doxytag: member="CDepthCamera::EnableMedian" ref="a62c9bc3fac5283b334e7bb6697601529" args="(bool enable)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>EnableMedian</b> (bool enable)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa6e04f2fe9f7954d961048ef817ca68f"></a><!-- doxytag: member="CDepthCamera::FreezeVideo" ref="aa6e04f2fe9f7954d961048ef817ca68f" args="(bool freeze)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>FreezeVideo</b> (bool freeze)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#ac75f195acb38130b5c99689db2e6e17a">CDepthCamera</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#ac75f195acb38130b5c99689db2e6e17a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#abf96f2d756152525ea65a9c977099c6b">~CDepthCamera</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Clean-up internal objects.  <a href="#abf96f2d756152525ea65a9c977099c6b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#a96a77d7c76328eddee19dac8c506ad10">Initialize</a> (int timeout=INFINITE)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">initialize the <a class="el" href="classTDVCameraInterfaceBase.html" title="Main camera control interface.">TDVCameraInterfaceBase</a> object, and the callbacks in case the camera is not connected or DMachine is not running, it will wait the specified time until returning, to prevent program blocking.  <a href="#a96a77d7c76328eddee19dac8c506ad10"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#a44a96495b5cf3a644fecdaacc47f1c81">ChangeResolution</a> (int resolutionMode)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Change the video resolution.  <a href="#a44a96495b5cf3a644fecdaacc47f1c81"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#aa4e2377f5716a4be08887f1d30b90b45">GetVideoSize</a> (int &amp;width, int &amp;height, int &amp;rgbFullResWidth, int &amp;rgbFullResHeight, int &amp;depthPixelSize, int &amp;rgbPixelSize) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">get video frame parameters.  <a href="#aa4e2377f5716a4be08887f1d30b90b45"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#af4e2522bd2bf8bd42521998bbc3f034e">GetMaxAllowedWidth</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieves the maximal width possible for setting depth range, measured in centemeters.  <a href="#af4e2522bd2bf8bd42521998bbc3f034e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#a873d46b85b1bafb25d78910a12bd4556">SetDepthWindowPosition</a> (int distance, int width)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get the depth range manually.  <a href="#a873d46b85b1bafb25d78910a12bd4556"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#a598224eccb8d75dd8ddc73c393ca2373">GetDepthWindowPosition</a> (int &amp;distance, int &amp;width) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get the depth range distance and width the depth range will be between distance and distance and width, measured in centemeters.  <a href="#a598224eccb8d75dd8ddc73c393ca2373"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#a9caed017bbbeeaa2c70313d33bd7e791">FindObjectUsingWidth</a> (int depthWidth)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set the width specified (in centemeters), and centers the depth window around the closest object to the camera the function blocks until object is found.  <a href="#a9caed017bbbeeaa2c70313d33bd7e791"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#ad8fd2a78bbadbe27373ab2a1b84e18ab">EnableRGBFullResolution</a> (bool enable)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Enable or disable the transfer of RGB in 640x480 resolution.  <a href="#ad8fd2a78bbadbe27373ab2a1b84e18ab"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#a282135dd5261d925a804a20c428a07d3">IsRGBFullResolutionEnabled</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Check whether the RGB in full resolution is also transfered.  <a href="#a282135dd5261d925a804a20c428a07d3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#a22299b77c0894b278eb4430f9f734558">EnableIRVideoTransfer</a> (bool enable)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Enable or disable the transfer of IR Video (Primary and secondary IR).  <a href="#a22299b77c0894b278eb4430f9f734558"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#a8578e6f5ab6ad17cf861dd1368530e34">IsIRVideoTransferEnabled</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">check whether the IR video (primary and secondary) is also transfered  <a href="#a8578e6f5ab6ad17cf861dd1368530e34"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#aaeb19d95b8ca3d8444bcc98615088420">EnableWideDepthMode</a> (bool enable)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">when the user needs a 300cm depth window range, enable this mode.  <a href="#aaeb19d95b8ca3d8444bcc98615088420"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#a727a74d77a7dc759b8dd551f547c6eb3">IsWideDepthModeEnabled</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">is the large depth mode enabled?  <a href="#a727a74d77a7dc759b8dd551f547c6eb3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#a0089ad147398b91c7419c4147a62b4d0">EnableDepthFilter</a> (bool enable, int intensity=25)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Enable or disable the "smooth" filter.  <a href="#a0089ad147398b91c7419c4147a62b4d0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#aa1450d0f09f22a6e9af15d0ec5a52d18">IsDepthFilterEnabled</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">check if the depth filter is enabled, and if so, what is it's intensity  <a href="#aa1450d0f09f22a6e9af15d0ec5a52d18"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#aba9b4149179d4116853544b431ee060a">GetNextFrame</a> (unsigned char *&amp;pDepthFrame, unsigned char *&amp;pRGBFrame, unsigned char *&amp;pRGBFullResFrame, unsigned char *&amp;pPrimaryIR, unsigned char *&amp;pSecondaryIR, int timeout=INFINITE)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">returns the next frames data.  <a href="#aba9b4149179d4116853544b431ee060a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTDVCameraInterfaceBase.html">TDVCameraInterfaceBase</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#a7425f9f47dbe7d963e3c7601c593701f">GetCameraInterface</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">when you wish to get full control over other parameters, you can get the internal <a class="el" href="classTDVCameraInterfaceBase.html" title="Main camera control interface.">TDVCameraInterfaceBase</a> object and handle things by yourself  <a href="#a7425f9f47dbe7d963e3c7601c593701f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#ad0d6687953ff85c564a3c5dbc47611ca">EnableTrack</a> (bool enable)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Enables tracking.  <a href="#ad0d6687953ff85c564a3c5dbc47611ca"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#a69f4c73d7f3295ff6003fb66a50f9f9d">EnableSmoothing</a> (bool enable, double smoothVal)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Enables smoothing.  <a href="#a69f4c73d7f3295ff6003fb66a50f9f9d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#a06108a42c127014629a97acddfe20716">SetCleanVal</a> (double cleanVal)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the clean value.  <a href="#a06108a42c127014629a97acddfe20716"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#a62c9bc3fac5283b334e7bb6697601529">EnableMedian</a> (bool enable)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Enables median.  <a href="#a62c9bc3fac5283b334e7bb6697601529"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#aa6e04f2fe9f7954d961048ef817ca68f">FreezeVideo</a> (bool freeze)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Freezes the video.  <a href="#aa6e04f2fe9f7954d961048ef817ca68f"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#ad88de5389a7bc6ca20e0db707d7f6eef">UnInitialize</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">uninitialize all internal objects.  <a href="#ad88de5389a7bc6ca20e0db707d7f6eef"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#a8ead9c1fb31102b8234a3bb1c5f91767">SetFrames</a> (unsigned char *pDepthFrame, unsigned char *pRGBFrame, unsigned char *pRGBFullResFrame, unsigned char *pPrimaryIR, unsigned char *pSecondaryIR)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sets new frames internally (called from the video callback)  <a href="#a8ead9c1fb31102b8234a3bb1c5f91767"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#a10375f54c88ac964da77bd6d68737651">Lock</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Enter critical section.  <a href="#a10375f54c88ac964da77bd6d68737651"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#afcdd564c4a3bf29cb795e46636ed69f8">Unlock</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Exit the critical section.  <a href="#afcdd564c4a3bf29cb795e46636ed69f8"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTDVCameraInterfaceBase.html">TDVCameraInterfaceBase</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#a582ab44c2edcd75ad8ce1eb0bd05d091">m_pCameraInterfaceBase</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The camera control object.  <a href="#a582ab44c2edcd75ad8ce1eb0bd05d091"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#a5b50a03643c8ad985e1e6585e9b3b3ca">m_bEnableRGBFullResoltion</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Is RGB full resolution enabled?  <a href="#a5b50a03643c8ad985e1e6585e9b3b3ca"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#a9e0639626b4c1c481cf7448bfdd76a19">m_bEnableIRVideoTransfer</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Is RGB full resolution enabled?  <a href="#a9e0639626b4c1c481cf7448bfdd76a19"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#a027a53955a0e0339a0c71d96f6e33145">m_bEnableLargeDepthMode</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Is the large depth mode enabled?  <a href="#a027a53955a0e0339a0c71d96f6e33145"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">HANDLE&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#af01ee8f46a03164ea069c3e823b8bdf0">m_hNewFrameReady</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Handle to notify when a new frame is received.  <a href="#af01ee8f46a03164ea069c3e823b8bdf0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">HANDLE&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#aeb0853d9a2dd3eb975aa3b343834a05d">m_hCriticalSection</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Critical section lock mutex.  <a href="#aeb0853d9a2dd3eb975aa3b343834a05d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#a89f403c7ac124ae0819fa9cfed6bc0b9">m_pDepthFrame</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Holds the latest depth frame.  <a href="#a89f403c7ac124ae0819fa9cfed6bc0b9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#a8dc1f715911723a0283e137cc1133643">m_pRGBFrame</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Holds the latest RGB frame.  <a href="#a8dc1f715911723a0283e137cc1133643"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#a840c579a0a30beda9a0bbab172ed79fb">m_pRGBFullResFrame</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Holds the latest RGB full resolution frame.  <a href="#a840c579a0a30beda9a0bbab172ed79fb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#a2ab8b014fbf8b14abc427a58254d7e96">m_pPrimary</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Holds the latest primary IR frame.  <a href="#a2ab8b014fbf8b14abc427a58254d7e96"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#a2b26cf7e5c43d4e7f8fcb57c3ea3f676">m_pSecondary</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Holds the latest secondary IR frame.  <a href="#a2b26cf7e5c43d4e7f8fcb57c3ea3f676"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#a75e26a195d32450dd08a21b16ad968d7">m_bIsInitialized</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Is the DepthCamera initialized?  <a href="#a75e26a195d32450dd08a21b16ad968d7"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac08b981ee61b617b6b0530e85880e692"></a><!-- doxytag: member="CDepthCamera::videoCallBack" ref="ac08b981ee61b617b6b0530e85880e692" args="(unsigned char *pDepthBuf, unsigned char *pRgbBuf, int bufIndex, void *pObject)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>videoCallBack</b> (unsigned char *pDepthBuf, unsigned char *pRgbBuf, int bufIndex, void *pObject)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac9f4aa0d65f8d18cfc2ff367d68ae7db"></a><!-- doxytag: member="CDepthCamera::cmdCallBack" ref="ac9f4aa0d65f8d18cfc2ff367d68ae7db" args="(int cmd, void *pObject)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdCallBack</b> (int cmd, void *pObject)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#ac08b981ee61b617b6b0530e85880e692">videoCallBack</a> (unsigned char *pDepthBuf, unsigned char *<a class="el" href="TDVCameraInterface_8h.html#aedd72030031117ddb7ce6263e18fbf4d">pRgbBuf</a>, int <a class="el" href="TDVCameraInterface_8h.html#a5ad8256bd74e0afd76867ff9c5f7a63f">bufIndex</a>, void *<a class="el" href="TDVCameraInterface_8h.html#a1c9117b12efc5066ab9cea83d3b6f2fd">pObject</a>)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Define the video callback as friend functions, to enable full access to <a class="el" href="classCDepthCamera.html" title="The main class that deals with the z-camera hardware and API.">CDepthCamera</a> object.  <a href="#ac08b981ee61b617b6b0530e85880e692"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDepthCamera.html#ac9f4aa0d65f8d18cfc2ff367d68ae7db">cmdCallBack</a> (int cmd, void *<a class="el" href="TDVCameraInterface_8h.html#a1c9117b12efc5066ab9cea83d3b6f2fd">pObject</a>)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Define the command callback as friend functions, to enable full access to <a class="el" href="classCDepthCamera.html" title="The main class that deals with the z-camera hardware and API.">CDepthCamera</a> object.  <a href="#ac9f4aa0d65f8d18cfc2ff367d68ae7db"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>The main class that deals with the z-camera hardware and API. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ac75f195acb38130b5c99689db2e6e17a"></a><!-- doxytag: member="CDepthCamera::CDepthCamera" ref="ac75f195acb38130b5c99689db2e6e17a" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CDepthCamera::CDepthCamera </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="abf96f2d756152525ea65a9c977099c6b"></a><!-- doxytag: member="CDepthCamera::~CDepthCamera" ref="abf96f2d756152525ea65a9c977099c6b" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CDepthCamera::~CDepthCamera </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Clean-up internal objects. </p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a44a96495b5cf3a644fecdaacc47f1c81"></a><!-- doxytag: member="CDepthCamera::ChangeResolution" ref="a44a96495b5cf3a644fecdaacc47f1c81" args="(int resolutionMode)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CDepthCamera::ChangeResolution </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>resolutionMode</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Change the video resolution. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>resolutionMode</em>&nbsp;</td><td>The new resolution </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0089ad147398b91c7419c4147a62b4d0"></a><!-- doxytag: member="CDepthCamera::EnableDepthFilter" ref="a0089ad147398b91c7419c4147a62b4d0" args="(bool enable, int intensity=25)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CDepthCamera::EnableDepthFilter </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>enable</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>intensity</em> = <code>25</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enable or disable the "smooth" filter. </p>
+<p>also set the filter's intensity </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>enable</em>&nbsp;</td><td>True to enable "smooth" filter </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>intensity</em>&nbsp;</td><td>The intensity. 25 by default </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a22299b77c0894b278eb4430f9f734558"></a><!-- doxytag: member="CDepthCamera::EnableIRVideoTransfer" ref="a22299b77c0894b278eb4430f9f734558" args="(bool enable)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CDepthCamera::EnableIRVideoTransfer </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>enable</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enable or disable the transfer of IR Video (Primary and secondary IR). </p>
+<p>When enabled, this consumes more CPU </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>enable</em>&nbsp;</td><td>True to enable IR video </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a62c9bc3fac5283b334e7bb6697601529"></a><!-- doxytag: member="CDepthCamera::EnableMedian" ref="a62c9bc3fac5283b334e7bb6697601529" args="(bool enable)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CDepthCamera::EnableMedian </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>enable</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enables median. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>enable</em>&nbsp;</td><td>True to enable median </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad8fd2a78bbadbe27373ab2a1b84e18ab"></a><!-- doxytag: member="CDepthCamera::EnableRGBFullResolution" ref="ad8fd2a78bbadbe27373ab2a1b84e18ab" args="(bool enable)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CDepthCamera::EnableRGBFullResolution </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>enable</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enable or disable the transfer of RGB in 640x480 resolution. </p>
+<p>When enabled, this consumes more CPU </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>enable</em>&nbsp;</td><td>True to enable RGB </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a69f4c73d7f3295ff6003fb66a50f9f9d"></a><!-- doxytag: member="CDepthCamera::EnableSmoothing" ref="a69f4c73d7f3295ff6003fb66a50f9f9d" args="(bool enable, double smoothVal)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CDepthCamera::EnableSmoothing </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>enable</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>smoothVal</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enables smoothing. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>enable</em>&nbsp;</td><td>true to enable smoothing </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>smoothVal</em>&nbsp;</td><td>The new value for smoothing </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad0d6687953ff85c564a3c5dbc47611ca"></a><!-- doxytag: member="CDepthCamera::EnableTrack" ref="ad0d6687953ff85c564a3c5dbc47611ca" args="(bool enable)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CDepthCamera::EnableTrack </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>enable</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enables tracking. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>enable</em>&nbsp;</td><td>True to enable tracking </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aaeb19d95b8ca3d8444bcc98615088420"></a><!-- doxytag: member="CDepthCamera::EnableWideDepthMode" ref="aaeb19d95b8ca3d8444bcc98615088420" args="(bool enable)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CDepthCamera::EnableWideDepthMode </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>enable</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>when the user needs a 300cm depth window range, enable this mode. </p>
+<p>It will automatically place the depth range to support depth range starting from 100cm and ending at 400cm (distance from the camera). </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>enable</em>&nbsp;</td><td>True to enable wide depth mode </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a9caed017bbbeeaa2c70313d33bd7e791"></a><!-- doxytag: member="CDepthCamera::FindObjectUsingWidth" ref="a9caed017bbbeeaa2c70313d33bd7e791" args="(int depthWidth)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CDepthCamera::FindObjectUsingWidth </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>depthWidth</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set the width specified (in centemeters), and centers the depth window around the closest object to the camera the function blocks until object is found. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>depthWidth</em>&nbsp;</td><td>The new width </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa6e04f2fe9f7954d961048ef817ca68f"></a><!-- doxytag: member="CDepthCamera::FreezeVideo" ref="aa6e04f2fe9f7954d961048ef817ca68f" args="(bool freeze)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CDepthCamera::FreezeVideo </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>freeze</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Freezes the video. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>freeze</em>&nbsp;</td><td>True to freeze the video </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7425f9f47dbe7d963e3c7601c593701f"></a><!-- doxytag: member="CDepthCamera::GetCameraInterface" ref="a7425f9f47dbe7d963e3c7601c593701f" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTDVCameraInterfaceBase.html">TDVCameraInterfaceBase</a> * CDepthCamera::GetCameraInterface </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>when you wish to get full control over other parameters, you can get the internal <a class="el" href="classTDVCameraInterfaceBase.html" title="Main camera control interface.">TDVCameraInterfaceBase</a> object and handle things by yourself </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>TDVCameraInterfaceBase* The TDV camera </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a598224eccb8d75dd8ddc73c393ca2373"></a><!-- doxytag: member="CDepthCamera::GetDepthWindowPosition" ref="a598224eccb8d75dd8ddc73c393ca2373" args="(int &amp;distance, int &amp;width) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CDepthCamera::GetDepthWindowPosition </td>
+          <td>(</td>
+          <td class="paramtype">int &amp;&nbsp;</td>
+          <td class="paramname"> <em>distance</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&nbsp;</td>
+          <td class="paramname"> <em>width</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the depth range distance and width the depth range will be between distance and distance and width, measured in centemeters. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>distance</em>&nbsp;</td><td>The distance from the camera </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>width</em>&nbsp;</td><td>The width </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af4e2522bd2bf8bd42521998bbc3f034e"></a><!-- doxytag: member="CDepthCamera::GetMaxAllowedWidth" ref="af4e2522bd2bf8bd42521998bbc3f034e" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CDepthCamera::GetMaxAllowedWidth </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieves the maximal width possible for setting depth range, measured in centemeters. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the maximal width possible </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aba9b4149179d4116853544b431ee060a"></a><!-- doxytag: member="CDepthCamera::GetNextFrame" ref="aba9b4149179d4116853544b431ee060a" args="(unsigned char *&amp;pDepthFrame, unsigned char *&amp;pRGBFrame, unsigned char *&amp;pRGBFullResFrame, unsigned char *&amp;pPrimaryIR, unsigned char *&amp;pSecondaryIR, int timeout=INFINITE)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CDepthCamera::GetNextFrame </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char *&amp;&nbsp;</td>
+          <td class="paramname"> <em>pDepthFrame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char *&amp;&nbsp;</td>
+          <td class="paramname"> <em>pRGBFrame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char *&amp;&nbsp;</td>
+          <td class="paramname"> <em>pRGBFullResFrame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char *&amp;&nbsp;</td>
+          <td class="paramname"> <em>pPrimaryIR</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char *&amp;&nbsp;</td>
+          <td class="paramname"> <em>pSecondaryIR</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>timeout</em> = <code>INFINITE</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>returns the next frames data. </p>
+<p>If RGB full resolution or the IR video is not enabled, their relevant pointer will be NULL. This function will block until the next frame is ready, or until timeout is reached. If timeout occurs, the function returns false, otherwise true. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pDepthFrame</em>&nbsp;</td><td>The depth frame </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pRGBFrame</em>&nbsp;</td><td>The RGB frame </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pRGBFullResFrame</em>&nbsp;</td><td>The RGB full resolution frame </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pPrimaryIR</em>&nbsp;</td><td>The primary IR </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pSecondaryIR</em>&nbsp;</td><td>The secondary IR </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>timeout</em>&nbsp;</td><td>The timeout. INFINITE by default </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if successful </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa4e2377f5716a4be08887f1d30b90b45"></a><!-- doxytag: member="CDepthCamera::GetVideoSize" ref="aa4e2377f5716a4be08887f1d30b90b45" args="(int &amp;width, int &amp;height, int &amp;rgbFullResWidth, int &amp;rgbFullResHeight, int &amp;depthPixelSize, int &amp;rgbPixelSize) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CDepthCamera::GetVideoSize </td>
+          <td>(</td>
+          <td class="paramtype">int &amp;&nbsp;</td>
+          <td class="paramname"> <em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&nbsp;</td>
+          <td class="paramname"> <em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&nbsp;</td>
+          <td class="paramname"> <em>rgbFullResWidth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&nbsp;</td>
+          <td class="paramname"> <em>rgbFullResHeight</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&nbsp;</td>
+          <td class="paramname"> <em>depthPixelSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&nbsp;</td>
+          <td class="paramname"> <em>rgbPixelSize</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>get video frame parameters. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>width</em>&nbsp;</td><td>The width of the frame </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>height</em>&nbsp;</td><td>The height of the frame </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>rgbFullResWidth</em>&nbsp;</td><td>The RGB width </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>rgbFullResHeight</em>&nbsp;</td><td>The RGB width </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>depthPixelSize</em>&nbsp;</td><td>The depth pixel size </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>rgbPixelSize</em>&nbsp;</td><td>The RGB pixel size </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if successful </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a96a77d7c76328eddee19dac8c506ad10"></a><!-- doxytag: member="CDepthCamera::Initialize" ref="a96a77d7c76328eddee19dac8c506ad10" args="(int timeout=INFINITE)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CDepthCamera::Initialize </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>timeout</em> = <code>INFINITE</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>initialize the <a class="el" href="classTDVCameraInterfaceBase.html" title="Main camera control interface.">TDVCameraInterfaceBase</a> object, and the callbacks in case the camera is not connected or DMachine is not running, it will wait the specified time until returning, to prevent program blocking. </p>
+<p>by default, it will wait indefinitely </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>timeout</em>&nbsp;</td><td>The timeout. By default INFINITE </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if successful </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa1450d0f09f22a6e9af15d0ec5a52d18"></a><!-- doxytag: member="CDepthCamera::IsDepthFilterEnabled" ref="aa1450d0f09f22a6e9af15d0ec5a52d18" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CDepthCamera::IsDepthFilterEnabled </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>check if the depth filter is enabled, and if so, what is it's intensity </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if "smooth" filter is enabled </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8578e6f5ab6ad17cf861dd1368530e34"></a><!-- doxytag: member="CDepthCamera::IsIRVideoTransferEnabled" ref="a8578e6f5ab6ad17cf861dd1368530e34" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CDepthCamera::IsIRVideoTransferEnabled </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>check whether the IR video (primary and secondary) is also transfered </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if IR video is enabled </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a282135dd5261d925a804a20c428a07d3"></a><!-- doxytag: member="CDepthCamera::IsRGBFullResolutionEnabled" ref="a282135dd5261d925a804a20c428a07d3" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CDepthCamera::IsRGBFullResolutionEnabled </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Check whether the RGB in full resolution is also transfered. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if RBG full resolution is enabled </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a727a74d77a7dc759b8dd551f547c6eb3"></a><!-- doxytag: member="CDepthCamera::IsWideDepthModeEnabled" ref="a727a74d77a7dc759b8dd551f547c6eb3" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CDepthCamera::IsWideDepthModeEnabled </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>is the large depth mode enabled? </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if wide depth mode is enabled </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a10375f54c88ac964da77bd6d68737651"></a><!-- doxytag: member="CDepthCamera::Lock" ref="a10375f54c88ac964da77bd6d68737651" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CDepthCamera::Lock </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enter critical section. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if successfully locked </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a06108a42c127014629a97acddfe20716"></a><!-- doxytag: member="CDepthCamera::SetCleanVal" ref="a06108a42c127014629a97acddfe20716" args="(double cleanVal)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CDepthCamera::SetCleanVal </td>
+          <td>(</td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>cleanVal</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the clean value. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>cleanVal</em>&nbsp;</td><td>The new clean value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a873d46b85b1bafb25d78910a12bd4556"></a><!-- doxytag: member="CDepthCamera::SetDepthWindowPosition" ref="a873d46b85b1bafb25d78910a12bd4556" args="(int distance, int width)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CDepthCamera::SetDepthWindowPosition </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>distance</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>width</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the depth range manually. </p>
+<p>This function chooses default settings that will best fit the distance and width specified the depth range will be between distance and distance+width, measured in centemeters </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>distance</em>&nbsp;</td><td>The distance from the camera </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>width</em>&nbsp;</td><td>The width </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8ead9c1fb31102b8234a3bb1c5f91767"></a><!-- doxytag: member="CDepthCamera::SetFrames" ref="a8ead9c1fb31102b8234a3bb1c5f91767" args="(unsigned char *pDepthFrame, unsigned char *pRGBFrame, unsigned char *pRGBFullResFrame, unsigned char *pPrimaryIR, unsigned char *pSecondaryIR)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CDepthCamera::SetFrames </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char *&nbsp;</td>
+          <td class="paramname"> <em>pDepthFrame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char *&nbsp;</td>
+          <td class="paramname"> <em>pRGBFrame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char *&nbsp;</td>
+          <td class="paramname"> <em>pRGBFullResFrame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char *&nbsp;</td>
+          <td class="paramname"> <em>pPrimaryIR</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char *&nbsp;</td>
+          <td class="paramname"> <em>pSecondaryIR</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>sets new frames internally (called from the video callback) </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pDepthFrame</em>&nbsp;</td><td>The new depth frame </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pRGBFrame</em>&nbsp;</td><td>The new RGB frame </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pRGBFullResFrame</em>&nbsp;</td><td>The new RGB full resolution frame </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pPrimaryIR</em>&nbsp;</td><td>The new primary IR </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pSecondaryIR</em>&nbsp;</td><td>The new secondary IR </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad88de5389a7bc6ca20e0db707d7f6eef"></a><!-- doxytag: member="CDepthCamera::UnInitialize" ref="ad88de5389a7bc6ca20e0db707d7f6eef" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CDepthCamera::UnInitialize </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>uninitialize all internal objects. </p>
+
+</div>
+</div>
+<a class="anchor" id="afcdd564c4a3bf29cb795e46636ed69f8"></a><!-- doxytag: member="CDepthCamera::Unlock" ref="afcdd564c4a3bf29cb795e46636ed69f8" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CDepthCamera::Unlock </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Exit the critical section. </p>
+
+</div>
+</div>
+<hr/><h2>Friends And Related Function Documentation</h2>
+<a class="anchor" id="ac9f4aa0d65f8d18cfc2ff367d68ae7db"></a><!-- doxytag: member="CDepthCamera::cmdCallBack" ref="ac9f4aa0d65f8d18cfc2ff367d68ae7db" args="(int cmd, void *pObject)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cmdCallBack </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>cmd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>pObject</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Define the command callback as friend functions, to enable full access to <a class="el" href="classCDepthCamera.html" title="The main class that deals with the z-camera hardware and API.">CDepthCamera</a> object. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>cmd</em>&nbsp;</td><td>The command </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pObject</em>&nbsp;</td><td>an object for the callback </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ac08b981ee61b617b6b0530e85880e692"></a><!-- doxytag: member="CDepthCamera::videoCallBack" ref="ac08b981ee61b617b6b0530e85880e692" args="(unsigned char *pDepthBuf, unsigned char *pRgbBuf, int bufIndex, void *pObject)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void videoCallBack </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char *&nbsp;</td>
+          <td class="paramname"> <em>pDepthBuf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char *&nbsp;</td>
+          <td class="paramname"> <em>pRgbBuf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>bufIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>pObject</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Define the video callback as friend functions, to enable full access to <a class="el" href="classCDepthCamera.html" title="The main class that deals with the z-camera hardware and API.">CDepthCamera</a> object. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pDepthBuf</em>&nbsp;</td><td>The depth buffer </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pRgbBuf</em>&nbsp;</td><td>The RGB buffer </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>bufIndex</em>&nbsp;</td><td>The buffer index </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pObject</em>&nbsp;</td><td>The object for the callback </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a9e0639626b4c1c481cf7448bfdd76a19"></a><!-- doxytag: member="CDepthCamera::m_bEnableIRVideoTransfer" ref="a9e0639626b4c1c481cf7448bfdd76a19" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classCDepthCamera.html#a9e0639626b4c1c481cf7448bfdd76a19">CDepthCamera::m_bEnableIRVideoTransfer</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Is RGB full resolution enabled? </p>
+
+</div>
+</div>
+<a class="anchor" id="a027a53955a0e0339a0c71d96f6e33145"></a><!-- doxytag: member="CDepthCamera::m_bEnableLargeDepthMode" ref="a027a53955a0e0339a0c71d96f6e33145" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classCDepthCamera.html#a027a53955a0e0339a0c71d96f6e33145">CDepthCamera::m_bEnableLargeDepthMode</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Is the large depth mode enabled? </p>
+
+</div>
+</div>
+<a class="anchor" id="a5b50a03643c8ad985e1e6585e9b3b3ca"></a><!-- doxytag: member="CDepthCamera::m_bEnableRGBFullResoltion" ref="a5b50a03643c8ad985e1e6585e9b3b3ca" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classCDepthCamera.html#a5b50a03643c8ad985e1e6585e9b3b3ca">CDepthCamera::m_bEnableRGBFullResoltion</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Is RGB full resolution enabled? </p>
+
+</div>
+</div>
+<a class="anchor" id="a75e26a195d32450dd08a21b16ad968d7"></a><!-- doxytag: member="CDepthCamera::m_bIsInitialized" ref="a75e26a195d32450dd08a21b16ad968d7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classCDepthCamera.html#a75e26a195d32450dd08a21b16ad968d7">CDepthCamera::m_bIsInitialized</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Is the DepthCamera initialized? </p>
+
+</div>
+</div>
+<a class="anchor" id="aeb0853d9a2dd3eb975aa3b343834a05d"></a><!-- doxytag: member="CDepthCamera::m_hCriticalSection" ref="aeb0853d9a2dd3eb975aa3b343834a05d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HANDLE <a class="el" href="classCDepthCamera.html#aeb0853d9a2dd3eb975aa3b343834a05d">CDepthCamera::m_hCriticalSection</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Critical section lock mutex. </p>
+
+</div>
+</div>
+<a class="anchor" id="af01ee8f46a03164ea069c3e823b8bdf0"></a><!-- doxytag: member="CDepthCamera::m_hNewFrameReady" ref="af01ee8f46a03164ea069c3e823b8bdf0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HANDLE <a class="el" href="classCDepthCamera.html#af01ee8f46a03164ea069c3e823b8bdf0">CDepthCamera::m_hNewFrameReady</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Handle to notify when a new frame is received. </p>
+
+</div>
+</div>
+<a class="anchor" id="a582ab44c2edcd75ad8ce1eb0bd05d091"></a><!-- doxytag: member="CDepthCamera::m_pCameraInterfaceBase" ref="a582ab44c2edcd75ad8ce1eb0bd05d091" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTDVCameraInterfaceBase.html">TDVCameraInterfaceBase</a>* <a class="el" href="classCDepthCamera.html#a582ab44c2edcd75ad8ce1eb0bd05d091">CDepthCamera::m_pCameraInterfaceBase</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The camera control object. </p>
+
+</div>
+</div>
+<a class="anchor" id="a89f403c7ac124ae0819fa9cfed6bc0b9"></a><!-- doxytag: member="CDepthCamera::m_pDepthFrame" ref="a89f403c7ac124ae0819fa9cfed6bc0b9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char* <a class="el" href="classCDepthCamera.html#a89f403c7ac124ae0819fa9cfed6bc0b9">CDepthCamera::m_pDepthFrame</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Holds the latest depth frame. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2ab8b014fbf8b14abc427a58254d7e96"></a><!-- doxytag: member="CDepthCamera::m_pPrimary" ref="a2ab8b014fbf8b14abc427a58254d7e96" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char* <a class="el" href="classCDepthCamera.html#a2ab8b014fbf8b14abc427a58254d7e96">CDepthCamera::m_pPrimary</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Holds the latest primary IR frame. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8dc1f715911723a0283e137cc1133643"></a><!-- doxytag: member="CDepthCamera::m_pRGBFrame" ref="a8dc1f715911723a0283e137cc1133643" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char* <a class="el" href="classCDepthCamera.html#a8dc1f715911723a0283e137cc1133643">CDepthCamera::m_pRGBFrame</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Holds the latest RGB frame. </p>
+
+</div>
+</div>
+<a class="anchor" id="a840c579a0a30beda9a0bbab172ed79fb"></a><!-- doxytag: member="CDepthCamera::m_pRGBFullResFrame" ref="a840c579a0a30beda9a0bbab172ed79fb" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char* <a class="el" href="classCDepthCamera.html#a840c579a0a30beda9a0bbab172ed79fb">CDepthCamera::m_pRGBFullResFrame</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Holds the latest RGB full resolution frame. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2b26cf7e5c43d4e7f8fcb57c3ea3f676"></a><!-- doxytag: member="CDepthCamera::m_pSecondary" ref="a2b26cf7e5c43d4e7f8fcb57c3ea3f676" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char* <a class="el" href="classCDepthCamera.html#a2b26cf7e5c43d4e7f8fcb57c3ea3f676">CDepthCamera::m_pSecondary</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Holds the latest secondary IR frame. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/<a class="el" href="DepthCamera_8h_source.html">DepthCamera.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/ZCamera/<a class="el" href="DepthCamera_8h_source.html">DepthCamera.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/ZCamera/<a class="el" href="DepthCamera_8cpp.html">DepthCamera.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -118,7 +1255,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdCallBack</b> (int 
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -127,7 +1264,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>cmdCallBack</b> (int 
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:45 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

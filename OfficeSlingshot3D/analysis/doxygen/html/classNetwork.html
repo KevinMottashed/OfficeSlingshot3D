@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -50,11 +51,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
-<h1>Network Class Reference</h1>  </div>
+<h1>Network Class Reference<br/>
+<small>
+[<a class="el" href="group__Network.html">Network</a>]</small>
+</h1>  </div>
 </div>
 <div class="contents">
 <!-- doxytag: class="Network" --><!-- doxytag: inherits="NetworkSubject" -->
-<p>Abstract class representing the networking component of the application all network interfaces should be able to send and receive data.  
+<p><b>public</b> Abstract class representing the networking component of the application.  
 <a href="#_details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Network_8h_source.html">Network.h</a>&gt;</code></p>
@@ -72,52 +76,92 @@ Inheritance diagram for Network:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3cc2fb4f8fa4d507077e8da85ce5a1c8"></a><!-- doxytag: member="Network::Network" ref="a3cc2fb4f8fa4d507077e8da85ce5a1c8" args="()" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#a3cc2fb4f8fa4d507077e8da85ce5a1c8">Network</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7a4e19cdb4bf0c7ecf82baa643831492"></a><!-- doxytag: member="Network::~Network" ref="a7a4e19cdb4bf0c7ecf82baa643831492" args="()" -->
-virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#a7a4e19cdb4bf0c7ecf82baa643831492">~Network</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#afb5306e2b769c01780aaa44d2c14306d">listen</a> (const std::string &amp;userName)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#a3cc2fb4f8fa4d507077e8da85ce5a1c8">Network</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#a3cc2fb4f8fa4d507077e8da85ce5a1c8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#a7a4e19cdb4bf0c7ecf82baa643831492">~Network</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#a7a4e19cdb4bf0c7ecf82baa643831492"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#afb5306e2b769c01780aaa44d2c14306d">listen</a> (const std::string &amp;userName)=0</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Start listening for connections.  <a href="#afb5306e2b769c01780aaa44d2c14306d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#a105f5e229e0ac9ff2b718dd34112c292">connect</a> (const std::string &amp;ipAddress, const std::string &amp;userName)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#a105f5e229e0ac9ff2b718dd34112c292">connect</a> (const std::string &amp;ipAddress, const std::string &amp;userName)=0</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Attempt to connect to a peer.  <a href="#a105f5e229e0ac9ff2b718dd34112c292"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#a1b0e29fc9936615e76c1db95caba0a9e">disconnect</a> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#a1b0e29fc9936615e76c1db95caba0a9e">disconnect</a> ()=0</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Disconnect from a peer.  <a href="#a1b0e29fc9936615e76c1db95caba0a9e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#a3f6b451fd546f2e44eb2c14661bc1ad3">sendStartGame</a> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#a3f6b451fd546f2e44eb2c14661bc1ad3">sendStartGame</a> ()=0</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a start game message to the peer.  <a href="#a3f6b451fd546f2e44eb2c14661bc1ad3"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#ac60291a8d99468ebc38d085fc0455df0">sendPauseGame</a> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#ac60291a8d99468ebc38d085fc0455df0">sendPauseGame</a> ()=0</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a pause game message to the peer.  <a href="#ac60291a8d99468ebc38d085fc0455df0"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#ae3f72f3003309c6d38105f504db8ce05">sendEndGame</a> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#ae3f72f3003309c6d38105f504db8ce05">sendEndGame</a> ()=0</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send an end game message to the peer.  <a href="#ae3f72f3003309c6d38105f504db8ce05"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#a741e75b2e9adfc188c53e150b4dd4610">sendUserName</a> (const std::string &amp;userName)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#a741e75b2e9adfc188c53e150b4dd4610">sendUserName</a> (const std::string &amp;userName)=0</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send our username to the peer.  <a href="#a741e75b2e9adfc188c53e150b4dd4610"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#aa5e1e44e3cb4862b2c343999c89ce3b5">sendChatMessage</a> (const std::string &amp;message)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#aa5e1e44e3cb4862b2c343999c89ce3b5">sendChatMessage</a> (const std::string &amp;message)=0</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a chat message to the peer.  <a href="#aa5e1e44e3cb4862b2c343999c89ce3b5"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#a189df8819d21d4f1a277ca753453045b">sendVideoData</a> (const <a class="el" href="structVideoData.html">VideoData</a> &amp;video)=0</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send video data to the peer.  <a href="#a189df8819d21d4f1a277ca753453045b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#a9a2eb94c34d8d93f7490184cd2526e62">sendPlayerPosition</a> (const cVector3d &amp;position)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#a9a2eb94c34d8d93f7490184cd2526e62">sendPlayerPosition</a> (const cVector3d &amp;position)=0</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send the players position to the peer.  <a href="#a9a2eb94c34d8d93f7490184cd2526e62"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#aa105332ed8a1325a89f1f3e0a9d27521">sendSlingshotPosition</a> (const cVector3d &amp;position)=0</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send the slingshot position to the peer.  <a href="#aa105332ed8a1325a89f1f3e0a9d27521"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#a477324500341f146fc7fc7411290a424">sendProjectile</a> (const <a class="el" href="classProjectile.html">Projectile</a> &amp;projectile)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#a0bac3128a353f86f12015302e286e59f">sendSlingshotPullback</a> (const cVector3d &amp;position)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send the slingshot pullback position to the peer.  <a href="#a0bac3128a353f86f12015302e286e59f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#a477324500341f146fc7fc7411290a424">sendProjectile</a> (const <a class="el" href="classProjectile.html">Projectile</a> &amp;projectile)=0</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a projectile to the peer.  <a href="#a477324500341f146fc7fc7411290a424"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#ad4fd766e5bae5a3f002a26218b60b426">sendSlingshotPullback</a> ()=0</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a slingshot pullback event to the peer.  <a href="#ad4fd766e5bae5a3f002a26218b60b426"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#a3b910c81b63814007c6ceebb87125287">sendGameOver</a> ()=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a message to the peer letting him know that we have lost the game.  <a href="#a3b910c81b63814007c6ceebb87125287"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#a8fb9019d9d77bac90340545541b2e383">sendPlayerHit</a> (<a class="el" href="group__Common.html#gaa22d3933804e3afcd4eac294dded7434">BodyPart_t</a> bodyPart)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a message to the peer letting him know that we have been hit.  <a href="#a8fb9019d9d77bac90340545541b2e383"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#a28f288d3f5531426ca7e63a4bb1fd0b1">sendPhysicsSync</a> (const <a class="el" href="classPhysicsSync.html">PhysicsSync</a> &amp;sync)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a physics sync object to the peer so that he can synchronize his game.  <a href="#a28f288d3f5531426ca7e63a4bb1fd0b1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#ab84ebbf03390c5ee99a27e2b340e3518">isConnected</a> () const =0</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Determines if we are connected to a peer.  <a href="#ab84ebbf03390c5ee99a27e2b340e3518"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetwork.html#a1e8342d061f8e1b28d50d966e946650b">isListening</a> () const =0</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Determines if we are listening for connections.  <a href="#a1e8342d061f8e1b28d50d966e946650b"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<p>Abstract class representing the networking component of the application all network interfaces should be able to send and receive data. </p>
+<p><b>public</b> Abstract class representing the networking component of the application. </p>
+<p>All network interfaces should be able to send and receive data. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a3cc2fb4f8fa4d507077e8da85ce5a1c8"></a><!-- doxytag: member="Network::Network" ref="a3cc2fb4f8fa4d507077e8da85ce5a1c8" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Network::Network </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7a4e19cdb4bf0c7ecf82baa643831492"></a><!-- doxytag: member="Network::~Network" ref="a7a4e19cdb4bf0c7ecf82baa643831492" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Network::~Network </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
 <hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a105f5e229e0ac9ff2b718dd34112c292"></a><!-- doxytag: member="Network::connect" ref="a105f5e229e0ac9ff2b718dd34112c292" args="(const std::string &amp;ipAddress, const std::string &amp;userName)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual rc_network Network::connect </td>
+          <td class="memname">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> Network::connect </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&nbsp;</td>
           <td class="paramname"> <em>ipAddress</em>, </td>
@@ -140,12 +184,12 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <p>Attempt to connect to a peer. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>ipAddress</em>&nbsp;</td><td>The ip address that we will connect to </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>userName</em>&nbsp;</td><td>The username that will be used to establish the connection </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>ipAddress</em>&nbsp;</td><td>The ip address that we will connect to. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>userName</em>&nbsp;</td><td>The username that will be used to establish the connection. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if we are now connected to the peer </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if we are now connected to the peer. </dd></dl>
 
 <p>Implemented in <a class="el" href="classWinsockNetwork.html#a0f7f289635183b1082894f230a989006">WinsockNetwork</a>, and <a class="el" href="classNetworkReplayer.html#a6d4deeeede0cd5c07b44489a33c113f5">NetworkReplayer</a>.</p>
 
@@ -156,7 +200,7 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual rc_network Network::disconnect </td>
+          <td class="memname">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> Network::disconnect </td>
           <td>(</td>
           <td class="paramname"></td>
           <td>&nbsp;)&nbsp;</td>
@@ -167,7 +211,7 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <div class="memdoc">
 
 <p>Disconnect from a peer. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if we successfully disconnected </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if we successfully disconnected. </dd></dl>
 
 <p>Implemented in <a class="el" href="classWinsockNetwork.html#abd947a2edb4d5053286f25b4c9f041c1">WinsockNetwork</a>, and <a class="el" href="classNetworkReplayer.html#a3aab774a33a87446aa874871fea54655">NetworkReplayer</a>.</p>
 
@@ -189,7 +233,7 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <div class="memdoc">
 
 <p>Determines if we are connected to a peer. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>true if we are connected to a peer </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if we are connected to a peer. </dd></dl>
 
 <p>Implemented in <a class="el" href="classWinsockNetwork.html#a8c621566b7ce641d86797569346fcaad">WinsockNetwork</a>, and <a class="el" href="classNetworkReplayer.html#a3656c06c32e76a30ac48055a0695d99a">NetworkReplayer</a>.</p>
 
@@ -211,7 +255,7 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <div class="memdoc">
 
 <p>Determines if we are listening for connections. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>true if we are listening for connections </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if we are listening for connections. </dd></dl>
 
 <p>Implemented in <a class="el" href="classWinsockNetwork.html#a7cbc0e15323359b9bdb862342e406f23">WinsockNetwork</a>, and <a class="el" href="classNetworkReplayer.html#a869c34b845f18eb262ead68542662aa4">NetworkReplayer</a>.</p>
 
@@ -222,7 +266,7 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual rc_network Network::listen </td>
+          <td class="memname">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> Network::listen </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&nbsp;</td>
           <td class="paramname"> <em>userName</em></td>
@@ -236,11 +280,11 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <p>Start listening for connections. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>userName</em>&nbsp;</td><td>The username used to establish the connection </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>userName</em>&nbsp;</td><td>The username used to establish the connection. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if listening was successful </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if listening was successful. </dd></dl>
 
 <p>Implemented in <a class="el" href="classWinsockNetwork.html#a6f2f806a0e246a46ff6d0c2006cddd43">WinsockNetwork</a>, and <a class="el" href="classNetworkReplayer.html#a54f644fe92941370481c45989bad6615">NetworkReplayer</a>.</p>
 
@@ -251,7 +295,7 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual rc_network Network::sendChatMessage </td>
+          <td class="memname">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> Network::sendChatMessage </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&nbsp;</td>
           <td class="paramname"> <em>message</em></td>
@@ -265,11 +309,11 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <p>Send a chat message to the peer. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>message</em>&nbsp;</td><td>The chat message that will be sent to the peer. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>message</em>&nbsp;</td><td>The chat message that will be sent to the peer. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received. </dd></dl>
 
 <p>Implemented in <a class="el" href="classWinsockNetwork.html#a420d4e6b5c698476a94dcdb503233de7">WinsockNetwork</a>, and <a class="el" href="classNetworkReplayer.html#a689bc26f935bb0d7f72d3f69cea6e98c">NetworkReplayer</a>.</p>
 
@@ -280,7 +324,7 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual rc_network Network::sendEndGame </td>
+          <td class="memname">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> Network::sendEndGame </td>
           <td>(</td>
           <td class="paramname"></td>
           <td>&nbsp;)&nbsp;</td>
@@ -291,9 +335,31 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <div class="memdoc">
 
 <p>Send an end game message to the peer. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received. </dd></dl>
 
 <p>Implemented in <a class="el" href="classWinsockNetwork.html#a877c8001bbd880295e0458c3377dca25">WinsockNetwork</a>, and <a class="el" href="classNetworkReplayer.html#a33c840b356485101092fe220d4aa73fb">NetworkReplayer</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3b910c81b63814007c6ceebb87125287"></a><!-- doxytag: member="Network::sendGameOver" ref="a3b910c81b63814007c6ceebb87125287" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> Network::sendGameOver </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Send a message to the peer letting him know that we have lost the game. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received. </dd></dl>
+
+<p>Implemented in <a class="el" href="classWinsockNetwork.html#aa2729abffd0d31c14e11d8e6d0eed13a">WinsockNetwork</a>, and <a class="el" href="classNetworkReplayer.html#a79fb2c1ab0000c403b74784e66aaf75c">NetworkReplayer</a>.</p>
 
 </div>
 </div>
@@ -302,7 +368,7 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual rc_network Network::sendPauseGame </td>
+          <td class="memname">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> Network::sendPauseGame </td>
           <td>(</td>
           <td class="paramname"></td>
           <td>&nbsp;)&nbsp;</td>
@@ -313,9 +379,67 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <div class="memdoc">
 
 <p>Send a pause game message to the peer. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received. </dd></dl>
 
 <p>Implemented in <a class="el" href="classWinsockNetwork.html#ae4412629d2ee052afc41c81f36cfad50">WinsockNetwork</a>, and <a class="el" href="classNetworkReplayer.html#aa54ba87a728ebdb0f23a82e409094468">NetworkReplayer</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a28f288d3f5531426ca7e63a4bb1fd0b1"></a><!-- doxytag: member="Network::sendPhysicsSync" ref="a28f288d3f5531426ca7e63a4bb1fd0b1" args="(const PhysicsSync &amp;sync)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> Network::sendPhysicsSync </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classPhysicsSync.html">PhysicsSync</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>sync</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Send a physics sync object to the peer so that he can synchronize his game. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>sync</em>&nbsp;</td><td>The sync object. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received. </dd></dl>
+
+<p>Implemented in <a class="el" href="classWinsockNetwork.html#a2f3494e76bc83bd0f15928b1d9fa52b1">WinsockNetwork</a>, and <a class="el" href="classNetworkReplayer.html#a587a3173eac92bac0ca5dc39224ad45b">NetworkReplayer</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8fb9019d9d77bac90340545541b2e383"></a><!-- doxytag: member="Network::sendPlayerHit" ref="a8fb9019d9d77bac90340545541b2e383" args="(BodyPart_t bodyPart)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> Network::sendPlayerHit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Common.html#gaa22d3933804e3afcd4eac294dded7434">BodyPart_t</a>&nbsp;</td>
+          <td class="paramname"> <em>bodyPart</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Send a message to the peer letting him know that we have been hit. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>bodyPart</em>&nbsp;</td><td>The body part that was hit. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received. </dd></dl>
+
+<p>Implemented in <a class="el" href="classWinsockNetwork.html#a5dd67044358bfcbe7f70318249cb260d">WinsockNetwork</a>, and <a class="el" href="classNetworkReplayer.html#afff40828e09f16c4c47a8775d84f4bd3">NetworkReplayer</a>.</p>
 
 </div>
 </div>
@@ -324,7 +448,7 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual rc_network Network::sendPlayerPosition </td>
+          <td class="memname">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> Network::sendPlayerPosition </td>
           <td>(</td>
           <td class="paramtype">const cVector3d &amp;&nbsp;</td>
           <td class="paramname"> <em>position</em></td>
@@ -338,11 +462,11 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <p>Send the players position to the peer. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>position</em>&nbsp;</td><td>Our player position that will be sent to the peer. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>position</em>&nbsp;</td><td>Our player position that will be sent to the peer. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received. </dd></dl>
 
 <p>Implemented in <a class="el" href="classWinsockNetwork.html#ab27dd7393a89573f9e75e1a50efbc833">WinsockNetwork</a>, and <a class="el" href="classNetworkReplayer.html#a7c9a5203b80840fee0157d506ff14f61">NetworkReplayer</a>.</p>
 
@@ -353,7 +477,7 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual rc_network Network::sendProjectile </td>
+          <td class="memname">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> Network::sendProjectile </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classProjectile.html">Projectile</a> &amp;&nbsp;</td>
           <td class="paramname"> <em>projectile</em></td>
@@ -367,22 +491,22 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <p>Send a projectile to the peer. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>projectile</em>&nbsp;</td><td>The projectile that will be sent to the peer. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>projectile</em>&nbsp;</td><td>The projectile that will be sent to the peer. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received. </dd></dl>
 
 <p>Implemented in <a class="el" href="classWinsockNetwork.html#accb610c314dd94a1649bcfe101c93997">WinsockNetwork</a>, and <a class="el" href="classNetworkReplayer.html#a7ebdbb74bb8e3b1fdc877d3c8157d342">NetworkReplayer</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="aa105332ed8a1325a89f1f3e0a9d27521"></a><!-- doxytag: member="Network::sendSlingshotPosition" ref="aa105332ed8a1325a89f1f3e0a9d27521" args="(const cVector3d &amp;position)=0" -->
+<a class="anchor" id="a0bac3128a353f86f12015302e286e59f"></a><!-- doxytag: member="Network::sendSlingshotPullback" ref="a0bac3128a353f86f12015302e286e59f" args="(const cVector3d &amp;position)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual rc_network Network::sendSlingshotPosition </td>
+          <td class="memname">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> Network::sendSlingshotPullback </td>
           <td>(</td>
           <td class="paramtype">const cVector3d &amp;&nbsp;</td>
           <td class="paramname"> <em>position</em></td>
@@ -393,39 +517,17 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 </div>
 <div class="memdoc">
 
-<p>Send the slingshot position to the peer. </p>
+<p>Send the slingshot pullback position to the peer. </p>
+<p>The pullback position is the position of the sling when the slingshot is being fired. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>position</em>&nbsp;</td><td>Our slingshot position that will be sent to the peer. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>position</em>&nbsp;</td><td>Our slingshot position that will be sent to the peer. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received. </dd></dl>
 
-<p>Implemented in <a class="el" href="classWinsockNetwork.html#af0456294cf39244cc59f1ca81e2aa2d3">WinsockNetwork</a>, and <a class="el" href="classNetworkReplayer.html#ad8ad840c17aa86b890857ef714eb019a">NetworkReplayer</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ad4fd766e5bae5a3f002a26218b60b426"></a><!-- doxytag: member="Network::sendSlingshotPullback" ref="ad4fd766e5bae5a3f002a26218b60b426" args="()=0" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual rc_network Network::sendSlingshotPullback </td>
-          <td>(</td>
-          <td class="paramname"></td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [pure virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Send a slingshot pullback event to the peer. </p>
-<p>This lets the peer know that we have started to pull back our slingshot. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received </dd></dl>
-
-<p>Implemented in <a class="el" href="classWinsockNetwork.html#a0a8ced3a30f215e71114b9fa94b3d1e3">WinsockNetwork</a>, and <a class="el" href="classNetworkReplayer.html#a98342ea3e802e9108b6d3329d977eade">NetworkReplayer</a>.</p>
+<p>Implemented in <a class="el" href="classWinsockNetwork.html#a587efadbb4e7189d749a38bff7cdf504">WinsockNetwork</a>, and <a class="el" href="classNetworkReplayer.html#a97ead6562741c489a632dcbcf5af1f02">NetworkReplayer</a>.</p>
 
 </div>
 </div>
@@ -434,7 +536,7 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual rc_network Network::sendStartGame </td>
+          <td class="memname">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> Network::sendStartGame </td>
           <td>(</td>
           <td class="paramname"></td>
           <td>&nbsp;)&nbsp;</td>
@@ -445,7 +547,7 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <div class="memdoc">
 
 <p>Send a start game message to the peer. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received. </dd></dl>
 
 <p>Implemented in <a class="el" href="classWinsockNetwork.html#a20ed4411ec34336c6a213b15cc3fcad9">WinsockNetwork</a>, and <a class="el" href="classNetworkReplayer.html#aa9f70d4eee3d630c36c2bbc71bb7e195">NetworkReplayer</a>.</p>
 
@@ -456,7 +558,7 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual rc_network Network::sendUserName </td>
+          <td class="memname">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> Network::sendUserName </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&nbsp;</td>
           <td class="paramname"> <em>userName</em></td>
@@ -468,51 +570,22 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <div class="memdoc">
 
 <p>Send our username to the peer. </p>
-<p>The user name is sent when the connection is established so this should only be used if a user changes there username </p>
+<p>The user name is sent when the connection is established so this should only be used if a user changes there username. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>userName</em>&nbsp;</td><td>Our new username that will be sent to the peer </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>userName</em>&nbsp;</td><td>Our new username that will be sent to the peer. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received. </dd></dl>
 
 <p>Implemented in <a class="el" href="classWinsockNetwork.html#ae76b6c306ef15d162fe652c38c78d4e2">WinsockNetwork</a>, and <a class="el" href="classNetworkReplayer.html#a49bb75f65853c34c0bdafa6aba066056">NetworkReplayer</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a189df8819d21d4f1a277ca753453045b"></a><!-- doxytag: member="Network::sendVideoData" ref="a189df8819d21d4f1a277ca753453045b" args="(const VideoData &amp;video)=0" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual rc_network Network::sendVideoData </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structVideoData.html">VideoData</a> &amp;&nbsp;</td>
-          <td class="paramname"> <em>video</em></td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [pure virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Send video data to the peer. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>video</em>&nbsp;</td><td>The video data that will be sent to the peer. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received </dd></dl>
-
-<p>Implemented in <a class="el" href="classWinsockNetwork.html#a36362dbaa70fbe00dd48fded21464888">WinsockNetwork</a>, and <a class="el" href="classNetworkReplayer.html#ab7f69701316a3387da91d2146ea97b5e">NetworkReplayer</a>.</p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/<a class="el" href="Network_8h_source.html">Network.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Network.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Network/<a class="el" href="Network_8h_source.html">Network.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Network/<a class="el" href="Network_8cpp.html">Network.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -520,7 +593,7 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -529,7 +602,7 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:46 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

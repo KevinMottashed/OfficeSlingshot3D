@@ -14,7 +14,7 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="11" level="0" />
+<coupling_between_objects value="12" level="0" />
 <IF4 value="0" level="0" />
 <IF4_per_member_function value="********" level="0" />
 <IF4_visible value="0" level="0" />
@@ -35,7 +35,7 @@
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="55" />
+<source_reference file="../../UserInterface/MainDlg.h" line="121" />
 </extent>
 <name>FalconReplayer</name>
 <visible>true</visible>
@@ -69,15 +69,15 @@
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/Game.cpp" line="12" />
+<source_reference file="../../Game/Game.cpp" line="13" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/Game.h" line="26" />
+<source_reference file="../../Game/Game.h" line="29" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Game/Game.h" line="72" />
+<source_reference file="../../Game/Game.h" line="115" />
 </extent>
 <name>Mediator</name>
 <visible>true</visible>
@@ -104,47 +104,47 @@
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Mediator/Mediator.h" line="31" />
+<source_reference file="../../Mediator/Mediator.h" line="41" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Mediator/Mediator.h" line="32" />
+<source_reference file="../../Mediator/Mediator.h" line="42" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Mediator/Mediator.h" line="33" />
+<source_reference file="../../Mediator/Mediator.h" line="43" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Mediator/Mediator.h" line="34" />
+<source_reference file="../../Mediator/Mediator.h" line="44" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Mediator/Mediator.h" line="35" />
+<source_reference file="../../Mediator/Mediator.h" line="45" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Mediator/Mediator.h" line="88" />
+<source_reference file="../../Mediator/Mediator.h" line="184" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Mediator/Mediator.h" line="89" />
+<source_reference file="../../Mediator/Mediator.h" line="189" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Mediator/Mediator.h" line="90" />
+<source_reference file="../../Mediator/Mediator.h" line="194" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Mediator/Mediator.h" line="91" />
+<source_reference file="../../Mediator/Mediator.h" line="199" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Mediator/Mediator.h" line="92" />
+<source_reference file="../../Mediator/Mediator.h" line="204" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Mediator/Mediator.h" line="96" />
+<source_reference file="../../Mediator/Mediator.h" line="214" />
 </extent>
 <name>NetworkReplayer</name>
 <visible>true</visible>
@@ -159,19 +159,30 @@
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Replay/NetworkReplayer.h" line="19" />
+<source_reference file="../../Replay/NetworkReplayer.h" line="28" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Replay/NetworkReplayer.h" line="20" />
+<source_reference file="../../Replay/NetworkReplayer.h" line="29" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Replay/NetworkReplayer.h" line="54" />
+<source_reference file="../../Replay/NetworkReplayer.h" line="168" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Replay/NetworkReplayer.h" line="55" />
+<source_reference file="../../Replay/NetworkReplayer.h" line="169" />
+</extent>
+<name>NovintFalcon</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Falcon/NovintFalcon.cpp" line="18" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Falcon/NovintFalcon.h" line="21" />
 </extent>
 <name>OfficeSlingshot3D</name>
 <visible>true</visible>
@@ -190,27 +201,27 @@
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Main/OfficeSlingshot3D.h" line="19" />
+<source_reference file="../../Main/OfficeSlingshot3D.h" line="28" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Main/OfficeSlingshot3D.h" line="20" />
+<source_reference file="../../Main/OfficeSlingshot3D.h" line="29" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Main/OfficeSlingshot3D.h" line="21" />
+<source_reference file="../../Main/OfficeSlingshot3D.h" line="30" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Main/OfficeSlingshot3D.h" line="34" />
+<source_reference file="../../Main/OfficeSlingshot3D.h" line="53" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Main/OfficeSlingshot3D.h" line="35" />
+<source_reference file="../../Main/OfficeSlingshot3D.h" line="58" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Main/OfficeSlingshot3D.h" line="36" />
+<source_reference file="../../Main/OfficeSlingshot3D.h" line="63" />
 </extent>
 <name>Replayer</name>
 <visible>true</visible>
@@ -244,11 +255,11 @@
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Jacket/SmartClothingManager.cpp" line="14" />
+<source_reference file="../../Jacket/SmartClothingManager.cpp" line="18" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Jacket/SmartClothingManager.h" line="18" />
+<source_reference file="../../Jacket/SmartClothingManager.h" line="20" />
 </extent>
 <name>UserInterfaceReplayer</name>
 <visible>true</visible>
@@ -282,7 +293,7 @@
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../ZCamera/ZCamera.h" line="43" />
+<source_reference file="../../ZCamera/ZCamera.h" line="71" />
 </extent>
 <name>ZCameraReplayer</name>
 <visible>true</visible>
@@ -297,19 +308,19 @@
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Replay/ZCameraReplayer.h" line="18" />
+<source_reference file="../../Replay/ZCameraReplayer.h" line="24" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Replay/ZCameraReplayer.h" line="19" />
+<source_reference file="../../Replay/ZCameraReplayer.h" line="25" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Replay/ZCameraReplayer.h" line="32" />
+<source_reference file="../../Replay/ZCameraReplayer.h" line="49" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Replay/ZCameraReplayer.h" line="33" />
+<source_reference file="../../Replay/ZCameraReplayer.h" line="50" />
 </extent>
 </client_module>
 <supplier_module>

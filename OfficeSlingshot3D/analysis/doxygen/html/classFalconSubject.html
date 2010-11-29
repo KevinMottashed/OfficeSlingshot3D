@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -48,7 +49,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <h1>FalconSubject Class Reference</h1>  </div>
 </div>
@@ -73,22 +75,63 @@ Inheritance diagram for FalconSubject:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1c7a53a4d28fbb83d305fd62470bfaa2"></a><!-- doxytag: member="FalconSubject::FalconSubject" ref="a1c7a53a4d28fbb83d305fd62470bfaa2" args="()" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFalconSubject.html#a1c7a53a4d28fbb83d305fd62470bfaa2">FalconSubject</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afd64db787e2371dc09b73917209f3566"></a><!-- doxytag: member="FalconSubject::~FalconSubject" ref="afd64db787e2371dc09b73917209f3566" args="()" -->
-virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFalconSubject.html#afd64db787e2371dc09b73917209f3566">~FalconSubject</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFalconSubject.html#a1c7a53a4d28fbb83d305fd62470bfaa2">FalconSubject</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#a1c7a53a4d28fbb83d305fd62470bfaa2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFalconSubject.html#afd64db787e2371dc09b73917209f3566">~FalconSubject</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#afd64db787e2371dc09b73917209f3566"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFalconSubject.html#a081d12a24abd16b88b69230f82ce1ec7">attach</a> (<a class="el" href="classFalconObserver.html">FalconObserver</a> *observer)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Attach a new observer to this subject.  <a href="#a081d12a24abd16b88b69230f82ce1ec7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFalconSubject.html#aaa69f14bf9659f783b9d95da47e55868">detach</a> (<a class="el" href="classFalconObserver.html">FalconObserver</a> *observer)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Detach an observer from this subject.  <a href="#aaa69f14bf9659f783b9d95da47e55868"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFalconSubject.html#abd19e56b3ffb433705576e361cc5b28f">notify</a> (FalconUpdateContext context, const void *data=NULL)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFalconSubject.html#abd19e56b3ffb433705576e361cc5b28f">notify</a> (<a class="el" href="FalconObserver_8h.html#a2c11e5186fe6519d1fe5d6f763ed08e6">FalconUpdateContext</a> context, const void *data=NULL)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Notifies all observers that a new update is available.  <a href="#abd19e56b3ffb433705576e361cc5b28f"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classFalconObserver.html">FalconObserver</a> * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFalconSubject.html#aa52b69ed1b6e87d0b118409c71712688">m_observers</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The list of observers currently observing this subject.  <a href="#aa52b69ed1b6e87d0b118409c71712688"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>Abstract class in the observer pattern for the falcon. </p>
 <p>This class is used to report falcon related updates to the observers. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a1c7a53a4d28fbb83d305fd62470bfaa2"></a><!-- doxytag: member="FalconSubject::FalconSubject" ref="a1c7a53a4d28fbb83d305fd62470bfaa2" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FalconSubject::FalconSubject </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="afd64db787e2371dc09b73917209f3566"></a><!-- doxytag: member="FalconSubject::~FalconSubject" ref="afd64db787e2371dc09b73917209f3566" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FalconSubject::~FalconSubject </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
 <hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a081d12a24abd16b88b69230f82ce1ec7"></a><!-- doxytag: member="FalconSubject::attach" ref="a081d12a24abd16b88b69230f82ce1ec7" args="(FalconObserver *observer)" -->
 <div class="memitem">
@@ -149,7 +192,7 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
         <tr>
           <td class="memname">void FalconSubject::notify </td>
           <td>(</td>
-          <td class="paramtype">FalconUpdateContext&nbsp;</td>
+          <td class="paramtype"><a class="el" href="FalconObserver_8h.html#a2c11e5186fe6519d1fe5d6f763ed08e6">FalconUpdateContext</a>&nbsp;</td>
           <td class="paramname"> <em>context</em>, </td>
         </tr>
         <tr>
@@ -178,9 +221,25 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 
 </div>
 </div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="aa52b69ed1b6e87d0b118409c71712688"></a><!-- doxytag: member="FalconSubject::m_observers" ref="aa52b69ed1b6e87d0b118409c71712688" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classFalconObserver.html">FalconObserver</a>*&gt; <a class="el" href="classFalconSubject.html#aa52b69ed1b6e87d0b118409c71712688">FalconSubject::m_observers</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The list of observers currently observing this subject. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Falcon/<a class="el" href="FalconSubject_8h_source.html">FalconSubject.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Falcon/FalconSubject.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Falcon/<a class="el" href="FalconSubject_8h_source.html">FalconSubject.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Falcon/<a class="el" href="FalconSubject_8cpp.html">FalconSubject.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -188,7 +247,7 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -197,7 +256,7 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:45 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

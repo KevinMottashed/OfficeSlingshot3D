@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -48,7 +49,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a>  </div>
   <div class="headertitle">
 <h1>VirtualAvatar Class Reference</h1>  </div>
 </div>
@@ -61,20 +65,92 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#af35317b6992d361235debb2b05d0ecb9">VirtualAvatar</a> (cWorld *world, cVector3d startingPosition, bool isLocal)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#af35317b6992d361235debb2b05d0ecb9">VirtualAvatar</a> (cWorld *world, cVector3d startingPosition, bool <a class="el" href="classVirtualAvatar.html#a4fc13aa9452c8ffa383419de764907a6">isLocal</a>)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Contructor.  <a href="#af35317b6992d361235debb2b05d0ecb9"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a804f465f57b7baf6f10cd92b1ed9a907"></a><!-- doxytag: member="VirtualAvatar::~VirtualAvatar" ref="a804f465f57b7baf6f10cd92b1ed9a907" args="(void)" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#a804f465f57b7baf6f10cd92b1ed9a907">~VirtualAvatar</a> (void)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#a804f465f57b7baf6f10cd92b1ed9a907">~VirtualAvatar</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#a804f465f57b7baf6f10cd92b1ed9a907"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#a7055e90972db0a5e8ad47a2e11a04870">rotate</a> (double ang)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Rotate the avatar.  <a href="#a7055e90972db0a5e8ad47a2e11a04870"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#a784e340db30cc9cb6cecb47cedd03c1c">translate</a> (double ang)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Translate (move) the avatar.  <a href="#a784e340db30cc9cb6cecb47cedd03c1c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#a8f96410a9875f2f4823a1f5f0d0146f3">updateBoundaries</a> (double ang, cVector3d position)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Update boundaries when the avatar is moved or rotated.  <a href="#a8f96410a9875f2f4823a1f5f0d0146f3"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a76eb4880060cb9af5ac602197186d999"></a><!-- doxytag: member="VirtualAvatar::isInHitBox" ref="a76eb4880060cb9af5ac602197186d999" args="(cVector3d ballPos)" -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#a76eb4880060cb9af5ac602197186d999">isInHitBox</a> (cVector3d ballPos)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns true if the point is in the balls hit box. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#a76eb4880060cb9af5ac602197186d999">isInHitBox</a> (cVector3d ballPos)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns true if the point is in the balls hit box.  <a href="#a76eb4880060cb9af5ac602197186d999"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Common.html#gaa22d3933804e3afcd4eac294dded7434">BodyPart_t</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#a3aa509b73400d4ff04c11d4577dc3e23">getHitBodyPart</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieves the body part hit by the ball.  <a href="#a3aa509b73400d4ff04c11d4577dc3e23"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#addae7f6e8d0d9f18b930f6008d648d57">getChestMin</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve the chest hit box minimum value.  <a href="#addae7f6e8d0d9f18b930f6008d648d57"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#ae1d5566e6d4cfde65e720fc0e12f2158">getChestMax</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve the chest hit box maximum value.  <a href="#ae1d5566e6d4cfde65e720fc0e12f2158"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#a84f58ef6d95474c385be22a6dac13fb5">getRightArmMin</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve the right arm hit box minimum value.  <a href="#a84f58ef6d95474c385be22a6dac13fb5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#a721ad73e986d2fe81e13240ff6033539">getRightArmMax</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve the right arm hit box maximum value.  <a href="#a721ad73e986d2fe81e13240ff6033539"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#a2a3a7500c61cd68f3a4aaf6e418189ea">getLeftArmMin</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve the left arm hit box minimum value.  <a href="#a2a3a7500c61cd68f3a4aaf6e418189ea"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#a3de115a2db03a1658d2c63915a375007">getLeftArmMax</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve the left arm hit box maximum value.  <a href="#a3de115a2db03a1658d2c63915a375007"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#a4d40d049a17f789e1984fb7082a76151">getHeadMin</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve the head hit box minimum value.  <a href="#a4d40d049a17f789e1984fb7082a76151"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#ab75a176f73437bf434214ad3ca8affb5">getHeadMax</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve the head hit box maximum value.  <a href="#ab75a176f73437bf434214ad3ca8affb5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#adeebf871ccbfefd089688d5b319c3552">resetPosition</a> (cVector3d startingPosition, bool <a class="el" href="classVirtualAvatar.html#a4fc13aa9452c8ffa383419de764907a6">isLocal</a>)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Resets the avatar to its starting position.  <a href="#adeebf871ccbfefd089688d5b319c3552"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#aa6949c775be0bccce84dbbe9198d3771">createBoundaries</a> (cVector3d startingPosition)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates the vertices associated to the boundary box for hit detection.  <a href="#aa6949c775be0bccce84dbbe9198d3771"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#a8146bfbfa0a06793090d2b764ded853e">createMeshCube</a> (cMesh *a_mesh, cVector3d minVector, cVector3d maxVector)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates the mesh object with the correct boundary points.  <a href="#a8146bfbfa0a06793090d2b764ded853e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#aea9afe75a5bfad869db1ced0a590d7cb">translate</a> (double xTrans, double yTrans)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Translate (move) the avatar.  <a href="#aea9afe75a5bfad869db1ced0a590d7cb"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cMesh *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#ad2f73d5aba65c0b29d844cc077eff98d">avatarMesh</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The mesh that displays the avatar.  <a href="#ad2f73d5aba65c0b29d844cc077eff98d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cMesh *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#af0f3b47d881731bf27abbd67255dc97d">chestHitBox</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The mesh for the chest hit box.  <a href="#af0f3b47d881731bf27abbd67255dc97d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#a5352c868424b7150961ea8e5a16984cc">chestMin</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The bottom-left corner of the chest bounding box.  <a href="#a5352c868424b7150961ea8e5a16984cc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#aceb94343279af8f784a2cea1a410c9e8">chestMax</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The top-right corner of the chest bounding box.  <a href="#aceb94343279af8f784a2cea1a410c9e8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cMesh *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#ae9b429b8a247e1a29fea108874eb7dce">rArmHitBox</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The mesh for the right arm hit box.  <a href="#ae9b429b8a247e1a29fea108874eb7dce"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#a8120ab6899cc4554f84a5c4056533418">rArmMin</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The bottom-left corner of the right arm bounding box.  <a href="#a8120ab6899cc4554f84a5c4056533418"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#a66f2808133889d1bd94f9ea6281581d0">rArmMax</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The top-right corner of the right arm bounding box.  <a href="#a66f2808133889d1bd94f9ea6281581d0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cMesh *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#ad38788e2dfb19246bb43d0f1ce83be71">lArmHitBox</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The mesh for the left arm hit box.  <a href="#ad38788e2dfb19246bb43d0f1ce83be71"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#a0a20bc90802d555b7fa17e4e7b46e05e">lArmMin</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The bottom-left corner of the left arm bounding box.  <a href="#a0a20bc90802d555b7fa17e4e7b46e05e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#aca57b6beb7bba7ad5be9f8f9b28ff40b">lArmMax</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The top-right corner of the left arm bounding box.  <a href="#aca57b6beb7bba7ad5be9f8f9b28ff40b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cMesh *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#ad81b4c5278783a6d8a378eef8f58f48f">headHitBox</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The mesh for the left arm hit box.  <a href="#ad81b4c5278783a6d8a378eef8f58f48f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#ab25b110bae45013f861bcda0f32c6b71">headMin</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The bottom-left corner of the left arm bounding box.  <a href="#ab25b110bae45013f861bcda0f32c6b71"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#a64c73e9f0b994882d25d0ec520088781">headMax</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The top-right corner of the left arm bounding box.  <a href="#a64c73e9f0b994882d25d0ec520088781"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#a4fc13aa9452c8ffa383419de764907a6">isLocal</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">True if the avatar belongs to the local player.  <a href="#a4fc13aa9452c8ffa383419de764907a6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Common.html#gaa22d3933804e3afcd4eac294dded7434">BodyPart_t</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#a026378f08de33e3167988ad718ad5208">hitPart</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The body part hit by the collision.  <a href="#a026378f08de33e3167988ad718ad5208"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#a626c886e9e04175ccaa19838964d44e8">iniChestMin</a> = cVector3d(-0.3, 0.0, -0.4)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The initial position of the chest hit box's minimum value.  <a href="#a626c886e9e04175ccaa19838964d44e8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#a5db5ec0d108774ed27f88ee1e4c5ca24">iniChestMax</a> = cVector3d(0.3, 0.8, 0.4)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The initial position of the chest hit box's maximum value.  <a href="#a5db5ec0d108774ed27f88ee1e4c5ca24"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#a3fe6aaba9ce2a7ac92de83804d87f033">iniLeftArmMin</a> = cVector3d(-0.5, 0.0, -0.4)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The initial position of the left arm hit box's minimum value.  <a href="#a3fe6aaba9ce2a7ac92de83804d87f033"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#a2fa0322a9753ea096b67cc696f4e2320">iniLeftArmMax</a> = cVector3d(-0.3, 0.8, 0.4)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The initial position of the left arm hit box's maximum value.  <a href="#a2fa0322a9753ea096b67cc696f4e2320"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#a2a54aa65e951c8d61b16ed899124f66d">iniRightArmMin</a> = cVector3d(0.3, 0.0, -0.4)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The initial position of the right arm hit box's minimum value.  <a href="#a2a54aa65e951c8d61b16ed899124f66d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#aaf9143cc7ac2f51e89f56aa83e55e0d9">iniRightArmMax</a> = cVector3d(0.5, 0.8, 0.4)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The initial position of the right arm hit box's maximum value.  <a href="#aaf9143cc7ac2f51e89f56aa83e55e0d9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#ad469fe93d42ed6335c0e2d59e2ab8d7b">iniHeadMin</a> = cVector3d(-0.15, 0.8, -0.4)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The initial position of the head hit box's minimum value.  <a href="#ad469fe93d42ed6335c0e2d59e2ab8d7b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualAvatar.html#a08358e8f3789e4e7b64fa5d2023347e6">iniHeadMax</a> = cVector3d(0.15, 1.3, 0.4)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The initial position of the head hit box's maximum value.  <a href="#a08358e8f3789e4e7b64fa5d2023347e6"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>Represents an avatar in the 3d environment. </p>
@@ -115,14 +191,346 @@ bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>world</em>&nbsp;</td><td>The chai3d world to which the avatar belongs. </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>startingPosition</em>&nbsp;</td><td>The avatar's position. </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>true</em>&nbsp;</td><td>if the avatar is the local avatar. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>isLocal</em>&nbsp;</td><td>True if the avatar is the local avatar. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
+<a class="anchor" id="a804f465f57b7baf6f10cd92b1ed9a907"></a><!-- doxytag: member="VirtualAvatar::~VirtualAvatar" ref="a804f465f57b7baf6f10cd92b1ed9a907" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VirtualAvatar::~VirtualAvatar </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="aa6949c775be0bccce84dbbe9198d3771"></a><!-- doxytag: member="VirtualAvatar::createBoundaries" ref="aa6949c775be0bccce84dbbe9198d3771" args="(cVector3d startingPosition)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VirtualAvatar::createBoundaries </td>
+          <td>(</td>
+          <td class="paramtype">cVector3d&nbsp;</td>
+          <td class="paramname"> <em>startingPosition</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Creates the vertices associated to the boundary box for hit detection. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>startingPosition</em>&nbsp;</td><td>The avatar's starting position </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8146bfbfa0a06793090d2b764ded853e"></a><!-- doxytag: member="VirtualAvatar::createMeshCube" ref="a8146bfbfa0a06793090d2b764ded853e" args="(cMesh *a_mesh, cVector3d minVector, cVector3d maxVector)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VirtualAvatar::createMeshCube </td>
+          <td>(</td>
+          <td class="paramtype">cMesh *&nbsp;</td>
+          <td class="paramname"> <em>a_mesh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cVector3d&nbsp;</td>
+          <td class="paramname"> <em>minVector</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cVector3d&nbsp;</td>
+          <td class="paramname"> <em>maxVector</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Creates the mesh object with the correct boundary points. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>a_mesh</em>&nbsp;</td><td>The mesh object </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>minVector</em>&nbsp;</td><td>Vector representing the minimum of the box </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maxVector</em>&nbsp;</td><td>Vector representing the maximum of the box </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae1d5566e6d4cfde65e720fc0e12f2158"></a><!-- doxytag: member="VirtualAvatar::getChestMax" ref="ae1d5566e6d4cfde65e720fc0e12f2158" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d VirtualAvatar::getChestMax </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the chest hit box maximum value. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The chest hit box's maximum </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="addae7f6e8d0d9f18b930f6008d648d57"></a><!-- doxytag: member="VirtualAvatar::getChestMin" ref="addae7f6e8d0d9f18b930f6008d648d57" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d VirtualAvatar::getChestMin </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the chest hit box minimum value. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The chest hit box's minimum </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab75a176f73437bf434214ad3ca8affb5"></a><!-- doxytag: member="VirtualAvatar::getHeadMax" ref="ab75a176f73437bf434214ad3ca8affb5" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d VirtualAvatar::getHeadMax </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the head hit box maximum value. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The head hit box's maximum </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4d40d049a17f789e1984fb7082a76151"></a><!-- doxytag: member="VirtualAvatar::getHeadMin" ref="a4d40d049a17f789e1984fb7082a76151" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d VirtualAvatar::getHeadMin </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the head hit box minimum value. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The head hit box's minimum </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3aa509b73400d4ff04c11d4577dc3e23"></a><!-- doxytag: member="VirtualAvatar::getHitBodyPart" ref="a3aa509b73400d4ff04c11d4577dc3e23" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Common.html#gaa22d3933804e3afcd4eac294dded7434">BodyPart_t</a> VirtualAvatar::getHitBodyPart </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieves the body part hit by the ball. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The body part index hit by the ball </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3de115a2db03a1658d2c63915a375007"></a><!-- doxytag: member="VirtualAvatar::getLeftArmMax" ref="a3de115a2db03a1658d2c63915a375007" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d VirtualAvatar::getLeftArmMax </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the left arm hit box maximum value. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The left arm hit box's maximum </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2a3a7500c61cd68f3a4aaf6e418189ea"></a><!-- doxytag: member="VirtualAvatar::getLeftArmMin" ref="a2a3a7500c61cd68f3a4aaf6e418189ea" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d VirtualAvatar::getLeftArmMin </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the left arm hit box minimum value. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The left arm hit box's minimum </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a721ad73e986d2fe81e13240ff6033539"></a><!-- doxytag: member="VirtualAvatar::getRightArmMax" ref="a721ad73e986d2fe81e13240ff6033539" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d VirtualAvatar::getRightArmMax </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the right arm hit box maximum value. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The right arm hit box's maximum </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a84f58ef6d95474c385be22a6dac13fb5"></a><!-- doxytag: member="VirtualAvatar::getRightArmMin" ref="a84f58ef6d95474c385be22a6dac13fb5" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d VirtualAvatar::getRightArmMin </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the right arm hit box minimum value. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The right arm hit box's minimum </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a76eb4880060cb9af5ac602197186d999"></a><!-- doxytag: member="VirtualAvatar::isInHitBox" ref="a76eb4880060cb9af5ac602197186d999" args="(cVector3d ballPos)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool VirtualAvatar::isInHitBox </td>
+          <td>(</td>
+          <td class="paramtype">cVector3d&nbsp;</td>
+          <td class="paramname"> <em>ballPos</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns true if the point is in the balls hit box. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>ballPos</em>&nbsp;</td><td>The position of the ball </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if the ball collided with the local avatar </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="adeebf871ccbfefd089688d5b319c3552"></a><!-- doxytag: member="VirtualAvatar::resetPosition" ref="adeebf871ccbfefd089688d5b319c3552" args="(cVector3d startingPosition, bool isLocal)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VirtualAvatar::resetPosition </td>
+          <td>(</td>
+          <td class="paramtype">cVector3d&nbsp;</td>
+          <td class="paramname"> <em>startingPosition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>isLocal</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Resets the avatar to its starting position. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>startingPosition</em>&nbsp;</td><td>The avatar's starting position within the world </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>isLocal</em>&nbsp;</td><td>True if the avatar is the local one </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a7055e90972db0a5e8ad47a2e11a04870"></a><!-- doxytag: member="VirtualAvatar::rotate" ref="a7055e90972db0a5e8ad47a2e11a04870" args="(double ang)" -->
 <div class="memitem">
 <div class="memproto">
@@ -149,7 +557,7 @@ bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
-<a class="anchor" id="a784e340db30cc9cb6cecb47cedd03c1c"></a><!-- doxytag: member="VirtualAvatar::translate" ref="a784e340db30cc9cb6cecb47cedd03c1c" args="(double ang)" -->
+<a class="anchor" id="aea9afe75a5bfad869db1ced0a590d7cb"></a><!-- doxytag: member="VirtualAvatar::translate" ref="aea9afe75a5bfad869db1ced0a590d7cb" args="(double xTrans, double yTrans)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -157,9 +565,18 @@ bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td class="memname">void VirtualAvatar::translate </td>
           <td>(</td>
           <td class="paramtype">double&nbsp;</td>
-          <td class="paramname"> <em>ang</em></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramname"> <em>xTrans</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>yTrans</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [private]</code></td>
         </tr>
       </table>
 </div>
@@ -168,52 +585,363 @@ bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Translate (move) the avatar. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>ang</em>&nbsp;</td><td>The angle to which the avatar was rotated. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>xTrans</em>&nbsp;</td><td>The x value to translate </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>yTrans</em>&nbsp;</td><td>The y value to translate </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="a8f96410a9875f2f4823a1f5f0d0146f3"></a><!-- doxytag: member="VirtualAvatar::updateBoundaries" ref="a8f96410a9875f2f4823a1f5f0d0146f3" args="(double ang, cVector3d position)" -->
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="ad2f73d5aba65c0b29d844cc077eff98d"></a><!-- doxytag: member="VirtualAvatar::avatarMesh" ref="ad2f73d5aba65c0b29d844cc077eff98d" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void VirtualAvatar::updateBoundaries </td>
-          <td>(</td>
-          <td class="paramtype">double&nbsp;</td>
-          <td class="paramname"> <em>ang</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cVector3d&nbsp;</td>
-          <td class="paramname"> <em>position</em></td><td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td><td></td>
+          <td class="memname">cMesh* <a class="el" href="classVirtualAvatar.html#ad2f73d5aba65c0b29d844cc077eff98d">VirtualAvatar::avatarMesh</a><code> [private]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Update boundaries when the avatar is moved or rotated. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>ang</em>&nbsp;</td><td>The angle from which the avatar was moved. </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>position</em>&nbsp;</td><td>The avatar's position. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>The mesh that displays the avatar. </p>
+
+</div>
+</div>
+<a class="anchor" id="af0f3b47d881731bf27abbd67255dc97d"></a><!-- doxytag: member="VirtualAvatar::chestHitBox" ref="af0f3b47d881731bf27abbd67255dc97d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cMesh* <a class="el" href="classVirtualAvatar.html#af0f3b47d881731bf27abbd67255dc97d">VirtualAvatar::chestHitBox</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The mesh for the chest hit box. </p>
+
+</div>
+</div>
+<a class="anchor" id="aceb94343279af8f784a2cea1a410c9e8"></a><!-- doxytag: member="VirtualAvatar::chestMax" ref="aceb94343279af8f784a2cea1a410c9e8" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d <a class="el" href="classVirtualAvatar.html#aceb94343279af8f784a2cea1a410c9e8">VirtualAvatar::chestMax</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The top-right corner of the chest bounding box. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5352c868424b7150961ea8e5a16984cc"></a><!-- doxytag: member="VirtualAvatar::chestMin" ref="a5352c868424b7150961ea8e5a16984cc" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d <a class="el" href="classVirtualAvatar.html#a5352c868424b7150961ea8e5a16984cc">VirtualAvatar::chestMin</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The bottom-left corner of the chest bounding box. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad81b4c5278783a6d8a378eef8f58f48f"></a><!-- doxytag: member="VirtualAvatar::headHitBox" ref="ad81b4c5278783a6d8a378eef8f58f48f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cMesh* <a class="el" href="classVirtualAvatar.html#ad81b4c5278783a6d8a378eef8f58f48f">VirtualAvatar::headHitBox</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The mesh for the left arm hit box. </p>
+
+</div>
+</div>
+<a class="anchor" id="a64c73e9f0b994882d25d0ec520088781"></a><!-- doxytag: member="VirtualAvatar::headMax" ref="a64c73e9f0b994882d25d0ec520088781" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d <a class="el" href="classVirtualAvatar.html#a64c73e9f0b994882d25d0ec520088781">VirtualAvatar::headMax</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The top-right corner of the left arm bounding box. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab25b110bae45013f861bcda0f32c6b71"></a><!-- doxytag: member="VirtualAvatar::headMin" ref="ab25b110bae45013f861bcda0f32c6b71" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d <a class="el" href="classVirtualAvatar.html#ab25b110bae45013f861bcda0f32c6b71">VirtualAvatar::headMin</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The bottom-left corner of the left arm bounding box. </p>
+
+</div>
+</div>
+<a class="anchor" id="a026378f08de33e3167988ad718ad5208"></a><!-- doxytag: member="VirtualAvatar::hitPart" ref="a026378f08de33e3167988ad718ad5208" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Common.html#gaa22d3933804e3afcd4eac294dded7434">BodyPart_t</a> <a class="el" href="classVirtualAvatar.html#a026378f08de33e3167988ad718ad5208">VirtualAvatar::hitPart</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The body part hit by the collision. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5db5ec0d108774ed27f88ee1e4c5ca24"></a><!-- doxytag: member="VirtualAvatar::iniChestMax" ref="a5db5ec0d108774ed27f88ee1e4c5ca24" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const cVector3d <a class="el" href="classVirtualAvatar.html#a5db5ec0d108774ed27f88ee1e4c5ca24">VirtualAvatar::iniChestMax</a> = cVector3d(0.3, 0.8, 0.4)<code> [static, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The initial position of the chest hit box's maximum value. </p>
+
+</div>
+</div>
+<a class="anchor" id="a626c886e9e04175ccaa19838964d44e8"></a><!-- doxytag: member="VirtualAvatar::iniChestMin" ref="a626c886e9e04175ccaa19838964d44e8" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const cVector3d <a class="el" href="classVirtualAvatar.html#a626c886e9e04175ccaa19838964d44e8">VirtualAvatar::iniChestMin</a> = cVector3d(-0.3, 0.0, -0.4)<code> [static, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The initial position of the chest hit box's minimum value. </p>
+
+</div>
+</div>
+<a class="anchor" id="a08358e8f3789e4e7b64fa5d2023347e6"></a><!-- doxytag: member="VirtualAvatar::iniHeadMax" ref="a08358e8f3789e4e7b64fa5d2023347e6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const cVector3d <a class="el" href="classVirtualAvatar.html#a08358e8f3789e4e7b64fa5d2023347e6">VirtualAvatar::iniHeadMax</a> = cVector3d(0.15, 1.3, 0.4)<code> [static, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The initial position of the head hit box's maximum value. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad469fe93d42ed6335c0e2d59e2ab8d7b"></a><!-- doxytag: member="VirtualAvatar::iniHeadMin" ref="ad469fe93d42ed6335c0e2d59e2ab8d7b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const cVector3d <a class="el" href="classVirtualAvatar.html#ad469fe93d42ed6335c0e2d59e2ab8d7b">VirtualAvatar::iniHeadMin</a> = cVector3d(-0.15, 0.8, -0.4)<code> [static, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The initial position of the head hit box's minimum value. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2fa0322a9753ea096b67cc696f4e2320"></a><!-- doxytag: member="VirtualAvatar::iniLeftArmMax" ref="a2fa0322a9753ea096b67cc696f4e2320" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const cVector3d <a class="el" href="classVirtualAvatar.html#a2fa0322a9753ea096b67cc696f4e2320">VirtualAvatar::iniLeftArmMax</a> = cVector3d(-0.3, 0.8, 0.4)<code> [static, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The initial position of the left arm hit box's maximum value. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3fe6aaba9ce2a7ac92de83804d87f033"></a><!-- doxytag: member="VirtualAvatar::iniLeftArmMin" ref="a3fe6aaba9ce2a7ac92de83804d87f033" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const cVector3d <a class="el" href="classVirtualAvatar.html#a3fe6aaba9ce2a7ac92de83804d87f033">VirtualAvatar::iniLeftArmMin</a> = cVector3d(-0.5, 0.0, -0.4)<code> [static, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The initial position of the left arm hit box's minimum value. </p>
+
+</div>
+</div>
+<a class="anchor" id="aaf9143cc7ac2f51e89f56aa83e55e0d9"></a><!-- doxytag: member="VirtualAvatar::iniRightArmMax" ref="aaf9143cc7ac2f51e89f56aa83e55e0d9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const cVector3d <a class="el" href="classVirtualAvatar.html#aaf9143cc7ac2f51e89f56aa83e55e0d9">VirtualAvatar::iniRightArmMax</a> = cVector3d(0.5, 0.8, 0.4)<code> [static, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The initial position of the right arm hit box's maximum value. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2a54aa65e951c8d61b16ed899124f66d"></a><!-- doxytag: member="VirtualAvatar::iniRightArmMin" ref="a2a54aa65e951c8d61b16ed899124f66d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const cVector3d <a class="el" href="classVirtualAvatar.html#a2a54aa65e951c8d61b16ed899124f66d">VirtualAvatar::iniRightArmMin</a> = cVector3d(0.3, 0.0, -0.4)<code> [static, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The initial position of the right arm hit box's minimum value. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4fc13aa9452c8ffa383419de764907a6"></a><!-- doxytag: member="VirtualAvatar::isLocal" ref="a4fc13aa9452c8ffa383419de764907a6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classVirtualAvatar.html#a4fc13aa9452c8ffa383419de764907a6">VirtualAvatar::isLocal</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>True if the avatar belongs to the local player. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad38788e2dfb19246bb43d0f1ce83be71"></a><!-- doxytag: member="VirtualAvatar::lArmHitBox" ref="ad38788e2dfb19246bb43d0f1ce83be71" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cMesh* <a class="el" href="classVirtualAvatar.html#ad38788e2dfb19246bb43d0f1ce83be71">VirtualAvatar::lArmHitBox</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The mesh for the left arm hit box. </p>
+
+</div>
+</div>
+<a class="anchor" id="aca57b6beb7bba7ad5be9f8f9b28ff40b"></a><!-- doxytag: member="VirtualAvatar::lArmMax" ref="aca57b6beb7bba7ad5be9f8f9b28ff40b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d <a class="el" href="classVirtualAvatar.html#aca57b6beb7bba7ad5be9f8f9b28ff40b">VirtualAvatar::lArmMax</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The top-right corner of the left arm bounding box. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0a20bc90802d555b7fa17e4e7b46e05e"></a><!-- doxytag: member="VirtualAvatar::lArmMin" ref="a0a20bc90802d555b7fa17e4e7b46e05e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d <a class="el" href="classVirtualAvatar.html#a0a20bc90802d555b7fa17e4e7b46e05e">VirtualAvatar::lArmMin</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The bottom-left corner of the left arm bounding box. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae9b429b8a247e1a29fea108874eb7dce"></a><!-- doxytag: member="VirtualAvatar::rArmHitBox" ref="ae9b429b8a247e1a29fea108874eb7dce" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cMesh* <a class="el" href="classVirtualAvatar.html#ae9b429b8a247e1a29fea108874eb7dce">VirtualAvatar::rArmHitBox</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The mesh for the right arm hit box. </p>
+
+</div>
+</div>
+<a class="anchor" id="a66f2808133889d1bd94f9ea6281581d0"></a><!-- doxytag: member="VirtualAvatar::rArmMax" ref="a66f2808133889d1bd94f9ea6281581d0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d <a class="el" href="classVirtualAvatar.html#a66f2808133889d1bd94f9ea6281581d0">VirtualAvatar::rArmMax</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The top-right corner of the right arm bounding box. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8120ab6899cc4554f84a5c4056533418"></a><!-- doxytag: member="VirtualAvatar::rArmMin" ref="a8120ab6899cc4554f84a5c4056533418" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d <a class="el" href="classVirtualAvatar.html#a8120ab6899cc4554f84a5c4056533418">VirtualAvatar::rArmMin</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The bottom-left corner of the right arm bounding box. </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/<a class="el" href="VirtualAvatar_8h_source.html">VirtualAvatar.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/VirtualAvatar.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Game/<a class="el" href="VirtualAvatar_8h_source.html">VirtualAvatar.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Game/<a class="el" href="VirtualAvatar_8cpp.html">VirtualAvatar.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -221,7 +949,7 @@ bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -230,7 +958,7 @@ bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:10 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:46 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

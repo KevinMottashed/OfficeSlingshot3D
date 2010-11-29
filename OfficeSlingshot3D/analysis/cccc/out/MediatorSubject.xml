@@ -6,9 +6,9 @@
 <lines_of_code_per_member_function value="******" level="0" />
 <McCabes_cyclomatic_complexity value="4" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
-<lines_of_code value="24" level="0" />
+<lines_of_code value="30" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="1.583" level="0" />
+<lines_of_code_per_line_of_comment value="1.267" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 <weighted_methods_per_class_unity value="6" level="0" />
 <weighted_methods_per_class_visibility value="5" level="0" />
@@ -24,17 +24,17 @@
 </module_summary>
 <module_detail>
 <description>declaration</description>
-<source_reference file="../../Mediator/MediatorProxy.h" line="9" />
+<source_reference file="../../Mediator/MediatorProxy.h" line="21" />
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="0" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 <description>definition</description>
-<source_reference file="../../Mediator/MediatorSubject.h" line="12" />
+<source_reference file="../../Mediator/MediatorSubject.h" line="14" />
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="8" level="0" />
+<lines_of_comment value="10" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module_detail>
@@ -47,7 +47,7 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Mediator/MediatorSubject.h" line="18" />
+<source_reference file="../../Mediator/MediatorSubject.h" line="20" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -63,11 +63,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Mediator/MediatorSubject.h" line="28" />
+<source_reference file="../../Mediator/MediatorSubject.h" line="31" />
 </extent>
 <lines_of_code value="7" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="4" level="0" />
+<lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -79,11 +79,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Mediator/MediatorSubject.h" line="33" />
+<source_reference file="../../Mediator/MediatorSubject.h" line="37" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="3" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -91,11 +91,11 @@
 <name>notify(...)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Mediator/MediatorSubject.h" line="38" />
+<source_reference file="../../Mediator/MediatorSubject.h" line="44" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="3" level="0" />
+<lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -119,7 +119,7 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Mediator/MediatorSubject.h" line="23" />
+<source_reference file="../../Mediator/MediatorSubject.h" line="25" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -137,7 +137,7 @@
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../Mediator/Mediator.h" line="28" />
+<source_reference file="../../Mediator/Mediator.h" line="30" />
 </extent>
 </client_module>
 <supplier_module>
@@ -154,11 +154,11 @@
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/MediatorSubject.h" line="28" />
+<source_reference file="../../Mediator/MediatorSubject.h" line="31" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/MediatorSubject.h" line="33" />
+<source_reference file="../../Mediator/MediatorSubject.h" line="37" />
 </extent>
 <name>MediatorUpdateContext_t</name>
 <visible>true</visible>
@@ -172,7 +172,7 @@
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Mediator/MediatorSubject.h" line="44" />
+<source_reference file="../../Mediator/MediatorSubject.h" line="50" />
 </extent>
 </supplier_module>
 </module>

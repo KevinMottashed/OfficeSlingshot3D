@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -48,21 +49,119 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <h1>SyncLocker Class Reference</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="SyncLocker" --><table class="memberdecls">
+<!-- doxytag: class="SyncLocker" -->
+<p>Utility class for wrapping a mutex in the RIAA pattern.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="SyncLocker_8h_source.html">SyncLocker.h</a>&gt;</code></p>
+<table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a70e00872c7846340907f66e1f731ad51"></a><!-- doxytag: member="SyncLocker::SyncLocker" ref="a70e00872c7846340907f66e1f731ad51" args="(CRITICAL_SECTION &amp;cs)" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><b>SyncLocker</b> (CRITICAL_SECTION &amp;cs)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8e127b12629478b4acb1d511f9514bb6"></a><!-- doxytag: member="SyncLocker::operator bool" ref="a8e127b12629478b4acb1d511f9514bb6" args="()" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><b>operator bool</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSyncLocker.html#a70e00872c7846340907f66e1f731ad51">SyncLocker</a> (CRITICAL_SECTION &amp;<a class="el" href="classSyncLocker.html#a7eeabbb6fd38f96b2bb6210bf08ae374">cs</a>)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#a70e00872c7846340907f66e1f731ad51"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSyncLocker.html#ad7759158751ef3f378916581f4d1e8d1">~SyncLocker</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#ad7759158751ef3f378916581f4d1e8d1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSyncLocker.html#a8e127b12629478b4acb1d511f9514bb6">operator bool</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Typecast to bool operator.  <a href="#a8e127b12629478b4acb1d511f9514bb6"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CRITICAL_SECTION *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSyncLocker.html#a7eeabbb6fd38f96b2bb6210bf08ae374">cs</a></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Utility class for wrapping a mutex in the RIAA pattern. </p>
+<p>The mutex is locked on construction and released upon destruction. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a70e00872c7846340907f66e1f731ad51"></a><!-- doxytag: member="SyncLocker::SyncLocker" ref="a70e00872c7846340907f66e1f731ad51" args="(CRITICAL_SECTION &amp;cs)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SyncLocker::SyncLocker </td>
+          <td>(</td>
+          <td class="paramtype">CRITICAL_SECTION &amp;&nbsp;</td>
+          <td class="paramname"> <em>cs</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+<p>Locks the mutex. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>cs</em>&nbsp;</td><td>The mutex to lock. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad7759158751ef3f378916581f4d1e8d1"></a><!-- doxytag: member="SyncLocker::~SyncLocker" ref="ad7759158751ef3f378916581f4d1e8d1" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SyncLocker::~SyncLocker </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+<p>Releases the mutex. </p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a8e127b12629478b4acb1d511f9514bb6"></a><!-- doxytag: member="SyncLocker::operator bool" ref="a8e127b12629478b4acb1d511f9514bb6" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SyncLocker::operator bool </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Typecast to bool operator. </p>
+<p>Provided to aid the synchronized macro. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>false </dd></dl>
+
+</div>
+</div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a7eeabbb6fd38f96b2bb6210bf08ae374"></a><!-- doxytag: member="SyncLocker::cs" ref="a7eeabbb6fd38f96b2bb6210bf08ae374" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CRITICAL_SECTION* <a class="el" href="classSyncLocker.html#a7eeabbb6fd38f96b2bb6210bf08ae374">SyncLocker::cs</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/<a class="el" href="SyncLocker_8h_source.html">SyncLocker.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Utils/<a class="el" href="SyncLocker_8h_source.html">SyncLocker.h</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -70,7 +169,7 @@ Public Member Functions</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -79,7 +178,7 @@ Public Member Functions</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:46 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

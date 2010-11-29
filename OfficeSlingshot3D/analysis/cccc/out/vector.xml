@@ -42,25 +42,25 @@
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Mediator/MediatorSubject.h" line="44" />
+<source_reference file="../../Mediator/MediatorSubject.h" line="50" />
 </extent>
 <name>NetworkSubject</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Network/NetworkSubject.h" line="19" />
+<source_reference file="../../Network/NetworkSubject.h" line="41" />
 </extent>
 <name>Packet</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/Packet.h" line="48" />
+<source_reference file="../../Network/Packet.h" line="74" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/Packet.h" line="114" />
+<source_reference file="../../Network/Packet.h" line="144" />
 </extent>
 <name>TestRunner</name>
 <visible>true</visible>
@@ -74,25 +74,25 @@
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../UserInterface/UserInterfaceSubject.h" line="19" />
+<source_reference file="../../UserInterface/UserInterfaceSubject.h" line="47" />
 </extent>
 <name>VirtualEnvironment</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="171" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="279" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="176" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="284" />
 </extent>
 <name>ZCameraSubject</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../ZCamera/ZCameraSubject.h" line="19" />
+<source_reference file="../../ZCamera/ZCameraSubject.h" line="40" />
 </extent>
 </client_module>
 <supplier_module>

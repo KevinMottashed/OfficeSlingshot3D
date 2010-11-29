@@ -14,7 +14,7 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="3" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="3" level="0" />
+<coupling_between_objects value="4" level="0" />
 <IF4 value="0" level="0" />
 <IF4_per_member_function value="********" level="0" />
 <IF4_visible value="0" level="0" />
@@ -104,6 +104,17 @@
 <extent>
 <description>inheritance</description>
 <source_reference file="../../Replay/UserInterfaceReplayer.h" line="11" />
+</extent>
+<name>UserPreferences</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/UserInterfaceReplayer.cpp" line="6" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/UserInterfaceReplayer.h" line="15" />
 </extent>
 <name>shared_ptr</name>
 <visible>true</visible>

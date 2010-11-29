@@ -2,36 +2,36 @@
 <!--Detailed report on module Network-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="28" level="0" />
+<lines_of_code value="29" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="0" />
-<lines_of_code value="82" level="0" />
+<lines_of_code value="89" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="0.341" level="0" />
+<lines_of_code_per_line_of_comment value="0.326" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-<weighted_methods_per_class_unity value="17" level="0" />
+<weighted_methods_per_class_unity value="18" level="0" />
 <weighted_methods_per_class_visibility value="2" level="0" />
 <depth_of_inheritance_tree value="1" level="0" />
 <number_of_children value="2" level="0" />
-<coupling_between_objects value="6" level="0" />
-<IF4 value="64" level="0" />
+<coupling_between_objects value="8" level="0" />
+<IF4 value="144" level="1" />
 <IF4_per_member_function value="********" level="2" />
-<IF4_visible value="64" level="1" />
+<IF4_visible value="144" level="2" />
 <IF4_visible_per_member_function value="********" level="2" />
-<IF4_concrete value="4" level="0" />
+<IF4_concrete value="16" level="0" />
 <IF4_concrete_per_member_function value="********" level="2" />
 </module_summary>
 <module_detail>
 <description>definition</description>
-<source_reference file="../../Network/Network.h" line="15" />
+<source_reference file="../../Network/Network.h" line="18" />
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="4" level="0" />
+<lines_of_comment value="6" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 <description>declaration</description>
-<source_reference file="../../Network/NetworkProxy.h" line="10" />
+<source_reference file="../../Network/NetworkProxy.h" line="22" />
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="0" level="0" />
@@ -47,7 +47,7 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/Network.h" line="21" />
+<source_reference file="../../Network/Network.h" line="24" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -59,7 +59,7 @@
 <name>connect(const string &amp;,const string &amp;)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/Network.h" line="41" />
+<source_reference file="../../Network/Network.h" line="44" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -71,7 +71,7 @@
 <name>disconnect()</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/Network.h" line="47" />
+<source_reference file="../../Network/Network.h" line="50" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -83,7 +83,7 @@
 <name>isConnected()</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/Network.h" line="122" />
+<source_reference file="../../Network/Network.h" line="132" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -95,7 +95,7 @@
 <name>isListening()</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/Network.h" line="128" />
+<source_reference file="../../Network/Network.h" line="138" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -107,7 +107,7 @@
 <name>listen(const string &amp;)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/Network.h" line="33" />
+<source_reference file="../../Network/Network.h" line="36" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -119,7 +119,7 @@
 <name>sendChatMessage(const string &amp;)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/Network.h" line="81" />
+<source_reference file="../../Network/Network.h" line="84" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -131,7 +131,19 @@
 <name>sendEndGame()</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/Network.h" line="65" />
+<source_reference file="../../Network/Network.h" line="68" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>sendGameOver()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Network/Network.h" line="112" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -143,7 +155,7 @@
 <name>sendPauseGame()</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/Network.h" line="59" />
+<source_reference file="../../Network/Network.h" line="62" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -152,10 +164,34 @@
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
+<name>sendPhysicsSync(const PhysicsSync &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Network/Network.h" line="126" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="5" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>sendPlayerHit(BodyPart_t)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Network/Network.h" line="119" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="5" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
 <name>sendPlayerPosition(const cVector3d &amp;)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/Network.h" line="95" />
+<source_reference file="../../Network/Network.h" line="91" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -167,7 +203,7 @@
 <name>sendProjectile(const Projectile &amp;)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/Network.h" line="109" />
+<source_reference file="../../Network/Network.h" line="106" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -176,26 +212,14 @@
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
-<name>sendSlingshotPosition(const cVector3d &amp;)</name>
+<name>sendSlingshotPullback(const cVector3d &amp;)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/Network.h" line="102" />
+<source_reference file="../../Network/Network.h" line="99" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="5" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>sendSlingshotPullback()</name>
-<extent>
-<description>declaration</description>
-<source_reference file="../../Network/Network.h" line="116" />
-</extent>
-<lines_of_code value="1" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="5" level="0" />
+<lines_of_comment value="6" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -203,7 +227,7 @@
 <name>sendStartGame()</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/Network.h" line="53" />
+<source_reference file="../../Network/Network.h" line="56" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -215,23 +239,11 @@
 <name>sendUserName(const string &amp;)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/Network.h" line="74" />
+<source_reference file="../../Network/Network.h" line="77" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="7" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>sendVideoData(const VideoData &amp;)</name>
-<extent>
-<description>declaration</description>
-<source_reference file="../../Network/Network.h" line="88" />
-</extent>
-<lines_of_code value="1" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -243,7 +255,7 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Network/Network.h" line="26" />
+<source_reference file="../../Network/Network.h" line="29" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -261,64 +273,78 @@
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../Replay/NetworkReplayer.h" line="15" />
+<source_reference file="../../Replay/NetworkReplayer.h" line="19" />
 </extent>
 <name>WinsockNetwork</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="45" />
+<source_reference file="../../Network/WinsockNetwork.h" line="55" />
 </extent>
 </client_module>
 <supplier_module>
+<name>BodyPart_t</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Network/Network.h" line="119" />
+</extent>
 <name>NetworkSubject</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../Network/Network.h" line="15" />
+<source_reference file="../../Network/Network.h" line="18" />
+</extent>
+<name>PhysicsSync</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Network/Network.h" line="126" />
 </extent>
 <name>Projectile</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/Network.h" line="109" />
+<source_reference file="../../Network/Network.h" line="106" />
 </extent>
 <name>cVector3d</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/Network.h" line="95" />
+<source_reference file="../../Network/Network.h" line="91" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/Network.h" line="102" />
+<source_reference file="../../Network/Network.h" line="99" />
 </extent>
 <name>string</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/Network.h" line="33" />
+<source_reference file="../../Network/Network.h" line="36" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/Network.h" line="41" />
+<source_reference file="../../Network/Network.h" line="44" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/Network.h" line="41" />
+<source_reference file="../../Network/Network.h" line="44" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/Network.h" line="74" />
+<source_reference file="../../Network/Network.h" line="77" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/Network.h" line="81" />
+<source_reference file="../../Network/Network.h" line="84" />
 </extent>
 </supplier_module>
 </module>

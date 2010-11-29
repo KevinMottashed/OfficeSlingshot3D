@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OfficeSlingshot3D: /home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h Source File</title>
+<title>OfficeSlingshot3D: /home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Jacket/TactileArray.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -41,164 +42,110 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.h</h1>  </div>
+<h1>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Jacket/TactileArray.h</h1>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef TACTILE_ARRAY_H</span>
+<a href="TactileArray_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef TACTILE_ARRAY_H</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define TACTILE_ARRAY_H</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &quot;mmsystem.h&quot;</span>
 <a name="l00005"></a>00005 <span class="preprocessor">#include &quot;math.h&quot;</span>
 <a name="l00006"></a>00006 <span class="preprocessor">#include &quot;serialPort.h&quot;</span>
 <a name="l00007"></a>00007 
-<a name="l00008"></a>00008 <span class="comment">// definition of the array of the tactile device</span>
-<a name="l00010"></a>00010 <span class="comment"></span><span class="comment">//#define ARRAY_SIZE_X 1</span>
-<a name="l00011"></a>00011 <span class="comment">//#define ARRAY_SIZE_Y 31</span>
-<a name="l00012"></a>00012 <span class="comment">//#define ARRAY_SIZE ARRAY_SIZE_X*ARRAY_SIZE_Y</span>
-<a name="l00013"></a>00013 <span class="preprocessor">#define MAX_INTENSITY 15</span>
-<a name="l00014"></a>00014 <span class="preprocessor"></span>
-<a name="l00015"></a>00015 <span class="preprocessor">#define MAX_APPLIED_INTENSITY 12</span>
-<a name="l00016"></a>00016 <span class="preprocessor"></span>
-<a name="l00017"></a>00017 
-<a name="l00018"></a>00018 <span class="comment">// input protocol parameters</span>
-<a name="l00020"></a>00020 <span class="comment"></span>
-<a name="l00021"></a>00021 <span class="comment">// header bit</span>
-<a name="l00022"></a>00022 <span class="preprocessor">#define MASK_HEADER                 0x80 //0b10000000</span>
-<a name="l00023"></a>00023 <span class="preprocessor"></span><span class="preprocessor">#define MASK_DATA                   0x7f //0b01111111</span>
-<a name="l00024"></a>00024 <span class="preprocessor"></span><span class="preprocessor">#define HEADER_COMMAND              0x80</span>
-<a name="l00025"></a>00025 <span class="preprocessor"></span><span class="preprocessor">#define HEADER_DATA                 0x00</span>
+<a name="l00008"></a><a class="code" href="TactileArray_8h.html#a1d1d5e7ff16f25b68fdf779befd298f7">00008</a> <span class="preprocessor">#define MAX_INTENSITY 15</span>
+<a name="l00009"></a>00009 <span class="preprocessor"></span>
+<a name="l00010"></a><a class="code" href="TactileArray_8h.html#a4dead170aba1da013b7171d8d34923dd">00010</a> <span class="preprocessor">#define MAX_APPLIED_INTENSITY 12</span>
+<a name="l00011"></a>00011 <span class="preprocessor"></span>
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013 <span class="comment">// input protocol parameters</span>
+<a name="l00015"></a>00015 <span class="comment"></span>
+<a name="l00016"></a>00016 <span class="comment">// header bit</span>
+<a name="l00017"></a><a class="code" href="TactileArray_8h.html#a9ce9d03b885d41b0249cfa2d0c5a296e">00017</a> <span class="preprocessor">#define MASK_HEADER                 0x80 //0b10000000</span>
+<a name="l00018"></a><a class="code" href="TactileArray_8h.html#ab4470ea32815e1f8fe745faa3951131c">00018</a> <span class="preprocessor"></span><span class="preprocessor">#define MASK_DATA                   0x7f //0b01111111</span>
+<a name="l00019"></a><a class="code" href="TactileArray_8h.html#aa75da145db240730147b72192c4c04f7">00019</a> <span class="preprocessor"></span><span class="preprocessor">#define HEADER_COMMAND              0x80</span>
+<a name="l00020"></a><a class="code" href="TactileArray_8h.html#ac8949330ab927a824434725b3076bb42">00020</a> <span class="preprocessor"></span><span class="preprocessor">#define HEADER_DATA                 0x00</span>
+<a name="l00021"></a>00021 <span class="preprocessor"></span>
+<a name="l00022"></a>00022 <span class="comment">// commands</span>
+<a name="l00023"></a><a class="code" href="TactileArray_8h.html#a5b7a7c790e858cb8bfd173a7d91c44df">00023</a> <span class="preprocessor">#define COMMAND_ARRAY_DATA          0x01</span>
+<a name="l00024"></a><a class="code" href="TactileArray_8h.html#a4121dfbc4300792904a0835a279ea32d">00024</a> <span class="preprocessor"></span><span class="preprocessor">#define COMMAND_GET_ARRAY_SIZE_X_Y  0x02</span>
+<a name="l00025"></a><a class="code" href="TactileArray_8h.html#ac7e6f1a114b4c39b76ea645f2962c96f">00025</a> <span class="preprocessor"></span><span class="preprocessor">#define COMMAND_ARE_YOU_OK          0x03</span>
 <a name="l00026"></a>00026 <span class="preprocessor"></span>
-<a name="l00027"></a>00027 <span class="comment">// commands</span>
-<a name="l00028"></a>00028 <span class="preprocessor">#define COMMAND_ARRAY_DATA          0x01</span>
-<a name="l00029"></a>00029 <span class="preprocessor"></span><span class="preprocessor">#define COMMAND_GET_ARRAY_SIZE_X_Y  0x02</span>
-<a name="l00030"></a>00030 <span class="preprocessor"></span><span class="preprocessor">#define COMMAND_ARE_YOU_OK          0x03</span>
+<a name="l00027"></a>00027 <span class="comment">// payload bit</span>
+<a name="l00028"></a><a class="code" href="TactileArray_8h.html#a29808a8317ec9d7a44c732f4998aed6a">00028</a> <span class="preprocessor">#define DATA_BIT                    7</span>
+<a name="l00029"></a><a class="code" href="TactileArray_8h.html#ae80cb31cff816920c8167c73f9f817ca">00029</a> <span class="preprocessor"></span><span class="preprocessor">#define ARRAY_DATA_BIT              4  // for 16 intensities</span>
+<a name="l00030"></a><a class="code" href="TactileArray_8h.html#a56648ec024284a4e8fb86153b8608165">00030</a> <span class="preprocessor"></span><span class="preprocessor">#define MASK_ARRAY_DATA             0xF000 // from ARRAY_DATA_BIT</span>
 <a name="l00031"></a>00031 <span class="preprocessor"></span>
-<a name="l00032"></a>00032 <span class="comment">// payload bit</span>
-<a name="l00033"></a>00033 <span class="preprocessor">#define DATA_BIT                    7</span>
-<a name="l00034"></a>00034 <span class="preprocessor"></span><span class="preprocessor">#define ARRAY_DATA_BIT              4  // for 16 intensities</span>
-<a name="l00035"></a>00035 <span class="preprocessor"></span><span class="preprocessor">#define MASK_ARRAY_DATA             0xF000 // from ARRAY_DATA_BIT</span>
-<a name="l00036"></a>00036 <span class="preprocessor"></span>
-<a name="l00037"></a>00037 
-<a name="l00038"></a>00038 
-<a name="l00039"></a><a class="code" href="classTactileArray.html">00039</a> <span class="keyword">class </span><a class="code" href="classTactileArray.html">TactileArray</a>
-<a name="l00040"></a>00040 {
-<a name="l00041"></a>00041 <span class="keyword">public</span>:
-<a name="l00042"></a>00042     <a class="code" href="classTactileArray.html">TactileArray</a>(<span class="keywordtype">int</span> a_portNum);
-<a name="l00043"></a>00043     ~<a class="code" href="classTactileArray.html">TactileArray</a>(<span class="keywordtype">void</span>);
-<a name="l00044"></a>00044     <span class="keywordtype">bool</span> openSerialPort(<span class="keywordtype">int</span> pNo = 1, <span class="keywordtype">bool</span> announce = <span class="keyword">false</span>);
-<a name="l00045"></a>00045     <span class="keywordtype">bool</span> closeSerialPort();
-<a name="l00046"></a>00046 <span class="keyword">private</span>:
-<a name="l00047"></a>00047     <span class="comment">// array data</span>
-<a name="l00048"></a>00048     <span class="keywordtype">int</span> m_arraySizeX;
-<a name="l00049"></a>00049     <span class="keywordtype">int</span> m_arraySizeY;
-<a name="l00050"></a>00050     <span class="keywordtype">int</span> m_arraySize;
-<a name="l00051"></a>00051     <span class="keywordtype">int</span> * m_pIntensityArray;
-<a name="l00052"></a>00052     <span class="keywordtype">int</span> m_maxIntensity;
-<a name="l00053"></a>00053     <span class="comment">// buffer to avr</span>
-<a name="l00054"></a>00054     <span class="keywordtype">int</span> m_bufferSize;
-<a name="l00055"></a>00055     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> * m_pBuffer;
-<a name="l00056"></a>00056     <span class="comment">// serial port</span>
-<a name="l00057"></a>00057     <a class="code" href="classCSerialPort.html">CSerialPort</a> * m_pSerialPort;
-<a name="l00058"></a>00058     <span class="comment">// serial port number</span>
-<a name="l00059"></a>00059     <span class="keywordtype">int</span> m_portNum;
-<a name="l00060"></a>00060     <span class="comment">// thread parameters for test</span>
-<a name="l00061"></a>00061     DWORD m_dwTestThreadID;
-<a name="l00062"></a>00062     HANDLE m_hTestThread;
-<a name="l00063"></a>00063 
-<a name="l00064"></a>00064     <span class="keywordtype">void</span> assembleBuffer(<span class="keywordtype">void</span>);
-<a name="l00065"></a>00065 
-<a name="l00066"></a>00066 <span class="keyword">public</span>:
-<a name="l00067"></a>00067     <span class="keywordtype">bool</span> initialize(<span class="keywordtype">void</span>);
-<a name="l00068"></a>00068     <span class="keywordtype">void</span> setPort(<span class="keywordtype">int</span> a_portNum);
-<a name="l00069"></a>00069 
-<a name="l00070"></a>00070     <span class="comment">// Setting intensity values</span>
-<a name="l00071"></a>00071     <span class="keywordtype">void</span> setIntensity(<span class="keywordtype">int</span> * pIntensityArray)
-<a name="l00072"></a>00072     {
-<a name="l00073"></a>00073         memcpy(m_pIntensityArray, pIntensityArray, m_arraySize);
-<a name="l00074"></a>00074     }
-<a name="l00075"></a>00075 
-<a name="l00076"></a>00076     <span class="keywordtype">void</span> setIntensity(<span class="keywordtype">double</span> * pIntensityArray)
-<a name="l00077"></a>00077     {
-<a name="l00078"></a>00078         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;m_arraySizeX; i++)
-<a name="l00079"></a>00079             <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j&lt;m_arraySizeY; j++)
-<a name="l00080"></a>00080                 setIntensity(i, j, pIntensityArray[i*m_arraySizeX+m_arraySizeY]);
-<a name="l00081"></a>00081     }
-<a name="l00082"></a>00082 
-<a name="l00083"></a>00083     <span class="keywordtype">void</span> setIntensity(<span class="keywordtype">int</span> arrayX, <span class="keywordtype">int</span> arrayY, <span class="keywordtype">int</span> intensity)
-<a name="l00084"></a>00084     {
-<a name="l00085"></a>00085         <span class="keywordflow">if</span>(intensity &gt;= m_maxIntensity)
-<a name="l00086"></a>00086             intensity = m_maxIntensity;
-<a name="l00087"></a>00087         <span class="keywordflow">if</span>(intensity &lt;= 0)
-<a name="l00088"></a>00088             intensity = 0;      
-<a name="l00089"></a>00089         m_pIntensityArray[arrayX*m_arraySizeX + arrayY] = intensity;
-<a name="l00090"></a>00090     }
-<a name="l00091"></a>00091 
-<a name="l00092"></a>00092     <span class="keywordtype">void</span> setIntensity(<span class="keywordtype">int</span> arrayX, <span class="keywordtype">int</span> arrayY, <span class="keywordtype">double</span> intensity)
-<a name="l00093"></a>00093     {
-<a name="l00094"></a>00094         <span class="keywordflow">if</span>(intensity &gt;= 1.0)
-<a name="l00095"></a>00095             intensity = 1.0;
-<a name="l00096"></a>00096         <span class="keywordflow">if</span>(intensity &lt;= 0)
-<a name="l00097"></a>00097             intensity = 0.0;
-<a name="l00098"></a>00098         m_pIntensityArray[arrayX*m_arraySizeX + arrayY] = (int)(intensity*(<span class="keywordtype">double</span>)m_maxIntensity);
-<a name="l00099"></a>00099     }
-<a name="l00100"></a>00100 
-<a name="l00101"></a>00101     <span class="keywordtype">void</span> setIntensityAll(<span class="keywordtype">int</span> intensity = 0)
-<a name="l00102"></a>00102     {
-<a name="l00103"></a>00103         <span class="keywordflow">if</span>(intensity &gt;= m_maxIntensity)
-<a name="l00104"></a>00104             intensity = m_maxIntensity;
-<a name="l00105"></a>00105         <span class="keywordflow">if</span>(intensity &lt;= 0)
-<a name="l00106"></a>00106             intensity = 0;
-<a name="l00107"></a>00107         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;m_arraySize; i++)
-<a name="l00108"></a>00108             m_pIntensityArray[i] = intensity;
-<a name="l00109"></a>00109     }
-<a name="l00110"></a>00110 
-<a name="l00111"></a>00111     <span class="keywordtype">void</span> setIntensityAll(<span class="keywordtype">double</span> intensity)
-<a name="l00112"></a>00112     {
-<a name="l00113"></a>00113         <span class="keywordflow">if</span>(intensity &gt;= 1.0)
-<a name="l00114"></a>00114             intensity = 1.0;
-<a name="l00115"></a>00115         <span class="keywordflow">if</span>(intensity &lt;= 0)
-<a name="l00116"></a>00116             intensity = 0.0;
-<a name="l00117"></a>00117         <span class="keywordtype">int</span> scaledIntensity = (int)(intensity*(<span class="keywordtype">double</span>)m_maxIntensity);
-<a name="l00118"></a>00118         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;m_arraySize; i++)
-<a name="l00119"></a>00119             m_pIntensityArray[i] = scaledIntensity;
-<a name="l00120"></a>00120     }
-<a name="l00121"></a>00121 
-<a name="l00122"></a>00122     <span class="keywordtype">void</span> setArraySize(<span class="keywordtype">int</span> a_arraySizeX, <span class="keywordtype">int</span> a_arraySizeY)
-<a name="l00123"></a>00123     {
-<a name="l00124"></a>00124         m_arraySizeX = a_arraySizeX;
-<a name="l00125"></a>00125         m_arraySizeY = a_arraySizeY;
-<a name="l00126"></a>00126         m_arraySize = m_arraySizeX*m_arraySizeY;
-<a name="l00127"></a>00127     }
-<a name="l00128"></a>00128     <span class="keywordtype">void</span> actuate(<span class="keywordtype">void</span>);
-<a name="l00129"></a>00129     <span class="keywordtype">void</span> test1by1(<span class="keywordtype">void</span>);
-<a name="l00130"></a>00130 
-<a name="l00131"></a>00131     <span class="keywordtype">int</span> getMaxIntensity(<span class="keywordtype">void</span>)<span class="keyword"> const</span>
-<a name="l00132"></a>00132 <span class="keyword">    </span>{
-<a name="l00133"></a>00133         <span class="keywordflow">return</span> m_maxIntensity;
-<a name="l00134"></a>00134     }
-<a name="l00135"></a>00135 
-<a name="l00136"></a>00136     <span class="keywordtype">int</span> getArraySizeX(<span class="keywordtype">void</span>)<span class="keyword"> const</span>
-<a name="l00137"></a>00137 <span class="keyword">    </span>{
-<a name="l00138"></a>00138         <span class="keywordflow">return</span> m_arraySizeX;
-<a name="l00139"></a>00139     }
-<a name="l00140"></a>00140 
-<a name="l00141"></a>00141     <span class="keywordtype">int</span> getArraySizeY(<span class="keywordtype">void</span>)<span class="keyword"> const</span>
-<a name="l00142"></a>00142 <span class="keyword">    </span>{
-<a name="l00143"></a>00143         <span class="keywordflow">return</span> m_arraySizeY;
-<a name="l00144"></a>00144     }
+<a name="l00032"></a>00032 
+<a name="l00037"></a><a class="code" href="classTactileArray.html">00037</a> <span class="keyword">class </span><a class="code" href="classTactileArray.html" title="Interface class for any smart clothing hardware.">TactileArray</a>
+<a name="l00038"></a>00038 {
+<a name="l00039"></a>00039 <span class="keyword">public</span>:
+<a name="l00044"></a>00044     <a class="code" href="classTactileArray.html#acbfafee94d72b978ace17f08167fc036" title="Constructor.">TactileArray</a>(<span class="keywordtype">int</span> a_portNum);
+<a name="l00045"></a>00045 
+<a name="l00049"></a>00049     <a class="code" href="classTactileArray.html#aa72109a83d27ab40f2098f40155e3865" title="Destructor.">~TactileArray</a>(<span class="keywordtype">void</span>);
+<a name="l00050"></a>00050 
+<a name="l00057"></a>00057     <span class="keywordtype">bool</span> <a class="code" href="classTactileArray.html#aeadf3a68daab9c158a108a15debb28b8" title="Open&amp;#39;s the array&amp;#39;s serial port.">openSerialPort</a>(<span class="keywordtype">int</span> pNo = 1, <span class="keywordtype">bool</span> announce = <span class="keyword">false</span>);
+<a name="l00058"></a>00058 
+<a name="l00063"></a>00063     <span class="keywordtype">bool</span> <a class="code" href="classTactileArray.html#a3dd4969a067bd024a98fa9e99e40e971" title="Closes the serial port.">closeSerialPort</a>();
+<a name="l00064"></a>00064 
+<a name="l00069"></a>00069     <span class="keywordtype">bool</span> <a class="code" href="classTactileArray.html#ab8b3c1326d810855cde7422c93279dd1" title="Initialize the tactile array.">initialize</a>(<span class="keywordtype">void</span>);
+<a name="l00070"></a>00070 
+<a name="l00075"></a>00075     <span class="keywordtype">bool</span> <a class="code" href="classTactileArray.html#af2f2bcd949b994996a51409b8d3b8b9d" title="Sets the array&amp;#39;s port number.">setPort</a>(<span class="keywordtype">int</span> a_portNum);
+<a name="l00080"></a>00080     <span class="keywordtype">void</span> <a class="code" href="classTactileArray.html#a62f715d4171c021a1d22ae67b2cb121d" title="Setting intensity values.">setIntensity</a>(<span class="keywordtype">int</span> * pIntensityArray);
+<a name="l00081"></a>00081 
+<a name="l00086"></a>00086     <span class="keywordtype">void</span> <a class="code" href="classTactileArray.html#a62f715d4171c021a1d22ae67b2cb121d" title="Setting intensity values.">setIntensity</a>(<span class="keywordtype">double</span> * pIntensityArray);
+<a name="l00087"></a>00087 
+<a name="l00094"></a>00094     <span class="keywordtype">void</span> <a class="code" href="classTactileArray.html#a62f715d4171c021a1d22ae67b2cb121d" title="Setting intensity values.">setIntensity</a>(<span class="keywordtype">int</span> arrayX, <span class="keywordtype">int</span> arrayY, <span class="keywordtype">int</span> intensity);
+<a name="l00095"></a>00095 
+<a name="l00102"></a>00102     <span class="keywordtype">void</span> <a class="code" href="classTactileArray.html#a62f715d4171c021a1d22ae67b2cb121d" title="Setting intensity values.">setIntensity</a>(<span class="keywordtype">int</span> arrayX, <span class="keywordtype">int</span> arrayY, <span class="keywordtype">double</span> intensity);
+<a name="l00103"></a>00103 
+<a name="l00108"></a>00108     <span class="keywordtype">void</span> <a class="code" href="classTactileArray.html#abbca9d69c0c6be1816214ebb75ecd16c" title="Setting intensity values for all the array.">setIntensityAll</a>(<span class="keywordtype">int</span> intensity = 0);
+<a name="l00109"></a>00109 
+<a name="l00114"></a>00114     <span class="keywordtype">void</span> <a class="code" href="classTactileArray.html#abbca9d69c0c6be1816214ebb75ecd16c" title="Setting intensity values for all the array.">setIntensityAll</a>(<span class="keywordtype">double</span> intensity);
+<a name="l00115"></a>00115 
+<a name="l00121"></a>00121     <span class="keywordtype">void</span> <a class="code" href="classTactileArray.html#adc94914edaa38a6c261f2b8a42f88bbb" title="Sets the array size.">setArraySize</a>(<span class="keywordtype">int</span> a_arraySizeX, <span class="keywordtype">int</span> a_arraySizeY);
+<a name="l00122"></a>00122 
+<a name="l00126"></a>00126     <span class="keywordtype">void</span> <a class="code" href="classTactileArray.html#a2d2e28e36c7d0f166e06d5061ba85196" title="Actuates the array.">actuate</a>(<span class="keywordtype">void</span>);
+<a name="l00127"></a>00127 
+<a name="l00132"></a>00132     <span class="keywordtype">int</span> <a class="code" href="classTactileArray.html#a5bb334c3d9bca1949141f7ae4a6637ba" title="Retreive the intensity.">getMaxIntensity</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;
+<a name="l00133"></a>00133 
+<a name="l00138"></a>00138     <span class="keywordtype">int</span> <a class="code" href="classTactileArray.html#a7a573669d558b1a22bf3e943795af119" title="Retreive the array size in x.">getArraySizeX</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;
+<a name="l00139"></a>00139 
+<a name="l00144"></a>00144     <span class="keywordtype">int</span> <a class="code" href="classTactileArray.html#a7dbe69bda14b3c208d96f4e5e1fa19be" title="Retreive the array size in y.">getArraySizeY</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;
 <a name="l00145"></a>00145 
-<a name="l00146"></a>00146     <span class="keywordtype">int</span> getArraySize(<span class="keywordtype">void</span>)<span class="keyword"> const</span>
-<a name="l00147"></a>00147 <span class="keyword">    </span>{
-<a name="l00148"></a>00148         <span class="keywordflow">return</span> m_arraySize;
-<a name="l00149"></a>00149     }
-<a name="l00150"></a>00150 };
+<a name="l00150"></a>00150     <span class="keywordtype">int</span> <a class="code" href="classTactileArray.html#afffd3159074b989045c47807b133cbec" title="Retreive the array size.">getArraySize</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;
 <a name="l00151"></a>00151 
-<a name="l00152"></a>00152 <span class="preprocessor">#endif</span>
-<a name="l00153"></a>00153 <span class="preprocessor"></span>
+<a name="l00152"></a>00152 <span class="keyword">private</span>:
+<a name="l00156"></a><a class="code" href="classTactileArray.html#a40dc48b328f2c22bd82d4eebb7f1728e">00156</a>     <span class="keywordtype">int</span> <a class="code" href="classTactileArray.html#a40dc48b328f2c22bd82d4eebb7f1728e" title="Array&amp;#39;s X size.">m_arraySizeX</a>;
+<a name="l00157"></a>00157 
+<a name="l00161"></a><a class="code" href="classTactileArray.html#a542531eddf0b23d9b67ba78f27ca5f06">00161</a>     <span class="keywordtype">int</span> <a class="code" href="classTactileArray.html#a542531eddf0b23d9b67ba78f27ca5f06" title="Array&amp;#39;s Y size.">m_arraySizeY</a>;
+<a name="l00162"></a>00162 
+<a name="l00166"></a><a class="code" href="classTactileArray.html#a35224d769212429b4778d02e4125fdfe">00166</a>     <span class="keywordtype">int</span> <a class="code" href="classTactileArray.html#a35224d769212429b4778d02e4125fdfe" title="Array&amp;#39;s size.">m_arraySize</a>;
+<a name="l00167"></a>00167 
+<a name="l00171"></a><a class="code" href="classTactileArray.html#a64e1f81dcd5d2911967ac766c0fe8b85">00171</a>     <span class="keywordtype">int</span> * <a class="code" href="classTactileArray.html#a64e1f81dcd5d2911967ac766c0fe8b85" title="Reference to the array&amp;#39;s intensity.">m_pIntensityArray</a>;
+<a name="l00172"></a>00172 
+<a name="l00176"></a><a class="code" href="classTactileArray.html#a3b1697c4ff0b59f82ca1eb3cd27f4fd4">00176</a>     <span class="keywordtype">int</span> <a class="code" href="classTactileArray.html#a3b1697c4ff0b59f82ca1eb3cd27f4fd4" title="The maximum possible intensity.">m_maxIntensity</a>;
+<a name="l00177"></a>00177 
+<a name="l00181"></a><a class="code" href="classTactileArray.html#a426a0308de9b91b22b96e49dd252ec8e">00181</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> * <a class="code" href="classTactileArray.html#a426a0308de9b91b22b96e49dd252ec8e" title="Buffer to avr.">m_pBuffer</a>;
+<a name="l00182"></a>00182 
+<a name="l00186"></a><a class="code" href="classTactileArray.html#aed1c7600f47ea7366601643c0c19af14">00186</a>     <span class="keywordtype">int</span> <a class="code" href="classTactileArray.html#aed1c7600f47ea7366601643c0c19af14" title="Avr buffer&amp;#39;s size.">m_bufferSize</a>;
+<a name="l00190"></a><a class="code" href="classTactileArray.html#a1d5dcd23f529577e7e9c1f0f74a2ad02">00190</a>     <a class="code" href="classCSerialPort.html">CSerialPort</a> * <a class="code" href="classTactileArray.html#a1d5dcd23f529577e7e9c1f0f74a2ad02" title="Serial port.">m_pSerialPort</a>;
+<a name="l00191"></a>00191 
+<a name="l00195"></a><a class="code" href="classTactileArray.html#a71878047e5da1f500c8df4621a5ed482">00195</a>     <span class="keywordtype">int</span> <a class="code" href="classTactileArray.html#a71878047e5da1f500c8df4621a5ed482" title="Serial port number.">m_portNum</a>;
+<a name="l00196"></a>00196 
+<a name="l00197"></a>00197     <span class="comment">// thread parameters for test</span>
+<a name="l00198"></a><a class="code" href="classTactileArray.html#a2452ae09ea065c4980f34e36b76f6b9b">00198</a>     DWORD <a class="code" href="classTactileArray.html#a2452ae09ea065c4980f34e36b76f6b9b">m_dwTestThreadID</a>;
+<a name="l00199"></a><a class="code" href="classTactileArray.html#a67e75740dcebb35dc900c56312e16b75">00199</a>     HANDLE <a class="code" href="classTactileArray.html#a67e75740dcebb35dc900c56312e16b75">m_hTestThread</a>;
+<a name="l00200"></a>00200 
+<a name="l00204"></a>00204     <span class="keywordtype">void</span> <a class="code" href="classTactileArray.html#a0d8b973fe8f79500b0f9e3e704918855" title="Assembles the buffer.">assembleBuffer</a>(<span class="keywordtype">void</span>);
+<a name="l00205"></a>00205 };
+<a name="l00206"></a>00206 
+<a name="l00207"></a>00207 <span class="preprocessor">#endif</span>
+<a name="l00208"></a>00208 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -206,7 +153,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -215,7 +162,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:44 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

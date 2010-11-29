@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OfficeSlingshot3D: /home/kevin/workspace/HugMe/HugMe v0.9.1/Game/TitleScreen.h Source File</title>
+<title>OfficeSlingshot3D: /home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Game/TitleScreen.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -41,35 +42,50 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/TitleScreen.h</h1>  </div>
+<h1>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Game/TitleScreen.h</h1>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef TITLE_SCREEN_H</span>
+<a href="TitleScreen_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef TITLE_SCREEN_H</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define TITLE_SCREEN_H</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
-<a name="l00004"></a>00004 <span class="preprocessor">#include &quot;chai3d.h&quot;</span>
-<a name="l00005"></a>00005 
-<a name="l00009"></a><a class="code" href="classTitleScreen.html">00009</a> <span class="keyword">class </span><a class="code" href="classTitleScreen.html" title="The title screen is a 3D environment that is displayed when the game isn&amp;#39;t running.">TitleScreen</a>
-<a name="l00010"></a>00010 {
-<a name="l00011"></a>00011 <span class="keyword">public</span>:
-<a name="l00015"></a>00015     <a class="code" href="classTitleScreen.html#a7aa7add9040c34b655bcde4cd6e758f2" title="Constructor.">TitleScreen</a>();
-<a name="l00016"></a>00016 
-<a name="l00020"></a>00020     <span class="keyword">virtual</span> <a class="code" href="classTitleScreen.html#a4f844eb163acc5b2373f6330b37673c1" title="Destructor.">~TitleScreen</a>();
-<a name="l00021"></a>00021 
-<a name="l00026"></a>00026     cCamera* <a class="code" href="classTitleScreen.html#aafaa452d86899a0fa60405fa1b82754e" title="Retrieve the camera for this title screen.">camera</a>();
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028 <span class="keyword">private</span>:
-<a name="l00029"></a>00029     cWorld* world;
-<a name="l00030"></a>00030     cCamera* _camera;
-<a name="l00031"></a>00031     cLight* light;
-<a name="l00032"></a>00032     cBitmap* bitmap;
-<a name="l00033"></a>00033 };
-<a name="l00034"></a>00034 
-<a name="l00035"></a>00035 <span class="preprocessor">#endif</span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &quot;stdafx.h&quot;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;chai3d.h&quot;</span>
+<a name="l00006"></a>00006 
+<a name="l00007"></a>00007 <span class="keyword">using namespace </span>std;
+<a name="l00008"></a>00008 
+<a name="l00012"></a><a class="code" href="classTitleScreen.html">00012</a> <span class="keyword">class </span><a class="code" href="classTitleScreen.html" title="The title screen is a 3D environment that is displayed when the game isn&amp;#39;t running.">TitleScreen</a>
+<a name="l00013"></a>00013 {
+<a name="l00014"></a>00014 <span class="keyword">public</span>:
+<a name="l00018"></a>00018     <a class="code" href="classTitleScreen.html" title="The title screen is a 3D environment that is displayed when the game isn&amp;#39;t running.">TitleScreen</a>();
+<a name="l00019"></a>00019 
+<a name="l00023"></a>00023     <span class="keyword">virtual</span> ~<a class="code" href="classTitleScreen.html" title="The title screen is a 3D environment that is displayed when the game isn&amp;#39;t running.">TitleScreen</a>();
+<a name="l00024"></a>00024 
+<a name="l00029"></a>00029     cCamera* camera();
+<a name="l00030"></a>00030 
+<a name="l00035"></a>00035     <span class="keywordtype">void</span> changeMuteIcon(<span class="keywordtype">bool</span> soundOn);
+<a name="l00036"></a>00036 
+<a name="l00041"></a>00041     <span class="keywordtype">void</span> changeVolumeIcon(<span class="keywordtype">int</span> vol);
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043 <span class="keyword">private</span>:
+<a name="l00047"></a><a class="code" href="classTitleScreen.html#a3f3356631a930f11c762092b7e454b65">00047</a>     cWorld* world;
+<a name="l00048"></a>00048 
+<a name="l00052"></a><a class="code" href="classTitleScreen.html#a2c2eff5e9ef493f2ae0acf75702b98fd">00052</a>     cCamera* _camera;
+<a name="l00053"></a>00053 
+<a name="l00057"></a><a class="code" href="classTitleScreen.html#ac1e5aff821d202a0b11a29382f7685ba">00057</a>     cLight* light;
+<a name="l00058"></a>00058 
+<a name="l00062"></a><a class="code" href="classTitleScreen.html#a951e7c3632d55af26acaec5d1f3069b0">00062</a>     cBitmap* bitmap;
+<a name="l00063"></a>00063 
+<a name="l00067"></a><a class="code" href="classTitleScreen.html#a9b829cbb189ade96ddf97b63266fcc1f">00067</a>     cBitmap* muteControl;
+<a name="l00068"></a>00068 
+<a name="l00072"></a><a class="code" href="classTitleScreen.html#a38c360591c036862e58df41c53c4be48">00072</a>     cBitmap* volumeControl;
+<a name="l00073"></a>00073 };
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -77,7 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -86,7 +102,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:44 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

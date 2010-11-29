@@ -2,32 +2,32 @@
 <!--Detailed report on module MFCUserInterface-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="134" level="0" />
+<lines_of_code value="159" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
-<McCabes_cyclomatic_complexity value="20" level="0" />
+<McCabes_cyclomatic_complexity value="23" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
-<lines_of_code value="23" level="0" />
+<lines_of_code value="107" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="5.826" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.870" level="0" />
-<weighted_methods_per_class_unity value="22" level="0" />
+<lines_of_code_per_line_of_comment value="1.486" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.215" level="0" />
+<weighted_methods_per_class_unity value="26" level="0" />
 <weighted_methods_per_class_visibility value="8" level="0" />
 <depth_of_inheritance_tree value="2" level="0" />
 <number_of_children value="1" level="0" />
-<coupling_between_objects value="8" level="0" />
-<IF4 value="49" level="0" />
+<coupling_between_objects value="10" level="0" />
+<IF4 value="81" level="0" />
 <IF4_per_member_function value="********" level="2" />
-<IF4_visible value="49" level="1" />
+<IF4_visible value="81" level="1" />
 <IF4_visible_per_member_function value="********" level="2" />
-<IF4_concrete value="16" level="0" />
+<IF4_concrete value="25" level="0" />
 <IF4_concrete_per_member_function value="********" level="2" />
 </module_summary>
 <module_detail>
 <description>definition</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="16" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="22" />
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="9" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 <description>declaration</description>
@@ -47,11 +47,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="19" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="29" />
 </extent>
 <lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -59,15 +59,31 @@
 <name>changePreferences(const UserPreferences &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="128" />
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="127" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="66" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="134" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>changeVolume(const int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="139" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="157" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -79,11 +95,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="69" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="139" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -95,11 +111,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="39" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="63" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -111,11 +127,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="33" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="51" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="4" level="0" />
+<lines_of_comment value="8" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -127,11 +143,27 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="40" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="68" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="3" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>displayGameOver(Player_t)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="110" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="84" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -143,27 +175,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="36" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="58" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>displayLocalFrame(const VideoData &amp;)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="110" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="45" />
-</extent>
-<lines_of_code value="5" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -175,11 +191,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="41" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="73" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -191,27 +207,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="44" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="78" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>displayRemoteFrame(const VideoData &amp;)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="116" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="46" />
-</extent>
-<lines_of_code value="5" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -223,11 +223,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="62" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="123" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -239,11 +239,27 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="75" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="175" />
 </extent>
 <lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>muteVolume(const bool)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="133" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="151" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -255,11 +271,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="53" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="98" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="4" level="0" />
+<lines_of_comment value="6" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -271,11 +287,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="55" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="108" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -287,11 +303,27 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="54" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="103" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="3" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>paint()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="116" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="89" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -303,11 +335,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="63" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="128" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -319,11 +351,27 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="58" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="113" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="3" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>setMutePref(const bool)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="145" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="163" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -331,15 +379,31 @@
 <name>setPeerUserName(const string &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="122" />
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="121" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="72" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="145" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>setVolPref(const int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="151" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="169" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -351,11 +415,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="61" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="118" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -367,7 +431,7 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="26" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="40" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
@@ -383,11 +447,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="20" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="34" />
 </extent>
 <lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -410,7 +474,7 @@
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="78" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="181" />
 </extent>
 <name>ConnectionState_t</name>
 <visible>true</visible>
@@ -421,7 +485,7 @@
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="33" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="51" />
 </extent>
 <name>GameState_t</name>
 <visible>true</visible>
@@ -432,7 +496,7 @@
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="36" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="58" />
 </extent>
 <name>Player_t</name>
 <visible>true</visible>
@@ -447,18 +511,64 @@
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="33" />
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="110" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="36" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="51" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="58" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="84" />
 </extent>
 <name>UserInterface</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="16" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="22" />
+</extent>
+<name>UserPreferences</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="5" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="127" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="29" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="134" />
+</extent>
+<name>bool</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="133" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="145" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="151" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="163" />
 </extent>
 <name>cCamera</name>
 <visible>true</visible>
@@ -469,7 +579,7 @@
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="26" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="40" />
 </extent>
 <name>string</name>
 <visible>true</visible>
@@ -484,19 +594,19 @@
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="122" />
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="121" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="44" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="78" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="58" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="113" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="72" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="145" />
 </extent>
 </supplier_module>
 </module>

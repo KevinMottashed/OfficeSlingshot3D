@@ -41,35 +41,35 @@
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
-<description>has by reference</description>
-<source_reference file="../../Utils/SyncLocker.h" line="8" />
+<description>pass by reference</description>
+<source_reference file="../../Utils/SyncLocker.h" line="17" />
 </extent>
 <extent>
-<description>pass by reference</description>
-<source_reference file="../../Utils/SyncLocker.h" line="10" />
+<description>has by reference</description>
+<source_reference file="../../Utils/SyncLocker.h" line="41" />
 </extent>
 <name>SyncReaderWriters</name>
 <visible>false</visible>
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Utils/SyncReaderWriters.h" line="47" />
+<source_reference file="../../Utils/SyncReaderWriters.h" line="61" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Utils/SyncReaderWriters.h" line="50" />
+<source_reference file="../../Utils/SyncReaderWriters.h" line="64" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Utils/SyncReaderWriters.h" line="53" />
+<source_reference file="../../Utils/SyncReaderWriters.h" line="67" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Utils/SyncReaderWriters.h" line="56" />
+<source_reference file="../../Utils/SyncReaderWriters.h" line="70" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Utils/SyncReaderWriters.h" line="59" />
+<source_reference file="../../Utils/SyncReaderWriters.h" line="73" />
 </extent>
 </client_module>
 <supplier_module>

@@ -14,7 +14,7 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="4" level="0" />
+<coupling_between_objects value="5" level="0" />
 <IF4 value="0" level="0" />
 <IF4_per_member_function value="********" level="0" />
 <IF4_visible value="0" level="0" />
@@ -158,6 +158,21 @@
 <client_module>
 </client_module>
 <supplier_module>
+<name>UserPreferences</name>
+<visible>false</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/Replayer.cpp" line="6" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/Replayer.h" line="24" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Replay/Replayer.h" line="43" />
+</extent>
 <name>auto_ptr</name>
 <visible>true</visible>
 <concrete>true</concrete>

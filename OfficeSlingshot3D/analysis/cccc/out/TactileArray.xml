@@ -2,16 +2,16 @@
 <!--Detailed report on module TactileArray-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="175" level="0" />
+<lines_of_code value="117" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
-<McCabes_cyclomatic_complexity value="33" level="0" />
+<McCabes_cyclomatic_complexity value="17" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
-<lines_of_code value="27" level="0" />
+<lines_of_code value="128" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="6.481" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="1.222" level="0" />
-<weighted_methods_per_class_unity value="20" level="0" />
-<weighted_methods_per_class_visibility value="19" level="0" />
+<lines_of_code_per_line_of_comment value="0.914" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.133" level="0" />
+<weighted_methods_per_class_unity value="19" level="0" />
+<weighted_methods_per_class_visibility value="18" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="2" level="0" />
 <coupling_between_objects value="6" level="0" />
@@ -24,10 +24,10 @@
 </module_summary>
 <module_detail>
 <description>definition</description>
-<source_reference file="../../Jacket/TactileArray.h" line="39" />
-<lines_of_code value="17" level="0" />
+<source_reference file="../../Jacket/TactileArray.h" line="37" />
+<lines_of_code value="16" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="15" level="0" />
+<lines_of_comment value="37" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module_detail>
@@ -40,11 +40,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Jacket/TactileArray.h" line="42" />
+<source_reference file="../../Jacket/TactileArray.h" line="44" />
 </extent>
 <lines_of_code value="14" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="3" level="0" />
+<lines_of_comment value="7" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -56,11 +56,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Jacket/TactileArray.h" line="128" />
+<source_reference file="../../Jacket/TactileArray.h" line="126" />
 </extent>
 <lines_of_code value="7" level="0" />
 <McCabes_cyclomatic_complexity value="2" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -72,12 +72,12 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Jacket/TactileArray.h" line="64" />
+<source_reference file="../../Jacket/TactileArray.h" line="204" />
 </extent>
 <lines_of_code value="26" level="0" />
 <McCabes_cyclomatic_complexity value="3" level="0" />
-<lines_of_comment value="0" level="0" />
-<lines_of_code_per_line_of_comment value="******" level="2" />
+<lines_of_comment value="3" level="0" />
+<lines_of_code_per_line_of_comment value="8.667" level="1" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
@@ -88,59 +88,59 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Jacket/TactileArray.h" line="45" />
+<source_reference file="../../Jacket/TactileArray.h" line="63" />
 </extent>
 <lines_of_code value="9" level="0" />
 <McCabes_cyclomatic_complexity value="2" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
 <name>getArraySize(void)</name>
 <extent>
-<description>definition</description>
-<source_reference file="../../Jacket/TactileArray.h" line="146" />
+<description>declaration</description>
+<source_reference file="../../Jacket/TactileArray.h" line="150" />
 </extent>
-<lines_of_code value="4" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
 <name>getArraySizeX(void)</name>
 <extent>
-<description>definition</description>
-<source_reference file="../../Jacket/TactileArray.h" line="136" />
+<description>declaration</description>
+<source_reference file="../../Jacket/TactileArray.h" line="138" />
 </extent>
-<lines_of_code value="4" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
 <name>getArraySizeY(void)</name>
 <extent>
-<description>definition</description>
-<source_reference file="../../Jacket/TactileArray.h" line="141" />
+<description>declaration</description>
+<source_reference file="../../Jacket/TactileArray.h" line="144" />
 </extent>
-<lines_of_code value="4" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
 <name>getMaxIntensity(void)</name>
 <extent>
-<description>definition</description>
-<source_reference file="../../Jacket/TactileArray.h" line="131" />
+<description>declaration</description>
+<source_reference file="../../Jacket/TactileArray.h" line="132" />
 </extent>
-<lines_of_code value="4" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -148,11 +148,11 @@
 <name>initialize(void)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Jacket/TactileArray.h" line="67" />
+<source_reference file="../../Jacket/TactileArray.h" line="69" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -164,95 +164,95 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Jacket/TactileArray.h" line="44" />
+<source_reference file="../../Jacket/TactileArray.h" line="57" />
 </extent>
 <lines_of_code value="25" level="0" />
 <McCabes_cyclomatic_complexity value="10" level="0" />
-<lines_of_comment value="3" level="0" />
-<lines_of_code_per_line_of_comment value="8.333" level="1" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="3.333" level="0" />
+<lines_of_comment value="9" level="0" />
+<lines_of_code_per_line_of_comment value="2.778" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="1.111" level="0" />
 </member_function>
 <member_function>
 <name>setArraySize(int,int)</name>
 <extent>
-<description>definition</description>
-<source_reference file="../../Jacket/TactileArray.h" line="122" />
+<description>declaration</description>
+<source_reference file="../../Jacket/TactileArray.h" line="121" />
 </extent>
-<lines_of_code value="6" level="0" />
+<lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
 <name>setIntensity(double *)</name>
 <extent>
-<description>definition</description>
-<source_reference file="../../Jacket/TactileArray.h" line="76" />
+<description>declaration</description>
+<source_reference file="../../Jacket/TactileArray.h" line="86" />
 </extent>
-<lines_of_code value="6" level="0" />
-<McCabes_cyclomatic_complexity value="2" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
 <name>setIntensity(int *)</name>
 <extent>
-<description>definition</description>
-<source_reference file="../../Jacket/TactileArray.h" line="71" />
+<description>declaration</description>
+<source_reference file="../../Jacket/TactileArray.h" line="80" />
 </extent>
-<lines_of_code value="4" level="0" />
+<lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
 <name>setIntensity(int,int,double)</name>
 <extent>
-<description>definition</description>
-<source_reference file="../../Jacket/TactileArray.h" line="92" />
+<description>declaration</description>
+<source_reference file="../../Jacket/TactileArray.h" line="102" />
 </extent>
-<lines_of_code value="8" level="0" />
-<McCabes_cyclomatic_complexity value="2" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="6" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
 <name>setIntensity(int,int,int)</name>
 <extent>
-<description>definition</description>
-<source_reference file="../../Jacket/TactileArray.h" line="83" />
+<description>declaration</description>
+<source_reference file="../../Jacket/TactileArray.h" line="94" />
 </extent>
-<lines_of_code value="8" level="0" />
-<McCabes_cyclomatic_complexity value="2" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="6" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
 <name>setIntensityAll(double)</name>
 <extent>
-<description>definition</description>
-<source_reference file="../../Jacket/TactileArray.h" line="111" />
+<description>declaration</description>
+<source_reference file="../../Jacket/TactileArray.h" line="114" />
 </extent>
-<lines_of_code value="10" level="0" />
-<McCabes_cyclomatic_complexity value="3" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
 <name>setIntensityAll(int)</name>
 <extent>
-<description>definition</description>
-<source_reference file="../../Jacket/TactileArray.h" line="101" />
+<description>declaration</description>
+<source_reference file="../../Jacket/TactileArray.h" line="108" />
 </extent>
-<lines_of_code value="9" level="0" />
-<McCabes_cyclomatic_complexity value="3" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -260,23 +260,11 @@
 <name>setPort(int)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Jacket/TactileArray.h" line="68" />
+<source_reference file="../../Jacket/TactileArray.h" line="75" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>test1by1(void)</name>
-<extent>
-<description>declaration</description>
-<source_reference file="../../Jacket/TactileArray.h" line="129" />
-</extent>
-<lines_of_code value="1" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -288,11 +276,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Jacket/TactileArray.h" line="43" />
+<source_reference file="../../Jacket/TactileArray.h" line="49" />
 </extent>
 <lines_of_code value="7" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="4" level="0" />
+<lines_of_comment value="7" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -306,14 +294,14 @@
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../Jacket/DisplayDeviceArmband.h" line="9" />
+<source_reference file="../../Jacket/DisplayDeviceArmband.h" line="13" />
 </extent>
 <name>DisplayDeviceJacket</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../Jacket/DisplayDeviceJacket.h" line="13" />
+<source_reference file="../../Jacket/DisplayDeviceJacket.h" line="18" />
 </extent>
 </client_module>
 <supplier_module>
@@ -322,21 +310,21 @@
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Jacket/TactileArray.h" line="57" />
+<source_reference file="../../Jacket/TactileArray.h" line="190" />
 </extent>
 <name>DWORD</name>
 <visible>false</visible>
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Jacket/TactileArray.h" line="61" />
+<source_reference file="../../Jacket/TactileArray.h" line="198" />
 </extent>
 <name>HANDLE</name>
 <visible>false</visible>
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Jacket/TactileArray.h" line="62" />
+<source_reference file="../../Jacket/TactileArray.h" line="199" />
 </extent>
 <name>bool</name>
 <visible>true</visible>
@@ -347,7 +335,7 @@
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Jacket/TactileArray.h" line="44" />
+<source_reference file="../../Jacket/TactileArray.h" line="57" />
 </extent>
 </supplier_module>
 </module>

@@ -2,14 +2,14 @@
 <!--Detailed report on module KeyboardZCamera-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="56" level="0" />
+<lines_of_code value="61" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
-<McCabes_cyclomatic_complexity value="5" level="0" />
+<McCabes_cyclomatic_complexity value="7" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
-<lines_of_code value="27" level="0" />
+<lines_of_code value="28" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="2.074" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.185" level="0" />
+<lines_of_code_per_line_of_comment value="2.179" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.250" level="0" />
 <weighted_methods_per_class_unity value="5" level="0" />
 <weighted_methods_per_class_visibility value="5" level="0" />
 <depth_of_inheritance_tree value="2" level="0" />
@@ -59,17 +59,17 @@
 <name>keyPressed(int)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../ZCamera/KeyboardZCamera.cpp" line="28" />
+<source_reference file="../../ZCamera/KeyboardZCamera.cpp" line="30" />
 </extent>
 <extent>
 <description>declaration</description>
 <source_reference file="../../ZCamera/KeyboardZCamera.h" line="37" />
 </extent>
-<lines_of_code value="26" level="0" />
-<McCabes_cyclomatic_complexity value="5" level="0" />
+<lines_of_code value="30" level="0" />
+<McCabes_cyclomatic_complexity value="7" level="0" />
 <lines_of_comment value="4" level="0" />
-<lines_of_code_per_line_of_comment value="6.500" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="1.250" level="0" />
+<lines_of_code_per_line_of_comment value="7.500" level="1" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="1.750" level="0" />
 </member_function>
 <member_function>
 <name>startCapture()</name>
@@ -97,9 +97,9 @@
 <description>declaration</description>
 <source_reference file="../../ZCamera/KeyboardZCamera.h" line="32" />
 </extent>
-<lines_of_code value="5" level="0" />
+<lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="3" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>

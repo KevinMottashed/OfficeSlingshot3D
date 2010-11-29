@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -48,24 +49,214 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <h1>OfficeSlingshot3D Class Reference</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="OfficeSlingshot3D" --><table class="memberdecls">
+<!-- doxytag: class="OfficeSlingshot3D" -->
+<p>The office slingshot 3D class is the class that runs the game The game can be started by calling <a class="el" href="classOfficeSlingshot3D.html#a0f34ade76b08ebb126176bca57eaec66" title="Starts the application.">run()</a> or operator ().  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="OfficeSlingshot3D_8h_source.html">OfficeSlingshot3D.h</a>&gt;</code></p>
+<table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3695f1459a3979777d0f06fdcbdde7a1"></a><!-- doxytag: member="OfficeSlingshot3D::OfficeSlingshot3D" ref="a3695f1459a3979777d0f06fdcbdde7a1" args="(boost::shared_ptr&lt; Game &gt; game, boost::shared_ptr&lt; Logger &gt; logger, boost::shared_ptr&lt; Replayer &gt; replayer, CDialog *dialog)" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><b>OfficeSlingshot3D</b> (boost::shared_ptr&lt; <a class="el" href="classGame.html">Game</a> &gt; game, boost::shared_ptr&lt; <a class="el" href="classLogger.html">Logger</a> &gt; logger, boost::shared_ptr&lt; <a class="el" href="classReplayer.html">Replayer</a> &gt; replayer, CDialog *dialog)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0f34ade76b08ebb126176bca57eaec66"></a><!-- doxytag: member="OfficeSlingshot3D::run" ref="a0f34ade76b08ebb126176bca57eaec66" args="()" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a525fe6fecb5ec28394dfe906596a5421"></a><!-- doxytag: member="OfficeSlingshot3D::operator()" ref="a525fe6fecb5ec28394dfe906596a5421" args="()" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>operator()</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOfficeSlingshot3D.html#a3695f1459a3979777d0f06fdcbdde7a1">OfficeSlingshot3D</a> (boost::shared_ptr&lt; <a class="el" href="classGame.html">Game</a> &gt; <a class="el" href="classOfficeSlingshot3D.html#afb41b0f28f1024c831228ab1d6d948e4">game</a>, boost::shared_ptr&lt; <a class="el" href="classLogger.html">Logger</a> &gt; <a class="el" href="classOfficeSlingshot3D.html#a3ce019aa2232a218d04bc2bbb27636e7">logger</a>, boost::shared_ptr&lt; <a class="el" href="classReplayer.html">Replayer</a> &gt; <a class="el" href="classOfficeSlingshot3D.html#ace5389b8ac58be71587a1682976800d5">replayer</a>, CDialog *<a class="el" href="classOfficeSlingshot3D.html#ab8245fcb337c019fc3101f5ec7879729">dialog</a>)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#a3695f1459a3979777d0f06fdcbdde7a1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOfficeSlingshot3D.html#afaa1e2dc717d888fd7a1365f7166ccad">~OfficeSlingshot3D</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#afaa1e2dc717d888fd7a1365f7166ccad"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOfficeSlingshot3D.html#a0f34ade76b08ebb126176bca57eaec66">run</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Starts the application.  <a href="#a0f34ade76b08ebb126176bca57eaec66"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOfficeSlingshot3D.html#a525fe6fecb5ec28394dfe906596a5421">operator()</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Starts the application Provided so that we can easily create a boost::thread from this object.  <a href="#a525fe6fecb5ec28394dfe906596a5421"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr&lt; <a class="el" href="classGame.html">Game</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOfficeSlingshot3D.html#afb41b0f28f1024c831228ab1d6d948e4">game</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The game object.  <a href="#afb41b0f28f1024c831228ab1d6d948e4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr&lt; <a class="el" href="classLogger.html">Logger</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOfficeSlingshot3D.html#a3ce019aa2232a218d04bc2bbb27636e7">logger</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The logger object.  <a href="#a3ce019aa2232a218d04bc2bbb27636e7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr&lt; <a class="el" href="classReplayer.html">Replayer</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOfficeSlingshot3D.html#ace5389b8ac58be71587a1682976800d5">replayer</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The replayer object.  <a href="#ace5389b8ac58be71587a1682976800d5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CDialog *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOfficeSlingshot3D.html#ab8245fcb337c019fc3101f5ec7879729">dialog</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Used to start the application.  <a href="#ab8245fcb337c019fc3101f5ec7879729"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>The office slingshot 3D class is the class that runs the game The game can be started by calling <a class="el" href="classOfficeSlingshot3D.html#a0f34ade76b08ebb126176bca57eaec66" title="Starts the application.">run()</a> or operator (). </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a3695f1459a3979777d0f06fdcbdde7a1"></a><!-- doxytag: member="OfficeSlingshot3D::OfficeSlingshot3D" ref="a3695f1459a3979777d0f06fdcbdde7a1" args="(boost::shared_ptr&lt; Game &gt; game, boost::shared_ptr&lt; Logger &gt; logger, boost::shared_ptr&lt; Replayer &gt; replayer, CDialog *dialog)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">OfficeSlingshot3D::OfficeSlingshot3D </td>
+          <td>(</td>
+          <td class="paramtype">boost::shared_ptr&lt; <a class="el" href="classGame.html">Game</a> &gt;&nbsp;</td>
+          <td class="paramname"> <em>game</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boost::shared_ptr&lt; <a class="el" href="classLogger.html">Logger</a> &gt;&nbsp;</td>
+          <td class="paramname"> <em>logger</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boost::shared_ptr&lt; <a class="el" href="classReplayer.html">Replayer</a> &gt;&nbsp;</td>
+          <td class="paramname"> <em>replayer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CDialog *&nbsp;</td>
+          <td class="paramname"> <em>dialog</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>game</em>&nbsp;</td><td>The game object </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>logger</em>&nbsp;</td><td>The application's logger </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>replayer</em>&nbsp;</td><td>The application's replayer </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>dialog</em>&nbsp;</td><td>The main window of the application </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="afaa1e2dc717d888fd7a1365f7166ccad"></a><!-- doxytag: member="OfficeSlingshot3D::~OfficeSlingshot3D" ref="afaa1e2dc717d888fd7a1365f7166ccad" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">OfficeSlingshot3D::~OfficeSlingshot3D </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a525fe6fecb5ec28394dfe906596a5421"></a><!-- doxytag: member="OfficeSlingshot3D::operator()" ref="a525fe6fecb5ec28394dfe906596a5421" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OfficeSlingshot3D::operator() </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Starts the application Provided so that we can easily create a boost::thread from this object. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0f34ade76b08ebb126176bca57eaec66"></a><!-- doxytag: member="OfficeSlingshot3D::run" ref="a0f34ade76b08ebb126176bca57eaec66" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OfficeSlingshot3D::run </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Starts the application. </p>
+
+</div>
+</div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="ab8245fcb337c019fc3101f5ec7879729"></a><!-- doxytag: member="OfficeSlingshot3D::dialog" ref="ab8245fcb337c019fc3101f5ec7879729" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CDialog* <a class="el" href="classOfficeSlingshot3D.html#ab8245fcb337c019fc3101f5ec7879729">OfficeSlingshot3D::dialog</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Used to start the application. </p>
+
+</div>
+</div>
+<a class="anchor" id="afb41b0f28f1024c831228ab1d6d948e4"></a><!-- doxytag: member="OfficeSlingshot3D::game" ref="afb41b0f28f1024c831228ab1d6d948e4" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::shared_ptr&lt;<a class="el" href="classGame.html">Game</a>&gt; <a class="el" href="classOfficeSlingshot3D.html#afb41b0f28f1024c831228ab1d6d948e4">OfficeSlingshot3D::game</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The game object. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3ce019aa2232a218d04bc2bbb27636e7"></a><!-- doxytag: member="OfficeSlingshot3D::logger" ref="a3ce019aa2232a218d04bc2bbb27636e7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::shared_ptr&lt;<a class="el" href="classLogger.html">Logger</a>&gt; <a class="el" href="classOfficeSlingshot3D.html#a3ce019aa2232a218d04bc2bbb27636e7">OfficeSlingshot3D::logger</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The logger object. </p>
+
+</div>
+</div>
+<a class="anchor" id="ace5389b8ac58be71587a1682976800d5"></a><!-- doxytag: member="OfficeSlingshot3D::replayer" ref="ace5389b8ac58be71587a1682976800d5" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::shared_ptr&lt;<a class="el" href="classReplayer.html">Replayer</a>&gt; <a class="el" href="classOfficeSlingshot3D.html#ace5389b8ac58be71587a1682976800d5">OfficeSlingshot3D::replayer</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The replayer object. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Main/<a class="el" href="OfficeSlingshot3D_8h_source.html">OfficeSlingshot3D.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Main/OfficeSlingshot3D.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Main/<a class="el" href="OfficeSlingshot3D_8h_source.html">OfficeSlingshot3D.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Main/<a class="el" href="OfficeSlingshot3D_8cpp.html">OfficeSlingshot3D.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -73,7 +264,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>operator()</b> ()</td
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,7 +273,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>operator()</b> ()</td
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:46 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

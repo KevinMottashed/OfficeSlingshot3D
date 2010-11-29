@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -48,12 +49,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <h1>TactileArray Class Reference</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="TactileArray" --><div class="dynheader">
+<!-- doxytag: class="TactileArray" -->
+<p>Interface class for any smart clothing hardware.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="TactileArray_8h_source.html">TactileArray.h</a>&gt;</code></p>
+<div class="dynheader">
 Inheritance diagram for TactileArray:</div>
 <div class="dyncontent">
  <div class="center">
@@ -66,46 +74,738 @@ Inheritance diagram for TactileArray:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acbfafee94d72b978ace17f08167fc036"></a><!-- doxytag: member="TactileArray::TactileArray" ref="acbfafee94d72b978ace17f08167fc036" args="(int a_portNum)" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><b>TactileArray</b> (int a_portNum)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeadf3a68daab9c158a108a15debb28b8"></a><!-- doxytag: member="TactileArray::openSerialPort" ref="aeadf3a68daab9c158a108a15debb28b8" args="(int pNo=1, bool announce=false)" -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>openSerialPort</b> (int pNo=1, bool announce=false)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3dd4969a067bd024a98fa9e99e40e971"></a><!-- doxytag: member="TactileArray::closeSerialPort" ref="a3dd4969a067bd024a98fa9e99e40e971" args="()" -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>closeSerialPort</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab8b3c1326d810855cde7422c93279dd1"></a><!-- doxytag: member="TactileArray::initialize" ref="ab8b3c1326d810855cde7422c93279dd1" args="(void)" -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>initialize</b> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afa6e34c93e1311edce551539831e0982"></a><!-- doxytag: member="TactileArray::setPort" ref="afa6e34c93e1311edce551539831e0982" args="(int a_portNum)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>setPort</b> (int a_portNum)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a62f715d4171c021a1d22ae67b2cb121d"></a><!-- doxytag: member="TactileArray::setIntensity" ref="a62f715d4171c021a1d22ae67b2cb121d" args="(int *pIntensityArray)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>setIntensity</b> (int *pIntensityArray)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9d537a2423b2cba35badcca3468593f0"></a><!-- doxytag: member="TactileArray::setIntensity" ref="a9d537a2423b2cba35badcca3468593f0" args="(double *pIntensityArray)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>setIntensity</b> (double *pIntensityArray)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a57f15c2bbd18cbbdf2fe59d8a550d8a5"></a><!-- doxytag: member="TactileArray::setIntensity" ref="a57f15c2bbd18cbbdf2fe59d8a550d8a5" args="(int arrayX, int arrayY, int intensity)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>setIntensity</b> (int arrayX, int arrayY, int intensity)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8e84527dac8a4b36ac8dbddf50a4c855"></a><!-- doxytag: member="TactileArray::setIntensity" ref="a8e84527dac8a4b36ac8dbddf50a4c855" args="(int arrayX, int arrayY, double intensity)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>setIntensity</b> (int arrayX, int arrayY, double intensity)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abbca9d69c0c6be1816214ebb75ecd16c"></a><!-- doxytag: member="TactileArray::setIntensityAll" ref="abbca9d69c0c6be1816214ebb75ecd16c" args="(int intensity=0)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>setIntensityAll</b> (int intensity=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad3edd3dc58c199e73a5095fe9ccb6c5e"></a><!-- doxytag: member="TactileArray::setIntensityAll" ref="ad3edd3dc58c199e73a5095fe9ccb6c5e" args="(double intensity)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>setIntensityAll</b> (double intensity)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adc94914edaa38a6c261f2b8a42f88bbb"></a><!-- doxytag: member="TactileArray::setArraySize" ref="adc94914edaa38a6c261f2b8a42f88bbb" args="(int a_arraySizeX, int a_arraySizeY)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>setArraySize</b> (int a_arraySizeX, int a_arraySizeY)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2d2e28e36c7d0f166e06d5061ba85196"></a><!-- doxytag: member="TactileArray::actuate" ref="a2d2e28e36c7d0f166e06d5061ba85196" args="(void)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>actuate</b> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a40a5564388ad4ee3fabf8b9866538b48"></a><!-- doxytag: member="TactileArray::test1by1" ref="a40a5564388ad4ee3fabf8b9866538b48" args="(void)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>test1by1</b> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5bb334c3d9bca1949141f7ae4a6637ba"></a><!-- doxytag: member="TactileArray::getMaxIntensity" ref="a5bb334c3d9bca1949141f7ae4a6637ba" args="(void) const " -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getMaxIntensity</b> (void) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7a573669d558b1a22bf3e943795af119"></a><!-- doxytag: member="TactileArray::getArraySizeX" ref="a7a573669d558b1a22bf3e943795af119" args="(void) const " -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getArraySizeX</b> (void) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7dbe69bda14b3c208d96f4e5e1fa19be"></a><!-- doxytag: member="TactileArray::getArraySizeY" ref="a7dbe69bda14b3c208d96f4e5e1fa19be" args="(void) const " -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getArraySizeY</b> (void) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afffd3159074b989045c47807b133cbec"></a><!-- doxytag: member="TactileArray::getArraySize" ref="afffd3159074b989045c47807b133cbec" args="(void) const " -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getArraySize</b> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTactileArray.html#acbfafee94d72b978ace17f08167fc036">TactileArray</a> (int a_portNum)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#acbfafee94d72b978ace17f08167fc036"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTactileArray.html#aa72109a83d27ab40f2098f40155e3865">~TactileArray</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#aa72109a83d27ab40f2098f40155e3865"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTactileArray.html#aeadf3a68daab9c158a108a15debb28b8">openSerialPort</a> (int pNo=1, bool announce=false)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Open's the array's serial port.  <a href="#aeadf3a68daab9c158a108a15debb28b8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTactileArray.html#a3dd4969a067bd024a98fa9e99e40e971">closeSerialPort</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Closes the serial port.  <a href="#a3dd4969a067bd024a98fa9e99e40e971"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTactileArray.html#ab8b3c1326d810855cde7422c93279dd1">initialize</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Initialize the tactile array.  <a href="#ab8b3c1326d810855cde7422c93279dd1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTactileArray.html#af2f2bcd949b994996a51409b8d3b8b9d">setPort</a> (int a_portNum)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the array's port number.  <a href="#af2f2bcd949b994996a51409b8d3b8b9d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTactileArray.html#a62f715d4171c021a1d22ae67b2cb121d">setIntensity</a> (int *pIntensityArray)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Setting intensity values.  <a href="#a62f715d4171c021a1d22ae67b2cb121d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTactileArray.html#a9d537a2423b2cba35badcca3468593f0">setIntensity</a> (double *pIntensityArray)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Setting intensity values.  <a href="#a9d537a2423b2cba35badcca3468593f0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTactileArray.html#a57f15c2bbd18cbbdf2fe59d8a550d8a5">setIntensity</a> (int arrayX, int arrayY, int intensity)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Setting intensity values.  <a href="#a57f15c2bbd18cbbdf2fe59d8a550d8a5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTactileArray.html#a8e84527dac8a4b36ac8dbddf50a4c855">setIntensity</a> (int arrayX, int arrayY, double intensity)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Setting intensity values.  <a href="#a8e84527dac8a4b36ac8dbddf50a4c855"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTactileArray.html#abbca9d69c0c6be1816214ebb75ecd16c">setIntensityAll</a> (int intensity=0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Setting intensity values for all the array.  <a href="#abbca9d69c0c6be1816214ebb75ecd16c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTactileArray.html#ad3edd3dc58c199e73a5095fe9ccb6c5e">setIntensityAll</a> (double intensity)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Setting intensity values for all the array.  <a href="#ad3edd3dc58c199e73a5095fe9ccb6c5e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTactileArray.html#adc94914edaa38a6c261f2b8a42f88bbb">setArraySize</a> (int a_arraySizeX, int a_arraySizeY)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the array size.  <a href="#adc94914edaa38a6c261f2b8a42f88bbb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTactileArray.html#a2d2e28e36c7d0f166e06d5061ba85196">actuate</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Actuates the array.  <a href="#a2d2e28e36c7d0f166e06d5061ba85196"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTactileArray.html#a5bb334c3d9bca1949141f7ae4a6637ba">getMaxIntensity</a> (void) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retreive the intensity.  <a href="#a5bb334c3d9bca1949141f7ae4a6637ba"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTactileArray.html#a7a573669d558b1a22bf3e943795af119">getArraySizeX</a> (void) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retreive the array size in x.  <a href="#a7a573669d558b1a22bf3e943795af119"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTactileArray.html#a7dbe69bda14b3c208d96f4e5e1fa19be">getArraySizeY</a> (void) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retreive the array size in y.  <a href="#a7dbe69bda14b3c208d96f4e5e1fa19be"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTactileArray.html#afffd3159074b989045c47807b133cbec">getArraySize</a> (void) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retreive the array size.  <a href="#afffd3159074b989045c47807b133cbec"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTactileArray.html#a0d8b973fe8f79500b0f9e3e704918855">assembleBuffer</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Assembles the buffer.  <a href="#a0d8b973fe8f79500b0f9e3e704918855"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTactileArray.html#a40dc48b328f2c22bd82d4eebb7f1728e">m_arraySizeX</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Array's X size.  <a href="#a40dc48b328f2c22bd82d4eebb7f1728e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTactileArray.html#a542531eddf0b23d9b67ba78f27ca5f06">m_arraySizeY</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Array's Y size.  <a href="#a542531eddf0b23d9b67ba78f27ca5f06"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTactileArray.html#a35224d769212429b4778d02e4125fdfe">m_arraySize</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Array's size.  <a href="#a35224d769212429b4778d02e4125fdfe"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTactileArray.html#a64e1f81dcd5d2911967ac766c0fe8b85">m_pIntensityArray</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reference to the array's intensity.  <a href="#a64e1f81dcd5d2911967ac766c0fe8b85"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTactileArray.html#a3b1697c4ff0b59f82ca1eb3cd27f4fd4">m_maxIntensity</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The maximum possible intensity.  <a href="#a3b1697c4ff0b59f82ca1eb3cd27f4fd4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTactileArray.html#a426a0308de9b91b22b96e49dd252ec8e">m_pBuffer</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Buffer to avr.  <a href="#a426a0308de9b91b22b96e49dd252ec8e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTactileArray.html#aed1c7600f47ea7366601643c0c19af14">m_bufferSize</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Avr buffer's size.  <a href="#aed1c7600f47ea7366601643c0c19af14"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCSerialPort.html">CSerialPort</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTactileArray.html#a1d5dcd23f529577e7e9c1f0f74a2ad02">m_pSerialPort</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Serial port.  <a href="#a1d5dcd23f529577e7e9c1f0f74a2ad02"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTactileArray.html#a71878047e5da1f500c8df4621a5ed482">m_portNum</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Serial port number.  <a href="#a71878047e5da1f500c8df4621a5ed482"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">DWORD&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTactileArray.html#a2452ae09ea065c4980f34e36b76f6b9b">m_dwTestThreadID</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">HANDLE&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTactileArray.html#a67e75740dcebb35dc900c56312e16b75">m_hTestThread</a></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Interface class for any smart clothing hardware. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="acbfafee94d72b978ace17f08167fc036"></a><!-- doxytag: member="TactileArray::TactileArray" ref="acbfafee94d72b978ace17f08167fc036" args="(int a_portNum)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TactileArray::TactileArray </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>a_portNum</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>a_portNum</em>&nbsp;</td><td>The port number </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa72109a83d27ab40f2098f40155e3865"></a><!-- doxytag: member="TactileArray::~TactileArray" ref="aa72109a83d27ab40f2098f40155e3865" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TactileArray::~TactileArray </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a2d2e28e36c7d0f166e06d5061ba85196"></a><!-- doxytag: member="TactileArray::actuate" ref="a2d2e28e36c7d0f166e06d5061ba85196" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TactileArray::actuate </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Actuates the array. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0d8b973fe8f79500b0f9e3e704918855"></a><!-- doxytag: member="TactileArray::assembleBuffer" ref="a0d8b973fe8f79500b0f9e3e704918855" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TactileArray::assembleBuffer </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Assembles the buffer. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3dd4969a067bd024a98fa9e99e40e971"></a><!-- doxytag: member="TactileArray::closeSerialPort" ref="a3dd4969a067bd024a98fa9e99e40e971" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TactileArray::closeSerialPort </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Closes the serial port. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if successful </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afffd3159074b989045c47807b133cbec"></a><!-- doxytag: member="TactileArray::getArraySize" ref="afffd3159074b989045c47807b133cbec" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TactileArray::getArraySize </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retreive the array size. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>array size </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7a573669d558b1a22bf3e943795af119"></a><!-- doxytag: member="TactileArray::getArraySizeX" ref="a7a573669d558b1a22bf3e943795af119" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TactileArray::getArraySizeX </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retreive the array size in x. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>array size in x </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7dbe69bda14b3c208d96f4e5e1fa19be"></a><!-- doxytag: member="TactileArray::getArraySizeY" ref="a7dbe69bda14b3c208d96f4e5e1fa19be" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TactileArray::getArraySizeY </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retreive the array size in y. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>array size in y </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5bb334c3d9bca1949141f7ae4a6637ba"></a><!-- doxytag: member="TactileArray::getMaxIntensity" ref="a5bb334c3d9bca1949141f7ae4a6637ba" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TactileArray::getMaxIntensity </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retreive the intensity. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the intensity </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab8b3c1326d810855cde7422c93279dd1"></a><!-- doxytag: member="TactileArray::initialize" ref="ab8b3c1326d810855cde7422c93279dd1" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TactileArray::initialize </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Initialize the tactile array. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if successful </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aeadf3a68daab9c158a108a15debb28b8"></a><!-- doxytag: member="TactileArray::openSerialPort" ref="aeadf3a68daab9c158a108a15debb28b8" args="(int pNo=1, bool announce=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TactileArray::openSerialPort </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>pNo</em> = <code>1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>announce</em> = <code>false</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Open's the array's serial port. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pNo</em>&nbsp;</td><td>The port number. 1 by default </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>announce</em>&nbsp;</td><td>If true, sends a message when successful. False by default </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if successful </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="adc94914edaa38a6c261f2b8a42f88bbb"></a><!-- doxytag: member="TactileArray::setArraySize" ref="adc94914edaa38a6c261f2b8a42f88bbb" args="(int a_arraySizeX, int a_arraySizeY)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TactileArray::setArraySize </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>a_arraySizeX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>a_arraySizeY</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the array size. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>a_arraySizeX</em>&nbsp;</td><td>The x value </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>a_arraySizeY</em>&nbsp;</td><td>The y value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8e84527dac8a4b36ac8dbddf50a4c855"></a><!-- doxytag: member="TactileArray::setIntensity" ref="a8e84527dac8a4b36ac8dbddf50a4c855" args="(int arrayX, int arrayY, double intensity)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TactileArray::setIntensity </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>arrayX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>arrayY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>intensity</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Setting intensity values. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>arrayX</em>&nbsp;</td><td>The x value of the array </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>arrayY</em>&nbsp;</td><td>The y value of the array </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>intensity</em>&nbsp;</td><td>The intensity to be set </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a57f15c2bbd18cbbdf2fe59d8a550d8a5"></a><!-- doxytag: member="TactileArray::setIntensity" ref="a57f15c2bbd18cbbdf2fe59d8a550d8a5" args="(int arrayX, int arrayY, int intensity)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TactileArray::setIntensity </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>arrayX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>arrayY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>intensity</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Setting intensity values. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>arrayX</em>&nbsp;</td><td>The x value of the array </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>arrayY</em>&nbsp;</td><td>The y value of the array </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>intensity</em>&nbsp;</td><td>The intensity to be set </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a9d537a2423b2cba35badcca3468593f0"></a><!-- doxytag: member="TactileArray::setIntensity" ref="a9d537a2423b2cba35badcca3468593f0" args="(double *pIntensityArray)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TactileArray::setIntensity </td>
+          <td>(</td>
+          <td class="paramtype">double *&nbsp;</td>
+          <td class="paramname"> <em>pIntensityArray</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Setting intensity values. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pIntensityArray</em>&nbsp;</td><td>The intensity array </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a62f715d4171c021a1d22ae67b2cb121d"></a><!-- doxytag: member="TactileArray::setIntensity" ref="a62f715d4171c021a1d22ae67b2cb121d" args="(int *pIntensityArray)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TactileArray::setIntensity </td>
+          <td>(</td>
+          <td class="paramtype">int *&nbsp;</td>
+          <td class="paramname"> <em>pIntensityArray</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Setting intensity values. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pIntensityArray</em>&nbsp;</td><td>The intensity array </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="abbca9d69c0c6be1816214ebb75ecd16c"></a><!-- doxytag: member="TactileArray::setIntensityAll" ref="abbca9d69c0c6be1816214ebb75ecd16c" args="(int intensity=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TactileArray::setIntensityAll </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>intensity</em> = <code>0</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Setting intensity values for all the array. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>intensity</em>&nbsp;</td><td>The intensity to be set. 0 by default </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad3edd3dc58c199e73a5095fe9ccb6c5e"></a><!-- doxytag: member="TactileArray::setIntensityAll" ref="ad3edd3dc58c199e73a5095fe9ccb6c5e" args="(double intensity)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TactileArray::setIntensityAll </td>
+          <td>(</td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>intensity</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Setting intensity values for all the array. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>intensity</em>&nbsp;</td><td>The intensity to be set </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af2f2bcd949b994996a51409b8d3b8b9d"></a><!-- doxytag: member="TactileArray::setPort" ref="af2f2bcd949b994996a51409b8d3b8b9d" args="(int a_portNum)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TactileArray::setPort </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>a_portNum</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the array's port number. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>a_portNum</em>&nbsp;</td><td>The new port number </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a35224d769212429b4778d02e4125fdfe"></a><!-- doxytag: member="TactileArray::m_arraySize" ref="a35224d769212429b4778d02e4125fdfe" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classTactileArray.html#a35224d769212429b4778d02e4125fdfe">TactileArray::m_arraySize</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Array's size. </p>
+
+</div>
+</div>
+<a class="anchor" id="a40dc48b328f2c22bd82d4eebb7f1728e"></a><!-- doxytag: member="TactileArray::m_arraySizeX" ref="a40dc48b328f2c22bd82d4eebb7f1728e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classTactileArray.html#a40dc48b328f2c22bd82d4eebb7f1728e">TactileArray::m_arraySizeX</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Array's X size. </p>
+
+</div>
+</div>
+<a class="anchor" id="a542531eddf0b23d9b67ba78f27ca5f06"></a><!-- doxytag: member="TactileArray::m_arraySizeY" ref="a542531eddf0b23d9b67ba78f27ca5f06" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classTactileArray.html#a542531eddf0b23d9b67ba78f27ca5f06">TactileArray::m_arraySizeY</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Array's Y size. </p>
+
+</div>
+</div>
+<a class="anchor" id="aed1c7600f47ea7366601643c0c19af14"></a><!-- doxytag: member="TactileArray::m_bufferSize" ref="aed1c7600f47ea7366601643c0c19af14" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classTactileArray.html#aed1c7600f47ea7366601643c0c19af14">TactileArray::m_bufferSize</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Avr buffer's size. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2452ae09ea065c4980f34e36b76f6b9b"></a><!-- doxytag: member="TactileArray::m_dwTestThreadID" ref="a2452ae09ea065c4980f34e36b76f6b9b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DWORD <a class="el" href="classTactileArray.html#a2452ae09ea065c4980f34e36b76f6b9b">TactileArray::m_dwTestThreadID</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a67e75740dcebb35dc900c56312e16b75"></a><!-- doxytag: member="TactileArray::m_hTestThread" ref="a67e75740dcebb35dc900c56312e16b75" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HANDLE <a class="el" href="classTactileArray.html#a67e75740dcebb35dc900c56312e16b75">TactileArray::m_hTestThread</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3b1697c4ff0b59f82ca1eb3cd27f4fd4"></a><!-- doxytag: member="TactileArray::m_maxIntensity" ref="a3b1697c4ff0b59f82ca1eb3cd27f4fd4" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classTactileArray.html#a3b1697c4ff0b59f82ca1eb3cd27f4fd4">TactileArray::m_maxIntensity</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The maximum possible intensity. </p>
+
+</div>
+</div>
+<a class="anchor" id="a426a0308de9b91b22b96e49dd252ec8e"></a><!-- doxytag: member="TactileArray::m_pBuffer" ref="a426a0308de9b91b22b96e49dd252ec8e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char* <a class="el" href="classTactileArray.html#a426a0308de9b91b22b96e49dd252ec8e">TactileArray::m_pBuffer</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Buffer to avr. </p>
+
+</div>
+</div>
+<a class="anchor" id="a64e1f81dcd5d2911967ac766c0fe8b85"></a><!-- doxytag: member="TactileArray::m_pIntensityArray" ref="a64e1f81dcd5d2911967ac766c0fe8b85" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int* <a class="el" href="classTactileArray.html#a64e1f81dcd5d2911967ac766c0fe8b85">TactileArray::m_pIntensityArray</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reference to the array's intensity. </p>
+
+</div>
+</div>
+<a class="anchor" id="a71878047e5da1f500c8df4621a5ed482"></a><!-- doxytag: member="TactileArray::m_portNum" ref="a71878047e5da1f500c8df4621a5ed482" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classTactileArray.html#a71878047e5da1f500c8df4621a5ed482">TactileArray::m_portNum</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Serial port number. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1d5dcd23f529577e7e9c1f0f74a2ad02"></a><!-- doxytag: member="TactileArray::m_pSerialPort" ref="a1d5dcd23f529577e7e9c1f0f74a2ad02" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCSerialPort.html">CSerialPort</a>* <a class="el" href="classTactileArray.html#a1d5dcd23f529577e7e9c1f0f74a2ad02">TactileArray::m_pSerialPort</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Serial port. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/<a class="el" href="TactileArray_8h_source.html">TactileArray.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/TactileArray.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Jacket/<a class="el" href="TactileArray_8h_source.html">TactileArray.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Jacket/<a class="el" href="TactileArray_8cpp.html">TactileArray.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -113,7 +813,7 @@ int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getArraySize</b> (void
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -122,7 +822,7 @@ int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getArraySize</b> (void
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:46 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

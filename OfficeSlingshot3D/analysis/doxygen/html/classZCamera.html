@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -49,12 +50,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a>  </div>
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <h1>ZCamera Class Reference</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="ZCamera" --><!-- doxytag: inherits="IZCamera" --><div class="dynheader">
+<!-- doxytag: class="ZCamera" --><!-- doxytag: inherits="IZCamera" -->
+<p>Concrete implementation of the z camera manager.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="ZCamera_8h_source.html">ZCamera.h</a>&gt;</code></p>
+<div class="dynheader">
 Inheritance diagram for ZCamera:</div>
 <div class="dyncontent">
  <div class="center">
@@ -67,22 +74,349 @@ Inheritance diagram for ZCamera:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9eb62d7424767779dc46cc357ae77645"></a><!-- doxytag: member="ZCamera::startCapture" ref="a9eb62d7424767779dc46cc357ae77645" args="()" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>startCapture</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af883a28008906c04065644c5e8eb4e40"></a><!-- doxytag: member="ZCamera::stopCapture" ref="af883a28008906c04065644c5e8eb4e40" args="()" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>stopCapture</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9f26639f4ca64617b67fc13775d4bf84"></a><!-- doxytag: member="ZCamera::getFrameFromCamera" ref="a9f26639f4ca64617b67fc13775d4bf84" args="()" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>getFrameFromCamera</b> ()</td></tr>
-<tr><td colspan="2"><h2><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a723ebde9648512ab731c0c1f0b82ac22"></a><!-- doxytag: member="ZCamera::reverseFrameUpDown" ref="a723ebde9648512ab731c0c1f0b82ac22" args="(VideoData &amp;vd, int channels)" -->
-static void&nbsp;</td><td class="memItemRight" valign="bottom"><b>reverseFrameUpDown</b> (<a class="el" href="structVideoData.html">VideoData</a> &amp;vd, int channels)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a71f106ccc5d3b25d733c9852be1a5641"></a><!-- doxytag: member="ZCamera::reverseFrameLeftRight" ref="a71f106ccc5d3b25d733c9852be1a5641" args="(VideoData &amp;vd, int channels)" -->
-static void&nbsp;</td><td class="memItemRight" valign="bottom"><b>reverseFrameLeftRight</b> (<a class="el" href="structVideoData.html">VideoData</a> &amp;vd, int channels)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZCamera.html#a20dd87f5a896f366a86d9da07c095eab">ZCamera</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#a20dd87f5a896f366a86d9da07c095eab"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZCamera.html#a2ef338c8a8a44360d10dddfae9482121">~ZCamera</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#a2ef338c8a8a44360d10dddfae9482121"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZCamera.html#a9eb62d7424767779dc46cc357ae77645">startCapture</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Create a thread to start capturing frames from the camera.  <a href="#a9eb62d7424767779dc46cc357ae77645"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZCamera.html#af883a28008906c04065644c5e8eb4e40">stopCapture</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Stop the thread that's capturing frames from the camera.  <a href="#af883a28008906c04065644c5e8eb4e40"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZCamera.html#a9f26639f4ca64617b67fc13775d4bf84">getFrameFromCamera</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Camera loop that fetches frames and player position.  <a href="#a9f26639f4ca64617b67fc13775d4bf84"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZCamera.html#a95aee7dafe28dd4b330142d73dd50f32">ZCamera</a> (const <a class="el" href="classZCamera.html">ZCamera</a> &amp;zCamera)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy-Constructor.  <a href="#a95aee7dafe28dd4b330142d73dd50f32"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZCamera.html">ZCamera</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZCamera.html#a8c6ebc1f3652f29272c34e57390a356f">operator=</a> (const <a class="el" href="classZCamera.html">ZCamera</a> &amp;zCamera)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy-Constructor.  <a href="#a8c6ebc1f3652f29272c34e57390a356f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZCamera.html#a6cdd8c3020ba15af70a67780c4813bcd">getPlayerPosition</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get player position.  <a href="#a6cdd8c3020ba15af70a67780c4813bcd"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::auto_ptr&lt; boost::thread &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZCamera.html#a57de8aa57e3513af3fc378d72068c2b6">zcameraThread</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Thread for capturing frames from the camera.  <a href="#a57de8aa57e3513af3fc378d72068c2b6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZCamera.html#a89fb6d98d89caf877457665cf230045d">zcamPresent</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">True if a camera is present.  <a href="#a89fb6d98d89caf877457665cf230045d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCDepthCamera.html">CDepthCamera</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZCamera.html#abc0ba6694aac9197d41b5508db311236">m_depthCamera</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The <a class="el" href="classCDepthCamera.html" title="The main class that deals with the z-camera hardware and API.">CDepthCamera</a> object.  <a href="#abc0ba6694aac9197d41b5508db311236"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr&lt; std::vector<br class="typebreak"/>
+&lt; BYTE &gt; &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZCamera.html#a2838af74d1a9596da25e6ba2173e196b">RGB</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">A reference to the RGB bytes.  <a href="#a2838af74d1a9596da25e6ba2173e196b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZCamera.html#a4ff264a55fda82a28f620df67b009ced">DEPTH</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The depth data.  <a href="#a4ff264a55fda82a28f620df67b009ced"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZCamera.html#a8eb75395f704582e5e74c4888ab6f295">RGBFrame</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">A frame of RGB.  <a href="#a8eb75395f704582e5e74c4888ab6f295"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZCamera.html#a31bb3bdf7c6e5eb03557167f28fbefc3">RGBFull</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">A frame of RGB, full resolution.  <a href="#a31bb3bdf7c6e5eb03557167f28fbefc3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZCamera.html#aee9d43139d58868e6792d62046e67f74">PRIM</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The primary IR data.  <a href="#aee9d43139d58868e6792d62046e67f74"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZCamera.html#a8ed7ceabed9b6801dd2425587097a46f">SEC</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The secondary IR data.  <a href="#a8ed7ceabed9b6801dd2425587097a46f"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Concrete implementation of the z camera manager. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a20dd87f5a896f366a86d9da07c095eab"></a><!-- doxytag: member="ZCamera::ZCamera" ref="a20dd87f5a896f366a86d9da07c095eab" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ZCamera::ZCamera </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2ef338c8a8a44360d10dddfae9482121"></a><!-- doxytag: member="ZCamera::~ZCamera" ref="a2ef338c8a8a44360d10dddfae9482121" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ZCamera::~ZCamera </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a95aee7dafe28dd4b330142d73dd50f32"></a><!-- doxytag: member="ZCamera::ZCamera" ref="a95aee7dafe28dd4b330142d73dd50f32" args="(const ZCamera &amp;zCamera)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ZCamera::ZCamera </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classZCamera.html">ZCamera</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>zCamera</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copy-Constructor. </p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a9f26639f4ca64617b67fc13775d4bf84"></a><!-- doxytag: member="ZCamera::getFrameFromCamera" ref="a9f26639f4ca64617b67fc13775d4bf84" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ZCamera::getFrameFromCamera </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Camera loop that fetches frames and player position. </p>
+<p>runs at 32 fps and continually sends information to controller </p>
+
+</div>
+</div>
+<a class="anchor" id="a6cdd8c3020ba15af70a67780c4813bcd"></a><!-- doxytag: member="ZCamera::getPlayerPosition" ref="a6cdd8c3020ba15af70a67780c4813bcd" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d ZCamera::getPlayerPosition </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get player position. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the player position </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8c6ebc1f3652f29272c34e57390a356f"></a><!-- doxytag: member="ZCamera::operator=" ref="a8c6ebc1f3652f29272c34e57390a356f" args="(const ZCamera &amp;zCamera)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZCamera.html">ZCamera</a>&amp; ZCamera::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classZCamera.html">ZCamera</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>zCamera</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copy-Constructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9eb62d7424767779dc46cc357ae77645"></a><!-- doxytag: member="ZCamera::startCapture" ref="a9eb62d7424767779dc46cc357ae77645" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ZCamera::startCapture </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Create a thread to start capturing frames from the camera. </p>
+
+<p>Implements <a class="el" href="classIZCamera.html#a6d9b10985172343983a9edbdb324c367">IZCamera</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af883a28008906c04065644c5e8eb4e40"></a><!-- doxytag: member="ZCamera::stopCapture" ref="af883a28008906c04065644c5e8eb4e40" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ZCamera::stopCapture </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Stop the thread that's capturing frames from the camera. </p>
+
+<p>Implements <a class="el" href="classIZCamera.html#ac1a752c869fc2c97b0f7feff6163068f">IZCamera</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a4ff264a55fda82a28f620df67b009ced"></a><!-- doxytag: member="ZCamera::DEPTH" ref="a4ff264a55fda82a28f620df67b009ced" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char* <a class="el" href="classZCamera.html#a4ff264a55fda82a28f620df67b009ced">ZCamera::DEPTH</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The depth data. </p>
+
+</div>
+</div>
+<a class="anchor" id="abc0ba6694aac9197d41b5508db311236"></a><!-- doxytag: member="ZCamera::m_depthCamera" ref="abc0ba6694aac9197d41b5508db311236" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCDepthCamera.html">CDepthCamera</a>* <a class="el" href="classZCamera.html#abc0ba6694aac9197d41b5508db311236">ZCamera::m_depthCamera</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The <a class="el" href="classCDepthCamera.html" title="The main class that deals with the z-camera hardware and API.">CDepthCamera</a> object. </p>
+
+</div>
+</div>
+<a class="anchor" id="aee9d43139d58868e6792d62046e67f74"></a><!-- doxytag: member="ZCamera::PRIM" ref="aee9d43139d58868e6792d62046e67f74" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char* <a class="el" href="classZCamera.html#aee9d43139d58868e6792d62046e67f74">ZCamera::PRIM</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The primary IR data. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2838af74d1a9596da25e6ba2173e196b"></a><!-- doxytag: member="ZCamera::RGB" ref="a2838af74d1a9596da25e6ba2173e196b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::shared_ptr&lt;std::vector&lt;BYTE&gt; &gt; <a class="el" href="classZCamera.html#a2838af74d1a9596da25e6ba2173e196b">ZCamera::RGB</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>A reference to the RGB bytes. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8eb75395f704582e5e74c4888ab6f295"></a><!-- doxytag: member="ZCamera::RGBFrame" ref="a8eb75395f704582e5e74c4888ab6f295" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char* <a class="el" href="classZCamera.html#a8eb75395f704582e5e74c4888ab6f295">ZCamera::RGBFrame</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>A frame of RGB. </p>
+
+</div>
+</div>
+<a class="anchor" id="a31bb3bdf7c6e5eb03557167f28fbefc3"></a><!-- doxytag: member="ZCamera::RGBFull" ref="a31bb3bdf7c6e5eb03557167f28fbefc3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char* <a class="el" href="classZCamera.html#a31bb3bdf7c6e5eb03557167f28fbefc3">ZCamera::RGBFull</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>A frame of RGB, full resolution. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8ed7ceabed9b6801dd2425587097a46f"></a><!-- doxytag: member="ZCamera::SEC" ref="a8ed7ceabed9b6801dd2425587097a46f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char* <a class="el" href="classZCamera.html#a8ed7ceabed9b6801dd2425587097a46f">ZCamera::SEC</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The secondary IR data. </p>
+
+</div>
+</div>
+<a class="anchor" id="a57de8aa57e3513af3fc378d72068c2b6"></a><!-- doxytag: member="ZCamera::zcameraThread" ref="a57de8aa57e3513af3fc378d72068c2b6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::auto_ptr&lt;boost::thread&gt; <a class="el" href="classZCamera.html#a57de8aa57e3513af3fc378d72068c2b6">ZCamera::zcameraThread</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Thread for capturing frames from the camera. </p>
+
+</div>
+</div>
+<a class="anchor" id="a89fb6d98d89caf877457665cf230045d"></a><!-- doxytag: member="ZCamera::zcamPresent" ref="a89fb6d98d89caf877457665cf230045d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classZCamera.html#a89fb6d98d89caf877457665cf230045d">ZCamera::zcamPresent</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>True if a camera is present. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/<a class="el" href="ZCamera_8h_source.html">ZCamera.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/ZCamera.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/ZCamera/<a class="el" href="ZCamera_8h_source.html">ZCamera.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/ZCamera/<a class="el" href="ZCamera_8cpp.html">ZCamera.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -90,7 +424,7 @@ static void&nbsp;</td><td class="memItemRight" valign="bottom"><b>reverseFrameLe
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -99,7 +433,7 @@ static void&nbsp;</td><td class="memItemRight" valign="bottom"><b>reverseFrameLe
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:10 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:46 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

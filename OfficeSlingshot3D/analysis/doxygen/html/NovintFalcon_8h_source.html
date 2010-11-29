@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OfficeSlingshot3D: /home/kevin/workspace/HugMe/HugMe v0.9.1/Falcon/NovintFalcon.h Source File</title>
+<title>OfficeSlingshot3D: /home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Falcon/NovintFalcon.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -41,60 +42,65 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/kevin/workspace/HugMe/HugMe v0.9.1/Falcon/NovintFalcon.h</h1>  </div>
+<h1>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Falcon/NovintFalcon.h</h1>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef NOVINT_FALCON__H</span>
+<a href="NovintFalcon_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef NOVINT_FALCON__H</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define NOVINT_FALCON__H</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
-<a name="l00004"></a>00004 <span class="preprocessor">#include &quot;Falcon.h&quot;</span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &quot;<a class="code" href="Falcon_8h.html">Falcon.h</a>&quot;</span>
 <a name="l00005"></a>00005 <span class="preprocessor">#include &quot;stdafx.h&quot;</span>
-<a name="l00006"></a>00006 <span class="preprocessor">#include &quot;boost.h&quot;</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include &quot;<a class="code" href="boost_8h.html">boost.h</a>&quot;</span>
 <a name="l00007"></a>00007 <span class="preprocessor">#include &quot;chai3d.h&quot;</span>
-<a name="l00008"></a>00008 
-<a name="l00012"></a><a class="code" href="classNovintFalcon.html">00012</a> <span class="keyword">class </span><a class="code" href="classNovintFalcon.html" title="The novint falcon.">NovintFalcon</a> : <span class="keyword">public</span> <a class="code" href="classFalcon.html" title="Abstract class that represents a falcon.">Falcon</a>
-<a name="l00013"></a>00013 {
-<a name="l00014"></a>00014 <span class="keyword">public</span>:
-<a name="l00018"></a>00018     <a class="code" href="classNovintFalcon.html#ac36e7148131ecbdfff97289f2c9e3b9c" title="Constructor.">NovintFalcon</a>();
-<a name="l00019"></a>00019 
-<a name="l00023"></a>00023     <span class="keyword">virtual</span> <a class="code" href="classNovintFalcon.html#afb0ece97317db2eb6da852e219cc85eb" title="Destructor.">~NovintFalcon</a>();
-<a name="l00024"></a>00024 
-<a name="l00028"></a>00028     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classNovintFalcon.html#a3e82b6e9d7c393684b809971208922bf" title="Start polling the falcon for information.">startPolling</a>();
-<a name="l00029"></a>00029 
-<a name="l00033"></a>00033     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classNovintFalcon.html#a3bc94cd6f05df1d327f79fb87001039d" title="Stop polling the falcon for information.">stopPolling</a>();
-<a name="l00034"></a>00034 
-<a name="l00039"></a>00039     <span class="keyword">virtual</span> cCollisionAABBBox <a class="code" href="classNovintFalcon.html#a8226c5b4a2cb0d2e88b6a41e2c7c3af9" title="Returns the box to which the slingshot is bound.">boundingBox</a>() <span class="keyword">const</span>;
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041 <span class="keyword">private</span>:
-<a name="l00046"></a>00046     <a class="code" href="classNovintFalcon.html#ac36e7148131ecbdfff97289f2c9e3b9c" title="Constructor.">NovintFalcon</a>(<span class="keyword">const</span> <a class="code" href="classNovintFalcon.html" title="The novint falcon.">NovintFalcon</a>&amp; novintFalcon);
-<a name="l00047"></a>00047  
-<a name="l00052"></a>00052     <a class="code" href="classNovintFalcon.html" title="The novint falcon.">NovintFalcon</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classNovintFalcon.html" title="The novint falcon.">NovintFalcon</a>&amp; novintFalcon); 
-<a name="l00053"></a>00053 
-<a name="l00057"></a>00057     <span class="keywordtype">void</span> poll();
-<a name="l00058"></a>00058 
-<a name="l00062"></a>00062     <span class="keywordtype">bool</span> reporting;
-<a name="l00063"></a>00063 
-<a name="l00067"></a>00067     cVector3d position;
-<a name="l00068"></a>00068 
-<a name="l00072"></a>00072     cCollisionAABBBox falconBox;
-<a name="l00073"></a>00073 
-<a name="l00077"></a>00077     std::auto_ptr&lt;boost::thread&gt; pollingThread;
-<a name="l00078"></a>00078 
-<a name="l00082"></a>00082     <span class="keywordtype">int</span> numHapticDevices;
-<a name="l00083"></a>00083 
-<a name="l00087"></a>00087     <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> MAX_DEVICES = 4;
-<a name="l00088"></a>00088 
-<a name="l00092"></a>00092     cGenericHapticDevice* hapticDevices[MAX_DEVICES];
-<a name="l00093"></a>00093 
-<a name="l00097"></a>00097     cHapticDeviceHandler handler;
-<a name="l00098"></a>00098 };
-<a name="l00099"></a>00099 
-<a name="l00100"></a>00100 <span class="preprocessor">#endif</span>
-<a name="l00101"></a>00101 <span class="preprocessor"></span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;<a class="code" href="UserPreferences_8h.html">UserPreferences.h</a>&quot;</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;<a class="code" href="Configuration_8h.html">Configuration.h</a>&quot;</span>
+<a name="l00010"></a>00010 
+<a name="l00014"></a><a class="code" href="classNovintFalcon.html">00014</a> <span class="keyword">class </span><a class="code" href="classNovintFalcon.html" title="The novint falcon.">NovintFalcon</a> : <span class="keyword">public</span> <a class="code" href="classFalcon.html" title="Abstract class that represents a falcon.">Falcon</a>
+<a name="l00015"></a>00015 {
+<a name="l00016"></a>00016 <span class="keyword">public</span>:
+<a name="l00021"></a>00021     <a class="code" href="classNovintFalcon.html#a8e01c9e377f4f52f6575e1275470cde8" title="Constructor.">NovintFalcon</a>(boost::shared_ptr&lt;Configuration&gt; configuration);
+<a name="l00022"></a>00022 
+<a name="l00026"></a>00026     <span class="keyword">virtual</span> <a class="code" href="classNovintFalcon.html#afb0ece97317db2eb6da852e219cc85eb" title="Destructor.">~NovintFalcon</a>();
+<a name="l00027"></a>00027 
+<a name="l00031"></a>00031     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classNovintFalcon.html#a3e82b6e9d7c393684b809971208922bf" title="Start polling the falcon for information.">startPolling</a>();
+<a name="l00032"></a>00032 
+<a name="l00036"></a>00036     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classNovintFalcon.html#a3bc94cd6f05df1d327f79fb87001039d" title="Stop polling the falcon for information.">stopPolling</a>();
+<a name="l00037"></a>00037 
+<a name="l00042"></a>00042     <span class="keyword">virtual</span> cCollisionAABBBox <a class="code" href="classNovintFalcon.html#a8226c5b4a2cb0d2e88b6a41e2c7c3af9" title="Returns the box to which the slingshot is bound.">boundingBox</a>() <span class="keyword">const</span>;
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044 <span class="keyword">private</span>:
+<a name="l00049"></a>00049     <a class="code" href="classNovintFalcon.html#a8e01c9e377f4f52f6575e1275470cde8" title="Constructor.">NovintFalcon</a>(<span class="keyword">const</span> <a class="code" href="classNovintFalcon.html" title="The novint falcon.">NovintFalcon</a>&amp; novintFalcon);
+<a name="l00050"></a>00050  
+<a name="l00055"></a>00055     <a class="code" href="classNovintFalcon.html" title="The novint falcon.">NovintFalcon</a>&amp; <a class="code" href="classNovintFalcon.html#a5ee3fe9a6271b67bda6a1dba4e1988e7" title="Assignment operator.">operator=</a>(<span class="keyword">const</span> <a class="code" href="classNovintFalcon.html" title="The novint falcon.">NovintFalcon</a>&amp; novintFalcon); 
+<a name="l00056"></a>00056 
+<a name="l00060"></a>00060     <span class="keywordtype">void</span> <a class="code" href="classNovintFalcon.html#af7b4b03a176c59e458c55f99a6ed5a7a" title="Poll the slingshot&amp;#39;s position and firing state.">poll</a>();
+<a name="l00061"></a>00061 
+<a name="l00065"></a><a class="code" href="classNovintFalcon.html#ab6a5b86ad27c9f910245c14530fe23fb">00065</a>     <span class="keywordtype">bool</span> <a class="code" href="classNovintFalcon.html#ab6a5b86ad27c9f910245c14530fe23fb" title="True when the falcon should notify observers that an event occured.">reporting</a>;
+<a name="l00066"></a>00066 
+<a name="l00070"></a><a class="code" href="classNovintFalcon.html#a652b205f9d3fd33c1d710dd766d63af9">00070</a>     cVector3d <a class="code" href="classNovintFalcon.html#a652b205f9d3fd33c1d710dd766d63af9" title="The falcon&amp;#39;s current position.">position</a>;
+<a name="l00071"></a>00071 
+<a name="l00072"></a><a class="code" href="classNovintFalcon.html#aba58f2dd9f8cad812e399aededde67f4">00072</a>     <span class="keywordtype">bool</span> <a class="code" href="classNovintFalcon.html#aba58f2dd9f8cad812e399aededde67f4" title="True if the slingshot is currently in firing mode.">firing</a>; 
+<a name="l00074"></a><a class="code" href="classNovintFalcon.html#ac2c0979a248d5f9c7c2ffb0e35119e95">00074</a>     <span class="keywordtype">bool</span> <a class="code" href="classNovintFalcon.html#ac2c0979a248d5f9c7c2ffb0e35119e95" title="True if the force feedback from the falcon device is used.">forceEnabled</a>; 
+<a name="l00079"></a><a class="code" href="classNovintFalcon.html#ad03bd56f8b3c5fc2ad5840528c171366">00079</a>     cCollisionAABBBox <a class="code" href="classNovintFalcon.html#ad03bd56f8b3c5fc2ad5840528c171366" title="The bounding box to which the falcon is restricted.">falconBox</a>;
+<a name="l00080"></a>00080 
+<a name="l00084"></a><a class="code" href="classNovintFalcon.html#a5a2ac7ef924757e02426be1bd7b8a275">00084</a>     std::auto_ptr&lt;boost::thread&gt; <a class="code" href="classNovintFalcon.html#a5a2ac7ef924757e02426be1bd7b8a275" title="Holds the thread which will poll the falcon.">pollingThread</a>;
+<a name="l00085"></a>00085 
+<a name="l00089"></a><a class="code" href="classNovintFalcon.html#a9534753404ec44c0514aeaa729e0eb9b">00089</a>     <span class="keywordtype">int</span> <a class="code" href="classNovintFalcon.html#a9534753404ec44c0514aeaa729e0eb9b" title="number of haptic devices detected">numHapticDevices</a>;
+<a name="l00090"></a>00090 
+<a name="l00094"></a><a class="code" href="classNovintFalcon.html#afe8a56e56cb2b7caccf7b7def36114db">00094</a>     <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classNovintFalcon.html#afe8a56e56cb2b7caccf7b7def36114db" title="number of haptic devices supported">MAX_DEVICES</a> = 4;
+<a name="l00095"></a>00095 
+<a name="l00099"></a><a class="code" href="classNovintFalcon.html#aa6e4c2ae85c8f830c649ab236fe28778">00099</a>     cGenericHapticDevice* <a class="code" href="classNovintFalcon.html#aa6e4c2ae85c8f830c649ab236fe28778" title="A table containing pointers to all haptic devices detected on this computer.">hapticDevices</a>[<a class="code" href="classNovintFalcon.html#afe8a56e56cb2b7caccf7b7def36114db" title="number of haptic devices supported">MAX_DEVICES</a>];
+<a name="l00100"></a>00100 
+<a name="l00104"></a><a class="code" href="classNovintFalcon.html#a577ea2c5df49e8b87afee93040461dee">00104</a>     cHapticDeviceHandler <a class="code" href="classNovintFalcon.html#a577ea2c5df49e8b87afee93040461dee" title="The handler for the haptic devices.">handler</a>;
+<a name="l00105"></a>00105 };
+<a name="l00106"></a>00106 
+<a name="l00107"></a>00107 <span class="preprocessor">#endif</span>
+<a name="l00108"></a>00108 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -102,7 +108,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -111,7 +117,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:44 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

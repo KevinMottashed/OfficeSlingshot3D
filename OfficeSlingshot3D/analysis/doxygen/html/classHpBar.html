@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -48,22 +49,227 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a>  </div>
   <div class="headertitle">
 <h1>HpBar Class Reference</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="HpBar" --><table class="memberdecls">
+<!-- doxytag: class="HpBar" -->
+<p><code>#include &lt;<a class="el" href="HpBar_8h_source.html">HpBar.h</a>&gt;</code></p>
+<table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab7308dcda24cad121b9eea5f16f0196d"></a><!-- doxytag: member="HpBar::HpBar" ref="ab7308dcda24cad121b9eea5f16f0196d" args="(cWorld *world, bool isLocal)" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><b>HpBar</b> (cWorld *world, bool isLocal)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2d64d6ec33cd462d243e0ebf910f6dcf"></a><!-- doxytag: member="HpBar::ReduceHP" ref="a2d64d6ec33cd462d243e0ebf910f6dcf" args="(int hpLost)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>ReduceHP</b> (int hpLost)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHpBar.html#ab7308dcda24cad121b9eea5f16f0196d">HpBar</a> (cWorld *world, bool <a class="el" href="classHpBar.html#adb971597461e9576277249c788c8a1b0">isLocal</a>)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#ab7308dcda24cad121b9eea5f16f0196d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHpBar.html#a260683bb94643e2f9af79a2fd0454cae">~HpBar</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#a260683bb94643e2f9af79a2fd0454cae"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHpBar.html#abcf0d824bfa544e71b3dac624f9b1adc">ReduceHP</a> (unsigned int hpLost)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reduces the HP of the user.  <a href="#abcf0d824bfa544e71b3dac624f9b1adc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHpBar.html#acdaf4f892a0e425411ef4d341215f12f">ResetHp</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reset HP of the users.  <a href="#acdaf4f892a0e425411ef4d341215f12f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHpBar.html#a7c27428aae3744a4a06aaf933ac59a2a">getHP</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reset HP of the users.  <a href="#a7c27428aae3744a4a06aaf933ac59a2a"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHpBar.html#a6ebe002004470992ec83aa15e817a8e4">hp</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The current HP.  <a href="#a6ebe002004470992ec83aa15e817a8e4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cMesh *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHpBar.html#a0753fdf37d97a6adaf0b25c38f28c3b3">hpBarMesh</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The HP bar's mesh object.  <a href="#a0753fdf37d97a6adaf0b25c38f28c3b3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHpBar.html#adb971597461e9576277249c788c8a1b0">isLocal</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">True if the HP bar is associated to the local user.  <a href="#adb971597461e9576277249c788c8a1b0"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHpBar.html#aa9d30c3a829a8e72ebebbe6f75b6ab91">totalHp</a> = 10</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The default initial total health.  <a href="#aa9d30c3a829a8e72ebebbe6f75b6ab91"></a><br/></td></tr>
 </table>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ab7308dcda24cad121b9eea5f16f0196d"></a><!-- doxytag: member="HpBar::HpBar" ref="ab7308dcda24cad121b9eea5f16f0196d" args="(cWorld *world, bool isLocal)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HpBar::HpBar </td>
+          <td>(</td>
+          <td class="paramtype">cWorld *&nbsp;</td>
+          <td class="paramname"> <em>world</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>isLocal</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>world</em>&nbsp;</td><td>The world in which the HP bar will be placed </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>isLocal</em>&nbsp;</td><td>True is the HP bar is associated to the local user </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a260683bb94643e2f9af79a2fd0454cae"></a><!-- doxytag: member="HpBar::~HpBar" ref="a260683bb94643e2f9af79a2fd0454cae" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HpBar::~HpBar </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a7c27428aae3744a4a06aaf933ac59a2a"></a><!-- doxytag: member="HpBar::getHP" ref="a7c27428aae3744a4a06aaf933ac59a2a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double HpBar::getHP </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reset HP of the users. </p>
+
+</div>
+</div>
+<a class="anchor" id="abcf0d824bfa544e71b3dac624f9b1adc"></a><!-- doxytag: member="HpBar::ReduceHP" ref="abcf0d824bfa544e71b3dac624f9b1adc" args="(unsigned int hpLost)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HpBar::ReduceHP </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>hpLost</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reduces the HP of the user. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>hpLost</em>&nbsp;</td><td>The amount of HP to be reduced </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="acdaf4f892a0e425411ef4d341215f12f"></a><!-- doxytag: member="HpBar::ResetHp" ref="acdaf4f892a0e425411ef4d341215f12f" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HpBar::ResetHp </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reset HP of the users. </p>
+
+</div>
+</div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a6ebe002004470992ec83aa15e817a8e4"></a><!-- doxytag: member="HpBar::hp" ref="a6ebe002004470992ec83aa15e817a8e4" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="classHpBar.html#a6ebe002004470992ec83aa15e817a8e4">HpBar::hp</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The current HP. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0753fdf37d97a6adaf0b25c38f28c3b3"></a><!-- doxytag: member="HpBar::hpBarMesh" ref="a0753fdf37d97a6adaf0b25c38f28c3b3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cMesh* <a class="el" href="classHpBar.html#a0753fdf37d97a6adaf0b25c38f28c3b3">HpBar::hpBarMesh</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The HP bar's mesh object. </p>
+
+</div>
+</div>
+<a class="anchor" id="adb971597461e9576277249c788c8a1b0"></a><!-- doxytag: member="HpBar::isLocal" ref="adb971597461e9576277249c788c8a1b0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classHpBar.html#adb971597461e9576277249c788c8a1b0">HpBar::isLocal</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>True if the HP bar is associated to the local user. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa9d30c3a829a8e72ebebbe6f75b6ab91"></a><!-- doxytag: member="HpBar::totalHp" ref="aa9d30c3a829a8e72ebebbe6f75b6ab91" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="classHpBar.html#aa9d30c3a829a8e72ebebbe6f75b6ab91">HpBar::totalHp</a> = 10<code> [static, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The default initial total health. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/<a class="el" href="HpBar_8h_source.html">HpBar.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/HpBar.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Game/<a class="el" href="HpBar_8h_source.html">HpBar.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Game/<a class="el" href="HpBar_8cpp.html">HpBar.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -71,7 +277,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>ReduceHP</b> (int hpL
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -80,7 +286,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>ReduceHP</b> (int hpL
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:45 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

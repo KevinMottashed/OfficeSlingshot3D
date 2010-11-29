@@ -2,43 +2,43 @@
 <!--Detailed report on module CMainDlg-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="317" level="0" />
+<lines_of_code value="410" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
-<McCabes_cyclomatic_complexity value="36" level="0" />
+<McCabes_cyclomatic_complexity value="41" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
-<lines_of_code value="79" level="0" />
+<lines_of_code value="160" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="4.013" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.456" level="0" />
-<weighted_methods_per_class_unity value="25" level="0" />
+<lines_of_code_per_line_of_comment value="2.562" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.256" level="0" />
+<weighted_methods_per_class_unity value="36" level="0" />
 <weighted_methods_per_class_visibility value="6" level="0" />
 <depth_of_inheritance_tree value="1" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="16" level="0" />
-<IF4 value="225" level="1" />
+<coupling_between_objects value="18" level="0" />
+<IF4 value="289" level="1" />
 <IF4_per_member_function value="********" level="2" />
-<IF4_visible value="225" level="2" />
+<IF4_visible value="289" level="2" />
 <IF4_visible_per_member_function value="********" level="2" />
 <IF4_concrete value="0" level="0" />
 <IF4_concrete_per_member_function value="********" level="0" />
 </module_summary>
 <module_detail>
 <description>definition</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="21" />
-<lines_of_code value="24" level="0" />
+<source_reference file="../../UserInterface/MainDlg.h" line="24" />
+<lines_of_code value="33" level="1" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="7" level="0" />
-<lines_of_code_per_line_of_comment value="3.429" level="0" />
+<lines_of_comment value="29" level="0" />
+<lines_of_code_per_line_of_comment value="1.138" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 <description>declaration</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="14" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="13" />
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="0" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 <description>declaration</description>
-<source_reference file="../../UserInterface/UserInterface.h" line="14" />
+<source_reference file="../../UserInterface/UserInterface.h" line="13" />
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="0" level="0" />
@@ -50,15 +50,15 @@
 <name>AddChatContent(CString)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="172" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="180" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="45" />
+<source_reference file="../../UserInterface/MainDlg.h" line="97" />
 </extent>
 <lines_of_code value="10" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="5" level="0" />
+<lines_of_comment value="8" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -66,11 +66,11 @@
 <name>CMainDlg(...)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="24" />
+<source_reference file="../../UserInterface/MainDlg.h" line="33" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="7" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -78,9 +78,9 @@
 <name>CMainDlg(UserInterface *,const UserPreferences &amp;,CWnd *)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="9" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="8" />
 </extent>
-<lines_of_code value="7" level="0" />
+<lines_of_code value="9" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
@@ -90,11 +90,11 @@
 <name>DoDataExchange(CDataExchange *)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="20" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="21" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="79" />
+<source_reference file="../../UserInterface/MainDlg.h" line="169" />
 </extent>
 <lines_of_code value="8" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -106,7 +106,7 @@
 <name>OnChangeChatInput()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="156" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="164" />
 </extent>
 <lines_of_code value="10" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
@@ -118,7 +118,7 @@
 <name>OnDestroy()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="206" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="211" />
 </extent>
 <lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -130,7 +130,7 @@
 <name>OnExitGame()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="116" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="124" />
 </extent>
 <lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
@@ -142,28 +142,16 @@
 <name>OnInitDialog()</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="67" />
+<source_reference file="../../UserInterface/MainDlg.h" line="157" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
 <name>OnNetworkConnect()</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="67" />
-</extent>
-<lines_of_code value="5" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="2" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>OnNetworkDisconnect()</name>
 <extent>
 <description>definition</description>
 <source_reference file="../../UserInterface/MainDlg.cpp" line="75" />
@@ -175,7 +163,7 @@
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
-<name>OnNetworkListen()</name>
+<name>OnNetworkDisconnect()</name>
 <extent>
 <description>definition</description>
 <source_reference file="../../UserInterface/MainDlg.cpp" line="83" />
@@ -187,10 +175,22 @@
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
+<name>OnNetworkListen()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MainDlg.cpp" line="91" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="2" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
 <name>OnPauseGame()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="124" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="132" />
 </extent>
 <lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
@@ -202,7 +202,7 @@
 <name>OnPreferencesEdit()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="91" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="99" />
 </extent>
 <lines_of_code value="11" level="0" />
 <McCabes_cyclomatic_complexity value="2" level="0" />
@@ -214,7 +214,7 @@
 <name>OnSendChat()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="132" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="140" />
 </extent>
 <lines_of_code value="13" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
@@ -226,7 +226,7 @@
 <name>OnStartGame()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="108" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="116" />
 </extent>
 <lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
@@ -235,18 +235,102 @@
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
+<name>OnStnClickedGameWindow()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MainDlg.cpp" line="538" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>OnStnClickedVol1()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MainDlg.cpp" line="493" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>OnStnClickedVol2()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MainDlg.cpp" line="500" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>OnStnClickedVol3()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MainDlg.cpp" line="507" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>OnStnClickedVol4()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MainDlg.cpp" line="514" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>OnStnClickedVol5()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MainDlg.cpp" line="521" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>OnStnClickedVolumeCtrl()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MainDlg.cpp" line="484" />
+</extent>
+<lines_of_code value="8" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
 <name>PreTranslateMessage(MSG *)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="188" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="196" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="64" />
+<source_reference file="../../UserInterface/MainDlg.h" line="152" />
 </extent>
-<lines_of_code value="13" level="0" />
+<lines_of_code value="12" level="0" />
 <McCabes_cyclomatic_complexity value="4" level="0" />
-<lines_of_comment value="5" level="0" />
+<lines_of_comment value="7" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -254,11 +338,11 @@
 <name>camera(cCamera *)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="433" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="478" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="51" />
+<source_reference file="../../UserInterface/MainDlg.h" line="103" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
@@ -270,15 +354,15 @@
 <name>displayConnectionFailed()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="375" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="380" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="33" />
+<source_reference file="../../UserInterface/MainDlg.h" line="52" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -286,63 +370,79 @@
 <name>displayConnectionStateChanged(ConnectionState_t,Player_t)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="213" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="218" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="27" />
+<source_reference file="../../UserInterface/MainDlg.h" line="40" />
 </extent>
 <lines_of_code value="67" level="1" />
 <McCabes_cyclomatic_complexity value="7" level="0" />
-<lines_of_comment value="9" level="0" />
-<lines_of_code_per_line_of_comment value="7.444" level="1" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.778" level="0" />
+<lines_of_comment value="13" level="0" />
+<lines_of_code_per_line_of_comment value="5.154" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.538" level="0" />
 </member_function>
 <member_function>
 <name>displayFailedToListen()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="381" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="386" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="34" />
+<source_reference file="../../UserInterface/MainDlg.h" line="57" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>displayGameOver(Player_t)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MainDlg.cpp" line="447" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/MainDlg.h" line="80" />
+</extent>
+<lines_of_code value="21" level="0" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
+<lines_of_comment value="7" level="0" />
+<lines_of_code_per_line_of_comment value="3.000" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
 <name>displayGameStateChanged(GameState_t,Player_t)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="303" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="308" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="30" />
+<source_reference file="../../UserInterface/MainDlg.h" line="47" />
 </extent>
 <lines_of_code value="62" level="1" />
 <McCabes_cyclomatic_complexity value="8" level="0" />
-<lines_of_comment value="4" level="0" />
-<lines_of_code_per_line_of_comment value="15.500" level="1" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="2.000" level="0" />
+<lines_of_comment value="8" level="0" />
+<lines_of_code_per_line_of_comment value="7.750" level="1" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="1.000" level="0" />
 </member_function>
 <member_function>
 <name>displayLocalChatMessage(const string &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="421" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="435" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="39" />
+<source_reference file="../../UserInterface/MainDlg.h" line="74" />
 </extent>
 <lines_of_code value="8" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="2" level="0" />
+<lines_of_comment value="6" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -350,15 +450,15 @@
 <name>displayNetworkError()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="387" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="392" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="35" />
+<source_reference file="../../UserInterface/MainDlg.h" line="62" />
 </extent>
 <lines_of_code value="13" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="2" level="0" />
+<lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -366,15 +466,47 @@
 <name>displayPeerChatMessage(const string &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="409" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="423" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="38" />
+<source_reference file="../../UserInterface/MainDlg.h" line="68" />
 </extent>
 <lines_of_code value="8" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="6" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>paint()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MainDlg.cpp" line="473" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/MainDlg.h" line="85" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="3" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>setMutePref(const bool)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MainDlg.cpp" line="528" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/MainDlg.h" line="109" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -382,15 +514,31 @@
 <name>setPeerUserName(const string &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="403" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="408" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="42" />
+<source_reference file="../../UserInterface/MainDlg.h" line="91" />
 </extent>
-<lines_of_code value="6" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_code value="11" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_comment value="6" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>setVolPref(const int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../UserInterface/MainDlg.cpp" line="533" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../UserInterface/MainDlg.h" line="115" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -404,7 +552,7 @@
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="78" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="181" />
 </extent>
 </client_module>
 <supplier_module>
@@ -413,169 +561,203 @@
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="74" />
+<source_reference file="../../UserInterface/MainDlg.h" line="164" />
 </extent>
 <name>CDataExchange</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="20" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="21" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="79" />
+<source_reference file="../../UserInterface/MainDlg.h" line="169" />
 </extent>
 <name>CDialog</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="21" />
+<source_reference file="../../UserInterface/MainDlg.h" line="24" />
 </extent>
 <name>CEdit</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="73" />
+<source_reference file="../../UserInterface/MainDlg.h" line="163" />
 </extent>
 <name>CRichEditCtrl</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="72" />
+<source_reference file="../../UserInterface/MainDlg.h" line="162" />
 </extent>
 <name>CString</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="172" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="180" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="45" />
+<source_reference file="../../UserInterface/MainDlg.h" line="97" />
 </extent>
 <name>CWnd</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="9" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="8" />
 </extent>
 <name>ConnectionState_t</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="213" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="218" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="27" />
+<source_reference file="../../UserInterface/MainDlg.h" line="40" />
 </extent>
 <name>GameState_t</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="303" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="308" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="30" />
+<source_reference file="../../UserInterface/MainDlg.h" line="47" />
 </extent>
 <name>MSG</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="188" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="196" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="64" />
+<source_reference file="../../UserInterface/MainDlg.h" line="152" />
 </extent>
 <name>Player_t</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="213" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="218" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="303" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="308" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="27" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="447" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="30" />
+<source_reference file="../../UserInterface/MainDlg.h" line="40" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../UserInterface/MainDlg.h" line="47" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../UserInterface/MainDlg.h" line="80" />
 </extent>
 <name>UserInterface</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="9" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="8" />
 </extent>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="57" />
+<source_reference file="../../UserInterface/MainDlg.h" line="126" />
+</extent>
+<name>UserPreferences</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/MainDlg.cpp" line="8" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../UserInterface/MainDlg.h" line="131" />
+</extent>
+<name>bool</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../UserInterface/MainDlg.cpp" line="528" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../UserInterface/MainDlg.h" line="109" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../UserInterface/MainDlg.h" line="141" />
 </extent>
 <name>cCamera</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="433" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="478" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="51" />
+<source_reference file="../../UserInterface/MainDlg.h" line="103" />
 </extent>
 <name>shared_ptr</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="55" />
+<source_reference file="../../UserInterface/MainDlg.h" line="121" />
 </extent>
 <name>string</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="403" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="408" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="409" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="423" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="421" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="435" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="38" />
+<source_reference file="../../UserInterface/MainDlg.h" line="68" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="39" />
+<source_reference file="../../UserInterface/MainDlg.h" line="74" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="42" />
+<source_reference file="../../UserInterface/MainDlg.h" line="91" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="61" />
+<source_reference file="../../UserInterface/MainDlg.h" line="136" />
 </extent>
 </supplier_module>
 </module>

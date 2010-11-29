@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -52,73 +53,79 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 Here are the data structures with brief descriptions:<table>
-  <tr><td class="indexkey"><a class="el" href="classAudio.html">Audio</a></td><td class="indexvalue">Manages everything audio related </td></tr>
-  <tr><td class="indexkey"><a class="el" href="classCChatApp.html">CChatApp</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classCDepthCamera.html">CDepthCamera</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classCMainDlg.html">CMainDlg</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classConfiguration.html">Configuration</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classConsoleSink.html">ConsoleSink</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classConsoleStream.html">ConsoleStream</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classCPreferences.html">CPreferences</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="classAudio.html">Audio</a></td><td class="indexvalue"><b>public</b> Manages everything audio related </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classCChatApp.html">CChatApp</a></td><td class="indexvalue">The main class of the window application </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classCDepthCamera.html">CDepthCamera</a></td><td class="indexvalue">The main class that deals with the z-camera hardware and API </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classCMainDlg.html">CMainDlg</a></td><td class="indexvalue">A class representing the main UI element of <a class="el" href="classOfficeSlingshot3D.html" title="The office slingshot 3D class is the class that runs the game The game can be started by calling run(...">OfficeSlingshot3D</a> </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classConfiguration.html">Configuration</a></td><td class="indexvalue"><b>package</b> Manages the software's configuration and stores it in a file </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classConsoleSink.html">ConsoleSink</a></td><td class="indexvalue">A boost iostream sink that writes to the debug console </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classConsoleStream.html">ConsoleStream</a></td><td class="indexvalue">A utility for writing to the debug console </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classCPreferences.html">CPreferences</a></td><td class="indexvalue">A classe used to manage the user's preferences by displaying a dialog with all the required values </td></tr>
   <tr><td class="indexkey"><a class="el" href="classCSerialPort.html">CSerialPort</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classDisplayDeviceArmband.html">DisplayDeviceArmband</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classDisplayDeviceJacket.html">DisplayDeviceJacket</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="classDisplayDeviceArmband.html">DisplayDeviceArmband</a></td><td class="indexvalue">Represents the Armband device and enables us to activate the armbands actuators </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classDisplayDeviceJacket.html">DisplayDeviceJacket</a></td><td class="indexvalue">Represents the Jacket device and enables us to activate the jacket actuators </td></tr>
   <tr><td class="indexkey"><a class="el" href="classFalcon.html">Falcon</a></td><td class="indexvalue">Abstract class that represents a falcon </td></tr>
   <tr><td class="indexkey"><a class="el" href="classFalconObserver.html">FalconObserver</a></td><td class="indexvalue">Abstract class in the observer patern for the falcon </td></tr>
   <tr><td class="indexkey"><a class="el" href="classFalconReplayer.html">FalconReplayer</a></td><td class="indexvalue"></td></tr>
   <tr><td class="indexkey"><a class="el" href="classFalconSubject.html">FalconSubject</a></td><td class="indexvalue">Abstract class in the observer pattern for the falcon </td></tr>
-  <tr><td class="indexkey"><a class="el" href="classGame.html">Game</a></td><td class="indexvalue">Represents the <a class="el" href="classOfficeSlingshot3D.html">OfficeSlingshot3D</a> game </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classGame.html">Game</a></td><td class="indexvalue">Represents the <a class="el" href="classOfficeSlingshot3D.html" title="The office slingshot 3D class is the class that runs the game The game can be started by calling run(...">OfficeSlingshot3D</a> game </td></tr>
   <tr><td class="indexkey"><a class="el" href="classHpBar.html">HpBar</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classHumanFormatLogger.html">HumanFormatLogger&lt; Stream &gt;</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classIZCamera.html">IZCamera</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="classHumanFormatLogger.html">HumanFormatLogger&lt; Stream &gt;</a></td><td class="indexvalue"><b>public</b> Concrete logger class that outputs in a human readable format </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classIZCamera.html">IZCamera</a></td><td class="indexvalue">Abstract interface for a z camera </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classKeyboard.html">Keyboard</a></td><td class="indexvalue"><b>public</b> Singleton class that represents the keyboard </td></tr>
   <tr><td class="indexkey"><a class="el" href="classKeyboardFalcon.html">KeyboardFalcon</a></td><td class="indexvalue"><a class="el" href="classFalcon.html" title="Abstract class that represents a falcon.">Falcon</a> emulator that uses the keyboard instead of a novint falcon </td></tr>
-  <tr><td class="indexkey"><a class="el" href="classKeyboardZCamera.html">KeyboardZCamera</a></td><td class="indexvalue"><a class="el" href="classZCamera.html">ZCamera</a> emulator that uses the keyboard instead of a z-camera </td></tr>
-  <tr><td class="indexkey"><a class="el" href="classLogger.html">Logger</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classMediator.html">Mediator</a></td><td class="indexvalue">This class mediates the interactions between the devices and the game </td></tr>
-  <tr><td class="indexkey"><a class="el" href="classMediatorObserver.html">MediatorObserver</a></td><td class="indexvalue">Abstract class in the observer pattern </td></tr>
-  <tr><td class="indexkey"><a class="el" href="classMediatorSubject.html">MediatorSubject</a></td><td class="indexvalue">This class represents the mediator in the observer pattern Observers will receive notifications about various updates when the user interacts with the system </td></tr>
-  <tr><td class="indexkey"><a class="el" href="classMFCOpenGLControl.html">MFCOpenGLControl</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classMFCUserInterface.html">MFCUserInterface</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classNetwork.html">Network</a></td><td class="indexvalue">Abstract class representing the networking component of the application all network interfaces should be able to send and receive data </td></tr>
-  <tr><td class="indexkey"><a class="el" href="classNetworkObserver.html">NetworkObserver</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classNetworkReplayer.html">NetworkReplayer</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classNetworkSocket.html">NetworkSocket</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classNetworkSubject.html">NetworkSubject</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="classKeyboardListener.html">KeyboardListener</a></td><td class="indexvalue"><b>public</b> Interface for a class that listens to keyboard events </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classKeyboardZCamera.html">KeyboardZCamera</a></td><td class="indexvalue"><a class="el" href="classZCamera.html" title="Concrete implementation of the z camera manager.">ZCamera</a> emulator that uses the keyboard instead of a z-camera </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classLogger.html">Logger</a></td><td class="indexvalue"><b>public</b> Abstract class used for logging </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classLoseScreen.html">LoseScreen</a></td><td class="indexvalue">The lose screen is a 3D environment that is displayed when the local player lost the game </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classMediator.html">Mediator</a></td><td class="indexvalue"><b>public</b> This class mediates the interactions between the devices and the game </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classMediatorObserver.html">MediatorObserver</a></td><td class="indexvalue"><b>public</b> Abstract class in the observer pattern </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classMediatorSubject.html">MediatorSubject</a></td><td class="indexvalue"><b>public</b> This class represents the mediator in the observer pattern Observers will receive notifications about various updates when the user interacts with the system </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classMFCOpenGLControl.html">MFCOpenGLControl</a></td><td class="indexvalue">A class representing the OpenGL window </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classMFCUserInterface.html">MFCUserInterface</a></td><td class="indexvalue">A class Inprementing all the major methods of the <a class="el" href="UserInterface_8h.html">UserInterface.h</a> interface </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classNetwork.html">Network</a></td><td class="indexvalue"><b>public</b> Abstract class representing the networking component of the application </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classNetworkObserver.html">NetworkObserver</a></td><td class="indexvalue"><b>public</b> Interface for a class observing the network </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classNetworkReplayer.html">NetworkReplayer</a></td><td class="indexvalue">The network replayer class is in charge of replaying network events </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classNetworkSocket.html">NetworkSocket</a></td><td class="indexvalue"><b>public</b> A network socket used to transmit/receive data </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classNetworkSubject.html">NetworkSubject</a></td><td class="indexvalue"><b>public</b> This class represents the network in the observer pattern Observers will receive updates whenever a message is received over the network </td></tr>
   <tr><td class="indexkey"><a class="el" href="classNovintFalcon.html">NovintFalcon</a></td><td class="indexvalue">The novint falcon </td></tr>
-  <tr><td class="indexkey"><a class="el" href="classOfficeSlingshot3D.html">OfficeSlingshot3D</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classOfficeSlingshot3DFactory.html">OfficeSlingshot3DFactory</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classPacket.html">Packet&lt; PacketType &gt;</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="structPacketHeader.html">PacketHeader&lt; PacketType &gt;</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="classOfficeSlingshot3D.html">OfficeSlingshot3D</a></td><td class="indexvalue">The office slingshot 3D class is the class that runs the game The game can be started by calling <a class="el" href="classOfficeSlingshot3D.html#a0f34ade76b08ebb126176bca57eaec66" title="Starts the application.">run()</a> or operator () </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classOfficeSlingshot3DFactory.html">OfficeSlingshot3DFactory</a></td><td class="indexvalue">A factory to create instances of <a class="el" href="classOfficeSlingshot3D.html" title="The office slingshot 3D class is the class that runs the game The game can be started by calling run(...">OfficeSlingshot3D</a> </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classPacket.html">Packet&lt; PacketType &gt;</a></td><td class="indexvalue"><b>package</b> The <a class="el" href="classPacket.html" title="package The Packet class is used to represent all packets that our network can send.">Packet</a> class is used to represent all packets that our network can send </td></tr>
+  <tr><td class="indexkey"><a class="el" href="structPacketHeader.html">PacketHeader&lt; PacketType &gt;</a></td><td class="indexvalue"><b>package</b> The header for all packets </td></tr>
   <tr><td class="indexkey"><a class="el" href="classPerspectiveMath.html">PerspectiveMath</a></td><td class="indexvalue">Utility class that the mediator will use to adjust the players perspectives so that they match </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classPhysicsSync.html">PhysicsSync</a></td><td class="indexvalue"><b>public</b> This data structure is used to synchronize 2 virtual environments </td></tr>
   <tr><td class="indexkey"><a class="el" href="classProjectile.html">Projectile</a></td><td class="indexvalue">Represents a projectile Each projectile has a position and a force behind it </td></tr>
   <tr><td class="indexkey"><a class="el" href="classReplayer.html">Replayer</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classReplayFormatEvent.html">ReplayFormatEvent</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classReplayFormatLogger.html">ReplayFormatLogger&lt; Stream &gt;</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classSmartClothingManager.html">SmartClothingManager</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classSyncLocker.html">SyncLocker</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classSyncReaderLock.html">SyncReaderLock</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classSyncReaderWriters.html">SyncReaderWriters</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classSyncWriterLock.html">SyncWriterLock</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classTactileArray.html">TactileArray</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classTDVCameraInterfaceBase.html">TDVCameraInterfaceBase</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classTDVCameraInterfaceBase2.html">TDVCameraInterfaceBase2</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="classReplayFormatEvent.html">ReplayFormatEvent</a></td><td class="indexvalue"><b>package</b> The replay format event class is used to represent a replay event </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classReplayFormatLogger.html">ReplayFormatLogger&lt; Stream &gt;</a></td><td class="indexvalue"><b>public</b> Concrete logger class that outputs in the replay format </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classSmartClothingManager.html">SmartClothingManager</a></td><td class="indexvalue">Manager in charge of enabling other modules to vibrate a cetain HumanPart and sets the jacket and armband ports </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classSound.html">Sound</a></td><td class="indexvalue"><b>package</b> Abstraction for a <a class="el" href="classSound.html" title="package Abstraction for a Sound in the FMOD library.">Sound</a> in the FMOD library </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classSyncLocker.html">SyncLocker</a></td><td class="indexvalue">Utility class for wrapping a mutex in the RIAA pattern </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classSyncReaderLock.html">SyncReaderLock</a></td><td class="indexvalue">Locks a SyncReaderWriter object in reader mode following the RIAA pattern </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classSyncReaderWriters.html">SyncReaderWriters</a></td><td class="indexvalue">DEPRECATED </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classSyncWriterLock.html">SyncWriterLock</a></td><td class="indexvalue">Locks a SyncReaderWriter object in writer mode following the RIAA pattern </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classTactileArray.html">TactileArray</a></td><td class="indexvalue">Interface class for any smart clothing hardware </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classTDVCameraInterfaceBase.html">TDVCameraInterfaceBase</a></td><td class="indexvalue">Main camera control interface </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classTDVCameraInterfaceBase2.html">TDVCameraInterfaceBase2</a></td><td class="indexvalue"><a class="el" href="classTDVCameraInterfaceBase2.html" title="TDVCameraInterfaceBase2 contains.">TDVCameraInterfaceBase2</a> contains </td></tr>
   <tr><td class="indexkey"><a class="el" href="classTestRunner.html">TestRunner</a></td><td class="indexvalue">This class is used to start all the unit tests </td></tr>
   <tr><td class="indexkey"><a class="el" href="classTitleScreen.html">TitleScreen</a></td><td class="indexvalue">The title screen is a 3D environment that is displayed when the game isn't running </td></tr>
-  <tr><td class="indexkey"><a class="el" href="classUserInterface.html">UserInterface</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classUserInterfaceObserver.html">UserInterfaceObserver</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="classUserInterface.html">UserInterface</a></td><td class="indexvalue">An interface to this package </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classUserInterfaceObserver.html">UserInterfaceObserver</a></td><td class="indexvalue">The observer class for the user interface </td></tr>
   <tr><td class="indexkey"><a class="el" href="classUserInterfaceReplayer.html">UserInterfaceReplayer</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classUserInterfaceSubject.html">UserInterfaceSubject</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="structUserPreferences.html">UserPreferences</a></td><td class="indexvalue">Represents the user preferences </td></tr>
-  <tr><td class="indexkey"><a class="el" href="structVideoData.html">VideoData</a></td><td class="indexvalue">Represent a frame of video data </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classUserInterfaceSubject.html">UserInterfaceSubject</a></td><td class="indexvalue">A class needed for the subject/observer user pattern </td></tr>
+  <tr><td class="indexkey"><a class="el" href="structUserPreferences.html">UserPreferences</a></td><td class="indexvalue"><b>public</b> Represents the user preferences </td></tr>
   <tr><td class="indexkey"><a class="el" href="classVirtualAvatar.html">VirtualAvatar</a></td><td class="indexvalue">Represents an avatar in the 3d environment </td></tr>
   <tr><td class="indexkey"><a class="el" href="classVirtualBall.html">VirtualBall</a></td><td class="indexvalue">Represents a ball in the 3d environment </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classVirtualElastic.html">VirtualElastic</a></td><td class="indexvalue"></td></tr>
   <tr><td class="indexkey"><a class="el" href="classVirtualEnvironment.html">VirtualEnvironment</a></td><td class="indexvalue">The virtual environment is the 3d environment in which the game is played </td></tr>
-  <tr><td class="indexkey"><a class="el" href="classVirtualSlingshot.html">VirtualSlingshot</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classWinsockNetwork.html">WinsockNetwork</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classZCamera.html">ZCamera</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classZCameraObserver.html">ZCameraObserver</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classZCameraReplayer.html">ZCameraReplayer</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classZCameraSubject.html">ZCameraSubject</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="classVirtualSlingshot.html">VirtualSlingshot</a></td><td class="indexvalue">Represents a slingshot in the 3d environment </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classWinScreen.html">WinScreen</a></td><td class="indexvalue">The win screen is a 3D environment that is displayed when the local player won the game </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classWinsockNetwork.html">WinsockNetwork</a></td><td class="indexvalue"><b>public</b> A concrete implementation of the network class using windows sockets </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classZCamera.html">ZCamera</a></td><td class="indexvalue">Concrete implementation of the z camera manager </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classZCameraObserver.html">ZCameraObserver</a></td><td class="indexvalue">Abstract class in the observer patern for the zcamera </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classZCameraReplayer.html">ZCameraReplayer</a></td><td class="indexvalue">The zcamera replayer class is in charge of replaying zcamera events </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classZCameraSubject.html">ZCameraSubject</a></td><td class="indexvalue">Abstract class in the observer pattern for the zcamera </td></tr>
 </table>
 </div>
 <!--- window showing the filter options -->
@@ -126,7 +133,7 @@ Here are the data structures with brief descriptions:<table>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -135,7 +142,7 @@ Here are the data structures with brief descriptions:<table>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:45 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

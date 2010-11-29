@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -53,7 +54,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>ZCameraObserver Class Reference</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="ZCameraObserver" --><div class="dynheader">
+<!-- doxytag: class="ZCameraObserver" -->
+<p>Abstract class in the observer patern for the zcamera.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="ZCameraObserver_8h_source.html">ZCameraObserver.h</a>&gt;</code></p>
+<div class="dynheader">
 Inheritance diagram for ZCameraObserver:</div>
 <div class="dyncontent">
  <div class="center">
@@ -68,12 +74,98 @@ Inheritance diagram for ZCameraObserver:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a627e480f25c0d2ef0407f6b09e6883d4"></a><!-- doxytag: member="ZCameraObserver::update" ref="a627e480f25c0d2ef0407f6b09e6883d4" args="(ZCameraUpdateContext context, const void *data)=0" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>update</b> (ZCameraUpdateContext context, const void *data)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZCameraObserver.html#a3b1b6931998732b3def70cc697595454">ZCameraObserver</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#a3b1b6931998732b3def70cc697595454"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZCameraObserver.html#ad281e70716877992ade18e9e4841b306">~ZCameraObserver</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#ad281e70716877992ade18e9e4841b306"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZCameraObserver.html#a627e480f25c0d2ef0407f6b09e6883d4">update</a> (<a class="el" href="ZCameraObserver_8h.html#a3af3029bde4b133ab920f268aed62718">ZCameraUpdateContext</a> context, const void *data)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Abstract function to handle updates from the zcamera.  <a href="#a627e480f25c0d2ef0407f6b09e6883d4"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Abstract class in the observer patern for the zcamera. </p>
+<p>The zcamera reports all events via the observer pattern </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a3b1b6931998732b3def70cc697595454"></a><!-- doxytag: member="ZCameraObserver::ZCameraObserver" ref="a3b1b6931998732b3def70cc697595454" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ZCameraObserver::ZCameraObserver </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad281e70716877992ade18e9e4841b306"></a><!-- doxytag: member="ZCameraObserver::~ZCameraObserver" ref="ad281e70716877992ade18e9e4841b306" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ZCameraObserver::~ZCameraObserver </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a627e480f25c0d2ef0407f6b09e6883d4"></a><!-- doxytag: member="ZCameraObserver::update" ref="a627e480f25c0d2ef0407f6b09e6883d4" args="(ZCameraUpdateContext context, const void *data)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ZCameraObserver::update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ZCameraObserver_8h.html#a3af3029bde4b133ab920f268aed62718">ZCameraUpdateContext</a>&nbsp;</td>
+          <td class="paramname"> <em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&nbsp;</td>
+          <td class="paramname"> <em>data</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Abstract function to handle updates from the zcamera. </p>
+<p>Every time there is an update the zcamera subject will call this method. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>context</em>&nbsp;</td><td>The context of the update </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>data</em>&nbsp;</td><td>The data associated with the update </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classLogger.html#a9ac2396edcab7a8ff751bc3bd5a1dd33">Logger</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/<a class="el" href="ZCameraObserver_8h_source.html">ZCameraObserver.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/ZCameraObserver.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/ZCamera/<a class="el" href="ZCameraObserver_8h_source.html">ZCameraObserver.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/ZCamera/<a class="el" href="ZCameraObserver_8cpp.html">ZCameraObserver.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -81,7 +173,7 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>update</b> (Z
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,7 +182,7 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>update</b> (Z
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:10 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:46 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

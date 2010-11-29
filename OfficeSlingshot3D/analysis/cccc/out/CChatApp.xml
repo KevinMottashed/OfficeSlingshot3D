@@ -6,10 +6,10 @@
 <lines_of_code_per_member_function value="******" level="0" />
 <McCabes_cyclomatic_complexity value="5" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
-<lines_of_code value="25" level="0" />
+<lines_of_code value="28" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="1.600" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.200" level="0" />
+<lines_of_code_per_line_of_comment value="1.429" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.179" level="0" />
 <weighted_methods_per_class_unity value="2" level="0" />
 <weighted_methods_per_class_visibility value="1" level="0" />
 <depth_of_inheritance_tree value="1" level="0" />
@@ -24,7 +24,7 @@
 </module_summary>
 <module_detail>
 <description>definition</description>
-<source_reference file="../../Main/Chat.h" line="17" />
+<source_reference file="../../Main/Chat.h" line="16" />
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="13" level="0" />
@@ -36,11 +36,11 @@
 <name>CChatApp()</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Main/Chat.h" line="20" />
+<source_reference file="../../Main/Chat.h" line="22" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -52,7 +52,7 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Main/Chat.h" line="26" />
+<source_reference file="../../Main/Chat.h" line="28" />
 </extent>
 <lines_of_code value="33" level="1" />
 <McCabes_cyclomatic_complexity value="5" level="0" />
@@ -72,7 +72,7 @@
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../Main/Chat.h" line="17" />
+<source_reference file="../../Main/Chat.h" line="16" />
 </extent>
 </supplier_module>
 </module>

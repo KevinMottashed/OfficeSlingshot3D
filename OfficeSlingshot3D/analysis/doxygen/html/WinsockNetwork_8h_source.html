@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OfficeSlingshot3D: /home/kevin/workspace/HugMe/HugMe v0.9.1/Network/WinsockNetwork.h Source File</title>
+<title>OfficeSlingshot3D: /home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Network/WinsockNetwork.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -41,230 +42,184 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/WinsockNetwork.h</h1>  </div>
+<h1>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Network/WinsockNetwork.h</h1>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef WINSOCK_NETWORK_H</span>
+<a href="WinsockNetwork_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef WINSOCK_NETWORK_H</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define WINSOCK_NETWORK_H</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &quot;Stdafx.h&quot;</span>
-<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;boost.h&quot;</span>
-<a name="l00006"></a>00006 <span class="preprocessor">#include &quot;NetworkSocket.h&quot;</span>
-<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;NetworkCodes.h&quot;</span>
-<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;Network.h&quot;</span>
-<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;Packet.h&quot;</span>
-<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;SyncReaderWriters.h&quot;</span>
-<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;VideoData.h&quot;</span>
-<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;ConnectionStateEnum.h&quot;</span>
-<a name="l00013"></a>00013 
-<a name="l00014"></a>00014 <span class="comment">// Forward declarations (files include each other)</span>
-<a name="l00015"></a>00015 <span class="keyword">class </span><a class="code" href="classNetworkSocket.html">NetworkSocket</a>;
-<a name="l00016"></a>00016 
-<a name="l00017"></a>00017 <span class="comment">// all the different packet types for a control packet</span>
-<a name="l00018"></a>00018 <span class="keyword">enum</span> ControlPacketType
-<a name="l00019"></a>00019 {
-<a name="l00020"></a>00020     CONTROL_PACKET_NAME, <span class="comment">// a user name packet</span>
-<a name="l00021"></a>00021     CONTROL_PACKET_CHAT, <span class="comment">// a chat message packet</span>
-<a name="l00022"></a>00022     CONTROL_PACKET_START_GAME, <span class="comment">// tell the peer the game is starting</span>
-<a name="l00023"></a>00023     CONTROL_PACKET_PAUSE_GAME, <span class="comment">// tell the peer the game is paused</span>
-<a name="l00024"></a>00024     CONTROL_PACKET_END_GAME, <span class="comment">// tell the peer the game is ending</span>
-<a name="l00025"></a>00025     CONTROL_PACKET_UNKNOWN
-<a name="l00026"></a>00026 };
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028 <span class="comment">// all the different packet types for a data packet</span>
-<a name="l00029"></a>00029 <span class="keyword">enum</span> DataPacketType
-<a name="l00030"></a>00030 {
-<a name="l00031"></a>00031     DATA_PACKET_VIDEO,
-<a name="l00032"></a>00032     DATA_PACKET_PLAYER_POSITION,
-<a name="l00033"></a>00033     DATA_PACKET_SLINGSHOT_POSITION,
-<a name="l00034"></a>00034     DATA_PACKET_SLINGSHOT_PULLBACK,
-<a name="l00035"></a>00035     DATA_PACKET_PROJECTILE,
-<a name="l00036"></a>00036     DATA_PACKET_UNKNOWN
-<a name="l00037"></a>00037 };
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039 <span class="comment">// the 2 packet types</span>
-<a name="l00040"></a>00040 <span class="keyword">typedef</span> <a class="code" href="classPacket.html">Packet&lt;ControlPacketType&gt;</a> <a class="code" href="classPacket.html">ControlPacket</a>;
-<a name="l00041"></a>00041 <span class="keyword">typedef</span> <a class="code" href="classPacket.html">Packet&lt;DataPacketType&gt;</a> <a class="code" href="classPacket.html">DataPacket</a>;
-<a name="l00042"></a>00042 
-<a name="l00043"></a>00043 <span class="comment">// A concrete implementation of the network class</span>
-<a name="l00044"></a>00044 <span class="comment">// this class uses windows sockets to implement the send/receive functionality</span>
-<a name="l00045"></a><a class="code" href="classWinsockNetwork.html">00045</a> <span class="keyword">class </span><a class="code" href="classWinsockNetwork.html">WinsockNetwork</a> : <span class="keyword">public</span> <a class="code" href="classNetwork.html" title="Abstract class representing the networking component of the application all network interfaces should...">Network</a> 
-<a name="l00046"></a>00046 {
-<a name="l00047"></a>00047 <span class="keyword">public</span>:
-<a name="l00048"></a>00048     <a class="code" href="classWinsockNetwork.html">WinsockNetwork</a>();
-<a name="l00049"></a>00049     <span class="keyword">virtual</span> ~<a class="code" href="classWinsockNetwork.html">WinsockNetwork</a>();
-<a name="l00050"></a>00050 
-<a name="l00051"></a>00051     <span class="comment">// start listening for connections with the given user name</span>
-<a name="l00052"></a>00052     <span class="keyword">virtual</span> rc_network <a class="code" href="classWinsockNetwork.html#a6f2f806a0e246a46ff6d0c2006cddd43" title="Start listening for connections.">listen</a>(<span class="keyword">const</span> std::string&amp; userName);
-<a name="l00053"></a>00053 
-<a name="l00054"></a>00054     <span class="comment">// connect to a host</span>
-<a name="l00055"></a>00055     <span class="keyword">virtual</span> rc_network <a class="code" href="classWinsockNetwork.html#a0f7f289635183b1082894f230a989006" title="Attempt to connect to a peer.">connect</a>(<span class="keyword">const</span> std::string&amp; ipAddress, <span class="keyword">const</span> std::string&amp; userName);
-<a name="l00056"></a>00056 
-<a name="l00057"></a>00057     <span class="comment">// disconnect from a host</span>
-<a name="l00058"></a>00058     <span class="keyword">virtual</span> rc_network <a class="code" href="classWinsockNetwork.html#abd947a2edb4d5053286f25b4c9f041c1" title="Disconnect from a peer.">disconnect</a>();
-<a name="l00059"></a>00059 
-<a name="l00060"></a>00060     <span class="comment">// send the player&#39;s user name over the network</span>
-<a name="l00061"></a>00061     <span class="keyword">virtual</span> rc_network <a class="code" href="classWinsockNetwork.html#ae76b6c306ef15d162fe652c38c78d4e2" title="Send our username to the peer.">sendUserName</a>(<span class="keyword">const</span> std::string&amp; userName);
+<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;<a class="code" href="boost_8h.html">boost.h</a>&quot;</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include &quot;<a class="code" href="NetworkSocket_8h.html">NetworkSocket.h</a>&quot;</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;<a class="code" href="NetworkCodes_8h.html">NetworkCodes.h</a>&quot;</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;<a class="code" href="Network_8h.html">Network.h</a>&quot;</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;<a class="code" href="Packet_8h.html">Packet.h</a>&quot;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="SyncReaderWriters_8h.html">SyncReaderWriters.h</a>&quot;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="ConnectionStateEnum_8h.html">ConnectionStateEnum.h</a>&quot;</span>
+<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;<a class="code" href="BodyPartEnum_8h.html">BodyPartEnum.h</a>&quot;</span>
+<a name="l00013"></a>00013 <span class="preprocessor">#include &quot;<a class="code" href="PhysicsSync_8h.html">PhysicsSync.h</a>&quot;</span>
+<a name="l00014"></a>00014 
+<a name="l00015"></a>00015 <span class="comment">// Forward declarations (files include each other)</span>
+<a name="l00016"></a>00016 <span class="keyword">class </span><a class="code" href="classNetworkSocket.html" title="public A network socket used to transmit/receive data.">NetworkSocket</a>;
+<a name="l00017"></a>00017 
+<a name="l00021"></a><a class="code" href="WinsockNetwork_8h.html#afff1737b43ebc30e138ec9a1fb7cf73c">00021</a> <span class="keyword">enum</span> <a class="code" href="WinsockNetwork_8h.html#afff1737b43ebc30e138ec9a1fb7cf73c" title="The different packet types for a control packet.">ControlPacketType</a>
+<a name="l00022"></a>00022 {
+<a name="l00023"></a><a class="code" href="WinsockNetwork_8h.html#afff1737b43ebc30e138ec9a1fb7cf73caba62773c8286c34f6b3a04e6c054c7cb">00023</a>     CONTROL_PACKET_NAME, 
+<a name="l00024"></a><a class="code" href="WinsockNetwork_8h.html#afff1737b43ebc30e138ec9a1fb7cf73cabbeb0d5737daafae54ed940c2bcba553">00024</a>     CONTROL_PACKET_CHAT, 
+<a name="l00025"></a><a class="code" href="WinsockNetwork_8h.html#afff1737b43ebc30e138ec9a1fb7cf73ca7a18c2bb0d02697368885a99876b6eb4">00025</a>     CONTROL_PACKET_START_GAME, 
+<a name="l00026"></a><a class="code" href="WinsockNetwork_8h.html#afff1737b43ebc30e138ec9a1fb7cf73caaec30f53bdd0dfbf27203dff949d0bf4">00026</a>     CONTROL_PACKET_PAUSE_GAME, 
+<a name="l00027"></a><a class="code" href="WinsockNetwork_8h.html#afff1737b43ebc30e138ec9a1fb7cf73ca321dcb6445d34d4d812fc379aaddab82">00027</a>     CONTROL_PACKET_END_GAME, 
+<a name="l00028"></a><a class="code" href="WinsockNetwork_8h.html#afff1737b43ebc30e138ec9a1fb7cf73ca6aab86f23a59520f6f64349514b42016">00028</a>     <a class="code" href="WinsockNetwork_8h.html#afff1737b43ebc30e138ec9a1fb7cf73ca6aab86f23a59520f6f64349514b42016" title="Unknown packet type.">CONTROL_PACKET_UNKNOWN</a> 
+<a name="l00029"></a>00029 };
+<a name="l00030"></a>00030 
+<a name="l00034"></a><a class="code" href="WinsockNetwork_8h.html#a8177281edf91c9421c33891469a41308">00034</a> <span class="keyword">enum</span> <a class="code" href="WinsockNetwork_8h.html#a8177281edf91c9421c33891469a41308" title="The different packet types for a data packet.">DataPacketType</a>
+<a name="l00035"></a>00035 {
+<a name="l00036"></a><a class="code" href="WinsockNetwork_8h.html#a8177281edf91c9421c33891469a41308a9270c2f82014d73c1f74be56c1ed730d">00036</a>     DATA_PACKET_PLAYER_POSITION, 
+<a name="l00037"></a><a class="code" href="WinsockNetwork_8h.html#a8177281edf91c9421c33891469a41308acd14816cc5b4dbcc59c0f081161a8c36">00037</a>     DATA_PACKET_SLINGSHOT_PULLBACK, 
+<a name="l00038"></a><a class="code" href="WinsockNetwork_8h.html#a8177281edf91c9421c33891469a41308a20973b2fe10da332b68a5e6e3c5f5cf1">00038</a>     DATA_PACKET_PROJECTILE, 
+<a name="l00039"></a><a class="code" href="WinsockNetwork_8h.html#a8177281edf91c9421c33891469a41308ab677c76392dd222683899d25ed88c06b">00039</a>     DATA_PACKET_GAME_OVER, 
+<a name="l00040"></a><a class="code" href="WinsockNetwork_8h.html#a8177281edf91c9421c33891469a41308a117f50ea7a3a89db26fd36e49f93adf4">00040</a>     DATA_PACKET_PLAYER_HIT, 
+<a name="l00041"></a><a class="code" href="WinsockNetwork_8h.html#a8177281edf91c9421c33891469a41308a33773d688726df38cdbbc3b2b2e7802e">00041</a>     DATA_PACKET_PHYSICS_SYNC, 
+<a name="l00042"></a><a class="code" href="WinsockNetwork_8h.html#a8177281edf91c9421c33891469a41308ad61cf83672f30b7b4c4a731eb94f994a">00042</a>     <a class="code" href="WinsockNetwork_8h.html#a8177281edf91c9421c33891469a41308ad61cf83672f30b7b4c4a731eb94f994a" title="Unknown packet type.">DATA_PACKET_UNKNOWN</a> 
+<a name="l00043"></a>00043 };
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045 <span class="comment">// the 2 packet types</span>
+<a name="l00046"></a><a class="code" href="WinsockNetwork_8h.html#a3411bffc3da381f34242bdeafc897a41">00046</a> <span class="keyword">typedef</span> <a class="code" href="classPacket.html" title="package The Packet class is used to represent all packets that our network can send.">Packet&lt;ControlPacketType&gt;</a> <a class="code" href="classPacket.html" title="package The Packet class is used to represent all packets that our network can send.">ControlPacket</a>;
+<a name="l00047"></a><a class="code" href="WinsockNetwork_8h.html#a2c1e0f5663ba41ead802bfaa5a2e5a1f">00047</a> <span class="keyword">typedef</span> <a class="code" href="classPacket.html" title="package The Packet class is used to represent all packets that our network can send.">Packet&lt;DataPacketType&gt;</a> <a class="code" href="classPacket.html" title="package The Packet class is used to represent all packets that our network can send.">DataPacket</a>;
+<a name="l00048"></a>00048 
+<a name="l00055"></a><a class="code" href="classWinsockNetwork.html">00055</a> <span class="keyword">class </span><a class="code" href="classWinsockNetwork.html" title="public A concrete implementation of the network class using windows sockets.">WinsockNetwork</a> : <span class="keyword">public</span> <a class="code" href="classNetwork.html" title="public Abstract class representing the networking component of the application.">Network</a> 
+<a name="l00056"></a>00056 {
+<a name="l00057"></a>00057 <span class="keyword">public</span>:
+<a name="l00061"></a>00061     <a class="code" href="classWinsockNetwork.html#ac05e14adb6aa2f726fc4f916c9fc6e7e" title="Constructor.">WinsockNetwork</a>();
 <a name="l00062"></a>00062 
-<a name="l00063"></a>00063     <span class="comment">// send a chat message to the other player</span>
-<a name="l00064"></a>00064     <span class="keyword">virtual</span> rc_network <a class="code" href="classWinsockNetwork.html#a420d4e6b5c698476a94dcdb503233de7" title="Send a chat message to the peer.">sendChatMessage</a>(<span class="keyword">const</span> std::string&amp; message);
-<a name="l00065"></a>00065 
-<a name="l00066"></a>00066     <span class="comment">// send a start/pause/exit game message</span>
-<a name="l00067"></a>00067     <span class="keyword">virtual</span> rc_network <a class="code" href="classWinsockNetwork.html#a20ed4411ec34336c6a213b15cc3fcad9" title="Send a start game message to the peer.">sendStartGame</a>();
-<a name="l00068"></a>00068     <span class="keyword">virtual</span> rc_network <a class="code" href="classWinsockNetwork.html#ae4412629d2ee052afc41c81f36cfad50" title="Send a pause game message to the peer.">sendPauseGame</a>();
-<a name="l00069"></a>00069     <span class="keyword">virtual</span> rc_network <a class="code" href="classWinsockNetwork.html#a877c8001bbd880295e0458c3377dca25" title="Send an end game message to the peer.">sendEndGame</a>();
-<a name="l00070"></a>00070 
-<a name="l00071"></a>00071     <span class="comment">// send a video data to the other player</span>
-<a name="l00072"></a>00072     <span class="keyword">virtual</span> rc_network <a class="code" href="classWinsockNetwork.html#a36362dbaa70fbe00dd48fded21464888" title="Send video data to the peer.">sendVideoData</a>(<span class="keyword">const</span> <a class="code" href="structVideoData.html" title="Represent a frame of video data.">VideoData</a>&amp; video);
-<a name="l00073"></a>00073 
-<a name="l00074"></a>00074     <span class="comment">// send a player position to the other player</span>
-<a name="l00075"></a>00075     <span class="keyword">virtual</span> rc_network <a class="code" href="classWinsockNetwork.html#ab27dd7393a89573f9e75e1a50efbc833" title="Send the players position to the peer.">sendPlayerPosition</a>(<span class="keyword">const</span> cVector3d&amp; position);
-<a name="l00076"></a>00076 
-<a name="l00077"></a>00077     <span class="comment">// send a slingshot position to the other player</span>
-<a name="l00078"></a>00078     <span class="keyword">virtual</span> rc_network <a class="code" href="classWinsockNetwork.html#af0456294cf39244cc59f1ca81e2aa2d3" title="Send the slingshot position to the peer.">sendSlingshotPosition</a>(<span class="keyword">const</span> cVector3d&amp; position);
-<a name="l00079"></a>00079 
-<a name="l00080"></a>00080     <span class="comment">// send a projectile over the network</span>
-<a name="l00081"></a>00081     <span class="keyword">virtual</span> rc_network <a class="code" href="classWinsockNetwork.html#accb610c314dd94a1649bcfe101c93997" title="Send a projectile to the peer.">sendProjectile</a>(<span class="keyword">const</span> <a class="code" href="classProjectile.html" title="Represents a projectile Each projectile has a position and a force behind it.">Projectile</a>&amp; projectile);
-<a name="l00082"></a>00082 
-<a name="l00083"></a>00083     <span class="comment">// send a slingshot pullback event over the network</span>
-<a name="l00084"></a>00084     <span class="keyword">virtual</span> rc_network <a class="code" href="classWinsockNetwork.html#a0a8ced3a30f215e71114b9fa94b3d1e3" title="Send a slingshot pullback event to the peer.">sendSlingshotPullback</a>();
-<a name="l00085"></a>00085 
-<a name="l00086"></a>00086     <span class="comment">// true if  we are connected to a peer</span>
-<a name="l00087"></a>00087     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classWinsockNetwork.html#a8c621566b7ce641d86797569346fcaad" title="Determines if we are connected to a peer.">isConnected</a>() <span class="keyword">const</span>;
-<a name="l00088"></a>00088 
-<a name="l00089"></a>00089     <span class="comment">// true if  we are listening for connections</span>
-<a name="l00090"></a>00090     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classWinsockNetwork.html#a7cbc0e15323359b9bdb862342e406f23" title="Determines if we are listening for connections.">isListening</a>() <span class="keyword">const</span>;
-<a name="l00091"></a>00091 
-<a name="l00092"></a>00092     <span class="comment">// notify the network interface that a network connection has been accepted</span>
-<a name="l00093"></a>00093     <span class="keywordtype">void</span> notifyAccept(<a class="code" href="classNetworkSocket.html">NetworkSocket</a>* socket);
-<a name="l00094"></a>00094 
-<a name="l00095"></a>00095 <span class="keyword">private</span>:
-<a name="l00096"></a>00096     <span class="comment">//---------------</span>
-<a name="l00097"></a>00097     <span class="comment">// Constants</span>
-<a name="l00098"></a>00098     <span class="comment">//---------------</span>
-<a name="l00099"></a>00099 
-<a name="l00100"></a>00100     <span class="comment">// the network ports for our application</span>
-<a name="l00101"></a>00101     <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> chat_port;
-<a name="l00102"></a>00102     <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> data_port;
+<a name="l00067"></a>00067     <span class="keyword">virtual</span> <a class="code" href="classWinsockNetwork.html#a8229a3b6d82b851ad731e9b51e58e0e9" title="Destructor.">~WinsockNetwork</a>();
+<a name="l00068"></a>00068 
+<a name="l00074"></a>00074     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classWinsockNetwork.html#a6f2f806a0e246a46ff6d0c2006cddd43" title="Start listening for connections with the given user name.">listen</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="classWinsockNetwork.html#ace4f23e2d575b5b5abe37fdca8efd787" title="The user name that we will use to establish a connection to the other player.">userName</a>);
+<a name="l00075"></a>00075 
+<a name="l00082"></a>00082     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classWinsockNetwork.html#a0f7f289635183b1082894f230a989006" title="Connect to an ip address with the given user name.">connect</a>(<span class="keyword">const</span> std::string&amp; ipAddress, <span class="keyword">const</span> std::string&amp; userName);
+<a name="l00083"></a>00083 
+<a name="l00088"></a>00088     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classWinsockNetwork.html#abd947a2edb4d5053286f25b4c9f041c1" title="Disconnect from the peer.">disconnect</a>();
+<a name="l00089"></a>00089 
+<a name="l00095"></a>00095     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classWinsockNetwork.html#ae76b6c306ef15d162fe652c38c78d4e2" title="Send our user name to the peer.">sendUserName</a>(<span class="keyword">const</span> std::string&amp; userName);
+<a name="l00096"></a>00096 
+<a name="l00102"></a>00102     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classWinsockNetwork.html#a420d4e6b5c698476a94dcdb503233de7" title="Send a chat message to the other player.">sendChatMessage</a>(<span class="keyword">const</span> std::string&amp; message);
 <a name="l00103"></a>00103 
-<a name="l00104"></a>00104     <span class="comment">// maximum size for a control packet</span>
-<a name="l00105"></a>00105     <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> maximum_control_packet_size;
-<a name="l00106"></a>00106     <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> maximum_data_packet_size;
-<a name="l00107"></a>00107 
-<a name="l00108"></a>00108     <span class="comment">//-----------------------</span>
-<a name="l00109"></a>00109     <span class="comment">// Control Socket</span>
-<a name="l00110"></a>00110     <span class="comment">//-----------------------</span>
-<a name="l00111"></a>00111     <span class="comment">// the control socket, used for sending chat messages, user names, game data ...</span>
-<a name="l00112"></a>00112     <a class="code" href="classNetworkSocket.html">NetworkSocket</a>* m_pControlSocket; <span class="comment">// the actual socket</span>
-<a name="l00113"></a>00113     SOCKET m_hControlSocket; <span class="comment">// the socket handle</span>
-<a name="l00114"></a>00114     BOOL m_bControlConnected; <span class="comment">// true if the connection has been accepted</span>
-<a name="l00115"></a>00115     <span class="keyword">mutable</span> CRITICAL_SECTION m_csControlSocketSend; <span class="comment">// mutex for sending control messages</span>
-<a name="l00116"></a>00116 
-<a name="l00117"></a>00117     <span class="comment">// the control receive thread, receives messages through the network</span>
-<a name="l00118"></a>00118     std::auto_ptr&lt;boost::thread&gt; controlReceiveThread;
-<a name="l00119"></a>00119 
-<a name="l00124"></a>00124     <span class="keywordtype">void</span> controlReceive();
-<a name="l00125"></a>00125 
-<a name="l00126"></a>00126     <span class="comment">//-----------------------</span>
-<a name="l00127"></a>00127     <span class="comment">// Data Socket</span>
-<a name="l00128"></a>00128     <span class="comment">//-----------------------</span>
-<a name="l00129"></a>00129     <span class="comment">// the data socket, used for sending data, video, falcon, tactile ...</span>
-<a name="l00130"></a>00130     <a class="code" href="classNetworkSocket.html">NetworkSocket</a>* m_pDataSocket; <span class="comment">// the actual socket</span>
-<a name="l00131"></a>00131     SOCKET m_hDataSocket; <span class="comment">// the socket handle</span>
-<a name="l00132"></a>00132     BOOL m_bDataConnected; <span class="comment">// true if the connection has been accepted</span>
-<a name="l00133"></a>00133     <span class="keyword">mutable</span> CRITICAL_SECTION m_csDataSocketSend; <span class="comment">// mutex for sending data message</span>
-<a name="l00134"></a>00134 
-<a name="l00135"></a>00135     <span class="comment">// the data receive thread, receives messages through the network</span>
-<a name="l00136"></a>00136     std::auto_ptr&lt;boost::thread&gt; dataReceiveThread;
-<a name="l00137"></a>00137 
-<a name="l00138"></a>00138     <span class="comment">// the threads managing the data socket</span>
-<a name="l00139"></a>00139     <span class="keywordtype">void</span> dataReceive();
-<a name="l00140"></a>00140 
-<a name="l00141"></a>00141     <span class="comment">//--------------------------</span>
-<a name="l00142"></a>00142     <span class="comment">// Private Member functions</span>
-<a name="l00143"></a>00143     <span class="comment">//--------------------------</span>
-<a name="l00144"></a>00144 
-<a name="l00145"></a>00145     <span class="comment">// reset the sockets to their original state</span>
-<a name="l00146"></a>00146     <span class="keywordtype">void</span> resetSockets();
-<a name="l00147"></a>00147 
-<a name="l00148"></a>00148     <span class="comment">// shutdown the send operation on the sockets</span>
-<a name="l00149"></a>00149     <span class="keywordtype">void</span> shutdownSockets();
-<a name="l00150"></a>00150 
-<a name="l00151"></a>00151     <span class="comment">// close the sockets</span>
-<a name="l00152"></a>00152     <span class="keywordtype">void</span> closeSockets();
-<a name="l00153"></a>00153 
-<a name="l00154"></a>00154     <span class="comment">// resets variables related to the connection status</span>
-<a name="l00155"></a>00155     <span class="keywordtype">void</span> resetConnectionStatus();
-<a name="l00156"></a>00156 
-<a name="l00157"></a>00157     <span class="comment">// initialize the connection, this will create the threads for receiving</span>
-<a name="l00158"></a>00158     rc_network initializeConnection();
+<a name="l00109"></a>00109     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classWinsockNetwork.html#a20ed4411ec34336c6a213b15cc3fcad9" title="Send a start game message to the peer.">sendStartGame</a>();
+<a name="l00110"></a>00110 
+<a name="l00116"></a>00116     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classWinsockNetwork.html#ae4412629d2ee052afc41c81f36cfad50" title="Send a pause game message to the peer.">sendPauseGame</a>();
+<a name="l00117"></a>00117 
+<a name="l00123"></a>00123     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classWinsockNetwork.html#a877c8001bbd880295e0458c3377dca25" title="Send an end game message to the peer.">sendEndGame</a>();
+<a name="l00124"></a>00124 
+<a name="l00130"></a>00130     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classWinsockNetwork.html#ab27dd7393a89573f9e75e1a50efbc833" title="Send a player position to the other player.">sendPlayerPosition</a>(<span class="keyword">const</span> cVector3d&amp; position);
+<a name="l00131"></a>00131 
+<a name="l00138"></a>00138     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classWinsockNetwork.html#a587efadbb4e7189d749a38bff7cdf504" title="Send the slingshot pullback position to the peer.">sendSlingshotPullback</a>(<span class="keyword">const</span> cVector3d&amp; position);
+<a name="l00139"></a>00139 
+<a name="l00145"></a>00145     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classWinsockNetwork.html#accb610c314dd94a1649bcfe101c93997" title="Send a projectile to the other player.">sendProjectile</a>(<span class="keyword">const</span> <a class="code" href="classProjectile.html" title="Represents a projectile Each projectile has a position and a force behind it.">Projectile</a>&amp; projectile);
+<a name="l00146"></a>00146 
+<a name="l00151"></a>00151     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classWinsockNetwork.html#aa2729abffd0d31c14e11d8e6d0eed13a" title="Send a message to the peer letting him know that we have lost the game.">sendGameOver</a>();
+<a name="l00152"></a>00152 
+<a name="l00158"></a>00158     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classWinsockNetwork.html#a5dd67044358bfcbe7f70318249cb260d" title="Send a message to the peer letting him know that we have been hit.">sendPlayerHit</a>(<a class="code" href="group__Common.html#gaa22d3933804e3afcd4eac294dded7434" title="public Enum representing different parts of the human body.">BodyPart_t</a> bodyPart);
 <a name="l00159"></a>00159 
-<a name="l00160"></a>00160     <span class="comment">// establishes the connection,</span>
-<a name="l00161"></a>00161     <span class="comment">// this will send any messages that need to be sent for the connection to be established</span>
-<a name="l00162"></a>00162     <span class="comment">// currently, all we need to send is our user name</span>
-<a name="l00163"></a>00163     rc_network establishConnection();
-<a name="l00164"></a>00164 
-<a name="l00165"></a>00165     <span class="comment">// terminate the network connection and reset everything</span>
-<a name="l00166"></a>00166     <span class="keywordtype">void</span> terminateConnection();
-<a name="l00167"></a>00167 
-<a name="l00168"></a>00168     <span class="comment">// send a control message to the peer</span>
-<a name="l00169"></a>00169     rc_network sendControlMessage(<span class="keyword">const</span> <a class="code" href="classPacket.html">ControlPacket</a>&amp; message);
-<a name="l00170"></a>00170 
-<a name="l00171"></a>00171     <span class="comment">// reset the network connection and notify the observers that the peer has disconnected</span>
-<a name="l00172"></a>00172     <span class="keywordtype">void</span> peerDisconnect();
-<a name="l00173"></a>00173 
-<a name="l00174"></a>00174     <span class="comment">// reset the network connection and notify the observers that a network error has occured</span>
-<a name="l00175"></a>00175     <span class="keywordtype">void</span> networkError(rc_network error);
-<a name="l00176"></a>00176 
-<a name="l00177"></a>00177     <span class="comment">// send a data message synchronously</span>
-<a name="l00178"></a>00178     rc_network syncSendDataMessage(<span class="keyword">const</span> <a class="code" href="classPacket.html">DataPacket</a>&amp; packet);
-<a name="l00179"></a>00179 
-<a name="l00180"></a>00180     <span class="comment">// handle a data message</span>
-<a name="l00181"></a>00181     <span class="keywordtype">void</span> handleDataMessage(<span class="keyword">const</span> <a class="code" href="classPacket.html">DataPacket</a>&amp; message);
-<a name="l00182"></a>00182 
-<a name="l00183"></a>00183     <span class="comment">// send a control message synchronously</span>
-<a name="l00184"></a>00184     rc_network syncSendControlMessage(<span class="keyword">const</span> <a class="code" href="classPacket.html">ControlPacket</a>&amp; packet);
+<a name="l00165"></a>00165     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classWinsockNetwork.html#a2f3494e76bc83bd0f15928b1d9fa52b1" title="Send a physics sync object to the peer so that he can synchronize his game.">sendPhysicsSync</a>(<span class="keyword">const</span> <a class="code" href="classPhysicsSync.html" title="public This data structure is used to synchronize 2 virtual environments.">PhysicsSync</a>&amp; sync);
+<a name="l00166"></a>00166 
+<a name="l00171"></a>00171     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classWinsockNetwork.html#a8c621566b7ce641d86797569346fcaad" title="Determines if we are connected to a peer.">isConnected</a>() <span class="keyword">const</span>;
+<a name="l00172"></a>00172 
+<a name="l00177"></a>00177     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classWinsockNetwork.html#a7cbc0e15323359b9bdb862342e406f23" title="Determines if we are listening for connections.">isListening</a>() <span class="keyword">const</span>;
+<a name="l00178"></a>00178 
+<a name="l00184"></a>00184     <span class="keywordtype">void</span> <a class="code" href="classWinsockNetwork.html#a011b39d509309dd98f3b798e7c6b7c62" title="Notify the network interface that a network connection has been accepted.">notifyAccept</a>(<a class="code" href="classNetworkSocket.html" title="public A network socket used to transmit/receive data.">NetworkSocket</a>* socket);
 <a name="l00185"></a>00185 
-<a name="l00186"></a>00186     <span class="comment">// handle a control packet</span>
-<a name="l00187"></a>00187     <span class="keywordtype">void</span> handleControlPacket(<span class="keyword">const</span> <a class="code" href="classPacket.html">ControlPacket</a>&amp; packet);
-<a name="l00188"></a>00188 
-<a name="l00189"></a>00189     <span class="comment">// get and set the connection in a thread safe manner</span>
-<a name="l00190"></a>00190     <a class="code" href="namespaceConnectionState.html#ad1b6674b6f1c58f17e9db75d0a77149f" title="Enum representing all the different connection states.">ConnectionState_t</a> getConnectionState() <span class="keyword">const</span>;
-<a name="l00191"></a>00191     <span class="keywordtype">void</span> setConnectionState(<a class="code" href="namespaceConnectionState.html#ad1b6674b6f1c58f17e9db75d0a77149f" title="Enum representing all the different connection states.">ConnectionState_t</a> state);
-<a name="l00192"></a>00192 
-<a name="l00193"></a>00193     <span class="comment">//---------------------------</span>
-<a name="l00194"></a>00194     <span class="comment">// Private Data Members</span>
-<a name="l00195"></a>00195     <span class="comment">//---------------------------</span>
-<a name="l00196"></a>00196 
-<a name="l00197"></a>00197     <span class="comment">// we need to synchronize the different threads modifying the connection status to avoid race conditions</span>
-<a name="l00198"></a>00198     <span class="comment">// the operations that modify the connection status are:</span>
-<a name="l00199"></a>00199     <span class="comment">// startListening, connect, disconnect, peerDisconnect, notifyAccept and network error</span>
-<a name="l00200"></a>00200     <span class="comment">// only 1 of these operation can be executed at a time or we will run into synchronization issues</span>
-<a name="l00201"></a>00201     <span class="comment">// these operations are considered writers in the readers/writers concurrency pattern</span>
-<a name="l00202"></a>00202     <span class="comment">// the readers are the operations that use the sockets (send/recv)</span>
-<a name="l00203"></a>00203     <span class="keyword">mutable</span> <a class="code" href="classSyncReaderWriters.html">SyncReaderWriters</a> m_rwsync_ConnectionStatus;
-<a name="l00204"></a>00204 
-<a name="l00205"></a>00205     <span class="keywordtype">bool</span> m_bIsServer; <span class="comment">// true if we are the server (listener)</span>
-<a name="l00206"></a>00206     <a class="code" href="namespaceConnectionState.html#ad1b6674b6f1c58f17e9db75d0a77149f" title="Enum representing all the different connection states.">ConnectionState_t</a> m_connectionState;
-<a name="l00207"></a>00207     <span class="keyword">mutable</span> CRITICAL_SECTION m_csConnectionState;
-<a name="l00208"></a>00208 
-<a name="l00209"></a>00209     <span class="comment">// true if we are in the process of disconnecting and the disconnect originated from us</span>
-<a name="l00210"></a>00210     <span class="keywordtype">bool</span> m_bLocalDisconnect; 
-<a name="l00211"></a>00211     <span class="keyword">mutable</span> CRITICAL_SECTION m_csLocalDisconnect;
+<a name="l00186"></a>00186 <span class="keyword">private</span>:
+<a name="l00187"></a><a class="code" href="classWinsockNetwork.html#adf8d00131cde385ac4ef5abcca3006f6">00187</a>     <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classWinsockNetwork.html#adf8d00131cde385ac4ef5abcca3006f6" title="Port number for the control socket.">chat_port</a>; 
+<a name="l00188"></a><a class="code" href="classWinsockNetwork.html#aaf941895214baf812f0f5f443120863a">00188</a>     <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classWinsockNetwork.html#aaf941895214baf812f0f5f443120863a" title="Port number for the data socket.">data_port</a>; 
+<a name="l00190"></a><a class="code" href="classWinsockNetwork.html#a69f8e6cef216f1ce9a2dd13585db21bc">00190</a>     <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classWinsockNetwork.html#a69f8e6cef216f1ce9a2dd13585db21bc" title="Maximum size for a control packet.">maximum_control_packet_size</a>; 
+<a name="l00191"></a><a class="code" href="classWinsockNetwork.html#a5bde59b8bc9f7c367409d8f074ca9cb0">00191</a>     <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classWinsockNetwork.html#a5bde59b8bc9f7c367409d8f074ca9cb0" title="Maximum size for a data packet.">maximum_data_packet_size</a>; 
+<a name="l00193"></a>00193     <span class="comment">//-----------------------</span>
+<a name="l00194"></a>00194     <span class="comment">// Control Socket</span>
+<a name="l00195"></a>00195     <span class="comment">//-----------------------</span>
+<a name="l00196"></a>00196     <span class="comment">// the control socket, used for sending chat messages, user names, game data ...</span>
+<a name="l00197"></a><a class="code" href="classWinsockNetwork.html#ab05e2a65ff7dbff4321a5db18a049fa3">00197</a>     <a class="code" href="classNetworkSocket.html" title="public A network socket used to transmit/receive data.">NetworkSocket</a>* <a class="code" href="classWinsockNetwork.html#ab05e2a65ff7dbff4321a5db18a049fa3" title="Socket used for control messages.">m_pControlSocket</a>; 
+<a name="l00198"></a><a class="code" href="classWinsockNetwork.html#a263ef10b976b788d1ac59fba7909bd5c">00198</a>     SOCKET <a class="code" href="classWinsockNetwork.html#a263ef10b976b788d1ac59fba7909bd5c" title="The socket handle for the control socket.">m_hControlSocket</a>; 
+<a name="l00199"></a><a class="code" href="classWinsockNetwork.html#af18db3076fb210b93c44cfc47be7c1c9">00199</a>     BOOL <a class="code" href="classWinsockNetwork.html#af18db3076fb210b93c44cfc47be7c1c9" title="True if the control socket is connected.">m_bControlConnected</a>; 
+<a name="l00202"></a><a class="code" href="classWinsockNetwork.html#aa9e348910c808cb9cea3cb01ad549dad">00202</a>     <span class="keyword">mutable</span> CRITICAL_SECTION <a class="code" href="classWinsockNetwork.html#aa9e348910c808cb9cea3cb01ad549dad" title="Protects the control socket from trying to send multiple messages at a time.">m_csControlSocketSend</a>;
+<a name="l00203"></a>00203 
+<a name="l00205"></a><a class="code" href="classWinsockNetwork.html#a2a28c41c23ac78ffb54646dd39a7a296">00205</a>     std::auto_ptr&lt;boost::thread&gt; <a class="code" href="classWinsockNetwork.html#a2a28c41c23ac78ffb54646dd39a7a296" title="The thread for receiving messages through the control socket.">controlReceiveThread</a>;
+<a name="l00206"></a>00206 
+<a name="l00211"></a>00211     <span class="keywordtype">void</span> <a class="code" href="classWinsockNetwork.html#a61fa7847068b09d51fd6e9ec77c48387" title="Receive messages from the control socket.">controlReceive</a>();
 <a name="l00212"></a>00212 
-<a name="l00213"></a>00213     <span class="comment">// the user name that we will use to establish a connection to the other player</span>
-<a name="l00214"></a>00214     std::string userName;
-<a name="l00215"></a>00215 
-<a name="l00216"></a>00216     <span class="comment">// the semaphore that will be used to signal a connection established</span>
-<a name="l00217"></a>00217     <span class="keyword">mutable</span> CSemaphore* m_sEstablished;
-<a name="l00218"></a>00218 };
-<a name="l00219"></a>00219 
-<a name="l00220"></a>00220 <span class="preprocessor">#endif</span>
-<a name="l00221"></a>00221 <span class="preprocessor"></span>
+<a name="l00213"></a>00213     <span class="comment">//-----------------------</span>
+<a name="l00214"></a>00214     <span class="comment">// Data Socket</span>
+<a name="l00215"></a>00215     <span class="comment">//-----------------------</span>
+<a name="l00216"></a>00216     <span class="comment">// the data socket, used for sending data, video, falcon, tactile ...</span>
+<a name="l00217"></a><a class="code" href="classWinsockNetwork.html#a2e1290ad360a406031c2a6db9728b99e">00217</a>     <a class="code" href="classNetworkSocket.html" title="public A network socket used to transmit/receive data.">NetworkSocket</a>* <a class="code" href="classWinsockNetwork.html#a2e1290ad360a406031c2a6db9728b99e" title="Socket used for data messages.">m_pDataSocket</a>; 
+<a name="l00218"></a><a class="code" href="classWinsockNetwork.html#a0b71cd93e1a0888d8f8d9a8edda88f78">00218</a>     SOCKET <a class="code" href="classWinsockNetwork.html#a0b71cd93e1a0888d8f8d9a8edda88f78" title="The socket handle for the data socket.">m_hDataSocket</a>; 
+<a name="l00219"></a><a class="code" href="classWinsockNetwork.html#a0a09ce4acd94995e3e0c2ecab4970023">00219</a>     BOOL <a class="code" href="classWinsockNetwork.html#a0a09ce4acd94995e3e0c2ecab4970023" title="True if the data socket is connected.">m_bDataConnected</a>; 
+<a name="l00222"></a><a class="code" href="classWinsockNetwork.html#a0c9517808fb2d98ac6b627b8e2cd0de8">00222</a>     <span class="keyword">mutable</span> CRITICAL_SECTION <a class="code" href="classWinsockNetwork.html#a0c9517808fb2d98ac6b627b8e2cd0de8" title="Protects the data socket from trying to send multiple messages at a time.">m_csDataSocketSend</a>;
+<a name="l00223"></a>00223 
+<a name="l00225"></a><a class="code" href="classWinsockNetwork.html#a68e73c0e2faa4a594d5a8323e92e41d3">00225</a>     std::auto_ptr&lt;boost::thread&gt; <a class="code" href="classWinsockNetwork.html#a68e73c0e2faa4a594d5a8323e92e41d3" title="The thread for receiving messages through the data socket.">dataReceiveThread</a>;
+<a name="l00226"></a>00226 
+<a name="l00231"></a>00231     <span class="keywordtype">void</span> <a class="code" href="classWinsockNetwork.html#af3c09d4effb71590f624eb8dd1f6b97c" title="Receive messages from the data socket.">dataReceive</a>();
+<a name="l00232"></a>00232 
+<a name="l00233"></a>00233     <span class="comment">//--------------------------</span>
+<a name="l00234"></a>00234     <span class="comment">// Private Member functions</span>
+<a name="l00235"></a>00235     <span class="comment">//--------------------------</span>
+<a name="l00236"></a>00236 
+<a name="l00240"></a>00240     <span class="keywordtype">void</span> <a class="code" href="classWinsockNetwork.html#a81e7f99f744e1c41a161739bd7b9133e" title="Reset the sockets to their original state.">resetSockets</a>();
+<a name="l00241"></a>00241 
+<a name="l00245"></a>00245     <span class="keywordtype">void</span> <a class="code" href="classWinsockNetwork.html#a4b6dee85d574e3149b93f87f708a96f2" title="Shutdown the send operation on the sockets.">shutdownSockets</a>();
+<a name="l00246"></a>00246 
+<a name="l00250"></a>00250     <span class="keywordtype">void</span> <a class="code" href="classWinsockNetwork.html#a254444f84b9d7b611df5b20efba40c99" title="Close the sockets.">closeSockets</a>();
+<a name="l00251"></a>00251 
+<a name="l00255"></a>00255     <span class="keywordtype">void</span> <a class="code" href="classWinsockNetwork.html#a82b3b9d8c254e0ee8d51ffc4f70bb403" title="Resets variables related to the connection status.">resetConnectionStatus</a>();
+<a name="l00256"></a>00256 
+<a name="l00260"></a>00260     <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classWinsockNetwork.html#afa8326d1575a3ca117582f56bd480d35" title="Initialize the connection, this will create the threads for receiving.">initializeConnection</a>();
+<a name="l00261"></a>00261 
+<a name="l00267"></a>00267     <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classWinsockNetwork.html#a17dd443de3f6c293ce0b9858d8b1e02a" title="Establishes the connection.">establishConnection</a>();
+<a name="l00268"></a>00268 
+<a name="l00272"></a>00272     <span class="keywordtype">void</span> <a class="code" href="classWinsockNetwork.html#a5cfa151bd5fd523f6eaf094435694679" title="Terminate the network connection and reset everything.">terminateConnection</a>();
+<a name="l00273"></a>00273 
+<a name="l00279"></a>00279     <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classWinsockNetwork.html#aed7e6b6ccb1758d0c54f160dc083b619" title="Send a control message to the peer.">sendControlMessage</a>(<span class="keyword">const</span> <a class="code" href="classPacket.html" title="package The Packet class is used to represent all packets that our network can send.">ControlPacket</a>&amp; message);
+<a name="l00280"></a>00280 
+<a name="l00284"></a>00284     <span class="keywordtype">void</span> <a class="code" href="classWinsockNetwork.html#a4e4c7ffc12d92944ca727a912e97a537" title="Reset the network connection and notify the observers that the peer has disconnected.">peerDisconnect</a>();
+<a name="l00285"></a>00285 
+<a name="l00290"></a>00290     <span class="keywordtype">void</span> <a class="code" href="classWinsockNetwork.html#a0e884da881373a5041bee283ee97cdbe" title="Reset the network connection and notify the observers that a network error has occured.">networkError</a>(<a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> error);
+<a name="l00291"></a>00291 
+<a name="l00297"></a>00297     <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classWinsockNetwork.html#a09e0e078cedabce8837154d5e123ce99" title="Send a data message synchronously.">syncSendDataMessage</a>(<span class="keyword">const</span> <a class="code" href="classPacket.html" title="package The Packet class is used to represent all packets that our network can send.">DataPacket</a>&amp; packet);
+<a name="l00298"></a>00298 
+<a name="l00303"></a>00303     <span class="keywordtype">void</span> <a class="code" href="classWinsockNetwork.html#a1676871ebba12ffcf8739d76d3fcea07" title="Handle a data message.">handleDataMessage</a>(<span class="keyword">const</span> <a class="code" href="classPacket.html" title="package The Packet class is used to represent all packets that our network can send.">DataPacket</a>&amp; message);
+<a name="l00304"></a>00304 
+<a name="l00310"></a>00310     <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classWinsockNetwork.html#abedeafaff49d603f443e75ad88e3c09c" title="Send a control message synchronously.">syncSendControlMessage</a>(<span class="keyword">const</span> <a class="code" href="classPacket.html" title="package The Packet class is used to represent all packets that our network can send.">ControlPacket</a>&amp; packet);
+<a name="l00311"></a>00311 
+<a name="l00316"></a>00316     <span class="keywordtype">void</span> <a class="code" href="classWinsockNetwork.html#a9e07fee153774461dd64d717a931a22e" title="Handle a control packet.">handleControlPacket</a>(<span class="keyword">const</span> <a class="code" href="classPacket.html" title="package The Packet class is used to represent all packets that our network can send.">ControlPacket</a>&amp; packet);
+<a name="l00317"></a>00317 
+<a name="l00322"></a>00322     <a class="code" href="group__Common.html#gad1b6674b6f1c58f17e9db75d0a77149f" title="public Enum representing all the different connection states.">ConnectionState_t</a> <a class="code" href="classWinsockNetwork.html#a4b19ffac1dbebef7d1614f3042feceb0" title="Get the connection state.">getConnectionState</a>() <span class="keyword">const</span>;
+<a name="l00323"></a>00323 
+<a name="l00328"></a>00328     <span class="keywordtype">void</span> <a class="code" href="classWinsockNetwork.html#a509c5c7b87a564edcef4c16bef4c25af" title="Set the connection state.">setConnectionState</a>(<a class="code" href="group__Common.html#gad1b6674b6f1c58f17e9db75d0a77149f" title="public Enum representing all the different connection states.">ConnectionState_t</a> state);
+<a name="l00329"></a>00329 
+<a name="l00330"></a>00330     <span class="comment">//---------------------------</span>
+<a name="l00331"></a>00331     <span class="comment">// Private Data Members</span>
+<a name="l00332"></a>00332     <span class="comment">//---------------------------</span>
+<a name="l00333"></a>00333 
+<a name="l00342"></a><a class="code" href="classWinsockNetwork.html#a91ea27b06ec6c639ff8187370e4ce261">00342</a>     <span class="keyword">mutable</span> <a class="code" href="classSyncReaderWriters.html" title="DEPRECATED.">SyncReaderWriters</a> <a class="code" href="classWinsockNetwork.html#a91ea27b06ec6c639ff8187370e4ce261" title="We need to synchronize the different threads modifying the connection status to avoid race conditions...">m_rwsync_ConnectionStatus</a>;
+<a name="l00343"></a>00343 
+<a name="l00344"></a><a class="code" href="classWinsockNetwork.html#ac44f043525eb42f7473bc71f53c3c010">00344</a>     <span class="keywordtype">bool</span> <a class="code" href="classWinsockNetwork.html#ac44f043525eb42f7473bc71f53c3c010" title="True if we are the server (listener).">m_bIsServer</a>; 
+<a name="l00345"></a><a class="code" href="classWinsockNetwork.html#a8b04d9d22f1e1965447bbf6f2b60f514">00345</a>     <a class="code" href="group__Common.html#gad1b6674b6f1c58f17e9db75d0a77149f" title="public Enum representing all the different connection states.">ConnectionState_t</a> <a class="code" href="classWinsockNetwork.html#a8b04d9d22f1e1965447bbf6f2b60f514" title="The state of the connection.">m_connectionState</a>; 
+<a name="l00346"></a><a class="code" href="classWinsockNetwork.html#a7704c1b0b5b9307ba8785022ea38640a">00346</a>     <span class="keyword">mutable</span> CRITICAL_SECTION <a class="code" href="classWinsockNetwork.html#a7704c1b0b5b9307ba8785022ea38640a" title="Protects the connection state from concurrent access.">m_csConnectionState</a>; 
+<a name="l00349"></a><a class="code" href="classWinsockNetwork.html#acda5a8f30718e150732513222fcf3952">00349</a>     <span class="keywordtype">bool</span> <a class="code" href="classWinsockNetwork.html#acda5a8f30718e150732513222fcf3952" title="True if we are in the process of disconnecting and the disconnect originated from us...">m_bLocalDisconnect</a>;
+<a name="l00350"></a>00350 
+<a name="l00352"></a><a class="code" href="classWinsockNetwork.html#ab585f67503393d8b2608fc9558d1eb8d">00352</a>     <span class="keyword">mutable</span> CRITICAL_SECTION <a class="code" href="classWinsockNetwork.html#ab585f67503393d8b2608fc9558d1eb8d" title="Protects m_bLocalDisconnect from concurrent access.">m_csLocalDisconnect</a>;
+<a name="l00353"></a>00353 
+<a name="l00355"></a><a class="code" href="classWinsockNetwork.html#ace4f23e2d575b5b5abe37fdca8efd787">00355</a>     std::string userName;
+<a name="l00356"></a>00356 
+<a name="l00358"></a><a class="code" href="classWinsockNetwork.html#aac3699d4165241681183281d560f5cec">00358</a>     <span class="keyword">mutable</span> CSemaphore* <a class="code" href="classWinsockNetwork.html#aac3699d4165241681183281d560f5cec" title="The semaphore that will be used to signal a connection established.">m_sEstablished</a>;
+<a name="l00359"></a>00359 };
+<a name="l00360"></a>00360 
+<a name="l00361"></a>00361 <span class="preprocessor">#endif</span>
+<a name="l00362"></a>00362 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -272,7 +227,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -281,7 +236,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:45 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

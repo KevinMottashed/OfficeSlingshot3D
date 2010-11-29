@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -48,13 +49,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
-<h1>MediatorSubject Class Reference</h1>  </div>
+<h1>MediatorSubject Class Reference<br/>
+<small>
+[<a class="el" href="group__Mediator.html">Mediator</a>]</small>
+</h1>  </div>
 </div>
 <div class="contents">
 <!-- doxytag: class="MediatorSubject" -->
-<p>This class represents the mediator in the observer pattern Observers will receive notifications about various updates when the user interacts with the system.  
+<p><b>public</b> This class represents the mediator in the observer pattern Observers will receive notifications about various updates when the user interacts with the system.  
 <a href="#_details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="MediatorSubject_8h_source.html">MediatorSubject.h</a>&gt;</code></p>
@@ -70,27 +75,170 @@ Inheritance diagram for MediatorSubject:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3db4b61f18f2a98025de4ab896855c27"></a><!-- doxytag: member="MediatorSubject::MediatorSubject" ref="a3db4b61f18f2a98025de4ab896855c27" args="()" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediatorSubject.html#a3db4b61f18f2a98025de4ab896855c27">MediatorSubject</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a63e7e01e35bd1d073861c14a3734439b"></a><!-- doxytag: member="MediatorSubject::~MediatorSubject" ref="a63e7e01e35bd1d073861c14a3734439b" args="()" -->
-virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediatorSubject.html#a63e7e01e35bd1d073861c14a3734439b">~MediatorSubject</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa4837dc018798cde2a754992e48e3ca0"></a><!-- doxytag: member="MediatorSubject::attach" ref="aa4837dc018798cde2a754992e48e3ca0" args="(MediatorObserver *observer)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediatorSubject.html#aa4837dc018798cde2a754992e48e3ca0">attach</a> (<a class="el" href="classMediatorObserver.html">MediatorObserver</a> *observer)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Attach an observer to this subject. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa3e6f03e597b315593f8ec7b654b1c23"></a><!-- doxytag: member="MediatorSubject::detach" ref="aa3e6f03e597b315593f8ec7b654b1c23" args="(MediatorObserver *observer)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediatorSubject.html#aa3e6f03e597b315593f8ec7b654b1c23">detach</a> (<a class="el" href="classMediatorObserver.html">MediatorObserver</a> *observer)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Detach an observer from this subject. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3bb9ea404e6bd3f3f7153cca88377049"></a><!-- doxytag: member="MediatorSubject::notify" ref="a3bb9ea404e6bd3f3f7153cca88377049" args="(MediatorUpdateContext_t context, const void *data=NULL)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediatorSubject.html#a3bb9ea404e6bd3f3f7153cca88377049">notify</a> (<a class="el" href="namespaceMediatorUpdateContext.html#aa3a9bed543f2a2237dc2b6feea170a1d">MediatorUpdateContext_t</a> context, const void *data=NULL)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Notify all observers that an event happened. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediatorSubject.html#a3db4b61f18f2a98025de4ab896855c27">MediatorSubject</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#a3db4b61f18f2a98025de4ab896855c27"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediatorSubject.html#a63e7e01e35bd1d073861c14a3734439b">~MediatorSubject</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#a63e7e01e35bd1d073861c14a3734439b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediatorSubject.html#aa4837dc018798cde2a754992e48e3ca0">attach</a> (<a class="el" href="classMediatorObserver.html">MediatorObserver</a> *observer)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Attach an observer to this subject.  <a href="#aa4837dc018798cde2a754992e48e3ca0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediatorSubject.html#aa3e6f03e597b315593f8ec7b654b1c23">detach</a> (<a class="el" href="classMediatorObserver.html">MediatorObserver</a> *observer)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Detach an observer from this subject.  <a href="#aa3e6f03e597b315593f8ec7b654b1c23"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediatorSubject.html#a3bb9ea404e6bd3f3f7153cca88377049">notify</a> (<a class="el" href="group__Mediator.html#gaa3a9bed543f2a2237dc2b6feea170a1d">MediatorUpdateContext_t</a> context, const void *data=NULL)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Notify all observers that an event happened.  <a href="#a3bb9ea404e6bd3f3f7153cca88377049"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classMediatorObserver.html">MediatorObserver</a> * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMediatorSubject.html#acbf1f174061f981e282d0a74ee159d1c">observers</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">List of observers observing this subject.  <a href="#acbf1f174061f981e282d0a74ee159d1c"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<p>This class represents the mediator in the observer pattern Observers will receive notifications about various updates when the user interacts with the system. </p>
+<p><b>public</b> This class represents the mediator in the observer pattern Observers will receive notifications about various updates when the user interacts with the system. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a3db4b61f18f2a98025de4ab896855c27"></a><!-- doxytag: member="MediatorSubject::MediatorSubject" ref="a3db4b61f18f2a98025de4ab896855c27" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MediatorSubject::MediatorSubject </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a63e7e01e35bd1d073861c14a3734439b"></a><!-- doxytag: member="MediatorSubject::~MediatorSubject" ref="a63e7e01e35bd1d073861c14a3734439b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MediatorSubject::~MediatorSubject </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="aa4837dc018798cde2a754992e48e3ca0"></a><!-- doxytag: member="MediatorSubject::attach" ref="aa4837dc018798cde2a754992e48e3ca0" args="(MediatorObserver *observer)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MediatorSubject::attach </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classMediatorObserver.html">MediatorObserver</a> *&nbsp;</td>
+          <td class="paramname"> <em>observer</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Attach an observer to this subject. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>observer</em>&nbsp;</td><td>The observer to attach. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa3e6f03e597b315593f8ec7b654b1c23"></a><!-- doxytag: member="MediatorSubject::detach" ref="aa3e6f03e597b315593f8ec7b654b1c23" args="(MediatorObserver *observer)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MediatorSubject::detach </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classMediatorObserver.html">MediatorObserver</a> *&nbsp;</td>
+          <td class="paramname"> <em>observer</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Detach an observer from this subject. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>observer</em>&nbsp;</td><td>The observer to detach. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a3bb9ea404e6bd3f3f7153cca88377049"></a><!-- doxytag: member="MediatorSubject::notify" ref="a3bb9ea404e6bd3f3f7153cca88377049" args="(MediatorUpdateContext_t context, const void *data=NULL)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MediatorSubject::notify </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Mediator.html#gaa3a9bed543f2a2237dc2b6feea170a1d">MediatorUpdateContext_t</a>&nbsp;</td>
+          <td class="paramname"> <em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&nbsp;</td>
+          <td class="paramname"> <em>data</em> = <code>NULL</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Notify all observers that an event happened. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>context</em>&nbsp;</td><td>The context, describes what happened. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>data</em>&nbsp;</td><td>The data associated with the update. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="acbf1f174061f981e282d0a74ee159d1c"></a><!-- doxytag: member="MediatorSubject::observers" ref="acbf1f174061f981e282d0a74ee159d1c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classMediatorObserver.html">MediatorObserver</a>*&gt; <a class="el" href="classMediatorSubject.html#acbf1f174061f981e282d0a74ee159d1c">MediatorSubject::observers</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>List of observers observing this subject. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/<a class="el" href="MediatorSubject_8h_source.html">MediatorSubject.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/MediatorSubject.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Mediator/<a class="el" href="MediatorSubject_8h_source.html">MediatorSubject.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Mediator/<a class="el" href="MediatorSubject_8cpp.html">MediatorSubject.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -98,7 +246,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -107,7 +255,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:45 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

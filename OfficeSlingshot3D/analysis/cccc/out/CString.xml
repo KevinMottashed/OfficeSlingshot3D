@@ -35,22 +35,22 @@
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="172" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="180" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="45" />
+<source_reference file="../../UserInterface/MainDlg.h" line="97" />
 </extent>
 <name>CPreferences</name>
 <visible>false</visible>
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../UserInterface/Preferences.h" line="25" />
+<source_reference file="../../UserInterface/Preferences.h" line="36" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../UserInterface/Preferences.h" line="26" />
+<source_reference file="../../UserInterface/Preferences.h" line="37" />
 </extent>
 </client_module>
 <supplier_module>

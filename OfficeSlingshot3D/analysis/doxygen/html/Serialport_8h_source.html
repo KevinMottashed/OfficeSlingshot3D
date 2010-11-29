@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OfficeSlingshot3D: /home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h Source File</title>
+<title>OfficeSlingshot3D: /home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Jacket/Serialport.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -41,14 +42,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.h</h1>  </div>
+<h1>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Jacket/Serialport.h</h1>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a href="Serialport_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
 <a name="l00002"></a>00002 <span class="comment">**  FILENAME            CSerialPort.h</span>
 <a name="l00003"></a>00003 <span class="comment">**</span>
 <a name="l00004"></a>00004 <span class="comment">**  PURPOSE             This class can read, write and watch one serial port.</span>
@@ -68,131 +70,131 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00018"></a>00018 <span class="preprocessor">#ifndef SERIALPORT_H</span>
 <a name="l00019"></a>00019 <span class="preprocessor"></span><span class="preprocessor">#define SERIALPORT_H</span>
 <a name="l00020"></a>00020 <span class="preprocessor"></span>
-<a name="l00021"></a>00021 <span class="preprocessor">#define WM_COMM_BREAK_DETECTED      WM_USER+1   // A break was detected on input.</span>
-<a name="l00022"></a>00022 <span class="preprocessor"></span><span class="preprocessor">#define WM_COMM_CTS_DETECTED        WM_USER+2   // The CTS (clear-to-send) signal changed state. </span>
-<a name="l00023"></a>00023 <span class="preprocessor"></span><span class="preprocessor">#define WM_COMM_DSR_DETECTED        WM_USER+3   // The DSR (data-set-ready) signal changed state. </span>
-<a name="l00024"></a>00024 <span class="preprocessor"></span><span class="preprocessor">#define WM_COMM_ERR_DETECTED        WM_USER+4   // A line-status error occurred. Line-status errors are CE_FRAME, CE_OVERRUN, and CE_RXPARITY. </span>
-<a name="l00025"></a>00025 <span class="preprocessor"></span><span class="preprocessor">#define WM_COMM_RING_DETECTED       WM_USER+5   // A ring indicator was detected. </span>
-<a name="l00026"></a>00026 <span class="preprocessor"></span><span class="preprocessor">#define WM_COMM_RLSD_DETECTED       WM_USER+6   // The RLSD (receive-line-signal-detect) signal changed state. </span>
-<a name="l00027"></a>00027 <span class="preprocessor"></span><span class="preprocessor">#define WM_COMM_RXCHAR              WM_USER+7   // A character was received and placed in the input buffer. </span>
-<a name="l00028"></a>00028 <span class="preprocessor"></span><span class="preprocessor">#define WM_COMM_RXFLAG_DETECTED     WM_USER+8   // The event character was received and placed in the input buffer.  </span>
-<a name="l00029"></a>00029 <span class="preprocessor"></span><span class="preprocessor">#define WM_COMM_TXEMPTY_DETECTED    WM_USER+9   // The last character in the output buffer was sent.  </span>
+<a name="l00021"></a><a class="code" href="Serialport_8h.html#a93ad6212a22bf6f1f7c225b1cc056b16">00021</a> <span class="preprocessor">#define WM_COMM_BREAK_DETECTED      WM_USER+1   // A break was detected on input.</span>
+<a name="l00022"></a><a class="code" href="Serialport_8h.html#a630ee37531669ec6855a28e594b3785a">00022</a> <span class="preprocessor"></span><span class="preprocessor">#define WM_COMM_CTS_DETECTED        WM_USER+2   // The CTS (clear-to-send) signal changed state. </span>
+<a name="l00023"></a><a class="code" href="Serialport_8h.html#aaa58a75290ea6a67be2ec5932ba7fc1f">00023</a> <span class="preprocessor"></span><span class="preprocessor">#define WM_COMM_DSR_DETECTED        WM_USER+3   // The DSR (data-set-ready) signal changed state. </span>
+<a name="l00024"></a><a class="code" href="Serialport_8h.html#accc078296c09d98c04f16c675d38a83e">00024</a> <span class="preprocessor"></span><span class="preprocessor">#define WM_COMM_ERR_DETECTED        WM_USER+4   // A line-status error occurred. Line-status errors are CE_FRAME, CE_OVERRUN, and CE_RXPARITY. </span>
+<a name="l00025"></a><a class="code" href="Serialport_8h.html#aa3881ef80320f5d70ac233ba8b228229">00025</a> <span class="preprocessor"></span><span class="preprocessor">#define WM_COMM_RING_DETECTED       WM_USER+5   // A ring indicator was detected. </span>
+<a name="l00026"></a><a class="code" href="Serialport_8h.html#ad1c867313e0e7d3c79a471d1e23f703e">00026</a> <span class="preprocessor"></span><span class="preprocessor">#define WM_COMM_RLSD_DETECTED       WM_USER+6   // The RLSD (receive-line-signal-detect) signal changed state. </span>
+<a name="l00027"></a><a class="code" href="Serialport_8h.html#a07ed65cde57b188abf3c718dd7e234ca">00027</a> <span class="preprocessor"></span><span class="preprocessor">#define WM_COMM_RXCHAR              WM_USER+7   // A character was received and placed in the input buffer. </span>
+<a name="l00028"></a><a class="code" href="Serialport_8h.html#a32c55959304086e15e2303078cadcdaa">00028</a> <span class="preprocessor"></span><span class="preprocessor">#define WM_COMM_RXFLAG_DETECTED     WM_USER+8   // The event character was received and placed in the input buffer.  </span>
+<a name="l00029"></a><a class="code" href="Serialport_8h.html#a16524062fe43ff8e5157dd8df2962c23">00029</a> <span class="preprocessor"></span><span class="preprocessor">#define WM_COMM_TXEMPTY_DETECTED    WM_USER+9   // The last character in the output buffer was sent.  </span>
 <a name="l00030"></a>00030 <span class="preprocessor"></span>
 <a name="l00031"></a>00031 <span class="comment">// small buffer for input - should be ok for this app, not enough for many others</span>
 <a name="l00032"></a>00032 <span class="comment">// beware</span>
-<a name="l00033"></a>00033 <span class="preprocessor">#define IN_BUFFER_SIZE              64</span>
+<a name="l00033"></a><a class="code" href="Serialport_8h.html#aa8a96f886dfb6ce7692f035fe49597c2">00033</a> <span class="preprocessor">#define IN_BUFFER_SIZE              64</span>
 <a name="l00034"></a>00034 <span class="preprocessor"></span>
 <a name="l00035"></a><a class="code" href="classCSerialPort.html">00035</a> <span class="keyword">class </span><a class="code" href="classCSerialPort.html">CSerialPort</a>
 <a name="l00036"></a>00036 {                                                        
 <a name="l00037"></a>00037 <span class="keyword">public</span>:
 <a name="l00038"></a>00038     <span class="comment">// contruction and destruction</span>
 <a name="l00039"></a>00039     
-<a name="l00040"></a>00040     <a class="code" href="classCSerialPort.html">CSerialPort</a>();
-<a name="l00041"></a>00041     <span class="keyword">virtual</span>     ~<a class="code" href="classCSerialPort.html">CSerialPort</a>();
+<a name="l00040"></a>00040     <a class="code" href="classCSerialPort.html#a4f99783ee3859f782d394eff9fb9c3d6">CSerialPort</a>();
+<a name="l00041"></a>00041     <span class="keyword">virtual</span>     <a class="code" href="classCSerialPort.html#abd72f8599d0696d9b14a56780cce8d21">~CSerialPort</a>();
 <a name="l00042"></a>00042 
 <a name="l00043"></a>00043     <span class="comment">// port initialisation                                          </span>
 <a name="l00044"></a>00044 <span class="comment">//  BOOL        InitPort(UINT portnr = 1, UINT baud = 57600, char parity = &#39;N&#39;, UINT databits = 8, UINT stopsbits = 1, DWORD dwCommEvents = EV_RXCHAR | EV_CTS, UINT nBufferSize = 512);</span>
-<a name="l00045"></a>00045     BOOL        InitPort(UINT portnr = 5, UINT baud = 115000, <span class="keywordtype">char</span> parity = <span class="charliteral">&#39;N&#39;</span>, UINT databits = 8, UINT stopsbits = 1, DWORD dwCommEvents = EV_RXCHAR | EV_CTS, UINT nBufferSize = 512);
-<a name="l00046"></a>00046     <span class="keywordtype">void</span>        ClosePort();
+<a name="l00045"></a>00045     BOOL        <a class="code" href="classCSerialPort.html#a42f4c47706372681484122ef5273366b">InitPort</a>(UINT portnr = 5, UINT baud = 115000, <span class="keywordtype">char</span> parity = <span class="charliteral">&#39;N&#39;</span>, UINT databits = 8, UINT stopsbits = 1, DWORD dwCommEvents = EV_RXCHAR | EV_CTS, UINT nBufferSize = 512);
+<a name="l00046"></a>00046     <span class="keywordtype">void</span>        <a class="code" href="classCSerialPort.html#ae0d2dd450a48c47a2039e9458290f04f">ClosePort</a>();
 <a name="l00047"></a>00047 
 <a name="l00048"></a>00048     <span class="comment">// start/stop comm watching</span>
-<a name="l00049"></a>00049     BOOL        StartMonitoring();
-<a name="l00050"></a>00050     BOOL        RestartMonitoring();
-<a name="l00051"></a>00051     BOOL        StopMonitoring();
+<a name="l00049"></a>00049     BOOL        <a class="code" href="classCSerialPort.html#a857bc7ba9e143cd114ffbb94cb05f59a">StartMonitoring</a>();
+<a name="l00050"></a>00050     BOOL        <a class="code" href="classCSerialPort.html#a29d8b3f2af87a93bbbd57e6a7ec9fe6a">RestartMonitoring</a>();
+<a name="l00051"></a>00051     BOOL        <a class="code" href="classCSerialPort.html#a442b9d838ee9c0fec8486a51fc9c23fc">StopMonitoring</a>();
 <a name="l00052"></a>00052 
-<a name="l00053"></a>00053     DWORD       GetWriteBufferSize();
-<a name="l00054"></a>00054     DWORD       GetCommEvents();
-<a name="l00055"></a>00055     DCB         GetDCB();
+<a name="l00053"></a>00053     DWORD       <a class="code" href="classCSerialPort.html#a5e330d93575e5b012674cb567f1879af">GetWriteBufferSize</a>();
+<a name="l00054"></a>00054     DWORD       <a class="code" href="classCSerialPort.html#ab4a7e6cafcd2fba87fc0a83bf4728388">GetCommEvents</a>();
+<a name="l00055"></a>00055     DCB         <a class="code" href="classCSerialPort.html#a428e130644f1d1cb2e1fa9608c3988e1">GetDCB</a>();
 <a name="l00056"></a>00056 
-<a name="l00057"></a>00057     <span class="keywordtype">void</span>        WriteToPort(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* <span class="keywordtype">string</span>, <span class="keywordtype">int</span> len);
-<a name="l00058"></a>00058     <span class="keywordtype">void</span>        WriteToPort(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> chr);
+<a name="l00057"></a>00057     <span class="keywordtype">void</span>        <a class="code" href="classCSerialPort.html#ac5084fd35c6d431f0bb32fa4184d46cd">WriteToPort</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* <span class="keywordtype">string</span>, <span class="keywordtype">int</span> len);
+<a name="l00058"></a>00058     <span class="keywordtype">void</span>        <a class="code" href="classCSerialPort.html#ac5084fd35c6d431f0bb32fa4184d46cd">WriteToPort</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> chr);
 <a name="l00059"></a>00059 
 <a name="l00060"></a>00060 
 <a name="l00061"></a>00061     <span class="comment">// whether we have sent the current packet</span>
-<a name="l00062"></a>00062     <span class="keywordtype">bool</span>                sentPacket;
+<a name="l00062"></a><a class="code" href="classCSerialPort.html#ac31f6f3a9e19c134e4e6a12276a1f37f">00062</a>     <span class="keywordtype">bool</span>                <a class="code" href="classCSerialPort.html#ac31f6f3a9e19c134e4e6a12276a1f37f">sentPacket</a>;
 <a name="l00063"></a>00063 
-<a name="l00064"></a>00064     <span class="keywordtype">void</span> writeInBuffer(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> in)
+<a name="l00064"></a><a class="code" href="classCSerialPort.html#ad7ae2f1cfbefbdbe0b4c7dd1f8426546">00064</a>     <span class="keywordtype">void</span> <a class="code" href="classCSerialPort.html#ad7ae2f1cfbefbdbe0b4c7dd1f8426546">writeInBuffer</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> in)
 <a name="l00065"></a>00065         {
-<a name="l00066"></a>00066         inBuffer[bufferWrite] = in;
-<a name="l00067"></a>00067         <span class="keywordflow">if</span> (bufferWrite&lt;IN_BUFFER_SIZE-1)
-<a name="l00068"></a>00068             bufferWrite++; <span class="comment">// this algorithm just means that when we reach the end of our buffer, we just keep writing over the last byte</span>
+<a name="l00066"></a>00066         <a class="code" href="classCSerialPort.html#a88885412d6681041e2371d4e222b5cea">inBuffer</a>[<a class="code" href="classCSerialPort.html#ae1ef9cb92cdf3a47520457a0164a59f8">bufferWrite</a>] = in;
+<a name="l00067"></a>00067         <span class="keywordflow">if</span> (<a class="code" href="classCSerialPort.html#ae1ef9cb92cdf3a47520457a0164a59f8">bufferWrite</a>&lt;<a class="code" href="Serialport_8h.html#aa8a96f886dfb6ce7692f035fe49597c2">IN_BUFFER_SIZE</a>-1)
+<a name="l00068"></a>00068             <a class="code" href="classCSerialPort.html#ae1ef9cb92cdf3a47520457a0164a59f8">bufferWrite</a>++; <span class="comment">// this algorithm just means that when we reach the end of our buffer, we just keep writing over the last byte</span>
 <a name="l00069"></a>00069                            <span class="comment">// hopefully won&#39;t come up!</span>
 <a name="l00070"></a>00070         }
 <a name="l00071"></a>00071 
-<a name="l00072"></a>00072     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> readInBuffer()
+<a name="l00072"></a><a class="code" href="classCSerialPort.html#a78bf02e85438c4d05522cabb4d565860">00072</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classCSerialPort.html#a78bf02e85438c4d05522cabb4d565860">readInBuffer</a>()
 <a name="l00073"></a>00073         {
-<a name="l00074"></a>00074         <span class="keywordflow">if</span> (bufferWrite&gt;0 &amp;&amp; bufferRead!=bufferWrite)
+<a name="l00074"></a>00074         <span class="keywordflow">if</span> (<a class="code" href="classCSerialPort.html#ae1ef9cb92cdf3a47520457a0164a59f8">bufferWrite</a>&gt;0 &amp;&amp; <a class="code" href="classCSerialPort.html#a2373805b68f988f7989074f329855117">bufferRead</a>!=<a class="code" href="classCSerialPort.html#ae1ef9cb92cdf3a47520457a0164a59f8">bufferWrite</a>)
 <a name="l00075"></a>00075             {
-<a name="l00076"></a>00076             <span class="keywordtype">int</span> temp = inBuffer[bufferRead];
-<a name="l00077"></a>00077             bufferRead++;
-<a name="l00078"></a>00078             <span class="keywordflow">if</span> (bufferRead==bufferWrite)
+<a name="l00076"></a>00076             <span class="keywordtype">int</span> temp = <a class="code" href="classCSerialPort.html#a88885412d6681041e2371d4e222b5cea">inBuffer</a>[<a class="code" href="classCSerialPort.html#a2373805b68f988f7989074f329855117">bufferRead</a>];
+<a name="l00077"></a>00077             <a class="code" href="classCSerialPort.html#a2373805b68f988f7989074f329855117">bufferRead</a>++;
+<a name="l00078"></a>00078             <span class="keywordflow">if</span> (<a class="code" href="classCSerialPort.html#a2373805b68f988f7989074f329855117">bufferRead</a>==<a class="code" href="classCSerialPort.html#ae1ef9cb92cdf3a47520457a0164a59f8">bufferWrite</a>)
 <a name="l00079"></a>00079                 {
-<a name="l00080"></a>00080                 bufferWrite=0;
-<a name="l00081"></a>00081                 bufferRead=0;
+<a name="l00080"></a>00080                 <a class="code" href="classCSerialPort.html#ae1ef9cb92cdf3a47520457a0164a59f8">bufferWrite</a>=0;
+<a name="l00081"></a>00081                 <a class="code" href="classCSerialPort.html#a2373805b68f988f7989074f329855117">bufferRead</a>=0;
 <a name="l00082"></a>00082                 }
 <a name="l00083"></a>00083             <span class="keywordflow">return</span> temp;
 <a name="l00084"></a>00084             }
 <a name="l00085"></a>00085 
-<a name="l00086"></a>00086         <span class="keywordflow">if</span> (bufferRead==bufferWrite)
+<a name="l00086"></a>00086         <span class="keywordflow">if</span> (<a class="code" href="classCSerialPort.html#a2373805b68f988f7989074f329855117">bufferRead</a>==<a class="code" href="classCSerialPort.html#ae1ef9cb92cdf3a47520457a0164a59f8">bufferWrite</a>)
 <a name="l00087"></a>00087             {
-<a name="l00088"></a>00088             bufferWrite=0;
-<a name="l00089"></a>00089             bufferRead=0;
+<a name="l00088"></a>00088             <a class="code" href="classCSerialPort.html#ae1ef9cb92cdf3a47520457a0164a59f8">bufferWrite</a>=0;
+<a name="l00089"></a>00089             <a class="code" href="classCSerialPort.html#a2373805b68f988f7989074f329855117">bufferRead</a>=0;
 <a name="l00090"></a>00090             }
 <a name="l00091"></a>00091         <span class="keywordflow">return</span> 0;
 <a name="l00092"></a>00092         }
 <a name="l00093"></a>00093 
-<a name="l00094"></a>00094     <span class="keywordtype">bool</span> inBufferData()<span class="keyword"> const</span>
-<a name="l00095"></a>00095 <span class="keyword">        </span>{<span class="keywordflow">return</span> !(bufferRead==bufferWrite);}
+<a name="l00094"></a><a class="code" href="classCSerialPort.html#a395595b1b7215e1c6a52e89105a213bf">00094</a>     <span class="keywordtype">bool</span> <a class="code" href="classCSerialPort.html#a395595b1b7215e1c6a52e89105a213bf">inBufferData</a>()<span class="keyword"> const</span>
+<a name="l00095"></a>00095 <span class="keyword">        </span>{<span class="keywordflow">return</span> !(<a class="code" href="classCSerialPort.html#a2373805b68f988f7989074f329855117">bufferRead</a>==<a class="code" href="classCSerialPort.html#ae1ef9cb92cdf3a47520457a0164a59f8">bufferWrite</a>);}
 <a name="l00096"></a>00096 
-<a name="l00097"></a>00097     <span class="keywordtype">bool</span> getConnected()<span class="keyword"> const</span>
-<a name="l00098"></a>00098 <span class="keyword">        </span>{<span class="keywordflow">return</span> connected;}
+<a name="l00097"></a><a class="code" href="classCSerialPort.html#a7740299ef083ed1bfabc4cb9bd38dbfa">00097</a>     <span class="keywordtype">bool</span> <a class="code" href="classCSerialPort.html#a7740299ef083ed1bfabc4cb9bd38dbfa">getConnected</a>()<span class="keyword"> const</span>
+<a name="l00098"></a>00098 <span class="keyword">        </span>{<span class="keywordflow">return</span> <a class="code" href="classCSerialPort.html#aec4a44728b9218106547c975b62f51fa">connected</a>;}
 <a name="l00099"></a>00099 
 <a name="l00100"></a>00100 <span class="keyword">protected</span>:
 <a name="l00101"></a>00101     <span class="comment">// protected memberfunctions</span>
-<a name="l00102"></a>00102     <span class="keywordtype">void</span>        ProcessErrorMessage(<span class="keywordtype">char</span>* ErrorText);
-<a name="l00103"></a>00103     <span class="keyword">static</span> UINT CommThread( LPVOID pParam );
-<a name="l00104"></a>00104     <span class="keyword">static</span> <span class="keywordtype">void</span> ReceiveChar(<a class="code" href="classCSerialPort.html">CSerialPort</a>* port, COMSTAT comstat);
-<a name="l00105"></a>00105     <span class="keyword">static</span> <span class="keywordtype">void</span> WriteChar(<a class="code" href="classCSerialPort.html">CSerialPort</a>* port);
+<a name="l00102"></a>00102     <span class="keywordtype">void</span>        <a class="code" href="classCSerialPort.html#a411e1c0e48ea5cce9dc815b8348727b4">ProcessErrorMessage</a>(<span class="keywordtype">char</span>* ErrorText);
+<a name="l00103"></a>00103     <span class="keyword">static</span> UINT <a class="code" href="classCSerialPort.html#a961a364b7f313aca15558e3ca895fa15">CommThread</a>( LPVOID pParam );
+<a name="l00104"></a>00104     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classCSerialPort.html#a9b6e1397f75a72d379fe7a77bd3018c4">ReceiveChar</a>(<a class="code" href="classCSerialPort.html">CSerialPort</a>* port, COMSTAT comstat);
+<a name="l00105"></a>00105     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classCSerialPort.html#a7062a8930c4fd2f1e611a0324c5e55fc">WriteChar</a>(<a class="code" href="classCSerialPort.html">CSerialPort</a>* port);
 <a name="l00106"></a>00106 
 <a name="l00107"></a>00107     <span class="comment">// thread</span>
-<a name="l00108"></a>00108     CWinThread*         m_Thread;
+<a name="l00108"></a><a class="code" href="classCSerialPort.html#a3c2fe60cefc3c0e14638c132c313bc42">00108</a>     CWinThread*         <a class="code" href="classCSerialPort.html#a3c2fe60cefc3c0e14638c132c313bc42">m_Thread</a>;
 <a name="l00109"></a>00109 
 <a name="l00110"></a>00110     <span class="comment">// synchronisation objects</span>
-<a name="l00111"></a>00111     CRITICAL_SECTION    m_csCommunicationSync;
-<a name="l00112"></a>00112     BOOL                m_bThreadAlive;
+<a name="l00111"></a><a class="code" href="classCSerialPort.html#a3df14df19d8f6f09d803bee2ec0ab25e">00111</a>     CRITICAL_SECTION    <a class="code" href="classCSerialPort.html#a3df14df19d8f6f09d803bee2ec0ab25e">m_csCommunicationSync</a>;
+<a name="l00112"></a><a class="code" href="classCSerialPort.html#a33f11e4d656ace95dba8f4e8e5890f9f">00112</a>     BOOL                <a class="code" href="classCSerialPort.html#a33f11e4d656ace95dba8f4e8e5890f9f">m_bThreadAlive</a>;
 <a name="l00113"></a>00113 
 <a name="l00114"></a>00114     <span class="comment">// handles</span>
-<a name="l00115"></a>00115     HANDLE              m_hShutdownEvent;
-<a name="l00116"></a>00116     HANDLE              m_hComm;
-<a name="l00117"></a>00117     HANDLE              m_hWriteEvent;
+<a name="l00115"></a><a class="code" href="classCSerialPort.html#a7f19c5462fef05e6182ab2af9b1a2da2">00115</a>     HANDLE              <a class="code" href="classCSerialPort.html#a7f19c5462fef05e6182ab2af9b1a2da2">m_hShutdownEvent</a>;
+<a name="l00116"></a><a class="code" href="classCSerialPort.html#a234faffa92379fada3f91ce21a8cac35">00116</a>     HANDLE              <a class="code" href="classCSerialPort.html#a234faffa92379fada3f91ce21a8cac35">m_hComm</a>;
+<a name="l00117"></a><a class="code" href="classCSerialPort.html#a2a4e02de15cc82cb41f9660c9af203ed">00117</a>     HANDLE              <a class="code" href="classCSerialPort.html#a2a4e02de15cc82cb41f9660c9af203ed">m_hWriteEvent</a>;
 <a name="l00118"></a>00118 
 <a name="l00119"></a>00119     <span class="comment">// Event array. </span>
 <a name="l00120"></a>00120     <span class="comment">// One element is used for each event. There are two event handles for each port.</span>
 <a name="l00121"></a>00121     <span class="comment">// A Write event and a receive character event which is located in the overlapped structure (m_ov.hEvent).</span>
 <a name="l00122"></a>00122     <span class="comment">// There is a general shutdown when the port is closed. </span>
-<a name="l00123"></a>00123     HANDLE              m_hEventArray[3];
+<a name="l00123"></a><a class="code" href="classCSerialPort.html#adc1530502ba6dde3a9352141077b5afa">00123</a>     HANDLE              <a class="code" href="classCSerialPort.html#adc1530502ba6dde3a9352141077b5afa">m_hEventArray</a>[3];
 <a name="l00124"></a>00124 
 <a name="l00125"></a>00125     <span class="comment">// structures</span>
-<a name="l00126"></a>00126     OVERLAPPED          m_ov;
-<a name="l00127"></a>00127     COMMTIMEOUTS        m_CommTimeouts;
-<a name="l00128"></a>00128     DCB                 m_dcb;
+<a name="l00126"></a><a class="code" href="classCSerialPort.html#a5fe58c691b790d9e5d33c454411814fe">00126</a>     OVERLAPPED          <a class="code" href="classCSerialPort.html#a5fe58c691b790d9e5d33c454411814fe">m_ov</a>;
+<a name="l00127"></a><a class="code" href="classCSerialPort.html#a73604d37bb19ac73d6fe1ecacd4bb458">00127</a>     COMMTIMEOUTS        <a class="code" href="classCSerialPort.html#a73604d37bb19ac73d6fe1ecacd4bb458">m_CommTimeouts</a>;
+<a name="l00128"></a><a class="code" href="classCSerialPort.html#acf13f9a229e3693a1eae6b24e72c152c">00128</a>     DCB                 <a class="code" href="classCSerialPort.html#acf13f9a229e3693a1eae6b24e72c152c">m_dcb</a>;
 <a name="l00129"></a>00129 
 <a name="l00130"></a>00130     <span class="comment">// misc</span>
-<a name="l00131"></a>00131     UINT                m_nPortNr;
-<a name="l00132"></a>00132     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*      m_szWriteBuffer;
-<a name="l00133"></a>00133     <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span>      m_WriteBufferSize;
-<a name="l00134"></a>00134     DWORD               m_dwCommEvents;
-<a name="l00135"></a>00135     DWORD               m_nWriteBufferSize;
+<a name="l00131"></a><a class="code" href="classCSerialPort.html#a16c93a6c87ae31ff80eb2ef5c655f45a">00131</a>     UINT                <a class="code" href="classCSerialPort.html#a16c93a6c87ae31ff80eb2ef5c655f45a">m_nPortNr</a>;
+<a name="l00132"></a><a class="code" href="classCSerialPort.html#ac7ba598ab505a6bb7bf011d4c046ef0e">00132</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*      <a class="code" href="classCSerialPort.html#ac7ba598ab505a6bb7bf011d4c046ef0e">m_szWriteBuffer</a>;
+<a name="l00133"></a><a class="code" href="classCSerialPort.html#af758a1a7ebc24c8a4223accce75a9673">00133</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span>      <a class="code" href="classCSerialPort.html#af758a1a7ebc24c8a4223accce75a9673">m_WriteBufferSize</a>;
+<a name="l00134"></a><a class="code" href="classCSerialPort.html#af6b5fa783fef229806f8662b0df2c18e">00134</a>     DWORD               <a class="code" href="classCSerialPort.html#af6b5fa783fef229806f8662b0df2c18e">m_dwCommEvents</a>;
+<a name="l00135"></a><a class="code" href="classCSerialPort.html#a0da3f981892077c2193aff091379eac6">00135</a>     DWORD               <a class="code" href="classCSerialPort.html#a0da3f981892077c2193aff091379eac6">m_nWriteBufferSize</a>;
 <a name="l00136"></a>00136 
 <a name="l00137"></a>00137     <span class="comment">// bool for connection</span>
-<a name="l00138"></a>00138     <span class="keywordtype">bool</span>                connected;
+<a name="l00138"></a><a class="code" href="classCSerialPort.html#aec4a44728b9218106547c975b62f51fa">00138</a>     <span class="keywordtype">bool</span>                <a class="code" href="classCSerialPort.html#aec4a44728b9218106547c975b62f51fa">connected</a>;
 <a name="l00139"></a>00139 
 <a name="l00140"></a>00140     <span class="comment">// we have a small internal buffer which we upload characters into </span>
 <a name="l00141"></a>00141     <span class="comment">// we then read them with the same timer that commands the write scehdule</span>
 <a name="l00142"></a>00142     <span class="comment">// simplifies programming for subsequent developers</span>
-<a name="l00143"></a>00143     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>       inBuffer[IN_BUFFER_SIZE];
-<a name="l00144"></a>00144     <span class="keywordtype">int</span>                 bufferWrite;
-<a name="l00145"></a>00145     <span class="keywordtype">int</span>                 bufferRead;
+<a name="l00143"></a><a class="code" href="classCSerialPort.html#a88885412d6681041e2371d4e222b5cea">00143</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>       <a class="code" href="classCSerialPort.html#a88885412d6681041e2371d4e222b5cea">inBuffer</a>[IN_BUFFER_SIZE];
+<a name="l00144"></a><a class="code" href="classCSerialPort.html#ae1ef9cb92cdf3a47520457a0164a59f8">00144</a>     <span class="keywordtype">int</span>                 <a class="code" href="classCSerialPort.html#ae1ef9cb92cdf3a47520457a0164a59f8">bufferWrite</a>;
+<a name="l00145"></a><a class="code" href="classCSerialPort.html#a2373805b68f988f7989074f329855117">00145</a>     <span class="keywordtype">int</span>                 <a class="code" href="classCSerialPort.html#a2373805b68f988f7989074f329855117">bufferRead</a>;
 <a name="l00146"></a>00146 };
 <a name="l00147"></a>00147 
 <a name="l00148"></a>00148 <span class="preprocessor">#endif</span>
@@ -204,7 +206,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -213,7 +215,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:44 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

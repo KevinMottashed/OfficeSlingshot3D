@@ -35,7 +35,7 @@
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="138" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="279" />
 </extent>
 </client_module>
 <supplier_module>

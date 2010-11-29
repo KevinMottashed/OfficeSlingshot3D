@@ -14,7 +14,7 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="3" level="0" />
+<coupling_between_objects value="2" level="0" />
 <IF4 value="0" level="0" />
 <IF4_per_member_function value="********" level="0" />
 <IF4_visible value="0" level="0" />
@@ -45,19 +45,12 @@
 <description>has by value</description>
 <source_reference file="../../Jacket/Serialport.h" line="135" />
 </extent>
-<name>Game</name>
-<visible>false</visible>
-<concrete>true</concrete>
-<extent>
-<description>has by value</description>
-<source_reference file="../../Game/Game.h" line="51" />
-</extent>
 <name>TactileArray</name>
 <visible>false</visible>
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Jacket/TactileArray.h" line="61" />
+<source_reference file="../../Jacket/TactileArray.h" line="198" />
 </extent>
 </client_module>
 <supplier_module>

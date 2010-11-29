@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OfficeSlingshot3D: /home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/NetworkReplayer.h Source File</title>
+<title>OfficeSlingshot3D: /home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Replay/NetworkReplayer.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -41,72 +42,78 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/NetworkReplayer.h</h1>  </div>
+<h1>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Replay/NetworkReplayer.h</h1>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef NETWORK_REPLAYER</span>
+<a href="NetworkReplayer_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef NETWORK_REPLAYER</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define NETWORK_REPLAYER</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &quot;stdafx.h&quot;</span>
-<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;boost.h&quot;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;<a class="code" href="boost_8h.html">boost.h</a>&quot;</span>
 <a name="l00006"></a>00006 
-<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;LoggerProxy.h&quot;</span>
-<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;NetworkProxy.h&quot;</span>
-<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;ConnectionStateEnum.h&quot;</span>
-<a name="l00010"></a>00010 
-<a name="l00011"></a>00011 <span class="comment">// The network replayer class is in charge of replaying network events</span>
-<a name="l00012"></a>00012 <span class="comment">// The replay function is used to replay a specific log event, at which</span>
-<a name="l00013"></a>00013 <span class="comment">// point the network replayer will extract any information it needs from</span>
-<a name="l00014"></a>00014 <span class="comment">// the provided file.</span>
-<a name="l00015"></a><a class="code" href="classNetworkReplayer.html">00015</a> <span class="keyword">class </span><a class="code" href="classNetworkReplayer.html">NetworkReplayer</a> : <span class="keyword">public</span> <a class="code" href="classNetwork.html" title="Abstract class representing the networking component of the application all network interfaces should...">Network</a>
-<a name="l00016"></a>00016 {
-<a name="l00017"></a>00017 <span class="keyword">public</span>:
-<a name="l00018"></a>00018     <span class="comment">// contructor, takes the archive and related file that will be used to extract data</span>
-<a name="l00019"></a>00019     <a class="code" href="classNetworkReplayer.html">NetworkReplayer</a>(boost::shared_ptr&lt;std::ifstream&gt; file,
-<a name="l00020"></a>00020                     boost::shared_ptr&lt;boost::archive::text_iarchive&gt; archive);
-<a name="l00021"></a>00021     <span class="keyword">virtual</span> ~<a class="code" href="classNetworkReplayer.html">NetworkReplayer</a>();
-<a name="l00022"></a>00022 
-<a name="l00023"></a>00023     <span class="comment">// replay an event, the event must be part of the network event category</span>
-<a name="l00024"></a>00024     <span class="keywordtype">void</span> replay(LogEvent_t logEvent);
-<a name="l00025"></a>00025 
-<a name="l00026"></a>00026     <span class="comment">// modify the connection status</span>
-<a name="l00027"></a>00027     <span class="keyword">virtual</span> rc_network <a class="code" href="classNetworkReplayer.html#a54f644fe92941370481c45989bad6615" title="Start listening for connections.">listen</a>(<span class="keyword">const</span> std::string&amp; userName); 
-<a name="l00028"></a>00028     <span class="keyword">virtual</span> rc_network <a class="code" href="classNetworkReplayer.html#a6d4deeeede0cd5c07b44489a33c113f5" title="Attempt to connect to a peer.">connect</a>(<span class="keyword">const</span> std::string&amp; ipAddress, <span class="keyword">const</span> std::string&amp; userName);
-<a name="l00029"></a>00029     <span class="keyword">virtual</span> rc_network <a class="code" href="classNetworkReplayer.html#a3aab774a33a87446aa874871fea54655" title="Disconnect from a peer.">disconnect</a>();
+<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;<a class="code" href="LoggerProxy_8h.html" title="Convinience header for including all public members of the logger module.">LoggerProxy.h</a>&quot;</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;<a class="code" href="NetworkProxy_8h.html" title="Convinience header for including all public members of the network module.">NetworkProxy.h</a>&quot;</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;<a class="code" href="ConnectionStateEnum_8h.html">ConnectionStateEnum.h</a>&quot;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="BodyPartEnum_8h.html">BodyPartEnum.h</a>&quot;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="PhysicsSync_8h.html">PhysicsSync.h</a>&quot;</span>
+<a name="l00012"></a>00012 
+<a name="l00019"></a><a class="code" href="classNetworkReplayer.html">00019</a> <span class="keyword">class </span><a class="code" href="classNetworkReplayer.html" title="The network replayer class is in charge of replaying network events.">NetworkReplayer</a> : <span class="keyword">public</span> <a class="code" href="classNetwork.html" title="public Abstract class representing the networking component of the application.">Network</a>
+<a name="l00020"></a>00020 {
+<a name="l00021"></a>00021 <span class="keyword">public</span>:
+<a name="l00028"></a>00028     <a class="code" href="classNetworkReplayer.html#ad91a8bed9fc2c9e69163c5290a823fee" title="Constructor.">NetworkReplayer</a>(boost::shared_ptr&lt;std::ifstream&gt; <a class="code" href="classNetworkReplayer.html#a27864b6e6cb19128daf23b71d8230bd1" title="The file from which the archive was created.">file</a>,
+<a name="l00029"></a>00029                     boost::shared_ptr&lt;boost::archive::text_iarchive&gt; <a class="code" href="classNetworkReplayer.html#a4cf93cd1483fa3ab4bdfe9b5027028f8" title="The archive from which the replay events will be retrieved.">archive</a>);
 <a name="l00030"></a>00030 
-<a name="l00031"></a>00031     <span class="comment">// send a message to modify the game state</span>
-<a name="l00032"></a>00032     <span class="keyword">virtual</span> rc_network <a class="code" href="classNetworkReplayer.html#aa9f70d4eee3d630c36c2bbc71bb7e195" title="Send a start game message to the peer.">sendStartGame</a>();
-<a name="l00033"></a>00033     <span class="keyword">virtual</span> rc_network <a class="code" href="classNetworkReplayer.html#aa54ba87a728ebdb0f23a82e409094468" title="Send a pause game message to the peer.">sendPauseGame</a>();
-<a name="l00034"></a>00034     <span class="keyword">virtual</span> rc_network <a class="code" href="classNetworkReplayer.html#a33c840b356485101092fe220d4aa73fb" title="Send an end game message to the peer.">sendEndGame</a>();
+<a name="l00034"></a>00034     <span class="keyword">virtual</span> <a class="code" href="classNetworkReplayer.html#a195d8e75db6e9b77a802a1eb31a85973" title="Destructor.">~NetworkReplayer</a>();
 <a name="l00035"></a>00035 
-<a name="l00036"></a>00036     <span class="comment">// send data to the other player</span>
-<a name="l00037"></a>00037     <span class="keyword">virtual</span> rc_network <a class="code" href="classNetworkReplayer.html#a49bb75f65853c34c0bdafa6aba066056" title="Send our username to the peer.">sendUserName</a>(<span class="keyword">const</span> std::string&amp; userName);
-<a name="l00038"></a>00038     <span class="keyword">virtual</span> rc_network <a class="code" href="classNetworkReplayer.html#a689bc26f935bb0d7f72d3f69cea6e98c" title="Send a chat message to the peer.">sendChatMessage</a>(<span class="keyword">const</span> std::string&amp; message);
-<a name="l00039"></a>00039     <span class="keyword">virtual</span> rc_network <a class="code" href="classNetworkReplayer.html#ab7f69701316a3387da91d2146ea97b5e" title="Send video data to the peer.">sendVideoData</a>(<span class="keyword">const</span> <a class="code" href="structVideoData.html" title="Represent a frame of video data.">VideoData</a>&amp; video);
-<a name="l00040"></a>00040     <span class="keyword">virtual</span> rc_network <a class="code" href="classNetworkReplayer.html#a7c9a5203b80840fee0157d506ff14f61" title="Send the players position to the peer.">sendPlayerPosition</a>(<span class="keyword">const</span> cVector3d&amp; position);
-<a name="l00041"></a>00041     <span class="keyword">virtual</span> rc_network <a class="code" href="classNetworkReplayer.html#ad8ad840c17aa86b890857ef714eb019a" title="Send the slingshot position to the peer.">sendSlingshotPosition</a>(<span class="keyword">const</span> cVector3d&amp; position);
-<a name="l00042"></a>00042     <span class="keyword">virtual</span> rc_network <a class="code" href="classNetworkReplayer.html#a7ebdbb74bb8e3b1fdc877d3c8157d342" title="Send a projectile to the peer.">sendProjectile</a>(<span class="keyword">const</span> <a class="code" href="classProjectile.html" title="Represents a projectile Each projectile has a position and a force behind it.">Projectile</a>&amp; projectile);
-<a name="l00043"></a>00043     <span class="keyword">virtual</span> rc_network <a class="code" href="classNetworkReplayer.html#a98342ea3e802e9108b6d3329d977eade" title="Send a slingshot pullback event to the peer.">sendSlingshotPullback</a>();
-<a name="l00044"></a>00044     <span class="keyword">virtual</span> rc_network sendSlingshotRelease();
-<a name="l00045"></a>00045 
-<a name="l00046"></a>00046     <span class="comment">// network state retrievers</span>
-<a name="l00047"></a>00047     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classNetworkReplayer.html#a3656c06c32e76a30ac48055a0695d99a" title="Determines if we are connected to a peer.">isConnected</a>() <span class="keyword">const</span>;
-<a name="l00048"></a>00048     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classNetworkReplayer.html#a869c34b845f18eb262ead68542662aa4" title="Determines if we are listening for connections.">isListening</a>() <span class="keyword">const</span>;
+<a name="l00040"></a>00040     <span class="keywordtype">void</span> <a class="code" href="classNetworkReplayer.html#ab4162db2236a7b337bcef679682f8609" title="Replay an event, the event must be part of the network event category.">replay</a>(<a class="code" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0" title="package This enum represents all input events that the system can receive.">LogEvent_t</a> logEvent);
+<a name="l00041"></a>00041 
+<a name="l00048"></a>00048     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classNetworkReplayer.html#a54f644fe92941370481c45989bad6615" title="Start listening for connections.">listen</a>(<span class="keyword">const</span> std::string&amp; userName); 
 <a name="l00049"></a>00049 
-<a name="l00050"></a>00050 <span class="keyword">private</span>:
-<a name="l00051"></a>00051     <a class="code" href="namespaceConnectionState.html#ad1b6674b6f1c58f17e9db75d0a77149f" title="Enum representing all the different connection states.">ConnectionState_t</a> connectionState;
-<a name="l00052"></a>00052 
-<a name="l00053"></a>00053     <span class="comment">// the file/archive used for retrieving the data associated with events</span>
-<a name="l00054"></a>00054     boost::shared_ptr&lt;std::ifstream&gt; file;
-<a name="l00055"></a>00055     boost::shared_ptr&lt;boost::archive::text_iarchive&gt; archive;   
-<a name="l00056"></a>00056 };
-<a name="l00057"></a>00057 
-<a name="l00058"></a>00058 <span class="preprocessor">#endif</span>
-<a name="l00059"></a>00059 <span class="preprocessor"></span>
+<a name="l00057"></a>00057     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classNetworkReplayer.html#a6d4deeeede0cd5c07b44489a33c113f5" title="Attempt to connect to a peer.">connect</a>(<span class="keyword">const</span> std::string&amp; ipAddress, <span class="keyword">const</span> std::string&amp; userName);
+<a name="l00058"></a>00058 
+<a name="l00064"></a>00064     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classNetworkReplayer.html#a3aab774a33a87446aa874871fea54655" title="Disconnect from a peer.">disconnect</a>();
+<a name="l00065"></a>00065 
+<a name="l00071"></a>00071     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classNetworkReplayer.html#aa9f70d4eee3d630c36c2bbc71bb7e195" title="Send a start game message to the peer.">sendStartGame</a>();
+<a name="l00072"></a>00072     
+<a name="l00078"></a>00078     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classNetworkReplayer.html#aa54ba87a728ebdb0f23a82e409094468" title="Send a pause game message to the peer.">sendPauseGame</a>();
+<a name="l00079"></a>00079     
+<a name="l00085"></a>00085     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classNetworkReplayer.html#a33c840b356485101092fe220d4aa73fb" title="Send a end game message to the peer.">sendEndGame</a>();
+<a name="l00086"></a>00086 
+<a name="l00092"></a>00092     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classNetworkReplayer.html#a49bb75f65853c34c0bdafa6aba066056" title="Send a user name to the peer.">sendUserName</a>(<span class="keyword">const</span> std::string&amp; userName);
+<a name="l00093"></a>00093 
+<a name="l00099"></a>00099     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classNetworkReplayer.html#a689bc26f935bb0d7f72d3f69cea6e98c" title="Send a chat message to the peer.">sendChatMessage</a>(<span class="keyword">const</span> std::string&amp; message);
+<a name="l00100"></a>00100     
+<a name="l00106"></a>00106     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classNetworkReplayer.html#a7c9a5203b80840fee0157d506ff14f61" title="Send a player position to the peer.">sendPlayerPosition</a>(<span class="keyword">const</span> cVector3d&amp; position);
+<a name="l00107"></a>00107 
+<a name="l00114"></a>00114     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classNetworkReplayer.html#a97ead6562741c489a632dcbcf5af1f02" title="Send the slingshot pullback position to the peer.">sendSlingshotPullback</a>(<span class="keyword">const</span> cVector3d&amp; position);
+<a name="l00115"></a>00115 
+<a name="l00121"></a>00121     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classNetworkReplayer.html#a7ebdbb74bb8e3b1fdc877d3c8157d342" title="Send a projectile to the peer.">sendProjectile</a>(<span class="keyword">const</span> <a class="code" href="classProjectile.html" title="Represents a projectile Each projectile has a position and a force behind it.">Projectile</a>&amp; projectile);
+<a name="l00122"></a>00122 
+<a name="l00128"></a>00128     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classNetworkReplayer.html#a8bc7c3c55dd7f7227d63335206a905a0" title="Send a slingshot release event to the peer.">sendSlingshotRelease</a>();
+<a name="l00129"></a>00129 
+<a name="l00135"></a>00135     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classNetworkReplayer.html#a79fb2c1ab0000c403b74784e66aaf75c" title="Send a game over message to the peer.">sendGameOver</a>();
+<a name="l00136"></a>00136 
+<a name="l00143"></a>00143     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classNetworkReplayer.html#afff40828e09f16c4c47a8775d84f4bd3" title="Send a message to the peer letting him know that we have been hit.">sendPlayerHit</a>(<a class="code" href="group__Common.html#gaa22d3933804e3afcd4eac294dded7434" title="public Enum representing different parts of the human body.">BodyPart_t</a> bodyPart);
+<a name="l00144"></a>00144 
+<a name="l00151"></a>00151     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classNetworkReplayer.html#a587a3173eac92bac0ca5dc39224ad45b" title="Send a physics sync object to the peer so that he can synchronize his game.">sendPhysicsSync</a>(<span class="keyword">const</span> <a class="code" href="classPhysicsSync.html" title="public This data structure is used to synchronize 2 virtual environments.">PhysicsSync</a>&amp; sync);
+<a name="l00152"></a>00152 
+<a name="l00157"></a>00157     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classNetworkReplayer.html#a3656c06c32e76a30ac48055a0695d99a" title="Determines if we are connected to a peer.">isConnected</a>() <span class="keyword">const</span>;
+<a name="l00158"></a>00158     
+<a name="l00163"></a>00163     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classNetworkReplayer.html#a869c34b845f18eb262ead68542662aa4" title="Determines if we are listening for connections.">isListening</a>() <span class="keyword">const</span>;
+<a name="l00164"></a>00164 
+<a name="l00165"></a>00165 <span class="keyword">private</span>:
+<a name="l00166"></a><a class="code" href="classNetworkReplayer.html#a0ef88f2c7b0f028c2c122a1a5d745da1">00166</a>     <a class="code" href="group__Common.html#gad1b6674b6f1c58f17e9db75d0a77149f" title="public Enum representing all the different connection states.">ConnectionState_t</a> <a class="code" href="classNetworkReplayer.html#a0ef88f2c7b0f028c2c122a1a5d745da1" title="The current state of the connection.">connectionState</a>; 
+<a name="l00168"></a><a class="code" href="classNetworkReplayer.html#a27864b6e6cb19128daf23b71d8230bd1">00168</a>     boost::shared_ptr&lt;std::ifstream&gt; file; 
+<a name="l00169"></a><a class="code" href="classNetworkReplayer.html#a4cf93cd1483fa3ab4bdfe9b5027028f8">00169</a>     boost::shared_ptr&lt;boost::archive::text_iarchive&gt; archive; 
+<a name="l00170"></a>00170 };
+<a name="l00171"></a>00171 
+<a name="l00172"></a>00172 <span class="preprocessor">#endif</span>
+<a name="l00173"></a>00173 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -114,7 +121,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -123,7 +130,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:45 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

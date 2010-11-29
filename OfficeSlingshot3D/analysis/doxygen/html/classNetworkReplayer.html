@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -48,12 +49,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <h1>NetworkReplayer Class Reference</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="NetworkReplayer" --><!-- doxytag: inherits="Network" --><div class="dynheader">
+<!-- doxytag: class="NetworkReplayer" --><!-- doxytag: inherits="Network" -->
+<p>The network replayer class is in charge of replaying network events.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="NetworkReplayer_8h_source.html">NetworkReplayer.h</a>&gt;</code></p>
+<div class="dynheader">
 Inheritance diagram for NetworkReplayer:</div>
 <div class="dyncontent">
  <div class="center">
@@ -66,50 +73,123 @@ Inheritance diagram for NetworkReplayer:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad91a8bed9fc2c9e69163c5290a823fee"></a><!-- doxytag: member="NetworkReplayer::NetworkReplayer" ref="ad91a8bed9fc2c9e69163c5290a823fee" args="(boost::shared_ptr&lt; std::ifstream &gt; file, boost::shared_ptr&lt; boost::archive::text_iarchive &gt; archive)" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><b>NetworkReplayer</b> (boost::shared_ptr&lt; std::ifstream &gt; file, boost::shared_ptr&lt; boost::archive::text_iarchive &gt; archive)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab4162db2236a7b337bcef679682f8609"></a><!-- doxytag: member="NetworkReplayer::replay" ref="ab4162db2236a7b337bcef679682f8609" args="(LogEvent_t logEvent)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>replay</b> (LogEvent_t logEvent)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#a54f644fe92941370481c45989bad6615">listen</a> (const std::string &amp;userName)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#ad91a8bed9fc2c9e69163c5290a823fee">NetworkReplayer</a> (boost::shared_ptr&lt; std::ifstream &gt; <a class="el" href="classNetworkReplayer.html#a27864b6e6cb19128daf23b71d8230bd1">file</a>, boost::shared_ptr&lt; boost::archive::text_iarchive &gt; <a class="el" href="classNetworkReplayer.html#a4cf93cd1483fa3ab4bdfe9b5027028f8">archive</a>)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#ad91a8bed9fc2c9e69163c5290a823fee"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#a195d8e75db6e9b77a802a1eb31a85973">~NetworkReplayer</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#a195d8e75db6e9b77a802a1eb31a85973"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#ab4162db2236a7b337bcef679682f8609">replay</a> (<a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a> logEvent)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Replay an event, the event must be part of the network event category.  <a href="#ab4162db2236a7b337bcef679682f8609"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#a54f644fe92941370481c45989bad6615">listen</a> (const std::string &amp;userName)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Start listening for connections.  <a href="#a54f644fe92941370481c45989bad6615"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#a6d4deeeede0cd5c07b44489a33c113f5">connect</a> (const std::string &amp;ipAddress, const std::string &amp;userName)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#a6d4deeeede0cd5c07b44489a33c113f5">connect</a> (const std::string &amp;ipAddress, const std::string &amp;userName)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Attempt to connect to a peer.  <a href="#a6d4deeeede0cd5c07b44489a33c113f5"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#a3aab774a33a87446aa874871fea54655">disconnect</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#a3aab774a33a87446aa874871fea54655">disconnect</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Disconnect from a peer.  <a href="#a3aab774a33a87446aa874871fea54655"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#aa9f70d4eee3d630c36c2bbc71bb7e195">sendStartGame</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#aa9f70d4eee3d630c36c2bbc71bb7e195">sendStartGame</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a start game message to the peer.  <a href="#aa9f70d4eee3d630c36c2bbc71bb7e195"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#aa54ba87a728ebdb0f23a82e409094468">sendPauseGame</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#aa54ba87a728ebdb0f23a82e409094468">sendPauseGame</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a pause game message to the peer.  <a href="#aa54ba87a728ebdb0f23a82e409094468"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#a33c840b356485101092fe220d4aa73fb">sendEndGame</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send an end game message to the peer.  <a href="#a33c840b356485101092fe220d4aa73fb"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#a49bb75f65853c34c0bdafa6aba066056">sendUserName</a> (const std::string &amp;userName)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send our username to the peer.  <a href="#a49bb75f65853c34c0bdafa6aba066056"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#a689bc26f935bb0d7f72d3f69cea6e98c">sendChatMessage</a> (const std::string &amp;message)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#a33c840b356485101092fe220d4aa73fb">sendEndGame</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a end game message to the peer.  <a href="#a33c840b356485101092fe220d4aa73fb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#a49bb75f65853c34c0bdafa6aba066056">sendUserName</a> (const std::string &amp;userName)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a user name to the peer.  <a href="#a49bb75f65853c34c0bdafa6aba066056"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#a689bc26f935bb0d7f72d3f69cea6e98c">sendChatMessage</a> (const std::string &amp;message)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a chat message to the peer.  <a href="#a689bc26f935bb0d7f72d3f69cea6e98c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#ab7f69701316a3387da91d2146ea97b5e">sendVideoData</a> (const <a class="el" href="structVideoData.html">VideoData</a> &amp;video)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send video data to the peer.  <a href="#ab7f69701316a3387da91d2146ea97b5e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#a7c9a5203b80840fee0157d506ff14f61">sendPlayerPosition</a> (const cVector3d &amp;position)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send the players position to the peer.  <a href="#a7c9a5203b80840fee0157d506ff14f61"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#ad8ad840c17aa86b890857ef714eb019a">sendSlingshotPosition</a> (const cVector3d &amp;position)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send the slingshot position to the peer.  <a href="#ad8ad840c17aa86b890857ef714eb019a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#a7ebdbb74bb8e3b1fdc877d3c8157d342">sendProjectile</a> (const <a class="el" href="classProjectile.html">Projectile</a> &amp;projectile)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#a7c9a5203b80840fee0157d506ff14f61">sendPlayerPosition</a> (const cVector3d &amp;position)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a player position to the peer.  <a href="#a7c9a5203b80840fee0157d506ff14f61"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#a97ead6562741c489a632dcbcf5af1f02">sendSlingshotPullback</a> (const cVector3d &amp;position)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send the slingshot pullback position to the peer.  <a href="#a97ead6562741c489a632dcbcf5af1f02"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#a7ebdbb74bb8e3b1fdc877d3c8157d342">sendProjectile</a> (const <a class="el" href="classProjectile.html">Projectile</a> &amp;projectile)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a projectile to the peer.  <a href="#a7ebdbb74bb8e3b1fdc877d3c8157d342"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#a98342ea3e802e9108b6d3329d977eade">sendSlingshotPullback</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a slingshot pullback event to the peer.  <a href="#a98342ea3e802e9108b6d3329d977eade"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8bc7c3c55dd7f7227d63335206a905a0"></a><!-- doxytag: member="NetworkReplayer::sendSlingshotRelease" ref="a8bc7c3c55dd7f7227d63335206a905a0" args="()" -->
-virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><b>sendSlingshotRelease</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#a8bc7c3c55dd7f7227d63335206a905a0">sendSlingshotRelease</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a slingshot release event to the peer.  <a href="#a8bc7c3c55dd7f7227d63335206a905a0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#a79fb2c1ab0000c403b74784e66aaf75c">sendGameOver</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a game over message to the peer.  <a href="#a79fb2c1ab0000c403b74784e66aaf75c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#afff40828e09f16c4c47a8775d84f4bd3">sendPlayerHit</a> (<a class="el" href="group__Common.html#gaa22d3933804e3afcd4eac294dded7434">BodyPart_t</a> bodyPart)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a message to the peer letting him know that we have been hit.  <a href="#afff40828e09f16c4c47a8775d84f4bd3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#a587a3173eac92bac0ca5dc39224ad45b">sendPhysicsSync</a> (const <a class="el" href="classPhysicsSync.html">PhysicsSync</a> &amp;sync)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a physics sync object to the peer so that he can synchronize his game.  <a href="#a587a3173eac92bac0ca5dc39224ad45b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#a3656c06c32e76a30ac48055a0695d99a">isConnected</a> () const </td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Determines if we are connected to a peer.  <a href="#a3656c06c32e76a30ac48055a0695d99a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#a869c34b845f18eb262ead68542662aa4">isListening</a> () const </td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Determines if we are listening for connections.  <a href="#a869c34b845f18eb262ead68542662aa4"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Common.html#gad1b6674b6f1c58f17e9db75d0a77149f">ConnectionState_t</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#a0ef88f2c7b0f028c2c122a1a5d745da1">connectionState</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The current state of the connection.  <a href="#a0ef88f2c7b0f028c2c122a1a5d745da1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr&lt; std::ifstream &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#a27864b6e6cb19128daf23b71d8230bd1">file</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The file from which the archive was created.  <a href="#a27864b6e6cb19128daf23b71d8230bd1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr<br class="typebreak"/>
+&lt; boost::archive::text_iarchive &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkReplayer.html#a4cf93cd1483fa3ab4bdfe9b5027028f8">archive</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The archive from which the replay events will be retrieved.  <a href="#a4cf93cd1483fa3ab4bdfe9b5027028f8"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>The network replayer class is in charge of replaying network events. </p>
+<p>The replay function is used to replay a specific log event, at which point the network replayer will extract any information it needs from the provided file. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ad91a8bed9fc2c9e69163c5290a823fee"></a><!-- doxytag: member="NetworkReplayer::NetworkReplayer" ref="ad91a8bed9fc2c9e69163c5290a823fee" args="(boost::shared_ptr&lt; std::ifstream &gt; file, boost::shared_ptr&lt; boost::archive::text_iarchive &gt; archive)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">NetworkReplayer::NetworkReplayer </td>
+          <td>(</td>
+          <td class="paramtype">boost::shared_ptr&lt; std::ifstream &gt;&nbsp;</td>
+          <td class="paramname"> <em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boost::shared_ptr&lt; boost::archive::text_iarchive &gt;&nbsp;</td>
+          <td class="paramname"> <em>archive</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+<p>We must pass in both the file and the archive because we can't delete the file first. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>file</em>&nbsp;</td><td>The file from which archive was created. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>archive</em>&nbsp;</td><td>The archive containing all the replay events. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a195d8e75db6e9b77a802a1eb31a85973"></a><!-- doxytag: member="NetworkReplayer::~NetworkReplayer" ref="a195d8e75db6e9b77a802a1eb31a85973" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">NetworkReplayer::~NetworkReplayer </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
 <hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a6d4deeeede0cd5c07b44489a33c113f5"></a><!-- doxytag: member="NetworkReplayer::connect" ref="a6d4deeeede0cd5c07b44489a33c113f5" args="(const std::string &amp;ipAddress, const std::string &amp;userName)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rc_network NetworkReplayer::connect </td>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> NetworkReplayer::connect </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&nbsp;</td>
           <td class="paramname"> <em>ipAddress</em>, </td>
@@ -130,6 +210,7 @@ virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><b>sendSli
 <div class="memdoc">
 
 <p>Attempt to connect to a peer. </p>
+<p>The replayer won't actually do anything, this is just to implement the network interface. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>ipAddress</em>&nbsp;</td><td>The ip address that we will connect to </td></tr>
@@ -137,7 +218,7 @@ virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><b>sendSli
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if we are now connected to the peer </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS </dd></dl>
 
 <p>Implements <a class="el" href="classNetwork.html#a105f5e229e0ac9ff2b718dd34112c292">Network</a>.</p>
 
@@ -148,7 +229,7 @@ virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><b>sendSli
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rc_network NetworkReplayer::disconnect </td>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> NetworkReplayer::disconnect </td>
           <td>(</td>
           <td class="paramname"></td>
           <td>&nbsp;)&nbsp;</td>
@@ -159,7 +240,8 @@ virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><b>sendSli
 <div class="memdoc">
 
 <p>Disconnect from a peer. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if we successfully disconnected </dd></dl>
+<p>The replayer won't actually do anything, this is just to implement the network interface. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS </dd></dl>
 
 <p>Implements <a class="el" href="classNetwork.html#a1b0e29fc9936615e76c1db95caba0a9e">Network</a>.</p>
 
@@ -214,7 +296,7 @@ virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><b>sendSli
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rc_network NetworkReplayer::listen </td>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> NetworkReplayer::listen </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&nbsp;</td>
           <td class="paramname"> <em>userName</em></td>
@@ -226,15 +308,42 @@ virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><b>sendSli
 <div class="memdoc">
 
 <p>Start listening for connections. </p>
+<p>The replayer won't actually do anything, this is just to implement the network interface. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>userName</em>&nbsp;</td><td>The username used to establish the connection </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if listening was successful </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS </dd></dl>
 
 <p>Implements <a class="el" href="classNetwork.html#afb5306e2b769c01780aaa44d2c14306d">Network</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab4162db2236a7b337bcef679682f8609"></a><!-- doxytag: member="NetworkReplayer::replay" ref="ab4162db2236a7b337bcef679682f8609" args="(LogEvent_t logEvent)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NetworkReplayer::replay </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a>&nbsp;</td>
+          <td class="paramname"> <em>logEvent</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Replay an event, the event must be part of the network event category. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>logEvent</em>&nbsp;</td><td>the event to replay. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -243,7 +352,7 @@ virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><b>sendSli
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rc_network NetworkReplayer::sendChatMessage </td>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> NetworkReplayer::sendChatMessage </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&nbsp;</td>
           <td class="paramname"> <em>message</em></td>
@@ -255,13 +364,8 @@ virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><b>sendSli
 <div class="memdoc">
 
 <p>Send a chat message to the peer. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>message</em>&nbsp;</td><td>The chat message that will be sent to the peer. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received </dd></dl>
+<p>The replayer won't actually do anything, this is just to implement the network interface. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS </dd></dl>
 
 <p>Implements <a class="el" href="classNetwork.html#aa5e1e44e3cb4862b2c343999c89ce3b5">Network</a>.</p>
 
@@ -272,7 +376,7 @@ virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><b>sendSli
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rc_network NetworkReplayer::sendEndGame </td>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> NetworkReplayer::sendEndGame </td>
           <td>(</td>
           <td class="paramname"></td>
           <td>&nbsp;)&nbsp;</td>
@@ -282,10 +386,34 @@ virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><b>sendSli
 </div>
 <div class="memdoc">
 
-<p>Send an end game message to the peer. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received </dd></dl>
+<p>Send a end game message to the peer. </p>
+<p>The replayer won't actually do anything, this is just to implement the network interface. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS </dd></dl>
 
 <p>Implements <a class="el" href="classNetwork.html#ae3f72f3003309c6d38105f504db8ce05">Network</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a79fb2c1ab0000c403b74784e66aaf75c"></a><!-- doxytag: member="NetworkReplayer::sendGameOver" ref="a79fb2c1ab0000c403b74784e66aaf75c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> NetworkReplayer::sendGameOver </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Send a game over message to the peer. </p>
+<p>The replayer won't actually do anything, this is just to implement the network interface. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS </dd></dl>
+
+<p>Implements <a class="el" href="classNetwork.html#a3b910c81b63814007c6ceebb87125287">Network</a>.</p>
 
 </div>
 </div>
@@ -294,7 +422,7 @@ virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><b>sendSli
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rc_network NetworkReplayer::sendPauseGame </td>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> NetworkReplayer::sendPauseGame </td>
           <td>(</td>
           <td class="paramname"></td>
           <td>&nbsp;)&nbsp;</td>
@@ -305,9 +433,70 @@ virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><b>sendSli
 <div class="memdoc">
 
 <p>Send a pause game message to the peer. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received </dd></dl>
+<p>The replayer won't actually do anything, this is just to implement the network interface. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS </dd></dl>
 
 <p>Implements <a class="el" href="classNetwork.html#ac60291a8d99468ebc38d085fc0455df0">Network</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a587a3173eac92bac0ca5dc39224ad45b"></a><!-- doxytag: member="NetworkReplayer::sendPhysicsSync" ref="a587a3173eac92bac0ca5dc39224ad45b" args="(const PhysicsSync &amp;sync)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> NetworkReplayer::sendPhysicsSync </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classPhysicsSync.html">PhysicsSync</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>sync</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Send a physics sync object to the peer so that he can synchronize his game. </p>
+<p>The replayer won't actually do anything, this is just to implement the network interface. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>sync</em>&nbsp;</td><td>The sync object. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS. </dd></dl>
+
+<p>Implements <a class="el" href="classNetwork.html#a28f288d3f5531426ca7e63a4bb1fd0b1">Network</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afff40828e09f16c4c47a8775d84f4bd3"></a><!-- doxytag: member="NetworkReplayer::sendPlayerHit" ref="afff40828e09f16c4c47a8775d84f4bd3" args="(BodyPart_t bodyPart)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> NetworkReplayer::sendPlayerHit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Common.html#gaa22d3933804e3afcd4eac294dded7434">BodyPart_t</a>&nbsp;</td>
+          <td class="paramname"> <em>bodyPart</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Send a message to the peer letting him know that we have been hit. </p>
+<p>The replayer won't actually do anything, this is just to implement the network interface. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>bodyPart</em>&nbsp;</td><td>The body part that was hit. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS </dd></dl>
+
+<p>Implements <a class="el" href="classNetwork.html#a8fb9019d9d77bac90340545541b2e383">Network</a>.</p>
 
 </div>
 </div>
@@ -316,7 +505,7 @@ virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><b>sendSli
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rc_network NetworkReplayer::sendPlayerPosition </td>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> NetworkReplayer::sendPlayerPosition </td>
           <td>(</td>
           <td class="paramtype">const cVector3d &amp;&nbsp;</td>
           <td class="paramname"> <em>position</em></td>
@@ -327,14 +516,9 @@ virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><b>sendSli
 </div>
 <div class="memdoc">
 
-<p>Send the players position to the peer. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>position</em>&nbsp;</td><td>Our player position that will be sent to the peer. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received </dd></dl>
+<p>Send a player position to the peer. </p>
+<p>The replayer won't actually do anything, this is just to implement the network interface. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS </dd></dl>
 
 <p>Implements <a class="el" href="classNetwork.html#a9a2eb94c34d8d93f7490184cd2526e62">Network</a>.</p>
 
@@ -345,7 +529,7 @@ virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><b>sendSli
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rc_network NetworkReplayer::sendProjectile </td>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> NetworkReplayer::sendProjectile </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classProjectile.html">Projectile</a> &amp;&nbsp;</td>
           <td class="paramname"> <em>projectile</em></td>
@@ -357,24 +541,19 @@ virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><b>sendSli
 <div class="memdoc">
 
 <p>Send a projectile to the peer. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>projectile</em>&nbsp;</td><td>The projectile that will be sent to the peer. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received </dd></dl>
+<p>The replayer won't actually do anything, this is just to implement the network interface. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS </dd></dl>
 
 <p>Implements <a class="el" href="classNetwork.html#a477324500341f146fc7fc7411290a424">Network</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ad8ad840c17aa86b890857ef714eb019a"></a><!-- doxytag: member="NetworkReplayer::sendSlingshotPosition" ref="ad8ad840c17aa86b890857ef714eb019a" args="(const cVector3d &amp;position)" -->
+<a class="anchor" id="a97ead6562741c489a632dcbcf5af1f02"></a><!-- doxytag: member="NetworkReplayer::sendSlingshotPullback" ref="a97ead6562741c489a632dcbcf5af1f02" args="(const cVector3d &amp;position)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rc_network NetworkReplayer::sendSlingshotPosition </td>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> NetworkReplayer::sendSlingshotPullback </td>
           <td>(</td>
           <td class="paramtype">const cVector3d &amp;&nbsp;</td>
           <td class="paramname"> <em>position</em></td>
@@ -385,25 +564,20 @@ virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><b>sendSli
 </div>
 <div class="memdoc">
 
-<p>Send the slingshot position to the peer. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>position</em>&nbsp;</td><td>Our slingshot position that will be sent to the peer. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received </dd></dl>
+<p>Send the slingshot pullback position to the peer. </p>
+<p>The pullback position is the position of the sling when the slingshot is being fired. The replayer won't actually do anything, this is just to implement the network interface. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS </dd></dl>
 
-<p>Implements <a class="el" href="classNetwork.html#aa105332ed8a1325a89f1f3e0a9d27521">Network</a>.</p>
+<p>Implements <a class="el" href="classNetwork.html#a0bac3128a353f86f12015302e286e59f">Network</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a98342ea3e802e9108b6d3329d977eade"></a><!-- doxytag: member="NetworkReplayer::sendSlingshotPullback" ref="a98342ea3e802e9108b6d3329d977eade" args="()" -->
+<a class="anchor" id="a8bc7c3c55dd7f7227d63335206a905a0"></a><!-- doxytag: member="NetworkReplayer::sendSlingshotRelease" ref="a8bc7c3c55dd7f7227d63335206a905a0" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rc_network NetworkReplayer::sendSlingshotPullback </td>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> NetworkReplayer::sendSlingshotRelease </td>
           <td>(</td>
           <td class="paramname"></td>
           <td>&nbsp;)&nbsp;</td>
@@ -413,11 +587,9 @@ virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><b>sendSli
 </div>
 <div class="memdoc">
 
-<p>Send a slingshot pullback event to the peer. </p>
-<p>This lets the peer know that we have started to pull back our slingshot. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received </dd></dl>
-
-<p>Implements <a class="el" href="classNetwork.html#ad4fd766e5bae5a3f002a26218b60b426">Network</a>.</p>
+<p>Send a slingshot release event to the peer. </p>
+<p>The replayer won't actually do anything, this is just to implement the network interface. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS </dd></dl>
 
 </div>
 </div>
@@ -426,7 +598,7 @@ virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><b>sendSli
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rc_network NetworkReplayer::sendStartGame </td>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> NetworkReplayer::sendStartGame </td>
           <td>(</td>
           <td class="paramname"></td>
           <td>&nbsp;)&nbsp;</td>
@@ -437,7 +609,8 @@ virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><b>sendSli
 <div class="memdoc">
 
 <p>Send a start game message to the peer. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received </dd></dl>
+<p>The replayer won't actually do anything, this is just to implement the network interface. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS </dd></dl>
 
 <p>Implements <a class="el" href="classNetwork.html#a3f6b451fd546f2e44eb2c14661bc1ad3">Network</a>.</p>
 
@@ -448,7 +621,7 @@ virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><b>sendSli
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rc_network NetworkReplayer::sendUserName </td>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> NetworkReplayer::sendUserName </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&nbsp;</td>
           <td class="paramname"> <em>userName</em></td>
@@ -459,52 +632,63 @@ virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><b>sendSli
 </div>
 <div class="memdoc">
 
-<p>Send our username to the peer. </p>
-<p>The user name is sent when the connection is established so this should only be used if a user changes there username </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>userName</em>&nbsp;</td><td>Our new username that will be sent to the peer </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received </dd></dl>
+<p>Send a user name to the peer. </p>
+<p>The replayer won't actually do anything, this is just to implement the network interface. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>SUCCESS </dd></dl>
 
 <p>Implements <a class="el" href="classNetwork.html#a741e75b2e9adfc188c53e150b4dd4610">Network</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ab7f69701316a3387da91d2146ea97b5e"></a><!-- doxytag: member="NetworkReplayer::sendVideoData" ref="ab7f69701316a3387da91d2146ea97b5e" args="(const VideoData &amp;video)" -->
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a4cf93cd1483fa3ab4bdfe9b5027028f8"></a><!-- doxytag: member="NetworkReplayer::archive" ref="a4cf93cd1483fa3ab4bdfe9b5027028f8" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rc_network NetworkReplayer::sendVideoData </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structVideoData.html">VideoData</a> &amp;&nbsp;</td>
-          <td class="paramname"> <em>video</em></td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [virtual]</code></td>
+          <td class="memname">boost::shared_ptr&lt;boost::archive::text_iarchive&gt; <a class="el" href="classNetworkReplayer.html#a4cf93cd1483fa3ab4bdfe9b5027028f8">NetworkReplayer::archive</a><code> [private]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Send video data to the peer. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>video</em>&nbsp;</td><td>The video data that will be sent to the peer. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received </dd></dl>
+<p>The archive from which the replay events will be retrieved. </p>
 
-<p>Implements <a class="el" href="classNetwork.html#a189df8819d21d4f1a277ca753453045b">Network</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a0ef88f2c7b0f028c2c122a1a5d745da1"></a><!-- doxytag: member="NetworkReplayer::connectionState" ref="a0ef88f2c7b0f028c2c122a1a5d745da1" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Common.html#gad1b6674b6f1c58f17e9db75d0a77149f">ConnectionState_t</a> <a class="el" href="classNetworkReplayer.html#a0ef88f2c7b0f028c2c122a1a5d745da1">NetworkReplayer::connectionState</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The current state of the connection. </p>
+
+</div>
+</div>
+<a class="anchor" id="a27864b6e6cb19128daf23b71d8230bd1"></a><!-- doxytag: member="NetworkReplayer::file" ref="a27864b6e6cb19128daf23b71d8230bd1" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::shared_ptr&lt;std::ifstream&gt; <a class="el" href="classNetworkReplayer.html#a27864b6e6cb19128daf23b71d8230bd1">NetworkReplayer::file</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The file from which the archive was created. </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/<a class="el" href="NetworkReplayer_8h_source.html">NetworkReplayer.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Replay/NetworkReplayer.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Replay/<a class="el" href="NetworkReplayer_8h_source.html">NetworkReplayer.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Replay/<a class="el" href="NetworkReplayer_8cpp.html">NetworkReplayer.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -512,7 +696,7 @@ virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><b>sendSli
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -521,7 +705,7 @@ virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><b>sendSli
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:46 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

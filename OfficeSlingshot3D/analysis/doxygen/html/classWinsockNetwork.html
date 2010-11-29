@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -48,12 +49,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a>  </div>
   <div class="headertitle">
-<h1>WinsockNetwork Class Reference</h1>  </div>
+<h1>WinsockNetwork Class Reference<br/>
+<small>
+[<a class="el" href="group__Network.html">Network</a>]</small>
+</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="WinsockNetwork" --><!-- doxytag: inherits="Network" --><div class="dynheader">
+<!-- doxytag: class="WinsockNetwork" --><!-- doxytag: inherits="Network" -->
+<p><b>public</b> A concrete implementation of the network class using windows sockets.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="WinsockNetwork_8h_source.html">WinsockNetwork.h</a>&gt;</code></p>
+<div class="dynheader">
 Inheritance diagram for WinsockNetwork:</div>
 <div class="dyncontent">
  <div class="center">
@@ -66,46 +78,200 @@ Inheritance diagram for WinsockNetwork:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a6f2f806a0e246a46ff6d0c2006cddd43">listen</a> (const std::string &amp;userName)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Start listening for connections.  <a href="#a6f2f806a0e246a46ff6d0c2006cddd43"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a0f7f289635183b1082894f230a989006">connect</a> (const std::string &amp;ipAddress, const std::string &amp;userName)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Attempt to connect to a peer.  <a href="#a0f7f289635183b1082894f230a989006"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#abd947a2edb4d5053286f25b4c9f041c1">disconnect</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Disconnect from a peer.  <a href="#abd947a2edb4d5053286f25b4c9f041c1"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#ae76b6c306ef15d162fe652c38c78d4e2">sendUserName</a> (const std::string &amp;userName)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send our username to the peer.  <a href="#ae76b6c306ef15d162fe652c38c78d4e2"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a420d4e6b5c698476a94dcdb503233de7">sendChatMessage</a> (const std::string &amp;message)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a chat message to the peer.  <a href="#a420d4e6b5c698476a94dcdb503233de7"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a20ed4411ec34336c6a213b15cc3fcad9">sendStartGame</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#ac05e14adb6aa2f726fc4f916c9fc6e7e">WinsockNetwork</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#ac05e14adb6aa2f726fc4f916c9fc6e7e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a8229a3b6d82b851ad731e9b51e58e0e9">~WinsockNetwork</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#a8229a3b6d82b851ad731e9b51e58e0e9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a6f2f806a0e246a46ff6d0c2006cddd43">listen</a> (const std::string &amp;<a class="el" href="classWinsockNetwork.html#ace4f23e2d575b5b5abe37fdca8efd787">userName</a>)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Start listening for connections with the given user name.  <a href="#a6f2f806a0e246a46ff6d0c2006cddd43"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a0f7f289635183b1082894f230a989006">connect</a> (const std::string &amp;ipAddress, const std::string &amp;<a class="el" href="classWinsockNetwork.html#ace4f23e2d575b5b5abe37fdca8efd787">userName</a>)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Connect to an ip address with the given user name.  <a href="#a0f7f289635183b1082894f230a989006"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#abd947a2edb4d5053286f25b4c9f041c1">disconnect</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Disconnect from the peer.  <a href="#abd947a2edb4d5053286f25b4c9f041c1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#ae76b6c306ef15d162fe652c38c78d4e2">sendUserName</a> (const std::string &amp;<a class="el" href="classWinsockNetwork.html#ace4f23e2d575b5b5abe37fdca8efd787">userName</a>)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send our user name to the peer.  <a href="#ae76b6c306ef15d162fe652c38c78d4e2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a420d4e6b5c698476a94dcdb503233de7">sendChatMessage</a> (const std::string &amp;message)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a chat message to the other player.  <a href="#a420d4e6b5c698476a94dcdb503233de7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a20ed4411ec34336c6a213b15cc3fcad9">sendStartGame</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a start game message to the peer.  <a href="#a20ed4411ec34336c6a213b15cc3fcad9"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#ae4412629d2ee052afc41c81f36cfad50">sendPauseGame</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#ae4412629d2ee052afc41c81f36cfad50">sendPauseGame</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a pause game message to the peer.  <a href="#ae4412629d2ee052afc41c81f36cfad50"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a877c8001bbd880295e0458c3377dca25">sendEndGame</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a877c8001bbd880295e0458c3377dca25">sendEndGame</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send an end game message to the peer.  <a href="#a877c8001bbd880295e0458c3377dca25"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a36362dbaa70fbe00dd48fded21464888">sendVideoData</a> (const <a class="el" href="structVideoData.html">VideoData</a> &amp;video)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send video data to the peer.  <a href="#a36362dbaa70fbe00dd48fded21464888"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#ab27dd7393a89573f9e75e1a50efbc833">sendPlayerPosition</a> (const cVector3d &amp;position)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send the players position to the peer.  <a href="#ab27dd7393a89573f9e75e1a50efbc833"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#af0456294cf39244cc59f1ca81e2aa2d3">sendSlingshotPosition</a> (const cVector3d &amp;position)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send the slingshot position to the peer.  <a href="#af0456294cf39244cc59f1ca81e2aa2d3"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#accb610c314dd94a1649bcfe101c93997">sendProjectile</a> (const <a class="el" href="classProjectile.html">Projectile</a> &amp;projectile)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a projectile to the peer.  <a href="#accb610c314dd94a1649bcfe101c93997"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual rc_network&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a0a8ced3a30f215e71114b9fa94b3d1e3">sendSlingshotPullback</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a slingshot pullback event to the peer.  <a href="#a0a8ced3a30f215e71114b9fa94b3d1e3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#ab27dd7393a89573f9e75e1a50efbc833">sendPlayerPosition</a> (const cVector3d &amp;position)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a player position to the other player.  <a href="#ab27dd7393a89573f9e75e1a50efbc833"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a587efadbb4e7189d749a38bff7cdf504">sendSlingshotPullback</a> (const cVector3d &amp;position)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send the slingshot pullback position to the peer.  <a href="#a587efadbb4e7189d749a38bff7cdf504"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#accb610c314dd94a1649bcfe101c93997">sendProjectile</a> (const <a class="el" href="classProjectile.html">Projectile</a> &amp;projectile)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a projectile to the other player.  <a href="#accb610c314dd94a1649bcfe101c93997"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#aa2729abffd0d31c14e11d8e6d0eed13a">sendGameOver</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a message to the peer letting him know that we have lost the game.  <a href="#aa2729abffd0d31c14e11d8e6d0eed13a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a5dd67044358bfcbe7f70318249cb260d">sendPlayerHit</a> (<a class="el" href="group__Common.html#gaa22d3933804e3afcd4eac294dded7434">BodyPart_t</a> bodyPart)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a message to the peer letting him know that we have been hit.  <a href="#a5dd67044358bfcbe7f70318249cb260d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a2f3494e76bc83bd0f15928b1d9fa52b1">sendPhysicsSync</a> (const <a class="el" href="classPhysicsSync.html">PhysicsSync</a> &amp;sync)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a physics sync object to the peer so that he can synchronize his game.  <a href="#a2f3494e76bc83bd0f15928b1d9fa52b1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a8c621566b7ce641d86797569346fcaad">isConnected</a> () const </td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Determines if we are connected to a peer.  <a href="#a8c621566b7ce641d86797569346fcaad"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a7cbc0e15323359b9bdb862342e406f23">isListening</a> () const </td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Determines if we are listening for connections.  <a href="#a7cbc0e15323359b9bdb862342e406f23"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a011b39d509309dd98f3b798e7c6b7c62"></a><!-- doxytag: member="WinsockNetwork::notifyAccept" ref="a011b39d509309dd98f3b798e7c6b7c62" args="(NetworkSocket *socket)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>notifyAccept</b> (<a class="el" href="classNetworkSocket.html">NetworkSocket</a> *socket)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a011b39d509309dd98f3b798e7c6b7c62">notifyAccept</a> (<a class="el" href="classNetworkSocket.html">NetworkSocket</a> *socket)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Notify the network interface that a network connection has been accepted.  <a href="#a011b39d509309dd98f3b798e7c6b7c62"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a61fa7847068b09d51fd6e9ec77c48387">controlReceive</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Receive messages from the control socket.  <a href="#a61fa7847068b09d51fd6e9ec77c48387"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#af3c09d4effb71590f624eb8dd1f6b97c">dataReceive</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Receive messages from the data socket.  <a href="#af3c09d4effb71590f624eb8dd1f6b97c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a81e7f99f744e1c41a161739bd7b9133e">resetSockets</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reset the sockets to their original state.  <a href="#a81e7f99f744e1c41a161739bd7b9133e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a4b6dee85d574e3149b93f87f708a96f2">shutdownSockets</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Shutdown the send operation on the sockets.  <a href="#a4b6dee85d574e3149b93f87f708a96f2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a254444f84b9d7b611df5b20efba40c99">closeSockets</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Close the sockets.  <a href="#a254444f84b9d7b611df5b20efba40c99"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a82b3b9d8c254e0ee8d51ffc4f70bb403">resetConnectionStatus</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Resets variables related to the connection status.  <a href="#a82b3b9d8c254e0ee8d51ffc4f70bb403"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#afa8326d1575a3ca117582f56bd480d35">initializeConnection</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Initialize the connection, this will create the threads for receiving.  <a href="#afa8326d1575a3ca117582f56bd480d35"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a17dd443de3f6c293ce0b9858d8b1e02a">establishConnection</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Establishes the connection.  <a href="#a17dd443de3f6c293ce0b9858d8b1e02a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a5cfa151bd5fd523f6eaf094435694679">terminateConnection</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Terminate the network connection and reset everything.  <a href="#a5cfa151bd5fd523f6eaf094435694679"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#aed7e6b6ccb1758d0c54f160dc083b619">sendControlMessage</a> (const <a class="el" href="classPacket.html">ControlPacket</a> &amp;message)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a control message to the peer.  <a href="#aed7e6b6ccb1758d0c54f160dc083b619"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a4e4c7ffc12d92944ca727a912e97a537">peerDisconnect</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reset the network connection and notify the observers that the peer has disconnected.  <a href="#a4e4c7ffc12d92944ca727a912e97a537"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a0e884da881373a5041bee283ee97cdbe">networkError</a> (<a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> error)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reset the network connection and notify the observers that a network error has occured.  <a href="#a0e884da881373a5041bee283ee97cdbe"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a09e0e078cedabce8837154d5e123ce99">syncSendDataMessage</a> (const <a class="el" href="classPacket.html">DataPacket</a> &amp;packet)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a data message synchronously.  <a href="#a09e0e078cedabce8837154d5e123ce99"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a1676871ebba12ffcf8739d76d3fcea07">handleDataMessage</a> (const <a class="el" href="classPacket.html">DataPacket</a> &amp;message)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Handle a data message.  <a href="#a1676871ebba12ffcf8739d76d3fcea07"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#abedeafaff49d603f443e75ad88e3c09c">syncSendControlMessage</a> (const <a class="el" href="classPacket.html">ControlPacket</a> &amp;packet)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send a control message synchronously.  <a href="#abedeafaff49d603f443e75ad88e3c09c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a9e07fee153774461dd64d717a931a22e">handleControlPacket</a> (const <a class="el" href="classPacket.html">ControlPacket</a> &amp;packet)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Handle a control packet.  <a href="#a9e07fee153774461dd64d717a931a22e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Common.html#gad1b6674b6f1c58f17e9db75d0a77149f">ConnectionState_t</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a4b19ffac1dbebef7d1614f3042feceb0">getConnectionState</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get the connection state.  <a href="#a4b19ffac1dbebef7d1614f3042feceb0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a509c5c7b87a564edcef4c16bef4c25af">setConnectionState</a> (<a class="el" href="group__Common.html#gad1b6674b6f1c58f17e9db75d0a77149f">ConnectionState_t</a> state)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set the connection state.  <a href="#a509c5c7b87a564edcef4c16bef4c25af"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNetworkSocket.html">NetworkSocket</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#ab05e2a65ff7dbff4321a5db18a049fa3">m_pControlSocket</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Socket used for control messages.  <a href="#ab05e2a65ff7dbff4321a5db18a049fa3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">SOCKET&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a263ef10b976b788d1ac59fba7909bd5c">m_hControlSocket</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The socket handle for the control socket.  <a href="#a263ef10b976b788d1ac59fba7909bd5c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">BOOL&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#af18db3076fb210b93c44cfc47be7c1c9">m_bControlConnected</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">True if the control socket is connected.  <a href="#af18db3076fb210b93c44cfc47be7c1c9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CRITICAL_SECTION&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#aa9e348910c808cb9cea3cb01ad549dad">m_csControlSocketSend</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Protects the control socket from trying to send multiple messages at a time.  <a href="#aa9e348910c808cb9cea3cb01ad549dad"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::auto_ptr&lt; boost::thread &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a2a28c41c23ac78ffb54646dd39a7a296">controlReceiveThread</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The thread for receiving messages through the control socket.  <a href="#a2a28c41c23ac78ffb54646dd39a7a296"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNetworkSocket.html">NetworkSocket</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a2e1290ad360a406031c2a6db9728b99e">m_pDataSocket</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Socket used for data messages.  <a href="#a2e1290ad360a406031c2a6db9728b99e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">SOCKET&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a0b71cd93e1a0888d8f8d9a8edda88f78">m_hDataSocket</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The socket handle for the data socket.  <a href="#a0b71cd93e1a0888d8f8d9a8edda88f78"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">BOOL&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a0a09ce4acd94995e3e0c2ecab4970023">m_bDataConnected</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">True if the data socket is connected.  <a href="#a0a09ce4acd94995e3e0c2ecab4970023"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CRITICAL_SECTION&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a0c9517808fb2d98ac6b627b8e2cd0de8">m_csDataSocketSend</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Protects the data socket from trying to send multiple messages at a time.  <a href="#a0c9517808fb2d98ac6b627b8e2cd0de8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::auto_ptr&lt; boost::thread &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a68e73c0e2faa4a594d5a8323e92e41d3">dataReceiveThread</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The thread for receiving messages through the data socket.  <a href="#a68e73c0e2faa4a594d5a8323e92e41d3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSyncReaderWriters.html">SyncReaderWriters</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a91ea27b06ec6c639ff8187370e4ce261">m_rwsync_ConnectionStatus</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">We need to synchronize the different threads modifying the connection status to avoid race conditions.  <a href="#a91ea27b06ec6c639ff8187370e4ce261"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#ac44f043525eb42f7473bc71f53c3c010">m_bIsServer</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">True if we are the server (listener).  <a href="#ac44f043525eb42f7473bc71f53c3c010"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Common.html#gad1b6674b6f1c58f17e9db75d0a77149f">ConnectionState_t</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a8b04d9d22f1e1965447bbf6f2b60f514">m_connectionState</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The state of the connection.  <a href="#a8b04d9d22f1e1965447bbf6f2b60f514"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CRITICAL_SECTION&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a7704c1b0b5b9307ba8785022ea38640a">m_csConnectionState</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Protects the connection state from concurrent access.  <a href="#a7704c1b0b5b9307ba8785022ea38640a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#acda5a8f30718e150732513222fcf3952">m_bLocalDisconnect</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">True if we are in the process of disconnecting and the disconnect originated from us.  <a href="#acda5a8f30718e150732513222fcf3952"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CRITICAL_SECTION&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#ab585f67503393d8b2608fc9558d1eb8d">m_csLocalDisconnect</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Protects m_bLocalDisconnect from concurrent access.  <a href="#ab585f67503393d8b2608fc9558d1eb8d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#ace4f23e2d575b5b5abe37fdca8efd787">userName</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The user name that we will use to establish a connection to the other player.  <a href="#ace4f23e2d575b5b5abe37fdca8efd787"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CSemaphore *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#aac3699d4165241681183281d560f5cec">m_sEstablished</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The semaphore that will be used to signal a connection established.  <a href="#aac3699d4165241681183281d560f5cec"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#adf8d00131cde385ac4ef5abcca3006f6">chat_port</a> = 8869</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Port number for the control socket.  <a href="#adf8d00131cde385ac4ef5abcca3006f6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#aaf941895214baf812f0f5f443120863a">data_port</a> = 8870</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Port number for the data socket.  <a href="#aaf941895214baf812f0f5f443120863a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a69f8e6cef216f1ce9a2dd13585db21bc">maximum_control_packet_size</a> = 4096</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Maximum size for a control packet.  <a href="#a69f8e6cef216f1ce9a2dd13585db21bc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWinsockNetwork.html#a5bde59b8bc9f7c367409d8f074ca9cb0">maximum_data_packet_size</a> = 100000</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Maximum size for a data packet.  <a href="#a5bde59b8bc9f7c367409d8f074ca9cb0"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p><b>public</b> A concrete implementation of the network class using windows sockets. </p>
+<p>This class uses windows sockets to implement the send/receive functionality. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ac05e14adb6aa2f726fc4f916c9fc6e7e"></a><!-- doxytag: member="WinsockNetwork::WinsockNetwork" ref="ac05e14adb6aa2f726fc4f916c9fc6e7e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">WinsockNetwork::WinsockNetwork </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8229a3b6d82b851ad731e9b51e58e0e9"></a><!-- doxytag: member="WinsockNetwork::~WinsockNetwork" ref="a8229a3b6d82b851ad731e9b51e58e0e9" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">WinsockNetwork::~WinsockNetwork </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+<p>This will close any open resources (sockets). </p>
+
+</div>
+</div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a254444f84b9d7b611df5b20efba40c99"></a><!-- doxytag: member="WinsockNetwork::closeSockets" ref="a254444f84b9d7b611df5b20efba40c99" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WinsockNetwork::closeSockets </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Close the sockets. </p>
+
+</div>
+</div>
 <a class="anchor" id="a0f7f289635183b1082894f230a989006"></a><!-- doxytag: member="WinsockNetwork::connect" ref="a0f7f289635183b1082894f230a989006" args="(const std::string &amp;ipAddress, const std::string &amp;userName)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rc_network WinsockNetwork::connect </td>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> WinsockNetwork::connect </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&nbsp;</td>
           <td class="paramname"> <em>ipAddress</em>, </td>
@@ -125,17 +291,57 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>notifyAccept</b> (<a 
 </div>
 <div class="memdoc">
 
-<p>Attempt to connect to a peer. </p>
+<p>Connect to an ip address with the given user name. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>ipAddress</em>&nbsp;</td><td>The ip address that we will connect to </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>userName</em>&nbsp;</td><td>The username that will be used to establish the connection </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>ipAddress</em>&nbsp;</td><td>The ipaddress to connect to. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>userName</em>&nbsp;</td><td>The user name to be used when establishing the connection. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if we are now connected to the peer </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>error code </dd></dl>
 
 <p>Implements <a class="el" href="classNetwork.html#a105f5e229e0ac9ff2b718dd34112c292">Network</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a61fa7847068b09d51fd6e9ec77c48387"></a><!-- doxytag: member="WinsockNetwork::controlReceive" ref="a61fa7847068b09d51fd6e9ec77c48387" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WinsockNetwork::controlReceive </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Receive messages from the control socket. </p>
+<p>This is an infinite loop and is meant to be run in a thread. </p>
+
+</div>
+</div>
+<a class="anchor" id="af3c09d4effb71590f624eb8dd1f6b97c"></a><!-- doxytag: member="WinsockNetwork::dataReceive" ref="af3c09d4effb71590f624eb8dd1f6b97c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WinsockNetwork::dataReceive </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Receive messages from the data socket. </p>
+<p>This is an infinite loop and is meant to be run in a thread. </p>
 
 </div>
 </div>
@@ -144,7 +350,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>notifyAccept</b> (<a 
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rc_network WinsockNetwork::disconnect </td>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> WinsockNetwork::disconnect </td>
           <td>(</td>
           <td class="paramname"></td>
           <td>&nbsp;)&nbsp;</td>
@@ -154,10 +360,121 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>notifyAccept</b> (<a 
 </div>
 <div class="memdoc">
 
-<p>Disconnect from a peer. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if we successfully disconnected </dd></dl>
+<p>Disconnect from the peer. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>error code </dd></dl>
 
 <p>Implements <a class="el" href="classNetwork.html#a1b0e29fc9936615e76c1db95caba0a9e">Network</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a17dd443de3f6c293ce0b9858d8b1e02a"></a><!-- doxytag: member="WinsockNetwork::establishConnection" ref="a17dd443de3f6c293ce0b9858d8b1e02a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> WinsockNetwork::establishConnection </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Establishes the connection. </p>
+<p>This will send any messages that need to be sent for the connection to be established. Currently, all we need to send is our user name. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4b19ffac1dbebef7d1614f3042feceb0"></a><!-- doxytag: member="WinsockNetwork::getConnectionState" ref="a4b19ffac1dbebef7d1614f3042feceb0" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Common.html#gad1b6674b6f1c58f17e9db75d0a77149f">ConnectionState_t</a> WinsockNetwork::getConnectionState </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the connection state. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The current state of the connection. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9e07fee153774461dd64d717a931a22e"></a><!-- doxytag: member="WinsockNetwork::handleControlPacket" ref="a9e07fee153774461dd64d717a931a22e" args="(const ControlPacket &amp;packet)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WinsockNetwork::handleControlPacket </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classPacket.html">ControlPacket</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>packet</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Handle a control packet. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>packet</em>&nbsp;</td><td>The control packet to handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1676871ebba12ffcf8739d76d3fcea07"></a><!-- doxytag: member="WinsockNetwork::handleDataMessage" ref="a1676871ebba12ffcf8739d76d3fcea07" args="(const DataPacket &amp;message)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WinsockNetwork::handleDataMessage </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classPacket.html">DataPacket</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>message</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Handle a data message. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>message</em>&nbsp;</td><td>The data message to handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="afa8326d1575a3ca117582f56bd480d35"></a><!-- doxytag: member="WinsockNetwork::initializeConnection" ref="afa8326d1575a3ca117582f56bd480d35" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> WinsockNetwork::initializeConnection </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Initialize the connection, this will create the threads for receiving. </p>
 
 </div>
 </div>
@@ -177,7 +494,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>notifyAccept</b> (<a 
 <div class="memdoc">
 
 <p>Determines if we are connected to a peer. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>true if we are connected to a peer </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if we are connected. </dd></dl>
 
 <p>Implements <a class="el" href="classNetwork.html#ab84ebbf03390c5ee99a27e2b340e3518">Network</a>.</p>
 
@@ -199,7 +516,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>notifyAccept</b> (<a 
 <div class="memdoc">
 
 <p>Determines if we are listening for connections. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>true if we are listening for connections </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if we are listening. </dd></dl>
 
 <p>Implements <a class="el" href="classNetwork.html#a1e8342d061f8e1b28d50d966e946650b">Network</a>.</p>
 
@@ -210,7 +527,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>notifyAccept</b> (<a 
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rc_network WinsockNetwork::listen </td>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> WinsockNetwork::listen </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&nbsp;</td>
           <td class="paramname"> <em>userName</em></td>
@@ -221,16 +538,126 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>notifyAccept</b> (<a 
 </div>
 <div class="memdoc">
 
-<p>Start listening for connections. </p>
+<p>Start listening for connections with the given user name. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>userName</em>&nbsp;</td><td>The username used to establish the connection </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>userName</em>&nbsp;</td><td>The user name to be used when establishing the connection. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if listening was successful </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>error code </dd></dl>
 
 <p>Implements <a class="el" href="classNetwork.html#afb5306e2b769c01780aaa44d2c14306d">Network</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0e884da881373a5041bee283ee97cdbe"></a><!-- doxytag: member="WinsockNetwork::networkError" ref="a0e884da881373a5041bee283ee97cdbe" args="(rc_network error)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WinsockNetwork::networkError </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td>
+          <td class="paramname"> <em>error</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reset the network connection and notify the observers that a network error has occured. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>error</em>&nbsp;</td><td>The error that occured. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a011b39d509309dd98f3b798e7c6b7c62"></a><!-- doxytag: member="WinsockNetwork::notifyAccept" ref="a011b39d509309dd98f3b798e7c6b7c62" args="(NetworkSocket *socket)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WinsockNetwork::notifyAccept </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classNetworkSocket.html">NetworkSocket</a> *&nbsp;</td>
+          <td class="paramname"> <em>socket</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Notify the network interface that a network connection has been accepted. </p>
+<p>This is called by the sockets to let us know when a connection has been accepted. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>socket</em>&nbsp;</td><td>The socket that has accepted the connection. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4e4c7ffc12d92944ca727a912e97a537"></a><!-- doxytag: member="WinsockNetwork::peerDisconnect" ref="a4e4c7ffc12d92944ca727a912e97a537" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WinsockNetwork::peerDisconnect </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reset the network connection and notify the observers that the peer has disconnected. </p>
+
+</div>
+</div>
+<a class="anchor" id="a82b3b9d8c254e0ee8d51ffc4f70bb403"></a><!-- doxytag: member="WinsockNetwork::resetConnectionStatus" ref="a82b3b9d8c254e0ee8d51ffc4f70bb403" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WinsockNetwork::resetConnectionStatus </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Resets variables related to the connection status. </p>
+
+</div>
+</div>
+<a class="anchor" id="a81e7f99f744e1c41a161739bd7b9133e"></a><!-- doxytag: member="WinsockNetwork::resetSockets" ref="a81e7f99f744e1c41a161739bd7b9133e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WinsockNetwork::resetSockets </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reset the sockets to their original state. </p>
 
 </div>
 </div>
@@ -239,7 +666,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>notifyAccept</b> (<a 
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rc_network WinsockNetwork::sendChatMessage </td>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> WinsockNetwork::sendChatMessage </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&nbsp;</td>
           <td class="paramname"> <em>message</em></td>
@@ -250,16 +677,43 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>notifyAccept</b> (<a 
 </div>
 <div class="memdoc">
 
-<p>Send a chat message to the peer. </p>
+<p>Send a chat message to the other player. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>message</em>&nbsp;</td><td>The chat message that will be sent to the peer. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>message</em>&nbsp;</td><td>The chat message to send. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received. </dd></dl>
 
 <p>Implements <a class="el" href="classNetwork.html#aa5e1e44e3cb4862b2c343999c89ce3b5">Network</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aed7e6b6ccb1758d0c54f160dc083b619"></a><!-- doxytag: member="WinsockNetwork::sendControlMessage" ref="aed7e6b6ccb1758d0c54f160dc083b619" args="(const ControlPacket &amp;message)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> WinsockNetwork::sendControlMessage </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classPacket.html">ControlPacket</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>message</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Send a control message to the peer. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>message</em>&nbsp;</td><td>The control message to send. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The error code. </dd></dl>
 
 </div>
 </div>
@@ -268,7 +722,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>notifyAccept</b> (<a 
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rc_network WinsockNetwork::sendEndGame </td>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> WinsockNetwork::sendEndGame </td>
           <td>(</td>
           <td class="paramname"></td>
           <td>&nbsp;)&nbsp;</td>
@@ -279,9 +733,32 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>notifyAccept</b> (<a 
 <div class="memdoc">
 
 <p>Send an end game message to the peer. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received </dd></dl>
+<p>This is used to tell the peer that we have ended the game. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received. </dd></dl>
 
 <p>Implements <a class="el" href="classNetwork.html#ae3f72f3003309c6d38105f504db8ce05">Network</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa2729abffd0d31c14e11d8e6d0eed13a"></a><!-- doxytag: member="WinsockNetwork::sendGameOver" ref="aa2729abffd0d31c14e11d8e6d0eed13a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> WinsockNetwork::sendGameOver </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Send a message to the peer letting him know that we have lost the game. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received </dd></dl>
+
+<p>Implements <a class="el" href="classNetwork.html#a3b910c81b63814007c6ceebb87125287">Network</a>.</p>
 
 </div>
 </div>
@@ -290,7 +767,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>notifyAccept</b> (<a 
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rc_network WinsockNetwork::sendPauseGame </td>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> WinsockNetwork::sendPauseGame </td>
           <td>(</td>
           <td class="paramname"></td>
           <td>&nbsp;)&nbsp;</td>
@@ -301,9 +778,68 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>notifyAccept</b> (<a 
 <div class="memdoc">
 
 <p>Send a pause game message to the peer. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received </dd></dl>
+<p>This is used to tell the peer that we have paused the game. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received. </dd></dl>
 
 <p>Implements <a class="el" href="classNetwork.html#ac60291a8d99468ebc38d085fc0455df0">Network</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2f3494e76bc83bd0f15928b1d9fa52b1"></a><!-- doxytag: member="WinsockNetwork::sendPhysicsSync" ref="a2f3494e76bc83bd0f15928b1d9fa52b1" args="(const PhysicsSync &amp;sync)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> WinsockNetwork::sendPhysicsSync </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classPhysicsSync.html">PhysicsSync</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>sync</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Send a physics sync object to the peer so that he can synchronize his game. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>sync</em>&nbsp;</td><td>The sync object. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received. </dd></dl>
+
+<p>Implements <a class="el" href="classNetwork.html#a28f288d3f5531426ca7e63a4bb1fd0b1">Network</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5dd67044358bfcbe7f70318249cb260d"></a><!-- doxytag: member="WinsockNetwork::sendPlayerHit" ref="a5dd67044358bfcbe7f70318249cb260d" args="(BodyPart_t bodyPart)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> WinsockNetwork::sendPlayerHit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Common.html#gaa22d3933804e3afcd4eac294dded7434">BodyPart_t</a>&nbsp;</td>
+          <td class="paramname"> <em>bodyPart</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Send a message to the peer letting him know that we have been hit. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>bodyPart</em>&nbsp;</td><td>The body part that was hit. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received. </dd></dl>
+
+<p>Implements <a class="el" href="classNetwork.html#a8fb9019d9d77bac90340545541b2e383">Network</a>.</p>
 
 </div>
 </div>
@@ -312,7 +848,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>notifyAccept</b> (<a 
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rc_network WinsockNetwork::sendPlayerPosition </td>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> WinsockNetwork::sendPlayerPosition </td>
           <td>(</td>
           <td class="paramtype">const cVector3d &amp;&nbsp;</td>
           <td class="paramname"> <em>position</em></td>
@@ -323,14 +859,14 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>notifyAccept</b> (<a 
 </div>
 <div class="memdoc">
 
-<p>Send the players position to the peer. </p>
+<p>Send a player position to the other player. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>position</em>&nbsp;</td><td>Our player position that will be sent to the peer. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>position</em>&nbsp;</td><td>The position to send. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received. </dd></dl>
 
 <p>Implements <a class="el" href="classNetwork.html#a9a2eb94c34d8d93f7490184cd2526e62">Network</a>.</p>
 
@@ -341,7 +877,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>notifyAccept</b> (<a 
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rc_network WinsockNetwork::sendProjectile </td>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> WinsockNetwork::sendProjectile </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classProjectile.html">Projectile</a> &amp;&nbsp;</td>
           <td class="paramname"> <em>projectile</em></td>
@@ -352,25 +888,25 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>notifyAccept</b> (<a 
 </div>
 <div class="memdoc">
 
-<p>Send a projectile to the peer. </p>
+<p>Send a projectile to the other player. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>projectile</em>&nbsp;</td><td>The projectile that will be sent to the peer. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>projectile</em>&nbsp;</td><td>The projectile to send. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received. </dd></dl>
 
 <p>Implements <a class="el" href="classNetwork.html#a477324500341f146fc7fc7411290a424">Network</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="af0456294cf39244cc59f1ca81e2aa2d3"></a><!-- doxytag: member="WinsockNetwork::sendSlingshotPosition" ref="af0456294cf39244cc59f1ca81e2aa2d3" args="(const cVector3d &amp;position)" -->
+<a class="anchor" id="a587efadbb4e7189d749a38bff7cdf504"></a><!-- doxytag: member="WinsockNetwork::sendSlingshotPullback" ref="a587efadbb4e7189d749a38bff7cdf504" args="(const cVector3d &amp;position)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rc_network WinsockNetwork::sendSlingshotPosition </td>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> WinsockNetwork::sendSlingshotPullback </td>
           <td>(</td>
           <td class="paramtype">const cVector3d &amp;&nbsp;</td>
           <td class="paramname"> <em>position</em></td>
@@ -381,39 +917,17 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>notifyAccept</b> (<a 
 </div>
 <div class="memdoc">
 
-<p>Send the slingshot position to the peer. </p>
+<p>Send the slingshot pullback position to the peer. </p>
+<p>The pullback position is the position of the sling when the slingshot is being fired. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>position</em>&nbsp;</td><td>Our slingshot position that will be sent to the peer. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>position</em>&nbsp;</td><td>The position to send. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received. </dd></dl>
 
-<p>Implements <a class="el" href="classNetwork.html#aa105332ed8a1325a89f1f3e0a9d27521">Network</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a0a8ced3a30f215e71114b9fa94b3d1e3"></a><!-- doxytag: member="WinsockNetwork::sendSlingshotPullback" ref="a0a8ced3a30f215e71114b9fa94b3d1e3" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">rc_network WinsockNetwork::sendSlingshotPullback </td>
-          <td>(</td>
-          <td class="paramname"></td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Send a slingshot pullback event to the peer. </p>
-<p>This lets the peer know that we have started to pull back our slingshot. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received </dd></dl>
-
-<p>Implements <a class="el" href="classNetwork.html#ad4fd766e5bae5a3f002a26218b60b426">Network</a>.</p>
+<p>Implements <a class="el" href="classNetwork.html#a0bac3128a353f86f12015302e286e59f">Network</a>.</p>
 
 </div>
 </div>
@@ -422,7 +936,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>notifyAccept</b> (<a 
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rc_network WinsockNetwork::sendStartGame </td>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> WinsockNetwork::sendStartGame </td>
           <td>(</td>
           <td class="paramname"></td>
           <td>&nbsp;)&nbsp;</td>
@@ -433,7 +947,8 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>notifyAccept</b> (<a 
 <div class="memdoc">
 
 <p>Send a start game message to the peer. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received </dd></dl>
+<p>This is used to tell the peer that we have started the game. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received. </dd></dl>
 
 <p>Implements <a class="el" href="classNetwork.html#a3f6b451fd546f2e44eb2c14661bc1ad3">Network</a>.</p>
 
@@ -444,7 +959,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>notifyAccept</b> (<a 
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rc_network WinsockNetwork::sendUserName </td>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> WinsockNetwork::sendUserName </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&nbsp;</td>
           <td class="paramname"> <em>userName</em></td>
@@ -455,52 +970,472 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>notifyAccept</b> (<a 
 </div>
 <div class="memdoc">
 
-<p>Send our username to the peer. </p>
-<p>The user name is sent when the connection is established so this should only be used if a user changes there username </p>
+<p>Send our user name to the peer. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>userName</em>&nbsp;</td><td>Our new username that will be sent to the peer </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>userName</em>&nbsp;</td><td>Our user name. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received. </dd></dl>
 
 <p>Implements <a class="el" href="classNetwork.html#a741e75b2e9adfc188c53e150b4dd4610">Network</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a36362dbaa70fbe00dd48fded21464888"></a><!-- doxytag: member="WinsockNetwork::sendVideoData" ref="a36362dbaa70fbe00dd48fded21464888" args="(const VideoData &amp;video)" -->
+<a class="anchor" id="a509c5c7b87a564edcef4c16bef4c25af"></a><!-- doxytag: member="WinsockNetwork::setConnectionState" ref="a509c5c7b87a564edcef4c16bef4c25af" args="(ConnectionState_t state)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rc_network WinsockNetwork::sendVideoData </td>
+          <td class="memname">void WinsockNetwork::setConnectionState </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structVideoData.html">VideoData</a> &amp;&nbsp;</td>
-          <td class="paramname"> <em>video</em></td>
+          <td class="paramtype"><a class="el" href="group__Common.html#gad1b6674b6f1c58f17e9db75d0a77149f">ConnectionState_t</a>&nbsp;</td>
+          <td class="paramname"> <em>state</em></td>
           <td>&nbsp;)&nbsp;</td>
-          <td><code> [virtual]</code></td>
+          <td><code> [private]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Send video data to the peer. </p>
+<p>Set the connection state. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>video</em>&nbsp;</td><td>The video data that will be sent to the peer. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>state</em>&nbsp;</td><td>The new connection state. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The error code, SUCCESS if the message was sent and received </dd></dl>
 
-<p>Implements <a class="el" href="classNetwork.html#a189df8819d21d4f1a277ca753453045b">Network</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a4b6dee85d574e3149b93f87f708a96f2"></a><!-- doxytag: member="WinsockNetwork::shutdownSockets" ref="a4b6dee85d574e3149b93f87f708a96f2" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WinsockNetwork::shutdownSockets </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Shutdown the send operation on the sockets. </p>
+
+</div>
+</div>
+<a class="anchor" id="abedeafaff49d603f443e75ad88e3c09c"></a><!-- doxytag: member="WinsockNetwork::syncSendControlMessage" ref="abedeafaff49d603f443e75ad88e3c09c" args="(const ControlPacket &amp;packet)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> WinsockNetwork::syncSendControlMessage </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classPacket.html">ControlPacket</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>packet</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Send a control message synchronously. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>packet</em>&nbsp;</td><td>The control packet to send. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The error code. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a09e0e078cedabce8837154d5e123ce99"></a><!-- doxytag: member="WinsockNetwork::syncSendDataMessage" ref="a09e0e078cedabce8837154d5e123ce99" args="(const DataPacket &amp;packet)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> WinsockNetwork::syncSendDataMessage </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classPacket.html">DataPacket</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>packet</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Send a data message synchronously. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>packet</em>&nbsp;</td><td>The data packet to send. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The error code. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5cfa151bd5fd523f6eaf094435694679"></a><!-- doxytag: member="WinsockNetwork::terminateConnection" ref="a5cfa151bd5fd523f6eaf094435694679" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WinsockNetwork::terminateConnection </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Terminate the network connection and reset everything. </p>
+
+</div>
+</div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="adf8d00131cde385ac4ef5abcca3006f6"></a><!-- doxytag: member="WinsockNetwork::chat_port" ref="adf8d00131cde385ac4ef5abcca3006f6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="classWinsockNetwork.html#adf8d00131cde385ac4ef5abcca3006f6">WinsockNetwork::chat_port</a> = 8869<code> [static, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Port number for the control socket. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2a28c41c23ac78ffb54646dd39a7a296"></a><!-- doxytag: member="WinsockNetwork::controlReceiveThread" ref="a2a28c41c23ac78ffb54646dd39a7a296" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::auto_ptr&lt;boost::thread&gt; <a class="el" href="classWinsockNetwork.html#a2a28c41c23ac78ffb54646dd39a7a296">WinsockNetwork::controlReceiveThread</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The thread for receiving messages through the control socket. </p>
+
+</div>
+</div>
+<a class="anchor" id="aaf941895214baf812f0f5f443120863a"></a><!-- doxytag: member="WinsockNetwork::data_port" ref="aaf941895214baf812f0f5f443120863a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="classWinsockNetwork.html#aaf941895214baf812f0f5f443120863a">WinsockNetwork::data_port</a> = 8870<code> [static, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Port number for the data socket. </p>
+
+</div>
+</div>
+<a class="anchor" id="a68e73c0e2faa4a594d5a8323e92e41d3"></a><!-- doxytag: member="WinsockNetwork::dataReceiveThread" ref="a68e73c0e2faa4a594d5a8323e92e41d3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::auto_ptr&lt;boost::thread&gt; <a class="el" href="classWinsockNetwork.html#a68e73c0e2faa4a594d5a8323e92e41d3">WinsockNetwork::dataReceiveThread</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The thread for receiving messages through the data socket. </p>
+
+</div>
+</div>
+<a class="anchor" id="af18db3076fb210b93c44cfc47be7c1c9"></a><!-- doxytag: member="WinsockNetwork::m_bControlConnected" ref="af18db3076fb210b93c44cfc47be7c1c9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL <a class="el" href="classWinsockNetwork.html#af18db3076fb210b93c44cfc47be7c1c9">WinsockNetwork::m_bControlConnected</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>True if the control socket is connected. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0a09ce4acd94995e3e0c2ecab4970023"></a><!-- doxytag: member="WinsockNetwork::m_bDataConnected" ref="a0a09ce4acd94995e3e0c2ecab4970023" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL <a class="el" href="classWinsockNetwork.html#a0a09ce4acd94995e3e0c2ecab4970023">WinsockNetwork::m_bDataConnected</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>True if the data socket is connected. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac44f043525eb42f7473bc71f53c3c010"></a><!-- doxytag: member="WinsockNetwork::m_bIsServer" ref="ac44f043525eb42f7473bc71f53c3c010" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classWinsockNetwork.html#ac44f043525eb42f7473bc71f53c3c010">WinsockNetwork::m_bIsServer</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>True if we are the server (listener). </p>
+
+</div>
+</div>
+<a class="anchor" id="acda5a8f30718e150732513222fcf3952"></a><!-- doxytag: member="WinsockNetwork::m_bLocalDisconnect" ref="acda5a8f30718e150732513222fcf3952" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classWinsockNetwork.html#acda5a8f30718e150732513222fcf3952">WinsockNetwork::m_bLocalDisconnect</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>True if we are in the process of disconnecting and the disconnect originated from us. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8b04d9d22f1e1965447bbf6f2b60f514"></a><!-- doxytag: member="WinsockNetwork::m_connectionState" ref="a8b04d9d22f1e1965447bbf6f2b60f514" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Common.html#gad1b6674b6f1c58f17e9db75d0a77149f">ConnectionState_t</a> <a class="el" href="classWinsockNetwork.html#a8b04d9d22f1e1965447bbf6f2b60f514">WinsockNetwork::m_connectionState</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The state of the connection. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7704c1b0b5b9307ba8785022ea38640a"></a><!-- doxytag: member="WinsockNetwork::m_csConnectionState" ref="a7704c1b0b5b9307ba8785022ea38640a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CRITICAL_SECTION <a class="el" href="classWinsockNetwork.html#a7704c1b0b5b9307ba8785022ea38640a">WinsockNetwork::m_csConnectionState</a><code> [mutable, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Protects the connection state from concurrent access. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa9e348910c808cb9cea3cb01ad549dad"></a><!-- doxytag: member="WinsockNetwork::m_csControlSocketSend" ref="aa9e348910c808cb9cea3cb01ad549dad" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CRITICAL_SECTION <a class="el" href="classWinsockNetwork.html#aa9e348910c808cb9cea3cb01ad549dad">WinsockNetwork::m_csControlSocketSend</a><code> [mutable, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Protects the control socket from trying to send multiple messages at a time. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0c9517808fb2d98ac6b627b8e2cd0de8"></a><!-- doxytag: member="WinsockNetwork::m_csDataSocketSend" ref="a0c9517808fb2d98ac6b627b8e2cd0de8" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CRITICAL_SECTION <a class="el" href="classWinsockNetwork.html#a0c9517808fb2d98ac6b627b8e2cd0de8">WinsockNetwork::m_csDataSocketSend</a><code> [mutable, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Protects the data socket from trying to send multiple messages at a time. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab585f67503393d8b2608fc9558d1eb8d"></a><!-- doxytag: member="WinsockNetwork::m_csLocalDisconnect" ref="ab585f67503393d8b2608fc9558d1eb8d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CRITICAL_SECTION <a class="el" href="classWinsockNetwork.html#ab585f67503393d8b2608fc9558d1eb8d">WinsockNetwork::m_csLocalDisconnect</a><code> [mutable, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Protects m_bLocalDisconnect from concurrent access. </p>
+
+</div>
+</div>
+<a class="anchor" id="a263ef10b976b788d1ac59fba7909bd5c"></a><!-- doxytag: member="WinsockNetwork::m_hControlSocket" ref="a263ef10b976b788d1ac59fba7909bd5c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SOCKET <a class="el" href="classWinsockNetwork.html#a263ef10b976b788d1ac59fba7909bd5c">WinsockNetwork::m_hControlSocket</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The socket handle for the control socket. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0b71cd93e1a0888d8f8d9a8edda88f78"></a><!-- doxytag: member="WinsockNetwork::m_hDataSocket" ref="a0b71cd93e1a0888d8f8d9a8edda88f78" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SOCKET <a class="el" href="classWinsockNetwork.html#a0b71cd93e1a0888d8f8d9a8edda88f78">WinsockNetwork::m_hDataSocket</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The socket handle for the data socket. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab05e2a65ff7dbff4321a5db18a049fa3"></a><!-- doxytag: member="WinsockNetwork::m_pControlSocket" ref="ab05e2a65ff7dbff4321a5db18a049fa3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classNetworkSocket.html">NetworkSocket</a>* <a class="el" href="classWinsockNetwork.html#ab05e2a65ff7dbff4321a5db18a049fa3">WinsockNetwork::m_pControlSocket</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Socket used for control messages. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2e1290ad360a406031c2a6db9728b99e"></a><!-- doxytag: member="WinsockNetwork::m_pDataSocket" ref="a2e1290ad360a406031c2a6db9728b99e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classNetworkSocket.html">NetworkSocket</a>* <a class="el" href="classWinsockNetwork.html#a2e1290ad360a406031c2a6db9728b99e">WinsockNetwork::m_pDataSocket</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Socket used for data messages. </p>
+
+</div>
+</div>
+<a class="anchor" id="a91ea27b06ec6c639ff8187370e4ce261"></a><!-- doxytag: member="WinsockNetwork::m_rwsync_ConnectionStatus" ref="a91ea27b06ec6c639ff8187370e4ce261" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSyncReaderWriters.html">SyncReaderWriters</a> <a class="el" href="classWinsockNetwork.html#a91ea27b06ec6c639ff8187370e4ce261">WinsockNetwork::m_rwsync_ConnectionStatus</a><code> [mutable, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>We need to synchronize the different threads modifying the connection status to avoid race conditions. </p>
+<p>The operations that modify the connection status are: startListening, connect, disconnect, peerDisconnect, notifyAccept and network error Only 1 of these operation can be executed at a time or we will run into synchronization issues. These operations are considered writers in the readers/writers concurrency pattern. The readers are the operations that use the sockets (send/recv). </p>
+
+</div>
+</div>
+<a class="anchor" id="aac3699d4165241681183281d560f5cec"></a><!-- doxytag: member="WinsockNetwork::m_sEstablished" ref="aac3699d4165241681183281d560f5cec" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CSemaphore* <a class="el" href="classWinsockNetwork.html#aac3699d4165241681183281d560f5cec">WinsockNetwork::m_sEstablished</a><code> [mutable, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The semaphore that will be used to signal a connection established. </p>
+
+</div>
+</div>
+<a class="anchor" id="a69f8e6cef216f1ce9a2dd13585db21bc"></a><!-- doxytag: member="WinsockNetwork::maximum_control_packet_size" ref="a69f8e6cef216f1ce9a2dd13585db21bc" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="classWinsockNetwork.html#a69f8e6cef216f1ce9a2dd13585db21bc">WinsockNetwork::maximum_control_packet_size</a> = 4096<code> [static, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Maximum size for a control packet. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5bde59b8bc9f7c367409d8f074ca9cb0"></a><!-- doxytag: member="WinsockNetwork::maximum_data_packet_size" ref="a5bde59b8bc9f7c367409d8f074ca9cb0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="classWinsockNetwork.html#a5bde59b8bc9f7c367409d8f074ca9cb0">WinsockNetwork::maximum_data_packet_size</a> = 100000<code> [static, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Maximum size for a data packet. </p>
+
+</div>
+</div>
+<a class="anchor" id="ace4f23e2d575b5b5abe37fdca8efd787"></a><!-- doxytag: member="WinsockNetwork::userName" ref="ace4f23e2d575b5b5abe37fdca8efd787" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classWinsockNetwork.html#ace4f23e2d575b5b5abe37fdca8efd787">WinsockNetwork::userName</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The user name that we will use to establish a connection to the other player. </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/<a class="el" href="WinsockNetwork_8h_source.html">WinsockNetwork.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/WinsockNetwork.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Network/<a class="el" href="WinsockNetwork_8h_source.html">WinsockNetwork.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Network/<a class="el" href="WinsockNetwork_8cpp.html">WinsockNetwork.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -508,7 +1443,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>notifyAccept</b> (<a 
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -517,7 +1452,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>notifyAccept</b> (<a 
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:10 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:46 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

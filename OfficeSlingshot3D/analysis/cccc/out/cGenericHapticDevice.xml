@@ -35,7 +35,7 @@
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Falcon/NovintFalcon.h" line="92" />
+<source_reference file="../../Falcon/NovintFalcon.h" line="99" />
 </extent>
 </client_module>
 <supplier_module>

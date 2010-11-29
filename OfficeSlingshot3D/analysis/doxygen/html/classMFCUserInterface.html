@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -54,7 +55,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>MFCUserInterface Class Reference</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="MFCUserInterface" --><!-- doxytag: inherits="UserInterface" --><div class="dynheader">
+<!-- doxytag: class="MFCUserInterface" --><!-- doxytag: inherits="UserInterface" -->
+<p>A class Inprementing all the major methods of the <a class="el" href="UserInterface_8h.html">UserInterface.h</a> interface.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="MFCUserInterface_8h_source.html">MFCUserInterface.h</a>&gt;</code></p>
+<div class="dynheader">
 Inheritance diagram for MFCUserInterface:</div>
 <div class="dyncontent">
  <div class="center">
@@ -68,54 +74,680 @@ Inheritance diagram for MFCUserInterface:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7ac72f8cddb94419db9c9ed261ace1b1"></a><!-- doxytag: member="MFCUserInterface::MFCUserInterface" ref="a7ac72f8cddb94419db9c9ed261ace1b1" args="(const UserPreferences &amp;preferences)" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><b>MFCUserInterface</b> (const <a class="el" href="structUserPreferences.html">UserPreferences</a> &amp;preferences)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMFCUserInterface.html#a7ac72f8cddb94419db9c9ed261ace1b1">MFCUserInterface</a> (const <a class="el" href="structUserPreferences.html">UserPreferences</a> &amp;preferences)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#a7ac72f8cddb94419db9c9ed261ace1b1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMFCUserInterface.html#a671b11850af623cb979c72590ab31684">~MFCUserInterface</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#a671b11850af623cb979c72590ab31684"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMFCUserInterface.html#aad532c59dfe347b8a69f92b5b6ee7563">switchCamera</a> (cCamera *camera)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Changes the camera from which the vritual world will be displayed.  <a href="#aad532c59dfe347b8a69f92b5b6ee7563"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="affc39ae32cd234575ce95db40701db01"></a><!-- doxytag: member="MFCUserInterface::displayConnectionStateChanged" ref="affc39ae32cd234575ce95db40701db01" args="(ConnectionState_t state, Player_t player)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>displayConnectionStateChanged</b> (<a class="el" href="namespaceConnectionState.html#ad1b6674b6f1c58f17e9db75d0a77149f">ConnectionState_t</a> state, <a class="el" href="namespacePlayer.html#acc4ced29e6b7e20f602b3c8b60c75228">Player_t</a> player)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5cf1751505da89dc55df1fb12318bd96"></a><!-- doxytag: member="MFCUserInterface::displayGameStateChanged" ref="a5cf1751505da89dc55df1fb12318bd96" args="(GameState_t state, Player_t player)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>displayGameStateChanged</b> (<a class="el" href="namespaceGameState.html#a1026e99904938017415f188e2daba514">GameState_t</a> state, <a class="el" href="namespacePlayer.html#acc4ced29e6b7e20f602b3c8b60c75228">Player_t</a> player)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1eb12e6f9b8729361008d9abd290d245"></a><!-- doxytag: member="MFCUserInterface::displayConnectionFailed" ref="a1eb12e6f9b8729361008d9abd290d245" args="()" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>displayConnectionFailed</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1ad6e96350df96d07b0f4de186c1677c"></a><!-- doxytag: member="MFCUserInterface::displayFailedToListen" ref="a1ad6e96350df96d07b0f4de186c1677c" args="()" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>displayFailedToListen</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a12aafbe2449d1eff42150b84e2b403b2"></a><!-- doxytag: member="MFCUserInterface::displayNetworkError" ref="a12aafbe2449d1eff42150b84e2b403b2" args="()" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>displayNetworkError</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a211917cb2e10228e4cabd54d5b411106"></a><!-- doxytag: member="MFCUserInterface::displayPeerChatMessage" ref="a211917cb2e10228e4cabd54d5b411106" args="(const std::string &amp;message)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>displayPeerChatMessage</b> (const std::string &amp;message)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a93930bcf41087f4f1c0380f12b190714"></a><!-- doxytag: member="MFCUserInterface::displayLocalFrame" ref="a93930bcf41087f4f1c0380f12b190714" args="(const VideoData &amp;video)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>displayLocalFrame</b> (const <a class="el" href="structVideoData.html">VideoData</a> &amp;video)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afea24df787ef3ebdd57ad7c6435e14cc"></a><!-- doxytag: member="MFCUserInterface::displayRemoteFrame" ref="afea24df787ef3ebdd57ad7c6435e14cc" args="(const VideoData &amp;video)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>displayRemoteFrame</b> (const <a class="el" href="structVideoData.html">VideoData</a> &amp;video)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a25bf67955e01502250d4239ea6dc9e6d"></a><!-- doxytag: member="MFCUserInterface::networkConnectButtonPushed" ref="a25bf67955e01502250d4239ea6dc9e6d" args="()" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>networkConnectButtonPushed</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad19ff1d9fe21137d564c7f91d6d9638a"></a><!-- doxytag: member="MFCUserInterface::networkListenButtonPushed" ref="ad19ff1d9fe21137d564c7f91d6d9638a" args="()" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>networkListenButtonPushed</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a05124c9a819899bf74dbbbd1ba27d32d"></a><!-- doxytag: member="MFCUserInterface::networkDisconnectButtonPushed" ref="a05124c9a819899bf74dbbbd1ba27d32d" args="()" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>networkDisconnectButtonPushed</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a645879dc2e81a2d2810d215bbc435d87"></a><!-- doxytag: member="MFCUserInterface::sendChatButtonPushed" ref="a645879dc2e81a2d2810d215bbc435d87" args="(const std::string &amp;message)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>sendChatButtonPushed</b> (const std::string &amp;message)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3ded83efa5ecbc38a21051dd90dc661e"></a><!-- doxytag: member="MFCUserInterface::startGameButtonPushed" ref="a3ded83efa5ecbc38a21051dd90dc661e" args="()" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>startGameButtonPushed</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0bfd2943d3cf9e704bb71880eb3aa865"></a><!-- doxytag: member="MFCUserInterface::exitGameButtonPushed" ref="a0bfd2943d3cf9e704bb71880eb3aa865" args="()" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>exitGameButtonPushed</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a99a9356281a3d713e0fda41940f7a6fb"></a><!-- doxytag: member="MFCUserInterface::pauseGameButtonPushed" ref="a99a9356281a3d713e0fda41940f7a6fb" args="()" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>pauseGameButtonPushed</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab979a02b0fb024ebdd2e8cc958e26d42"></a><!-- doxytag: member="MFCUserInterface::changePreferences" ref="ab979a02b0fb024ebdd2e8cc958e26d42" args="(const UserPreferences &amp;preferences)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>changePreferences</b> (const <a class="el" href="structUserPreferences.html">UserPreferences</a> &amp;preferences)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0953b5a6a8880539f48e33828e1ebdac"></a><!-- doxytag: member="MFCUserInterface::closeApplication" ref="a0953b5a6a8880539f48e33828e1ebdac" args="()" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>closeApplication</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a37ad511facfb8e5b6f34059a3ebf9f57"></a><!-- doxytag: member="MFCUserInterface::setPeerUserName" ref="a37ad511facfb8e5b6f34059a3ebf9f57" args="(const std::string &amp;name)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>setPeerUserName</b> (const std::string &amp;name)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a03a72e69e2586b52ba3acac1e6b39700"></a><!-- doxytag: member="MFCUserInterface::getMainWindow" ref="a03a72e69e2586b52ba3acac1e6b39700" args="()" -->
-CDialog *&nbsp;</td><td class="memItemRight" valign="bottom"><b>getMainWindow</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMFCUserInterface.html#affc39ae32cd234575ce95db40701db01">displayConnectionStateChanged</a> (<a class="el" href="group__Common.html#gad1b6674b6f1c58f17e9db75d0a77149f">ConnectionState_t</a> state, <a class="el" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228">Player_t</a> player)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Display that a certain player has changed the connection state.  <a href="#affc39ae32cd234575ce95db40701db01"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMFCUserInterface.html#a5cf1751505da89dc55df1fb12318bd96">displayGameStateChanged</a> (<a class="el" href="group__Common.html#ga1026e99904938017415f188e2daba514">GameState_t</a> state, <a class="el" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228">Player_t</a> player)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Display that a certain player has changed the game state.  <a href="#a5cf1751505da89dc55df1fb12318bd96"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMFCUserInterface.html#a1eb12e6f9b8729361008d9abd290d245">displayConnectionFailed</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Update the user interface to reflect that a connection has failed.  <a href="#a1eb12e6f9b8729361008d9abd290d245"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMFCUserInterface.html#a1ad6e96350df96d07b0f4de186c1677c">displayFailedToListen</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Update the user interface to reflect that the listen has failed.  <a href="#a1ad6e96350df96d07b0f4de186c1677c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMFCUserInterface.html#a12aafbe2449d1eff42150b84e2b403b2">displayNetworkError</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Update the user interface to reflect that a network error occurred.  <a href="#a12aafbe2449d1eff42150b84e2b403b2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMFCUserInterface.html#a211917cb2e10228e4cabd54d5b411106">displayPeerChatMessage</a> (const std::string &amp;message)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Update the user interface to display a new peer message.  <a href="#a211917cb2e10228e4cabd54d5b411106"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMFCUserInterface.html#a3ce2be516dadc69ae646b8dc0f37b6ec">displayGameOver</a> (<a class="el" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228">Player_t</a> player)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Update the user interface to display game over.  <a href="#a3ce2be516dadc69ae646b8dc0f37b6ec"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMFCUserInterface.html#a7786bd2d3fd4e0974824f2ef2815f48c">paint</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Redraw the screen.  <a href="#a7786bd2d3fd4e0974824f2ef2815f48c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMFCUserInterface.html#a25bf67955e01502250d4239ea6dc9e6d">networkConnectButtonPushed</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">User wants to connect to the peer.  <a href="#a25bf67955e01502250d4239ea6dc9e6d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMFCUserInterface.html#ad19ff1d9fe21137d564c7f91d6d9638a">networkListenButtonPushed</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">User wants to listen for connections.  <a href="#ad19ff1d9fe21137d564c7f91d6d9638a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMFCUserInterface.html#a05124c9a819899bf74dbbbd1ba27d32d">networkDisconnectButtonPushed</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">User wants to disconnect to the peer.  <a href="#a05124c9a819899bf74dbbbd1ba27d32d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMFCUserInterface.html#a645879dc2e81a2d2810d215bbc435d87">sendChatButtonPushed</a> (const std::string &amp;message)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">User wants to send a new chat message.  <a href="#a645879dc2e81a2d2810d215bbc435d87"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMFCUserInterface.html#a3ded83efa5ecbc38a21051dd90dc661e">startGameButtonPushed</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">User wants to start a new game.  <a href="#a3ded83efa5ecbc38a21051dd90dc661e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMFCUserInterface.html#a0bfd2943d3cf9e704bb71880eb3aa865">exitGameButtonPushed</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">User wants to exit the game.  <a href="#a0bfd2943d3cf9e704bb71880eb3aa865"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMFCUserInterface.html#a99a9356281a3d713e0fda41940f7a6fb">pauseGameButtonPushed</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">User wants to pause the game.  <a href="#a99a9356281a3d713e0fda41940f7a6fb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMFCUserInterface.html#ab979a02b0fb024ebdd2e8cc958e26d42">changePreferences</a> (const <a class="el" href="structUserPreferences.html">UserPreferences</a> &amp;preferences)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Update the user's preferences.  <a href="#ab979a02b0fb024ebdd2e8cc958e26d42"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMFCUserInterface.html#a0953b5a6a8880539f48e33828e1ebdac">closeApplication</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">User wants to close the application.  <a href="#a0953b5a6a8880539f48e33828e1ebdac"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMFCUserInterface.html#a37ad511facfb8e5b6f34059a3ebf9f57">setPeerUserName</a> (const std::string &amp;name)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Update the peers user name.  <a href="#a37ad511facfb8e5b6f34059a3ebf9f57"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMFCUserInterface.html#a4302b366e05790bc21e6e27c453c10b7">muteVolume</a> (const bool soundOn)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Mutes the volume.  <a href="#a4302b366e05790bc21e6e27c453c10b7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMFCUserInterface.html#aa4996cba3bd2f61c42526e699f08b92b">changeVolume</a> (const int vol)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Changes the volume.  <a href="#aa4996cba3bd2f61c42526e699f08b92b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMFCUserInterface.html#a421be6e758a0acf2319affc95eec8054">setMutePref</a> (const bool mute)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the mute preference.  <a href="#a421be6e758a0acf2319affc95eec8054"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMFCUserInterface.html#a5fdebc1e7ea2f3138cbf66b47375cfd7">setVolPref</a> (const int vol)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the volume preference.  <a href="#a5fdebc1e7ea2f3138cbf66b47375cfd7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CDialog *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMFCUserInterface.html#a03a72e69e2586b52ba3acac1e6b39700">getMainWindow</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the applications main window.  <a href="#a03a72e69e2586b52ba3acac1e6b39700"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a548760ec3e8f659b262ef3aab3709e7f"></a><!-- doxytag: member="MFCUserInterface::m_pMainDlg" ref="a548760ec3e8f659b262ef3aab3709e7f" args="" -->
-<a class="el" href="classCMainDlg.html">CMainDlg</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><b>m_pMainDlg</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCMainDlg.html">CMainDlg</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMFCUserInterface.html#a548760ec3e8f659b262ef3aab3709e7f">m_pMainDlg</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The applications main window.  <a href="#a548760ec3e8f659b262ef3aab3709e7f"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>A class Inprementing all the major methods of the <a class="el" href="UserInterface_8h.html">UserInterface.h</a> interface. </p>
+<p>This is the main class to link the UI element classes to this package's interface to the mediator. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a7ac72f8cddb94419db9c9ed261ace1b1"></a><!-- doxytag: member="MFCUserInterface::MFCUserInterface" ref="a7ac72f8cddb94419db9c9ed261ace1b1" args="(const UserPreferences &amp;preferences)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MFCUserInterface::MFCUserInterface </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structUserPreferences.html">UserPreferences</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>preferences</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>preferences</em>&nbsp;</td><td>The user's preferences. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a671b11850af623cb979c72590ab31684"></a><!-- doxytag: member="MFCUserInterface::~MFCUserInterface" ref="a671b11850af623cb979c72590ab31684" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MFCUserInterface::~MFCUserInterface </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ab979a02b0fb024ebdd2e8cc958e26d42"></a><!-- doxytag: member="MFCUserInterface::changePreferences" ref="ab979a02b0fb024ebdd2e8cc958e26d42" args="(const UserPreferences &amp;preferences)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MFCUserInterface::changePreferences </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structUserPreferences.html">UserPreferences</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>preferences</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Update the user's preferences. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>preferences</em>&nbsp;</td><td>The new user preferences. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classUserInterface.html#a9cd95da39bf37d49427d8f5b0b8eb862">UserInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa4996cba3bd2f61c42526e699f08b92b"></a><!-- doxytag: member="MFCUserInterface::changeVolume" ref="aa4996cba3bd2f61c42526e699f08b92b" args="(const int vol)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MFCUserInterface::changeVolume </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>vol</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Changes the volume. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>vol</em>&nbsp;</td><td>The new volume </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classUserInterface.html#a60c16e868b2bd5b5c36ca5253c072e84">UserInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0953b5a6a8880539f48e33828e1ebdac"></a><!-- doxytag: member="MFCUserInterface::closeApplication" ref="a0953b5a6a8880539f48e33828e1ebdac" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MFCUserInterface::closeApplication </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>User wants to close the application. </p>
+
+<p>Implements <a class="el" href="classUserInterface.html#a00fb412f6a4ac0da2ca57053ad6d1515">UserInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1eb12e6f9b8729361008d9abd290d245"></a><!-- doxytag: member="MFCUserInterface::displayConnectionFailed" ref="a1eb12e6f9b8729361008d9abd290d245" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MFCUserInterface::displayConnectionFailed </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Update the user interface to reflect that a connection has failed. </p>
+
+<p>Implements <a class="el" href="classUserInterface.html#aa5d1fd621af37b9d57269ea57ea1470a">UserInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="affc39ae32cd234575ce95db40701db01"></a><!-- doxytag: member="MFCUserInterface::displayConnectionStateChanged" ref="affc39ae32cd234575ce95db40701db01" args="(ConnectionState_t state, Player_t player)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MFCUserInterface::displayConnectionStateChanged </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Common.html#gad1b6674b6f1c58f17e9db75d0a77149f">ConnectionState_t</a>&nbsp;</td>
+          <td class="paramname"> <em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228">Player_t</a>&nbsp;</td>
+          <td class="paramname"> <em>player</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Display that a certain player has changed the connection state. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>state</em>&nbsp;</td><td>The new connection state. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>player</em>&nbsp;</td><td>The player that changed the connetion state. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classUserInterface.html#a80c9af3149653a9fcca77994ff921520">UserInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1ad6e96350df96d07b0f4de186c1677c"></a><!-- doxytag: member="MFCUserInterface::displayFailedToListen" ref="a1ad6e96350df96d07b0f4de186c1677c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MFCUserInterface::displayFailedToListen </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Update the user interface to reflect that the listen has failed. </p>
+
+<p>Implements <a class="el" href="classUserInterface.html#a62d5eb6ee2406546e588dcd640e50b9d">UserInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3ce2be516dadc69ae646b8dc0f37b6ec"></a><!-- doxytag: member="MFCUserInterface::displayGameOver" ref="a3ce2be516dadc69ae646b8dc0f37b6ec" args="(Player_t player)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MFCUserInterface::displayGameOver </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228">Player_t</a>&nbsp;</td>
+          <td class="paramname"> <em>player</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Update the user interface to display game over. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>player</em>&nbsp;</td><td>The player that has won the game. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classUserInterface.html#af67dc21aebede12a65f468676f93bd91">UserInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5cf1751505da89dc55df1fb12318bd96"></a><!-- doxytag: member="MFCUserInterface::displayGameStateChanged" ref="a5cf1751505da89dc55df1fb12318bd96" args="(GameState_t state, Player_t player)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MFCUserInterface::displayGameStateChanged </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Common.html#ga1026e99904938017415f188e2daba514">GameState_t</a>&nbsp;</td>
+          <td class="paramname"> <em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228">Player_t</a>&nbsp;</td>
+          <td class="paramname"> <em>player</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Display that a certain player has changed the game state. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>state</em>&nbsp;</td><td>The new game state. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>player</em>&nbsp;</td><td>The player that changed the game state. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classUserInterface.html#aea6b02914ae2d7ffe561189d7c7c7802">UserInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a12aafbe2449d1eff42150b84e2b403b2"></a><!-- doxytag: member="MFCUserInterface::displayNetworkError" ref="a12aafbe2449d1eff42150b84e2b403b2" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MFCUserInterface::displayNetworkError </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Update the user interface to reflect that a network error occurred. </p>
+
+<p>Implements <a class="el" href="classUserInterface.html#a4dfc4010db770d8be0a7a9dd4d9eaa98">UserInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a211917cb2e10228e4cabd54d5b411106"></a><!-- doxytag: member="MFCUserInterface::displayPeerChatMessage" ref="a211917cb2e10228e4cabd54d5b411106" args="(const std::string &amp;message)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MFCUserInterface::displayPeerChatMessage </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>message</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Update the user interface to display a new peer message. </p>
+
+<p>Implements <a class="el" href="classUserInterface.html#aa88e0b9f1ca62c294de672b5104f4592">UserInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0bfd2943d3cf9e704bb71880eb3aa865"></a><!-- doxytag: member="MFCUserInterface::exitGameButtonPushed" ref="a0bfd2943d3cf9e704bb71880eb3aa865" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MFCUserInterface::exitGameButtonPushed </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>User wants to exit the game. </p>
+
+<p>Implements <a class="el" href="classUserInterface.html#acff5ed6d4703ee489e00eab5463e7227">UserInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a03a72e69e2586b52ba3acac1e6b39700"></a><!-- doxytag: member="MFCUserInterface::getMainWindow" ref="a03a72e69e2586b52ba3acac1e6b39700" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CDialog * MFCUserInterface::getMainWindow </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the applications main window. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the main window. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4302b366e05790bc21e6e27c453c10b7"></a><!-- doxytag: member="MFCUserInterface::muteVolume" ref="a4302b366e05790bc21e6e27c453c10b7" args="(const bool soundOn)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MFCUserInterface::muteVolume </td>
+          <td>(</td>
+          <td class="paramtype">const bool&nbsp;</td>
+          <td class="paramname"> <em>soundOn</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Mutes the volume. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>soundOn</em>&nbsp;</td><td>True if the sound is currently on and is to be muted </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classUserInterface.html#a617d14b6d6ab4f299ecba05c5d670264">UserInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a25bf67955e01502250d4239ea6dc9e6d"></a><!-- doxytag: member="MFCUserInterface::networkConnectButtonPushed" ref="a25bf67955e01502250d4239ea6dc9e6d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MFCUserInterface::networkConnectButtonPushed </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>User wants to connect to the peer. </p>
+
+<p>Implements <a class="el" href="classUserInterface.html#a1b12a2289689bd1d907c87421b78bfb3">UserInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a05124c9a819899bf74dbbbd1ba27d32d"></a><!-- doxytag: member="MFCUserInterface::networkDisconnectButtonPushed" ref="a05124c9a819899bf74dbbbd1ba27d32d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MFCUserInterface::networkDisconnectButtonPushed </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>User wants to disconnect to the peer. </p>
+
+<p>Implements <a class="el" href="classUserInterface.html#a5b58c16329d4c76efdc2e27b7a3ad3f6">UserInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad19ff1d9fe21137d564c7f91d6d9638a"></a><!-- doxytag: member="MFCUserInterface::networkListenButtonPushed" ref="ad19ff1d9fe21137d564c7f91d6d9638a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MFCUserInterface::networkListenButtonPushed </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>User wants to listen for connections. </p>
+
+<p>Implements <a class="el" href="classUserInterface.html#a0bcb21302e8bad1fab6864e688f90600">UserInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7786bd2d3fd4e0974824f2ef2815f48c"></a><!-- doxytag: member="MFCUserInterface::paint" ref="a7786bd2d3fd4e0974824f2ef2815f48c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MFCUserInterface::paint </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Redraw the screen. </p>
+
+<p>Implements <a class="el" href="classUserInterface.html#ac14d223c61aeff714190fd1ae888b97a">UserInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a99a9356281a3d713e0fda41940f7a6fb"></a><!-- doxytag: member="MFCUserInterface::pauseGameButtonPushed" ref="a99a9356281a3d713e0fda41940f7a6fb" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MFCUserInterface::pauseGameButtonPushed </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>User wants to pause the game. </p>
+
+<p>Implements <a class="el" href="classUserInterface.html#aee390b73f66a0ed6f8511bf5eff7edb1">UserInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a645879dc2e81a2d2810d215bbc435d87"></a><!-- doxytag: member="MFCUserInterface::sendChatButtonPushed" ref="a645879dc2e81a2d2810d215bbc435d87" args="(const std::string &amp;message)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MFCUserInterface::sendChatButtonPushed </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>message</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>User wants to send a new chat message. </p>
+
+<p>Implements <a class="el" href="classUserInterface.html#a9016f77640f4197afee05e7e3368f951">UserInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a421be6e758a0acf2319affc95eec8054"></a><!-- doxytag: member="MFCUserInterface::setMutePref" ref="a421be6e758a0acf2319affc95eec8054" args="(const bool mute)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MFCUserInterface::setMutePref </td>
+          <td>(</td>
+          <td class="paramtype">const bool&nbsp;</td>
+          <td class="paramname"> <em>mute</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the mute preference. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>mute</em>&nbsp;</td><td>True if the sound needs to be muted </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classUserInterface.html#a7ad2ba662dcbef58663d7e02f6c2ed7d">UserInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a37ad511facfb8e5b6f34059a3ebf9f57"></a><!-- doxytag: member="MFCUserInterface::setPeerUserName" ref="a37ad511facfb8e5b6f34059a3ebf9f57" args="(const std::string &amp;name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MFCUserInterface::setPeerUserName </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Update the peers user name. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>The new user name. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classUserInterface.html#a4b8e1fe5649f204600bf356a5b356e10">UserInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5fdebc1e7ea2f3138cbf66b47375cfd7"></a><!-- doxytag: member="MFCUserInterface::setVolPref" ref="a5fdebc1e7ea2f3138cbf66b47375cfd7" args="(const int vol)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MFCUserInterface::setVolPref </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>vol</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the volume preference. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>vol</em>&nbsp;</td><td>The new volume </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classUserInterface.html#ade9fbc3f11415f5b3f57697959fc8c01">UserInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3ded83efa5ecbc38a21051dd90dc661e"></a><!-- doxytag: member="MFCUserInterface::startGameButtonPushed" ref="a3ded83efa5ecbc38a21051dd90dc661e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MFCUserInterface::startGameButtonPushed </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>User wants to start a new game. </p>
+
+<p>Implements <a class="el" href="classUserInterface.html#ae6b475f54fc90a950718312ab1c5ac6e">UserInterface</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="aad532c59dfe347b8a69f92b5b6ee7563"></a><!-- doxytag: member="MFCUserInterface::switchCamera" ref="aad532c59dfe347b8a69f92b5b6ee7563" args="(cCamera *camera)" -->
 <div class="memitem">
 <div class="memproto">
@@ -144,9 +776,25 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a548760ec3e8f659b262ef3aab3709e7f"></a><!-- doxytag: member="MFCUserInterface::m_pMainDlg" ref="a548760ec3e8f659b262ef3aab3709e7f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCMainDlg.html">CMainDlg</a>* <a class="el" href="classMFCUserInterface.html#a548760ec3e8f659b262ef3aab3709e7f">MFCUserInterface::m_pMainDlg</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The applications main window. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/<a class="el" href="MFCUserInterface_8h_source.html">MFCUserInterface.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MFCUserInterface.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/UserInterface/<a class="el" href="MFCUserInterface_8h_source.html">MFCUserInterface.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/UserInterface/<a class="el" href="MFCUserInterface_8cpp.html">MFCUserInterface.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -154,7 +802,7 @@ Protected Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -163,7 +811,7 @@ Protected Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:46 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

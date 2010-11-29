@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -48,7 +49,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a>  </div>
   <div class="headertitle">
 <h1>VirtualEnvironment Class Reference</h1>  </div>
 </div>
@@ -61,40 +64,155 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae0e38db3924687d121dfbda86e1d9b72"></a><!-- doxytag: member="VirtualEnvironment::VirtualEnvironment" ref="ae0e38db3924687d121dfbda86e1d9b72" args="(void)" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#ae0e38db3924687d121dfbda86e1d9b72">VirtualEnvironment</a> (void)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5e8b1b63923dd31b8574f88f18007da5"></a><!-- doxytag: member="VirtualEnvironment::~VirtualEnvironment" ref="a5e8b1b63923dd31b8574f88f18007da5" args="(void)" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#a5e8b1b63923dd31b8574f88f18007da5">~VirtualEnvironment</a> (void)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#ae0e38db3924687d121dfbda86e1d9b72">VirtualEnvironment</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#ae0e38db3924687d121dfbda86e1d9b72"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#a5e8b1b63923dd31b8574f88f18007da5">~VirtualEnvironment</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#a5e8b1b63923dd31b8574f88f18007da5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">cCamera *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#afd987f6e88168c734aee6689efb64e5b">camera</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get the environments camera.  <a href="#afd987f6e88168c734aee6689efb64e5b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#ab34e50a795e4b872f24b2d604a5464f7">moveLocalSlingshot</a> (cVector3d position)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Move the local slingshot to a new position.  <a href="#ab34e50a795e4b872f24b2d604a5464f7"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#a24bc3eec1917751a16f4ac510f06affc">movePeerSlingshot</a> (cVector3d position)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Move the peer slingshot to a new position.  <a href="#a24bc3eec1917751a16f4ac510f06affc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#a73345d04770c2080b1e102fb9457c3d3">moveLocalAvatar</a> (cVector3d position)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Move the local avatar to a new position.  <a href="#a73345d04770c2080b1e102fb9457c3d3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#ab0dea50eb3ff01720a539ec669d07e54">movePeerAvatar</a> (cVector3d position)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Move the peer avatar to a new position.  <a href="#ab0dea50eb3ff01720a539ec669d07e54"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#a8cd7268b0e8339cad855715a9a7b6c7f">reduceLocalHp</a> (int dmg)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reduce the hit points on the local player.  <a href="#a8cd7268b0e8339cad855715a9a7b6c7f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#a6e2c1d962098ed2b16b11aac8fe79380">reducePeerHp</a> (int dmg)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reduce the hit points on the peer player.  <a href="#a6e2c1d962098ed2b16b11aac8fe79380"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#ac38e0670dbc34d131ff5f9a81d0c6f33">reduceLocalHp</a> (unsigned int dmg)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reduce the hit points on the local player.  <a href="#ac38e0670dbc34d131ff5f9a81d0c6f33"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#a37495d74462db8936992592ad80f2452">reducePeerHp</a> (unsigned int dmg)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reduce the hit points on the peer player.  <a href="#a37495d74462db8936992592ad80f2452"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#a0577b16f25c4108e545eff191a44162e">resetAll</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Resets all the environment objects.  <a href="#a0577b16f25c4108e545eff191a44162e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#a29742ed13f5a0a9287bd3b3c2d31eb98">isLocalPlayerDead</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Check if the local player has no more HP.  <a href="#a29742ed13f5a0a9287bd3b3c2d31eb98"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classProjectile.html">Projectile</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#a05831f68bb623ab852a52180b92b6efb">fireLocalSlingshot</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Shoot a projectile from the local slingshot.  <a href="#a05831f68bb623ab852a52180b92b6efb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#a3eb4771f3cd9cba993c9cdc0b8d0271f">firePeerSlingshot</a> (<a class="el" href="classProjectile.html">Projectile</a> p)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Shoot a projectile from the peer's slingshot.  <a href="#a3eb4771f3cd9cba993c9cdc0b8d0271f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#a16992e5f4a49275da974d74f71accc86">pullBackLocalBall</a> (cVector3d relBallPos)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Moves the local ball as the user is pulling back the slingshot before shooting it.  <a href="#a16992e5f4a49275da974d74f71accc86"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#a6834cf58aaa2d5c14585877300cc63cb">pullBackPeerBall</a> (cVector3d relBallPos)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Moves the peer ball as the user is pulling back the slingshot before shooting it.  <a href="#a6834cf58aaa2d5c14585877300cc63cb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#a8490579021c2abeef1dba404bab86db9">initialize</a> (void)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Initialize the 3d environment.  <a href="#a8490579021c2abeef1dba404bab86db9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#adff43d5572e61995b167ea0bc532d1c4">updateFrame</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Update the frame.  <a href="#adff43d5572e61995b167ea0bc532d1c4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#aacb8b90cc65753c95c2c4a6a9bc9f51b">isColliding</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Check if an object is colliding with the local player.  <a href="#aacb8b90cc65753c95c2c4a6a9bc9f51b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#a45366895aef32aa5dadf843c00d3a5e1">getCurrentBallPosition</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get the current ball's position.  <a href="#a45366895aef32aa5dadf843c00d3a5e1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Common.html#gaa22d3933804e3afcd4eac294dded7434">BodyPart_t</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#ad80ed7471f76c0dfa622eb23fdfd3677">getAvatarHitBodyPart</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get the body part hit by the ball.  <a href="#ad80ed7471f76c0dfa622eb23fdfd3677"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#a546f795867d721529d37f0ca3eee3564">getLocalAvatarChestMin</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve the chest hit box minimum value from the local avatar object.  <a href="#a546f795867d721529d37f0ca3eee3564"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#a1f21cf03605137ea61a9a1c1a60010e9">getLocalAvatarChestMax</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve the chest hit box maximum value from the local avatar object.  <a href="#a1f21cf03605137ea61a9a1c1a60010e9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#a3a7eee4606ec308b89eeb51193e872d0">getLocalAvatarRightArmMin</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve the right arm hit box minimum value from the local avatar object.  <a href="#a3a7eee4606ec308b89eeb51193e872d0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#af946cfc7e74f053c40d97b8cf612b6eb">getLocalAvatarRightArmMax</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve the right arm hit box maximum value from the local avatar object.  <a href="#af946cfc7e74f053c40d97b8cf612b6eb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#aca621796fe67a0f17dbccf88ab83ab7e">getLocalAvatarLeftArmMin</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve the left arm hit box minimum value from the local avatar object.  <a href="#aca621796fe67a0f17dbccf88ab83ab7e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#a0ea6c08b4976b8110eedf45e7c12c1ec">getLocalAvatarLeftArmMax</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve the left arm hit box maximum value from the local avatar object.  <a href="#a0ea6c08b4976b8110eedf45e7c12c1ec"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#ab8896d48b9b7c597138556c302c6e9bc">getLocalAvatarHeadMin</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve the head hit box minimum value from the local avatar object.  <a href="#ab8896d48b9b7c597138556c302c6e9bc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#a9e190f0c64def34018161dbd228a4c32">getLocalAvatarHeadMax</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve the head hit box maximum value from the local avatar object.  <a href="#a9e190f0c64def34018161dbd228a4c32"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#a0681be81fa5c40f28ddffb75acdc2cdd">changeMuteIcon</a> (bool soundOn)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Changes between the mute and unmute icons.  <a href="#a0681be81fa5c40f28ddffb75acdc2cdd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#a5d2cc7ec7e387ff58bb7c0be2915d1a5">changeVolumeIcon</a> (int vol)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Changes the volume control image.  <a href="#a5d2cc7ec7e387ff58bb7c0be2915d1a5"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cCamera *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#a9df30f690edbedf929e3a08b5fdffe08">_camera</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The virtual environments camera.  <a href="#a9df30f690edbedf929e3a08b5fdffe08"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cWorld *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#ad8087c366cf7d57ee70a53a8dcff48a9">world</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The 3d world.  <a href="#ad8087c366cf7d57ee70a53a8dcff48a9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cLight *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#aa0e283e27849a31d20e22be63112aa98">light</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The light that illuminates the world.  <a href="#aa0e283e27849a31d20e22be63112aa98"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classVirtualSlingshot.html">VirtualSlingshot</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#aae5fcdcad01000c9131499909c160cd1">lSlingshot</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The local player's slingshot.  <a href="#aae5fcdcad01000c9131499909c160cd1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classVirtualSlingshot.html">VirtualSlingshot</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#aefde9585021d7ddf6794f255d6bfd79b">rSlingshot</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The peer player's slingshot.  <a href="#aefde9585021d7ddf6794f255d6bfd79b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classVirtualAvatar.html">VirtualAvatar</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#ad220fd5676740b6eba5f149e29b5d886">rAvatar</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The local player's avatar.  <a href="#ad220fd5676740b6eba5f149e29b5d886"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classVirtualAvatar.html">VirtualAvatar</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#a279a3a0bc7484f7dd1bbf9af127ba676">lAvatar</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The peer player's avatar.  <a href="#a279a3a0bc7484f7dd1bbf9af127ba676"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classHpBar.html">HpBar</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#a28307dfc5538cb8b1633eb36e74d8359">rHpBar</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The peer's hit point bar.  <a href="#a28307dfc5538cb8b1633eb36e74d8359"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classHpBar.html">HpBar</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#a144543441615fa5812dffd142a10dfc8">lHpBar</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The local player's hit point bar.  <a href="#a144543441615fa5812dffd142a10dfc8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classVirtualElastic.html">VirtualElastic</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#a2d8a43b1453608aa8010774337012567">lElastics</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The left elastic.  <a href="#a2d8a43b1453608aa8010774337012567"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classVirtualElastic.html">VirtualElastic</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#a45d26711b4f08914cb62cfe6d1494d1b">rElastics</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The right elastic.  <a href="#a45d26711b4f08914cb62cfe6d1494d1b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cBitmap *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#ab2f78d519edefd55385cc4915a434f3f">background</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The background image.  <a href="#ab2f78d519edefd55385cc4915a434f3f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cBitmap *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#af4d17fd5f42d3b2d5fd9c1fc2895607e">muteControl</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The mute control bitmap image.  <a href="#af4d17fd5f42d3b2d5fd9c1fc2895607e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cBitmap *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#a0fc7807155cf47279b980cc19b7b819a">volumeControl</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The volume control bitmap image.  <a href="#a0fc7807155cf47279b980cc19b7b819a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cODEWorld *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#af464b3fe37a766440a94cec26cc16275">ODEWorld</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The ODE world.  <a href="#af464b3fe37a766440a94cec26cc16275"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classVirtualBall.html">VirtualBall</a> * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#aa0d688ee9378bbef4dfa9600ff662a5d">localBalls</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The balls that can be fired by the local player.  <a href="#aa0d688ee9378bbef4dfa9600ff662a5d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classVirtualBall.html">VirtualBall</a> * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#aafce170a4bf307030537c5b18e23218b">peerBalls</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The balls that can be fired by the peer player.  <a href="#aafce170a4bf307030537c5b18e23218b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cODEGenericBody *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#a61d21327eeb6780fa0a6318505fcbc24">ODEGround</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The physical ground.  <a href="#a61d21327eeb6780fa0a6318505fcbc24"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#a021feff4aca85e8bc9a6ed311a61c4f6">rNumBalls</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The number of balls that have been fired by the peer.  <a href="#a021feff4aca85e8bc9a6ed311a61c4f6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#ad19d7afe3f69144b6dcc8aec1355aa86">lNumBalls</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The number of balls that have been fired by the local player.  <a href="#ad19d7afe3f69144b6dcc8aec1355aa86"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#ae35b656385f0f81560b5e7c830b7fd00">ball_limit</a> = 2</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The number of balls per player that can be in play at any given time.  <a href="#ae35b656385f0f81560b5e7c830b7fd00"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualEnvironment.html#a32a03de9376a341f79c364678e2a3712">firing_force</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The force at which balls are fired.  <a href="#a32a03de9376a341f79c364678e2a3712"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>The virtual environment is the 3d environment in which the game is played. </p>
 <p>This class contains all the 3d objects that make up our game. The environment is implemented using the chai3d library. This class is responsible for all modifications to the environment. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ae0e38db3924687d121dfbda86e1d9b72"></a><!-- doxytag: member="VirtualEnvironment::VirtualEnvironment" ref="ae0e38db3924687d121dfbda86e1d9b72" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VirtualEnvironment::VirtualEnvironment </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5e8b1b63923dd31b8574f88f18007da5"></a><!-- doxytag: member="VirtualEnvironment::~VirtualEnvironment" ref="a5e8b1b63923dd31b8574f88f18007da5" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VirtualEnvironment::~VirtualEnvironment </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
 <hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="afd987f6e88168c734aee6689efb64e5b"></a><!-- doxytag: member="VirtualEnvironment::camera" ref="afd987f6e88168c734aee6689efb64e5b" args="()" -->
 <div class="memitem">
@@ -113,6 +231,58 @@ Public Member Functions</h2></td></tr>
 
 <p>Get the environments camera. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the camera </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0681be81fa5c40f28ddffb75acdc2cdd"></a><!-- doxytag: member="VirtualEnvironment::changeMuteIcon" ref="a0681be81fa5c40f28ddffb75acdc2cdd" args="(bool soundOn)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VirtualEnvironment::changeMuteIcon </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>soundOn</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Changes between the mute and unmute icons. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>soundOn</em>&nbsp;</td><td>True if the sound is currently on </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5d2cc7ec7e387ff58bb7c0be2915d1a5"></a><!-- doxytag: member="VirtualEnvironment::changeVolumeIcon" ref="a5d2cc7ec7e387ff58bb7c0be2915d1a5" args="(int vol)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VirtualEnvironment::changeVolumeIcon </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>vol</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Changes the volume control image. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>vol</em>&nbsp;</td><td>The new volume </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -162,6 +332,206 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ad80ed7471f76c0dfa622eb23fdfd3677"></a><!-- doxytag: member="VirtualEnvironment::getAvatarHitBodyPart" ref="ad80ed7471f76c0dfa622eb23fdfd3677" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Common.html#gaa22d3933804e3afcd4eac294dded7434">BodyPart_t</a> VirtualEnvironment::getAvatarHitBodyPart </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the body part hit by the ball. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The body part that was hit </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a45366895aef32aa5dadf843c00d3a5e1"></a><!-- doxytag: member="VirtualEnvironment::getCurrentBallPosition" ref="a45366895aef32aa5dadf843c00d3a5e1" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d VirtualEnvironment::getCurrentBallPosition </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the current ball's position. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The current ball's position </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1f21cf03605137ea61a9a1c1a60010e9"></a><!-- doxytag: member="VirtualEnvironment::getLocalAvatarChestMax" ref="a1f21cf03605137ea61a9a1c1a60010e9" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d VirtualEnvironment::getLocalAvatarChestMax </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the chest hit box maximum value from the local avatar object. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The local avatar's chest hit box's maximum </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a546f795867d721529d37f0ca3eee3564"></a><!-- doxytag: member="VirtualEnvironment::getLocalAvatarChestMin" ref="a546f795867d721529d37f0ca3eee3564" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d VirtualEnvironment::getLocalAvatarChestMin </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the chest hit box minimum value from the local avatar object. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The local avatar's chest hit box's minimum </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9e190f0c64def34018161dbd228a4c32"></a><!-- doxytag: member="VirtualEnvironment::getLocalAvatarHeadMax" ref="a9e190f0c64def34018161dbd228a4c32" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d VirtualEnvironment::getLocalAvatarHeadMax </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the head hit box maximum value from the local avatar object. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The local avatar's head hit box's maximum </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab8896d48b9b7c597138556c302c6e9bc"></a><!-- doxytag: member="VirtualEnvironment::getLocalAvatarHeadMin" ref="ab8896d48b9b7c597138556c302c6e9bc" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d VirtualEnvironment::getLocalAvatarHeadMin </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the head hit box minimum value from the local avatar object. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The local avatar's head hit box's minimum </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0ea6c08b4976b8110eedf45e7c12c1ec"></a><!-- doxytag: member="VirtualEnvironment::getLocalAvatarLeftArmMax" ref="a0ea6c08b4976b8110eedf45e7c12c1ec" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d VirtualEnvironment::getLocalAvatarLeftArmMax </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the left arm hit box maximum value from the local avatar object. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The local avatar's left arm hit box's maximum </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aca621796fe67a0f17dbccf88ab83ab7e"></a><!-- doxytag: member="VirtualEnvironment::getLocalAvatarLeftArmMin" ref="aca621796fe67a0f17dbccf88ab83ab7e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d VirtualEnvironment::getLocalAvatarLeftArmMin </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the left arm hit box minimum value from the local avatar object. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The local avatar's left arm hit box's minimum </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af946cfc7e74f053c40d97b8cf612b6eb"></a><!-- doxytag: member="VirtualEnvironment::getLocalAvatarRightArmMax" ref="af946cfc7e74f053c40d97b8cf612b6eb" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d VirtualEnvironment::getLocalAvatarRightArmMax </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the right arm hit box maximum value from the local avatar object. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The local avatar's right arm hit box's maximum </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3a7eee4606ec308b89eeb51193e872d0"></a><!-- doxytag: member="VirtualEnvironment::getLocalAvatarRightArmMin" ref="a3a7eee4606ec308b89eeb51193e872d0" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d VirtualEnvironment::getLocalAvatarRightArmMin </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the right arm hit box minimum value from the local avatar object. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The local avatar's right arm hit box's minimum </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a8490579021c2abeef1dba404bab86db9"></a><!-- doxytag: member="VirtualEnvironment::initialize" ref="a8490579021c2abeef1dba404bab86db9" args="(void)" -->
 <div class="memitem">
 <div class="memproto">
@@ -203,6 +573,26 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a29742ed13f5a0a9287bd3b3c2d31eb98"></a><!-- doxytag: member="VirtualEnvironment::isLocalPlayerDead" ref="a29742ed13f5a0a9287bd3b3c2d31eb98" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool VirtualEnvironment::isLocalPlayerDead </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Check if the local player has no more HP. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if local player has no more HP </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a73345d04770c2080b1e102fb9457c3d3"></a><!-- doxytag: member="VirtualEnvironment::moveLocalAvatar" ref="a73345d04770c2080b1e102fb9457c3d3" args="(cVector3d position)" -->
 <div class="memitem">
 <div class="memproto">
@@ -220,32 +610,6 @@ Public Member Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Move the local avatar to a new position. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>position</em>&nbsp;</td><td>The new position </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ab34e50a795e4b872f24b2d604a5464f7"></a><!-- doxytag: member="VirtualEnvironment::moveLocalSlingshot" ref="ab34e50a795e4b872f24b2d604a5464f7" args="(cVector3d position)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void VirtualEnvironment::moveLocalSlingshot </td>
-          <td>(</td>
-          <td class="paramtype">cVector3d&nbsp;</td>
-          <td class="paramname"> <em>position</em></td>
-          <td>&nbsp;)&nbsp;</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Move the local slingshot to a new position. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>position</em>&nbsp;</td><td>The new position </td></tr>
@@ -281,15 +645,15 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a24bc3eec1917751a16f4ac510f06affc"></a><!-- doxytag: member="VirtualEnvironment::movePeerSlingshot" ref="a24bc3eec1917751a16f4ac510f06affc" args="(cVector3d position)" -->
+<a class="anchor" id="a16992e5f4a49275da974d74f71accc86"></a><!-- doxytag: member="VirtualEnvironment::pullBackLocalBall" ref="a16992e5f4a49275da974d74f71accc86" args="(cVector3d relBallPos)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void VirtualEnvironment::movePeerSlingshot </td>
+          <td class="memname">void VirtualEnvironment::pullBackLocalBall </td>
           <td>(</td>
           <td class="paramtype">cVector3d&nbsp;</td>
-          <td class="paramname"> <em>position</em></td>
+          <td class="paramname"> <em>relBallPos</em></td>
           <td>&nbsp;)&nbsp;</td>
           <td></td>
         </tr>
@@ -297,24 +661,50 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Move the peer slingshot to a new position. </p>
+<p>Moves the local ball as the user is pulling back the slingshot before shooting it. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>position</em>&nbsp;</td><td>The new position </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>relBallPos</em>&nbsp;</td><td>The position of the ball relative to its original position </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="a8cd7268b0e8339cad855715a9a7b6c7f"></a><!-- doxytag: member="VirtualEnvironment::reduceLocalHp" ref="a8cd7268b0e8339cad855715a9a7b6c7f" args="(int dmg)" -->
+<a class="anchor" id="a6834cf58aaa2d5c14585877300cc63cb"></a><!-- doxytag: member="VirtualEnvironment::pullBackPeerBall" ref="a6834cf58aaa2d5c14585877300cc63cb" args="(cVector3d relBallPos)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VirtualEnvironment::pullBackPeerBall </td>
+          <td>(</td>
+          <td class="paramtype">cVector3d&nbsp;</td>
+          <td class="paramname"> <em>relBallPos</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Moves the peer ball as the user is pulling back the slingshot before shooting it. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>relBallPos</em>&nbsp;</td><td>The position of the ball relative to its original position </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ac38e0670dbc34d131ff5f9a81d0c6f33"></a><!-- doxytag: member="VirtualEnvironment::reduceLocalHp" ref="ac38e0670dbc34d131ff5f9a81d0c6f33" args="(unsigned int dmg)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void VirtualEnvironment::reduceLocalHp </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
+          <td class="paramtype">unsigned int&nbsp;</td>
           <td class="paramname"> <em>dmg</em></td>
           <td>&nbsp;)&nbsp;</td>
           <td></td>
@@ -333,14 +723,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a6e2c1d962098ed2b16b11aac8fe79380"></a><!-- doxytag: member="VirtualEnvironment::reducePeerHp" ref="a6e2c1d962098ed2b16b11aac8fe79380" args="(int dmg)" -->
+<a class="anchor" id="a37495d74462db8936992592ad80f2452"></a><!-- doxytag: member="VirtualEnvironment::reducePeerHp" ref="a37495d74462db8936992592ad80f2452" args="(unsigned int dmg)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void VirtualEnvironment::reducePeerHp </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
+          <td class="paramtype">unsigned int&nbsp;</td>
           <td class="paramname"> <em>dmg</em></td>
           <td>&nbsp;)&nbsp;</td>
           <td></td>
@@ -356,6 +746,25 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="a0577b16f25c4108e545eff191a44162e"></a><!-- doxytag: member="VirtualEnvironment::resetAll" ref="a0577b16f25c4108e545eff191a44162e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VirtualEnvironment::resetAll </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Resets all the environment objects. </p>
 
 </div>
 </div>
@@ -379,9 +788,346 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a9df30f690edbedf929e3a08b5fdffe08"></a><!-- doxytag: member="VirtualEnvironment::_camera" ref="a9df30f690edbedf929e3a08b5fdffe08" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cCamera* <a class="el" href="classVirtualEnvironment.html#a9df30f690edbedf929e3a08b5fdffe08">VirtualEnvironment::_camera</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The virtual environments camera. </p>
+<p>This is the camera through which the player will see the world. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab2f78d519edefd55385cc4915a434f3f"></a><!-- doxytag: member="VirtualEnvironment::background" ref="ab2f78d519edefd55385cc4915a434f3f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cBitmap* <a class="el" href="classVirtualEnvironment.html#ab2f78d519edefd55385cc4915a434f3f">VirtualEnvironment::background</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The background image. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae35b656385f0f81560b5e7c830b7fd00"></a><!-- doxytag: member="VirtualEnvironment::ball_limit" ref="ae35b656385f0f81560b5e7c830b7fd00" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned int <a class="el" href="classVirtualEnvironment.html#ae35b656385f0f81560b5e7c830b7fd00">VirtualEnvironment::ball_limit</a> = 2<code> [static, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The number of balls per player that can be in play at any given time. </p>
+
+</div>
+</div>
+<a class="anchor" id="a32a03de9376a341f79c364678e2a3712"></a><!-- doxytag: member="VirtualEnvironment::firing_force" ref="a32a03de9376a341f79c364678e2a3712" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const cVector3d <a class="el" href="classVirtualEnvironment.html#a32a03de9376a341f79c364678e2a3712">VirtualEnvironment::firing_force</a><code> [static, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The force at which balls are fired. </p>
+<p>This should eventually be changed for a force that is calculated based on how far the sling is pulled. </p>
+
+</div>
+</div>
+<a class="anchor" id="a279a3a0bc7484f7dd1bbf9af127ba676"></a><!-- doxytag: member="VirtualEnvironment::lAvatar" ref="a279a3a0bc7484f7dd1bbf9af127ba676" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classVirtualAvatar.html">VirtualAvatar</a>* <a class="el" href="classVirtualEnvironment.html#a279a3a0bc7484f7dd1bbf9af127ba676">VirtualEnvironment::lAvatar</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The peer player's avatar. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2d8a43b1453608aa8010774337012567"></a><!-- doxytag: member="VirtualEnvironment::lElastics" ref="a2d8a43b1453608aa8010774337012567" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classVirtualElastic.html">VirtualElastic</a>* <a class="el" href="classVirtualEnvironment.html#a2d8a43b1453608aa8010774337012567">VirtualEnvironment::lElastics</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The left elastic. </p>
+
+</div>
+</div>
+<a class="anchor" id="a144543441615fa5812dffd142a10dfc8"></a><!-- doxytag: member="VirtualEnvironment::lHpBar" ref="a144543441615fa5812dffd142a10dfc8" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classHpBar.html">HpBar</a>* <a class="el" href="classVirtualEnvironment.html#a144543441615fa5812dffd142a10dfc8">VirtualEnvironment::lHpBar</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The local player's hit point bar. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa0e283e27849a31d20e22be63112aa98"></a><!-- doxytag: member="VirtualEnvironment::light" ref="aa0e283e27849a31d20e22be63112aa98" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cLight* <a class="el" href="classVirtualEnvironment.html#aa0e283e27849a31d20e22be63112aa98">VirtualEnvironment::light</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The light that illuminates the world. </p>
+<p>This light is attached to the camera. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad19d7afe3f69144b6dcc8aec1355aa86"></a><!-- doxytag: member="VirtualEnvironment::lNumBalls" ref="ad19d7afe3f69144b6dcc8aec1355aa86" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classVirtualEnvironment.html#ad19d7afe3f69144b6dcc8aec1355aa86">VirtualEnvironment::lNumBalls</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The number of balls that have been fired by the local player. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa0d688ee9378bbef4dfa9600ff662a5d"></a><!-- doxytag: member="VirtualEnvironment::localBalls" ref="aa0d688ee9378bbef4dfa9600ff662a5d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classVirtualBall.html">VirtualBall</a>*&gt; <a class="el" href="classVirtualEnvironment.html#aa0d688ee9378bbef4dfa9600ff662a5d">VirtualEnvironment::localBalls</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The balls that can be fired by the local player. </p>
+
+</div>
+</div>
+<a class="anchor" id="aae5fcdcad01000c9131499909c160cd1"></a><!-- doxytag: member="VirtualEnvironment::lSlingshot" ref="aae5fcdcad01000c9131499909c160cd1" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classVirtualSlingshot.html">VirtualSlingshot</a>* <a class="el" href="classVirtualEnvironment.html#aae5fcdcad01000c9131499909c160cd1">VirtualEnvironment::lSlingshot</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The local player's slingshot. </p>
+
+</div>
+</div>
+<a class="anchor" id="af4d17fd5f42d3b2d5fd9c1fc2895607e"></a><!-- doxytag: member="VirtualEnvironment::muteControl" ref="af4d17fd5f42d3b2d5fd9c1fc2895607e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cBitmap* <a class="el" href="classVirtualEnvironment.html#af4d17fd5f42d3b2d5fd9c1fc2895607e">VirtualEnvironment::muteControl</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The mute control bitmap image. </p>
+
+</div>
+</div>
+<a class="anchor" id="a61d21327eeb6780fa0a6318505fcbc24"></a><!-- doxytag: member="VirtualEnvironment::ODEGround" ref="a61d21327eeb6780fa0a6318505fcbc24" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cODEGenericBody* <a class="el" href="classVirtualEnvironment.html#a61d21327eeb6780fa0a6318505fcbc24">VirtualEnvironment::ODEGround</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The physical ground. </p>
+<p>This object is used for physics on the floor. Other 3d objects can hit the floor and bounce off of it. </p>
+
+</div>
+</div>
+<a class="anchor" id="af464b3fe37a766440a94cec26cc16275"></a><!-- doxytag: member="VirtualEnvironment::ODEWorld" ref="af464b3fe37a766440a94cec26cc16275" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cODEWorld* <a class="el" href="classVirtualEnvironment.html#af464b3fe37a766440a94cec26cc16275">VirtualEnvironment::ODEWorld</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The ODE world. </p>
+<p>This is the world object used for physics. In contrast with the chai3d world which is used for displaying objects. </p>
+
+</div>
+</div>
+<a class="anchor" id="aafce170a4bf307030537c5b18e23218b"></a><!-- doxytag: member="VirtualEnvironment::peerBalls" ref="aafce170a4bf307030537c5b18e23218b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classVirtualBall.html">VirtualBall</a>*&gt; <a class="el" href="classVirtualEnvironment.html#aafce170a4bf307030537c5b18e23218b">VirtualEnvironment::peerBalls</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The balls that can be fired by the peer player. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad220fd5676740b6eba5f149e29b5d886"></a><!-- doxytag: member="VirtualEnvironment::rAvatar" ref="ad220fd5676740b6eba5f149e29b5d886" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classVirtualAvatar.html">VirtualAvatar</a>* <a class="el" href="classVirtualEnvironment.html#ad220fd5676740b6eba5f149e29b5d886">VirtualEnvironment::rAvatar</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The local player's avatar. </p>
+
+</div>
+</div>
+<a class="anchor" id="a45d26711b4f08914cb62cfe6d1494d1b"></a><!-- doxytag: member="VirtualEnvironment::rElastics" ref="a45d26711b4f08914cb62cfe6d1494d1b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classVirtualElastic.html">VirtualElastic</a>* <a class="el" href="classVirtualEnvironment.html#a45d26711b4f08914cb62cfe6d1494d1b">VirtualEnvironment::rElastics</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The right elastic. </p>
+
+</div>
+</div>
+<a class="anchor" id="a28307dfc5538cb8b1633eb36e74d8359"></a><!-- doxytag: member="VirtualEnvironment::rHpBar" ref="a28307dfc5538cb8b1633eb36e74d8359" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classHpBar.html">HpBar</a>* <a class="el" href="classVirtualEnvironment.html#a28307dfc5538cb8b1633eb36e74d8359">VirtualEnvironment::rHpBar</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The peer's hit point bar. </p>
+
+</div>
+</div>
+<a class="anchor" id="a021feff4aca85e8bc9a6ed311a61c4f6"></a><!-- doxytag: member="VirtualEnvironment::rNumBalls" ref="a021feff4aca85e8bc9a6ed311a61c4f6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classVirtualEnvironment.html#a021feff4aca85e8bc9a6ed311a61c4f6">VirtualEnvironment::rNumBalls</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The number of balls that have been fired by the peer. </p>
+
+</div>
+</div>
+<a class="anchor" id="aefde9585021d7ddf6794f255d6bfd79b"></a><!-- doxytag: member="VirtualEnvironment::rSlingshot" ref="aefde9585021d7ddf6794f255d6bfd79b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classVirtualSlingshot.html">VirtualSlingshot</a>* <a class="el" href="classVirtualEnvironment.html#aefde9585021d7ddf6794f255d6bfd79b">VirtualEnvironment::rSlingshot</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The peer player's slingshot. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0fc7807155cf47279b980cc19b7b819a"></a><!-- doxytag: member="VirtualEnvironment::volumeControl" ref="a0fc7807155cf47279b980cc19b7b819a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cBitmap* <a class="el" href="classVirtualEnvironment.html#a0fc7807155cf47279b980cc19b7b819a">VirtualEnvironment::volumeControl</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The volume control bitmap image. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad8087c366cf7d57ee70a53a8dcff48a9"></a><!-- doxytag: member="VirtualEnvironment::world" ref="ad8087c366cf7d57ee70a53a8dcff48a9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cWorld* <a class="el" href="classVirtualEnvironment.html#ad8087c366cf7d57ee70a53a8dcff48a9">VirtualEnvironment::world</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The 3d world. </p>
+<p>This is the virtual environments world, all 3d objects will be added to this world. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/<a class="el" href="VirtualEnvironment_8h_source.html">VirtualEnvironment.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/VirtualEnvironment.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Game/<a class="el" href="VirtualEnvironment_8h_source.html">VirtualEnvironment.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Game/<a class="el" href="VirtualEnvironment_8cpp.html">VirtualEnvironment.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -389,7 +1135,7 @@ Public Member Functions</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -398,7 +1144,7 @@ Public Member Functions</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:10 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:46 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -49,6 +50,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#friends">Friends</a>  </div>
   <div class="headertitle">
 <h1>Projectile Class Reference</h1>  </div>
@@ -66,9 +69,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default constructor.  <a href="#ac536ed2aad56af866a2078b9a85aa16d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProjectile.html#aa6b1d062ff11e1cb71941d8c4bc834ff">Projectile</a> (cVector3d position, cVector3d force)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#aa6b1d062ff11e1cb71941d8c4bc834ff"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a94903e021fa2edab60ba3836ca0b937d"></a><!-- doxytag: member="Projectile::~Projectile" ref="a94903e021fa2edab60ba3836ca0b937d" args="()" -->
-virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProjectile.html#a94903e021fa2edab60ba3836ca0b937d">~Projectile</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProjectile.html#a94903e021fa2edab60ba3836ca0b937d">~Projectile</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#a94903e021fa2edab60ba3836ca0b937d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProjectile.html#a365ac17f48bff5a1a29b20f7810db86b">position</a> () const </td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get the position.  <a href="#a365ac17f48bff5a1a29b20f7810db86b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProjectile.html#a8216e973c892e18a1ace6f3385b6264c">position</a> (double x, double y, double z)</td></tr>
@@ -83,10 +85,20 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set the force.  <a href="#a87d54cff36cc5f6e1fe92811476079fd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProjectile.html#abb98fb2ad23ddeb32102d7d3b924878c">equals</a> (const <a class="el" href="classProjectile.html">Projectile</a> &amp;other, float epsilon=0.0f)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Compare 2 projectiles for equality.  <a href="#abb98fb2ad23ddeb32102d7d3b924878c"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;typename Archive &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">void&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classProjectile.html#a6314f8c89b941a71df57a7f3ba07529b">serialize</a> (Archive &amp;ar, const unsigned int version)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Serialize/Deserialize a projectile This function is used by boost for transmiting and saving projectiles.  <a href="#a6314f8c89b941a71df57a7f3ba07529b"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProjectile.html#acef965bdfdbbdc72cb0a2e3c74351bbc">_position</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The projectiles position.  <a href="#acef965bdfdbbdc72cb0a2e3c74351bbc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProjectile.html#a26142b673a0a10280f948d5f4753ec8c">_force</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The projectiles force.  <a href="#a26142b673a0a10280f948d5f4753ec8c"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac98d07dd8f7b70e16ccb9a01abf56b9c"></a><!-- doxytag: member="Projectile::boost::serialization::access" ref="ac98d07dd8f7b70e16ccb9a01abf56b9c" args="" -->
-class&nbsp;</td><td class="memItemRight" valign="bottom"><b>boost::serialization::access</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProjectile.html#ac98d07dd8f7b70e16ccb9a01abf56b9c">boost::serialization::access</a></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>Represents a projectile Each projectile has a position and a force behind it. </p>
@@ -139,11 +151,30 @@ class&nbsp;</td><td class="memItemRight" valign="bottom"><b>boost::serialization
 <p>Constructor. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>position</em>&nbsp;</td><td>The position for this projectile </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>force</em>&nbsp;</td><td>The force applied to this projectile </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>position</em>&nbsp;</td><td>The position for this projectile </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>force</em>&nbsp;</td><td>The force applied to this projectile </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="a94903e021fa2edab60ba3836ca0b937d"></a><!-- doxytag: member="Projectile::~Projectile" ref="a94903e021fa2edab60ba3836ca0b937d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Projectile::~Projectile </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
 
 </div>
 </div>
@@ -177,38 +208,12 @@ class&nbsp;</td><td class="memItemRight" valign="bottom"><b>boost::serialization
 <p>A projectile's position and force is expressed using floating point numbers so the epsilon paramater is provided to allow for an error margin. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>other</em>&nbsp;</td><td>The other projectile. </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>epsilon</em>&nbsp;</td><td>The error margin allowed in the floating point comparisons </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>other</em>&nbsp;</td><td>The other projectile. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>epsilon</em>&nbsp;</td><td>The error margin allowed in the floating point comparisons. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>true if the projectiles are equal </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a87d54cff36cc5f6e1fe92811476079fd"></a><!-- doxytag: member="Projectile::force" ref="a87d54cff36cc5f6e1fe92811476079fd" args="(const cVector3d &amp;v)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Projectile::force </td>
-          <td>(</td>
-          <td class="paramtype">const cVector3d &amp;&nbsp;</td>
-          <td class="paramname"> <em>v</em></td>
-          <td>&nbsp;)&nbsp;</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Set the force. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>v</em>&nbsp;</td><td>The new force </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if the projectiles are equal. </dd></dl>
 
 </div>
 </div>
@@ -246,9 +251,35 @@ class&nbsp;</td><td class="memItemRight" valign="bottom"><b>boost::serialization
 <p>Set the force. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>x</em>&nbsp;</td><td>The x coordinate </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>y</em>&nbsp;</td><td>The y coordinate </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>z</em>&nbsp;</td><td>The z coordinate </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>x</em>&nbsp;</td><td>The x coordinate </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>y</em>&nbsp;</td><td>The y coordinate </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>z</em>&nbsp;</td><td>The z coordinate </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a87d54cff36cc5f6e1fe92811476079fd"></a><!-- doxytag: member="Projectile::force" ref="a87d54cff36cc5f6e1fe92811476079fd" args="(const cVector3d &amp;v)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Projectile::force </td>
+          <td>(</td>
+          <td class="paramtype">const cVector3d &amp;&nbsp;</td>
+          <td class="paramname"> <em>v</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set the force. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>v</em>&nbsp;</td><td>The new force </td></tr>
   </table>
   </dd>
 </dl>
@@ -272,6 +303,26 @@ class&nbsp;</td><td class="memItemRight" valign="bottom"><b>boost::serialization
 
 <p>Get the force. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The projectile's force </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a365ac17f48bff5a1a29b20f7810db86b"></a><!-- doxytag: member="Projectile::position" ref="a365ac17f48bff5a1a29b20f7810db86b" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d Projectile::position </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the position. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The projectile's position </dd></dl>
 
 </div>
 </div>
@@ -309,32 +360,12 @@ class&nbsp;</td><td class="memItemRight" valign="bottom"><b>boost::serialization
 <p>Set the position. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>x</em>&nbsp;</td><td>The x coordinate </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>y</em>&nbsp;</td><td>The y coordinate </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>z</em>&nbsp;</td><td>The z coordinate </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>x</em>&nbsp;</td><td>The x coordinate </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>y</em>&nbsp;</td><td>The y coordinate </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>z</em>&nbsp;</td><td>The z coordinate </td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a class="anchor" id="a365ac17f48bff5a1a29b20f7810db86b"></a><!-- doxytag: member="Projectile::position" ref="a365ac17f48bff5a1a29b20f7810db86b" args="() const " -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">cVector3d Projectile::position </td>
-          <td>(</td>
-          <td class="paramname"></td>
-          <td>&nbsp;)&nbsp;</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Get the position. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The projectile's position </dd></dl>
 
 </div>
 </div>
@@ -357,16 +388,99 @@ class&nbsp;</td><td class="memItemRight" valign="bottom"><b>boost::serialization
 <p>Set the position. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>v</em>&nbsp;</td><td>The new position </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>v</em>&nbsp;</td><td>The new position. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
+<a class="anchor" id="a6314f8c89b941a71df57a7f3ba07529b"></a><!-- doxytag: member="Projectile::serialize" ref="a6314f8c89b941a71df57a7f3ba07529b" args="(Archive &amp;ar, const unsigned int version)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Archive &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void Projectile::serialize </td>
+          <td>(</td>
+          <td class="paramtype">Archive &amp;&nbsp;</td>
+          <td class="paramname"> <em>ar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&nbsp;</td>
+          <td class="paramname"> <em>version</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Serialize/Deserialize a projectile This function is used by boost for transmiting and saving projectiles. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in,out]</tt>&nbsp;</td><td valign="top"><em>ar</em>&nbsp;</td><td>The archive where the projectile will be serialized to or deserialized from </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>version</em>&nbsp;</td><td>The archive's version </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Friends And Related Function Documentation</h2>
+<a class="anchor" id="ac98d07dd8f7b70e16ccb9a01abf56b9c"></a><!-- doxytag: member="Projectile::boost::serialization::access" ref="ac98d07dd8f7b70e16ccb9a01abf56b9c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class boost::serialization::access<code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a26142b673a0a10280f948d5f4753ec8c"></a><!-- doxytag: member="Projectile::_force" ref="a26142b673a0a10280f948d5f4753ec8c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d <a class="el" href="classProjectile.html#a26142b673a0a10280f948d5f4753ec8c">Projectile::_force</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The projectiles force. </p>
+
+</div>
+</div>
+<a class="anchor" id="acef965bdfdbbdc72cb0a2e3c74351bbc"></a><!-- doxytag: member="Projectile::_position" ref="acef965bdfdbbdc72cb0a2e3c74351bbc" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d <a class="el" href="classProjectile.html#acef965bdfdbbdc72cb0a2e3c74351bbc">Projectile::_position</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The projectiles position. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Common/<a class="el" href="Projectile_8h_source.html">Projectile.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Common/Projectile.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Common/<a class="el" href="Projectile_8h_source.html">Projectile.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Common/<a class="el" href="Projectile_8cpp.html">Projectile.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -374,7 +488,7 @@ class&nbsp;</td><td class="memItemRight" valign="bottom"><b>boost::serialization
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -383,7 +497,7 @@ class&nbsp;</td><td class="memItemRight" valign="bottom"><b>boost::serialization
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:46 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

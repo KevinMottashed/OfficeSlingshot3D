@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -48,7 +49,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <h1>TestRunner Class Reference</h1>  </div>
 </div>
@@ -61,21 +63,80 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adf6d073e739128299841d29a6701d34b"></a><!-- doxytag: member="TestRunner::TestRunner" ref="adf6d073e739128299841d29a6701d34b" args="()" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTestRunner.html#adf6d073e739128299841d29a6701d34b">TestRunner</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a121456d7e522c0d83d648a0118ec0c6f"></a><!-- doxytag: member="TestRunner::~TestRunner" ref="a121456d7e522c0d83d648a0118ec0c6f" args="()" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTestRunner.html#a121456d7e522c0d83d648a0118ec0c6f">~TestRunner</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a692f0bb1327c4092398b95c27ec6957b"></a><!-- doxytag: member="TestRunner::run" ref="a692f0bb1327c4092398b95c27ec6957b" args="()" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTestRunner.html#a692f0bb1327c4092398b95c27ec6957b">run</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Run all tests suites. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTestRunner.html#adf6d073e739128299841d29a6701d34b">TestRunner</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#adf6d073e739128299841d29a6701d34b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTestRunner.html#a121456d7e522c0d83d648a0118ec0c6f">~TestRunner</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#a121456d7e522c0d83d648a0118ec0c6f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTestRunner.html#a692f0bb1327c4092398b95c27ec6957b">run</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Run all tests suites.  <a href="#a692f0bb1327c4092398b95c27ec6957b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTestRunner.html#a5d3932d4614f12c9fca2870597b90e1d">toStream</a> (std::ostream &amp;os) const </td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Print the test results to a stream.  <a href="#a5d3932d4614f12c9fca2870597b90e1d"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; TestSuite * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTestRunner.html#aa2a13b622b3da4b8766ce98e8e579003">suites</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">A collection of all the test suites.  <a href="#aa2a13b622b3da4b8766ce98e8e579003"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>This class is used to start all the unit tests. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="adf6d073e739128299841d29a6701d34b"></a><!-- doxytag: member="TestRunner::TestRunner" ref="adf6d073e739128299841d29a6701d34b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TestRunner::TestRunner </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a121456d7e522c0d83d648a0118ec0c6f"></a><!-- doxytag: member="TestRunner::~TestRunner" ref="a121456d7e522c0d83d648a0118ec0c6f" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TestRunner::~TestRunner </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a692f0bb1327c4092398b95c27ec6957b"></a><!-- doxytag: member="TestRunner::run" ref="a692f0bb1327c4092398b95c27ec6957b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TestRunner::run </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Run all tests suites. </p>
+
+</div>
+</div>
 <a class="anchor" id="a5d3932d4614f12c9fca2870597b90e1d"></a><!-- doxytag: member="TestRunner::toStream" ref="a5d3932d4614f12c9fca2870597b90e1d" args="(std::ostream &amp;os) const " -->
 <div class="memitem">
 <div class="memproto">
@@ -102,9 +163,25 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="aa2a13b622b3da4b8766ce98e8e579003"></a><!-- doxytag: member="TestRunner::suites" ref="aa2a13b622b3da4b8766ce98e8e579003" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;TestSuite*&gt; <a class="el" href="classTestRunner.html#aa2a13b622b3da4b8766ce98e8e579003">TestRunner::suites</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>A collection of all the test suites. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Test/<a class="el" href="TestRunner_8h_source.html">TestRunner.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Test/TestRunner.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Test/<a class="el" href="TestRunner_8h_source.html">TestRunner.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Test/<a class="el" href="TestRunner_8cpp.html">TestRunner.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -112,7 +189,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -121,7 +198,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:46 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

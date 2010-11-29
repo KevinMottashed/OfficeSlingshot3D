@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -48,12 +49,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <h1>KeyboardFalcon Class Reference</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="KeyboardFalcon" --><!-- doxytag: inherits="Falcon" -->
+<!-- doxytag: class="KeyboardFalcon" --><!-- doxytag: inherits="Falcon,KeyboardListener" -->
 <p><a class="el" href="classFalcon.html" title="Abstract class that represents a falcon.">Falcon</a> emulator that uses the keyboard instead of a novint falcon.  
 <a href="#_details">More...</a></p>
 
@@ -64,34 +67,82 @@ Inheritance diagram for KeyboardFalcon:</div>
  <div class="center">
   <img src="classKeyboardFalcon.png" usemap="#KeyboardFalcon_map" alt=""/>
   <map id="KeyboardFalcon_map" name="KeyboardFalcon_map">
-<area href="classFalcon.html" alt="Falcon" shape="rect" coords="0,56,106,80"/>
-<area href="classFalconSubject.html" alt="FalconSubject" shape="rect" coords="0,0,106,24"/>
+<area href="classFalcon.html" alt="Falcon" shape="rect" coords="0,56,112,80"/>
+<area href="classKeyboardListener.html" alt="KeyboardListener" shape="rect" coords="122,56,234,80"/>
+<area href="classFalconSubject.html" alt="FalconSubject" shape="rect" coords="0,0,112,24"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7b79d2129b322900cc65f6f250469875"></a><!-- doxytag: member="KeyboardFalcon::KeyboardFalcon" ref="a7b79d2129b322900cc65f6f250469875" args="()" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboardFalcon.html#a7b79d2129b322900cc65f6f250469875">KeyboardFalcon</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1db3b6a58d955521253dfc7067a88f36"></a><!-- doxytag: member="KeyboardFalcon::~KeyboardFalcon" ref="a1db3b6a58d955521253dfc7067a88f36" args="()" -->
-virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboardFalcon.html#a1db3b6a58d955521253dfc7067a88f36">~KeyboardFalcon</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af9a2c400cb05910d806861eb8af566f9"></a><!-- doxytag: member="KeyboardFalcon::startPolling" ref="af9a2c400cb05910d806861eb8af566f9" args="()" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboardFalcon.html#af9a2c400cb05910d806861eb8af566f9">startPolling</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Start reporting falcon events to the mediator. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adf5bf86dd3610843b0db8b8795f6049b"></a><!-- doxytag: member="KeyboardFalcon::stopPolling" ref="adf5bf86dd3610843b0db8b8795f6049b" args="()" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboardFalcon.html#adf5bf86dd3610843b0db8b8795f6049b">stopPolling</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Stop reporting falcon events to the mediator. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a496423ca690aa227530ac8e3f4ce06a0"></a><!-- doxytag: member="KeyboardFalcon::keyPressed" ref="a496423ca690aa227530ac8e3f4ce06a0" args="(unsigned int key)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboardFalcon.html#a496423ca690aa227530ac8e3f4ce06a0">keyPressed</a> (unsigned int key)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Handle a key pressed event. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboardFalcon.html#a7b79d2129b322900cc65f6f250469875">KeyboardFalcon</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#a7b79d2129b322900cc65f6f250469875"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboardFalcon.html#a1db3b6a58d955521253dfc7067a88f36">~KeyboardFalcon</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#a1db3b6a58d955521253dfc7067a88f36"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboardFalcon.html#af9a2c400cb05910d806861eb8af566f9">startPolling</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Start reporting falcon events to the mediator.  <a href="#af9a2c400cb05910d806861eb8af566f9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboardFalcon.html#adf5bf86dd3610843b0db8b8795f6049b">stopPolling</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Stop reporting falcon events to the mediator.  <a href="#adf5bf86dd3610843b0db8b8795f6049b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboardFalcon.html#a496423ca690aa227530ac8e3f4ce06a0">keyPressed</a> (unsigned int key)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Handle a key pressed event.  <a href="#a496423ca690aa227530ac8e3f4ce06a0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual cCollisionAABBBox&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboardFalcon.html#a5f4b4e7d349e46f2662f8da3baa09086">boundingBox</a> () const </td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the box to which the slingshot is bound.  <a href="#a5f4b4e7d349e46f2662f8da3baa09086"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboardFalcon.html#a88481739030e529d313d95049e5ffb2f">resetPosition</a> ()</td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboardFalcon.html#af050d570900ba45b0234e0664a9bf3ae">reporting</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The keyboard falcon will only report events to the mediator when this is true.  <a href="#af050d570900ba45b0234e0664a9bf3ae"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboardFalcon.html#ac20d16948761dc18d4e8398f887e3e75">position</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The falcon's current position.  <a href="#ac20d16948761dc18d4e8398f887e3e75"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboardFalcon.html#a7bc29a1303fea0fc0eb2b5d165b3bd69">firing</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">True if the slingshot is currently in firing mode.  <a href="#a7bc29a1303fea0fc0eb2b5d165b3bd69"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cCollisionAABBBox&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyboardFalcon.html#a4b0a15a1acb1dd8478b0665d946ad7f1">_boundingBox</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The keyboard falcon cannot move outside of this box.  <a href="#a4b0a15a1acb1dd8478b0665d946ad7f1"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p><a class="el" href="classFalcon.html" title="Abstract class that represents a falcon.">Falcon</a> emulator that uses the keyboard instead of a novint falcon. </p>
 <p>This class should mainly be used for testing purposes as we only have 1 falcon. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a7b79d2129b322900cc65f6f250469875"></a><!-- doxytag: member="KeyboardFalcon::KeyboardFalcon" ref="a7b79d2129b322900cc65f6f250469875" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">KeyboardFalcon::KeyboardFalcon </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1db3b6a58d955521253dfc7067a88f36"></a><!-- doxytag: member="KeyboardFalcon::~KeyboardFalcon" ref="a1db3b6a58d955521253dfc7067a88f36" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">KeyboardFalcon::~KeyboardFalcon </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
 <hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a5f4b4e7d349e46f2662f8da3baa09086"></a><!-- doxytag: member="KeyboardFalcon::boundingBox" ref="a5f4b4e7d349e46f2662f8da3baa09086" args="() const " -->
 <div class="memitem">
@@ -111,13 +162,149 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>Returns the box to which the slingshot is bound. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the box to which the slingshot is bound </dd></dl>
 
-<p>Implements <a class="el" href="classFalcon.html#a8113221c67437ed4f726af6d68c0e66e">Falcon</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a496423ca690aa227530ac8e3f4ce06a0"></a><!-- doxytag: member="KeyboardFalcon::keyPressed" ref="a496423ca690aa227530ac8e3f4ce06a0" args="(unsigned int key)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void KeyboardFalcon::keyPressed </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>key</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Handle a key pressed event. </p>
+
+<p>Implements <a class="el" href="classKeyboardListener.html#a4e43ef109c98297252d766dad9c92e8d">KeyboardListener</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a88481739030e529d313d95049e5ffb2f"></a><!-- doxytag: member="KeyboardFalcon::resetPosition" ref="a88481739030e529d313d95049e5ffb2f" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void KeyboardFalcon::resetPosition </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af9a2c400cb05910d806861eb8af566f9"></a><!-- doxytag: member="KeyboardFalcon::startPolling" ref="af9a2c400cb05910d806861eb8af566f9" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void KeyboardFalcon::startPolling </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Start reporting falcon events to the mediator. </p>
+
+</div>
+</div>
+<a class="anchor" id="adf5bf86dd3610843b0db8b8795f6049b"></a><!-- doxytag: member="KeyboardFalcon::stopPolling" ref="adf5bf86dd3610843b0db8b8795f6049b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void KeyboardFalcon::stopPolling </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Stop reporting falcon events to the mediator. </p>
+
+</div>
+</div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a4b0a15a1acb1dd8478b0665d946ad7f1"></a><!-- doxytag: member="KeyboardFalcon::_boundingBox" ref="a4b0a15a1acb1dd8478b0665d946ad7f1" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cCollisionAABBBox <a class="el" href="classKeyboardFalcon.html#a4b0a15a1acb1dd8478b0665d946ad7f1">KeyboardFalcon::_boundingBox</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The keyboard falcon cannot move outside of this box. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7bc29a1303fea0fc0eb2b5d165b3bd69"></a><!-- doxytag: member="KeyboardFalcon::firing" ref="a7bc29a1303fea0fc0eb2b5d165b3bd69" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classKeyboardFalcon.html#a7bc29a1303fea0fc0eb2b5d165b3bd69">KeyboardFalcon::firing</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>True if the slingshot is currently in firing mode. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac20d16948761dc18d4e8398f887e3e75"></a><!-- doxytag: member="KeyboardFalcon::position" ref="ac20d16948761dc18d4e8398f887e3e75" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d <a class="el" href="classKeyboardFalcon.html#ac20d16948761dc18d4e8398f887e3e75">KeyboardFalcon::position</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The falcon's current position. </p>
+
+</div>
+</div>
+<a class="anchor" id="af050d570900ba45b0234e0664a9bf3ae"></a><!-- doxytag: member="KeyboardFalcon::reporting" ref="af050d570900ba45b0234e0664a9bf3ae" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classKeyboardFalcon.html#af050d570900ba45b0234e0664a9bf3ae">KeyboardFalcon::reporting</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The keyboard falcon will only report events to the mediator when this is true. </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Falcon/<a class="el" href="KeyboardFalcon_8h_source.html">KeyboardFalcon.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Falcon/KeyboardFalcon.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Falcon/<a class="el" href="KeyboardFalcon_8h_source.html">KeyboardFalcon.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Falcon/<a class="el" href="KeyboardFalcon_8cpp.html">KeyboardFalcon.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -125,7 +312,7 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -134,7 +321,7 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:45 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

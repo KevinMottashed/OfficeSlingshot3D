@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -53,16 +54,51 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>OfficeSlingshot3DFactory Class Reference</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="OfficeSlingshot3DFactory" --><table class="memberdecls">
+<!-- doxytag: class="OfficeSlingshot3DFactory" -->
+<p>A factory to create instances of <a class="el" href="classOfficeSlingshot3D.html" title="The office slingshot 3D class is the class that runs the game The game can be started by calling run(...">OfficeSlingshot3D</a>.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="OfficeSlingshot3DFactory_8h_source.html">OfficeSlingshot3DFactory.h</a>&gt;</code></p>
+<table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae282fe62015e22275188d157d9fa5fcb"></a><!-- doxytag: member="OfficeSlingshot3DFactory::createFromConfigFile" ref="ae282fe62015e22275188d157d9fa5fcb" args="(const std::string &amp;fileName)" -->
-static boost::shared_ptr<br class="typebreak"/>
-&lt; <a class="el" href="classOfficeSlingshot3D.html">OfficeSlingshot3D</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>createFromConfigFile</b> (const std::string &amp;fileName)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static boost::shared_ptr<br class="typebreak"/>
+&lt; <a class="el" href="classOfficeSlingshot3D.html">OfficeSlingshot3D</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOfficeSlingshot3DFactory.html#ae282fe62015e22275188d157d9fa5fcb">createFromConfigFile</a> (const std::string &amp;fileName)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Create an instance of <a class="el" href="classOfficeSlingshot3D.html" title="The office slingshot 3D class is the class that runs the game The game can be started by calling run(...">OfficeSlingshot3D</a> from a configuration file see ReadMe.txt for the format of the configuration file.  <a href="#ae282fe62015e22275188d157d9fa5fcb"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>A factory to create instances of <a class="el" href="classOfficeSlingshot3D.html" title="The office slingshot 3D class is the class that runs the game The game can be started by calling run(...">OfficeSlingshot3D</a>. </p>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ae282fe62015e22275188d157d9fa5fcb"></a><!-- doxytag: member="OfficeSlingshot3DFactory::createFromConfigFile" ref="ae282fe62015e22275188d157d9fa5fcb" args="(const std::string &amp;fileName)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">shared_ptr&lt; <a class="el" href="classOfficeSlingshot3D.html">OfficeSlingshot3D</a> &gt; OfficeSlingshot3DFactory::createFromConfigFile </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>fileName</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Create an instance of <a class="el" href="classOfficeSlingshot3D.html" title="The office slingshot 3D class is the class that runs the game The game can be started by calling run(...">OfficeSlingshot3D</a> from a configuration file see ReadMe.txt for the format of the configuration file. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>fileName</em>&nbsp;</td><td>The configuration file name </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>a reference to the <a class="el" href="classOfficeSlingshot3D.html" title="The office slingshot 3D class is the class that runs the game The game can be started by calling run(...">OfficeSlingshot3D</a> object </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Main/<a class="el" href="OfficeSlingshot3DFactory_8h_source.html">OfficeSlingshot3DFactory.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Main/OfficeSlingshot3DFactory.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Main/<a class="el" href="OfficeSlingshot3DFactory_8h_source.html">OfficeSlingshot3DFactory.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Main/<a class="el" href="OfficeSlingshot3DFactory_8cpp.html">OfficeSlingshot3DFactory.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -70,7 +106,7 @@ static boost::shared_ptr<br class="typebreak"/>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -79,7 +115,7 @@ static boost::shared_ptr<br class="typebreak"/>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:46 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

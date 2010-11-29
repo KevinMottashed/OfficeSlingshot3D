@@ -35,7 +35,7 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Test/TestRunner.cpp" line="32" />
+<source_reference file="../../Test/TestRunner.cpp" line="34" />
 </extent>
 <extent>
 <description>pass by reference</description>

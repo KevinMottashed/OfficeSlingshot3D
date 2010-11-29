@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OfficeSlingshot3D: /home/kevin/workspace/HugMe/HugMe v0.9.1/Audio/Audio.h Source File</title>
+<title>OfficeSlingshot3D: /home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Audio/Audio.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -41,63 +42,69 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/kevin/workspace/HugMe/HugMe v0.9.1/Audio/Audio.h</h1>  </div>
+<h1>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Audio/Audio.h</h1>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef AUDIO_H</span>
+<a href="Audio_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef AUDIO_H</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define AUDIO_H</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
-<a name="l00004"></a>00004 <span class="preprocessor">#include &quot;FMOD.hpp&quot;</span>
-<a name="l00005"></a>00005 
-<a name="l00009"></a><a class="code" href="classAudio.html">00009</a> <span class="keyword">class </span><a class="code" href="classAudio.html" title="Manages everything audio related.">Audio</a>
-<a name="l00010"></a>00010 {
-<a name="l00011"></a>00011 <span class="keyword">public</span>:
-<a name="l00016"></a>00016     <a class="code" href="classAudio.html#aa9d3935a2b91ab4b825bc0cb05f245ea" title="Constructor This will preload all the audio files.">Audio</a>();
-<a name="l00017"></a>00017 
-<a name="l00022"></a>00022     <span class="keyword">virtual</span> <a class="code" href="classAudio.html#ae8f54deecb5f48511aaab469e80294d6" title="Destructor Releases all resources related to the audio files.">~Audio</a>();
-<a name="l00023"></a>00023 
-<a name="l00027"></a>00027     <span class="keywordtype">void</span> <a class="code" href="classAudio.html#abafc657b2fa6b6b622c87ecf7a3acf39" title="play the background music (loops forever)">playBGMusic</a>();
+<a name="l00004"></a>00004 <span class="preprocessor">#include &quot;stdafx.h&quot;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;FMOD.hpp&quot;</span>
+<a name="l00006"></a>00006 
+<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;<a class="code" href="Sound_8h.html">Sound.h</a>&quot;</span>
+<a name="l00008"></a>00008 
+<a name="l00014"></a><a class="code" href="classAudio.html">00014</a> <span class="keyword">class </span><a class="code" href="classAudio.html" title="public Manages everything audio related.">Audio</a>
+<a name="l00015"></a>00015 {
+<a name="l00016"></a>00016 <span class="keyword">public</span>:
+<a name="l00021"></a>00021     <a class="code" href="classAudio.html#aa9d3935a2b91ab4b825bc0cb05f245ea" title="Constructor.">Audio</a>();
+<a name="l00022"></a>00022 
+<a name="l00027"></a>00027     <span class="keyword">virtual</span> <a class="code" href="classAudio.html#ae8f54deecb5f48511aaab469e80294d6" title="Destructor.">~Audio</a>();
 <a name="l00028"></a>00028 
-<a name="l00032"></a>00032     <span class="keywordtype">void</span> <a class="code" href="classAudio.html#a01f3b6aac2b88e2bb2640ce70627b674" title="stop the background music">stopBGMusic</a>();
+<a name="l00032"></a>00032     <span class="keywordtype">void</span> <a class="code" href="classAudio.html#abafc657b2fa6b6b622c87ecf7a3acf39" title="play the background music (loops forever).">playBGMusic</a>();
 <a name="l00033"></a>00033 
-<a name="l00037"></a>00037     <span class="keywordtype">void</span> <a class="code" href="classAudio.html#a5ddf491058537000fed8af79dbf2a35b" title="play hit sound (when a player gets hit)">playHit</a>();
+<a name="l00037"></a>00037     <span class="keywordtype">void</span> <a class="code" href="classAudio.html#a01f3b6aac2b88e2bb2640ce70627b674" title="stop the background music.">stopBGMusic</a>();
 <a name="l00038"></a>00038 
-<a name="l00042"></a>00042     <span class="keywordtype">void</span> <a class="code" href="classAudio.html#afdc5abc6b0be2303beb366901d08f183" title="play slingshot fired sound">playSlingshotFired</a>();
+<a name="l00042"></a>00042     <span class="keywordtype">void</span> <a class="code" href="classAudio.html#a5ddf491058537000fed8af79dbf2a35b" title="play hit sound (when a player gets hit).">playHit</a>();
 <a name="l00043"></a>00043 
-<a name="l00047"></a>00047     <span class="keywordtype">void</span> <a class="code" href="classAudio.html#ab645b7ef99ecfecaa3f2df5edd0e6d80" title="play game start sound">playGameStart</a>();
+<a name="l00047"></a>00047     <span class="keywordtype">void</span> <a class="code" href="classAudio.html#ab4a37d6487d34cbe79360dd8571edb4a" title="play headshot sound (when a player gets hit in the head).">playHeadshot</a>();
 <a name="l00048"></a>00048 
-<a name="l00052"></a>00052     <span class="keywordtype">void</span> <a class="code" href="classAudio.html#a8d71a98c801429602b8d8ab23f494ac9" title="play game over sound (when the player has won)">playGameOverWon</a>();
+<a name="l00052"></a>00052     <span class="keywordtype">void</span> <a class="code" href="classAudio.html#afdc5abc6b0be2303beb366901d08f183" title="play slingshot fired sound.">playSlingshotFired</a>();
 <a name="l00053"></a>00053 
-<a name="l00057"></a>00057     <span class="keywordtype">void</span> <a class="code" href="classAudio.html#a832770af29658fc578e81d8e1651088f" title="play game over sound (when the player has lost)">playGameOverLost</a>();
+<a name="l00057"></a>00057     <span class="keywordtype">void</span> <a class="code" href="classAudio.html#ab645b7ef99ecfecaa3f2df5edd0e6d80" title="play game start sound.">playGameStart</a>();
 <a name="l00058"></a>00058 
-<a name="l00059"></a>00059 <span class="keyword">private</span>:
-<a name="l00060"></a>00060     
-<a name="l00065"></a>00065     <a class="code" href="classAudio.html#aa9d3935a2b91ab4b825bc0cb05f245ea" title="Constructor This will preload all the audio files.">Audio</a>(<span class="keyword">const</span> <a class="code" href="classAudio.html" title="Manages everything audio related.">Audio</a>&amp; other);
-<a name="l00066"></a>00066 
-<a name="l00071"></a>00071     <a class="code" href="classAudio.html" title="Manages everything audio related.">Audio</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classAudio.html" title="Manages everything audio related.">Audio</a>&amp; other);
-<a name="l00072"></a>00072 
-<a name="l00077"></a>00077     FMOD::System* system;
+<a name="l00062"></a>00062     <span class="keywordtype">void</span> <a class="code" href="classAudio.html#a8d71a98c801429602b8d8ab23f494ac9" title="play game over sound (when the player has won).">playGameOverWon</a>();
+<a name="l00063"></a>00063 
+<a name="l00067"></a>00067     <span class="keywordtype">void</span> <a class="code" href="classAudio.html#a832770af29658fc578e81d8e1651088f" title="play game over sound (when the player has lost).">playGameOverLost</a>();
+<a name="l00068"></a>00068 
+<a name="l00072"></a>00072     <span class="keywordtype">void</span> <a class="code" href="classAudio.html#aa0e92b124233981ef4ac6ed5d69df270" title="Mute all audio.">mute</a>();
+<a name="l00073"></a>00073 
+<a name="l00077"></a>00077     <span class="keywordtype">void</span> <a class="code" href="classAudio.html#a04fb3052d1f4dbb7befa514fe617b7cf" title="Unmute all audio.">unmute</a>();
 <a name="l00078"></a>00078 
-<a name="l00082"></a>00082     FMOD::Sound* hitSound;
-<a name="l00083"></a>00083 
-<a name="l00087"></a>00087     FMOD::Sound* slingshotFiredSound;
-<a name="l00088"></a>00088 
-<a name="l00092"></a>00092     FMOD::Sound* round1Sound;
-<a name="l00093"></a>00093 
-<a name="l00097"></a>00097     FMOD::Sound* bgMusicSound;
+<a name="l00083"></a>00083     <span class="keywordtype">void</span> <a class="code" href="classAudio.html#acadf79eefa32465bd4a72a9d21670899" title="Set the volume level.">volume</a>(<span class="keywordtype">float</span> level);
+<a name="l00084"></a>00084 
+<a name="l00085"></a>00085 <span class="keyword">private</span>:
+<a name="l00086"></a>00086     
+<a name="l00091"></a>00091     <a class="code" href="classAudio.html#aa9d3935a2b91ab4b825bc0cb05f245ea" title="Constructor.">Audio</a>(<span class="keyword">const</span> <a class="code" href="classAudio.html" title="public Manages everything audio related.">Audio</a>&amp; other);
+<a name="l00092"></a>00092 
+<a name="l00097"></a>00097     <a class="code" href="classAudio.html" title="public Manages everything audio related.">Audio</a>&amp; <a class="code" href="classAudio.html#ad6c7d7841dd567459afe17da367cfa61" title="Assignment operator.">operator=</a>(<span class="keyword">const</span> <a class="code" href="classAudio.html" title="public Manages everything audio related.">Audio</a>&amp; other);
 <a name="l00098"></a>00098 
-<a name="l00102"></a>00102     FMOD::Channel* bgMusicChannel;
-<a name="l00103"></a>00103 
-<a name="l00107"></a>00107     FMOD::Sound* gameWonSound;
-<a name="l00108"></a>00108 
-<a name="l00112"></a>00112     FMOD::Sound* gameLostSound;
-<a name="l00113"></a>00113 };
-<a name="l00114"></a>00114 
-<a name="l00115"></a>00115 <span class="preprocessor">#endif</span>
+<a name="l00103"></a><a class="code" href="classAudio.html#ae30095f34e5848ea75805f45711c027e">00103</a>     FMOD::System* <a class="code" href="classAudio.html#ae30095f34e5848ea75805f45711c027e" title="The audio system.">system</a>;
+<a name="l00104"></a>00104 
+<a name="l00105"></a><a class="code" href="classAudio.html#a857f24f69951c035512f5f9a13f2bcf2">00105</a>     std::auto_ptr&lt;Sound&gt; <a class="code" href="classAudio.html#a857f24f69951c035512f5f9a13f2bcf2" title="The sound when a player gets hit.">hitSound</a>; 
+<a name="l00106"></a><a class="code" href="classAudio.html#af3f4c316ecaad9bc80d1c54826730307">00106</a>     std::auto_ptr&lt;Sound&gt; <a class="code" href="classAudio.html#af3f4c316ecaad9bc80d1c54826730307" title="The sound when a player gets hit in the head.">headshotSound</a>; 
+<a name="l00107"></a><a class="code" href="classAudio.html#ae45328514dd01e613710bc5aa06547bf">00107</a>     std::auto_ptr&lt;Sound&gt; <a class="code" href="classAudio.html#ae45328514dd01e613710bc5aa06547bf" title="The sound when a slingshot is fired.">slingshotFiredSound</a>; 
+<a name="l00108"></a><a class="code" href="classAudio.html#afc3f70d9cb9adc3dd3afe4c887609d09">00108</a>     std::auto_ptr&lt;Sound&gt; <a class="code" href="classAudio.html#afc3f70d9cb9adc3dd3afe4c887609d09" title="The announcer when the game starts &amp;quot;round 1 .. fight!&amp;quot;.">round1Sound</a>; 
+<a name="l00109"></a><a class="code" href="classAudio.html#ae425293188b6d8e41b379a99c06e8b0e">00109</a>     std::auto_ptr&lt;Sound&gt; <a class="code" href="classAudio.html#ae425293188b6d8e41b379a99c06e8b0e" title="The background music, currently doom3 theme.">bgMusicSound</a>; 
+<a name="l00110"></a><a class="code" href="classAudio.html#ab5838dd880a0ee5a5d0b4d9c3eda0ac7">00110</a>     std::auto_ptr&lt;Sound&gt; <a class="code" href="classAudio.html#ab5838dd880a0ee5a5d0b4d9c3eda0ac7" title="The announcer for when the game is won.">gameWonSound</a>; 
+<a name="l00111"></a><a class="code" href="classAudio.html#a67e54b022143644db63e460961904610">00111</a>     std::auto_ptr&lt;Sound&gt; <a class="code" href="classAudio.html#a67e54b022143644db63e460961904610" title="The announcer for when the game is lost.">gameLostSound</a>; 
+<a name="l00112"></a>00112 };
+<a name="l00113"></a>00113 
+<a name="l00114"></a>00114 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -105,7 +112,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -114,7 +121,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:44 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

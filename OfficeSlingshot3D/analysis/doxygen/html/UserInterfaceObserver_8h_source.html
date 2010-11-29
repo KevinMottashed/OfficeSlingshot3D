@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OfficeSlingshot3D: /home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterfaceObserver.h Source File</title>
+<title>OfficeSlingshot3D: /home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/UserInterface/UserInterfaceObserver.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -41,48 +42,51 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterfaceObserver.h</h1>  </div>
+<h1>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/UserInterface/UserInterfaceObserver.h</h1>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef USER_INTERFACE_OBSERVER_H</span>
+<a href="UserInterfaceObserver_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef USER_INTERFACE_OBSERVER_H</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define USER_INTERFACE_OBSERVER_H</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &quot;stdafx.h&quot;</span>
 <a name="l00005"></a>00005 
-<a name="l00006"></a>00006 <span class="comment">// each update has a context</span>
-<a name="l00007"></a>00007 <span class="comment">// the context represents what has changed in the observed object</span>
-<a name="l00008"></a>00008 <span class="keyword">enum</span> UserInterfaceUpdateContext
-<a name="l00009"></a>00009 {
-<a name="l00010"></a>00010     LISTEN,
-<a name="l00011"></a>00011     CONNECT,
-<a name="l00012"></a>00012     DISCONNECT,
-<a name="l00013"></a>00013     USER_NAME,
-<a name="l00014"></a>00014     START_GAME,
-<a name="l00015"></a>00015     EXIT_GAME,
-<a name="l00016"></a>00016     PAUSE_GAME,
-<a name="l00017"></a>00017     EXIT_APPLICATION,
-<a name="l00018"></a>00018     CHAT_MESSAGE,
-<a name="l00019"></a>00019     ARM_BAND_PORT,
-<a name="l00020"></a>00020     JACKET_PORT,
-<a name="l00021"></a>00021     PREFERENCES,
-<a name="l00022"></a>00022 };
-<a name="l00023"></a>00023 
-<a name="l00024"></a><a class="code" href="classUserInterfaceObserver.html">00024</a> <span class="keyword">class </span><a class="code" href="classUserInterfaceObserver.html">UserInterfaceObserver</a>
-<a name="l00025"></a>00025 {
-<a name="l00026"></a>00026 <span class="keyword">public</span>:
-<a name="l00027"></a>00027     <a class="code" href="classUserInterfaceObserver.html">UserInterfaceObserver</a>();
-<a name="l00028"></a>00028     <span class="keyword">virtual</span> ~<a class="code" href="classUserInterfaceObserver.html">UserInterfaceObserver</a>();
-<a name="l00029"></a>00029 
-<a name="l00030"></a>00030     <span class="comment">// handles an update</span>
-<a name="l00031"></a>00031     <span class="keyword">virtual</span> <span class="keywordtype">void</span> update(UserInterfaceUpdateContext context, <span class="keyword">const</span> <span class="keywordtype">void</span>* data) = 0;
-<a name="l00032"></a>00032 };
-<a name="l00033"></a>00033 
-<a name="l00034"></a>00034 <span class="preprocessor">#endif</span>
-<a name="l00035"></a>00035 <span class="preprocessor"></span>
+<a name="l00011"></a><a class="code" href="UserInterfaceObserver_8h.html#ad1eb8a0c335743e35a99b456afcc81ac">00011</a> <span class="keyword">enum</span> <a class="code" href="UserInterfaceObserver_8h.html#ad1eb8a0c335743e35a99b456afcc81ac" title="Enum.">UserInterfaceUpdateContext</a>
+<a name="l00012"></a>00012 {
+<a name="l00013"></a><a class="code" href="UserInterfaceObserver_8h.html#ad1eb8a0c335743e35a99b456afcc81aca331ec9878c0ed22e62de969d4b96b5bb">00013</a>     LISTEN,
+<a name="l00014"></a><a class="code" href="UserInterfaceObserver_8h.html#ad1eb8a0c335743e35a99b456afcc81aca20391dd2915a0e64343d24c2f2e40b95">00014</a>     CONNECT,
+<a name="l00015"></a><a class="code" href="UserInterfaceObserver_8h.html#ad1eb8a0c335743e35a99b456afcc81aca2f6318afb30e8e2817e6203ebedc8173">00015</a>     DISCONNECT,
+<a name="l00016"></a><a class="code" href="UserInterfaceObserver_8h.html#ad1eb8a0c335743e35a99b456afcc81aca1cb155c0e3b2460a7021710a043abbeb">00016</a>     USER_NAME,
+<a name="l00017"></a><a class="code" href="UserInterfaceObserver_8h.html#ad1eb8a0c335743e35a99b456afcc81acaccab244294e0e1bcded736405b2db375">00017</a>     START_GAME,
+<a name="l00018"></a><a class="code" href="UserInterfaceObserver_8h.html#ad1eb8a0c335743e35a99b456afcc81aca4bf4cbde18067e0600c7c8a7a30ba316">00018</a>     EXIT_GAME,
+<a name="l00019"></a><a class="code" href="UserInterfaceObserver_8h.html#ad1eb8a0c335743e35a99b456afcc81acacd9228164b08b3b5f95d78ae240a2f81">00019</a>     PAUSE_GAME,
+<a name="l00020"></a><a class="code" href="UserInterfaceObserver_8h.html#ad1eb8a0c335743e35a99b456afcc81aca945280aa3e9db0f24215a8d9b6ddbd8e">00020</a>     EXIT_APPLICATION,
+<a name="l00021"></a><a class="code" href="UserInterfaceObserver_8h.html#ad1eb8a0c335743e35a99b456afcc81aca1f6a2dc0bd462759c27efac5715d4e3d">00021</a>     CHAT_MESSAGE,
+<a name="l00022"></a><a class="code" href="UserInterfaceObserver_8h.html#ad1eb8a0c335743e35a99b456afcc81aca39b6e2fa0099e648919e8c979a7eb06d">00022</a>     ARM_BAND_PORT,
+<a name="l00023"></a><a class="code" href="UserInterfaceObserver_8h.html#ad1eb8a0c335743e35a99b456afcc81aca2948775ad5bd33c198ebd79358268af2">00023</a>     JACKET_PORT,
+<a name="l00024"></a><a class="code" href="UserInterfaceObserver_8h.html#ad1eb8a0c335743e35a99b456afcc81aca94015c1f4805e1ef583674afbe37d083">00024</a>     PREFERENCES,
+<a name="l00025"></a><a class="code" href="UserInterfaceObserver_8h.html#ad1eb8a0c335743e35a99b456afcc81aca8112cc30557cf9a4a93ea541d6cf3caf">00025</a>     MUTE_VOLUME,
+<a name="l00026"></a><a class="code" href="UserInterfaceObserver_8h.html#ad1eb8a0c335743e35a99b456afcc81aca740ebeccb8d1858317f3e023f205d1af">00026</a>     CHANGE_VOLUME,
+<a name="l00027"></a>00027 };
+<a name="l00028"></a>00028 
+<a name="l00032"></a><a class="code" href="classUserInterfaceObserver.html">00032</a> <span class="keyword">class </span><a class="code" href="classUserInterfaceObserver.html" title="The observer class for the user interface.">UserInterfaceObserver</a>
+<a name="l00033"></a>00033 {
+<a name="l00034"></a>00034 <span class="keyword">public</span>:
+<a name="l00035"></a>00035 
+<a name="l00039"></a>00039     <a class="code" href="classUserInterfaceObserver.html#a437f45fecb779ae239dd7783e4c70adc" title="Constructor.">UserInterfaceObserver</a>();
+<a name="l00040"></a>00040 
+<a name="l00044"></a>00044     <span class="keyword">virtual</span> <a class="code" href="classUserInterfaceObserver.html#a45325a24548430fe6bc184bfc8f11677" title="Destructor.">~UserInterfaceObserver</a>();
+<a name="l00045"></a>00045 
+<a name="l00051"></a>00051     <span class="comment">// </span>
+<a name="l00052"></a>00052     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classUserInterfaceObserver.html#a99599901a3ae957ef5ae487105d35318" title="Handles an update.">update</a>(<a class="code" href="UserInterfaceObserver_8h.html#ad1eb8a0c335743e35a99b456afcc81ac" title="Enum.">UserInterfaceUpdateContext</a> context, <span class="keyword">const</span> <span class="keywordtype">void</span>* data) = 0;
+<a name="l00053"></a>00053 };
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055 <span class="preprocessor">#endif</span>
+<a name="l00056"></a>00056 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -90,7 +94,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -99,7 +103,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:45 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

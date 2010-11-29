@@ -6,15 +6,15 @@
 <lines_of_code_per_member_function value="******" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
-<lines_of_code value="23" level="0" />
+<lines_of_code value="34" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="1.739" level="0" />
+<lines_of_code_per_line_of_comment value="1.176" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 <weighted_methods_per_class_unity value="4" level="0" />
 <weighted_methods_per_class_visibility value="2" level="0" />
 <depth_of_inheritance_tree value="1" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="4" level="0" />
+<coupling_between_objects value="5" level="0" />
 <IF4 value="0" level="0" />
 <IF4_per_member_function value="********" level="0" />
 <IF4_visible value="0" level="0" />
@@ -24,10 +24,10 @@
 </module_summary>
 <module_detail>
 <description>definition</description>
-<source_reference file="../../UserInterface/Preferences.h" line="10" />
+<source_reference file="../../UserInterface/Preferences.h" line="14" />
 <lines_of_code value="12" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="9" level="0" />
+<lines_of_comment value="12" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module_detail>
@@ -36,11 +36,11 @@
 <name>CPreferences(...)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/Preferences.h" line="14" />
+<source_reference file="../../UserInterface/Preferences.h" line="22" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="6" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -48,7 +48,7 @@
 <name>CPreferences(const UserPreferences &amp;,CWnd *)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/Preferences.cpp" line="14" />
+<source_reference file="../../UserInterface/Preferences.cpp" line="11" />
 </extent>
 <lines_of_code value="9" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -60,11 +60,11 @@
 <name>DoDataExchange(CDataExchange *)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/Preferences.cpp" line="27" />
+<source_reference file="../../UserInterface/Preferences.cpp" line="24" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/Preferences.h" line="35" />
+<source_reference file="../../UserInterface/Preferences.h" line="46" />
 </extent>
 <lines_of_code value="9" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -76,15 +76,15 @@
 <name>getPreferences()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../UserInterface/Preferences.cpp" line="38" />
+<source_reference file="../../UserInterface/Preferences.cpp" line="35" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/Preferences.h" line="17" />
+<source_reference file="../../UserInterface/Preferences.h" line="28" />
 </extent>
 <lines_of_code value="9" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -100,36 +100,47 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/Preferences.cpp" line="27" />
+<source_reference file="../../UserInterface/Preferences.cpp" line="24" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/Preferences.h" line="35" />
+<source_reference file="../../UserInterface/Preferences.h" line="46" />
 </extent>
 <name>CDialog</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../UserInterface/Preferences.h" line="10" />
+<source_reference file="../../UserInterface/Preferences.h" line="14" />
 </extent>
 <name>CString</name>
 <visible>false</visible>
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../UserInterface/Preferences.h" line="25" />
+<source_reference file="../../UserInterface/Preferences.h" line="36" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../UserInterface/Preferences.h" line="26" />
+<source_reference file="../../UserInterface/Preferences.h" line="37" />
 </extent>
 <name>CWnd</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/Preferences.cpp" line="14" />
+<source_reference file="../../UserInterface/Preferences.cpp" line="11" />
+</extent>
+<name>UserPreferences</name>
+<visible>false</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../UserInterface/Preferences.cpp" line="11" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../UserInterface/Preferences.h" line="35" />
 </extent>
 </supplier_module>
 </module>

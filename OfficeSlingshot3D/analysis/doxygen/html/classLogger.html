@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -51,10 +52,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a>  </div>
   <div class="headertitle">
-<h1>Logger Class Reference</h1>  </div>
+<h1>Logger Class Reference<br/>
+<small>
+[<a class="el" href="group__Logger.html">Logger</a>]</small>
+</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="Logger" --><!-- doxytag: inherits="NetworkObserver,FalconObserver,UserInterfaceObserver,ZCameraObserver" --><div class="dynheader">
+<!-- doxytag: class="Logger" --><!-- doxytag: inherits="NetworkObserver,FalconObserver,UserInterfaceObserver,ZCameraObserver" -->
+<p><b>public</b> Abstract class used for logging.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Logger_8h_source.html">Logger.h</a>&gt;</code></p>
+<div class="dynheader">
 Inheritance diagram for Logger:</div>
 <div class="dyncontent">
  <div class="center">
@@ -71,34 +80,523 @@ Inheritance diagram for Logger:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abb5098f19a132e91034a6974ed1f2e51"></a><!-- doxytag: member="Logger::update" ref="abb5098f19a132e91034a6974ed1f2e51" args="(NetworkUpdateContext context, const void *data)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>update</b> (NetworkUpdateContext context, const void *data)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab346038a6b7f284d8f57d1296dd98079"></a><!-- doxytag: member="Logger::update" ref="ab346038a6b7f284d8f57d1296dd98079" args="(UserInterfaceUpdateContext context, const void *data)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>update</b> (UserInterfaceUpdateContext context, const void *data)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afe25b23b7f952e183f1361ac572800c4"></a><!-- doxytag: member="Logger::update" ref="afe25b23b7f952e183f1361ac572800c4" args="(FalconUpdateContext context, const void *data)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>update</b> (FalconUpdateContext context, const void *data)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9ac2396edcab7a8ff751bc3bd5a1dd33"></a><!-- doxytag: member="Logger::update" ref="a9ac2396edcab7a8ff751bc3bd5a1dd33" args="(ZCameraUpdateContext context, const void *data)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>update</b> (ZCameraUpdateContext context, const void *data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#abc41bfb031d896170c7675fa96a6b30c">Logger</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#abc41bfb031d896170c7675fa96a6b30c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#acb668a9e186a25fbaad2e4af6d1ed00a">~Logger</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#acb668a9e186a25fbaad2e4af6d1ed00a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#abb5098f19a132e91034a6974ed1f2e51">update</a> (<a class="el" href="group__Network.html#ga60a60734bbc0407b2f0567078bbe20e1">NetworkUpdateContext</a> context, const void *data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Handles an update coming from the network.  <a href="#abb5098f19a132e91034a6974ed1f2e51"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#ab346038a6b7f284d8f57d1296dd98079">update</a> (<a class="el" href="UserInterfaceObserver_8h.html#ad1eb8a0c335743e35a99b456afcc81ac">UserInterfaceUpdateContext</a> context, const void *data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Handles an update coming from the user interface.  <a href="#ab346038a6b7f284d8f57d1296dd98079"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#afe25b23b7f952e183f1361ac572800c4">update</a> (<a class="el" href="FalconObserver_8h.html#a2c11e5186fe6519d1fe5d6f763ed08e6">FalconUpdateContext</a> context, const void *data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Handles an update coming from the falcon.  <a href="#afe25b23b7f952e183f1361ac572800c4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#a9ac2396edcab7a8ff751bc3bd5a1dd33">update</a> (<a class="el" href="ZCameraObserver_8h.html#a3af3029bde4b133ab920f268aed62718">ZCameraUpdateContext</a> context, const void *data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Handles an update coming from the zcamera.  <a href="#a9ac2396edcab7a8ff751bc3bd5a1dd33"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a801f41e68772457e9635c68e951cc0f1"></a><!-- doxytag: member="Logger::log" ref="a801f41e68772457e9635c68e951cc0f1" args="(LogEvent_t logEvent)=0" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>log</b> (LogEvent_t logEvent)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2c18b2cbcb7338768d69fc710e1553f5"></a><!-- doxytag: member="Logger::log" ref="a2c18b2cbcb7338768d69fc710e1553f5" args="(LogEvent_t logEvent, rc_network error)=0" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>log</b> (LogEvent_t logEvent, rc_network error)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a33d4f1b5211dccdf685210244ccbed15"></a><!-- doxytag: member="Logger::log" ref="a33d4f1b5211dccdf685210244ccbed15" args="(LogEvent_t logEvent, const std::string &amp;str)=0" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>log</b> (LogEvent_t logEvent, const std::string &amp;str)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa7be835d8810ab03f57d11c040ed01ee"></a><!-- doxytag: member="Logger::log" ref="aa7be835d8810ab03f57d11c040ed01ee" args="(LogEvent_t logEvent, const VideoData &amp;video)=0" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>log</b> (LogEvent_t logEvent, const <a class="el" href="structVideoData.html">VideoData</a> &amp;video)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0bfc30bba95fbd89495e9a2f0f1672a3"></a><!-- doxytag: member="Logger::log" ref="a0bfc30bba95fbd89495e9a2f0f1672a3" args="(LogEvent_t logEvent, const cVector3d &amp;vec)=0" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>log</b> (LogEvent_t logEvent, const cVector3d &amp;vec)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2ce2fc72be31a47bc11c023c2ed0ac71"></a><!-- doxytag: member="Logger::log" ref="a2ce2fc72be31a47bc11c023c2ed0ac71" args="(LogEvent_t logEvent, const Projectile &amp;projectile)=0" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>log</b> (LogEvent_t logEvent, const <a class="el" href="classProjectile.html">Projectile</a> &amp;projectile)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af36c61a9def35ee2e9bf4929f5633e90"></a><!-- doxytag: member="Logger::log" ref="af36c61a9def35ee2e9bf4929f5633e90" args="(LogEvent_t logEvent, const UserPreferences &amp;preferences)=0" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>log</b> (LogEvent_t logEvent, const <a class="el" href="structUserPreferences.html">UserPreferences</a> &amp;preferences)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#a801f41e68772457e9635c68e951cc0f1">log</a> (<a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a> logEvent)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Log an event that has no associated data.  <a href="#a801f41e68772457e9635c68e951cc0f1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#a3e211b1fc9a2cb01c2a2d6231b34c134">log</a> (<a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a> logEvent, unsigned int uInt)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Log an event with data of type unsigned int.  <a href="#a3e211b1fc9a2cb01c2a2d6231b34c134"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#a2c18b2cbcb7338768d69fc710e1553f5">log</a> (<a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a> logEvent, <a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a> error)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Log an event with data of type rc_network.  <a href="#a2c18b2cbcb7338768d69fc710e1553f5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#a33d4f1b5211dccdf685210244ccbed15">log</a> (<a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a> logEvent, const std::string &amp;str)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Log an event with data of type string.  <a href="#a33d4f1b5211dccdf685210244ccbed15"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#a0bfc30bba95fbd89495e9a2f0f1672a3">log</a> (<a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a> logEvent, const cVector3d &amp;vec)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Log an event with data of type cVector3d.  <a href="#a0bfc30bba95fbd89495e9a2f0f1672a3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#a2ce2fc72be31a47bc11c023c2ed0ac71">log</a> (<a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a> logEvent, const <a class="el" href="classProjectile.html">Projectile</a> &amp;projectile)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Log an event with data of type <a class="el" href="classProjectile.html" title="Represents a projectile Each projectile has a position and a force behind it.">Projectile</a>.  <a href="#a2ce2fc72be31a47bc11c023c2ed0ac71"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#af36c61a9def35ee2e9bf4929f5633e90">log</a> (<a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a> logEvent, const <a class="el" href="structUserPreferences.html">UserPreferences</a> &amp;preferences)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Log an event with data of type <a class="el" href="structUserPreferences.html" title="public Represents the user preferences.">UserPreferences</a>.  <a href="#af36c61a9def35ee2e9bf4929f5633e90"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#a84d4bfea797a8d06ab8d956aa04edcc3">log</a> (<a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a> logEvent, const <a class="el" href="classPhysicsSync.html">PhysicsSync</a> &amp;sync)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Log an event with data of type <a class="el" href="classPhysicsSync.html" title="public This data structure is used to synchronize 2 virtual environments.">PhysicsSync</a>.  <a href="#a84d4bfea797a8d06ab8d956aa04edcc3"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p><b>public</b> Abstract class used for logging. </p>
+<p>This defines the interface for all loggers. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="abc41bfb031d896170c7675fa96a6b30c"></a><!-- doxytag: member="Logger::Logger" ref="abc41bfb031d896170c7675fa96a6b30c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Logger::Logger </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="acb668a9e186a25fbaad2e4af6d1ed00a"></a><!-- doxytag: member="Logger::~Logger" ref="acb668a9e186a25fbaad2e4af6d1ed00a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Logger::~Logger </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a801f41e68772457e9635c68e951cc0f1"></a><!-- doxytag: member="Logger::log" ref="a801f41e68772457e9635c68e951cc0f1" args="(LogEvent_t logEvent)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Logger::log </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a>&nbsp;</td>
+          <td class="paramname"> <em>logEvent</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected, pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Log an event that has no associated data. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>logEvent</em>&nbsp;</td><td>The event to be logged. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classHumanFormatLogger.html#a36ded631f6095de7b0cb96ec2af0944c">HumanFormatLogger&lt; Stream &gt;</a>, and <a class="el" href="classReplayFormatLogger.html#a18bcc32caf1d4834b9658819c45617bb">ReplayFormatLogger&lt; Stream &gt;</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a33d4f1b5211dccdf685210244ccbed15"></a><!-- doxytag: member="Logger::log" ref="a33d4f1b5211dccdf685210244ccbed15" args="(LogEvent_t logEvent, const std::string &amp;str)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Logger::log </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a>&nbsp;</td>
+          <td class="paramname"> <em>logEvent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>str</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected, pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Log an event with data of type string. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>logEvent</em>&nbsp;</td><td>The event to be logged. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>str</em>&nbsp;</td><td>The associated data. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classHumanFormatLogger.html#adce37538632ef3b2eb7527e49a31d818">HumanFormatLogger&lt; Stream &gt;</a>, and <a class="el" href="classReplayFormatLogger.html#a09c2b70d4bab8a8dce7cd0fcf98ff00f">ReplayFormatLogger&lt; Stream &gt;</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af36c61a9def35ee2e9bf4929f5633e90"></a><!-- doxytag: member="Logger::log" ref="af36c61a9def35ee2e9bf4929f5633e90" args="(LogEvent_t logEvent, const UserPreferences &amp;preferences)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Logger::log </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a>&nbsp;</td>
+          <td class="paramname"> <em>logEvent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structUserPreferences.html">UserPreferences</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>preferences</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected, pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Log an event with data of type <a class="el" href="structUserPreferences.html" title="public Represents the user preferences.">UserPreferences</a>. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>logEvent</em>&nbsp;</td><td>The event to be logged. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>preferences</em>&nbsp;</td><td>The associated data. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classHumanFormatLogger.html#a3ef78598907255bd9a467932f523d2fb">HumanFormatLogger&lt; Stream &gt;</a>, and <a class="el" href="classReplayFormatLogger.html#ac024c64378af6a0e146b6cfc29d3cc63">ReplayFormatLogger&lt; Stream &gt;</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0bfc30bba95fbd89495e9a2f0f1672a3"></a><!-- doxytag: member="Logger::log" ref="a0bfc30bba95fbd89495e9a2f0f1672a3" args="(LogEvent_t logEvent, const cVector3d &amp;vec)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Logger::log </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a>&nbsp;</td>
+          <td class="paramname"> <em>logEvent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const cVector3d &amp;&nbsp;</td>
+          <td class="paramname"> <em>vec</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected, pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Log an event with data of type cVector3d. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>logEvent</em>&nbsp;</td><td>The event to be logged. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>vec</em>&nbsp;</td><td>The associated data. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classHumanFormatLogger.html#ace0b4baa6c6999ca4111e4bc443e6b4a">HumanFormatLogger&lt; Stream &gt;</a>, and <a class="el" href="classReplayFormatLogger.html#afb7d48668573d253ce0a40668897dd2d">ReplayFormatLogger&lt; Stream &gt;</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2ce2fc72be31a47bc11c023c2ed0ac71"></a><!-- doxytag: member="Logger::log" ref="a2ce2fc72be31a47bc11c023c2ed0ac71" args="(LogEvent_t logEvent, const Projectile &amp;projectile)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Logger::log </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a>&nbsp;</td>
+          <td class="paramname"> <em>logEvent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classProjectile.html">Projectile</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>projectile</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected, pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Log an event with data of type <a class="el" href="classProjectile.html" title="Represents a projectile Each projectile has a position and a force behind it.">Projectile</a>. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>logEvent</em>&nbsp;</td><td>The event to be logged. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>projectile</em>&nbsp;</td><td>The associated data. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classHumanFormatLogger.html#a84e429003498dc59385e7e4dfd4dee64">HumanFormatLogger&lt; Stream &gt;</a>, and <a class="el" href="classReplayFormatLogger.html#a7ea8b69c839d2e6da78da5637f3852bd">ReplayFormatLogger&lt; Stream &gt;</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3e211b1fc9a2cb01c2a2d6231b34c134"></a><!-- doxytag: member="Logger::log" ref="a3e211b1fc9a2cb01c2a2d6231b34c134" args="(LogEvent_t logEvent, unsigned int uInt)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Logger::log </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a>&nbsp;</td>
+          <td class="paramname"> <em>logEvent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>uInt</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected, pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Log an event with data of type unsigned int. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>logEvent</em>&nbsp;</td><td>The event to be logged. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>uInt</em>&nbsp;</td><td>The associated data. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classHumanFormatLogger.html#acd608252b3f91d307872a48b33495f28">HumanFormatLogger&lt; Stream &gt;</a>, and <a class="el" href="classReplayFormatLogger.html#a20eece84ff04b7cfb707b143d88c5d21">ReplayFormatLogger&lt; Stream &gt;</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2c18b2cbcb7338768d69fc710e1553f5"></a><!-- doxytag: member="Logger::log" ref="a2c18b2cbcb7338768d69fc710e1553f5" args="(LogEvent_t logEvent, rc_network error)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Logger::log </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a>&nbsp;</td>
+          <td class="paramname"> <em>logEvent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2">rc_network</a>&nbsp;</td>
+          <td class="paramname"> <em>error</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected, pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Log an event with data of type rc_network. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>logEvent</em>&nbsp;</td><td>The event to be logged. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>error</em>&nbsp;</td><td>The associated data. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classHumanFormatLogger.html#a2e419cfe25dbf748ee6b0eb2141f65fc">HumanFormatLogger&lt; Stream &gt;</a>, and <a class="el" href="classReplayFormatLogger.html#aad5d2ca1b6527bda0a773a703d455707">ReplayFormatLogger&lt; Stream &gt;</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a84d4bfea797a8d06ab8d956aa04edcc3"></a><!-- doxytag: member="Logger::log" ref="a84d4bfea797a8d06ab8d956aa04edcc3" args="(LogEvent_t logEvent, const PhysicsSync &amp;sync)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Logger::log </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0">LogEvent_t</a>&nbsp;</td>
+          <td class="paramname"> <em>logEvent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classPhysicsSync.html">PhysicsSync</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>sync</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected, pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Log an event with data of type <a class="el" href="classPhysicsSync.html" title="public This data structure is used to synchronize 2 virtual environments.">PhysicsSync</a>. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>logEvent</em>&nbsp;</td><td>The event to be logged. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>sync</em>&nbsp;</td><td>The associated data. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classHumanFormatLogger.html#a793c554c71116f71debe8fd79399f148">HumanFormatLogger&lt; Stream &gt;</a>, and <a class="el" href="classReplayFormatLogger.html#ae43aeab07e3ea74a743c6105105250cd">ReplayFormatLogger&lt; Stream &gt;</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab346038a6b7f284d8f57d1296dd98079"></a><!-- doxytag: member="Logger::update" ref="ab346038a6b7f284d8f57d1296dd98079" args="(UserInterfaceUpdateContext context, const void *data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Logger::update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="UserInterfaceObserver_8h.html#ad1eb8a0c335743e35a99b456afcc81ac">UserInterfaceUpdateContext</a>&nbsp;</td>
+          <td class="paramname"> <em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&nbsp;</td>
+          <td class="paramname"> <em>data</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Handles an update coming from the user interface. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>context</em>&nbsp;</td><td>The context of the update. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>data</em>&nbsp;</td><td>The data associated with the update. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="afe25b23b7f952e183f1361ac572800c4"></a><!-- doxytag: member="Logger::update" ref="afe25b23b7f952e183f1361ac572800c4" args="(FalconUpdateContext context, const void *data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Logger::update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="FalconObserver_8h.html#a2c11e5186fe6519d1fe5d6f763ed08e6">FalconUpdateContext</a>&nbsp;</td>
+          <td class="paramname"> <em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&nbsp;</td>
+          <td class="paramname"> <em>data</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Handles an update coming from the falcon. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>context</em>&nbsp;</td><td>The context of the update. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>data</em>&nbsp;</td><td>The data associated with the update. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a9ac2396edcab7a8ff751bc3bd5a1dd33"></a><!-- doxytag: member="Logger::update" ref="a9ac2396edcab7a8ff751bc3bd5a1dd33" args="(ZCameraUpdateContext context, const void *data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Logger::update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ZCameraObserver_8h.html#a3af3029bde4b133ab920f268aed62718">ZCameraUpdateContext</a>&nbsp;</td>
+          <td class="paramname"> <em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&nbsp;</td>
+          <td class="paramname"> <em>data</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Handles an update coming from the zcamera. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>context</em>&nbsp;</td><td>The context of the update. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>data</em>&nbsp;</td><td>The data associated with the update. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classZCameraObserver.html#a627e480f25c0d2ef0407f6b09e6883d4">ZCameraObserver</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abb5098f19a132e91034a6974ed1f2e51"></a><!-- doxytag: member="Logger::update" ref="abb5098f19a132e91034a6974ed1f2e51" args="(NetworkUpdateContext context, const void *data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Logger::update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Network.html#ga60a60734bbc0407b2f0567078bbe20e1">NetworkUpdateContext</a>&nbsp;</td>
+          <td class="paramname"> <em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&nbsp;</td>
+          <td class="paramname"> <em>data</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Handles an update coming from the network. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>context</em>&nbsp;</td><td>The context of the update. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>data</em>&nbsp;</td><td>The data associated with the update. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/<a class="el" href="Logger_8h_source.html">Logger.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/Logger.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Logger/<a class="el" href="Logger_8h_source.html">Logger.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Logger/<a class="el" href="Logger_8cpp.html">Logger.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -106,7 +604,7 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>log</b> (LogE
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -115,7 +613,7 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>log</b> (LogE
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:45 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

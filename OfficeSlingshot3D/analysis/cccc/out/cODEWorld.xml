@@ -39,14 +39,14 @@
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Game/VirtualBall.h" line="21" />
+<source_reference file="../../Game/VirtualBall.h" line="23" />
 </extent>
 <name>VirtualEnvironment</name>
 <visible>false</visible>
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="166" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="274" />
 </extent>
 </client_module>
 <supplier_module>

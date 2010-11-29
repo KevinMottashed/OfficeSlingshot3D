@@ -8,13 +8,13 @@ Detailed report on module Projectile
 <TR>
 <TH BGCOLOR="AQUA" WIDTH=70%>Metric</TH><TH BGCOLOR="AQUA" WIDTH=10%>Tag</TH><TH BGCOLOR="AQUA" WIDTH=10%>Overall</TH><TH BGCOLOR="AQUA" WIDTH=10%>Per Function</TH></TR>
 <TR>
-<TD>Lines of Code</TD><TD>LOC</TD><TD ALIGN=RIGHT>    73</TD><TD ALIGN=RIGHT>******</TD></TR>
+<TD>Lines of Code</TD><TD>LOC</TD><TD ALIGN=RIGHT>    74</TD><TD ALIGN=RIGHT>******</TD></TR>
 <TR>
 <TD>McCabe's Cyclomatic Number</TD><TD>MVG</TD><TD ALIGN=RIGHT>     7</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>******</STRONG></TD></TR>
 <TR>
 <TD>Lines of Comment</TD><TD>COM</TD><TD ALIGN=RIGHT>    67</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>********</STRONG></TD></TR>
 <TR>
-<TD>LOC/COM</TD><TD>L_C</TD><TD ALIGN=RIGHT> 1.090</TD><TD>&nbsp;</TD></TR>
+<TD>LOC/COM</TD><TD>L_C</TD><TD ALIGN=RIGHT> 1.104</TD><TD>&nbsp;</TD></TR>
 <TR>
 <TD>MVG/COM</TD><TD>M_C</TD><TD ALIGN=RIGHT> 0.104</TD><TD>&nbsp;</TD></TR>
 <TR>
@@ -32,11 +32,16 @@ Detailed report on module Projectile
 <TR>
 <TD>Information Flow measure ( &nbsp;visible&nbsp;)</TD><TD>IF4v</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>   400</STRONG></TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>********</STRONG></TD></TR>
 <TR>
-<TD>Information Flow measure ( &nbsp;concrete&nbsp;)</TD><TD>IF4c</TD><TD ALIGN=RIGHT>     9</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>********</STRONG></TD></TR>
+<TD>Information Flow measure ( &nbsp;concrete&nbsp;)</TD><TD>IF4c</TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>********</STRONG></TD></TR>
 </TABLE>
 <H2><A NAME="modext">Definitions and Declarations</A></H2>
 <TABLE BORDER WIDTH=100%><TR>
 <TD WIDTH=50%>Description</TD><TH BGCOLOR="AQUA" WIDTH=10%>LOC</TH><TH BGCOLOR="AQUA" WIDTH=10%>MVG</TH><TH BGCOLOR="AQUA" WIDTH=10%>COM</TH><TH BGCOLOR="AQUA" WIDTH=10%>L_C</TH><TH BGCOLOR="AQUA" WIDTH=10%>M_C</TH><TR>
+<TD>declaration &nbsp;
+<CODE><A HREF="cccc_src.html#../../Common/CommonProxy.h:        25">../../Common/CommonProxy.h:25</A></CODE><BR>
+</TD>
+<TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+<TR>
 <TD>definition &nbsp;
 <CODE><A HREF="cccc_src.html#../../Common/Projectile.h:        11">../../Common/Projectile.h:11</A></CODE><BR>
 </TD>
@@ -124,7 +129,7 @@ declaration &nbsp;
 <TR>
 <TD>serialize( &nbsp;Archive &amp;, &nbsp;const int&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#../../Common/Projectile.h:       114">../../Common/Projectile.h:114</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Common/Projectile.h:       119">../../Common/Projectile.h:119</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
@@ -144,62 +149,66 @@ declaration &nbsp;
 <TD WIDTH=50%>
 HumanFormatLogger [V] <BR>
 pass by reference &nbsp;
-<CODE><A HREF="cccc_src.html#../../Logger/HumanFormatLogger.h:       124">../../Logger/HumanFormatLogger.h:124</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Logger/HumanFormatLogger.h:        66">../../Logger/HumanFormatLogger.h:66</A></CODE><BR>
+pass by reference &nbsp;
+<CODE><A HREF="cccc_src.html#../../Logger/HumanFormatLogger.h:       155">../../Logger/HumanFormatLogger.h:155</A></CODE><BR>
 <BR>
 <BR>
 Logger [V] <BR>
 pass by reference &nbsp;
-<CODE><A HREF="cccc_src.html#../../Logger/Logger.h:        36">../../Logger/Logger.h:36</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Logger/Logger.h:        97">../../Logger/Logger.h:97</A></CODE><BR>
 <BR>
 <BR>
 Mediator [CV] <BR>
 pass by value &nbsp;
-<CODE><A HREF="cccc_src.html#../../Mediator/Mediator.cpp:       105">../../Mediator/Mediator.cpp:105</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Mediator/Mediator.cpp:       102">../../Mediator/Mediator.cpp:102</A></CODE><BR>
 pass by value &nbsp;
-<CODE><A HREF="cccc_src.html#../../Mediator/Mediator.h:        79">../../Mediator/Mediator.h:79</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Mediator/Mediator.h:       114">../../Mediator/Mediator.h:114</A></CODE><BR>
 <BR>
 <BR>
 Network [V] <BR>
 pass by reference &nbsp;
-<CODE><A HREF="cccc_src.html#../../Network/Network.h:       109">../../Network/Network.h:109</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Network/Network.h:       106">../../Network/Network.h:106</A></CODE><BR>
 <BR>
 <BR>
 NetworkReplayer [V] <BR>
 pass by reference &nbsp;
-<CODE><A HREF="cccc_src.html#../../Replay/NetworkReplayer.cpp:       178">../../Replay/NetworkReplayer.cpp:178</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Replay/NetworkReplayer.cpp:       181">../../Replay/NetworkReplayer.cpp:181</A></CODE><BR>
 pass by reference &nbsp;
-<CODE><A HREF="cccc_src.html#../../Replay/NetworkReplayer.h:        42">../../Replay/NetworkReplayer.h:42</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Replay/NetworkReplayer.h:       121">../../Replay/NetworkReplayer.h:121</A></CODE><BR>
 <BR>
 <BR>
 PerspectiveMath [V] <BR>
 pass by reference &nbsp;
-<CODE><A HREF="cccc_src.html#../../Mediator/PerspectiveMath.cpp:        14">../../Mediator/PerspectiveMath.cpp:14</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Utils/PerspectiveMath.cpp:        14">../../Utils/PerspectiveMath.cpp:14</A></CODE><BR>
 pass by reference &nbsp;
-<CODE><A HREF="cccc_src.html#../../Mediator/PerspectiveMath.h:        30">../../Mediator/PerspectiveMath.h:30</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Utils/PerspectiveMath.h:        30">../../Utils/PerspectiveMath.h:30</A></CODE><BR>
 <BR>
 <BR>
 ReplayFormatLogger [V] <BR>
 pass by reference &nbsp;
-<CODE><A HREF="cccc_src.html#../../Logger/ReplayFormatLogger.h:       149">../../Logger/ReplayFormatLogger.h:149</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Logger/ReplayFormatLogger.h:        69">../../Logger/ReplayFormatLogger.h:69</A></CODE><BR>
+pass by reference &nbsp;
+<CODE><A HREF="cccc_src.html#../../Logger/ReplayFormatLogger.h:       178">../../Logger/ReplayFormatLogger.h:178</A></CODE><BR>
 <BR>
 <BR>
-VirtualBall [CV] <BR>
-pass by value &nbsp;
-<CODE><A HREF="cccc_src.html#../../Game/VirtualBall.cpp:        28">../../Game/VirtualBall.cpp:28</A></CODE><BR>
-pass by value &nbsp;
-<CODE><A HREF="cccc_src.html#../../Game/VirtualBall.h:        34">../../Game/VirtualBall.h:34</A></CODE><BR>
+VirtualBall [V] <BR>
+pass by reference &nbsp;
+<CODE><A HREF="cccc_src.html#../../Game/VirtualBall.cpp:        30">../../Game/VirtualBall.cpp:30</A></CODE><BR>
+pass by reference &nbsp;
+<CODE><A HREF="cccc_src.html#../../Game/VirtualBall.h:        36">../../Game/VirtualBall.h:36</A></CODE><BR>
 <BR>
 <BR>
 VirtualEnvironment [CV] <BR>
 pass by value &nbsp;
-<CODE><A HREF="cccc_src.html#../../Game/VirtualEnvironment.cpp:        69">../../Game/VirtualEnvironment.cpp:69</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Game/VirtualEnvironment.cpp:        75">../../Game/VirtualEnvironment.cpp:75</A></CODE><BR>
 pass by value &nbsp;
-<CODE><A HREF="cccc_src.html#../../Game/VirtualEnvironment.h:        85">../../Game/VirtualEnvironment.h:85</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Game/VirtualEnvironment.h:        89">../../Game/VirtualEnvironment.h:89</A></CODE><BR>
 <BR>
 <BR>
 WinsockNetwork [V] <BR>
 pass by reference &nbsp;
-<CODE><A HREF="cccc_src.html#../../Network/WinsockNetwork.h:        81">../../Network/WinsockNetwork.h:81</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Network/WinsockNetwork.h:       145">../../Network/WinsockNetwork.h:145</A></CODE><BR>
 <BR>
 <BR>
 &nbsp;
@@ -207,7 +216,7 @@ pass by reference &nbsp;
 <TD WIDTH=50%>
 Archive [V] <BR>
 pass by reference &nbsp;
-<CODE><A HREF="cccc_src.html#../../Common/Projectile.h:       114">../../Common/Projectile.h:114</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Common/Projectile.h:       119">../../Common/Projectile.h:119</A></CODE><BR>
 <BR>
 <BR>
 cVector3d [CV] <BR>

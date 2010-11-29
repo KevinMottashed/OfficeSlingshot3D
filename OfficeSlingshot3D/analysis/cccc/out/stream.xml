@@ -35,7 +35,7 @@
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../Utils/ConsoleStream.h" line="23" />
+<source_reference file="../../Utils/ConsoleStream.h" line="29" />
 </extent>
 </client_module>
 <supplier_module>

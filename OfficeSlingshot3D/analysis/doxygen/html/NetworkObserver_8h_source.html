@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OfficeSlingshot3D: /home/kevin/workspace/HugMe/HugMe v0.9.1/Network/NetworkObserver.h Source File</title>
+<title>OfficeSlingshot3D: /home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Network/NetworkObserver.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -41,49 +42,47 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/NetworkObserver.h</h1>  </div>
+<h1>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Network/NetworkObserver.h</h1>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef NETWORK_OBSERVER_H</span>
+<a href="NetworkObserver_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef NETWORK_OBSERVER_H</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define NETWORK_OBSERVER_H</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &quot;stdafx.h&quot;</span>
 <a name="l00005"></a>00005 
-<a name="l00006"></a>00006 <span class="comment">// each update has a context</span>
-<a name="l00007"></a>00007 <span class="comment">// the context represents what has changed in the observed object</span>
-<a name="l00008"></a>00008 <span class="keyword">enum</span> NetworkUpdateContext
-<a name="l00009"></a>00009 {
-<a name="l00010"></a>00010     PEER_CONNECTED,
-<a name="l00011"></a>00011     PEER_DISCONNECTED,
-<a name="l00012"></a>00012     PEER_START_GAME,
-<a name="l00013"></a>00013     PEER_PAUSE_GAME,
-<a name="l00014"></a>00014     PEER_EXIT_GAME,
-<a name="l00015"></a>00015     NETWORK_ERROR,
-<a name="l00016"></a>00016     RECEIVED_USER_NAME,
-<a name="l00017"></a>00017     RECEIVED_CHAT_MESSAGE,
-<a name="l00018"></a>00018     RECEIVED_VIDEO,
-<a name="l00019"></a>00019     RECEIVED_SLINGSHOT_POSITION,
-<a name="l00020"></a>00020     RECEIVED_PROJECTILE,
-<a name="l00021"></a>00021     RECEIVED_PULLBACK,
-<a name="l00022"></a>00022     RECEIVED_PLAYER_POSITION
-<a name="l00023"></a>00023 };
-<a name="l00024"></a>00024 
-<a name="l00025"></a><a class="code" href="classNetworkObserver.html">00025</a> <span class="keyword">class </span><a class="code" href="classNetworkObserver.html">NetworkObserver</a>
-<a name="l00026"></a>00026 {
-<a name="l00027"></a>00027 <span class="keyword">public</span>:
-<a name="l00028"></a>00028     <a class="code" href="classNetworkObserver.html">NetworkObserver</a>();
-<a name="l00029"></a>00029     <span class="keyword">virtual</span> ~<a class="code" href="classNetworkObserver.html">NetworkObserver</a>();
-<a name="l00030"></a>00030 
-<a name="l00031"></a>00031     <span class="comment">// handles an update</span>
-<a name="l00032"></a>00032     <span class="keyword">virtual</span> <span class="keywordtype">void</span> update(NetworkUpdateContext context, <span class="keyword">const</span> <span class="keywordtype">void</span>* data) = 0;
-<a name="l00033"></a>00033 };
-<a name="l00034"></a>00034 
-<a name="l00035"></a>00035 <span class="preprocessor">#endif</span>
-<a name="l00036"></a>00036 <span class="preprocessor"></span>
+<a name="l00012"></a><a class="code" href="group__Network.html#ga60a60734bbc0407b2f0567078bbe20e1">00012</a> <span class="keyword">enum</span> <a class="code" href="group__Network.html#ga60a60734bbc0407b2f0567078bbe20e1" title="public The context associated with an update.">NetworkUpdateContext</a>
+<a name="l00013"></a>00013 {
+<a name="l00014"></a><a class="code" href="group__Network.html#gga60a60734bbc0407b2f0567078bbe20e1af3d87f56116881c391433b49524cad57">00014</a>     PEER_CONNECTED, 
+<a name="l00015"></a><a class="code" href="group__Network.html#gga60a60734bbc0407b2f0567078bbe20e1a829e12d1f600038598bef31d7800ec5c">00015</a>     PEER_DISCONNECTED, 
+<a name="l00016"></a><a class="code" href="group__Network.html#gga60a60734bbc0407b2f0567078bbe20e1a35ceed561f20a9613f6636fe40c2e0a7">00016</a>     PEER_START_GAME, 
+<a name="l00017"></a><a class="code" href="group__Network.html#gga60a60734bbc0407b2f0567078bbe20e1a62a8d3a990a2fb60e0ff73641b7cced7">00017</a>     PEER_PAUSE_GAME, 
+<a name="l00018"></a><a class="code" href="group__Network.html#gga60a60734bbc0407b2f0567078bbe20e1afba064b190181709a7916974e51e9b98">00018</a>     PEER_EXIT_GAME, 
+<a name="l00019"></a><a class="code" href="group__Network.html#gga60a60734bbc0407b2f0567078bbe20e1ac9754fb0373dd0b6825978060204a47b">00019</a>     NETWORK_ERROR, 
+<a name="l00020"></a><a class="code" href="group__Network.html#gga60a60734bbc0407b2f0567078bbe20e1a508f6b19e9aebb976d6b702559f3d5d5">00020</a>     RECEIVED_USER_NAME, 
+<a name="l00021"></a><a class="code" href="group__Network.html#gga60a60734bbc0407b2f0567078bbe20e1a195417562cda9ffebe100bdbceec179b">00021</a>     RECEIVED_CHAT_MESSAGE, 
+<a name="l00022"></a><a class="code" href="group__Network.html#gga60a60734bbc0407b2f0567078bbe20e1abfd54c3dd2534ab2d149f7461cce01d9">00022</a>     RECEIVED_SLINGSHOT_PULLBACK, 
+<a name="l00023"></a><a class="code" href="group__Network.html#gga60a60734bbc0407b2f0567078bbe20e1ad86b1bcbf8184395f3166450d94a3bec">00023</a>     RECEIVED_PROJECTILE, 
+<a name="l00024"></a><a class="code" href="group__Network.html#gga60a60734bbc0407b2f0567078bbe20e1a033564d7cb6cdbbdace652d7682b3e65">00024</a>     RECEIVED_PLAYER_POSITION, 
+<a name="l00025"></a><a class="code" href="group__Network.html#gga60a60734bbc0407b2f0567078bbe20e1aca0273cde93a0e29bfe22c778334544b">00025</a>     RECEIVED_GAME_OVER, 
+<a name="l00026"></a><a class="code" href="group__Network.html#gga60a60734bbc0407b2f0567078bbe20e1adaa783c653fe8282ec2b4d556b6510cd">00026</a>     RECEIVED_PLAYER_HIT, 
+<a name="l00027"></a><a class="code" href="group__Network.html#gga60a60734bbc0407b2f0567078bbe20e1a08a9fdb325c2afbbebac8ed63dbc9be5">00027</a>     RECEIVED_PHYSICS_SYNC, 
+<a name="l00028"></a>00028 };
+<a name="l00029"></a>00029 
+<a name="l00035"></a><a class="code" href="classNetworkObserver.html">00035</a> <span class="keyword">class </span><a class="code" href="classNetworkObserver.html" title="public Interface for a class observing the network.">NetworkObserver</a>
+<a name="l00036"></a>00036 {
+<a name="l00037"></a>00037 <span class="keyword">public</span>:
+<a name="l00038"></a>00038     <a class="code" href="classNetworkObserver.html#af31566a172c373946fb6ecc2914aa081" title="Constructor.">NetworkObserver</a>(); 
+<a name="l00039"></a>00039     <span class="keyword">virtual</span> <a class="code" href="classNetworkObserver.html#ae1b1c038f738f4740f518f524df55ca0" title="Destructor.">~NetworkObserver</a>(); 
+<a name="l00046"></a>00046     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classNetworkObserver.html#a9eee41ce2b4dcc3ed580513dca0321b1" title="Handle a network update.">update</a>(<a class="code" href="group__Network.html#ga60a60734bbc0407b2f0567078bbe20e1" title="public The context associated with an update.">NetworkUpdateContext</a> context, <span class="keyword">const</span> <span class="keywordtype">void</span>* data) = 0;
+<a name="l00047"></a>00047 };
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049 <span class="preprocessor">#endif</span>
+<a name="l00050"></a>00050 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -91,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -100,7 +99,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:44 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

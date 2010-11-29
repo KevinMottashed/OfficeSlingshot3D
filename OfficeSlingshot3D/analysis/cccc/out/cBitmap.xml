@@ -14,7 +14,7 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="2" level="0" />
+<coupling_between_objects value="4" level="0" />
 <IF4 value="0" level="0" />
 <IF4_per_member_function value="********" level="0" />
 <IF4_visible value="0" level="0" />
@@ -30,19 +30,65 @@
 <module>
 <name>cBitmap</name>
 <client_module>
+<name>LoseScreen</name>
+<visible>false</visible>
+<concrete>false</concrete>
+<extent>
+<description>has by reference</description>
+<source_reference file="../../Game/LoseScreen.h" line="62" />
+</extent>
+<extent>
+<description>has by reference</description>
+<source_reference file="../../Game/LoseScreen.h" line="67" />
+</extent>
+<extent>
+<description>has by reference</description>
+<source_reference file="../../Game/LoseScreen.h" line="72" />
+</extent>
 <name>TitleScreen</name>
 <visible>false</visible>
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/TitleScreen.h" line="32" />
+<source_reference file="../../Game/TitleScreen.h" line="62" />
+</extent>
+<extent>
+<description>has by reference</description>
+<source_reference file="../../Game/TitleScreen.h" line="67" />
+</extent>
+<extent>
+<description>has by reference</description>
+<source_reference file="../../Game/TitleScreen.h" line="72" />
 </extent>
 <name>VirtualEnvironment</name>
 <visible>false</visible>
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="159" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="257" />
+</extent>
+<extent>
+<description>has by reference</description>
+<source_reference file="../../Game/VirtualEnvironment.h" line="262" />
+</extent>
+<extent>
+<description>has by reference</description>
+<source_reference file="../../Game/VirtualEnvironment.h" line="267" />
+</extent>
+<name>WinScreen</name>
+<visible>false</visible>
+<concrete>false</concrete>
+<extent>
+<description>has by reference</description>
+<source_reference file="../../Game/WinScreen.h" line="62" />
+</extent>
+<extent>
+<description>has by reference</description>
+<source_reference file="../../Game/WinScreen.h" line="67" />
+</extent>
+<extent>
+<description>has by reference</description>
+<source_reference file="../../Game/WinScreen.h" line="72" />
 </extent>
 </client_module>
 <supplier_module>

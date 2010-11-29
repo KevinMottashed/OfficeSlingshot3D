@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -50,22 +51,68 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<h1>PacketHeader&lt; PacketType &gt; Struct Template Reference</h1>  </div>
+<h1>PacketHeader&lt; PacketType &gt; Struct Template Reference<br/>
+<small>
+[<a class="el" href="group__Network.html">Network</a>]</small>
+</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="PacketHeader" --><table class="memberdecls">
+<!-- doxytag: class="PacketHeader" -->
+<p><b>package</b> The header for all packets.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Packet_8h_source.html">Packet.h</a>&gt;</code></p>
+<table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa9dea8d798186486a554a72e5cccf251"></a><!-- doxytag: member="PacketHeader::size" ref="aa9dea8d798186486a554a72e5cccf251" args="" -->
-unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><b>size</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a05d799894147a984d82cf048788df180"></a><!-- doxytag: member="PacketHeader::type" ref="a05d799894147a984d82cf048788df180" args="" -->
-PacketType&nbsp;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPacketHeader.html#aa9dea8d798186486a554a72e5cccf251">size</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The size of the packet.  <a href="#aa9dea8d798186486a554a72e5cccf251"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">PacketType&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPacketHeader.html#a05d799894147a984d82cf048788df180">type</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The packet type.  <a href="#a05d799894147a984d82cf048788df180"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
 <h3>template&lt;typename PacketType&gt;<br/>
  struct PacketHeader&lt; PacketType &gt;</h3>
 
+<p><b>package</b> The header for all packets. </p>
+<p>The header contains a size which is the size of the whole packet and a type which should be a enum representing what the packet is. </p>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="aa9dea8d798186486a554a72e5cccf251"></a><!-- doxytag: member="PacketHeader::size" ref="aa9dea8d798186486a554a72e5cccf251" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename PacketType&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int <a class="el" href="structPacketHeader.html">PacketHeader</a>&lt; PacketType &gt;::<a class="el" href="structPacketHeader.html#aa9dea8d798186486a554a72e5cccf251">size</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The size of the packet. </p>
+
+</div>
+</div>
+<a class="anchor" id="a05d799894147a984d82cf048788df180"></a><!-- doxytag: member="PacketHeader::type" ref="a05d799894147a984d82cf048788df180" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename PacketType&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">PacketType <a class="el" href="structPacketHeader.html">PacketHeader</a>&lt; PacketType &gt;::<a class="el" href="structPacketHeader.html#a05d799894147a984d82cf048788df180">type</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The packet type. </p>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/<a class="el" href="Packet_8h_source.html">Packet.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Network/<a class="el" href="Packet_8h_source.html">Packet.h</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -73,7 +120,7 @@ PacketType&nbsp;</td><td class="memItemRight" valign="bottom"><b>type</b></td></
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,7 +129,7 @@ PacketType&nbsp;</td><td class="memItemRight" valign="bottom"><b>type</b></td></
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:46 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

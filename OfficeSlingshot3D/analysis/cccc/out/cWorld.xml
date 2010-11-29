@@ -14,7 +14,7 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="6" level="0" />
+<coupling_between_objects value="9" level="0" />
 <IF4 value="0" level="0" />
 <IF4_per_member_function value="********" level="0" />
 <IF4_visible value="0" level="0" />
@@ -39,25 +39,32 @@
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Game/HpBar.h" line="16" />
+<source_reference file="../../Game/HpBar.h" line="14" />
+</extent>
+<name>LoseScreen</name>
+<visible>false</visible>
+<concrete>false</concrete>
+<extent>
+<description>has by reference</description>
+<source_reference file="../../Game/LoseScreen.h" line="47" />
 </extent>
 <name>TitleScreen</name>
 <visible>false</visible>
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/TitleScreen.h" line="29" />
+<source_reference file="../../Game/TitleScreen.h" line="47" />
 </extent>
 <name>VirtualAvatar</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Game/VirtualAvatar.cpp" line="3" />
+<source_reference file="../../Game/VirtualAvatar.cpp" line="15" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Game/VirtualAvatar.h" line="18" />
+<source_reference file="../../Game/VirtualAvatar.h" line="20" />
 </extent>
 <name>VirtualBall</name>
 <visible>true</visible>
@@ -68,25 +75,43 @@
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Game/VirtualBall.h" line="21" />
+<source_reference file="../../Game/VirtualBall.h" line="23" />
+</extent>
+<name>VirtualElastic</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Game/VirtualElastic.cpp" line="3" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Game/VirtualElastic.h" line="14" />
 </extent>
 <name>VirtualEnvironment</name>
 <visible>false</visible>
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="118" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="206" />
 </extent>
 <name>VirtualSlingshot</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Game/VirtualSlingshot.cpp" line="6" />
+<source_reference file="../../Game/VirtualSlingshot.cpp" line="4" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Game/VirtualSlingshot.h" line="18" />
+<source_reference file="../../Game/VirtualSlingshot.h" line="17" />
+</extent>
+<name>WinScreen</name>
+<visible>false</visible>
+<concrete>false</concrete>
+<extent>
+<description>has by reference</description>
+<source_reference file="../../Game/WinScreen.h" line="47" />
 </extent>
 </client_module>
 <supplier_module>

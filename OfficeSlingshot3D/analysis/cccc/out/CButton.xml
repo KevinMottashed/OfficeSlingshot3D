@@ -35,7 +35,7 @@
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="74" />
+<source_reference file="../../UserInterface/MainDlg.h" line="164" />
 </extent>
 </client_module>
 <supplier_module>

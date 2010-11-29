@@ -2,13 +2,13 @@
 <!--Detailed report on module TestRunner-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="37" level="0" />
+<lines_of_code value="38" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="0" />
 <lines_of_code value="19" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="1.947" level="0" />
+<lines_of_code_per_line_of_comment value="2.000" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 <weighted_methods_per_class_unity value="4" level="0" />
 <weighted_methods_per_class_visibility value="3" level="0" />
@@ -36,13 +36,13 @@
 <name>TestRunner()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Test/TestRunner.cpp" line="9" />
+<source_reference file="../../Test/TestRunner.cpp" line="10" />
 </extent>
 <extent>
 <description>declaration</description>
 <source_reference file="../../Test/TestRunner.h" line="17" />
 </extent>
-<lines_of_code value="7" level="0" />
+<lines_of_code value="8" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
@@ -52,7 +52,7 @@
 <name>run()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Test/TestRunner.cpp" line="24" />
+<source_reference file="../../Test/TestRunner.cpp" line="26" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -68,7 +68,7 @@
 <name>toStream(ostream &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Test/TestRunner.cpp" line="32" />
+<source_reference file="../../Test/TestRunner.cpp" line="34" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -84,7 +84,7 @@
 <name>~TestRunner()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Test/TestRunner.cpp" line="16" />
+<source_reference file="../../Test/TestRunner.cpp" line="18" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -108,7 +108,7 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Test/TestRunner.cpp" line="32" />
+<source_reference file="../../Test/TestRunner.cpp" line="34" />
 </extent>
 <extent>
 <description>pass by reference</description>

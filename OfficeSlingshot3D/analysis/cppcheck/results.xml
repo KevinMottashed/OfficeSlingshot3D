@@ -1,10 +1,23 @@
 <?xml version="1.0"?>
 <results>
-<error file="Game/VirtualAvatar.h" line="47" id="functionConst" severity="style" msg="The function 'VirtualAvatar::isInHitBox' can be const"/>
+<error file="Common/PhysicsSync.cpp" line="3" id="uninitVar" severity="style" msg="Member variable not initialized in the constructor 'PhysicsSync::_age'"/>
+<error file="Falcon/NovintFalcon.cpp" line="101" id="unreadVariable" severity="style" msg="Variable 'Kv' is assigned a value that is never used"/>
+<error file="Game/HpBar.h" line="36" id="functionConst" severity="style" msg="The function 'HpBar::getHP' can be const"/>
+<error file="Game/VirtualAvatar.h" line="44" id="functionConst" severity="style" msg="The function 'VirtualAvatar::getHitBodyPart' can be const"/>
+<error file="Game/VirtualAvatar.h" line="50" id="functionConst" severity="style" msg="The function 'VirtualAvatar::getChestMin' can be const"/>
+<error file="Game/VirtualAvatar.h" line="56" id="functionConst" severity="style" msg="The function 'VirtualAvatar::getChestMax' can be const"/>
+<error file="Game/VirtualAvatar.h" line="62" id="functionConst" severity="style" msg="The function 'VirtualAvatar::getRightArmMin' can be const"/>
+<error file="Game/VirtualAvatar.h" line="68" id="functionConst" severity="style" msg="The function 'VirtualAvatar::getRightArmMax' can be const"/>
+<error file="Game/VirtualAvatar.h" line="74" id="functionConst" severity="style" msg="The function 'VirtualAvatar::getLeftArmMin' can be const"/>
+<error file="Game/VirtualAvatar.h" line="80" id="functionConst" severity="style" msg="The function 'VirtualAvatar::getLeftArmMax' can be const"/>
+<error file="Game/VirtualAvatar.h" line="86" id="functionConst" severity="style" msg="The function 'VirtualAvatar::getHeadMin' can be const"/>
+<error file="Game/VirtualAvatar.h" line="92" id="functionConst" severity="style" msg="The function 'VirtualAvatar::getHeadMax' can be const"/>
 <error file="Game/VirtualEnvironment.cpp" line="7" id="uninitVar" severity="style" msg="Member variable not initialized in the constructor 'VirtualEnvironment::lNumBalls'"/>
 <error file="Game/VirtualEnvironment.cpp" line="7" id="uninitVar" severity="style" msg="Member variable not initialized in the constructor 'VirtualEnvironment::rNumBalls'"/>
 <error file="Game/VirtualEnvironment.cpp" line="7" id="uninitVar" severity="style" msg="Member variable not initialized in the constructor 'VirtualEnvironment::ODEGround'"/>
 <error file="Game/VirtualEnvironment.cpp" line="7" id="uninitVar" severity="style" msg="Member variable not initialized in the constructor 'VirtualEnvironment::ODEWorld'"/>
+<error file="Game/VirtualEnvironment.cpp" line="7" id="uninitVar" severity="style" msg="Member variable not initialized in the constructor 'VirtualEnvironment::rElastics'"/>
+<error file="Game/VirtualEnvironment.cpp" line="7" id="uninitVar" severity="style" msg="Member variable not initialized in the constructor 'VirtualEnvironment::lElastics'"/>
 <error file="Game/VirtualEnvironment.cpp" line="7" id="uninitVar" severity="style" msg="Member variable not initialized in the constructor 'VirtualEnvironment::lHpBar'"/>
 <error file="Game/VirtualEnvironment.cpp" line="7" id="uninitVar" severity="style" msg="Member variable not initialized in the constructor 'VirtualEnvironment::rHpBar'"/>
 <error file="Game/VirtualEnvironment.cpp" line="7" id="uninitVar" severity="style" msg="Member variable not initialized in the constructor 'VirtualEnvironment::lAvatar'"/>
@@ -15,15 +28,20 @@
 <error file="Logger/Logger.cpp" line="17" id="wrongmathcall" severity="error" msg="Passing value 0 to log() leads to undefined result"/>
 <error file="Logger/ReplayFormatEvent.cpp" line="3" id="uninitVar" severity="style" msg="Member variable not initialized in the constructor 'ReplayFormatEvent::logEvent'"/>
 <error file="Logger/ReplayFormatEvent.cpp" line="3" id="uninitVar" severity="style" msg="Member variable not initialized in the constructor 'ReplayFormatEvent::time'"/>
-<error file="UserInterface/MFCOpenGLControl.cpp" line="3" id="uninitVar" severity="style" msg="Member variable not initialized in the constructor 'MFCOpenGLControl::_camera'"/>
-<error file="UserInterface/MFCOpenGLControl.cpp" line="3" id="uninitVar" severity="style" msg="Member variable not initialized in the constructor 'MFCOpenGLControl::m_nPixelFormat'"/>
-<error file="UserInterface/MFCOpenGLControl.cpp" line="3" id="uninitVar" severity="style" msg="Member variable not initialized in the constructor 'MFCOpenGLControl::hWnd'"/>
+<error file="UserInterface/MFCOpenGLControl.cpp" line="5" id="uninitVar" severity="style" msg="Member variable not initialized in the constructor 'MFCOpenGLControl::_camera'"/>
+<error file="UserInterface/MFCOpenGLControl.cpp" line="5" id="uninitVar" severity="style" msg="Member variable not initialized in the constructor 'MFCOpenGLControl::m_nPixelFormat'"/>
+<error file="UserInterface/MFCOpenGLControl.cpp" line="5" id="uninitVar" severity="style" msg="Member variable not initialized in the constructor 'MFCOpenGLControl::hWnd'"/>
 <error file="Jacket/Serialport.cpp" line="1" id="unusedFunction" severity="style" msg="The function 'GetCommEvents' is never used"/>
 <error file="Jacket/Serialport.cpp" line="1" id="unusedFunction" severity="style" msg="The function 'GetDCB' is never used"/>
 <error file="ZCamera/DepthCamera.cpp" line="1" id="unusedFunction" severity="style" msg="The function 'GetDepthWindowPosition' is never used"/>
 <error file="ZCamera/DepthCamera.cpp" line="1" id="unusedFunction" severity="style" msg="The function 'GetVideoSize' is never used"/>
 <error file="Jacket/Serialport.cpp" line="1" id="unusedFunction" severity="style" msg="The function 'GetWriteBufferSize' is never used"/>
 <error file="ZCamera/DepthCamera.cpp" line="1" id="unusedFunction" severity="style" msg="The function 'IsDepthFilterEnabled' is never used"/>
+<error file="Jacket/TactileArray.cpp" line="1" id="unusedFunction" severity="style" msg="The function 'getArraySize' is never used"/>
+<error file="Jacket/TactileArray.cpp" line="1" id="unusedFunction" severity="style" msg="The function 'getArraySizeX' is never used"/>
+<error file="Jacket/TactileArray.cpp" line="1" id="unusedFunction" severity="style" msg="The function 'getArraySizeY' is never used"/>
+<error file="Jacket/TactileArray.cpp" line="1" id="unusedFunction" severity="style" msg="The function 'getMaxIntensity' is never used"/>
 <error file="Network/NetworkSocket.cpp" line="1" id="unusedFunction" severity="style" msg="The function 'isServer' is never used"/>
+<error file="Jacket/TactileArray.cpp" line="1" id="unusedFunction" severity="style" msg="The function 'test1by1Thread' is never used"/>
 <error file="Test/Framework/TestFailedException.cpp" line="1" id="unusedFunction" severity="style" msg="The function 'what' is never used"/>
 </results>

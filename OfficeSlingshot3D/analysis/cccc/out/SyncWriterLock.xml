@@ -6,7 +6,7 @@
 <lines_of_code_per_member_function value="******" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="0" />
-<lines_of_code value="4" level="0" />
+<lines_of_code value="11" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
@@ -24,7 +24,7 @@
 </module_summary>
 <module_detail>
 <description>definition</description>
-<source_reference file="../../Utils/SyncReaderWriters.h" line="79" />
+<source_reference file="../../Utils/SyncReaderWriters.h" line="101" />
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="4" level="0" />
@@ -40,11 +40,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Utils/SyncReaderWriters.h" line="82" />
+<source_reference file="../../Utils/SyncReaderWriters.h" line="108" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -56,11 +56,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Utils/SyncReaderWriters.h" line="83" />
+<source_reference file="../../Utils/SyncReaderWriters.h" line="113" />
 </extent>
 <lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -80,11 +80,11 @@
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Utils/SyncReaderWriters.h" line="82" />
+<source_reference file="../../Utils/SyncReaderWriters.h" line="108" />
 </extent>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Utils/SyncReaderWriters.h" line="85" />
+<source_reference file="../../Utils/SyncReaderWriters.h" line="115" />
 </extent>
 </supplier_module>
 </module>

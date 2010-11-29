@@ -6,7 +6,7 @@
 <lines_of_code_per_member_function value="******" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
-<lines_of_code value="10" level="0" />
+<lines_of_code value="12" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
@@ -24,10 +24,10 @@
 </module_summary>
 <module_detail>
 <description>definition</description>
-<source_reference file="../../Utils/ConsoleStream.h" line="16" />
+<source_reference file="../../Utils/ConsoleStream.h" line="10" />
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="7" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module_detail>
@@ -44,7 +44,7 @@
 </extent>
 <lines_of_code value="9" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="3" level="0" />
+<lines_of_comment value="9" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -58,7 +58,7 @@
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Utils/ConsoleStream.h" line="29" />
+<source_reference file="../../Utils/ConsoleStream.h" line="45" />
 </extent>
 </client_module>
 <supplier_module>
@@ -67,7 +67,7 @@
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../Utils/ConsoleStream.h" line="16" />
+<source_reference file="../../Utils/ConsoleStream.h" line="10" />
 </extent>
 <name>streamsize</name>
 <visible>true</visible>

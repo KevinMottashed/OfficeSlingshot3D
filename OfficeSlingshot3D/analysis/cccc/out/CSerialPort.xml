@@ -354,7 +354,7 @@
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Jacket/TactileArray.h" line="57" />
+<source_reference file="../../Jacket/TactileArray.h" line="190" />
 </extent>
 </client_module>
 <supplier_module>

@@ -35,14 +35,14 @@
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/VirtualBall.h" line="52" />
+<source_reference file="../../Game/VirtualBall.h" line="98" />
 </extent>
 <name>VirtualEnvironment</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="183" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="291" />
 </extent>
 </client_module>
 <supplier_module>

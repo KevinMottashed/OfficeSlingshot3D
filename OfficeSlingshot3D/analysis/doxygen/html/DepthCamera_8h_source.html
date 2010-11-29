@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OfficeSlingshot3D: /home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h Source File</title>
+<title>OfficeSlingshot3D: /home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/ZCamera/DepthCamera.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -41,14 +42,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/DepthCamera.h</h1>  </div>
+<h1>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/ZCamera/DepthCamera.h</h1>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//****************************************************************************</span>
+<a href="DepthCamera_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//****************************************************************************</span>
 <a name="l00002"></a>00002 <span class="comment">//</span>
 <a name="l00003"></a>00003 <span class="comment">//  Copyright (C) 1997-2007 3DV SYSTEMS LTD.</span>
 <a name="l00004"></a>00004 <span class="comment">//  All rights reserved.</span>
@@ -68,139 +70,118 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00018"></a>00018 <span class="preprocessor">#include &quot;stdafx.h&quot;</span>
 <a name="l00019"></a>00019 <span class="preprocessor">#include &quot;tdvCameraInterface.h&quot;</span>
 <a name="l00020"></a>00020 
-<a name="l00021"></a>00021 <span class="comment">// video callback definition</span>
-<a name="l00022"></a>00022 <span class="keywordtype">void</span> videoCallBack(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> * pDepthBuf, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> * pRgbBuf, 
-<a name="l00023"></a>00023                           <span class="keywordtype">int</span> bufIndex, <span class="keywordtype">void</span>* pObject);
-<a name="l00024"></a>00024 <span class="comment">// command callback definition</span>
-<a name="l00025"></a>00025 <span class="keywordtype">void</span> cmdCallBack(<span class="keywordtype">int</span> cmd, <span class="keywordtype">void</span>* pObject);
-<a name="l00026"></a>00026 
-<a name="l00027"></a>00027 
-<a name="l00028"></a><a class="code" href="classCDepthCamera.html">00028</a> <span class="keyword">class </span><a class="code" href="classCDepthCamera.html">CDepthCamera</a>
-<a name="l00029"></a>00029 {
-<a name="l00030"></a>00030     <span class="comment">// define the callbacks as friend functions, to enable them full access to CDepthCamera object</span>
-<a name="l00031"></a>00031     <span class="keyword">friend</span> <span class="keywordtype">void</span> videoCallBack(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> * pDepthBuf, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> * pRgbBuf, 
-<a name="l00032"></a>00032                               <span class="keywordtype">int</span> bufIndex, <span class="keywordtype">void</span>* pObject);
-<a name="l00033"></a>00033     <span class="keyword">friend</span> <span class="keywordtype">void</span> cmdCallBack(<span class="keywordtype">int</span> cmd, <span class="keywordtype">void</span>* pObject);
-<a name="l00034"></a>00034 
-<a name="l00035"></a>00035 <span class="keyword">public</span>:
-<a name="l00036"></a>00036     <a class="code" href="classCDepthCamera.html">CDepthCamera</a>(<span class="keywordtype">void</span>);
-<a name="l00037"></a>00037 
-<a name="l00038"></a>00038     <span class="comment">// Clean-up internal objects.</span>
-<a name="l00039"></a>00039     ~<a class="code" href="classCDepthCamera.html">CDepthCamera</a>(<span class="keywordtype">void</span>); 
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041     <span class="comment">// initialize the TDVCameraInterfaceBase object, and the callbacks</span>
-<a name="l00042"></a>00042     <span class="comment">// in case the camera is not connected or DMachine is not running,</span>
-<a name="l00043"></a>00043     <span class="comment">// it will wait the specified time until returning, to prevent program blocking.</span>
-<a name="l00044"></a>00044     <span class="comment">// by default, it will wait indefinitely</span>
-<a name="l00045"></a>00045     <span class="keywordtype">bool</span> Initialize(<span class="keywordtype">int</span> timeout = INFINITE); 
-<a name="l00046"></a>00046     
-<a name="l00047"></a>00047     <span class="comment">// currently the supported resolutions are: </span>
-<a name="l00048"></a>00048     <span class="comment">//      - RESOLUTION_320X240_30FPS </span>
-<a name="l00049"></a>00049     <span class="comment">//      - RESOLUTION_160X120_60FPS</span>
-<a name="l00050"></a>00050     <span class="comment">// this function blocks until the resolution has been changed.</span>
-<a name="l00051"></a>00051     <span class="keywordtype">void</span> ChangeResolution(<span class="keywordtype">int</span> resolutionMode);
-<a name="l00052"></a>00052 
-<a name="l00053"></a>00053     <span class="comment">// get video frame parameters.</span>
-<a name="l00054"></a>00054     <span class="keywordtype">bool</span> GetVideoSize(<span class="keywordtype">int</span>&amp; width, <span class="keywordtype">int</span>&amp; height, 
-<a name="l00055"></a>00055                       <span class="keywordtype">int</span>&amp; rgbFullResWidth, <span class="keywordtype">int</span>&amp; rgbFullResHeight,
-<a name="l00056"></a>00056                       <span class="keywordtype">int</span>&amp; depthPixelSize, <span class="keywordtype">int</span>&amp; rgbPixelSize) <span class="keyword">const</span>;
-<a name="l00057"></a>00057 
-<a name="l00058"></a>00058     <span class="comment">// returns the maximal width possible for setting depth range, measured in centemeters</span>
-<a name="l00059"></a>00059     <span class="keywordtype">int</span> GetMaxAllowedWidth() <span class="keyword">const</span>;
-<a name="l00060"></a>00060 
-<a name="l00061"></a>00061     <span class="comment">// set the depth range manually. This function chooses default settings</span>
-<a name="l00062"></a>00062     <span class="comment">// that will best fit the distance\width specified</span>
-<a name="l00063"></a>00063     <span class="comment">// the depth range will be between distance and distance+width, measured in centemeters</span>
-<a name="l00064"></a>00064     <span class="keywordtype">void</span> SetDepthWindowPosition(<span class="keywordtype">int</span> distance, <span class="keywordtype">int</span> width);
-<a name="l00065"></a>00065 
-<a name="l00066"></a>00066     <span class="comment">// get the depth range distance\width</span>
-<a name="l00067"></a>00067     <span class="comment">// the depth range will be between distance and distance+width, measured in centemeters</span>
-<a name="l00068"></a>00068     <span class="keywordtype">void</span> GetDepthWindowPosition(<span class="keywordtype">int</span> &amp;distance, <span class="keywordtype">int</span> &amp;width) <span class="keyword">const</span>;
-<a name="l00069"></a>00069 
-<a name="l00070"></a>00070     <span class="comment">// set the width specified (in centemeters), and centers the depth window </span>
-<a name="l00071"></a>00071     <span class="comment">// around the closest object to the camera</span>
-<a name="l00072"></a>00072     <span class="comment">// the function blocks until object is found</span>
-<a name="l00073"></a>00073     <span class="keywordtype">void</span> FindObjectUsingWidth(<span class="keywordtype">int</span> depthWidth);
-<a name="l00074"></a>00074 
-<a name="l00075"></a>00075     <span class="comment">// enable\disable the transfer of RGB in 640x480 resolution. </span>
-<a name="l00076"></a>00076     <span class="comment">// When enabled, this consumes more CPU</span>
-<a name="l00077"></a>00077     <span class="keywordtype">void</span> EnableRGBFullResolution(<span class="keywordtype">bool</span> enable);
-<a name="l00078"></a>00078 
-<a name="l00079"></a>00079     <span class="comment">// check whether the RGB in full resolution is also transfered</span>
-<a name="l00080"></a>00080     <span class="keywordtype">bool</span> IsRGBFullResolutionEnabled() <span class="keyword">const</span>;
-<a name="l00081"></a>00081 
-<a name="l00082"></a>00082     <span class="comment">// enable\disable the transfer of IR Video (Primary and secondary IR).</span>
-<a name="l00083"></a>00083     <span class="comment">// When enabled, this consumes more CPU</span>
-<a name="l00084"></a>00084     <span class="keywordtype">void</span> EnableIRVideoTransfer(<span class="keywordtype">bool</span> enable);
-<a name="l00085"></a>00085 
-<a name="l00086"></a>00086     <span class="comment">// check whether the IR video (primary and secondary) is also transfered</span>
-<a name="l00087"></a>00087     <span class="keywordtype">bool</span> IsIRVideoTransferEnabled() <span class="keyword">const</span>;
+<a name="l00024"></a>00024 <span class="keywordtype">void</span> <a class="code" href="DepthCamera_8cpp.html#ac08b981ee61b617b6b0530e85880e692" title="video callback definition">videoCallBack</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> * pDepthBuf, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> * <a class="code" href="TDVCameraInterface_8h.html#aedd72030031117ddb7ce6263e18fbf4d">pRgbBuf</a>, 
+<a name="l00025"></a>00025                           <span class="keywordtype">int</span> <a class="code" href="TDVCameraInterface_8h.html#a5ad8256bd74e0afd76867ff9c5f7a63f">bufIndex</a>, <span class="keywordtype">void</span>* <a class="code" href="TDVCameraInterface_8h.html#a1c9117b12efc5066ab9cea83d3b6f2fd">pObject</a>);
+<a name="l00029"></a>00029 <span class="keywordtype">void</span> <a class="code" href="DepthCamera_8cpp.html#ac9f4aa0d65f8d18cfc2ff367d68ae7db" title="command callback definition">cmdCallBack</a>(<span class="keywordtype">int</span> cmd, <span class="keywordtype">void</span>* <a class="code" href="TDVCameraInterface_8h.html#a1c9117b12efc5066ab9cea83d3b6f2fd">pObject</a>);
+<a name="l00030"></a>00030 
+<a name="l00035"></a><a class="code" href="classCDepthCamera.html">00035</a> <span class="keyword">class </span><a class="code" href="classCDepthCamera.html" title="The main class that deals with the z-camera hardware and API.">CDepthCamera</a>
+<a name="l00036"></a>00036 {
+<a name="l00045"></a>00045     <span class="keyword">friend</span> <span class="keywordtype">void</span> <a class="code" href="classCDepthCamera.html#ac08b981ee61b617b6b0530e85880e692" title="Define the video callback as friend functions, to enable full access to CDepthCamera object...">videoCallBack</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> * pDepthBuf, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> * <a class="code" href="TDVCameraInterface_8h.html#aedd72030031117ddb7ce6263e18fbf4d">pRgbBuf</a>, 
+<a name="l00046"></a>00046                               <span class="keywordtype">int</span> <a class="code" href="TDVCameraInterface_8h.html#a5ad8256bd74e0afd76867ff9c5f7a63f">bufIndex</a>, <span class="keywordtype">void</span>* <a class="code" href="TDVCameraInterface_8h.html#a1c9117b12efc5066ab9cea83d3b6f2fd">pObject</a>);
+<a name="l00047"></a>00047     
+<a name="l00054"></a>00054     <span class="keyword">friend</span> <span class="keywordtype">void</span> <a class="code" href="classCDepthCamera.html#ac9f4aa0d65f8d18cfc2ff367d68ae7db" title="Define the command callback as friend functions, to enable full access to CDepthCamera object...">cmdCallBack</a>(<span class="keywordtype">int</span> cmd, <span class="keywordtype">void</span>* pObject);
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056 <span class="keyword">public</span>:
+<a name="l00060"></a>00060     <a class="code" href="classCDepthCamera.html#ac75f195acb38130b5c99689db2e6e17a" title="Constructor.">CDepthCamera</a>(<span class="keywordtype">void</span>);
+<a name="l00061"></a>00061 
+<a name="l00065"></a>00065     <a class="code" href="classCDepthCamera.html#abf96f2d756152525ea65a9c977099c6b" title="Clean-up internal objects.">~CDepthCamera</a>(<span class="keywordtype">void</span>); 
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067 
+<a name="l00076"></a>00076     <span class="keywordtype">bool</span> <a class="code" href="classCDepthCamera.html#a96a77d7c76328eddee19dac8c506ad10" title="initialize the TDVCameraInterfaceBase object, and the callbacks in case the camera is not connected o...">Initialize</a>(<span class="keywordtype">int</span> timeout = INFINITE); 
+<a name="l00077"></a>00077     
+<a name="l00078"></a>00078     <span class="comment">// currently the supported resolutions are: </span>
+<a name="l00079"></a>00079     <span class="comment">//      - RESOLUTION_320X240_30FPS </span>
+<a name="l00080"></a>00080     <span class="comment">//      - RESOLUTION_160X120_60FPS</span>
+<a name="l00081"></a>00081     <span class="comment">// this function blocks until the resolution has been changed.</span>
+<a name="l00082"></a>00082 
+<a name="l00087"></a>00087     <span class="keywordtype">void</span> <a class="code" href="classCDepthCamera.html#a44a96495b5cf3a644fecdaacc47f1c81" title="Change the video resolution.">ChangeResolution</a>(<span class="keywordtype">int</span> resolutionMode);
 <a name="l00088"></a>00088 
-<a name="l00089"></a>00089     <span class="comment">// when the user needs a 300cm depth window range, enable this mode.</span>
-<a name="l00090"></a>00090     <span class="comment">// It will automatically place the depth range to support depth range starting</span>
-<a name="l00091"></a>00091     <span class="comment">// from 100cm and ending at 400cm (distance from the camera).</span>
-<a name="l00092"></a>00092     <span class="keywordtype">void</span> EnableWideDepthMode(<span class="keywordtype">bool</span> enable);
-<a name="l00093"></a>00093 
-<a name="l00094"></a>00094     <span class="comment">// is the large depth mode enabled?</span>
-<a name="l00095"></a>00095     <span class="keywordtype">bool</span> IsWideDepthModeEnabled() <span class="keyword">const</span>;
-<a name="l00096"></a>00096 
-<a name="l00097"></a>00097     <span class="comment">// enable\disable the &quot;smooth&quot; filter. also set the filter&#39;s intensity</span>
-<a name="l00098"></a>00098     <span class="keywordtype">void</span> EnableDepthFilter(<span class="keywordtype">bool</span> enable, <span class="keywordtype">int</span> intensity = 25);
-<a name="l00099"></a>00099     
-<a name="l00100"></a>00100     <span class="comment">// check if the depth filter is enabled, and if so, what is it&#39;s intensity</span>
-<a name="l00101"></a>00101     <span class="keywordtype">bool</span> IsDepthFilterEnabled() <span class="keyword">const</span>;
+<a name="l00099"></a>00099     <span class="keywordtype">bool</span> <a class="code" href="classCDepthCamera.html#aa4e2377f5716a4be08887f1d30b90b45" title="get video frame parameters.">GetVideoSize</a>(<span class="keywordtype">int</span>&amp; width, <span class="keywordtype">int</span>&amp; height, 
+<a name="l00100"></a>00100                       <span class="keywordtype">int</span>&amp; rgbFullResWidth, <span class="keywordtype">int</span>&amp; rgbFullResHeight,
+<a name="l00101"></a>00101                       <span class="keywordtype">int</span>&amp; depthPixelSize, <span class="keywordtype">int</span>&amp; rgbPixelSize) <span class="keyword">const</span>;
 <a name="l00102"></a>00102 
-<a name="l00103"></a>00103     <span class="comment">// returns the next frames data. </span>
-<a name="l00104"></a>00104     <span class="comment">// If RGB full resolution or the IR video is not enabled,</span>
-<a name="l00105"></a>00105     <span class="comment">// their relevant pointer will be NULL.</span>
-<a name="l00106"></a>00106     <span class="comment">// This function will block until the next frame is ready, or until timeout</span>
-<a name="l00107"></a>00107     <span class="comment">// is reached. If timeout occurs, the function returns false, otherwise true.</span>
-<a name="l00108"></a>00108     <span class="keywordtype">bool</span> GetNextFrame(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* &amp;pDepthFrame, 
-<a name="l00109"></a>00109                       <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* &amp;pRGBFrame, 
-<a name="l00110"></a>00110                       <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* &amp;pRGBFullResFrame,
-<a name="l00111"></a>00111                       <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* &amp;pPrimaryIR,
-<a name="l00112"></a>00112                       <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* &amp;pSecondaryIR,
-<a name="l00113"></a>00113                       <span class="keywordtype">int</span> timeout = INFINITE);
-<a name="l00114"></a>00114     <span class="comment">// when you wish to get full control over other parameters, you can get the</span>
-<a name="l00115"></a>00115     <span class="comment">// internal TDVCameraInterfaceBase object and handle things by yourself</span>
-<a name="l00116"></a>00116     <a class="code" href="classTDVCameraInterfaceBase.html">TDVCameraInterfaceBase</a>* GetCameraInterface();
+<a name="l00107"></a>00107     <span class="keywordtype">int</span> <a class="code" href="classCDepthCamera.html#af4e2522bd2bf8bd42521998bbc3f034e" title="Retrieves the maximal width possible for setting depth range, measured in centemeters.">GetMaxAllowedWidth</a>() <span class="keyword">const</span>;
+<a name="l00108"></a>00108 
+<a name="l00116"></a>00116     <span class="keywordtype">void</span> <a class="code" href="classCDepthCamera.html#a873d46b85b1bafb25d78910a12bd4556" title="Get the depth range manually.">SetDepthWindowPosition</a>(<span class="keywordtype">int</span> distance, <span class="keywordtype">int</span> width);
 <a name="l00117"></a>00117 
-<a name="l00118"></a>00118     <span class="comment">// by gaecha</span>
-<a name="l00119"></a>00119     <span class="keywordtype">void</span> EnableTrack(<span class="keywordtype">bool</span> enable);
-<a name="l00120"></a>00120     <span class="keywordtype">void</span> EnableSmoothing(<span class="keywordtype">bool</span> enable, <span class="keywordtype">double</span> smoothVal);
-<a name="l00121"></a>00121     <span class="keywordtype">void</span> SetCleanVal(<span class="keywordtype">double</span> cleanVal);
-<a name="l00122"></a>00122     <span class="keywordtype">void</span> EnableMedian(<span class="keywordtype">bool</span> enable);
-<a name="l00123"></a>00123     <span class="keywordtype">void</span> FreezeVideo(<span class="keywordtype">bool</span> freeze);
-<a name="l00124"></a>00124     <span class="comment">//</span>
+<a name="l00124"></a>00124     <span class="keywordtype">void</span> <a class="code" href="classCDepthCamera.html#a598224eccb8d75dd8ddc73c393ca2373" title="Get the depth range distance and width the depth range will be between distance and distance and widt...">GetDepthWindowPosition</a>(<span class="keywordtype">int</span> &amp;distance, <span class="keywordtype">int</span> &amp;width) <span class="keyword">const</span>;
 <a name="l00125"></a>00125 
-<a name="l00126"></a>00126 <span class="keyword">private</span>:
-<a name="l00127"></a>00127 
-<a name="l00128"></a>00128     <span class="comment">// uninitialize all internal objects.</span>
-<a name="l00129"></a>00129     <span class="keywordtype">void</span> UnInitialize(); 
-<a name="l00130"></a>00130 
-<a name="l00131"></a>00131     <span class="comment">// sets new frames internally (called from the video callback)</span>
-<a name="l00132"></a>00132     <span class="keywordtype">void</span> SetFrames(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* pDepthFrame, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* pRGBFrame, 
-<a name="l00133"></a>00133                    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* pRGBFullResFrame,
-<a name="l00134"></a>00134                    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* pPrimaryIR,<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* pSecondaryIR);
-<a name="l00135"></a>00135     <span class="keywordtype">bool</span> Lock();    <span class="comment">// enter critical section. Returns true if successfully locked</span>
-<a name="l00136"></a>00136     <span class="keywordtype">void</span> Unlock();  <span class="comment">// exit critical section</span>
-<a name="l00137"></a>00137 
-<a name="l00138"></a>00138     <a class="code" href="classTDVCameraInterfaceBase.html">TDVCameraInterfaceBase</a>* m_pCameraInterfaceBase;     <span class="comment">// the camera control object</span>
-<a name="l00139"></a>00139     <span class="keywordtype">bool</span>                    m_bEnableRGBFullResoltion;  <span class="comment">// is RGB full resolution enables?</span>
-<a name="l00140"></a>00140     <span class="keywordtype">bool</span>                    m_bEnableIRVideoTransfer;   <span class="comment">// is RGB full resolution enables?</span>
-<a name="l00141"></a>00141     <span class="keywordtype">bool</span>                    m_bEnableLargeDepthMode;    <span class="comment">// is the large depth mode enabled?</span>
-<a name="l00142"></a>00142     HANDLE                  m_hNewFrameReady;           <span class="comment">// handle to notify when a new frame is received</span>
-<a name="l00143"></a>00143     HANDLE                  m_hCriticalSection;         <span class="comment">// critical section lock mutex</span>
-<a name="l00144"></a>00144     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*          m_pDepthFrame;              <span class="comment">// holds the latest depth frame</span>
-<a name="l00145"></a>00145     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*          m_pRGBFrame;                <span class="comment">// holds the latest RGB frame</span>
-<a name="l00146"></a>00146     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*          m_pRGBFullResFrame;         <span class="comment">// holds the latest RGB full resolution frame</span>
-<a name="l00147"></a>00147     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*          m_pPrimary;                 <span class="comment">// holds the latest primary IR frame</span>
-<a name="l00148"></a>00148     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*          m_pSecondary;               <span class="comment">// holds the latest secondary IR frame</span>
-<a name="l00149"></a>00149     <span class="keywordtype">bool</span>                    m_bIsInitialized;           <span class="comment">// Is the DepthCamera initialized?</span>
-<a name="l00150"></a>00150 };
-<a name="l00151"></a>00151 
-<a name="l00152"></a>00152 <span class="preprocessor">#endif</span>
-<a name="l00153"></a>00153 <span class="preprocessor"></span>
+<a name="l00132"></a>00132     <span class="keywordtype">void</span> <a class="code" href="classCDepthCamera.html#a9caed017bbbeeaa2c70313d33bd7e791" title="Set the width specified (in centemeters), and centers the depth window around the closest object to t...">FindObjectUsingWidth</a>(<span class="keywordtype">int</span> depthWidth);
+<a name="l00133"></a>00133 
+<a name="l00139"></a>00139     <span class="keywordtype">void</span> <a class="code" href="classCDepthCamera.html#ad8fd2a78bbadbe27373ab2a1b84e18ab" title="Enable or disable the transfer of RGB in 640x480 resolution.">EnableRGBFullResolution</a>(<span class="keywordtype">bool</span> enable);
+<a name="l00140"></a>00140 
+<a name="l00145"></a>00145     <span class="keywordtype">bool</span> <a class="code" href="classCDepthCamera.html#a282135dd5261d925a804a20c428a07d3" title="Check whether the RGB in full resolution is also transfered.">IsRGBFullResolutionEnabled</a>() <span class="keyword">const</span>;
+<a name="l00146"></a>00146 
+<a name="l00152"></a>00152     <span class="keywordtype">void</span> <a class="code" href="classCDepthCamera.html#a22299b77c0894b278eb4430f9f734558" title="Enable or disable the transfer of IR Video (Primary and secondary IR).">EnableIRVideoTransfer</a>(<span class="keywordtype">bool</span> enable);
+<a name="l00153"></a>00153 
+<a name="l00158"></a>00158     <span class="keywordtype">bool</span> <a class="code" href="classCDepthCamera.html#a8578e6f5ab6ad17cf861dd1368530e34" title="check whether the IR video (primary and secondary) is also transfered">IsIRVideoTransferEnabled</a>() <span class="keyword">const</span>;
+<a name="l00159"></a>00159 
+<a name="l00166"></a>00166     <span class="keywordtype">void</span> <a class="code" href="classCDepthCamera.html#aaeb19d95b8ca3d8444bcc98615088420" title="when the user needs a 300cm depth window range, enable this mode.">EnableWideDepthMode</a>(<span class="keywordtype">bool</span> enable);
+<a name="l00167"></a>00167 
+<a name="l00172"></a>00172     <span class="keywordtype">bool</span> <a class="code" href="classCDepthCamera.html#a727a74d77a7dc759b8dd551f547c6eb3" title="is the large depth mode enabled?">IsWideDepthModeEnabled</a>() <span class="keyword">const</span>;
+<a name="l00173"></a>00173 
+<a name="l00179"></a>00179     <span class="keywordtype">void</span> <a class="code" href="classCDepthCamera.html#a0089ad147398b91c7419c4147a62b4d0" title="Enable or disable the &amp;quot;smooth&amp;quot; filter.">EnableDepthFilter</a>(<span class="keywordtype">bool</span> enable, <span class="keywordtype">int</span> intensity = 25);
+<a name="l00180"></a>00180     
+<a name="l00185"></a>00185     <span class="keywordtype">bool</span> <a class="code" href="classCDepthCamera.html#aa1450d0f09f22a6e9af15d0ec5a52d18" title="check if the depth filter is enabled, and if so, what is it&amp;#39;s intensity">IsDepthFilterEnabled</a>() <span class="keyword">const</span>;
+<a name="l00186"></a>00186 
+<a name="l00201"></a>00201     <span class="keywordtype">bool</span> <a class="code" href="classCDepthCamera.html#aba9b4149179d4116853544b431ee060a" title="returns the next frames data.">GetNextFrame</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* &amp;pDepthFrame, 
+<a name="l00202"></a>00202                       <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* &amp;pRGBFrame, 
+<a name="l00203"></a>00203                       <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* &amp;pRGBFullResFrame,
+<a name="l00204"></a>00204                       <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* &amp;pPrimaryIR,
+<a name="l00205"></a>00205                       <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* &amp;pSecondaryIR,
+<a name="l00206"></a>00206                       <span class="keywordtype">int</span> timeout = INFINITE);
+<a name="l00207"></a>00207 
+<a name="l00213"></a>00213     <a class="code" href="classTDVCameraInterfaceBase.html" title="Main camera control interface.">TDVCameraInterfaceBase</a>* <a class="code" href="classCDepthCamera.html#a7425f9f47dbe7d963e3c7601c593701f" title="when you wish to get full control over other parameters, you can get the internal TDVCameraInterfaceB...">GetCameraInterface</a>();
+<a name="l00214"></a>00214 
+<a name="l00219"></a>00219     <span class="keywordtype">void</span> <a class="code" href="classCDepthCamera.html#ad0d6687953ff85c564a3c5dbc47611ca" title="Enables tracking.">EnableTrack</a>(<span class="keywordtype">bool</span> enable);
+<a name="l00220"></a>00220 
+<a name="l00226"></a>00226     <span class="keywordtype">void</span> <a class="code" href="classCDepthCamera.html#a69f4c73d7f3295ff6003fb66a50f9f9d" title="Enables smoothing.">EnableSmoothing</a>(<span class="keywordtype">bool</span> enable, <span class="keywordtype">double</span> smoothVal);
+<a name="l00227"></a>00227 
+<a name="l00232"></a>00232     <span class="keywordtype">void</span> <a class="code" href="classCDepthCamera.html#a06108a42c127014629a97acddfe20716" title="Sets the clean value.">SetCleanVal</a>(<span class="keywordtype">double</span> cleanVal);
+<a name="l00233"></a>00233 
+<a name="l00238"></a>00238     <span class="keywordtype">void</span> <a class="code" href="classCDepthCamera.html#a62c9bc3fac5283b334e7bb6697601529" title="Enables median.">EnableMedian</a>(<span class="keywordtype">bool</span> enable);
+<a name="l00239"></a>00239 
+<a name="l00244"></a>00244     <span class="keywordtype">void</span> <a class="code" href="classCDepthCamera.html#aa6e04f2fe9f7954d961048ef817ca68f" title="Freezes the video.">FreezeVideo</a>(<span class="keywordtype">bool</span> freeze);
+<a name="l00245"></a>00245     <span class="comment">//</span>
+<a name="l00246"></a>00246 
+<a name="l00247"></a>00247 <span class="keyword">private</span>:
+<a name="l00248"></a>00248 
+<a name="l00252"></a>00252     <span class="keywordtype">void</span> <a class="code" href="classCDepthCamera.html#ad88de5389a7bc6ca20e0db707d7f6eef" title="uninitialize all internal objects.">UnInitialize</a>(); 
+<a name="l00253"></a>00253 
+<a name="l00262"></a>00262     <span class="keywordtype">void</span> <a class="code" href="classCDepthCamera.html#a8ead9c1fb31102b8234a3bb1c5f91767" title="sets new frames internally (called from the video callback)">SetFrames</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* pDepthFrame, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* pRGBFrame, 
+<a name="l00263"></a>00263                    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* pRGBFullResFrame,
+<a name="l00264"></a>00264                    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* pPrimaryIR,<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* pSecondaryIR);
+<a name="l00269"></a>00269     <span class="keywordtype">bool</span> <a class="code" href="classCDepthCamera.html#a10375f54c88ac964da77bd6d68737651" title="Enter critical section.">Lock</a>();
+<a name="l00270"></a>00270 
+<a name="l00274"></a>00274     <span class="keywordtype">void</span> <a class="code" href="classCDepthCamera.html#afcdd564c4a3bf29cb795e46636ed69f8" title="Exit the critical section.">Unlock</a>();
+<a name="l00275"></a>00275 
+<a name="l00279"></a><a class="code" href="classCDepthCamera.html#a582ab44c2edcd75ad8ce1eb0bd05d091">00279</a>     <a class="code" href="classTDVCameraInterfaceBase.html" title="Main camera control interface.">TDVCameraInterfaceBase</a>* <a class="code" href="classCDepthCamera.html#a582ab44c2edcd75ad8ce1eb0bd05d091" title="The camera control object.">m_pCameraInterfaceBase</a>;
+<a name="l00280"></a>00280     
+<a name="l00284"></a><a class="code" href="classCDepthCamera.html#a5b50a03643c8ad985e1e6585e9b3b3ca">00284</a>     <span class="keywordtype">bool</span>                    <a class="code" href="classCDepthCamera.html#a5b50a03643c8ad985e1e6585e9b3b3ca" title="Is RGB full resolution enabled?">m_bEnableRGBFullResoltion</a>;
+<a name="l00285"></a>00285     
+<a name="l00289"></a><a class="code" href="classCDepthCamera.html#a9e0639626b4c1c481cf7448bfdd76a19">00289</a>     <span class="keywordtype">bool</span>                    <a class="code" href="classCDepthCamera.html#a9e0639626b4c1c481cf7448bfdd76a19" title="Is RGB full resolution enabled?">m_bEnableIRVideoTransfer</a>;
+<a name="l00290"></a>00290     
+<a name="l00294"></a><a class="code" href="classCDepthCamera.html#a027a53955a0e0339a0c71d96f6e33145">00294</a>     <span class="keywordtype">bool</span>                    <a class="code" href="classCDepthCamera.html#a027a53955a0e0339a0c71d96f6e33145" title="Is the large depth mode enabled?">m_bEnableLargeDepthMode</a>;
+<a name="l00295"></a>00295     
+<a name="l00299"></a><a class="code" href="classCDepthCamera.html#af01ee8f46a03164ea069c3e823b8bdf0">00299</a>     HANDLE                  <a class="code" href="classCDepthCamera.html#af01ee8f46a03164ea069c3e823b8bdf0" title="Handle to notify when a new frame is received.">m_hNewFrameReady</a>;
+<a name="l00300"></a>00300     
+<a name="l00304"></a><a class="code" href="classCDepthCamera.html#aeb0853d9a2dd3eb975aa3b343834a05d">00304</a>     HANDLE                  <a class="code" href="classCDepthCamera.html#aeb0853d9a2dd3eb975aa3b343834a05d" title="Critical section lock mutex.">m_hCriticalSection</a>;
+<a name="l00305"></a>00305     
+<a name="l00309"></a><a class="code" href="classCDepthCamera.html#a89f403c7ac124ae0819fa9cfed6bc0b9">00309</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*          <a class="code" href="classCDepthCamera.html#a89f403c7ac124ae0819fa9cfed6bc0b9" title="Holds the latest depth frame.">m_pDepthFrame</a>;
+<a name="l00310"></a>00310     
+<a name="l00314"></a><a class="code" href="classCDepthCamera.html#a8dc1f715911723a0283e137cc1133643">00314</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*          <a class="code" href="classCDepthCamera.html#a8dc1f715911723a0283e137cc1133643" title="Holds the latest RGB frame.">m_pRGBFrame</a>;
+<a name="l00315"></a>00315     
+<a name="l00319"></a><a class="code" href="classCDepthCamera.html#a840c579a0a30beda9a0bbab172ed79fb">00319</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*          <a class="code" href="classCDepthCamera.html#a840c579a0a30beda9a0bbab172ed79fb" title="Holds the latest RGB full resolution frame.">m_pRGBFullResFrame</a>;
+<a name="l00320"></a>00320     
+<a name="l00324"></a><a class="code" href="classCDepthCamera.html#a2ab8b014fbf8b14abc427a58254d7e96">00324</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*          <a class="code" href="classCDepthCamera.html#a2ab8b014fbf8b14abc427a58254d7e96" title="Holds the latest primary IR frame.">m_pPrimary</a>;
+<a name="l00325"></a>00325     
+<a name="l00329"></a><a class="code" href="classCDepthCamera.html#a2b26cf7e5c43d4e7f8fcb57c3ea3f676">00329</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*          <a class="code" href="classCDepthCamera.html#a2b26cf7e5c43d4e7f8fcb57c3ea3f676" title="Holds the latest secondary IR frame.">m_pSecondary</a>;
+<a name="l00330"></a>00330     
+<a name="l00334"></a><a class="code" href="classCDepthCamera.html#a75e26a195d32450dd08a21b16ad968d7">00334</a>     <span class="keywordtype">bool</span>                    <a class="code" href="classCDepthCamera.html#a75e26a195d32450dd08a21b16ad968d7" title="Is the DepthCamera initialized?">m_bIsInitialized</a>;
+<a name="l00335"></a>00335 };
+<a name="l00336"></a>00336 
+<a name="l00337"></a>00337 <span class="preprocessor">#endif</span>
+<a name="l00338"></a>00338 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -208,7 +189,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -217,7 +198,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:45 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

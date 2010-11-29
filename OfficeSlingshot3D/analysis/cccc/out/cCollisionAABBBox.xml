@@ -35,33 +35,49 @@
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Falcon/KeyboardFalcon.h" line="61" />
+<source_reference file="../../Falcon/KeyboardFalcon.h" line="63" />
 </extent>
 <name>NovintFalcon</name>
 <visible>false</visible>
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Falcon/NovintFalcon.h" line="72" />
+<source_reference file="../../Falcon/NovintFalcon.h" line="79" />
 </extent>
 <name>PerspectiveMath</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/PerspectiveMath.cpp" line="35" />
+<source_reference file="../../Utils/PerspectiveMath.cpp" line="45" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/PerspectiveMath.cpp" line="35" />
+<source_reference file="../../Utils/PerspectiveMath.cpp" line="51" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/PerspectiveMath.h" line="34" />
+<source_reference file="../../Utils/PerspectiveMath.cpp" line="57" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/PerspectiveMath.h" line="34" />
+<source_reference file="../../Utils/PerspectiveMath.cpp" line="57" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Utils/PerspectiveMath.h" line="48" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Utils/PerspectiveMath.h" line="50" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Utils/PerspectiveMath.h" line="59" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Utils/PerspectiveMath.h" line="59" />
 </extent>
 </client_module>
 <supplier_module>

@@ -35,15 +35,11 @@
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Network/Packet.h" line="158" />
+<source_reference file="../../Network/Packet.h" line="188" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Network/Packet.h" line="175" />
-</extent>
-<extent>
-<description>pass by value</description>
-<source_reference file="../../Network/Packet.h" line="202" />
+<source_reference file="../../Network/Packet.h" line="205" />
 </extent>
 </client_module>
 <supplier_module>

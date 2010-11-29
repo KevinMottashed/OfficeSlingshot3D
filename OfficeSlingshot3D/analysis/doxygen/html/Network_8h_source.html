@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OfficeSlingshot3D: /home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Network.h Source File</title>
+<title>OfficeSlingshot3D: /home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Network/Network.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -41,62 +42,66 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/Network.h</h1>  </div>
+<h1>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Network/Network.h</h1>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef NETWORK_H</span>
+<a href="Network_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef NETWORK_H</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define NETWORK_H</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
-<a name="l00004"></a>00004 <span class="preprocessor">#include &quot;NetworkSubject.h&quot;</span>
-<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;stdafx.h&quot;</span>
-<a name="l00006"></a>00006 <span class="preprocessor">#include &quot;VideoData.h&quot;</span>
-<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;chai3d.h&quot;</span>
-<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;NetworkCodes.h&quot;</span>
-<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;Projectile.h&quot;</span>
-<a name="l00010"></a>00010 
-<a name="l00015"></a><a class="code" href="classNetwork.html">00015</a> <span class="keyword">class </span><a class="code" href="classNetwork.html" title="Abstract class representing the networking component of the application all network interfaces should...">Network</a> : <span class="keyword">public</span> <a class="code" href="classNetworkSubject.html">NetworkSubject</a>
-<a name="l00016"></a>00016 {
-<a name="l00017"></a>00017 <span class="keyword">public</span>:
-<a name="l00021"></a>00021     <a class="code" href="classNetwork.html#a3cc2fb4f8fa4d507077e8da85ce5a1c8" title="Constructor.">Network</a>();
-<a name="l00022"></a>00022 
-<a name="l00026"></a>00026     <span class="keyword">virtual</span> <a class="code" href="classNetwork.html#a7a4e19cdb4bf0c7ecf82baa643831492" title="Destructor.">~Network</a>();
-<a name="l00027"></a>00027 
-<a name="l00033"></a>00033     <span class="keyword">virtual</span> rc_network <a class="code" href="classNetwork.html#afb5306e2b769c01780aaa44d2c14306d" title="Start listening for connections.">listen</a>(<span class="keyword">const</span> std::string&amp; userName) = 0; 
-<a name="l00034"></a>00034 
-<a name="l00041"></a>00041     <span class="keyword">virtual</span> rc_network <a class="code" href="classNetwork.html#a105f5e229e0ac9ff2b718dd34112c292" title="Attempt to connect to a peer.">connect</a>(<span class="keyword">const</span> std::string&amp; ipAddress, <span class="keyword">const</span> std::string&amp; userName) = 0;
-<a name="l00042"></a>00042 
-<a name="l00047"></a>00047     <span class="keyword">virtual</span> rc_network <a class="code" href="classNetwork.html#a1b0e29fc9936615e76c1db95caba0a9e" title="Disconnect from a peer.">disconnect</a>() = 0;
-<a name="l00048"></a>00048 
-<a name="l00053"></a>00053     <span class="keyword">virtual</span> rc_network <a class="code" href="classNetwork.html#a3f6b451fd546f2e44eb2c14661bc1ad3" title="Send a start game message to the peer.">sendStartGame</a>() = 0;
-<a name="l00054"></a>00054 
-<a name="l00059"></a>00059     <span class="keyword">virtual</span> rc_network <a class="code" href="classNetwork.html#ac60291a8d99468ebc38d085fc0455df0" title="Send a pause game message to the peer.">sendPauseGame</a>() = 0;
-<a name="l00060"></a>00060 
-<a name="l00065"></a>00065     <span class="keyword">virtual</span> rc_network <a class="code" href="classNetwork.html#ae3f72f3003309c6d38105f504db8ce05" title="Send an end game message to the peer.">sendEndGame</a>() = 0;
-<a name="l00066"></a>00066 
-<a name="l00074"></a>00074     <span class="keyword">virtual</span> rc_network <a class="code" href="classNetwork.html#a741e75b2e9adfc188c53e150b4dd4610" title="Send our username to the peer.">sendUserName</a>(<span class="keyword">const</span> std::string&amp; userName) = 0;
-<a name="l00075"></a>00075 
-<a name="l00081"></a>00081     <span class="keyword">virtual</span> rc_network <a class="code" href="classNetwork.html#aa5e1e44e3cb4862b2c343999c89ce3b5" title="Send a chat message to the peer.">sendChatMessage</a>(<span class="keyword">const</span> std::string&amp; message) = 0;
-<a name="l00082"></a>00082     
-<a name="l00088"></a>00088     <span class="keyword">virtual</span> rc_network <a class="code" href="classNetwork.html#a189df8819d21d4f1a277ca753453045b" title="Send video data to the peer.">sendVideoData</a>(<span class="keyword">const</span> <a class="code" href="structVideoData.html" title="Represent a frame of video data.">VideoData</a>&amp; video) = 0;
-<a name="l00089"></a>00089 
-<a name="l00095"></a>00095     <span class="keyword">virtual</span> rc_network <a class="code" href="classNetwork.html#a9a2eb94c34d8d93f7490184cd2526e62" title="Send the players position to the peer.">sendPlayerPosition</a>(<span class="keyword">const</span> cVector3d&amp; position) = 0;
-<a name="l00096"></a>00096 
-<a name="l00102"></a>00102     <span class="keyword">virtual</span> rc_network <a class="code" href="classNetwork.html#aa105332ed8a1325a89f1f3e0a9d27521" title="Send the slingshot position to the peer.">sendSlingshotPosition</a>(<span class="keyword">const</span> cVector3d&amp; position) = 0;
-<a name="l00103"></a>00103 
-<a name="l00109"></a>00109     <span class="keyword">virtual</span> rc_network <a class="code" href="classNetwork.html#a477324500341f146fc7fc7411290a424" title="Send a projectile to the peer.">sendProjectile</a>(<span class="keyword">const</span> <a class="code" href="classProjectile.html" title="Represents a projectile Each projectile has a position and a force behind it.">Projectile</a>&amp; projectile) = 0;
-<a name="l00110"></a>00110 
-<a name="l00116"></a>00116     <span class="keyword">virtual</span> rc_network <a class="code" href="classNetwork.html#ad4fd766e5bae5a3f002a26218b60b426" title="Send a slingshot pullback event to the peer.">sendSlingshotPullback</a>() = 0;
-<a name="l00117"></a>00117 
-<a name="l00122"></a>00122     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classNetwork.html#ab84ebbf03390c5ee99a27e2b340e3518" title="Determines if we are connected to a peer.">isConnected</a>() <span class="keyword">const</span> = 0;
-<a name="l00123"></a>00123 
-<a name="l00128"></a>00128     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classNetwork.html#a1e8342d061f8e1b28d50d966e946650b" title="Determines if we are listening for connections.">isListening</a>() <span class="keyword">const</span> = 0;
-<a name="l00129"></a>00129 };
-<a name="l00130"></a>00130 
-<a name="l00131"></a>00131 <span class="preprocessor">#endif</span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &quot;stdafx.h&quot;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;chai3d.h&quot;</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include &quot;<a class="code" href="NetworkSubject_8h.html">NetworkSubject.h</a>&quot;</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;<a class="code" href="NetworkCodes_8h.html">NetworkCodes.h</a>&quot;</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;<a class="code" href="Projectile_8h.html">Projectile.h</a>&quot;</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;<a class="code" href="BodyPartEnum_8h.html">BodyPartEnum.h</a>&quot;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="PhysicsSync_8h.html">PhysicsSync.h</a>&quot;</span>
+<a name="l00011"></a>00011 
+<a name="l00018"></a><a class="code" href="classNetwork.html">00018</a> <span class="keyword">class </span><a class="code" href="classNetwork.html" title="public Abstract class representing the networking component of the application.">Network</a> : <span class="keyword">public</span> <a class="code" href="classNetworkSubject.html" title="public This class represents the network in the observer pattern Observers will receive updates whene...">NetworkSubject</a>
+<a name="l00019"></a>00019 {
+<a name="l00020"></a>00020 <span class="keyword">public</span>:
+<a name="l00024"></a>00024     <a class="code" href="classNetwork.html#a3cc2fb4f8fa4d507077e8da85ce5a1c8" title="Constructor.">Network</a>();
+<a name="l00025"></a>00025 
+<a name="l00029"></a>00029     <span class="keyword">virtual</span> <a class="code" href="classNetwork.html#a7a4e19cdb4bf0c7ecf82baa643831492" title="Destructor.">~Network</a>();
+<a name="l00030"></a>00030 
+<a name="l00036"></a>00036     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classNetwork.html#afb5306e2b769c01780aaa44d2c14306d" title="Start listening for connections.">listen</a>(<span class="keyword">const</span> std::string&amp; userName) = 0; 
+<a name="l00037"></a>00037 
+<a name="l00044"></a>00044     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classNetwork.html#a105f5e229e0ac9ff2b718dd34112c292" title="Attempt to connect to a peer.">connect</a>(<span class="keyword">const</span> std::string&amp; ipAddress, <span class="keyword">const</span> std::string&amp; userName) = 0;
+<a name="l00045"></a>00045 
+<a name="l00050"></a>00050     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classNetwork.html#a1b0e29fc9936615e76c1db95caba0a9e" title="Disconnect from a peer.">disconnect</a>() = 0;
+<a name="l00051"></a>00051 
+<a name="l00056"></a>00056     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classNetwork.html#a3f6b451fd546f2e44eb2c14661bc1ad3" title="Send a start game message to the peer.">sendStartGame</a>() = 0;
+<a name="l00057"></a>00057 
+<a name="l00062"></a>00062     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classNetwork.html#ac60291a8d99468ebc38d085fc0455df0" title="Send a pause game message to the peer.">sendPauseGame</a>() = 0;
+<a name="l00063"></a>00063 
+<a name="l00068"></a>00068     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classNetwork.html#ae3f72f3003309c6d38105f504db8ce05" title="Send an end game message to the peer.">sendEndGame</a>() = 0;
+<a name="l00069"></a>00069 
+<a name="l00077"></a>00077     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classNetwork.html#a741e75b2e9adfc188c53e150b4dd4610" title="Send our username to the peer.">sendUserName</a>(<span class="keyword">const</span> std::string&amp; userName) = 0;
+<a name="l00078"></a>00078 
+<a name="l00084"></a>00084     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classNetwork.html#aa5e1e44e3cb4862b2c343999c89ce3b5" title="Send a chat message to the peer.">sendChatMessage</a>(<span class="keyword">const</span> std::string&amp; message) = 0;
+<a name="l00085"></a>00085     
+<a name="l00091"></a>00091     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classNetwork.html#a9a2eb94c34d8d93f7490184cd2526e62" title="Send the players position to the peer.">sendPlayerPosition</a>(<span class="keyword">const</span> cVector3d&amp; position) = 0;
+<a name="l00092"></a>00092 
+<a name="l00099"></a>00099     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classNetwork.html#a0bac3128a353f86f12015302e286e59f" title="Send the slingshot pullback position to the peer.">sendSlingshotPullback</a>(<span class="keyword">const</span> cVector3d&amp; position) = 0;
+<a name="l00100"></a>00100 
+<a name="l00106"></a>00106     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classNetwork.html#a477324500341f146fc7fc7411290a424" title="Send a projectile to the peer.">sendProjectile</a>(<span class="keyword">const</span> <a class="code" href="classProjectile.html" title="Represents a projectile Each projectile has a position and a force behind it.">Projectile</a>&amp; projectile) = 0;
+<a name="l00107"></a>00107 
+<a name="l00112"></a>00112     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classNetwork.html#a3b910c81b63814007c6ceebb87125287" title="Send a message to the peer letting him know that we have lost the game.">sendGameOver</a>() = 0;
+<a name="l00113"></a>00113 
+<a name="l00119"></a>00119     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classNetwork.html#a8fb9019d9d77bac90340545541b2e383" title="Send a message to the peer letting him know that we have been hit.">sendPlayerHit</a>(<a class="code" href="group__Common.html#gaa22d3933804e3afcd4eac294dded7434" title="public Enum representing different parts of the human body.">BodyPart_t</a> bodyPart) = 0;
+<a name="l00120"></a>00120 
+<a name="l00126"></a>00126     <span class="keyword">virtual</span> <a class="code" href="group__Network.html#ga2d3c89cecafe8a14aaf68aa3e0104ef2" title="public All the possible return codes from network related functions.">rc_network</a> <a class="code" href="classNetwork.html#a28f288d3f5531426ca7e63a4bb1fd0b1" title="Send a physics sync object to the peer so that he can synchronize his game.">sendPhysicsSync</a>(<span class="keyword">const</span> <a class="code" href="classPhysicsSync.html" title="public This data structure is used to synchronize 2 virtual environments.">PhysicsSync</a>&amp; sync) = 0;
+<a name="l00127"></a>00127 
+<a name="l00132"></a>00132     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classNetwork.html#ab84ebbf03390c5ee99a27e2b340e3518" title="Determines if we are connected to a peer.">isConnected</a>() <span class="keyword">const</span> = 0;
+<a name="l00133"></a>00133 
+<a name="l00138"></a>00138     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classNetwork.html#a1e8342d061f8e1b28d50d966e946650b" title="Determines if we are listening for connections.">isListening</a>() <span class="keyword">const</span> = 0;
+<a name="l00139"></a>00139 };
+<a name="l00140"></a>00140 
+<a name="l00141"></a>00141 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -104,7 +109,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -113,7 +118,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:44 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

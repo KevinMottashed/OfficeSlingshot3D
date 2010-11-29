@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OfficeSlingshot3D: /home/kevin/workspace/HugMe/HugMe v0.9.1/Game/Game.h Source File</title>
+<title>OfficeSlingshot3D: /home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Game/Game.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -41,69 +42,94 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/Game.h</h1>  </div>
+<h1>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Game/Game.h</h1>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef GAME_H</span>
+<a href="Game_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef GAME_H</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define GAME_H</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &quot;stdafx.h&quot;</span>
-<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;boost.h&quot;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;<a class="code" href="boost_8h.html">boost.h</a>&quot;</span>
 <a name="l00006"></a>00006 <span class="preprocessor">#include &quot;chai3d.h&quot;</span>
 <a name="l00007"></a>00007 
-<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;Projectile.h&quot;</span>
-<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;GameStateEnum.h&quot;</span>
-<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;MediatorProxy.h&quot;</span>
-<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;VirtualEnvironment.h&quot;</span>
-<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;TitleScreen.h&quot;</span>
-<a name="l00013"></a>00013 
-<a name="l00014"></a>00014 
-<a name="l00020"></a><a class="code" href="classGame.html">00020</a> <span class="keyword">class </span><a class="code" href="classGame.html" title="Represents the OfficeSlingshot3D game.">Game</a> : <span class="keyword">public</span> <a class="code" href="classMediatorObserver.html" title="Abstract class in the observer pattern.">MediatorObserver</a>
-<a name="l00021"></a>00021 {
-<a name="l00022"></a>00022 <span class="keyword">public</span>:
-<a name="l00026"></a>00026     <a class="code" href="classGame.html#ae4a3e825c02c218e3a110586dbc964f5" title="Constructor.">Game</a>(boost::shared_ptr&lt;Mediator&gt; mediator);
-<a name="l00027"></a>00027 
-<a name="l00031"></a>00031     <span class="keyword">virtual</span> <a class="code" href="classGame.html#ae3d112ca6e0e55150d2fdbc704474530" title="Destructor.">~Game</a>();
-<a name="l00032"></a>00032 
-<a name="l00036"></a>00036     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classGame.html#a1e83402bc85f4ef4150bee568e4f8986" title="Updates from the mediator.">update</a>(<a class="code" href="namespaceMediatorUpdateContext.html#aa3a9bed543f2a2237dc2b6feea170a1d" title="Each update has a context.">MediatorUpdateContext_t</a> context, <span class="keyword">const</span> <span class="keywordtype">void</span>* data);
-<a name="l00037"></a>00037 
-<a name="l00038"></a>00038 <span class="keyword">private</span>:
-<a name="l00042"></a>00042     <a class="code" href="classGame.html#ae4a3e825c02c218e3a110586dbc964f5" title="Constructor.">Game</a>(<span class="keyword">const</span> <a class="code" href="classGame.html" title="Represents the OfficeSlingshot3D game.">Game</a>&amp; game);
-<a name="l00043"></a>00043     
-<a name="l00047"></a>00047     <a class="code" href="classGame.html" title="Represents the OfficeSlingshot3D game.">Game</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classGame.html" title="Represents the OfficeSlingshot3D game.">Game</a>&amp; game);
-<a name="l00048"></a>00048 
-<a name="l00049"></a>00049     <span class="comment">// the main game loop thread</span>
-<a name="l00050"></a>00050     HANDLE m_hGameLoopThread; <span class="comment">// handle</span>
-<a name="l00051"></a>00051     DWORD m_dwIDGameLoop; <span class="comment">// thread id</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;<a class="code" href="Projectile_8h.html">Projectile.h</a>&quot;</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;<a class="code" href="GameStateEnum_8h.html">GameStateEnum.h</a>&quot;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="MediatorProxy_8h.html" title="Convinience header for including all public members of the mediator module.">MediatorProxy.h</a>&quot;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="VirtualEnvironment_8h.html">VirtualEnvironment.h</a>&quot;</span>
+<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;<a class="code" href="TitleScreen_8h.html">TitleScreen.h</a>&quot;</span>
+<a name="l00013"></a>00013 <span class="preprocessor">#include &quot;<a class="code" href="WinScreen_8h.html">WinScreen.h</a>&quot;</span>
+<a name="l00014"></a>00014 <span class="preprocessor">#include &quot;<a class="code" href="LoseScreen_8h.html">LoseScreen.h</a>&quot;</span>
+<a name="l00015"></a>00015 <span class="preprocessor">#include &quot;<a class="code" href="BodyPartEnum_8h.html">BodyPartEnum.h</a>&quot;</span>
+<a name="l00016"></a>00016 
+<a name="l00017"></a>00017 
+<a name="l00023"></a><a class="code" href="classGame.html">00023</a> <span class="keyword">class </span><a class="code" href="classGame.html" title="Represents the OfficeSlingshot3D game.">Game</a> : <span class="keyword">public</span> <a class="code" href="classMediatorObserver.html" title="public Abstract class in the observer pattern.">MediatorObserver</a>
+<a name="l00024"></a>00024 {
+<a name="l00025"></a>00025 <span class="keyword">public</span>:
+<a name="l00029"></a>00029     <a class="code" href="classGame.html#ae4a3e825c02c218e3a110586dbc964f5" title="Constructor.">Game</a>(boost::shared_ptr&lt;Mediator&gt; <a class="code" href="classGame.html#a6e1d6860b46e9d865e19c33a656122e6" title="The mediator for interpreting user input and synchronizing with the peer.">mediator</a>);
+<a name="l00030"></a>00030 
+<a name="l00034"></a>00034     <span class="keyword">virtual</span> <a class="code" href="classGame.html#ae3d112ca6e0e55150d2fdbc704474530" title="Destructor.">~Game</a>();
+<a name="l00035"></a>00035 
+<a name="l00040"></a>00040     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classGame.html#a1e83402bc85f4ef4150bee568e4f8986" title="Updates from the mediator.">update</a>(<a class="code" href="group__Mediator.html#gaa3a9bed543f2a2237dc2b6feea170a1d" title="public Each update has a context.">MediatorUpdateContext_t</a> context, <span class="keyword">const</span> <span class="keywordtype">void</span>* data);
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042 <span class="keyword">private</span>:
+<a name="l00046"></a>00046     <a class="code" href="classGame.html#ae4a3e825c02c218e3a110586dbc964f5" title="Constructor.">Game</a>(<span class="keyword">const</span> <a class="code" href="classGame.html" title="Represents the OfficeSlingshot3D game.">Game</a>&amp; game);
+<a name="l00047"></a>00047     
+<a name="l00051"></a>00051     <a class="code" href="classGame.html" title="Represents the OfficeSlingshot3D game.">Game</a>&amp; <a class="code" href="classGame.html#a400871f3835fe6c8d274f464ac11302e" title="Assignment operator, not implemented to protect from use.">operator=</a>(<span class="keyword">const</span> <a class="code" href="classGame.html" title="Represents the OfficeSlingshot3D game.">Game</a>&amp; game);
 <a name="l00052"></a>00052 
-<a name="l00056"></a>00056     std::auto_ptr&lt;boost::thread&gt; gameThread;
+<a name="l00056"></a><a class="code" href="classGame.html#a16fc73f1cc2fab7326147645fad0e9a9">00056</a>     std::auto_ptr&lt;boost::thread&gt; <a class="code" href="classGame.html#a16fc73f1cc2fab7326147645fad0e9a9" title="Holds the thread which will run the main game loop.">gameThread</a>;
 <a name="l00057"></a>00057 
-<a name="l00062"></a>00062     <span class="keywordtype">void</span> gameLoop();
+<a name="l00062"></a>00062     <span class="keywordtype">void</span> <a class="code" href="classGame.html#aede5f46c8c7bbbaf8459eeec397a11e7" title="This function is the main game loop.">gameLoop</a>();
 <a name="l00063"></a>00063 
-<a name="l00067"></a>00067     <a class="code" href="namespaceGameState.html#a1026e99904938017415f188e2daba514" title="Enum representing all the different game states.">GameState_t</a> state;
-<a name="l00068"></a>00068 
-<a name="l00072"></a>00072     boost::shared_ptr&lt;Mediator&gt; mediator;
-<a name="l00073"></a>00073 
-<a name="l00078"></a>00078     <a class="code" href="classVirtualEnvironment.html" title="The virtual environment is the 3d environment in which the game is played.">VirtualEnvironment</a> environment;
-<a name="l00079"></a>00079 
-<a name="l00084"></a>00084     <a class="code" href="classTitleScreen.html" title="The title screen is a 3D environment that is displayed when the game isn&amp;#39;t running.">TitleScreen</a> titleScreen;
-<a name="l00085"></a>00085 
-<a name="l00092"></a>00092     boost::mutex environment_mutex;
-<a name="l00093"></a>00093 
-<a name="l00097"></a>00097     <span class="keywordtype">void</span> reset();
-<a name="l00098"></a>00098 
-<a name="l00103"></a>00103     <span class="keywordtype">void</span> start(<a class="code" href="namespacePlayer.html#acc4ced29e6b7e20f602b3c8b60c75228" title="Enum representing all the different players.">Player_t</a> player);
-<a name="l00104"></a>00104 
-<a name="l00109"></a>00109     <span class="keywordtype">void</span> pause(<a class="code" href="namespacePlayer.html#acc4ced29e6b7e20f602b3c8b60c75228" title="Enum representing all the different players.">Player_t</a> player);
-<a name="l00110"></a>00110 
-<a name="l00115"></a>00115     <span class="keywordtype">void</span> stop(<a class="code" href="namespacePlayer.html#acc4ced29e6b7e20f602b3c8b60c75228" title="Enum representing all the different players.">Player_t</a> player);
-<a name="l00116"></a>00116 };
-<a name="l00117"></a>00117 <span class="preprocessor">#endif</span>
-<a name="l00118"></a>00118 <span class="preprocessor"></span>
+<a name="l00068"></a>00068     <span class="keywordtype">void</span> <a class="code" href="classGame.html#a924888ee85f1b0aeec71b3a7ebb94398" title="Helper for the game loop.">processUpdateQueue</a>();
+<a name="l00069"></a>00069 
+<a name="l00075"></a>00075     <span class="keywordtype">void</span> <a class="code" href="classGame.html#abd745aafe76f8c995f6f5d2779ea6210" title="Handle a single update.">handleUpdate</a>(<a class="code" href="group__Mediator.html#gaa3a9bed543f2a2237dc2b6feea170a1d" title="public Each update has a context.">MediatorUpdateContext_t</a>&amp; context, boost::any&amp; data);
+<a name="l00076"></a>00076 
+<a name="l00081"></a>00081     <span class="keywordtype">void</span> <a class="code" href="classGame.html#ab71d119862a920bbecb160424e5e947f" title="Update the game world for the next frame.">updateWorld</a>();
+<a name="l00082"></a>00082 
+<a name="l00087"></a>00087     <span class="keywordtype">void</span> <a class="code" href="classGame.html#a4dacbfb5594fbfec24eabf059c56a5df" title="Helper for the game loop.">checkForCollisions</a>();
+<a name="l00088"></a>00088 
+<a name="l00093"></a>00093     <span class="keywordtype">void</span> <a class="code" href="classGame.html#ad4e4d40d7c0843aad264765d3e1e5371" title="This gathers the current state of our game and sends it to the peer.">sendPhysicsSync</a>();
+<a name="l00094"></a>00094 
+<a name="l00100"></a>00100     <span class="keywordtype">void</span> <a class="code" href="classGame.html#a86346ec5094641b8d3b266ba879cc61a" title="Handle a physics sync packet from the peer.">handlePhysicsSync</a>(<span class="keyword">const</span> <a class="code" href="classPhysicsSync.html" title="public This data structure is used to synchronize 2 virtual environments.">PhysicsSync</a>&amp; sync);
+<a name="l00101"></a>00101 
+<a name="l00105"></a><a class="code" href="classGame.html#a8d7bbb10971fd5f1bedf74ba5009bc8e">00105</a>     <a class="code" href="group__Common.html#ga1026e99904938017415f188e2daba514" title="public Enum representing all the different game states.">GameState_t</a> <a class="code" href="classGame.html#a8d7bbb10971fd5f1bedf74ba5009bc8e" title="The current state of the game.">state</a>;
+<a name="l00106"></a>00106 
+<a name="l00110"></a><a class="code" href="classGame.html#a9eeeeb7d3bf756e7e02366b7ebd58781">00110</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="classGame.html#a9eeeeb7d3bf756e7e02366b7ebd58781" title="The age (in frames) of the current game.">age</a>;
+<a name="l00111"></a>00111 
+<a name="l00115"></a><a class="code" href="classGame.html#a6e1d6860b46e9d865e19c33a656122e6">00115</a>     boost::shared_ptr&lt;Mediator&gt; mediator;
+<a name="l00116"></a>00116 
+<a name="l00121"></a><a class="code" href="classGame.html#afdfd0899b64c6e244a23154ab830e809">00121</a>     <a class="code" href="classVirtualEnvironment.html" title="The virtual environment is the 3d environment in which the game is played.">VirtualEnvironment</a> <a class="code" href="classGame.html#afdfd0899b64c6e244a23154ab830e809" title="The games virtual environment.">environment</a>;
+<a name="l00122"></a>00122 
+<a name="l00127"></a><a class="code" href="classGame.html#a72cffd20a06f8b5e99ac5cb15fde95fa">00127</a>     <a class="code" href="classTitleScreen.html" title="The title screen is a 3D environment that is displayed when the game isn&amp;#39;t running.">TitleScreen</a> <a class="code" href="classGame.html#a72cffd20a06f8b5e99ac5cb15fde95fa" title="The game&amp;#39;s title screen.">titleScreen</a>;
+<a name="l00128"></a>00128 
+<a name="l00133"></a><a class="code" href="classGame.html#aef64579d52c72fd05327be979dad7c26">00133</a>     <a class="code" href="classWinScreen.html" title="The win screen is a 3D environment that is displayed when the local player won the game...">WinScreen</a> <a class="code" href="classGame.html#aef64579d52c72fd05327be979dad7c26" title="The game&amp;#39;s win screen.">winScreen</a>;
+<a name="l00134"></a>00134 
+<a name="l00139"></a><a class="code" href="classGame.html#a029c31c15e0a40a2c5fe3b7a98d72d2a">00139</a>     <a class="code" href="classLoseScreen.html" title="The lose screen is a 3D environment that is displayed when the local player lost the game...">LoseScreen</a> <a class="code" href="classGame.html#a029c31c15e0a40a2c5fe3b7a98d72d2a" title="The game&amp;#39;s lose screen.">loseScreen</a>;
+<a name="l00140"></a>00140 
+<a name="l00145"></a><a class="code" href="classGame.html#abb684a755d14e751d333e96e6044ce6d">00145</a>     std::queue&lt;std::pair&lt;MediatorUpdateContext_t, boost::any&gt; &gt; <a class="code" href="classGame.html#abb684a755d14e751d333e96e6044ce6d" title="The game&amp;#39;s update queue.">updateQueue</a>;
+<a name="l00146"></a>00146 
+<a name="l00150"></a><a class="code" href="classGame.html#a073da4e2184847aa4a8f227b67f8009d">00150</a>     boost::mutex <a class="code" href="classGame.html#a073da4e2184847aa4a8f227b67f8009d" title="Protect the update queue from simultaneous access.">updateQueueMutex</a>;
+<a name="l00151"></a>00151 
+<a name="l00155"></a>00155     <span class="keywordtype">void</span> <a class="code" href="classGame.html#a39bb2fd26b5ea6b164f28f9f6723582e" title="Reset the game to its original state.">reset</a>();
+<a name="l00156"></a>00156 
+<a name="l00161"></a>00161     <span class="keywordtype">void</span> <a class="code" href="classGame.html#ac99f9b8f2fe853140727464c97128fdc" title="Start the game.">start</a>(<a class="code" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228" title="public Enum representing all the different players.">Player_t</a> player);
+<a name="l00162"></a>00162 
+<a name="l00167"></a>00167     <span class="keywordtype">void</span> <a class="code" href="classGame.html#aaa1a4a60cb09861202ecd623946eb55b" title="Pause the game.">pause</a>(<a class="code" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228" title="public Enum representing all the different players.">Player_t</a> player);
+<a name="l00168"></a>00168 
+<a name="l00173"></a>00173     <span class="keywordtype">void</span> <a class="code" href="classGame.html#ad9b2e2bce281d90f4d64913b18d919b0" title="Stop the game.">stop</a>(<a class="code" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228" title="public Enum representing all the different players.">Player_t</a> player);
+<a name="l00174"></a>00174 
+<a name="l00180"></a>00180     <span class="keyword">static</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classGame.html#a27179f8fc227701b573cc5f7212727f8" title="Calculate the damage done when a player is hit on a certain body part.">calculateHitDamage</a>(<a class="code" href="group__Common.html#gaa22d3933804e3afcd4eac294dded7434" title="public Enum representing different parts of the human body.">BodyPart_t</a> bodyPart);
+<a name="l00181"></a>00181 
+<a name="l00188"></a>00188     <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classGame.html#a1c5a25be6e6e96d318e1916aa0c75ff4" title="Determine if the update context is world related.">isWorldRelatedUpdate</a>(<a class="code" href="group__Mediator.html#gaa3a9bed543f2a2237dc2b6feea170a1d" title="public Each update has a context.">MediatorUpdateContext_t</a> context);
+<a name="l00189"></a>00189 
+<a name="l00190"></a>00190 };
+<a name="l00191"></a>00191 <span class="preprocessor">#endif</span>
+<a name="l00192"></a>00192 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -111,7 +137,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -120,7 +146,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:44 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

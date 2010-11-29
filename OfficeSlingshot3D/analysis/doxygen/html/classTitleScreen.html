@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -48,7 +49,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <h1>TitleScreen Class Reference</h1>  </div>
 </div>
@@ -61,17 +63,72 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7aa7add9040c34b655bcde4cd6e758f2"></a><!-- doxytag: member="TitleScreen::TitleScreen" ref="a7aa7add9040c34b655bcde4cd6e758f2" args="()" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTitleScreen.html#a7aa7add9040c34b655bcde4cd6e758f2">TitleScreen</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4f844eb163acc5b2373f6330b37673c1"></a><!-- doxytag: member="TitleScreen::~TitleScreen" ref="a4f844eb163acc5b2373f6330b37673c1" args="()" -->
-virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTitleScreen.html#a4f844eb163acc5b2373f6330b37673c1">~TitleScreen</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTitleScreen.html#a7aa7add9040c34b655bcde4cd6e758f2">TitleScreen</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#a7aa7add9040c34b655bcde4cd6e758f2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTitleScreen.html#a4f844eb163acc5b2373f6330b37673c1">~TitleScreen</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#a4f844eb163acc5b2373f6330b37673c1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">cCamera *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTitleScreen.html#aafaa452d86899a0fa60405fa1b82754e">camera</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve the camera for this title screen.  <a href="#aafaa452d86899a0fa60405fa1b82754e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTitleScreen.html#a4ca23c7b2ac6663abf5fc5465a049127">changeMuteIcon</a> (bool soundOn)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Changes between the mute and unmute icons.  <a href="#a4ca23c7b2ac6663abf5fc5465a049127"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTitleScreen.html#aedcadb2cac1e911b57b9e1a35f8ded5a">changeVolumeIcon</a> (int vol)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Changes the volume control image.  <a href="#aedcadb2cac1e911b57b9e1a35f8ded5a"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cWorld *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTitleScreen.html#a3f3356631a930f11c762092b7e454b65">world</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The virtual world.  <a href="#a3f3356631a930f11c762092b7e454b65"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cCamera *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTitleScreen.html#a2c2eff5e9ef493f2ae0acf75702b98fd">_camera</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The world's camera.  <a href="#a2c2eff5e9ef493f2ae0acf75702b98fd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cLight *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTitleScreen.html#ac1e5aff821d202a0b11a29382f7685ba">light</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The environment's light.  <a href="#ac1e5aff821d202a0b11a29382f7685ba"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cBitmap *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTitleScreen.html#a951e7c3632d55af26acaec5d1f3069b0">bitmap</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The background bitmap image.  <a href="#a951e7c3632d55af26acaec5d1f3069b0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cBitmap *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTitleScreen.html#a9b829cbb189ade96ddf97b63266fcc1f">muteControl</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The mute control bitmap image.  <a href="#a9b829cbb189ade96ddf97b63266fcc1f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cBitmap *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTitleScreen.html#a38c360591c036862e58df41c53c4be48">volumeControl</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The volume control bitmap image.  <a href="#a38c360591c036862e58df41c53c4be48"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>The title screen is a 3D environment that is displayed when the game isn't running. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a7aa7add9040c34b655bcde4cd6e758f2"></a><!-- doxytag: member="TitleScreen::TitleScreen" ref="a7aa7add9040c34b655bcde4cd6e758f2" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TitleScreen::TitleScreen </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4f844eb163acc5b2373f6330b37673c1"></a><!-- doxytag: member="TitleScreen::~TitleScreen" ref="a4f844eb163acc5b2373f6330b37673c1" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TitleScreen::~TitleScreen </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
 <hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="aafaa452d86899a0fa60405fa1b82754e"></a><!-- doxytag: member="TitleScreen::camera" ref="aafaa452d86899a0fa60405fa1b82754e" args="()" -->
 <div class="memitem">
@@ -93,9 +150,152 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 
 </div>
 </div>
+<a class="anchor" id="a4ca23c7b2ac6663abf5fc5465a049127"></a><!-- doxytag: member="TitleScreen::changeMuteIcon" ref="a4ca23c7b2ac6663abf5fc5465a049127" args="(bool soundOn)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TitleScreen::changeMuteIcon </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>soundOn</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Changes between the mute and unmute icons. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>soundOn</em>&nbsp;</td><td>True if the sound is currently on </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aedcadb2cac1e911b57b9e1a35f8ded5a"></a><!-- doxytag: member="TitleScreen::changeVolumeIcon" ref="aedcadb2cac1e911b57b9e1a35f8ded5a" args="(int vol)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TitleScreen::changeVolumeIcon </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>vol</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Changes the volume control image. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>vol</em>&nbsp;</td><td>The new volume </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a2c2eff5e9ef493f2ae0acf75702b98fd"></a><!-- doxytag: member="TitleScreen::_camera" ref="a2c2eff5e9ef493f2ae0acf75702b98fd" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cCamera* <a class="el" href="classTitleScreen.html#a2c2eff5e9ef493f2ae0acf75702b98fd">TitleScreen::_camera</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The world's camera. </p>
+
+</div>
+</div>
+<a class="anchor" id="a951e7c3632d55af26acaec5d1f3069b0"></a><!-- doxytag: member="TitleScreen::bitmap" ref="a951e7c3632d55af26acaec5d1f3069b0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cBitmap* <a class="el" href="classTitleScreen.html#a951e7c3632d55af26acaec5d1f3069b0">TitleScreen::bitmap</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The background bitmap image. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac1e5aff821d202a0b11a29382f7685ba"></a><!-- doxytag: member="TitleScreen::light" ref="ac1e5aff821d202a0b11a29382f7685ba" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cLight* <a class="el" href="classTitleScreen.html#ac1e5aff821d202a0b11a29382f7685ba">TitleScreen::light</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The environment's light. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9b829cbb189ade96ddf97b63266fcc1f"></a><!-- doxytag: member="TitleScreen::muteControl" ref="a9b829cbb189ade96ddf97b63266fcc1f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cBitmap* <a class="el" href="classTitleScreen.html#a9b829cbb189ade96ddf97b63266fcc1f">TitleScreen::muteControl</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The mute control bitmap image. </p>
+
+</div>
+</div>
+<a class="anchor" id="a38c360591c036862e58df41c53c4be48"></a><!-- doxytag: member="TitleScreen::volumeControl" ref="a38c360591c036862e58df41c53c4be48" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cBitmap* <a class="el" href="classTitleScreen.html#a38c360591c036862e58df41c53c4be48">TitleScreen::volumeControl</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The volume control bitmap image. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3f3356631a930f11c762092b7e454b65"></a><!-- doxytag: member="TitleScreen::world" ref="a3f3356631a930f11c762092b7e454b65" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cWorld* <a class="el" href="classTitleScreen.html#a3f3356631a930f11c762092b7e454b65">TitleScreen::world</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The virtual world. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/<a class="el" href="TitleScreen_8h_source.html">TitleScreen.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/TitleScreen.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Game/<a class="el" href="TitleScreen_8h_source.html">TitleScreen.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Game/<a class="el" href="TitleScreen_8cpp.html">TitleScreen.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -103,7 +303,7 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -112,7 +312,7 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:46 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

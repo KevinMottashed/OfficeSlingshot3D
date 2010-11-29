@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OfficeSlingshot3D: /home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MainDlg.h Source File</title>
+<title>OfficeSlingshot3D: /home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/UserInterface/MainDlg.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -41,110 +42,122 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/MainDlg.h</h1>  </div>
+<h1>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/UserInterface/MainDlg.h</h1>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef MAIN_DLG_H</span>
+<a href="MainDlg_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef MAIN_DLG_H</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define MAIN_DLG_H</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &quot;stdafx.h&quot;</span>
 <a name="l00005"></a>00005 <span class="preprocessor">#include &quot;Resource.h&quot;</span>
-<a name="l00006"></a>00006 <span class="preprocessor">#include &quot;UserInterface.h&quot;</span>
-<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;VideoData.h&quot;</span>
-<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;UserPreferences.h&quot;</span>
-<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;MFCOpenGLControl.h&quot;</span>
-<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;ConnectionStateEnum.h&quot;</span>
-<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;PlayerEnum.h&quot;</span>
-<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;GameStateEnum.h&quot;</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include &quot;<a class="code" href="UserInterface_8h.html">UserInterface.h</a>&quot;</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;<a class="code" href="UserPreferences_8h.html">UserPreferences.h</a>&quot;</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;<a class="code" href="MFCOpenGLControl_8h.html">MFCOpenGLControl.h</a>&quot;</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;<a class="code" href="ConnectionStateEnum_8h.html">ConnectionStateEnum.h</a>&quot;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="PlayerEnum_8h.html">PlayerEnum.h</a>&quot;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="GameStateEnum_8h.html">GameStateEnum.h</a>&quot;</span>
+<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;<a class="code" href="Audio_8h.html">Audio.h</a>&quot;</span>
 <a name="l00013"></a>00013 
-<a name="l00014"></a>00014 <span class="preprocessor">#include &quot;boost.h&quot;</span>
+<a name="l00014"></a>00014 <span class="preprocessor">#include &quot;<a class="code" href="boost_8h.html">boost.h</a>&quot;</span>
 <a name="l00015"></a>00015 
-<a name="l00017"></a>00017 <span class="comment">// CMainDlg dialog</span>
-<a name="l00018"></a>00018 
-<a name="l00019"></a>00019 <span class="keyword">class </span><a class="code" href="classUserInterface.html">UserInterface</a>;
-<a name="l00020"></a>00020 
-<a name="l00021"></a><a class="code" href="classCMainDlg.html">00021</a> <span class="keyword">class </span><a class="code" href="classCMainDlg.html">CMainDlg</a> : <span class="keyword">public</span> CDialog
-<a name="l00022"></a>00022 {
-<a name="l00023"></a>00023 <span class="keyword">public</span>:
-<a name="l00024"></a>00024     <a class="code" href="classCMainDlg.html">CMainDlg</a>(<a class="code" href="classUserInterface.html">UserInterface</a>* pUserInterface, <span class="keyword">const</span> <a class="code" href="structUserPreferences.html" title="Represents the user preferences.">UserPreferences</a>&amp; preferences, CWnd* pParent = NULL);   <span class="comment">// standard constructor</span>
-<a name="l00025"></a>00025 
-<a name="l00026"></a>00026     <span class="comment">// display that a certain player has changed the connection state</span>
-<a name="l00027"></a>00027     <span class="keywordtype">void</span> displayConnectionStateChanged(<a class="code" href="namespaceConnectionState.html#ad1b6674b6f1c58f17e9db75d0a77149f" title="Enum representing all the different connection states.">ConnectionState_t</a> state, <a class="code" href="namespacePlayer.html#acc4ced29e6b7e20f602b3c8b60c75228" title="Enum representing all the different players.">Player_t</a> player);
-<a name="l00028"></a>00028 
-<a name="l00029"></a>00029     <span class="comment">// display that a certain player has changed the game state</span>
-<a name="l00030"></a>00030     <span class="keywordtype">void</span> displayGameStateChanged(<a class="code" href="namespaceGameState.html#a1026e99904938017415f188e2daba514" title="Enum representing all the different game states.">GameState_t</a> state, <a class="code" href="namespacePlayer.html#acc4ced29e6b7e20f602b3c8b60c75228" title="Enum representing all the different players.">Player_t</a> player);
-<a name="l00031"></a>00031 
-<a name="l00032"></a>00032     <span class="comment">// visual feedback for connection state </span>
-<a name="l00033"></a>00033     <span class="keywordtype">void</span> displayConnectionFailed();
-<a name="l00034"></a>00034     <span class="keywordtype">void</span> displayFailedToListen();
-<a name="l00035"></a>00035     <span class="keywordtype">void</span> displayNetworkError();
-<a name="l00036"></a>00036 
-<a name="l00037"></a>00037     <span class="comment">// visual feedback for peer interaction</span>
-<a name="l00038"></a>00038     <span class="keywordtype">void</span> displayPeerChatMessage(<span class="keyword">const</span> std::string&amp; message);
-<a name="l00039"></a>00039     <span class="keywordtype">void</span> displayLocalChatMessage(<span class="keyword">const</span> std::string&amp; message);
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041     <span class="comment">// update the peers user name</span>
-<a name="l00042"></a>00042     <span class="keywordtype">void</span> setPeerUserName(<span class="keyword">const</span> std::string&amp; name);
-<a name="l00043"></a>00043 
-<a name="l00044"></a>00044     <span class="comment">// Method to add a string in a new line in the text box</span>
-<a name="l00045"></a>00045     <span class="keywordtype">void</span> AddChatContent(CString strCont);
-<a name="l00046"></a>00046 
-<a name="l00051"></a>00051     <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#a5b14164d26fb2c0fdc533503c302bdfc" title="Set the camera whose frames will be drawn in the open gl window.">camera</a>(cCamera* <a class="code" href="classCMainDlg.html#a5b14164d26fb2c0fdc533503c302bdfc" title="Set the camera whose frames will be drawn in the open gl window.">camera</a>);
-<a name="l00052"></a>00052 
-<a name="l00053"></a>00053 <span class="keyword">private</span>:
-<a name="l00054"></a>00054 
-<a name="l00055"></a>00055     boost::shared_ptr&lt;MFCOpenGLControl&gt; m_oglWindow;
-<a name="l00056"></a>00056 
-<a name="l00057"></a>00057     <a class="code" href="classUserInterface.html">UserInterface</a>* pUserInterface;
-<a name="l00058"></a>00058     <a class="code" href="structUserPreferences.html" title="Represents the user preferences.">UserPreferences</a> m_preferences;
-<a name="l00059"></a>00059 
-<a name="l00060"></a>00060     <span class="comment">// peers user name</span>
-<a name="l00061"></a>00061     std::string m_peerUserName;
-<a name="l00062"></a>00062     
-<a name="l00063"></a>00063     <span class="comment">// Inherited method to catch messages before they are sent to the UI</span>
-<a name="l00064"></a>00064     <span class="keyword">virtual</span> BOOL CMainDlg::PreTranslateMessage(MSG* pMsg);
-<a name="l00065"></a>00065 
-<a name="l00066"></a>00066     <span class="comment">// Inherited method to perform actions before the UI is displayed</span>
-<a name="l00067"></a>00067     <span class="keyword">virtual</span> BOOL CMainDlg::OnInitDialog();
-<a name="l00068"></a>00068 
-<a name="l00069"></a>00069 <span class="comment">// Dialog Data</span>
-<a name="l00070"></a>00070     <span class="comment">//{{AFX_DATA(CMainDlg)</span>
-<a name="l00071"></a>00071     <span class="keyword">enum</span> { IDD = IDD_MAIN_DIALOG };
-<a name="l00072"></a>00072         CRichEditCtrl m_richChat;
-<a name="l00073"></a>00073         CEdit m_editChatInput;
-<a name="l00074"></a>00074         CButton m_sendChatButton;
-<a name="l00075"></a>00075     <span class="comment">//}}AFX_DATA</span>
-<a name="l00076"></a>00076 
-<a name="l00077"></a>00077     <span class="comment">//{{AFX_VIRTUAL(CMainDlg)</span>
-<a name="l00078"></a>00078 
-<a name="l00079"></a>00079     <span class="keyword">virtual</span> <span class="keywordtype">void</span> DoDataExchange(CDataExchange* pDX);    <span class="comment">// DDX/DDV support</span>
-<a name="l00080"></a>00080     <span class="comment">//}}AFX_VIRTUAL</span>
+<a name="l00016"></a>00016 <span class="keyword">class </span><a class="code" href="classUserInterface.html" title="An interface to this package.">UserInterface</a>;
+<a name="l00017"></a>00017 
+<a name="l00024"></a><a class="code" href="classCMainDlg.html">00024</a> <span class="keyword">class </span><a class="code" href="classCMainDlg.html" title="A class representing the main UI element of OfficeSlingshot3D.">CMainDlg</a> : <span class="keyword">public</span> CDialog
+<a name="l00025"></a>00025 {
+<a name="l00026"></a>00026 <span class="keyword">public</span>:
+<a name="l00033"></a>00033     <a class="code" href="classCMainDlg.html#a3d1855c88836a3f933555d4ef350412b" title="Contructor.">CMainDlg</a>(<a class="code" href="classUserInterface.html" title="An interface to this package.">UserInterface</a>* <a class="code" href="classCMainDlg.html#a61d7fcec9b72bf28c8ddff24ba757294" title="The user interface object.">pUserInterface</a>, <span class="keyword">const</span> <a class="code" href="structUserPreferences.html" title="public Represents the user preferences.">UserPreferences</a>&amp; preferences, CWnd* pParent = NULL);   <span class="comment">// standard constructor</span>
+<a name="l00034"></a>00034 
+<a name="l00040"></a>00040     <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#a4f3d053547e8dd3ee376747a5899c80f" title="Display that a certain player has changed the connection state.">displayConnectionStateChanged</a>(<a class="code" href="group__Common.html#gad1b6674b6f1c58f17e9db75d0a77149f" title="public Enum representing all the different connection states.">ConnectionState_t</a> state, <a class="code" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228" title="public Enum representing all the different players.">Player_t</a> player);
+<a name="l00041"></a>00041 
+<a name="l00047"></a>00047     <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#af52a54b8267d1aed20a8a7cf68af0eca" title="Display that a certain player has changed the game state.">displayGameStateChanged</a>(<a class="code" href="group__Common.html#ga1026e99904938017415f188e2daba514" title="public Enum representing all the different game states.">GameState_t</a> state, <a class="code" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228" title="public Enum representing all the different players.">Player_t</a> player);
+<a name="l00048"></a>00048 
+<a name="l00052"></a>00052     <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#a0ed46cba2e44554234ee991f8c3ece30" title="Display that the connection to the peer has failed.">displayConnectionFailed</a>();
+<a name="l00053"></a>00053 
+<a name="l00057"></a>00057     <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#a8d6808eaab0ee11cde45362ffadef5ec" title="Display that request to listen has failed.">displayFailedToListen</a>();
+<a name="l00058"></a>00058 
+<a name="l00062"></a>00062     <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#ae514375b2047fef42542152203a69391" title="Display that a network error has occurred.">displayNetworkError</a>();
+<a name="l00063"></a>00063 
+<a name="l00068"></a>00068     <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#a2afd2d4afae59cd06054e69f97fb3279" title="Display a new message in the peer&amp;#39;s message box.">displayPeerChatMessage</a>(<span class="keyword">const</span> std::string&amp; message);
+<a name="l00069"></a>00069 
+<a name="l00074"></a>00074     <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#a345af8a0634e8d49c342b51c5ccc9917" title="Display a new message in the local user&amp;#39;s message box.">displayLocalChatMessage</a>(<span class="keyword">const</span> std::string&amp; message);
+<a name="l00075"></a>00075 
+<a name="l00080"></a>00080     <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#a434e1bcf20ce1ed52cb1251dd6e1590f" title="Update the user interface to display game over.">displayGameOver</a>(<a class="code" href="group__Common.html#gacc4ced29e6b7e20f602b3c8b60c75228" title="public Enum representing all the different players.">Player_t</a> player);
 <a name="l00081"></a>00081 
-<a name="l00082"></a>00082     <span class="comment">// Message map functions</span>
-<a name="l00083"></a>00083     <span class="comment">//{{AFX_MSG(CMainDlg)</span>
-<a name="l00084"></a>00084     afx_msg <span class="keywordtype">void</span> OnNetworkConnect();
-<a name="l00085"></a>00085     afx_msg <span class="keywordtype">void</span> OnNetworkDisconnect();
-<a name="l00086"></a>00086     afx_msg <span class="keywordtype">void</span> OnNetworkListen();
-<a name="l00087"></a>00087     afx_msg <span class="keywordtype">void</span> OnPreferencesEdit();
-<a name="l00088"></a>00088     afx_msg <span class="keywordtype">void</span> OnStartGame();
-<a name="l00089"></a>00089     afx_msg <span class="keywordtype">void</span> OnExitGame();
-<a name="l00090"></a>00090     afx_msg <span class="keywordtype">void</span> OnPauseGame();
-<a name="l00091"></a>00091     afx_msg <span class="keywordtype">void</span> OnDestroy();
-<a name="l00092"></a>00092     afx_msg <span class="keywordtype">void</span> OnSendChat();
-<a name="l00093"></a>00093     afx_msg <span class="keywordtype">void</span> OnChangeChatInput();
-<a name="l00094"></a>00094     <span class="comment">//}}AFX_MSG</span>
-<a name="l00095"></a>00095     DECLARE_MESSAGE_MAP()
-<a name="l00096"></a>00096 };
-<a name="l00097"></a>00097 
-<a name="l00098"></a>00098 <span class="comment">//{{AFX_INSERT_LOCATION}}</span>
-<a name="l00099"></a>00099 <span class="comment">// Microsoft Visual C++ will insert additional declarations immediately before the previous line.</span>
-<a name="l00100"></a>00100 
-<a name="l00101"></a>00101 <span class="preprocessor">#endif</span>
-<a name="l00102"></a>00102 <span class="preprocessor"></span> 
+<a name="l00085"></a>00085     <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#a2f9e23d3ccbfed73c62ba027d0e47938" title="Redraw the screen.">paint</a>();
+<a name="l00086"></a>00086 
+<a name="l00091"></a>00091     <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#ab058737971aa5c0ba4646ab2623e6b84" title="Update the peers user name.">setPeerUserName</a>(<span class="keyword">const</span> std::string&amp; name);
+<a name="l00092"></a>00092 
+<a name="l00097"></a>00097     <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#ae693fe41d98817879fdfe7b496acea37" title="Method to add a string in a new line in the text box.">AddChatContent</a>(CString strCont);
+<a name="l00098"></a>00098 
+<a name="l00103"></a>00103     <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#a5b14164d26fb2c0fdc533503c302bdfc" title="Set the camera whose frames will be drawn in the open gl window.">camera</a>(cCamera* <a class="code" href="classCMainDlg.html#a5b14164d26fb2c0fdc533503c302bdfc" title="Set the camera whose frames will be drawn in the open gl window.">camera</a>);
+<a name="l00104"></a>00104 
+<a name="l00109"></a>00109     <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#a58105b3e82a58538f99753a4e037a193" title="Sets the mute preference.">setMutePref</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> mute);
+<a name="l00110"></a>00110 
+<a name="l00115"></a>00115     <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#ad449f28c968c3c936d2b27d133a98d5d" title="Sets the volume preference.">setVolPref</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> vol);
+<a name="l00116"></a>00116 
+<a name="l00117"></a>00117 <span class="keyword">private</span>:
+<a name="l00121"></a><a class="code" href="classCMainDlg.html#a85aa455784f232140a8d8bff162a8fee">00121</a>     boost::shared_ptr&lt;MFCOpenGLControl&gt; <a class="code" href="classCMainDlg.html#a85aa455784f232140a8d8bff162a8fee" title="The openGL window.">m_oglWindow</a>;
+<a name="l00122"></a>00122 
+<a name="l00126"></a><a class="code" href="classCMainDlg.html#a61d7fcec9b72bf28c8ddff24ba757294">00126</a>     <a class="code" href="classUserInterface.html" title="An interface to this package.">UserInterface</a>* pUserInterface;
+<a name="l00127"></a>00127 
+<a name="l00131"></a><a class="code" href="classCMainDlg.html#aa8836279921548c4e822e9d6c6a19518">00131</a>     <a class="code" href="structUserPreferences.html" title="public Represents the user preferences.">UserPreferences</a> <a class="code" href="classCMainDlg.html#aa8836279921548c4e822e9d6c6a19518" title="The user preferences object.">m_preferences</a>;
+<a name="l00132"></a>00132 
+<a name="l00136"></a><a class="code" href="classCMainDlg.html#aca5081cb72f1fd612d62841c1ab32065">00136</a>     std::string <a class="code" href="classCMainDlg.html#aca5081cb72f1fd612d62841c1ab32065" title="The peer&amp;#39;s user name.">m_peerUserName</a>;
+<a name="l00137"></a>00137 
+<a name="l00141"></a><a class="code" href="classCMainDlg.html#a601b964702cbae7ccfe1e4f0df8f7fb3">00141</a>     <span class="keywordtype">bool</span> <a class="code" href="classCMainDlg.html#a601b964702cbae7ccfe1e4f0df8f7fb3" title="A flag to determine if the sound is on or off.">m_soundOn</a>;
+<a name="l00142"></a>00142 
+<a name="l00146"></a><a class="code" href="classCMainDlg.html#ab82a0a43ac7e9dc4246f5ce25dec8cb8">00146</a>     <span class="keywordtype">int</span> <a class="code" href="classCMainDlg.html#ab82a0a43ac7e9dc4246f5ce25dec8cb8" title="Volume intensity.">m_volume</a>;
+<a name="l00147"></a>00147     
+<a name="l00152"></a>00152     <span class="keyword">virtual</span> BOOL <a class="code" href="classCMainDlg.html#af3d8d0e7dc5db05123abf8358f939763" title="Inherited method to catch messages before they are sent to the UI.">CMainDlg::PreTranslateMessage</a>(MSG* pMsg);
+<a name="l00153"></a>00153 
+<a name="l00157"></a>00157     <span class="keyword">virtual</span> BOOL <a class="code" href="classCMainDlg.html#a4042eda8acf5ccf4ee58b69b2351aa71" title="Inherited method to perform actions before the UI is displayed.">CMainDlg::OnInitDialog</a>();
+<a name="l00158"></a>00158 
+<a name="l00159"></a>00159 <span class="comment">// Dialog Data</span>
+<a name="l00160"></a>00160     <span class="comment">//{{AFX_DATA(CMainDlg)</span>
+<a name="l00161"></a><a class="code" href="classCMainDlg.html#a1012b2ed66796565ea783955ba9b2095a75f08fe8911ee4f9c647ddae9d37ce11">00161</a>     <span class="keyword">enum</span> { <a class="code" href="classCMainDlg.html#a1012b2ed66796565ea783955ba9b2095a75f08fe8911ee4f9c647ddae9d37ce11">IDD</a> = IDD_MAIN_DIALOG };
+<a name="l00162"></a><a class="code" href="classCMainDlg.html#a7b79b0df5650cb33a22a4c53eb360429">00162</a>         CRichEditCtrl <a class="code" href="classCMainDlg.html#a7b79b0df5650cb33a22a4c53eb360429">m_richChat</a>;
+<a name="l00163"></a><a class="code" href="classCMainDlg.html#a1c0ab4f56af264927c1eead020795a1e">00163</a>         CEdit <a class="code" href="classCMainDlg.html#a1c0ab4f56af264927c1eead020795a1e">m_editChatInput</a>;
+<a name="l00164"></a><a class="code" href="classCMainDlg.html#aee8bcc12ec6ab8c45713dddf42fa4912">00164</a>         CButton <a class="code" href="classCMainDlg.html#aee8bcc12ec6ab8c45713dddf42fa4912">m_sendChatButton</a>;
+<a name="l00165"></a>00165     <span class="comment">//}}AFX_DATA</span>
+<a name="l00166"></a>00166 
+<a name="l00167"></a>00167     <span class="comment">//{{AFX_VIRTUAL(CMainDlg)</span>
+<a name="l00168"></a>00168 
+<a name="l00169"></a>00169     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#a5f98bab2b2c91cd6cf14ea8ebdf7e689">DoDataExchange</a>(CDataExchange* pDX);    <span class="comment">// DDX/DDV support</span>
+<a name="l00170"></a>00170     <span class="comment">//}}AFX_VIRTUAL</span>
+<a name="l00171"></a>00171 
+<a name="l00172"></a>00172     <span class="comment">// Message map functions</span>
+<a name="l00173"></a>00173     <span class="comment">//{{AFX_MSG(CMainDlg)</span>
+<a name="l00174"></a>00174     afx_msg <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#aff4a9132244f615aebe9f7d39f695016">OnNetworkConnect</a>();
+<a name="l00175"></a>00175     afx_msg <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#af93cc4cd64ed7dce630d2a0ad47cc652">OnNetworkDisconnect</a>();
+<a name="l00176"></a>00176     afx_msg <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#acb229de8c4cce8a9dc6e37552f7d5ad5">OnNetworkListen</a>();
+<a name="l00177"></a>00177     afx_msg <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#a5dd246cb829e770fe61da4f1a8f3e3e9">OnPreferencesEdit</a>();
+<a name="l00178"></a>00178     afx_msg <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#ac2216a6a546f97670cee8cdc3df6d49b">OnStartGame</a>();
+<a name="l00179"></a>00179     afx_msg <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#ad6ec2aa4d3fa3cd36011544dd973853b">OnExitGame</a>();
+<a name="l00180"></a>00180     afx_msg <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#a942774068f026a96de6d129be1846d3a">OnPauseGame</a>();
+<a name="l00181"></a>00181     afx_msg <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#aaaf80a7f9c54f3839a09f3b92bcfaf4e">OnDestroy</a>();
+<a name="l00182"></a>00182     afx_msg <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#aab8ca8faf75b616605eacb530602ce99">OnSendChat</a>();
+<a name="l00183"></a>00183     afx_msg <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#a637868af2347b9aa9ecf6ca2c5929968">OnChangeChatInput</a>();
+<a name="l00184"></a>00184     <span class="comment">//}}AFX_MSG</span>
+<a name="l00185"></a>00185     DECLARE_MESSAGE_MAP()
+<a name="l00186"></a>00186     afx_msg <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#a4156609dd519a249c0cbe08c86070205">OnStnClickedVolumeCtrl</a>();
+<a name="l00187"></a>00187     afx_msg <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#a70b8b5279232e446f534bdf40a579e7b">OnStnClickedVol1</a>();
+<a name="l00188"></a>00188     afx_msg <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#a84e10e2e6deaa5aa3b0c2eab1d5456ed">OnStnClickedVol2</a>();
+<a name="l00189"></a>00189     afx_msg <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#a1b181df0c5c9c711230a824d7dbbc7e0">OnStnClickedVol3</a>();
+<a name="l00190"></a>00190     afx_msg <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#a18d11fca4e9cb558eb3a11b7bbf7993d">OnStnClickedVol4</a>();
+<a name="l00191"></a>00191     afx_msg <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#aa182790357c0fc3b7642ffd0bc637afe">OnStnClickedVol5</a>();
+<a name="l00192"></a>00192     afx_msg <span class="keywordtype">void</span> <a class="code" href="classCMainDlg.html#a264f7b813913a9a1dff6d99b0c13f3aa">OnStnClickedGameWindow</a>();
+<a name="l00193"></a>00193 };
+<a name="l00194"></a>00194 
+<a name="l00195"></a>00195 <span class="comment">//{{AFX_INSERT_LOCATION}}</span>
+<a name="l00196"></a>00196 <span class="comment">// Microsoft Visual C++ will insert additional declarations immediately before the previous line.</span>
+<a name="l00197"></a>00197 
+<a name="l00198"></a>00198 <span class="preprocessor">#endif</span>
+<a name="l00199"></a>00199 <span class="preprocessor"></span> 
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -152,7 +165,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -161,7 +174,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:45 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

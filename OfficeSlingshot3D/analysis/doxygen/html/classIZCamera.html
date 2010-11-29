@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -48,12 +49,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a>  </div>
   <div class="headertitle">
 <h1>IZCamera Class Reference</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="IZCamera" --><!-- doxytag: inherits="ZCameraSubject" --><div class="dynheader">
+<!-- doxytag: class="IZCamera" --><!-- doxytag: inherits="ZCameraSubject" -->
+<p>Abstract interface for a z camera.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="IZCamera_8h_source.html">IZCamera.h</a>&gt;</code></p>
+<div class="dynheader">
 Inheritance diagram for IZCamera:</div>
 <div class="dyncontent">
  <div class="center">
@@ -68,14 +75,148 @@ Inheritance diagram for IZCamera:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6d9b10985172343983a9edbdb324c367"></a><!-- doxytag: member="IZCamera::startCapture" ref="a6d9b10985172343983a9edbdb324c367" args="()=0" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>startCapture</b> ()=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac1a752c869fc2c97b0f7feff6163068f"></a><!-- doxytag: member="IZCamera::stopCapture" ref="ac1a752c869fc2c97b0f7feff6163068f" args="()=0" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>stopCapture</b> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIZCamera.html#aa1804fc6991eb7da7c44a0993482d189">IZCamera</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#aa1804fc6991eb7da7c44a0993482d189"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIZCamera.html#a550d4b2e89a38a72ea33e1d324ec7297">~IZCamera</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#a550d4b2e89a38a72ea33e1d324ec7297"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIZCamera.html#a6d9b10985172343983a9edbdb324c367">startCapture</a> ()=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Create a thread to start capturing frames from the camera.  <a href="#a6d9b10985172343983a9edbdb324c367"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIZCamera.html#ac1a752c869fc2c97b0f7feff6163068f">stopCapture</a> ()=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Stop the thread that's capturing frames from the camera.  <a href="#ac1a752c869fc2c97b0f7feff6163068f"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIZCamera.html#aee9e627172c327eb2f07462f4be56e5e">IZCamera</a> (const <a class="el" href="classIZCamera.html">IZCamera</a> &amp;zCamera)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy-Constructor.  <a href="#aee9e627172c327eb2f07462f4be56e5e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classIZCamera.html">IZCamera</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIZCamera.html#afaed2c9d97ba2a2b4610c84a94b52b0e">operator=</a> (const <a class="el" href="classIZCamera.html">IZCamera</a> &amp;zCamera)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy-Constructor.  <a href="#afaed2c9d97ba2a2b4610c84a94b52b0e"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Abstract interface for a z camera. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="aa1804fc6991eb7da7c44a0993482d189"></a><!-- doxytag: member="IZCamera::IZCamera" ref="aa1804fc6991eb7da7c44a0993482d189" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IZCamera::IZCamera </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a550d4b2e89a38a72ea33e1d324ec7297"></a><!-- doxytag: member="IZCamera::~IZCamera" ref="a550d4b2e89a38a72ea33e1d324ec7297" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IZCamera::~IZCamera </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="aee9e627172c327eb2f07462f4be56e5e"></a><!-- doxytag: member="IZCamera::IZCamera" ref="aee9e627172c327eb2f07462f4be56e5e" args="(const IZCamera &amp;zCamera)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IZCamera::IZCamera </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classIZCamera.html">IZCamera</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>zCamera</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copy-Constructor. </p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="afaed2c9d97ba2a2b4610c84a94b52b0e"></a><!-- doxytag: member="IZCamera::operator=" ref="afaed2c9d97ba2a2b4610c84a94b52b0e" args="(const IZCamera &amp;zCamera)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classIZCamera.html">IZCamera</a>&amp; IZCamera::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classIZCamera.html">IZCamera</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>zCamera</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copy-Constructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a6d9b10985172343983a9edbdb324c367"></a><!-- doxytag: member="IZCamera::startCapture" ref="a6d9b10985172343983a9edbdb324c367" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IZCamera::startCapture </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Create a thread to start capturing frames from the camera. </p>
+
+<p>Implemented in <a class="el" href="classZCameraReplayer.html#aa5ac01ea8f9f47b51cf92ad0aa0d7fc4">ZCameraReplayer</a>, and <a class="el" href="classZCamera.html#a9eb62d7424767779dc46cc357ae77645">ZCamera</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac1a752c869fc2c97b0f7feff6163068f"></a><!-- doxytag: member="IZCamera::stopCapture" ref="ac1a752c869fc2c97b0f7feff6163068f" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IZCamera::stopCapture </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Stop the thread that's capturing frames from the camera. </p>
+
+<p>Implemented in <a class="el" href="classZCameraReplayer.html#af25eba02746ce6c8f4765c6466c3841e">ZCameraReplayer</a>, and <a class="el" href="classZCamera.html#af883a28008906c04065644c5e8eb4e40">ZCamera</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/<a class="el" href="IZCamera_8h_source.html">IZCamera.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/ZCamera/IZCamera.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/ZCamera/<a class="el" href="IZCamera_8h_source.html">IZCamera.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/ZCamera/<a class="el" href="IZCamera_8cpp.html">IZCamera.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -83,7 +224,7 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>stopCapture</
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -92,7 +233,7 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>stopCapture</
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:45 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

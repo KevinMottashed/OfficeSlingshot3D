@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module PhysicsSync-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="32" level="0" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
+<lines_of_code value="34" level="0" />
+<lines_of_code_per_member_function value="********" level="2" />
+<lines_of_code_per_line_of_comment value="0.941" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+<weighted_methods_per_class_unity value="5" level="0" />
+<weighted_methods_per_class_visibility value="4" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="9" level="0" />
+<IF4 value="64" level="0" />
+<IF4_per_member_function value="********" level="2" />
+<IF4_visible value="64" level="1" />
+<IF4_visible_per_member_function value="********" level="2" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete_per_member_function value="********" level="0" />
+</module_summary>
+<module_detail>
+<description>declaration</description>
+<source_reference file="../../Common/CommonProxy.h" line="24" />
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="10" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+<description>definition</description>
+<source_reference file="../../Common/PhysicsSync.h" line="14" />
+<lines_of_code value="8" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="14" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module_detail>
+<procedural_detail>
+<member_function>
+<name>PhysicsSync()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Common/PhysicsSync.cpp" line="3" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Common/PhysicsSync.h" line="18" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>age()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Common/PhysicsSync.cpp" line="11" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Common/PhysicsSync.h" line="27" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>age(long)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Common/PhysicsSync.cpp" line="16" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Common/PhysicsSync.h" line="33" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>serialize(Archive &amp;,const int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Common/PhysicsSync.h" line="65" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>~PhysicsSync()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Common/PhysicsSync.cpp" line="7" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Common/PhysicsSync.h" line="21" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>PhysicsSync</name>
+<client_module>
+<name>Game</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Game/Game.cpp" line="403" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Game/Game.h" line="100" />
+</extent>
+<name>HumanFormatLogger</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Logger/HumanFormatLogger.h" line="80" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Logger/HumanFormatLogger.h" line="171" />
+</extent>
+<name>Logger</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Logger/Logger.h" line="111" />
+</extent>
+<name>Mediator</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="627" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Mediator/Mediator.h" line="166" />
+</extent>
+<name>Network</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Network/Network.h" line="126" />
+</extent>
+<name>NetworkReplayer</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="201" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Replay/NetworkReplayer.h" line="151" />
+</extent>
+<name>ReplayFormatLogger</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="83" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="194" />
+</extent>
+<name>WinsockNetwork</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Network/WinsockNetwork.h" line="165" />
+</extent>
+</client_module>
+<supplier_module>
+<name>Archive</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Common/PhysicsSync.h" line="65" />
+</extent>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>

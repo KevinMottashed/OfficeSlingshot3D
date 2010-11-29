@@ -2,19 +2,19 @@
 <!--Detailed report on module VirtualBall-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="35" level="0" />
+<lines_of_code value="104" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
+<McCabes_cyclomatic_complexity value="8" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
-<lines_of_code value="32" level="0" />
+<lines_of_code value="70" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="1.094" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-<weighted_methods_per_class_unity value="5" level="0" />
-<weighted_methods_per_class_visibility value="4" level="0" />
+<lines_of_code_per_line_of_comment value="1.486" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.114" level="0" />
+<weighted_methods_per_class_unity value="11" level="0" />
+<weighted_methods_per_class_visibility value="10" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="5" level="0" />
+<coupling_between_objects value="7" level="0" />
 <IF4 value="0" level="0" />
 <IF4_per_member_function value="********" level="0" />
 <IF4_visible value="0" level="0" />
@@ -24,59 +24,155 @@
 </module_summary>
 <module_detail>
 <description>definition</description>
-<source_reference file="../../Game/VirtualBall.h" line="13" />
-<lines_of_code value="7" level="0" />
+<source_reference file="../../Game/VirtualBall.h" line="14" />
+<lines_of_code value="11" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="10" level="0" />
+<lines_of_comment value="23" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module_detail>
 <procedural_detail>
 <member_function>
-<name>VirtualBall(cWorld *,cODEWorld *)</name>
+<name>VirtualBall(cWorld *,cODEWorld *,bool)</name>
 <extent>
 <description>definition</description>
 <source_reference file="../../Game/VirtualBall.cpp" line="3" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Game/VirtualBall.h" line="21" />
+<source_reference file="../../Game/VirtualBall.h" line="23" />
 </extent>
-<lines_of_code value="13" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="7" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>fire(Projectile)</name>
-<extent>
-<description>definition</description>
-<source_reference file="../../Game/VirtualBall.cpp" line="28" />
-</extent>
-<extent>
-<description>declaration</description>
-<source_reference file="../../Game/VirtualBall.h" line="34" />
-</extent>
-<lines_of_code value="7" level="0" />
+<lines_of_code value="15" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="8" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
-<name>getMeshPos()</name>
+<name>calculateForceVector()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Game/VirtualBall.cpp" line="39" />
+<source_reference file="../../Game/VirtualBall.cpp" line="107" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Game/VirtualBall.h" line="40" />
+<source_reference file="../../Game/VirtualBall.h" line="76" />
 </extent>
-<lines_of_code value="4" level="0" />
+<lines_of_code value="10" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
 <lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>collided()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualBall.cpp" line="53" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualBall.h" line="60" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>fire(const Projectile &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualBall.cpp" line="30" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualBall.h" line="36" />
+</extent>
+<lines_of_code value="12" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="8" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getAlreadyCollided()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualBall.cpp" line="48" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualBall.h" line="54" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getBallCenter()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualBall.cpp" line="63" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualBall.h" line="48" />
+</extent>
+<lines_of_code value="11" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getBallPos()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualBall.cpp" line="58" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualBall.h" line="42" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>move(const cVector3d &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualBall.cpp" line="82" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualBall.h" line="70" />
+</extent>
+<lines_of_code value="19" level="0" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
+<lines_of_comment value="5" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>reset()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Game/VirtualBall.cpp" line="74" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Game/VirtualBall.h" line="65" />
+</extent>
+<lines_of_code value="7" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -84,7 +180,7 @@
 <name>~VirtualBall()</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Game/VirtualBall.h" line="26" />
+<source_reference file="../../Game/VirtualBall.h" line="28" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -96,7 +192,7 @@
 <name>~VirtualBall(void)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Game/VirtualBall.cpp" line="24" />
+<source_reference file="../../Game/VirtualBall.cpp" line="26" />
 </extent>
 <lines_of_code value="3" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -113,28 +209,51 @@
 <supplier_module>
 <name>Projectile</name>
 <visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Game/VirtualBall.cpp" line="30" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Game/VirtualBall.h" line="36" />
+</extent>
+<name>bool</name>
+<visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualBall.cpp" line="28" />
+<source_reference file="../../Game/VirtualBall.cpp" line="3" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualBall.h" line="34" />
+<source_reference file="../../Game/VirtualBall.h" line="23" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualBall.h" line="87" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualBall.h" line="92" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualBall.h" line="103" />
 </extent>
 <name>cMesh</name>
 <visible>false</visible>
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/VirtualBall.h" line="46" />
+<source_reference file="../../Game/VirtualBall.h" line="82" />
 </extent>
 <name>cODEGenericBody</name>
 <visible>false</visible>
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Game/VirtualBall.h" line="52" />
+<source_reference file="../../Game/VirtualBall.h" line="98" />
 </extent>
 <name>cODEWorld</name>
 <visible>true</visible>
@@ -145,7 +264,22 @@
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Game/VirtualBall.h" line="21" />
+<source_reference file="../../Game/VirtualBall.h" line="23" />
+</extent>
+<name>cVector3d</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Game/VirtualBall.cpp" line="82" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Game/VirtualBall.h" line="70" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualBall.h" line="109" />
 </extent>
 <name>cWorld</name>
 <visible>true</visible>
@@ -156,7 +290,7 @@
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Game/VirtualBall.h" line="21" />
+<source_reference file="../../Game/VirtualBall.h" line="23" />
 </extent>
 </supplier_module>
 </module>

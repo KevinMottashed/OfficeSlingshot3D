@@ -2,14 +2,14 @@
 <!--Detailed report on module FalconReplayer-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="53" level="0" />
+<lines_of_code value="58" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
-<McCabes_cyclomatic_complexity value="6" level="0" />
+<McCabes_cyclomatic_complexity value="7" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
 <lines_of_code value="12" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="4.417" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.500" level="0" />
+<lines_of_code_per_line_of_comment value="4.833" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.583" level="0" />
 <weighted_methods_per_class_unity value="6" level="0" />
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="2" level="0" />
@@ -52,7 +52,7 @@
 <name>boundingBox()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Replay/FalconReplayer.cpp" line="49" />
+<source_reference file="../../Replay/FalconReplayer.cpp" line="54" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -74,17 +74,17 @@
 <description>declaration</description>
 <source_reference file="../../Replay/FalconReplayer.h" line="24" />
 </extent>
-<lines_of_code value="16" level="0" />
-<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_code value="21" level="0" />
+<McCabes_cyclomatic_complexity value="4" level="0" />
 <lines_of_comment value="2" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
+<lines_of_code_per_line_of_comment value="10.500" level="1" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
 <name>startPolling()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Replay/FalconReplayer.cpp" line="39" />
+<source_reference file="../../Replay/FalconReplayer.cpp" line="44" />
 </extent>
 <extent>
 <description>declaration</description>
@@ -100,7 +100,7 @@
 <name>stopPolling()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Replay/FalconReplayer.cpp" line="44" />
+<source_reference file="../../Replay/FalconReplayer.cpp" line="49" />
 </extent>
 <extent>
 <description>declaration</description>

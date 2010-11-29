@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -48,12 +49,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
-<h1>NetworkSubject Class Reference</h1>  </div>
+<h1>NetworkSubject Class Reference<br/>
+<small>
+[<a class="el" href="group__Network.html">Network</a>]</small>
+</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="NetworkSubject" --><div class="dynheader">
+<!-- doxytag: class="NetworkSubject" -->
+<p><b>public</b> This class represents the network in the observer pattern Observers will receive updates whenever a message is received over the network.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="NetworkSubject_8h_source.html">NetworkSubject.h</a>&gt;</code></p>
+<div class="dynheader">
 Inheritance diagram for NetworkSubject:</div>
 <div class="dyncontent">
  <div class="center">
@@ -67,16 +77,172 @@ Inheritance diagram for NetworkSubject:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7dad1909bc12d5bba33ac9b935f39465"></a><!-- doxytag: member="NetworkSubject::attach" ref="a7dad1909bc12d5bba33ac9b935f39465" args="(NetworkObserver *observer)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>attach</b> (<a class="el" href="classNetworkObserver.html">NetworkObserver</a> *observer)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9c2121db78ea8b1d1d3e3ab5e709a081"></a><!-- doxytag: member="NetworkSubject::detach" ref="a9c2121db78ea8b1d1d3e3ab5e709a081" args="(NetworkObserver *observer)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>detach</b> (<a class="el" href="classNetworkObserver.html">NetworkObserver</a> *observer)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abcf72266c492400152874107c6f2cc25"></a><!-- doxytag: member="NetworkSubject::notify" ref="abcf72266c492400152874107c6f2cc25" args="(NetworkUpdateContext context, const void *data=NULL)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>notify</b> (NetworkUpdateContext context, const void *data=NULL)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkSubject.html#af364bff77a34ce7ff67b7c09977f7cb9">NetworkSubject</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#af364bff77a34ce7ff67b7c09977f7cb9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkSubject.html#a7fa409294cd8240f37bc5c0a1798892c">~NetworkSubject</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#a7fa409294cd8240f37bc5c0a1798892c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkSubject.html#a7dad1909bc12d5bba33ac9b935f39465">attach</a> (<a class="el" href="classNetworkObserver.html">NetworkObserver</a> *observer)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Attaches an observer to this subject.  <a href="#a7dad1909bc12d5bba33ac9b935f39465"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkSubject.html#a9c2121db78ea8b1d1d3e3ab5e709a081">detach</a> (<a class="el" href="classNetworkObserver.html">NetworkObserver</a> *observer)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Detach an observer from this subject.  <a href="#a9c2121db78ea8b1d1d3e3ab5e709a081"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkSubject.html#abcf72266c492400152874107c6f2cc25">notify</a> (<a class="el" href="group__Network.html#ga60a60734bbc0407b2f0567078bbe20e1">NetworkUpdateContext</a> context, const void *data=NULL)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Notifies all observers of an update.  <a href="#abcf72266c492400152874107c6f2cc25"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classNetworkObserver.html">NetworkObserver</a> * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNetworkSubject.html#ac540fd9d7ab761ef52eb190827288a87">m_observers</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The list of observers.  <a href="#ac540fd9d7ab761ef52eb190827288a87"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p><b>public</b> This class represents the network in the observer pattern Observers will receive updates whenever a message is received over the network. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="af364bff77a34ce7ff67b7c09977f7cb9"></a><!-- doxytag: member="NetworkSubject::NetworkSubject" ref="af364bff77a34ce7ff67b7c09977f7cb9" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">NetworkSubject::NetworkSubject </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7fa409294cd8240f37bc5c0a1798892c"></a><!-- doxytag: member="NetworkSubject::~NetworkSubject" ref="a7fa409294cd8240f37bc5c0a1798892c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">NetworkSubject::~NetworkSubject </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a7dad1909bc12d5bba33ac9b935f39465"></a><!-- doxytag: member="NetworkSubject::attach" ref="a7dad1909bc12d5bba33ac9b935f39465" args="(NetworkObserver *observer)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NetworkSubject::attach </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classNetworkObserver.html">NetworkObserver</a> *&nbsp;</td>
+          <td class="paramname"> <em>observer</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Attaches an observer to this subject. </p>
+<p>The observer will start receiving updates. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>observer</em>&nbsp;</td><td>The observer to attach. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a9c2121db78ea8b1d1d3e3ab5e709a081"></a><!-- doxytag: member="NetworkSubject::detach" ref="a9c2121db78ea8b1d1d3e3ab5e709a081" args="(NetworkObserver *observer)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NetworkSubject::detach </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classNetworkObserver.html">NetworkObserver</a> *&nbsp;</td>
+          <td class="paramname"> <em>observer</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Detach an observer from this subject. </p>
+<p>The observer will no longer receive updates. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>observer</em>&nbsp;</td><td>The observer to detach. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="abcf72266c492400152874107c6f2cc25"></a><!-- doxytag: member="NetworkSubject::notify" ref="abcf72266c492400152874107c6f2cc25" args="(NetworkUpdateContext context, const void *data=NULL)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NetworkSubject::notify </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Network.html#ga60a60734bbc0407b2f0567078bbe20e1">NetworkUpdateContext</a>&nbsp;</td>
+          <td class="paramname"> <em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&nbsp;</td>
+          <td class="paramname"> <em>data</em> = <code>NULL</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Notifies all observers of an update. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>context</em>&nbsp;</td><td>The update's context. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>data</em>&nbsp;</td><td>The data associated with the update. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="ac540fd9d7ab761ef52eb190827288a87"></a><!-- doxytag: member="NetworkSubject::m_observers" ref="ac540fd9d7ab761ef52eb190827288a87" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classNetworkObserver.html">NetworkObserver</a>*&gt; <a class="el" href="classNetworkSubject.html#ac540fd9d7ab761ef52eb190827288a87">NetworkSubject::m_observers</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The list of observers. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/<a class="el" href="NetworkSubject_8h_source.html">NetworkSubject.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/NetworkSubject.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Network/<a class="el" href="NetworkSubject_8h_source.html">NetworkSubject.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Network/<a class="el" href="NetworkSubject_8cpp.html">NetworkSubject.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -84,7 +250,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>notify</b> (NetworkUp
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -93,7 +259,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>notify</b> (NetworkUp
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:46 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

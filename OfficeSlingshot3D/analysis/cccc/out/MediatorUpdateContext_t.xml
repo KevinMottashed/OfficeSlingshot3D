@@ -35,18 +35,34 @@
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/Game.cpp" line="35" />
+<source_reference file="../../Game/Game.cpp" line="41" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Game/Game.cpp" line="227" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/Game.h" line="36" />
+<source_reference file="../../Game/Game.cpp" line="438" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/Game.h" line="40" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Game/Game.h" line="75" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/Game.h" line="188" />
 </extent>
 <name>MediatorObserver</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Mediator/MediatorObserver.h" line="28" />
+<source_reference file="../../Mediator/MediatorObserver.h" line="32" />
 </extent>
 <name>MediatorSubject</name>
 <visible>true</visible>

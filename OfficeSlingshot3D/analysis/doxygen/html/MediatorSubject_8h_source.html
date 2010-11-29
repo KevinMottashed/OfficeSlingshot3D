@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OfficeSlingshot3D: /home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/MediatorSubject.h Source File</title>
+<title>OfficeSlingshot3D: /home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Mediator/MediatorSubject.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -41,37 +42,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/MediatorSubject.h</h1>  </div>
+<h1>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Mediator/MediatorSubject.h</h1>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef MEDIATOR_SUBJECT_H</span>
+<a href="MediatorSubject_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef MEDIATOR_SUBJECT_H</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define MEDIATOR_SUBJECT_H</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &quot;stdafx.h&quot;</span>
-<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;MediatorObserver.h&quot;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;<a class="code" href="MediatorObserver_8h.html">MediatorObserver.h</a>&quot;</span>
 <a name="l00006"></a>00006 
-<a name="l00012"></a><a class="code" href="classMediatorSubject.html">00012</a> <span class="keyword">class </span><a class="code" href="classMediatorSubject.html" title="This class represents the mediator in the observer pattern Observers will receive notifications about...">MediatorSubject</a>
-<a name="l00013"></a>00013 {
-<a name="l00014"></a>00014 <span class="keyword">public</span>:
-<a name="l00018"></a>00018     <a class="code" href="classMediatorSubject.html#a3db4b61f18f2a98025de4ab896855c27" title="Constructor.">MediatorSubject</a>();
-<a name="l00019"></a>00019 
-<a name="l00023"></a>00023     <span class="keyword">virtual</span> <a class="code" href="classMediatorSubject.html#a63e7e01e35bd1d073861c14a3734439b" title="Destructor.">~MediatorSubject</a>();
-<a name="l00024"></a>00024 
-<a name="l00028"></a>00028     <span class="keywordtype">void</span> <a class="code" href="classMediatorSubject.html#aa4837dc018798cde2a754992e48e3ca0" title="Attach an observer to this subject.">attach</a>(<a class="code" href="classMediatorObserver.html" title="Abstract class in the observer pattern.">MediatorObserver</a>* observer);
-<a name="l00029"></a>00029 
-<a name="l00033"></a>00033     <span class="keywordtype">void</span> <a class="code" href="classMediatorSubject.html#aa3e6f03e597b315593f8ec7b654b1c23" title="Detach an observer from this subject.">detach</a>(<a class="code" href="classMediatorObserver.html" title="Abstract class in the observer pattern.">MediatorObserver</a>* observer);
-<a name="l00034"></a>00034 
-<a name="l00038"></a>00038     <span class="keywordtype">void</span> <a class="code" href="classMediatorSubject.html#a3bb9ea404e6bd3f3f7153cca88377049" title="Notify all observers that an event happened.">notify</a>(<a class="code" href="namespaceMediatorUpdateContext.html#aa3a9bed543f2a2237dc2b6feea170a1d" title="Each update has a context.">MediatorUpdateContext_t</a> context, <span class="keyword">const</span> <span class="keywordtype">void</span>* data = NULL);
-<a name="l00039"></a>00039 
-<a name="l00040"></a>00040 <span class="keyword">private</span>:
-<a name="l00044"></a>00044     std::vector&lt;MediatorObserver*&gt; observers;
-<a name="l00045"></a>00045 };
-<a name="l00046"></a>00046 
-<a name="l00047"></a>00047 <span class="preprocessor">#endif</span>
+<a name="l00014"></a><a class="code" href="classMediatorSubject.html">00014</a> <span class="keyword">class </span><a class="code" href="classMediatorSubject.html" title="public This class represents the mediator in the observer pattern Observers will receive notification...">MediatorSubject</a>
+<a name="l00015"></a>00015 {
+<a name="l00016"></a>00016 <span class="keyword">public</span>:
+<a name="l00020"></a>00020     <a class="code" href="classMediatorSubject.html#a3db4b61f18f2a98025de4ab896855c27" title="Constructor.">MediatorSubject</a>();
+<a name="l00021"></a>00021 
+<a name="l00025"></a>00025     <span class="keyword">virtual</span> <a class="code" href="classMediatorSubject.html#a63e7e01e35bd1d073861c14a3734439b" title="Destructor.">~MediatorSubject</a>();
+<a name="l00026"></a>00026 
+<a name="l00031"></a>00031     <span class="keywordtype">void</span> <a class="code" href="classMediatorSubject.html#aa4837dc018798cde2a754992e48e3ca0" title="Attach an observer to this subject.">attach</a>(<a class="code" href="classMediatorObserver.html" title="public Abstract class in the observer pattern.">MediatorObserver</a>* observer);
+<a name="l00032"></a>00032 
+<a name="l00037"></a>00037     <span class="keywordtype">void</span> <a class="code" href="classMediatorSubject.html#aa3e6f03e597b315593f8ec7b654b1c23" title="Detach an observer from this subject.">detach</a>(<a class="code" href="classMediatorObserver.html" title="public Abstract class in the observer pattern.">MediatorObserver</a>* observer);
+<a name="l00038"></a>00038 
+<a name="l00044"></a>00044     <span class="keywordtype">void</span> <a class="code" href="classMediatorSubject.html#a3bb9ea404e6bd3f3f7153cca88377049" title="Notify all observers that an event happened.">notify</a>(<a class="code" href="group__Mediator.html#gaa3a9bed543f2a2237dc2b6feea170a1d" title="public Each update has a context.">MediatorUpdateContext_t</a> context, <span class="keyword">const</span> <span class="keywordtype">void</span>* data = NULL);
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046 <span class="keyword">private</span>:
+<a name="l00050"></a><a class="code" href="classMediatorSubject.html#acbf1f174061f981e282d0a74ee159d1c">00050</a>     std::vector&lt;MediatorObserver*&gt; <a class="code" href="classMediatorSubject.html#acbf1f174061f981e282d0a74ee159d1c" title="List of observers observing this subject.">observers</a>;
+<a name="l00051"></a>00051 };
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -79,7 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -88,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:44 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

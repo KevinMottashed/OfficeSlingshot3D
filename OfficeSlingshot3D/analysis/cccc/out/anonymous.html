@@ -8,17 +8,17 @@ Detailed report on module anonymous
 <TR>
 <TH BGCOLOR="AQUA" WIDTH=70%>Metric</TH><TH BGCOLOR="AQUA" WIDTH=10%>Tag</TH><TH BGCOLOR="AQUA" WIDTH=10%>Overall</TH><TH BGCOLOR="AQUA" WIDTH=10%>Per Function</TH></TR>
 <TR>
-<TD>Lines of Code</TD><TD>LOC</TD><TD ALIGN=RIGHT>   172</TD><TD ALIGN=RIGHT>******</TD></TR>
+<TD>Lines of Code</TD><TD>LOC</TD><TD ALIGN=RIGHT>   205</TD><TD ALIGN=RIGHT>******</TD></TR>
 <TR>
-<TD>McCabe's Cyclomatic Number</TD><TD>MVG</TD><TD ALIGN=RIGHT>    39</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>******</STRONG></TD></TR>
+<TD>McCabe's Cyclomatic Number</TD><TD>MVG</TD><TD ALIGN=RIGHT>    48</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>******</STRONG></TD></TR>
 <TR>
-<TD>Lines of Comment</TD><TD>COM</TD><TD ALIGN=RIGHT>   110</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>********</STRONG></TD></TR>
+<TD>Lines of Comment</TD><TD>COM</TD><TD ALIGN=RIGHT>   145</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>********</STRONG></TD></TR>
 <TR>
-<TD>LOC/COM</TD><TD>L_C</TD><TD ALIGN=RIGHT> 1.564</TD><TD>&nbsp;</TD></TR>
+<TD>LOC/COM</TD><TD>L_C</TD><TD ALIGN=RIGHT> 1.414</TD><TD>&nbsp;</TD></TR>
 <TR>
-<TD>MVG/COM</TD><TD>M_C</TD><TD ALIGN=RIGHT> 0.355</TD><TD>&nbsp;</TD></TR>
+<TD>MVG/COM</TD><TD>M_C</TD><TD ALIGN=RIGHT> 0.331</TD><TD>&nbsp;</TD></TR>
 <TR>
-<TD>Weighted Methods per Class ( &nbsp;weighting = unity&nbsp;)</TD><TD>WMC1</TD><TD ALIGN=RIGHT>    19</TD><TD>&nbsp;</TD></TR>
+<TD>Weighted Methods per Class ( &nbsp;weighting = unity&nbsp;)</TD><TD>WMC1</TD><TD ALIGN=RIGHT>    20</TD><TD>&nbsp;</TD></TR>
 <TR>
 <TD>Weighted Methods per Class ( &nbsp;weighting = visible&nbsp;)</TD><TD>WMCv</TD><TD ALIGN=RIGHT>     0</TD><TD>&nbsp;</TD></TR>
 <TR>
@@ -50,89 +50,97 @@ definition &nbsp;
 <TR>
 <TD>BEGIN_MESSAGE_MAP( &nbsp;CMainDlg, &nbsp;CDialog&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#../../UserInterface/MainDlg.cpp:        31">../../UserInterface/MainDlg.cpp:31</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../UserInterface/MainDlg.cpp:        32">../../UserInterface/MainDlg.cpp:32</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>    20</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     8</TD><TD ALIGN=RIGHT> 2.500</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT>    27</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     8</TD><TD ALIGN=RIGHT> 3.375</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>BEGIN_MESSAGE_MAP( &nbsp;CPreferences, &nbsp;CDialog&nbsp;)<BR>
 declaration &nbsp;
-<CODE><A HREF="cccc_src.html#../../UserInterface/Preferences.cpp:        47">../../UserInterface/Preferences.cpp:47</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../UserInterface/Preferences.cpp:        44">../../UserInterface/Preferences.cpp:44</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>     2</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     2</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>BEGIN_MESSAGE_MAP( &nbsp;MFCOpenGLControl, &nbsp;CWnd&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#../../UserInterface/MFCOpenGLControl.cpp:        18">../../UserInterface/MFCOpenGLControl.cpp:18</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../UserInterface/MFCOpenGLControl.cpp:        21">../../UserInterface/MFCOpenGLControl.cpp:21</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>    17</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
-<TR>
-<TD>BEGIN_MESSAGE_MAP( &nbsp;NetworkSocket, &nbsp;CSocket&nbsp;)<BR>
-definition &nbsp;
-<CODE><A HREF="cccc_src.html#../../Network/NetworkSocket.cpp:        26">../../Network/NetworkSocket.cpp:26</A></CODE><BR>
-<BR>
-</TD><TD ALIGN=RIGHT>    10</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     5</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT>    15</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>cmdCallBack( &nbsp;int, &nbsp;void *&nbsp;)<BR>
 definition &nbsp;
 <CODE><A HREF="cccc_src.html#../../ZCamera/DepthCamera.cpp:        50">../../ZCamera/DepthCamera.cpp:50</A></CODE><BR>
 declaration &nbsp;
-<CODE><A HREF="cccc_src.html#../../ZCamera/DepthCamera.h:        25">../../ZCamera/DepthCamera.h:25</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../ZCamera/DepthCamera.h:        29">../../ZCamera/DepthCamera.h:29</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>    11</TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT>    14</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT>    11</TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT>    16</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+<TR>
+<TD>lookup( &nbsp;BodyPartEnum&nbsp;)<BR>
+declaration &nbsp;
+<CODE><A HREF="cccc_src.html#../../Common/BodyPartEnum.h:        30">../../Common/BodyPartEnum.h:30</A></CODE><BR>
+<BR>
+</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     5</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>lookup( &nbsp;ConnectionStateEnum&nbsp;)<BR>
 declaration &nbsp;
-<CODE><A HREF="cccc_src.html#../../Common/ConnectionStateEnum.h:        28">../../Common/ConnectionStateEnum.h:28</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Common/ConnectionStateEnum.h:        30">../../Common/ConnectionStateEnum.h:30</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     5</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>lookup( &nbsp;GameStateEnum&nbsp;)<BR>
 declaration &nbsp;
-<CODE><A HREF="cccc_src.html#../../Common/GameStateEnum.h:        27">../../Common/GameStateEnum.h:27</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Common/GameStateEnum.h:        29">../../Common/GameStateEnum.h:29</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     5</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>lookup( &nbsp;LogEventCategoryEnum&nbsp;)<BR>
 declaration &nbsp;
-<CODE><A HREF="cccc_src.html#../../Logger/LogEventCategoryEnum.h:        21">../../Logger/LogEventCategoryEnum.h:21</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Logger/LogEventCategoryEnum.h:        32">../../Logger/LogEventCategoryEnum.h:32</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     5</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>lookup( &nbsp;LogEventEnum&nbsp;)<BR>
 declaration &nbsp;
-<CODE><A HREF="cccc_src.html#../../Logger/LogEventEnum.h:        55">../../Logger/LogEventEnum.h:55</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Logger/LogEventEnum.h:        68">../../Logger/LogEventEnum.h:68</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     5</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>lookup( &nbsp;PlayerEnum&nbsp;)<BR>
 declaration &nbsp;
-<CODE><A HREF="cccc_src.html#../../Common/PlayerEnum.h:        26">../../Common/PlayerEnum.h:26</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Common/PlayerEnum.h:        28">../../Common/PlayerEnum.h:28</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     5</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>lookup( &nbsp;rc_network&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#../../Network/NetworkCodes.h:        27">../../Network/NetworkCodes.h:27</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Network/NetworkCodes.h:        32">../../Network/NetworkCodes.h:32</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT BGCOLOR="YELLOW"><EM>    36</EM></TD><TD ALIGN=RIGHT BGCOLOR="YELLOW"><EM>    16</EM></TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>36.000</STRONG></TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>16.000</STRONG></TD></TR>
+</TD><TD ALIGN=RIGHT>    30</TD><TD ALIGN=RIGHT BGCOLOR="YELLOW"><EM>    13</EM></TD><TD ALIGN=RIGHT>     5</TD><TD ALIGN=RIGHT> 6.000</TD><TD ALIGN=RIGHT> 2.600</TD></TR>
 <TR>
 <TD>lookupCategory( &nbsp;LogEvent_t&nbsp;)<BR>
 declaration &nbsp;
-<CODE><A HREF="cccc_src.html#../../Logger/LogEventCategoryEnum.h:        24">../../Logger/LogEventCategoryEnum.h:24</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Logger/LogEventCategoryEnum.h:        39">../../Logger/LogEventCategoryEnum.h:39</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     5</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+<TR>
+<TD>operator &lt;&lt;( &nbsp;ostream &amp;, &nbsp;const PhysicsSync &amp;&nbsp;)<BR>
+definition &nbsp;
+<CODE><A HREF="cccc_src.html#../../Common/PhysicsSync.cpp:        21">../../Common/PhysicsSync.cpp:21</A></CODE><BR>
+declaration &nbsp;
+<CODE><A HREF="cccc_src.html#../../Common/PhysicsSync.h:        58">../../Common/PhysicsSync.h:58</A></CODE><BR>
+<BR>
+</TD><TD ALIGN=RIGHT>     5</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>operator &lt;&lt;( &nbsp;ostream &amp;, &nbsp;const Projectile &amp;&nbsp;)<BR>
 definition &nbsp;
 <CODE><A HREF="cccc_src.html#../../Common/Projectile.cpp:        66">../../Common/Projectile.cpp:66</A></CODE><BR>
 declaration &nbsp;
-<CODE><A HREF="cccc_src.html#../../Common/Projectile.h:       107">../../Common/Projectile.h:107</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Common/Projectile.h:       112">../../Common/Projectile.h:112</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>operator &lt;&lt;( &nbsp;ostream &amp;, &nbsp;const TestRunner &amp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#../../Test/TestRunner.cpp:        40">../../Test/TestRunner.cpp:40</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Test/TestRunner.cpp:        42">../../Test/TestRunner.cpp:42</A></CODE><BR>
 declaration &nbsp;
 <CODE><A HREF="cccc_src.html#../../Test/TestRunner.h:        48">../../Test/TestRunner.h:48</A></CODE><BR>
 <BR>
@@ -140,19 +148,19 @@ declaration &nbsp;
 <TR>
 <TD>operator &lt;&lt;( &nbsp;ostream &amp;, &nbsp;const UserPreferences &amp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#../../Common/UserPreferences.cpp:         3">../../Common/UserPreferences.cpp:3</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Common/UserPreferences.cpp:        25">../../Common/UserPreferences.cpp:25</A></CODE><BR>
 declaration &nbsp;
-<CODE><A HREF="cccc_src.html#../../Common/UserPreferences.h:        60">../../Common/UserPreferences.h:60</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Common/UserPreferences.h:        79">../../Common/UserPreferences.h:79</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>     9</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     8</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT>    12</TD><TD ALIGN=RIGHT>     3</TD><TD ALIGN=RIGHT>     7</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>operator &gt;&gt;( &nbsp;istream &amp;, &nbsp;UserPreferences &amp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#../../Common/UserPreferences.cpp:        12">../../Common/UserPreferences.cpp:12</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Common/UserPreferences.cpp:        37">../../Common/UserPreferences.cpp:37</A></CODE><BR>
 declaration &nbsp;
-<CODE><A HREF="cccc_src.html#../../Common/UserPreferences.h:        70">../../Common/UserPreferences.h:70</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Common/UserPreferences.h:        90">../../Common/UserPreferences.h:90</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>     9</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     8</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT BGCOLOR="YELLOW"><EM>    44</EM></TD><TD ALIGN=RIGHT>    10</TD><TD ALIGN=RIGHT>    14</TD><TD ALIGN=RIGHT> 3.143</TD><TD ALIGN=RIGHT> 0.714</TD></TR>
 <TR>
 <TD>serialize( &nbsp;Archive &amp;, &nbsp;cVector3d &amp;, &nbsp;const int&nbsp;)<BR>
 definition &nbsp;
@@ -164,9 +172,9 @@ definition &nbsp;
 definition &nbsp;
 <CODE><A HREF="cccc_src.html#../../ZCamera/DepthCamera.cpp:        19">../../ZCamera/DepthCamera.cpp:19</A></CODE><BR>
 declaration &nbsp;
-<CODE><A HREF="cccc_src.html#../../ZCamera/DepthCamera.h:        22">../../ZCamera/DepthCamera.h:22</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../ZCamera/DepthCamera.h:        24">../../ZCamera/DepthCamera.h:24</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>    27</TD><TD ALIGN=RIGHT BGCOLOR="YELLOW"><EM>    13</EM></TD><TD ALIGN=RIGHT>    28</TD><TD ALIGN=RIGHT> 0.964</TD><TD ALIGN=RIGHT> 0.464</TD></TR>
+</TD><TD ALIGN=RIGHT>    27</TD><TD ALIGN=RIGHT BGCOLOR="YELLOW"><EM>    13</EM></TD><TD ALIGN=RIGHT>    30</TD><TD ALIGN=RIGHT> 0.900</TD><TD ALIGN=RIGHT> 0.433</TD></TR>
 <TR><TD HEIGHT=12 COLSPAN=6></TD></TR>
 </TR></TABLE>
 <H2><A NAME="structdet">Relationships</A></H2>

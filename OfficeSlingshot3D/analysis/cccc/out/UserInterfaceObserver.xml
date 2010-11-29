@@ -6,7 +6,7 @@
 <lines_of_code_per_member_function value="******" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="0" />
-<lines_of_code value="1" level="0" />
+<lines_of_code value="15" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
@@ -24,10 +24,10 @@
 </module_summary>
 <module_detail>
 <description>definition</description>
-<source_reference file="../../UserInterface/UserInterfaceObserver.h" line="24" />
+<source_reference file="../../UserInterface/UserInterfaceObserver.h" line="32" />
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 <description>declaration</description>
@@ -47,11 +47,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/UserInterfaceObserver.h" line="27" />
+<source_reference file="../../UserInterface/UserInterfaceObserver.h" line="39" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -59,11 +59,11 @@
 <name>update(UserInterfaceUpdateContext,const void *)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/UserInterfaceObserver.h" line="31" />
+<source_reference file="../../UserInterface/UserInterfaceObserver.h" line="52" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="6" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -75,11 +75,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../UserInterface/UserInterfaceObserver.h" line="28" />
+<source_reference file="../../UserInterface/UserInterfaceObserver.h" line="44" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -93,14 +93,14 @@
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../Logger/Logger.h" line="16" />
+<source_reference file="../../Logger/Logger.h" line="22" />
 </extent>
 <name>Mediator</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../Mediator/Mediator.h" line="25" />
+<source_reference file="../../Mediator/Mediator.h" line="27" />
 </extent>
 <name>UserInterfaceSubject</name>
 <visible>true</visible>
@@ -115,11 +115,11 @@
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/UserInterfaceSubject.h" line="13" />
+<source_reference file="../../UserInterface/UserInterfaceSubject.h" line="27" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../UserInterface/UserInterfaceSubject.h" line="14" />
+<source_reference file="../../UserInterface/UserInterfaceSubject.h" line="33" />
 </extent>
 </client_module>
 <supplier_module>

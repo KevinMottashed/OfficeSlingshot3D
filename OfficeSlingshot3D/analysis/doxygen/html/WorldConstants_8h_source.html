@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OfficeSlingshot3D: /home/kevin/workspace/HugMe/HugMe v0.9.1/Common/WorldConstants.h Source File</title>
+<title>OfficeSlingshot3D: /home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Common/WorldConstants.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -41,40 +42,45 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/kevin/workspace/HugMe/HugMe v0.9.1/Common/WorldConstants.h</h1>  </div>
+<h1>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Common/WorldConstants.h</h1>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef WORLD_CONSTANTS_H</span>
+<a href="WorldConstants_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef WORLD_CONSTANTS_H</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define WORLD_CONSTANTS_H</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &quot;chai3d.h&quot;</span>
 <a name="l00005"></a>00005 
 <a name="l00010"></a><a class="code" href="namespaceWorld.html">00010</a> <span class="keyword">namespace </span>World
 <a name="l00011"></a>00011 {
-<a name="l00018"></a>00018     <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> error_margin = 0.001f;
-<a name="l00019"></a>00019 
-<a name="l00023"></a>00023     <span class="keyword">static</span> <span class="keyword">const</span> cVector3d local_slingshot_starting_position = cVector3d(0.0f, -0.2f, 5.0f);
-<a name="l00024"></a>00024     
-<a name="l00028"></a>00028     <span class="keyword">static</span> <span class="keyword">const</span> cVector3d peer_slingshot_starting_position = cVector3d(0.0f, -0.2f, -5.0f);
-<a name="l00029"></a>00029 
-<a name="l00033"></a>00033     <span class="keyword">static</span> <span class="keyword">const</span> cVector3d local_avatar_starting_position = cVector3d(0.0f, 0.0f, 6.0f);
-<a name="l00034"></a>00034     
-<a name="l00038"></a>00038     <span class="keyword">static</span> <span class="keyword">const</span> cVector3d peer_avatar_starting_position = cVector3d(0.0f, 0.0f, -6.0f);
-<a name="l00039"></a>00039 
-<a name="l00043"></a>00043     <span class="keyword">static</span> <span class="keyword">const</span> cCollisionAABBBox local_slingshot_bounding_box = cCollisionAABBBox(
-<a name="l00044"></a>00044         cVector3d(-1.0f - error_margin, -0.4f - error_margin, 4.0f - error_margin), 
-<a name="l00045"></a>00045         cVector3d(1.0f + error_margin, 0.0f + error_margin, 5.0f + error_margin));
-<a name="l00046"></a>00046 
-<a name="l00050"></a>00050     <span class="keyword">static</span> <span class="keyword">const</span> cCollisionAABBBox peer_slingshot_bounding_box = cCollisionAABBBox(
-<a name="l00051"></a>00051         cVector3d(-0.4f - error_margin, 4.0f - error_margin, -5.0f - error_margin), 
-<a name="l00052"></a>00052         cVector3d(0.0f + error_margin, 5.0f + error_margin, -4.0f + error_margin));
-<a name="l00053"></a>00053 }
-<a name="l00054"></a>00054 
-<a name="l00055"></a>00055 <span class="preprocessor">#endif</span>
+<a name="l00020"></a><a class="code" href="group__Common.html#gacefc3686d38b08cc01913cedc98ffafb">00020</a>     <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="group__Common.html#gacefc3686d38b08cc01913cedc98ffafb" title="public Error margin for floating point comparisons.">error_margin</a> = 0.001f;
+<a name="l00021"></a>00021 
+<a name="l00027"></a><a class="code" href="group__Common.html#gaf9eea633986b85773b476748821b84b4">00027</a>     <span class="keyword">static</span> <span class="keyword">const</span> cVector3d <a class="code" href="group__Common.html#gaf9eea633986b85773b476748821b84b4" title="public Our slingshot&amp;#39;s starting position.">local_slingshot_position</a> = cVector3d(0.0f, -0.2f, 5.0f);
+<a name="l00028"></a>00028     
+<a name="l00034"></a><a class="code" href="group__Common.html#ga9a17da6ef772b8cd24c764567b935dbe">00034</a>     <span class="keyword">static</span> <span class="keyword">const</span> cVector3d <a class="code" href="group__Common.html#ga9a17da6ef772b8cd24c764567b935dbe" title="public The peers slingshot&amp;#39;s starting position.">peer_slingshot_position</a> = cVector3d(0.0f, -0.2f, -5.0f);
+<a name="l00035"></a>00035 
+<a name="l00041"></a><a class="code" href="group__Common.html#gaf6b54909fa4bb4fc23247d58df5040c5">00041</a>     <span class="keyword">static</span> <span class="keyword">const</span> cVector3d <a class="code" href="group__Common.html#gaf6b54909fa4bb4fc23247d58df5040c5" title="public The local ball&amp;#39;s starting position.">local_ball_starting_position</a> = cVector3d(0.0f, 0.5f, 5.1f);
+<a name="l00042"></a>00042 
+<a name="l00048"></a><a class="code" href="group__Common.html#ga0e4926a89fad6a99a79c1ec4899fa1a4">00048</a>     <span class="keyword">static</span> <span class="keyword">const</span> cVector3d <a class="code" href="group__Common.html#ga0e4926a89fad6a99a79c1ec4899fa1a4" title="public The local ball&amp;#39;s starting position.">peer_ball_starting_position</a> = cVector3d(0.0f, 0.5f, -5.1f);
+<a name="l00049"></a>00049 
+<a name="l00055"></a><a class="code" href="group__Common.html#gaabafb4848c857da150b1329cf6ae2138">00055</a>     <span class="keyword">static</span> <span class="keyword">const</span> cVector3d <a class="code" href="group__Common.html#gaabafb4848c857da150b1329cf6ae2138" title="public Our avatar&amp;#39;s starting position.">local_avatar_starting_position</a> = cVector3d(0.0f, 0.0f, 6.0f);
+<a name="l00056"></a>00056     
+<a name="l00062"></a><a class="code" href="group__Common.html#gac68a5ccdbd850f0c3686727e88be2776">00062</a>     <span class="keyword">static</span> <span class="keyword">const</span> cVector3d <a class="code" href="group__Common.html#gac68a5ccdbd850f0c3686727e88be2776" title="public The peers avatar&amp;#39;s starting position.">peer_avatar_starting_position</a> = cVector3d(0.0f, 0.0f, -6.0f);
+<a name="l00063"></a>00063 
+<a name="l00069"></a><a class="code" href="group__Common.html#ga8508f8bc29cfac2f0a858c7e638b976d">00069</a>     <span class="keyword">static</span> <span class="keyword">const</span> cCollisionAABBBox <a class="code" href="group__Common.html#ga8508f8bc29cfac2f0a858c7e638b976d" title="public Local ball bounding box.">local_ball_bounding_box</a> = cCollisionAABBBox(
+<a name="l00070"></a>00070         cVector3d(-0.3f - <a class="code" href="group__Common.html#gacefc3686d38b08cc01913cedc98ffafb" title="public Error margin for floating point comparisons.">error_margin</a>, 0.0f - <a class="code" href="group__Common.html#gacefc3686d38b08cc01913cedc98ffafb" title="public Error margin for floating point comparisons.">error_margin</a>, 5.0f - <a class="code" href="group__Common.html#gacefc3686d38b08cc01913cedc98ffafb" title="public Error margin for floating point comparisons.">error_margin</a>), 
+<a name="l00071"></a>00071         cVector3d(0.3f + <a class="code" href="group__Common.html#gacefc3686d38b08cc01913cedc98ffafb" title="public Error margin for floating point comparisons.">error_margin</a>, 0.5f + <a class="code" href="group__Common.html#gacefc3686d38b08cc01913cedc98ffafb" title="public Error margin for floating point comparisons.">error_margin</a>, 6.0f + <a class="code" href="group__Common.html#gacefc3686d38b08cc01913cedc98ffafb" title="public Error margin for floating point comparisons.">error_margin</a>));
+<a name="l00072"></a>00072 
+<a name="l00078"></a><a class="code" href="group__Common.html#ga51a4e39b2b1310af1f90112f0b636986">00078</a>     <span class="keyword">static</span> <span class="keyword">const</span> cCollisionAABBBox <a class="code" href="group__Common.html#ga51a4e39b2b1310af1f90112f0b636986" title="public Peer ball bounding box.">peer_ball_bounding_box</a> = cCollisionAABBBox(
+<a name="l00079"></a>00079         cVector3d(-0.3f - <a class="code" href="group__Common.html#gacefc3686d38b08cc01913cedc98ffafb" title="public Error margin for floating point comparisons.">error_margin</a>, 0.0f - <a class="code" href="group__Common.html#gacefc3686d38b08cc01913cedc98ffafb" title="public Error margin for floating point comparisons.">error_margin</a>, -5.0f - <a class="code" href="group__Common.html#gacefc3686d38b08cc01913cedc98ffafb" title="public Error margin for floating point comparisons.">error_margin</a>), 
+<a name="l00080"></a>00080         cVector3d(0.3f + <a class="code" href="group__Common.html#gacefc3686d38b08cc01913cedc98ffafb" title="public Error margin for floating point comparisons.">error_margin</a>, 0.5f + <a class="code" href="group__Common.html#gacefc3686d38b08cc01913cedc98ffafb" title="public Error margin for floating point comparisons.">error_margin</a>, -6.0f + <a class="code" href="group__Common.html#gacefc3686d38b08cc01913cedc98ffafb" title="public Error margin for floating point comparisons.">error_margin</a>));
+<a name="l00081"></a>00081 }
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -82,7 +88,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -91,7 +97,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:44 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -67,14 +68,151 @@ Static Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Invert the perspective on a coordinate in a 3D space.  <a href="#a37100d823fa9ed299d9987fd38c9e1f5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPerspectiveMath.html#a13cbb76a51ce78db12d4013b96586bd1">invert3DProjectile</a> (<a class="el" href="classProjectile.html">Projectile</a> &amp;projectile)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Invert the perspective on a projectile traveling in a 3D space.  <a href="#a13cbb76a51ce78db12d4013b96586bd1"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3a535221683e28fc95c5edae6c15d360"></a><!-- doxytag: member="PerspectiveMath::convertOrientationXYZtoYZX" ref="a3a535221683e28fc95c5edae6c15d360" args="(cVector3d &amp;vector)" -->
-static void&nbsp;</td><td class="memItemRight" valign="bottom"><b>convertOrientationXYZtoYZX</b> (cVector3d &amp;vector)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa8fa5bbda93edd97ee3f0c280914fa6b"></a><!-- doxytag: member="PerspectiveMath::convertBoxToBox" ref="aa8fa5bbda93edd97ee3f0c280914fa6b" args="(cVector3d &amp;vector, const cCollisionAABBBox &amp;boxOrigin, const cCollisionAABBBox &amp;boxTarget)" -->
-static void&nbsp;</td><td class="memItemRight" valign="bottom"><b>convertBoxToBox</b> (cVector3d &amp;vector, const cCollisionAABBBox &amp;boxOrigin, const cCollisionAABBBox &amp;boxTarget)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPerspectiveMath.html#a3b081df5341e7ab5f0915f222ce192f3">convertOrientationNovintToGame</a> (cVector3d &amp;vector)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Converts the orientation of a vector from XYZ to YZX.  <a href="#a3b081df5341e7ab5f0915f222ce192f3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPerspectiveMath.html#a77d6ac52d3ae14ae34651f0256f2ffb6">convertOrientationGameToNovint</a> (cVector3d &amp;vector)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPerspectiveMath.html#a513fcdd446b5421db925c181c0521c27">convertBoxOrientationNovintToGame</a> (cCollisionAABBBox &amp;box)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Converts the orientation of a bounding box from XYZ to YZX See convertOrientationXYZtoYZX for more details.  <a href="#a513fcdd446b5421db925c181c0521c27"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPerspectiveMath.html#a01ce8d3b8027f6478cbada3ccfdec1f3">convertBoxOrientationGameToNovint</a> (cCollisionAABBBox &amp;box)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPerspectiveMath.html#aa8fa5bbda93edd97ee3f0c280914fa6b">convertBoxToBox</a> (cVector3d &amp;vector, const cCollisionAABBBox &amp;boxOrigin, const cCollisionAABBBox &amp;boxTarget)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Translates a point from one box to the other.  <a href="#aa8fa5bbda93edd97ee3f0c280914fa6b"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>Utility class that the mediator will use to adjust the players perspectives so that they match. </p>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a01ce8d3b8027f6478cbada3ccfdec1f3"></a><!-- doxytag: member="PerspectiveMath::convertBoxOrientationGameToNovint" ref="a01ce8d3b8027f6478cbada3ccfdec1f3" args="(cCollisionAABBBox &amp;box)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PerspectiveMath::convertBoxOrientationGameToNovint </td>
+          <td>(</td>
+          <td class="paramtype">cCollisionAABBBox &amp;&nbsp;</td>
+          <td class="paramname"> <em>box</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a513fcdd446b5421db925c181c0521c27"></a><!-- doxytag: member="PerspectiveMath::convertBoxOrientationNovintToGame" ref="a513fcdd446b5421db925c181c0521c27" args="(cCollisionAABBBox &amp;box)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PerspectiveMath::convertBoxOrientationNovintToGame </td>
+          <td>(</td>
+          <td class="paramtype">cCollisionAABBBox &amp;&nbsp;</td>
+          <td class="paramname"> <em>box</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Converts the orientation of a bounding box from XYZ to YZX See convertOrientationXYZtoYZX for more details. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>box</em>&nbsp;</td><td>The bounding box to convert. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa8fa5bbda93edd97ee3f0c280914fa6b"></a><!-- doxytag: member="PerspectiveMath::convertBoxToBox" ref="aa8fa5bbda93edd97ee3f0c280914fa6b" args="(cVector3d &amp;vector, const cCollisionAABBBox &amp;boxOrigin, const cCollisionAABBBox &amp;boxTarget)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PerspectiveMath::convertBoxToBox </td>
+          <td>(</td>
+          <td class="paramtype">cVector3d &amp;&nbsp;</td>
+          <td class="paramname"> <em>vector</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const cCollisionAABBBox &amp;&nbsp;</td>
+          <td class="paramname"> <em>boxOrigin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const cCollisionAABBBox &amp;&nbsp;</td>
+          <td class="paramname"> <em>boxTarget</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Translates a point from one box to the other. </p>
+<p>The point appears at the same relative position in the target box. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>vector</em>&nbsp;</td><td>The point to translate. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>boxOrigin</em>&nbsp;</td><td>The box where the point originates from. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>boxTarget</em>&nbsp;</td><td>The box to which the point will be translated. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a77d6ac52d3ae14ae34651f0256f2ffb6"></a><!-- doxytag: member="PerspectiveMath::convertOrientationGameToNovint" ref="a77d6ac52d3ae14ae34651f0256f2ffb6" args="(cVector3d &amp;vector)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PerspectiveMath::convertOrientationGameToNovint </td>
+          <td>(</td>
+          <td class="paramtype">cVector3d &amp;&nbsp;</td>
+          <td class="paramname"> <em>vector</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3b081df5341e7ab5f0915f222ce192f3"></a><!-- doxytag: member="PerspectiveMath::convertOrientationNovintToGame" ref="a3b081df5341e7ab5f0915f222ce192f3" args="(cVector3d &amp;vector)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PerspectiveMath::convertOrientationNovintToGame </td>
+          <td>(</td>
+          <td class="paramtype">cVector3d &amp;&nbsp;</td>
+          <td class="paramname"> <em>vector</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Converts the orientation of a vector from XYZ to YZX. </p>
+<p>This effectively converts a perspective where x is depth, y is left-right and z is height to a perspective where x is left-right, y is height and z is depth. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>vector</em>&nbsp;</td><td>The vector to convert. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a65c41921db4ee62a8f3a92fb887cc8ce"></a><!-- doxytag: member="PerspectiveMath::invert2DCoordinate" ref="a65c41921db4ee62a8f3a92fb887cc8ce" args="(cVector3d &amp;vector)" -->
 <div class="memitem">
 <div class="memproto">
@@ -154,8 +292,8 @@ static void&nbsp;</td><td class="memItemRight" valign="bottom"><b>convertBoxToBo
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/<a class="el" href="PerspectiveMath_8h_source.html">PerspectiveMath.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/PerspectiveMath.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Utils/<a class="el" href="PerspectiveMath_8h_source.html">PerspectiveMath.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Utils/<a class="el" href="PerspectiveMath_8cpp.html">PerspectiveMath.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -163,7 +301,7 @@ static void&nbsp;</td><td class="memItemRight" valign="bottom"><b>convertBoxToBo
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -172,7 +310,7 @@ static void&nbsp;</td><td class="memItemRight" valign="bottom"><b>convertBoxToBo
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:46 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

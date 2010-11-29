@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OfficeSlingshot3D: /home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatEvent.h Source File</title>
+<title>OfficeSlingshot3D: /home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Logger/ReplayFormatEvent.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -41,57 +42,51 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/kevin/workspace/HugMe/HugMe v0.9.1/Logger/ReplayFormatEvent.h</h1>  </div>
+<h1>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Logger/ReplayFormatEvent.h</h1>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef REPLAY_FORMAT_EVENT_H</span>
+<a href="ReplayFormatEvent_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef REPLAY_FORMAT_EVENT_H</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define REPLAY_FORMAT_EVENT_H</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &quot;stdafx.h&quot;</span>
-<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;boost.h&quot;</span>
-<a name="l00006"></a>00006 <span class="preprocessor">#include &quot;LogEventEnum.h&quot;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;<a class="code" href="boost_8h.html">boost.h</a>&quot;</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include &quot;<a class="code" href="LogEventEnum_8h.html">LogEventEnum.h</a>&quot;</span>
 <a name="l00007"></a>00007 
-<a name="l00008"></a>00008 <span class="comment">// The replay format event class is used to represent a replay event</span>
-<a name="l00009"></a>00009 <span class="comment">// A replay event contains a time at which the event occured where the </span>
-<a name="l00010"></a>00010 <span class="comment">// time is the elapsed time since the application started. This class</span>
-<a name="l00011"></a>00011 <span class="comment">// also contains an enum representing the event that occured.</span>
-<a name="l00012"></a><a class="code" href="classReplayFormatEvent.html">00012</a> <span class="keyword">class </span><a class="code" href="classReplayFormatEvent.html">ReplayFormatEvent</a>
-<a name="l00013"></a>00013 {
-<a name="l00014"></a>00014 <span class="keyword">public</span>:
-<a name="l00015"></a>00015     <a class="code" href="classReplayFormatEvent.html">ReplayFormatEvent</a>();
-<a name="l00016"></a>00016     <a class="code" href="classReplayFormatEvent.html">ReplayFormatEvent</a>(<span class="keywordtype">long</span> time, LogEvent_t logEvent);
-<a name="l00017"></a>00017     ~<a class="code" href="classReplayFormatEvent.html">ReplayFormatEvent</a>();
-<a name="l00018"></a>00018 
-<a name="l00019"></a>00019     <span class="keywordtype">long</span> time;
-<a name="l00020"></a>00020     LogEvent_t logEvent;
-<a name="l00021"></a>00021 
-<a name="l00022"></a>00022 <span class="keyword">private</span>:
-<a name="l00023"></a>00023     <span class="comment">// the boost serialization library requires access to the serialize function</span>
-<a name="l00024"></a>00024     <span class="keyword">friend</span> <span class="keyword">class </span>boost::serialization::access;
-<a name="l00025"></a>00025 
-<a name="l00026"></a>00026     <span class="comment">// serialization function that the boost library will use for both</span>
-<a name="l00027"></a>00027     <span class="comment">// serializaing and deserializing this data type</span>
-<a name="l00028"></a>00028     <span class="keyword">template</span>&lt;<span class="keyword">class</span> Archive&gt;
-<a name="l00029"></a>00029     <span class="keywordtype">void</span> serialize(Archive &amp; ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> version);
-<a name="l00030"></a>00030 };
-<a name="l00031"></a>00031 
-<a name="l00032"></a>00032 <span class="comment">//---------------------------------------------</span>
-<a name="l00033"></a>00033 <span class="comment">// Template Implementation</span>
-<a name="l00034"></a>00034 <span class="comment">//---------------------------------------------</span>
-<a name="l00035"></a>00035 
-<a name="l00036"></a>00036 <span class="keyword">template</span>&lt;<span class="keyword">class</span> Archive&gt;
-<a name="l00037"></a>00037 <span class="keywordtype">void</span> ReplayFormatEvent::serialize(Archive &amp; ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> version)
-<a name="l00038"></a>00038 {
-<a name="l00039"></a>00039     ar &amp; time;
-<a name="l00040"></a>00040     ar &amp; logEvent;
-<a name="l00041"></a>00041     <span class="keywordflow">return</span>;
-<a name="l00042"></a>00042 }
-<a name="l00043"></a>00043 
-<a name="l00044"></a>00044 <span class="preprocessor">#endif</span>
+<a name="l00016"></a><a class="code" href="classReplayFormatEvent.html">00016</a> <span class="keyword">class </span><a class="code" href="classReplayFormatEvent.html" title="package The replay format event class is used to represent a replay event.">ReplayFormatEvent</a>
+<a name="l00017"></a>00017 {
+<a name="l00018"></a>00018 <span class="keyword">public</span>:
+<a name="l00019"></a>00019     <a class="code" href="classReplayFormatEvent.html#a45a9d52a2c3e7e9b9fbf58b3d0c3a0e4" title="Constructor.">ReplayFormatEvent</a>(); 
+<a name="l00026"></a>00026     <a class="code" href="classReplayFormatEvent.html#a45a9d52a2c3e7e9b9fbf58b3d0c3a0e4" title="Constructor.">ReplayFormatEvent</a>(<span class="keywordtype">long</span> <a class="code" href="classReplayFormatEvent.html#a8752c98de9f608ef9794efca7f08bdb9" title="The time at which the event occured.">time</a>, <a class="code" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0" title="package This enum represents all input events that the system can receive.">LogEvent_t</a> <a class="code" href="classReplayFormatEvent.html#ad5f6fcaac9f58026e5a87a1320666236" title="The event that happened.">logEvent</a>);
+<a name="l00027"></a>00027     
+<a name="l00028"></a>00028     <a class="code" href="classReplayFormatEvent.html#aa81b1342497c6381101b3f5c8f2d8118" title="Destructor.">~ReplayFormatEvent</a>(); 
+<a name="l00030"></a><a class="code" href="classReplayFormatEvent.html#a8752c98de9f608ef9794efca7f08bdb9">00030</a>     <span class="keywordtype">long</span> time; 
+<a name="l00031"></a><a class="code" href="classReplayFormatEvent.html#ad5f6fcaac9f58026e5a87a1320666236">00031</a>     <a class="code" href="group__Logger.html#ga7955bef9cc357e9dc8f6937561479ed0" title="package This enum represents all input events that the system can receive.">LogEvent_t</a> logEvent; 
+<a name="l00033"></a>00033 <span class="keyword">private</span>:
+<a name="l00034"></a>00034     <span class="comment">// the boost serialization library requires access to the serialize function</span>
+<a name="l00035"></a><a class="code" href="classReplayFormatEvent.html#ac98d07dd8f7b70e16ccb9a01abf56b9c">00035</a>     <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classReplayFormatEvent.html#ac98d07dd8f7b70e16ccb9a01abf56b9c">boost::serialization::access</a>;
+<a name="l00036"></a>00036     
+<a name="l00043"></a>00043     <span class="keyword">template</span>&lt;<span class="keyword">class</span> Archive&gt;
+<a name="l00044"></a>00044     <span class="keywordtype">void</span> <a class="code" href="classReplayFormatEvent.html#a295ee0364f97e785525574ffe2acf773" title="Serialization function that the boost library will use for both serializaing and deserializing this d...">serialize</a>(Archive &amp; ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> version);
+<a name="l00045"></a>00045 };
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047 <span class="comment">//---------------------------------------------</span>
+<a name="l00048"></a>00048 <span class="comment">// Template Implementation</span>
+<a name="l00049"></a>00049 <span class="comment">//---------------------------------------------</span>
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051 <span class="keyword">template</span>&lt;<span class="keyword">class</span> Archive&gt;
+<a name="l00052"></a><a class="code" href="classReplayFormatEvent.html#a295ee0364f97e785525574ffe2acf773">00052</a> <span class="keywordtype">void</span> <a class="code" href="classReplayFormatEvent.html#a295ee0364f97e785525574ffe2acf773" title="Serialization function that the boost library will use for both serializaing and deserializing this d...">ReplayFormatEvent::serialize</a>(Archive &amp; ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> version)
+<a name="l00053"></a>00053 {
+<a name="l00054"></a>00054     ar &amp; <a class="code" href="classReplayFormatEvent.html#a8752c98de9f608ef9794efca7f08bdb9" title="The time at which the event occured.">time</a>;
+<a name="l00055"></a>00055     ar &amp; <a class="code" href="classReplayFormatEvent.html#ad5f6fcaac9f58026e5a87a1320666236" title="The event that happened.">logEvent</a>;
+<a name="l00056"></a>00056     <span class="keywordflow">return</span>;
+<a name="l00057"></a>00057 }
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -99,7 +94,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -108,7 +103,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:44 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

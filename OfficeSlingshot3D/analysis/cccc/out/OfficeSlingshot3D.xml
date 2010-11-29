@@ -6,9 +6,9 @@
 <lines_of_code_per_member_function value="******" level="0" />
 <McCabes_cyclomatic_complexity value="3" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
-<lines_of_code value="11" level="0" />
+<lines_of_code value="36" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="3.818" level="0" />
+<lines_of_code_per_line_of_comment value="1.167" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 <weighted_methods_per_class_unity value="4" level="0" />
 <weighted_methods_per_class_visibility value="0" level="0" />
@@ -24,10 +24,10 @@
 </module_summary>
 <module_detail>
 <description>definition</description>
-<source_reference file="../../Main/OfficeSlingshot3D.h" line="16" />
+<source_reference file="../../Main/OfficeSlingshot3D.h" line="18" />
 <lines_of_code value="9" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="5" level="0" />
+<lines_of_comment value="16" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module_detail>
@@ -40,11 +40,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Main/OfficeSlingshot3D.h" line="19" />
+<source_reference file="../../Main/OfficeSlingshot3D.h" line="28" />
 </extent>
 <lines_of_code value="14" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="7" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -56,11 +56,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Main/OfficeSlingshot3D.h" line="29" />
+<source_reference file="../../Main/OfficeSlingshot3D.h" line="47" />
 </extent>
 <lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -72,7 +72,7 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Main/OfficeSlingshot3D.h" line="28" />
+<source_reference file="../../Main/OfficeSlingshot3D.h" line="41" />
 </extent>
 <lines_of_code value="10" level="0" />
 <McCabes_cyclomatic_complexity value="2" level="0" />
@@ -88,11 +88,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Main/OfficeSlingshot3D.h" line="23" />
+<source_reference file="../../Main/OfficeSlingshot3D.h" line="36" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -112,11 +112,11 @@
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Main/OfficeSlingshot3D.h" line="22" />
+<source_reference file="../../Main/OfficeSlingshot3D.h" line="31" />
 </extent>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Main/OfficeSlingshot3D.h" line="39" />
+<source_reference file="../../Main/OfficeSlingshot3D.h" line="68" />
 </extent>
 <name>shared_ptr</name>
 <visible>true</visible>
@@ -135,27 +135,27 @@
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Main/OfficeSlingshot3D.h" line="19" />
+<source_reference file="../../Main/OfficeSlingshot3D.h" line="28" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Main/OfficeSlingshot3D.h" line="20" />
+<source_reference file="../../Main/OfficeSlingshot3D.h" line="29" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Main/OfficeSlingshot3D.h" line="21" />
+<source_reference file="../../Main/OfficeSlingshot3D.h" line="30" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Main/OfficeSlingshot3D.h" line="34" />
+<source_reference file="../../Main/OfficeSlingshot3D.h" line="53" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Main/OfficeSlingshot3D.h" line="35" />
+<source_reference file="../../Main/OfficeSlingshot3D.h" line="58" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Main/OfficeSlingshot3D.h" line="36" />
+<source_reference file="../../Main/OfficeSlingshot3D.h" line="63" />
 </extent>
 </supplier_module>
 </module>

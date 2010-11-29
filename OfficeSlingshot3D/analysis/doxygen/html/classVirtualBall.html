@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -48,7 +49,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <h1>VirtualBall Class Reference</h1>  </div>
 </div>
@@ -61,20 +63,45 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualBall.html#ac23e87ff7e9311a6eec9534cf7c4ad19">VirtualBall</a> (cWorld *world, cODEWorld *ODEWorld)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#ac23e87ff7e9311a6eec9534cf7c4ad19"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af8e24103797c63c53886dc82fcab09e8"></a><!-- doxytag: member="VirtualBall::~VirtualBall" ref="af8e24103797c63c53886dc82fcab09e8" args="()" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualBall.html#af8e24103797c63c53886dc82fcab09e8">~VirtualBall</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualBall.html#a886d85950bb75ca63c2583e1a0ac9211">fire</a> (<a class="el" href="classProjectile.html">Projectile</a> p)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Fire the ball.  <a href="#a886d85950bb75ca63c2583e1a0ac9211"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualBall.html#a4477ee504d911d89d66dd1c61aa0fcb1">getMeshPos</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get the ball's position.  <a href="#a4477ee504d911d89d66dd1c61aa0fcb1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualBall.html#ac541f49d2ce4ade78e8ac8b03b5d3f59">VirtualBall</a> (cWorld *world, cODEWorld *ODEWorld, bool <a class="el" href="classVirtualBall.html#a7fe939aeb3ffcda214ed34e3c9368bba">isLocal</a>)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#ac541f49d2ce4ade78e8ac8b03b5d3f59"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualBall.html#af8e24103797c63c53886dc82fcab09e8">~VirtualBall</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#af8e24103797c63c53886dc82fcab09e8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualBall.html#a1e77d40bf2e385646927e378b4bdd59d">fire</a> (const <a class="el" href="classProjectile.html">Projectile</a> &amp;p)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Fire the ball.  <a href="#a1e77d40bf2e385646927e378b4bdd59d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualBall.html#a6a8472aa9f932bb582e316e4450c4bba">getBallPos</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get the ball's position.  <a href="#a6a8472aa9f932bb582e316e4450c4bba"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualBall.html#abd6173fa61f99b054db3fca15d082bb1">getBallCenter</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get the ball's center.  <a href="#abd6173fa61f99b054db3fca15d082bb1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualBall.html#ac2b9aa7e9c377924c127507fb4cfb465">getAlreadyCollided</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get the alreadyCollided flag.  <a href="#ac2b9aa7e9c377924c127507fb4cfb465"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualBall.html#a325399ffb5c541e5247993406964ef79">collided</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the alreadyCollided flag to true to make sure that the ball only collides once for each time it was fired.  <a href="#a325399ffb5c541e5247993406964ef79"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualBall.html#a67df90cc33f0f137a8d427b63a0d6be0">reset</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Resets the ball by disabling it and resetting all flags.  <a href="#a67df90cc33f0f137a8d427b63a0d6be0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualBall.html#aa8baa0598134a06501af8193a75223d8">move</a> (const cVector3d &amp;newBallPos)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Moves the ball within the ball boundaries.  <a href="#aa8baa0598134a06501af8193a75223d8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualBall.html#ad904f41ecfefc0ac3b00b459dbf90c41">calculateForceVector</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Translates the initial and final positions of the ball to a force.  <a href="#ad904f41ecfefc0ac3b00b459dbf90c41"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cMesh *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualBall.html#a5a98a8f64fff2ec42b0ed248df0d07a3">ballMesh</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The mesh that represents the ball.  <a href="#a5a98a8f64fff2ec42b0ed248df0d07a3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualBall.html#a7fe939aeb3ffcda214ed34e3c9368bba">isLocal</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">True if the ball is local.  <a href="#a7fe939aeb3ffcda214ed34e3c9368bba"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualBall.html#a40c43b4c3e502c7e9562220e0ea76a26">alreadyCollided</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Flag to know if the ball has already collided.  <a href="#a40c43b4c3e502c7e9562220e0ea76a26"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cODEGenericBody *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualBall.html#a1139b760b833b3924c54e6c408f4854a">odeBall</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The ball's physical representation.  <a href="#a1139b760b833b3924c54e6c408f4854a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualBall.html#af0cf9b50428306cb02b13be8d27033a0">firstPullBack</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Variable capturing if its the first pullback message received.  <a href="#af0cf9b50428306cb02b13be8d27033a0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cVector3d&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVirtualBall.html#a2723f18675947d9cebdab752f61fd6fc">startingOffset</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The offset of the starting position of the ball compared to the starting position of the ball.  <a href="#a2723f18675947d9cebdab752f61fd6fc"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>Represents a ball in the 3d environment. </p>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ac23e87ff7e9311a6eec9534cf7c4ad19"></a><!-- doxytag: member="VirtualBall::VirtualBall" ref="ac23e87ff7e9311a6eec9534cf7c4ad19" args="(cWorld *world, cODEWorld *ODEWorld)" -->
+<a class="anchor" id="ac541f49d2ce4ade78e8ac8b03b5d3f59"></a><!-- doxytag: member="VirtualBall::VirtualBall" ref="ac541f49d2ce4ade78e8ac8b03b5d3f59" args="(cWorld *world, cODEWorld *ODEWorld, bool isLocal)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -88,7 +115,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">cODEWorld *&nbsp;</td>
-          <td class="paramname"> <em>ODEWorld</em></td><td>&nbsp;</td>
+          <td class="paramname"> <em>ODEWorld</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>isLocal</em></td><td>&nbsp;</td>
         </tr>
         <tr>
           <td></td>
@@ -104,21 +137,81 @@ Public Member Functions</h2></td></tr>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>world</em>&nbsp;</td><td>The chai3d world to which the ball belongs. </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>ODEWorld</em>&nbsp;</td><td>The physical world to which the ball belongs. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>isLocal</em>&nbsp;</td><td>True if its a local ball </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
+<a class="anchor" id="af8e24103797c63c53886dc82fcab09e8"></a><!-- doxytag: member="VirtualBall::~VirtualBall" ref="af8e24103797c63c53886dc82fcab09e8" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VirtualBall::~VirtualBall </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a886d85950bb75ca63c2583e1a0ac9211"></a><!-- doxytag: member="VirtualBall::fire" ref="a886d85950bb75ca63c2583e1a0ac9211" args="(Projectile p)" -->
+<a class="anchor" id="ad904f41ecfefc0ac3b00b459dbf90c41"></a><!-- doxytag: member="VirtualBall::calculateForceVector" ref="ad904f41ecfefc0ac3b00b459dbf90c41" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d VirtualBall::calculateForceVector </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Translates the initial and final positions of the ball to a force. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The force corresponding to the start and end positions </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a325399ffb5c541e5247993406964ef79"></a><!-- doxytag: member="VirtualBall::collided" ref="a325399ffb5c541e5247993406964ef79" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VirtualBall::collided </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the alreadyCollided flag to true to make sure that the ball only collides once for each time it was fired. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1e77d40bf2e385646927e378b4bdd59d"></a><!-- doxytag: member="VirtualBall::fire" ref="a1e77d40bf2e385646927e378b4bdd59d" args="(const Projectile &amp;p)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void VirtualBall::fire </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classProjectile.html">Projectile</a>&nbsp;</td>
+          <td class="paramtype">const <a class="el" href="classProjectile.html">Projectile</a> &amp;&nbsp;</td>
           <td class="paramname"> <em>p</em></td>
           <td>&nbsp;)&nbsp;</td>
           <td></td>
@@ -138,16 +231,56 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a4477ee504d911d89d66dd1c61aa0fcb1"></a><!-- doxytag: member="VirtualBall::getMeshPos" ref="a4477ee504d911d89d66dd1c61aa0fcb1" args="()" -->
+<a class="anchor" id="ac2b9aa7e9c377924c127507fb4cfb465"></a><!-- doxytag: member="VirtualBall::getAlreadyCollided" ref="ac2b9aa7e9c377924c127507fb4cfb465" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">cVector3d VirtualBall::getMeshPos </td>
+          <td class="memname">bool VirtualBall::getAlreadyCollided </td>
           <td>(</td>
           <td class="paramname"></td>
           <td>&nbsp;)&nbsp;</td>
-          <td></td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the alreadyCollided flag. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The alreadyCollided flag </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="abd6173fa61f99b054db3fca15d082bb1"></a><!-- doxytag: member="VirtualBall::getBallCenter" ref="abd6173fa61f99b054db3fca15d082bb1" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d VirtualBall::getBallCenter </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the ball's center. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The center of the ball. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6a8472aa9f932bb582e316e4450c4bba"></a><!-- doxytag: member="VirtualBall::getBallPos" ref="a6a8472aa9f932bb582e316e4450c4bba" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d VirtualBall::getBallPos </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
         </tr>
       </table>
 </div>
@@ -158,9 +291,140 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aa8baa0598134a06501af8193a75223d8"></a><!-- doxytag: member="VirtualBall::move" ref="aa8baa0598134a06501af8193a75223d8" args="(const cVector3d &amp;newBallPos)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VirtualBall::move </td>
+          <td>(</td>
+          <td class="paramtype">const cVector3d &amp;&nbsp;</td>
+          <td class="paramname"> <em>newBallPos</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Moves the ball within the ball boundaries. </p>
+
+</div>
+</div>
+<a class="anchor" id="a67df90cc33f0f137a8d427b63a0d6be0"></a><!-- doxytag: member="VirtualBall::reset" ref="a67df90cc33f0f137a8d427b63a0d6be0" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VirtualBall::reset </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Resets the ball by disabling it and resetting all flags. </p>
+
+</div>
+</div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a40c43b4c3e502c7e9562220e0ea76a26"></a><!-- doxytag: member="VirtualBall::alreadyCollided" ref="a40c43b4c3e502c7e9562220e0ea76a26" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classVirtualBall.html#a40c43b4c3e502c7e9562220e0ea76a26">VirtualBall::alreadyCollided</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Flag to know if the ball has already collided. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5a98a8f64fff2ec42b0ed248df0d07a3"></a><!-- doxytag: member="VirtualBall::ballMesh" ref="a5a98a8f64fff2ec42b0ed248df0d07a3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cMesh* <a class="el" href="classVirtualBall.html#a5a98a8f64fff2ec42b0ed248df0d07a3">VirtualBall::ballMesh</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The mesh that represents the ball. </p>
+
+</div>
+</div>
+<a class="anchor" id="af0cf9b50428306cb02b13be8d27033a0"></a><!-- doxytag: member="VirtualBall::firstPullBack" ref="af0cf9b50428306cb02b13be8d27033a0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classVirtualBall.html#af0cf9b50428306cb02b13be8d27033a0">VirtualBall::firstPullBack</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Variable capturing if its the first pullback message received. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7fe939aeb3ffcda214ed34e3c9368bba"></a><!-- doxytag: member="VirtualBall::isLocal" ref="a7fe939aeb3ffcda214ed34e3c9368bba" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classVirtualBall.html#a7fe939aeb3ffcda214ed34e3c9368bba">VirtualBall::isLocal</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>True if the ball is local. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1139b760b833b3924c54e6c408f4854a"></a><!-- doxytag: member="VirtualBall::odeBall" ref="a1139b760b833b3924c54e6c408f4854a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cODEGenericBody* <a class="el" href="classVirtualBall.html#a1139b760b833b3924c54e6c408f4854a">VirtualBall::odeBall</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The ball's physical representation. </p>
+<p>This is used for collisions and other physics calculations. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2723f18675947d9cebdab752f61fd6fc"></a><!-- doxytag: member="VirtualBall::startingOffset" ref="a2723f18675947d9cebdab752f61fd6fc" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cVector3d <a class="el" href="classVirtualBall.html#a2723f18675947d9cebdab752f61fd6fc">VirtualBall::startingOffset</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The offset of the starting position of the ball compared to the starting position of the ball. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/<a class="el" href="VirtualBall_8h_source.html">VirtualBall.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/VirtualBall.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Game/<a class="el" href="VirtualBall_8h_source.html">VirtualBall.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Game/<a class="el" href="VirtualBall_8cpp.html">VirtualBall.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -168,7 +432,7 @@ Public Member Functions</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -177,7 +441,7 @@ Public Member Functions</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:10 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:46 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

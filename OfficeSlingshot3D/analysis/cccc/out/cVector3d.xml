@@ -14,7 +14,7 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="14" level="0" />
+<coupling_between_objects value="18" level="0" />
 <IF4 value="0" level="0" />
 <IF4_per_member_function value="********" level="0" />
 <IF4_visible value="0" level="0" />
@@ -35,7 +35,11 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Logger/HumanFormatLogger.h" line="116" />
+<source_reference file="../../Logger/HumanFormatLogger.h" line="59" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Logger/HumanFormatLogger.h" line="147" />
 </extent>
 <name>KeyboardFalcon</name>
 <visible>false</visible>
@@ -56,79 +60,114 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Logger/Logger.h" line="35" />
+<source_reference file="../../Logger/Logger.h" line="90" />
+</extent>
+<name>Mediator</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="487" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="487" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Mediator/Mediator.cpp" line="487" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Mediator/Mediator.h" line="124" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Mediator/Mediator.h" line="125" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Mediator/Mediator.h" line="126" />
 </extent>
 <name>Network</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/Network.h" line="95" />
+<source_reference file="../../Network/Network.h" line="91" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/Network.h" line="102" />
+<source_reference file="../../Network/Network.h" line="99" />
 </extent>
 <name>NetworkReplayer</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Replay/NetworkReplayer.cpp" line="168" />
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="171" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Replay/NetworkReplayer.cpp" line="173" />
+<source_reference file="../../Replay/NetworkReplayer.cpp" line="176" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Replay/NetworkReplayer.h" line="40" />
+<source_reference file="../../Replay/NetworkReplayer.h" line="106" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Replay/NetworkReplayer.h" line="41" />
+<source_reference file="../../Replay/NetworkReplayer.h" line="114" />
 </extent>
 <name>NovintFalcon</name>
 <visible>false</visible>
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Falcon/NovintFalcon.h" line="67" />
+<source_reference file="../../Falcon/NovintFalcon.h" line="70" />
 </extent>
 <name>PerspectiveMath</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/PerspectiveMath.cpp" line="3" />
+<source_reference file="../../Utils/PerspectiveMath.cpp" line="3" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/PerspectiveMath.cpp" line="8" />
+<source_reference file="../../Utils/PerspectiveMath.cpp" line="8" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/PerspectiveMath.cpp" line="27" />
+<source_reference file="../../Utils/PerspectiveMath.cpp" line="27" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/PerspectiveMath.cpp" line="35" />
+<source_reference file="../../Utils/PerspectiveMath.cpp" line="36" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/PerspectiveMath.h" line="18" />
+<source_reference file="../../Utils/PerspectiveMath.cpp" line="57" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/PerspectiveMath.h" line="24" />
+<source_reference file="../../Utils/PerspectiveMath.h" line="18" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/PerspectiveMath.h" line="32" />
+<source_reference file="../../Utils/PerspectiveMath.h" line="24" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/PerspectiveMath.h" line="34" />
+<source_reference file="../../Utils/PerspectiveMath.h" line="38" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Utils/PerspectiveMath.h" line="40" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Utils/PerspectiveMath.h" line="59" />
 </extent>
 <name>Projectile</name>
 <visible>true</visible>
@@ -170,115 +209,264 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Logger/ReplayFormatLogger.h" line="141" />
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="62" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="170" />
+</extent>
+<name>SmartClothingManager</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Jacket/SmartClothingManager.cpp" line="52" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Jacket/SmartClothingManager.cpp" line="52" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Jacket/SmartClothingManager.cpp" line="52" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Jacket/SmartClothingManager.h" line="44" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Jacket/SmartClothingManager.h" line="44" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Jacket/SmartClothingManager.h" line="44" />
 </extent>
 <name>VirtualAvatar</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualAvatar.cpp" line="3" />
+<source_reference file="../../Game/VirtualAvatar.cpp" line="15" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualAvatar.cpp" line="52" />
+<source_reference file="../../Game/VirtualAvatar.cpp" line="103" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualAvatar.cpp" line="61" />
+<source_reference file="../../Game/VirtualAvatar.cpp" line="129" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualAvatar.h" line="18" />
+<source_reference file="../../Game/VirtualAvatar.cpp" line="189" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualAvatar.h" line="42" />
+<source_reference file="../../Game/VirtualAvatar.cpp" line="202" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualAvatar.h" line="47" />
+<source_reference file="../../Game/VirtualAvatar.cpp" line="202" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="20" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="38" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="99" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Game/VirtualAvatar.h" line="57" />
+<source_reference file="../../Game/VirtualAvatar.h" line="115" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Game/VirtualAvatar.h" line="62" />
+<source_reference file="../../Game/VirtualAvatar.h" line="120" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="130" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="135" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="145" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="150" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="160" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="165" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="179" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="184" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="189" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="194" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="199" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="204" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="209" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="214" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="221" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="229" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/VirtualAvatar.h" line="229" />
+</extent>
+<name>VirtualBall</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Game/VirtualBall.cpp" line="82" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Game/VirtualBall.h" line="70" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Game/VirtualBall.h" line="109" />
+</extent>
+<name>VirtualElastic</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Game/VirtualElastic.cpp" line="3" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/VirtualElastic.cpp" line="26" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/VirtualElastic.cpp" line="26" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/VirtualElastic.cpp" line="26" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Game/VirtualElastic.h" line="14" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/VirtualElastic.h" line="28" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/VirtualElastic.h" line="28" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Game/VirtualElastic.h" line="28" />
 </extent>
 <name>VirtualEnvironment</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualEnvironment.cpp" line="42" />
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="88" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualEnvironment.cpp" line="47" />
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="99" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualEnvironment.cpp" line="79" />
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="110" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualEnvironment.cpp" line="92" />
+<source_reference file="../../Game/VirtualEnvironment.cpp" line="121" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="43" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="47" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="49" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="53" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="55" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="95" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="61" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="101" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Game/VirtualEnvironment.h" line="205" />
+<source_reference file="../../Game/VirtualEnvironment.h" line="313" />
 </extent>
 <name>VirtualSlingshot</name>
 <visible>true</visible>
-<concrete>true</concrete>
+<concrete>false</concrete>
 <extent>
-<description>pass by value</description>
-<source_reference file="../../Game/VirtualSlingshot.cpp" line="6" />
+<description>pass by reference</description>
+<source_reference file="../../Game/VirtualSlingshot.cpp" line="4" />
 </extent>
 <extent>
-<description>pass by value</description>
-<source_reference file="../../Game/VirtualSlingshot.cpp" line="30" />
-</extent>
-<extent>
-<description>has by value</description>
-<source_reference file="../../Game/VirtualSlingshot.h" line="15" />
-</extent>
-<extent>
-<description>pass by value</description>
-<source_reference file="../../Game/VirtualSlingshot.h" line="18" />
-</extent>
-<extent>
-<description>pass by value</description>
-<source_reference file="../../Game/VirtualSlingshot.h" line="21" />
+<description>pass by reference</description>
+<source_reference file="../../Game/VirtualSlingshot.h" line="17" />
 </extent>
 <name>WinsockNetwork</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="75" />
+<source_reference file="../../Network/WinsockNetwork.h" line="130" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Network/WinsockNetwork.h" line="78" />
+<source_reference file="../../Network/WinsockNetwork.h" line="138" />
 </extent>
 </client_module>
 <supplier_module>

@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -48,44 +49,360 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
-<h1>Packet&lt; PacketType &gt; Class Template Reference</h1>  </div>
+<h1>Packet&lt; PacketType &gt; Class Template Reference<br/>
+<small>
+[<a class="el" href="group__Network.html">Network</a>]</small>
+</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="Packet" --><table class="memberdecls">
+<!-- doxytag: class="Packet" -->
+<p><b>package</b> The <a class="el" href="classPacket.html" title="package The Packet class is used to represent all packets that our network can send.">Packet</a> class is used to represent all packets that our network can send.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Packet_8h_source.html">Packet.h</a>&gt;</code></p>
+<table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad1c9f433dbc7a5ba43bbdff826fb1dd7"></a><!-- doxytag: member="Packet::getType" ref="ad1c9f433dbc7a5ba43bbdff826fb1dd7" args="() const " -->
-PacketType&nbsp;</td><td class="memItemRight" valign="bottom"><b>getType</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af688d0ad264f65b12c9cdc999218a828"></a><!-- doxytag: member="Packet::getHeader" ref="af688d0ad264f65b12c9cdc999218a828" args="() const " -->
-boost::shared_ptr&lt; const <br class="typebreak"/>
-std::vector&lt; char &gt; &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>getHeader</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a96a63681049b3d47e2f0252336c8e6ef"></a><!-- doxytag: member="Packet::getData" ref="a96a63681049b3d47e2f0252336c8e6ef" args="() const " -->
-boost::shared_ptr&lt; const <br class="typebreak"/>
-std::vector&lt; char &gt; &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>getData</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae2b47f4d54170c708dd50edf95e167b7"></a><!-- doxytag: member="Packet::readPacket" ref="ae2b47f4d54170c708dd50edf95e167b7" args="(std::vector&lt; char &gt; &amp;input)" -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>readPacket</b> (std::vector&lt; char &gt; &amp;input)</td></tr>
-<tr><td class="memTemplParams" colspan="2"><a class="anchor" id="a95ca1c18efc8202f7cd4c46ffb89a4a8"></a><!-- doxytag: member="Packet::write" ref="a95ca1c18efc8202f7cd4c46ffb89a4a8" args="(PacketType type, const T &amp;t)" -->
-template&lt;typename T &gt; </td></tr>
-<tr><td class="memTemplItemLeft" align="right" valign="top">void&nbsp;</td><td class="memTemplItemRight" valign="bottom"><b>write</b> (PacketType type, const T &amp;t)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a42af3a3916922f11ab4bcc4f88ed959b"></a><!-- doxytag: member="Packet::write" ref="a42af3a3916922f11ab4bcc4f88ed959b" args="(PacketType type, const VideoData &amp;video)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>write</b> (PacketType type, const <a class="el" href="structVideoData.html">VideoData</a> &amp;video)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a28002ec8b26d8d6affcabdcab11ba0a0"></a><!-- doxytag: member="Packet::write" ref="a28002ec8b26d8d6affcabdcab11ba0a0" args="(PacketType type)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>write</b> (PacketType type)</td></tr>
-<tr><td class="memTemplParams" colspan="2"><a class="anchor" id="a0f40b9784dca6e16c6a64ee2d882e670"></a><!-- doxytag: member="Packet::read" ref="a0f40b9784dca6e16c6a64ee2d882e670" args="(T &amp;t) const " -->
-template&lt;typename T &gt; </td></tr>
-<tr><td class="memTemplItemLeft" align="right" valign="top">void&nbsp;</td><td class="memTemplItemRight" valign="bottom"><b>read</b> (T &amp;t) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6d8226bd69d08362da8402646c14045"></a><!-- doxytag: member="Packet::read" ref="ab6d8226bd69d08362da8402646c14045" args="(VideoData &amp;video) const " -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>read</b> (<a class="el" href="structVideoData.html">VideoData</a> &amp;video) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeaa7b195cad3722b9f4e39093e8193e5"></a><!-- doxytag: member="Packet::clear" ref="aeaa7b195cad3722b9f4e39093e8193e5" args="()" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacket.html#a8f02274ce4bd2b04351b51a2757d4913">Packet</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#a8f02274ce4bd2b04351b51a2757d4913"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacket.html#ae20ae272c7f294b6c1c2b678af0e7e88">~Packet</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#ae20ae272c7f294b6c1c2b678af0e7e88"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">PacketType&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacket.html#ad1c9f433dbc7a5ba43bbdff826fb1dd7">getType</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get the packet's type.  <a href="#ad1c9f433dbc7a5ba43bbdff826fb1dd7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr&lt; const <br class="typebreak"/>
+std::vector&lt; char &gt; &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacket.html#af688d0ad264f65b12c9cdc999218a828">getHeader</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get the packet's header in bytes.  <a href="#af688d0ad264f65b12c9cdc999218a828"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr&lt; const <br class="typebreak"/>
+std::vector&lt; char &gt; &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacket.html#a96a63681049b3d47e2f0252336c8e6ef">getData</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get the packet's data in bytes.  <a href="#a96a63681049b3d47e2f0252336c8e6ef"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacket.html#ae2b47f4d54170c708dd50edf95e167b7">readPacket</a> (std::vector&lt; char &gt; &amp;input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Attempt to create a data packet from a stream of bytes.  <a href="#ae2b47f4d54170c708dd50edf95e167b7"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">void&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classPacket.html#a95ca1c18efc8202f7cd4c46ffb89a4a8">write</a> (PacketType type, const T &amp;t)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Write data into the packet, including the header.  <a href="#a95ca1c18efc8202f7cd4c46ffb89a4a8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacket.html#a28002ec8b26d8d6affcabdcab11ba0a0">write</a> (PacketType type)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Write a header into the packet.  <a href="#a28002ec8b26d8d6affcabdcab11ba0a0"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">void&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classPacket.html#a0f40b9784dca6e16c6a64ee2d882e670">read</a> (T &amp;t) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Read data from the packet.  <a href="#a0f40b9784dca6e16c6a64ee2d882e670"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacket.html#aeaa7b195cad3722b9f4e39093e8193e5">clear</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Clear the packets header and data.  <a href="#aeaa7b195cad3722b9f4e39093e8193e5"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr&lt; std::vector<br class="typebreak"/>
+&lt; char &gt; &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacket.html#a20ed5e9cf9dc00a5cfb60149e63efb49">header</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The header section.  <a href="#a20ed5e9cf9dc00a5cfb60149e63efb49"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr&lt; std::vector<br class="typebreak"/>
+&lt; char &gt; &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacket.html#a6ad23fd3f161b18a2f2bcaac889b1070">data</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The data section.  <a href="#a6ad23fd3f161b18a2f2bcaac889b1070"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
 <h3>template&lt;typename PacketType&gt;<br/>
  class Packet&lt; PacketType &gt;</h3>
 
+<p><b>package</b> The <a class="el" href="classPacket.html" title="package The Packet class is used to represent all packets that our network can send.">Packet</a> class is used to represent all packets that our network can send. </p>
+<p>All packets include a header and data section. The header is the type of the packet and the size of the data section. This class uses the boost serialization library to serialize types for transmission and deserialize types upon reception. A packet has 2 sections and they are ordered as follows [header][data]. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a8f02274ce4bd2b04351b51a2757d4913"></a><!-- doxytag: member="Packet::Packet" ref="a8f02274ce4bd2b04351b51a2757d4913" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename PacketType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classPacket.html">Packet</a>&lt; PacketType &gt;::<a class="el" href="classPacket.html">Packet</a> </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+<p>Creates an empty packet. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae20ae272c7f294b6c1c2b678af0e7e88"></a><!-- doxytag: member="Packet::~Packet" ref="ae20ae272c7f294b6c1c2b678af0e7e88" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename PacketType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classPacket.html">Packet</a>&lt; PacketType &gt;::~<a class="el" href="classPacket.html">Packet</a> </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="aeaa7b195cad3722b9f4e39093e8193e5"></a><!-- doxytag: member="Packet::clear" ref="aeaa7b195cad3722b9f4e39093e8193e5" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename PacketType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classPacket.html">Packet</a>&lt; PacketType &gt;::clear </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Clear the packets header and data. </p>
+
+</div>
+</div>
+<a class="anchor" id="a96a63681049b3d47e2f0252336c8e6ef"></a><!-- doxytag: member="Packet::getData" ref="a96a63681049b3d47e2f0252336c8e6ef" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename PacketType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::shared_ptr&lt; const std::vector&lt; char &gt; &gt; <a class="el" href="classPacket.html">Packet</a>&lt; PacketType &gt;::getData </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the packet's data in bytes. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>a vector of chars containing the packet's data. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af688d0ad264f65b12c9cdc999218a828"></a><!-- doxytag: member="Packet::getHeader" ref="af688d0ad264f65b12c9cdc999218a828" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename PacketType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::shared_ptr&lt; const std::vector&lt; char &gt; &gt; <a class="el" href="classPacket.html">Packet</a>&lt; PacketType &gt;::getHeader </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the packet's header in bytes. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>a vector of chars containing the packet's header. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad1c9f433dbc7a5ba43bbdff826fb1dd7"></a><!-- doxytag: member="Packet::getType" ref="ad1c9f433dbc7a5ba43bbdff826fb1dd7" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename PacketType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">PacketType <a class="el" href="classPacket.html">Packet</a>&lt; PacketType &gt;::getType </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the packet's type. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the packet's type. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0f40b9784dca6e16c6a64ee2d882e670"></a><!-- doxytag: member="Packet::read" ref="a0f40b9784dca6e16c6a64ee2d882e670" args="(T &amp;t) const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename PacketType &gt; </div>
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classPacket.html">Packet</a>&lt; PacketType &gt;::read </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&nbsp;</td>
+          <td class="paramname"> <em>t</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Read data from the packet. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>t</em>&nbsp;</td><td>The extracted data. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae2b47f4d54170c708dd50edf95e167b7"></a><!-- doxytag: member="Packet::readPacket" ref="ae2b47f4d54170c708dd50edf95e167b7" args="(std::vector&lt; char &gt; &amp;input)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename PacketType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classPacket.html">Packet</a>&lt; PacketType &gt;::readPacket </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; char &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Attempt to create a data packet from a stream of bytes. </p>
+<p>If we could create a packet from the bytes then the contents of this packet will be replaced with contents from the stream. The bytes that were used to create the packet will also be removed from the stream the function returns false if a packet could not be created. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in,out]</tt>&nbsp;</td><td valign="top"><em>input</em>&nbsp;</td><td>The bytes used to try to create a packet. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if a packet was created. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a95ca1c18efc8202f7cd4c46ffb89a4a8"></a><!-- doxytag: member="Packet::write" ref="a95ca1c18efc8202f7cd4c46ffb89a4a8" args="(PacketType type, const T &amp;t)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename PacketType &gt; </div>
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classPacket.html">Packet</a>&lt; PacketType &gt;::write </td>
+          <td>(</td>
+          <td class="paramtype">PacketType&nbsp;</td>
+          <td class="paramname"> <em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&nbsp;</td>
+          <td class="paramname"> <em>t</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Write data into the packet, including the header. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>type</em>&nbsp;</td><td>The type of packet that this will become. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>t</em>&nbsp;</td><td>The data to write into the packet. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a28002ec8b26d8d6affcabdcab11ba0a0"></a><!-- doxytag: member="Packet::write" ref="a28002ec8b26d8d6affcabdcab11ba0a0" args="(PacketType type)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename PacketType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classPacket.html">Packet</a>&lt; PacketType &gt;::write </td>
+          <td>(</td>
+          <td class="paramtype">PacketType&nbsp;</td>
+          <td class="paramname"> <em>type</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Write a header into the packet. </p>
+<p>This version is provided for header only packets. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>type</em>&nbsp;</td><td>The type of packet that this will become. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a6ad23fd3f161b18a2f2bcaac889b1070"></a><!-- doxytag: member="Packet::data" ref="a6ad23fd3f161b18a2f2bcaac889b1070" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename PacketType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::shared_ptr&lt;std::vector&lt;char&gt; &gt; <a class="el" href="classPacket.html">Packet</a>&lt; PacketType &gt;::<a class="el" href="classPacket.html#a6ad23fd3f161b18a2f2bcaac889b1070">data</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The data section. </p>
+
+</div>
+</div>
+<a class="anchor" id="a20ed5e9cf9dc00a5cfb60149e63efb49"></a><!-- doxytag: member="Packet::header" ref="a20ed5e9cf9dc00a5cfb60149e63efb49" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename PacketType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::shared_ptr&lt;std::vector&lt;char&gt; &gt; <a class="el" href="classPacket.html">Packet</a>&lt; PacketType &gt;::<a class="el" href="classPacket.html#a20ed5e9cf9dc00a5cfb60149e63efb49">header</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The header section. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Network/<a class="el" href="Packet_8h_source.html">Packet.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Network/<a class="el" href="Packet_8h_source.html">Packet.h</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -93,7 +410,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -102,7 +419,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:46 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

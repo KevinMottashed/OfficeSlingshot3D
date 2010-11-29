@@ -35,46 +35,54 @@
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="213" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="218" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MainDlg.cpp" line="303" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="308" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="27" />
+<source_reference file="../../UserInterface/MainDlg.cpp" line="447" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MainDlg.h" line="30" />
+<source_reference file="../../UserInterface/MainDlg.h" line="40" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../UserInterface/MainDlg.h" line="47" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../UserInterface/MainDlg.h" line="80" />
 </extent>
 <name>Game</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/Game.cpp" line="124" />
+<source_reference file="../../Game/Game.cpp" line="112" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/Game.cpp" line="151" />
+<source_reference file="../../Game/Game.cpp" line="133" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/Game.cpp" line="174" />
+<source_reference file="../../Game/Game.cpp" line="147" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/Game.h" line="103" />
+<source_reference file="../../Game/Game.h" line="161" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/Game.h" line="109" />
+<source_reference file="../../Game/Game.h" line="167" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Game/Game.h" line="115" />
+<source_reference file="../../Game/Game.h" line="173" />
 </extent>
 <name>MFCUserInterface</name>
 <visible>true</visible>
@@ -89,11 +97,19 @@
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="33" />
+<source_reference file="../../UserInterface/MFCUserInterface.cpp" line="110" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/MFCUserInterface.h" line="36" />
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="51" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="58" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../UserInterface/MFCUserInterface.h" line="84" />
 </extent>
 <name>Mediator</name>
 <visible>true</visible>
@@ -104,42 +120,54 @@
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Mediator/Mediator.cpp" line="62" />
+<source_reference file="../../Mediator/Mediator.cpp" line="58" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Mediator/Mediator.cpp" line="80" />
+<source_reference file="../../Mediator/Mediator.cpp" line="77" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Mediator/Mediator.cpp" line="105" />
+<source_reference file="../../Mediator/Mediator.cpp" line="102" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Mediator/Mediator.h" line="49" />
+<source_reference file="../../Mediator/Mediator.cpp" line="512" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Mediator/Mediator.h" line="56" />
+<source_reference file="../../Mediator/Mediator.h" line="84" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Mediator/Mediator.h" line="63" />
+<source_reference file="../../Mediator/Mediator.h" line="91" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Mediator/Mediator.h" line="79" />
+<source_reference file="../../Mediator/Mediator.h" line="98" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Mediator/Mediator.h" line="114" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Mediator/Mediator.h" line="138" />
 </extent>
 <name>UserInterface</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/UserInterface.h" line="33" />
+<source_reference file="../../UserInterface/UserInterface.h" line="48" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../UserInterface/UserInterface.h" line="36" />
+<source_reference file="../../UserInterface/UserInterface.h" line="55" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../UserInterface/UserInterface.h" line="81" />
 </extent>
 </client_module>
 <supplier_module>

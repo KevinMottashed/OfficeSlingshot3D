@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OfficeSlingshot3D: /home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/Configuration.h Source File</title>
+<title>OfficeSlingshot3D: /home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Mediator/Configuration.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -41,45 +42,43 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/kevin/workspace/HugMe/HugMe v0.9.1/Mediator/Configuration.h</h1>  </div>
+<h1>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Mediator/Configuration.h</h1>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef CONFIGURATION_H</span>
+<a href="Configuration_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef CONFIGURATION_H</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define CONFIGURATION_H</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &quot;stdafx.h&quot;</span>
-<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;UserPreferences.h&quot;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;<a class="code" href="UserPreferences_8h.html">UserPreferences.h</a>&quot;</span>
 <a name="l00006"></a>00006 
-<a name="l00007"></a>00007 <span class="comment">// manages the software configuration and</span>
-<a name="l00008"></a>00008 <span class="comment">// stores it in a file</span>
-<a name="l00009"></a><a class="code" href="classConfiguration.html">00009</a> <span class="keyword">class </span><a class="code" href="classConfiguration.html">Configuration</a>
-<a name="l00010"></a>00010 {
-<a name="l00011"></a>00011 <span class="keyword">public</span>:
-<a name="l00012"></a>00012     <a class="code" href="classConfiguration.html">Configuration</a>(<span class="keyword">const</span> std::string&amp; fileName);
-<a name="l00013"></a>00013     ~<a class="code" href="classConfiguration.html">Configuration</a>();
-<a name="l00014"></a>00014 
-<a name="l00015"></a>00015     <a class="code" href="structUserPreferences.html" title="Represents the user preferences.">UserPreferences</a> getUserPreferences() <span class="keyword">const</span>;
-<a name="l00016"></a>00016     <span class="keywordtype">void</span> setUserPreferences(<span class="keyword">const</span> <a class="code" href="structUserPreferences.html" title="Represents the user preferences.">UserPreferences</a>&amp; pref);
-<a name="l00017"></a>00017 <span class="keyword">private</span>:
-<a name="l00018"></a>00018     <span class="keywordtype">void</span> readFromFile();
-<a name="l00019"></a>00019     <span class="keywordtype">void</span> writeToFile();
+<a name="l00012"></a><a class="code" href="classConfiguration.html">00012</a> <span class="keyword">class </span><a class="code" href="classConfiguration.html" title="package Manages the software&amp;#39;s configuration and stores it in a file.">Configuration</a>
+<a name="l00013"></a>00013 {
+<a name="l00014"></a>00014 <span class="keyword">public</span>:
+<a name="l00019"></a>00019     <a class="code" href="classConfiguration.html#ab3a2622e0fdae62c410e851036cb7a77" title="Constructor.">Configuration</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="classConfiguration.html#a7d43aa2559d9be930830f94f575f8360" title="The file where the preferences are stored.">fileName</a>);
 <a name="l00020"></a>00020 
-<a name="l00021"></a>00021     <span class="comment">// default preferences</span>
-<a name="l00022"></a>00022     <span class="keyword">static</span> <span class="keyword">const</span> std::string default_ip_address;
-<a name="l00023"></a>00023     <span class="keyword">static</span> <span class="keyword">const</span> std::string default_name;
-<a name="l00024"></a>00024     <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> default_arm_band_port = 3;
-<a name="l00025"></a>00025     <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> default_jacket_port = 97;
-<a name="l00026"></a>00026 
-<a name="l00027"></a>00027     <a class="code" href="structUserPreferences.html" title="Represents the user preferences.">UserPreferences</a> preferences;
-<a name="l00028"></a>00028     std::string fileName;
-<a name="l00029"></a>00029 };
-<a name="l00030"></a>00030 
-<a name="l00031"></a>00031 <span class="preprocessor">#endif</span>
-<a name="l00032"></a>00032 <span class="preprocessor"></span>
+<a name="l00024"></a>00024     <a class="code" href="classConfiguration.html#a0dd0fa189e239f4c9a036303f641441e" title="Destructor.">~Configuration</a>();
+<a name="l00025"></a>00025 
+<a name="l00030"></a>00030     <a class="code" href="structUserPreferences.html" title="public Represents the user preferences.">UserPreferences</a> <a class="code" href="classConfiguration.html#af60b6cbd2ad623fe06cf3bc274f5a292" title="Get the user preferences.">getUserPreferences</a>() <span class="keyword">const</span>;
+<a name="l00031"></a>00031 
+<a name="l00036"></a>00036     <span class="keywordtype">void</span> <a class="code" href="classConfiguration.html#aee3e4e01d719504ed22ea7f0c8f0ef24" title="Set the user preferences.">setUserPreferences</a>(<span class="keyword">const</span> <a class="code" href="structUserPreferences.html" title="public Represents the user preferences.">UserPreferences</a>&amp; pref);
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038 <span class="keyword">private</span>:
+<a name="l00042"></a>00042     <span class="keywordtype">void</span> <a class="code" href="classConfiguration.html#a949e696e624a5a843955ee460031a300" title="Read the preferences from a file.">readFromFile</a>();
+<a name="l00043"></a>00043 
+<a name="l00047"></a>00047     <span class="keywordtype">void</span> <a class="code" href="classConfiguration.html#a0a1e7da21d74b5ba71f1497b14550a01" title="Write the preferences to a file.">writeToFile</a>();
+<a name="l00048"></a>00048 
+<a name="l00052"></a><a class="code" href="classConfiguration.html#afc2873cb2c7856e629be8c1af5f6914b">00052</a>     <a class="code" href="structUserPreferences.html" title="public Represents the user preferences.">UserPreferences</a> <a class="code" href="classConfiguration.html#afc2873cb2c7856e629be8c1af5f6914b" title="The user preferences.">preferences</a>;
+<a name="l00053"></a>00053 
+<a name="l00057"></a><a class="code" href="classConfiguration.html#a7d43aa2559d9be930830f94f575f8360">00057</a>     std::string fileName;
+<a name="l00058"></a>00058 };
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060 <span class="preprocessor">#endif</span>
+<a name="l00061"></a>00061 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -87,7 +86,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -96,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:44 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

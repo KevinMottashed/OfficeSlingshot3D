@@ -112,14 +112,14 @@
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../Logger/Logger.h" line="15" />
+<source_reference file="../../Logger/Logger.h" line="21" />
 </extent>
 <name>Mediator</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../Mediator/Mediator.h" line="27" />
+<source_reference file="../../Mediator/Mediator.h" line="29" />
 </extent>
 </client_module>
 <supplier_module>

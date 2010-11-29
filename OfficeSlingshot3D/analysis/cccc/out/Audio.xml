@@ -2,39 +2,39 @@
 <!--Detailed report on module Audio-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="91" level="0" />
+<lines_of_code value="111" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
-<McCabes_cyclomatic_complexity value="3" level="0" />
-<McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
-<lines_of_code value="74" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="0" />
+<lines_of_code value="78" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="1.230" level="0" />
+<lines_of_code_per_line_of_comment value="1.423" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-<weighted_methods_per_class_unity value="11" level="0" />
-<weighted_methods_per_class_visibility value="9" level="0" />
+<weighted_methods_per_class_unity value="15" level="0" />
+<weighted_methods_per_class_visibility value="13" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="4" level="0" />
-<IF4 value="9" level="0" />
+<coupling_between_objects value="3" level="0" />
+<IF4 value="4" level="0" />
 <IF4_per_member_function value="********" level="2" />
-<IF4_visible value="9" level="0" />
+<IF4_visible value="4" level="0" />
 <IF4_visible_per_member_function value="********" level="2" />
-<IF4_concrete value="0" level="0" />
-<IF4_concrete_per_member_function value="********" level="0" />
+<IF4_concrete value="1" level="0" />
+<IF4_concrete_per_member_function value="********" level="2" />
 </module_summary>
 <module_detail>
 <description>definition</description>
-<source_reference file="../../Audio/Audio.h" line="9" />
+<source_reference file="../../Audio/Audio.h" line="14" />
 <lines_of_code value="13" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="28" level="0" />
+<lines_of_comment value="16" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 <description>declaration</description>
-<source_reference file="../../Audio/AudioProxy.h" line="4" />
+<source_reference file="../../Audio/AudioProxy.h" line="15" />
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="9" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module_detail>
@@ -47,19 +47,19 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Audio/Audio.h" line="16" />
+<source_reference file="../../Audio/Audio.h" line="21" />
 </extent>
-<lines_of_code value="22" level="0" />
+<lines_of_code value="16" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="10" level="0" />
-<lines_of_code_per_line_of_comment value="2.200" level="0" />
+<lines_of_comment value="6" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
 <name>Audio(const Audio &amp;)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Audio/Audio.h" line="65" />
+<source_reference file="../../Audio/Audio.h" line="91" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -68,10 +68,26 @@
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
+<name>mute()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Audio/Audio.cpp" line="73" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Audio/Audio.h" line="72" />
+</extent>
+<lines_of_code value="11" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="3" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
 <name>operator =(const Audio &amp;)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Audio/Audio.h" line="71" />
+<source_reference file="../../Audio/Audio.h" line="97" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -83,13 +99,13 @@
 <name>playBGMusic()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Audio/Audio.cpp" line="43" />
+<source_reference file="../../Audio/Audio.cpp" line="33" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Audio/Audio.h" line="27" />
+<source_reference file="../../Audio/Audio.h" line="32" />
 </extent>
-<lines_of_code value="6" level="0" />
+<lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
@@ -99,13 +115,13 @@
 <name>playGameOverLost()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Audio/Audio.cpp" line="87" />
+<source_reference file="../../Audio/Audio.cpp" line="68" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Audio/Audio.h" line="57" />
+<source_reference file="../../Audio/Audio.h" line="67" />
 </extent>
-<lines_of_code value="6" level="0" />
+<lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
@@ -115,13 +131,13 @@
 <name>playGameOverWon()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Audio/Audio.cpp" line="81" />
+<source_reference file="../../Audio/Audio.cpp" line="63" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Audio/Audio.h" line="52" />
+<source_reference file="../../Audio/Audio.h" line="62" />
 </extent>
-<lines_of_code value="6" level="0" />
+<lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
@@ -131,13 +147,29 @@
 <name>playGameStart()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Audio/Audio.cpp" line="75" />
+<source_reference file="../../Audio/Audio.cpp" line="58" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Audio/Audio.h" line="57" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="3" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>playHeadshot()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Audio/Audio.cpp" line="43" />
 </extent>
 <extent>
 <description>declaration</description>
 <source_reference file="../../Audio/Audio.h" line="47" />
 </extent>
-<lines_of_code value="6" level="0" />
+<lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
@@ -147,13 +179,13 @@
 <name>playHit()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Audio/Audio.cpp" line="63" />
+<source_reference file="../../Audio/Audio.cpp" line="48" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Audio/Audio.h" line="37" />
+<source_reference file="../../Audio/Audio.h" line="42" />
 </extent>
-<lines_of_code value="6" level="0" />
+<lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
@@ -163,13 +195,13 @@
 <name>playSlingshotFired()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Audio/Audio.cpp" line="69" />
+<source_reference file="../../Audio/Audio.cpp" line="53" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Audio/Audio.h" line="42" />
+<source_reference file="../../Audio/Audio.h" line="52" />
 </extent>
-<lines_of_code value="6" level="0" />
+<lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
@@ -179,15 +211,47 @@
 <name>stopBGMusic()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Audio/Audio.cpp" line="49" />
+<source_reference file="../../Audio/Audio.cpp" line="38" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Audio/Audio.h" line="32" />
+<source_reference file="../../Audio/Audio.h" line="37" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="3" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>unmute()</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Audio/Audio.cpp" line="84" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Audio/Audio.h" line="77" />
 </extent>
 <lines_of_code value="11" level="0" />
-<McCabes_cyclomatic_complexity value="3" level="0" />
-<lines_of_comment value="5" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="3" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>volume(float)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Audio/Audio.cpp" line="95" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Audio/Audio.h" line="83" />
+</extent>
+<lines_of_code value="11" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -195,11 +259,11 @@
 <name>~Audio()</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Audio/Audio.cpp" line="36" />
+<source_reference file="../../Audio/Audio.cpp" line="26" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Audio/Audio.h" line="22" />
+<source_reference file="../../Audio/Audio.h" line="27" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -217,50 +281,47 @@
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Mediator/Mediator.h" line="93" />
+<source_reference file="../../Mediator/Mediator.h" line="209" />
 </extent>
 </client_module>
 <supplier_module>
-<name>Channel</name>
-<visible>true</visible>
-<concrete>false</concrete>
-<extent>
-<description>has by reference</description>
-<source_reference file="../../Audio/Audio.h" line="102" />
-</extent>
-<name>Sound</name>
-<visible>true</visible>
-<concrete>false</concrete>
-<extent>
-<description>has by reference</description>
-<source_reference file="../../Audio/Audio.h" line="82" />
-</extent>
-<extent>
-<description>has by reference</description>
-<source_reference file="../../Audio/Audio.h" line="87" />
-</extent>
-<extent>
-<description>has by reference</description>
-<source_reference file="../../Audio/Audio.h" line="92" />
-</extent>
-<extent>
-<description>has by reference</description>
-<source_reference file="../../Audio/Audio.h" line="97" />
-</extent>
-<extent>
-<description>has by reference</description>
-<source_reference file="../../Audio/Audio.h" line="107" />
-</extent>
-<extent>
-<description>has by reference</description>
-<source_reference file="../../Audio/Audio.h" line="112" />
-</extent>
 <name>System</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Audio/Audio.h" line="77" />
+<source_reference file="../../Audio/Audio.h" line="103" />
+</extent>
+<name>auto_ptr</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Audio/Audio.h" line="105" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Audio/Audio.h" line="106" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Audio/Audio.h" line="107" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Audio/Audio.h" line="108" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Audio/Audio.h" line="109" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Audio/Audio.h" line="110" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Audio/Audio.h" line="111" />
 </extent>
 </supplier_module>
 </module>

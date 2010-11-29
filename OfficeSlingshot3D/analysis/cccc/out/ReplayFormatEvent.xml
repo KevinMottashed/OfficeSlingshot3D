@@ -6,9 +6,9 @@
 <lines_of_code_per_member_function value="******" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
-<lines_of_code value="6" level="0" />
+<lines_of_code value="23" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="4.667" level="0" />
+<lines_of_code_per_line_of_comment value="1.217" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 <weighted_methods_per_class_unity value="4" level="0" />
 <weighted_methods_per_class_visibility value="3" level="0" />
@@ -24,10 +24,10 @@
 </module_summary>
 <module_detail>
 <description>definition</description>
-<source_reference file="../../Logger/ReplayFormatEvent.h" line="12" />
+<source_reference file="../../Logger/ReplayFormatEvent.h" line="16" />
 <lines_of_code value="9" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="6" level="0" />
+<lines_of_comment value="16" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module_detail>
@@ -40,11 +40,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Logger/ReplayFormatEvent.h" line="15" />
+<source_reference file="../../Logger/ReplayFormatEvent.h" line="19" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="1" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -56,11 +56,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Logger/ReplayFormatEvent.h" line="16" />
+<source_reference file="../../Logger/ReplayFormatEvent.h" line="26" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -68,7 +68,7 @@
 <name>serialize(Archive &amp;,const int)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Logger/ReplayFormatEvent.h" line="37" />
+<source_reference file="../../Logger/ReplayFormatEvent.h" line="52" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
@@ -84,11 +84,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Logger/ReplayFormatEvent.h" line="17" />
+<source_reference file="../../Logger/ReplayFormatEvent.h" line="28" />
 </extent>
 <lines_of_code value="3" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="1" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -104,7 +104,7 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Logger/ReplayFormatEvent.h" line="37" />
+<source_reference file="../../Logger/ReplayFormatEvent.h" line="52" />
 </extent>
 <name>LogEvent_t</name>
 <visible>true</visible>
@@ -115,11 +115,11 @@
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="../../Logger/ReplayFormatEvent.h" line="16" />
+<source_reference file="../../Logger/ReplayFormatEvent.h" line="26" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Logger/ReplayFormatEvent.h" line="20" />
+<source_reference file="../../Logger/ReplayFormatEvent.h" line="31" />
 </extent>
 </supplier_module>
 </module>

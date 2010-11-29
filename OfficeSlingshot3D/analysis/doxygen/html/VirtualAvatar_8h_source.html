@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OfficeSlingshot3D: /home/kevin/workspace/HugMe/HugMe v0.9.1/Game/VirtualAvatar.h Source File</title>
+<title>OfficeSlingshot3D: /home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Game/VirtualAvatar.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -41,44 +42,106 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/kevin/workspace/HugMe/HugMe v0.9.1/Game/VirtualAvatar.h</h1>  </div>
+<h1>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Game/VirtualAvatar.h</h1>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef VIRTUAL_AVATAR_H</span>
+<a href="VirtualAvatar_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef VIRTUAL_AVATAR_H</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define VIRTUAL_AVATAR_H</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
-<a name="l00004"></a>00004 <span class="preprocessor">#include &quot;chai3d.h&quot;</span>
-<a name="l00005"></a>00005 
-<a name="l00009"></a><a class="code" href="classVirtualAvatar.html">00009</a> <span class="keyword">class </span><a class="code" href="classVirtualAvatar.html" title="Represents an avatar in the 3d environment.">VirtualAvatar</a>
-<a name="l00010"></a>00010 {
-<a name="l00011"></a>00011 <span class="keyword">public</span>:
-<a name="l00018"></a>00018     <a class="code" href="classVirtualAvatar.html#af35317b6992d361235debb2b05d0ecb9" title="Contructor.">VirtualAvatar</a>(cWorld* world, cVector3d startingPosition, <span class="keywordtype">bool</span> isLocal);
-<a name="l00019"></a>00019 
-<a name="l00023"></a>00023     <a class="code" href="classVirtualAvatar.html#a804f465f57b7baf6f10cd92b1ed9a907" title="Destructor.">~VirtualAvatar</a>(<span class="keywordtype">void</span>);
-<a name="l00024"></a>00024 
-<a name="l00029"></a>00029     <span class="keywordtype">void</span> <a class="code" href="classVirtualAvatar.html#a7055e90972db0a5e8ad47a2e11a04870" title="Rotate the avatar.">rotate</a>(<span class="keywordtype">double</span> ang);
-<a name="l00030"></a>00030 
-<a name="l00035"></a>00035     <span class="keywordtype">void</span> <a class="code" href="classVirtualAvatar.html#a784e340db30cc9cb6cecb47cedd03c1c" title="Translate (move) the avatar.">translate</a>(<span class="keywordtype">double</span> ang);
-<a name="l00036"></a>00036 
-<a name="l00042"></a>00042     <span class="keywordtype">void</span> <a class="code" href="classVirtualAvatar.html#a8f96410a9875f2f4823a1f5f0d0146f3" title="Update boundaries when the avatar is moved or rotated.">updateBoundaries</a>(<span class="keywordtype">double</span> ang, cVector3d position);
-<a name="l00043"></a>00043 
-<a name="l00047"></a>00047     <span class="keywordtype">bool</span> <a class="code" href="classVirtualAvatar.html#a76eb4880060cb9af5ac602197186d999" title="Returns true if the point is in the balls hit box.">isInHitBox</a>(cVector3d ballPos);
-<a name="l00048"></a>00048 <span class="keyword">private</span>:
-<a name="l00052"></a>00052     cMesh* avatarMesh;
-<a name="l00053"></a>00053 
-<a name="l00057"></a>00057     cVector3d boundaryMin;
-<a name="l00058"></a>00058 
-<a name="l00062"></a>00062     cVector3d boundaryMax;
+<a name="l00004"></a>00004 <span class="preprocessor">#include &quot;stdafx.h&quot;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;chai3d.h&quot;</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include &quot;<a class="code" href="BodyPartEnum_8h.html">BodyPartEnum.h</a>&quot;</span>
+<a name="l00007"></a>00007 
+<a name="l00011"></a><a class="code" href="classVirtualAvatar.html">00011</a> <span class="keyword">class </span><a class="code" href="classVirtualAvatar.html" title="Represents an avatar in the 3d environment.">VirtualAvatar</a>
+<a name="l00012"></a>00012 {
+<a name="l00013"></a>00013 <span class="keyword">public</span>:
+<a name="l00020"></a>00020     <a class="code" href="classVirtualAvatar.html#af35317b6992d361235debb2b05d0ecb9" title="Contructor.">VirtualAvatar</a>(cWorld* world, cVector3d startingPosition, <span class="keywordtype">bool</span> <a class="code" href="classVirtualAvatar.html#a4fc13aa9452c8ffa383419de764907a6" title="True if the avatar belongs to the local player.">isLocal</a>);
+<a name="l00021"></a>00021 
+<a name="l00025"></a>00025     <a class="code" href="classVirtualAvatar.html#a804f465f57b7baf6f10cd92b1ed9a907" title="Destructor.">~VirtualAvatar</a>(<span class="keywordtype">void</span>);
+<a name="l00026"></a>00026 
+<a name="l00031"></a>00031     <span class="keywordtype">void</span> <a class="code" href="classVirtualAvatar.html#a7055e90972db0a5e8ad47a2e11a04870" title="Rotate the avatar.">rotate</a>(<span class="keywordtype">double</span> ang);
+<a name="l00032"></a>00032 
+<a name="l00038"></a>00038     <span class="keywordtype">bool</span> <a class="code" href="classVirtualAvatar.html#a76eb4880060cb9af5ac602197186d999" title="Returns true if the point is in the balls hit box.">isInHitBox</a>(cVector3d ballPos);
+<a name="l00039"></a>00039 
+<a name="l00044"></a>00044     <a class="code" href="group__Common.html#gaa22d3933804e3afcd4eac294dded7434" title="public Enum representing different parts of the human body.">BodyPart_t</a> <a class="code" href="classVirtualAvatar.html#a3aa509b73400d4ff04c11d4577dc3e23" title="Retrieves the body part hit by the ball.">getHitBodyPart</a>();
+<a name="l00045"></a>00045 
+<a name="l00050"></a>00050     cVector3d <a class="code" href="classVirtualAvatar.html#addae7f6e8d0d9f18b930f6008d648d57" title="Retrieve the chest hit box minimum value.">getChestMin</a>();
+<a name="l00051"></a>00051 
+<a name="l00056"></a>00056     cVector3d <a class="code" href="classVirtualAvatar.html#ae1d5566e6d4cfde65e720fc0e12f2158" title="Retrieve the chest hit box maximum value.">getChestMax</a>();
+<a name="l00057"></a>00057 
+<a name="l00062"></a>00062     cVector3d <a class="code" href="classVirtualAvatar.html#a84f58ef6d95474c385be22a6dac13fb5" title="Retrieve the right arm hit box minimum value.">getRightArmMin</a>();
 <a name="l00063"></a>00063 
-<a name="l00067"></a>00067     <span class="keywordtype">bool</span> isLocal;
-<a name="l00068"></a>00068 
-<a name="l00069"></a>00069 };
-<a name="l00070"></a>00070 
-<a name="l00071"></a>00071 <span class="preprocessor">#endif</span>
+<a name="l00068"></a>00068     cVector3d <a class="code" href="classVirtualAvatar.html#a721ad73e986d2fe81e13240ff6033539" title="Retrieve the right arm hit box maximum value.">getRightArmMax</a>();
+<a name="l00069"></a>00069 
+<a name="l00074"></a>00074     cVector3d <a class="code" href="classVirtualAvatar.html#a2a3a7500c61cd68f3a4aaf6e418189ea" title="Retrieve the left arm hit box minimum value.">getLeftArmMin</a>();
+<a name="l00075"></a>00075 
+<a name="l00080"></a>00080     cVector3d <a class="code" href="classVirtualAvatar.html#a3de115a2db03a1658d2c63915a375007" title="Retrieve the left arm hit box maximum value.">getLeftArmMax</a>();
+<a name="l00081"></a>00081 
+<a name="l00086"></a>00086     cVector3d <a class="code" href="classVirtualAvatar.html#a4d40d049a17f789e1984fb7082a76151" title="Retrieve the head hit box minimum value.">getHeadMin</a>();
+<a name="l00087"></a>00087 
+<a name="l00092"></a>00092     cVector3d <a class="code" href="classVirtualAvatar.html#ab75a176f73437bf434214ad3ca8affb5" title="Retrieve the head hit box maximum value.">getHeadMax</a>();
+<a name="l00093"></a>00093 
+<a name="l00099"></a>00099     <span class="keywordtype">void</span> <a class="code" href="classVirtualAvatar.html#adeebf871ccbfefd089688d5b319c3552" title="Resets the avatar to its starting position.">resetPosition</a>(cVector3d startingPosition, <span class="keywordtype">bool</span> isLocal);
+<a name="l00100"></a>00100 
+<a name="l00101"></a>00101 <span class="keyword">private</span>:
+<a name="l00105"></a><a class="code" href="classVirtualAvatar.html#ad2f73d5aba65c0b29d844cc077eff98d">00105</a>     cMesh* <a class="code" href="classVirtualAvatar.html#ad2f73d5aba65c0b29d844cc077eff98d" title="The mesh that displays the avatar.">avatarMesh</a>;
+<a name="l00106"></a>00106 
+<a name="l00110"></a><a class="code" href="classVirtualAvatar.html#af0f3b47d881731bf27abbd67255dc97d">00110</a>     cMesh* <a class="code" href="classVirtualAvatar.html#af0f3b47d881731bf27abbd67255dc97d" title="The mesh for the chest hit box.">chestHitBox</a>;
+<a name="l00111"></a>00111 
+<a name="l00115"></a><a class="code" href="classVirtualAvatar.html#a5352c868424b7150961ea8e5a16984cc">00115</a>     cVector3d <a class="code" href="classVirtualAvatar.html#a5352c868424b7150961ea8e5a16984cc" title="The bottom-left corner of the chest bounding box.">chestMin</a>;
+<a name="l00116"></a>00116 
+<a name="l00120"></a><a class="code" href="classVirtualAvatar.html#aceb94343279af8f784a2cea1a410c9e8">00120</a>     cVector3d <a class="code" href="classVirtualAvatar.html#aceb94343279af8f784a2cea1a410c9e8" title="The top-right corner of the chest bounding box.">chestMax</a>;
+<a name="l00121"></a>00121 
+<a name="l00125"></a><a class="code" href="classVirtualAvatar.html#ae9b429b8a247e1a29fea108874eb7dce">00125</a>     cMesh* <a class="code" href="classVirtualAvatar.html#ae9b429b8a247e1a29fea108874eb7dce" title="The mesh for the right arm hit box.">rArmHitBox</a>;
+<a name="l00126"></a>00126 
+<a name="l00130"></a><a class="code" href="classVirtualAvatar.html#a8120ab6899cc4554f84a5c4056533418">00130</a>     cVector3d <a class="code" href="classVirtualAvatar.html#a8120ab6899cc4554f84a5c4056533418" title="The bottom-left corner of the right arm bounding box.">rArmMin</a>;
+<a name="l00131"></a>00131 
+<a name="l00135"></a><a class="code" href="classVirtualAvatar.html#a66f2808133889d1bd94f9ea6281581d0">00135</a>     cVector3d <a class="code" href="classVirtualAvatar.html#a66f2808133889d1bd94f9ea6281581d0" title="The top-right corner of the right arm bounding box.">rArmMax</a>;
+<a name="l00136"></a>00136 
+<a name="l00140"></a><a class="code" href="classVirtualAvatar.html#ad38788e2dfb19246bb43d0f1ce83be71">00140</a>     cMesh* <a class="code" href="classVirtualAvatar.html#ad38788e2dfb19246bb43d0f1ce83be71" title="The mesh for the left arm hit box.">lArmHitBox</a>;
+<a name="l00141"></a>00141 
+<a name="l00145"></a><a class="code" href="classVirtualAvatar.html#a0a20bc90802d555b7fa17e4e7b46e05e">00145</a>     cVector3d <a class="code" href="classVirtualAvatar.html#a0a20bc90802d555b7fa17e4e7b46e05e" title="The bottom-left corner of the left arm bounding box.">lArmMin</a>;
+<a name="l00146"></a>00146 
+<a name="l00150"></a><a class="code" href="classVirtualAvatar.html#aca57b6beb7bba7ad5be9f8f9b28ff40b">00150</a>     cVector3d <a class="code" href="classVirtualAvatar.html#aca57b6beb7bba7ad5be9f8f9b28ff40b" title="The top-right corner of the left arm bounding box.">lArmMax</a>;
+<a name="l00151"></a>00151 
+<a name="l00155"></a><a class="code" href="classVirtualAvatar.html#ad81b4c5278783a6d8a378eef8f58f48f">00155</a>     cMesh* <a class="code" href="classVirtualAvatar.html#ad81b4c5278783a6d8a378eef8f58f48f" title="The mesh for the left arm hit box.">headHitBox</a>;
+<a name="l00156"></a>00156 
+<a name="l00160"></a><a class="code" href="classVirtualAvatar.html#ab25b110bae45013f861bcda0f32c6b71">00160</a>     cVector3d <a class="code" href="classVirtualAvatar.html#ab25b110bae45013f861bcda0f32c6b71" title="The bottom-left corner of the left arm bounding box.">headMin</a>;
+<a name="l00161"></a>00161 
+<a name="l00165"></a><a class="code" href="classVirtualAvatar.html#a64c73e9f0b994882d25d0ec520088781">00165</a>     cVector3d <a class="code" href="classVirtualAvatar.html#a64c73e9f0b994882d25d0ec520088781" title="The top-right corner of the left arm bounding box.">headMax</a>;
+<a name="l00169"></a><a class="code" href="classVirtualAvatar.html#a4fc13aa9452c8ffa383419de764907a6">00169</a>     <span class="keywordtype">bool</span> isLocal;
+<a name="l00170"></a>00170 
+<a name="l00174"></a><a class="code" href="classVirtualAvatar.html#a026378f08de33e3167988ad718ad5208">00174</a>     <a class="code" href="group__Common.html#gaa22d3933804e3afcd4eac294dded7434" title="public Enum representing different parts of the human body.">BodyPart_t</a> <a class="code" href="classVirtualAvatar.html#a026378f08de33e3167988ad718ad5208" title="The body part hit by the collision.">hitPart</a>;
+<a name="l00175"></a>00175 
+<a name="l00179"></a><a class="code" href="classVirtualAvatar.html#a626c886e9e04175ccaa19838964d44e8">00179</a>     <span class="keyword">static</span> <span class="keyword">const</span> cVector3d <a class="code" href="classVirtualAvatar.html#a626c886e9e04175ccaa19838964d44e8" title="The initial position of the chest hit box&amp;#39;s minimum value.">iniChestMin</a>;
+<a name="l00180"></a>00180 
+<a name="l00184"></a><a class="code" href="classVirtualAvatar.html#a5db5ec0d108774ed27f88ee1e4c5ca24">00184</a>     <span class="keyword">static</span> <span class="keyword">const</span> cVector3d <a class="code" href="classVirtualAvatar.html#a5db5ec0d108774ed27f88ee1e4c5ca24" title="The initial position of the chest hit box&amp;#39;s maximum value.">iniChestMax</a>;
+<a name="l00185"></a>00185 
+<a name="l00189"></a><a class="code" href="classVirtualAvatar.html#a3fe6aaba9ce2a7ac92de83804d87f033">00189</a>     <span class="keyword">static</span> <span class="keyword">const</span> cVector3d <a class="code" href="classVirtualAvatar.html#a3fe6aaba9ce2a7ac92de83804d87f033" title="The initial position of the left arm hit box&amp;#39;s minimum value.">iniLeftArmMin</a>;
+<a name="l00190"></a>00190 
+<a name="l00194"></a><a class="code" href="classVirtualAvatar.html#a2fa0322a9753ea096b67cc696f4e2320">00194</a>     <span class="keyword">static</span> <span class="keyword">const</span> cVector3d <a class="code" href="classVirtualAvatar.html#a2fa0322a9753ea096b67cc696f4e2320" title="The initial position of the left arm hit box&amp;#39;s maximum value.">iniLeftArmMax</a>;
+<a name="l00195"></a>00195 
+<a name="l00199"></a><a class="code" href="classVirtualAvatar.html#a2a54aa65e951c8d61b16ed899124f66d">00199</a>     <span class="keyword">static</span> <span class="keyword">const</span> cVector3d <a class="code" href="classVirtualAvatar.html#a2a54aa65e951c8d61b16ed899124f66d" title="The initial position of the right arm hit box&amp;#39;s minimum value.">iniRightArmMin</a>;
+<a name="l00200"></a>00200 
+<a name="l00204"></a><a class="code" href="classVirtualAvatar.html#aaf9143cc7ac2f51e89f56aa83e55e0d9">00204</a>     <span class="keyword">static</span> <span class="keyword">const</span> cVector3d <a class="code" href="classVirtualAvatar.html#aaf9143cc7ac2f51e89f56aa83e55e0d9" title="The initial position of the right arm hit box&amp;#39;s maximum value.">iniRightArmMax</a>;
+<a name="l00205"></a>00205 
+<a name="l00209"></a><a class="code" href="classVirtualAvatar.html#ad469fe93d42ed6335c0e2d59e2ab8d7b">00209</a>     <span class="keyword">static</span> <span class="keyword">const</span> cVector3d <a class="code" href="classVirtualAvatar.html#ad469fe93d42ed6335c0e2d59e2ab8d7b" title="The initial position of the head hit box&amp;#39;s minimum value.">iniHeadMin</a>;
+<a name="l00210"></a>00210 
+<a name="l00214"></a><a class="code" href="classVirtualAvatar.html#a08358e8f3789e4e7b64fa5d2023347e6">00214</a>     <span class="keyword">static</span> <span class="keyword">const</span> cVector3d <a class="code" href="classVirtualAvatar.html#a08358e8f3789e4e7b64fa5d2023347e6" title="The initial position of the head hit box&amp;#39;s maximum value.">iniHeadMax</a>;
+<a name="l00215"></a>00215 
+<a name="l00221"></a>00221     <span class="keywordtype">void</span> <a class="code" href="classVirtualAvatar.html#aa6949c775be0bccce84dbbe9198d3771" title="Creates the vertices associated to the boundary box for hit detection.">createBoundaries</a>(cVector3d startingPosition);
+<a name="l00222"></a>00222 
+<a name="l00229"></a>00229     <span class="keywordtype">void</span> <a class="code" href="classVirtualAvatar.html#a8146bfbfa0a06793090d2b764ded853e" title="Creates the mesh object with the correct boundary points.">createMeshCube</a>(cMesh* a_mesh, cVector3d minVector, cVector3d maxVector);
+<a name="l00230"></a>00230 
+<a name="l00236"></a>00236     <span class="keywordtype">void</span> <a class="code" href="classVirtualAvatar.html#aea9afe75a5bfad869db1ced0a590d7cb" title="Translate (move) the avatar.">translate</a>(<span class="keywordtype">double</span> xTrans, <span class="keywordtype">double</span> yTrans);
+<a name="l00237"></a>00237 };
+<a name="l00238"></a>00238 
+<a name="l00239"></a>00239 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -86,7 +149,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -95,7 +158,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:44 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

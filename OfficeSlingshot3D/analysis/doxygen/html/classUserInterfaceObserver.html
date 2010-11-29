@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -53,7 +54,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>UserInterfaceObserver Class Reference</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="UserInterfaceObserver" --><div class="dynheader">
+<!-- doxytag: class="UserInterfaceObserver" -->
+<p>The observer class for the user interface.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="UserInterfaceObserver_8h_source.html">UserInterfaceObserver.h</a>&gt;</code></p>
+<div class="dynheader">
 Inheritance diagram for UserInterfaceObserver:</div>
 <div class="dyncontent">
  <div class="center">
@@ -68,12 +74,94 @@ Inheritance diagram for UserInterfaceObserver:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a99599901a3ae957ef5ae487105d35318"></a><!-- doxytag: member="UserInterfaceObserver::update" ref="a99599901a3ae957ef5ae487105d35318" args="(UserInterfaceUpdateContext context, const void *data)=0" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>update</b> (UserInterfaceUpdateContext context, const void *data)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUserInterfaceObserver.html#a437f45fecb779ae239dd7783e4c70adc">UserInterfaceObserver</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#a437f45fecb779ae239dd7783e4c70adc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUserInterfaceObserver.html#a45325a24548430fe6bc184bfc8f11677">~UserInterfaceObserver</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#a45325a24548430fe6bc184bfc8f11677"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUserInterfaceObserver.html#a99599901a3ae957ef5ae487105d35318">update</a> (<a class="el" href="UserInterfaceObserver_8h.html#ad1eb8a0c335743e35a99b456afcc81ac">UserInterfaceUpdateContext</a> context, const void *data)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Handles an update.  <a href="#a99599901a3ae957ef5ae487105d35318"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>The observer class for the user interface. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a437f45fecb779ae239dd7783e4c70adc"></a><!-- doxytag: member="UserInterfaceObserver::UserInterfaceObserver" ref="a437f45fecb779ae239dd7783e4c70adc" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UserInterfaceObserver::UserInterfaceObserver </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a45325a24548430fe6bc184bfc8f11677"></a><!-- doxytag: member="UserInterfaceObserver::~UserInterfaceObserver" ref="a45325a24548430fe6bc184bfc8f11677" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UserInterfaceObserver::~UserInterfaceObserver </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a99599901a3ae957ef5ae487105d35318"></a><!-- doxytag: member="UserInterfaceObserver::update" ref="a99599901a3ae957ef5ae487105d35318" args="(UserInterfaceUpdateContext context, const void *data)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void UserInterfaceObserver::update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="UserInterfaceObserver_8h.html#ad1eb8a0c335743e35a99b456afcc81ac">UserInterfaceUpdateContext</a>&nbsp;</td>
+          <td class="paramname"> <em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&nbsp;</td>
+          <td class="paramname"> <em>data</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Handles an update. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>context</em>&nbsp;</td><td>The user interface context. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>data</em>&nbsp;</td><td>The data passed through the update. Can be NULL. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/<a class="el" href="UserInterfaceObserver_8h_source.html">UserInterfaceObserver.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/UserInterfaceObserver.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/UserInterface/<a class="el" href="UserInterfaceObserver_8h_source.html">UserInterfaceObserver.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/UserInterface/<a class="el" href="UserInterfaceObserver_8cpp.html">UserInterfaceObserver.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -81,7 +169,7 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>update</b> (U
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,7 +178,7 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>update</b> (U
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:10 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:46 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

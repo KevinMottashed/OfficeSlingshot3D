@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -48,22 +49,209 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <h1>CPreferences Class Reference</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="CPreferences" --><table class="memberdecls">
+<!-- doxytag: class="CPreferences" -->
+<p>A classe used to manage the user's preferences by displaying a dialog with all the required values.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Preferences_8h_source.html">Preferences.h</a>&gt;</code></p>
+<table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1cb351f755d05386588ed3b808cd336e"></a><!-- doxytag: member="CPreferences::CPreferences" ref="a1cb351f755d05386588ed3b808cd336e" args="(const UserPreferences &amp;prefs, CWnd *pParent=NULL)" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><b>CPreferences</b> (const <a class="el" href="structUserPreferences.html">UserPreferences</a> &amp;prefs, CWnd *pParent=NULL)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad9add852953664688eddff62189bec05"></a><!-- doxytag: member="CPreferences::getPreferences" ref="ad9add852953664688eddff62189bec05" args="()" -->
-<a class="el" href="structUserPreferences.html">UserPreferences</a>&nbsp;</td><td class="memItemRight" valign="bottom"><b>getPreferences</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCPreferences.html#a1cb351f755d05386588ed3b808cd336e">CPreferences</a> (const <a class="el" href="structUserPreferences.html">UserPreferences</a> &amp;prefs, CWnd *pParent=NULL)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#a1cb351f755d05386588ed3b808cd336e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structUserPreferences.html">UserPreferences</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCPreferences.html#ad9add852953664688eddff62189bec05">getPreferences</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Getter for private attributes.  <a href="#ad9add852953664688eddff62189bec05"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="classCPreferences.html#a958754b09934a66767de7f41d6b63b22ae374708e559a701cc734e65906aaac8b">IDD</a> =  IDD_PREFERENCES
+ }</td></tr>
+<tr><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCPreferences.html#a5c03f354f86a866abdfaec3414ab5414">DoDataExchange</a> (CDataExchange *pDX)</td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structUserPreferences.html">UserPreferences</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCPreferences.html#a1e7a8e7beaa816f97734869b6791c851">m_preferences</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CString&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCPreferences.html#a07096ea23ae50230e8a86899eba6ea0c">m_strAddress</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CString&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCPreferences.html#ab5b49be2a70dedc8d70c565e7723ad72">m_userName</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCPreferences.html#a5b9af36886d117b50758f9d42104fc55">m_armBandPort</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCPreferences.html#a9abe68b919d10438cf48014e9ec790a6">m_jacketPort</a></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>A classe used to manage the user's preferences by displaying a dialog with all the required values. </p>
+<p>This dialog is contained within the main window of the application. </p>
+<hr/><h2>Member Enumeration Documentation</h2>
+<a class="anchor" id="a958754b09934a66767de7f41d6b63b22"></a><!-- doxytag: member="CPreferences::@1" ref="a958754b09934a66767de7f41d6b63b22" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum<code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a958754b09934a66767de7f41d6b63b22ae374708e559a701cc734e65906aaac8b"></a><!-- doxytag: member="IDD" ref="a958754b09934a66767de7f41d6b63b22ae374708e559a701cc734e65906aaac8b" args="" -->IDD</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a1cb351f755d05386588ed3b808cd336e"></a><!-- doxytag: member="CPreferences::CPreferences" ref="a1cb351f755d05386588ed3b808cd336e" args="(const UserPreferences &amp;prefs, CWnd *pParent=NULL)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPreferences::CPreferences </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structUserPreferences.html">UserPreferences</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>prefs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CWnd *&nbsp;</td>
+          <td class="paramname"> <em>pParent</em> = <code>NULL</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>prefs</em>&nbsp;</td><td>The user's preferences. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pParent</em>&nbsp;</td><td>The parent window NULL in our case. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a5c03f354f86a866abdfaec3414ab5414"></a><!-- doxytag: member="CPreferences::DoDataExchange" ref="a5c03f354f86a866abdfaec3414ab5414" args="(CDataExchange *pDX)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CPreferences::DoDataExchange </td>
+          <td>(</td>
+          <td class="paramtype">CDataExchange *&nbsp;</td>
+          <td class="paramname"> <em>pDX</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad9add852953664688eddff62189bec05"></a><!-- doxytag: member="CPreferences::getPreferences" ref="ad9add852953664688eddff62189bec05" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structUserPreferences.html">UserPreferences</a> CPreferences::getPreferences </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Getter for private attributes. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the user preferences. </dd></dl>
+
+</div>
+</div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a5b9af36886d117b50758f9d42104fc55"></a><!-- doxytag: member="CPreferences::m_armBandPort" ref="a5b9af36886d117b50758f9d42104fc55" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classCPreferences.html#a5b9af36886d117b50758f9d42104fc55">CPreferences::m_armBandPort</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9abe68b919d10438cf48014e9ec790a6"></a><!-- doxytag: member="CPreferences::m_jacketPort" ref="a9abe68b919d10438cf48014e9ec790a6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classCPreferences.html#a9abe68b919d10438cf48014e9ec790a6">CPreferences::m_jacketPort</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1e7a8e7beaa816f97734869b6791c851"></a><!-- doxytag: member="CPreferences::m_preferences" ref="a1e7a8e7beaa816f97734869b6791c851" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structUserPreferences.html">UserPreferences</a> <a class="el" href="classCPreferences.html#a1e7a8e7beaa816f97734869b6791c851">CPreferences::m_preferences</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a07096ea23ae50230e8a86899eba6ea0c"></a><!-- doxytag: member="CPreferences::m_strAddress" ref="a07096ea23ae50230e8a86899eba6ea0c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CString <a class="el" href="classCPreferences.html#a07096ea23ae50230e8a86899eba6ea0c">CPreferences::m_strAddress</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab5b49be2a70dedc8d70c565e7723ad72"></a><!-- doxytag: member="CPreferences::m_userName" ref="ab5b49be2a70dedc8d70c565e7723ad72" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CString <a class="el" href="classCPreferences.html#ab5b49be2a70dedc8d70c565e7723ad72">CPreferences::m_userName</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/<a class="el" href="Preferences_8h_source.html">Preferences.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/UserInterface/Preferences.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/UserInterface/<a class="el" href="Preferences_8h_source.html">Preferences.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/UserInterface/<a class="el" href="Preferences_8cpp.html">Preferences.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -71,7 +259,7 @@ Public Member Functions</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -80,7 +268,7 @@ Public Member Functions</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:45 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

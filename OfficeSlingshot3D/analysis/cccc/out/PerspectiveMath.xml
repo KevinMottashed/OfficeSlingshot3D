@@ -2,16 +2,16 @@
 <!--Detailed report on module PerspectiveMath-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="42" level="0" />
+<lines_of_code value="62" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="0" />
-<lines_of_code value="19" level="0" />
+<lines_of_code value="39" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="2.211" level="0" />
+<lines_of_code_per_line_of_comment value="1.590" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-<weighted_methods_per_class_unity value="5" level="0" />
-<weighted_methods_per_class_visibility value="5" level="0" />
+<weighted_methods_per_class_unity value="8" level="0" />
+<weighted_methods_per_class_visibility value="8" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
 <coupling_between_objects value="3" level="0" />
@@ -24,7 +24,7 @@
 </module_summary>
 <module_detail>
 <description>definition</description>
-<source_reference file="../../Mediator/PerspectiveMath.h" line="11" />
+<source_reference file="../../Utils/PerspectiveMath.h" line="11" />
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="3" level="0" />
@@ -33,34 +33,82 @@
 </module_detail>
 <procedural_detail>
 <member_function>
-<name>convertBoxToBox(cVector3d &amp;,const cCollisionAABBBox &amp;,const cCollisionAABBBox &amp;)</name>
+<name>convertBoxOrientationGameToNovint(cCollisionAABBBox &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Mediator/PerspectiveMath.cpp" line="35" />
+<source_reference file="../../Utils/PerspectiveMath.cpp" line="51" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Mediator/PerspectiveMath.h" line="34" />
+<source_reference file="../../Utils/PerspectiveMath.h" line="50" />
 </extent>
-<lines_of_code value="9" level="0" />
+<lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="2" level="0" />
+<lines_of_comment value="0" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
-<name>convertOrientationXYZtoYZX(cVector3d &amp;)</name>
+<name>convertBoxOrientationNovintToGame(cCollisionAABBBox &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Mediator/PerspectiveMath.cpp" line="27" />
+<source_reference file="../../Utils/PerspectiveMath.cpp" line="45" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Mediator/PerspectiveMath.h" line="32" />
+<source_reference file="../../Utils/PerspectiveMath.h" line="48" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="5" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>convertBoxToBox(cVector3d &amp;,const cCollisionAABBBox &amp;,const cCollisionAABBBox &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Utils/PerspectiveMath.cpp" line="57" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Utils/PerspectiveMath.h" line="59" />
+</extent>
+<lines_of_code value="9" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="9" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>convertOrientationGameToNovint(cVector3d &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Utils/PerspectiveMath.cpp" line="36" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Utils/PerspectiveMath.h" line="40" />
 </extent>
 <lines_of_code value="8" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>convertOrientationNovintToGame(cVector3d &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="../../Utils/PerspectiveMath.cpp" line="27" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="../../Utils/PerspectiveMath.h" line="38" />
+</extent>
+<lines_of_code value="8" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="7" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -68,11 +116,11 @@
 <name>invert2DCoordinate(cVector3d &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Mediator/PerspectiveMath.cpp" line="3" />
+<source_reference file="../../Utils/PerspectiveMath.cpp" line="3" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Mediator/PerspectiveMath.h" line="18" />
+<source_reference file="../../Utils/PerspectiveMath.h" line="18" />
 </extent>
 <lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -84,11 +132,11 @@
 <name>invert3DCoordinate(cVector3d &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Mediator/PerspectiveMath.cpp" line="8" />
+<source_reference file="../../Utils/PerspectiveMath.cpp" line="8" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Mediator/PerspectiveMath.h" line="24" />
+<source_reference file="../../Utils/PerspectiveMath.h" line="24" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -100,11 +148,11 @@
 <name>invert3DProjectile(Projectile &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="../../Mediator/PerspectiveMath.cpp" line="14" />
+<source_reference file="../../Utils/PerspectiveMath.cpp" line="14" />
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Mediator/PerspectiveMath.h" line="30" />
+<source_reference file="../../Utils/PerspectiveMath.h" line="30" />
 </extent>
 <lines_of_code value="10" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -124,65 +172,89 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/PerspectiveMath.cpp" line="14" />
+<source_reference file="../../Utils/PerspectiveMath.cpp" line="14" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/PerspectiveMath.h" line="30" />
+<source_reference file="../../Utils/PerspectiveMath.h" line="30" />
 </extent>
 <name>cCollisionAABBBox</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/PerspectiveMath.cpp" line="35" />
+<source_reference file="../../Utils/PerspectiveMath.cpp" line="45" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/PerspectiveMath.cpp" line="35" />
+<source_reference file="../../Utils/PerspectiveMath.cpp" line="51" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/PerspectiveMath.h" line="34" />
+<source_reference file="../../Utils/PerspectiveMath.cpp" line="57" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/PerspectiveMath.h" line="34" />
+<source_reference file="../../Utils/PerspectiveMath.cpp" line="57" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Utils/PerspectiveMath.h" line="48" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Utils/PerspectiveMath.h" line="50" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Utils/PerspectiveMath.h" line="59" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Utils/PerspectiveMath.h" line="59" />
 </extent>
 <name>cVector3d</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/PerspectiveMath.cpp" line="3" />
+<source_reference file="../../Utils/PerspectiveMath.cpp" line="3" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/PerspectiveMath.cpp" line="8" />
+<source_reference file="../../Utils/PerspectiveMath.cpp" line="8" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/PerspectiveMath.cpp" line="27" />
+<source_reference file="../../Utils/PerspectiveMath.cpp" line="27" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/PerspectiveMath.cpp" line="35" />
+<source_reference file="../../Utils/PerspectiveMath.cpp" line="36" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/PerspectiveMath.h" line="18" />
+<source_reference file="../../Utils/PerspectiveMath.cpp" line="57" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/PerspectiveMath.h" line="24" />
+<source_reference file="../../Utils/PerspectiveMath.h" line="18" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/PerspectiveMath.h" line="32" />
+<source_reference file="../../Utils/PerspectiveMath.h" line="24" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Mediator/PerspectiveMath.h" line="34" />
+<source_reference file="../../Utils/PerspectiveMath.h" line="38" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Utils/PerspectiveMath.h" line="40" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Utils/PerspectiveMath.h" line="59" />
 </extent>
 </supplier_module>
 </module>

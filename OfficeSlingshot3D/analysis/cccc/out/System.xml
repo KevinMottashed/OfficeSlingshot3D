@@ -14,7 +14,7 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="1" level="0" />
+<coupling_between_objects value="2" level="0" />
 <IF4 value="0" level="0" />
 <IF4_per_member_function value="********" level="0" />
 <IF4_visible value="0" level="0" />
@@ -35,7 +35,22 @@
 <concrete>false</concrete>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Audio/Audio.h" line="77" />
+<source_reference file="../../Audio/Audio.h" line="103" />
+</extent>
+<name>Sound</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Audio/Sound.cpp" line="3" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="../../Audio/Sound.h" line="22" />
+</extent>
+<extent>
+<description>has by reference</description>
+<source_reference file="../../Audio/Sound.h" line="59" />
 </extent>
 </client_module>
 <supplier_module>

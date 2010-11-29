@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -57,97 +58,731 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>CSerialPort Class Reference</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="CSerialPort" --><table class="memberdecls">
+<!-- doxytag: class="CSerialPort" -->
+<p><code>#include &lt;<a class="el" href="Serialport_8h_source.html">Serialport.h</a>&gt;</code></p>
+<table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a42f4c47706372681484122ef5273366b"></a><!-- doxytag: member="CSerialPort::InitPort" ref="a42f4c47706372681484122ef5273366b" args="(UINT portnr=5, UINT baud=115000, char parity= 'N', UINT databits=8, UINT stopsbits=1, DWORD dwCommEvents=EV_RXCHAR|EV_CTS, UINT nBufferSize=512)" -->
-BOOL&nbsp;</td><td class="memItemRight" valign="bottom"><b>InitPort</b> (UINT portnr=5, UINT baud=115000, char parity= 'N', UINT databits=8, UINT stopsbits=1, DWORD dwCommEvents=EV_RXCHAR|EV_CTS, UINT nBufferSize=512)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae0d2dd450a48c47a2039e9458290f04f"></a><!-- doxytag: member="CSerialPort::ClosePort" ref="ae0d2dd450a48c47a2039e9458290f04f" args="()" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>ClosePort</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a857bc7ba9e143cd114ffbb94cb05f59a"></a><!-- doxytag: member="CSerialPort::StartMonitoring" ref="a857bc7ba9e143cd114ffbb94cb05f59a" args="()" -->
-BOOL&nbsp;</td><td class="memItemRight" valign="bottom"><b>StartMonitoring</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a29d8b3f2af87a93bbbd57e6a7ec9fe6a"></a><!-- doxytag: member="CSerialPort::RestartMonitoring" ref="a29d8b3f2af87a93bbbd57e6a7ec9fe6a" args="()" -->
-BOOL&nbsp;</td><td class="memItemRight" valign="bottom"><b>RestartMonitoring</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a442b9d838ee9c0fec8486a51fc9c23fc"></a><!-- doxytag: member="CSerialPort::StopMonitoring" ref="a442b9d838ee9c0fec8486a51fc9c23fc" args="()" -->
-BOOL&nbsp;</td><td class="memItemRight" valign="bottom"><b>StopMonitoring</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5e330d93575e5b012674cb567f1879af"></a><!-- doxytag: member="CSerialPort::GetWriteBufferSize" ref="a5e330d93575e5b012674cb567f1879af" args="()" -->
-DWORD&nbsp;</td><td class="memItemRight" valign="bottom"><b>GetWriteBufferSize</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab4a7e6cafcd2fba87fc0a83bf4728388"></a><!-- doxytag: member="CSerialPort::GetCommEvents" ref="ab4a7e6cafcd2fba87fc0a83bf4728388" args="()" -->
-DWORD&nbsp;</td><td class="memItemRight" valign="bottom"><b>GetCommEvents</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a428e130644f1d1cb2e1fa9608c3988e1"></a><!-- doxytag: member="CSerialPort::GetDCB" ref="a428e130644f1d1cb2e1fa9608c3988e1" args="()" -->
-DCB&nbsp;</td><td class="memItemRight" valign="bottom"><b>GetDCB</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac5084fd35c6d431f0bb32fa4184d46cd"></a><!-- doxytag: member="CSerialPort::WriteToPort" ref="ac5084fd35c6d431f0bb32fa4184d46cd" args="(unsigned char *string, int len)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>WriteToPort</b> (unsigned char *string, int len)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa6e70c30d2094e93b57bf29ed2da9544"></a><!-- doxytag: member="CSerialPort::WriteToPort" ref="aa6e70c30d2094e93b57bf29ed2da9544" args="(unsigned char chr)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>WriteToPort</b> (unsigned char chr)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad7ae2f1cfbefbdbe0b4c7dd1f8426546"></a><!-- doxytag: member="CSerialPort::writeInBuffer" ref="ad7ae2f1cfbefbdbe0b4c7dd1f8426546" args="(unsigned char in)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>writeInBuffer</b> (unsigned char in)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a78bf02e85438c4d05522cabb4d565860"></a><!-- doxytag: member="CSerialPort::readInBuffer" ref="a78bf02e85438c4d05522cabb4d565860" args="()" -->
-unsigned char&nbsp;</td><td class="memItemRight" valign="bottom"><b>readInBuffer</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a395595b1b7215e1c6a52e89105a213bf"></a><!-- doxytag: member="CSerialPort::inBufferData" ref="a395595b1b7215e1c6a52e89105a213bf" args="() const " -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>inBufferData</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7740299ef083ed1bfabc4cb9bd38dbfa"></a><!-- doxytag: member="CSerialPort::getConnected" ref="a7740299ef083ed1bfabc4cb9bd38dbfa" args="() const " -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>getConnected</b> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#a4f99783ee3859f782d394eff9fb9c3d6">CSerialPort</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#abd72f8599d0696d9b14a56780cce8d21">~CSerialPort</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">BOOL&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#a42f4c47706372681484122ef5273366b">InitPort</a> (UINT portnr=5, UINT baud=115000, char parity= 'N', UINT databits=8, UINT stopsbits=1, DWORD dwCommEvents=EV_RXCHAR|EV_CTS, UINT nBufferSize=512)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#ae0d2dd450a48c47a2039e9458290f04f">ClosePort</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">BOOL&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#a857bc7ba9e143cd114ffbb94cb05f59a">StartMonitoring</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">BOOL&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#a29d8b3f2af87a93bbbd57e6a7ec9fe6a">RestartMonitoring</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">BOOL&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#a442b9d838ee9c0fec8486a51fc9c23fc">StopMonitoring</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">DWORD&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#a5e330d93575e5b012674cb567f1879af">GetWriteBufferSize</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">DWORD&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#ab4a7e6cafcd2fba87fc0a83bf4728388">GetCommEvents</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">DCB&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#a428e130644f1d1cb2e1fa9608c3988e1">GetDCB</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#ac5084fd35c6d431f0bb32fa4184d46cd">WriteToPort</a> (unsigned char *string, int len)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#aa6e70c30d2094e93b57bf29ed2da9544">WriteToPort</a> (unsigned char chr)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#ad7ae2f1cfbefbdbe0b4c7dd1f8426546">writeInBuffer</a> (unsigned char in)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned char&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#a78bf02e85438c4d05522cabb4d565860">readInBuffer</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#a395595b1b7215e1c6a52e89105a213bf">inBufferData</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#a7740299ef083ed1bfabc4cb9bd38dbfa">getConnected</a> () const </td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac31f6f3a9e19c134e4e6a12276a1f37f"></a><!-- doxytag: member="CSerialPort::sentPacket" ref="ac31f6f3a9e19c134e4e6a12276a1f37f" args="" -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>sentPacket</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#ac31f6f3a9e19c134e4e6a12276a1f37f">sentPacket</a></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a411e1c0e48ea5cce9dc815b8348727b4"></a><!-- doxytag: member="CSerialPort::ProcessErrorMessage" ref="a411e1c0e48ea5cce9dc815b8348727b4" args="(char *ErrorText)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>ProcessErrorMessage</b> (char *ErrorText)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#a411e1c0e48ea5cce9dc815b8348727b4">ProcessErrorMessage</a> (char *ErrorText)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-static-methods"></a>
 Static Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a961a364b7f313aca15558e3ca895fa15"></a><!-- doxytag: member="CSerialPort::CommThread" ref="a961a364b7f313aca15558e3ca895fa15" args="(LPVOID pParam)" -->
-static UINT&nbsp;</td><td class="memItemRight" valign="bottom"><b>CommThread</b> (LPVOID pParam)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9b6e1397f75a72d379fe7a77bd3018c4"></a><!-- doxytag: member="CSerialPort::ReceiveChar" ref="a9b6e1397f75a72d379fe7a77bd3018c4" args="(CSerialPort *port, COMSTAT comstat)" -->
-static void&nbsp;</td><td class="memItemRight" valign="bottom"><b>ReceiveChar</b> (<a class="el" href="classCSerialPort.html">CSerialPort</a> *port, COMSTAT comstat)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7062a8930c4fd2f1e611a0324c5e55fc"></a><!-- doxytag: member="CSerialPort::WriteChar" ref="a7062a8930c4fd2f1e611a0324c5e55fc" args="(CSerialPort *port)" -->
-static void&nbsp;</td><td class="memItemRight" valign="bottom"><b>WriteChar</b> (<a class="el" href="classCSerialPort.html">CSerialPort</a> *port)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static UINT&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#a961a364b7f313aca15558e3ca895fa15">CommThread</a> (LPVOID pParam)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#a9b6e1397f75a72d379fe7a77bd3018c4">ReceiveChar</a> (<a class="el" href="classCSerialPort.html">CSerialPort</a> *port, COMSTAT comstat)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#a7062a8930c4fd2f1e611a0324c5e55fc">WriteChar</a> (<a class="el" href="classCSerialPort.html">CSerialPort</a> *port)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3c2fe60cefc3c0e14638c132c313bc42"></a><!-- doxytag: member="CSerialPort::m_Thread" ref="a3c2fe60cefc3c0e14638c132c313bc42" args="" -->
-CWinThread *&nbsp;</td><td class="memItemRight" valign="bottom"><b>m_Thread</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3df14df19d8f6f09d803bee2ec0ab25e"></a><!-- doxytag: member="CSerialPort::m_csCommunicationSync" ref="a3df14df19d8f6f09d803bee2ec0ab25e" args="" -->
-CRITICAL_SECTION&nbsp;</td><td class="memItemRight" valign="bottom"><b>m_csCommunicationSync</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a33f11e4d656ace95dba8f4e8e5890f9f"></a><!-- doxytag: member="CSerialPort::m_bThreadAlive" ref="a33f11e4d656ace95dba8f4e8e5890f9f" args="" -->
-BOOL&nbsp;</td><td class="memItemRight" valign="bottom"><b>m_bThreadAlive</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7f19c5462fef05e6182ab2af9b1a2da2"></a><!-- doxytag: member="CSerialPort::m_hShutdownEvent" ref="a7f19c5462fef05e6182ab2af9b1a2da2" args="" -->
-HANDLE&nbsp;</td><td class="memItemRight" valign="bottom"><b>m_hShutdownEvent</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a234faffa92379fada3f91ce21a8cac35"></a><!-- doxytag: member="CSerialPort::m_hComm" ref="a234faffa92379fada3f91ce21a8cac35" args="" -->
-HANDLE&nbsp;</td><td class="memItemRight" valign="bottom"><b>m_hComm</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2a4e02de15cc82cb41f9660c9af203ed"></a><!-- doxytag: member="CSerialPort::m_hWriteEvent" ref="a2a4e02de15cc82cb41f9660c9af203ed" args="" -->
-HANDLE&nbsp;</td><td class="memItemRight" valign="bottom"><b>m_hWriteEvent</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adc1530502ba6dde3a9352141077b5afa"></a><!-- doxytag: member="CSerialPort::m_hEventArray" ref="adc1530502ba6dde3a9352141077b5afa" args="[3]" -->
-HANDLE&nbsp;</td><td class="memItemRight" valign="bottom"><b>m_hEventArray</b> [3]</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5fe58c691b790d9e5d33c454411814fe"></a><!-- doxytag: member="CSerialPort::m_ov" ref="a5fe58c691b790d9e5d33c454411814fe" args="" -->
-OVERLAPPED&nbsp;</td><td class="memItemRight" valign="bottom"><b>m_ov</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a73604d37bb19ac73d6fe1ecacd4bb458"></a><!-- doxytag: member="CSerialPort::m_CommTimeouts" ref="a73604d37bb19ac73d6fe1ecacd4bb458" args="" -->
-COMMTIMEOUTS&nbsp;</td><td class="memItemRight" valign="bottom"><b>m_CommTimeouts</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acf13f9a229e3693a1eae6b24e72c152c"></a><!-- doxytag: member="CSerialPort::m_dcb" ref="acf13f9a229e3693a1eae6b24e72c152c" args="" -->
-DCB&nbsp;</td><td class="memItemRight" valign="bottom"><b>m_dcb</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a16c93a6c87ae31ff80eb2ef5c655f45a"></a><!-- doxytag: member="CSerialPort::m_nPortNr" ref="a16c93a6c87ae31ff80eb2ef5c655f45a" args="" -->
-UINT&nbsp;</td><td class="memItemRight" valign="bottom"><b>m_nPortNr</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac7ba598ab505a6bb7bf011d4c046ef0e"></a><!-- doxytag: member="CSerialPort::m_szWriteBuffer" ref="ac7ba598ab505a6bb7bf011d4c046ef0e" args="" -->
-unsigned char *&nbsp;</td><td class="memItemRight" valign="bottom"><b>m_szWriteBuffer</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af758a1a7ebc24c8a4223accce75a9673"></a><!-- doxytag: member="CSerialPort::m_WriteBufferSize" ref="af758a1a7ebc24c8a4223accce75a9673" args="" -->
-unsigned short&nbsp;</td><td class="memItemRight" valign="bottom"><b>m_WriteBufferSize</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af6b5fa783fef229806f8662b0df2c18e"></a><!-- doxytag: member="CSerialPort::m_dwCommEvents" ref="af6b5fa783fef229806f8662b0df2c18e" args="" -->
-DWORD&nbsp;</td><td class="memItemRight" valign="bottom"><b>m_dwCommEvents</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0da3f981892077c2193aff091379eac6"></a><!-- doxytag: member="CSerialPort::m_nWriteBufferSize" ref="a0da3f981892077c2193aff091379eac6" args="" -->
-DWORD&nbsp;</td><td class="memItemRight" valign="bottom"><b>m_nWriteBufferSize</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aec4a44728b9218106547c975b62f51fa"></a><!-- doxytag: member="CSerialPort::connected" ref="aec4a44728b9218106547c975b62f51fa" args="" -->
-bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>connected</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a88885412d6681041e2371d4e222b5cea"></a><!-- doxytag: member="CSerialPort::inBuffer" ref="a88885412d6681041e2371d4e222b5cea" args="[IN_BUFFER_SIZE]" -->
-unsigned char&nbsp;</td><td class="memItemRight" valign="bottom"><b>inBuffer</b> [IN_BUFFER_SIZE]</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae1ef9cb92cdf3a47520457a0164a59f8"></a><!-- doxytag: member="CSerialPort::bufferWrite" ref="ae1ef9cb92cdf3a47520457a0164a59f8" args="" -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><b>bufferWrite</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2373805b68f988f7989074f329855117"></a><!-- doxytag: member="CSerialPort::bufferRead" ref="a2373805b68f988f7989074f329855117" args="" -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><b>bufferRead</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CWinThread *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#a3c2fe60cefc3c0e14638c132c313bc42">m_Thread</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CRITICAL_SECTION&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#a3df14df19d8f6f09d803bee2ec0ab25e">m_csCommunicationSync</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">BOOL&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#a33f11e4d656ace95dba8f4e8e5890f9f">m_bThreadAlive</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">HANDLE&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#a7f19c5462fef05e6182ab2af9b1a2da2">m_hShutdownEvent</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">HANDLE&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#a234faffa92379fada3f91ce21a8cac35">m_hComm</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">HANDLE&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#a2a4e02de15cc82cb41f9660c9af203ed">m_hWriteEvent</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">HANDLE&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#adc1530502ba6dde3a9352141077b5afa">m_hEventArray</a> [3]</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">OVERLAPPED&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#a5fe58c691b790d9e5d33c454411814fe">m_ov</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">COMMTIMEOUTS&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#a73604d37bb19ac73d6fe1ecacd4bb458">m_CommTimeouts</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">DCB&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#acf13f9a229e3693a1eae6b24e72c152c">m_dcb</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">UINT&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#a16c93a6c87ae31ff80eb2ef5c655f45a">m_nPortNr</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#ac7ba598ab505a6bb7bf011d4c046ef0e">m_szWriteBuffer</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned short&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#af758a1a7ebc24c8a4223accce75a9673">m_WriteBufferSize</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">DWORD&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#af6b5fa783fef229806f8662b0df2c18e">m_dwCommEvents</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">DWORD&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#a0da3f981892077c2193aff091379eac6">m_nWriteBufferSize</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#aec4a44728b9218106547c975b62f51fa">connected</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned char&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#a88885412d6681041e2371d4e222b5cea">inBuffer</a> [IN_BUFFER_SIZE]</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#ae1ef9cb92cdf3a47520457a0164a59f8">bufferWrite</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerialPort.html#a2373805b68f988f7989074f329855117">bufferRead</a></td></tr>
 </table>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a4f99783ee3859f782d394eff9fb9c3d6"></a><!-- doxytag: member="CSerialPort::CSerialPort" ref="a4f99783ee3859f782d394eff9fb9c3d6" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CSerialPort::CSerialPort </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abd72f8599d0696d9b14a56780cce8d21"></a><!-- doxytag: member="CSerialPort::~CSerialPort" ref="abd72f8599d0696d9b14a56780cce8d21" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CSerialPort::~CSerialPort </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ae0d2dd450a48c47a2039e9458290f04f"></a><!-- doxytag: member="CSerialPort::ClosePort" ref="ae0d2dd450a48c47a2039e9458290f04f" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CSerialPort::ClosePort </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a961a364b7f313aca15558e3ca895fa15"></a><!-- doxytag: member="CSerialPort::CommThread" ref="a961a364b7f313aca15558e3ca895fa15" args="(LPVOID pParam)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UINT CSerialPort::CommThread </td>
+          <td>(</td>
+          <td class="paramtype">LPVOID&nbsp;</td>
+          <td class="paramname"> <em>pParam</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab4a7e6cafcd2fba87fc0a83bf4728388"></a><!-- doxytag: member="CSerialPort::GetCommEvents" ref="ab4a7e6cafcd2fba87fc0a83bf4728388" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DWORD CSerialPort::GetCommEvents </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7740299ef083ed1bfabc4cb9bd38dbfa"></a><!-- doxytag: member="CSerialPort::getConnected" ref="a7740299ef083ed1bfabc4cb9bd38dbfa" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CSerialPort::getConnected </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a428e130644f1d1cb2e1fa9608c3988e1"></a><!-- doxytag: member="CSerialPort::GetDCB" ref="a428e130644f1d1cb2e1fa9608c3988e1" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DCB CSerialPort::GetDCB </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5e330d93575e5b012674cb567f1879af"></a><!-- doxytag: member="CSerialPort::GetWriteBufferSize" ref="a5e330d93575e5b012674cb567f1879af" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DWORD CSerialPort::GetWriteBufferSize </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a395595b1b7215e1c6a52e89105a213bf"></a><!-- doxytag: member="CSerialPort::inBufferData" ref="a395595b1b7215e1c6a52e89105a213bf" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CSerialPort::inBufferData </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a42f4c47706372681484122ef5273366b"></a><!-- doxytag: member="CSerialPort::InitPort" ref="a42f4c47706372681484122ef5273366b" args="(UINT portnr=5, UINT baud=115000, char parity= 'N', UINT databits=8, UINT stopsbits=1, DWORD dwCommEvents=EV_RXCHAR|EV_CTS, UINT nBufferSize=512)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL CSerialPort::InitPort </td>
+          <td>(</td>
+          <td class="paramtype">UINT&nbsp;</td>
+          <td class="paramname"> <em>portnr</em> = <code>5</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UINT&nbsp;</td>
+          <td class="paramname"> <em>baud</em> = <code>115000</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&nbsp;</td>
+          <td class="paramname"> <em>parity</em> = <code>'N'</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UINT&nbsp;</td>
+          <td class="paramname"> <em>databits</em> = <code>8</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UINT&nbsp;</td>
+          <td class="paramname"> <em>stopsbits</em> = <code>1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&nbsp;</td>
+          <td class="paramname"> <em>dwCommEvents</em> = <code>EV_RXCHAR&nbsp;|&nbsp;EV_CTS</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UINT&nbsp;</td>
+          <td class="paramname"> <em>nBufferSize</em> = <code>512</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a411e1c0e48ea5cce9dc815b8348727b4"></a><!-- doxytag: member="CSerialPort::ProcessErrorMessage" ref="a411e1c0e48ea5cce9dc815b8348727b4" args="(char *ErrorText)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CSerialPort::ProcessErrorMessage </td>
+          <td>(</td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>ErrorText</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a78bf02e85438c4d05522cabb4d565860"></a><!-- doxytag: member="CSerialPort::readInBuffer" ref="a78bf02e85438c4d05522cabb4d565860" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char CSerialPort::readInBuffer </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9b6e1397f75a72d379fe7a77bd3018c4"></a><!-- doxytag: member="CSerialPort::ReceiveChar" ref="a9b6e1397f75a72d379fe7a77bd3018c4" args="(CSerialPort *port, COMSTAT comstat)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CSerialPort::ReceiveChar </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classCSerialPort.html">CSerialPort</a> *&nbsp;</td>
+          <td class="paramname"> <em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">COMSTAT&nbsp;</td>
+          <td class="paramname"> <em>comstat</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a29d8b3f2af87a93bbbd57e6a7ec9fe6a"></a><!-- doxytag: member="CSerialPort::RestartMonitoring" ref="a29d8b3f2af87a93bbbd57e6a7ec9fe6a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL CSerialPort::RestartMonitoring </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a857bc7ba9e143cd114ffbb94cb05f59a"></a><!-- doxytag: member="CSerialPort::StartMonitoring" ref="a857bc7ba9e143cd114ffbb94cb05f59a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL CSerialPort::StartMonitoring </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a442b9d838ee9c0fec8486a51fc9c23fc"></a><!-- doxytag: member="CSerialPort::StopMonitoring" ref="a442b9d838ee9c0fec8486a51fc9c23fc" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL CSerialPort::StopMonitoring </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7062a8930c4fd2f1e611a0324c5e55fc"></a><!-- doxytag: member="CSerialPort::WriteChar" ref="a7062a8930c4fd2f1e611a0324c5e55fc" args="(CSerialPort *port)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CSerialPort::WriteChar </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classCSerialPort.html">CSerialPort</a> *&nbsp;</td>
+          <td class="paramname"> <em>port</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad7ae2f1cfbefbdbe0b4c7dd1f8426546"></a><!-- doxytag: member="CSerialPort::writeInBuffer" ref="ad7ae2f1cfbefbdbe0b4c7dd1f8426546" args="(unsigned char in)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CSerialPort::writeInBuffer </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&nbsp;</td>
+          <td class="paramname"> <em>in</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa6e70c30d2094e93b57bf29ed2da9544"></a><!-- doxytag: member="CSerialPort::WriteToPort" ref="aa6e70c30d2094e93b57bf29ed2da9544" args="(unsigned char chr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CSerialPort::WriteToPort </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&nbsp;</td>
+          <td class="paramname"> <em>chr</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac5084fd35c6d431f0bb32fa4184d46cd"></a><!-- doxytag: member="CSerialPort::WriteToPort" ref="ac5084fd35c6d431f0bb32fa4184d46cd" args="(unsigned char *string, int len)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CSerialPort::WriteToPort </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char *&nbsp;</td>
+          <td class="paramname"> <em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>len</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a2373805b68f988f7989074f329855117"></a><!-- doxytag: member="CSerialPort::bufferRead" ref="a2373805b68f988f7989074f329855117" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classCSerialPort.html#a2373805b68f988f7989074f329855117">CSerialPort::bufferRead</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae1ef9cb92cdf3a47520457a0164a59f8"></a><!-- doxytag: member="CSerialPort::bufferWrite" ref="ae1ef9cb92cdf3a47520457a0164a59f8" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classCSerialPort.html#ae1ef9cb92cdf3a47520457a0164a59f8">CSerialPort::bufferWrite</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aec4a44728b9218106547c975b62f51fa"></a><!-- doxytag: member="CSerialPort::connected" ref="aec4a44728b9218106547c975b62f51fa" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classCSerialPort.html#aec4a44728b9218106547c975b62f51fa">CSerialPort::connected</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a88885412d6681041e2371d4e222b5cea"></a><!-- doxytag: member="CSerialPort::inBuffer" ref="a88885412d6681041e2371d4e222b5cea" args="[IN_BUFFER_SIZE]" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char <a class="el" href="classCSerialPort.html#a88885412d6681041e2371d4e222b5cea">CSerialPort::inBuffer</a>[IN_BUFFER_SIZE]<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a33f11e4d656ace95dba8f4e8e5890f9f"></a><!-- doxytag: member="CSerialPort::m_bThreadAlive" ref="a33f11e4d656ace95dba8f4e8e5890f9f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL <a class="el" href="classCSerialPort.html#a33f11e4d656ace95dba8f4e8e5890f9f">CSerialPort::m_bThreadAlive</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a73604d37bb19ac73d6fe1ecacd4bb458"></a><!-- doxytag: member="CSerialPort::m_CommTimeouts" ref="a73604d37bb19ac73d6fe1ecacd4bb458" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">COMMTIMEOUTS <a class="el" href="classCSerialPort.html#a73604d37bb19ac73d6fe1ecacd4bb458">CSerialPort::m_CommTimeouts</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3df14df19d8f6f09d803bee2ec0ab25e"></a><!-- doxytag: member="CSerialPort::m_csCommunicationSync" ref="a3df14df19d8f6f09d803bee2ec0ab25e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CRITICAL_SECTION <a class="el" href="classCSerialPort.html#a3df14df19d8f6f09d803bee2ec0ab25e">CSerialPort::m_csCommunicationSync</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acf13f9a229e3693a1eae6b24e72c152c"></a><!-- doxytag: member="CSerialPort::m_dcb" ref="acf13f9a229e3693a1eae6b24e72c152c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DCB <a class="el" href="classCSerialPort.html#acf13f9a229e3693a1eae6b24e72c152c">CSerialPort::m_dcb</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af6b5fa783fef229806f8662b0df2c18e"></a><!-- doxytag: member="CSerialPort::m_dwCommEvents" ref="af6b5fa783fef229806f8662b0df2c18e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DWORD <a class="el" href="classCSerialPort.html#af6b5fa783fef229806f8662b0df2c18e">CSerialPort::m_dwCommEvents</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a234faffa92379fada3f91ce21a8cac35"></a><!-- doxytag: member="CSerialPort::m_hComm" ref="a234faffa92379fada3f91ce21a8cac35" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HANDLE <a class="el" href="classCSerialPort.html#a234faffa92379fada3f91ce21a8cac35">CSerialPort::m_hComm</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adc1530502ba6dde3a9352141077b5afa"></a><!-- doxytag: member="CSerialPort::m_hEventArray" ref="adc1530502ba6dde3a9352141077b5afa" args="[3]" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HANDLE <a class="el" href="classCSerialPort.html#adc1530502ba6dde3a9352141077b5afa">CSerialPort::m_hEventArray</a>[3]<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7f19c5462fef05e6182ab2af9b1a2da2"></a><!-- doxytag: member="CSerialPort::m_hShutdownEvent" ref="a7f19c5462fef05e6182ab2af9b1a2da2" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HANDLE <a class="el" href="classCSerialPort.html#a7f19c5462fef05e6182ab2af9b1a2da2">CSerialPort::m_hShutdownEvent</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2a4e02de15cc82cb41f9660c9af203ed"></a><!-- doxytag: member="CSerialPort::m_hWriteEvent" ref="a2a4e02de15cc82cb41f9660c9af203ed" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HANDLE <a class="el" href="classCSerialPort.html#a2a4e02de15cc82cb41f9660c9af203ed">CSerialPort::m_hWriteEvent</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a16c93a6c87ae31ff80eb2ef5c655f45a"></a><!-- doxytag: member="CSerialPort::m_nPortNr" ref="a16c93a6c87ae31ff80eb2ef5c655f45a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UINT <a class="el" href="classCSerialPort.html#a16c93a6c87ae31ff80eb2ef5c655f45a">CSerialPort::m_nPortNr</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0da3f981892077c2193aff091379eac6"></a><!-- doxytag: member="CSerialPort::m_nWriteBufferSize" ref="a0da3f981892077c2193aff091379eac6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DWORD <a class="el" href="classCSerialPort.html#a0da3f981892077c2193aff091379eac6">CSerialPort::m_nWriteBufferSize</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5fe58c691b790d9e5d33c454411814fe"></a><!-- doxytag: member="CSerialPort::m_ov" ref="a5fe58c691b790d9e5d33c454411814fe" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">OVERLAPPED <a class="el" href="classCSerialPort.html#a5fe58c691b790d9e5d33c454411814fe">CSerialPort::m_ov</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac7ba598ab505a6bb7bf011d4c046ef0e"></a><!-- doxytag: member="CSerialPort::m_szWriteBuffer" ref="ac7ba598ab505a6bb7bf011d4c046ef0e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char* <a class="el" href="classCSerialPort.html#ac7ba598ab505a6bb7bf011d4c046ef0e">CSerialPort::m_szWriteBuffer</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3c2fe60cefc3c0e14638c132c313bc42"></a><!-- doxytag: member="CSerialPort::m_Thread" ref="a3c2fe60cefc3c0e14638c132c313bc42" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CWinThread* <a class="el" href="classCSerialPort.html#a3c2fe60cefc3c0e14638c132c313bc42">CSerialPort::m_Thread</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af758a1a7ebc24c8a4223accce75a9673"></a><!-- doxytag: member="CSerialPort::m_WriteBufferSize" ref="af758a1a7ebc24c8a4223accce75a9673" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned short <a class="el" href="classCSerialPort.html#af758a1a7ebc24c8a4223accce75a9673">CSerialPort::m_WriteBufferSize</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac31f6f3a9e19c134e4e6a12276a1f37f"></a><!-- doxytag: member="CSerialPort::sentPacket" ref="ac31f6f3a9e19c134e4e6a12276a1f37f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classCSerialPort.html#ac31f6f3a9e19c134e4e6a12276a1f37f">CSerialPort::sentPacket</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/<a class="el" href="Serialport_8h_source.html">Serialport.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/Serialport.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Jacket/<a class="el" href="Serialport_8h_source.html">Serialport.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Jacket/<a class="el" href="Serialport_8cpp.html">Serialport.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -155,7 +790,7 @@ int&nbsp;</td><td class="memItemRight" valign="bottom"><b>bufferRead</b></td></t
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -164,7 +799,7 @@ int&nbsp;</td><td class="memItemRight" valign="bottom"><b>bufferRead</b></td></t
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:45 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

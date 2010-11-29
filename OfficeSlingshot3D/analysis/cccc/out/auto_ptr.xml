@@ -14,7 +14,7 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="4" level="0" />
+<coupling_between_objects value="7" level="0" />
 <IF4 value="0" level="0" />
 <IF4_per_member_function value="********" level="0" />
 <IF4_visible value="0" level="0" />
@@ -30,6 +30,37 @@
 <module>
 <name>auto_ptr</name>
 <client_module>
+<name>Audio</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Audio/Audio.h" line="105" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Audio/Audio.h" line="106" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Audio/Audio.h" line="107" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Audio/Audio.h" line="108" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Audio/Audio.h" line="109" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Audio/Audio.h" line="110" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Audio/Audio.h" line="111" />
+</extent>
 <name>Game</name>
 <visible>true</visible>
 <concrete>true</concrete>
@@ -37,12 +68,42 @@
 <description>has by value</description>
 <source_reference file="../../Game/Game.h" line="56" />
 </extent>
+<name>HumanFormatLogger</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/HumanFormatLogger.h" line="22" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Logger/HumanFormatLogger.h" line="95" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/HumanFormatLogger.h" line="104" />
+</extent>
 <name>NovintFalcon</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Falcon/NovintFalcon.h" line="77" />
+<source_reference file="../../Falcon/NovintFalcon.h" line="84" />
+</extent>
+<name>ReplayFormatLogger</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="25" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="113" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="../../Logger/ReplayFormatLogger.h" line="125" />
 </extent>
 <name>Replayer</name>
 <visible>true</visible>
@@ -56,7 +117,7 @@
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../ZCamera/ZCamera.h" line="37" />
+<source_reference file="../../ZCamera/ZCamera.h" line="56" />
 </extent>
 </client_module>
 <supplier_module>

@@ -6,10 +6,10 @@
 <lines_of_code_per_member_function value="******" level="0" />
 <McCabes_cyclomatic_complexity value="8" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
-<lines_of_code value="37" level="0" />
+<lines_of_code value="51" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="2.703" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="0.216" level="0" />
+<lines_of_code_per_line_of_comment value="1.961" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.157" level="0" />
 <weighted_methods_per_class_unity value="8" level="0" />
 <weighted_methods_per_class_visibility value="6" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
@@ -24,7 +24,7 @@
 </module_summary>
 <module_detail>
 <description>definition</description>
-<source_reference file="../../Utils/SyncReaderWriters.h" line="15" />
+<source_reference file="../../Utils/SyncReaderWriters.h" line="14" />
 <lines_of_code value="12" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="15" level="0" />
@@ -40,11 +40,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Utils/SyncReaderWriters.h" line="18" />
+<source_reference file="../../Utils/SyncReaderWriters.h" line="20" />
 </extent>
 <lines_of_code value="11" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="3" level="0" />
+<lines_of_comment value="6" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -52,7 +52,7 @@
 <name>SyncReaderWriters(const SyncReaderWriters &amp;)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Utils/SyncReaderWriters.h" line="37" />
+<source_reference file="../../Utils/SyncReaderWriters.h" line="51" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -68,12 +68,12 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Utils/SyncReaderWriters.h" line="23" />
+<source_reference file="../../Utils/SyncReaderWriters.h" line="31" />
 </extent>
 <lines_of_code value="22" level="0" />
 <McCabes_cyclomatic_complexity value="2" level="0" />
-<lines_of_comment value="6" level="0" />
-<lines_of_code_per_line_of_comment value="3.667" level="0" />
+<lines_of_comment value="8" level="0" />
+<lines_of_code_per_line_of_comment value="2.750" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
@@ -84,11 +84,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Utils/SyncReaderWriters.h" line="27" />
+<source_reference file="../../Utils/SyncReaderWriters.h" line="37" />
 </extent>
 <lines_of_code value="15" level="0" />
 <McCabes_cyclomatic_complexity value="2" level="0" />
-<lines_of_comment value="5" level="0" />
+<lines_of_comment value="7" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -96,7 +96,7 @@
 <name>operator =(const SyncReaderWriters &amp;)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Utils/SyncReaderWriters.h" line="38" />
+<source_reference file="../../Utils/SyncReaderWriters.h" line="52" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -112,11 +112,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Utils/SyncReaderWriters.h" line="30" />
+<source_reference file="../../Utils/SyncReaderWriters.h" line="42" />
 </extent>
 <lines_of_code value="14" level="0" />
 <McCabes_cyclomatic_complexity value="2" level="0" />
-<lines_of_comment value="3" level="0" />
+<lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -128,11 +128,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Utils/SyncReaderWriters.h" line="33" />
+<source_reference file="../../Utils/SyncReaderWriters.h" line="47" />
 </extent>
 <lines_of_code value="15" level="0" />
 <McCabes_cyclomatic_complexity value="2" level="0" />
-<lines_of_comment value="4" level="0" />
+<lines_of_comment value="6" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -144,11 +144,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../Utils/SyncReaderWriters.h" line="19" />
+<source_reference file="../../Utils/SyncReaderWriters.h" line="25" />
 </extent>
 <lines_of_code value="9" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="3" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -166,11 +166,11 @@
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Utils/SyncReaderWriters.h" line="69" />
+<source_reference file="../../Utils/SyncReaderWriters.h" line="87" />
 </extent>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Utils/SyncReaderWriters.h" line="72" />
+<source_reference file="../../Utils/SyncReaderWriters.h" line="94" />
 </extent>
 <name>SyncWriterLock</name>
 <visible>true</visible>
@@ -181,11 +181,11 @@
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../Utils/SyncReaderWriters.h" line="82" />
+<source_reference file="../../Utils/SyncReaderWriters.h" line="108" />
 </extent>
 <extent>
 <description>has by reference</description>
-<source_reference file="../../Utils/SyncReaderWriters.h" line="85" />
+<source_reference file="../../Utils/SyncReaderWriters.h" line="115" />
 </extent>
 </client_module>
 <supplier_module>
@@ -194,23 +194,23 @@
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Utils/SyncReaderWriters.h" line="47" />
+<source_reference file="../../Utils/SyncReaderWriters.h" line="61" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Utils/SyncReaderWriters.h" line="50" />
+<source_reference file="../../Utils/SyncReaderWriters.h" line="64" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Utils/SyncReaderWriters.h" line="53" />
+<source_reference file="../../Utils/SyncReaderWriters.h" line="67" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Utils/SyncReaderWriters.h" line="56" />
+<source_reference file="../../Utils/SyncReaderWriters.h" line="70" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Utils/SyncReaderWriters.h" line="59" />
+<source_reference file="../../Utils/SyncReaderWriters.h" line="73" />
 </extent>
 </supplier_module>
 </module>

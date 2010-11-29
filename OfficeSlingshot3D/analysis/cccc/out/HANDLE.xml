@@ -14,7 +14,7 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="4" level="0" />
+<coupling_between_objects value="3" level="0" />
 <IF4 value="0" level="0" />
 <IF4_per_member_function value="********" level="0" />
 <IF4_visible value="0" level="0" />
@@ -35,11 +35,11 @@
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="142" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="299" />
 </extent>
 <extent>
 <description>has by value</description>
-<source_reference file="../../ZCamera/DepthCamera.h" line="143" />
+<source_reference file="../../ZCamera/DepthCamera.h" line="304" />
 </extent>
 <name>CSerialPort</name>
 <visible>true</visible>
@@ -60,19 +60,12 @@
 <description>has by value</description>
 <source_reference file="../../Jacket/Serialport.h" line="123" />
 </extent>
-<name>Game</name>
-<visible>false</visible>
-<concrete>true</concrete>
-<extent>
-<description>has by value</description>
-<source_reference file="../../Game/Game.h" line="50" />
-</extent>
 <name>TactileArray</name>
 <visible>false</visible>
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../Jacket/TactileArray.h" line="62" />
+<source_reference file="../../Jacket/TactileArray.h" line="199" />
 </extent>
 </client_module>
 <supplier_module>

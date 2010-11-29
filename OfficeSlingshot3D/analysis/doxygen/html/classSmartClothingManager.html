@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -48,24 +49,279 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a>  </div>
   <div class="headertitle">
 <h1>SmartClothingManager Class Reference</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="SmartClothingManager" --><table class="memberdecls">
+<!-- doxytag: class="SmartClothingManager" -->
+<p>Manager in charge of enabling other modules to vibrate a cetain HumanPart and sets the jacket and armband ports.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="SmartClothingManager_8h_source.html">SmartClothingManager.h</a>&gt;</code></p>
+<table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab072728e81425927a693645f4025f299"></a><!-- doxytag: member="SmartClothingManager::SmartClothingManager" ref="ab072728e81425927a693645f4025f299" args="(boost::shared_ptr&lt; Configuration &gt; configuration)" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><b>SmartClothingManager</b> (boost::shared_ptr&lt; <a class="el" href="classConfiguration.html">Configuration</a> &gt; configuration)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a523c8a28beef2d207104624a0a9ca79f"></a><!-- doxytag: member="SmartClothingManager::vibrate" ref="a523c8a28beef2d207104624a0a9ca79f" args="(HumanPart touchedPart, int x, int y, int time)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>vibrate</b> (HumanPart touchedPart, int x, int y, int time)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6b5433716ef95d9cc631b784de33611"></a><!-- doxytag: member="SmartClothingManager::setPorts" ref="ab6b5433716ef95d9cc631b784de33611" args="(int armBandPort, int jacketPort)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>setPorts</b> (int armBandPort, int jacketPort)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSmartClothingManager.html#ab072728e81425927a693645f4025f299">SmartClothingManager</a> (boost::shared_ptr&lt; <a class="el" href="classConfiguration.html">Configuration</a> &gt; configuration)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#ab072728e81425927a693645f4025f299"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSmartClothingManager.html#ab3e165480dc99ad2018adfc54754fc16">~SmartClothingManager</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#ab3e165480dc99ad2018adfc54754fc16"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSmartClothingManager.html#ac9b17caee233d2b545a3b9c3c54e4a2d">vibrate</a> (<a class="el" href="group__Common.html#gaa22d3933804e3afcd4eac294dded7434">BodyPart_t</a> touchedPart, double x, double y)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Vibrates the smart clothing at a cetain point for a 1000 milliseconds.  <a href="#ac9b17caee233d2b545a3b9c3c54e4a2d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSmartClothingManager.html#a7235e6a95dd4fc8fbb0d7b7bae9d2735">vibrate</a> (<a class="el" href="group__Common.html#gaa22d3933804e3afcd4eac294dded7434">BodyPart_t</a> hitPart, cVector3d position, cVector3d minValue, cVector3d maxValue)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Determines where the smart clothing is to vibrate according to the position of the collision detected.  <a href="#a7235e6a95dd4fc8fbb0d7b7bae9d2735"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSmartClothingManager.html#ab6b5433716ef95d9cc631b784de33611">setPorts</a> (int armBandPort, int jacketPort)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set the armband and jacket ports.  <a href="#ab6b5433716ef95d9cc631b784de33611"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSmartClothingManager.html#a600fd54d6e6beb7a9ac6d4e2fa6e4857">TimerProc</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Stops the vibration after 1000 ms.  <a href="#a600fd54d6e6beb7a9ac6d4e2fa6e4857"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSmartClothingManager.html#a827bdff48365eb739db7a33abf930fc6">SmartClothingManager</a> (const <a class="el" href="classSmartClothingManager.html">SmartClothingManager</a> &amp;smartClothingManager)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy-Constructor.  <a href="#a827bdff48365eb739db7a33abf930fc6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSmartClothingManager.html">SmartClothingManager</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSmartClothingManager.html#af8fbb32fba969633bbfa124ddee14c68">operator=</a> (const <a class="el" href="classSmartClothingManager.html">SmartClothingManager</a> &amp;smartClothingManager)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy-Constructor.  <a href="#af8fbb32fba969633bbfa124ddee14c68"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Manager in charge of enabling other modules to vibrate a cetain HumanPart and sets the jacket and armband ports. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ab072728e81425927a693645f4025f299"></a><!-- doxytag: member="SmartClothingManager::SmartClothingManager" ref="ab072728e81425927a693645f4025f299" args="(boost::shared_ptr&lt; Configuration &gt; configuration)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmartClothingManager::SmartClothingManager </td>
+          <td>(</td>
+          <td class="paramtype">boost::shared_ptr&lt; <a class="el" href="classConfiguration.html">Configuration</a> &gt;&nbsp;</td>
+          <td class="paramname"> <em>configuration</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>configuration</em>&nbsp;</td><td>A reference to the configuration file </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab3e165480dc99ad2018adfc54754fc16"></a><!-- doxytag: member="SmartClothingManager::~SmartClothingManager" ref="ab3e165480dc99ad2018adfc54754fc16" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmartClothingManager::~SmartClothingManager </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a827bdff48365eb739db7a33abf930fc6"></a><!-- doxytag: member="SmartClothingManager::SmartClothingManager" ref="a827bdff48365eb739db7a33abf930fc6" args="(const SmartClothingManager &amp;smartClothingManager)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmartClothingManager::SmartClothingManager </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classSmartClothingManager.html">SmartClothingManager</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>smartClothingManager</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copy-Constructor. </p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="af8fbb32fba969633bbfa124ddee14c68"></a><!-- doxytag: member="SmartClothingManager::operator=" ref="af8fbb32fba969633bbfa124ddee14c68" args="(const SmartClothingManager &amp;smartClothingManager)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSmartClothingManager.html">SmartClothingManager</a>&amp; SmartClothingManager::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classSmartClothingManager.html">SmartClothingManager</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>smartClothingManager</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copy-Constructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab6b5433716ef95d9cc631b784de33611"></a><!-- doxytag: member="SmartClothingManager::setPorts" ref="ab6b5433716ef95d9cc631b784de33611" args="(int armBandPort, int jacketPort)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SmartClothingManager::setPorts </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>armBandPort</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>jacketPort</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set the armband and jacket ports. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>armBandPort</em>&nbsp;</td><td>The new armband port </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>jacketPort</em>&nbsp;</td><td>Then new jacket port </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a600fd54d6e6beb7a9ac6d4e2fa6e4857"></a><!-- doxytag: member="SmartClothingManager::TimerProc" ref="a600fd54d6e6beb7a9ac6d4e2fa6e4857" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SmartClothingManager::TimerProc </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Stops the vibration after 1000 ms. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac9b17caee233d2b545a3b9c3c54e4a2d"></a><!-- doxytag: member="SmartClothingManager::vibrate" ref="ac9b17caee233d2b545a3b9c3c54e4a2d" args="(BodyPart_t touchedPart, double x, double y)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SmartClothingManager::vibrate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Common.html#gaa22d3933804e3afcd4eac294dded7434">BodyPart_t</a>&nbsp;</td>
+          <td class="paramname"> <em>touchedPart</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>y</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Vibrates the smart clothing at a cetain point for a 1000 milliseconds. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>touchedPart</em>&nbsp;</td><td>The body part to be vibrated </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>x</em>&nbsp;</td><td>The x coordinate </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>y</em>&nbsp;</td><td>The y coordinate </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7235e6a95dd4fc8fbb0d7b7bae9d2735"></a><!-- doxytag: member="SmartClothingManager::vibrate" ref="a7235e6a95dd4fc8fbb0d7b7bae9d2735" args="(BodyPart_t hitPart, cVector3d position, cVector3d minValue, cVector3d maxValue)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SmartClothingManager::vibrate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Common.html#gaa22d3933804e3afcd4eac294dded7434">BodyPart_t</a>&nbsp;</td>
+          <td class="paramname"> <em>hitPart</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cVector3d&nbsp;</td>
+          <td class="paramname"> <em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cVector3d&nbsp;</td>
+          <td class="paramname"> <em>minValue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cVector3d&nbsp;</td>
+          <td class="paramname"> <em>maxValue</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Determines where the smart clothing is to vibrate according to the position of the collision detected. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>hitPart</em>&nbsp;</td><td>The part of the body where the hit was detected </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>position</em>&nbsp;</td><td>The position of the ball at the moment of the collision </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>minValue</em>&nbsp;</td><td>The hit box's minimum value </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maxValue</em>&nbsp;</td><td>The hit box's maximum value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/<a class="el" href="SmartClothingManager_8h_source.html">SmartClothingManager.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Jacket/SmartClothingManager.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Jacket/<a class="el" href="SmartClothingManager_8h_source.html">SmartClothingManager.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Jacket/<a class="el" href="SmartClothingManager_8cpp.html">SmartClothingManager.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -73,7 +329,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>setPorts</b> (int arm
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,7 +338,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>setPorts</b> (int arm
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:46 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -48,26 +49,300 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <h1>SyncReaderWriters Class Reference</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="SyncReaderWriters" --><table class="memberdecls">
+<!-- doxytag: class="SyncReaderWriters" -->
+<p>DEPRECATED.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="SyncReaderWriters_8h_source.html">SyncReaderWriters.h</a>&gt;</code></p>
+<table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a140a5fd82984c430d5cf09d8eaedc939"></a><!-- doxytag: member="SyncReaderWriters::lock_reader" ref="a140a5fd82984c430d5cf09d8eaedc939" args="()" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>lock_reader</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0a33621969f1b7dfb1cc3df40b218be0"></a><!-- doxytag: member="SyncReaderWriters::lock_writer" ref="a0a33621969f1b7dfb1cc3df40b218be0" args="()" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>lock_writer</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4edc618bdb3b02014b0dbe2e62ea2444"></a><!-- doxytag: member="SyncReaderWriters::unlock_reader" ref="a4edc618bdb3b02014b0dbe2e62ea2444" args="()" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>unlock_reader</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af966888ec964ab9ee92460dc49ec1cfe"></a><!-- doxytag: member="SyncReaderWriters::unlock_writer" ref="af966888ec964ab9ee92460dc49ec1cfe" args="()" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>unlock_writer</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSyncReaderWriters.html#a29190c9fc9dd31b71202a94154552cbd">SyncReaderWriters</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#a29190c9fc9dd31b71202a94154552cbd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSyncReaderWriters.html#a3a24272f6e0d8b889e7f6e7832e62fa8">~SyncReaderWriters</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor.  <a href="#a3a24272f6e0d8b889e7f6e7832e62fa8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSyncReaderWriters.html#a140a5fd82984c430d5cf09d8eaedc939">lock_reader</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Lock the resource as a reader.  <a href="#a140a5fd82984c430d5cf09d8eaedc939"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSyncReaderWriters.html#a0a33621969f1b7dfb1cc3df40b218be0">lock_writer</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Lock the resource as a writer.  <a href="#a0a33621969f1b7dfb1cc3df40b218be0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSyncReaderWriters.html#a4edc618bdb3b02014b0dbe2e62ea2444">unlock_reader</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Unlock the resource as a reader.  <a href="#a4edc618bdb3b02014b0dbe2e62ea2444"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSyncReaderWriters.html#af966888ec964ab9ee92460dc49ec1cfe">unlock_writer</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Unlock the resource as a writer.  <a href="#af966888ec964ab9ee92460dc49ec1cfe"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSyncReaderWriters.html#a79b73bb58949e2a1ae3066c7a1106a73">SyncReaderWriters</a> (const <a class="el" href="classSyncReaderWriters.html">SyncReaderWriters</a> &amp;sync)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSyncReaderWriters.html">SyncReaderWriters</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSyncReaderWriters.html#a2d57d848b25943b3f83793d4ede718e5">operator=</a> (const <a class="el" href="classSyncReaderWriters.html">SyncReaderWriters</a> &amp;sync)</td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSyncReaderWriters.html#a8d92c30bd68cfad0bf1dfebb4ca8985a">m_readCount</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSyncReaderWriters.html#ab1f482634ec5fcacf843122d7de6fb8b">m_writeCount</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CRITICAL_SECTION&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSyncReaderWriters.html#ab03d699cfa0c77c4fbd3fe9d89666c70">m_csReadCount</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CRITICAL_SECTION&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSyncReaderWriters.html#ae644f1c9c96479866ffd9a92a9434c10">m_csReadRequest</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CRITICAL_SECTION&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSyncReaderWriters.html#a022cd67195ecc3062d125d634d649aca">m_csReadersAllowed</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CRITICAL_SECTION&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSyncReaderWriters.html#ac54dcbea57ebb58399c87707a7baab3c">m_csWriteCount</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CRITICAL_SECTION&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSyncReaderWriters.html#ac85ff40b5659e4b774e68fec9873c510">m_csWriterAllowed</a></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>DEPRECATED. </p>
+<p>Utility class designed to solve the readers/writers concurrency problem. In this implementation the writers are given priority. This is marked as deprecated as the boost library contains something similar but more powerful/flexible so that should be used instead.</p>
+<p>A description of the problem as well as a pseudo code implementation can be found here: <a href="http://en.wikipedia.org/wiki/Readers-writers_problem">http://en.wikipedia.org/wiki/Readers-writers_problem</a> </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a29190c9fc9dd31b71202a94154552cbd"></a><!-- doxytag: member="SyncReaderWriters::SyncReaderWriters" ref="a29190c9fc9dd31b71202a94154552cbd" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SyncReaderWriters::SyncReaderWriters </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3a24272f6e0d8b889e7f6e7832e62fa8"></a><!-- doxytag: member="SyncReaderWriters::~SyncReaderWriters" ref="a3a24272f6e0d8b889e7f6e7832e62fa8" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SyncReaderWriters::~SyncReaderWriters </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a79b73bb58949e2a1ae3066c7a1106a73"></a><!-- doxytag: member="SyncReaderWriters::SyncReaderWriters" ref="a79b73bb58949e2a1ae3066c7a1106a73" args="(const SyncReaderWriters &amp;sync)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SyncReaderWriters::SyncReaderWriters </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classSyncReaderWriters.html">SyncReaderWriters</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>sync</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a140a5fd82984c430d5cf09d8eaedc939"></a><!-- doxytag: member="SyncReaderWriters::lock_reader" ref="a140a5fd82984c430d5cf09d8eaedc939" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SyncReaderWriters::lock_reader </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Lock the resource as a reader. </p>
+<p>The reader will be given access if there are no writers using or waiting for the resource. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0a33621969f1b7dfb1cc3df40b218be0"></a><!-- doxytag: member="SyncReaderWriters::lock_writer" ref="a0a33621969f1b7dfb1cc3df40b218be0" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SyncReaderWriters::lock_writer </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Lock the resource as a writer. </p>
+<p>The writer will be given access when all the other readers/writers have relinquished the resource. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2d57d848b25943b3f83793d4ede718e5"></a><!-- doxytag: member="SyncReaderWriters::operator=" ref="a2d57d848b25943b3f83793d4ede718e5" args="(const SyncReaderWriters &amp;sync)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSyncReaderWriters.html">SyncReaderWriters</a>&amp; SyncReaderWriters::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classSyncReaderWriters.html">SyncReaderWriters</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>sync</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4edc618bdb3b02014b0dbe2e62ea2444"></a><!-- doxytag: member="SyncReaderWriters::unlock_reader" ref="a4edc618bdb3b02014b0dbe2e62ea2444" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SyncReaderWriters::unlock_reader </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Unlock the resource as a reader. </p>
+
+</div>
+</div>
+<a class="anchor" id="af966888ec964ab9ee92460dc49ec1cfe"></a><!-- doxytag: member="SyncReaderWriters::unlock_writer" ref="af966888ec964ab9ee92460dc49ec1cfe" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SyncReaderWriters::unlock_writer </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Unlock the resource as a writer. </p>
+
+</div>
+</div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="ab03d699cfa0c77c4fbd3fe9d89666c70"></a><!-- doxytag: member="SyncReaderWriters::m_csReadCount" ref="ab03d699cfa0c77c4fbd3fe9d89666c70" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CRITICAL_SECTION <a class="el" href="classSyncReaderWriters.html#ab03d699cfa0c77c4fbd3fe9d89666c70">SyncReaderWriters::m_csReadCount</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a022cd67195ecc3062d125d634d649aca"></a><!-- doxytag: member="SyncReaderWriters::m_csReadersAllowed" ref="a022cd67195ecc3062d125d634d649aca" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CRITICAL_SECTION <a class="el" href="classSyncReaderWriters.html#a022cd67195ecc3062d125d634d649aca">SyncReaderWriters::m_csReadersAllowed</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae644f1c9c96479866ffd9a92a9434c10"></a><!-- doxytag: member="SyncReaderWriters::m_csReadRequest" ref="ae644f1c9c96479866ffd9a92a9434c10" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CRITICAL_SECTION <a class="el" href="classSyncReaderWriters.html#ae644f1c9c96479866ffd9a92a9434c10">SyncReaderWriters::m_csReadRequest</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac54dcbea57ebb58399c87707a7baab3c"></a><!-- doxytag: member="SyncReaderWriters::m_csWriteCount" ref="ac54dcbea57ebb58399c87707a7baab3c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CRITICAL_SECTION <a class="el" href="classSyncReaderWriters.html#ac54dcbea57ebb58399c87707a7baab3c">SyncReaderWriters::m_csWriteCount</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac85ff40b5659e4b774e68fec9873c510"></a><!-- doxytag: member="SyncReaderWriters::m_csWriterAllowed" ref="ac85ff40b5659e4b774e68fec9873c510" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CRITICAL_SECTION <a class="el" href="classSyncReaderWriters.html#ac85ff40b5659e4b774e68fec9873c510">SyncReaderWriters::m_csWriterAllowed</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8d92c30bd68cfad0bf1dfebb4ca8985a"></a><!-- doxytag: member="SyncReaderWriters::m_readCount" ref="a8d92c30bd68cfad0bf1dfebb4ca8985a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classSyncReaderWriters.html#a8d92c30bd68cfad0bf1dfebb4ca8985a">SyncReaderWriters::m_readCount</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab1f482634ec5fcacf843122d7de6fb8b"></a><!-- doxytag: member="SyncReaderWriters::m_writeCount" ref="ab1f482634ec5fcacf843122d7de6fb8b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classSyncReaderWriters.html#ab1f482634ec5fcacf843122d7de6fb8b">SyncReaderWriters::m_writeCount</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/<a class="el" href="SyncReaderWriters_8h_source.html">SyncReaderWriters.h</a></li>
-<li>/home/kevin/workspace/HugMe/HugMe v0.9.1/Utils/SyncReaderWriters.cpp</li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Utils/<a class="el" href="SyncReaderWriters_8h_source.html">SyncReaderWriters.h</a></li>
+<li>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Utils/<a class="el" href="SyncReaderWriters_8cpp.html">SyncReaderWriters.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -75,7 +350,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>unlock_writer</b> ()<
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -84,7 +359,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>unlock_writer</b> ()<
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:46 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

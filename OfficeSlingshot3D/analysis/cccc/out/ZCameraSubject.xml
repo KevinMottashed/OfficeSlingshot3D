@@ -6,9 +6,9 @@
 <lines_of_code_per_member_function value="******" level="0" />
 <McCabes_cyclomatic_complexity value="4" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
-<lines_of_code value="1" level="0" />
+<lines_of_code value="21" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="38.000" level="2" />
+<lines_of_code_per_line_of_comment value="1.810" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 <weighted_methods_per_class_unity value="6" level="0" />
 <weighted_methods_per_class_visibility value="5" level="0" />
@@ -31,10 +31,10 @@
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 <description>definition</description>
-<source_reference file="../../ZCamera/ZCameraSubject.h" line="7" />
+<source_reference file="../../ZCamera/ZCameraSubject.h" line="11" />
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="7" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module_detail>
@@ -47,7 +47,7 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/ZCameraSubject.h" line="10" />
+<source_reference file="../../ZCamera/ZCameraSubject.h" line="14" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -63,11 +63,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/ZCameraSubject.h" line="13" />
+<source_reference file="../../ZCamera/ZCameraSubject.h" line="21" />
 </extent>
 <lines_of_code value="7" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="1" level="0" />
+<lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -79,11 +79,11 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/ZCameraSubject.h" line="14" />
+<source_reference file="../../ZCamera/ZCameraSubject.h" line="27" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="4" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -91,11 +91,11 @@
 <name>notify(...)</name>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/ZCameraSubject.h" line="16" />
+<source_reference file="../../ZCamera/ZCameraSubject.h" line="34" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="5" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -119,7 +119,7 @@
 </extent>
 <extent>
 <description>declaration</description>
-<source_reference file="../../ZCamera/ZCameraSubject.h" line="11" />
+<source_reference file="../../ZCamera/ZCameraSubject.h" line="15" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -137,7 +137,7 @@
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../ZCamera/IZCamera.h" line="12" />
+<source_reference file="../../ZCamera/IZCamera.h" line="13" />
 </extent>
 </client_module>
 <supplier_module>
@@ -154,18 +154,18 @@
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../ZCamera/ZCameraSubject.h" line="13" />
+<source_reference file="../../ZCamera/ZCameraSubject.h" line="21" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="../../ZCamera/ZCameraSubject.h" line="14" />
+<source_reference file="../../ZCamera/ZCameraSubject.h" line="27" />
 </extent>
 <name>vector</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>has by value</description>
-<source_reference file="../../ZCamera/ZCameraSubject.h" line="19" />
+<source_reference file="../../ZCamera/ZCameraSubject.h" line="40" />
 </extent>
 </supplier_module>
 </module>

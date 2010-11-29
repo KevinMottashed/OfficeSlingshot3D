@@ -131,7 +131,7 @@
 <concrete>true</concrete>
 <extent>
 <description>inheritance</description>
-<source_reference file="../../Falcon/NovintFalcon.h" line="12" />
+<source_reference file="../../Falcon/NovintFalcon.h" line="14" />
 </extent>
 </client_module>
 <supplier_module>

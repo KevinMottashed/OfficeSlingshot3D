@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>OfficeSlingshot3D: /home/kevin/workspace/HugMe/HugMe v0.9.1/Common/UserPreferences.h Source File</title>
+<title>OfficeSlingshot3D: /home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Common/UserPreferences.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -41,58 +42,73 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/kevin/workspace/HugMe/HugMe v0.9.1/Common/UserPreferences.h</h1>  </div>
+<h1>/home/kevin/workspace/OfficeSlingshot3D/OfficeSlingshot3D/Common/UserPreferences.h</h1>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef USER_PREFERENCES_H</span>
+<a href="UserPreferences_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef USER_PREFERENCES_H</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define USER_PREFERENCES_H</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &quot;stdafx.h&quot;</span>
-<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;boost.h&quot;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;<a class="code" href="boost_8h.html">boost.h</a>&quot;</span>
 <a name="l00006"></a>00006 
-<a name="l00015"></a><a class="code" href="structUserPreferences.html">00015</a> <span class="keyword">struct </span><a class="code" href="structUserPreferences.html" title="Represents the user preferences.">UserPreferences</a>
-<a name="l00016"></a>00016 {
-<a name="l00017"></a>00017 <span class="keyword">public</span>:
-<a name="l00021"></a><a class="code" href="structUserPreferences.html#a2b7225f2ddf069be9e4f23f426409020">00021</a>     std::string <a class="code" href="structUserPreferences.html#a2b7225f2ddf069be9e4f23f426409020" title="The default ip address to connect to.">ipAddress</a>;
-<a name="l00022"></a>00022 
-<a name="l00026"></a><a class="code" href="structUserPreferences.html#a38d4e509e3d15d642d5e9517ddffd77e">00026</a>     std::string <a class="code" href="structUserPreferences.html#a38d4e509e3d15d642d5e9517ddffd77e" title="The user name.">name</a>;
-<a name="l00027"></a>00027 
-<a name="l00031"></a><a class="code" href="structUserPreferences.html#ac8d206952bf8799e05dbd99ec4bc4a33">00031</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="structUserPreferences.html#ac8d206952bf8799e05dbd99ec4bc4a33" title="The bluetooth port for the arm band.">armBandPort</a>;
-<a name="l00032"></a>00032 
-<a name="l00036"></a><a class="code" href="structUserPreferences.html#ad4bc7a7d5215b907953d7a0877dd2dec">00036</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="structUserPreferences.html#ad4bc7a7d5215b907953d7a0877dd2dec" title="The bluetooth port for the jacket.">jacketPort</a>;
-<a name="l00037"></a>00037 
-<a name="l00038"></a>00038 <span class="keyword">private</span>:
-<a name="l00039"></a>00039     <span class="comment">// the boost serialization library requires access to the serialize function</span>
-<a name="l00040"></a>00040     <span class="keyword">friend</span> <span class="keyword">class </span>boost::serialization::access;
-<a name="l00041"></a>00041 
-<a name="l00048"></a>00048     <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Archive&gt;
-<a name="l00049"></a>00049     <span class="keywordtype">void</span> serialize(Archive&amp; ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> version);
-<a name="l00050"></a>00050 };
-<a name="l00051"></a>00051 
-<a name="l00060"></a>00060 std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, <span class="keyword">const</span> <a class="code" href="structUserPreferences.html" title="Represents the user preferences.">UserPreferences</a>&amp; pref);
+<a name="l00017"></a><a class="code" href="structUserPreferences.html">00017</a> <span class="keyword">struct </span><a class="code" href="structUserPreferences.html" title="public Represents the user preferences.">UserPreferences</a>
+<a name="l00018"></a>00018 {
+<a name="l00019"></a>00019 <span class="keyword">public</span>:
+<a name="l00023"></a><a class="code" href="structUserPreferences.html#a2b7225f2ddf069be9e4f23f426409020">00023</a>     std::string <a class="code" href="structUserPreferences.html#a2b7225f2ddf069be9e4f23f426409020" title="The default ip address to connect to.">ipAddress</a>;
+<a name="l00024"></a>00024 
+<a name="l00028"></a><a class="code" href="structUserPreferences.html#a38d4e509e3d15d642d5e9517ddffd77e">00028</a>     std::string <a class="code" href="structUserPreferences.html#a38d4e509e3d15d642d5e9517ddffd77e" title="The user name.">name</a>;
+<a name="l00029"></a>00029 
+<a name="l00033"></a><a class="code" href="structUserPreferences.html#ac8d206952bf8799e05dbd99ec4bc4a33">00033</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="structUserPreferences.html#ac8d206952bf8799e05dbd99ec4bc4a33" title="The bluetooth port for the arm band.">armBandPort</a>;
+<a name="l00034"></a>00034 
+<a name="l00038"></a><a class="code" href="structUserPreferences.html#ad4bc7a7d5215b907953d7a0877dd2dec">00038</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="structUserPreferences.html#ad4bc7a7d5215b907953d7a0877dd2dec" title="The bluetooth port for the jacket.">jacketPort</a>;
+<a name="l00039"></a>00039 
+<a name="l00040"></a><a class="code" href="structUserPreferences.html#a7575204faa69d0d1e805ca4552c74b57">00040</a>     <span class="keywordtype">bool</span> <a class="code" href="structUserPreferences.html#a7575204faa69d0d1e805ca4552c74b57" title="True if the audio should be muted.">muted</a>; 
+<a name="l00041"></a><a class="code" href="structUserPreferences.html#a7af7116a8867bb54898d97762a41cefa">00041</a>     <span class="keywordtype">float</span> <a class="code" href="structUserPreferences.html#a7af7116a8867bb54898d97762a41cefa" title="The volume on a scale of 0.0 to 1.0.">volume</a>; 
+<a name="l00043"></a><a class="code" href="structUserPreferences.html#ab562fae4f95bdbfbd688d504361dbbfb">00043</a>     <span class="keywordtype">bool</span> <a class="code" href="structUserPreferences.html#ab562fae4f95bdbfbd688d504361dbbfb" title="True if the audio should be muted.">forceEnabled</a>; 
+<a name="l00045"></a><a class="code" href="structUserPreferences.html#a1607cde77c8296f43eab64a1f3240e30">00045</a>     <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="structUserPreferences.html#a1607cde77c8296f43eab64a1f3240e30" title="Default IP Address.">default_ip_address</a>; 
+<a name="l00046"></a><a class="code" href="structUserPreferences.html#a917839275305d569bde86f9f4812c09f">00046</a>     <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="structUserPreferences.html#a917839275305d569bde86f9f4812c09f" title="Default user name.">default_name</a>; 
+<a name="l00047"></a><a class="code" href="structUserPreferences.html#ab0557f81573441e2f16ca69fb5f9ae41">00047</a>     <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="structUserPreferences.html#ab0557f81573441e2f16ca69fb5f9ae41" title="Default blue tooth port for the arm band.">default_arm_band_port</a>; 
+<a name="l00048"></a><a class="code" href="structUserPreferences.html#adac20eb7dd8dad9f544da8353f5b3d9e">00048</a>     <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="structUserPreferences.html#adac20eb7dd8dad9f544da8353f5b3d9e" title="Default blue tooth port for the jacket.">default_jacket_port</a>; 
+<a name="l00049"></a><a class="code" href="structUserPreferences.html#a0161e49919e91548d1e2ac84748e4f44">00049</a>     <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">bool</span> <a class="code" href="structUserPreferences.html#a0161e49919e91548d1e2ac84748e4f44" title="Default for if the application is muted or not.">default_muted</a>; 
+<a name="l00050"></a><a class="code" href="structUserPreferences.html#a1d99b7c2272405601169e1d56447970d">00050</a>     <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="structUserPreferences.html#a1d99b7c2272405601169e1d56447970d" title="Default volume level.">default_volume</a>; 
+<a name="l00051"></a><a class="code" href="structUserPreferences.html#aeeb5858eb052cc5d6e3ff135840f9230">00051</a>     <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">bool</span> <a class="code" href="structUserPreferences.html#aeeb5858eb052cc5d6e3ff135840f9230" title="Default force enabled.">default_force_enabled</a>; 
+<a name="l00056"></a>00056     <span class="keywordtype">void</span> <a class="code" href="structUserPreferences.html#af433efa63cbf5775701a4402760e22f0" title="Reset all the preferences to the defaults.">setDefaults</a>();
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058 <span class="keyword">private</span>:
+<a name="l00059"></a>00059     <span class="comment">// the boost serialization library requires access to the serialize function</span>
+<a name="l00060"></a><a class="code" href="structUserPreferences.html#ac98d07dd8f7b70e16ccb9a01abf56b9c">00060</a>     <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="structUserPreferences.html#ac98d07dd8f7b70e16ccb9a01abf56b9c">boost::serialization::access</a>;
 <a name="l00061"></a>00061 
-<a name="l00070"></a>00070 std::istream&amp; operator&gt;&gt;(std::istream&amp; is, <a class="code" href="structUserPreferences.html" title="Represents the user preferences.">UserPreferences</a>&amp; pref);
+<a name="l00068"></a>00068     <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Archive&gt;
+<a name="l00069"></a>00069     <span class="keywordtype">void</span> <a class="code" href="structUserPreferences.html#adef1871ebc44afdc3c0c687ba50ae29b" title="Serialize or deserialize the user preferences.">serialize</a>(Archive&amp; ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> version);
+<a name="l00070"></a>00070 };
 <a name="l00071"></a>00071 
-<a name="l00072"></a>00072 <span class="comment">//--------------------------------------------</span>
-<a name="l00073"></a>00073 <span class="comment">// TEMPLATE IMPLEMENTATIONS</span>
-<a name="l00074"></a>00074 <span class="comment">//--------------------------------------------</span>
-<a name="l00075"></a>00075 
-<a name="l00076"></a>00076 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Archive&gt;
-<a name="l00077"></a>00077 <span class="keywordtype">void</span> UserPreferences::serialize(Archive&amp; ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> version)
-<a name="l00078"></a>00078 {
-<a name="l00079"></a>00079     ar &amp; <a class="code" href="structUserPreferences.html#a2b7225f2ddf069be9e4f23f426409020" title="The default ip address to connect to.">ipAddress</a>;
-<a name="l00080"></a>00080     ar &amp; <a class="code" href="structUserPreferences.html#a38d4e509e3d15d642d5e9517ddffd77e" title="The user name.">name</a>;
-<a name="l00081"></a>00081     ar &amp; <a class="code" href="structUserPreferences.html#ac8d206952bf8799e05dbd99ec4bc4a33" title="The bluetooth port for the arm band.">armBandPort</a>;
-<a name="l00082"></a>00082     ar &amp; <a class="code" href="structUserPreferences.html#ad4bc7a7d5215b907953d7a0877dd2dec" title="The bluetooth port for the jacket.">jacketPort</a>;
-<a name="l00083"></a>00083     <span class="keywordflow">return</span>;
-<a name="l00084"></a>00084 }
-<a name="l00085"></a>00085 
-<a name="l00086"></a>00086 <span class="preprocessor">#endif</span>
-<a name="l00087"></a>00087 <span class="preprocessor"></span>
+<a name="l00079"></a>00079 std::ostream&amp; <a class="code" href="PhysicsSync_8cpp.html#a323e82ed86e6e0b5a1d2ce938e28f65f" title="Output operator.">operator&lt;&lt;</a>(std::ostream&amp; os, <span class="keyword">const</span> <a class="code" href="structUserPreferences.html" title="public Represents the user preferences.">UserPreferences</a>&amp; pref);
+<a name="l00080"></a>00080 
+<a name="l00090"></a>00090 std::istream&amp; <a class="code" href="UserPreferences_8cpp.html#a7bec9affc38864be687e87eb9b25e343" title="Input operator.">operator&gt;&gt;</a>(std::istream&amp; is, <a class="code" href="structUserPreferences.html" title="public Represents the user preferences.">UserPreferences</a>&amp; pref);
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092 <span class="comment">//--------------------------------------------</span>
+<a name="l00093"></a>00093 <span class="comment">// TEMPLATE IMPLEMENTATIONS</span>
+<a name="l00094"></a>00094 <span class="comment">//--------------------------------------------</span>
+<a name="l00095"></a>00095 
+<a name="l00096"></a>00096 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Archive&gt;
+<a name="l00097"></a><a class="code" href="structUserPreferences.html#adef1871ebc44afdc3c0c687ba50ae29b">00097</a> <span class="keywordtype">void</span> <a class="code" href="structUserPreferences.html#adef1871ebc44afdc3c0c687ba50ae29b" title="Serialize or deserialize the user preferences.">UserPreferences::serialize</a>(Archive&amp; ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> version)
+<a name="l00098"></a>00098 {
+<a name="l00099"></a>00099     ar &amp; <a class="code" href="structUserPreferences.html#a2b7225f2ddf069be9e4f23f426409020" title="The default ip address to connect to.">ipAddress</a>;
+<a name="l00100"></a>00100     ar &amp; <a class="code" href="structUserPreferences.html#a38d4e509e3d15d642d5e9517ddffd77e" title="The user name.">name</a>;
+<a name="l00101"></a>00101     ar &amp; <a class="code" href="structUserPreferences.html#ac8d206952bf8799e05dbd99ec4bc4a33" title="The bluetooth port for the arm band.">armBandPort</a>;
+<a name="l00102"></a>00102     ar &amp; <a class="code" href="structUserPreferences.html#ad4bc7a7d5215b907953d7a0877dd2dec" title="The bluetooth port for the jacket.">jacketPort</a>;
+<a name="l00103"></a>00103     ar &amp; <a class="code" href="structUserPreferences.html#a7575204faa69d0d1e805ca4552c74b57" title="True if the audio should be muted.">muted</a>;
+<a name="l00104"></a>00104     ar &amp; <a class="code" href="structUserPreferences.html#a7af7116a8867bb54898d97762a41cefa" title="The volume on a scale of 0.0 to 1.0.">volume</a>;
+<a name="l00105"></a>00105     <span class="keywordflow">return</span>;
+<a name="l00106"></a>00106 }
+<a name="l00107"></a>00107 
+<a name="l00108"></a>00108 <span class="preprocessor">#endif</span>
+<a name="l00109"></a>00109 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -100,7 +116,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -109,7 +125,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 12 2010 22:25:09 for OfficeSlingshot3D by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Nov 29 2010 09:52:44 for OfficeSlingshot3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

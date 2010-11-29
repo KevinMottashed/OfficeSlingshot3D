@@ -12,7 +12,7 @@ Detailed report on module NetworkObserver
 <TR>
 <TD>McCabe's Cyclomatic Number</TD><TD>MVG</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>******</TD></TR>
 <TR>
-<TD>Lines of Comment</TD><TD>COM</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>********</STRONG></TD></TR>
+<TD>Lines of Comment</TD><TD>COM</TD><TD ALIGN=RIGHT>    12</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>********</STRONG></TD></TR>
 <TR>
 <TD>LOC/COM</TD><TD>L_C</TD><TD ALIGN=RIGHT>------</TD><TD>&nbsp;</TD></TR>
 <TR>
@@ -38,12 +38,12 @@ Detailed report on module NetworkObserver
 <TABLE BORDER WIDTH=100%><TR>
 <TD WIDTH=50%>Description</TD><TH BGCOLOR="AQUA" WIDTH=10%>LOC</TH><TH BGCOLOR="AQUA" WIDTH=10%>MVG</TH><TH BGCOLOR="AQUA" WIDTH=10%>COM</TH><TH BGCOLOR="AQUA" WIDTH=10%>L_C</TH><TH BGCOLOR="AQUA" WIDTH=10%>M_C</TH><TR>
 <TD>definition &nbsp;
-<CODE><A HREF="cccc_src.html#../../Network/NetworkObserver.h:        25">../../Network/NetworkObserver.h:25</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Network/NetworkObserver.h:        35">../../Network/NetworkObserver.h:35</A></CODE><BR>
 </TD>
-<TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+<TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     5</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>declaration &nbsp;
-<CODE><A HREF="cccc_src.html#../../Network/NetworkProxy.h:        11">../../Network/NetworkProxy.h:11</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Network/NetworkProxy.h:        23">../../Network/NetworkProxy.h:23</A></CODE><BR>
 </TD>
 <TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR><TD HEIGHT=12 COLSPAN=6></TD></TR>
@@ -55,23 +55,23 @@ Detailed report on module NetworkObserver
 definition &nbsp;
 <CODE><A HREF="cccc_src.html#../../Network/NetworkObserver.cpp:         3">../../Network/NetworkObserver.cpp:3</A></CODE><BR>
 declaration &nbsp;
-<CODE><A HREF="cccc_src.html#../../Network/NetworkObserver.h:        28">../../Network/NetworkObserver.h:28</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Network/NetworkObserver.h:        38">../../Network/NetworkObserver.h:38</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>update( &nbsp;NetworkUpdateContext, &nbsp;const void *&nbsp;)<BR>
 declaration &nbsp;
-<CODE><A HREF="cccc_src.html#../../Network/NetworkObserver.h:        32">../../Network/NetworkObserver.h:32</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Network/NetworkObserver.h:        46">../../Network/NetworkObserver.h:46</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     5</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>~NetworkObserver( &nbsp;&nbsp;)<BR>
 definition &nbsp;
 <CODE><A HREF="cccc_src.html#../../Network/NetworkObserver.cpp:         7">../../Network/NetworkObserver.cpp:7</A></CODE><BR>
 declaration &nbsp;
-<CODE><A HREF="cccc_src.html#../../Network/NetworkObserver.h:        29">../../Network/NetworkObserver.h:29</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Network/NetworkObserver.h:        39">../../Network/NetworkObserver.h:39</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR><TD HEIGHT=12 COLSPAN=6></TD></TR>
 </TR></TABLE>
 <H2><A NAME="structdet">Relationships</A></H2>
@@ -81,12 +81,12 @@ declaration &nbsp;
 <TD WIDTH=50%>
 Logger [CV] <BR>
 inheritance &nbsp;
-<CODE><A HREF="cccc_src.html#../../Logger/Logger.h:        14">../../Logger/Logger.h:14</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Logger/Logger.h:        20">../../Logger/Logger.h:20</A></CODE><BR>
 <BR>
 <BR>
 Mediator [CV] <BR>
 inheritance &nbsp;
-<CODE><A HREF="cccc_src.html#../../Mediator/Mediator.h:        24">../../Mediator/Mediator.h:24</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Mediator/Mediator.h:        26">../../Mediator/Mediator.h:26</A></CODE><BR>
 <BR>
 <BR>
 NetworkSubject [V] <BR>
@@ -95,9 +95,9 @@ pass by reference &nbsp;
 pass by reference &nbsp;
 <CODE><A HREF="cccc_src.html#../../Network/NetworkSubject.cpp:        20">../../Network/NetworkSubject.cpp:20</A></CODE><BR>
 pass by reference &nbsp;
-<CODE><A HREF="cccc_src.html#../../Network/NetworkSubject.h:        13">../../Network/NetworkSubject.h:13</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Network/NetworkSubject.h:        24">../../Network/NetworkSubject.h:24</A></CODE><BR>
 pass by reference &nbsp;
-<CODE><A HREF="cccc_src.html#../../Network/NetworkSubject.h:        14">../../Network/NetworkSubject.h:14</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#../../Network/NetworkSubject.h:        31">../../Network/NetworkSubject.h:31</A></CODE><BR>
 <BR>
 <BR>
 &nbsp;

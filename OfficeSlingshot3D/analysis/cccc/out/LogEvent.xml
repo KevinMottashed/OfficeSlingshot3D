@@ -2,14 +2,14 @@
 <!--Detailed report on module LogEvent-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="56" level="0" />
+<lines_of_code value="58" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
-<McCabes_cyclomatic_complexity value="26" level="0" />
+<McCabes_cyclomatic_complexity value="27" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
 <lines_of_code value="1" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="56.000" level="2" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="26.000" level="2" />
+<lines_of_code_per_line_of_comment value="58.000" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="27.000" level="2" />
 <weighted_methods_per_class_unity value="1" level="0" />
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
@@ -31,11 +31,11 @@
 <description>definition</description>
 <source_reference file="../../Logger/LogEventEnum.cpp" line="4" />
 </extent>
-<lines_of_code value="56" level="1" />
-<McCabes_cyclomatic_complexity value="26" level="1" />
+<lines_of_code value="58" level="1" />
+<McCabes_cyclomatic_complexity value="27" level="1" />
 <lines_of_comment value="1" level="0" />
-<lines_of_code_per_line_of_comment value="56.000" level="2" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="26.000" level="2" />
+<lines_of_code_per_line_of_comment value="58.000" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="27.000" level="2" />
 </member_function>
 </procedural_detail>
 <structural_detail>
