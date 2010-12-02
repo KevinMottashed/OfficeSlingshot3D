@@ -21,6 +21,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_02F77BED7D15438786B0623E088BF8CA"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_0A21D07A4BB64092867DD3A881FE9B7A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -65,6 +71,12 @@
         {
         "MsmKey" = "8:_312F185BFA4A4184BDB080F696623BFD"
         "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_340AE36679CC29BCBCB50BDFBD0C98EE"
+        "OwnerKey" = "8:_FFB5F85A184E4CAE933FDBAEC6F11C72"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -141,8 +153,14 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_6FC00E992BF5D7DAFCC4235903228285"
+        "MsmKey" = "8:_670D4D308AF84F2DA7569F484EA3F714"
         "OwnerKey" = "8:_FFB5F85A184E4CAE933FDBAEC6F11C72"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7409182BEF4B4DBA9300F17FF3817DE8"
+        "OwnerKey" = "8:_BBBF60BFE7244224A4F90B7F8512A702"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -165,12 +183,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_8B943A0B8C404F119709102309F0FCCC"
-        "OwnerKey" = "8:_F9AB73EF7737444E8FBDE8FF1A7F2F29"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_8BD9350D6E974636BA244B59C2A28DEA"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -184,6 +196,18 @@
         "Entry"
         {
         "MsmKey" = "8:_8D29CE57187F4786872F55D9FEADE620"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8F44AE31E229417B98C7B928C075575B"
+        "OwnerKey" = "8:_670D4D308AF84F2DA7569F484EA3F714"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_966C2B10308F42EEAAA547F12C18C485"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -231,14 +255,14 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_A9F03FC96BD86FAC0B9C7C09DBFC4BEB"
-        "OwnerKey" = "8:_FFB5F85A184E4CAE933FDBAEC6F11C72"
+        "MsmKey" = "8:_B2A5595915EB40EE94F12C751564B6CB"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_B2A5595915EB40EE94F12C751564B6CB"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_BBBF60BFE7244224A4F90B7F8512A702"
+        "OwnerKey" = "8:_FFB5F85A184E4CAE933FDBAEC6F11C72"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -249,7 +273,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_CC9EEBB59182922481994A64E1DA65A7"
+        "MsmKey" = "8:_C64ADEED4443BF15D776DCE50C2469C7"
         "OwnerKey" = "8:_FFB5F85A184E4CAE933FDBAEC6F11C72"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -257,12 +281,6 @@
         {
         "MsmKey" = "8:_D09C5DC729754F87B9922D123548BE5C"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D13A538C00C445CF8FAAEC09B54D1114"
-        "OwnerKey" = "8:_EBEE8073F0354CFD90527AC30029DC39"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -291,12 +309,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_EBEE8073F0354CFD90527AC30029DC39"
-        "OwnerKey" = "8:_FFB5F85A184E4CAE933FDBAEC6F11C72"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_EE79C1627BD94FDDBA8607B1C14271CE"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -315,7 +327,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_F9AB73EF7737444E8FBDE8FF1A7F2F29"
+        "MsmKey" = "8:_F2F9D66A764A53D75DF8CC731FD060A9"
         "OwnerKey" = "8:_FFB5F85A184E4CAE933FDBAEC6F11C72"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -413,6 +425,26 @@
             "TargetName" = "8:vol4.tga"
             "Tag" = "8:"
             "Folder" = "8:_04248FE43E1749CBAEBF1ADAA786204C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_02F77BED7D15438786B0623E088BF8CA"
+            {
+            "SourcePath" = "8:..\\OfficeSlingshot3D\\msvcr71.dll"
+            "TargetName" = "8:msvcr71.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_F49E5737F1764B6A9A86347F99A363F4"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -585,6 +617,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_340AE36679CC29BCBCB50BDFBD0C98EE"
+            {
+            "SourcePath" = "8:ConnectDM_VC80.dll"
+            "TargetName" = "8:ConnectDM_VC80.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_F49E5737F1764B6A9A86347F99A363F4"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3B8EE0A3CE84407EBAD6C29A7FCD0CE8"
@@ -807,26 +859,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6FC00E992BF5D7DAFCC4235903228285"
-            {
-            "SourcePath" = "8:fmodex.dll"
-            "TargetName" = "8:fmodex.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_F49E5737F1764B6A9A86347F99A363F4"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7868531356EB4DDFA0F9217ED88E0C30"
             {
             "SourcePath" = "8:..\\OfficeSlingshot3D\\pictures\\lostGame.tga"
@@ -933,6 +965,26 @@
             "TargetName" = "8:afterburn.mp3"
             "Tag" = "8:"
             "Folder" = "8:_DA258EF2C3FF4330AFA997F86B8E2001"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_966C2B10308F42EEAAA547F12C18C485"
+            {
+            "SourcePath" = "8:..\\OfficeSlingshot3D\\hdFalcon.dll"
+            "TargetName" = "8:hdFalcon.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_F49E5737F1764B6A9A86347F99A363F4"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1087,26 +1139,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A9F03FC96BD86FAC0B9C7C09DBFC4BEB"
-            {
-            "SourcePath" = "8:ode_double.dll"
-            "TargetName" = "8:ode_double.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_F49E5737F1764B6A9A86347F99A363F4"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B2A5595915EB40EE94F12C751564B6CB"
             {
             "SourcePath" = "8:..\\OfficeSlingshot3D\\sounds\\tink.mp3"
@@ -1147,10 +1179,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CC9EEBB59182922481994A64E1DA65A7"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C64ADEED4443BF15D776DCE50C2469C7"
             {
-            "SourcePath" = "8:ConnectDM_VC80.dll"
-            "TargetName" = "8:ConnectDM_VC80.dll"
+            "SourcePath" = "8:fmodex.dll"
+            "TargetName" = "8:fmodex.dll"
             "Tag" = "8:"
             "Folder" = "8:_F49E5737F1764B6A9A86347F99A363F4"
             "Condition" = "8:"
@@ -1327,6 +1359,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F2F9D66A764A53D75DF8CC731FD060A9"
+            {
+            "SourcePath" = "8:ode_double.dll"
+            "TargetName" = "8:ode_double.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_F49E5737F1764B6A9A86347F99A363F4"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -1460,7 +1512,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:OfficeSlingshot3DSetup"
         "ProductCode" = "8:{529DA9EA-7AB6-406D-A81B-56017C608B3F}"
-        "PackageCode" = "8:{B15447EA-55DD-4330-BEAB-E549A11F1C56}"
+        "PackageCode" = "8:{C846DAE7-05C9-4C61-AF6F-BF70FD9BBD88}"
         "UpgradeCode" = "8:{0D27D5F1-50C0-41E5-9BBD-9C4BDC8D02CF}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
@@ -1975,11 +2027,11 @@
         }
         "MergeModule"
         {
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_8B943A0B8C404F119709102309F0FCCC"
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_670D4D308AF84F2DA7569F484EA3F714"
             {
             "UseDynamicProperties" = "11:TRUE"
             "IsDependency" = "11:TRUE"
-            "SourcePath" = "8:policy_8_0_microsoft_vc80_debugcrt_x86.msm"
+            "SourcePath" = "8:Microsoft_VC80_DebugCRT_x86.msm"
                 "Properties"
                 {
                 }
@@ -1989,7 +2041,7 @@
             "Feature" = "8:"
             "IsolateTo" = "8:"
             }
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_D13A538C00C445CF8FAAEC09B54D1114"
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_7409182BEF4B4DBA9300F17FF3817DE8"
             {
             "UseDynamicProperties" = "11:TRUE"
             "IsDependency" = "11:TRUE"
@@ -2003,11 +2055,11 @@
             "Feature" = "8:"
             "IsolateTo" = "8:"
             }
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_EBEE8073F0354CFD90527AC30029DC39"
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_8F44AE31E229417B98C7B928C075575B"
             {
             "UseDynamicProperties" = "11:TRUE"
             "IsDependency" = "11:TRUE"
-            "SourcePath" = "8:Microsoft_VC80_DebugMFC_x86.msm"
+            "SourcePath" = "8:policy_8_0_microsoft_vc80_debugcrt_x86.msm"
                 "Properties"
                 {
                 }
@@ -2017,11 +2069,11 @@
             "Feature" = "8:"
             "IsolateTo" = "8:"
             }
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_F9AB73EF7737444E8FBDE8FF1A7F2F29"
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_BBBF60BFE7244224A4F90B7F8512A702"
             {
             "UseDynamicProperties" = "11:TRUE"
             "IsDependency" = "11:TRUE"
-            "SourcePath" = "8:Microsoft_VC80_DebugCRT_x86.msm"
+            "SourcePath" = "8:Microsoft_VC80_DebugMFC_x86.msm"
                 "Properties"
                 {
                 }
